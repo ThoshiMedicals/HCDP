@@ -1,0 +1,266 @@
+[
+  {
+    "id": "executive",
+    "label": "Executive Command Centre",
+    "icon": "home",
+    "items": [
+      [
+        "dashboard",
+        "Dashboard"
+      ],
+      [
+        "actionInbox",
+        "Action Inbox"
+      ],
+      [
+        "riskCentre",
+        "Risk Centre"
+      ],
+      [
+        "complianceCentre",
+        "Compliance Centre"
+      ],
+      [
+        "analytics",
+        "Executive Analytics"
+      ],
+      [
+        "emergencyCentre",
+        "Emergency Control"
+      ]
+    ]
+  },
+  {
+    "id": "operations",
+    "label": "Operations",
+    "icon": "task",
+    "items": [
+      [
+        "tasks",
+        "Tasks"
+      ],
+      [
+        "checklists",
+        "Checklists"
+      ],
+      [
+        "frontdesk",
+        "Opening / Closing"
+      ],
+      [
+        "incidents",
+        "Incidents & Continuity"
+      ],
+      [
+        "expiry",
+        "Expiry Centre"
+      ],
+      [
+        "syncCentre",
+        "Offline Reconciliation"
+      ]
+    ]
+  },
+  {
+    "id": "people",
+    "label": "People & Talent",
+    "icon": "users",
+    "items": [
+      [
+        "staff",
+        "Staff"
+      ],
+      [
+        "doctors",
+        "Doctors"
+      ],
+      [
+        "recruitment",
+        "Recruitment"
+      ],
+      [
+        "training",
+        "Training"
+      ],
+      [
+        "hrDocs",
+        "HR Documents"
+      ]
+    ]
+  },
+  {
+    "id": "rostering",
+    "label": "Rostering & Attendance",
+    "icon": "calendar",
+    "items": [
+      [
+        "roster",
+        "Roster & Shifts"
+      ],
+      [
+        "timeclock",
+        "Time & Attendance"
+      ]
+    ]
+  },
+  {
+    "id": "assets",
+    "label": "Assets & Facilities",
+    "icon": "box",
+    "items": [
+      [
+        "inventory",
+        "Inventory"
+      ],
+      [
+        "stock",
+        "Stock"
+      ],
+      [
+        "equipment",
+        "Equipment"
+      ],
+      [
+        "rooms",
+        "Rooms"
+      ],
+      [
+        "website",
+        "Website Monitoring"
+      ]
+    ]
+  },
+  {
+    "id": "web",
+    "label": "Website & Digital Experience",
+    "icon": "globe",
+    "items": [
+      [
+        "websiteStudio",
+        "Website Builder & SEO"
+      ]
+    ]
+  },
+  {
+    "id": "governance",
+    "label": "Governance",
+    "icon": "shield",
+    "items": [
+      [
+        "accreditation",
+        "Accreditation"
+      ],
+      [
+        "policies",
+        "Policies"
+      ],
+      [
+        "qi",
+        "QI / PDSA"
+      ],
+      [
+        "audit",
+        "Audit Log"
+      ],
+      [
+        "approvals",
+        "Approvals"
+      ]
+    ]
+  },
+  {
+    "id": "finance",
+    "label": "Finance & Forecasting",
+    "icon": "pay",
+    "items": [
+      [
+        "staffpay",
+        "Staff Pay"
+      ],
+      [
+        "doctorpay",
+        "Doctor Pay"
+      ],
+      [
+        "bbpip",
+        "BBPIP"
+      ],
+      [
+        "financialForecast",
+        "Financial Forecast"
+      ]
+    ]
+  },
+  {
+    "id": "communications",
+    "label": "Communications",
+    "icon": "chat",
+    "items": [
+      [
+        "memos",
+        "Memos & News"
+      ],
+      [
+        "commbook",
+        "Communication Book"
+      ],
+      [
+        "email",
+        "Email Campaigns"
+      ],
+      [
+        "sms",
+        "SMS Campaigns"
+      ],
+      [
+        "noticeboards",
+        "Noticeboards"
+      ]
+    ]
+  },
+  {
+    "id": "security",
+    "label": "Security & Access",
+    "icon": "lock",
+    "items": [
+      [
+        "remote",
+        "Remote Access"
+      ],
+      [
+        "vault",
+        "Password Vault"
+      ],
+      [
+        "cameras",
+        "Security Cameras"
+      ]
+    ]
+  },
+  {
+    "id": "organisation",
+    "label": "Organisation & Tenant",
+    "icon": "building",
+    "items": [
+      [
+        "settings",
+        "Organisation & Access"
+      ],
+      [
+        "saas",
+        "Tenant Administration"
+      ]
+    ]
+  },
+  {
+    "id": "vendor",
+    "label": "SaaS Vendor Administration",
+    "icon": "globe",
+    "items": [
+      [
+        "vendorConsole",
+        "Vendor Command Console"
+      ]
+    ]
+  }
+]

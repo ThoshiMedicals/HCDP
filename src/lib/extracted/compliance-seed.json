@@ -1,0 +1,44 @@
+[
+  {
+    "area": "Training",
+    "status": "Attention",
+    "score": 88,
+    "detail": "4 assignments due within 14 days",
+    "module": "training"
+  },
+  {
+    "area": "Documents",
+    "status": "Critical",
+    "score": 82,
+    "detail": "2 expired CPR certificates",
+    "module": "hrDocs"
+  },
+  {
+    "area": "Evidence",
+    "status": "Ready",
+    "score": 96,
+    "detail": "31 of 32 evidence items current",
+    "module": "accreditation"
+  },
+  {
+    "area": "Policies",
+    "status": "Attention",
+    "score": 90,
+    "detail": "3 reviews due this month",
+    "module": "policies"
+  },
+  {
+    "area": "Cold Chain",
+    "status": "Critical",
+    "score": 84,
+    "detail": "1 exception awaiting disposition",
+    "module": "accreditation"
+  },
+  {
+    "area": "QI Activities",
+    "status": "Ready",
+    "score": 95,
+    "detail": "6 active PDSA cycles on track",
+    "module": "qi"
+  }
+]

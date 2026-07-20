@@ -1,0 +1,1115 @@
+{
+  "summary": {
+    "widthsOk": true,
+    "appearanceTested": 7,
+    "buttonsTotal": 148,
+    "working": 26,
+    "localDemo": 62,
+    "backend": 5,
+    "buttonDefects": 55,
+    "persistenceOk": true,
+    "auditOk": false,
+    "routesOk": true,
+    "hydration": 1,
+    "consoleErrors": 1,
+    "defectList": [
+      "Save Clinic Group: not found",
+      "Category Staffing: missing",
+      "Category Compliance: missing",
+      "Category Finance & Pay: missing",
+      "Category Incidents: missing",
+      "Category Tasks & Checklists: missing",
+      "Category Assets & Facilities: missing",
+      "Category Digital & Security: missing",
+      "Open Related Action: not found",
+      "View Evidence: not found",
+      "AI Assign: not found",
+      "Ask AI: not found",
+      "Open Full Briefing: not found",
+      "Executive Open: not found",
+      "Approve with Conditions: not found",
+      "Reject: not found",
+      "Request More Information: not found",
+      "Add Comment: not found",
+      "Delegate: not found",
+      "Change Due Date: not found",
+      "Escalate: not found",
+      "Mark Complete: not found",
+      "Change Priority: not found",
+      "AA Change Due Date: not found",
+      "Send Reminder: not found",
+      "Open Record: not found",
+      "Reopen: not found",
+      "View Health Breakdown: not found",
+      "Open Contributing Records: not found",
+      "Request Update: not found",
+      "Assign Follow-up: not found",
+      "Mark Not Required: not found",
+      "Add Executive Note: not found",
+      "Manager Override: not found",
+      "Withdraw Override: not found",
+      "Staffing Create follow-up: not found",
+      "Temporary Continued Use: not found",
+      "Finance Review: not found",
+      "Review RCA: not found",
+      "Review CAPA: not found",
+      "View history: not found",
+      "View as Table: not found",
+      "Edit schedule: not found",
+      "Pause schedule: not found",
+      "Resume schedule: not found",
+      "Delete schedule: not found",
+      "Configure report: not found",
+      "Add card: not found",
+      "Reorder: not found",
+      "Resize Small: not found",
+      "Resize Medium: not found",
+      "Resize Large: not found",
+      "Expand card: not found",
+      "Add private note: not found",
+      "Mobile urgent: not found",
+      "Audit flow suite: locator.fill: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog').locator('input[type=\"password\"]')\n"
+    ]
+  },
+  "widths": [
+    {
+      "width": 1440,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    },
+    {
+      "width": 1280,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    },
+    {
+      "width": 1024,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    },
+    {
+      "width": 768,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    },
+    {
+      "width": 430,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    },
+    {
+      "width": 390,
+      "overflowX": 0,
+      "emergency": true,
+      "hasSticky": true,
+      "hamburger": true,
+      "createAction": true,
+      "headingsClipped": 2,
+      "drawerWider": false,
+      "drawerOk": true,
+      "ok": true,
+      "headingsNote": "truncated titles measured; no page overflow"
+    }
+  ],
+  "appearance": [
+    {
+      "name": "Light @1440",
+      "status": "Working",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Dark @1440",
+      "status": "Working",
+      "note": "theme-dark=true"
+    },
+    {
+      "name": "Device setting @1440",
+      "status": "Working",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Light @390",
+      "status": "Working",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Dark @390",
+      "status": "Working",
+      "note": "theme-dark=true"
+    },
+    {
+      "name": "Device setting @390",
+      "status": "Working",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Reduced-motion CSS for emergency pulse",
+      "status": "Working as local demonstration",
+      "note": "cc-pulse present; prefers-reduced-motion in tokens.css"
+    }
+  ],
+  "buttons": [
+    {
+      "name": "Select Clinics",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Urgent Only",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Save Clinic Group",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "All Clinics",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Choose Layout",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Period Today",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Period This Week",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Period This Month",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Period Custom Range",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Search or Ask",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Refresh",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Create Action",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Save Draft",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Continue Editing",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Submit Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Submit and Assign",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Start Monitoring Now",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Discard Draft",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Recurring action",
+      "status": "Working as local demonstration",
+      "note": "field in Create Action"
+    },
+    {
+      "name": "Organisation / Personal template",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Person / Role / Team assignment",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Multi-clinic linked actions",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Save Draft click",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Publish Announcement",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Announcement Save Draft",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Preview",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Publish Now",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Announcement Schedule",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "More menu",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Customise Dashboard",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Export",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Notification Bell",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Appearance",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "User Menu",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /EMERGENCY/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /URGENT/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /ATTENTION REQUIRED|ATTENTION/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /ROUTINE/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /OVERDUE/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /COMPLETED TODAY|COMPLETED/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Clear Filter",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Clinic Operations",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Staffing",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Compliance",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Finance & Pay",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Incidents",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Tasks & Checklists",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Assets & Facilities",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Category Digital & Security",
+      "status": "Defect found",
+      "note": "missing"
+    },
+    {
+      "name": "Card/Table switch",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "View All",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Open Related Action",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "View Evidence",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "AI Create Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "AI Assign",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Ask AI",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Open Full Briefing",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Executive Open",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Approve",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Approve with Conditions",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Reject",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Request More Information",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Add Comment",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Delegate",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Change Due Date",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Escalate",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Acknowledge",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mark Complete",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Open Full Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "AA Add Comment",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mention User",
+      "status": "Backend required and clearly labelled",
+      "note": "disabled"
+    },
+    {
+      "name": "Attach File",
+      "status": "Backend required and clearly labelled",
+      "note": "disabled"
+    },
+    {
+      "name": "Instruction",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Request Response",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Post Update",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "AA Assign",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Reassign",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "AA Escalate",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Change Priority",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "AA Change Due Date",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Send Reminder",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "AA Mark Complete",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Dismiss",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Bulk actions",
+      "status": "Working as local demonstration",
+      "note": "bulk via selection UI if present"
+    },
+    {
+      "name": "Open Record",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Reopen",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "QA Demo",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Simulate Next Day",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "View Health Breakdown",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Open Contributing Records",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Request Update",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Health Create Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Assign Follow-up",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Mark Not Required",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Add Executive Note",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Manager Override",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Withdraw Override",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Staffing Create follow-up",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Temporary Continued Use",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Finance Review",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Review RCA",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Review CAPA",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "View history",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "View as Table",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Reports tab",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "PDF demonstration",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Spreadsheet demonstration",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Print",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Email demonstration",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Schedule report",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Edit schedule",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Pause schedule",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Resume schedule",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Delete schedule",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Configure report",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "My Day tab",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "KPI Scorecard tab",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Add card",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Remove card",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Reorder",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Resize Small",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Resize Medium",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Resize Large",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Collapse card",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Expand card",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Save Layout",
+      "status": "Backend required and clearly labelled",
+      "note": "disabled"
+    },
+    {
+      "name": "Save as New",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Rename",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Duplicate",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Set Default",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Delete layout",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Restore Last Saved",
+      "status": "Backend required and clearly labelled",
+      "note": "disabled"
+    },
+    {
+      "name": "Restore Role Default",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Cancel Changes",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Add private note",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Open End-of-Day Summary",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "End-of-Day open",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Acknowledge emergency",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Withdraw emergency notice",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Announcement Previous/Next",
+      "status": "Backend required and clearly labelled",
+      "note": "disabled"
+    },
+    {
+      "name": "QA Demo open",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "QA Loading",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA No Matching",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA Incomplete",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA Error",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA Permission",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA Reset",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mobile urgent",
+      "status": "Defect found",
+      "note": "not found"
+    }
+  ],
+  "filters": [
+    {
+      "name": "Urgent-only filter sentence",
+      "status": "Working",
+      "note": "Urgent only"
+    },
+    {
+      "name": "Multi filter combo (urgent+category+period)",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Clear Filter restores default",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Drawer stable across refresh",
+      "status": "Working as local demonstration",
+      "note": "dialogs=0"
+    }
+  ],
+  "persistence": [
+    {
+      "name": "Appearance",
+      "status": "Working",
+      "note": "{\"storedApp\":\"\\\"dark\\\"\",\"dark\":true,\"stored\":\"\\\"dark\\\"\"}"
+    },
+    {
+      "name": "Collapsed sidebar",
+      "status": "Working",
+      "note": "{\"attr\":\"true\",\"stored\":\"true\"}"
+    },
+    {
+      "name": "localStorage Module 1 keys present",
+      "status": "Working",
+      "note": "{\"pulse.cc.appearance\":\"\\\"light\\\"\",\"pulse.cc.m1.actions\":\"[{\\\"id\\\":\\\"ACT-2026-001284\\\",\\\"reference\\\":\\\"AC\",\"pulse.cc.layouts\":\"[{\\\"id\\\":\\\"lay-default\\\",\\\"name\\\":\\\"Executive d\",\"pulse.lastModule\":\"dash"
+    },
+    {
+      "name": "Private notes / layouts / schedules / drafts",
+      "status": "Working as local demonstration",
+      "note": "keys inspected; earlier draft save exercised"
+    },
+    {
+      "name": "Invalid saved data soft-fail",
+      "status": "Working as local demonstration",
+      "note": "parsers use defaults in storage modules"
+    }
+  ],
+  "auditFlows": [
+    {
+      "name": "Password demo labelling",
+      "status": "Working",
+      "note": "Health Breakdown — Bald Hills\n\nEight equal areas · 12.5% each · incomplete areas excluded from the m"
+    },
+    {
+      "name": "Audit flow suite",
+      "status": "Defect found",
+      "note": "locator.fill: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog').locator('input[type=\"password\"]')\n"
+    }
+  ],
+  "routes": [
+    {
+      "name": "/dashboard",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/action-inbox",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/risk-centre",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/compliance-centre",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/analytics",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/emergency-centre",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/tasks",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/checklists",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/staff",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/doctors",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    },
+    {
+      "name": "/settings",
+      "status": "Working",
+      "note": "status=200 sidebar=true"
+    }
+  ],
+  "console": [
+    "error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` o"
+  ],
+  "defects": [
+    "Save Clinic Group: not found",
+    "Category Staffing: missing",
+    "Category Compliance: missing",
+    "Category Finance & Pay: missing",
+    "Category Incidents: missing",
+    "Category Tasks & Checklists: missing",
+    "Category Assets & Facilities: missing",
+    "Category Digital & Security: missing",
+    "Open Related Action: not found",
+    "View Evidence: not found",
+    "AI Assign: not found",
+    "Ask AI: not found",
+    "Open Full Briefing: not found",
+    "Executive Open: not found",
+    "Approve with Conditions: not found",
+    "Reject: not found",
+    "Request More Information: not found",
+    "Add Comment: not found",
+    "Delegate: not found",
+    "Change Due Date: not found",
+    "Escalate: not found",
+    "Mark Complete: not found",
+    "Change Priority: not found",
+    "AA Change Due Date: not found",
+    "Send Reminder: not found",
+    "Open Record: not found",
+    "Reopen: not found",
+    "View Health Breakdown: not found",
+    "Open Contributing Records: not found",
+    "Request Update: not found",
+    "Assign Follow-up: not found",
+    "Mark Not Required: not found",
+    "Add Executive Note: not found",
+    "Manager Override: not found",
+    "Withdraw Override: not found",
+    "Staffing Create follow-up: not found",
+    "Temporary Continued Use: not found",
+    "Finance Review: not found",
+    "Review RCA: not found",
+    "Review CAPA: not found",
+    "View history: not found",
+    "View as Table: not found",
+    "Edit schedule: not found",
+    "Pause schedule: not found",
+    "Resume schedule: not found",
+    "Delete schedule: not found",
+    "Configure report: not found",
+    "Add card: not found",
+    "Reorder: not found",
+    "Resize Small: not found",
+    "Resize Medium: not found",
+    "Resize Large: not found",
+    "Expand card: not found",
+    "Add private note: not found",
+    "Mobile urgent: not found",
+    "Audit flow suite: locator.fill: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog').locator('input[type=\"password\"]')\n"
+  ],
+  "notes": [
+    "Initial interactive inventory count: 452"
+  ]
+}

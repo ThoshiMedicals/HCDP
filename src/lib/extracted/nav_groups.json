@@ -1,0 +1,189 @@
+[
+  {
+    "id": "executive",
+    "label": "Executive Command Centre",
+    "icon": "home",
+    "items": [
+      [
+        "dashboard",
+        "Dashboard"
+      ],
+      [
+        "actionInbox",
+        "Action Inbox"
+      ],
+      [
+        "riskCentre",
+        "Risk Centre"
+      ],
+      [
+        "complianceCentre",
+        "Compliance Centre"
+      ],
+      [
+        "analytics",
+        "Analytics"
+      ]
+    ]
+  },
+  {
+    "id": "operations",
+    "label": "Operations",
+    "icon": "task",
+    "items": [
+      [
+        "tasks",
+        "Tasks"
+      ],
+      [
+        "checklists",
+        "Checklists"
+      ],
+      [
+        "incidents",
+        "Incidents"
+      ],
+      [
+        "commbook",
+        "Communication Book"
+      ],
+      [
+        "frontdesk",
+        "Front Desk"
+      ]
+    ]
+  },
+  {
+    "id": "people",
+    "label": "People",
+    "icon": "users",
+    "items": [
+      [
+        "staff",
+        "Staff"
+      ],
+      [
+        "doctors",
+        "Doctors"
+      ],
+      [
+        "training",
+        "Training"
+      ],
+      [
+        "hrDocs",
+        "HR Documents"
+      ]
+    ]
+  },
+  {
+    "id": "rostering",
+    "label": "Rostering",
+    "icon": "calendar",
+    "items": [
+      [
+        "roster",
+        "Roster & Shifts"
+      ],
+      [
+        "timeclock",
+        "Time & Attendance"
+      ]
+    ]
+  },
+  {
+    "id": "assets",
+    "label": "Assets",
+    "icon": "box",
+    "items": [
+      [
+        "inventory",
+        "Inventory"
+      ],
+      [
+        "equipment",
+        "Equipment"
+      ],
+      [
+        "rooms",
+        "Rooms"
+      ],
+      [
+        "stock",
+        "Stock"
+      ],
+      [
+        "website",
+        "Websites",
+        "phase2"
+      ]
+    ]
+  },
+  {
+    "id": "governance",
+    "label": "Governance",
+    "icon": "shield",
+    "items": [
+      [
+        "accreditation",
+        "Accreditation"
+      ],
+      [
+        "policies",
+        "Policies"
+      ],
+      [
+        "qi",
+        "QI / PDSA"
+      ],
+      [
+        "audit",
+        "Audits"
+      ]
+    ]
+  },
+  {
+    "id": "finance",
+    "label": "Finance",
+    "icon": "pay",
+    "items": [
+      [
+        "staffpay",
+        "Staff Pay"
+      ],
+      [
+        "doctorpay",
+        "Doctor Pay"
+      ],
+      [
+        "bbpip",
+        "BBPIP"
+      ],
+      [
+        "approvals",
+        "Approvals"
+      ]
+    ]
+  },
+  {
+    "id": "security",
+    "label": "Security",
+    "icon": "lock",
+    "items": [
+      [
+        "remote",
+        "Remote Access"
+      ],
+      [
+        "vault",
+        "Password Vault",
+        "phase2"
+      ],
+      [
+        "cameras",
+        "Cameras",
+        "phase2"
+      ]
+    ]
+  }
+]

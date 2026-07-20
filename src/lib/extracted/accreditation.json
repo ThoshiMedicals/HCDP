@@ -1,0 +1,41 @@
+[
+  {
+    "id": "acc_map_nursing",
+    "createdAt": "2026-07-09T00:00:00.000Z",
+    "updatedAt": "2026-07-09T00:00:00.000Z",
+    "title": "Nursing checklist evidence group",
+    "location": "",
+    "standard": "RACGP / AGPAL",
+    "criterion": "Daily, weekly and monthly nursing duties",
+    "owner": "Responsible nurse",
+    "reviewDate": "",
+    "status": "Active",
+    "description": "Daily, weekly and monthly nursing duties are managed as nurse checklist templates and reviewed by managers."
+  },
+  {
+    "id": "acc_map_frontdesk",
+    "createdAt": "2026-07-09T00:00:00.000Z",
+    "updatedAt": "2026-07-09T00:00:00.000Z",
+    "title": "Front desk opening and closing checklist group",
+    "location": "",
+    "standard": "Operational readiness",
+    "criterion": "Opening and closing responsibilities",
+    "owner": "Reception / Practice Manager",
+    "reviewDate": "",
+    "status": "Active",
+    "description": "Front desk opening and closing checklists are roster-linked staff duties, not accreditation evidence templates."
+  },
+  {
+    "id": "acc_map_manager",
+    "createdAt": "2026-07-09T00:00:00.000Z",
+    "updatedAt": "2026-07-09T00:00:00.000Z",
+    "title": "Manager accreditation readiness review",
+    "location": "",
+    "standard": "AGPAL / RACGP",
+    "criterion": "Surveyor evidence pack and document readiness",
+    "owner": "Practice Manager",
+    "reviewDate": "",
+    "status": "Active",
+    "description": "Managers review submitted nurse checklist evidence and complete AGPAL/RACGP readiness items."
+  }
+]

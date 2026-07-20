@@ -1,0 +1,2810 @@
+[
+  {
+    "number": 1,
+    "title": "Executive Command Centre",
+    "objective": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
+    "primaryUsers": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads",
+    "tabs": [
+      "Overview — Today’s priorities, all-location KPIs, urgent alerts and quick links.",
+      "My Day — Role-sensitive daily workspace for shifts, clocking, duties, tasks, training, handovers and alerts.",
+      "Clinic Health — Location cards with score, reasons, trend and drill-down.",
+      "KPI Scorecard — Comparable workforce, pay, quality, inventory, digital and risk measures.",
+      "Risk & Exceptions — Cross-module red/amber items ranked by severity and due date.",
+      "Reports — Saved management packs, period comparisons and exported summaries."
+    ],
+    "buttons": [
+      "Switch Clinic / All Clinics",
+      "Change Date Range",
+      "Open Action Inbox",
+      "View Source Record",
+      "Create Management Action",
+      "Export Executive Summary",
+      "Save View",
+      "Open My Day",
+      "Report a Problem"
+    ],
+    "visuals": [
+      "KPI strip for overdue actions, roster gaps, pay readiness, incidents, checklist completion and expiring evidence.",
+      "Clinic health cards with green/amber/red status plus plain-language reasons.",
+      "Top Risks table showing severity, owner, clinic, due date and days overdue.",
+      "Trend charts with comparison period selector and direct links to the relevant module.",
+      "Role-sensitive quick actions so users do not see actions they cannot perform."
+    ],
+    "rules": [
+      "Every KPI must have a documented definition, owner and threshold.",
+      "A red/amber status must show the contributing records rather than an unexplained score.",
+      "Clinic comparisons should be normalised where size or activity volume materially changes interpretation.",
+      "Closed or archived items remain available in trend reports but do not appear in the active attention queue.",
+      "Users see only clinics and sensitive indicators allowed by their role."
+    ],
+    "flows": [
+      {
+        "title": "Morning executive review",
+        "steps": [
+          "User opens the platform and lands on Overview with All Clinics or their default clinic selected.",
+          "The KPI strip loads current red and amber indicators; the user selects a card such as “Doctor pay blocked”.",
+          "A filtered detail drawer opens showing affected clinic, pay period, blocker, owner and due date.",
+          "The user clicks Open Source Record and is taken to the relevant module and exact item.",
+          "After the item is resolved, the dashboard status updates and the activity remains in history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Compare clinic performance",
+        "steps": [
+          "User opens Clinic Health and selects the comparison period.",
+          "The page displays clinic cards ordered by risk or score.",
+          "User selects two or more clinics and clicks Compare.",
+          "A comparison view shows KPI definitions, current value, trend, threshold and underlying exceptions.",
+          "User clicks Create Management Action on a weak area, assigns an owner and due date, and the action appears in Action Inbox."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Produce management pack",
+        "steps": [
+          "User opens Reports and chooses Monthly Operations Pack.",
+          "A preview shows included clinics, period, KPI sections, unresolved risks and commentary fields.",
+          "User adds management commentary and excludes any section they are not authorised to share.",
+          "User clicks Generate Report, reviews the final preview and exports the approved pack.",
+          "The generated report is stored in report history with creator, date and filters."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 1,
+        "title": "Role-Based My Day User Journey",
+        "objective": "Give reception, nursing, general staff, doctors and managers a simple daily starting point instead of requiring every user to interpret the executive dashboard.",
+        "placement": "Module 1 - Executive Command Centre, using a role-sensitive My Day tab.",
+        "steps": [
+          "User signs in and lands on My Day for the default clinic and current date.",
+          "The page displays today's shift, clocking status, opening/closing duty, checklists, tasks, training and alerts.",
+          "The user selects the next required action, such as Clock In, Start Opening Checklist or View Shift.",
+          "Completed items leave the urgent area and remain visible in the daily timeline.",
+          "Unfinished items are included in the next handover or manager exception queue.",
+          "The user may switch clinic or date only where access permits."
+        ],
+        "rules": [
+          "My Day is role and clinic sensitive.",
+          "Critical actions remain above the fold.",
+          "Patient records and appointment workflows are not displayed."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Executive operations summary",
+      "Clinic health and benchmarking report",
+      "Top-risk and overdue-action report",
+      "Monthly management pack",
+      "Measure: percentage of red/amber items resolved within target",
+      "Measure: number of unexplained or ownerless exceptions (target zero)"
+    ],
+    "key": "dashboard",
+    "icon": "home"
+  },
+  {
+    "number": 2,
+    "title": "Action Inbox & Notification Centre",
+    "objective": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
+    "primaryUsers": "All users for personal actions, Practice Managers, Operations Managers, Approvers, Owners",
+    "tabs": [
+      "My Actions — Items assigned directly to the logged-in user.",
+      "Team Queue — Items owned by the user’s team or clinic.",
+      "Approvals — Submitted records awaiting a decision.",
+      "Exceptions — Blocked, failed, skipped, overdue or mismatched records.",
+      "Escalations — High-risk or overdue items requiring elevated attention.",
+      "Completed — Recently completed decisions and actions with filters.",
+      "Delegations — Temporary approval cover, acting authority, effective dates and post-delegation review."
+    ],
+    "buttons": [
+      "Open Source",
+      "Approve",
+      "Reject",
+      "Request Changes",
+      "Reassign",
+      "Add Note",
+      "Snooze",
+      "Escalate",
+      "Complete",
+      "Bulk Assign",
+      "Mark Notification Read",
+      "Create Delegation",
+      "End Delegation",
+      "Review Delegated Decisions"
+    ],
+    "visuals": [
+      "Queue cards with source module icon, clinic, status, owner, due date and risk.",
+      "Split-view mode: queue on the left and record preview/action panel on the right.",
+      "Reason modal for reject, override, snooze or reassignment actions.",
+      "Unread notification badge and notification preference controls.",
+      "Saved filters such as “Due today”, “My clinics”, “Pay blockers” and “High risk”."
+    ],
+    "rules": [
+      "Action Inbox is the common approval entry point; duplicate standalone approval navigation should not be created.",
+      "Approvals must show the information needed to decide and a link to full evidence.",
+      "Reject, override, reassign and snooze actions require a reason.",
+      "The same item should not create multiple indistinguishable inbox entries for one user.",
+      "Escalation follows severity, due date and business ownership rules defined by the source module."
+    ],
+    "flows": [
+      {
+        "title": "Review and approve an item",
+        "steps": [
+          "User opens Approvals and filters by clinic or module.",
+          "User selects an item; the right panel displays summary, evidence, prior comments and decision impact.",
+          "User clicks Approve or Request Changes.",
+          "A confirmation modal shows any downstream effect, such as publishing a roster or moving a pay run forward.",
+          "The decision is saved, the source record changes status and affected users receive notification."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Resolve an exception",
+        "steps": [
+          "User opens Exceptions and selects an attendance or checklist exception.",
+          "The panel shows the exception reason, affected workflow and blocking consequence.",
+          "User chooses Resolve, Reassign or Open Source depending on authority.",
+          "If an override is used, the user enters a mandatory reason and confirms the risk.",
+          "The item leaves the active queue only when the source record is no longer blocked."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Escalate overdue work",
+        "steps": [
+          "A manager opens Team Queue and sorts by days overdue.",
+          "The manager selects one or more items and clicks Escalate.",
+          "The escalation modal requires escalation owner, reason, new due date and notification recipients.",
+          "The items move to Escalations and display the escalation level.",
+          "When resolved, the history records original owner, escalation and final outcome."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 3,
+        "title": "Approval Delegation and Absence Cover",
+        "objective": "Prevent pay, roster, compliance and operational approvals from becoming blocked while an authorised approver is absent.",
+        "placement": "Module 2 - Action Inbox & Notification Centre, supported by Module 3 permissions.",
+        "steps": [
+          "Approver opens Delegations and clicks Create Delegation.",
+          "The approver selects the delegate, relevant modules, clinics, authority level and start/end dates.",
+          "A preview lists approvals and queues that will redirect.",
+          "Higher-risk or broad delegations are submitted for owner approval.",
+          "During the active period, the delegate sees eligible actions labelled Acting on behalf of.",
+          "The delegation ends automatically or may be ended early with a reason.",
+          "A post-delegation report shows all decisions taken, unresolved items and any exceptions."
+        ],
+        "rules": [
+          "Delegation cannot exceed the delegator's own authority.",
+          "Sensitive modules may require separate approval.",
+          "Delegated decisions retain both the decision maker and original authority owner."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Personal and team action register",
+      "Approval turnaround report",
+      "Overdue and escalated action report",
+      "Notification delivery and acknowledgement summary",
+      "Measure: actions without an owner (target zero)",
+      "Measure: approval turnaround by module and clinic"
+    ],
+    "key": "actionInbox",
+    "icon": "bell"
+  },
+  {
+    "number": 3,
+    "title": "Organisation, Locations, Users & Permissions",
+    "objective": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
+    "primaryUsers": "Owner / Director, Group Administrator, Operations Manager, Authorised Practice Manager, Auditor",
+    "tabs": [
+      "Organisation — Group identity, business units and central contacts.",
+      "Clinics — Location profiles, hours, public holiday region and responsible managers.",
+      "Rooms & Areas — Operational areas used by rosters, assets, checklists and tickets.",
+      "Users — User accounts, status, assigned roles and clinic access.",
+      "Roles & Permissions — Role templates and permitted view/create/approve/export actions.",
+      "Business Settings — Pay periods, alert thresholds, review cycles and notification rules.",
+      "Access Reviews — Scheduled review of active permissions.",
+      "Audit History — Sensitive activity and access decision history.",
+      "Account Activation & Recovery — Invitation status, first-time access, lockout, reset and administrator-assisted recovery.",
+      "Clinic Lifecycle — New clinic opening, relocation, temporary closure, merger, service transfer, permanent closure and reopening."
+    ],
+    "buttons": [
+      "Add Clinic",
+      "Edit Clinic",
+      "Add Room / Area",
+      "Invite User",
+      "Assign Role",
+      "Add Clinic Access",
+      "Suspend User",
+      "Deactivate / Archive",
+      "Review Access",
+      "Save Settings",
+      "Export Access Report",
+      "Activate Account",
+      "Unlock Account",
+      "Start Clinic Transition",
+      "Confirm Clinic Readiness"
+    ],
+    "visuals": [
+      "Clinic cards with status, responsible manager, hours and unresolved setup gaps.",
+      "User access matrix showing modules against view/create/approve/export permissions.",
+      "Role assignment drawer with clinic scope and effective dates.",
+      "Access review wizard listing stale, excessive or unused permissions.",
+      "Audit timeline filtered by user, clinic, module, action and date."
+    ],
+    "rules": [
+      "A user may work across multiple clinics but only approved locations appear in their switcher.",
+      "Sensitive modules require explicit permission; general clinic access alone is insufficient.",
+      "Inactive users and clinics remain in history but cannot be selected for new work.",
+      "No shared generic login should be used for sensitive activities.",
+      "Changes to roles, permissions, settings and clinic responsibility are auditable and effective-dated."
+    ],
+    "flows": [
+      {
+        "title": "Add a clinic",
+        "steps": [
+          "Administrator opens Clinics and clicks Add Clinic.",
+          "A stepper opens for Identity, Contact, Hours, Rooms, Responsibilities and Alerts.",
+          "Administrator assigns responsible manager, nurse and escalation contacts.",
+          "A review screen highlights missing mandatory information.",
+          "Administrator clicks Activate Clinic; the clinic becomes selectable in approved modules."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Onboard a user",
+        "steps": [
+          "Administrator opens Users and clicks Invite User.",
+          "The form captures identity, contact, user type and employment relationship.",
+          "Administrator selects one or more clinics and assigns a role template.",
+          "A permission preview shows what the user can view and change.",
+          "Administrator confirms the invitation; the user remains Pending until activation requirements are met."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Suspend and offboard access",
+        "steps": [
+          "Manager opens a user profile and clicks Suspend or Start Offboarding.",
+          "A modal asks for effective date, reason and whether temporary or permanent.",
+          "The system displays impacted shifts, tasks, approvals, remote access and sensitive permissions.",
+          "Manager reassigns owned work and confirms access removal checklist.",
+          "The user is prevented from new activity while historical records remain visible."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Conduct access review",
+        "steps": [
+          "Authorised reviewer opens Access Reviews and selects clinic and review period.",
+          "The page lists active users, last activity, roles, sensitive permissions and exceptions.",
+          "Reviewer confirms, changes or removes each questionable permission.",
+          "Reviewer adds an overall sign-off comment and completes the review.",
+          "A review report is stored and unresolved changes enter Action Inbox."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 2,
+        "title": "First-Time Access, Sign-In Recovery and Account Lockout",
+        "objective": "Provide a complete journey from invitation to safe platform entry and a controlled path for forgotten credentials or locked accounts.",
+        "placement": "Module 3 - Organisation, Locations, Users & Permissions; Account Activation & Recovery workspace.",
+        "steps": [
+          "Invited user opens the invitation and confirms identity.",
+          "User creates sign-in details and completes required security setup.",
+          "A preview shows assigned clinics, role and permitted modules.",
+          "User accepts required privacy, security and acceptable-use acknowledgements.",
+          "User completes any mandatory profile setup and enters a guided first-use tour.",
+          "If access fails later, the user selects Reset Password, Unlock Account or Contact Administrator.",
+          "Sensitive recovery requests enter the administrator queue and are closed only after identity and authority are confirmed."
+        ],
+        "rules": [
+          "Invitation and recovery links have an expiry.",
+          "No user receives broader access through recovery than already approved.",
+          "All administrator-assisted recovery is auditable."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 3,
+        "title": "Approval Delegation and Absence Cover",
+        "objective": "Prevent pay, roster, compliance and operational approvals from becoming blocked while an authorised approver is absent.",
+        "placement": "Module 2 - Action Inbox & Notification Centre, supported by Module 3 permissions.",
+        "steps": [
+          "Approver opens Delegations and clicks Create Delegation.",
+          "The approver selects the delegate, relevant modules, clinics, authority level and start/end dates.",
+          "A preview lists approvals and queues that will redirect.",
+          "Higher-risk or broad delegations are submitted for owner approval.",
+          "During the active period, the delegate sees eligible actions labelled Acting on behalf of.",
+          "The delegation ends automatically or may be ended early with a reason.",
+          "A post-delegation report shows all decisions taken, unresolved items and any exceptions."
+        ],
+        "rules": [
+          "Delegation cannot exceed the delegator's own authority.",
+          "Sensitive modules may require separate approval.",
+          "Delegated decisions retain both the decision maker and original authority owner."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 4,
+        "title": "Clinic Opening, Relocation, Temporary Closure and Permanent Closure",
+        "objective": "Control the full lifecycle of a medical-centre location and ensure no workforce, asset, supplier, communication or governance responsibility is overlooked.",
+        "placement": "Module 3 - Clinic Lifecycle, linked to Modules 13, 15, 16, 17 and 19.",
+        "steps": [
+          "Authorised user selects Start Clinic Transition and chooses the transition type.",
+          "The guided impact assessment identifies affected staff, doctors, future rosters, assets, stock, suppliers, phone/website services, policies, accreditation evidence, tickets, incidents and pay responsibilities.",
+          "Actions, owners and due dates are assigned for each affected area.",
+          "Communications are drafted, reviewed and approved for relevant audiences.",
+          "Staff, doctors, assets, stock, contracts and open responsibilities are transferred, suspended or closed.",
+          "The readiness dashboard is reviewed and unresolved blockers are escalated.",
+          "Final approver confirms the effective date and changes the clinic status.",
+          "Historical records remain available under the former location and the transition receives a post-change review."
+        ],
+        "rules": [
+          "A clinic cannot close while critical responsibilities remain ownerless.",
+          "Historical records are never moved in a way that obscures the original clinic.",
+          "Patient transfer and appointment actions remain in the clinical/practice system."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 25,
+        "title": "Workforce Data Access and Correction Request",
+        "objective": "Allow staff and doctors to request access to, or correction of, permitted business records about themselves.",
+        "placement": "Modules 3, 4 and 13, through a controlled self-service request.",
+        "steps": [
+          "User opens self-service and submits an access or correction request.",
+          "The request identifies the record/category and explains the requested correction where applicable.",
+          "Authorised owner reviews identity, scope, sensitivity and any linked legal/retention restriction.",
+          "For access, permitted information is prepared and restricted third-party or sensitive information is excluded where appropriate.",
+          "For correction, the source owner approves, rejects or requests evidence.",
+          "Approved correction updates the source record through normal version/history rules.",
+          "The user receives the outcome, reason and completion date.",
+          "The request closes with a retained response history."
+        ],
+        "rules": [
+          "Self-service access does not grant general HR, finance or incident permissions.",
+          "Corrections do not erase valid historical facts.",
+          "Response time and escalation follow approved privacy/business rules.",
+          "Priority 3 - Future Service Maturity"
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Clinic profile register",
+      "User and permission matrix",
+      "Access review report",
+      "Inactive user and clinic report",
+      "Sensitive activity audit",
+      "Measure: overdue access reviews",
+      "Measure: inactive users retaining active access (target zero)"
+    ],
+    "key": "organisation",
+    "icon": "building"
+  },
+  {
+    "number": 4,
+    "title": "Staff & Doctor Management",
+    "objective": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
+    "primaryUsers": "HR / Payroll, Practice Managers, Owners, Staff self-service users, Doctors",
+    "tabs": [
+      "Staff Directory — Reception, nursing, management, administration, contractors and other staff.",
+      "Doctor Directory — Doctor business profile, locations, contract and payment settings.",
+      "HR Documents — Contracts, identity, certificates, performance and employment records.",
+      "Leave / Away Days — Requests, approvals, balances or reference status, coverage notes and calendar.",
+      "Award Rules — Classification, employment type, pay category mapping and effective dates.",
+      "Provider Credentials — AHPRA and role-specific credential evidence, expiry and review.",
+      "Onboarding — Readiness checklist, induction and access setup.",
+      "Offboarding — Work reassignment, document closure and access removal.",
+      "Employment Changes — Transfer, promotion, role, manager, employment type and clinic reassignment with effective dates.",
+      "Return to Work & Restrictions — Leave amendments, cancellations, return confirmation and controlled duty restrictions."
+    ],
+    "buttons": [
+      "Add Staff",
+      "Add Doctor",
+      "Edit Profile",
+      "Upload Document",
+      "Request Leave",
+      "Approve / Reject Leave",
+      "Change Classification",
+      "Change Contract / Rate",
+      "Verify Credential",
+      "Send Renewal Reminder",
+      "Suspend Profile",
+      "Start Offboarding",
+      "Start Employment Change",
+      "Amend / Cancel Leave",
+      "Confirm Return to Work",
+      "Suspend Eligibility",
+      "Reactivate Profile",
+      "Request Bank Detail Change"
+    ],
+    "visuals": [
+      "Profile header with readiness score, employment/contract status, default clinic and critical expiry badges.",
+      "Add Staff / Add Doctor multi-step wizard: Basic, Contact, Emergency, Employment/Contract, Locations, Pay Profile, Documents, Preferences and Review.",
+      "Effective-dated history for rates, classifications, contract terms, GST status and bank detail changes.",
+      "Document expiry calendar and missing-document checklist by role.",
+      "Onboarding/offboarding progress panel with owner and due date for each action."
+    ],
+    "rules": [
+      "A person cannot become Active for roster or pay until mandatory fields are complete or an authorised temporary exception is recorded.",
+      "Pay and contract settings are never overwritten; changes create a new effective-dated version.",
+      "Mandatory documents differ by role and clinic responsibility.",
+      "Leave and away days must feed roster warnings and coverage planning.",
+      "Suspension or termination triggers reassignment and access-removal actions.",
+      "Sensitive HR, bank and contract information is restricted to authorised roles."
+    ],
+    "flows": [
+      {
+        "title": "Add a staff member",
+        "steps": [
+          "HR user opens Staff Directory and clicks Add Staff.",
+          "The wizard opens at Basic Details; the user enters name, contact, emergency contact and preferred communication.",
+          "Employment & Locations captures role, employment type, default clinic, additional clinics, start date and manager.",
+          "Award & Pay Profile captures approved classification mapping without duplicating payroll calculations.",
+          "Documents & Readiness shows required uploads and training; the profile can be saved as Draft.",
+          "Reviewer clicks Activate once mandatory items are complete; the person becomes selectable for permitted rosters and tasks."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Add a doctor",
+        "steps": [
+          "Authorised user opens Doctor Directory and clicks Add Doctor.",
+          "The wizard captures business identity, ABN/GST status, contact, payment email and clinic assignments.",
+          "Contract & Payment captures percentage or agreed rule, effective date, payment cycle and bank details with restricted visibility.",
+          "Credentials captures required evidence and expiry dates.",
+          "A review screen shows Doctor Pay and BBPIP readiness.",
+          "Approver activates the profile; future transactions use the effective contract rule."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Request and approve leave",
+        "steps": [
+          "Staff member opens Leave / Away Days and clicks Request Leave.",
+          "The form captures dates, type, notes and attachment where required.",
+          "A coverage preview shows rostered shifts and potential gaps.",
+          "Manager receives an Action Inbox approval and approves, rejects or requests changes.",
+          "Approved leave updates the calendar and triggers roster warnings for affected planning periods."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Renew an expiring document",
+        "steps": [
+          "The expiry dashboard flags an approaching certificate or credential.",
+          "Owner clicks Send Reminder or opens the person’s document panel.",
+          "Staff/doctor uploads replacement evidence and submits it for review.",
+          "Reviewer verifies dates and status, then approves or rejects with reason.",
+          "The new version becomes Current; the prior version remains in history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Offboard a worker",
+        "steps": [
+          "Manager clicks Start Offboarding from the profile.",
+          "The checklist identifies future shifts, open tasks, approvals, training, assets, remote access and sensitive permissions.",
+          "Owners are assigned for reassignment, asset return and document completion.",
+          "Access is suspended on the effective date and open work is reassigned.",
+          "Reviewer signs off the checklist and the profile becomes Archived while history remains reportable."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 7,
+        "title": "Leave Amendment, Cancellation and Return to Work",
+        "objective": "Manage changes after leave approval and safely return staff to normal duties where confirmation or restrictions are required.",
+        "placement": "Module 4 - Staff & Doctor Management; Leave / Away Days and Return to Work workspaces.",
+        "steps": [
+          "Staff member opens approved leave and selects Amend or Cancel.",
+          "The page displays affected rosters, duties and pay periods.",
+          "The staff member enters the requested change and submits it.",
+          "Manager approves, rejects or requests changes after reviewing coverage and payroll impact.",
+          "Approved changes update the leave calendar and create roster/pay warnings where required.",
+          "On return, the staff member or manager completes Return to Work confirmation where applicable.",
+          "Any temporary restrictions or follow-up actions are recorded with controlled visibility and an end/review date."
+        ],
+        "rules": [
+          "Approved leave is not silently edited.",
+          "Restrictions are visible only to roles that need them for safe duty assignment.",
+          "Payroll and roster source records retain the effective dates of every change."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 8,
+        "title": "Worker Transfer, Promotion and Employment Change",
+        "objective": "Control effective-dated changes to a worker's role, manager, employment type, classification or clinic assignment.",
+        "placement": "Module 4 - Employment Changes.",
+        "steps": [
+          "HR opens the worker profile and clicks Start Employment Change.",
+          "User selects transfer, promotion, role change, manager change, employment-type change or clinic reassignment.",
+          "The impact panel identifies permissions, roster, training, award/pay and work-ownership consequences.",
+          "Required new documents, training and approvals are assigned.",
+          "Approvers review the before-and-after summary and effective date.",
+          "On approval, the new arrangement becomes active on the effective date.",
+          "Previous arrangements remain visible in history and affected users receive notifications."
+        ],
+        "rules": [
+          "The current arrangement remains active until the approved effective date.",
+          "Pay and classification changes create new versions rather than overwriting history.",
+          "Access should reduce or expand only according to approved role and clinic scope."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 9,
+        "title": "Credential Expiry, Suspension and Reactivation",
+        "objective": "Define the operational response when mandatory credentials expire or become invalid.",
+        "placement": "Module 4 - Provider Credentials and Onboarding/Readiness.",
+        "steps": [
+          "Reminder actions are issued before expiry according to the credential rule.",
+          "If the credential expires, the profile changes to Not Ready or Restricted for affected duties.",
+          "The manager reviews future rosters, checklists and responsibilities impacted by the expiry.",
+          "Manager removes/reassigns affected work, suspends eligibility or records an authorised temporary exception.",
+          "The worker uploads updated evidence and submits it for verification.",
+          "Reviewer approves or rejects the renewal.",
+          "On approval, the credential becomes Current and eligible duties are reactivated from the approved date."
+        ],
+        "rules": [
+          "Expired mandatory evidence cannot be treated as current.",
+          "Any temporary exception requires owner, reason, expiry and risk acknowledgement.",
+          "Reactivation is limited to the duties supported by the approved evidence."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 11,
+        "title": "Doctor Bank Detail Change and Verification",
+        "objective": "Protect doctor payments from unauthorised or incorrectly entered bank-detail changes.",
+        "placement": "Module 4 doctor profile and Module 8 Doctor Pay Command Centre.",
+        "steps": [
+          "Doctor or authorised finance user clicks Request Bank Detail Change.",
+          "New details are entered and remain Pending Verification; approved current details remain active.",
+          "The approved verification procedure is completed and evidence/reference is recorded.",
+          "Where required, a second authorised approver confirms or rejects the change.",
+          "The effective date is set and the doctor receives confirmation through the approved channel.",
+          "Doctor Pay displays a warning for pay runs affected by the change date.",
+          "Previous details remain restricted in effective-dated history."
+        ],
+        "rules": [
+          "Bank details are never changed through an unverified email instruction alone.",
+          "The requester cannot complete all approval steps where separation of duties is required.",
+          "Only approved effective details are used for manual payment preparation."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 25,
+        "title": "Workforce Data Access and Correction Request",
+        "objective": "Allow staff and doctors to request access to, or correction of, permitted business records about themselves.",
+        "placement": "Modules 3, 4 and 13, through a controlled self-service request.",
+        "steps": [
+          "User opens self-service and submits an access or correction request.",
+          "The request identifies the record/category and explains the requested correction where applicable.",
+          "Authorised owner reviews identity, scope, sensitivity and any linked legal/retention restriction.",
+          "For access, permitted information is prepared and restricted third-party or sensitive information is excluded where appropriate.",
+          "For correction, the source owner approves, rejects or requests evidence.",
+          "Approved correction updates the source record through normal version/history rules.",
+          "The user receives the outcome, reason and completion date.",
+          "The request closes with a retained response history."
+        ],
+        "rules": [
+          "Self-service access does not grant general HR, finance or incident permissions.",
+          "Corrections do not erase valid historical facts.",
+          "Response time and escalation follow approved privacy/business rules.",
+          "Priority 3 - Future Service Maturity"
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Staff and doctor master lists",
+      "Workforce readiness dashboard",
+      "Document and credential expiry report",
+      "Leave and away-day calendar",
+      "Award/classification mapping report",
+      "Onboarding and offboarding status report",
+      "Measure: active profiles fully ready",
+      "Measure: expired mandatory evidence"
+    ],
+    "key": "staff",
+    "icon": "users"
+  },
+  {
+    "number": 5,
+    "title": "Roster & Shift Management",
+    "objective": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
+    "primaryUsers": "Practice Managers, Operations Managers, Reception and Nursing Leads, Staff self-service users",
+    "tabs": [
+      "Week View — Primary drag-and-drop roster by clinic, role or staff member.",
+      "Coverage — Heat map of staffing and role gaps by time of day.",
+      "Availability — Normal patterns, exceptions, leave and away days.",
+      "Shift Requests — Swap, release and change requests awaiting review.",
+      "Open Shifts — Unfilled and urgent shifts offered to eligible staff across one or more clinics.",
+      "Published History — Versions, change reasons and notification status.",
+      "Roster Reports — Hours forecast, duties, conflicts and publication history."
+    ],
+    "buttons": [
+      "Add Shift",
+      "Copy Previous Week",
+      "Apply Template",
+      "Assign Staff",
+      "Mark Opening / Closing",
+      "Save Draft",
+      "Validate Roster",
+      "Publish",
+      "Request Swap",
+      "Approve Change",
+      "Emergency Change",
+      "Create Open Shift",
+      "Send Coverage Offer",
+      "Assign Accepted Offer",
+      "Print / Export"
+    ],
+    "visuals": [
+      "Dense weekly grid with clinic, role and staff views.",
+      "Coverage heat map and warning banner for gaps, double bookings, leave and excessive hours.",
+      "Shift card badges for opening, closing, role duty, break and status.",
+      "Pre-publication validation drawer listing blocking and warning items.",
+      "Duty impact preview during shift change."
+    ],
+    "rules": [
+      "Cross-location double booking must be blocked or require authorised override with reason.",
+      "Published roster changes record who, what, why, when and who was notified.",
+      "Opening, closing and role-specific checklist ownership follows the approved shift holder.",
+      "Leave, availability, training readiness and inactive status influence eligible staff selection.",
+      "Roster forecasts show hours by week, pay period, staff and clinic before publication."
+    ],
+    "flows": [
+      {
+        "title": "Build and publish roster",
+        "steps": [
+          "Manager opens Week View and selects clinic, week and role view.",
+          "Manager copies a prior week or starts from a template.",
+          "Shifts are added or adjusted and staff are assigned from an eligibility list.",
+          "Manager clicks Validate Roster; blocking issues and warnings appear in a drawer.",
+          "Manager resolves gaps or records authorised overrides.",
+          "Manager clicks Publish, confirms notification recipients and the roster becomes visible to staff."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Staff shift-swap request",
+        "steps": [
+          "Staff member opens My Roster, selects a shift and clicks Request Swap / Release.",
+          "The request drawer shows eligible replacement staff and the duties that will transfer.",
+          "Staff member selects a proposed replacement, adds reason and submits.",
+          "Replacement acceptance is captured where required, then the manager reviews warnings and impact.",
+          "On approval, the published roster changes, duties transfer and affected users are notified."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Emergency roster change",
+        "steps": [
+          "Manager clicks Emergency Change on the affected shift.",
+          "The modal requires emergency reason, replacement, timing and approver.",
+          "The page shows conflicts, hours and duty impact but permits an authorised override.",
+          "Manager confirms; notifications are sent immediately.",
+          "The change is tagged Emergency and appears in the stability report and audit history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 6,
+        "title": "Open Shift and Urgent Coverage Broadcast",
+        "objective": "Fill planned or sudden roster gaps quickly while preserving eligibility, fatigue, leave, training and cross-clinic controls.",
+        "placement": "Module 5 - Roster & Shift Management; Open Shifts tab.",
+        "steps": [
+          "Manager selects an uncovered shift and clicks Create Open Shift.",
+          "Eligible staff are filtered using role, clinic access, availability, leave, training status, current hours and conflicts.",
+          "Manager selects the offer audience and response deadline.",
+          "Eligible staff receive the offer and choose Accept or Decline.",
+          "If multiple staff accept, the manager reviews suitability and selects the final assignment.",
+          "Roster validation checks conflicts, hours and transferred duties.",
+          "The manager confirms the assignment; the roster and opening/closing responsibilities update and all affected users are notified."
+        ],
+        "rules": [
+          "Acceptance is provisional until the manager confirms where multiple users respond.",
+          "An urgent override requires a reason.",
+          "The flow does not expose restricted HR or pay information to other staff."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Published roster and printable roster",
+      "Coverage and conflict report",
+      "Rostered-hours forecast",
+      "Opening/closing duty report",
+      "Shift change and emergency change register",
+      "Measure: roster published on time",
+      "Measure: unresolved coverage gaps at publication"
+    ],
+    "key": "roster",
+    "icon": "calendar"
+  },
+  {
+    "number": 6,
+    "title": "Time & Attendance",
+    "objective": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
+    "primaryUsers": "All rostered staff, Practice Managers, Operations Managers, Payroll Users",
+    "tabs": [
+      "Live Attendance — Who is expected, clocked in, late, on break or missing.",
+      "My Clock — Staff clock-in/out and break actions.",
+      "Exceptions — Missing, late, early, location, break and overtime exceptions.",
+      "Timesheets — Pay-period view of actual hours and approvals.",
+      "Approval History — Corrections, reasons, approvers and lock history.",
+      "Reports — Attendance variance and exception trends."
+    ],
+    "buttons": [
+      "Clock In",
+      "Start Break",
+      "End Break",
+      "Clock Out",
+      "Report Missed Punch",
+      "Add Note",
+      "Correct Time",
+      "Approve",
+      "Reject Correction",
+      "Bulk Approve Clean Timesheets",
+      "Lock Period",
+      "Reopen with Reason"
+    ],
+    "visuals": [
+      "Large clock action card showing current shift, clinic and next expected action.",
+      "Live attendance board with clear non-colour status labels.",
+      "Exception queue ordered by payroll impact and due date.",
+      "Rostered versus actual timeline for each shift.",
+      "Timesheet summary with regular, overtime, leave and unresolved hours."
+    ],
+    "rules": [
+      "Clocking should link to a rostered shift wherever possible.",
+      "Attendance exceptions must not automatically deny payment for time that may have been worked.",
+      "Manual corrections require reason and manager approval.",
+      "Timesheets cannot be finalised with unresolved blocking exceptions unless an authorised override is recorded.",
+      "Checklists and attendance remain separate records even when accessed from the same shift screen."
+    ],
+    "flows": [
+      {
+        "title": "Normal clock-in/out",
+        "steps": [
+          "Staff member opens My Clock and sees the current rostered shift.",
+          "Staff clicks Clock In; the screen confirms clinic, shift and timestamp.",
+          "During the shift, Start Break and End Break update the live status.",
+          "At completion, staff clicks Clock Out and reviews the shift summary.",
+          "A clean shift moves automatically to the manager’s timesheet review without an exception."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Missed punch correction",
+        "steps": [
+          "Staff member clicks Report Missed Punch and selects the affected shift.",
+          "The form captures missing event, proposed time, reason and optional evidence.",
+          "Manager receives an exception item and compares roster, recorded events and note.",
+          "Manager approves, adjusts or rejects the proposed correction with reason.",
+          "The timesheet recalculates and the decision is retained in Approval History."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Pay-period attendance approval",
+        "steps": [
+          "Manager opens Timesheets for the pay period and filters to Unresolved.",
+          "The screen groups clean timesheets and exception-affected timesheets.",
+          "Manager bulk-approves clean records, then opens each exception for decision.",
+          "When all blockers are resolved, manager clicks Approve Period.",
+          "Payroll users see the location as Ready in Staff Pay."
+        ],
+        "kind": "Core"
+      }
+    ],
+    "outputs": [
+      "Live attendance board",
+      "Attendance exception report",
+      "Approved timesheet report",
+      "Roster-to-actual variance report",
+      "Correction and override history",
+      "Measure: unresolved exceptions at cut-off",
+      "Measure: repeated missed punches by clinic/person"
+    ],
+    "key": "timeclock",
+    "icon": "task"
+  },
+  {
+    "number": 7,
+    "title": "Staff Pay & Payroll Preparation",
+    "objective": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
+    "primaryUsers": "Payroll / Finance, Practice Managers, Operations Managers, Owners",
+    "tabs": [
+      "Pay Run — Staff and clinic readiness for the selected pay period.",
+      "Exceptions — Attendance, leave, classification and category blockers.",
+      "Variances — Roster-to-actual and prior-period differences.",
+      "Leave & Allowances — Approved leave, public holiday and authorised allowance review.",
+      "Export & Reconciliation — Approved output, export record and confirmation.",
+      "History — Locked periods, corrections and re-open decisions.",
+      "Corrections & Final Pay — Export rejection, final pay, overpayment, underpayment and replacement export control."
+    ],
+    "buttons": [
+      "Create Pay Run",
+      "Refresh Approved Time",
+      "Recalculate",
+      "Open Exception",
+      "Resolve / Assign",
+      "Approve Location",
+      "Submit Final Review",
+      "Export to Xero",
+      "Mark Reconciled",
+      "Lock Pay Period",
+      "Reopen with Approval",
+      "Process Final Pay",
+      "Record Overpayment / Underpayment",
+      "Generate Replacement Export"
+    ],
+    "visuals": [
+      "Pay-run control tower showing Ready, Blocked, In Review, Exported, Reconciled and Locked by clinic.",
+      "Variance flags for unusual overtime, missing leave, category changes and large roster differences.",
+      "Staff-level pay summary with source attendance and approval links.",
+      "Final review checklist before export.",
+      "Export history with creator, date, period, status and reconciliation note."
+    ],
+    "rules": [
+      "Only approved attendance and approved leave enter a payroll-ready run.",
+      "Rates and classifications come from effective-dated Staff Management settings and require payroll validation.",
+      "A pay run with unresolved blockers cannot be marked Ready without an authorised override.",
+      "Exporting does not mean payroll has been paid; reconciliation status is recorded separately.",
+      "Reopening a locked period requires elevated approval and a reason."
+    ],
+    "flows": [
+      {
+        "title": "Prepare a pay run",
+        "steps": [
+          "Payroll user selects the pay period and clicks Create Pay Run.",
+          "The module loads approved attendance, leave and current classification mappings.",
+          "The control tower identifies clinics and staff that are Ready or Blocked.",
+          "Payroll user resolves exceptions through the linked source records.",
+          "Once clear, payroll user clicks Recalculate and reviews totals and variances.",
+          "Each clinic is approved and the full run moves to Final Review."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Export and reconcile",
+        "steps": [
+          "Authorised user opens Export & Reconciliation and reviews the final checklist.",
+          "User clicks Export to Xero and confirms included employees and period.",
+          "The generated output is recorded with version and totals.",
+          "After payroll processing outside the platform, the user returns and records reconciliation result and notes.",
+          "The period is marked Reconciled and Locked."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Correct a prior period",
+        "steps": [
+          "Payroll user opens History and selects a locked period.",
+          "User clicks Reopen with Approval and enters reason and affected staff.",
+          "An elevated approver reviews the financial and reporting impact.",
+          "On approval, only authorised corrections can be made and a new version is created.",
+          "The corrected output is re-exported and both versions remain in history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 10,
+        "title": "Payroll Export Rejection, Final Pay and Overpayment Correction",
+        "objective": "Cover common payroll exceptions that occur after standard pay preparation.",
+        "placement": "Module 7 - Staff Pay & Payroll Preparation; Corrections & Final Pay.",
+        "steps": [
+          "For export rejection, payroll opens the failed output, reviews employee-level errors, corrects the source records and generates a replacement export version.",
+          "For final pay, offboarding creates a final-pay action covering approved hours, leave, allowances and outstanding corrections.",
+          "Payroll reviews and approves final-pay inputs, exports the result and records reconciliation.",
+          "For overpayment or underpayment, payroll records the variance, affected period, likely cause and communication requirement.",
+          "The correction method and approval are recorded.",
+          "The adjustment is processed in the appropriate pay period or external process.",
+          "The original, replacement and correction records remain linked in history."
+        ],
+        "rules": [
+          "A replacement export does not erase the rejected version.",
+          "Final pay must be completed before workforce offboarding is fully closed where applicable.",
+          "Recovery or correction actions require authorised review and clear communication history."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Payroll readiness report",
+      "Staff pay review and variance report",
+      "Xero-ready export or payroll summary",
+      "Export and reconciliation history",
+      "Prior-period correction report",
+      "Measure: corrections after export",
+      "Measure: pay runs completed by cut-off"
+    ],
+    "key": "staffpay",
+    "icon": "pay"
+  },
+  {
+    "number": 8,
+    "title": "Doctor Pay Command Centre",
+    "objective": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
+    "primaryUsers": "Finance / Payroll, Owner / Director, Authorised Practice Manager, Doctors, Auditors",
+    "tabs": [
+      "Pay Run — Current cycle, doctors, locations, totals and status.",
+      "Transactions — Imported activity matched to doctor and location.",
+      "Contract Rules — Effective percentage, fixed rules, GST and approved exceptions.",
+      "Adjustments — Authorised additions, deductions and corrections.",
+      "Reconciliation — Source totals, excluded items, prior adjustments and variance.",
+      "Approvals — Finance and owner decision queue.",
+      "Payslips — Generated, approved, reissued and archived statements.",
+      "Email Log — Delivery, failure, resend and recipient history.",
+      "Manual Payments — Bank transfer date, reference, amount and confirmer.",
+      "Doctor Portal — Doctor-visible payslips, statements and payment status.",
+      "Queries & Disputes — Doctor-submitted pay queries, evidence, finance response and resolution history.",
+      "Payment Exceptions — Failed, returned, partial and replacement manual payment records."
+    ],
+    "buttons": [
+      "Import / Refresh Transactions",
+      "Match Unassigned",
+      "Calculate Pay Run",
+      "Add Adjustment",
+      "Exclude with Reason",
+      "Reconcile",
+      "Submit for Approval",
+      "Approve / Reject",
+      "Generate Payslips",
+      "Preview",
+      "Email Payslips",
+      "Publish to Portal",
+      "Mark Bank Transfer Completed",
+      "Reissue",
+      "Lock Run",
+      "Record Failed / Returned Payment",
+      "Record Partial Payment",
+      "Resolve Pay Dispute"
+    ],
+    "visuals": [
+      "Pay-run progress stepper: Imported → Calculated → Reconciled → Approved → Payslips Sent → Manual Payment Recorded → Locked.",
+      "Doctor summary cards showing gross activity, exclusions, adjustments, rate, GST and amount payable.",
+      "Unmatched transaction queue and reconciliation variance panel.",
+      "Payslip preview with email delivery status and stored version.",
+      "Manual payment register with separate status from payslip delivery."
+    ],
+    "rules": [
+      "Doctor contract rules and GST settings are effective-dated and sourced from the approved doctor profile.",
+      "Unmatched, duplicate or excluded transactions must be resolved or explicitly approved before finalisation.",
+      "Adjustments require type, amount, reason, evidence, creator and approver.",
+      "Payslips are generated only from the approved reconciled version.",
+      "Email failure does not reverse approval; it creates a resend action.",
+      "Marking paid requires manual transfer date, amount, payment reference and authorised confirmer.",
+      "Corrections and reissues create a new version and never erase the original."
+    ],
+    "flows": [
+      {
+        "title": "Full doctor pay run",
+        "steps": [
+          "Finance user opens Pay Run, selects the payment cycle and clicks Import / Refresh Transactions.",
+          "Transactions are matched to doctor and clinic; unmatched items appear in a blocking queue.",
+          "User resolves unmatched items and clicks Calculate Pay Run.",
+          "The platform applies the effective contract rule, GST treatment and approved adjustments.",
+          "User opens Reconciliation, compares source totals, exclusions and calculated payable amounts, and resolves variances.",
+          "User clicks Submit for Approval; the authorised approver reviews summary and doctor-level detail.",
+          "After approval, user clicks Generate Payslips, previews them and confirms Email Payslips and Publish to Portal.",
+          "An authorised user completes the bank transfer outside the platform.",
+          "The user returns to Manual Payments, records transfer details and clicks Mark Completed.",
+          "When every doctor is resolved, the pay run is Locked."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Add an adjustment",
+        "steps": [
+          "User opens a doctor in Adjustments and clicks Add Adjustment.",
+          "A modal captures category, amount, GST treatment if relevant, reason, evidence and effective pay run.",
+          "The adjustment enters Pending Approval and recalculates the provisional amount.",
+          "Approver reviews the adjustment in Action Inbox and approves or rejects it.",
+          "Approved adjustment appears on the reconciliation and payslip with a clear label."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Reissue a payslip",
+        "steps": [
+          "Finance user opens Payslips and selects the original document.",
+          "User clicks Reissue and chooses correction, recipient update or delivery retry.",
+          "For a financial correction, the pay run must be reopened through the authorised correction workflow.",
+          "A new version is generated with reissue reason and reference to the original.",
+          "The new payslip is emailed/published and the email log records the outcome."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Doctor self-service review",
+        "steps": [
+          "Doctor opens Doctor Portal and sees recent pay cycles and status.",
+          "Doctor selects a cycle to view payslip, transaction schedule and payment status.",
+          "Doctor clicks Raise Query if clarification is needed and enters a category and message.",
+          "The query creates a finance action linked to the exact pay run and doctor.",
+          "Finance responds and the query history remains visible to the doctor."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 11,
+        "title": "Doctor Bank Detail Change and Verification",
+        "objective": "Protect doctor payments from unauthorised or incorrectly entered bank-detail changes.",
+        "placement": "Module 4 doctor profile and Module 8 Doctor Pay Command Centre.",
+        "steps": [
+          "Doctor or authorised finance user clicks Request Bank Detail Change.",
+          "New details are entered and remain Pending Verification; approved current details remain active.",
+          "The approved verification procedure is completed and evidence/reference is recorded.",
+          "Where required, a second authorised approver confirms or rejects the change.",
+          "The effective date is set and the doctor receives confirmation through the approved channel.",
+          "Doctor Pay displays a warning for pay runs affected by the change date.",
+          "Previous details remain restricted in effective-dated history."
+        ],
+        "rules": [
+          "Bank details are never changed through an unverified email instruction alone.",
+          "The requester cannot complete all approval steps where separation of duties is required.",
+          "Only approved effective details are used for manual payment preparation."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 12,
+        "title": "Doctor Pay Dispute, Failed Transfer and Partial Payment",
+        "objective": "Provide a controlled resolution path for doctor queries and manual payment exceptions.",
+        "placement": "Module 8 - Queries & Disputes and Payment Exceptions.",
+        "steps": [
+          "Doctor selects a payslip or transaction and clicks Raise Pay Query.",
+          "Doctor chooses a category such as missing activity, calculation issue, adjustment dispute, GST issue or payment not received.",
+          "Finance accepts the query, reviews linked source information and requests further information where needed.",
+          "If a financial correction is required, the authorised pay-run reopening and reissue process is followed.",
+          "If a transfer failed or was returned, finance records the payment exception and verifies approved bank details.",
+          "For partial payment, the paid amount is recorded and the remaining balance stays open.",
+          "Replacement payment details are recorded after the manual transfer is completed.",
+          "Finance sends the outcome to the doctor and closes the dispute only after resolution is confirmed."
+        ],
+        "rules": [
+          "A query does not alter approved pay automatically.",
+          "All financial corrections create a new version.",
+          "Payment status, payslip delivery and dispute status remain separate but linked."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Doctor payslip PDF",
+      "Doctor transaction schedule",
+      "Pay-run reconciliation report",
+      "Adjustment register",
+      "Email delivery log",
+      "Manual bank payment register",
+      "Quarterly/periodic doctor statement",
+      "Measure: pay runs completed by payment date",
+      "Measure: unmatched or disputed items at approval"
+    ],
+    "key": "doctorpay",
+    "icon": "pay"
+  },
+  {
+    "number": 9,
+    "title": "BBPIP Forecast & Reconciliation",
+    "objective": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
+    "primaryUsers": "Owner / Director, Finance, Practice Managers, Doctors with approved visibility, Compliance Reviewers",
+    "tabs": [
+      "Forecast — Current quarter/period estimate and trend.",
+      "Doctor / Clinic Contribution — Contribution summaries with filters.",
+      "Eligibility & Rules — Business interpretation, required evidence and effective dates.",
+      "Compliance Gaps — Missing or inconsistent evidence and exceptions.",
+      "Reconciliation — Forecast versus actual result and variance reasons.",
+      "Evidence — Linked reports, approvals and supporting files.",
+      "History — Prior forecasts, versions and final outcomes."
+    ],
+    "buttons": [
+      "Refresh Approved Data",
+      "Run Forecast",
+      "View Contribution",
+      "Open Gap",
+      "Assign Action",
+      "Add Evidence",
+      "Submit Estimate Review",
+      "Approve Forecast",
+      "Enter Actual Result",
+      "Reconcile Variance",
+      "Finalise Period",
+      "Export Summary"
+    ],
+    "visuals": [
+      "Forecast KPI cards for estimated amount, trend, confidence, unresolved gaps and period end.",
+      "Doctor/clinic contribution table with drill-down to approved summary data.",
+      "Compliance gap queue with owner, due date and potential impact.",
+      "Waterfall or variance view from forecast to actual result.",
+      "Period timeline showing forecast versions, reviews and final reconciliation."
+    ],
+    "rules": [
+      "Forecasts are estimates and must be labelled clearly until final reconciliation.",
+      "Business rules and eligibility assumptions require owner, effective date and review date.",
+      "Missing evidence or data-quality issues reduce forecast confidence and create owned actions.",
+      "Final actual outcomes are recorded separately from forecast versions.",
+      "Reconciliation variance requires a reason category and commentary."
+    ],
+    "flows": [
+      {
+        "title": "Create a forecast",
+        "steps": [
+          "User opens Forecast, selects period and clicks Refresh Approved Data.",
+          "The module displays source completeness and any blocking gaps.",
+          "User resolves or assigns gaps, then clicks Run Forecast.",
+          "The estimate displays by clinic and doctor with assumptions and confidence level.",
+          "User submits the estimate for review and the approver confirms or requests changes.",
+          "Approved forecast becomes the current management baseline."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Resolve a compliance gap",
+        "steps": [
+          "User opens Compliance Gaps and selects an item.",
+          "The panel explains the missing evidence, affected period and estimated impact.",
+          "User assigns an owner and due date or links existing evidence.",
+          "Reviewer verifies the evidence and marks the gap Resolved or Not Applicable with reason.",
+          "Forecast confidence and affected totals update after the next refresh."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Reconcile actual outcome",
+        "steps": [
+          "Finance user opens Reconciliation and enters or imports the approved actual result.",
+          "The module compares actual result to the latest approved forecast.",
+          "User categorises each material variance and adds supporting notes/evidence.",
+          "Approver reviews the reconciliation and clicks Finalise Period.",
+          "The period is locked and appears in history with forecast accuracy metrics."
+        ],
+        "kind": "Core"
+      }
+    ],
+    "outputs": [
+      "BBPIP forecast summary",
+      "Doctor and clinic contribution report",
+      "Compliance gap register",
+      "Forecast-to-actual reconciliation",
+      "Evidence pack",
+      "Measure: forecast accuracy",
+      "Measure: unresolved high-impact gaps before period end"
+    ],
+    "key": "bbpip",
+    "icon": "chart"
+  },
+  {
+    "number": 10,
+    "title": "Tasks, Checklists, Meetings & Actions",
+    "objective": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
+    "primaryUsers": "All Staff, Practice Managers, Nursing Leads, Operations Managers, Quality / Accreditation Leads",
+    "tabs": [
+      "My Tasks — Personal assigned work and due dates.",
+      "Team Tasks — Clinic/team tasks with ownership and status.",
+      "Active Checklists — Today’s recurring checklists by role and location.",
+      "Opening / Closing — Shift-linked duty checklists.",
+      "Manager Reviews — Daily, weekly, monthly and periodic review packs.",
+      "Template Builder — Create and version checklist templates.",
+      "Meetings — Meeting agenda, minutes and attendance.",
+      "Action Register — Actions created from meetings, incidents, audits and reviews.",
+      "Handover — End-of-shift and end-of-day transfer of unresolved operational matters with acknowledgement.",
+      "Reports — Completion, exceptions and overdue trends."
+    ],
+    "buttons": [
+      "Create Task",
+      "Create Checklist Template",
+      "Add Section / Item",
+      "Assign Role / Location",
+      "Publish Template",
+      "Start Checklist",
+      "Complete Item",
+      "Skip / Fail with Reason",
+      "Attach Evidence",
+      "Raise Ticket",
+      "Raise Incident",
+      "Create Meeting",
+      "Add Action",
+      "Carry Forward",
+      "Close Action",
+      "Create Handover",
+      "Acknowledge Handover",
+      "Escalate Unacknowledged Handover"
+    ],
+    "visuals": [
+      "Today panel showing due tasks and active checklists before secondary lists.",
+      "Checklist item types: tick, yes/no, number, temperature, text, photo/file and sign-off.",
+      "Progress bar and exception badge for each active checklist.",
+      "Template creation stepper: Details → Frequency → Items → Assignment → Evidence → Review → Publish.",
+      "Meeting screen with agenda on left, live minutes and action capture on right."
+    ],
+    "rules": [
+      "Checklists can be role-specific, location-specific, shift-specific and frequency-based.",
+      "Skipped or failed mandatory items require reason and may require evidence or escalation.",
+      "Opening/closing duties transfer automatically after an approved roster change.",
+      "Published templates are version-controlled; active checklist records retain the version used.",
+      "Meeting actions require owner and due date and automatically appear in Action Inbox.",
+      "A checklist exception can create a ticket, incident, stock action or document evidence without re-entering context."
+    ],
+    "flows": [
+      {
+        "title": "Build and publish a checklist",
+        "steps": [
+          "Manager opens Template Builder and clicks Create Checklist Template.",
+          "The stepper captures name, purpose, location, role, frequency and active period.",
+          "Manager adds sections and item types, marks mandatory items and defines evidence for failed/skipped responses.",
+          "Assignment step previews which staff or shifts will receive the checklist.",
+          "Reviewer checks the template and clicks Publish.",
+          "The template becomes active at the next scheduled occurrence and prior versions remain in history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Complete opening checklist",
+        "steps": [
+          "Rostered opening staff opens Opening / Closing from the shift card.",
+          "The active checklist shows ordered items and required evidence.",
+          "Staff completes items; a failed item prompts reason and displays Raise Ticket or Raise Incident.",
+          "Staff signs off and submits the checklist.",
+          "Manager sees completion status and any exception action in the review queue."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Conduct a management meeting",
+        "steps": [
+          "Chair opens Meetings and clicks Create Meeting.",
+          "Chair selects a template, clinic/group scope, attendees, agenda and linked reports.",
+          "During the meeting, decisions and notes are recorded; clicking Add Action captures owner, due date and linked module.",
+          "Chair reviews minutes and clicks Publish Minutes.",
+          "Open actions move to Action Register and automatically carry into the next meeting until closed."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Close a task/action",
+        "steps": [
+          "Owner opens My Tasks or Action Register and selects the item.",
+          "Owner adds outcome, evidence and any follow-up.",
+          "If approval is required, the item moves to manager review.",
+          "Approver confirms completion or reopens with reason.",
+          "Closed item remains searchable and included in completion reporting."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 5,
+        "title": "Daily and Shift Handover",
+        "objective": "Create a formal transfer of unresolved operational matters between shifts, days and responsible managers.",
+        "placement": "Module 10 - Tasks, Checklists, Meetings & Actions; Handover tab.",
+        "steps": [
+          "Outgoing user clicks Create Handover near the end of the shift or day.",
+          "The platform suggests unresolved operational items from linked modules.",
+          "User confirms relevant items and adds concise operational notes without unnecessary patient information.",
+          "Each item is assigned to the incoming person, role or manager.",
+          "Incoming user opens the handover and acknowledges receipt.",
+          "High-risk or unacknowledged items escalate according to due time and severity.",
+          "The handover closes when required items are acknowledged, while individual actions remain open until resolved."
+        ],
+        "rules": [
+          "Acknowledgement does not equal completion.",
+          "High-risk items cannot be removed without a reason.",
+          "Handover history remains part of the clinic daily record."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 13,
+        "title": "Missed Checklist, Retrospective Completion and Waiver",
+        "objective": "Handle an entire scheduled checklist occurrence that was not started or submitted on time.",
+        "placement": "Module 10 - Active Checklists and Exceptions.",
+        "steps": [
+          "A scheduled checklist remains unstarted or incomplete after the due threshold.",
+          "The assigned user and manager receive an alert.",
+          "Manager reviews the operational context and selects Complete Late, Reassign, Mark Not Required or Record Operational Failure.",
+          "Late completion requires a reason and evidence where defined.",
+          "A waiver requires an authorised reason and does not appear as normal completion.",
+          "High-risk missed controls create an incident or management action.",
+          "The occurrence closes with its true outcome and appears correctly in compliance reporting."
+        ],
+        "rules": [
+          "A missed occurrence cannot be backdated to appear on time.",
+          "Waiver and retrospective completion are permission controlled.",
+          "High-risk failures retain escalation history."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Task and action register",
+      "Checklist completion and exception report",
+      "Opening/closing compliance report",
+      "Meeting minutes PDF",
+      "Overdue meeting actions report",
+      "Location/role completion comparison",
+      "Measure: overdue mandatory duties",
+      "Measure: actions closed by due date"
+    ],
+    "key": "tasks",
+    "icon": "checklist"
+  },
+  {
+    "number": 11,
+    "title": "Training & Learning Management",
+    "objective": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
+    "primaryUsers": "Training Administrators, Practice Managers, Staff, Doctors, Quality Leads",
+    "tabs": [
+      "Catalogue — Courses, policy acknowledgements and learning resources.",
+      "My Learning — Assigned, due, overdue and completed learning.",
+      "Assignments — Role, clinic and individual assignment rules.",
+      "Sessions — Scheduled face-to-face or live training.",
+      "Assessments — Questions, pass rules and reassessment.",
+      "Competencies — Observed competency and evidence.",
+      "Certificates & Expiry — Uploaded or generated certificates and renewal dates.",
+      "Exemptions & Prior Learning — Evidence-based exemption, recognition and expiry management.",
+      "Reports — Completion, overdue and readiness reporting."
+    ],
+    "buttons": [
+      "Create Course",
+      "Upload Resource",
+      "Assign to Role / Clinic",
+      "Enrol Individual",
+      "Schedule Session",
+      "Start Learning",
+      "Submit Assessment",
+      "Record Competency",
+      "Upload Certificate",
+      "Acknowledge Policy",
+      "Send Reminder",
+      "Extend Due Date with Reason",
+      "Archive Course",
+      "Request Exemption / Prior Learning",
+      "Approve / Reject Exemption",
+      "Compare Role Requirements"
+    ],
+    "visuals": [
+      "Learning cards with due date, estimated duration, progress and status.",
+      "Course builder with content, assessment, acknowledgement and certificate settings.",
+      "Role readiness matrix showing mandatory training against people.",
+      "Expiry calendar and reminder timeline.",
+      "Manager view of overdue items affecting roster or responsibility readiness."
+    ],
+    "rules": [
+      "Mandatory learning rules can be assigned by role, clinic, responsibility or policy version.",
+      "Training completion and policy acknowledgement are distinct where both are required.",
+      "Expired or missing mandatory training can create roster or duty warnings.",
+      "Extensions require reason, owner and revised due date.",
+      "Course and assessment versions are retained for historical evidence."
+    ],
+    "flows": [
+      {
+        "title": "Create and assign learning",
+        "steps": [
+          "Training admin opens Catalogue and clicks Create Course.",
+          "The builder captures title, purpose, content, assessment, pass mark, validity period and certificate requirement.",
+          "Admin selects assignment rules by role, clinic or individual.",
+          "A preview lists affected people and due dates.",
+          "Admin publishes the course; assignments appear in My Learning and notifications are sent."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Complete training",
+        "steps": [
+          "User opens My Learning and selects an assigned course.",
+          "The course screen shows sections, progress and required assessment or acknowledgement.",
+          "User completes content and submits the assessment.",
+          "On pass, completion is recorded and a certificate is generated or upload requested.",
+          "If failed, the user receives feedback and a reassessment action according to the course rule."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Record observed competency",
+        "steps": [
+          "Manager opens Competencies and selects a person and competency.",
+          "The form displays the observation checklist and required evidence.",
+          "Manager records outcome, date, notes and next review date.",
+          "If competent, readiness updates; if not yet competent, remedial training/action is assigned.",
+          "The competency remains available in the person’s training history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 14,
+        "title": "Training Exemption, Prior Learning and Role-Change Reassignment",
+        "objective": "Recognise valid existing competence and recalculate learning requirements when roles or clinics change.",
+        "placement": "Module 11 - Exemptions & Prior Learning and Assignments.",
+        "steps": [
+          "User or manager opens the training requirement and clicks Request Exemption / Prior Learning.",
+          "Evidence, issuing body, completion date and validity period are submitted.",
+          "Training administrator reviews the evidence and approves, rejects or requests more information.",
+          "Approved exemption satisfies the requirement until its expiry or review date.",
+          "When a person changes role or clinic, the module compares old and new learning rules.",
+          "Required new assignments are created with due dates.",
+          "No-longer-required assignments are closed with a clear reason rather than deleted."
+        ],
+        "rules": [
+          "Exemptions are evidence based and time limited where appropriate.",
+          "Training completion and exemption remain distinguishable in reports.",
+          "Mandatory safety or legal learning may be configured as non-exemptible."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Training completion report",
+      "Overdue mandatory learning report",
+      "Role readiness matrix",
+      "Certificate and competency expiry report",
+      "Policy acknowledgement report",
+      "Measure: mandatory training current",
+      "Measure: overdue learning affecting duties"
+    ],
+    "key": "training",
+    "icon": "chart"
+  },
+  {
+    "number": 12,
+    "title": "Accreditation, Quality & Regulatory Compliance",
+    "objective": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
+    "primaryUsers": "Accreditation / Quality Lead, Practice Managers, Nursing Leads, Owners, Auditors",
+    "tabs": [
+      "Accreditation Standards — Requirements, ownership, status and due dates.",
+      "Evidence Library — Evidence linked to standards, audits and reviews.",
+      "Gap Register — Unmet, partial or expiring requirements.",
+      "QI / PDSA — Improvement ideas, measures, cycles and outcomes.",
+      "Nursing & Cold Chain — Recurring clinical-operational duties and temperature exceptions.",
+      "Service Quality — Non-clinical feedback themes, waiting-time issues and recovery actions.",
+      "Regulatory Calendar — Known review dates, regulatory changes and implementation actions.",
+      "Audits — Internal audit plans, findings and follow-up."
+    ],
+    "buttons": [
+      "Add Requirement",
+      "Assign Owner",
+      "Link Evidence",
+      "Create Gap Action",
+      "Start PDSA",
+      "Record Measure",
+      "Record Temperature",
+      "Log Exception",
+      "Add Feedback Theme",
+      "Create Service Recovery Action",
+      "Add Regulatory Change",
+      "Schedule Audit",
+      "Sign Off"
+    ],
+    "visuals": [
+      "Standards matrix showing Met, Partial, Not Met, Expiring and Not Applicable.",
+      "Evidence card with owner, version, review date and linked requirements.",
+      "PDSA board: Plan → Do → Study → Act with measures and decision.",
+      "Cold-chain chart and exception banner with escalation status.",
+      "Regulatory timeline with impact, affected modules, owner and readiness."
+    ],
+    "rules": [
+      "Every accreditation requirement needs an owner, status, evidence position and review date.",
+      "Evidence may support multiple requirements but must retain its source and current version.",
+      "Gaps create owned actions and cannot be marked Met without reviewed evidence.",
+      "Temperature or clinical-operational exceptions follow defined escalation and incident rules.",
+      "QI cycles must record baseline, intended change, measure, result and decision.",
+      "Regulatory change actions link to policy, training, checklist and change-management activities as needed."
+    ],
+    "flows": [
+      {
+        "title": "Close an accreditation gap",
+        "steps": [
+          "Lead opens Gap Register and selects a requirement.",
+          "The panel shows current status, missing evidence, owner and due date.",
+          "Lead creates or assigns gap actions and links relevant policy, checklist, training or ticket records.",
+          "When actions are complete, lead uploads/links evidence and submits for review.",
+          "Reviewer confirms the evidence and changes the requirement to Met or returns it with comments."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Run a PDSA cycle",
+        "steps": [
+          "User opens QI / PDSA and clicks Start PDSA.",
+          "Plan captures problem, baseline, proposed change, measure, owner and timeframe.",
+          "During Do, actions and observations are recorded.",
+          "Study compares results to baseline and captures learning.",
+          "In Act, the owner adopts, adapts or abandons the change and creates follow-up policy/training/checklist actions."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Handle a cold-chain exception",
+        "steps": [
+          "Nurse records a temperature reading in Nursing & Cold Chain.",
+          "An out-of-range value opens an exception modal requiring time, device, stock impact and immediate action.",
+          "The module prompts escalation, evidence and whether an incident/ticket is required.",
+          "Manager reviews and records disposition and corrective action.",
+          "The exception is included in compliance evidence and trend reporting."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Process regulatory change",
+        "steps": [
+          "Compliance owner adds a regulatory change with effective date and source summary.",
+          "Impact assessment identifies affected clinics, policies, training, checklists, communications and records.",
+          "Actions are assigned and tracked through Action Inbox.",
+          "Owner reviews evidence of implementation before the effective date.",
+          "The change is marked Implemented and scheduled for post-implementation review."
+        ],
+        "kind": "Core"
+      }
+    ],
+    "outputs": [
+      "Accreditation status and evidence pack",
+      "Gap register and overdue actions",
+      "QI/PDSA report",
+      "Nursing and cold-chain compliance report",
+      "Service quality theme report",
+      "Regulatory change calendar",
+      "Measure: requirements Met with current evidence",
+      "Measure: overdue high-risk gaps"
+    ],
+    "key": "accreditation",
+    "icon": "shield"
+  },
+  {
+    "number": 13,
+    "title": "Documents, Policies, SOPs & Intake",
+    "objective": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
+    "primaryUsers": "Administration, Practice Managers, HR, Finance, Quality / Accreditation, Document Owners",
+    "tabs": [
+      "Intake Queue — New emails, scans, invoices, certificates, forms and attachments awaiting classification.",
+      "Templates — Approved reusable forms, letters, checklists and document templates.",
+      "Location Folders — Clinic-specific controlled records and evidence.",
+      "Policies & SOPs — Approved business policies, procedures and work instructions.",
+      "Controlled Documents — Draft, review, approved, published, superseded and archived records.",
+      "Review Due — Upcoming and overdue reviews.",
+      "Acknowledgements — Required reading and acknowledgement status.",
+      "Search & Archive — Cross-folder search, filters and historical versions.",
+      "Retention & Legal Hold — Retention review, extension, controlled disposal and legal-hold protection."
+    ],
+    "buttons": [
+      "Upload / Scan",
+      "Classify",
+      "Assign Owner",
+      "Link to Module",
+      "Create Action",
+      "Create from Template",
+      "Generate PDF",
+      "Submit for Review",
+      "Approve / Reject",
+      "Publish",
+      "Request Acknowledgement",
+      "Replace Version",
+      "Archive",
+      "Restore",
+      "Place on Legal Hold",
+      "Release Legal Hold",
+      "Approve Disposal"
+    ],
+    "visuals": [
+      "Central intake queue with suggested category, sensitivity and owner.",
+      "Document metadata panel: title, type, clinic, owner, status, version, effective date, review date and links.",
+      "Side-by-side previous/current version comparison summary.",
+      "Review timeline and acknowledgement progress.",
+      "Template preview and PDF generation confirmation."
+    ],
+    "rules": [
+      "No business-critical intake item should remain orphaned without classification, owner or filing decision.",
+      "Sensitive HR, finance, incident and credential documents inherit source-module permissions.",
+      "Approved documents are version-controlled; superseded versions remain accessible to authorised reviewers.",
+      "Published policies/SOPs require effective and review dates.",
+      "Required acknowledgements create learning/action records and cannot be inferred from email delivery."
+    ],
+    "flows": [
+      {
+        "title": "Process document intake",
+        "steps": [
+          "Admin opens Intake Queue and selects an incoming item.",
+          "A classification drawer shows preview, suggested category, sensitivity and possible linked module.",
+          "Admin confirms category, clinic and owner, then chooses File, Create Action or Reject as Duplicate/Irrelevant.",
+          "If review is required, the item enters the owner’s Action Inbox.",
+          "After filing, the intake record shows destination and processing outcome."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Publish a controlled policy",
+        "steps": [
+          "Document owner opens Policies & SOPs and clicks Create New.",
+          "Owner starts from a template or uploads a draft, completes metadata and sets affected roles/clinics.",
+          "Owner submits for review; reviewers comment, approve or request changes.",
+          "On approval, owner clicks Publish and sets effective date and acknowledgement requirement.",
+          "Affected users receive acknowledgement tasks; the prior version becomes Superseded."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Generate a controlled PDF",
+        "steps": [
+          "User opens Templates and selects an approved template.",
+          "A guided form captures permitted business fields and linked record references.",
+          "User clicks Preview PDF and checks content, clinic branding and version.",
+          "User generates the PDF and chooses Store, Email through an approved workflow or Attach to Record.",
+          "The generated document is logged with template version and creator."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Complete scheduled review",
+        "steps": [
+          "Document owner opens Review Due and selects a record.",
+          "The review screen shows current version, usage links, incidents/gaps and prior review notes.",
+          "Owner chooses Confirm Current, Revise or Retire.",
+          "If revised, the document follows the approval and publication workflow.",
+          "The next review date is recorded and the review history remains visible."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 22,
+        "title": "Document Retention, Legal Hold and Controlled Disposal",
+        "objective": "Manage end-of-retention decisions without keeping every document indefinitely or deleting records under hold.",
+        "placement": "Module 13 - Retention & Legal Hold.",
+        "steps": [
+          "A document or record reaches its retention review date.",
+          "Owner reviews record category, business need, linked matters and any existing hold.",
+          "Owner selects Retain, Extend, Archive, Dispose or Place on Legal Hold.",
+          "Sensitive or bulk disposal is submitted for authorised approval.",
+          "Approved disposal follows the controlled method and records authority, date and evidence.",
+          "A legal hold prevents disposal, replacement or other action that would compromise the held record.",
+          "When the hold is released, the record returns to retention review rather than being immediately deleted."
+        ],
+        "rules": [
+          "Legal hold overrides normal disposal scheduling.",
+          "Disposal is auditable and cannot be undone; approval must be proportionate to sensitivity.",
+          "Source-module permissions continue to apply."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 25,
+        "title": "Workforce Data Access and Correction Request",
+        "objective": "Allow staff and doctors to request access to, or correction of, permitted business records about themselves.",
+        "placement": "Modules 3, 4 and 13, through a controlled self-service request.",
+        "steps": [
+          "User opens self-service and submits an access or correction request.",
+          "The request identifies the record/category and explains the requested correction where applicable.",
+          "Authorised owner reviews identity, scope, sensitivity and any linked legal/retention restriction.",
+          "For access, permitted information is prepared and restricted third-party or sensitive information is excluded where appropriate.",
+          "For correction, the source owner approves, rejects or requests evidence.",
+          "Approved correction updates the source record through normal version/history rules.",
+          "The user receives the outcome, reason and completion date.",
+          "The request closes with a retained response history."
+        ],
+        "rules": [
+          "Self-service access does not grant general HR, finance or incident permissions.",
+          "Corrections do not erase valid historical facts.",
+          "Response time and escalation follow approved privacy/business rules.",
+          "Priority 3 - Future Service Maturity"
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Document intake register",
+      "Controlled document register",
+      "Policy/SOP review report",
+      "Template and generated PDF history",
+      "Acknowledgement report",
+      "Unclassified/orphan document report",
+      "Measure: overdue document reviews",
+      "Measure: unassigned intake items"
+    ],
+    "key": "documents",
+    "icon": "file"
+  },
+  {
+    "number": 14,
+    "title": "Ticketing Desk & Work Orders",
+    "objective": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
+    "primaryUsers": "All Staff, Practice Managers, IT / Facilities, Asset Owners, Suppliers / Contractors where approved, Operations Managers",
+    "tabs": [
+      "New Ticket — Guided issue reporting.",
+      "My Tickets — Tickets raised by or assigned to the user.",
+      "Team Queue — Clinic/team triage and assignment.",
+      "Work Orders — Approved work scope, contractor and completion details.",
+      "Planned Maintenance — Scheduled recurring maintenance and inspections.",
+      "SLA & Escalations — Priority targets, breaches and high-risk items.",
+      "Closed — Searchable closure history and evidence.",
+      "Duplicate & Linked Tickets — Detection, master-ticket selection, duplicate linking and shared updates.",
+      "Contractor Visits — Scheduled arrival, controlled site access, safety/privacy acknowledgement, check-out and work sign-off.",
+      "Reports — Volume, recurring issues, downtime and vendor performance."
+    ],
+    "buttons": [
+      "Report Issue",
+      "Scan Asset / QR",
+      "Set Priority",
+      "Assign",
+      "Accept Work",
+      "Change Status",
+      "Add Update",
+      "Attach Photo / Evidence",
+      "Escalate",
+      "Create Work Order",
+      "Request Quote",
+      "Approve Quote",
+      "Mark Work Completed",
+      "Manager Sign-off",
+      "Close",
+      "Reopen",
+      "Merge as Duplicate",
+      "Check In Contractor",
+      "Check Out Contractor"
+    ],
+    "visuals": [
+      "Issue form with category, clinic, room, asset, impact, urgency, description and attachments.",
+      "Priority badge and SLA countdown.",
+      "Ticket timeline with assignments, updates, status changes and notifications.",
+      "Work-order panel for scope, supplier, cost approval, appointment and completion evidence.",
+      "Recurring issue banner linking related tickets and asset history."
+    ],
+    "rules": [
+      "Priority is based on impact and urgency; P1/high-risk items trigger immediate escalation.",
+      "A ticket may link to clinic, room, asset, printer, website, checklist, incident or supplier.",
+      "Closure evidence is mandatory for defined categories and manager sign-off may be required.",
+      "Vendor access and sensitive information are limited to the approved scope.",
+      "Reopened tickets retain original closure details and reason for reopening."
+    ],
+    "flows": [
+      {
+        "title": "Report and resolve a standard issue",
+        "steps": [
+          "Staff member clicks Report Issue or scans an asset QR code.",
+          "The form pre-fills clinic/asset where available; staff selects category, impact and description and adds evidence.",
+          "The ticket enters Team Queue where a manager confirms priority and assigns an owner.",
+          "Owner accepts, updates status and records work notes.",
+          "After completion, owner attaches evidence and clicks Mark Work Completed.",
+          "Manager reviews and clicks Close or returns the ticket for further work."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Handle a P1 issue",
+        "steps": [
+          "Reporter identifies a high-impact issue and submits the ticket.",
+          "The page displays P1 guidance and immediately notifies defined escalation contacts.",
+          "The assigned owner records containment and current service impact.",
+          "Updates remain visible in the escalation panel until service is restored.",
+          "Manager confirms resolution, root cause follow-up and whether an incident/RCA is required before closure."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Create a vendor work order",
+        "steps": [
+          "Manager opens a ticket and clicks Create Work Order.",
+          "The work-order form captures scope, supplier, access window, quote requirement, cost approval and safety/privacy conditions.",
+          "If a quote is required, the request enters finance/manager approval.",
+          "Approved work is scheduled and the vendor/owner records progress.",
+          "Completion evidence, invoice reference and manager sign-off close the work order and related ticket."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Printer fault workflow",
+        "steps": [
+          "User opens Printers in Inventory & Assets and clicks Raise Fault, or reports via QR.",
+          "Ticket receives printer location, model, serial, IP/queue and current toner/counter context.",
+          "Triage determines consumable, configuration, network or hardware issue and assigns internal support or supplier.",
+          "If unavailable, the fallback printer is displayed and staff are notified.",
+          "After repair, test-page evidence and service notes are added; counters/service history update on closure."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 18,
+        "title": "Duplicate Ticket Detection and Ticket Merging",
+        "objective": "Prevent multiple users reporting the same outage or asset issue from fragmenting ownership and updates.",
+        "placement": "Module 14 - Duplicate & Linked Tickets.",
+        "steps": [
+          "A reporter submits a ticket and the page displays possible existing matches.",
+          "Reporter may open the existing ticket or continue if the issue is different.",
+          "Triage user reviews related tickets and selects Merge as Duplicate where appropriate.",
+          "One ticket becomes the master operational record; duplicate tickets retain their original reporter and submission.",
+          "Duplicate reporters continue receiving authorised progress and closure updates.",
+          "SLA, assignment, work order and root-cause follow-up are managed from the master ticket.",
+          "Closing the master ticket updates linked duplicates while preserving each history."
+        ],
+        "rules": [
+          "Merging does not delete the original report.",
+          "Tickets from different confidentiality levels are not merged inappropriately.",
+          "A duplicate can be separated again only with a reason."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 19,
+        "title": "Contractor Arrival, Site Access and Work Completion",
+        "objective": "Control third-party attendance at clinics and connect access, safety and completion evidence to the work order.",
+        "placement": "Module 14 - Contractor Visits, linked to Module 15 suppliers/assets.",
+        "steps": [
+          "Approved work order schedules the contractor visit and nominates a site contact.",
+          "On arrival, the contractor or site contact opens Check In Contractor.",
+          "Identity, supplier, work order and permitted areas are confirmed.",
+          "Required safety, privacy and access conditions are acknowledged.",
+          "Work progress and any change in scope are recorded.",
+          "At completion, evidence, test results, parts used and outstanding work are recorded.",
+          "Site contact checks the area/asset and completes contractor check-out.",
+          "Manager signs off the work order or returns it for further work."
+        ],
+        "rules": [
+          "Contractor access is limited to approved time, scope and areas.",
+          "Scope/cost changes require approval before work continues where defined.",
+          "No contractor receives general platform access by default."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 26,
+        "title": "In-Product Help, Support and Feedback",
+        "objective": "Help users complete work correctly and report problems without losing page or record context.",
+        "placement": "Global help experience linked to Module 14 Ticketing Desk.",
+        "steps": [
+          "User opens Help from any page.",
+          "The panel displays guidance relevant to the user's role and current workflow.",
+          "User searches or opens the recommended instruction.",
+          "If unresolved, user clicks Report a Problem.",
+          "The support form carries current page/module/record context and allows description and attachment.",
+          "The resulting ticket appears in My Support Requests.",
+          "User receives updates and may confirm resolution or provide feedback."
+        ],
+        "rules": [
+          "Help content is business-facing and version controlled.",
+          "Sensitive record content is not copied into support unnecessarily.",
+          "Support requests follow normal ticket priority and permission rules."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 28,
+        "title": "Customer Support Escalation and Service-Impact Communication",
+        "objective": "Provide a mature support journey for future external clinic customers.",
+        "placement": "Module 20 - Customer Support Escalations, linked to Module 14.",
+        "steps": [
+          "Customer raises a support request and selects the affected area and impact.",
+          "Support triages severity and assigns an owner and target.",
+          "Where investigation requires tenant data, support requests time-limited access with reason and scope.",
+          "Customer/authorised owner approves, rejects or limits access.",
+          "Support provides progress updates and workarounds.",
+          "If multiple tenants are affected, an approved service-impact communication is issued without exposing other customers.",
+          "Resolution is confirmed with the customer and temporary access expires.",
+          "For significant events, a post-incident summary and prevention actions are recorded."
+        ],
+        "rules": [
+          "Support access is never assumed.",
+          "Cross-customer communications contain no tenant-specific confidential information.",
+          "Customer closure feedback does not remove internal follow-up actions."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Ticket and work-order registers",
+      "SLA breach and escalation report",
+      "Recurring issue report",
+      "Completion evidence report",
+      "Vendor response and completion report",
+      "Asset downtime report",
+      "Measure: P1 response/restoration time",
+      "Measure: tickets reopened after closure"
+    ],
+    "key": "ticketing",
+    "icon": "task"
+  },
+  {
+    "number": 15,
+    "title": "Inventory, Suppliers, Finance & Assets",
+    "objective": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
+    "primaryUsers": "Practice Managers, Inventory Owners, Finance Users, Asset / IT / Facilities Owners, Owners",
+    "tabs": [
+      "Inventory — Item register, PAR levels, quantities and clinic ownership.",
+      "Low Stock & Orders — Reorder queue, purchase requests and order status.",
+      "Transfers & Adjustments — Inter-clinic stock movement, wastage and corrections.",
+      "Invoice OCR — Supplier invoice upload, extracted fields, review and approval.",
+      "Suppliers & Contracts — Supplier ownership, contacts, terms, reviews and performance.",
+      "Finance Approvals — Operational invoice thresholds, duplicates and anomalies.",
+      "Assets & Equipment — Asset register, ownership, warranty and status.",
+      "Printers — Fleet details, toner, counters, network/queue and fallback.",
+      "Service Calendar — Service, calibration, warranty and planned maintenance.",
+      "Replacement Plan — Risk, age, cost and approval for replacement/retirement.",
+      "Stocktake — Full and cycle counts by clinic, room or item category with controlled variance approval.",
+      "Expiry & Recall — Batch/location tracking, quarantine, return, write-off and recall completion evidence.",
+      "Asset Assignment & Loans — Issue, transfer, temporary loan, return, loss and decommissioning.",
+      "Supplier Onboarding — Supplier due diligence, approved categories, quote comparison, activation and suspension."
+    ],
+    "buttons": [
+      "Add Item",
+      "Set PAR Level",
+      "Create Purchase Request",
+      "Approve Order",
+      "Receive Stock",
+      "Transfer Stock",
+      "Adjust / Write Off",
+      "Upload Invoice",
+      "Review OCR",
+      "Approve / Reject Invoice",
+      "Add Supplier",
+      "Schedule Contract Review",
+      "Add Asset",
+      "Generate QR",
+      "Schedule Service",
+      "Raise Fault",
+      "Add Printer",
+      "Update Toner / Counter",
+      "Set Fallback",
+      "Retire / Replace",
+      "Create Stocktake",
+      "Quarantine Batch",
+      "Start Recall",
+      "Assign / Loan Asset",
+      "Return Asset",
+      "Onboard Supplier",
+      "Suspend Supplier"
+    ],
+    "visuals": [
+      "Stock cards with on-hand, PAR, reorder, clinic and criticality.",
+      "OCR split view showing invoice image and editable extracted fields with confidence flags.",
+      "Duplicate and price-change warning panel.",
+      "Asset profile with QR, location/room, owner, warranty, service and linked tickets.",
+      "Printer profile fields: clinic, room, brand/model, serial/asset ID, hostname, IP address, network segment, connection path, print queue, driver, toner levels, counters, fallback printer, supplier/support and service due date."
+    ],
+    "rules": [
+      "Stock adjustments, transfers, write-offs and invoice approvals require reason and history.",
+      "OCR results do not update stock or finance records until reviewed and approved.",
+      "Duplicate invoice number, repeated total and unusual price movement are flagged for review.",
+      "Critical assets require owner, service/calibration rule and escalation for overdue service.",
+      "Printer records must support operational fallback and linked work-order history.",
+      "Supplier and contract reviews create actions before expiry or renewal dates."
+    ],
+    "flows": [
+      {
+        "title": "Low-stock reorder",
+        "steps": [
+          "Inventory owner opens Low Stock & Orders and reviews items below PAR.",
+          "User selects items and clicks Create Purchase Request.",
+          "The request groups items by supplier and clinic and shows expected quantity/cost.",
+          "Authorised manager approves or adjusts the request.",
+          "On delivery, user clicks Receive Stock, records quantities and discrepancies, and updates on-hand balance."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Supplier invoice OCR",
+        "steps": [
+          "Finance/inventory user opens Invoice OCR and uploads an invoice.",
+          "The split view displays extracted supplier, invoice number/date, GST, total and line items with confidence flags.",
+          "User corrects fields and links items, order and clinic.",
+          "Duplicate and price-change warnings are reviewed and resolved.",
+          "User submits for approval; after approval, invoice register and permitted stock receipts update.",
+          "The original invoice and approved extract remain linked."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Inter-clinic stock transfer",
+        "steps": [
+          "User opens Transfers & Adjustments and clicks Transfer Stock.",
+          "The form captures source clinic, destination clinic, items, quantities, reason and responsible staff.",
+          "Source owner dispatches and destination owner receives.",
+          "Any discrepancy requires reason and manager review.",
+          "Both clinic balances and the movement history update after receipt confirmation."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Add and service an asset",
+        "steps": [
+          "Asset owner opens Assets & Equipment and clicks Add Asset.",
+          "The wizard captures category, criticality, clinic/room, owner, serial, warranty, supplier and service/calibration schedule.",
+          "A QR label is generated and the asset becomes Active.",
+          "Before service due date, an action appears in Service Calendar.",
+          "Service completion records provider, date, outcome, evidence and next due date."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Add and manage a printer",
+        "steps": [
+          "IT/asset user opens Printers and clicks Add Printer.",
+          "The form captures physical, asset, network, queue, driver, toner, counter, supplier, support and fallback details.",
+          "User saves and performs a readiness review; incomplete operational fields remain amber.",
+          "Toner and service due alerts appear in the module and Action Inbox.",
+          "A fault can be raised directly from the printer profile and follows the work-order flow."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Supplier contract review",
+        "steps": [
+          "Contract owner opens Suppliers & Contracts and selects a contract due for review.",
+          "The review screen shows spend, tickets, SLA, price changes, incidents and expiry terms.",
+          "Owner records Renew, Renegotiate, Replace or End recommendation.",
+          "Required approval and follow-up actions are assigned.",
+          "The outcome, new dates and documents are stored in contract history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 15,
+        "title": "Stocktake, Expiry, Batch Recall and Product Return",
+        "objective": "Complete inventory assurance beyond ordering and transfers by controlling counts, variances, expiry and recall disposition.",
+        "placement": "Module 15 - Stocktake and Expiry & Recall tabs.",
+        "steps": [
+          "Manager creates a full or cycle stocktake and assigns count areas.",
+          "Staff count items and submit quantities and notes.",
+          "The platform compares counted and recorded quantities and creates variance review items.",
+          "Authorised manager approves adjustments and the stock balance updates with history.",
+          "For expiry or recall, the owner selects the affected item/batch and locates quantities by clinic and room.",
+          "Affected stock is quarantined and made unavailable for normal use.",
+          "The owner records return to supplier, transfer, write-off or other approved disposition.",
+          "Completion evidence and unresolved quantities are reviewed before the recall/expiry action is closed."
+        ],
+        "rules": [
+          "Stock balance changes require approved variance or movement records.",
+          "Quarantined stock is visibly unavailable.",
+          "Recall closure requires all known locations to be resolved or explicitly escalated.",
+          "Priority 2 - Strong Governance"
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 16,
+        "title": "Supplier Onboarding, Quote Comparison and Supplier Suspension",
+        "objective": "Ensure suppliers are approved, appropriately evidenced and monitored before use.",
+        "placement": "Module 15 - Suppliers & Contracts and Supplier Onboarding.",
+        "steps": [
+          "Owner clicks Onboard Supplier and completes identity, contacts, service categories, evidence and terms.",
+          "Required due-diligence items are assigned for review.",
+          "Where procurement comparison is required, quotes are entered and compared against the same scope.",
+          "Approver records the selected supplier and rationale.",
+          "Approved supplier becomes selectable for permitted work and orders.",
+          "Expired evidence, serious performance issues or incidents trigger a restriction/suspension review.",
+          "Authorised manager suspends, reinstates or ends the supplier and open work is reassigned where necessary."
+        ],
+        "rules": [
+          "Unapproved or suspended suppliers cannot be selected for new work without authorised exception.",
+          "Quote comparisons retain non-price considerations.",
+          "Supplier status changes are effective-dated and auditable."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 17,
+        "title": "Asset Assignment, Loan, Loss, Return and Decommissioning",
+        "objective": "Track responsibility for portable or sensitive assets throughout issue, transfer, return and retirement.",
+        "placement": "Module 15 - Asset Assignment & Loans.",
+        "steps": [
+          "Asset owner selects an active asset and clicks Assign / Loan Asset.",
+          "Holder, clinic, issue date, expected return date and condition are recorded.",
+          "Recipient acknowledges receipt and any use conditions.",
+          "Transfers and extensions are recorded as new movement events.",
+          "On return, the asset is inspected and condition/evidence are recorded.",
+          "If lost or stolen, the user records the event and links an incident, access review or replacement action.",
+          "For retirement, owner confirms data/access removal, disposal method, approval and final status."
+        ],
+        "rules": [
+          "An asset has one accountable holder/location at a time.",
+          "Sensitive devices require access/data-removal confirmation before disposal.",
+          "History remains visible after retirement."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Inventory and low-stock reports",
+      "Stock movement and adjustment register",
+      "Supplier invoice and OCR extract register",
+      "Duplicate/price anomaly report",
+      "Supplier and contract review report",
+      "Asset and printer fleet registers",
+      "Service/calibration and replacement plans",
+      "Measure: critical stockouts",
+      "Measure: overdue critical asset service"
+    ],
+    "key": "inventory",
+    "icon": "box"
+  },
+  {
+    "number": 16,
+    "title": "Incidents, Complaints, Risk & Continuity",
+    "objective": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
+    "primaryUsers": "All Staff as reporters, Practice Managers, Operations / Risk, Privacy / Security Owners, Owners, Quality Leads",
+    "tabs": [
+      "Report — Guided incident, complaint or risk submission.",
+      "Active Incidents — Triage, severity, ownership and current status.",
+      "Complaints — Service complaint handling and response actions.",
+      "Risk Register — Identified risks, controls, ratings and reviews.",
+      "Investigations — Evidence, interviews, chronology and findings.",
+      "RCA / CAPA — Root cause, corrective and preventive actions.",
+      "Business Continuity — Plans, contacts, critical services and exercises.",
+      "Downtime Events — Activation, impact, recovery and review.",
+      "Privacy / Cyber — Suspected breach, containment, assessment and actions.",
+      "Lessons & Trends — Themes, recurrence and linked improvement work.",
+      "Near Miss & Confidential Reporting — Near-miss capture and approved confidential/anonymous reporting pathways.",
+      "Continuity Exercises — Scenario-based tests for power, internet, phone, practice-system, building, weather, staffing and cyber disruption."
+    ],
+    "buttons": [
+      "Report Incident",
+      "Log Complaint",
+      "Add Risk",
+      "Triage",
+      "Set Severity",
+      "Assign Investigator",
+      "Add Evidence",
+      "Start RCA",
+      "Create CAPA",
+      "Escalate",
+      "Activate Downtime Plan",
+      "Log Privacy/Cyber Event",
+      "Notify Responsible Owner",
+      "Submit Closure",
+      "Approve Closure",
+      "Reopen",
+      "Report Near Miss",
+      "Start Continuity Exercise",
+      "Record Complaint Review / Escalation"
+    ],
+    "visuals": [
+      "Confidential report wizard with clear urgency guidance.",
+      "Severity and escalation banner with responsible owner and due dates.",
+      "Investigation timeline and evidence list.",
+      "RCA cause tree / contributing factor form and CAPA tracker.",
+      "Business continuity event board showing affected services, workaround, communications and recovery status."
+    ],
+    "rules": [
+      "High-risk events trigger immediate escalation according to approved business rules.",
+      "Sensitive reports are restricted by role and clinic.",
+      "Closure requires outcome, evidence, action status and approval where defined.",
+      "Corrective/preventive actions link to Tasks, Training, Policies, Checklists, Tickets or Change Management.",
+      "Privacy/cyber events require controlled access, containment record and responsible-owner review.",
+      "Reopening requires reason and retains the original closure decision."
+    ],
+    "flows": [
+      {
+        "title": "Report and investigate an incident",
+        "steps": [
+          "Reporter clicks Report Incident and selects category, clinic, date/time, immediate risk and description.",
+          "Urgent guidance appears; reporter records immediate action and submits.",
+          "Triage owner reviews severity, confidentiality and required escalation.",
+          "Investigator builds chronology, adds evidence and records contributing factors.",
+          "RCA/CAPA actions are created and assigned.",
+          "When actions and evidence meet closure criteria, investigator submits closure and authorised manager approves."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Manage a complaint",
+        "steps": [
+          "Manager logs or receives a complaint through the controlled intake path.",
+          "The complaint record captures service theme, preferred contact pathway, acknowledgement due and owner without unnecessary clinical detail.",
+          "Owner investigates, records communication and creates service recovery actions.",
+          "If risk or serious event is identified, the record links to an incident.",
+          "Manager approves response and closure; themes feed Service Quality reporting."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Activate downtime plan",
+        "steps": [
+          "Authorised user opens Business Continuity and clicks Activate Plan.",
+          "The event form captures affected clinic/service, start time, impact and decision owner.",
+          "The event board displays critical contacts, approved workaround checklists and communications.",
+          "Teams update status until recovery is confirmed.",
+          "Owner records recovery time, outstanding actions and post-event review; lessons create follow-up actions."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Privacy/cyber response",
+        "steps": [
+          "User logs a suspected privacy/cyber event with minimal necessary detail.",
+          "The restricted workflow prompts immediate containment and responsible-owner notification.",
+          "Owner assesses scope, affected systems/records, evidence and required advice/notification decisions.",
+          "Corrective actions, access reviews, communication and training tasks are assigned.",
+          "Closure requires documented assessment, actions and review approval."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 20,
+        "title": "Anonymous or Near-Miss Reporting and Complaint Review",
+        "objective": "Encourage early reporting while protecting confidentiality and providing a review path for unresolved complaints.",
+        "placement": "Module 16 - Near Miss & Confidential Reporting and Complaints.",
+        "steps": [
+          "Reporter selects Report Near Miss or confidential reporting pathway and records minimum necessary facts.",
+          "The report enters restricted triage with identity visibility limited according to the chosen pathway and approved rules.",
+          "Triage owner assesses severity, immediate controls and whether investigation is required.",
+          "Near misses may create prevention actions without being treated as completed harm events.",
+          "For complaints, the owner records acknowledgement, investigation, response and service-recovery actions.",
+          "If the complainant remains dissatisfied, an authorised review or escalation is opened.",
+          "External regulator, insurer, legal or other referral decisions are recorded where applicable.",
+          "Final outcome and lessons feed trends without exposing unnecessary identity."
+        ],
+        "rules": [
+          "Anonymous reporting limitations are explained clearly.",
+          "Confidentiality is not promised beyond approved business/legal limits.",
+          "Complaint escalation does not overwrite the original response."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 21,
+        "title": "Scenario-Based Business Continuity and Exercise",
+        "objective": "Provide usable playbooks for common clinic disruptions and confirm recovery through exercises and real events.",
+        "placement": "Module 16 - Business Continuity and Continuity Exercises.",
+        "steps": [
+          "Authorised user selects a scenario and chooses Live Event or Exercise.",
+          "The plan records affected clinic/services, start time, decision owner and current impact.",
+          "Roles, contacts and approved workaround checklists are assigned.",
+          "Internal/external operational communications are issued as required.",
+          "Teams update service status, risks and workaround progress.",
+          "When service is restored, the owner confirms recovery and identifies any backlog created during downtime.",
+          "Backlog reconciliation and outstanding actions are completed.",
+          "A post-event or exercise review records lessons, plan changes, training and follow-up actions."
+        ],
+        "rules": [
+          "Exercise notifications cannot be mistaken for a live incident.",
+          "Workarounds do not create duplicate patient records in this platform.",
+          "Recovery is not complete until critical backlog and open risks are addressed."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Incident and complaint registers",
+      "Risk register and control review",
+      "Investigation and RCA report",
+      "CAPA action report",
+      "Business continuity event and exercise report",
+      "Privacy/cyber response register",
+      "Trend and recurrence report",
+      "Measure: high-risk events triaged within target",
+      "Measure: overdue CAPA actions"
+    ],
+    "key": "incidents",
+    "icon": "alert"
+  },
+  {
+    "number": 17,
+    "title": "Email & SMS Communications",
+    "objective": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
+    "primaryUsers": "Authorised Marketing / Communications, Practice Managers, Owners / Approvers, Administration",
+    "tabs": [
+      "Email Campaigns — Draft, approval, scheduled, sent and completed email campaigns.",
+      "SMS Campaigns — Operational and approved marketing SMS.",
+      "Templates — Approved content, branding and mandatory wording.",
+      "Audience — Approved lists, filters, exclusions and source reference.",
+      "Approvals — Campaign decision queue and version review.",
+      "Delivery — Sent, delivered, failed, bounced and retry status.",
+      "Conversations — Permitted two-way messages where enabled.",
+      "Consent & Suppression — Opt-out, do-not-contact and excluded recipients.",
+      "Reports — Campaign performance, delivery and compliance.",
+      "Emergency Communications — Approved urgent templates, rapid approval, linked updates, all-clear and failure escalation."
+    ],
+    "buttons": [
+      "Create Email Campaign",
+      "Create SMS Campaign",
+      "Choose Template",
+      "Select Audience",
+      "Add Exclusions",
+      "Preview",
+      "Send Test",
+      "Submit for Approval",
+      "Schedule",
+      "Send Now",
+      "Pause / Cancel",
+      "Retry Failed",
+      "Record Response",
+      "Export Results",
+      "Cancel Scheduled Campaign",
+      "Pause Send",
+      "Send Emergency Update",
+      "Send All Clear"
+    ],
+    "visuals": [
+      "Campaign builder stepper: Purpose → Audience → Content → Review → Approval → Schedule.",
+      "Desktop/mobile email preview and SMS character/segment indicator.",
+      "Audience summary showing source, included, excluded, duplicates and consent suppression.",
+      "Approval comparison showing changes since prior version.",
+      "Delivery dashboard with failure reason and retry action."
+    ],
+    "rules": [
+      "Only approved templates and authorised users can send campaigns.",
+      "Audience counts must exclude suppressed, invalid and duplicate recipients before approval.",
+      "Campaign approval is tied to the exact content and audience version.",
+      "Opt-out and communication preferences are respected in all future sends.",
+      "Sensitive clinical or payment information must not be sent through general campaigns.",
+      "Failed delivery creates a review/retry action without duplicating successful sends."
+    ],
+    "flows": [
+      {
+        "title": "Create and send a campaign",
+        "steps": [
+          "User clicks Create Email Campaign or Create SMS Campaign.",
+          "The stepper captures purpose, clinic/brand, approved audience source and exclusions.",
+          "User selects a template, edits permitted content and previews the message.",
+          "User sends a test and resolves validation warnings.",
+          "User submits for approval; approver reviews exact content, audience count and schedule.",
+          "After approval, the campaign is scheduled or sent and delivery appears in the dashboard."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Handle failed deliveries",
+        "steps": [
+          "User opens Delivery and filters to Failed.",
+          "The page groups failures by invalid address/number, temporary failure, suppression or gateway issue.",
+          "User selects eligible temporary failures and clicks Retry Failed.",
+          "Permanent failures are marked for source-data correction and do not retry automatically.",
+          "The campaign report shows original and retry outcomes without double-counting."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Update suppression",
+        "steps": [
+          "Authorised user opens Consent & Suppression and searches the contact reference.",
+          "User records the approved preference or opt-out source and effective date.",
+          "The interface confirms which channels are suppressed.",
+          "Future campaign audience previews automatically exclude the suppressed contact.",
+          "Any authorised reversal requires reason and evidence."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 23,
+        "title": "Emergency Communication and Campaign Cancellation",
+        "objective": "Support urgent operational messages and safely control already scheduled or in-progress communications.",
+        "placement": "Module 17 - Emergency Communications and Campaigns.",
+        "steps": [
+          "Authorised user selects an approved emergency template and links the relevant incident, outage or clinic transition.",
+          "Audience, clinic scope, exclusions and communication channel are confirmed.",
+          "Urgent approval is completed according to severity rules.",
+          "Message is sent and delivery failures are prioritised for review.",
+          "Further updates and the all-clear remain linked to the original communication event.",
+          "For a scheduled normal campaign, user may cancel before sending and records a reason.",
+          "If content or audience changes after approval, the approval expires and the revised version must be reviewed again.",
+          "If a send can be paused, successful recipients are not sent duplicates when activity resumes."
+        ],
+        "rules": [
+          "Emergency messages remain operational and avoid sensitive clinical detail.",
+          "Cancellation does not recall messages already delivered.",
+          "All related messages share one event history."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Email and SMS campaign register",
+      "Approval history",
+      "Audience inclusion/exclusion summary",
+      "Delivery and failure report",
+      "Suppression/consent report",
+      "Template usage report",
+      "Measure: campaigns sent with approval",
+      "Measure: unresolved permanent delivery errors"
+    ],
+    "key": "communications",
+    "icon": "chat"
+  },
+  {
+    "number": 18,
+    "title": "Digital Operations & Security",
+    "objective": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
+    "primaryUsers": "IT / Security, Owners, Operations Managers, Approved Support Users, Auditors",
+    "tabs": [
+      "Website Monitoring — Availability, response time, outages and recovery.",
+      "SSL / Domain — Expiry, ownership and renewal actions.",
+      "Remote Access — Approved endpoints, requests, sessions and emergency access.",
+      "Password / Secrets — Credential ownership, access requests, rotation and review.",
+      "Security Cameras — Camera inventory, health, viewing and footage requests.",
+      "Device / Connector Health — Operational status and assigned owner.",
+      "Access Reviews — Periodic review of sensitive digital access.",
+      "Reports — Outage, access, rotation and health history."
+    ],
+    "buttons": [
+      "Add Website",
+      "Run Check",
+      "Acknowledge Outage",
+      "Create Incident / Ticket",
+      "Request Remote Access",
+      "Approve / Reject Access",
+      "Launch Approved Session",
+      "End Session",
+      "Request Secret Access",
+      "Reveal / Copy with Reason",
+      "Rotate Credential",
+      "Request Footage",
+      "Approve Export",
+      "Mark Camera Offline / Restored",
+      "Complete Access Review"
+    ],
+    "visuals": [
+      "Website health cards with current state, response time, recent outages and SSL days remaining.",
+      "Remote endpoint register with clinic, asset, tool, sensitivity and owner.",
+      "Access request drawer showing purpose, duration and approver.",
+      "Credential governance card with owner, rotation due and last review; plain-text display is avoided where governance-only.",
+      "Camera map/list with zone, purpose, privacy classification, health and request history."
+    ],
+    "rules": [
+      "A single transient website failure should follow the configured threshold before major outage escalation.",
+      "Sensitive remote access requires approved purpose and is logged by user, time, asset and clinic.",
+      "Emergency/break-glass access triggers immediate notification and after-the-fact review.",
+      "Credential reveal/copy/export requires reason and is auditable; high-risk credentials may require approval.",
+      "Camera access is limited by role, clinic, zone and approved purpose; export requires approval and reason.",
+      "Camera zones, signage, audio status and retention rules require business/privacy approval before use."
+    ],
+    "flows": [
+      {
+        "title": "Website outage response",
+        "steps": [
+          "Monitoring identifies repeated failures and creates an outage alert.",
+          "IT user opens Website Monitoring and reviews status, response history and affected site.",
+          "User acknowledges the alert and creates a ticket/incident if required.",
+          "Updates and recovery time are recorded.",
+          "After recovery, the outage closes and monthly uptime reporting updates."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Remote access request",
+        "steps": [
+          "Support user opens Remote Access and selects an endpoint.",
+          "User clicks Request Access and enters purpose, expected duration and related ticket.",
+          "Approver reviews sensitivity and scope and approves, rejects or limits duration.",
+          "User launches the approved session; start/end and reason are logged.",
+          "The session closes and any emergency or unusual access enters review."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "High-risk secret access",
+        "steps": [
+          "User opens Password / Secrets and requests access to a restricted record.",
+          "The request shows owner, sensitivity, reason and linked ticket/change.",
+          "Approver grants time-limited reveal/copy permission or rejects.",
+          "User performs the allowed action; the event is logged.",
+          "If rotation is required after use, a rotation task is created and tracked."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Camera footage request",
+        "steps": [
+          "Authorised user opens Security Cameras and clicks Request Footage.",
+          "The form captures camera/zone, date/time range, purpose and intended use/export.",
+          "Approver reviews privacy, scope and authority.",
+          "Approved viewing/export is performed through the controlled source and logged.",
+          "The request closes with outcome, evidence reference and retention instruction."
+        ],
+        "kind": "Core"
+      }
+    ],
+    "outputs": [
+      "Website uptime/outage report",
+      "SSL/domain expiry report",
+      "Remote access register and emergency review",
+      "Credential rotation and access audit",
+      "Camera inventory, health and footage request report",
+      "Sensitive access review report",
+      "Measure: unresolved critical outages",
+      "Measure: overdue credential rotations/access reviews"
+    ],
+    "key": "digital",
+    "icon": "lock"
+  },
+  {
+    "number": 19,
+    "title": "Clinic Analytics, Data Quality & Change",
+    "objective": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
+    "primaryUsers": "Owners, Operations Managers, Practice Managers, Data Owners, Change / Training / Compliance Owners",
+    "tabs": [
+      "Capacity & Flow — Aggregate provider availability, demand, waiting and utilisation trends.",
+      "Operational Trends — Roster, attendance, tasks, tickets, stock and quality trends.",
+      "Benchmark Detail — Comparable clinic metrics and contributing factors.",
+      "Data Quality — Missing, duplicate, expired, inconsistent and stale records.",
+      "Change Register — Proposed, assessed, approved, implemented and reviewed changes.",
+      "Impact Assessment — People, process, compliance, communication, finance and training impacts.",
+      "Readiness — Actions required before an effective date or business release.",
+      "Improvement Backlog — Prioritised improvement ideas and benefits.",
+      "Rollback & Benefits Review — Pause, rollback, correct-forward and expected-versus-actual benefit assessment."
+    ],
+    "buttons": [
+      "Refresh Analytics",
+      "Filter / Compare",
+      "Open Contributing Record",
+      "Create Action",
+      "Run Data Quality Check",
+      "Assign Correction",
+      "Merge / Resolve Duplicate",
+      "Raise Change",
+      "Assess Impact",
+      "Submit Change Approval",
+      "Publish Effective Date",
+      "Confirm Readiness",
+      "Start Post-Change Review",
+      "Add Improvement",
+      "Pause Change",
+      "Rollback Change",
+      "Correct Forward",
+      "Complete Benefits Review"
+    ],
+    "visuals": [
+      "Aggregate capacity charts by clinic, day and provider group with no patient identifiers.",
+      "Benchmark cards with definition, threshold and drill-down.",
+      "Data quality dashboard with completeness score and owner.",
+      "Change impact checklist and dependency map linking policies, training, checklists and communications.",
+      "Readiness status showing Not Started, At Risk, Ready and Implemented."
+    ],
+    "rules": [
+      "Analytics must clearly label data period, definition, exclusions and refresh status.",
+      "Data quality exceptions require an owner; critical incomplete data can block roster/pay/compliance workflows.",
+      "Duplicates are resolved without deleting required history.",
+      "Meaningful business changes require reason, owner, impact, effective date, communication/training decision and post-change review.",
+      "Policy, pay rule, template and critical workflow changes are versioned and effective-dated."
+    ],
+    "flows": [
+      {
+        "title": "Review clinic capacity",
+        "steps": [
+          "Manager opens Capacity & Flow and selects clinic and period.",
+          "Aggregate charts show demand, provider availability, waiting indicators and utilisation.",
+          "Manager selects an outlier and opens contributing summary, not patient records.",
+          "Manager clicks Create Action to address roster, opening hours, provider coverage or process issue.",
+          "The action is assigned and tracked through Action Inbox and later trend review."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Correct data-quality issue",
+        "steps": [
+          "Data owner opens Data Quality and filters to Critical.",
+          "The page shows missing/duplicate/stale record, affected workflows and assigned owner.",
+          "Owner opens the source record and corrects or submits a merge/review decision.",
+          "Reviewer confirms the correction where sensitive or high-impact.",
+          "The next quality check clears the exception and updates the clinic data-health score."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Manage a business change",
+        "steps": [
+          "Owner clicks Raise Change and records reason, desired outcome, affected clinics and effective date.",
+          "Impact Assessment prompts review of staff, policies, training, checklists, communications, privacy, finance and downtime.",
+          "Required actions and approvers are assigned.",
+          "When readiness items are complete, approver confirms Go Live / Effective.",
+          "After implementation, owner starts Post-Change Review and records outcomes, incidents and further actions."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 24,
+        "title": "Failed Change, Rollback and Benefit-Realisation Review",
+        "objective": "Provide a controlled response when an approved business change causes problems or does not achieve the intended outcome.",
+        "placement": "Module 19 - Change Register, Rollback & Benefits Review.",
+        "steps": [
+          "After implementation, the change owner records actual performance and any incidents, complaints or gaps.",
+          "If the change is unsafe or unsuccessful, the owner selects Pause, Rollback or Correct Forward.",
+          "The impact panel identifies affected clinics, users, policies, training, communications and records.",
+          "Required approval is obtained and affected users are notified.",
+          "Rollback/correction actions are executed and linked incidents/tickets are monitored.",
+          "The owner confirms stabilisation and records any permanent revisions.",
+          "At the scheduled benefits review, expected and actual outcomes, cost, risk and lessons are compared.",
+          "Further improvement actions are created or the change is formally closed."
+        ],
+        "rules": [
+          "Rollback decisions are as auditable as original approvals.",
+          "A failed change is not marked successful merely because tasks were completed.",
+          "Measures and review dates are defined before go-live wherever possible."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Aggregate clinic capacity and flow report",
+      "Operational trend and benchmark detail",
+      "Data quality dashboard and exception register",
+      "Change register and impact assessment",
+      "Readiness and post-change review report",
+      "Improvement backlog",
+      "Measure: critical data-quality exceptions",
+      "Measure: changes implemented with readiness complete"
+    ],
+    "key": "analytics",
+    "icon": "chart"
+  },
+  {
+    "number": 20,
+    "title": "Commercial SaaS & Future Workspaces",
+    "objective": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
+    "primaryUsers": "Owner / Commercial Manager, SaaS Administrator, Customer Success / Support, Finance / Billing, Tenant Administrator",
+    "tabs": [
+      "Tenants — Customer clinic groups, status, contacts and contract dates.",
+      "Plans & Modules — Subscribed capability packages and limits.",
+      "Onboarding — Customer configuration, training and acceptance checklist.",
+      "Branding & Settings — Approved tenant-level business preferences.",
+      "Support Access — Time-limited support requests, reasons and review.",
+      "Usage & Adoption — Module use, active users and configuration gaps.",
+      "Renewals — Renewal dates, risks, decisions and actions.",
+      "Offboarding — Export, retention, access removal and closure checklist.",
+      "Future Departments — Optional controlled workspaces with tasks and documents.",
+      "Subscription & Billing — Trial conversion, plan changes, billing contacts, failed payment, suspension and reinstatement.",
+      "Customer Support Escalations — Severity, temporary access, progress updates, service-impact communications and post-incident summary."
+    ],
+    "buttons": [
+      "Add Tenant",
+      "Select Plan / Modules",
+      "Invite Tenant Admin",
+      "Start Onboarding",
+      "Complete Configuration Review",
+      "Grant Temporary Support Access",
+      "Review Adoption",
+      "Create Renewal Action",
+      "Suspend Tenant",
+      "Start Offboarding",
+      "Confirm Closure",
+      "Create Department Workspace",
+      "Upgrade / Downgrade Plan",
+      "Record Failed Subscription Payment",
+      "Reinstate Tenant",
+      "Escalate Customer Support"
+    ],
+    "visuals": [
+      "Tenant health cards with onboarding, adoption, support, renewal and risk status.",
+      "Module entitlement checklist and business configuration preview.",
+      "Onboarding stepper with owners, due dates and acceptance evidence.",
+      "Support-access banner showing who, why and expiry.",
+      "Offboarding checklist covering access, open work, records, exports and confirmation."
+    ],
+    "rules": [
+      "Customer/tenant settings and records are separated in the user experience; support access is never assumed.",
+      "Support users require a ticket/reason and time-limited approval to view customer records.",
+      "Module packaging and plan limits are explicit to tenant administrators.",
+      "Offboarding follows an approved retention/export/access-removal checklist.",
+      "Optional department workspaces remain controlled and are not added to the main navigation unless activated."
+    ],
+    "flows": [
+      {
+        "title": "Onboard a tenant",
+        "steps": [
+          "Commercial admin opens Tenants and clicks Add Tenant.",
+          "The wizard captures customer identity, contacts, plan, modules, contract dates and support owner.",
+          "Tenant admin is invited and completes clinic, user and business-setting information.",
+          "Onboarding checklist covers configuration, training, sample workflows and acceptance.",
+          "Commercial admin completes Configuration Review and activates the tenant."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Grant support access",
+        "steps": [
+          "Support user opens Support Access and selects the tenant and related support ticket.",
+          "The request captures purpose, modules, duration and required data scope.",
+          "Tenant or authorised owner approves, rejects or limits the request.",
+          "A visible banner remains during the support-access period.",
+          "Access expires automatically according to the approved business duration and enters review history."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Manage renewal",
+        "steps": [
+          "Commercial manager opens Renewals and selects a tenant approaching renewal.",
+          "The screen shows adoption, open issues, plan, modules, support history and contract date.",
+          "Manager records renewal recommendation and creates customer actions.",
+          "Approved changes to modules/plan are scheduled for the renewal date.",
+          "Renewal outcome and next review date are stored."
+        ],
+        "kind": "Core"
+      },
+      {
+        "title": "Offboard tenant",
+        "steps": [
+          "Authorised admin clicks Start Offboarding.",
+          "Checklist identifies open actions, support access, users, reports, documents and agreed export/retention steps.",
+          "Tenant admin confirms required exports and closure date.",
+          "Access is suspended, outstanding responsibilities are completed and closure is reviewed.",
+          "Tenant is archived with a formal offboarding record."
+        ],
+        "kind": "Core"
+      },
+      {
+        "number": 27,
+        "title": "Commercial Plan Upgrade, Downgrade and Subscription Billing",
+        "objective": "Complete the future SaaS commercial lifecycle beyond onboarding and renewal.",
+        "placement": "Module 20 - Subscription & Billing.",
+        "steps": [
+          "Tenant administrator or commercial manager opens the current plan and selects Upgrade, Downgrade or Change Modules.",
+          "The page shows entitlement, limits, price/effective-date summary and operational impact.",
+          "Required customer and internal approvals are completed.",
+          "Upgrade changes activate on the approved date; downgrade identifies records/actions requiring completion or export first.",
+          "Billing-contact changes are confirmed and recorded.",
+          "A failed subscription payment creates a commercial action and approved customer communication.",
+          "If unresolved, tenant access may be restricted according to contract while essential offboarding/export options remain available.",
+          "On resolution, authorised user reinstates the tenant and records the outcome."
+        ],
+        "rules": [
+          "Plan changes do not remove historical records.",
+          "Suspension and reinstatement follow contract and approval rules.",
+          "Commercial billing remains separate from clinic patient billing."
+        ],
+        "kind": "Expanded"
+      },
+      {
+        "number": 28,
+        "title": "Customer Support Escalation and Service-Impact Communication",
+        "objective": "Provide a mature support journey for future external clinic customers.",
+        "placement": "Module 20 - Customer Support Escalations, linked to Module 14.",
+        "steps": [
+          "Customer raises a support request and selects the affected area and impact.",
+          "Support triages severity and assigns an owner and target.",
+          "Where investigation requires tenant data, support requests time-limited access with reason and scope.",
+          "Customer/authorised owner approves, rejects or limits access.",
+          "Support provides progress updates and workarounds.",
+          "If multiple tenants are affected, an approved service-impact communication is issued without exposing other customers.",
+          "Resolution is confirmed with the customer and temporary access expires.",
+          "For significant events, a post-incident summary and prevention actions are recorded."
+        ],
+        "rules": [
+          "Support access is never assumed.",
+          "Cross-customer communications contain no tenant-specific confidential information.",
+          "Customer closure feedback does not remove internal follow-up actions."
+        ],
+        "kind": "Expanded"
+      }
+    ],
+    "outputs": [
+      "Tenant register",
+      "Onboarding and acceptance checklist",
+      "Plan/module entitlement report",
+      "Support access audit",
+      "Usage/adoption and renewal risk report",
+      "Offboarding closure report",
+      "Measure: tenants activated without critical setup gaps",
+      "Measure: support access events with valid approval",
+      "Expanded User Flows and Lifecycle Scenarios",
+      "Version 2.0 adds the following normal, exception and lifecycle journeys to the existing twenty-module structure. These are not new sidebar modules unless explicitly stated; they are tabs, workspaces or linked flows inside the existing modules."
+    ],
+    "key": "saas",
+    "icon": "building"
+  }
+]

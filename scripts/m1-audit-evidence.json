@@ -1,0 +1,464 @@
+{
+  "summary": {
+    "widthsOk": true,
+    "appearanceTested": 3,
+    "buttonsTotal": 51,
+    "working": 9,
+    "localDemo": 35,
+    "backend": 2,
+    "buttonDefects": 5,
+    "corrected": [
+      "Appearance persistence",
+      "Sidebar collapse persistence",
+      "View Health Breakdown outside expandable",
+      "Staffing follow-up defaultOpen",
+      "Theme bootstrap script"
+    ],
+    "persistenceOk": true,
+    "auditOk": true,
+    "routesOk": true,
+    "hydration": 1,
+    "consoleErrors": 1,
+    "defectList": [
+      "Approve with Conditions: not found",
+      "Customise: not found",
+      "Save Clinic Group: ",
+      "Change Priority: ",
+      "Send Reminder: "
+    ]
+  },
+  "widths": [
+    {
+      "width": 1440,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 390,
+      "overflowX": 0,
+      "ok": true
+    }
+  ],
+  "appearance": [
+    {
+      "name": "Light",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Dark",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Device setting",
+      "status": "Working",
+      "note": ""
+    }
+  ],
+  "buttons": [
+    {
+      "name": "Select Clinics",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Create Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Publish",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Refresh",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Notifications",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mobile urgent",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA Demo",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "End-of-Day",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Withdraw notice",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Acknowledge",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Open Full Briefing",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Ask AI",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "View Evidence",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "View Health Breakdown",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Create follow-up",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Review RCA",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "View as Table",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Approve with Conditions",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Open Full Action",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Customise",
+      "status": "Defect found",
+      "note": "not found"
+    },
+    {
+      "name": "Urgent Only",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Save Clinic Group",
+      "status": "Defect found",
+      "note": ""
+    },
+    {
+      "name": "Category Clinic Operations",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Staffing",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Compliance",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Finance & Pay",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Incidents",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Tasks & Checklists",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Assets & Facilities",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Digital & Security",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Mention User",
+      "status": "Backend required and clearly labelled",
+      "note": ""
+    },
+    {
+      "name": "Attach File",
+      "status": "Backend required and clearly labelled",
+      "note": ""
+    },
+    {
+      "name": "Delegate",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Reject",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Escalate",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mark Complete",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Request More Information",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Change Due Date",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Add Comment",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Dismiss",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Change Priority",
+      "status": "Defect found",
+      "note": ""
+    },
+    {
+      "name": "Send Reminder",
+      "status": "Defect found",
+      "note": ""
+    },
+    {
+      "name": "Reassign",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Post Update",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Request Update",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Assign Follow-up",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mark Not Required",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Apply override",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "/Export PDF/i",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "/Schedule/i",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "/Print/i",
+      "status": "Working as local demonstration",
+      "note": ""
+    }
+  ],
+  "filters": [
+    {
+      "name": "Urgent-only sentence",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Clear Filter",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Period This Week",
+      "status": "Working",
+      "note": ""
+    }
+  ],
+  "persistence": [
+    {
+      "name": "Appearance Dark after refresh",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Sidebar collapsed after refresh",
+      "status": "Working",
+      "note": ""
+    }
+  ],
+  "auditFlows": [
+    {
+      "name": "Manager health override",
+      "status": "Working as local demonstration",
+      "note": "form + Apply override control present; enablement needs all required fields"
+    },
+    {
+      "name": "Emergency notice withdrawal",
+      "status": "Working as local demonstration",
+      "note": "browser prompt path"
+    },
+    {
+      "name": "Sensitive report export",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Serious priority reduction",
+      "status": "Working as local demonstration",
+      "note": "Change Priority in Full Action"
+    },
+    {
+      "name": "Large financial approval",
+      "status": "Working as local demonstration",
+      "note": "Approve + password gate on finance/exec items"
+    },
+    {
+      "name": "Serious incident closure path",
+      "status": "Working as local demonstration",
+      "note": "Review RCA / password-gated close"
+    }
+  ],
+  "routes": [
+    {
+      "name": "/dashboard",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/action-inbox",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/risk-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/compliance-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/analytics",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/emergency-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/tasks",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/checklists",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/staff",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/doctors",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/settings",
+      "status": "Working",
+      "note": "status=200"
+    }
+  ],
+  "console": [
+    "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`."
+  ],
+  "defects": [
+    "Approve with Conditions: not found",
+    "Customise: not found",
+    "Save Clinic Group: ",
+    "Change Priority: ",
+    "Send Reminder: "
+  ]
+}

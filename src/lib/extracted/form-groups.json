@@ -1,0 +1,26 @@
+{
+  "core": {
+    "title": "Core details",
+    "desc": "Identify the record and capture its main business information."
+  },
+  "assignment": {
+    "title": "Assignment & location",
+    "desc": "Set the clinic, room, owner, role or person responsible."
+  },
+  "schedule": {
+    "title": "Schedule & due dates",
+    "desc": "Define when the activity starts, occurs, expires or needs review."
+  },
+  "financial": {
+    "title": "Operational & financial settings",
+    "desc": "Capture quantities, rates, contract, stock or payment controls."
+  },
+  "details": {
+    "title": "Details, notes & evidence",
+    "desc": "Add the information reviewers need to understand and action the record."
+  },
+  "review": {
+    "title": "Status & review",
+    "desc": "Set the workflow status and any review or approval position."
+  }
+}

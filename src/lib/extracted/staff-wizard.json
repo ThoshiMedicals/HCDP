@@ -1,0 +1,146 @@
+{
+  "title": "Add Staff",
+  "tabs": [
+    "Basic",
+    "Emergency",
+    "Prefs",
+    "Personal"
+  ],
+  "fields": [
+    {
+      "name": "email",
+      "label": "Email Address *",
+      "type": "email",
+      "required": true,
+      "placeholder": "staff@example.com"
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "text"
+    },
+    {
+      "name": "firstName",
+      "label": "First Name *",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "lastName",
+      "label": "Last Name *",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "department",
+      "label": "Department *",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Reception",
+        "Nursing",
+        "Management",
+        "Administration",
+        "IT Support",
+        "Cleaners",
+        "Doctors"
+      ]
+    },
+    {
+      "name": "role",
+      "label": "Role *",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Receptionist",
+        "Nurse",
+        "Manager",
+        "Area Manager",
+        "Office Manager",
+        "Employee",
+        "IT Support"
+      ]
+    },
+    {
+      "name": "address",
+      "label": "Address",
+      "type": "text",
+      "full": true
+    },
+    {
+      "name": "emergencyContact",
+      "label": "Emergency Contact",
+      "type": "text"
+    },
+    {
+      "name": "emergencyRelationship",
+      "label": "Relationship",
+      "type": "text",
+      "placeholder": "e.g. Spouse, Partner"
+    },
+    {
+      "name": "emergencyPhone",
+      "label": "Emergency Phone",
+      "type": "text"
+    },
+    {
+      "name": "emergencyEmail",
+      "label": "Emergency Email",
+      "type": "email"
+    },
+    {
+      "name": "nextOfKin",
+      "label": "Next of Kin",
+      "type": "text"
+    },
+    {
+      "name": "nextOfKinPhone",
+      "label": "Next of Kin Phone",
+      "type": "text"
+    },
+    {
+      "name": "dietaryRestrictions",
+      "label": "Dietary Restrictions",
+      "type": "text",
+      "full": true,
+      "placeholder": "e.g. Vegetarian, Gluten-free"
+    },
+    {
+      "name": "workPreferences",
+      "label": "Work Preferences",
+      "type": "textarea",
+      "full": true,
+      "placeholder": "e.g. morning shifts, no weekends"
+    },
+    {
+      "name": "communicationPreference",
+      "label": "Communication Preference",
+      "type": "select",
+      "options": [
+        "Email",
+        "SMS",
+        "Phone",
+        "WhatsApp"
+      ]
+    },
+    {
+      "name": "birthday",
+      "label": "Birthday",
+      "type": "date"
+    },
+    {
+      "name": "personalNotes",
+      "label": "Likes / Dislikes / Notes",
+      "type": "textarea",
+      "full": true,
+      "placeholder": "Likes, dislikes, cultural celebrations and notes"
+    },
+    {
+      "name": "locations",
+      "label": "Medical centre allocation",
+      "type": "locationMulti",
+      "full": true
+    }
+  ],
+  "submitLabel": "Add & Send Invite"
+}

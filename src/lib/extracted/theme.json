@@ -1,0 +1,101 @@
+{
+  "root": {
+    "teal": "#0f3f7a",
+    "teal-2": "#155ea8",
+    "teal-3": "#e2eefb",
+    "ink": "#0b1720",
+    "text": "#31445a",
+    "muted": "#738196",
+    "line": "#e8edf2",
+    "soft": "#f7fafb",
+    "card": "#ffffff",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "success": "#16a34a",
+    "info": "#0f3f7a",
+    "purple": "#7c3aed"
+  },
+  "v34": {
+    "canvas": "#f1f5fa",
+    "card-line": "#cfd9e6",
+    "card-shadow": "0 5px 18px rgba(15,23,42,.055)"
+  },
+  "v33": {
+    "bg": "#f5f8fc",
+    "surface": "#ffffff",
+    "surface-2": "#f8fafc",
+    "line": "#dbe4ef",
+    "ink": "#14243a",
+    "muted": "#64758b",
+    "focus": "#2563eb"
+  },
+  "themes": {
+    "light": {
+      "bg": "#f4f7fb",
+      "surface": "#ffffff",
+      "surface-2": "#f8fafc",
+      "text": "#14243a",
+      "muted": "#687990",
+      "line": "#dfe7f1",
+      "primary": "#0f4c8a",
+      "primary-2": "#1d64aa",
+      "accent": "#0ea5e9",
+      "success": "#15803d",
+      "warning": "#b45309",
+      "danger": "#b91c1c"
+    },
+    "executive": {
+      "bg": "#f2f6fb",
+      "surface": "#ffffff",
+      "surface-2": "#f7fafe",
+      "text": "#10233d",
+      "muted": "#64748b",
+      "line": "#dce6f2",
+      "primary": "#0b3b72",
+      "primary-2": "#155ea8",
+      "accent": "#2563eb",
+      "success": "#047857",
+      "warning": "#b45309",
+      "danger": "#b42318"
+    },
+    "emerald": {
+      "bg": "#f2f8f6",
+      "surface": "#ffffff",
+      "surface-2": "#f4fbf8",
+      "text": "#12352c",
+      "muted": "#617a73",
+      "line": "#d9e9e3",
+      "primary": "#0f766e",
+      "primary-2": "#0d9488",
+      "accent": "#10b981",
+      "success": "#15803d",
+      "warning": "#a16207",
+      "danger": "#b91c1c"
+    },
+    "dark": {
+      "bg": "#07111f",
+      "surface": "#101d2d",
+      "surface-2": "#0b1726",
+      "text": "#f1f5f9",
+      "muted": "#94a3b8",
+      "line": "#26384e",
+      "primary": "#3b82f6",
+      "primary-2": "#60a5fa",
+      "accent": "#38bdf8",
+      "success": "#34d399",
+      "warning": "#fbbf24",
+      "danger": "#fb7185"
+    }
+  },
+  "settingsDefaults": {
+    "weeklyHourLimit": 40,
+    "breakAfterHours": 7,
+    "autoBreakMinutes": 30,
+    "doctorPayDays": "1,16",
+    "ticketP1Minutes": 15,
+    "payrollSource": "Xero",
+    "clinicalSource": "Best Practice",
+    "smsSenderId": "Not configured",
+    "dataRegion": "Australia"
+  }
+}

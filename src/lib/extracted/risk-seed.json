@@ -1,0 +1,101 @@
+[
+  {
+    "id": "R-001",
+    "category": "Compliance Risks",
+    "title": "RACGP evidence gap – emergency trolley review",
+    "severity": "High",
+    "clinic": "Lawnton",
+    "owner": "Quality Lead",
+    "due": "2026-07-15",
+    "progress": 45,
+    "route": "Practice Manager → Operations Director"
+  },
+  {
+    "id": "R-002",
+    "category": "Workforce Risks",
+    "title": "Two CPR certificates expired",
+    "severity": "Critical",
+    "clinic": "Bald Hills",
+    "owner": "HR Coordinator",
+    "due": "2026-07-13",
+    "progress": 20,
+    "route": "HR → Practice Manager"
+  },
+  {
+    "id": "R-003",
+    "category": "Cyber Risks",
+    "title": "Remote access review overdue",
+    "severity": "Medium",
+    "clinic": "All Sites",
+    "owner": "IT Manager",
+    "due": "2026-07-18",
+    "progress": 65,
+    "route": "IT → Director"
+  },
+  {
+    "id": "R-004",
+    "category": "Asset Risks",
+    "title": "Vaccine fridge calibration due",
+    "severity": "High",
+    "clinic": "Woolloongabba",
+    "owner": "Nurse Lead",
+    "due": "2026-07-14",
+    "progress": 60,
+    "route": "Nurse Lead → Practice Manager"
+  },
+  {
+    "id": "R-005",
+    "category": "Financial Risks",
+    "title": "Doctor pay variance pending approval",
+    "severity": "Medium",
+    "clinic": "Chapel Hill",
+    "owner": "Finance Manager",
+    "due": "2026-07-16",
+    "progress": 75,
+    "route": "Finance → Owner"
+  },
+  {
+    "id": "R-006",
+    "category": "Clinical Governance Risks",
+    "title": "Cold-chain exception awaiting disposition",
+    "severity": "High",
+    "clinic": "Forest Lake",
+    "owner": "Responsible Nurse",
+    "due": "2026-07-13",
+    "progress": 35,
+    "route": "Nurse → Quality Lead"
+  },
+  {
+    "id": "R-007",
+    "category": "Compliance Risks",
+    "title": "Policy review overdue – privacy response",
+    "severity": "Medium",
+    "clinic": "All Sites",
+    "owner": "Compliance Lead",
+    "due": "2026-07-20",
+    "progress": 50,
+    "route": "Compliance → Director"
+  },
+  {
+    "id": "R-008",
+    "category": "Workforce Risks",
+    "title": "Reception coverage gap next Monday",
+    "severity": "High",
+    "clinic": "Indooroopilly",
+    "owner": "Practice Manager",
+    "due": "2026-07-14",
+    "progress": 40,
+    "route": "Manager → Operations"
+  },
+  {
+    "id": "R-009",
+    "category": "Asset Risks",
+    "title": "Critical toner stock below PAR",
+    "severity": "Low",
+    "clinic": "Eight Mile Plains",
+    "owner": "Inventory Owner",
+    "due": "2026-07-17",
+    "progress": 80,
+    "route": "Inventory → Practice Manager"
+  }
+]

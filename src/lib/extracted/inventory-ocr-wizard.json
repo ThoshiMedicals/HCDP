@@ -1,0 +1,7 @@
+{
+  "title": "Scan Document / OCR",
+  "tabs": [],
+  "fields": [],
+  "submitLabel": "Save",
+  "sourceHtml": "\n      <div class=\"ocr-box\">\n        <div class=\"ocr-drop\">\n          <div>${icon('sparkles')}</div>\n          <strong>Upload or paste invoice text</strong>\n          <p>For this HTML preview, OCR is simulated locally. Paste invoice line text or choose a file name, then extract rows into inventory fields.</p>\n          <input class=\"input\" type=\"file\" id=\"ocrFile\" accept=\"image/*,.pdf,.txt\" />\n        </div>\n        <div class=\"field full\"><label>OCR text / invoice lines</label><textarea class=\"input\" id=\"ocrText\" placeholder=\"Example: Gloves Small qty 10 batch GLO-102 expiry 2026-09-30\"></textarea></div>\n        <div class=\"grid cols-3\">\n          ${metric('OCR review','Required','file','warning')}\n          ${metric('Duplicate invoice','Checked','alert','info')}\n          ${metric('Inventory update','After review','box','success')}\n        </div>\n      </div>"
+}

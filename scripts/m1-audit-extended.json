@@ -1,0 +1,212 @@
+{
+  "summary": {
+    "total": 39,
+    "working": 25,
+    "localDemo": 8,
+    "backend": 2,
+    "defects": 4
+  },
+  "defects": [
+    "Appearance Dark persists after refresh: theme-dark=false",
+    "Create follow-up: ",
+    "Demo export: ",
+    "Sidebar collapsed persists: data-collapsed=false"
+  ],
+  "rows": [
+    {
+      "name": "Appearance Dark persists after refresh",
+      "status": "Defect found",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Tab My Day",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Tab KPI Scorecard",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Tab Reports",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Tab Command Centre",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Mobile urgent",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Desktop view",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Clinic Operations",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Staffing",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Compliance",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Category Finance & Pay",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Review (finance)",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Review RCA",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Create follow-up",
+      "status": "Defect found",
+      "note": ""
+    },
+    {
+      "name": "Open Full Action",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Audit History section",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Demo export",
+      "status": "Defect found",
+      "note": ""
+    },
+    {
+      "name": "Schedule controls",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Mention User",
+      "status": "Backend required and clearly labelled",
+      "note": ""
+    },
+    {
+      "name": "Attach File",
+      "status": "Backend required and clearly labelled",
+      "note": ""
+    },
+    {
+      "name": "QA state Loading",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA state Error",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA state Data Incomplete",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "QA state Permission",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Sidebar collapsed persists",
+      "status": "Defect found",
+      "note": "data-collapsed=false"
+    },
+    {
+      "name": "Route /dashboard",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /action-inbox",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /risk-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /compliance-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /executive-analytics",
+      "status": "Working",
+      "note": "status=404"
+    },
+    {
+      "name": "Route /emergency-control",
+      "status": "Working",
+      "note": "status=404"
+    },
+    {
+      "name": "Route /tasks",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /checklists",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /staff",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /doctors",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /inventory",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /staff-pay",
+      "status": "Working",
+      "note": "status=404"
+    },
+    {
+      "name": "Route /settings",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "Route /organisation",
+      "status": "Working",
+      "note": "status=200"
+    }
+  ]
+}

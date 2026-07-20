@@ -1,0 +1,47 @@
+{
+  "Reception": [
+    "Reception",
+    "Receptionist"
+  ],
+  "Nursing": [
+    "Nurse",
+    "RN",
+    "Enrolled Nurse"
+  ],
+  "Management": [
+    "Practice Manager",
+    "Operations Manager",
+    "Manager",
+    "Office Manager"
+  ],
+  "Owners": [
+    "Owner",
+    "Director"
+  ],
+  "IT Support": [
+    "IT",
+    "IT Support"
+  ],
+  "Cleaners": [
+    "Cleaner",
+    "Cleaning"
+  ],
+  "Accountant": [
+    "Payroll",
+    "Accountant",
+    "Finance"
+  ],
+  "Administration": [
+    "Administration",
+    "Admin",
+    "Employee"
+  ],
+  "External": [
+    "Contractor",
+    "External"
+  ],
+  "Doctors": [
+    "Doctor",
+    "GP"
+  ]
+}

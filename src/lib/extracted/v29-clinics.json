@@ -1,0 +1,83 @@
+{
+  "Chapel Hill": {
+    "compliance": 97,
+    "risk": 94,
+    "workforce": 95,
+    "training": 97,
+    "inventory": 94,
+    "systems": 98,
+    "operations": 96
+  },
+  "Woolloongabba": {
+    "compliance": 93,
+    "risk": 88,
+    "workforce": 93,
+    "training": 91,
+    "inventory": 92,
+    "systems": 96,
+    "operations": 92
+  },
+  "Bald Hills": {
+    "compliance": 88,
+    "risk": 82,
+    "workforce": 87,
+    "training": 84,
+    "inventory": 91,
+    "systems": 96,
+    "operations": 89
+  },
+  "Cannon Hill": {
+    "compliance": 94,
+    "risk": 91,
+    "workforce": 92,
+    "training": 94,
+    "inventory": 90,
+    "systems": 97,
+    "operations": 93
+  },
+  "Eight Mile Plains": {
+    "compliance": 91,
+    "risk": 88,
+    "workforce": 90,
+    "training": 92,
+    "inventory": 86,
+    "systems": 95,
+    "operations": 90
+  },
+  "Indooroopilly": {
+    "compliance": 89,
+    "risk": 84,
+    "workforce": 86,
+    "training": 90,
+    "inventory": 89,
+    "systems": 95,
+    "operations": 88
+  },
+  "Forest Lake": {
+    "compliance": 86,
+    "risk": 79,
+    "workforce": 88,
+    "training": 89,
+    "inventory": 90,
+    "systems": 94,
+    "operations": 87
+  },
+  "Lawnton": {
+    "compliance": 80,
+    "risk": 72,
+    "workforce": 83,
+    "training": 85,
+    "inventory": 84,
+    "systems": 79,
+    "operations": 81
+  },
+  "Beachmere": {
+    "compliance": 87,
+    "risk": 83,
+    "workforce": 85,
+    "training": 88,
+    "inventory": 88,
+    "systems": 93,
+    "operations": 86
+  }
+}

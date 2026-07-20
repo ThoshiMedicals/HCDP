@@ -1,0 +1,68 @@
+{
+  "title": "Create Task",
+  "tabs": [],
+  "fields": [
+    {
+      "name": "department",
+      "label": "Department",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Accountant",
+        "Administration",
+        "Cleaners",
+        "Doctors",
+        "External",
+        "IT Support",
+        "Management",
+        "Nursing",
+        "Owners",
+        "Reception"
+      ]
+    },
+    {
+      "name": "assignedTo",
+      "label": "Assign To",
+      "type": "personAssignment",
+      "required": true
+    },
+    {
+      "name": "taskTopic",
+      "label": "Task Topic",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. Restock supply room"
+    },
+    {
+      "name": "completionDate",
+      "label": "Completion Date (optional)",
+      "type": "date"
+    },
+    {
+      "name": "taskDescription",
+      "label": "Task Description (optional)",
+      "type": "textarea",
+      "full": true,
+      "placeholder": "Add details or instructions..."
+    },
+    {
+      "name": "importantTask",
+      "label": "Important Task",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "name": "reminderEmail",
+      "label": "Reminders: Email",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "name": "reminderSms",
+      "label": "Reminders: SMS",
+      "type": "checkbox",
+      "default": false
+    }
+  ],
+  "submitLabel": "Create Task"
+}

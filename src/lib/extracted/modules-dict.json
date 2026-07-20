@@ -1,0 +1,275 @@
+{
+  "dashboard": {
+    "label": "Dashboard",
+    "title": "Good morning",
+    "subtitle": "Practice operations at a glance",
+    "icon": "home",
+    "special": true
+  },
+  "actionInbox": {
+    "label": "Action Inbox",
+    "title": "Action Inbox",
+    "subtitle": "Approvals, exceptions and overdue work",
+    "icon": "bell",
+    "special": true
+  },
+  "expiry": {
+    "label": "Expiry Centre",
+    "title": "Expiry Centre",
+    "subtitle": "Inventory, stock, rooms, staff documents and compliance — all in one place",
+    "icon": "calendar",
+    "special": true
+  },
+  "tasks": {
+    "label": "Tasks",
+    "title": "Tasks",
+    "subtitle": "Create, assign and track operational tasks",
+    "icon": "task",
+    "type": "task",
+    "primary": "Create Task"
+  },
+  "checklists": {
+    "label": "Checklists",
+    "title": "Checklists",
+    "subtitle": "Front desk, nursing, accreditation and manager review checklists",
+    "icon": "checklist",
+    "type": "checklist",
+    "primary": "Create Checklist"
+  },
+  "frontdesk": {
+    "label": "Opening / Closing",
+    "title": "Front Desk Opening & Closing",
+    "subtitle": "Roster-linked opening and closing duties for reception/front desk staff",
+    "icon": "checklist",
+    "special": true
+  },
+  "approvals": {
+    "label": "Approvals",
+    "title": "Approvals",
+    "subtitle": "Review workflow exceptions and approvals",
+    "icon": "shield",
+    "special": true
+  },
+  "incidents": {
+    "label": "Incidents",
+    "title": "Incidents & Risk",
+    "subtitle": "Report, investigate and close operational risks",
+    "icon": "alert",
+    "type": "incident",
+    "primary": "Report Incident"
+  },
+  "staff": {
+    "label": "Staff",
+    "title": "Staff Management",
+    "subtitle": "Create, manage and track staff members",
+    "icon": "users",
+    "type": "staff",
+    "primary": "Add Staff"
+  },
+  "doctors": {
+    "label": "Doctors",
+    "title": "Doctor Management",
+    "subtitle": "Contractor profile, pay settings and readiness",
+    "icon": "doctor",
+    "type": "doctor",
+    "primary": "Add Doctor"
+  },
+  "hrDocs": {
+    "label": "HR Documents",
+    "title": "HR Documents",
+    "subtitle": "Track registrations, certificates and employment documents",
+    "icon": "file",
+    "type": "hrDoc",
+    "primary": "Add Document"
+  },
+  "training": {
+    "label": "Training",
+    "title": "Training & Permissions",
+    "subtitle": "Training records, expiry and permission gates",
+    "icon": "chart",
+    "type": "training",
+    "primary": "Create Training"
+  },
+  "roster": {
+    "label": "Roster",
+    "title": "Roster",
+    "subtitle": "Build weekly rosters across locations",
+    "icon": "calendar",
+    "type": "roster",
+    "primary": "Add Shift"
+  },
+  "timeclock": {
+    "label": "Time Clock",
+    "title": "Time Clock",
+    "subtitle": "Clock events, breaks and exceptions",
+    "icon": "task",
+    "type": "timeclock",
+    "primary": "Add Time Entry"
+  },
+  "staffpay": {
+    "label": "Staff Pay",
+    "title": "Staff Pay",
+    "subtitle": "Prepare approved time for Xero payroll",
+    "icon": "pay",
+    "type": "staffpay",
+    "primary": "Create Pay Period"
+  },
+  "doctorpay": {
+    "label": "Doctor Pay",
+    "title": "Doctor Pay",
+    "subtitle": "Best Practice-derived pay runs and payslips",
+    "icon": "pay",
+    "type": "doctorpay",
+    "primary": "Create Pay Run"
+  },
+  "bbpip": {
+    "label": "BBPIP",
+    "title": "BBPIP & MBS Forecast",
+    "subtitle": "Estimate, split and reconcile BBPIP payments",
+    "icon": "chart",
+    "type": "bbpip",
+    "primary": "Create Estimate"
+  },
+  "rooms": {
+    "label": "Rooms",
+    "title": "Rooms",
+    "subtitle": "Manage rooms and equipment readiness",
+    "icon": "room",
+    "type": "room",
+    "primary": "Add Room"
+  },
+  "inventory": {
+    "label": "Inventory",
+    "title": "Inventory",
+    "subtitle": "Track asset inventory and expiry items",
+    "icon": "box",
+    "type": "inventory",
+    "primary": "Add Inventory Item"
+  },
+  "stock": {
+    "label": "Stock",
+    "title": "Stock",
+    "subtitle": "Manage consumables, vaccines and stock levels",
+    "icon": "box",
+    "type": "stock",
+    "primary": "Add Stock Item"
+  },
+  "equipment": {
+    "label": "Equipment",
+    "title": "Equipment",
+    "subtitle": "Calibration, tagging and equipment lifecycle",
+    "icon": "box",
+    "type": "equipment",
+    "primary": "Add Equipment"
+  },
+  "website": {
+    "label": "Website Monitoring",
+    "title": "Website Monitoring",
+    "subtitle": "Uptime, SSL expiry and recovery tracking",
+    "icon": "globe",
+    "type": "website",
+    "primary": "Add Website"
+  },
+  "accreditation": {
+    "label": "Accreditation",
+    "title": "Accreditation Evidence",
+    "subtitle": "AGPAL/RACGP evidence, checklists and readiness",
+    "icon": "shield",
+    "type": "accreditation",
+    "primary": "Add Evidence"
+  },
+  "qi": {
+    "label": "QI / PDSA",
+    "title": "QI / PDSA Register",
+    "subtitle": "Plan, Do, Study, Act improvement activities",
+    "icon": "chart",
+    "type": "qi",
+    "primary": "Add QI Activity"
+  },
+  "policies": {
+    "label": "Policies",
+    "title": "Policy Library",
+    "subtitle": "Document control, versions and review dates",
+    "icon": "file",
+    "type": "policy",
+    "primary": "Add Policy"
+  },
+  "audit": {
+    "label": "Audit Log",
+    "title": "Audit Log",
+    "subtitle": "Sensitive actions and export history",
+    "icon": "shield",
+    "special": true
+  },
+  "memos": {
+    "label": "Memos & News",
+    "title": "Memos & News",
+    "subtitle": "Publish announcements and staff acknowledgements",
+    "icon": "memo",
+    "type": "memo",
+    "primary": "Create Memo"
+  },
+  "commbook": {
+    "label": "Communication Book",
+    "title": "Digital Communication Book",
+    "subtitle": "Team notes with read visibility",
+    "icon": "chat",
+    "type": "commbook",
+    "primary": "Add Note"
+  },
+  "email": {
+    "label": "Email Campaigns",
+    "title": "Email Campaigns",
+    "subtitle": "Approved non-clinical email campaigns",
+    "icon": "memo",
+    "type": "email",
+    "primary": "Create Email"
+  },
+  "sms": {
+    "label": "SMS Campaigns",
+    "title": "SMS Campaigns",
+    "subtitle": "Approved non-clinical SMS campaigns",
+    "icon": "chat",
+    "type": "sms",
+    "primary": "Create SMS"
+  },
+  "noticeboards": {
+    "label": "Noticeboards",
+    "title": "Noticeboards",
+    "subtitle": "Waiting room and team screen content",
+    "icon": "globe",
+    "type": "noticeboard",
+    "primary": "Create Noticeboard"
+  },
+  "remote": {
+    "label": "Remote Access",
+    "title": "Remote Access",
+    "subtitle": "Approved remote support and access sessions",
+    "icon": "lock",
+    "type": "remote",
+    "primary": "Request Access"
+  },
+  "vault": {
+    "label": "Password Vault",
+    "title": "Password Vault",
+    "subtitle": "Controlled secret access with reveal logging",
+    "icon": "lock",
+    "type": "vault",
+    "primary": "Add Secret"
+  },
+  "cameras": {
+    "label": "Cameras",
+    "title": "Security Cameras",
+    "subtitle": "Camera register, access approval and export governance",
+    "icon": "camera",
+    "type": "camera",
+    "primary": "Request Camera Access"
+  },
+  "settings": {
+    "label": "Settings",
+    "title": "Settings",
+    "subtitle": "Locations, roles and rules engine",
+    "icon": "shield",
+    "special": true
+  }
+}

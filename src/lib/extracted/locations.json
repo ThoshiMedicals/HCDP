@@ -1,0 +1,101 @@
+[
+  {
+    "id": "loc_woolloongabba",
+    "name": "Woolloongabba Medical Centre",
+    "shortName": "Woolloongabba",
+    "phone": "07 3217 3344",
+    "email": "reception@gabbamedicalcentre.com.au",
+    "address": "468 Vulture Street, Woolloongabba QLD 4102",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_baldhills",
+    "name": "Bald Hills Doctors",
+    "shortName": "Bald Hills",
+    "phone": "07 3261 9117",
+    "email": "reception@baldhillsdoctors.com.au",
+    "address": "Bald Hills QLD",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_cannonhill",
+    "name": "Cannon Hill Family Doctors",
+    "shortName": "Cannon Hill",
+    "phone": "",
+    "email": "",
+    "address": "17/1177 Wynnum Rd, Cannon Hill QLD 4170",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_eightmile",
+    "name": "Eight Mile Plains Family Doctors",
+    "shortName": "Eight Mile Plains",
+    "phone": "",
+    "email": "",
+    "address": "Shop 7, Warrigal Square, 261 Warrigal Rd, Eight Mile Plains QLD 4113",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_chapelhill",
+    "name": "Chapel Hill Family Doctors",
+    "shortName": "Chapel Hill",
+    "phone": "07 3172 9910",
+    "email": "reception@chapelhilldoctors.com.au",
+    "address": "2 Kirkdale Road, Chapel Hill QLD 4069",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_indooroopilly",
+    "name": "Healthcare Doctors Indooroopilly",
+    "shortName": "Indooroopilly",
+    "phone": "07 3519 4666",
+    "email": "info.indooroopilly@healthcaredoctors.com.au",
+    "address": "11 Musgrave Rd, Indooroopilly QLD 4068",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_forestlake",
+    "name": "Forest Lake Doctors",
+    "shortName": "Forest Lake",
+    "phone": "07 3278 8877",
+    "email": "",
+    "address": "Forest Lake QLD",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_lawnton",
+    "name": "Lawnton Country Market Medical Centre",
+    "shortName": "Lawnton",
+    "phone": "07 3205 8119",
+    "email": "reception@lawntonmedicals.com.au",
+    "address": "Lawnton QLD",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  },
+  {
+    "id": "loc_beachmere",
+    "name": "Beachmere Medical Centre",
+    "shortName": "Beachmere",
+    "phone": "",
+    "email": "",
+    "address": "Beachmere QLD",
+    "manager": "",
+    "publicHolidayRegion": "Queensland",
+    "status": "Active"
+  }
+]

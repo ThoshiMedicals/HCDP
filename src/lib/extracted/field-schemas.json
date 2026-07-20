@@ -1,0 +1,3125 @@
+{
+  "locations": [
+    {
+      "name": "name",
+      "label": "Clinic name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "shortName",
+      "label": "Short name",
+      "type": "text"
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "text"
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email"
+    },
+    {
+      "name": "address",
+      "label": "Address",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "manager",
+      "label": "Manager",
+      "type": "text"
+    },
+    {
+      "name": "publicHolidayRegion",
+      "label": "Public holiday region",
+      "type": "select",
+      "options": [
+        "Queensland",
+        "New South Wales",
+        "Victoria",
+        "Other"
+      ]
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Inactive"
+      ],
+      "default": "Active"
+    }
+  ],
+  "tasks": [
+    {
+      "name": "title",
+      "label": "Task title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "IT",
+        "Facility",
+        "Accreditation",
+        "HR",
+        "Finance",
+        "Cleaning",
+        "Supplier",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "priority",
+      "label": "Priority",
+      "type": "select",
+      "options": [
+        "P1 Emergency",
+        "P2 Urgent",
+        "P3 Routine",
+        "P4 Scheduled"
+      ],
+      "required": true
+    },
+    {
+      "name": "assignedTo",
+      "label": "Assigned to",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "dueDate",
+      "label": "Due date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Pending",
+        "In progress",
+        "Waiting",
+        "Done"
+      ],
+      "default": "Pending"
+    }
+  ],
+  "checklists": [
+    {
+      "name": "name",
+      "label": "Checklist name",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "workflowScope",
+      "label": "Workflow group",
+      "type": "select",
+      "options": [
+        "Front Desk",
+        "Nurse Accreditation Checklist",
+        "Manager Accreditation Review",
+        "General Operations"
+      ],
+      "default": "General Operations"
+    },
+    {
+      "name": "frequency",
+      "label": "Frequency",
+      "type": "select",
+      "options": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly",
+        "Yearly",
+        "Custom"
+      ],
+      "required": true
+    },
+    {
+      "name": "type",
+      "label": "Type",
+      "type": "select",
+      "options": [
+        "General",
+        "Opening",
+        "Closing",
+        "Room Setup",
+        "Nursing",
+        "Accreditation",
+        "Cold Chain",
+        "Manager"
+      ],
+      "required": true
+    },
+    {
+      "name": "assignment",
+      "label": "Assignment",
+      "type": "select",
+      "options": [
+        "Group",
+        "Individual"
+      ],
+      "required": true
+    },
+    {
+      "name": "responsibleRole",
+      "label": "Responsible role",
+      "type": "select",
+      "options": [
+        "Reception",
+        "Nurse",
+        "Practice Manager",
+        "Cleaner",
+        "Doctor",
+        "Mixed team",
+        "Other"
+      ],
+      "default": "Other"
+    },
+    {
+      "name": "assignedTo",
+      "label": "Assigned to",
+      "type": "text"
+    },
+    {
+      "name": "managerReviewRequired",
+      "label": "Manager review required",
+      "type": "checkbox"
+    },
+    {
+      "name": "managerReviewStatus",
+      "label": "Manager review status",
+      "type": "select",
+      "options": [
+        "Not submitted",
+        "Pending review",
+        "Reviewed",
+        "Rework required",
+        "Manager-owned"
+      ],
+      "default": "Not submitted"
+    },
+    {
+      "name": "sourceDocument",
+      "label": "Source document / SOP",
+      "type": "text",
+      "full": true
+    },
+    {
+      "name": "clockoutRule",
+      "label": "Roster / clock-out rule",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "dueDate",
+      "label": "Next due date",
+      "type": "date"
+    },
+    {
+      "name": "items",
+      "label": "Checklist items - one per line",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "evidenceNote",
+      "label": "Evidence / completion note",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Active",
+        "Paused",
+        "Submitted",
+        "Reviewed",
+        "Rework Required"
+      ],
+      "default": "Active"
+    }
+  ],
+  "incidents": [
+    {
+      "name": "title",
+      "label": "Incident title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "Clinical governance",
+        "WHS",
+        "IT",
+        "Facility",
+        "Privacy",
+        "Cold Chain",
+        "Complaint",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "severity",
+      "label": "Severity",
+      "type": "select",
+      "options": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "required": true
+    },
+    {
+      "name": "immediateAction",
+      "label": "Immediate action taken",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "rca",
+      "label": "RCA summary",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "capa",
+      "label": "CAPA actions",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "openDisclosure",
+      "label": "Open disclosure required",
+      "type": "select",
+      "options": [
+        "No",
+        "Yes",
+        "To be assessed"
+      ]
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Reported",
+        "Triage",
+        "RCA Required",
+        "CAPA Open",
+        "Closed"
+      ],
+      "default": "Reported"
+    },
+    {
+      "name": "openDisclosureBy",
+      "label": "Open disclosure completed by",
+      "type": "text"
+    },
+    {
+      "name": "openDisclosureDate",
+      "label": "Open disclosure date",
+      "type": "date"
+    },
+    {
+      "name": "riskRegisterLink",
+      "label": "Risk register link / review note",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "effectivenessReview",
+      "label": "CAPA effectiveness review",
+      "type": "textarea",
+      "full": true
+    }
+  ],
+  "staff": [
+    {
+      "name": "name",
+      "label": "Full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "role",
+      "label": "Role",
+      "type": "select",
+      "options": [
+        "Reception",
+        "Nurse",
+        "Practice Manager",
+        "Operations Manager",
+        "Payroll",
+        "IT",
+        "Cleaner",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "sourceDesignation",
+      "label": "Original designation",
+      "type": "text"
+    },
+    {
+      "name": "employmentType",
+      "label": "Employment type",
+      "type": "select",
+      "options": [
+        "Casual",
+        "Permanent",
+        "Part-time",
+        "Full-time",
+        "Contractor"
+      ],
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "contactNo",
+      "label": "Contact number",
+      "type": "text"
+    },
+    {
+      "name": "locations",
+      "label": "Medical centre assignment",
+      "type": "locationMulti",
+      "full": true
+    },
+    {
+      "name": "maxWeeklyHours",
+      "label": "Max weekly hours",
+      "type": "number",
+      "default": 40
+    },
+    {
+      "name": "payRate",
+      "label": "Base hourly rate",
+      "type": "number"
+    },
+    {
+      "name": "cprExpiry",
+      "label": "CPR expiry",
+      "type": "date"
+    },
+    {
+      "name": "immunisationStatus",
+      "label": "Immunisation status",
+      "type": "select",
+      "options": [
+        "Not set",
+        "Recorded",
+        "Refused",
+        "Needs update"
+      ],
+      "default": "Not set"
+    },
+    {
+      "name": "bankReady",
+      "label": "Bank details verified",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Pending",
+        "Active",
+        "Suspended",
+        "Archived"
+      ],
+      "default": "Pending"
+    },
+    {
+      "name": "awardClassification",
+      "label": "Award classification / pay point",
+      "type": "text"
+    },
+    {
+      "name": "payRuleSet",
+      "label": "Pay rule set",
+      "type": "text"
+    },
+    {
+      "name": "accessLifecycle",
+      "label": "Access lifecycle",
+      "type": "select",
+      "options": [
+        "Onboarding",
+        "Active",
+        "Suspended",
+        "Terminated",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "doctors": [
+    {
+      "name": "name",
+      "label": "Doctor / provider name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "abn",
+      "label": "ABN",
+      "type": "text"
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email"
+    },
+    {
+      "name": "contractNumber",
+      "label": "Contract number",
+      "type": "text"
+    },
+    {
+      "name": "contractStart",
+      "label": "Contract start date",
+      "type": "date"
+    },
+    {
+      "name": "contractEnd",
+      "label": "Contract end date",
+      "type": "date"
+    },
+    {
+      "name": "company",
+      "label": "Company / trust",
+      "type": "text",
+      "full": true
+    },
+    {
+      "name": "mobile",
+      "label": "Mobile",
+      "type": "text"
+    },
+    {
+      "name": "homePhone",
+      "label": "Home phone",
+      "type": "text"
+    },
+    {
+      "name": "locations",
+      "label": "Assigned medical centres",
+      "type": "locationMulti",
+      "full": true
+    },
+    {
+      "name": "publicLocation",
+      "label": "Public website match",
+      "type": "text",
+      "full": true
+    },
+    {
+      "name": "publicSource",
+      "label": "Public source / notes",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "gstRegistered",
+      "label": "GST registered",
+      "type": "checkbox"
+    },
+    {
+      "name": "contractRate",
+      "label": "Facility fee rate %",
+      "type": "number",
+      "default": 30
+    },
+    {
+      "name": "bankReady",
+      "label": "Bank details verified",
+      "type": "checkbox"
+    },
+    {
+      "name": "ahpraExpiry",
+      "label": "AHPRA expiry",
+      "type": "date"
+    },
+    {
+      "name": "coveringDoctor",
+      "label": "Covering doctor during leave",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Pending",
+        "Active",
+        "Suspended",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "hrDocs": [
+    {
+      "name": "personName",
+      "label": "Person name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "personType",
+      "label": "Person type",
+      "type": "select",
+      "options": [
+        "Staff",
+        "Doctor",
+        "Contractor"
+      ],
+      "required": true
+    },
+    {
+      "name": "docType",
+      "label": "Document type",
+      "type": "select",
+      "options": [
+        "AHPRA",
+        "CPR",
+        "Contract",
+        "Induction",
+        "Immunisation",
+        "Performance appraisal",
+        "Police check",
+        "Insurance",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "expiryDate",
+      "label": "Expiry / review date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "owner",
+      "label": "Responsible manager",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Pending review",
+        "Expired",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "training": [
+    {
+      "name": "title",
+      "label": "Training title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "audience",
+      "label": "Audience",
+      "type": "select",
+      "options": [
+        "All staff",
+        "Reception",
+        "Nurses",
+        "Managers",
+        "Payroll",
+        "Doctors",
+        "IT",
+        "Contractors"
+      ],
+      "required": true
+    },
+    {
+      "name": "permissionGate",
+      "label": "Permission gate",
+      "type": "select",
+      "options": [
+        "None",
+        "Doctor Pay",
+        "Staff Pay",
+        "Cameras",
+        "Password Vault",
+        "Remote Access",
+        "SMS/Email",
+        "Best Practice reports"
+      ],
+      "default": "None"
+    },
+    {
+      "name": "expiryDate",
+      "label": "Expiry date",
+      "type": "date"
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Assigned",
+        "Completed",
+        "Verified",
+        "Expired"
+      ],
+      "default": "Draft"
+    },
+    {
+      "name": "permissionControlled",
+      "label": "Controls sensitive permission",
+      "type": "checkbox"
+    },
+    {
+      "name": "controlledModule",
+      "label": "Controlled module",
+      "type": "select",
+      "options": [
+        "Best Practice workflow",
+        "SMS/Email",
+        "Vaccine/Cold Chain",
+        "Incident Investigation",
+        "Camera Access",
+        "Doctor Pay",
+        "Password Vault",
+        "Remote Access",
+        "Other"
+      ],
+      "default": "Other"
+    },
+    {
+      "name": "completionStatus",
+      "label": "Completion status",
+      "type": "select",
+      "options": [
+        "Assigned",
+        "In progress",
+        "Completed",
+        "Failed",
+        "Expired"
+      ],
+      "default": "Assigned"
+    },
+    {
+      "name": "overrideExpiry",
+      "label": "Temporary override expiry",
+      "type": "date"
+    }
+  ],
+  "roster": [
+    {
+      "name": "staffName",
+      "label": "Staff member",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "role",
+      "label": "Role required",
+      "type": "select",
+      "options": [
+        "Reception",
+        "Nurse",
+        "Manager",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "date",
+      "label": "Shift date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "start",
+      "label": "Start time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "end",
+      "label": "End time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "openClose",
+      "label": "Responsibility",
+      "type": "select",
+      "options": [
+        "None",
+        "Opening",
+        "Closing",
+        "Opening & Closing"
+      ],
+      "default": "None"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Published",
+        "Changed",
+        "Locked"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "timeclock": [
+    {
+      "name": "staffName",
+      "label": "Staff member",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "date",
+      "label": "Date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "clockIn",
+      "label": "Clock in",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "clockOut",
+      "label": "Clock out",
+      "type": "time"
+    },
+    {
+      "name": "breakRemoved",
+      "label": "Break not taken",
+      "type": "checkbox"
+    },
+    {
+      "name": "checklistStatus",
+      "label": "Checklist status",
+      "type": "select",
+      "options": [
+        "Completed",
+        "Incomplete with reason",
+        "Not required"
+      ],
+      "default": "Completed"
+    },
+    {
+      "name": "reason",
+      "label": "Exception reason",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Submitted",
+        "Exception",
+        "Approved",
+        "Rejected",
+        "Locked"
+      ],
+      "default": "Submitted"
+    },
+    {
+      "name": "deviceIp",
+      "label": "Device / IP",
+      "type": "text"
+    },
+    {
+      "name": "approvedIpStatus",
+      "label": "Approved IP/device status",
+      "type": "select",
+      "options": [
+        "Approved",
+        "Unknown",
+        "Blocked"
+      ],
+      "default": "Unknown"
+    },
+    {
+      "name": "missedClockType",
+      "label": "Missed clock correction",
+      "type": "select",
+      "options": [
+        "None",
+        "Missed clock-in",
+        "Missed clock-out",
+        "Both"
+      ],
+      "default": "None"
+    },
+    {
+      "name": "acceptedAdjustedTime",
+      "label": "Accepted adjusted time",
+      "type": "text"
+    }
+  ],
+  "staffpay": [
+    {
+      "name": "periodStart",
+      "label": "Period start",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "periodEnd",
+      "label": "Period end",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "payrollContact",
+      "label": "Payroll contact",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Review",
+        "Approved",
+        "Exported",
+        "Locked"
+      ],
+      "default": "Draft"
+    },
+    {
+      "name": "notes",
+      "label": "Notes",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "xeroEarningsMapping",
+      "label": "Xero earnings mapping / categories",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "payrollAdvisorValidated",
+      "label": "Payroll advisor validation recorded",
+      "type": "checkbox"
+    },
+    {
+      "name": "correctionWorkflow",
+      "label": "Correction workflow note",
+      "type": "textarea",
+      "full": true
+    }
+  ],
+  "doctorpay": [
+    {
+      "name": "doctorName",
+      "label": "Doctor name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "from",
+      "label": "Period from",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "to",
+      "label": "Period to",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "totalBilling",
+      "label": "Total billing from Best Practice",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "rate",
+      "label": "Facility fee rate %",
+      "type": "number",
+      "required": true,
+      "default": 30
+    },
+    {
+      "name": "gstMode",
+      "label": "GST treatment",
+      "type": "select",
+      "options": [
+        "GST on facility fee",
+        "No GST",
+        "Contract-specific review"
+      ],
+      "required": true
+    },
+    {
+      "name": "adjustment",
+      "label": "Adjustment amount",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "adjustmentReason",
+      "label": "Adjustment reason",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "bpReportUploaded",
+      "label": "BP support report attached",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "BP Sync",
+        "Reconciled",
+        "Approved",
+        "Paid"
+      ],
+      "default": "Draft"
+    },
+    {
+      "name": "bpVariance",
+      "label": "BP reconciliation variance",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "bpTransactionRows",
+      "label": "BP transaction support rows - one row per line",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "paymentStatus",
+      "label": "Payment status",
+      "type": "select",
+      "options": [
+        "Not paid",
+        "Payment allocated",
+        "Paid outside portal",
+        "Reversal / correction required"
+      ],
+      "default": "Not paid"
+    },
+    {
+      "name": "bpSyncStatus",
+      "label": "BP sync status",
+      "type": "select",
+      "options": [
+        "Not synced",
+        "Manual sync",
+        "Scheduled sync",
+        "Failed sync",
+        "Reconciled"
+      ],
+      "default": "Not synced"
+    },
+    {
+      "name": "rateVersion",
+      "label": "Contract/rate version",
+      "type": "text",
+      "default": "Current"
+    },
+    {
+      "name": "approvedBy",
+      "label": "Pay run approved by",
+      "type": "text"
+    },
+    {
+      "name": "payslipEmailStatus",
+      "label": "Payslip email status",
+      "type": "select",
+      "options": [
+        "Not sent",
+        "Queued",
+        "Sent",
+        "Failed"
+      ],
+      "default": "Not sent"
+    }
+  ],
+  "bbpip": [
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "quarter",
+      "label": "Quarter",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. 2026 Q3"
+    },
+    {
+      "name": "eligibleValue",
+      "label": "Eligible bulk-billed value",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "excludedValue",
+      "label": "Excluded / mixed-billing value",
+      "type": "number",
+      "default": 0
+    },
+    {
+      "name": "itemVersion",
+      "label": "MBS item master version",
+      "type": "text",
+      "default": "Current"
+    },
+    {
+      "name": "finalAdvice",
+      "label": "Final Services Australia advice received",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Estimate",
+        "Reviewed",
+        "Reconciled",
+        "Closed"
+      ],
+      "default": "Estimate"
+    },
+    {
+      "name": "clinicParticipation",
+      "label": "Clinic participation status",
+      "type": "select",
+      "options": [
+        "Registered / opted in",
+        "Not registered",
+        "Under review"
+      ],
+      "default": "Under review"
+    },
+    {
+      "name": "mymedicareStatus",
+      "label": "MyMedicare / Organisation Register",
+      "type": "select",
+      "options": [
+        "Verified",
+        "Pending",
+        "Not recorded"
+      ],
+      "default": "Not recorded"
+    },
+    {
+      "name": "healthdirectSignage",
+      "label": "Healthdirect / signage evidence stored",
+      "type": "checkbox"
+    },
+    {
+      "name": "mixedBillingFlag",
+      "label": "Mixed billing / non-bulk-billed exception detected",
+      "type": "checkbox"
+    },
+    {
+      "name": "correctionStatus",
+      "label": "Correction status",
+      "type": "select",
+      "options": [
+        "Not required",
+        "Correction pending",
+        "Correction completed",
+        "Manual review"
+      ],
+      "default": "Not required"
+    },
+    {
+      "name": "actualPaymentAdvice",
+      "label": "Actual final payment advice amount",
+      "type": "number"
+    },
+    {
+      "name": "reconciledBy",
+      "label": "Reconciled by",
+      "type": "text"
+    },
+    {
+      "name": "eligibleItemRows",
+      "label": "Eligible MBS item rows / item master notes",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "excludedRows",
+      "label": "Excluded/private/WorkCover/non-Medicare rows",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "finalReconciliationNote",
+      "label": "Final reconciliation note",
+      "type": "textarea",
+      "full": true
+    }
+  ],
+  "rooms": [
+    {
+      "name": "name",
+      "label": "Room name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "type",
+      "label": "Room type",
+      "type": "select",
+      "options": [
+        "Consult room",
+        "Treatment room",
+        "Pathology",
+        "Reception",
+        "Storage",
+        "Admin",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "responsiblePerson",
+      "label": "Responsible person",
+      "type": "text"
+    },
+    {
+      "name": "reviewDate",
+      "label": "Review date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Needs setup",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "inventory": [
+    {
+      "name": "name",
+      "label": "Item name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "IT asset",
+        "Medical equipment",
+        "Furniture",
+        "Camera/NVR",
+        "Fridge",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "serial",
+      "label": "Serial / asset ID",
+      "type": "text"
+    },
+    {
+      "name": "expiryDate",
+      "label": "Expiry date",
+      "type": "date"
+    },
+    {
+      "name": "calibrationDue",
+      "label": "Calibration due",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Needs review",
+        "Archived"
+      ],
+      "default": "Active"
+    },
+    {
+      "name": "qty",
+      "label": "Quantity",
+      "type": "number"
+    },
+    {
+      "name": "batch",
+      "label": "Batch / invoice",
+      "type": "text"
+    },
+    {
+      "name": "invoiceNumber",
+      "label": "Invoice number",
+      "type": "text"
+    },
+    {
+      "name": "supplier",
+      "label": "Supplier",
+      "type": "text"
+    },
+    {
+      "name": "ocrStatus",
+      "label": "OCR status",
+      "type": "select",
+      "options": [
+        "Manual entry",
+        "OCR Review",
+        "Confirmed",
+        "Corrected"
+      ],
+      "default": "Manual entry"
+    },
+    {
+      "name": "electricalTestDue",
+      "label": "Electrical tag due",
+      "type": "date"
+    },
+    {
+      "name": "parMin",
+      "label": "PAR min",
+      "type": "number"
+    },
+    {
+      "name": "parMax",
+      "label": "PAR max",
+      "type": "number"
+    },
+    {
+      "name": "reviewNote",
+      "label": "Review / anomaly note",
+      "type": "textarea",
+      "full": true
+    }
+  ],
+  "stock": [
+    {
+      "name": "name",
+      "label": "Stock item",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "Drs Bag",
+        "Drugs",
+        "Consumables",
+        "Vaccines",
+        "Reusable",
+        "Samples",
+        "PPE",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "qty",
+      "label": "Quantity",
+      "type": "number",
+      "default": 1
+    },
+    {
+      "name": "parMin",
+      "label": "PAR min",
+      "type": "number",
+      "default": 1
+    },
+    {
+      "name": "parMax",
+      "label": "PAR max",
+      "type": "number",
+      "default": 10
+    },
+    {
+      "name": "batch",
+      "label": "Batch / invoice",
+      "type": "text"
+    },
+    {
+      "name": "expiryDate",
+      "label": "Expiry date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Reorder",
+        "Expired",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "equipment": [
+    {
+      "name": "name",
+      "label": "Equipment name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "room",
+      "label": "Room",
+      "type": "text"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "Calibration",
+        "Electrical Test",
+        "Medical equipment",
+        "IT",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "calibrationDue",
+      "label": "Calibration due",
+      "type": "date"
+    },
+    {
+      "name": "electricalTestDue",
+      "label": "Electrical test due",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Due soon",
+        "Expired",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "website": [
+    {
+      "name": "name",
+      "label": "Website name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "url",
+      "label": "URL",
+      "type": "url",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "expectedText",
+      "label": "Expected page text",
+      "type": "text"
+    },
+    {
+      "name": "sslExpiry",
+      "label": "SSL expiry date",
+      "type": "date"
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Not checked",
+        "Healthy",
+        "Down",
+        "SSL expiring",
+        "Recovered"
+      ],
+      "default": "Not checked"
+    }
+  ],
+  "accreditation": [
+    {
+      "name": "title",
+      "label": "Evidence title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "standard",
+      "label": "Standard / criterion",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "dueDate",
+      "label": "Due date",
+      "type": "date"
+    },
+    {
+      "name": "reviewDate",
+      "label": "Review date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Assigned",
+        "Evidence Required",
+        "Under Review",
+        "Ready",
+        "Archived"
+      ],
+      "default": "Assigned"
+    }
+  ],
+  "qi": [
+    {
+      "name": "title",
+      "label": "QI activity",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "area",
+      "label": "QI area",
+      "type": "select",
+      "options": [
+        "Clinical",
+        "Admin",
+        "Operational",
+        "Compliance",
+        "Finance"
+      ],
+      "required": true
+    },
+    {
+      "name": "goal",
+      "label": "SMART goal",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "measure",
+      "label": "Measure",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "owner",
+      "label": "Lead",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "PDSA stage",
+      "type": "select",
+      "options": [
+        "Plan",
+        "Do",
+        "Study",
+        "Act",
+        "Closed"
+      ],
+      "default": "Plan"
+    }
+  ],
+  "policies": [
+    {
+      "name": "title",
+      "label": "Policy title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "version",
+      "label": "Version",
+      "type": "text",
+      "required": true,
+      "default": "1.0"
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "text"
+    },
+    {
+      "name": "reviewDate",
+      "label": "Next review date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Published",
+        "Superseded",
+        "Archived"
+      ],
+      "default": "Draft"
+    },
+    {
+      "name": "documentKind",
+      "label": "Document kind",
+      "type": "select",
+      "options": [
+        "Policy",
+        "Procedure",
+        "Template",
+        "Form",
+        "Checklist template",
+        "PDF output template"
+      ],
+      "default": "Policy"
+    },
+    {
+      "name": "effectiveDate",
+      "label": "Effective date",
+      "type": "date"
+    },
+    {
+      "name": "publishScope",
+      "label": "Publish scope",
+      "type": "select",
+      "options": [
+        "Master only",
+        "Selected locations",
+        "All locations"
+      ],
+      "default": "Master only"
+    },
+    {
+      "name": "publishedLocations",
+      "label": "Published locations",
+      "type": "locationMulti",
+      "full": true
+    },
+    {
+      "name": "replicationChoice",
+      "label": "Replication choice",
+      "type": "select",
+      "options": [
+        "Do not replicate",
+        "Replicate to selected clinics",
+        "Replicate to all linked clinics"
+      ],
+      "default": "Do not replicate"
+    },
+    {
+      "name": "rollbackReason",
+      "label": "Rollback / reissue reason",
+      "type": "textarea",
+      "full": true
+    }
+  ],
+  "memos": [
+    {
+      "name": "title",
+      "label": "Memo title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "audience",
+      "label": "Audience",
+      "type": "select",
+      "options": [
+        "All staff",
+        "Reception",
+        "Nurses",
+        "Doctors",
+        "Managers",
+        "Payroll",
+        "IT"
+      ],
+      "required": true
+    },
+    {
+      "name": "mandatory",
+      "label": "Mandatory acknowledgement",
+      "type": "checkbox"
+    },
+    {
+      "name": "body",
+      "label": "Message",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Published",
+        "Archived"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "commbook": [
+    {
+      "name": "note",
+      "label": "Note",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "visibility",
+      "label": "Visibility",
+      "type": "select",
+      "options": [
+        "All staff",
+        "Managers only",
+        "Location only"
+      ],
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Visible",
+        "Archived"
+      ],
+      "default": "Visible"
+    }
+  ],
+  "email": [
+    {
+      "name": "name",
+      "label": "Campaign name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "audience",
+      "label": "Audience / segment",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "body",
+      "label": "Email body",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "scheduledAt",
+      "label": "Scheduled date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Review",
+        "Approved",
+        "Scheduled",
+        "Sent",
+        "Blocked"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "sms": [
+    {
+      "name": "name",
+      "label": "SMS campaign name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "audience",
+      "label": "Audience / segment",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "message",
+      "label": "SMS message",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "scheduledAt",
+      "label": "Scheduled date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Review",
+        "Approved",
+        "Scheduled",
+        "Sent",
+        "Blocked"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "noticeboards": [
+    {
+      "name": "title",
+      "label": "Notice title",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "screen",
+      "label": "Screen / location",
+      "type": "text"
+    },
+    {
+      "name": "content",
+      "label": "Content",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Approved",
+        "Published",
+        "Archived"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "remote": [
+    {
+      "name": "system",
+      "label": "System / device",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "user",
+      "label": "Requesting user",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "reason",
+      "label": "Reason",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "expiresAt",
+      "label": "Access expiry",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Requested",
+        "Approved",
+        "Active",
+        "Closed",
+        "Reviewed"
+      ],
+      "default": "Requested"
+    }
+  ],
+  "vault": [
+    {
+      "name": "system",
+      "label": "System",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "username",
+      "label": "Username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "secret",
+      "label": "Secret",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "owner",
+      "label": "Owner",
+      "type": "text"
+    },
+    {
+      "name": "reviewDate",
+      "label": "Review date",
+      "type": "date"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Needs review",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "cameras": [
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "zone",
+      "label": "Camera zone",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "requester",
+      "label": "Requester",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "accessType",
+      "label": "Access type",
+      "type": "select",
+      "options": [
+        "Live view",
+        "Recording review",
+        "Footage export"
+      ],
+      "required": true
+    },
+    {
+      "name": "reason",
+      "label": "Reason",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Requested",
+        "Approved",
+        "Viewed",
+        "Exported",
+        "Reviewed"
+      ],
+      "default": "Requested"
+    }
+  ],
+  "printers": [
+    {
+      "name": "name",
+      "label": "Printer name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "brand",
+      "label": "Brand",
+      "type": "select",
+      "options": [
+        "OKI",
+        "Brother",
+        "Kyocera",
+        "HP",
+        "Canon",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "model",
+      "label": "Model",
+      "type": "text"
+    },
+    {
+      "name": "ipAddress",
+      "label": "IP address",
+      "type": "text"
+    },
+    {
+      "name": "room",
+      "label": "Room / area",
+      "type": "text"
+    },
+    {
+      "name": "serial",
+      "label": "Serial number",
+      "type": "text"
+    },
+    {
+      "name": "counterMono",
+      "label": "Mono counter",
+      "type": "number"
+    },
+    {
+      "name": "counterColour",
+      "label": "Colour counter",
+      "type": "number"
+    },
+    {
+      "name": "tonerBlack",
+      "label": "Black toner %",
+      "type": "number"
+    },
+    {
+      "name": "tonerColour",
+      "label": "Colour toner %",
+      "type": "number"
+    },
+    {
+      "name": "serviceDue",
+      "label": "Service / lease review date",
+      "type": "date"
+    },
+    {
+      "name": "supplier",
+      "label": "Supplier / service contact",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Online",
+        "Low toner",
+        "Offline",
+        "Fault open",
+        "Service due",
+        "Archived"
+      ],
+      "default": "Online"
+    }
+  ],
+  "ticketing": [
+    {
+      "name": "title",
+      "label": "Issue / work order title",
+      "type": "text",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "requester",
+      "label": "Requester name / role",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "IT",
+        "Facility",
+        "Equipment",
+        "Clinical software",
+        "Cleaning",
+        "Supplier",
+        "Accreditation",
+        "HR",
+        "Finance",
+        "Printer",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "priority",
+      "label": "Priority",
+      "type": "select",
+      "options": [
+        "P1 Emergency",
+        "P2 Urgent",
+        "P3 Routine",
+        "P4 Scheduled"
+      ],
+      "required": true
+    },
+    {
+      "name": "assetId",
+      "label": "Asset ID / QR code",
+      "type": "text"
+    },
+    {
+      "name": "publicAreaAffected",
+      "label": "Public/clinical area affected",
+      "type": "select",
+      "options": [
+        "No",
+        "Yes",
+        "After-hours work required"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "infectionControl",
+      "label": "Infection control hazard",
+      "type": "select",
+      "options": [
+        "No",
+        "Yes - permit/isolation required"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "assignedTo",
+      "label": "Assigned internal person / contractor",
+      "type": "text"
+    },
+    {
+      "name": "dueDate",
+      "label": "Due date",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "required": true,
+      "full": true
+    },
+    {
+      "name": "completionEvidence",
+      "label": "Completion evidence / attachment reference",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "New",
+        "Triaged",
+        "Assigned",
+        "Waiting",
+        "Scheduled",
+        "In progress",
+        "Completed",
+        "Signed off",
+        "Closed",
+        "Cancelled"
+      ],
+      "default": "New"
+    }
+  ],
+  "finance": [
+    {
+      "name": "supplier",
+      "label": "Supplier",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "invoiceNumber",
+      "label": "Invoice number",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "invoiceDate",
+      "label": "Invoice date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "total",
+      "label": "Total inc GST",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "gst",
+      "label": "GST amount",
+      "type": "number"
+    },
+    {
+      "name": "category",
+      "label": "Category",
+      "type": "select",
+      "options": [
+        "Supplier invoice",
+        "Inventory purchase",
+        "Equipment",
+        "Rent/admin",
+        "Intercompany",
+        "Service provider",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "ocrStatus",
+      "label": "OCR / review status",
+      "type": "select",
+      "options": [
+        "Manual entry",
+        "OCR Review",
+        "Corrected",
+        "Approved"
+      ],
+      "default": "Manual entry"
+    },
+    {
+      "name": "lineItems",
+      "label": "Invoice line items / OCR text",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "approvalThreshold",
+      "label": "Approval threshold flag",
+      "type": "select",
+      "options": [
+        "Normal",
+        "Manager approval",
+        "Owner approval"
+      ],
+      "default": "Normal"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Uploaded",
+        "OCR Review",
+        "Pending approval",
+        "Approved",
+        "Posted",
+        "Locked"
+      ],
+      "default": "Uploaded"
+    }
+  ],
+  "leave": [
+    {
+      "name": "staffName",
+      "label": "Staff member",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "role",
+      "label": "Role",
+      "type": "select",
+      "options": [
+        "Reception",
+        "Nurse",
+        "Manager",
+        "Payroll",
+        "IT",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Usual location",
+      "type": "location"
+    },
+    {
+      "name": "leaveType",
+      "label": "Type",
+      "type": "select",
+      "options": [
+        "Casual away day",
+        "Annual leave",
+        "Personal leave",
+        "Unpaid leave",
+        "Doctor leave",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "from",
+      "label": "From",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "to",
+      "label": "To",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "balanceHours",
+      "label": "Available leave balance hours",
+      "type": "number"
+    },
+    {
+      "name": "requestedHours",
+      "label": "Requested hours",
+      "type": "number"
+    },
+    {
+      "name": "coveringPerson",
+      "label": "Covering person / doctor",
+      "type": "text"
+    },
+    {
+      "name": "reason",
+      "label": "Reason / note",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Requested",
+        "Balance checked",
+        "Approved",
+        "Rejected",
+        "Applied",
+        "Closed"
+      ],
+      "default": "Requested"
+    }
+  ],
+  "shiftswap": [
+    {
+      "name": "originalStaff",
+      "label": "Original staff member",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "replacementStaff",
+      "label": "Proposed replacement",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "shiftDate",
+      "label": "Shift date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "start",
+      "label": "Start time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "end",
+      "label": "End time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "name": "role",
+      "label": "Role",
+      "type": "select",
+      "options": [
+        "Reception",
+        "Nurse",
+        "Manager",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "openClose",
+      "label": "Opening / closing duty",
+      "type": "select",
+      "options": [
+        "None",
+        "Opening",
+        "Closing",
+        "Opening & Closing"
+      ],
+      "default": "None"
+    },
+    {
+      "name": "reason",
+      "label": "Reason",
+      "type": "textarea",
+      "full": true,
+      "required": true
+    },
+    {
+      "name": "emergencyChange",
+      "label": "Emergency / short notice change",
+      "type": "checkbox"
+    },
+    {
+      "name": "notificationStatus",
+      "label": "Notification status",
+      "type": "select",
+      "options": [
+        "Not sent",
+        "Pending",
+        "Sent"
+      ],
+      "default": "Not sent"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Requested",
+        "Validated",
+        "Approved",
+        "Rejected",
+        "Roster updated",
+        "Notified"
+      ],
+      "default": "Requested"
+    }
+  ],
+  "awardRules": [
+    {
+      "name": "name",
+      "label": "Rule-set name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "roleMapping",
+      "label": "Role mapping",
+      "type": "select",
+      "options": [
+        "Receptionist",
+        "Nurse",
+        "Practice Manager",
+        "Support staff",
+        "Other non-doctor"
+      ],
+      "required": true
+    },
+    {
+      "name": "classification",
+      "label": "Classification / level / pay point",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "employmentType",
+      "label": "Employment type",
+      "type": "select",
+      "options": [
+        "Full-time",
+        "Part-time",
+        "Casual"
+      ],
+      "required": true
+    },
+    {
+      "name": "ordinaryRate",
+      "label": "Ordinary hourly rate",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "casualLoading",
+      "label": "Casual loading %",
+      "type": "number"
+    },
+    {
+      "name": "eveningRate",
+      "label": "Evening / after-hours rate",
+      "type": "number"
+    },
+    {
+      "name": "saturdayRate",
+      "label": "Saturday rate",
+      "type": "number"
+    },
+    {
+      "name": "sundayRate",
+      "label": "Sunday rate",
+      "type": "number"
+    },
+    {
+      "name": "publicHolidayRate",
+      "label": "Public holiday rate",
+      "type": "number"
+    },
+    {
+      "name": "xeroMapping",
+      "label": "Xero earnings mapping",
+      "type": "text"
+    },
+    {
+      "name": "effectiveDate",
+      "label": "Effective date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "name": "advisorSignoff",
+      "label": "Payroll advisor sign-off recorded",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Draft",
+        "Advisor review",
+        "Approved",
+        "Effective",
+        "Archived"
+      ],
+      "default": "Draft"
+    }
+  ],
+  "doctorportal": [
+    {
+      "name": "doctorName",
+      "label": "Doctor name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "period",
+      "label": "Current period / quarter",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "currentEarnings",
+      "label": "Current earnings estimate",
+      "type": "number"
+    },
+    {
+      "name": "bbpipEstimate",
+      "label": "Estimated BBPIP GP share",
+      "type": "number"
+    },
+    {
+      "name": "quarterlyStatementStatus",
+      "label": "Quarterly statement",
+      "type": "select",
+      "options": [
+        "Not generated",
+        "Draft",
+        "Published",
+        "Viewed"
+      ],
+      "default": "Not generated"
+    },
+    {
+      "name": "lastPayslipDate",
+      "label": "Last payslip date",
+      "type": "date"
+    },
+    {
+      "name": "accessNotes",
+      "label": "Doctor visible notes",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Current period",
+        "Statement published",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "stocktransfer": [
+    {
+      "name": "itemName",
+      "label": "Item name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "fromLocation",
+      "label": "From location",
+      "type": "location"
+    },
+    {
+      "name": "toLocation",
+      "label": "To location",
+      "type": "location"
+    },
+    {
+      "name": "quantity",
+      "label": "Quantity",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "batch",
+      "label": "Batch / expiry",
+      "type": "text"
+    },
+    {
+      "name": "senderApproved",
+      "label": "Sender approved",
+      "type": "checkbox"
+    },
+    {
+      "name": "receiverApproved",
+      "label": "Receiver approved",
+      "type": "checkbox"
+    },
+    {
+      "name": "reason",
+      "label": "Reason",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Requested",
+        "Sender approved",
+        "Receiver approved",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Requested"
+    }
+  ],
+  "consent": [
+    {
+      "name": "personName",
+      "label": "Person name / audience label",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "channel",
+      "label": "Channel",
+      "type": "select",
+      "options": [
+        "Email",
+        "SMS",
+        "Email + SMS"
+      ],
+      "required": true
+    },
+    {
+      "name": "consentStatus",
+      "label": "Consent status",
+      "type": "select",
+      "options": [
+        "Opted in",
+        "Opted out",
+        "Suppressed",
+        "Bounced",
+        "Complaint",
+        "Unknown"
+      ],
+      "required": true
+    },
+    {
+      "name": "consentSource",
+      "label": "Consent source",
+      "type": "text"
+    },
+    {
+      "name": "consentDate",
+      "label": "Consent / opt-out date",
+      "type": "date"
+    },
+    {
+      "name": "optOutKeyword",
+      "label": "STOP / unsubscribe keyword",
+      "type": "text"
+    },
+    {
+      "name": "evidenceReference",
+      "label": "Evidence reference",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Active",
+        "Suppressed",
+        "Archived"
+      ],
+      "default": "Active"
+    }
+  ],
+  "cameraInventory": [
+    {
+      "name": "cameraName",
+      "label": "Camera name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "type": "location"
+    },
+    {
+      "name": "zone",
+      "label": "Zone / area",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "purpose",
+      "label": "Purpose",
+      "type": "select",
+      "options": [
+        "Entry/exit",
+        "Reception public area",
+        "External perimeter",
+        "Staff area",
+        "Restricted area",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "name": "privacyClass",
+      "label": "Privacy classification",
+      "type": "select",
+      "options": [
+        "Allowed public/business area",
+        "Caution - staff area",
+        "Prohibited/private area review"
+      ],
+      "required": true
+    },
+    {
+      "name": "nvrSource",
+      "label": "NVR/VMS source",
+      "type": "text"
+    },
+    {
+      "name": "retentionDays",
+      "label": "Retention days",
+      "type": "number"
+    },
+    {
+      "name": "audioStatus",
+      "label": "Audio status",
+      "type": "select",
+      "options": [
+        "Disabled",
+        "Enabled - legal approval required",
+        "Unknown"
+      ],
+      "default": "Disabled"
+    },
+    {
+      "name": "signageEvidence",
+      "label": "Signage / staff notice evidence",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "legalApproval",
+      "label": "Privacy/legal approval recorded",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Registered",
+        "Governance pending",
+        "Approved",
+        "Active",
+        "Offline",
+        "Archived"
+      ],
+      "default": "Registered"
+    }
+  ],
+  "users": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "name": "role",
+      "label": "Primary role",
+      "type": "select",
+      "options": [
+        "Owner",
+        "Practice Manager",
+        "Operations Manager",
+        "Reception",
+        "Nurse",
+        "Doctor",
+        "Payroll/Admin",
+        "IT Support",
+        "Contractor"
+      ],
+      "required": true
+    },
+    {
+      "name": "department",
+      "label": "Department",
+      "type": "select",
+      "options": [
+        "Operations",
+        "Reception",
+        "Nursing",
+        "Doctors",
+        "Payroll",
+        "HR",
+        "IT",
+        "Accreditation",
+        "Finance",
+        "Marketing"
+      ],
+      "required": true
+    },
+    {
+      "name": "locations",
+      "label": "Location access",
+      "type": "locationMulti",
+      "full": true
+    },
+    {
+      "name": "sensitiveAccess",
+      "label": "Sensitive access modules",
+      "type": "select",
+      "options": [
+        "None",
+        "Pay/HR",
+        "Doctor Pay",
+        "Incidents",
+        "Camera",
+        "Vault",
+        "Remote Access",
+        "SMS/Email"
+      ],
+      "default": "None"
+    },
+    {
+      "name": "mfaEnabled",
+      "label": "MFA enabled",
+      "type": "checkbox"
+    },
+    {
+      "name": "trainingGateStatus",
+      "label": "Training gate",
+      "type": "select",
+      "options": [
+        "Not required",
+        "Required - pending",
+        "Completed",
+        "Temporary override"
+      ],
+      "default": "Not required"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Invited",
+        "Active",
+        "Suspended",
+        "Terminated",
+        "Archived"
+      ],
+      "default": "Invited"
+    }
+  ],
+  "departments": [
+    {
+      "name": "name",
+      "label": "Department name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "manager",
+      "label": "Manager / owner",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "users",
+      "label": "Users / teams",
+      "type": "text"
+    },
+    {
+      "name": "purpose",
+      "label": "Purpose",
+      "type": "textarea",
+      "full": true
+    },
+    {
+      "name": "defaultDashboard",
+      "label": "Default dashboard",
+      "type": "text"
+    },
+    {
+      "name": "workflowBuilder",
+      "label": "Future workflow builder enabled",
+      "type": "checkbox"
+    },
+    {
+      "name": "documentsEnabled",
+      "label": "Department document library enabled",
+      "type": "checkbox"
+    },
+    {
+      "name": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Created",
+        "Configured",
+        "Active",
+        "Archived"
+      ],
+      "default": "Created"
+    }
+  ]
+}

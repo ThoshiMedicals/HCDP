@@ -1,0 +1,70 @@
+{
+  "Reception": [
+    "dashboard",
+    "actionInbox",
+    "tasks",
+    "checklists",
+    "commbook",
+    "frontdesk",
+    "roster",
+    "timeclock",
+    "training",
+    "incidents"
+  ],
+  "Nurse": [
+    "dashboard",
+    "actionInbox",
+    "tasks",
+    "checklists",
+    "incidents",
+    "commbook",
+    "roster",
+    "timeclock",
+    "training",
+    "inventory",
+    "equipment",
+    "rooms",
+    "stock",
+    "accreditation",
+    "policies",
+    "qi"
+  ],
+  "Doctor": [
+    "dashboard",
+    "actionInbox",
+    "doctors",
+    "roster",
+    "training",
+    "doctorpay",
+    "hrDocs"
+  ],
+  "Finance": [
+    "dashboard",
+    "actionInbox",
+    "riskCentre",
+    "analytics",
+    "staffpay",
+    "doctorpay",
+    "bbpip",
+    "approvals",
+    "inventory",
+    "audit"
+  ],
+  "IT / Facilities": [
+    "dashboard",
+    "actionInbox",
+    "riskCentre",
+    "tasks",
+    "incidents",
+    "inventory",
+    "equipment",
+    "rooms",
+    "website",
+    "remote",
+    "vault",
+    "cameras",
+    "audit"
+  ],
+  "Practice Manager": null,
+  "Owner / Director": null
+}

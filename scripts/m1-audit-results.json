@@ -1,0 +1,320 @@
+{
+  "summary": {
+    "totalButtonsLogged": 38,
+    "working": 29,
+    "localDemo": 6,
+    "backend": 0,
+    "defects": 6,
+    "widthAllOk": true,
+    "hydrationInConsole": 0
+  },
+  "buttons": [
+    {
+      "name": "Select Clinics",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Urgent only",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Save clinic group",
+      "status": "Working",
+      "note": "Visible in clinics menu"
+    },
+    {
+      "name": "All Clinics",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Period This Month",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Period Today",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Custom Range option",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Search or Ask",
+      "status": "Working as local demonstration",
+      "note": "urgent results"
+    },
+    {
+      "name": "Refresh",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Create Action open",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Save Draft",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Save Draft",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "Create Action reopen",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Publish open",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "QA Demo menu",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Simulate Next Day",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Simulate Next Day",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "More menu",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Customise Dashboard",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Notifications",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "User Menu",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /EMERGENCY/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /URGENT/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /ATTENTION/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /ROUTINE/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /OVERDUE/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Priority /COMPLETED/i",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Clear Filter",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Acknowledge emergency",
+      "status": "Working as local demonstration",
+      "note": "control present"
+    },
+    {
+      "name": "Withdraw notice",
+      "status": "Working as local demonstration",
+      "note": "control present — skipping destructive in sweep"
+    },
+    {
+      "name": "Executive Approve",
+      "status": "Working as local demonstration",
+      "note": ""
+    },
+    {
+      "name": "End-of-Day",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Reports tab",
+      "status": "Defect found",
+      "note": "Control not found in DOM"
+    },
+    {
+      "name": "Back to Command Centre",
+      "status": "Defect found",
+      "note": "Control not found in DOM"
+    },
+    {
+      "name": "Mobile urgent",
+      "status": "Defect found",
+      "note": "Control not found in DOM"
+    },
+    {
+      "name": "Desktop view restore",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Sidebar collapse",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "name": "Sidebar expand",
+      "status": "Working",
+      "note": ""
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "overflowX": 0,
+      "ok": true
+    },
+    {
+      "width": 390,
+      "overflowX": 0,
+      "ok": true
+    }
+  ],
+  "appearance": [
+    {
+      "name": "Dark",
+      "status": "Working",
+      "note": "theme-dark=true"
+    },
+    {
+      "name": "Device setting",
+      "status": "Working",
+      "note": "theme-dark=false"
+    },
+    {
+      "name": "Light",
+      "status": "Working",
+      "note": "theme-dark=false"
+    }
+  ],
+  "filters": [
+    {
+      "name": "Urgent + filter sentence",
+      "status": "Working",
+      "note": "Mobile urgent"
+    },
+    {
+      "name": "Clear / restore",
+      "status": "Working as local demonstration",
+      "note": ""
+    }
+  ],
+  "persistence": [
+    {
+      "name": "Action draft after reopen",
+      "status": "Working as local demonstration",
+      "note": "Create Action\n×\n\nDraft saved · Created 20/07/2026, 10:13:43 am · Last edited 20/"
+    },
+    {
+      "name": "Appearance after refresh",
+      "status": "Defect found",
+      "note": "theme-dark=false"
+    }
+  ],
+  "auditFlows": [],
+  "routes": [
+    {
+      "name": "/dashboard",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/action-inbox",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/risk-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/compliance-centre",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/tasks",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/staff",
+      "status": "Working",
+      "note": "status=200"
+    },
+    {
+      "name": "/settings",
+      "status": "Working",
+      "note": "status=200"
+    }
+  ],
+  "defects": [
+    "Reports tab: not found",
+    "Back to Command Centre: not found",
+    "Mobile urgent: not found"
+  ],
+  "console": []
+}

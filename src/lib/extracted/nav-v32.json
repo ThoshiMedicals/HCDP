@@ -1,0 +1,142 @@
+[
+  {
+    "id": "executive",
+    "label": "Executive Command Centre",
+    "items": [
+      {
+        "id": "dashboard",
+        "label": "Executive Command Centre"
+      },
+      {
+        "id": "action-inbox",
+        "label": "Action Inbox & Notifications"
+      },
+      {
+        "id": "analytics",
+        "label": "Analytics, Data & Change"
+      }
+    ]
+  },
+  {
+    "id": "operations",
+    "label": "Operations",
+    "items": [
+      {
+        "id": "tasks",
+        "label": "Tasks, Checklists & Actions"
+      },
+      {
+        "id": "incidents",
+        "label": "Incidents, Risk & Continuity"
+      },
+      {
+        "id": "ticketing",
+        "label": "Ticketing & Work Orders"
+      }
+    ]
+  },
+  {
+    "id": "people",
+    "label": "People & Talent",
+    "items": [
+      {
+        "id": "staff",
+        "label": "Staff & Doctor Management"
+      },
+      {
+        "id": "training",
+        "label": "Training & Learning"
+      }
+    ]
+  },
+  {
+    "id": "rostering",
+    "label": "Rostering & Attendance",
+    "items": [
+      {
+        "id": "roster",
+        "label": "Roster & Shift Management"
+      },
+      {
+        "id": "timeclock",
+        "label": "Time & Attendance"
+      }
+    ]
+  },
+  {
+    "id": "assets",
+    "label": "Assets & Facilities",
+    "items": [
+      {
+        "id": "inventory",
+        "label": "Inventory, Finance & Assets"
+      }
+    ]
+  },
+  {
+    "id": "governance",
+    "label": "Governance",
+    "items": [
+      {
+        "id": "accreditation",
+        "label": "Accreditation & Quality"
+      },
+      {
+        "id": "documents",
+        "label": "Documents, Policies & SOPs"
+      }
+    ]
+  },
+  {
+    "id": "finance",
+    "label": "Finance & Forecasting",
+    "items": [
+      {
+        "id": "staffpay",
+        "label": "Staff Pay & Payroll"
+      },
+      {
+        "id": "doctorpay",
+        "label": "Doctor Pay Command Centre"
+      },
+      {
+        "id": "bbpip",
+        "label": "BBPIP Forecast"
+      }
+    ]
+  },
+  {
+    "id": "communications",
+    "label": "Communications",
+    "items": [
+      {
+        "id": "communications",
+        "label": "Email & SMS Communications"
+      }
+    ]
+  },
+  {
+    "id": "security",
+    "label": "Security & Access",
+    "items": [
+      {
+        "id": "digital",
+        "label": "Digital Operations & Security"
+      }
+    ]
+  },
+  {
+    "id": "organisation",
+    "label": "Organisation & Tenant",
+    "items": [
+      {
+        "id": "organisation",
+        "label": "Organisation & Access"
+      },
+      {
+        "id": "saas",
+        "label": "Commercial SaaS"
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "teal": "#0f3f7a",
+  "teal-2": "#155ea8",
+  "teal-3": "#e2eefb",
+  "ink": "#0b1720",
+  "text": "#31445a",
+  "muted": "#738196",
+  "line": "#e8edf2",
+  "soft": "#f7fafb",
+  "card": "#ffffff",
+  "warning": "#f59e0b",
+  "danger": "#ef4444",
+  "success": "#16a34a",
+  "info": "#0f3f7a",
+  "purple": "#7c3aed",
+  "shadow": "0 18px 48px rgba(15,23,42,.08)",
+  "radius": "18px",
+  "radius-sm": "12px",
+  "sidebar": "288px"
+}

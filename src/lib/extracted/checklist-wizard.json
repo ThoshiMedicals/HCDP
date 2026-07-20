@@ -1,0 +1,136 @@
+{
+  "title": "Create Checklist",
+  "tabs": [
+    "1 Frequency",
+    "2 Type",
+    "3 Items",
+    "4 Assign",
+    "5 Publish"
+  ],
+  "fields": [
+    {
+      "name": "frequency",
+      "label": "Frequency",
+      "type": "select",
+      "required": false,
+      "full": false,
+      "options": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly",
+        "Yearly",
+        "Custom"
+      ]
+    },
+    {
+      "name": "timeOfDay",
+      "label": "Time of day",
+      "type": "select",
+      "required": false,
+      "full": false,
+      "options": [
+        "AM Morning",
+        "PM Afternoon",
+        "Custom Time",
+        "Clock-out",
+        "Clock-in"
+      ]
+    },
+    {
+      "name": "workflowScope",
+      "label": "Checklist type",
+      "type": "select",
+      "required": false,
+      "full": false,
+      "options": [
+        "General",
+        "Front Desk",
+        "Nurse Accreditation Checklist",
+        "Manager Accreditation Review",
+        "Room Setup"
+      ]
+    },
+    {
+      "name": "assignment",
+      "label": "Assignment",
+      "type": "select",
+      "required": false,
+      "full": false,
+      "options": [
+        "Group",
+        "Individual"
+      ]
+    },
+    {
+      "name": "department",
+      "label": "Department",
+      "type": "select",
+      "required": false,
+      "full": false,
+      "options": [
+        "All Departments",
+        "Reception",
+        "Nursing",
+        "Management",
+        "Doctors",
+        "IT Support",
+        "Cleaners"
+      ]
+    },
+    {
+      "name": "responsibleRole",
+      "label": "Responsible person / role",
+      "type": "text",
+      "required": false,
+      "full": false,
+      "placeholder": "e.g. Reception opening staff"
+    },
+    {
+      "name": "name",
+      "label": "Title",
+      "type": "text",
+      "required": true,
+      "full": true,
+      "placeholder": "e.g. Morning Opening"
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "required": false,
+      "full": true,
+      "placeholder": "Brief description"
+    },
+    {
+      "name": "items",
+      "label": "Checklist items",
+      "type": "textarea",
+      "required": false,
+      "full": true,
+      "placeholder": "One item per line\nTurn on reception computers\nCheck Best Practice opens\nRecord vaccine fridge AM temperature"
+    },
+    {
+      "name": "instructions",
+      "label": "Instructions",
+      "type": "textarea",
+      "required": false,
+      "full": true,
+      "placeholder": "Any notes for completing this checklist"
+    },
+    {
+      "name": "managerReviewRequired",
+      "label": "Manager review if skipped/incomplete",
+      "type": "checkbox",
+      "default": true
+    },
+    {
+      "name": "publishNow",
+      "label": "Publish checklist now",
+      "type": "checkbox",
+      "default": true
+    }
+  ],
+  "submitLabel": "Publish Checklist",
+  "sourceHtml": "<div class=\"wizard-tabs\"><span>1 Frequency</span><span>2 Type</span><span>3 Items</span><span>4 Assign</span><span>5 Publish</span></div><form id=\"checkWizard\" class=\"form-grid\"><div class=\"field\"><label>Frequency</label><select class=\"select\" name=\"frequency\"><option>Daily</option><option>Weekly</option><option>Monthly</option><option>Quarterly</option><option>Yearly</option><option>Custom</option></select></div><div class=\"field\"><label>Time of day</label><select class=\"select\" name=\"timeOfDay\"><option>AM Morning</option><option>PM Afternoon</option><option>Custom Time</option><option>Clock-out</option><option>Clock-in</option></select></div><div class=\"field\"><label>Checklist type</label><select class=\"select\" name=\"workflowScope\"><option>General</option><option>Front Desk</option><option>Nurse Accreditation Checklist</option><option>Manager Accreditation Review</option><option>Room Setup</option></select></div><div class=\"field\"><label>Assignment</label><select class=\"select\" name=\"assignment\"><option>Group</option><option>Individual</option></select></div><div class=\"field\"><label>Department</label><select class=\"select\" name=\"department\"><option>All Departments</option><option>Reception</option><option>Nursing</option><option>Management</option><option>Doctors</option><option>IT Support</option><option>Cleaners</option></select></div><div class=\"field\"><label>Responsible person / role</label><input class=\"input\" name=\"responsibleRole\" placeholder=\"e.g. Reception opening staff\"></div><div class=\"field full\"><label>Title</label><input class=\"input\" name=\"name\" required placeholder=\"e.g. Morning Opening\"></div><div class=\"field full\"><label>Description</label><textarea class=\"textarea\" name=\"description\" placeholder=\"Brief description\"></textarea></div><div class=\"field full\"><label>Checklist items</label><textarea class=\"textarea\" name=\"items\" placeholder=\"One item per line&#10;Turn on reception computers&#10;Check Best Practice opens&#10;Record vaccine fridge AM temperature\"></textarea><div class=\"field-hint\">Action type defaults to tick. Critical items create manager review if skipped.</div></div><div class=\"field full\"><label>Instructions</label><textarea class=\"textarea\" name=\"instructions\" placeholder=\"Any notes for completing this checklist\"></textarea></div><div class=\"field\"><label style=\"display:flex;gap:8px;align-items:center\"><input type=\"checkbox\" name=\"managerReviewRequired\" checked> Manager review if skipped/incomplete</label></div><div class=\"field\"><label style=\"display:flex;gap:8px;align-items:center\"><input type=\"checkbox\" name=\"publishNow\" checked> Publish checklist now</label></div></form>"
+}

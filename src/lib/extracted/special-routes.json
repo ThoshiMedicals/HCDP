@@ -1,0 +1,22 @@
+{
+  "ticketDesk": {
+    "title": "Ticketing Desk & Work Orders",
+    "subtitle": "Operational issues, work orders, SLA, duplicates and contractor visits",
+    "module": 14
+  },
+  "documents": {
+    "title": "Documents, Policies, SOPs & Intake",
+    "subtitle": "Intake, controlled documents, review, acknowledgement and retention",
+    "module": 13
+  },
+  "meetings": {
+    "title": "Meetings & Action Register",
+    "subtitle": "Agenda, minutes, decisions, ownership and carry-forward actions",
+    "module": 10
+  },
+  "productAssurance": {
+    "title": "Product Assurance & Module Review",
+    "subtitle": "Module-by-module workflow, accessibility and design review",
+    "module": 3
+  }
+}

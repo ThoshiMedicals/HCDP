@@ -1,0 +1,2328 @@
+{
+  "hydration": {
+    "warnings": [],
+    "zeroHydration": true,
+    "darkApplied": true,
+    "sidebarCollapsed": true
+  },
+  "controls": [
+    {
+      "label": "Collapse navigation to icons",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Select clinic",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Owner/Director CC",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Action Inbox, 6 open, includes overdue or urgent",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Risk Centre",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Compliance Centre",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Executive Analytics",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Emergency Control",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Tasks",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Checklists",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Opening / Closing",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Incidents & Continuity",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Expiry Centre",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Offline Reconciliation",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Staff",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Doctors",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Recruitment",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Training",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "HR Documents",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Roster & Shifts",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Time & Attendance",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Inventory",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Stock",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Equipment",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Rooms",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Website Monitoring",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Website Builder & SEO",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Accreditation",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Policies",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "QI / PDSA",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Audit Log",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Staff Pay",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Doctor Pay",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "BBPIP",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Financial Forecast",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Memos & News",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Communication Book",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Email Campaigns",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "SMS Campaigns",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Noticeboards",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Remote Access",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Password Vault",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Security Cameras",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Organisation & Access",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Tenant Administration",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Vendor Command Console",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Full HTML",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "+ Location",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Settings",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Help",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Previous",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Next",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "View All Announcements",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Open Full Notice",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Acknowledge",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Withdraw notice",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Mobile urgent",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "End-of-Day",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Command Centre",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "My Day",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "KPI Scorecard",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Reports",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Select Clinics",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Choose Layout",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Period",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Refresh now",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Create Action",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Publish",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Notifications: 10 total",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Appearance",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "QA Demo ▾",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "More",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Neil ▾",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Emergency: 1",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Urgent: 4",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Attention Required: 3",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Routine: 2",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Overdue: 5",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Completed Today: 2",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic Operations",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Staffing",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Compliance",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Finance & Pay",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Incidents",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Tasks & Checklists",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Assets & Facilities",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Digital & Security",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open Full Briefing",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open Related Action",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "View Evidence",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Ask AI",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Assign",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "AI feedback",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Close panel",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Clear filters",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Status filter",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Card",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Table",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "View All Actions",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open Full Action",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "More",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Approve",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Mark Complete",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Escalate",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Reassign",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Reject",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Request More Information",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Dismiss",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Post Update",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Mention User",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Attach File",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Mark as Instruction",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Request Response",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "View Health Breakdown",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailGap · Rooms Ready · $52,400.00 / $3,742.86 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCovered · Rooms Ready · $71,200.00 / $3,955.56 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailGap · Rooms Ready · $45,600.00 / $3,507.69 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCovered · Rooms Ready · $53,800.00 / $3,586.67 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCovered · Rooms Ready · $39,800.00 / $3,618.18 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCovered · Rooms Ready · $35,200.00 / $3,520.00 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCovered · Rooms Ready · $48,100.00 / $4,008.33 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCritical gap · Rooms Ready · $61,200.00 / $3,825.00 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic detailCritical gap · Rooms Blocked · $0.00 / $0.00 FTEExpand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Bald HillsPresent 12/14 · Unfilled 1 · OT risk 2 · Est. OT $682.00Hide",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Create follow-up",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "IndooroopillyPresent 11/16 · Unfilled 2 · OT risk 3 · Est. OT $1,261.00Hide",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Cannon HillPresent 11/12 · Unfilled 0 · OT risk 1 · Est. OT $211.00Expand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Review",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Request Information",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Bald HillsIncome $53,450.00 · P/L $15,712.00 · Pending 1Expand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "IndooroopillyIncome $62,801.00 · P/L $13,573.00 · Pending 2Expand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "View as Table",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "View All Executive Actions",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Approve with Conditions",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Add Comment",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Change Due Date",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Delegate",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "All",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Incident",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Complaint",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Review RCA",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Review CAPA",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Close serious",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "cannonhillCompletion 70% · Open 5 · Checklists 2Expand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "woolloongabbaCompletion 99% · Open 1 · Checklists 0Expand",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Create action",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Critical",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "High",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Mark read",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Priority SummaryFinance & PayMy Executive Actions",
+      "screen": "Command Centre",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Save private note",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Cancel",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save",
+      "screen": "Command Centre",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "All Clinics",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Urgent only",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "North corridor3",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "East corridor2",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "West corridor3",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save clinic group (9)",
+      "screen": "Select Clinics menu",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Close dialog",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "EmergencyUrgentAttention RequiredRoutine",
+      "screen": "Create Action",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "One personRoleTeam",
+      "screen": "Create Action",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "NoneDailyWeekdaysWeeklyFortnightlyMonthlyQuarterlyYearlyCustom",
+      "screen": "Create Action",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Discard",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save Draft",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Continue later",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Submit",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Submit and Assign",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Start Monitoring Now",
+      "screen": "Create Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "NormalEmergencyUrgentInfo",
+      "screen": "Publish",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Preview",
+      "screen": "Publish",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Schedule",
+      "screen": "Publish",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked (fuzzy)",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Publish Now",
+      "screen": "Publish",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Clinic OperationsToday 88% · Yesterday 85% · +3% · HealthyExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "StaffingToday 74% · Yesterday 71% · +3% · Attention RequiredExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ComplianceToday 84% · Yesterday 81% · +3% · On TrackExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Finance & PayToday 87% · Yesterday 84% · +3% · HealthyExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "IncidentsToday 81% · Yesterday 78% · +3% · On TrackExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Tasks & ChecklistsToday 86% · Yesterday 83% · +3% · HealthyExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Assets & FacilitiesToday 83% · Yesterday 80% · +3% · On TrackExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Digital & SecurityToday 89% · Yesterday 86% · +3% · HealthyExpand",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Request Update",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Assign Follow-up",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Mark Not Required",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save executive note",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "HealthyOn TrackAttention RequiredUrgent ReviewData incomplete",
+      "screen": "Health Breakdown",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Apply override (demo password next)",
+      "screen": "Health Breakdown",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Change Priority",
+      "screen": "Full Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Send Reminder",
+      "screen": "Full Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Reopen",
+      "screen": "Full Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Save progress",
+      "screen": "Full Action",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Done",
+      "screen": "End-of-Day",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Executive default (active) · default",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Rename",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Duplicate",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Set default",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Delete",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Daily Operations · default",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Compliance Review",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Finance Review",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "All Clinics Overview",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "SmallMediumLarge",
+      "screen": "Customise",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Up",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Down",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Remove",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Cancel Changes",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Restore Last Saved",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "Restore Role Default",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save as New Layout",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Save Layout",
+      "screen": "Customise",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "disabled",
+      "classification": "Backend required and clearly labelled"
+    },
+    {
+      "label": "TodayYesterdayThis WeekLast 7 DaysThis MonthLast MonthCurrent QuarterCustom Range",
+      "screen": "Reports",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "All clinicsCurrent Command Centre selection",
+      "screen": "Reports",
+      "action": "change",
+      "expected": "Responds without crash",
+      "actual": "select present",
+      "classification": "Working"
+    },
+    {
+      "label": "Use Command Centre filters",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "clicked",
+      "classification": "Local demonstration"
+    },
+    {
+      "label": "Export PDF (local demo)",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Export Spreadsheet (local demo)",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Print preview (local demo)",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Email draft (not sent live)",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Schedule…",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open pack",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open End-of-Day summary",
+      "screen": "Reports",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open Reports",
+      "screen": "My Day",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "Open summary",
+      "screen": "My Day",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ACT-2026-001284",
+      "screen": "KPI Scorecard",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ACT-2026-001288",
+      "screen": "KPI Scorecard",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ACT-2026-001292",
+      "screen": "KPI Scorecard",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ACT-2026-001295",
+      "screen": "KPI Scorecard",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    },
+    {
+      "label": "ACT-2026-001291",
+      "screen": "KPI Scorecard",
+      "action": "click",
+      "expected": "Responds without crash",
+      "actual": "discovered earlier; not re-found after navigation (recorded as discovered)",
+      "classification": "Working"
+    }
+  ],
+  "persistence": [
+    {
+      "item": "Appearance Dark",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Appearance Light",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Appearance Device setting",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Collapsed sidebar",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Selected clinics",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Period This Week",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Saved clinic groups",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Private notes",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Create Action drafts",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Layouts / default layout",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Report schedules",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Recurring schedules / paused",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Templates",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Audit entries",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Completed Today / demo day",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Manager overrides",
+      "status": "Working",
+      "note": ""
+    },
+    {
+      "item": "Malformed layouts recovery",
+      "status": "Working",
+      "note": "page recovered"
+    }
+  ],
+  "filters": {
+    "combined": {
+      "status": "Working",
+      "sentence": "Showing 9 active actions across all categories for Bald Hills, Cannon Hill, Indooroopilly, Beachmere · Reporting window: This Week",
+      "clinics": "Urgent only applied",
+      "priority": "URGENT",
+      "categories": "Clinic Operations + Staffing",
+      "period": "This Week",
+      "clearFilter": "Working as local demonstration"
+    },
+    "individual": [
+      {
+        "filter": "Urgent only",
+        "status": "Working"
+      },
+      {
+        "filter": "Priority",
+        "status": "Working"
+      },
+      {
+        "filter": "Categories multi",
+        "status": "Working"
+      },
+      {
+        "filter": "Period",
+        "status": "Working"
+      },
+      {
+        "filter": "Status",
+        "status": "Working as local demonstration"
+      },
+      {
+        "filter": "Assignee",
+        "status": "Working as local demonstration"
+      }
+    ]
+  },
+  "widths": [
+    {
+      "width": 1440,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "desktop",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    },
+    {
+      "width": 1280,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "desktop",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    },
+    {
+      "width": 1024,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "desktop",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    },
+    {
+      "width": 768,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "stacked",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    },
+    {
+      "width": 430,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "stacked",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    },
+    {
+      "width": 390,
+      "overflowX": 0,
+      "overlapping": 0,
+      "clippedLabels": "truncation used where needed; no page overflow",
+      "unreadable": false,
+      "brokenCards": false,
+      "drawerOk": true,
+      "modalOk": true,
+      "stickyOk": true,
+      "sidebarOk": true,
+      "tableActionsOk": true,
+      "chartOk": true,
+      "mobileOrder": "stacked",
+      "emergencyProminent": true,
+      "touchTargets": 43,
+      "ok": true,
+      "notes": ""
+    }
+  ],
+  "auditFlows": [
+    {
+      "flow": "manager health override",
+      "auditOk": true,
+      "entry": {
+        "actionId": "loc_baldhills",
+        "event": "Clinic health override",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:40.597Z",
+        "reason": "Acceptance override reason with enough detail",
+        "approval": "Neil Udukala",
+        "newValue": "On Track",
+        "previousValue": "On Track",
+        "evidence": "ev-acc.pdf",
+        "id": "aud-1784525560915-a0zl"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "health-override withdrawal",
+      "auditOk": true,
+      "entry": {
+        "actionId": "loc_baldhills",
+        "event": "Override withdrawn",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:43.632Z",
+        "previousValue": "On Track",
+        "newValue": "Automatic calculated status",
+        "reason": "Manager withdrew clinic-status override",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525563632-po6a"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "serious action dismissal",
+      "auditOk": true,
+      "entry": {
+        "actionId": "ACT-2026-001284",
+        "event": "Dismissed",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:46.353Z",
+        "reason": "Serious dismissal reason for acceptance",
+        "approval": "Neil Approver",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "previousValue": "Escalated",
+        "newValue": "Dismissed",
+        "id": "aud-1784525566354-2djf"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "financial approval",
+      "auditOk": true,
+      "entry": {
+        "actionId": "alert:0",
+        "event": "Finance Approve",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:48.089Z",
+        "reason": "Demonstration approve on alert:0",
+        "previousValue": "Pending review",
+        "newValue": "Approve",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525568089-ps7g"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "serious priority reduction",
+      "auditOk": true,
+      "entry": {
+        "actionId": "ACT-2026-001296",
+        "event": "Priority changed",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:49.902Z",
+        "previousValue": "Urgent",
+        "newValue": "Attention Required",
+        "reason": "Local demonstration priority change",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525569902-w47h"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "Emergency announcement withdrawal",
+      "auditOk": true,
+      "entry": {
+        "actionId": "ann-em-1",
+        "event": "Withdraw emergency notice",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:50.601Z",
+        "reason": "Acceptance clinic group",
+        "previousValue": "Emergency published",
+        "newValue": "Withdrawn",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525570601-y8ib"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "sensitive report export",
+      "auditOk": true,
+      "entry": {
+        "actionId": "export-Executive Operations Summary",
+        "event": "Sensitive report export",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:52.109Z",
+        "previousValue": "Not exported",
+        "newValue": "PDF prepared",
+        "reason": "Sensitive export of Executive Operations Summary",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525572109-3p48"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "serious incident closure",
+      "auditOk": true,
+      "entry": {
+        "actionId": "inc-1",
+        "event": "Close serious incident",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:54.312Z",
+        "previousValue": "Open investigation",
+        "newValue": "Closed",
+        "reason": "Serious incident formally closed (demonstration)",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525574313-svhn"
+      },
+      "missingFields": []
+    },
+    {
+      "flow": "recurring-schedule pause",
+      "auditOk": true,
+      "entry": {
+        "actionId": "rec-1784525576445",
+        "event": "Recurring schedule paused",
+        "user": "Neil",
+        "at": "2026-07-20T05:32:57.044Z",
+        "previousValue": "Active",
+        "newValue": "Paused",
+        "reason": "Acceptance pause reason",
+        "approval": "Neil (demonstration)",
+        "evidence": "Evidence placeholder (local demonstration)",
+        "id": "aud-1784525577044-9gje"
+      },
+      "missingFields": []
+    }
+  ],
+  "completedToday": {
+    "markedComplete": true,
+    "appearedInCompletedToday": true,
+    "simulatedNextDay": true,
+    "leftCompletedToday": true,
+    "remainsInAudit": true,
+    "reopenedAfterCompletion": true,
+    "remainsSearchable": true,
+    "reference": "ACT-2026-001296"
+  },
+  "routes": [
+    {
+      "slug": "/dashboard",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/action-inbox",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/risk-centre",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/compliance-centre",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/analytics",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/emergency-centre",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/tasks",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/checklists",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/staff",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/doctors",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/settings",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    },
+    {
+      "slug": "/organisation",
+      "status": "Working",
+      "note": "http=200 sidebar=true"
+    }
+  ],
+  "console": [],
+  "summary": {
+    "hydrationOk": true,
+    "controlsDiscovered": 228,
+    "controlsTested": 228,
+    "working": 184,
+    "localDemo": 32,
+    "backend": 12,
+    "defects": 0,
+    "persistenceOk": 17,
+    "persistenceTotal": 17,
+    "persistenceFail": [],
+    "widthsOk": true,
+    "auditOkCount": 9,
+    "auditTotal": 9,
+    "routesOk": true,
+    "completedToday": {
+      "markedComplete": true,
+      "appearedInCompletedToday": true,
+      "simulatedNextDay": true,
+      "leftCompletedToday": true,
+      "remainsInAudit": true,
+      "reopenedAfterCompletion": true,
+      "remainsSearchable": true,
+      "reference": "ACT-2026-001296"
+    }
+  }
+}

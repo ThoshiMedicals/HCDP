@@ -1,0 +1,1926 @@
+{
+  "1": {
+    "name": "Executive Command Centre",
+    "family": "Executive Command Centre",
+    "routes": [
+      "dashboard"
+    ],
+    "accent": "#2563eb",
+    "icon": "home",
+    "summary": "Strategic all-clinic health, intervention and executive decision control.",
+    "metrics": [
+      [
+        "Overall Health",
+        "92%",
+        "Six-component health model"
+      ],
+      [
+        "Critical Attention",
+        "6",
+        "Owned executive exceptions"
+      ],
+      [
+        "Clinics at Risk",
+        "2",
+        "Below approved threshold"
+      ],
+      [
+        "Decision SLA",
+        "2.4h",
+        "Median executive action time"
+      ]
+    ],
+    "patterns": [
+      "Exception-first landing",
+      "Explainable health scoring",
+      "Cross-clinic intervention",
+      "Role-sensitive drill-down"
+    ],
+    "flows": [
+      {
+        "id": "daily-review",
+        "title": "Morning Executive Review",
+        "purpose": "Move from portfolio health to owned source actions without searching modules.",
+        "steps": [
+          "Open the all-clinic Executive Health view and confirm the reporting period and data freshness.",
+          "Review Critical Attention items ordered by risk, due date and business impact.",
+          "Select a health component or clinic score and open its contributing records.",
+          "Assign, escalate or open the exact source workflow for each material exception.",
+          "Confirm that every red or amber item has an owner and due date.",
+          "Save the executive view and schedule or export the approved management pack."
+        ]
+      },
+      {
+        "id": "clinic-benchmark",
+        "title": "Clinic Benchmark and Intervention",
+        "purpose": "Compare clinics fairly and convert weak performance into governed action.",
+        "steps": [
+          "Open the Clinic League Table and select the comparison period.",
+          "Compare health, compliance, workforce, training, risk and open-action measures.",
+          "Open the calculation for an outlier and confirm normalisation factors.",
+          "Create a management action with accountable owner, due date and expected outcome.",
+          "Monitor the clinic trend and linked remediation until the source records resolve."
+        ]
+      },
+      {
+        "id": "emergency-intervention",
+        "title": "Cross-Location Emergency Intervention",
+        "purpose": "Coordinate mandatory action across affected clinics with live completion visibility.",
+        "steps": [
+          "Start an Emergency Intervention from the Risk Heatmap or Critical Attention panel.",
+          "Select affected clinics, severity, local action, evidence requirement and response deadline.",
+          "Preview the local workflows that will be superseded or prioritised.",
+          "Issue the mandatory action to each Practice Manager and local owner.",
+          "Monitor acknowledgement, evidence and sign-off by clinic.",
+          "Escalate overdue or blocked responses and issue updates.",
+          "Close only after all clinics are resolved or formally escalated."
+        ]
+      }
+    ]
+  },
+  "2": {
+    "name": "Action Inbox & Notifications",
+    "family": "Executive Command Centre",
+    "routes": [
+      "actionInbox",
+      "approvals"
+    ],
+    "accent": "#1d4ed8",
+    "icon": "bell",
+    "summary": "Single queue for approvals, exceptions, escalations and owned work.",
+    "metrics": [
+      [
+        "My Open Actions",
+        "18",
+        "Across authorised clinics"
+      ],
+      [
+        "Due Today",
+        "7",
+        "Requires action"
+      ],
+      [
+        "SLA Breaches",
+        "2",
+        "Escalated automatically"
+      ],
+      [
+        "First-Touch Resolution",
+        "74%",
+        "Resolved without reassignment"
+      ]
+    ],
+    "patterns": [
+      "Split-view triage",
+      "One-click resolution",
+      "SLA escalation",
+      "Alert deduplication"
+    ],
+    "flows": [
+      {
+        "id": "triage-resolve",
+        "title": "Triage and Resolve an Action",
+        "purpose": "Decide from one queue with evidence, impact and source context.",
+        "steps": [
+          "Open My Actions or Team Queue and apply clinic, category and priority filters.",
+          "Select an item to load the evidence, activity history and downstream impact.",
+          "Choose Approve, Request Changes, Reassign, Resolve or Open Source.",
+          "Enter the required reason where the decision changes ownership or status.",
+          "Confirm the action and verify the source record updates.",
+          "Keep the item active until the underlying requirement is genuinely satisfied."
+        ]
+      },
+      {
+        "id": "sla-escalation",
+        "title": "Automatic SLA Escalation",
+        "purpose": "Prevent time-sensitive work from remaining unseen or ownerless.",
+        "steps": [
+          "A critical item remains unresolved beyond its configured response threshold.",
+          "The platform adds an uneditable System Timeout event and SLA Breached label.",
+          "The item routes to the next approved escalation owner while retaining the original owner.",
+          "The escalated user receives a high-priority notification with direct source link.",
+          "The user resolves or reassigns the source issue.",
+          "The full breach, escalation and response timeline remains reportable."
+        ]
+      },
+      {
+        "id": "deduplicate",
+        "title": "Link and Deduplicate Related Alerts",
+        "purpose": "Reduce queue noise without deleting independent operational evidence.",
+        "steps": [
+          "Select related alerts caused by one operational event.",
+          "Choose Link & Deduplicate and nominate the master operational record.",
+          "Review confidentiality and clinic permissions before linking.",
+          "Nest secondary alerts as Linked Exceptions beneath the master item.",
+          "Use the master record for shared updates while retaining each source history.",
+          "Close each linked exception only when its own outcome is satisfied."
+        ]
+      }
+    ]
+  },
+  "3": {
+    "name": "Organisation, Locations, Users & Permissions",
+    "family": "Organisation & Tenant",
+    "routes": [
+      "settings",
+      "productAssurance"
+    ],
+    "accent": "#475569",
+    "icon": "building",
+    "summary": "Organisation structure, clinic lifecycle, access governance and business settings.",
+    "metrics": [
+      [
+        "Active Clinics",
+        "9",
+        "Across one group"
+      ],
+      [
+        "Active Users",
+        "146",
+        "Role and clinic scoped"
+      ],
+      [
+        "Access Reviews Due",
+        "4",
+        "Within 30 days"
+      ],
+      [
+        "Excess Access",
+        "0",
+        "Target state"
+      ]
+    ],
+    "patterns": [
+      "Federated sign-in",
+      "Clinic-scoped access",
+      "Effective-dated roles",
+      "Lifecycle impact review"
+    ],
+    "flows": [
+      {
+        "id": "clinic-lifecycle",
+        "title": "Clinic Lifecycle Transition",
+        "purpose": "Open, relocate, merge, reduce or close a clinic without orphaning responsibilities.",
+        "steps": [
+          "Start a Clinic Transition and select the transition type and effective date.",
+          "Complete the impact assessment across workforce, rosters, assets, stock, suppliers, communications, digital services and governance.",
+          "Assign owners, due dates, dependencies and evidence requirements.",
+          "Resolve all critical readiness blockers and approve communications.",
+          "Confirm final readiness and change the clinic status on the effective date.",
+          "Retain historical records under the originating clinic and complete a post-transition review."
+        ]
+      },
+      {
+        "id": "access-review",
+        "title": "Scheduled Access Review",
+        "purpose": "Confirm that users retain only current role and clinic permissions.",
+        "steps": [
+          "Open Access Reviews and select the clinic, scope and review period.",
+          "Review active users, last activity, sensitive permissions, temporary access and delegations.",
+          "Confirm, reduce, remove or extend access with a reason.",
+          "Route unresolved access changes to the responsible administrator.",
+          "Complete the review with sign-off and retain the decision history."
+        ]
+      },
+      {
+        "id": "temporary-access",
+        "title": "Temporary Cross-Clinic Access",
+        "purpose": "Support short-term workforce sharing without permanent permission growth.",
+        "steps": [
+          "Open the worker profile and select Grant Temporary Cross-Access.",
+          "Choose the destination clinic, role scope, permitted workspaces and hard expiry.",
+          "Preview what the worker can view, create, approve and export.",
+          "Obtain approval where the scope is sensitive or broad.",
+          "Activate the temporary access and label actions completed under it.",
+          "Terminate access automatically at expiry and include it in the next access review."
+        ]
+      }
+    ]
+  },
+  "4": {
+    "name": "Staff & Doctor Management",
+    "family": "People & Talent",
+    "routes": [
+      "staff",
+      "doctors",
+      "hrDocs"
+    ],
+    "accent": "#7c3aed",
+    "icon": "users",
+    "summary": "Effective-dated workforce profiles, readiness, contracts, credentials and lifecycle changes.",
+    "metrics": [
+      [
+        "Active Workforce",
+        "129",
+        "Staff and doctors"
+      ],
+      [
+        "Fully Ready",
+        "91%",
+        "Mandatory requirements current"
+      ],
+      [
+        "Credentials Due",
+        "8",
+        "Within 45 days"
+      ],
+      [
+        "Onboarding Open",
+        "6",
+        "Owned readiness plans"
+      ]
+    ],
+    "patterns": [
+      "Readiness gating",
+      "Effective-dated history",
+      "Credential impact",
+      "Candidate promotion"
+    ],
+    "flows": [
+      {
+        "id": "onboard-worker",
+        "title": "Onboard and Activate a Worker",
+        "purpose": "Create a complete workforce profile and prevent premature roster or pay use.",
+        "steps": [
+          "Create the staff or doctor profile and record identity, role, clinics and start date.",
+          "Complete contract, award, payment and credential sections appropriate to the person type.",
+          "Review the role-based mandatory document and training checklist.",
+          "Assign missing onboarding actions to responsible owners.",
+          "Verify sensitive bank, contract and credential information.",
+          "Activate the profile only when mandatory readiness is complete or an authorised exception exists."
+        ]
+      },
+      {
+        "id": "credential-control",
+        "title": "Credential Suspension and Reactivation",
+        "purpose": "Apply immediate operational controls when mandatory evidence expires or changes.",
+        "steps": [
+          "Open the credential alert and review the affected duties, clinics and future shifts.",
+          "Select Suspend Eligibility and enter the business justification.",
+          "Reassign affected shifts and block new duty or pay actions where the approved rule requires.",
+          "Receive and review replacement evidence.",
+          "Approve or reject the renewal with effective date.",
+          "Reactivate only the duties supported by the approved credential."
+        ]
+      },
+      {
+        "id": "effective-change",
+        "title": "Employment or Contract Change",
+        "purpose": "Implement role, rate, clinic or contract changes without overwriting history.",
+        "steps": [
+          "Start Employment Change or Contract Change from the profile.",
+          "Select the change type, effective date and reason.",
+          "Review impacts on access, roster eligibility, training, award rules, pay and approvals.",
+          "Complete required approvals and supporting documents.",
+          "Activate the new version on the approved date.",
+          "Retain the former version and generate prior-period adjustment actions when retrospective."
+        ]
+      }
+    ]
+  },
+  "5": {
+    "name": "Roster & Shift Management",
+    "family": "Rostering & Attendance",
+    "routes": [
+      "roster"
+    ],
+    "accent": "#0891b2",
+    "icon": "calendar",
+    "summary": "High-density, shift-first workforce planning with eligibility, fatigue, cost and dissemination controls.",
+    "metrics": [
+      [
+        "Coverage",
+        "97%",
+        "Published requirement filled"
+      ],
+      [
+        "Open Shifts",
+        "5",
+        "Awaiting assignment"
+      ],
+      [
+        "Blocking Conflicts",
+        "2",
+        "Must resolve before publish"
+      ],
+      [
+        "Labour vs Budget",
+        "43.8%",
+        "Threshold 45%"
+      ]
+    ],
+    "patterns": [
+      "Shift-first grid",
+      "Bulk assignment",
+      "Explainable eligibility",
+      "Publish and disseminate"
+    ],
+    "flows": [
+      {
+        "id": "bulk-roster",
+        "title": "High-Density Bulk Roster Generation",
+        "purpose": "Build required coverage first and assign compliant staff at scale.",
+        "steps": [
+          "Open the high-density location grid and choose clinics and roster period.",
+          "Apply an approved coverage template to create unassigned shift blocks.",
+          "Select multiple shifts and open Assignment Intelligence.",
+          "Rank staff by role, access, availability, hours, fatigue, award impact, training and credentials.",
+          "Bulk assign selected workers and recalculate conflicts and cost.",
+          "Resolve blockers or request a scoped authorised override.",
+          "Publish and disseminate the validated roster with acknowledgement tracking."
+        ]
+      },
+      {
+        "id": "urgent-coverage",
+        "title": "Open Shift and Urgent Coverage",
+        "purpose": "Fill a planned or sudden vacancy using a governed offer process.",
+        "steps": [
+          "Convert the uncovered shift into an Open Shift with response deadline.",
+          "Filter eligible workers by role, clinic access, availability, training and current hours.",
+          "Choose the offer audience and send the coverage request.",
+          "Review acceptances and select the final worker where several respond.",
+          "Run roster validation and transfer opening, closing or checklist duties.",
+          "Confirm assignment and notify all affected users."
+        ]
+      },
+      {
+        "id": "override",
+        "title": "Roster Compliance Override",
+        "purpose": "Allow exceptional coverage only after transparent risk and authority review.",
+        "steps": [
+          "Validate the roster and open a blocking conflict.",
+          "Review the violated rule, affected worker, cost and fatigue impact.",
+          "Select Request Authorised Override and enter the business case and control.",
+          "Route the request to the approved Operations Manager.",
+          "Approve, reject or request changes.",
+          "Embed the approved justification in the published shift history."
+        ]
+      }
+    ]
+  },
+  "6": {
+    "name": "Time & Attendance",
+    "family": "Rostering & Attendance",
+    "routes": [
+      "timeclock",
+      "syncCentre"
+    ],
+    "accent": "#0e7490",
+    "icon": "task",
+    "summary": "Approved-terminal attendance, breaks, exceptions, offline capture and timesheet readiness.",
+    "metrics": [
+      [
+        "Clocked In",
+        "42",
+        "Across active clinics"
+      ],
+      [
+        "Open Exceptions",
+        "9",
+        "Manager review required"
+      ],
+      [
+        "Offline Items",
+        "3",
+        "Pending reconciliation"
+      ],
+      [
+        "Clean Timesheets",
+        "94%",
+        "No blocking exception"
+      ]
+    ],
+    "patterns": [
+      "Terminal-first clocking",
+      "Exception fairness",
+      "Offline reconciliation",
+      "Temporary mobile override"
+    ],
+    "flows": [
+      {
+        "id": "standard-clock",
+        "title": "Standard Attendance Capture",
+        "purpose": "Record actual work against an approved shift with clear next actions.",
+        "steps": [
+          "Open My Clock on an approved clinic terminal.",
+          "Confirm the rostered shift, clinic and current attendance state.",
+          "Record clock-in, break and clock-out events.",
+          "Review the completed shift summary.",
+          "Route any missing or inconsistent event to the exception queue.",
+          "Move a clean record to timesheet review."
+        ]
+      },
+      {
+        "id": "offline-sync",
+        "title": "Offline Capture and Reconciliation",
+        "purpose": "Preserve low-risk attendance events during connectivity loss without treating them as confirmed.",
+        "steps": [
+          "The interface enters visible Offline Mode and limits available actions.",
+          "The worker records an approved attendance event locally.",
+          "The event is labelled Pending Reconciliation with local timestamp.",
+          "On restoration, match the event to roster and current access.",
+          "Route duplicates, overlaps or changed assignments to the manager.",
+          "Approve, correct or reject the event and refresh the timesheet."
+        ]
+      },
+      {
+        "id": "mobile-exception",
+        "title": "Temporary Mobile Clocking and Location Review",
+        "purpose": "Support field work while preventing unrestricted mobile attendance.",
+        "steps": [
+          "Manager grants a worker a time-limited mobile clocking profile for an approved purpose.",
+          "The worker clocks from the mobile interface during the approved window.",
+          "The platform checks expected time and location.",
+          "A mismatch enters the attendance Exceptions workspace.",
+          "Manager reviews the context and records the business justification.",
+          "The event is approved or rejected and the override expires automatically."
+        ]
+      }
+    ]
+  },
+  "7": {
+    "name": "Staff Pay & Payroll Preparation",
+    "family": "Finance & Forecasting",
+    "routes": [
+      "staffpay"
+    ],
+    "accent": "#a16207",
+    "icon": "pay",
+    "summary": "Payroll readiness, variance review, export, reconciliation, correction and final-pay control.",
+    "metrics": [
+      [
+        "Current Run",
+        "92% Ready",
+        "Across all clinics"
+      ],
+      [
+        "Blocking Employees",
+        "7",
+        "Attendance or mapping issues"
+      ],
+      [
+        "Export Status",
+        "Draft",
+        "Awaiting final review"
+      ],
+      [
+        "Corrections After Export",
+        "1",
+        "Current quarter"
+      ]
+    ],
+    "patterns": [
+      "Control-tower readiness",
+      "Source-linked variance",
+      "Versioned export",
+      "Final-pay checklist"
+    ],
+    "flows": [
+      {
+        "id": "prepare-run",
+        "title": "Prepare and Approve a Pay Run",
+        "purpose": "Convert approved time and leave into a payroll-ready output without replacing payroll.",
+        "steps": [
+          "Create the pay run for the selected period.",
+          "Load approved attendance, leave and effective classification mappings.",
+          "Review clinic and employee readiness.",
+          "Resolve source exceptions through linked records.",
+          "Recalculate totals and investigate material variances.",
+          "Approve each clinic and submit the full run for final review."
+        ]
+      },
+      {
+        "id": "export-rejection",
+        "title": "Export Rejection and Replacement",
+        "purpose": "Correct mapping errors without altering locked timesheet history.",
+        "steps": [
+          "Export the approved run to the payroll process.",
+          "Receive an Export Failed state with employee-level reasons.",
+          "Open the reconciliation panel and map the external rejection to the relevant award or identity setting.",
+          "Correct the configuration while preserving original approved time.",
+          "Generate a replacement export version.",
+          "Reconcile and lock the successful output while retaining the rejected version."
+        ]
+      },
+      {
+        "id": "final-pay",
+        "title": "Final Pay and Prior-Period Correction",
+        "purpose": "Complete offboarding and pay corrections with clear history and authority.",
+        "steps": [
+          "Open the final-pay action generated by offboarding or a discovered variance.",
+          "Review approved hours, leave, allowances and outstanding corrections.",
+          "Record the correction or final-pay method and required communication.",
+          "Obtain authorised approval.",
+          "Process the adjustment in the appropriate payroll period or external workflow.",
+          "Link original, replacement and correction records and complete reconciliation."
+        ]
+      }
+    ]
+  },
+  "8": {
+    "name": "Doctor Pay Command Centre",
+    "family": "Finance & Forecasting",
+    "routes": [
+      "doctorpay"
+    ],
+    "accent": "#92400e",
+    "icon": "pay",
+    "summary": "Multi-clinic doctor activity reconciliation, contract calculation, payslips, disputes and manual payment recording.",
+    "metrics": [
+      [
+        "Current Cycle",
+        "$418k",
+        "Gross activity imported"
+      ],
+      [
+        "Unmatched Items",
+        "3",
+        "Blocks approval"
+      ],
+      [
+        "Doctors Ready",
+        "44/47",
+        "Reconciled"
+      ],
+      [
+        "Payment Queries",
+        "2",
+        "Open disputes"
+      ]
+    ],
+    "patterns": [
+      "Consolidated provider view",
+      "Effective contract rules",
+      "Separate payment status",
+      "Versioned correction"
+    ],
+    "flows": [
+      {
+        "id": "doctor-run",
+        "title": "Consolidated Doctor Pay Run",
+        "purpose": "Create one controlled pay result while preserving clinic-level detail.",
+        "steps": [
+          "Select the payment cycle and import approved activity summaries from each clinic.",
+          "Match transactions to the doctor, clinic and effective contract rule.",
+          "Resolve duplicates, exclusions and unmatched activity.",
+          "Calculate service fee, GST and approved adjustments by clinic.",
+          "Reconcile clinic totals into the consolidated provider statement.",
+          "Submit for approval, generate the payslip and publish it to the doctor portal.",
+          "Record the external manual bank transfer and lock the completed run."
+        ]
+      },
+      {
+        "id": "dispute",
+        "title": "Doctor Pay Query and Correction",
+        "purpose": "Resolve a doctor concern without silently changing an approved run.",
+        "steps": [
+          "Doctor raises a query from the exact payslip or transaction.",
+          "Finance categorises and accepts the case.",
+          "Review source activity, contract terms and prior adjustments.",
+          "Request further information or reopen the run through the authorised correction process.",
+          "Generate and publish a new version where the financial result changes.",
+          "Send the resolution and close only when the outcome is confirmed."
+        ]
+      },
+      {
+        "id": "payment-exception",
+        "title": "Failed, Returned or Partial Payment",
+        "purpose": "Keep payslip approval, delivery and payment exception states separate but linked.",
+        "steps": [
+          "Record the failed, returned or partial manual transfer.",
+          "Verify current approved bank details and the affected amount.",
+          "Record the paid amount and keep any outstanding balance open.",
+          "Complete the replacement transfer outside MCOP.",
+          "Record the new payment reference and date.",
+          "Notify the doctor and close the exception with full history."
+        ]
+      }
+    ]
+  },
+  "9": {
+    "name": "BBPIP Forecast & Reconciliation",
+    "family": "Finance & Forecasting",
+    "routes": [
+      "bbpip"
+    ],
+    "accent": "#b45309",
+    "icon": "chart",
+    "summary": "Incentive forecasting, contribution analysis, evidence gaps and final outcome reconciliation.",
+    "metrics": [
+      [
+        "Forecast",
+        "${money?\"\":\"\"}",
+        "$286k current estimate"
+      ],
+      [
+        "Confidence",
+        "88%",
+        "Three evidence gaps"
+      ],
+      [
+        "High-Impact Gaps",
+        "2",
+        "Before period close"
+      ],
+      [
+        "Forecast Accuracy",
+        "94%",
+        "Previous quarter"
+      ]
+    ],
+    "patterns": [
+      "Assumption transparency",
+      "Contribution drill-down",
+      "Evidence confidence",
+      "Forecast-to-actual reconciliation"
+    ],
+    "flows": [
+      {
+        "id": "run-forecast",
+        "title": "Create and Approve a Forecast",
+        "purpose": "Create an explainable estimate using approved operational summaries.",
+        "steps": [
+          "Select the incentive period and refresh approved source summaries.",
+          "Review completeness, eligibility assumptions and blocking data gaps.",
+          "Run the forecast by clinic and doctor.",
+          "Inspect contribution, confidence and assumptions.",
+          "Submit the estimate for review.",
+          "Approve the current management baseline and retain its version."
+        ]
+      },
+      {
+        "id": "gap-remediation",
+        "title": "Resolve an Eligibility or Evidence Gap",
+        "purpose": "Convert a forecast weakness into owned evidence work.",
+        "steps": [
+          "Open the Compliance Gaps queue.",
+          "Select the gap and review its affected period and estimated value.",
+          "Assign an owner and due date or link approved evidence.",
+          "Review the submitted evidence.",
+          "Mark the gap Resolved or Not Applicable with reason.",
+          "Refresh the forecast confidence and values."
+        ]
+      },
+      {
+        "id": "reconcile-actual",
+        "title": "Reconcile the Actual Incentive Outcome",
+        "purpose": "Explain the difference between forecast and approved actual result.",
+        "steps": [
+          "Enter or import the approved actual outcome.",
+          "Compare it with the latest approved forecast.",
+          "Classify each material variance.",
+          "Attach supporting evidence and commentary.",
+          "Obtain reconciliation approval.",
+          "Finalise and lock the period with accuracy reporting."
+        ]
+      }
+    ]
+  },
+  "10": {
+    "name": "Tasks, Checklists, Meetings & Actions",
+    "family": "Operations",
+    "routes": [
+      "tasks",
+      "checklists",
+      "frontdesk",
+      "commbook",
+      "meetings"
+    ],
+    "accent": "#0f766e",
+    "icon": "checklist",
+    "summary": "Daily work, room controls, handovers, meetings and accountable action closure.",
+    "metrics": [
+      [
+        "Due Today",
+        "31",
+        "Across authorised clinics"
+      ],
+      [
+        "Checklist Completion",
+        "96%",
+        "Current day"
+      ],
+      [
+        "Overdue Actions",
+        "8",
+        "Manager follow-up"
+      ],
+      [
+        "Handover Acknowledged",
+        "93%",
+        "Current shift"
+      ]
+    ],
+    "patterns": [
+      "Role-based task lists",
+      "Room-linked templates",
+      "Exception branching",
+      "Carry-forward actions"
+    ],
+    "flows": [
+      {
+        "id": "checklist-cycle",
+        "title": "Create, Publish and Execute a Checklist",
+        "purpose": "Turn a controlled template into role, room or shift-specific operational evidence.",
+        "steps": [
+          "Create or select a checklist template.",
+          "Define location, room, role, frequency, item types and evidence rules.",
+          "Preview assignments and publish a version.",
+          "The assigned user completes the occurrence in My Day.",
+          "A failed or skipped item captures reason and can create a ticket or incident.",
+          "Manager reviews exceptions and closes the occurrence with its true outcome."
+        ]
+      },
+      {
+        "id": "handover",
+        "title": "Daily and Shift Handover",
+        "purpose": "Transfer unresolved operational responsibility without treating acknowledgement as completion.",
+        "steps": [
+          "Outgoing user creates a handover.",
+          "The platform suggests open tasks, incidents, tickets, stock issues and checklist failures.",
+          "User confirms relevant items and assigns incoming owners.",
+          "Incoming users acknowledge receipt.",
+          "High-risk unacknowledged items escalate.",
+          "The handover closes when acknowledgement is complete while source actions remain open."
+        ]
+      },
+      {
+        "id": "scale-change",
+        "title": "Practice Scale-Up or Scale-Down Checklist",
+        "purpose": "Control clinic, room or service changes through protected milestones and local actions.",
+        "steps": [
+          "Start a Structural Change Directive and select the change type and effective date.",
+          "Load protected milestones covering workforce, rooms, assets, finance, communications and governance.",
+          "Append local actions without removing mandatory requirements.",
+          "Track owner, due date, evidence and dependencies.",
+          "Complete verification review and resolve blocking milestones.",
+          "Approve activation and schedule post-change review."
+        ]
+      }
+    ]
+  },
+  "11": {
+    "name": "Training & Learning Management",
+    "family": "People & Talent",
+    "routes": [
+      "training"
+    ],
+    "accent": "#6d28d9",
+    "icon": "chart",
+    "summary": "Role-based learning, competency, acknowledgement, exemption and quality-triggered remediation.",
+    "metrics": [
+      [
+        "Mandatory Current",
+        "94%",
+        "Across active workforce"
+      ],
+      [
+        "Overdue Learning",
+        "11",
+        "Affects readiness"
+      ],
+      [
+        "Competencies Due",
+        "6",
+        "Within 30 days"
+      ],
+      [
+        "QA Escalations",
+        "1",
+        "Targeted restriction active"
+      ]
+    ],
+    "patterns": [
+      "Role readiness matrix",
+      "Evidence-based exemption",
+      "Observed competency",
+      "Quality-triggered training"
+    ],
+    "flows": [
+      {
+        "id": "assign-learning",
+        "title": "Create and Assign Learning",
+        "purpose": "Publish versioned content and assign it by role, clinic or responsibility.",
+        "steps": [
+          "Create the course, acknowledgement or competency requirement.",
+          "Define content, assessment, pass rule, validity and evidence.",
+          "Select assignment rules and preview affected users.",
+          "Publish the learning version.",
+          "Users complete content and assessment.",
+          "Record completion, failure, certificate and next renewal."
+        ]
+      },
+      {
+        "id": "exemption",
+        "title": "Exemption and Prior Learning",
+        "purpose": "Recognise valid existing evidence without hiding the difference from completion.",
+        "steps": [
+          "User requests an exemption against a specific requirement.",
+          "Submit issuing body, evidence, completion date and validity.",
+          "Training administrator compares evidence with the requirement.",
+          "Approve, reject or request more information.",
+          "Apply the exemption until its expiry or review date.",
+          "Retain exemption and completion as distinct reportable outcomes."
+        ]
+      },
+      {
+        "id": "quality-escalation",
+        "title": "Automated Quality Assurance Training Escalation",
+        "purpose": "Respond to repeated operational errors with targeted remediation and controlled sign-off.",
+        "steps": [
+          "Approved error thresholds are reached for a user and duty.",
+          "A high-priority quality action appears for the manager.",
+          "Manager reviews contributing records and confirms the competency issue.",
+          "Mandatory corrective training is assigned and readiness changes to Review Required.",
+          "Affected high-risk sign-off is temporarily restricted.",
+          "User completes training and observed assessment.",
+          "Manager verifies readiness and restores the scoped permission."
+        ]
+      }
+    ]
+  },
+  "12": {
+    "name": "Accreditation, Quality & Regulatory Compliance",
+    "family": "Governance",
+    "routes": [
+      "complianceCentre",
+      "accreditation",
+      "qi",
+      "audit",
+      "expiry"
+    ],
+    "accent": "#16a34a",
+    "icon": "shield",
+    "summary": "RACGP readiness, evidence, cold chain, audits, QI and regulatory action.",
+    "metrics": [
+      [
+        "RACGP Readiness",
+        "91%",
+        "Organisation score"
+      ],
+      [
+        "Critical Gaps",
+        "3",
+        "Evidence or action missing"
+      ],
+      [
+        "Cold Chain",
+        "99.2%",
+        "Readings within range"
+      ],
+      [
+        "Audit Actions Overdue",
+        "4",
+        "Requires owner follow-up"
+      ]
+    ],
+    "patterns": [
+      "Evidence-linked standards",
+      "Traffic-light plus text",
+      "Gap-to-action conversion",
+      "PDSA learning loop"
+    ],
+    "flows": [
+      {
+        "id": "readiness-review",
+        "title": "Accreditation Readiness Review",
+        "purpose": "Explain readiness and drive every gap to evidence or owned action.",
+        "steps": [
+          "Open Compliance Centre and select organisation or clinic.",
+          "Review readiness by training, documents, policies, cold chain, QI and audit findings.",
+          "Open a Critical or Attention Required component.",
+          "Assign or review the contributing action and required evidence.",
+          "Submit evidence for independent review.",
+          "Confirm the requirement Met or return it with comments."
+        ]
+      },
+      {
+        "id": "cold-chain",
+        "title": "Cold-Chain Exception",
+        "purpose": "Contain and investigate an out-of-range reading while preserving evidence.",
+        "steps": [
+          "Record the scheduled temperature reading.",
+          "An out-of-range value opens the exception workflow.",
+          "Record device, time, stock impact and immediate containment.",
+          "Create a ticket or incident where required.",
+          "Manager records stock disposition and corrective action.",
+          "Close after review and include the event in compliance trends."
+        ]
+      },
+      {
+        "id": "audit-finding",
+        "title": "Audit Finding to Verified Closure",
+        "purpose": "Convert an audit observation into controlled corrective action and retained evidence.",
+        "steps": [
+          "Record the audit finding, risk and affected requirement.",
+          "Assign corrective and preventive actions.",
+          "Link policy, training, checklist or ticket changes.",
+          "Track evidence and due dates.",
+          "Reviewer verifies effectiveness, not just task completion.",
+          "Close the finding and update readiness and recurrence reporting."
+        ]
+      }
+    ]
+  },
+  "13": {
+    "name": "Documents, Policies, SOPs & Intake",
+    "family": "Governance",
+    "routes": [
+      "documents",
+      "policies"
+    ],
+    "accent": "#15803d",
+    "icon": "file",
+    "summary": "Controlled intake, classification, review, publication, acknowledgement, retention and legal hold.",
+    "metrics": [
+      [
+        "Intake Unclassified",
+        "7",
+        "Requires filing decision"
+      ],
+      [
+        "Reviews Due",
+        "12",
+        "Within 60 days"
+      ],
+      [
+        "Acknowledgement",
+        "97%",
+        "Current policies"
+      ],
+      [
+        "Legal Holds",
+        "2",
+        "Protected records"
+      ]
+    ],
+    "patterns": [
+      "Central intake",
+      "Version comparison",
+      "Acknowledgement tasks",
+      "Retention governance"
+    ],
+    "flows": [
+      {
+        "id": "intake",
+        "title": "Process Document Intake",
+        "purpose": "Prevent incoming business records from remaining ownerless or unclassified.",
+        "steps": [
+          "Open the Intake Queue and select the incoming item.",
+          "Review preview, suggested category, sensitivity and possible source module.",
+          "Confirm clinic, owner, classification and retention category.",
+          "File the record, create an action or reject it as duplicate or irrelevant.",
+          "Route required review to the Action Inbox.",
+          "Record the final destination and processing outcome."
+        ]
+      },
+      {
+        "id": "publish-policy",
+        "title": "Publish a Controlled Policy or SOP",
+        "purpose": "Create an approved version with effective date, acknowledgement and superseded history.",
+        "steps": [
+          "Create from template or upload a draft.",
+          "Complete metadata, roles, clinics, owner, effective and review dates.",
+          "Submit to reviewers and resolve comments.",
+          "Approve the exact version.",
+          "Publish and assign acknowledgements where required.",
+          "Mark the prior version Superseded and retain full history."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "Retention, Legal Hold and Disposal",
+        "purpose": "Control end-of-life decisions without destroying held or required records.",
+        "steps": [
+          "A record reaches its retention review date.",
+          "Owner reviews category, business need, linked matters and hold status.",
+          "Choose Retain, Extend, Archive, Dispose or Place on Legal Hold.",
+          "Obtain approval for sensitive or bulk disposal.",
+          "Record disposal authority and evidence or maintain the hold.",
+          "Return released holds to review rather than deleting automatically."
+        ]
+      }
+    ]
+  },
+  "14": {
+    "name": "Ticketing Desk & Work Orders",
+    "family": "Operations",
+    "routes": [
+      "ticketDesk"
+    ],
+    "accent": "#0d9488",
+    "icon": "task",
+    "summary": "Issue intake, triage, SLA, work orders, duplicates, contractors and evidence-based closure.",
+    "metrics": [
+      [
+        "Open Tickets",
+        "14",
+        "All priorities"
+      ],
+      [
+        "P1 Active",
+        "1",
+        "Immediate oversight"
+      ],
+      [
+        "SLA Compliance",
+        "93%",
+        "Current month"
+      ],
+      [
+        "Reopened",
+        "2",
+        "Last 30 days"
+      ]
+    ],
+    "patterns": [
+      "Impact-urgency triage",
+      "SLA countdown",
+      "Master duplicate record",
+      "Closure evidence"
+    ],
+    "flows": [
+      {
+        "id": "standard-ticket",
+        "title": "Report and Resolve an Operational Issue",
+        "purpose": "Move from staff report to evidence-based manager closure.",
+        "steps": [
+          "Report the issue or scan the linked asset.",
+          "Capture clinic, room, asset, impact, urgency and evidence.",
+          "Triage priority and assign an owner.",
+          "Owner accepts work and records updates.",
+          "Attach completion evidence and mark work complete.",
+          "Manager signs off or returns the ticket for further work."
+        ]
+      },
+      {
+        "id": "vendor-workorder",
+        "title": "Vendor Work Order and Contractor Visit",
+        "purpose": "Govern scope, cost, access and completion for external work.",
+        "steps": [
+          "Create a work order from the ticket.",
+          "Define scope, supplier, access window, quote and safety requirements.",
+          "Obtain cost approval where required.",
+          "Check in the contractor and confirm permitted areas.",
+          "Record work, parts, evidence and scope changes.",
+          "Check out, test the asset and complete manager sign-off."
+        ]
+      },
+      {
+        "id": "merge-duplicate",
+        "title": "Duplicate Detection and Master Ticket",
+        "purpose": "Consolidate service restoration while preserving every original report.",
+        "steps": [
+          "A new ticket displays possible duplicates based on clinic, asset and timing.",
+          "Triage compares the reports and selects Merge as Duplicate.",
+          "Choose the master ticket and confirm confidentiality compatibility.",
+          "Manage assignment, SLA and work order from the master.",
+          "Keep duplicate reporters informed.",
+          "Close linked duplicates when the master and their own outcome are satisfied."
+        ]
+      }
+    ]
+  },
+  "15": {
+    "name": "Inventory, Suppliers, Finance & Assets",
+    "family": "Assets & Facilities",
+    "routes": [
+      "inventory",
+      "stock",
+      "equipment",
+      "rooms",
+      "printers"
+    ],
+    "accent": "#d97706",
+    "icon": "box",
+    "summary": "Stock, suppliers, invoices, assets, equipment, printers, service and recall control.",
+    "metrics": [
+      [
+        "Critical Stockouts",
+        "0",
+        "Target state"
+      ],
+      [
+        "Low Stock Items",
+        "12",
+        "Below PAR"
+      ],
+      [
+        "Service Overdue",
+        "3",
+        "Critical assets"
+      ],
+      [
+        "Supplier Reviews Due",
+        "5",
+        "Within 60 days"
+      ]
+    ],
+    "patterns": [
+      "PAR-driven replenishment",
+      "Batch and recall traceability",
+      "Asset accountability",
+      "Supplier due diligence"
+    ],
+    "flows": [
+      {
+        "id": "replenish",
+        "title": "Low-Stock Reorder and Receipt",
+        "purpose": "Replenish below-PAR stock with approval and discrepancy control.",
+        "steps": [
+          "Review items below PAR by clinic and criticality.",
+          "Create a purchase request grouped by supplier.",
+          "Review quantities, expected cost and approval threshold.",
+          "Approve and issue the order.",
+          "Receive delivered quantities and record discrepancies.",
+          "Update balances and retain the movement and approval history."
+        ]
+      },
+      {
+        "id": "recall",
+        "title": "Expiry, Batch Recall and Product Disposition",
+        "purpose": "Locate, quarantine and resolve affected stock across all clinics.",
+        "steps": [
+          "Select the affected item or batch.",
+          "Identify quantities by clinic and room.",
+          "Quarantine stock and prevent normal use.",
+          "Assign local verification actions.",
+          "Record return, transfer, write-off or approved disposition.",
+          "Close only when every known location is resolved or escalated."
+        ]
+      },
+      {
+        "id": "asset-lifecycle",
+        "title": "Asset Assignment, Service and Retirement",
+        "purpose": "Maintain one accountable owner or location throughout the asset lifecycle.",
+        "steps": [
+          "Create or select the asset and confirm criticality and service rules.",
+          "Assign or loan it to a person, clinic or room.",
+          "Track service, calibration, warranty and linked faults.",
+          "Inspect and record condition on transfer or return.",
+          "For loss or theft, create linked incident and access actions.",
+          "For retirement, confirm data removal, disposal approval and final status."
+        ]
+      }
+    ]
+  },
+  "16": {
+    "name": "Incidents, Complaints, Risk & Continuity",
+    "family": "Operations",
+    "routes": [
+      "incidents",
+      "riskCentre",
+      "emergencyCentre"
+    ],
+    "accent": "#be123c",
+    "icon": "alert",
+    "summary": "Confidential reporting, triage, investigation, RCA/CAPA, enterprise risk and continuity.",
+    "metrics": [
+      [
+        "Open Incidents",
+        "9",
+        "Two high risk"
+      ],
+      [
+        "CAPA Overdue",
+        "4",
+        "Effectiveness pending"
+      ],
+      [
+        "Continuity Exercises",
+        "2",
+        "Due this quarter"
+      ],
+      [
+        "Risk Controls Effective",
+        "88%",
+        "Current review"
+      ]
+    ],
+    "patterns": [
+      "Just culture reporting",
+      "Severity-based triage",
+      "RCA/CAPA effectiveness",
+      "Scenario continuity"
+    ],
+    "flows": [
+      {
+        "id": "incident",
+        "title": "Report, Investigate and Close an Incident",
+        "purpose": "Capture facts quickly, protect confidentiality and verify corrective action effectiveness.",
+        "steps": [
+          "Reporter records category, clinic, time, immediate risk and immediate action.",
+          "Triage assigns severity, confidentiality and investigator.",
+          "Investigator builds chronology, evidence and contributing factors.",
+          "Create corrective and preventive actions with owners and due dates.",
+          "Verify actions and effectiveness.",
+          "Submit closure for authorised review and retain lessons and trends."
+        ]
+      },
+      {
+        "id": "complaint",
+        "title": "Complaint Response and Escalation",
+        "purpose": "Manage service concerns, recovery and review without unnecessary clinical detail.",
+        "steps": [
+          "Log the complaint, preferred contact channel, acknowledgement due date and owner.",
+          "Acknowledge and investigate the service concern.",
+          "Record communication and recovery actions.",
+          "Link an incident where risk or serious harm is identified.",
+          "Approve the response and outcome.",
+          "Open an independent review if the complainant remains dissatisfied."
+        ]
+      },
+      {
+        "id": "continuity",
+        "title": "Business Continuity Event or Exercise",
+        "purpose": "Activate a usable playbook, restore service and reconcile backlog.",
+        "steps": [
+          "Select a scenario and choose Live Event or Exercise.",
+          "Record affected clinic, services, impact and decision owner.",
+          "Assign roles, contacts, workaround checklists and communications.",
+          "Update risk and service status during the event.",
+          "Confirm restoration and identify backlog.",
+          "Reconcile backlog and complete the post-event review and actions."
+        ]
+      }
+    ]
+  },
+  "17": {
+    "name": "Email & SMS Communications",
+    "family": "Communications",
+    "routes": [
+      "email",
+      "sms",
+      "memos",
+      "noticeboards"
+    ],
+    "accent": "#db2777",
+    "icon": "chat",
+    "summary": "Approved campaigns, emergency communication, audience governance, consent and delivery.",
+    "metrics": [
+      [
+        "Scheduled Messages",
+        "6",
+        "Approved queue"
+      ],
+      [
+        "Delivery Rate",
+        "98.6%",
+        "Last 30 days"
+      ],
+      [
+        "Permanent Failures",
+        "11",
+        "Requires source correction"
+      ],
+      [
+        "Approvals Pending",
+        "3",
+        "Exact content and audience"
+      ]
+    ],
+    "patterns": [
+      "Exact-version approval",
+      "Consent suppression",
+      "Delivery exception queue",
+      "Event-linked emergency updates"
+    ],
+    "flows": [
+      {
+        "id": "campaign",
+        "title": "Create, Approve and Send a Campaign",
+        "purpose": "Send approved operational communication with audience and consent controls.",
+        "steps": [
+          "Create the email or SMS campaign and select purpose and clinic scope.",
+          "Choose an approved audience source and exclusions.",
+          "Select a template and edit permitted content.",
+          "Preview desktop, mobile or SMS segments and send a test.",
+          "Submit the exact content and audience version for approval.",
+          "Schedule or send and monitor delivery results."
+        ]
+      },
+      {
+        "id": "delivery",
+        "title": "Failed Delivery Review",
+        "purpose": "Retry eligible failures without duplicating successful sends.",
+        "steps": [
+          "Open Delivery and filter Failed.",
+          "Group failures by invalid contact, suppression, temporary failure or provider issue.",
+          "Retry eligible temporary failures.",
+          "Create source-correction actions for permanent failures.",
+          "Keep successful recipients excluded from retry.",
+          "Report original and retry outcomes accurately."
+        ]
+      },
+      {
+        "id": "emergency-comms",
+        "title": "Emergency Update and All-Clear",
+        "purpose": "Issue urgent operational messages linked to the source event.",
+        "steps": [
+          "Select the approved emergency template and linked incident or outage.",
+          "Confirm clinics, audience, exclusions and channels.",
+          "Complete the urgent approval.",
+          "Send the initial message and prioritise failures.",
+          "Issue linked updates as conditions change.",
+          "Send the all-clear and retain one event history."
+        ]
+      }
+    ]
+  },
+  "18": {
+    "name": "Digital Operations & Security",
+    "family": "Security & Access",
+    "routes": [
+      "website",
+      "remote",
+      "vault",
+      "cameras"
+    ],
+    "accent": "#dc2626",
+    "icon": "lock",
+    "summary": "Digital availability, remote support, privileged access, secrets, cameras and review.",
+    "metrics": [
+      [
+        "Critical Outages",
+        "0",
+        "Current state"
+      ],
+      [
+        "Remote Sessions Active",
+        "2",
+        "Approved and timed"
+      ],
+      [
+        "Credential Rotations Due",
+        "4",
+        "Within 30 days"
+      ],
+      [
+        "Camera Health",
+        "97%",
+        "One device offline"
+      ]
+    ],
+    "patterns": [
+      "Time-limited access",
+      "Break-glass review",
+      "Secret reveal audit",
+      "Privacy-scoped footage"
+    ],
+    "flows": [
+      {
+        "id": "outage",
+        "title": "Website or Digital-Service Outage",
+        "purpose": "Acknowledge, restore and learn from repeated service failure.",
+        "steps": [
+          "Repeated monitoring failures create an outage alert.",
+          "IT reviews response history, affected site and service impact.",
+          "Acknowledge and create the linked ticket or incident.",
+          "Record containment, updates and recovery time.",
+          "Confirm restoration and close the source issue.",
+          "Update uptime and recurrence reporting."
+        ]
+      },
+      {
+        "id": "remote-access",
+        "title": "Remote Access Request and Session",
+        "purpose": "Limit support access by purpose, asset, clinic and time.",
+        "steps": [
+          "Support user selects an approved endpoint.",
+          "Request access with purpose, duration and related ticket.",
+          "Approver reviews sensitivity and narrows scope if required.",
+          "Launch the approved session and record start.",
+          "End the session and record outcome.",
+          "Review any emergency or unusual access."
+        ]
+      },
+      {
+        "id": "privileged-access",
+        "title": "Secret or Camera Access",
+        "purpose": "Apply explicit purpose and approval to sensitive access and export.",
+        "steps": [
+          "User requests a secret reveal or camera footage action.",
+          "Record system or zone, purpose, time range and linked matter.",
+          "Approver reviews authority, privacy and minimum necessary scope.",
+          "Grant time-limited viewing, copy or export.",
+          "Log the action and required retention.",
+          "Create credential rotation or follow-up action where needed."
+        ]
+      }
+    ]
+  },
+  "19": {
+    "name": "Clinic Analytics, Data Quality & Change",
+    "family": "Executive Command Centre",
+    "routes": [
+      "analytics"
+    ],
+    "accent": "#4f46e5",
+    "icon": "chart",
+    "summary": "Trusted operational insight, all-clinic benchmarking, data correction and governed change.",
+    "metrics": [
+      [
+        "Data Completeness",
+        "96%",
+        "All active clinics"
+      ],
+      [
+        "Critical Data Issues",
+        "5",
+        "Affect downstream work"
+      ],
+      [
+        "Changes At Risk",
+        "2",
+        "Readiness incomplete"
+      ],
+      [
+        "Benefits Realised",
+        "82%",
+        "Closed changes"
+      ]
+    ],
+    "patterns": [
+      "Metric definitions",
+      "Contributing-record drill-down",
+      "Owned data quality",
+      "Rollback and benefits review"
+    ],
+    "flows": [
+      {
+        "id": "benchmark",
+        "title": "Review Clinic Performance and Create Action",
+        "purpose": "Use comparable metrics to identify and improve operational outliers.",
+        "steps": [
+          "Select the clinic, period and comparison cohort.",
+          "Review metric definition, threshold, exclusions and freshness.",
+          "Open an outlier and inspect contributing operational summaries.",
+          "Create an action with owner, due date and expected measure.",
+          "Track the action through the Action Inbox.",
+          "Review the subsequent trend and close when the outcome is verified."
+        ]
+      },
+      {
+        "id": "data-quality",
+        "title": "Correct a Critical Data-Quality Issue",
+        "purpose": "Fix missing, stale or duplicate source information without erasing history.",
+        "steps": [
+          "Open Data Quality and filter Critical.",
+          "Review the source record and downstream workflows affected.",
+          "Correct, merge or submit the record for specialist review.",
+          "Obtain confirmation for sensitive or high-impact corrections.",
+          "Run the next quality check.",
+          "Clear the exception and update the clinic data-health score."
+        ]
+      },
+      {
+        "id": "change-recovery",
+        "title": "Business Change, Rollback and Benefits Review",
+        "purpose": "Implement change with readiness and recover safely when results are poor.",
+        "steps": [
+          "Raise the change with outcome, clinics and effective date.",
+          "Assess impacts across people, policy, training, communications, finance and continuity.",
+          "Assign actions and obtain approval.",
+          "Confirm readiness and implement.",
+          "If unsafe or unsuccessful, Pause, Rollback or Correct Forward.",
+          "Stabilise service and complete the expected-versus-actual benefits review."
+        ]
+      }
+    ]
+  },
+  "20": {
+    "name": "Commercial SaaS & Organisation Workspaces",
+    "family": "Organisation & Tenant",
+    "routes": [
+      "saas"
+    ],
+    "accent": "#64748b",
+    "icon": "building",
+    "summary": "Tenant onboarding, plan governance, support access, usage, billing, renewal and offboarding.",
+    "metrics": [
+      [
+        "Active Tenants",
+        "18",
+        "Commercial portfolio"
+      ],
+      [
+        "Onboarding",
+        "3",
+        "In progress"
+      ],
+      [
+        "Renewals Due",
+        "4",
+        "Within 90 days"
+      ],
+      [
+        "Support Access Active",
+        "1",
+        "Time-limited"
+      ]
+    ],
+    "patterns": [
+      "Tenant separation",
+      "Entitlement clarity",
+      "Approved support access",
+      "Controlled offboarding"
+    ],
+    "flows": [
+      {
+        "id": "tenant-onboard",
+        "title": "Onboard and Activate a Tenant",
+        "purpose": "Configure a customer group with clear ownership, training and acceptance.",
+        "steps": [
+          "Create the tenant identity, contacts, contract dates and support owner.",
+          "Select the plan and enabled modules.",
+          "Invite the tenant administrator.",
+          "Complete clinic, user, configuration, training and sample-workflow tasks.",
+          "Review acceptance evidence and unresolved gaps.",
+          "Activate the tenant and schedule adoption review."
+        ]
+      },
+      {
+        "id": "plan-change",
+        "title": "Plan Upgrade, Downgrade or Billing Recovery",
+        "purpose": "Change commercial entitlement without removing historical records.",
+        "steps": [
+          "Open the current plan and select the proposed change.",
+          "Review gained or lost modules, limits, price and effective date.",
+          "Identify records or exports required before downgrade.",
+          "Complete customer and internal approvals.",
+          "Apply the change on the approved date.",
+          "For failed payment, communicate, restrict or reinstate according to contract."
+        ]
+      },
+      {
+        "id": "support-access",
+        "title": "Tenant-Approved Support Access",
+        "purpose": "Allow support investigation only for an approved ticket, scope and duration.",
+        "steps": [
+          "Support requests access from the customer case.",
+          "Specify tenant, modules, purpose, data scope and expiry.",
+          "Tenant administrator approves, limits or rejects.",
+          "Display a visible support-access banner during the period.",
+          "Complete support work and record outcome.",
+          "Expire access automatically and include it in review history."
+        ]
+      }
+    ]
+  },
+  "21": {
+    "name": "SaaS Vendor Operations & Tenant Provisioning",
+    "family": "SaaS Vendor Administration",
+    "routes": [
+      "vendorConsole"
+    ],
+    "accent": "#4338ca",
+    "icon": "globe",
+    "summary": "Vendor-level provisioning, entitlement, service status and support governance outside tenant operations.",
+    "metrics": [
+      [
+        "Provisioning Pending",
+        "2",
+        "Awaiting activation"
+      ],
+      [
+        "Portfolio Availability",
+        "99.97%",
+        "Current month"
+      ],
+      [
+        "Past Due Tenants",
+        "1",
+        "Commercial action open"
+      ],
+      [
+        "Data Separation Breaches",
+        "0",
+        "Target state"
+      ]
+    ],
+    "patterns": [
+      "Vendor/tenant boundary",
+      "Provisioning checklist",
+      "Portfolio service status",
+      "Client-authorised support"
+    ],
+    "flows": [
+      {
+        "id": "provision",
+        "title": "Provision a New Medical Group Tenant",
+        "purpose": "Create the commercial tenant shell and hand control to the client administrator.",
+        "steps": [
+          "Open Vendor Command Console and select Provision New Tenant.",
+          "Record corporate identity, primary contact, country and contract reference.",
+          "Select subscription tier and module entitlements.",
+          "Review provisioning checklist and commercial approval.",
+          "Confirm provisioning and create the Pending Activation tenant.",
+          "Send the administrator invitation and monitor activation."
+        ]
+      },
+      {
+        "id": "suspend",
+        "title": "Commercial Suspension and Reinstatement",
+        "purpose": "Apply contractual restriction while preserving records and essential closure options.",
+        "steps": [
+          "Open the tenant commercial status.",
+          "Review failed payment, contract status and customer communication.",
+          "Submit the suspension decision for authority.",
+          "Apply the approved restriction and notify the tenant.",
+          "Keep permitted export, support and resolution actions available.",
+          "After resolution, reinstate and record the outcome."
+        ]
+      },
+      {
+        "id": "service-impact",
+        "title": "Portfolio Service-Impact Coordination",
+        "purpose": "Communicate and manage a multi-tenant service issue without exposing customer information.",
+        "steps": [
+          "Service monitoring identifies a cross-tenant impact.",
+          "Vendor operations creates the service event and severity.",
+          "Publish an approved portfolio bulletin without tenant-confidential detail.",
+          "Track affected components, workarounds and restoration.",
+          "Issue updates and the all-clear.",
+          "Complete a post-incident summary and prevention actions."
+        ]
+      }
+    ]
+  },
+  "22": {
+    "name": "Recruitment & Talent Acquisition",
+    "family": "People & Talent",
+    "routes": [
+      "recruitment"
+    ],
+    "accent": "#8b5cf6",
+    "icon": "users",
+    "summary": "Vacancies, tenant-controlled applications, candidate Kanban, assessment, offers and promotion to staff.",
+    "metrics": [
+      [
+        "Open Vacancies",
+        "5",
+        "Across four clinics"
+      ],
+      [
+        "Active Candidates",
+        "23",
+        "In live pipelines"
+      ],
+      [
+        "Median Time to Shortlist",
+        "3.2d",
+        "Current quarter"
+      ],
+      [
+        "Offers Accepted",
+        "78%",
+        "Rolling 12 months"
+      ]
+    ],
+    "patterns": [
+      "Tenant-controlled intake",
+      "Kanban pipeline",
+      "Structured assessment",
+      "Locked candidate history"
+    ],
+    "flows": [
+      {
+        "id": "vacancy",
+        "title": "Create and Publish a Vacancy",
+        "purpose": "Approve role need and publish a consistent tenant-controlled application experience.",
+        "steps": [
+          "Create a vacancy from an approved job template.",
+          "Record clinic, employment type, owner, hours, credentials and closing date.",
+          "Preview public content and screening questions.",
+          "Submit for approval and resolve changes.",
+          "Publish and generate the external application link.",
+          "Monitor applications and vacancy ageing."
+        ]
+      },
+      {
+        "id": "candidate",
+        "title": "Review, Interview and Offer",
+        "purpose": "Progress candidates consistently using structured evidence and authority.",
+        "steps": [
+          "Review new applications and completeness.",
+          "Shortlist or request more information.",
+          "Schedule structured interview and panel.",
+          "Record assessment, references and comparison.",
+          "Submit the preferred offer for approval.",
+          "Issue the offer and record acceptance, decline or withdrawal."
+        ]
+      },
+      {
+        "id": "promote",
+        "title": "Candidate-to-Employee Transition",
+        "purpose": "Create a workforce profile without losing or mutating the recruitment history.",
+        "steps": [
+          "Open an accepted candidate and select Promote to Staff Profile.",
+          "Review mapped identity, role, clinic and start details.",
+          "Identify missing workforce readiness information.",
+          "Confirm promotion and create the Draft staff profile.",
+          "Lock the candidate history as Promoted to Staff.",
+          "Complete normal onboarding, access, training and activation."
+        ]
+      }
+    ]
+  },
+  "23": {
+    "name": "Tenant Website Infrastructure & SEO Engine",
+    "family": "Website & Digital Experience",
+    "routes": [
+      "websiteStudio"
+    ],
+    "accent": "#059669",
+    "icon": "globe",
+    "summary": "Modular website assembly, local SEO, public form routing, publication and rollback governance.",
+    "metrics": [
+      [
+        "Published Pages",
+        "18",
+        "Across clinic sites"
+      ],
+      [
+        "SEO Completeness",
+        "91%",
+        "One profile mismatch"
+      ],
+      [
+        "Form Routing Health",
+        "96%",
+        "One owner missing"
+      ],
+      [
+        "30-Day Uptime",
+        "99.92%",
+        "Current portfolio"
+      ]
+    ],
+    "patterns": [
+      "Approved component assembly",
+      "Clinic-profile consistency",
+      "Purpose-limited forms",
+      "Versioned publish and rollback"
+    ],
+    "flows": [
+      {
+        "id": "build-site",
+        "title": "Assemble and Publish a Tenant Website",
+        "purpose": "Publish responsive clinic-safe content using approved modules and source details.",
+        "steps": [
+          "Create the site from the tenant brand and base template.",
+          "Add clinic pages and approved components.",
+          "Link current clinic details, services, profiles and booking destinations.",
+          "Preview desktop and mobile.",
+          "Run accessibility, SEO and source-consistency checks.",
+          "Submit for approval and publish the approved version."
+        ]
+      },
+      {
+        "id": "seo",
+        "title": "Local SEO Review",
+        "purpose": "Keep search-facing clinic details complete and consistent with the approved clinic profile.",
+        "steps": [
+          "Open the clinic page in SEO Visibility Control.",
+          "Review title, description, address, phone, hours and service categories.",
+          "Resolve mismatches and duplicate content.",
+          "Preview the search result.",
+          "Submit the exact changes for approval.",
+          "Publish and monitor completeness and visibility trends."
+        ]
+      },
+      {
+        "id": "form-routing",
+        "title": "Create and Route a Public Form",
+        "purpose": "Collect minimum necessary public information and convert it to an owned operational action.",
+        "steps": [
+          "Choose the approved public form purpose.",
+          "Add only necessary fields and the privacy notice.",
+          "Select clinic, destination queue, owner, acknowledgement and SLA.",
+          "Preview and review privacy and routing.",
+          "Publish the form.",
+          "Create an intake or Action Inbox item for each submission and escalate routing failures."
+        ]
+      }
+    ]
+  },
+  "24": {
+    "name": "Practice Financial Forecast & Ledger Control",
+    "family": "Finance & Forecasting",
+    "routes": [
+      "financialForecast"
+    ],
+    "accent": "#ca8a04",
+    "icon": "chart",
+    "summary": "Multi-clinic revenue, expense, roster-cost, margin baseline and actual-versus-forecast control.",
+    "metrics": [
+      [
+        "Projected Margin",
+        "24.6%",
+        "Current locked baseline"
+      ],
+      [
+        "Labour to Revenue",
+        "45.9%",
+        "Threshold attention"
+      ],
+      [
+        "High Variances",
+        "1",
+        "Mandatory remediation"
+      ],
+      [
+        "Forecast Accuracy",
+        "95.2%",
+        "Rolling quarters"
+      ]
+    ],
+    "patterns": [
+      "Immutable baseline",
+      "Live roster cost",
+      "Scenario comparison",
+      "Actual-vs-forecast triage"
+    ],
+    "flows": [
+      {
+        "id": "forecast",
+        "title": "Initialize and Lock a Fiscal Forecast",
+        "purpose": "Create an explainable multi-clinic baseline from approved operational summaries.",
+        "steps": [
+          "Select clinics, fiscal period and historical comparison.",
+          "Load approved doctor pay, staff pay, incentive and cost summaries.",
+          "Add structural revenue and expense assumptions.",
+          "Resolve missing or unmapped configuration.",
+          "Compare expected, conservative and stress scenarios.",
+          "Submit, approve and lock the immutable baseline."
+        ]
+      },
+      {
+        "id": "labour-check",
+        "title": "Predictive Roster Labour-Cost Check",
+        "purpose": "Prevent roster publication from exceeding an approved labour threshold without authority.",
+        "steps": [
+          "Open the roster grid with the clinic budget loaded.",
+          "Assign shifts and watch real-time labour cost and ratio.",
+          "Open the contributing cost breakdown when the threshold is exceeded.",
+          "Adjust coverage or request an over-budget override.",
+          "Approver reviews service need, cost and operational risk.",
+          "Release only the approved roster version and amount."
+        ]
+      },
+      {
+        "id": "variance",
+        "title": "Actual versus Forecast Reconciliation",
+        "purpose": "Detect, own and remediate material financial variance without changing the baseline.",
+        "steps": [
+          "Import the approved external accounting summary.",
+          "Map actual lines to forecast categories.",
+          "Overlay actual values against the locked baseline.",
+          "Create actions for material negative or positive variances.",
+          "Record cause, recovery plan, owner and due date.",
+          "Reconcile the period while retaining baseline, actual and remediation history."
+        ]
+      }
+    ]
+  }
+}

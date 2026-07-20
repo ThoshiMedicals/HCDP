@@ -1,0 +1,845 @@
+[
+  {
+    "title": "Complete checklist",
+    "fields": [],
+    "htmlLength": 595
+  },
+  {
+    "title": "Doctor payslip preview",
+    "fields": [],
+    "htmlLength": 597
+  },
+  {
+    "title": "Secret reveal request",
+    "fields": [],
+    "htmlLength": 229
+  },
+  {
+    "title": "Secret",
+    "fields": [],
+    "htmlLength": 56
+  },
+  {
+    "title": "Supplier invoice approval PDF preview",
+    "fields": [],
+    "htmlLength": 430
+  },
+  {
+    "title": "Scan Document / OCR",
+    "fields": [],
+    "htmlLength": 873
+  },
+  {
+    "title": "Create Checklist",
+    "fields": [
+      {
+        "name": "frequency",
+        "label": "Frequency",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Daily",
+          "Weekly",
+          "Monthly",
+          "Quarterly",
+          "Yearly",
+          "Custom"
+        ]
+      },
+      {
+        "name": "timeOfDay",
+        "label": "Time of day",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "AM Morning",
+          "PM Afternoon",
+          "Custom Time",
+          "Clock-out",
+          "Clock-in"
+        ]
+      },
+      {
+        "name": "workflowScope",
+        "label": "Checklist type",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "General",
+          "Front Desk",
+          "Nurse Accreditation Checklist",
+          "Manager Accreditation Review",
+          "Room Setup"
+        ]
+      },
+      {
+        "name": "assignment",
+        "label": "Assignment",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Group",
+          "Individual"
+        ]
+      },
+      {
+        "name": "department",
+        "label": "Department",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "All Departments",
+          "Reception",
+          "Nursing",
+          "Management",
+          "Doctors",
+          "IT Support",
+          "Cleaners"
+        ]
+      },
+      {
+        "name": "responsibleRole",
+        "label": "Responsible person / role",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": "e.g. Reception opening staff"
+      },
+      {
+        "name": "name",
+        "label": "Title",
+        "type": "text",
+        "required": true,
+        "full": true,
+        "placeholder": "e.g. Morning Opening"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "textarea",
+        "required": false,
+        "full": true,
+        "placeholder": "Brief description"
+      },
+      {
+        "name": "items",
+        "label": "Checklist items",
+        "type": "textarea",
+        "required": false,
+        "full": true,
+        "placeholder": "One item per line\nTurn on reception computers\nCheck Best Practice opens\nRecord vaccine fridge AM temperature"
+      },
+      {
+        "name": "instructions",
+        "label": "Instructions",
+        "type": "textarea",
+        "required": false,
+        "full": true,
+        "placeholder": "Any notes for completing this checklist"
+      },
+      {
+        "name": "managerReviewRequired",
+        "label": "Manager review if skipped/incomplete",
+        "type": "checkbox",
+        "default": true
+      },
+      {
+        "name": "publishNow",
+        "label": "Publish checklist now",
+        "type": "checkbox",
+        "default": true
+      }
+    ],
+    "htmlLength": 2660
+  },
+  {
+    "title": "Create Printer Work Order",
+    "fields": [
+      {
+        "name": "printerId",
+        "label": "Printer",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "${safeText(p.name)} - ${safeText(locName(p.location))}"
+        ]
+      },
+      {
+        "name": "priority",
+        "label": "Priority",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "P2 Urgent",
+          "P3 Routine",
+          "P4 Scheduled"
+        ]
+      },
+      {
+        "name": "description",
+        "label": "Problem description",
+        "type": "textarea",
+        "required": false,
+        "full": true,
+        "placeholder": "Describe fault, error code, affected users and fallback used"
+      }
+    ],
+    "htmlLength": 642
+  },
+  {
+    "title": "Notification Preferences",
+    "fields": [],
+    "htmlLength": 992
+  },
+  {
+    "title": "Related Records",
+    "fields": [],
+    "htmlLength": 938
+  },
+  {
+    "title": "Help & Support",
+    "fields": [
+      {
+        "name": "type",
+        "label": "Request type",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "How-to question",
+          "Usability issue",
+          "Data correction",
+          "Technical problem",
+          "Feedback"
+        ]
+      },
+      {
+        "name": "impact",
+        "label": "Impact",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ]
+      },
+      {
+        "name": "page",
+        "label": "Current page",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 1036
+  },
+  {
+    "title": "Add Enterprise Risk",
+    "fields": [
+      {
+        "name": "title",
+        "label": "Risk title",
+        "type": "text",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 987
+  },
+  {
+    "title": "Create Compliance Gap Action",
+    "fields": [],
+    "htmlLength": 720
+  },
+  {
+    "title": "Action Detail",
+    "fields": [],
+    "htmlLength": 173
+  },
+  {
+    "title": "Analytics Filters",
+    "fields": [],
+    "htmlLength": 807
+  },
+  {
+    "title": "Access Restricted",
+    "fields": [],
+    "htmlLength": 198
+  },
+  {
+    "title": "Executive Health Calculation",
+    "fields": [],
+    "htmlLength": 558
+  },
+  {
+    "title": "Reassign Action",
+    "fields": [],
+    "htmlLength": 500
+  },
+  {
+    "title": "Request Changes",
+    "fields": [],
+    "htmlLength": 145
+  },
+  {
+    "title": "Approval Delegations",
+    "fields": [],
+    "htmlLength": 749
+  },
+  {
+    "title": "Role Access Matrix",
+    "fields": [],
+    "htmlLength": 850
+  },
+  {
+    "title": "Access Restricted",
+    "fields": [],
+    "htmlLength": 231
+  },
+  {
+    "title": "Enterprise Sign-In Journey",
+    "fields": [],
+    "htmlLength": 1119
+  },
+  {
+    "title": "Access Review",
+    "fields": [],
+    "htmlLength": 861
+  },
+  {
+    "title": "Start Cross-Location Emergency Intervention",
+    "fields": [
+      {
+        "name": "priority",
+        "label": "Priority",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Critical",
+          "High"
+        ]
+      },
+      {
+        "name": "owner",
+        "label": "Action owner",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Group Operations Manager",
+          "Quality / Accreditation Lead",
+          "IT / Facilities Lead"
+        ]
+      },
+      {
+        "name": "title",
+        "label": "Emergency issue",
+        "type": "text",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      },
+      {
+        "name": "due",
+        "label": "Completion due",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "action",
+        "label": "Mandatory action",
+        "type": "textarea",
+        "required": false,
+        "full": true,
+        "placeholder": ""
+      },
+      {
+        "name": "clinics",
+        "label": "${e(c)}",
+        "type": "checkbox",
+        "default": true
+      }
+    ],
+    "htmlLength": 1293
+  },
+  {
+    "title": "Link & Deduplicate Alerts",
+    "fields": [],
+    "htmlLength": 390
+  },
+  {
+    "title": "Grant Temporary Cross-Clinic Access",
+    "fields": [
+      {
+        "name": "person",
+        "label": "Staff member",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "${e(x.name)}"
+        ]
+      },
+      {
+        "name": "clinic",
+        "label": "Destination clinic",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "${e(x)}"
+        ]
+      },
+      {
+        "name": "expires",
+        "label": "Hard expiry",
+        "type": "text",
+        "required": true,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "scope",
+        "label": "Roster & Shift Management",
+        "type": "checkbox",
+        "default": true
+      }
+    ],
+    "htmlLength": 1458
+  },
+  {
+    "title": "Immediate Administrative Credential Suspension",
+    "fields": [
+      {
+        "name": "person",
+        "label": "Clinician",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "${e(x.name)}"
+        ]
+      },
+      {
+        "name": "credential",
+        "label": "Credential",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "AHPRA registration",
+          "Professional insurance",
+          "Required role credential"
+        ]
+      },
+      {
+        "name": "effective",
+        "label": "Effective date",
+        "type": "date",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "reason",
+        "label": "Mandatory business justification",
+        "type": "textarea",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 956
+  },
+  {
+    "title": "Retrospective Contract Amendment",
+    "fields": [
+      {
+        "name": "doctor",
+        "label": "Doctor",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "${e(x.name)}"
+        ]
+      },
+      {
+        "name": "effective",
+        "label": "Retrospective effective date",
+        "type": "date",
+        "required": true,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "oldRate",
+        "label": "Previous facility fee rate",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "newRate",
+        "label": "Revised facility fee rate",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "reason",
+        "label": "Business directive / reason",
+        "type": "textarea",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 1001
+  },
+  {
+    "title": "Request Authorised Roster Override",
+    "fields": [
+      {
+        "name": "reason",
+        "label": "Explicit business case",
+        "type": "textarea",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 891
+  },
+  {
+    "title": "Mobile Location Exception Triage",
+    "fields": [
+      {
+        "name": "reason",
+        "label": "Business reason",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "Home Visit",
+          "Offsite Training",
+          "Approved Community Outreach",
+          "Incorrect Location Capture"
+        ]
+      }
+    ],
+    "htmlLength": 1236
+  },
+  {
+    "title": "Offline Operational Capture",
+    "fields": [
+      {
+        "name": "type",
+        "label": "Capture type",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Temperature Reading",
+          "Clock Event",
+          "Safety Checklist",
+          "Urgent Operational Note"
+        ]
+      },
+      {
+        "name": "clinic",
+        "label": "Clinic",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "${e(x)}"
+        ]
+      },
+      {
+        "name": "summary",
+        "label": "Captured details",
+        "type": "textarea",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 965
+  },
+  {
+    "title": "Reconciliation Review",
+    "fields": [],
+    "htmlLength": 951
+  },
+  {
+    "title": "Third-Party Payroll Export Rejection Triage",
+    "fields": [],
+    "htmlLength": 930
+  },
+  {
+    "title": "Cross-Clinic Consolidated Doctor Reconciliation",
+    "fields": [],
+    "htmlLength": 1056
+  },
+  {
+    "title": "Provision New Medical Group Tenant",
+    "fields": [
+      {
+        "name": "country",
+        "label": "Base country",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Australia",
+          "New Zealand"
+        ]
+      },
+      {
+        "name": "plan",
+        "label": "Subscription package",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Enterprise",
+          "Professional",
+          "Starter"
+        ]
+      },
+      {
+        "name": "name",
+        "label": "Medical group name",
+        "type": "text",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      },
+      {
+        "name": "abn",
+        "label": "Corporate ABN",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "admin",
+        "label": "Primary administrator",
+        "type": "text",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 1490
+  },
+  {
+    "title": "Change Tenant Status",
+    "fields": [],
+    "htmlLength": 709
+  },
+  {
+    "title": "Modify Subscription Tier",
+    "fields": [],
+    "htmlLength": 698
+  },
+  {
+    "title": "Schedule Product Release",
+    "fields": [],
+    "htmlLength": 1118
+  },
+  {
+    "title": "Request Client-Approved Support Pass",
+    "fields": [],
+    "htmlLength": 862
+  },
+  {
+    "title": "Access Restricted",
+    "fields": [],
+    "htmlLength": 217
+  },
+  {
+    "title": "Create Recruitment Vacancy",
+    "fields": [
+      {
+        "name": "clinic",
+        "label": "Clinic",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "Chapel Hill",
+          "Woolloongabba",
+          "Lawnton"
+        ]
+      },
+      {
+        "name": "type",
+        "label": "Employment type",
+        "type": "select",
+        "required": true,
+        "full": false,
+        "options": [
+          "Permanent Part-Time",
+          "Permanent",
+          "Casual",
+          "Full-Time"
+        ]
+      },
+      {
+        "name": "title",
+        "label": "Vacancy title",
+        "type": "text",
+        "required": true,
+        "full": true,
+        "placeholder": ""
+      },
+      {
+        "name": "owner",
+        "label": "Hiring owner",
+        "type": "text",
+        "required": true,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "closing",
+        "label": "Application closing date",
+        "type": "date",
+        "required": false,
+        "full": false,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 1224
+  },
+  {
+    "title": "Add Candidate",
+    "fields": [
+      {
+        "name": "vacancy",
+        "label": "Vacancy",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "${esc(v.title)} · ${esc(v.clinic)}"
+        ]
+      },
+      {
+        "name": "source",
+        "label": "Source",
+        "type": "select",
+        "required": false,
+        "full": false,
+        "options": [
+          "Clinic website",
+          "Seek",
+          "Indeed",
+          "Employee referral"
+        ]
+      },
+      {
+        "name": "name",
+        "label": "Full name",
+        "type": "text",
+        "required": true,
+        "full": false,
+        "placeholder": ""
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "text",
+        "required": true,
+        "full": false,
+        "placeholder": ""
+      }
+    ],
+    "htmlLength": 678
+  },
+  {
+    "title": "Promote Candidate to Staff Profile",
+    "fields": [],
+    "htmlLength": 769
+  },
+  {
+    "title": "Schedule Interview",
+    "fields": [],
+    "htmlLength": 595
+  },
+  {
+    "title": "Publish Emergency Website Notice",
+    "fields": [],
+    "htmlLength": 724
+  },
+  {
+    "title": "Initialize Fiscal Forecast Model",
+    "fields": [],
+    "htmlLength": 806
+  },
+  {
+    "title": "Import Actual Ledger Data",
+    "fields": [],
+    "htmlLength": 586
+  },
+  {
+    "title": "Request Over-Budget Roster Override",
+    "fields": [],
+    "htmlLength": 853
+  },
+  {
+    "title": "Financial Variance Triage",
+    "fields": [],
+    "htmlLength": 979
+  },
+  {
+    "title": "Add Forecast Assumption",
+    "fields": [],
+    "htmlLength": 783
+  },
+  {
+    "title": "Publish & Disseminate Roster",
+    "fields": [],
+    "htmlLength": 784
+  },
+  {
+    "title": "Rooms & Areas Checklist Configurator",
+    "fields": [],
+    "htmlLength": 751
+  },
+  {
+    "title": "Practice Scale-Up / Scale-Down Directive",
+    "fields": [],
+    "htmlLength": 1301
+  },
+  {
+    "title": "Quality Assurance Training Escalation",
+    "fields": [],
+    "htmlLength": 806
+  },
+  {
+    "title": "Grant Temporary Mobile Clocking",
+    "fields": [],
+    "htmlLength": 1005
+  }
+]

@@ -1,0 +1,195 @@
+{
+  "tasks": [
+    "Created",
+    "Assigned",
+    "In progress",
+    "Done",
+    "Audited"
+  ],
+  "checklists": [
+    "Created",
+    "Scheduled",
+    "Submitted",
+    "Reviewed",
+    "Stored"
+  ],
+  "incidents": [
+    "Reported",
+    "Triage",
+    "RCA",
+    "CAPA",
+    "Closed"
+  ],
+  "staff": [
+    "Created",
+    "Documents",
+    "Approved",
+    "Active",
+    "Archived"
+  ],
+  "doctors": [
+    "Created",
+    "Contract",
+    "Payment Ready",
+    "Active",
+    "Archived"
+  ],
+  "hrDocs": [
+    "Uploaded",
+    "Validated",
+    "Active",
+    "Renewal Due",
+    "Archived"
+  ],
+  "training": [
+    "Created",
+    "Assigned",
+    "Completed",
+    "Verified",
+    "Expired"
+  ],
+  "roster": [
+    "Draft",
+    "Validated",
+    "Published",
+    "Changed",
+    "Locked"
+  ],
+  "timeclock": [
+    "Clocked",
+    "Exception",
+    "Reviewed",
+    "Approved",
+    "Locked"
+  ],
+  "staffpay": [
+    "Draft",
+    "Review",
+    "Approved",
+    "Exported",
+    "Locked"
+  ],
+  "doctorpay": [
+    "Draft",
+    "BP Sync",
+    "Reconciled",
+    "Approved",
+    "Paid"
+  ],
+  "bbpip": [
+    "Estimate",
+    "Reviewed",
+    "Split",
+    "Reconciled",
+    "Closed"
+  ],
+  "rooms": [
+    "Created",
+    "Equipped",
+    "Checked",
+    "Active",
+    "Archived"
+  ],
+  "inventory": [
+    "Added",
+    "Validated",
+    "Active",
+    "Expiring",
+    "Archived"
+  ],
+  "stock": [
+    "Added",
+    "PAR Check",
+    "Active",
+    "Reorder",
+    "Archived"
+  ],
+  "equipment": [
+    "Added",
+    "Calibrated",
+    "Active",
+    "Due Soon",
+    "Archived"
+  ],
+  "website": [
+    "Added",
+    "Checked",
+    "Healthy",
+    "Incident",
+    "Recovered"
+  ],
+  "accreditation": [
+    "Assigned",
+    "Evidence",
+    "Reviewed",
+    "Ready",
+    "Archived"
+  ],
+  "qi": [
+    "Planned",
+    "Doing",
+    "Study",
+    "Act",
+    "Closed"
+  ],
+  "policies": [
+    "Draft",
+    "Reviewed",
+    "Published",
+    "Acknowledged",
+    "Archived"
+  ],
+  "memos": [
+    "Draft",
+    "Published",
+    "Acknowledged",
+    "Archived"
+  ],
+  "commbook": [
+    "Created",
+    "Visible",
+    "Read",
+    "Archived"
+  ],
+  "email": [
+    "Draft",
+    "Review",
+    "Approved",
+    "Scheduled",
+    "Sent"
+  ],
+  "sms": [
+    "Draft",
+    "Review",
+    "Approved",
+    "Scheduled",
+    "Sent"
+  ],
+  "noticeboards": [
+    "Draft",
+    "Approved",
+    "Published",
+    "Archived"
+  ],
+  "remote": [
+    "Requested",
+    "Approved",
+    "Active",
+    "Closed",
+    "Reviewed"
+  ],
+  "vault": [
+    "Added",
+    "Approved",
+    "Revealed",
+    "Reviewed",
+    "Archived"
+  ],
+  "cameras": [
+    "Requested",
+    "Approved",
+    "Viewed",
+    "Exported",
+    "Reviewed"
+  ]
+}
