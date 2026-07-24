@@ -44,6 +44,11 @@ import {
 } from "./store";
 import type { OrgFilters, OrgSectionId, OrgState, ReviewDecision, RiskLevel, UserAccountStatus } from "./types";
 import type { ClinicLifecycleStatus } from "./types";
+import { useIdentity } from "@/platform/context/identity-context";
+import {
+  ensureOrgInboxDemoBridge,
+  syncOrgRecordToInbox,
+} from "@/modules/m03-organisation-access/adapters/org-inbox-sync";
 
 export const DEMO_ACTORS = [
   { id: "usr_sarah", name: "Sarah Mitchell", role: "Senior Administrator" },
@@ -117,6 +122,7 @@ const OrganisationContext = createContext<OrganisationContextValue | null>(null)
 
 export function OrganisationProvider({ children }: { children: ReactNode }) {
   const { pushToast: portalToast } = usePortal();
+  const { identity } = useIdentity();
 
   const createInitialState = () => {
     const loaded = loadOrgState();
@@ -140,8 +146,20 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
       const initial = escalateOverdueReviews(expireTemporaryAccess(loadOrgState()));
       setStateInternal(initial);
       saveOrgState(initial);
+      ensureOrgInboxDemoBridge(initial);
     });
   }, []);
+
+  /** Sync Module 3 demo actor from global identity when orgActorId is known */
+  useEffect(() => {
+    if (!identity.orgActorId) return;
+    setStateInternal((prev) => {
+      if (prev.currentUserId === identity.orgActorId) return prev;
+      const next = { ...prev, currentUserId: identity.orgActorId! };
+      saveOrgState(next);
+      return next;
+    });
+  }, [identity.orgActorId, identity.userId]);
 
   const pushToast = useCallback(
     (message: string, tone: ToastTone = "default") => {
@@ -228,6 +246,7 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
           return false;
         }
         setState(result.state);
+        syncOrgRecordToInbox(result.state, "access-request", requestId);
         const req = result.state.requests.find((r) => r.id === requestId);
         if (req?.requiresTwoApprovers && req.status === "Partially Approved") {
           pushToast("First approval recorded — awaiting second approver.", "default");
@@ -243,7 +262,9 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
           return false;
         }
         setState(result.state);
+        syncOrgRecordToInbox(result.state, "access-review", reviewId);
         if (result.createdRequestId) {
+          syncOrgRecordToInbox(result.state, "access-request", result.createdRequestId);
           pushToast("Review completed — access increase request created.", "default");
         } else {
           pushToast("Access review completed.", "success");
@@ -267,7 +288,9 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
         pushToast("Correction note added to audit record.", "success");
       },
       resolveAlert: (alertId, note) => {
-        setState(resolveAlert(state, alertId, note));
+        const next = resolveAlert(state, alertId, note);
+        setState(next);
+        syncOrgRecordToInbox(next, "security-alert", alertId);
         pushToast("Alert resolved.", "success");
       },
       recordExport: (reportName, format) => {

@@ -2,6 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useIdentity } from "@/platform/context/identity-context";
+import { getSourceLinkForInboxAction } from "@/platform/services/action-inbox-bridge";
+import { buildSourceHref } from "@/platform/contracts/source-record";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -152,6 +156,8 @@ function cloneAction(action: InboxAction): InboxAction {
 export function ActionInboxApp() {
   const { pushToast } = usePortal();
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const { identity, inboxDemoRole, canSeeSensitive: identitySensitive } = useIdentity();
 
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [actions, setActions] = useState<InboxAction[]>([]);
@@ -244,6 +250,25 @@ export function ActionInboxApp() {
       });
     }
   }, [searchParams]);
+
+  /** Deep-link: ?actionId=… */
+  useEffect(() => {
+    const actionId = searchParams.get("actionId");
+    if (!actionId || !actions.length) return;
+    if (actions.some((a) => a.id === actionId)) {
+      queueMicrotask(() => {
+        setReviewId(actionId);
+        setExpandedId(actionId);
+      });
+    }
+  }, [searchParams, actions]);
+
+  /** Global Act as User / Role drives inbox demo role + sensitivity */
+  useEffect(() => {
+    setDemoRole(inboxDemoRole);
+    setCanSeeSensitive(identitySensitive);
+    if (!identity.managerControls) setMainView("my-actions");
+  }, [inboxDemoRole, identitySensitive, identity.managerControls, identity.userId]);
 
   useEffect(() => {
     writeJson(M2_STORAGE.role, demoRole);
@@ -856,12 +881,24 @@ export function ActionInboxApp() {
       return;
     }
     if (kind === "open-source") {
-      pushToast(
-        a?.sourceRecord
-          ? `Demonstration: would open ${a.sourceModule} / ${a.sourceRecord}.`
-          : "No source record linked.",
-        "default"
-      );
+      const link = a ? getSourceLinkForInboxAction(a.id) : undefined;
+      const href =
+        link?.source
+          ? buildSourceHref(link.source)
+          : a?.sourceRecord?.startsWith("/")
+            ? a.sourceRecord
+            : null;
+      if (href) {
+        router.push(href);
+        pushToast(`Opening source record in ${link?.source.sourceModuleId ?? a?.sourceModule ?? "module"}.`, "success");
+      } else {
+        pushToast(
+          a?.sourceRecord
+            ? `Demonstration: would open ${a.sourceModule} / ${a.sourceRecord}.`
+            : "No source record linked.",
+          "default"
+        );
+      }
       return;
     }
     openReason(kind as ReasonKind, reviewId);
@@ -1135,14 +1172,18 @@ export function ActionInboxApp() {
                     setDemoRole(next);
                     setSelectedIds([]);
                     if (next === "staff") setMainView("my-actions");
-                    pushToast(next === "manager" ? "Manager view active." : "Staff view active.", "default");
+                    pushToast(
+                      `Local inbox role override: ${next}. Prefer Act as User / Role in the sidebar for platform-wide identity.`,
+                      "default"
+                    );
                   }}
-                  aria-label="Demonstration role"
+                  aria-label="Demonstration role (coordinates with global identity)"
                 >
                   <option value="manager">Manager</option>
                   <option value="staff">Staff</option>
                 </select>
               </label>
+              <Badge tone="info">{identity.displayName} · {identity.role}</Badge>
               <label className="flex items-center gap-1.5 text-[11px] font-bold text-[#475569]">
                 Sensitivity
                 <select

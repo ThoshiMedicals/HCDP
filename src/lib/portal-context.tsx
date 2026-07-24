@@ -24,6 +24,7 @@ import { ALL_LOCATIONS_ID } from "@/lib/types";
 import type { ToastItem, ToastTone } from "@/components/ui/Toast";
 import { readSidebarCollapsed, writeSidebarCollapsed } from "@/lib/command-centre/cc-extras";
 import { hydrateAppearanceFromStorage } from "@/lib/command-centre/storage";
+import { syncFromPortalActiveLocation, hydrateClinicContext, portalActiveLocationId } from "@/platform/context/clinic-context";
 
 const STORAGE_KEYS = {
   location: "pulse.activeLocation",
@@ -166,10 +167,13 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
     sidebarCollapsedValue = readSidebarCollapsed();
     sidebarCollapsedListeners.forEach((l) => l());
     hydrateAppearanceFromStorage();
-    document.documentElement.style.setProperty(
-      "--sidebar-current",
-      sidebarCollapsedValue ? "72px" : "288px"
-    );
+    document.documentElement.style.setProperty("--sidebar-current", "288px");
+    hydrateClinicContext();
+    const shared = portalActiveLocationId();
+    if (shared && shared !== memoryLocationId) {
+      memoryLocationId = shared;
+      locationListeners.forEach((l) => l());
+    }
   }, []);
 
   useEffect(() => {
@@ -182,7 +186,7 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useLayoutEffect(() => {
-    document.documentElement.style.setProperty("--sidebar-current", sidebarCollapsed ? "72px" : "288px");
+    document.documentElement.style.setProperty("--sidebar-current", "288px");
   }, [sidebarCollapsed]);
 
   const setSidebarCollapsed = useCallback((collapsed: boolean) => {
@@ -191,6 +195,7 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
 
   const setActiveLocationId = useCallback((id: string) => {
     writeLocation(id);
+    syncFromPortalActiveLocation(id);
   }, []);
 
   const rememberModule = useCallback((moduleId: string) => {

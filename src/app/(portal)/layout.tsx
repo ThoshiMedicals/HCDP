@@ -1,6 +1,8 @@
 "use client";
 
 import { PortalProvider, usePortal } from "@/lib/portal-context";
+import { ClinicContextProvider } from "@/platform/context/clinic-context";
+import { IdentityProvider } from "@/platform/context/identity-context";
 import { CreateFormProvider } from "@/components/forms/CreateFormProvider";
 import { Sidebar } from "@/components/shell/Sidebar";
 import { Topbar } from "@/components/shell/Topbar";
@@ -25,7 +27,11 @@ function PortalChrome({ children }: { children: React.ReactNode }) {
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
     <PortalProvider>
-      <PortalChrome>{children}</PortalChrome>
+      <ClinicContextProvider>
+        <IdentityProvider>
+          <PortalChrome>{children}</PortalChrome>
+        </IdentityProvider>
+      </ClinicContextProvider>
     </PortalProvider>
   );
 }

@@ -190,8 +190,6 @@ export function PrioritySummary({
           const isEmergency = key === "Emergency";
           const zeroOk = count === 0 && (key === "Emergency" || key === "Urgent" || key === "Overdue");
           const delta = YDAY_DELTA[key] ?? 0;
-          const short =
-            key === "Attention Required" ? "Attention" : key === "Completed Today" ? "Completed" : key;
           return (
             <button
               key={key}
@@ -200,7 +198,7 @@ export function PrioritySummary({
               aria-label={`${key}: ${count}`}
               aria-pressed={active}
               className={cn(
-                "flex min-h-[104px] flex-col justify-between rounded-xl border px-3 py-2.5 text-left transition",
+                "flex min-h-[84px] flex-col justify-between rounded-xl border px-3 py-2.5 text-left transition",
                 active
                   ? "border-[var(--cc-exec,#1e40af)] cc-surface-info ring-2 ring-[color-mix(in_srgb,var(--cc-exec,#1e40af)_35%,transparent)]"
                   : "border-[var(--cc-card-line)] bg-[var(--cc-soft)] hover:border-[color-mix(in_srgb,var(--cc-exec,#1e40af)_50%,var(--cc-card-line))]",
@@ -214,10 +212,11 @@ export function PrioritySummary({
                 ) : (
                   <div className="text-[26px] font-black leading-none tracking-tight tabular-nums">{count}</div>
                 )}
-                <div className="mt-1 text-[10px] font-semibold text-[var(--cc-muted)]">{short}</div>
-                <div className="mt-0.5 text-[10px] text-[var(--cc-muted)]">
-                  {delta === 0 ? "No change vs yesterday" : `${delta > 0 ? "+" : ""}${delta} vs yesterday`}
-                </div>
+                {delta !== 0 ? (
+                  <div className="mt-1 text-[10px] text-[var(--cc-muted)]">
+                    {`${delta > 0 ? "+" : ""}${delta} vs yesterday`}
+                  </div>
+                ) : null}
               </div>
             </button>
           );

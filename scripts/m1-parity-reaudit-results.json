@@ -1,0 +1,212 @@
+{
+  "startedAt": "2026-07-21T23:39:57.304Z",
+  "base": "http://localhost:3000",
+  "hydrationOk": true,
+  "console": [],
+  "widths": [
+    {
+      "width": 1440,
+      "ok": true,
+      "scrollWidth": 1440,
+      "hasTitle": true,
+      "crashed": false
+    },
+    {
+      "width": 1280,
+      "ok": true,
+      "scrollWidth": 1280,
+      "hasTitle": true,
+      "crashed": false
+    },
+    {
+      "width": 1024,
+      "ok": true,
+      "scrollWidth": 1024,
+      "hasTitle": true,
+      "crashed": false
+    },
+    {
+      "width": 768,
+      "ok": true,
+      "scrollWidth": 768,
+      "hasTitle": true,
+      "crashed": false
+    },
+    {
+      "width": 430,
+      "ok": true,
+      "scrollWidth": 430,
+      "hasTitle": true,
+      "crashed": false
+    },
+    {
+      "width": 390,
+      "ok": true,
+      "scrollWidth": 390,
+      "hasTitle": true,
+      "crashed": false
+    }
+  ],
+  "appearance": [
+    {
+      "mode": "light",
+      "ok": true,
+      "darkClass": false,
+      "stored": "\"light\""
+    },
+    {
+      "mode": "dark",
+      "ok": true,
+      "darkClass": true,
+      "stored": "\"dark\""
+    },
+    {
+      "mode": "system",
+      "ok": true,
+      "darkClass": false,
+      "stored": "\"system\""
+    }
+  ],
+  "chrome": [
+    {
+      "name": "Title Owner/Director Command Centre",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Greeting Neil organisation overview",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Layout Daily Operations default",
+      "status": "Exact",
+      "note": "Layout: Daily Operations "
+    },
+    {
+      "name": "Ribbon search placeholder",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Online chip",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Ribbon Export",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Profile Owner / Director",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Quick find",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Workflows",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Insights",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "View",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Favourite star",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Notifications control",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Create Action",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Publish Announcement",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Mobile urgent view",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "End-of-Day Summary",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Enterprise Sign-In shell card",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Emergency Intervention shell",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Command Centre tab",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "My Day tab",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "KPI Scorecard tab",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Reports tab",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Notifications Emergency bucket",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Notifications Unread bucket",
+      "status": "Exact",
+      "note": ""
+    },
+    {
+      "name": "Notifications Approvals bucket",
+      "status": "Exact",
+      "note": ""
+    }
+  ],
+  "defects": [],
+  "finishedAt": "2026-07-21T23:40:14.542Z",
+  "summary": {
+    "chromeExact": 26,
+    "chromeTotal": 26,
+    "widthsOk": true,
+    "appearanceOk": true,
+    "hydrationOk": true,
+    "defectCount": 0
+  }
+}

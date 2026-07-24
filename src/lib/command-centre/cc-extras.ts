@@ -58,7 +58,6 @@ export const SUGGESTED_LAYOUT_NAMES = [
   "Compliance Review",
   "Finance Review",
   "All Clinics Overview",
-  "My Day",
 ] as const;
 
 export function ensureSuggestedLayouts(
@@ -74,7 +73,7 @@ export function ensureSuggestedLayouts(
       name,
       sections: defaultSections.map((s) => ({ ...s })),
       updatedAt: new Date().toISOString(),
-      isDefault: name === "Daily Operations",
+      isDefault: false,
     });
   }
   return extras.length ? [...existing, ...extras] : existing;

@@ -74,7 +74,7 @@ export function AiBriefing({
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 {f.relatedActionId ? (
                   <Button small variant="line" onClick={() => onOpenAction(f.relatedActionId!)}>
-                    Open Related Action
+                    Open related action
                   </Button>
                 ) : null}
                 <Button small variant="soft" onClick={onCreateAction}>
@@ -89,22 +89,18 @@ export function AiBriefing({
                 <Button small variant="line" disabled title="Assignment workflow requires a future backend">
                   Assign
                 </Button>
-                <select
-                  className="cc-ctrl max-w-full"
-                  value={f.feedback ?? ""}
-                  onChange={(e) => {
-                    const v = e.target.value as AiFeedback;
-                    if (v) onFeedback(f.id, v);
-                  }}
-                  aria-label="AI feedback"
-                >
-                  <option value="">Feedback…</option>
-                  {FEEDBACK.map((fb) => (
-                    <option key={fb} value={fb}>
-                      {fb}
-                    </option>
-                  ))}
-                </select>
+              </div>
+              <div className="mt-2 flex flex-wrap items-center gap-1.5" role="group" aria-label="AI feedback">
+                {FEEDBACK.map((fb) => (
+                  <Button
+                    key={fb}
+                    small
+                    variant={f.feedback === fb ? "teal" : "line"}
+                    onClick={() => onFeedback(f.id, fb)}
+                  >
+                    {fb}
+                  </Button>
+                ))}
               </div>
             </div>
           ))}

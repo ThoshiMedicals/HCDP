@@ -23,6 +23,8 @@ const PERIOD_OPTIONS: LayoutPeriod[] = [
   "Custom Range",
 ];
 
+const NORTH_CORRIDOR_IDS = ["loc_baldhills", "loc_lawnton", "loc_beachmere"];
+
 export function ControlBar({
   locations,
   health,
@@ -116,6 +118,8 @@ export function ControlBar({
   const allSelected =
     selectedClinicIds.length === 0 || selectedClinicIds.length === locations.length;
   const canSaveGroup = selectedClinicIds.length > 0;
+  const northCorridorGroup = clinicGroups.find((g) => g.name.toLowerCase().includes("north corridor"));
+  const otherClinicGroups = clinicGroups.filter((g) => g !== northCorridorGroup);
   const totalNotes =
     notificationCounts.emergency + notificationCounts.unread + notificationCounts.approvals;
 
@@ -174,16 +178,23 @@ export function ControlBar({
               >
                 <div className="mb-2 flex flex-wrap gap-1">
                   <Button small variant="soft" onClick={() => onChangeClinics(locations.map((l) => l.id))}>
-                    All Clinics
+                    All clinics
                   </Button>
                   <Button small variant="line" onClick={() => onChangeClinics(urgentClinicIds)}>
-                    Urgent only
+                    Clinics with urgent issues
+                  </Button>
+                  <Button
+                    small
+                    variant="line"
+                    onClick={() => onChangeClinics(northCorridorGroup?.locationIds ?? NORTH_CORRIDOR_IDS)}
+                  >
+                    Saved group: North corridor
                   </Button>
                 </div>
                 <div className="mb-1 text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
                   Saved groups
                 </div>
-                {clinicGroups.map((g) => (
+                {otherClinicGroups.map((g) => (
                   <button
                     key={g.id}
                     type="button"
@@ -223,7 +234,15 @@ export function ControlBar({
                         onChange={() => toggleClinic(loc.id)}
                       />
                       <span className="min-w-0 flex-1 truncate">{loc.shortName}</span>
-                      {h ? <HealthDot band={h.override?.band ?? h.band} score={h.overallScore} /> : null}
+                      {h ? (
+                        <span className="flex shrink-0 items-center gap-1.5">
+                          <HealthDot band={h.override?.band ?? h.band} score={h.overallScore} />
+                          <span className="whitespace-nowrap text-[10px] font-bold text-[var(--cc-muted)]">
+                            {h.override?.band ?? h.band}
+                            {h.emergencyStatus ? " · Emergency" : ""}
+                          </span>
+                        </span>
+                      ) : null}
                     </label>
                   );
                 })}
@@ -290,6 +309,7 @@ export function ControlBar({
           >
             {PERIOD_OPTIONS.map((p) => (
               <option key={p} value={p}>
+                Period:{" "}
                 {p === "This Week"
                   ? "This week"
                   : p === "This Month"
@@ -329,7 +349,7 @@ export function ControlBar({
             <input
               value={searchQuery}
               onChange={(e) => onSearch(e.target.value)}
-              placeholder="Search or ask a question across the platform"
+              placeholder="Search or Ask…"
               aria-label="Search or ask a question across the platform"
               className="cc-ctrl w-full font-semibold"
             />
@@ -342,14 +362,27 @@ export function ControlBar({
             Create Action
           </Button>
           <Button small variant="teal" onClick={onPublish}>
-            Publish
+            Publish Announcement
+          </Button>
+          <Button small variant="line" onClick={onCustomise}>
+            Customise Dashboard
+          </Button>
+          <Button small variant="line" onClick={onExport}>
+            Export
+          </Button>
+          <Button
+            small
+            variant={paused ? "warn" : "line"}
+            onClick={onTogglePause}
+          >
+            {paused ? "Resume Automatic Refresh" : "Pause Automatic Refresh"}
           </Button>
 
           <button
             type="button"
             className="cc-ctrl relative"
             onClick={onNotifications}
-            aria-label={`Notifications: ${totalNotes} total`}
+            aria-label="Notifications"
           >
             Notifications
             {totalNotes > 0 ? (
@@ -378,42 +411,39 @@ export function ControlBar({
             />
           ) : null}
 
-          <div className="relative" ref={moreRef}>
-            <button
-              type="button"
-              className="cc-ctrl"
-              aria-expanded={moreOpen}
-              onClick={() => {
-                setMoreOpen((v) => !v);
-                setClinicsOpen(false);
-                setUserOpen(false);
-              }}
-            >
-              More
-            </button>
-            {moreOpen ? (
-              <div className="absolute right-0 top-[110%] z-40 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1.5 shadow-xl">
-                {[
-                  ["Customise Dashboard", onCustomise],
-                  ["Export", onExport],
-                  ...(onTemplatesRecurring ? [["Templates & Recurring", onTemplatesRecurring] as const] : []),
-                  [paused ? "Resume auto-refresh" : "Pause auto-refresh", onTogglePause],
-                ].map(([label, fn]) => (
-                  <button
-                    key={String(label)}
-                    type="button"
-                    className="flex w-full rounded-lg px-2.5 py-2 text-left text-xs font-semibold hover:bg-[var(--cc-soft)]"
-                    onClick={() => {
-                      (fn as () => void)();
-                      setMoreOpen(false);
-                    }}
-                  >
-                    {label as string}
-                  </button>
-                ))}
-              </div>
-            ) : null}
-          </div>
+          {onTemplatesRecurring ? (
+            <div className="relative" ref={moreRef}>
+              <button
+                type="button"
+                className="cc-ctrl"
+                aria-expanded={moreOpen}
+                onClick={() => {
+                  setMoreOpen((v) => !v);
+                  setClinicsOpen(false);
+                  setUserOpen(false);
+                }}
+              >
+                More
+              </button>
+              {moreOpen ? (
+                <div className="absolute right-0 top-[110%] z-40 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1.5 shadow-xl">
+                  {[["Templates & Recurring", onTemplatesRecurring] as const].map(([label, fn]) => (
+                    <button
+                      key={String(label)}
+                      type="button"
+                      className="flex w-full rounded-lg px-2.5 py-2 text-left text-xs font-semibold hover:bg-[var(--cc-soft)]"
+                      onClick={() => {
+                        fn();
+                        setMoreOpen(false);
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
 
           <div className="relative" ref={userRef}>
             <button
@@ -478,6 +508,11 @@ export function ControlBar({
                 <span key={id} className="cc-chip">
                   {h ? <HealthDot band={h.override?.band ?? h.band} score={h.overallScore} /> : null}
                   <span className="max-w-[110px] truncate">{loc?.shortName ?? id}</span>
+                  {h ? (
+                    <span className="whitespace-nowrap text-[9px] font-bold text-[var(--cc-muted)]">
+                      {h.override?.band ?? h.band}
+                    </span>
+                  ) : null}
                   <button
                     type="button"
                     className="ml-0.5 text-[var(--cc-muted)] hover:cc-text-danger"
@@ -497,6 +532,9 @@ export function ControlBar({
               paused && "font-semibold cc-text-warn"
             )}
           >
+            <Button small variant="line" onClick={onRefreshNow} aria-label="Refresh now">
+              Refresh Now
+            </Button>
             <span>
               Last updated: {formatClock(lastUpdated)} · Next refresh {formatClock(nextRefresh)}
             </span>
@@ -510,7 +548,7 @@ export function ControlBar({
       </div>
       {unsavedLayout ? (
         <div className="border-t cc-surface-warn border px-4 py-1.5 text-xs font-semibold cc-text-warn lg:px-7">
-          Unsaved layout changes — open Customise and choose Save Layout before leaving.
+          You have unsaved layout changes. Select Save Layout to keep them.
         </div>
       ) : null}
     </div>

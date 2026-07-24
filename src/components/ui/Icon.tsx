@@ -114,6 +114,13 @@ const paths: Record<IconName, ReactNode> = {
       d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.5 0 4.5-4 4.5-9S14.5 3 12 3 7.5 7 7.5 12s2 9 4.5 9ZM3.5 12h17"
     />
   ),
+  search: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-5.2-5.2"
+    />
+  ),
 };
 
 export function Icon({

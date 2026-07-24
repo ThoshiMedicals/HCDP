@@ -14,10 +14,12 @@ export function MyDayOwnerView({
   onOpenAction,
   onOpenReports,
   onEndOfDay,
+  onViewNotice,
 }: {
   onOpenAction: (id: string) => void;
   onOpenReports: () => void;
   onEndOfDay: () => void;
+  onViewNotice?: () => void;
 }) {
   const blocks: Array<{
     title: string;
@@ -113,9 +115,14 @@ export function MyDayOwnerView({
                         Open summary
                       </Button>
                     ) : null}
-                    {r.kind === "notice" || (!r.actionId && !r.kind) ? (
+                    {r.kind === "notice" ? (
+                      <Button small variant="line" onClick={onViewNotice}>
+                        View notice
+                      </Button>
+                    ) : null}
+                    {!r.actionId && !r.kind ? (
                       <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
-                        {r.kind === "notice" ? "Read-only notice" : "No linked action in this demonstration"}
+                        No linked action in this demonstration
                       </span>
                     ) : null}
                   </div>
@@ -150,6 +157,7 @@ export function KpiScorecardView({
       source: "Clinic ops, staffing, compliance, finance, incidents, tasks, assets, digital",
       warn: "Below 80%",
       serious: "Below 65%",
+      period,
       refresh: "Every 5 minutes",
       explain: "Beachmere emergency and Indooroopilly urgents reduced the organisation mean.",
       records: ["ACT-2026-001284"],
@@ -163,6 +171,7 @@ export function KpiScorecardView({
       source: "Roster and timeclock",
       warn: "Below 95%",
       serious: "Below 90%",
+      period,
       refresh: "Every 15 minutes",
       explain: "Three unfilled shifts today at Bald Hills and Indooroopilly.",
       records: ["ACT-2026-001288"],
@@ -176,6 +185,7 @@ export function KpiScorecardView({
       source: "HR documents, doctors, accreditation",
       warn: "Below 96%",
       serious: "Any serious expired item",
+      period,
       refresh: "Hourly",
       explain: "One serious AHPRA expiry remains with temporary continued use pending.",
       records: ["ACT-2026-001292"],
@@ -189,12 +199,13 @@ export function KpiScorecardView({
       source: "Finance, staff pay, doctor pay, suppliers",
       warn: ">5% adverse vs forecast",
       serious: ">8% adverse vs forecast",
+      period,
       refresh: "Hourly",
       explain: "Organisation ahead of forecast; Indooroopilly doctor pay is a local adverse variance.",
       records: ["ACT-2026-001295"],
     },
     {
-      name: "Opening checklist on-time",
+      name: "Opening checklist on-time rate",
       value: "86%",
       def: "Clinics completing opening checklist by the 08:00 SLA.",
       owner: "Practice Managers",
@@ -202,9 +213,38 @@ export function KpiScorecardView({
       source: "Front desk / checklists",
       warn: "Below 95%",
       serious: "Repeated miss pattern (2× in 7 days)",
+      period: "This Week",
       refresh: "Every 5 minutes",
       explain: "Cannon Hill late twice this week triggered Attention Required.",
       records: ["ACT-2026-001291"],
+    },
+    {
+      name: "Serious incident cycle time",
+      value: "6.2 days",
+      def: "Average days from serious incident/complaint open to RCA complete.",
+      owner: "Quality Lead",
+      calc: "Mean calendar days for serious records in period",
+      source: "Incidents module",
+      warn: "Above 5 days",
+      serious: "Above 7 days or overdue RCA",
+      period: "This Month",
+      refresh: "Daily",
+      explain: "Cannon Hill complaint RCA is overdue pending clinician statement.",
+      records: ["ACT-2026-001296"],
+    },
+    {
+      name: "Digital availability",
+      value: "97.2%",
+      def: "Share of clinic operating time with critical systems available.",
+      owner: "IT / Facilities",
+      calc: "Available minutes ÷ Planned minutes",
+      source: "Websites, internet, phones, practice systems, backup",
+      warn: "Below 99%",
+      serious: "Any full clinic outage",
+      period,
+      refresh: "Immediate for emergencies",
+      explain: "Beachmere full outage reduces organisation availability.",
+      records: ["ACT-2026-001284"],
     },
     {
       name: "Overdue action burden",
@@ -215,6 +255,7 @@ export function KpiScorecardView({
       source: "Command Centre action register",
       warn: "Above 5",
       serious: "Above 10 or any Emergency overdue",
+      period,
       refresh: "Every 5 minutes",
       explain: "Active queue excludes completed/closed/dismissed/archived by design.",
       records: [] as string[],
@@ -231,7 +272,7 @@ export function KpiScorecardView({
         </p>
       </div>
       <div className="overflow-auto p-4">
-        <table className="w-full min-w-[1100px] border-collapse text-left text-[11px]">
+        <table className="w-full min-w-[1220px] border-collapse text-left text-[11px]">
           <thead>
             <tr className="border-b border-[var(--cc-card-line)] text-[10px] uppercase text-[var(--cc-muted)]">
               <th className="py-2 pr-2">KPI</th>
@@ -242,6 +283,7 @@ export function KpiScorecardView({
               <th className="pr-2">Source</th>
               <th className="pr-2">Warning</th>
               <th className="pr-2">Serious</th>
+              <th className="pr-2">Period</th>
               <th className="pr-2">Refresh</th>
               <th>Explanation & records</th>
             </tr>
@@ -253,7 +295,9 @@ export function KpiScorecardView({
                 <td className="pr-2 text-[15px] font-black tabular-nums whitespace-nowrap">
                   {k.name === "Overdue action burden"
                     ? String(overdueCount)
-                    : kpiPeriodAdjust({ name: k.name, value: k.value }, periodCtx)}
+                    : k.name === "Serious incident cycle time"
+                      ? k.value
+                      : kpiPeriodAdjust({ name: k.name, value: k.value }, periodCtx)}
                 </td>
                 <td className="pr-2 max-w-[180px] leading-snug text-[var(--cc-muted)]">{k.def}</td>
                 <td className="pr-2 whitespace-nowrap">{k.owner}</td>
@@ -261,6 +305,7 @@ export function KpiScorecardView({
                 <td className="pr-2 max-w-[140px] leading-snug text-[var(--cc-muted)]">{k.source}</td>
                 <td className="pr-2 whitespace-nowrap cc-text-warn">{k.warn}</td>
                 <td className="pr-2 whitespace-nowrap cc-text-danger">{k.serious}</td>
+                <td className="pr-2 whitespace-nowrap">{k.period}</td>
                 <td className="pr-2 whitespace-nowrap">{k.refresh}</td>
                 <td className="max-w-[220px] leading-snug">
                   {k.explain}
@@ -292,6 +337,7 @@ export function ReportsView({
   period,
   locations,
   selectedClinicIds,
+  pushToast,
 }: {
   onOpenPack: () => void;
   onExport: (opts: { format: string; sensitive: boolean; report: string }) => void;
@@ -303,6 +349,7 @@ export function ReportsView({
   period: LayoutPeriod;
   locations: Location[];
   selectedClinicIds: string[];
+  pushToast?: (msg: string, tone?: "success" | "warn" | "default") => void;
 }) {
   const reports = [
     {
@@ -368,8 +415,31 @@ export function ReportsView({
             onSchedule={() => onSchedule(r.title)}
             isEod={"eod" in r && r.eod}
             isPack={"pack" in r && r.pack}
+            pushToast={pushToast}
           />
         ))}
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
+          <div className="min-w-0 text-xs">
+            <strong className="block text-[13px]">Weekly operations digest</strong>
+            <span className="text-[var(--cc-muted)]">Saved · Mondays 07:00</span>
+          </div>
+          <Button
+            small
+            variant="line"
+            onClick={() => pushToast?.("Weekly digest opened (demo).", "success")}
+          >
+            Open
+          </Button>
+        </div>
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
+          <div className="min-w-0 text-xs">
+            <strong className="block text-[13px]">Clinic comparison — normalised rates</strong>
+            <span className="text-[var(--cc-muted)]">Fair / FTE and / room alongside actuals</span>
+          </div>
+          <Button small variant="line" onClick={onGoCommand}>
+            View on Command Centre
+          </Button>
+        </div>
       </div>
     </CcCard>
   );
@@ -487,6 +557,7 @@ function ReportConfigCard({
   onSchedule,
   isEod,
   isPack,
+  pushToast,
 }: {
   title: string;
   blurb: string;
@@ -503,6 +574,7 @@ function ReportConfigCard({
   onSchedule: () => void;
   isEod?: boolean;
   isPack?: boolean;
+  pushToast?: (msg: string, tone?: "success" | "warn" | "default") => void;
 }) {
   const [reportTitle, setReportTitle] = useState(title);
   const [reportPeriod, setReportPeriod] = useState<LayoutPeriod>(period);
@@ -605,9 +677,29 @@ function ReportConfigCard({
         <Button small variant="line" onClick={() => onExport({ format: "Email", sensitive: confidential, report: reportTitle })}>
           Email draft (not sent live)
         </Button>
+        {isPack ? (
+          <Button
+            small
+            variant="line"
+            onClick={() => onExport({ format: "PDF", sensitive: true, report: reportTitle })}
+          >
+            Export with confidential finance
+          </Button>
+        ) : null}
         <Button small variant="soft" onClick={onSchedule}>
           Schedule…
         </Button>
+        {isPack ? (
+          <Button
+            small
+            variant="soft"
+            onClick={() =>
+              pushToast?.("Scheduled Monthly Management Pack retained for 1st of each month 07:00.", "success")
+            }
+          >
+            Keep schedule
+          </Button>
+        ) : null}
       </div>
       <p className="m-0 mt-2 text-[10px] text-[var(--cc-muted)]">
         Local export demonstration only. Live email and scheduled delivery require a future backend.

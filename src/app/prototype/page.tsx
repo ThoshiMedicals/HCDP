@@ -1,12 +1,6 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { HtmlPrototypeFrame } from "@/components/shell/HtmlPrototypeFrame";
-
-/** Full HTML codebase as-is — nothing omitted. */
+/** Legacy Full HTML entry — redirect to labelled development reference. */
 export default function PrototypePage() {
-  return (
-    <div className="fixed inset-0 z-[100] bg-white">
-      <HtmlPrototypeFrame className="h-screen w-full border-0" />
-    </div>
-  );
+  redirect("/prototype-reference");
 }

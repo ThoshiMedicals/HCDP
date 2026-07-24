@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
@@ -41,6 +42,8 @@ const NAV: { id: OrgSectionId; label: string }[] = [
   { id: "settings", label: "Settings" },
 ];
 
+const VALID_SECTIONS = new Set(NAV.map((n) => n.id));
+
 function SectionBody({ section }: { section: OrgSectionId }) {
   switch (section) {
     case "overview":
@@ -70,6 +73,24 @@ function SectionBody({ section }: { section: OrgSectionId }) {
     default:
       return null;
   }
+}
+
+function OrganisationDeepLink() {
+  const searchParams = useSearchParams();
+  const { setSection, navigate } = useOrganisation();
+
+  useEffect(() => {
+    const section = searchParams.get("section");
+    const recordId = searchParams.get("recordId");
+    if (section && VALID_SECTIONS.has(section as OrgSectionId)) {
+      setSection(section as OrgSectionId);
+      if (recordId) {
+        navigate(section as OrgSectionId, { card: recordId, query: recordId });
+      }
+    }
+  }, [searchParams, setSection, navigate]);
+
+  return null;
 }
 
 function OrganisationWorkspaceInner() {
@@ -305,6 +326,9 @@ function OrganisationWorkspaceInner() {
 export function OrganisationWorkspace() {
   return (
     <OrganisationProvider>
+      <Suspense fallback={null}>
+        <OrganisationDeepLink />
+      </Suspense>
       <OrganisationWorkspaceInner />
     </OrganisationProvider>
   );

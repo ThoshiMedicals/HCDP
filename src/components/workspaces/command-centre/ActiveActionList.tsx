@@ -65,8 +65,8 @@ export function ActiveActionList({
         title={showCompleted ? "Completed Today" : "Active Action List"}
         subtitle={
           showCompleted
-            ? "Kept until end of day, then removed from the active dashboard while history remains."
-            : "Ordered by priority, overdue age, escalation, due date and last update."
+            ? "Completed, closed, dismissed and archived records are excluded from active queues. Completed Today stays until end of day, then clears while history remains."
+            : "Active queue only — completed, closed, dismissed and archived excluded. Ordered by priority, overdue age, escalation, due date and last update."
         }
         actions={
           <>
@@ -83,27 +83,29 @@ export function ActiveActionList({
         }
       />
 
-      {selected.length > 0 ? (
-        <div className="cc-surface-info mx-4 mb-3 flex flex-wrap gap-1.5 rounded-xl border p-2">
-          <span className="text-xs font-bold">{selected.length} selected</span>
-          {["Acknowledge", "Escalate", "Mark Complete"].map((verb) => (
-            <Button key={verb} small variant="line" onClick={() => onBulk(selected, verb)}>
-              {verb}
-            </Button>
-          ))}
+      <div className="cc-surface-info mx-4 mb-3 flex flex-wrap items-center gap-1.5 rounded-xl border p-2">
+        <span className="text-xs font-bold">Bulk:</span>
+        {["Acknowledge", "Assign", "Escalate", "Mark Complete", "Dismiss"].map((verb) => (
           <Button
+            key={verb}
             small
-            variant="soft"
-            onClick={() => onBulk(selected, "Assign")}
-            title="Local demonstration — updates owner note only"
+            variant="line"
+            disabled={selected.length === 0}
+            onClick={() => {
+              if (!selected.length) return;
+              onBulk(selected, verb);
+            }}
           >
-            Assign (demo)
+            {verb}
           </Button>
-          <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
-            Change Priority, Due Date, Reminder and Export require a future workflow backend.
-          </span>
-        </div>
-      ) : null}
+        ))}
+        <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
+          {selected.length > 0 ? `${selected.length} selected` : "Select one or more actions."}
+        </span>
+        <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
+          Change Priority, Due Date, Reminder and Export require a future workflow backend.
+        </span>
+      </div>
 
       {view === "card" ? (
         <div className="grid gap-2.5 px-4 pb-4">
@@ -145,22 +147,15 @@ export function ActiveActionList({
                     <Button small variant="teal" onClick={() => onOpen(a.id)}>
                       Open Full Action
                     </Button>
-                    <Button small variant="line" onClick={() => onBulk([a.id], "Acknowledge")}>
-                      Acknowledge
-                    </Button>
+                    {["Acknowledge", "Assign", "Approve", "Mark Complete", "Escalate", "Dismiss"].map((verb) => (
+                      <Button key={verb} small variant="line" onClick={() => onBulk([a.id], verb)}>
+                        {verb}
+                      </Button>
+                    ))}
                     <details className="relative">
                       <summary className="cc-ctrl cursor-pointer list-none text-[11px]">More</summary>
                       <div className="absolute left-0 top-[110%] z-20 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1 shadow-lg">
-                        {[
-                          "Approve",
-                          "Mark Complete",
-                          "Escalate",
-                          "Assign",
-                          "Reassign",
-                          "Reject",
-                          "Request More Information",
-                          "Dismiss",
-                        ].map((label) => (
+                        {["Reassign", "Reject", "Request More Information"].map((label) => (
                           <button
                             key={label}
                             type="button"

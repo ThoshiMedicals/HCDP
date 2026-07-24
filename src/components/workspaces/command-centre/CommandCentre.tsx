@@ -130,6 +130,8 @@ import {
   TasksDeliveryPanel,
   TrendsPanel,
 } from "./Sections";
+import { InboxProjectionSummary } from "./InboxProjectionSummary";
+import { syncFromModule1SelectedClinics } from "@/modules/m01-command-centre/adapters/platform";
 import {
   CreateActionModal,
   CustomiseDashboardModal,
@@ -149,6 +151,20 @@ const REFRESH_MS = 5 * 60 * 1000;
 const DRAFT_STORAGE = CC_STORAGE.draftForm;
 
 type CcView = "command" | "myday" | "kpi" | "reports";
+
+// Prototype m1-layout: main column (~1.6fr) vs side column (~0.9fr) at desktop widths.
+const MAIN_SECTION_IDS = ["priority", "categories", "ai", "actions", "positive", "completed", "clinics", "trends"];
+const SIDE_SECTION_IDS = [
+  "executive",
+  "staffing",
+  "compliance",
+  "finance",
+  "incidents",
+  "tasks",
+  "assets",
+  "digital",
+  "activity",
+];
 
 function clinicMatch(locationId: string, selected: string[], allCount: number) {
   if (!selected.length || selected.length === allCount) return true;
@@ -205,9 +221,16 @@ function initLayouts(): SavedLayout[] {
   return [
     {
       id: "lay-default",
-      name: "Executive default",
+      name: "Daily Operations",
       sections: DEFAULT_SECTIONS,
       isDefault: true,
+      updatedAt: "2026-07-20T00:00:00.000Z",
+    },
+    {
+      id: "lay-personal",
+      name: "My Personal Layout",
+      sections: DEFAULT_SECTIONS,
+      isDefault: false,
       updatedAt: "2026-07-20T00:00:00.000Z",
     },
   ];
@@ -216,7 +239,26 @@ function initLayouts(): SavedLayout[] {
 function loadClientLayouts(): SavedLayout[] {
   const raw = readLayouts();
   const seed = initLayouts();
-  const merged = ensureSuggestedLayouts(raw.length ? raw : seed, DEFAULT_SECTIONS);
+  let base = raw.length ? raw : seed;
+  // Migrate older seeds that used “My Personal Layout” as the role default.
+  base = base.map((l) =>
+    l.id === "lay-default" && l.name === "My Personal Layout"
+      ? { ...l, name: "Daily Operations", isDefault: true }
+      : l
+  );
+  if (!base.some((l) => l.name === "My Personal Layout")) {
+    base = [
+      ...base,
+      {
+        id: "lay-personal",
+        name: "My Personal Layout",
+        sections: DEFAULT_SECTIONS,
+        isDefault: false,
+        updatedAt: "2026-07-20T00:00:00.000Z",
+      },
+    ];
+  }
+  const merged = ensureSuggestedLayouts(base, DEFAULT_SECTIONS);
   if (JSON.stringify(merged) !== JSON.stringify(raw)) writeLayouts(merged);
   return merged;
 }
@@ -233,7 +275,7 @@ export function CommandCentre() {
   const [demoDay, setDemoDay] = useState("2026-07-20");
   const [layouts, setLayouts] = useState<SavedLayout[]>(() => initLayouts());
   const [activeLayoutId, setActiveLayoutId] = useState<string | null>("lay-default");
-  const [layoutName, setLayoutName] = useState("Executive default");
+  const [layoutName, setLayoutName] = useState("Daily Operations");
   const [searchQuery, setSearchQuery] = useState("");
   const [priorityFilter, setPriorityFilter] = useState<string | null>(null);
   const [categoryFilters, setCategoryFilters] = useState<ActionCategory[]>([]);
@@ -276,11 +318,13 @@ export function CommandCentre() {
   const [scrollPanel, setScrollPanel] = useState<string | null>(null);
   const [qaCardState, setQaCardState] = useState<QaCardState | null>(null);
   const [announcementsAllOpen, setAnnouncementsAllOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [eodOpen, setEodOpen] = useState(false);
   const [passwordOpen, setPasswordOpen] = useState(false);
   const [passwordTitle, setPasswordTitle] = useState("");
   const passwordActionRef = useRef<(() => void) | null>(null);
-  const [lastUpdated, setLastUpdated] = useState(() => new Date("2026-07-20T08:52:00.000Z"));
+  /** Demo day morning in Australia/Brisbane — keeps greeting aligned with prototype presentation. */
+  const [lastUpdated, setLastUpdated] = useState(() => new Date("2026-07-19T22:52:00.000Z"));
   const [paused, setPaused] = useState(false);
   const [dataStale, setDataStale] = useState(false);
   const [mobileUrgent, setMobileUrgent] = useState(false);
@@ -321,7 +365,15 @@ export function CommandCentre() {
       setClientReady(true);
       const ls = loadClientLayouts();
       setLayouts(ls);
-      const active = readActiveLayoutId() ?? ls.find((l) => l.isDefault)?.id ?? ls[0]?.id ?? "lay-default";
+      const preferred =
+        ls.find((l) => l.name === "Daily Operations")?.id ??
+        ls.find((l) => l.isDefault)?.id ??
+        ls[0]?.id ??
+        "lay-default";
+      const stored = readActiveLayoutId();
+      const active =
+        stored && ls.some((l) => l.id === stored) ? stored : preferred;
+      if (!stored || !ls.some((l) => l.id === stored)) writeActiveLayoutId(active);
       setActiveLayoutId(active);
       const current = ls.find((l) => l.id === active) ?? ls[0];
       if (current) {
@@ -335,6 +387,7 @@ export function CommandCentre() {
   useEffect(() => {
     if (!clientReady) return;
     writeSelectedClinics(selectedClinicIds);
+    syncFromModule1SelectedClinics(selectedClinicIds);
   }, [selectedClinicIds, clientReady]);
 
   useEffect(() => {
@@ -417,7 +470,7 @@ export function CommandCentre() {
 
   const nextRefresh = nextRefreshAt(lastUpdated, REFRESH_MS);
   const greeting = timeOfDayGreeting(lastUpdated);
-  const todayLabel = formatDisplayDate(lastUpdated);
+  const todayLabel = formatDisplayDate(new Date(`${demoDay}T12:00:00`));
 
   const filteredHealth = useMemo(
     () => clinicHealth.filter((h) => clinicMatch(h.locationId, selectedClinicIds, locations.length)),
@@ -465,6 +518,11 @@ export function CommandCentre() {
 
   const emergencyAnnouncements = announcements.filter((a) => a.type === "Emergency" && !a.acknowledged);
   const normalAnnouncements = announcements.filter((a) => a.type !== "Emergency");
+  const notificationCounts = {
+    emergency: emergencyAnnouncements.length,
+    unread: announcements.filter((a) => !a.acknowledged).length,
+    approvals: actions.filter((a) => a.stage === "Awaiting Approval").length,
+  };
 
   const refresh = useCallback(
     (forceEmergency = false) => {
@@ -837,18 +895,23 @@ export function CommandCentre() {
       case "priority":
         return wrapSection(
           id,
-          <PrioritySummary
-            counts={priorityCounts}
-            selected={priorityFilter}
-            onSelect={(k) => setPriorityFilter(k)}
-            onClear={() => setPriorityFilter(null)}
-            lastUpdated={lastUpdated}
-            clinicScopeLabel={
-              selectedClinicIds.length === locations.length
-                ? "All clinics"
-                : `${selectedClinicIds.length} clinic(s) selected`
-            }
-          />
+          <>
+            <PrioritySummary
+              counts={priorityCounts}
+              selected={priorityFilter}
+              onSelect={(k) => setPriorityFilter(k)}
+              onClear={() => setPriorityFilter(null)}
+              lastUpdated={lastUpdated}
+              clinicScopeLabel={
+                selectedClinicIds.length === locations.length
+                  ? "All clinics"
+                  : `${selectedClinicIds.length} clinic(s) selected`
+              }
+            />
+            <div className="mt-3">
+              <InboxProjectionSummary />
+            </div>
+          </>
         );
       case "categories":
         return wrapSection(
@@ -1054,7 +1117,7 @@ export function CommandCentre() {
 
   return (
     <div className="cc-root">
-      <div className="mx-auto w-full max-w-[1480px] px-4 pt-4 lg:px-7">
+      <div className="mx-auto w-full max-w-[1480px] px-3 pt-2.5 lg:px-5">
         <EmergencyBanner
           items={emergencyAnnouncements}
           index={emergencyIndex}
@@ -1075,7 +1138,7 @@ export function CommandCentre() {
         />
       </div>
 
-      <header className="mx-auto w-full max-w-[1480px] px-4 pb-3 pt-2 lg:px-7">
+      <header className="mx-auto w-full max-w-[1480px] px-3 pb-2 pt-1.5 lg:px-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
             <div className="cc-text-info text-[10px] font-extrabold uppercase tracking-[0.08em]">
@@ -1088,19 +1151,11 @@ export function CommandCentre() {
               {greeting}, Neil. Here is today’s organisation overview.
             </p>
             <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
-              {todayLabel} · Layout: {layoutName} · Period: {periodLabel(period, customRange)} · Demo day: {demoDay}
+              {todayLabel} · Layout: {layoutName} · Period: {periodLabel(period, customRange)}
             </p>
             {dataStale ? (
               <p className="cc-text-warn m-0 mt-1 text-[12px] font-bold">Data may be outdated</p>
             ) : null}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Button small variant={mobileUrgent ? "teal" : "line"} onClick={() => setMobileUrgent((v) => !v)}>
-              {mobileUrgent ? "Desktop view" : "Mobile urgent"}
-            </Button>
-            <Button small variant="line" onClick={() => setEodOpen(true)}>
-              End-of-Day
-            </Button>
           </div>
         </div>
 
@@ -1124,6 +1179,14 @@ export function CommandCentre() {
               {label}
             </button>
           ))}
+          <div className="ml-auto flex flex-wrap gap-2">
+            <Button small variant={mobileUrgent ? "teal" : "line"} onClick={() => setMobileUrgent((v) => !v)}>
+              {mobileUrgent ? "Full desktop view" : "Mobile urgent view"}
+            </Button>
+            <Button small variant="line" onClick={() => setEodOpen(true)}>
+              End-of-Day Summary
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -1155,16 +1218,12 @@ export function CommandCentre() {
         onCustomise={() => setCustomiseOpen(true)}
         onExport={() => setExportOpen(true)}
         onNotifications={() => {
-          setAnnouncementsAllOpen(true);
+          setNotificationsOpen(true);
         }}
         unsavedLayout={unsavedLayout}
         appearance={resolvedAppearance}
         onAppearance={setAppearance}
-        notificationCounts={{
-          emergency: emergencyAnnouncements.length,
-          unread: normalAnnouncements.filter((a) => a.requireAck && !a.acknowledged).length,
-          approvals: executive.length,
-        }}
+        notificationCounts={notificationCounts}
         onQaSimulateNextDay={simulateNextDay}
         onQaSetCardState={(s) => {
           setQaCardState(s);
@@ -1185,7 +1244,7 @@ export function CommandCentre() {
         }
       />
 
-      <div className="mx-auto grid w-full max-w-[1480px] gap-3 px-4 py-4 lg:px-7">
+      <div className="mx-auto grid w-full max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5">
         <SearchResultsPanel
           query={searchQuery}
           results={searchResults}
@@ -1198,6 +1257,7 @@ export function CommandCentre() {
             onOpenAction={setOpenActionId}
             onOpenReports={() => setViewTab("reports")}
             onEndOfDay={() => setEodOpen(true)}
+            onViewNotice={() => setAnnouncementsAllOpen(true)}
           />
         ) : null}
 
@@ -1249,6 +1309,7 @@ export function CommandCentre() {
             period={period}
             locations={locations}
             selectedClinicIds={selectedClinicIds}
+            pushToast={pushToast}
           />
         ) : null}
 
@@ -1266,7 +1327,7 @@ export function CommandCentre() {
 
             {mobileUrgent ? (
               <div className="grid gap-3">
-                <p className="cc-layer-label">Level 1 · Urgent review</p>
+                <p className="cc-layer-label">Urgent review</p>
                 {renderSection("priority")}
                 {renderSection("executive")}
                 <FilterSentenceBar
@@ -1281,78 +1342,67 @@ export function CommandCentre() {
                 {renderSection("actions")}
               </div>
             ) : (
-              <>
-                <p className="cc-layer-label">Level 1 · Situation at a glance</p>
-                <div className="grid gap-3">
+              <div className="grid items-start gap-3 min-[1100px]:grid-cols-[1.6fr_0.9fr]">
+                <div className="grid min-w-0 gap-3">
                   {orderedSectionIds
-                    .filter((id) => ["priority", "categories", "ai"].includes(id))
+                    .filter((id) => MAIN_SECTION_IDS.slice(0, 3).includes(id))
                     .map((id) => renderSection(id))}
-                </div>
 
-                <FilterSentenceBar
-                  sentence={filterSentence}
-                  onClear={() => {
-                    setPriorityFilter(null);
-                    setCategoryFilters([]);
-                    setStatusFilter(null);
-                    setAssigneeFilter(null);
-                  }}
-                />
-
-                <div className="flex flex-wrap gap-2">
-                  <select
-                    className="cc-ctrl"
-                    value={statusFilter ?? ""}
-                    onChange={(e) => setStatusFilter(e.target.value || null)}
-                    aria-label="Status filter"
-                  >
-                    <option value="">All statuses</option>
-                    {["Assigned", "In Progress", "Awaiting Approval", "Overdue", "Escalated", "Blocked"].map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    className="cc-ctrl"
-                    placeholder="Assigned person…"
-                    value={assigneeFilter ?? ""}
-                    onChange={(e) => setAssigneeFilter(e.target.value || null)}
-                    aria-label="Assigned person filter"
+                  <FilterSentenceBar
+                    sentence={filterSentence}
+                    onClear={() => {
+                      setPriorityFilter(null);
+                      setCategoryFilters([]);
+                      setStatusFilter(null);
+                      setAssigneeFilter(null);
+                    }}
                   />
-                </div>
 
-                <p className="cc-layer-label">Level 2 · Actions and summaries</p>
-                <div className="grid items-start gap-3 2xl:grid-cols-[minmax(0,1fr)_360px]">
-                  <div className="grid min-w-0 gap-3">
-                    {orderedSectionIds
-                      .filter((id) =>
-                        ["actions", "positive", "completed", "clinics", "staffing", "finance", "trends"].includes(id)
-                      )
-                      .map((id) => renderSection(id))}
-                  </div>
-                  <div className="grid min-w-0 gap-3 2xl:sticky 2xl:top-[56px]">
-                    <p className="cc-layer-label">Level 3 · Detail panels</p>
-                    {orderedSectionIds
-                      .filter((id) =>
-                        ["executive", "compliance", "incidents", "tasks", "assets", "digital", "activity"].includes(id)
-                      )
-                      .map((id) => renderSection(id))}
-                    <PrivateNotesCard
-                      notes={privateNotes}
-                      onSave={(n) => setPrivateNotes((prev) => [...prev, n])}
-                      onDelete={(nid) => {
-                        setPrivateNotes((prev) => prev.filter((n) => n.id !== nid));
-                        pushToast("Private note deleted locally.", "success");
-                      }}
-                      onUpdate={(n) => {
-                        setPrivateNotes((prev) => prev.map((x) => (x.id === n.id ? n : x)));
-                        pushToast("Reminder saved on private note (local demo).", "success");
-                      }}
+                  <div className="flex flex-wrap gap-2">
+                    <select
+                      className="cc-ctrl"
+                      value={statusFilter ?? ""}
+                      onChange={(e) => setStatusFilter(e.target.value || null)}
+                      aria-label="Status filter"
+                    >
+                      <option value="">All statuses</option>
+                      {["Assigned", "In Progress", "Awaiting Approval", "Overdue", "Escalated", "Blocked"].map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      className="cc-ctrl"
+                      placeholder="Assigned person…"
+                      value={assigneeFilter ?? ""}
+                      onChange={(e) => setAssigneeFilter(e.target.value || null)}
+                      aria-label="Assigned person filter"
                     />
                   </div>
+
+                  {orderedSectionIds
+                    .filter((id) => MAIN_SECTION_IDS.slice(3).includes(id))
+                    .map((id) => renderSection(id))}
                 </div>
-              </>
+                <div className="grid min-w-0 gap-3 min-[1100px]:sticky min-[1100px]:top-[64px]">
+                  {orderedSectionIds
+                    .filter((id) => SIDE_SECTION_IDS.includes(id))
+                    .map((id) => renderSection(id))}
+                  <PrivateNotesCard
+                    notes={privateNotes}
+                    onSave={(n) => setPrivateNotes((prev) => [...prev, n])}
+                    onDelete={(nid) => {
+                      setPrivateNotes((prev) => prev.filter((n) => n.id !== nid));
+                      pushToast("Private note deleted locally.", "success");
+                    }}
+                    onUpdate={(n) => {
+                      setPrivateNotes((prev) => prev.map((x) => (x.id === n.id ? n : x)));
+                      pushToast("Reminder saved on private note (local demo).", "success");
+                    }}
+                  />
+                </div>
+              </div>
             )}
           </>
         ) : null}
@@ -1594,8 +1644,13 @@ export function CommandCentre() {
         onRestoreDefault={() => {
           setSections(DEFAULT_SECTIONS);
           setSavedSections(DEFAULT_SECTIONS);
-          setLayoutName("Executive default");
-          pushToast("Restored Owner/Director role default.", "success");
+          setLayoutName("Daily Operations");
+          const daily = layouts.find((l) => l.name === "Daily Operations");
+          if (daily) {
+            setActiveLayoutId(daily.id);
+            writeActiveLayoutId(daily.id);
+          }
+          pushToast("Restored Daily Operations default.", "success");
         }}
       />
 
@@ -1668,6 +1723,35 @@ export function CommandCentre() {
         }}
       />
 
+      <Modal
+        open={notificationsOpen}
+        title="Notifications"
+        onClose={() => setNotificationsOpen(false)}
+        footer={
+          <Button variant="line" onClick={() => setNotificationsOpen(false)}>
+            Close
+          </Button>
+        }
+      >
+        <div className="grid gap-2 text-sm">
+          <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
+            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Emergency</div>
+            <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.emergency}</div>
+            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Require immediate Owner acknowledgement</p>
+          </div>
+          <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
+            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Unread</div>
+            <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.unread}</div>
+            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Announcements and activity not yet marked read</p>
+          </div>
+          <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
+            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Approvals</div>
+            <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.approvals}</div>
+            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Executive decisions waiting</p>
+          </div>
+        </div>
+      </Modal>
+
       <Modal open={announcementsAllOpen} title="All Announcements" onClose={() => setAnnouncementsAllOpen(false)}>
         <div className="grid gap-3">
           {announcements.map((a) => (
@@ -1711,6 +1795,8 @@ export function CommandCentre() {
               currency: "AUD",
             })}
           </li>
+          <li>Unread mandatory announcements: {announcements.filter((a) => a.requireAck && !a.acknowledged).length}</li>
+          <li>Active queue excludes completed, closed, dismissed and archived records</li>
           <li>Positive: systems healthy across majority of clinics; Woolloongabba leading health score</li>
           <li>Private reminders: {privateNotes.length}</li>
           <li>Early review tomorrow: Beachmere utilities ETA and Indooroopilly doctor pay variance</li>
@@ -1750,8 +1836,21 @@ export function CommandCentre() {
             <strong>Staffing fill:</strong> 93% month average · Overtime cost {formatMoneyExact(18440)}
           </p>
           <p>
+            <strong>Compliance:</strong> 95% · 1 serious expiry managed with temporary continued use controls
+          </p>
+          <p>
+            <strong>Incidents:</strong> 2 serious records · 1 RCA overdue carried into July
+          </p>
+          <p>
+            <strong>Digital:</strong> 99.1% availability excluding Beachmere outage day
+          </p>
+          <p>
             <strong>Completed work retained for period comparison:</strong> 186 closed/completed actions (excluded from
             active queues)
+          </p>
+          <p>
+            <strong>AI briefing themes:</strong> Stabilise Beachmere restoration plan; clear Indooroopilly staffing and
+            pay variance; sustain Forest Lake / Woolloongabba performance.
           </p>
           <p className="text-[11px] text-[var(--cc-muted)]">
             Scheduled email delivery of this pack requires a future reporting backend.

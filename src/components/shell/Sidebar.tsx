@@ -1,40 +1,194 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { NAV_GROUPS, getModule } from "@/lib/modules";
-import { usePortal } from "@/lib/portal-context";
-import { ALL_LOCATIONS_ID } from "@/lib/types";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
+  FAMILY_PALETTE,
+  NAV_GROUPS,
+  getModule,
+  getModuleByPlatformId,
+} from "@/lib/modules";
+import { usePortal } from "@/lib/portal-context";
+import {
+  getInboxBadgeServerSnapshot,
   getInboxBadgeSnapshot,
+  hydrateInboxBadge,
   subscribeInboxBadge,
-  type InboxBadgeSnapshot,
 } from "@/lib/action-inbox/badge";
+import {
+  pushRecent,
+  readCollapsedGroups,
+  readNavPrefs,
+  toggleFavorite,
+  writeCollapsedGroups,
+} from "@/lib/shell/nav-prefs";
+import { useIdentity } from "@/platform/context/identity-context";
+import { migrateNavPrefsToModuleIds } from "@/platform/navigation/migrate-nav-prefs";
+import { searchPlatformNav } from "@/platform/navigation/nav-search";
+import { modulesVisibleForRole } from "@/platform/module-registry";
+import { identitySeesEnterprise } from "@/platform/permissions/visibility";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/lib/cn";
 
+const NAV_PREFS_SERVER_SNAPSHOT = {
+  favorites: ["executive-command-centre", "action-inbox", "roster"] as string[],
+  recents: [] as string[],
+};
+
+let navPrefsListeners = new Set<() => void>();
+let navPrefsCache = NAV_PREFS_SERVER_SNAPSHOT;
+let navPrefsHydrated = false;
+
+function subscribeNavPrefs(listener: () => void) {
+  navPrefsListeners.add(listener);
+  return () => {
+    navPrefsListeners.delete(listener);
+  };
+}
+
+function getNavPrefsSnapshot() {
+  if (!navPrefsHydrated) return NAV_PREFS_SERVER_SNAPSHOT;
+  return navPrefsCache;
+}
+
+function getNavPrefsServerSnapshot() {
+  return NAV_PREFS_SERVER_SNAPSHOT;
+}
+
+function emitNavPrefs(next: { favorites: string[]; recents: string[] }) {
+  navPrefsCache = next;
+  navPrefsHydrated = true;
+  navPrefsListeners.forEach((l) => l());
+}
+
+function hydrateNavPrefs() {
+  if (typeof window === "undefined") return;
+  migrateNavPrefsToModuleIds();
+  navPrefsCache = readNavPrefs();
+  navPrefsHydrated = true;
+  navPrefsListeners.forEach((l) => l());
+}
+
+const COLLAPSE_SERVER_SNAPSHOT: Record<string, boolean> = {
+  "enterprise-extensions": true,
+};
+let collapseListeners = new Set<() => void>();
+let collapseCache: Record<string, boolean> = COLLAPSE_SERVER_SNAPSHOT;
+let collapseHydrated = false;
+
+function subscribeCollapse(listener: () => void) {
+  collapseListeners.add(listener);
+  return () => {
+    collapseListeners.delete(listener);
+  };
+}
+
+function getCollapseSnapshot() {
+  if (!collapseHydrated) return COLLAPSE_SERVER_SNAPSHOT;
+  return collapseCache;
+}
+
+function getCollapseServerSnapshot(): Record<string, boolean> {
+  return COLLAPSE_SERVER_SNAPSHOT;
+}
+
+function emitCollapse(next: Record<string, boolean>) {
+  collapseCache = next;
+  collapseHydrated = true;
+  writeCollapsedGroups(next);
+  collapseListeners.forEach((l) => l());
+}
+
+function hydrateCollapse() {
+  if (typeof window === "undefined") return;
+  collapseCache = { ...COLLAPSE_SERVER_SNAPSHOT, ...readCollapsedGroups() };
+  collapseHydrated = true;
+  collapseListeners.forEach((l) => l());
+}
+
 export function Sidebar() {
   const pathname = usePathname();
-  const {
-    locations,
-    activeLocationId,
-    setActiveLocationId,
-    sidebarOpen,
-    setSidebarOpen,
-    sidebarCollapsed,
-    setSidebarCollapsed,
-  } = usePortal();
-  const selectValue = activeLocationId;
+  const router = useRouter();
+  const { sidebarOpen, setSidebarOpen, pushToast } = usePortal();
+  const { identity, identities, setActiveIdentity } = useIdentity();
+  const navRef = useRef<HTMLElement | null>(null);
 
-  /** Module 2 badge — SSR-safe empty, then hydrate from pulse.m2.inbox.* */
-  const [inboxBadge, setInboxBadge] = useState<InboxBadgeSnapshot>({ count: 0, urgent: false });
+  const [navQuery, setNavQuery] = useState("");
 
   useEffect(() => {
-    const refresh = () => setInboxBadge(getInboxBadgeSnapshot());
-    refresh();
-    return subscribeInboxBadge(refresh);
+    hydrateNavPrefs();
+    hydrateCollapse();
+    hydrateInboxBadge();
   }, []);
+
+  const navPrefs = useSyncExternalStore(subscribeNavPrefs, getNavPrefsSnapshot, getNavPrefsServerSnapshot);
+  const collapsedGroups = useSyncExternalStore(subscribeCollapse, getCollapseSnapshot, getCollapseServerSnapshot);
+  const inboxBadge = useSyncExternalStore(
+    subscribeInboxBadge,
+    getInboxBadgeSnapshot,
+    getInboxBadgeServerSnapshot
+  );
+  const favorites = navPrefs.favorites;
+  const recents = navPrefs.recents;
+
+  const visiblePlatform = useMemo(
+    () => modulesVisibleForRole(identity.role),
+    [identity.role]
+  );
+  const visibleIds = useMemo(() => new Set(visiblePlatform.map((m) => m.id)), [visiblePlatform]);
+  const showEnterprise = identitySeesEnterprise(identity);
+
+  const trackRecent = useCallback((platformId: string) => {
+    emitNavPrefs({ favorites: readNavPrefs().favorites, recents: pushRecent(platformId) });
+  }, []);
+
+  const q = navQuery.trim();
+  const searchHits = useMemo(
+    () => (q ? searchPlatformNav(q, visiblePlatform) : []),
+    [q, visiblePlatform]
+  );
+
+  const jumpFamily = useCallback((title: string) => {
+    const group = NAV_GROUPS.find((g) => g.title === title);
+    if (!group) return;
+    emitCollapse({ ...getCollapseSnapshot(), [group.id]: false });
+    window.requestAnimationFrame(() => {
+      const el = navRef.current?.querySelector(`[data-nav-group="${group.id}"]`);
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }, []);
+
+  const toggleGroup = useCallback((groupId: string) => {
+    const cur = getCollapseSnapshot();
+    emitCollapse({ ...cur, [groupId]: !cur[groupId] });
+  }, []);
+
+  const onRemoveFavorite = useCallback(
+    (platformId: string) => {
+      const { favorites: next } = toggleFavorite(platformId);
+      emitNavPrefs({ favorites: next, recents: readNavPrefs().recents });
+      pushToast("Removed from favourites");
+    },
+    [pushToast]
+  );
+
+  const favMods = useMemo(
+    () =>
+      favorites
+        .map((id) => getModuleByPlatformId(id) ?? getModule(id))
+        .filter((m): m is NonNullable<typeof m> => Boolean(m) && visibleIds.has(m!.platformId)),
+    [favorites, visibleIds]
+  );
+  const recentMods = useMemo(
+    () =>
+      recents
+        .filter((id) => !favorites.includes(id))
+        .slice(0, 4)
+        .map((id) => getModuleByPlatformId(id) ?? getModule(id))
+        .filter((m): m is NonNullable<typeof m> => Boolean(m) && visibleIds.has(m!.platformId)),
+    [recents, favorites, visibleIds]
+  );
 
   return (
     <>
@@ -44,220 +198,294 @@ export function Sidebar() {
       />
       <aside
         className={cn(
-          "fixed bottom-0 left-0 top-0 z-[6] flex flex-col border-r border-[var(--v34-card-line)] bg-[var(--card)] text-[var(--ink)] transition-[width,transform] duration-200",
-          sidebarCollapsed ? "lg:w-[72px]" : "lg:w-[var(--sidebar)]",
-          "w-[var(--sidebar)]",
+          "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col border-r border-[var(--v34-card-line)] bg-[var(--card)] text-[var(--ink)] transition-transform duration-200",
           sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
-        data-collapsed={sidebarCollapsed ? "true" : "false"}
       >
-        <div
-          className={cn(
-            "flex items-center border-b border-[var(--v34-card-line)] py-4",
-            sidebarCollapsed ? "justify-center px-2" : "gap-2.5 px-[18px]"
-          )}
-        >
-          <div className="relative grid h-[34px] w-[34px] shrink-0 place-items-center rounded-[10px] border-[3px] border-[var(--teal)] font-black text-[var(--teal)]">
-            P
-            <span className="pointer-events-none absolute inset-[6px] translate-x-1.5 -translate-y-1.5 rounded-[7px] border-2 border-[var(--teal)]" />
+        <div className="v33-nav-tools">
+          <label className="v33-nav-search">
+            <Icon name="search" className="h-[15px] w-[15px] shrink-0" />
+            <input
+              type="search"
+              autoComplete="off"
+              placeholder="Find a module or section"
+              aria-label="Find a module or section"
+              value={navQuery}
+              onChange={(e) => setNavQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  setNavQuery("");
+                  (e.target as HTMLInputElement).blur();
+                }
+                if (e.key === "Enter" && searchHits[0]) {
+                  router.push(searchHits[0].href);
+                  setSidebarOpen(false);
+                }
+              }}
+            />
+          </label>
+          <div className="v33-family-palette" aria-label="Jump to family">
+            {FAMILY_PALETTE.map((fam) => (
+              <button
+                key={fam.title}
+                type="button"
+                className="v33-family-jump"
+                style={{ ["--family" as string]: fam.accent }}
+                data-short={fam.short}
+                title={fam.title}
+                aria-label={`Open ${fam.title}`}
+                onClick={() => jumpFamily(fam.title)}
+              >
+                <span className="v33-family-code" aria-hidden>
+                  {fam.short}
+                </span>
+              </button>
+            ))}
           </div>
-          {!sidebarCollapsed ? (
-            <div className="min-w-0">
-              <div className="text-[20px] font-extrabold tracking-tight text-[var(--teal)]">Pulse</div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--muted)]">
-                Healthcare Doctors
+        </div>
+
+        <nav ref={navRef} className="mt-1 flex-1 overflow-auto px-0 pb-4">
+          {q ? (
+            <div className="v33-aux-nav px-2">
+              <div className="v33-aux-head">
+                <span>Search results</span>
+                <span>{searchHits.length}</span>
+              </div>
+              <div className="v33-aux-list">
+                {searchHits.length === 0 ? (
+                  <div className="px-2 py-2 text-xs text-[var(--muted)]">No modules or sections matched.</div>
+                ) : (
+                  searchHits.map((hit) => (
+                    <Link
+                      key={`${hit.moduleId}-${hit.sectionId ?? "mod"}-${hit.href}`}
+                      href={hit.href}
+                      className="v33-aux-btn"
+                      title={hit.matchLabel}
+                      onClick={() => {
+                        trackRecent(hit.moduleId);
+                        setSidebarOpen(false);
+                        setNavQuery("");
+                      }}
+                    >
+                      <span className="v33-aux-label">{hit.matchLabel}</span>
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
           ) : null}
-        </div>
 
-        <div className={cn("mt-3", sidebarCollapsed ? "mx-2" : "mx-3")}>
-          <button
-            type="button"
-            className="mb-2 hidden w-full items-center justify-center gap-2 rounded-xl border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-2 text-[11px] font-bold lg:flex"
-            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            aria-pressed={sidebarCollapsed}
-            aria-label={sidebarCollapsed ? "Expand navigation" : "Collapse navigation to icons"}
-            title={sidebarCollapsed ? "Expand navigation" : "Icon-only navigation"}
-          >
-            <Icon name="task" className="h-3.5 w-3.5" />
-            {!sidebarCollapsed ? <span>Collapse</span> : null}
-          </button>
-
-          {!sidebarCollapsed ? (
-            <div className="flex items-center gap-2.5 rounded-xl border border-[var(--v34-card-line)] bg-[var(--soft)] px-2.5 py-2.5 shadow-[0_2px_7px_rgba(15,23,42,0.035)]">
-              <div className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[var(--teal-3)] text-[var(--teal)]">
-                <Icon name="building" />
-              </div>
-              <select
-                className="w-full border-0 bg-transparent text-[13px] font-semibold text-[var(--ink)] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--theme-accent)]"
-                value={selectValue}
-                onChange={(e) => setActiveLocationId(e.target.value)}
-                aria-label="Select clinic"
-              >
-                <option value={ALL_LOCATIONS_ID}>All locations</option>
-                {locations.map((loc) => (
-                  <option key={loc.id} value={loc.id}>
-                    {loc.shortName}
-                  </option>
-                ))}
-              </select>
-            </div>
-          ) : (
-            <div
-              className="grid h-10 place-items-center rounded-xl border border-[var(--v34-card-line)] bg-[var(--soft)] text-[var(--teal)]"
-              title="Clinic selector available when navigation is expanded"
-            >
-              <Icon name="building" className="h-4 w-4" />
-            </div>
-          )}
-        </div>
-
-        <nav className={cn("mt-3 flex-1 space-y-2.5 overflow-auto pb-4", sidebarCollapsed ? "px-2" : "px-3")}>
-          {NAV_GROUPS.map((group) => (
-            <div
-              key={group.id}
-              className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] shadow-[0_2px_7px_rgba(15,23,42,0.035)]"
-              style={{
-                borderLeft: sidebarCollapsed ? undefined : `4px solid ${group.accent}`,
-                background: `color-mix(in srgb, ${group.accent} 8%, var(--card))`,
-              }}
-            >
-              {!sidebarCollapsed ? (
-                <div
-                  className="flex items-center gap-2 border-b px-2.5 py-2 text-[11px] font-black uppercase tracking-[0.08em]"
-                  style={{
-                    color: group.accent,
-                    background: `color-mix(in srgb, ${group.accent} 17%, var(--card))`,
-                    borderColor: `color-mix(in srgb, ${group.accent} 18%, var(--line))`,
-                  }}
-                >
-                  <span
-                    className="grid h-6 w-6 place-items-center rounded-lg border"
-                    style={{
-                      background: `color-mix(in srgb, ${group.accent} 25%, var(--card))`,
-                      borderColor: `color-mix(in srgb, ${group.accent} 28%, var(--card))`,
-                    }}
-                  >
-                    <Icon name={group.icon} className="h-3 w-3" />
-                  </span>
-                  <span className="truncate">{group.title}</span>
-                </div>
+          {!q && (favMods.length > 0 || recentMods.length > 0) ? (
+            <div className="v33-aux-nav">
+              {favMods.length > 0 ? (
+                <>
+                  <div className="v33-aux-head">
+                    <span>Favourites</span>
+                    <span>{favMods.length}</span>
+                  </div>
+                  <div className="v33-aux-list">
+                    {favMods.map((mod) =>
+                      mod ? (
+                        <Link
+                          key={mod.platformId}
+                          href={`/${mod.id}`}
+                          className="v33-aux-btn"
+                          title={mod.title}
+                          onClick={() => {
+                            trackRecent(mod.platformId);
+                            setSidebarOpen(false);
+                          }}
+                        >
+                          <span style={{ color: NAV_GROUPS.find((g) => g.title === mod.group || g.id === mod.groupId)?.accent }}>
+                            <Icon name={mod.icon} className="h-[14px] w-[14px]" />
+                          </span>
+                          <span className="v33-aux-label">{mod.title}</span>
+                          <button
+                            type="button"
+                            className="v33-remove"
+                            aria-label="Remove favourite"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              onRemoveFavorite(mod.platformId);
+                            }}
+                          >
+                            ×
+                          </button>
+                        </Link>
+                      ) : null
+                    )}
+                  </div>
+                </>
               ) : null}
-              <div
-                className="space-y-0.5 p-1.5"
-                style={{ background: sidebarCollapsed ? undefined : group.soft }}
-              >
-                {group.items.map((slug) => {
-                  const mod = getModule(slug);
-                  if (!mod) return null;
-                  const active =
-                    pathname === `/${mod.id}` ||
-                    (mod.id === "action-inbox" && pathname.startsWith("/action-inbox"));
-                  const showBadge = mod.htmlId === "actionInbox" && inboxBadge.count > 0;
-                  return (
-                    <Link
-                      key={mod.id}
-                      href={`/${mod.id}`}
-                      onClick={() => setSidebarOpen(false)}
-                      title={sidebarCollapsed ? mod.label : undefined}
-                      aria-label={
-                        showBadge
-                          ? `${mod.label}, ${inboxBadge.count} open${inboxBadge.urgent ? ", includes overdue or urgent" : ""}`
-                          : mod.label
-                      }
-                      aria-current={active ? "page" : undefined}
-                      className={cn(
-                        "relative flex min-h-[34px] w-full items-center gap-2 rounded-[10px] px-2 py-1.5 text-left text-[12px] font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--theme-accent)]",
-                        sidebarCollapsed && "justify-center px-0",
-                        active
-                          ? "font-extrabold text-white"
-                          : "text-[var(--text)] hover:bg-[var(--soft)]"
-                      )}
-                      style={
-                        active
-                          ? {
-                              background: `linear-gradient(90deg, ${group.accent}, color-mix(in srgb, ${group.accent} 84%, var(--card)))`,
-                              boxShadow: `0 7px 16px color-mix(in srgb, ${group.accent} 30%, transparent)`,
-                            }
-                          : undefined
-                      }
-                    >
-                      <span
-                        className={cn(
-                          "grid h-7 w-7 shrink-0 place-items-center rounded-lg border",
-                          active ? "border-white/30 bg-white/20 text-white" : "bg-[var(--card)]"
-                        )}
-                        style={
-                          active
-                            ? undefined
-                            : {
-                                color: group.accent,
-                                borderColor: `color-mix(in srgb, ${group.accent} 16%, var(--card))`,
-                                background: `color-mix(in srgb, ${group.accent} 14%, var(--card))`,
-                              }
-                        }
-                      >
-                        <Icon name={mod.icon} className="h-3.5 w-3.5" />
-                      </span>
-                      {!sidebarCollapsed ? (
-                        <>
-                          <span className="flex-1 leading-tight">{mod.label}</span>
-                          {showBadge ? (
-                            <span
-                              className={cn(
-                                "rounded-full px-1.5 text-[10px] font-extrabold",
-                                active
-                                  ? "bg-white/20 text-white"
-                                  : inboxBadge.urgent
-                                    ? "border border-[#fecaca] bg-[#fef2f2] text-[#b91c1c]"
-                                    : "border border-[var(--line)] bg-[var(--card)] text-[var(--theme-primary)]"
-                              )}
-                              title={
-                                inboxBadge.urgent
-                                  ? `${inboxBadge.count} open · includes overdue or urgent`
-                                  : `${inboxBadge.count} open actions`
-                              }
-                            >
-                              {inboxBadge.count}
-                              <span className="sr-only">
-                                {inboxBadge.urgent ? " overdue or urgent" : " open"}
-                              </span>
-                            </span>
-                          ) : null}
-                        </>
-                      ) : showBadge ? (
-                        <span
-                          className={cn(
-                            "absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full",
-                            inboxBadge.urgent ? "bg-[#dc2626]" : "bg-[var(--theme-primary)]"
-                          )}
-                          aria-hidden
-                        />
-                      ) : null}
-                    </Link>
-                  );
-                })}
-              </div>
+              {recentMods.length > 0 ? (
+                <>
+                  <div className="v33-aux-head">
+                    <span>Recent</span>
+                    <span>{recentMods.length}</span>
+                  </div>
+                  <div className="v33-aux-list">
+                    {recentMods.map((mod) =>
+                      mod ? (
+                        <Link
+                          key={mod.platformId}
+                          href={`/${mod.id}`}
+                          className="v33-aux-btn"
+                          title={mod.title}
+                          onClick={() => {
+                            trackRecent(mod.platformId);
+                            setSidebarOpen(false);
+                          }}
+                        >
+                          <span style={{ color: NAV_GROUPS.find((g) => g.id === mod.groupId)?.accent }}>
+                            <Icon name={mod.icon} className="h-[14px] w-[14px]" />
+                          </span>
+                          <span className="v33-aux-label">{mod.title}</span>
+                        </Link>
+                      ) : null
+                    )}
+                  </div>
+                </>
+              ) : null}
             </div>
-          ))}
+          ) : null}
+
+          {!q
+            ? NAV_GROUPS.map((group) => {
+                if (group.tier === "enterprise" && !showEnterprise) return null;
+
+                const items = group.items
+                  .map((slug) => getModule(slug))
+                  .filter((mod): mod is NonNullable<typeof mod> => {
+                    if (!mod) return false;
+                    return visibleIds.has(mod.platformId);
+                  });
+                if (!items.length) return null;
+
+                const hasActive = items.some(
+                  (mod) =>
+                    pathname === `/${mod.id}` ||
+                    (mod.id === "action-inbox" && pathname.startsWith("/action-inbox")) ||
+                    (mod.id === "dashboard" && (pathname === "/" || pathname === "/dashboard"))
+                );
+                const isCollapsed = Boolean(collapsedGroups[group.id]) && !hasActive;
+
+                return (
+                  <div
+                    key={group.id}
+                    data-nav-group={group.id}
+                    className={cn("v32-nav-group", isCollapsed && "collapsed")}
+                    style={{ ["--family" as string]: group.accent, ["--family-soft" as string]: group.soft }}
+                  >
+                    <button
+                      type="button"
+                      className="v32-nav-toggle"
+                      aria-expanded={!isCollapsed}
+                      onClick={() => toggleGroup(group.id)}
+                    >
+                      <span className="ico">
+                        <Icon name={group.icon} className="h-[15px] w-[15px]" />
+                      </span>
+                      <span className="truncate">{group.title}</span>
+                      <span className="chev" aria-hidden>
+                        ⌄
+                      </span>
+                    </button>
+                    <div className="v32-nav-children">
+                      {items.map((mod) => {
+                        const active =
+                          pathname === `/${mod.id}` ||
+                          (mod.id === "action-inbox" && pathname.startsWith("/action-inbox")) ||
+                          (mod.id === "dashboard" && (pathname === "/" || pathname === "/dashboard"));
+                        const showBadge = mod.platformId === "action-inbox" && inboxBadge.count > 0;
+                        const isFav = favorites.includes(mod.platformId);
+                        return (
+                          <Link
+                            key={mod.platformId}
+                            href={`/${mod.id}`}
+                            onClick={() => {
+                              trackRecent(mod.platformId);
+                              setSidebarOpen(false);
+                            }}
+                            aria-label={
+                              showBadge
+                                ? `${mod.label}, ${inboxBadge.count} open${inboxBadge.urgent ? ", includes overdue or urgent" : ""}`
+                                : mod.label
+                            }
+                            aria-current={active ? "page" : undefined}
+                            className={cn("nav-btn", active && "active")}
+                          >
+                            <span className="nav-icon">
+                              <Icon name={mod.icon} className="h-[14px] w-[14px]" />
+                            </span>
+                            <span className="nav-label">{mod.label}</span>
+                            {showBadge ? (
+                              <span
+                                className={cn("v32-count", inboxBadge.urgent && "urgent")}
+                                title={
+                                  inboxBadge.urgent
+                                    ? `${inboxBadge.count} open · includes overdue or urgent`
+                                    : `${inboxBadge.count} open actions`
+                                }
+                              >
+                                {inboxBadge.count}
+                              </span>
+                            ) : null}
+                            <button
+                              type="button"
+                              className={cn("v33-fav-star", isFav && "is-fav")}
+                              title={isFav ? "Remove favourite" : "Add favourite"}
+                              aria-label={isFav ? "Remove favourite" : "Add favourite"}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const { favorites: next, added } = toggleFavorite(mod.platformId);
+                                emitNavPrefs({ favorites: next, recents: readNavPrefs().recents });
+                                pushToast(added ? "Added to favourites" : "Removed from favourites");
+                              }}
+                            >
+                              {isFav ? "★" : "☆"}
+                            </button>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })
+            : null}
         </nav>
 
-        {!sidebarCollapsed ? (
-          <div className="flex items-center gap-2.5 border-t border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3">
-            <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#dbeafe] to-[#bfdbfe] font-extrabold text-[var(--teal)]">
-              HD
-            </div>
-            <div>
-              <div className="text-[13px] font-bold">Practice Owner</div>
-              <div className="text-xs text-[var(--muted)]">Healthcare Doctors Pulse</div>
-            </div>
+        <div className="sidebar-user">
+          <div className="avatar">
+            {identity.displayName
+              .split(" ")
+              .map((p) => p[0])
+              .join("")
+              .slice(0, 2)}
           </div>
-        ) : (
-          <div className="border-t border-[var(--v34-card-line)] py-3 text-center text-[10px] font-extrabold text-[var(--teal)]">
-            HD
+          <div className="min-w-0 flex-1">
+            <div className="user-name">{identity.displayName}</div>
+            <div className="user-role">{identity.role}</div>
           </div>
-        )}
+          <div className="v27-sidebar-role">
+            <select
+              aria-label="Act as User / Role"
+              title="Act as User / Role"
+              value={identity.userId}
+              onChange={(e) => {
+                setActiveIdentity(e.target.value);
+                pushToast(`Acting as ${identities.find((i) => i.userId === e.target.value)?.displayName ?? e.target.value}`);
+              }}
+            >
+              {identities.map((u) => (
+                <option key={u.userId} value={u.userId}>
+                  {u.displayName} · {u.role}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </aside>
     </>
   );

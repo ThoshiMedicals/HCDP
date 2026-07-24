@@ -1,124 +1,190 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import type { ModuleDef } from "@/lib/modules";
 import { usePortal } from "@/lib/portal-context";
 import { PageHeader } from "@/components/shell/PageHeader";
-import { HtmlPrototypeFrame } from "@/components/shell/HtmlPrototypeFrame";
-import { Button } from "@/components/ui/Button";
-import { ActionInboxWorkspace } from "./ActionInboxWorkspace";
-import { DashboardWorkspace } from "./DashboardWorkspace";
-import { ModuleStub } from "./ModuleStub";
-import { OrganisationWorkspace } from "./OrganisationWorkspace";
+import { CommandCentreModule } from "@/modules/m01-command-centre";
+import { ActionInboxModule } from "@/modules/m02-action-inbox";
+import { OrganisationAccessModule } from "@/modules/m03-organisation-access";
+import { StaffDoctorsModule } from "@/modules/m04-staff-doctors";
+import { RosterModule } from "@/modules/m05-roster";
+import { TimeAttendanceModule } from "@/modules/m06-time-attendance";
+import { StaffPayModule } from "@/modules/m07-staff-pay";
+import { DoctorPayModule } from "@/modules/m08-doctor-pay";
+import { BbpipModule } from "@/modules/m09-bbpip";
+import { TasksActionsModule } from "@/modules/m10-tasks-actions";
+import { TrainingModule } from "@/modules/m11-training";
+import { ComplianceQualityModule } from "@/modules/m12-compliance-quality";
+import { DocumentsModule } from "@/modules/m13-documents";
+import { TicketingModule } from "@/modules/m14-ticketing";
+import { InventoryAssetsModule } from "@/modules/m15-inventory-assets";
+import { IncidentsRiskModule } from "@/modules/m16-incidents-risk";
+import { CommunicationsModule } from "@/modules/m17-communications";
+import { DigitalOperationsModule } from "@/modules/m18-digital-operations";
+import { AnalyticsChangeModule } from "@/modules/m19-analytics-change";
+import { CommercialWorkspacesModule } from "@/modules/m20-commercial-workspaces";
+import { VendorOperationsModule } from "@/modules/m21-vendor-operations";
+import { RecruitmentModule } from "@/modules/m22-recruitment";
+import { WebsiteSeoModule } from "@/modules/m23-website-seo";
+import { FinancialForecastModule } from "@/modules/m24-financial-forecast";
 import { TasksWorkspace } from "./TasksWorkspace";
 import {
   AccreditationWorkspace,
   ChecklistsWorkspace,
   DoctorsDirectoryWorkspace,
-  HtmlModuleFallback,
   RiskCentreWorkspace,
   StaffDirectoryWorkspace,
 } from "./HtmlSeedWorkspaces";
+import { ModuleLanding } from "./ModuleLanding";
 
-type ViewMode = "html" | "next";
+/** Temporary partial Next panels for modules still mid-migration. */
+function PartialBody({ module }: { module: ModuleDef }) {
+  const search = useSearchParams();
+  const section = search.get("section") ?? "";
 
+  switch (module.platformId) {
+    case "staff-doctors": {
+      if (section === "doctors" || section === "doctor-profiles") {
+        return <DoctorsDirectoryWorkspace />;
+      }
+      return <StaffDirectoryWorkspace />;
+    }
+    case "tasks-actions": {
+      if (section === "meetings" || section === "meeting-actions") {
+        return <TasksWorkspace initialTab="meetings" />;
+      }
+      if (section === "checklists" || section === "opening-closing") {
+        return <ChecklistsWorkspace />;
+      }
+      return <TasksWorkspace />;
+    }
+    case "compliance-quality": {
+      if (section === "accreditation") return <AccreditationWorkspace />;
+      return <RiskCentreWorkspace />;
+    }
+    case "incidents-risk":
+      return <RiskCentreWorkspace />;
+    default:
+      return null;
+  }
+}
+
+function resolveModuleEntry(platformId: string): React.ReactNode {
+  switch (platformId) {
+    case "executive-command-centre":
+      return <CommandCentreModule />;
+    case "action-inbox":
+      return <ActionInboxModule />;
+    case "organisation-access":
+      return <OrganisationAccessModule />;
+    case "staff-doctors":
+      return <StaffDoctorsModule />;
+    case "roster":
+      return <RosterModule />;
+    case "time-attendance":
+      return <TimeAttendanceModule />;
+    case "staff-pay":
+      return <StaffPayModule />;
+    case "doctor-pay":
+      return <DoctorPayModule />;
+    case "bbpip":
+      return <BbpipModule />;
+    case "tasks-actions":
+      return <TasksActionsModule />;
+    case "training":
+      return <TrainingModule />;
+    case "compliance-quality":
+      return <ComplianceQualityModule />;
+    case "documents-policies":
+      return <DocumentsModule />;
+    case "ticketing":
+      return <TicketingModule />;
+    case "inventory-assets":
+      return <InventoryAssetsModule />;
+    case "incidents-risk":
+      return <IncidentsRiskModule />;
+    case "communications":
+      return <CommunicationsModule />;
+    case "digital-ops":
+      return <DigitalOperationsModule />;
+    case "analytics":
+      return <AnalyticsChangeModule />;
+    case "saas":
+      return <CommercialWorkspacesModule />;
+    case "vendor-console":
+      return <VendorOperationsModule />;
+    case "recruitment":
+      return <RecruitmentModule />;
+    case "website-studio":
+      return <WebsiteSeoModule />;
+    case "financial-forecast":
+      return <FinancialForecastModule />;
+    default:
+      return null;
+  }
+}
+
+function ModuleBody({ module }: { module: ModuleDef }) {
+  const entry = resolveModuleEntry(module.platformId);
+  const hasPartial =
+    module.platformId === "staff-doctors" ||
+    module.platformId === "tasks-actions" ||
+    module.platformId === "compliance-quality" ||
+    module.platformId === "incidents-risk";
+
+  // Modules 1–3 are complete workspaces via module entry adapters
+  if (
+    module.platformId === "executive-command-centre" ||
+    module.platformId === "action-inbox" ||
+    module.platformId === "organisation-access"
+  ) {
+    return <>{entry}</>;
+  }
+
+  // Rebuild-pending modules: module entry renders ModuleLanding; attach partial panels when useful
+  if (hasPartial) {
+    return (
+      <ModuleLanding module={module}>
+        <Suspense fallback={null}>
+          <PartialBody module={module} />
+        </Suspense>
+      </ModuleLanding>
+    );
+  }
+
+  return <>{entry}</>;
+}
+
+/**
+ * Thin workspace router — business logic lives in src/modules/* and src/platform/*.
+ */
 export function ModuleWorkspace({ module }: { module: ModuleDef }) {
   const { rememberModule } = usePortal();
-  const isCommandCentre = module.htmlId === "dashboard";
-  const isOrganisation = module.htmlId === "settings";
-  const isActionInbox = module.htmlId === "actionInbox";
-  const forceNextRebuild = isCommandCentre || isOrganisation || isActionInbox;
-  const [otherViewMode, setOtherViewMode] = useState<ViewMode>("html");
-  const viewMode: ViewMode = forceNextRebuild ? "next" : otherViewMode;
+  const isCommandCentre = module.platformId === "executive-command-centre";
+  const isActionInbox = module.platformId === "action-inbox";
 
   useEffect(() => {
-    rememberModule(module.id);
-  }, [module.id, rememberModule]);
-
-  let body: React.ReactNode;
-  switch (module.htmlId) {
-    case "dashboard":
-      body = <DashboardWorkspace />;
-      break;
-    case "actionInbox":
-      body = <ActionInboxWorkspace />;
-      break;
-    case "settings":
-      body = <OrganisationWorkspace />;
-      break;
-    case "tasks":
-      body = <TasksWorkspace />;
-      break;
-    case "staff":
-      body = <StaffDirectoryWorkspace />;
-      break;
-    case "doctors":
-      body = <DoctorsDirectoryWorkspace />;
-      break;
-    case "checklists":
-    case "frontdesk":
-      body = <ChecklistsWorkspace />;
-      break;
-    case "accreditation":
-      body = <AccreditationWorkspace />;
-      break;
-    case "riskCentre":
-    case "complianceCentre":
-      body = <RiskCentreWorkspace />;
-      break;
-    default:
-      body = module.polished ? (
-        <ModuleStub module={module} />
-      ) : (
-        <HtmlModuleFallback
-          title={module.title}
-          source={`HTML module id: ${module.htmlId}`}
-          icon={module.icon}
-          htmlId={module.htmlId}
-        />
-      );
-  }
+    rememberModule(module.platformId || module.id);
+  }, [module.id, module.platformId, rememberModule]);
 
   return (
     <>
-      {!isCommandCentre || viewMode === "html" ? <PageHeader module={module} /> : null}
-      {!isCommandCentre && !isOrganisation && !isActionInbox ? (
-        <div className="flex flex-wrap items-center gap-2 border-b border-[var(--v34-card-line)] bg-[#f8fafc] px-4 py-2 lg:px-7">
-          <span className="text-xs font-bold text-[#526479]">View source:</span>
-          <Button
-            small
-            variant={viewMode === "html" ? "teal" : "line"}
-            onClick={() => setOtherViewMode("html")}
-          >
-            Exact HTML (complete)
-          </Button>
-          <Button
-            small
-            variant={viewMode === "next" ? "teal" : "line"}
-            onClick={() => setOtherViewMode("next")}
-          >
-            Next rebuild
-          </Button>
-          <span className="text-xs text-[#738196]">
-            HTML mode is a byte-for-byte copy of the prototype — every form, seed and wizard.
-          </span>
-        </div>
-      ) : null}
-      {viewMode === "html" ? (
-        <HtmlPrototypeFrame htmlId={module.htmlId} />
-      ) : (
-        <section
-          className={
-            isCommandCentre
-              ? "content w-full max-w-none px-0 py-0 pb-0"
-              : isActionInbox
-                ? "content mx-auto w-full max-w-[1600px] px-4 py-5 pb-20 lg:px-7 lg:py-[26px]"
-                : "content mx-auto w-full max-w-[1480px] px-4 py-5 pb-20 lg:px-7 lg:py-[26px]"
-          }
-        >
-          {body}
-        </section>
-      )}
+      {!isCommandCentre ? <PageHeader module={module} /> : null}
+      <section
+        className={
+          isCommandCentre
+            ? "content w-full max-w-none px-0 py-0 pb-0"
+            : isActionInbox
+              ? "content mx-auto w-full max-w-[1600px] px-4 py-5 pb-20 lg:px-7 lg:py-[26px]"
+              : "content mx-auto w-full max-w-[1480px] px-4 py-5 pb-20 lg:px-7 lg:py-[26px]"
+        }
+      >
+        <Suspense fallback={null}>
+          <ModuleBody module={module} />
+        </Suspense>
+      </section>
     </>
   );
 }

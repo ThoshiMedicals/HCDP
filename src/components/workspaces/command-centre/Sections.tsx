@@ -149,6 +149,19 @@ export function MyExecutiveActions({
   );
 }
 
+const CLINIC_FTE_GUESS: Record<string, number> = {
+  loc_baldhills: 14, loc_cannonhill: 12, loc_woolloongabba: 18, loc_eightmile: 13,
+  loc_chapelhill: 15, loc_indooroopilly: 16, loc_forestlake: 11, loc_lawnton: 10, loc_beachmere: 8,
+};
+const CLINIC_INCOME_GUESS: Record<string, number> = {
+  loc_baldhills: 52400, loc_cannonhill: 48100, loc_woolloongabba: 71200, loc_eightmile: 45600,
+  loc_chapelhill: 53800, loc_indooroopilly: 61200, loc_forestlake: 39800, loc_lawnton: 35200, loc_beachmere: 0,
+};
+const CLINIC_ROOMS_GUESS: Record<string, number> = {
+  loc_baldhills: 6, loc_cannonhill: 5, loc_woolloongabba: 8, loc_eightmile: 5,
+  loc_chapelhill: 6, loc_indooroopilly: 7, loc_forestlake: 4, loc_lawnton: 4, loc_beachmere: 3,
+};
+
 export function ClinicOperationsPanel({
   health,
   locations,
@@ -159,27 +172,25 @@ export function ClinicOperationsPanel({
   onOpenHealth?: (locationId: string) => void;
 }) {
   const groups = {
-    "Operating Normally": health.filter((h) => h.openingStatus !== "Temporarily Closed" && (h.band === "Healthy" || h.band === "On Track") && !h.emergencyStatus),
-    "Attention Required": health.filter((h) => h.band === "Attention Required" && h.openingStatus !== "Temporarily Closed"),
-    Urgent: health.filter((h) => (h.band === "Urgent Review" || h.emergencyStatus) && h.openingStatus !== "Temporarily Closed"),
+    "Operating Normally": health.filter(
+      (h) => h.openingStatus !== "Temporarily Closed" && (h.overallScore ?? -1) >= 80 && !h.emergencyStatus
+    ),
+    "Attention Required": health.filter(
+      (h) => h.openingStatus !== "Temporarily Closed" && (h.overallScore ?? -1) >= 65 && (h.overallScore ?? -1) < 80
+    ),
+    Urgent: health.filter(
+      (h) => h.openingStatus !== "Temporarily Closed" && ((h.overallScore ?? -1) < 65 || h.emergencyStatus)
+    ),
     "Temporarily Closed": health.filter((h) => h.openingStatus === "Temporarily Closed"),
   } as const;
 
   const ranked = [...health].sort((a, b) => (b.overallScore ?? -1) - (a.overallScore ?? -1));
-  const fteGuess: Record<string, number> = {
-    loc_baldhills: 14, loc_cannonhill: 12, loc_woolloongabba: 18, loc_eightmile: 13,
-    loc_chapelhill: 15, loc_indooroopilly: 16, loc_forestlake: 11, loc_lawnton: 10, loc_beachmere: 8,
-  };
-  const incomeGuess: Record<string, number> = {
-    loc_baldhills: 52400, loc_cannonhill: 48100, loc_woolloongabba: 71200, loc_eightmile: 45600,
-    loc_chapelhill: 53800, loc_indooroopilly: 61200, loc_forestlake: 39800, loc_lawnton: 35200, loc_beachmere: 0,
-  };
 
   return (
     <CcCard accent="#1e40af">
       <CcCardHeader
         title="Clinic Operations & Comparison"
-        subtitle="Overall 0–100% score across eight equal areas. Actual totals shown with fair / FTE rates."
+        subtitle="Overall 0–100% score across eight equal areas. Emergency status shown separately. Actual totals shown alongside fair / FTE and / room rates."
       />
       <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 xl:grid-cols-4">
         {(Object.keys(groups) as Array<keyof typeof groups>).map((g) => (
@@ -195,8 +206,9 @@ export function ClinicOperationsPanel({
               ) : null}
               {groups[g].map((h) => {
                 const loc = locations.find((l) => l.id === h.locationId);
-                const fte = fteGuess[h.locationId] || 12;
-                const income = incomeGuess[h.locationId] || 0;
+                const fte = CLINIC_FTE_GUESS[h.locationId] || 12;
+                const rooms = CLINIC_ROOMS_GUESS[h.locationId] || 4;
+                const income = CLINIC_INCOME_GUESS[h.locationId] || 0;
                 return (
                   <div key={h.locationId} className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-2.5">
                     <div className="mb-1 flex items-start justify-between gap-2">
@@ -205,9 +217,36 @@ export function ClinicOperationsPanel({
                         <HealthBadge band={h.override?.band ?? h.band} score={h.overallScore} compact />
                       </span>
                     </div>
-                    <div className="text-[11px] font-semibold text-[var(--cc-muted)]">
-                      Score {h.overallScore === null ? "—" : `${h.overallScore}%`} · Urgent {h.urgentIssues} ·{" "}
-                      {h.openingStatus}
+                    {h.emergencyStatus ? (
+                      <div className="cc-text-danger mb-1 text-[10px] font-extrabold">
+                        Emergency status active (separate from score)
+                      </div>
+                    ) : null}
+                    {h.openingChecklist === "Late" ? (
+                      <div className="cc-text-warn mb-1 text-[10px] font-bold">Warning: opening checklist late</div>
+                    ) : null}
+                    {h.missingInfo?.length ? (
+                      <div className="mb-1 text-[10px] text-[var(--cc-muted)]">
+                        Data incomplete: {h.missingInfo.join(", ")} (score not reduced)
+                      </div>
+                    ) : null}
+                    <div className="grid gap-0.5 text-[11px] leading-snug text-[var(--cc-muted)]">
+                      <span>
+                        {h.openingStatus} · Checklist {h.openingChecklist}
+                      </span>
+                      <span>
+                        Staffing {h.staffingStatus} · Rooms {h.roomsStatus} · Systems {h.systemsStatus}
+                      </span>
+                      <span>
+                        Urgent {h.urgentIssues} · Overdue {h.overdueWork} · Manager {h.manager}
+                      </span>
+                      <span>
+                        Trend {h.trend} · Strongest {h.strongest} · Weakest {h.weakest}
+                      </span>
+                      <span className="tabular-nums">
+                        Income {formatMoneyExact(income)} · {formatMoneyExact(fte ? income / fte : 0)} / FTE ·{" "}
+                        {formatMoneyExact(rooms ? income / rooms : 0)} / room
+                      </span>
                     </div>
                     {onOpenHealth ? (
                       <Button small variant="line" className="mt-1.5" onClick={() => onOpenHealth(h.locationId)}>
@@ -215,34 +254,14 @@ export function ClinicOperationsPanel({
                       </Button>
                     ) : null}
                     <ExpandableBlock
-                      title="Clinic detail"
-                      summary={`${h.staffingStatus} · Rooms ${h.roomsStatus} · ${formatMoneyExact(income)} / ${formatMoneyExact(income / fte)} FTE`}
+                      title="Audit and override detail"
+                      summary={`Last refreshed ${new Date(h.lastUpdate).toLocaleString("en-AU")}`}
                       className="mt-1.5"
                     >
                       {h.override ? (
                         <div className="cc-text-warn mb-1 text-[10px] font-extrabold">Manager Override Active</div>
                       ) : null}
-                      {h.emergencyStatus ? (
-                        <div className="cc-text-danger mb-1 text-[10px] font-extrabold">
-                          Emergency (separate from score)
-                        </div>
-                      ) : null}
-                      {h.openingChecklist === "Late" ? (
-                        <div className="cc-text-warn mb-1 text-[10px] font-bold">Opening checklist late</div>
-                      ) : null}
                       <div className="grid gap-0.5 text-[10px] leading-snug text-[var(--cc-muted)]">
-                        <span>
-                          {h.openingStatus} · Checklist {h.openingChecklist}
-                        </span>
-                        <span>
-                          Staff {h.staffingStatus} · Rooms {h.roomsStatus} · Systems {h.systemsStatus}
-                        </span>
-                        <span>
-                          Urgent {h.urgentIssues} · Overdue {h.overdueWork} · {h.manager}
-                        </span>
-                        <span className="tabular-nums">
-                          Income {formatMoneyExact(income)} · {formatMoneyExact(income / fte)} / FTE
-                        </span>
                         <span>Last refreshed {new Date(h.lastUpdate).toLocaleString("en-AU")}</span>
                       </div>
                     </ExpandableBlock>
@@ -254,53 +273,94 @@ export function ClinicOperationsPanel({
         ))}
       </div>
       <div className="border-t border-[var(--cc-card-line)] px-4 py-3">
-        <ExpandableBlock
-          title="Ranked comparison (actual + normalised)"
-          summary={`${ranked.length} clinics · expand for income, FTE rates and weakest area`}
-        >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[820px] text-left text-xs">
-              <thead>
-                <tr className="text-[10px] uppercase text-[var(--cc-muted)]">
-                  <th className="py-1 pr-2">Rank</th>
-                  <th className="pr-2">Clinic</th>
-                  <th className="pr-2">Score</th>
-                  <th className="pr-2">Income</th>
-                  <th className="pr-2">/ FTE</th>
-                  <th className="pr-2">Urgent / 10 FTE</th>
-                  <th className="pr-2">Trend</th>
-                  <th>Weakest</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ranked.map((h, i) => {
-                  const fte = fteGuess[h.locationId] || 12;
-                  const income = incomeGuess[h.locationId] || 0;
-                  return (
-                    <tr key={h.locationId} className="border-t border-[var(--cc-card-line)]">
-                      <td className="py-1.5 font-bold">{i + 1}</td>
-                      <td>{locations.find((l) => l.id === h.locationId)?.shortName}</td>
-                      <td className="font-black tabular-nums">
-                        {h.overallScore === null ? "—" : `${h.overallScore}%`}
-                      </td>
-                      <td className="tabular-nums">{formatMoneyExact(income)}</td>
-                      <td className="tabular-nums">{formatMoneyExact(income / fte)}</td>
-                      <td className="tabular-nums">{((h.urgentIssues / fte) * 10).toFixed(1)}</td>
-                      <td>{h.trend}</td>
-                      <td className="max-w-[140px] truncate">{h.weakest}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-2 text-[11px] text-[var(--cc-muted)]">
-            Normalisation keeps larger clinics from looking worse on absolute volume alone. Actual totals stay visible.
-          </p>
-        </ExpandableBlock>
+        <h4 className="m-0 mb-2 text-[13px] font-extrabold">Ranked comparison (normalised)</h4>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[820px] text-left text-xs">
+            <thead>
+              <tr className="text-[10px] uppercase text-[var(--cc-muted)]">
+                <th className="py-1 pr-2">Rank</th>
+                <th className="pr-2">Clinic</th>
+                <th className="pr-2">Score</th>
+                <th className="pr-2">Income (actual)</th>
+                <th className="pr-2">Income / FTE</th>
+                <th className="pr-2">Income / room</th>
+                <th className="pr-2">Urgent / 10 FTE</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ranked.map((h, i) => {
+                const fte = CLINIC_FTE_GUESS[h.locationId] || 12;
+                const rooms = CLINIC_ROOMS_GUESS[h.locationId] || 4;
+                const income = CLINIC_INCOME_GUESS[h.locationId] || 0;
+                return (
+                  <tr key={h.locationId} className="border-t border-[var(--cc-card-line)]">
+                    <td className="py-1.5 font-bold">{i + 1}</td>
+                    <td>{locations.find((l) => l.id === h.locationId)?.shortName}</td>
+                    <td className="font-black tabular-nums">
+                      {h.overallScore === null ? "—" : `${h.overallScore}%`}
+                    </td>
+                    <td className="tabular-nums">{formatMoneyExact(income)}</td>
+                    <td className="tabular-nums">{formatMoneyExact(income / fte)}</td>
+                    <td className="tabular-nums">{formatMoneyExact(income / rooms)}</td>
+                    <td className="tabular-nums">{((h.urgentIssues / fte) * 10).toFixed(1)}</td>
+                    <td>{h.trend}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-[11px] text-[var(--cc-muted)]">
+          Normalisation prevents larger clinics from looking worse simply because they have higher absolute volumes.
+          Actual totals remain visible beside fair rates.
+        </p>
       </div>
     </CcCard>
   );
+}
+
+function rollupStaffing(staffing: StaffingSnapshot[]) {
+  const gapsByRole = new Map<string, number>();
+  const nextSevenDayRisks: string[] = [];
+  const coverRecommendations: Array<{ role: string; person: string; reason: string }> = [];
+  const totals = staffing.reduce(
+    (acc, s) => {
+      for (const g of s.gapsByRole) gapsByRole.set(g.role, (gapsByRole.get(g.role) ?? 0) + g.gaps);
+      for (const r of s.nextSevenDayRisks) if (!nextSevenDayRisks.includes(r)) nextSevenDayRisks.push(r);
+      coverRecommendations.push(...s.coverRecommendations);
+      return {
+        rostered: acc.rostered + s.rostered,
+        present: acc.present + s.present,
+        absent: acc.absent + s.absent,
+        late: acc.late + s.late,
+        unfilled: acc.unfilled + s.unfilled,
+        overtimeRisk: acc.overtimeRisk + s.overtimeRisk,
+        onLeave: acc.onLeave + s.onLeave,
+        agencyLocum: acc.agencyLocum + s.agencyLocum,
+        doctorCoverage: acc.doctorCoverage + s.doctorCoverage,
+        estimatedOvertimeCost: acc.estimatedOvertimeCost + s.estimatedOvertimeCost,
+      };
+    },
+    {
+      rostered: 0,
+      present: 0,
+      absent: 0,
+      late: 0,
+      unfilled: 0,
+      overtimeRisk: 0,
+      onLeave: 0,
+      agencyLocum: 0,
+      doctorCoverage: 0,
+      estimatedOvertimeCost: 0,
+    }
+  );
+  return {
+    ...totals,
+    gapsByRole: Array.from(gapsByRole.entries()).map(([role, gaps]) => ({ role, gaps })),
+    nextSevenDayRisks,
+    coverRecommendations,
+  };
 }
 
 export function StaffingPanel({
@@ -312,12 +372,51 @@ export function StaffingPanel({
   locations: Location[];
   onCreateFollowUp?: (locationId: string, cover: { role: string; person: string; reason: string }) => void;
 }) {
+  const org = rollupStaffing(staffing);
   return (
     <CcCard>
       <CcCardHeader
         title="Staffing & Roster"
         subtitle="Exact counts. Cover recommendations only — staff are not moved between clinics from this dashboard."
       />
+      <div className="grid grid-cols-2 gap-2 px-4 pb-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <StatBlock label="Rostered" value={org.rostered} />
+        <StatBlock label="Present" value={org.present} tone="success" />
+        <StatBlock label="Absent" value={org.absent} tone={org.absent ? "warn" : "default"} />
+        <StatBlock label="Late" value={org.late} />
+        <StatBlock label="Unfilled" value={org.unfilled} tone={org.unfilled ? "danger" : "default"} />
+        <StatBlock label="OT risk" value={org.overtimeRisk} />
+        <StatBlock label="Leave" value={org.onLeave} />
+        <StatBlock label="Agency/locum" value={org.agencyLocum} />
+        <StatBlock label="Doctor coverage" value={org.doctorCoverage} />
+        <StatBlock label="Est. OT cost" value={formatMoneyExact(org.estimatedOvertimeCost)} tone="warn" />
+      </div>
+      <div className="px-4 pb-3 text-xs">
+        <div className="font-bold">Gaps by role (organisation)</div>
+        <div className="mt-1 flex flex-wrap gap-2">
+          {org.gapsByRole.map((g) => (
+            <Badge key={g.role} tone={g.gaps ? "warn" : "success"}>
+              {g.role}: {g.gaps}
+            </Badge>
+          ))}
+          {!org.gapsByRole.length ? <span className="text-[var(--cc-muted)]">No role gaps reported.</span> : null}
+        </div>
+        <div className="mt-2 font-bold">Next 7-day risks (organisation)</div>
+        <ul className="m-0 pl-4">
+          {org.nextSevenDayRisks.map((r) => (
+            <li key={r}>{r}</li>
+          ))}
+          {!org.nextSevenDayRisks.length ? <li className="text-[var(--cc-muted)]">No risks flagged.</li> : null}
+        </ul>
+        <div className="mt-2 font-bold">Recommended cover (organisation)</div>
+        {org.coverRecommendations.length ? (
+          <p className="m-0 leading-relaxed">
+            {org.coverRecommendations.map((c) => `${c.role}: ${c.person} — ${c.reason}`).join(" · ")}
+          </p>
+        ) : (
+          <p className="m-0 text-[var(--cc-muted)]">No cover recommended for the current filters.</p>
+        )}
+      </div>
       <div className="grid gap-2 px-4 pb-4">
         {staffing.map((s) => {
           const name = locationShort(s.locationId, locations);
@@ -402,10 +501,10 @@ export function CompliancePanel({
         title="Compliance & Expiries"
         subtitle={`Organisation compliance ${orgPercent}%. Serious expired items create Urgent actions — people/equipment are not auto-blocked.`}
       />
-      <div className="grid gap-3 px-4 pb-4">
+      <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 lg:grid-cols-4">
         {groups.map((g) => (
-          <div key={g}>
-            <div className="mb-1.5 text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+          <div key={g} className="min-w-0">
+            <div className="mb-1.5 truncate text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g}
             </div>
             <div className="grid gap-2">
@@ -469,33 +568,23 @@ export function FinancePanel({
         <StatBlock label="Income" value={formatMoneyExact(org.income)} tone="success" />
         <StatBlock label="Expenses" value={formatMoneyExact(org.expenses)} />
         <StatBlock label="Profit / Loss" value={formatMoneyExact(org.profitLoss)} tone="info" />
+        <StatBlock label="Staff pay" value={formatMoneyExact(org.staffPay)} />
+        <StatBlock label="Doctor pay" value={formatMoneyExact(org.doctorPay)} />
+        <StatBlock label="Supplier payments" value={formatMoneyExact(org.supplierPayments)} />
         <StatBlock label="Pending approvals" value={org.pendingApprovals} tone="warn" />
+        <StatBlock label="Pending amounts" value={formatMoneyExact(org.pendingAmounts)} />
         <StatBlock
           label="Forecast vs actual"
           value={formatMoneyExact(org.actual)}
           hint={`Forecast ${formatMoneyExact(org.forecast)} · Var ${formatMoneyExact(org.varianceDollar)} (${org.variancePercent}%)`}
         />
-        <StatBlock label="Pending amounts" value={formatMoneyExact(org.pendingAmounts)} />
-      </div>
-      <div className="px-4 pb-3">
-        <ExpandableBlock
-          title="Organisation pay breakdown"
-          summary={`Staff ${formatMoneyExact(org.staffPay)} · Doctors ${formatMoneyExact(org.doctorPay)} · Suppliers ${formatMoneyExact(org.supplierPayments)}`}
-        >
-          <div className="grid gap-2 grid-cols-2 sm:grid-cols-3">
-            <StatBlock label="Staff pay" value={formatMoneyExact(org.staffPay)} />
-            <StatBlock label="Doctor pay" value={formatMoneyExact(org.doctorPay)} />
-            <StatBlock label="Supplier payments" value={formatMoneyExact(org.supplierPayments)} />
-          </div>
-        </ExpandableBlock>
       </div>
       {org.alerts.length ? (
         <div className="cc-surface-danger mx-4 mb-3 rounded-xl border p-3">
-          <div className="cc-text-danger text-xs font-extrabold">Material unusual financial changes</div>
           {org.alerts.map((a, i) => (
             <div key={a.title} className="mt-1 text-sm">
-              {a.title}: expected {formatMoneyExact(a.expected)}, actual {formatMoneyExact(a.actual)} (
-              {formatMoneyExact(a.dollarDiff)}, {a.percentDiff}%)
+              Material unusual change — {a.title}: expected {formatMoneyExact(a.expected)}, actual{" "}
+              {formatMoneyExact(a.actual)} ({formatMoneyExact(a.dollarDiff)}, {a.percentDiff}%)
               {onAction ? (
                 <div className="cc-action-btns mt-1.5">
                   {(["Review", "Approve", "Reject", "Request Information"] as const).map((verb) => (

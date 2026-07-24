@@ -30,6 +30,15 @@ import { readTemplates, readRecurring, writeRecurring, writeReportSchedules, rea
 import type { EnrichSearchResult } from "@/lib/command-centre/search";
 import type { SearchNavigate } from "@/lib/command-centre/search";
 
+// Prototype labels (Emergency / Important / Information / Positive Update) mapped onto the
+// existing Announcement["type"] values so downstream state/logic is unchanged.
+const ANNOUNCEMENT_TYPE_OPTIONS: Array<{ value: Announcement["type"]; label: string }> = [
+  { value: "Emergency", label: "Emergency" },
+  { value: "Urgent", label: "Important" },
+  { value: "Info", label: "Information" },
+  { value: "Normal", label: "Positive Update" },
+];
+
 export function PasswordConfirmModal({
   open,
   title,
@@ -405,7 +414,7 @@ export function PublishAnnouncementModal({
   pushLocalDraft?: (title: string, message: string) => void;
 }) {
   const [title, setTitle] = useState("");
-  const [type, setType] = useState<Announcement["type"]>("Normal");
+  const [type, setType] = useState<Announcement["type"]>("Info");
   const [message, setMessage] = useState("");
   const [requireAck, setRequireAck] = useState(true);
   const [channels, setChannels] = useState<Announcement["channels"]>(["Dashboard", "Email"]);
@@ -506,8 +515,10 @@ export function PublishAnnouncementModal({
         </Field>
         <Field label="Type">
           <select className={inputClass} value={type} onChange={(e) => setType(e.target.value as Announcement["type"])}>
-            {["Normal", "Emergency", "Urgent", "Info"].map((t) => (
-              <option key={t}>{t}</option>
+            {ANNOUNCEMENT_TYPE_OPTIONS.map((t) => (
+              <option key={t.value} value={t.value}>
+                {t.label}
+              </option>
             ))}
           </select>
         </Field>

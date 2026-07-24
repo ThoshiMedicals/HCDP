@@ -19,10 +19,10 @@ function statusTone(s: TaskItem["status"]) {
   return "default" as const;
 }
 
-export function TasksWorkspace() {
+export function TasksWorkspace({ initialTab = "tasks" }: { initialTab?: string }) {
   const { tasks, locations, activeLocationId } = usePortal();
   const { openCreate, openChecklistWizard } = useCreateForm();
-  const [tab, setTab] = useState("tasks");
+  const [tab, setTab] = useState(initialTab);
 
   const rows = useMemo(
     () => tasks.filter((t) => matchesLocation(t.locationId, activeLocationId)),
