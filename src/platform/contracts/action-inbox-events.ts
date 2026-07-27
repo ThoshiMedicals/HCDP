@@ -42,6 +42,8 @@ export interface ActionInboxEventInput {
   sourceStatus?: string;
   inboxStatus?: PlatformInboxStatus;
   projectionKey?: string;
+  /** Monotonic source version for stale create/update replay protection. */
+  sourceRecordVersion?: number;
 }
 
 export interface SourceLinkRecord {
@@ -50,6 +52,10 @@ export interface SourceLinkRecord {
   sourceKey: string;
   source: SourceRecordRef;
   updatedAt: string;
+  /** Last source record version applied to this projection (stale-replay guard). */
+  sourceRecordVersion?: number;
+  /** Source version at which the projection was closed/resolved. */
+  closedAtSourceVersion?: number;
 }
 
 export interface ActionInboxBridgeResult {

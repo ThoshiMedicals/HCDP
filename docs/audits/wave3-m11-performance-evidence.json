@@ -1,0 +1,78 @@
+{
+  "total": 8,
+  "pass": 8,
+  "fail": 0,
+  "deferred": 0,
+  "results": [
+    {
+      "id": "perf.catalogue.filter",
+      "name": "Catalogue search/filter (500+)",
+      "targetMs": 300,
+      "actualMs": 0.55,
+      "result": "pass",
+      "matched": 260,
+      "executedAt": "2026-07-27T05:08:05.080Z"
+    },
+    {
+      "id": "perf.assignment.page",
+      "name": "Assignment-list paging (page size 50, ≥5k)",
+      "targetMs": 400,
+      "actualMs": 0.19,
+      "result": "pass",
+      "pageLen": 50,
+      "executedAt": "2026-07-27T05:08:05.082Z"
+    },
+    {
+      "id": "perf.bulk.preview",
+      "name": "Bulk-assignment preview (≤500)",
+      "targetMs": 2000,
+      "actualMs": 0.47,
+      "result": "pass",
+      "executedAt": "2026-07-27T05:08:05.083Z"
+    },
+    {
+      "id": "perf.bulk.submit",
+      "name": "Bulk-assignment submission (≤500)",
+      "targetMs": 5000,
+      "actualMs": 493.34,
+      "result": "pass",
+      "succeeded": 500,
+      "failed": 0,
+      "executedAt": "2026-07-27T05:08:05.576Z"
+    },
+    {
+      "id": "perf.readiness.one",
+      "name": "M04 readiness recalculation (one person)",
+      "targetMs": 100,
+      "actualMs": 11.27,
+      "result": "pass",
+      "executedAt": "2026-07-27T05:08:05.666Z"
+    },
+    {
+      "id": "perf.readiness.batch",
+      "name": "M04 readiness batch (≤200 persons)",
+      "targetMs": 3000,
+      "actualMs": 1211.28,
+      "result": "pass",
+      "executedAt": "2026-07-27T05:08:06.877Z"
+    },
+    {
+      "id": "perf.m02.projection",
+      "name": "M02 projection generation (single condition sync)",
+      "targetMs": 50,
+      "actualMs": 2.84,
+      "result": "pass",
+      "assignmentCount": 501,
+      "executedAt": "2026-07-27T05:08:06.886Z"
+    },
+    {
+      "id": "perf.dashboard.interactive",
+      "name": "Initial role dashboard (/training overview)",
+      "targetMs": 2500,
+      "actualMs": 426,
+      "result": "pass",
+      "note": "Playwright BASE_URL=http://localhost:3012",
+      "executedAt": "2026-07-27T05:08:06.886Z"
+    }
+  ]
+}

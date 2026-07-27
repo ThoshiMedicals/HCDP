@@ -14,7 +14,7 @@ export function DepartmentsSection() {
   const [view, setView] = useState("list");
   const [showArchived, setShowArchived] = useState(false);
 
-  const clinicIds = new Set(clinics.map((c) => c.id));
+  const clinicIds = useMemo(() => new Set(clinics.map((c) => c.id)), [clinics]);
   const departments = useMemo(() => {
     let deps = state.departments.filter((d) => clinicIds.has(d.clinicId));
     if (!showArchived) deps = deps.filter((d) => !d.archived);

@@ -131,6 +131,7 @@ import {
   TrendsPanel,
 } from "./Sections";
 import { InboxProjectionSummary } from "./InboxProjectionSummary";
+import { WorkforceProjectionSummary } from "./WorkforceProjectionSummary";
 import { syncFromModule1SelectedClinics } from "@/modules/m01-command-centre/adapters/platform";
 import {
   CreateActionModal,
@@ -908,8 +909,9 @@ export function CommandCentre() {
                   : `${selectedClinicIds.length} clinic(s) selected`
               }
             />
-            <div className="mt-3">
+            <div className="mt-3 space-y-3">
               <InboxProjectionSummary />
+              <WorkforceProjectionSummary />
             </div>
           </>
         );

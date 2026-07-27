@@ -769,7 +769,7 @@ async function main() {
     testedAt: new Date().toISOString(),
     method: "Playwright Chromium headless + Cursor browser MCP spot checks",
     url: BASE,
-    build: "pending final npm run build",
+    build: process.env.QA_BUILD_NOTE || `Wave 2 M04 build — rerun ${new Date().toISOString().slice(0, 10)}`,
     summary,
     tests,
   };

@@ -1,7 +1,7 @@
 # Platform Storage Register
 
-**Stage:** Platform Integration Spine  
-**Date:** 24 July 2026
+**Stage:** Platform Integration Spine + Wave 2 M04  
+**Date:** 27 July 2026
 
 ## Shared platform keys (`pulse.platform.*`)
 
@@ -35,6 +35,28 @@ Actions, notifications, settings, drafts, templates, saved views, delegations, a
 ### Module 3 — `pulse.org.m3.state`
 Full organisation state — **system of record** for access requests/reviews/alerts; inbox holds projections only.
 
+## Workforce family keys (Wave 2 — M04 canonical)
+
+| Key | Owner | Purpose | Version | Migration id | Notes |
+|---|---|---|---|---|---|
+| `pulse.m04.workforce.meta` | M04 | Meta / init | 1 | `m04-workforce-storage-v1` | Module-specific |
+| `pulse.m04.workforce.people` | M04 | Person SoT | 1 | `m04-workforce-portal-seed-v1` | Migrated from HTML seed; legacyId retained |
+| `pulse.m04.workforce.engagements` | M04 | Effective-dated engagements | 1 | — | |
+| `pulse.m04.workforce.credentials` | M04 | Credentials | 1 | — | |
+| `pulse.m04.workforce.leave` | M04 | Leave | 1 | — | |
+| `pulse.m04.workforce.availability` | M04 | Availability | 1 | — | |
+| `pulse.m04.workforce.restrictions` | M04 | Restrictions (sensitivity) | 1 | — | |
+| `pulse.m04.workforce.onboarding` | M04 | Onboarding | 1 | — | |
+| `pulse.m04.workforce.offboarding` | M04 | Offboarding | 1 | — | |
+| `pulse.m04.workforce.readiness` | M04 | Derived readiness cache | 1 | — | Not manually editable |
+| `pulse.m05.roster.*` | M05 | Skeleton only | 1 | `m05-roster-storage-v1` | Landing only |
+| `pulse.m06.attendance.*` | M06 | Skeleton only | 1 | `m06-attendance-storage-v1` | Landing only |
+| `pulse.m07.staffpay.*` | M07 | Skeleton only | 1 | `m07-staffpay-storage-v1` | Landing only |
+| `pulse.m11.training.*` | M11 | Skeleton only | 1 | `m11-training-storage-v1` | Landing only |
+| `pulse.m22.recruitment.*` | M22 | Skeleton only | 1 | `m22-recruitment-storage-v1` | Landing only |
+
+After M04 cutover: **do not dual-write** portal `records.staff/doctors`. Legacy seed JSON remains for rollback/compatibility; portal bag is read-only compatibility. Do not delete legacy data in Wave 2.
+
 ## Migration IDs
 
 | Migration id | Version | Effect |
@@ -43,5 +65,12 @@ Full organisation state — **system of record** for access requests/reviews/ale
 | `identity-context` | 1 | Seed identity from executive role |
 | `nav-prefs-module-ids` | 1 | Map htmlIds → approved module IDs in nav prefs |
 | `org-m3-inbox-bridge` | 1 | Create three controlled M3→M2 projections once |
+| `m04-workforce-storage-v1` | 1 | Initialise empty M04 workforce collections |
+| `m04-workforce-portal-seed-v1` | 1 | Idempotent people seed from HTML staff/doctors; no dual-write to portal |
+| `m05-roster-storage-v1` | 1 | Initialise empty M05 roster collections |
+| `m06-attendance-storage-v1` | 1 | Initialise empty M06 attendance collections |
+| `m07-staffpay-storage-v1` | 1 | Initialise empty M07 staff-pay collections |
+| `m11-training-storage-v1` | 1 | Initialise empty M11 training collections |
+| `m22-recruitment-storage-v1` | 1 | Initialise empty M22 recruitment collections |
 
 All migrations are idempotent and tolerate invalid JSON.

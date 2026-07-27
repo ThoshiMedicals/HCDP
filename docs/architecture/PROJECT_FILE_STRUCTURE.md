@@ -29,6 +29,7 @@ Development folder/
     │   ├── module-registry/
     │   ├── context/           # Clinic + identity providers
     │   ├── contracts/         # Source-record, inbox, notification, audit, exec summary
+    │   ├── workforce/         # Workforce family contracts, events, projection services (Wave 1+)
     │   ├── services/          # Implementations of contracts (bridge, publish, summary)
     │   ├── navigation/        # Legacy redirects, search, favs migration
     │   ├── permissions/       # Shell / enterprise visibility helpers

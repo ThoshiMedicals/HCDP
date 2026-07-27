@@ -1,16 +1,16 @@
 # Platform Integration QA Report
 
-- **Test date and time:** 2026-07-24T05:15:57.541Z
+- **Test date and time:** 2026-07-27T05:08:02.656Z
 - **Browser / testing method:** Node HTTP harness + Cursor browser MCP (interactive)
 - **Application URL:** http://localhost:3000
-- **Commit:** 71c16ef
-- **Build:** npm run build PASSED (Next.js 16.2.10 Turbopack)
+- **Commit:** 649333b
+- **Build:** Wave 2 M04 next start — fresh interactive rerun 2026-07-27
 
 ## Summary
 
 | Total | Pass | Fail | Blocked |
 |---:|---:|---:|---:|
-| 153 | 153 | 0 | 0 |
+| 152 | 152 | 0 | 0 |
 
 ## Tests
 
@@ -26,8 +26,8 @@
 
 ### legacy.staff — Legacy /staff
 
-- **Expected:** /staff-doctors {"section":"staff"}
-- **Actual:** 307 → /staff-doctors?section=staff
+- **Expected:** /staff-doctors {"section":"people"}
+- **Actual:** 307 → /staff-doctors?section=people
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -36,8 +36,8 @@
 
 ### legacy.doctors — Legacy /doctors
 
-- **Expected:** /staff-doctors {"section":"doctors"}
-- **Actual:** 307 → /staff-doctors?section=doctors
+- **Expected:** /staff-doctors {"section":"doctor-profiles"}
+- **Actual:** 307 → /staff-doctors?section=doctor-profiles
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -46,8 +46,8 @@
 
 ### legacy.hr-docs — Legacy /hr-docs
 
-- **Expected:** /staff-doctors {"section":"hr-documents"}
-- **Actual:** 307 → /staff-doctors?section=hr-documents
+- **Expected:** /staff-doctors {"section":"credentials"}
+- **Actual:** 307 → /staff-doctors?section=credentials
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -377,7 +377,7 @@
 ### page_staff_doctors — Load /staff-doctors
 
 - **Expected:** 200 OK
-- **Actual:** 200; rebuild=true; toggle=false
+- **Actual:** 200; rebuild=false; toggle=false
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -607,7 +607,7 @@
 ### legacy.queryPreserve — Preserve query params on legacy redirect
 
 - **Expected:** section+recordId+clinicId
-- **Actual:** /staff-doctors?section=hr-documents&recordId=abc123&clinicId=loc_woolloongabba
+- **Actual:** /staff-doctors?section=credentials&recordId=abc123&clinicId=loc_woolloongabba
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -827,7 +827,7 @@
 ### clinic.single — Single clinic selection
 
 - **Expected:** single Woolloongabba
-- **Actual:** {"version":1,"mode":"single","selectedClinicIds":["loc_woolloongabba"],"groupId":null,"label":"Single Clinic · Woolloongabba","updatedAt":"2026-07-24T05:13:53.501Z"}
+- **Actual:** {"version":1,"mode":"single","selectedClinicIds":["loc_woolloongabba"],"groupId":null,"label":"Single Clinic · Woolloongabba","updatedAt":"2026-07-27T01:17:42.819Z"}
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -837,7 +837,7 @@
 ### clinic.group — Clinic group selection
 
 - **Expected:** group
-- **Actual:** {"version":1,"mode":"group","selectedClinicIds":["loc_woolloongabba","loc_cannonhill","loc_eightmile"],"groupId":"grp_brisbane_south","label":"Clinic Group · Brisbane South","updatedAt":"2026-07-24T05:13:53.953Z"}
+- **Actual:** {"version":1,"mode":"group","selectedClinicIds":["loc_woolloongabba","loc_cannonhill","loc_eightmile"],"groupId":"grp_brisbane_south","label":"Clinic Group · Brisbane South","updatedAt":"2026-07-27T01:17:43.269Z"}
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -887,7 +887,7 @@
 ### clinic.migrationFlag — Clinic migration recorded
 
 - **Expected:** clinic-context
-- **Actual:** {"clinic-context":1,"nav-prefs-module-ids":1,"identity-context":1,"org-m3-inbox-bridge":1}
+- **Actual:** {"clinic-context":1,"nav-prefs-module-ids":1,"identity-context":1,"m04-workforce-storage-v1":1,"m04-workforce-portal-seed-v1":1,"org-m3-inbox-bridge":1}
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -987,7 +987,7 @@
 ### landing_staff_doctors — Landing /staff-doctors
 
 - **Expected:** Rebuild pending + no iframe/toggle
-- **Actual:** {"rebuild":true,"moduleN":true,"iframe":false,"htmlToggle":false,"blank":false}
+- **Actual:** {"rebuild":false,"moduleN":true,"iframe":false,"htmlToggle":false,"blank":false}
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -1297,7 +1297,7 @@
 ### search.HR_Documents — Search "HR Documents"
 
 - **Expected:** hit containing hr
-- **Actual:** Staff & Doctor Management | Staff & Doctor Management → HR Documents | Action Inbox 6
+- **Actual:** Staff & Doctor Management | Staff & Doctor Management → Credentials | Action Inbox 6
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -1507,7 +1507,7 @@
 ### storage.migrationsIdempotent — Migrations registry present
 
 - **Expected:** present
-- **Actual:** {"clinic-context":1,"nav-prefs-module-ids":1,"identity-context":1,"org-m3-inbox-bridge":1}
+- **Actual:** {"clinic-context":1,"nav-prefs-module-ids":1,"identity-context":1,"m04-workforce-storage-v1":1,"m04-workforce-portal-seed-v1":1,"org-m3-inbox-bridge":1}
 - **Result:** pass
 - **Defect:** —
 - **File changed to repair:** —
@@ -1539,15 +1539,3 @@
 - Modules 4–24 remain Rebuild Pending by design (landing/partial only).
 - Modules 1–3 UI remain in `components/workspaces` pending gradual migration.
 - Some accessibility checks rely on visual browser inspection rather than axe-core automation.
-
-
-## Defects repaired
-
-| ID | Severity | Summary | Repair | Retest |
-|---|---|---|---|---|
-| DEF-001 | major | Enterprise Extensions ignored identity flag | Sidebar.tsx identitySeesEnterprise | pass |
-| DEF-002 | minor | Damaged clinic JSON recovery | clinic-context.tsx hydrate rewrite | pass |
-
-## Baseline
-
-Signed off: docs/architecture/PLATFORM_BASELINE_V1.md

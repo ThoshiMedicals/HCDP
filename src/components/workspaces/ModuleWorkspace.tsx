@@ -33,9 +33,7 @@ import { TasksWorkspace } from "./TasksWorkspace";
 import {
   AccreditationWorkspace,
   ChecklistsWorkspace,
-  DoctorsDirectoryWorkspace,
   RiskCentreWorkspace,
-  StaffDirectoryWorkspace,
 } from "./HtmlSeedWorkspaces";
 import { ModuleLanding } from "./ModuleLanding";
 
@@ -45,12 +43,6 @@ function PartialBody({ module }: { module: ModuleDef }) {
   const section = search.get("section") ?? "";
 
   switch (module.platformId) {
-    case "staff-doctors": {
-      if (section === "doctors" || section === "doctor-profiles") {
-        return <DoctorsDirectoryWorkspace />;
-      }
-      return <StaffDirectoryWorkspace />;
-    }
     case "tasks-actions": {
       if (section === "meetings" || section === "meeting-actions") {
         return <TasksWorkspace initialTab="meetings" />;
@@ -129,16 +121,16 @@ function resolveModuleEntry(platformId: string): React.ReactNode {
 function ModuleBody({ module }: { module: ModuleDef }) {
   const entry = resolveModuleEntry(module.platformId);
   const hasPartial =
-    module.platformId === "staff-doctors" ||
     module.platformId === "tasks-actions" ||
     module.platformId === "compliance-quality" ||
     module.platformId === "incidents-risk";
 
-  // Modules 1–3 are complete workspaces via module entry adapters
+  // Modules 1–4 are complete workspaces via module entry adapters
   if (
     module.platformId === "executive-command-centre" ||
     module.platformId === "action-inbox" ||
-    module.platformId === "organisation-access"
+    module.platformId === "organisation-access" ||
+    module.platformId === "staff-doctors"
   ) {
     return <>{entry}</>;
   }

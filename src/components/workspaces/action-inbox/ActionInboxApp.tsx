@@ -173,12 +173,34 @@ export function ActionInboxApp() {
   const [filters, setFilters] = useState<InboxFilters>({ ...DEFAULT_FILTERS });
   const [density, setDensity] = useState<DisplayDensity>("comfortable");
   const [demoMode, setDemoMode] = useState(true);
-  const [demoRole, setDemoRole] = useState<DemoRole>(() =>
-    readJson<DemoRole>(M2_STORAGE.role, "manager")
-  );
-  const [canSeeSensitive, setCanSeeSensitive] = useState(() =>
-    readJson<boolean>(M2_STORAGE.sensitivity, true)
-  );
+  const [roleOverride, setRoleOverride] = useState<DemoRole | null>(null);
+  const [sensitivityOverride, setSensitivityOverride] = useState<boolean | null>(null);
+  const [syncedIdentityUserId, setSyncedIdentityUserId] = useState(identity.userId);
+  const [syncedManagerControls, setSyncedManagerControls] = useState(identity.managerControls);
+
+  // Reset local inbox overrides when global Act-as identity changes (render-time sync).
+  if (identity.userId !== syncedIdentityUserId) {
+    setSyncedIdentityUserId(identity.userId);
+    setRoleOverride(null);
+    setSensitivityOverride(null);
+  }
+  if (identity.managerControls !== syncedManagerControls) {
+    setSyncedManagerControls(identity.managerControls);
+    if (!identity.managerControls) setMainView("my-actions");
+  }
+
+  const demoRole = roleOverride ?? inboxDemoRole;
+  const canSeeSensitive = sensitivityOverride ?? identitySensitive;
+
+  const applyDemoRole = useCallback((next: DemoRole) => {
+    setRoleOverride(next);
+    writeJson(M2_STORAGE.role, next);
+  }, []);
+
+  const applySensitivity = useCallback((full: boolean) => {
+    setSensitivityOverride(full);
+    writeJson(M2_STORAGE.sensitivity, full);
+  }, []);
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -262,21 +284,6 @@ export function ActionInboxApp() {
       });
     }
   }, [searchParams, actions]);
-
-  /** Global Act as User / Role drives inbox demo role + sensitivity */
-  useEffect(() => {
-    setDemoRole(inboxDemoRole);
-    setCanSeeSensitive(identitySensitive);
-    if (!identity.managerControls) setMainView("my-actions");
-  }, [inboxDemoRole, identitySensitive, identity.managerControls, identity.userId]);
-
-  useEffect(() => {
-    writeJson(M2_STORAGE.role, demoRole);
-  }, [demoRole]);
-
-  useEffect(() => {
-    writeJson(M2_STORAGE.sensitivity, canSeeSensitive);
-  }, [canSeeSensitive]);
 
   useEffect(() => {
     if (!moreOpen) return;
@@ -1169,7 +1176,7 @@ export function ActionInboxApp() {
                   value={demoRole}
                   onChange={(e) => {
                     const next = e.target.value as DemoRole;
-                    setDemoRole(next);
+                    applyDemoRole(next);
                     setSelectedIds([]);
                     if (next === "staff") setMainView("my-actions");
                     pushToast(
@@ -1191,7 +1198,7 @@ export function ActionInboxApp() {
                   value={canSeeSensitive ? "full" : "restricted"}
                   onChange={(e) => {
                     const full = e.target.value === "full";
-                    setCanSeeSensitive(full);
+                    applySensitivity(full);
                     pushToast(
                       full ? "Full sensitivity view." : "Restricted sensitivity view.",
                       "default"
@@ -1271,7 +1278,8 @@ export function ActionInboxApp() {
                       demoRole === "manager" ? "Switch to staff role" : "Switch to manager role"
                     }
                     onClick={() => {
-                      setDemoRole((r) => (r === "manager" ? "staff" : "manager"));
+                      const next = demoRole === "manager" ? "staff" : "manager";
+                      applyDemoRole(next);
                       setSelectedIds([]);
                       if (demoRole === "manager") setMainView("my-actions");
                       pushToast(
@@ -1288,7 +1296,7 @@ export function ActionInboxApp() {
                         : "Sensitivity: switch to full"
                     }
                     onClick={() => {
-                      setCanSeeSensitive((v) => !v);
+                      applySensitivity(!canSeeSensitive);
                       pushToast(
                         canSeeSensitive
                           ? "Restricted sensitivity view."

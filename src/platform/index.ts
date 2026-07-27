@@ -13,3 +13,4 @@ export * from "./storage";
 export * from "./demo";
 export * from "./status";
 export * from "./validation";
+export * from "./workforce";

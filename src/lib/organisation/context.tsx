@@ -132,6 +132,17 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
   const [state, setStateInternal] = useState<OrgState>(() => createInitialState());
   const [section, setSection] = useState<OrgSectionId>("overview");
   const [filters, setFilters] = useState<OrgFilters>({});
+  const [syncedOrgActorId, setSyncedOrgActorId] = useState(identity.orgActorId);
+
+  // Sync Module 3 demo actor from global identity during render (not in an effect).
+  if (identity.orgActorId && identity.orgActorId !== syncedOrgActorId) {
+    setSyncedOrgActorId(identity.orgActorId);
+    if (state.currentUserId !== identity.orgActorId) {
+      const next = { ...state, currentUserId: identity.orgActorId };
+      saveOrgState(next);
+      setStateInternal(next);
+    }
+  }
 
   const setState = useCallback((next: OrgState | ((prev: OrgState) => OrgState)) => {
     setStateInternal((prev) => {
@@ -149,17 +160,6 @@ export function OrganisationProvider({ children }: { children: ReactNode }) {
       ensureOrgInboxDemoBridge(initial);
     });
   }, []);
-
-  /** Sync Module 3 demo actor from global identity when orgActorId is known */
-  useEffect(() => {
-    if (!identity.orgActorId) return;
-    setStateInternal((prev) => {
-      if (prev.currentUserId === identity.orgActorId) return prev;
-      const next = { ...prev, currentUserId: identity.orgActorId! };
-      saveOrgState(next);
-      return next;
-    });
-  }, [identity.orgActorId, identity.userId]);
 
   const pushToast = useCallback(
     (message: string, tone: ToastTone = "default") => {

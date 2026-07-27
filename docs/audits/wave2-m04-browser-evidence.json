@@ -1,0 +1,214 @@
+{
+  "testedAt": "2026-07-27T00:34:24.053Z",
+  "method": "Playwright Chromium headless",
+  "url": "http://localhost:3001",
+  "wave": "Wave 2 M04",
+  "summary": {
+    "total": 25,
+    "pass": 25,
+    "fail": 0,
+    "blocked": 0
+  },
+  "tests": [
+    {
+      "id": "m04.load",
+      "name": "Staff-doctors workspace loads",
+      "expected": "200 + workspace title",
+      "actual": "status=200 hasTitle=true",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.overview",
+      "name": "Deep-link section=overview",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors active=Overview",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.people",
+      "name": "Deep-link section=people",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=people active=People Directory",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.staff-profiles",
+      "name": "Deep-link section=staff-profiles",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=staff-profiles active=Staff Profiles",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.doctor-profiles",
+      "name": "Deep-link section=doctor-profiles",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=doctor-profiles active=Doctor Profiles",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.engagements",
+      "name": "Deep-link section=engagements",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=engagements active=Engagements",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.credentials",
+      "name": "Deep-link section=credentials",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=credentials active=Credentials",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.leave-availability",
+      "name": "Deep-link section=leave-availability",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=leave-availability active=Leave & Availability",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.restrictions",
+      "name": "Deep-link section=restrictions",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=restrictions active=Restrictions",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.onboarding",
+      "name": "Deep-link section=onboarding",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=onboarding active=Onboarding",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.offboarding",
+      "name": "Deep-link section=offboarding",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=offboarding active=Offboarding",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.reports",
+      "name": "Deep-link section=reports",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=reports active=Reports",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.section.settings",
+      "name": "Deep-link section=settings",
+      "expected": "section nav present",
+      "actual": "url=http://localhost:3001/staff-doctors?section=settings active=Settings",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.nav.urlWrite",
+      "name": "Nav click writes ?section=",
+      "expected": "contains section=credentials",
+      "actual": "http://localhost:3001/staff-doctors?section=credentials",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.legacy/staff",
+      "name": "Legacy /staff reaches M04",
+      "expected": "M04 content",
+      "actual": "status=200 url=http://localhost:3001/staff-doctors?section=people",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.legacy/doctors",
+      "name": "Legacy /doctors reaches M04",
+      "expected": "M04 content",
+      "actual": "status=200 url=http://localhost:3001/staff-doctors?section=doctor-profiles",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m04.legacy/hr-docs",
+      "name": "Legacy /hr-docs reaches M04",
+      "expected": "M04 content",
+      "actual": "status=200 url=http://localhost:3001/staff-doctors?section=credentials",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "m01.workforceProjection",
+      "name": "Command Centre shows M04 workforce card",
+      "expected": "Workforce (Module 4) projection",
+      "actual": "workforce projection visible",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.1440",
+      "name": "No page-level horizontal overflow at 1440px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":1440,\"clientWidth\":1440,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.1280",
+      "name": "No page-level horizontal overflow at 1280px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":1280,\"clientWidth\":1280,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.1024",
+      "name": "No page-level horizontal overflow at 1024px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":1024,\"clientWidth\":1024,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.768",
+      "name": "No page-level horizontal overflow at 768px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":768,\"clientWidth\":768,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.430",
+      "name": "No page-level horizontal overflow at 430px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":430,\"clientWidth\":430,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "responsive.390",
+      "name": "No page-level horizontal overflow at 390px",
+      "expected": "overflowPx <= 1",
+      "actual": "{\"scrollWidth\":390,\"clientWidth\":390,\"overflowPx\":0}",
+      "result": "pass",
+      "defect": null
+    },
+    {
+      "id": "a11y.nav",
+      "name": "Section nav has aria-label and aria-current",
+      "expected": "1 labelled nav + active current",
+      "actual": "nav=1 aria-current=1",
+      "result": "pass",
+      "defect": null
+    }
+  ]
+}

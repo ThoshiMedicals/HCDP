@@ -56,6 +56,14 @@ export function hasMigration(id: string, version = 1): boolean {
   return readMigrationFlags()[id] === version;
 }
 
+/** Test/seed rollback helper — removes a migration flag without wiping data. */
+export function clearMigrationFlag(id: string): void {
+  if (typeof window === "undefined") return;
+  const flags = { ...readMigrationFlags() };
+  delete flags[id];
+  writeJsonSafe(PLATFORM_KEYS.migrations, flags);
+}
+
 export function runMigrationOnce(id: string, version: number, fn: () => void): boolean {
   if (typeof window === "undefined") return false;
   if (hasMigration(id, version)) return false;

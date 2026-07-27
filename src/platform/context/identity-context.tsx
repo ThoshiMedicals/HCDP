@@ -3,6 +3,9 @@
 /**
  * Global demonstration identity — Act as User / Role.
  * Coordinates shell, Action Inbox, and Organisation demo actors without removing module permission logic.
+ *
+ * DEMO ONLY: This is not production authentication. When AUTH_ENFORCEMENT=production,
+ * Act-as is blocked so it cannot become a security bypass. Real sessions use platform/auth.
  */
 
 import {
@@ -16,6 +19,9 @@ import {
 import { M2_STORAGE, writeJson } from "@/lib/action-inbox/storage";
 import type { DemoRole } from "@/lib/action-inbox/types";
 import { PLATFORM_KEYS, readJsonSafe, runMigrationOnce, writeJsonSafe } from "@/platform/storage";
+import { assertDemoActAsAllowed, DEMO_ACT_AS_NOTICE } from "@/platform/auth/demo/demo-isolation";
+
+export { DEMO_ACT_AS_NOTICE };
 
 export type DemoIdentityRole =
   | "Director"
@@ -261,6 +267,7 @@ export function getActiveIdentity(): DemoIdentity {
 }
 
 export function setActiveIdentity(userId: string) {
+  assertDemoActAsAllowed();
   if (!BY_ID[userId]) return;
   persist(userId);
 }

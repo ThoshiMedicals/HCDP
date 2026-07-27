@@ -471,11 +471,17 @@ export function Sidebar() {
           <div className="v27-sidebar-role">
             <select
               aria-label="Act as User / Role"
-              title="Act as User / Role"
+              title="Demonstration identity only — not production authentication"
               value={identity.userId}
               onChange={(e) => {
-                setActiveIdentity(e.target.value);
-                pushToast(`Acting as ${identities.find((i) => i.userId === e.target.value)?.displayName ?? e.target.value}`);
+                try {
+                  setActiveIdentity(e.target.value);
+                  pushToast(
+                    `Acting as ${identities.find((i) => i.userId === e.target.value)?.displayName ?? e.target.value} (demo)`
+                  );
+                } catch (err) {
+                  pushToast(err instanceof Error ? err.message : "Demo Act-as disabled");
+                }
               }}
             >
               {identities.map((u) => (
@@ -484,6 +490,9 @@ export function Sidebar() {
                 </option>
               ))}
             </select>
+            <p className="mt-1 text-[10px] leading-snug text-[var(--muted)]">
+              Demo Act-as — not production auth
+            </p>
           </div>
         </div>
       </aside>

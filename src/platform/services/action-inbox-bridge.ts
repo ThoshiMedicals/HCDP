@@ -132,6 +132,25 @@ export function dispatchActionInboxEvent(input: ActionInboxEventInput): InboxAct
 
   if (input.kind === "create" || input.kind === "update") {
     const existing = link ? actions.find((a) => a.id === link.inboxActionId) : undefined;
+    const incomingVersion = input.sourceRecordVersion;
+    // Stale replay: do not reopen or overwrite a newer resolved outcome.
+    if (
+      existing &&
+      (existing.status === "Completed" || existing.status === "Archived") &&
+      link?.closedAtSourceVersion != null &&
+      (incomingVersion == null || incomingVersion <= link.closedAtSourceVersion)
+    ) {
+      return existing;
+    }
+    if (
+      existing &&
+      link?.sourceRecordVersion != null &&
+      incomingVersion != null &&
+      incomingVersion < link.sourceRecordVersion
+    ) {
+      return existing;
+    }
+
     const nextAction = buildInboxAction(input, existing);
     if (existing) {
       actions = actions.map((a) => (a.id === existing.id ? nextAction : a));
@@ -170,6 +189,11 @@ export function dispatchActionInboxEvent(input: ActionInboxEventInput): InboxAct
       sourceKey: sourceRefKey(input.source),
       source: input.source,
       updatedAt: nowIso(),
+      sourceRecordVersion: incomingVersion ?? link?.sourceRecordVersion,
+      closedAtSourceVersion:
+        nextAction.status === "Completed" || nextAction.status === "Archived"
+          ? incomingVersion ?? link?.closedAtSourceVersion
+          : undefined,
     };
     saveLinks(links);
     return nextAction;
@@ -281,7 +305,20 @@ export function dispatchActionInboxEvent(input: ActionInboxEventInput): InboxAct
 
   actions = actions.map((a) => (a.id === updated.id ? updated : a));
   saveActions(actions);
-  links[key] = { ...link, source: input.source, updatedAt: nowIso() };
+  const closedVersion =
+    input.kind === "close" || input.kind === "mark-source-resolved"
+      ? input.sourceRecordVersion ?? link.sourceRecordVersion
+      : link.sourceRecordVersion;
+  links[key] = {
+    ...link,
+    source: input.source,
+    updatedAt: nowIso(),
+    sourceRecordVersion: input.sourceRecordVersion ?? link.sourceRecordVersion,
+    closedAtSourceVersion:
+      input.kind === "close" || input.kind === "mark-source-resolved"
+        ? closedVersion
+        : link.closedAtSourceVersion,
+  };
   saveLinks(links);
   return updated;
 }

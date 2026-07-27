@@ -17,9 +17,9 @@ export const LEGACY_REDIRECTS: LegacyRedirect[] = [
   { from: "approvals", to: "/action-inbox", query: { category: "Approval" } },
   { from: "organisation", to: "/settings" },
 
-  { from: "staff", to: "/staff-doctors", section: "staff" },
-  { from: "doctors", to: "/staff-doctors", section: "doctors" },
-  { from: "hr-docs", to: "/staff-doctors", section: "hr-documents" },
+  { from: "staff", to: "/staff-doctors", section: "people" },
+  { from: "doctors", to: "/staff-doctors", section: "doctor-profiles" },
+  { from: "hr-docs", to: "/staff-doctors", section: "credentials" },
 
   { from: "timeclock", to: "/time-attendance", section: "attendance" },
   { from: "sync-centre", to: "/time-attendance", section: "offline-reconciliation" },

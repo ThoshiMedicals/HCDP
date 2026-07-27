@@ -16,9 +16,9 @@ const OUT_MD = path.join(REPO, "docs", "audits", "PLATFORM_INTEGRATION_QA.md");
 
 const LEGACY_REDIRECTS = [
   ["approvals", "/action-inbox", { category: "Approval" }],
-  ["staff", "/staff-doctors", { section: "staff" }],
-  ["doctors", "/staff-doctors", { section: "doctors" }],
-  ["hr-docs", "/staff-doctors", { section: "hr-documents" }],
+  ["staff", "/staff-doctors", { section: "people" }],
+  ["doctors", "/staff-doctors", { section: "doctor-profiles" }],
+  ["hr-docs", "/staff-doctors", { section: "credentials" }],
   ["timeclock", "/time-attendance", { section: "attendance" }],
   ["sync-centre", "/time-attendance", { section: "offline-reconciliation" }],
   ["tasks", "/tasks-actions", { section: "tasks" }],
@@ -248,7 +248,7 @@ async function main() {
     const url = new URL(loc, BASE);
     const ok =
       url.pathname === "/staff-doctors" &&
-      url.searchParams.get("section") === "hr-documents" &&
+      url.searchParams.get("section") === "credentials" &&
       url.searchParams.get("recordId") === "abc123" &&
       url.searchParams.get("clinicId") === "loc_woolloongabba";
     results.push(
