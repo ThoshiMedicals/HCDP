@@ -11,10 +11,12 @@
     "test:auth": "tsx --test \"src/platform/auth/tests/**/*.test.ts\"",
     "test:m04": "tsx --test \"src/modules/m04-staff-doctors/tests/**/*.test.ts\"",
     "test:m11": "tsx --test \"src/modules/m11-training/tests/**/*.test.ts\"",
-    "test": "npm run test:workforce && npm run test:auth && npm run test:m04 && npm run test:m11",
+    "test:m05": "tsx --test \"src/modules/m05-roster/tests/**/*.test.ts\"",
+    "test": "npm run test:workforce && npm run test:auth && npm run test:m04 && npm run test:m11 && npm run test:m05",
     "test:platform-qa": "node scripts/platform-integration-qa.mjs",
     "test:wave2-evidence": "node scripts/wave2-m04-acceptance-evidence.mjs",
-    "test:wave3-evidence": "node scripts/wave3-m11-acceptance-evidence.mjs"
+    "test:wave3-evidence": "node scripts/wave3-m11-acceptance-evidence.mjs",
+    "test:wave4-evidence": "node scripts/wave4-m05-acceptance-evidence.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

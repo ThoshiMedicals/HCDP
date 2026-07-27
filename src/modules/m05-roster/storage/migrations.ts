@@ -8,6 +8,18 @@ export type M05StorageMeta = {
 
 const EMPTY: unknown[] = [];
 
+const V1_COLLECTION_KEYS = [
+  M05_STORAGE_KEYS.periods,
+  M05_STORAGE_KEYS.shifts,
+  M05_STORAGE_KEYS.publications,
+  M05_STORAGE_KEYS.swaps,
+  M05_STORAGE_KEYS.openShifts,
+] as const;
+
+/**
+ * Wave 1 skeleton seed — retained for lineage of `M05_MIGRATION_ID` and to
+ * satisfy migration idempotency assertions. Never wipes existing data.
+ */
 export function seedM05StorageSkeleton(): void {
   const existing = readJsonSafe<M05StorageMeta | null>(M05_STORAGE_KEYS.meta, null);
   if (!existing) {
@@ -16,13 +28,7 @@ export function seedM05StorageSkeleton(): void {
       initializedAt: new Date().toISOString(),
     } satisfies M05StorageMeta);
   }
-  for (const key of [
-    M05_STORAGE_KEYS.periods,
-    M05_STORAGE_KEYS.shifts,
-    M05_STORAGE_KEYS.publications,
-    M05_STORAGE_KEYS.swaps,
-    M05_STORAGE_KEYS.openShifts,
-  ] as const) {
+  for (const key of V1_COLLECTION_KEYS) {
     const cur = readJsonSafe<unknown[] | null>(key, null);
     if (cur == null) writeJsonSafe(key, EMPTY);
   }

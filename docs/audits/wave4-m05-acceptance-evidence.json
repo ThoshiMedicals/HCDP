@@ -1,0 +1,322 @@
+{
+  "generatedAt": "2026-07-27T06:57:21.925Z",
+  "baseUrl": "http://localhost:3100",
+  "unit": {
+    "exitCode": 0,
+    "tests": 104,
+    "pass": 104,
+    "fail": 0,
+    "suites": 12
+  },
+  "total": 31,
+  "pass": 30,
+  "fail": 0,
+  "skipped": 0,
+  "blocked": 1,
+  "results": [
+    {
+      "id": "unit.m05",
+      "name": "M05 unit suite (tsx --test)",
+      "expected": "all pass",
+      "actual": "tests=104; pass=104; fail=0; suites=12",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:56:31.169Z",
+      "workflow": "unit"
+    },
+    {
+      "id": "perf.dashboard.interactive",
+      "name": "Initial /roster overview interactive",
+      "expected": "<=2500ms",
+      "actual": "716ms; heading=Roster & Shift Management",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:56:59.579Z",
+      "workflow": "perf"
+    },
+    {
+      "id": "ux.appearance.light",
+      "name": "Appearance explicit light mode",
+      "expected": "light",
+      "actual": "scheme=light",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:00.189Z",
+      "workflow": "ux.appearance"
+    },
+    {
+      "id": "ux.appearance.dark",
+      "name": "Appearance explicit dark mode",
+      "expected": "dark",
+      "actual": "scheme=dark",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:00.808Z",
+      "workflow": "ux.appearance"
+    },
+    {
+      "id": "ux.appearance.device",
+      "name": "Appearance device/system mode",
+      "expected": "light→dark preference change; usable mobile",
+      "actual": "light=light; dark=dark; mobileOverflow=false",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:01.954Z",
+      "workflow": "ux.appearance"
+    },
+    {
+      "id": "section.roster-board",
+      "name": "M05 section roster-board functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:02.829Z",
+      "route": "http://localhost:3100/roster",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.coverage",
+      "name": "M05 section coverage functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:03.620Z",
+      "route": "http://localhost:3100/roster?section=coverage",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.open-shifts",
+      "name": "M05 section open-shifts functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:04.470Z",
+      "route": "http://localhost:3100/roster?section=open-shifts",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.availability-leave",
+      "name": "M05 section availability-leave functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:05.323Z",
+      "route": "http://localhost:3100/roster?section=availability-leave",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.requests",
+      "name": "M05 section requests functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:06.455Z",
+      "route": "http://localhost:3100/roster?section=requests",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.conflicts-warnings",
+      "name": "M05 section conflicts-warnings functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:07.307Z",
+      "route": "http://localhost:3100/roster?section=conflicts-warnings",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.published-history",
+      "name": "M05 section published-history functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:08.338Z",
+      "route": "http://localhost:3100/roster?section=published-history",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.cost-forecast",
+      "name": "M05 section cost-forecast functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:09.234Z",
+      "route": "http://localhost:3100/roster?section=cost-forecast",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.reports",
+      "name": "M05 section reports functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:10.031Z",
+      "route": "http://localhost:3100/roster?section=reports",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "section.settings",
+      "name": "M05 section settings functional",
+      "expected": "heading + non-placeholder content",
+      "actual": "headings=3; placeholderOnly=false; bodyChars=2316",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:11.009Z",
+      "route": "http://localhost:3100/roster?section=settings",
+      "workflow": "sections.functional"
+    },
+    {
+      "id": "ux.state.loading",
+      "name": "Functional UX state: loading",
+      "expected": "data-testid ux-state-loading rendered",
+      "actual": "marker=2; bodyChars=1726",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:12.019Z",
+      "route": "http://localhost:3100/roster?uxState=loading",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.empty",
+      "name": "Functional UX state: empty",
+      "expected": "data-testid ux-state-empty rendered",
+      "actual": "marker=2; bodyChars=1775",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:12.773Z",
+      "route": "http://localhost:3100/roster?uxState=empty",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.filtered-empty",
+      "name": "Functional UX state: filtered-empty",
+      "expected": "data-testid ux-state-filtered-empty rendered",
+      "actual": "marker=2; bodyChars=1791",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:13.529Z",
+      "route": "http://localhost:3100/roster?uxState=filtered-empty",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.restricted",
+      "name": "Functional UX state: restricted",
+      "expected": "data-testid ux-state-restricted rendered",
+      "actual": "marker=2; bodyChars=1794",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:14.385Z",
+      "route": "http://localhost:3100/roster?uxState=restricted",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.validation-error",
+      "name": "Functional UX state: validation-error",
+      "expected": "data-testid ux-state-validation-error rendered",
+      "actual": "marker=2; bodyChars=1799",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:15.487Z",
+      "route": "http://localhost:3100/roster?uxState=validation-error",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.system-error",
+      "name": "Functional UX state: system-error",
+      "expected": "data-testid ux-state-system-error rendered",
+      "actual": "marker=2; bodyChars=1786",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:16.413Z",
+      "route": "http://localhost:3100/roster?uxState=system-error",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.offline",
+      "name": "Functional UX state: offline",
+      "expected": "data-testid ux-state-offline rendered",
+      "actual": "marker=2; bodyChars=1975",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:17.138Z",
+      "route": "http://localhost:3100/roster?uxState=offline",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.state.concurrent-conflict",
+      "name": "Functional UX state: concurrent-conflict",
+      "expected": "data-testid ux-state-concurrent-conflict rendered",
+      "actual": "marker=2; bodyChars=1882",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:18.072Z",
+      "route": "http://localhost:3100/roster?uxState=concurrent-conflict",
+      "workflow": "ux.states"
+    },
+    {
+      "id": "ux.overflow.1440",
+      "name": "Zero page overflow @ 1440",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:18.728Z",
+      "workflow": "ux.responsive",
+      "viewport": "1440x900"
+    },
+    {
+      "id": "ux.overflow.1280",
+      "name": "Zero page overflow @ 1280",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:19.256Z",
+      "workflow": "ux.responsive",
+      "viewport": "1280x900"
+    },
+    {
+      "id": "ux.overflow.1024",
+      "name": "Zero page overflow @ 1024",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:19.739Z",
+      "workflow": "ux.responsive",
+      "viewport": "1024x900"
+    },
+    {
+      "id": "ux.overflow.768",
+      "name": "Zero page overflow @ 768",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:20.323Z",
+      "workflow": "ux.responsive",
+      "viewport": "768x900"
+    },
+    {
+      "id": "ux.overflow.430",
+      "name": "Zero page overflow @ 430",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:20.718Z",
+      "workflow": "ux.responsive",
+      "viewport": "430x900"
+    },
+    {
+      "id": "ux.overflow.390",
+      "name": "Zero page overflow @ 390",
+      "expected": "scrollWidth <= clientWidth",
+      "actual": "ok",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:21.137Z",
+      "workflow": "ux.responsive",
+      "viewport": "390x900"
+    },
+    {
+      "id": "ux.keyboard.focus",
+      "name": "Keyboard focus visible",
+      "expected": "focused non-BODY element",
+      "actual": "{\"tag\":\"INPUT\",\"outline\":\"none\"}",
+      "result": "pass",
+      "executedAt": "2026-07-27T06:57:21.760Z",
+      "workflow": "ux.keyboard"
+    },
+    {
+      "id": "wf.12.m10-duty-bridge",
+      "name": "Workflow 12 transfer opening/closing duties to M10",
+      "expected": "adapter present + safe M10 contract",
+      "actual": "M10 duty task contract not present at Wave 4 execution start",
+      "result": "blocked",
+      "executedAt": "2026-07-27T06:57:21.925Z",
+      "workflow": "wf.12",
+      "workflowEvidenceCode": "BLOCKED-M10"
+    }
+  ]
+}

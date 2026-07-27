@@ -1,8 +1,8 @@
 {
-  "testedAt": "2026-07-27T05:08:02.656Z",
+  "testedAt": "2026-07-27T06:53:30.662Z",
   "method": "Node HTTP harness + Cursor browser MCP (interactive)",
   "url": "http://localhost:3000",
-  "commit": "649333b",
+  "commit": "03a0bef",
   "build": "Wave 2 M04 next start — fresh interactive rerun 2026-07-27",
   "summary": {
     "total": 152,

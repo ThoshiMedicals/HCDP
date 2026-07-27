@@ -11,3 +11,9 @@ export * from "./timesheet-ref";
 export * from "./pay-period-ref";
 export * from "./candidate-ref";
 export * from "./workforce-events";
+// Wave 4 (M05) additive refs — non-destructive additions.
+export * from "./roster-period-ref";
+export * from "./roster-publication-ref";
+export * from "./assignment-ref";
+export * from "./open-shift-ref";
+export * from "./swap-request-ref";

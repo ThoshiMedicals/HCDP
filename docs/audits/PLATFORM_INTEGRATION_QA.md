@@ -1,9 +1,9 @@
 # Platform Integration QA Report
 
-- **Test date and time:** 2026-07-27T05:08:02.656Z
+- **Test date and time:** 2026-07-27T06:53:30.662Z
 - **Browser / testing method:** Node HTTP harness + Cursor browser MCP (interactive)
 - **Application URL:** http://localhost:3000
-- **Commit:** 649333b
+- **Commit:** 03a0bef
 - **Build:** Wave 2 M04 next start — fresh interactive rerun 2026-07-27
 
 ## Summary
