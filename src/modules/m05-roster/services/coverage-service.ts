@@ -27,13 +27,16 @@ export interface CoverageEvaluation {
   fullyCovered: boolean;
 }
 
-function activeAssignmentsForShift(shiftId: string): Assignment[] {
-  return store.listAssignments(shiftId).filter((a) => a.state === "assigned");
+function activeAssignmentsForShift(
+  shiftId: string,
+  byShift: Map<string, Assignment[]>
+): Assignment[] {
+  return (byShift.get(shiftId) ?? []).filter((a) => a.state === "assigned");
 }
 
-function shiftFillCount(shift: Shift): number {
+function shiftFillCount(shift: Shift, byShift: Map<string, Assignment[]>): number {
   if (["cancelled", "superseded"].includes(shift.status)) return 0;
-  return activeAssignmentsForShift(shift.id).length;
+  return activeAssignmentsForShift(shift.id, byShift).length;
 }
 
 function timeOverlapsRequirement(
@@ -51,6 +54,7 @@ export function evaluateCoverage(input: {
   rosterPeriodId: string;
   asOf?: string;
 }): CoverageEvaluation {
+  store.evidenceForceSystemError();
   const period = store.getPeriod(input.rosterPeriodId);
   if (!period) {
     return {
@@ -67,12 +71,22 @@ export function evaluateCoverage(input: {
     .listShifts(period.id)
     .filter((s) => !["cancelled", "superseded"].includes(s.status));
 
+  const byShift = new Map<string, Assignment[]>();
+  for (const assignment of store.listAssignments()) {
+    const bucket = byShift.get(assignment.shiftId);
+    if (bucket) bucket.push(assignment);
+    else byShift.set(assignment.shiftId, [assignment]);
+  }
+
   const gaps: CoverageGap[] = [];
   for (const req of requirements) {
     const candidateShifts = shifts.filter(
       (s) => s.roleLabel === req.roleLabel && timeOverlapsRequirement(s, req)
     );
-    const filled = candidateShifts.reduce((sum, s) => sum + shiftFillCount(s), 0);
+    const filled = candidateShifts.reduce(
+      (sum, s) => sum + shiftFillCount(s, byShift),
+      0
+    );
     if (filled >= req.requiredCount) continue;
     const missing = req.requiredCount - filled;
     const severity = filled === 0 ? "hard" : "soft";

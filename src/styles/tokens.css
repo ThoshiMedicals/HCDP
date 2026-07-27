@@ -814,3 +814,10 @@ body.theme-dark .v33-context-btn {
   }
 }
 
+
+/* M05 roster section nav — measurable keyboard focus indicator */
+[data-testid^='m05-nav-']:focus-visible {
+  outline: 2px solid var(--theme-accent, #2563eb) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35) !important;
+}

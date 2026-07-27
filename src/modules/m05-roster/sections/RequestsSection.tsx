@@ -25,6 +25,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function RequestsSection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
@@ -195,21 +196,15 @@ export function RequestsSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Requests</h2>
-        </div>
+      <SectionFrame sectionId="requests" title="Requests">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   if (conflict) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Requests</h2>
-        </div>
+      <SectionFrame sectionId="requests" title="Requests">
         <ConcurrentConflictState
           targetType={conflict.targetType}
           targetId={conflict.targetId}
@@ -218,15 +213,14 @@ export function RequestsSection() {
             bump();
           }}
         />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="requests" title="Requests">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Requests</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Manage swap requests — request, propose, recipient-accept, approve, reject and
           withdraw.
@@ -268,11 +262,14 @@ export function RequestsSection() {
       ) : null}
 
       {swaps.length === 0 ? (
-        <EmptyState
-          title="No swap requests"
-          description="Create a swap request above."
-        />
+        <div data-testid="m05-requests-list">
+          <EmptyState
+            title="No swap requests"
+            description="Create a swap request above."
+          />
+        </div>
       ) : (
+        <div data-testid="m05-requests-list">
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3">
             <PanelTitle>Swap requests</PanelTitle>
@@ -462,7 +459,8 @@ export function RequestsSection() {
             </tbody>
           </Table>
         </Panel>
+        </div>
       )}
-    </div>
+    </SectionFrame>
   );
 }

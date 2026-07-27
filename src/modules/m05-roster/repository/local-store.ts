@@ -27,11 +27,29 @@ import type {
 import type { ConflictPolicy } from "../types/policy";
 import { M05_STORAGE_KEYS } from "../storage/keys";
 
+/** In-memory list cache — avoids O(n²) JSON parse/stringify on bulk writes. */
+const listCache = new Map<string, unknown[]>();
+
+export function clearM05LocalStoreCacheForTests(): void {
+  listCache.clear();
+}
+
+/** Invalidate cache after out-of-band localStorage writes (second tab / evidence). */
+export function invalidateM05LocalStoreCache(key?: string): void {
+  if (key) listCache.delete(key);
+  else listCache.clear();
+}
+
 function loadList<T>(key: string): T[] {
-  return readJsonSafe<T[]>(key, []);
+  const cached = listCache.get(key);
+  if (cached) return cached as T[];
+  const list = readJsonSafe<T[]>(key, []);
+  listCache.set(key, list as unknown[]);
+  return list;
 }
 
 function saveList<T>(key: string, items: T[]): void {
+  listCache.set(key, items as unknown[]);
   writeJsonSafe(key, items);
 }
 
@@ -329,4 +347,28 @@ export function replaceApprovedLeaveCache(rows: ApprovedLeaveCacheRow[]): void {
 
 export function upsertApprovedLeaveCacheRow(row: ApprovedLeaveCacheRow): ApprovedLeaveCacheRow {
   return upsertById(M05_STORAGE_KEYS.approvedLeaveCache, row);
+}
+
+// ——— Evidence harness hooks (dev/staging only) ———
+
+/**
+ * Wave 4 evidence-harness hook. When the flag
+ * `pulse.m05.evidence.forceSystemError` is set to `"1"` in localStorage,
+ * throws an unexpected `Error` so section render paths surface the real
+ * `SystemErrorState` — proving the system-error branch on genuine flow
+ * rather than a screenshot demo. Call from the start of a read that
+ * every M05 section already depends on (e.g. `listPeriodsForActor`,
+ * `evaluateCoverage`).
+ */
+export function evidenceForceSystemError(): void {
+  if (typeof window === "undefined") return;
+  try {
+    if (window.localStorage.getItem("pulse.m05.evidence.forceSystemError") === "1") {
+      throw new Error("Evidence harness forced M05 system error");
+    }
+  } catch (e) {
+    if (e instanceof Error && e.message === "Evidence harness forced M05 system error") {
+      throw e;
+    }
+  }
 }

@@ -23,6 +23,33 @@ import { runM05PortalSeed, runM05PolicySeed } from "./storage/seed-safe";
 import type { M05SectionId, MigrationReport } from "./types/domain";
 import { M05_SECTION_ALIASES } from "./types/domain";
 
+/**
+ * Wave 4 evidence-harness storage flag. When set to `"1"`, the M05 actor is
+ * built with an empty permission set (no `roster.view`) — every section then
+ * renders `RestrictedState`, giving the evidence harness a real, functional
+ * proof of the restricted UX branch that mirrors the existing
+ * `forceLoading` / `forceSystemError` flags.
+ */
+const EVIDENCE_FORCE_RESTRICTED_KEY = "pulse.m05.evidence.forceRestricted";
+
+function readForceRestricted(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(EVIDENCE_FORCE_RESTRICTED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function subscribeForceRestricted(cb: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const onStorage = (e: StorageEvent) => {
+    if (!e.key || e.key === EVIDENCE_FORCE_RESTRICTED_KEY) cb();
+  };
+  window.addEventListener("storage", onStorage);
+  return () => window.removeEventListener("storage", onStorage);
+}
+
 interface RosterContextValue {
   section: M05SectionId;
   setSection: (section: M05SectionId) => void;
@@ -71,14 +98,20 @@ export function RosterProvider({ children }: { children: ReactNode }) {
 
   const bump = useCallback(() => setRefreshKey((k) => k + 1), []);
 
+  const forceRestricted = useSyncExternalStore(
+    subscribeForceRestricted,
+    readForceRestricted,
+    () => false
+  );
+
   const actor: M05Actor = useMemo(
     () => ({
       userId: identity.userId,
-      permissions: mapDemoIdentityPermissions(identity),
+      permissions: forceRestricted ? [] : mapDemoIdentityPermissions(identity),
       clinicIds:
         identity.accessibleClinicIds === "all" ? undefined : identity.accessibleClinicIds,
     }),
-    [identity]
+    [identity, forceRestricted]
   );
 
   useEffect(() => {

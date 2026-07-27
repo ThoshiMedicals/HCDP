@@ -19,6 +19,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 const DEFAULT_ORG = "org_parent";
 
@@ -111,20 +112,16 @@ export function AvailabilityLeaveSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Availability & Leave</h2>
-        </div>
+      <SectionFrame sectionId="availability-leave" title="Availability & Leave">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="availability-leave" title="Availability & Leave">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Availability & Leave</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           M05 owns roster-side preferences/declarations. Approved leave is READ from
           the M05-side contract cache — M05 never mutates M04 leave records.
@@ -140,6 +137,7 @@ export function AvailabilityLeaveSection() {
             value={personFilter}
             onChange={(e) => setPersonFilter(e.target.value)}
             aria-label="Person id filter"
+            data-testid="m05-availability-filter-person"
           />
           <input
             className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
@@ -301,6 +299,6 @@ export function AvailabilityLeaveSection() {
           </Table>
         )}
       </Panel>
-    </div>
+    </SectionFrame>
   );
 }

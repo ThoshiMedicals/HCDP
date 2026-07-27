@@ -23,7 +23,12 @@ import type { ActionItem, Location, TaskItem } from "@/lib/types";
 import { ALL_LOCATIONS_ID } from "@/lib/types";
 import type { ToastItem, ToastTone } from "@/components/ui/Toast";
 import { readSidebarCollapsed, writeSidebarCollapsed } from "@/lib/command-centre/cc-extras";
-import { hydrateAppearanceFromStorage } from "@/lib/command-centre/storage";
+import {
+  applyAppearance,
+  getAppearanceSnapshot,
+  hydrateAppearanceFromStorage,
+  subscribeSystemAppearance,
+} from "@/lib/command-centre/storage";
 import { syncFromPortalActiveLocation, hydrateClinicContext, portalActiveLocationId } from "@/platform/context/clinic-context";
 
 const STORAGE_KEYS = {
@@ -174,6 +179,14 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
       memoryLocationId = shared;
       locationListeners.forEach((l) => l());
     }
+  }, []);
+
+  useEffect(() => {
+    return subscribeSystemAppearance(() => {
+      if (getAppearanceSnapshot() === "system") {
+        applyAppearance("system");
+      }
+    });
   }, []);
 
   useEffect(() => {

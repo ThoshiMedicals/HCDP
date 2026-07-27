@@ -10,6 +10,7 @@ import {
   exportShiftAssignmentsCsv,
 } from "../services/reporting-service";
 import { RestrictedState, OfflineState } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function ReportsSection() {
   const { actor, pushToast, refreshKey } = useRoster();
@@ -55,20 +56,16 @@ export function ReportsSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Reports</h2>
-        </div>
+      <SectionFrame sectionId="reports" title="Reports">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="reports" title="Reports">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Reports</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Scoped roster reports. Export requires <code>roster.export</code>. Cost
           columns require <code>roster.cost.view</code>.
@@ -104,7 +101,7 @@ export function ReportsSection() {
             aria-label="Clinic ids"
           />
           {canExport ? (
-            <Button variant="teal" onClick={handleExport}>
+            <Button variant="teal" onClick={handleExport} data-testid="m05-report-export">
               Export CSV
             </Button>
           ) : (
@@ -123,7 +120,7 @@ export function ReportsSection() {
           </pre>
         </Panel>
       ) : null}
-    </div>
+    </SectionFrame>
   );
 }
 

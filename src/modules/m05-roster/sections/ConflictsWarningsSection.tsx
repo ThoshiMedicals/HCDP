@@ -16,6 +16,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function ConflictsWarningsSection() {
   const { actor, pushToast, refreshKey } = useRoster();
@@ -73,20 +74,16 @@ export function ConflictsWarningsSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Conflicts & Warnings</h2>
-        </div>
+      <SectionFrame sectionId="conflicts-warnings" title="Conflicts & Warnings">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="conflicts-warnings" title="Conflicts & Warnings">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Conflicts & Warnings</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Evaluate conflicts and fatigue rules for a candidate shift and person against
           the current published policy.
@@ -121,7 +118,11 @@ export function ConflictsWarningsSection() {
             onChange={(e) => setPersonId(e.target.value)}
             aria-label="Person id"
           />
-          <Button variant="teal" onClick={handleEvaluate}>
+          <Button
+            variant="teal"
+            onClick={handleEvaluate}
+            data-testid="m05-conflicts-run"
+          >
             Evaluate conflicts
           </Button>
         </div>
@@ -175,6 +176,6 @@ export function ConflictsWarningsSection() {
           </Table>
         </Panel>
       )}
-    </div>
+    </SectionFrame>
   );
 }

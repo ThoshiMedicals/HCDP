@@ -170,6 +170,7 @@ export function transitionPeriod(
 
 export function listPeriodsForActor(actor: M05Actor, clinicId?: string): RosterPeriod[] {
   assertM05Permission(actor, "roster.view");
+  store.evidenceForceSystemError();
   const target = clinicId ? [clinicId] : undefined;
   return store.listPeriods(clinicId).filter((p) => {
     if (actor.permissions.includes("*")) return true;

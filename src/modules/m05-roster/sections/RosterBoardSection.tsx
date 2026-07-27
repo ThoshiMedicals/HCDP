@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { Panel, PanelSub, PanelTitle } from "@/components/ui/Panel";
 import { Table, THead, Th, Td } from "@/components/ui/Table";
 import { useRoster } from "../context";
-import { hasM05Permission } from "../permissions";
-import { createPeriod, listPeriodsForActor } from "../services/period-service";
+import { hasM05Permission, M05ClinicScopeError, M05PermissionError } from "../permissions";
+import { createPeriod, listPeriodsForActor, transitionPeriod } from "../services/period-service";
 import {
   createShift,
   listShiftsForActor,
@@ -23,19 +23,21 @@ import {
   FilteredEmptyState,
   OfflineState,
   RestrictedState,
+  SystemErrorState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 const DEFAULT_CLINIC = "loc_woolloongabba";
 
 export function RosterBoardSection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
-  void refreshKey;
 
   const canView = hasM05Permission(actor, "roster.view");
   const canCreatePeriod = hasM05Permission(actor, "roster.period.create");
   const canEditShift = hasM05Permission(actor, "roster.shift.edit");
   const canAssign = hasM05Permission(actor, "roster.assign");
+  const canReview = hasM05Permission(actor, "roster.review");
 
   const [selectedPeriodId, setSelectedPeriodId] = useState<string | null>(null);
   const [conflict, setConflict] = useState<{ targetType: string; targetId: string } | null>(null);
@@ -64,13 +66,38 @@ export function RosterBoardSection() {
 
   const [filter, setFilter] = useState("");
 
-  let periods: RosterPeriod[] = [];
-  let restrictedError: string | null = null;
-  try {
-    periods = canView ? listPeriodsForActor(actor) : [];
-  } catch (e) {
-    restrictedError = e instanceof Error ? e.message : "Restricted";
-  }
+  // Snapshot periods against refreshKey so optimistic concurrency can detect
+  // stale expectedVersion after an out-of-band storage write (second tab / evidence).
+  const periodRead = useMemo(() => {
+    void refreshKey;
+    if (!canView) {
+      return { periods: [] as RosterPeriod[], restrictedError: null as string | null, systemError: null as string | null };
+    }
+    try {
+      return {
+        periods: listPeriodsForActor(actor),
+        restrictedError: null as string | null,
+        systemError: null as string | null,
+      };
+    } catch (e) {
+      if (e instanceof M05PermissionError || e instanceof M05ClinicScopeError) {
+        return {
+          periods: [] as RosterPeriod[],
+          restrictedError: e.message,
+          systemError: null as string | null,
+        };
+      }
+      return {
+        periods: [] as RosterPeriod[],
+        restrictedError: null as string | null,
+        systemError: e instanceof Error ? e.message : "Unexpected error",
+      };
+    }
+  }, [actor, canView, refreshKey]);
+
+  const periods = periodRead.periods;
+  const restrictedError = periodRead.restrictedError;
+  const systemError = periodRead.systemError;
 
   const activePeriodId = useMemo(() => {
     if (selectedPeriodId && periods.some((p) => p.id === selectedPeriodId)) {
@@ -80,6 +107,7 @@ export function RosterBoardSection() {
   }, [selectedPeriodId, periods]);
 
   const shifts: Shift[] = useMemo(() => {
+    void refreshKey;
     if (!activePeriodId) return [];
     try {
       return listShiftsForActor(actor, activePeriodId);
@@ -125,6 +153,27 @@ export function RosterBoardSection() {
       pushToast(`Period "${period.label}" created.`, "success");
     } catch (e) {
       pushToast(e instanceof Error ? e.message : "Create period failed", "danger");
+    }
+  };
+
+  const handleSubmitForReview = () => {
+    if (!activePeriodId) return;
+    const period = periods.find((p) => p.id === activePeriodId);
+    if (!period) return;
+    try {
+      transitionPeriod(actor, {
+        periodId: period.id,
+        to: "under_review",
+        expectedVersion: period.version,
+      });
+      bump();
+      pushToast(`Period "${period.label}" submitted for review.`, "success");
+    } catch (e) {
+      if (e instanceof ConcurrentConflictError) {
+        setConflict({ targetType: e.targetType, targetId: e.targetId });
+      } else {
+        pushToast(e instanceof Error ? e.message : "Submit for review failed", "danger");
+      }
     }
   };
 
@@ -237,32 +286,31 @@ export function RosterBoardSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Roster Board</h2>
-        </div>
+      <SectionFrame sectionId="roster-board" title="Roster Board">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
+    );
+  }
+
+  if (systemError) {
+    return (
+      <SectionFrame sectionId="roster-board" title="Roster Board">
+        <SystemErrorState error={systemError} onRetry={() => bump()} />
+      </SectionFrame>
     );
   }
 
   if (restrictedError) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Roster Board</h2>
-        </div>
+      <SectionFrame sectionId="roster-board" title="Roster Board">
         <RestrictedState message={restrictedError} />
-      </div>
+      </SectionFrame>
     );
   }
 
   if (conflict) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Roster Board</h2>
-        </div>
+      <SectionFrame sectionId="roster-board" title="Roster Board">
         <ConcurrentConflictState
           targetType={conflict.targetType}
           targetId={conflict.targetId}
@@ -271,15 +319,14 @@ export function RosterBoardSection() {
             bump();
           }}
         />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="roster-board" title="Roster Board">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Roster Board</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Build weekly rosters — periods, shifts and assignments. Every assignment runs
           authoritative M04/platform eligibility.
@@ -298,6 +345,7 @@ export function RosterBoardSection() {
               value={newLabel}
               onChange={(e) => setNewLabel(e.target.value)}
               aria-label="Period label"
+              data-testid="m05-period-label"
             />
             <input
               type="date"
@@ -320,7 +368,11 @@ export function RosterBoardSection() {
               onChange={(e) => setNewClinic(e.target.value)}
               aria-label="Clinic id"
             />
-            <Button variant="teal" onClick={handleCreatePeriod}>
+            <Button
+              variant="teal"
+              onClick={handleCreatePeriod}
+              data-testid="m05-create-period"
+            >
               Create period
             </Button>
           </div>
@@ -363,6 +415,18 @@ export function RosterBoardSection() {
               </button>
             ))}
           </div>
+          {canReview && activePeriodId ? (
+            <div className="border-t border-[var(--line)] px-3 py-2">
+              <Button
+                small
+                variant="teal"
+                onClick={handleSubmitForReview}
+                data-testid="m05-period-submit-review"
+              >
+                Submit for review
+              </Button>
+            </div>
+          ) : null}
         </Panel>
       )}
 
@@ -430,6 +494,7 @@ export function RosterBoardSection() {
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               aria-label="Filter shifts"
+              data-testid="m05-board-filter"
             />
           </div>
 
@@ -581,6 +646,6 @@ export function RosterBoardSection() {
           ) : null}
         </Panel>
       ) : null}
-    </div>
+    </SectionFrame>
   );
 }

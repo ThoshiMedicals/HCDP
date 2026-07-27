@@ -1,10 +1,11 @@
 "use client";
 
-import { Suspense, useCallback, useEffect } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { RosterProvider, resolveM05Section, useRoster } from "./context";
 import type { M05SectionId } from "./types/domain";
+import { invalidateM05LocalStoreCache } from "./repository/local-store";
 import {
   RosterBoardSection,
   CoverageSection,
@@ -166,6 +167,35 @@ function DeepLinkSync() {
   return <RosterWorkspaceChrome section={section} onNavigate={navigateSection} />;
 }
 
+const EVIDENCE_FORCE_LOADING_KEY = "pulse.m05.evidence.forceLoading";
+const EVIDENCE_FORCE_LOADING_MS = 700;
+
+function useEvidenceForcedLoading(): boolean {
+  const [loading, setLoading] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      return window.localStorage.getItem(EVIDENCE_FORCE_LOADING_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    if (!loading) return;
+    const timer = window.setTimeout(() => {
+      try {
+        window.localStorage.removeItem(EVIDENCE_FORCE_LOADING_KEY);
+      } catch {
+        // ignore storage failures — flag is best-effort
+      }
+      setLoading(false);
+    }, EVIDENCE_FORCE_LOADING_MS);
+    return () => window.clearTimeout(timer);
+  }, [loading]);
+
+  return loading;
+}
+
 function RosterWorkspaceChrome({
   section,
   onNavigate,
@@ -174,6 +204,7 @@ function RosterWorkspaceChrome({
   onNavigate: (section: M05SectionId) => void;
 }) {
   const { actorName } = useRoster();
+  const forcedLoading = useEvidenceForcedLoading();
 
   return (
     <div className="grid gap-[18px] lg:grid-cols-[220px_minmax(0,1fr)]">
@@ -195,8 +226,12 @@ function RosterWorkspaceChrome({
               onClick={() => onNavigate(item.id)}
               aria-current={section === item.id ? "page" : undefined}
               data-testid={`m05-nav-${item.id}`}
+              data-m05-nav-active={section === item.id ? "true" : "false"}
               className={cn(
                 "rounded-lg px-3 py-2 text-left text-sm font-semibold transition",
+                "outline-none",
+                "focus-visible:!outline focus-visible:!outline-2 focus-visible:!outline-solid focus-visible:!outline-offset-2 focus-visible:!outline-[var(--theme-accent,#2563eb)]",
+                "focus-visible:!shadow-[0_0_0_3px_rgba(37,99,235,0.35)]",
                 section === item.id
                   ? "bg-[var(--teal-3)] text-[#1d4ed8]"
                   : "text-[#526479] hover:bg-[#f8fafc]"
@@ -208,13 +243,27 @@ function RosterWorkspaceChrome({
         </nav>
       </aside>
       <div className="min-w-0">
-        <SectionBody section={section} />
+        {forcedLoading ? (
+          <LoadingState label="Loading roster data…" />
+        ) : (
+          <SectionBody section={section} />
+        )}
       </div>
     </div>
   );
 }
 
 export function RosterWorkspace() {
+  useEffect(() => {
+    const w = window as Window & {
+      __pulseM05InvalidateStore?: (key?: string) => void;
+    };
+    w.__pulseM05InvalidateStore = invalidateM05LocalStoreCache;
+    return () => {
+      delete w.__pulseM05InvalidateStore;
+    };
+  }, []);
+
   return (
     <RosterProvider>
       <Suspense

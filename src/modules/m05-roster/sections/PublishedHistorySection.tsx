@@ -20,6 +20,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function PublishedHistorySection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
@@ -71,20 +72,16 @@ export function PublishedHistorySection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Published & History</h2>
-        </div>
+      <SectionFrame sectionId="published-history" title="Published History">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="published-history" title="Published History">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Published & History</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Publications are IMMUTABLE. Ack status is DERIVED from acknowledgement rows —
           period stays in <code>published</code> while acks are in flight.
@@ -92,11 +89,14 @@ export function PublishedHistorySection() {
       </div>
 
       {publications.length === 0 ? (
-        <EmptyState
-          title="No publications yet"
-          description="Publish a period from services or seed data to see history here."
-        />
+        <div data-testid="m05-publications-list">
+          <EmptyState
+            title="No publications yet"
+            description="Publish a period from services or seed data to see history here."
+          />
+        </div>
       ) : (
+        <div data-testid="m05-publications-list">
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3">
             <PanelTitle>Publications</PanelTitle>
@@ -208,7 +208,8 @@ export function PublishedHistorySection() {
             </tbody>
           </Table>
         </Panel>
+        </div>
       )}
-    </div>
+    </SectionFrame>
   );
 }

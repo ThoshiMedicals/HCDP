@@ -10,13 +10,16 @@ import { hasM05Permission } from "../permissions";
 import { listPeriodsForActor } from "../services/period-service";
 import { escalateCoverageGap, evaluateCoverage } from "../services/coverage-service";
 import type { CoverageEvaluation } from "../services/coverage-service";
+import type { RosterPeriod } from "../types/domain";
 import * as store from "../repository/local-store";
 import {
   EmptyState,
   OfflineState,
   RestrictedState,
+  SystemErrorState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function CoverageSection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
@@ -29,12 +32,28 @@ export function CoverageSection() {
   const [errors, setErrors] = useState<string[]>([]);
   const [escalateReason, setEscalateReason] = useState("");
   const [escalateOpenShiftId, setEscalateOpenShiftId] = useState<string | null>(null);
+  const [systemError, setSystemError] = useState<string | null>(null);
 
-  const periods = useMemo(() => (canView ? listPeriodsForActor(actor) : []), [
-    actor,
-    canView,
-    refreshKey,
-  ]);
+  // Evidence-hardened read: `listPeriodsForActor` also drives the
+  // `pulse.m05.evidence.forceSystemError` flag (see period-service). We must
+  // catch here so the section renders `SystemErrorState` on genuine flow
+  // instead of throwing during render.
+  const { periods, readError } = useMemo<{
+    periods: RosterPeriod[];
+    readError: string | null;
+  }>(() => {
+    if (!canView) return { periods: [], readError: null };
+    try {
+      return { periods: listPeriodsForActor(actor), readError: null };
+    } catch (e) {
+      return {
+        periods: [],
+        readError: e instanceof Error ? e.message : "Unexpected error",
+      };
+    }
+  }, [actor, canView, refreshKey]);
+
+  const effectiveSystemError = systemError ?? readError;
 
   const activePeriodId = selectedPeriodId ?? periods[0]?.id ?? null;
 
@@ -57,6 +76,7 @@ export function CoverageSection() {
     try {
       const result = evaluateCoverage({ rosterPeriodId: activePeriodId });
       setEvaluation(result);
+      setSystemError(null);
       pushToast(
         result.fullyCovered
           ? "Coverage evaluation complete — no gaps."
@@ -64,6 +84,7 @@ export function CoverageSection() {
         result.fullyCovered ? "success" : "warn"
       );
     } catch (e) {
+      setSystemError(e instanceof Error ? e.message : "Coverage evaluation failed");
       pushToast(e instanceof Error ? e.message : "Coverage evaluation failed", "danger");
     }
   };
@@ -88,20 +109,30 @@ export function CoverageSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Coverage</h2>
-        </div>
+      <SectionFrame sectionId="coverage" title="Coverage">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
+    );
+  }
+
+  if (effectiveSystemError) {
+    return (
+      <SectionFrame sectionId="coverage" title="Coverage">
+        <SystemErrorState
+          error={effectiveSystemError}
+          onRetry={() => {
+            setSystemError(null);
+            bump();
+          }}
+        />
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="coverage" title="Coverage">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Coverage</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Compare coverage requirements against assigned shifts and escalate hard gaps.
         </p>
@@ -125,7 +156,7 @@ export function CoverageSection() {
               </option>
             ))}
           </select>
-          <Button variant="teal" onClick={handleRun}>
+          <Button variant="teal" onClick={handleRun} data-testid="m05-coverage-run">
             Evaluate coverage
           </Button>
         </div>
@@ -276,6 +307,6 @@ export function CoverageSection() {
           </Table>
         </Panel>
       ) : null}
-    </div>
+    </SectionFrame>
   );
 }

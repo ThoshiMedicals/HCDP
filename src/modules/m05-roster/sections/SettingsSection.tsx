@@ -18,6 +18,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 const DEFAULT_ORG = "org_parent";
 
@@ -64,20 +65,16 @@ export function SettingsSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Policy & Settings</h2>
-        </div>
+      <SectionFrame sectionId="settings" title="Settings">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="settings" title="Settings">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Policy & Settings</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Manage versioned roster conflict/fatigue policies. Publishing archives the
           prior published policy for the organisation.
@@ -122,11 +119,14 @@ export function SettingsSection() {
       ) : null}
 
       {policies.length === 0 ? (
-        <EmptyState
-          title="No policies yet"
-          description="Seed runs on mount. Draft/publish above to add more."
-        />
+        <div data-testid="m05-policy-list">
+          <EmptyState
+            title="No policies yet"
+            description="Seed runs on mount. Draft/publish above to add more."
+          />
+        </div>
       ) : (
+        <div data-testid="m05-policy-list">
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3">
             <PanelTitle>Conflict policies</PanelTitle>
@@ -179,6 +179,7 @@ export function SettingsSection() {
             </tbody>
           </Table>
         </Panel>
+        </div>
       )}
 
       <Panel>
@@ -188,6 +189,6 @@ export function SettingsSection() {
           {actor.clinicIds === undefined ? "all clinics" : `${actor.clinicIds.length} clinic(s)`}
         </div>
       </Panel>
-    </div>
+    </SectionFrame>
   );
 }

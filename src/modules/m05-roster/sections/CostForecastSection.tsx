@@ -20,6 +20,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function CostForecastSection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
@@ -77,20 +78,16 @@ export function CostForecastSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Cost Forecast</h2>
-        </div>
+      <SectionFrame sectionId="cost-forecast" title="Cost Forecast">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="cost-forecast" title="Cost Forecast">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Cost Forecast</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Planning-only forecasts. Rate and cost figures are masked without{" "}
           <code>roster.cost.view</code>.
@@ -126,7 +123,7 @@ export function CostForecastSection() {
                 </option>
               ))}
             </select>
-            <Button variant="teal" onClick={handleBuild}>
+            <Button variant="teal" onClick={handleBuild} data-testid="m05-cost-build">
               Build cost forecast
             </Button>
           </div>
@@ -202,7 +199,7 @@ export function CostForecastSection() {
           ))}
         </div>
       )}
-    </div>
+    </SectionFrame>
   );
 }
 

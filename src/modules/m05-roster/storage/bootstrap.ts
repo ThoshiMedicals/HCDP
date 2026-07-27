@@ -5,6 +5,7 @@
 
 import { readJsonSafe } from "@/platform/storage/storage";
 import type { MigrationReport } from "../types/domain";
+import { clearM05LocalStoreCacheForTests } from "../repository/local-store";
 import { M05_STORAGE_KEYS } from "./keys";
 import { runM05StorageMigrations } from "./migrations";
 import { runM05SchemaV2Migration } from "./migrate-v2";
@@ -48,4 +49,5 @@ export function notifyM05BootstrapListeners(): void {
 export function resetM05BootstrapCacheForTests(): void {
   bootstrapped = false;
   cachedReport = null;
+  clearM05LocalStoreCacheForTests();
 }

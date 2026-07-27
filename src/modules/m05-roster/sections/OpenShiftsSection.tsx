@@ -24,6 +24,7 @@ import {
   RestrictedState,
   ValidationErrorState,
 } from "../components/ux";
+import { SectionFrame } from "../components/SectionFrame";
 
 export function OpenShiftsSection() {
   const { actor, bump, pushToast, refreshKey } = useRoster();
@@ -157,21 +158,15 @@ export function OpenShiftsSection() {
 
   if (!canView) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Open Shifts</h2>
-        </div>
+      <SectionFrame sectionId="open-shifts" title="Open Shifts">
         <RestrictedState permission="roster.view" />
-      </div>
+      </SectionFrame>
     );
   }
 
   if (conflict) {
     return (
-      <div className="grid gap-4">
-        <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Open Shifts</h2>
-        </div>
+      <SectionFrame sectionId="open-shifts" title="Open Shifts">
         <ConcurrentConflictState
           targetType={conflict.targetType}
           targetId={conflict.targetId}
@@ -180,15 +175,14 @@ export function OpenShiftsSection() {
             bump();
           }}
         />
-      </div>
+      </SectionFrame>
     );
   }
 
   return (
-    <div className="grid gap-4">
+    <SectionFrame sectionId="open-shifts" title="Open Shifts">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Open Shifts</h2>
         <p className="m-0 mt-1 text-sm text-[#526479]">
           Offer, accept and select workers for open shifts. Every acceptance re-checks
           authoritative eligibility.
@@ -229,11 +223,14 @@ export function OpenShiftsSection() {
       ) : null}
 
       {openShifts.length === 0 ? (
-        <EmptyState
-          title="No open shifts"
-          description="Offer an unassigned shift above to create one."
-        />
+        <div data-testid="m05-open-shifts-list">
+          <EmptyState
+            title="No open shifts"
+            description="Offer an unassigned shift above to create one."
+          />
+        </div>
       ) : (
+        <div data-testid="m05-open-shifts-list">
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3">
             <PanelTitle>Open shifts</PanelTitle>
@@ -384,7 +381,8 @@ export function OpenShiftsSection() {
             </tbody>
           </Table>
         </Panel>
+        </div>
       )}
-    </div>
+    </SectionFrame>
   );
 }
