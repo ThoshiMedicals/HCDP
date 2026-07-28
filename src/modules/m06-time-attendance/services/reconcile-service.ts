@@ -1,6 +1,9 @@
 import { assertM06ClinicScope, assertM06Permission, type M06Actor } from "../permissions";
 import { listExceptions, listSessions } from "../repository/local-store";
-import { listPublishedAssignmentsForPerson } from "../adapters/m05-shift-read";
+import {
+  listPublishedAssignmentsForClinic,
+  listPublishedAssignmentsForPerson,
+} from "../adapters/m05-shift-read";
 import { raiseException } from "./exception-service";
 
 export type ReconcileRow = {
@@ -24,6 +27,7 @@ export function reconcileRosterAttendance(input: {
   const people = new Set<string>();
   if (input.personId) people.add(input.personId);
   for (const s of sessions) people.add(s.personId);
+  for (const a of listPublishedAssignmentsForClinic(input.clinicId)) people.add(a.personId);
 
   const rows: ReconcileRow[] = [];
   const exceptionIds: string[] = [];

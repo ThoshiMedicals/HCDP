@@ -348,10 +348,7 @@ async function runBrowser() {
     // --- Approvals: approve changes pending count ---
     {
       await activateSection("approvals");
-      const pendingBefore = Number(
-        String(await page.locator('[data-testid="m06-approval-count"]').innerText()).match(/\d+/)?.[0] ?? 0
-      );
-      const approveBtn = page.locator('[data-testid^="m06-approval-approve-"]').first();
+      let approveBtn = page.locator('[data-testid^="m06-approval-approve-"]').first();
       if ((await approveBtn.count()) < 1) {
         // Submit a timesheet first to create pending approval
         await activateSection("timesheets");
@@ -361,10 +358,14 @@ async function runBrowser() {
           await page.waitForTimeout(350);
         }
         await activateSection("approvals");
+        approveBtn = page.locator('[data-testid^="m06-approval-approve-"]').first();
       }
-      const approveBtn2 = page.locator('[data-testid^="m06-approval-approve-"]').first();
-      if ((await approveBtn2.count()) < 1) throw new Error("no pending approval control after timesheet submit");
-      await approveBtn2.click();
+      if ((await approveBtn.count()) < 1) throw new Error("no pending approval control after timesheet submit");
+      const pendingBefore = Number(
+        String(await page.locator('[data-testid="m06-approval-count"]').innerText()).match(/\d+/)?.[0] ?? 0
+      );
+      if (!(pendingBefore > 0)) throw new Error("approvals evidence requires pendingBefore > 0");
+      await approveBtn.click();
       await page.waitForTimeout(400);
       const pendingAfter = Number(
         String(await page.locator('[data-testid="m06-approval-count"]').innerText()).match(/\d+/)?.[0] ?? 0
@@ -374,52 +375,156 @@ async function runBrowser() {
         "Section approvals functional proof",
         "approve reduces pending queue",
         `pending ${pendingBefore}->${pendingAfter}`,
-        pendingAfter < pendingBefore || pendingAfter >= 0 ? (pendingAfter <= pendingBefore ? "pass" : "fail") : "fail"
+        pendingAfter < pendingBefore ? "pass" : "fail"
       );
-      // Stricter: must have decreased or been 1->0
       if (!(pendingAfter < pendingBefore)) {
-        // overwrite last record as fail
-        results[results.length - 1].result = "fail";
-        results[results.length - 1].actual = `pending did not decrease (${pendingBefore}->${pendingAfter})`;
+        throw new Error(`pending did not decrease (${pendingBefore}->${pendingAfter})`);
       }
     }
 
-    // --- History: filter changes visible rows ---
+    // --- History: filter requires rows, empties on no-match, restores on clear ---
     {
       await activateSection("history");
+      let beforeRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      if (beforeRows < 1) {
+        // Ensure at least one service-backed history row exists
+        await activateSection("clock");
+        const open = await page.locator('[data-testid="m06-clock-open-session"]').count();
+        if (open < 1) {
+          await page.locator('[data-testid="m06-clock-local"]').fill("2026-07-28T09:05");
+          await page.locator('[data-testid="m06-clock-in"]').click();
+          await page.waitForTimeout(300);
+        }
+        const outBtn = page.locator('[data-testid="m06-clock-out"]');
+        if (!(await outBtn.isDisabled())) {
+          await page.locator('[data-testid="m06-clock-local"]').fill("2026-07-28T17:05");
+          await outBtn.click();
+          await page.waitForTimeout(300);
+        }
+        await activateSection("history");
+        beforeRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      }
+      if (!(beforeRows > 0)) throw new Error("history evidence requires beforeRows > 0");
+      const firstRowText = await page.locator('[data-testid="m06-history-list"] li').first().innerText();
       const filter = page.locator('[data-testid="m06-history-filter"]');
       if ((await filter.count()) < 1) throw new Error("history filter missing");
-      const beforeRows = await page.locator('[data-testid="m06-history-list"] li').count();
       await filter.fill("___no_match_filter___");
-      await page.waitForTimeout(200);
-      const filteredEmpty = await page.locator('[data-testid="m06-ux-filtered-empty"]').count();
+      await page.waitForTimeout(250);
       const afterRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      const filteredEmpty = await page.locator('[data-testid="m06-ux-filtered-empty"]').count();
+      if (!(afterRows === 0 && filteredEmpty > 0)) {
+        throw new Error(`filter did not empty list (afterRows=${afterRows}, filteredEmpty=${filteredEmpty})`);
+      }
+      await page.locator('[data-testid="m06-history-clear-filter"]').click();
+      await page.waitForTimeout(250);
+      const restoredRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      const restoredText = restoredRows > 0 ? await page.locator('[data-testid="m06-history-list"] li').first().innerText() : "";
+      const ok = restoredRows >= beforeRows && restoredText.includes(firstRowText.slice(0, Math.min(12, firstRowText.length)));
       record(
         "section.history",
         "Section history functional proof",
-        "filter changes visible rows / filtered-empty",
-        `rows ${beforeRows}->${afterRows}; filteredEmpty=${filteredEmpty}`,
-        afterRows === 0 || filteredEmpty > 0 ? "pass" : "fail"
+        "beforeRows>0; filter empties; clear restores rows",
+        `before=${beforeRows}; afterFilter=${afterRows}; filteredEmpty=${filteredEmpty}; restored=${restoredRows}`,
+        ok ? "pass" : "fail"
       );
-      await page.locator('[data-testid="m06-history-clear-filter"]').click();
+      if (!ok) throw new Error("history clear did not restore service-backed rows");
     }
 
-    // --- Reports: build produces output that changes on reconcile ---
+    // --- Reports: seed mismatch; build + reconcile assert business classifications ---
     {
+      const clinicId = await page.evaluate(() => {
+        // Prefer clinic from open M06 session if present; else demo default used by workspace
+        try {
+          const sessions = JSON.parse(localStorage.getItem("pulse.m06.attendance.sessions") || "[]");
+          if (Array.isArray(sessions) && sessions[0]?.clinicId) return sessions[0].clinicId;
+        } catch {
+          /* ignore */
+        }
+        return "loc_baldhills";
+      });
+      const mismatchPerson = "p-browser-reconcile-missing";
+      const mismatchShift = "shf-browser-reconcile-01";
+      await page.evaluate(
+        ({ clinicId, mismatchPerson, mismatchShift }) => {
+          const publicationId = "pub-browser-reconcile-01";
+          localStorage.setItem(
+            "pulse.m05.roster.publications",
+            JSON.stringify([{ id: publicationId, publicationVersion: 1, state: "published" }])
+          );
+          localStorage.setItem(
+            "pulse.m05.roster.shifts",
+            JSON.stringify([
+              {
+                id: mismatchShift,
+                clinicId,
+                localStart: "2026-07-28T09:00",
+                localEnd: "2026-07-28T17:00",
+              },
+            ])
+          );
+          localStorage.setItem(
+            "pulse.m05.roster.assignments",
+            JSON.stringify([
+              {
+                id: "asn-browser-reconcile-01",
+                shiftId: mismatchShift,
+                personId: mismatchPerson,
+                clinicId,
+                state: "assigned",
+                publicationId,
+              },
+            ])
+          );
+        },
+        { clinicId, mismatchPerson, mismatchShift }
+      );
+
       await activateSection("reports");
       await page.locator('[data-testid="m06-report-build"]').click();
-      await page.waitForTimeout(250);
+      await page.waitForTimeout(300);
       const out1 = await page.locator('[data-testid="m06-report-output"]').innerText();
+      let report1;
+      try {
+        report1 = JSON.parse(out1);
+      } catch {
+        throw new Error("build report did not produce JSON");
+      }
+      if (typeof report1.sessions !== "number" || typeof report1.exceptionsOpen !== "number") {
+        throw new Error("build report missing expected service-backed fields");
+      }
+      if (!("counts" in report1)) throw new Error("build report missing counts");
+      if (!(report1.sessions >= 1)) throw new Error("build report must include service-backed session record(s)");
+
       await page.locator('[data-testid="m06-report-reconcile"]').click();
-      await page.waitForTimeout(250);
+      await page.waitForTimeout(350);
+      const reconcileList = page.locator('[data-testid="m06-reconcile-output"]');
+      if ((await reconcileList.count()) < 1) throw new Error("reconcile output missing");
+      const missingRow = page.locator(
+        `[data-testid="m06-reconcile-row-missing-attendance"][data-m06-reconcile-shift="${mismatchShift}"][data-m06-reconcile-person="${mismatchPerson}"]`
+      );
+      const missingCount = await missingRow.count();
+      const missingText = missingCount > 0 ? await missingRow.first().innerText() : "";
+      if (!(missingCount >= 1 && missingText.includes("missing-attendance") && missingText.includes(mismatchShift))) {
+        throw new Error(`exact missing-attendance classification not found for ${mismatchShift}/${mismatchPerson}`);
+      }
       const out2 = await page.locator('[data-testid="m06-report-output"]').innerText();
+      let report2;
+      try {
+        report2 = JSON.parse(out2);
+      } catch {
+        throw new Error("post-reconcile report did not produce JSON");
+      }
+      // Reconcile raises missed-in → open exceptions must increase vs pre-reconcile report
+      const exceptionsIncreased = report2.exceptionsOpen > report1.exceptionsOpen;
+      const ok = missingCount >= 1 && exceptionsIncreased;
       record(
         "section.reports",
         "Section reports functional proof",
-        "build + reconcile update service-backed output",
-        `len ${out1.length}->${out2.length}`,
-        out1.length > 10 && out2.length > 10 ? "pass" : "fail"
+        "build fields + exact missing-attendance reconcile classification",
+        `sessions=${report1.sessions}; missingRow=${missingCount}; exceptions ${report1.exceptionsOpen}->${report2.exceptionsOpen}`,
+        ok ? "pass" : "fail"
       );
+      if (!ok) throw new Error("reports reconcile did not assert missing-attendance classification");
     }
 
     // --- Settings: publish increases version; restricted cannot mutate ---

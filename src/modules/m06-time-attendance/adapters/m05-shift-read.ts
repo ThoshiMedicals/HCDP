@@ -35,7 +35,7 @@ export function getShiftRef(shiftId: string): ShiftRef | null {
   return null;
 }
 
-export function listPublishedAssignmentsForPerson(personId: string): PublishedAssignmentSnapshot[] {
+function loadPublishedAssignmentSnapshots(): PublishedAssignmentSnapshot[] {
   // Prefer live M05 publication-linked assignments via storage keys (read-only).
   const assignments = readJsonSafe<
     Array<{
@@ -66,7 +66,6 @@ export function listPublishedAssignmentsForPerson(personId: string): PublishedAs
 
   const out: PublishedAssignmentSnapshot[] = [];
   for (const a of assignments) {
-    if (a.personId !== personId) continue;
     if (a.state && !["assigned", "published", "active"].includes(a.state) && !a.publicationId) continue;
     const shift = shifts.find((s) => s.id === a.shiftId);
     const pub = a.publicationId ? pubs.find((p) => p.id === a.publicationId) : undefined;
@@ -87,6 +86,11 @@ export function listPublishedAssignmentsForPerson(personId: string): PublishedAs
       publicationVersion: pub?.publicationVersion,
     });
   }
+  return out;
+}
+
+export function listPublishedAssignmentsForPerson(personId: string): PublishedAssignmentSnapshot[] {
+  const out = loadPublishedAssignmentSnapshots().filter((a) => a.personId === personId);
 
   if (!out.length && demoShift && demoShift.personId === personId) {
     out.push({
@@ -100,6 +104,11 @@ export function listPublishedAssignmentsForPerson(personId: string): PublishedAs
     });
   }
   return out;
+}
+
+/** Clinic-scoped published assignments for roster-vs-attendance reconcile. */
+export function listPublishedAssignmentsForClinic(clinicId: string): PublishedAssignmentSnapshot[] {
+  return loadPublishedAssignmentSnapshots().filter((a) => a.clinicId === clinicId && a.published);
 }
 
 export function getAssignmentRef(_id: string): AssignmentRef | null {

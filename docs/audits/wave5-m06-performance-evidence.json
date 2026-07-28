@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T01:29:28.329Z",
+  "generatedAt": "2026-07-28T01:42:10.461Z",
   "environment": "local prototype — not a production SLA",
   "results": [
     {
@@ -7,154 +7,154 @@
       "name": "Clock-in/out submission",
       "datasetSize": 1,
       "targetMs": 300,
-      "measuredMs": 91.24,
+      "measuredMs": 77.2,
       "method": "clockIn+clockOut",
       "metricType": "per-op typical",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:22.009Z"
+      "executedAt": "2026-07-28T01:42:05.094Z"
     },
     {
       "id": "perf.eligibility",
       "name": "Eligibility + roster lookup",
       "datasetSize": 1,
       "targetMs": 150,
-      "measuredMs": 0.03,
+      "measuredMs": 0.07,
       "method": "listPublishedAssignmentsForPerson",
       "metricType": "per-op typical",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:22.009Z"
+      "executedAt": "2026-07-28T01:42:05.094Z"
     },
     {
       "id": "perf.exception",
       "name": "Exception calculation sample",
       "datasetSize": 100,
       "targetMs": 1000,
-      "measuredMs": 581.62,
+      "measuredMs": 601,
       "method": "raiseMissedClockIn×100",
       "metricType": "p95",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:23.449Z"
+      "executedAt": "2026-07-28T01:42:06.594Z"
     },
     {
       "id": "perf.break",
       "name": "Break calculation sample",
       "datasetSize": 100,
       "targetMs": 500,
-      "measuredMs": 204.03,
+      "measuredMs": 461.03,
       "method": "startBreak+endBreak×20",
       "metricType": "p95",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:23.943Z"
+      "executedAt": "2026-07-28T01:42:07.473Z"
     },
     {
       "id": "perf.timesheet",
       "name": "Timesheet generation",
       "datasetSize": 1,
       "targetMs": 2000,
-      "measuredMs": 0.38,
+      "measuredMs": 0.52,
       "method": "generateTimesheet",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:23.944Z"
+      "executedAt": "2026-07-28T01:42:07.474Z"
     },
     {
       "id": "perf.correction",
       "name": "Correction submission",
       "datasetSize": 1,
       "targetMs": 400,
-      "measuredMs": 12.1,
+      "measuredMs": 8.94,
       "method": "requestCorrection",
       "metricType": "per-op",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:23.983Z"
+      "executedAt": "2026-07-28T01:42:07.510Z"
     },
     {
       "id": "perf.approval",
       "name": "Approval",
       "datasetSize": 1,
       "targetMs": 500,
-      "measuredMs": 10.63,
+      "measuredMs": 29.03,
       "method": "approveCorrection",
       "metricType": "per-op",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:24.026Z"
+      "executedAt": "2026-07-28T01:42:07.585Z"
     },
     {
       "id": "perf.bulkPreview",
       "name": "Bulk preview",
       "datasetSize": 200,
       "targetMs": 2000,
-      "measuredMs": 1.85,
+      "measuredMs": 0.5,
       "method": "previewBulkApprove",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:24.573Z"
+      "executedAt": "2026-07-28T01:42:08.276Z"
     },
     {
       "id": "perf.bulkSubmit",
       "name": "Bulk submission",
       "datasetSize": 200,
       "targetMs": 5000,
-      "measuredMs": 829.3,
+      "measuredMs": 479.09,
       "method": "submitBulkApprove",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:25.452Z"
+      "executedAt": "2026-07-28T01:42:08.770Z"
     },
     {
       "id": "perf.offline",
       "name": "Offline sync batch",
       "datasetSize": 100,
       "targetMs": 3000,
-      "measuredMs": 381.07,
+      "measuredMs": 207.75,
       "method": "enqueue+syncOfflineQueue",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:26.846Z"
+      "executedAt": "2026-07-28T01:42:09.596Z"
     },
     {
       "id": "perf.m02",
       "name": "M02 projection single",
       "datasetSize": 1,
       "targetMs": 50,
-      "measuredMs": 19.16,
+      "measuredMs": 36.31,
       "method": "raiseMissedClockIn→inbox",
       "metricType": "typical",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:26.930Z"
+      "executedAt": "2026-07-28T01:42:09.681Z"
     },
     {
       "id": "perf.live",
       "name": "Live attendance board load",
       "datasetSize": 50,
       "targetMs": 2500,
-      "measuredMs": 0.38,
+      "measuredMs": 0.17,
       "method": "listSessionsForActor",
       "metricType": "max/p95",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:28.322Z"
+      "executedAt": "2026-07-28T01:42:10.458Z"
     },
     {
       "id": "perf.report",
       "name": "Reports build",
       "datasetSize": 1,
       "targetMs": 3000,
-      "measuredMs": 1.05,
+      "measuredMs": 0.55,
       "method": "buildAttendanceReport",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:28.324Z"
+      "executedAt": "2026-07-28T01:42:10.459Z"
     },
     {
       "id": "perf.export",
       "name": "Scoped export",
       "datasetSize": 1,
       "targetMs": 3000,
-      "measuredMs": 2.04,
+      "measuredMs": 0.88,
       "method": "exportAttendance",
       "metricType": "max",
       "result": "pass",
-      "executedAt": "2026-07-28T01:29:28.328Z"
+      "executedAt": "2026-07-28T01:42:10.460Z"
     }
   ]
 }

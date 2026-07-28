@@ -1,71 +1,71 @@
 {
-  "generatedAt": "2026-07-28T01:29:23.688Z",
+  "generatedAt": "2026-07-28T01:42:06.598Z",
   "required": [
     {
       "id": "WF-01",
       "name": "rostered employee clock-in",
       "result": "pass",
-      "detail": "session=ats_ms3z9x5v_xam7zh; rostered=true; shift=shf-wf01"
+      "detail": "session=ats_ms3zq9s9_x81o6n; rostered=true; shift=shf-wf01"
     },
     {
       "id": "WF-02",
       "name": "unrostered clock-in",
       "result": "pass",
-      "detail": "session=ats_ms3z9x63_angeg6; exception=aex_ms3z9x64_gwabzx"
+      "detail": "session=ats_ms3zq9sj_06ug56; exception=aex_ms3zq9sj_yywtt2"
     },
     {
       "id": "WF-03",
       "name": "early clock-in",
       "result": "pass",
-      "detail": "exception=aex_ms3z9x6c_qpe451"
+      "detail": "exception=aex_ms3zq9sr_ftg4yi"
     },
     {
       "id": "WF-04",
       "name": "late arrival",
       "result": "pass",
-      "detail": "exception=aex_ms3z9x6l_uyzui5; inbox=act-ms3z9x6m-5bmyx"
+      "detail": "exception=aex_ms3zq9sx_rxhixy; inbox=act-ms3zq9sy-oc5wt"
     },
     {
       "id": "WF-05",
       "name": "missed clock-in",
       "result": "pass",
-      "detail": "exception=aex_ms3z9x6p_xcpyru; idempotent"
+      "detail": "exception=aex_ms3zq9t0_p4rzf2; idempotent"
     },
     {
       "id": "WF-06",
       "name": "break start",
       "result": "pass",
-      "detail": "break=brk_ms3z9x6v_btow2f; session=on_break"
+      "detail": "break=brk_ms3zq9t7_67b9jz; session=on_break"
     },
     {
       "id": "WF-07",
       "name": "break end",
       "result": "pass",
-      "detail": "break=brk_ms3z9x73_006vog; session=open"
+      "detail": "break=brk_ms3zq9tg_axp6wo; session=open"
     },
     {
       "id": "WF-08",
       "name": "missed break",
       "result": "pass",
-      "detail": "break=brk_ms3z9x78_1xnzwh"
+      "detail": "break=brk_ms3zq9tn_0doq2c"
     },
     {
       "id": "WF-09",
       "name": "normal clock-out",
       "result": "pass",
-      "detail": "session=ats_ms3z9x7c_w10ahm; no early-out"
+      "detail": "session=ats_ms3zq9ts_ao971m; no early-out"
     },
     {
       "id": "WF-10",
       "name": "early departure",
       "result": "pass",
-      "detail": "exception=aex_ms3z9x81_i8xvoc"
+      "detail": "exception=aex_ms3zq9u4_wjckjm"
     },
     {
       "id": "WF-11",
       "name": "missed clock-out",
       "result": "pass",
-      "detail": "exception=aex_ms3z9x87_sj52dp"
+      "detail": "exception=aex_ms3zq9ud_b1puti"
     },
     {
       "id": "WF-12",
@@ -77,19 +77,19 @@
       "id": "WF-13",
       "name": "offline capture and sync",
       "result": "pass",
-      "detail": "applied=off_ms3z9x8j_cb7v70"
+      "detail": "applied=off_ms3zq9uk_dpsl5s"
     },
     {
       "id": "WF-14",
       "name": "employee correction request",
       "result": "pass",
-      "detail": "correction=acr_ms3z9x8v_fm51m2; state=requested"
+      "detail": "correction=acr_ms3zq9uu_ium3yz; state=requested"
     },
     {
       "id": "WF-15",
       "name": "manager correction",
       "result": "pass",
-      "detail": "correction=acr_ms3z9x9j_n6h3ny"
+      "detail": "correction=acr_ms3zq9vd_9x3a78"
     },
     {
       "id": "WF-16",
@@ -101,19 +101,19 @@
       "id": "WF-17",
       "name": "reopened timesheet",
       "result": "pass",
-      "detail": "timesheet=atsheet_ms3z9xah_9s985e"
+      "detail": "timesheet=atsheet_ms3zq9xm_5ylce6"
     },
     {
       "id": "WF-18",
       "name": "exception escalation",
       "result": "pass",
-      "detail": "exception=aex_ms3z9xak_6rsxdf"
+      "detail": "exception=aex_ms3zq9xq_xv7gpb"
     },
     {
       "id": "WF-19A",
       "name": "TimesheetRef publication",
       "result": "pass",
-      "detail": "idempotency=publish::atsheet_ms3z9xaq_fhmp4a::3"
+      "detail": "idempotency=publish::atsheet_ms3zq9y2_1j6n5i::3"
     },
     {
       "id": "WF-20",
@@ -125,7 +125,7 @@
       "id": "WF-21",
       "name": "bulk approval partial success",
       "result": "pass",
-      "detail": "ok=aap_ms3z9xaz_gy0p4w; scope-denied=aap_ms3z9xb7_wecplh; not-found=missing-approval-wf21; rejectRest-blocked"
+      "detail": "ok=aap_ms3zq9yq_htiakw; scope-denied=aap_ms3zq9yz_ktyz4t; not-found=missing-approval-wf21; rejectRest-blocked"
     }
   ],
   "blockedIntake": {

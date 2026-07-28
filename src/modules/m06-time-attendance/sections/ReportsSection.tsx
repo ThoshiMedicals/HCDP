@@ -6,12 +6,13 @@ import { SectionFrame } from "../components/SectionFrame";
 import { RestrictedState } from "../components/ux";
 import { useAttendance } from "../context";
 import { hasM06Permission } from "../permissions";
-import { reconcileRosterAttendance } from "../services/reconcile-service";
+import { reconcileRosterAttendance, type ReconcileRow } from "../services/reconcile-service";
 import { buildAttendanceReport, exportAttendance } from "../services/reporting-service";
 
 export function ReportsSection() {
   const { actor, clinicId, pushToast } = useAttendance();
   const [report, setReport] = useState<ReturnType<typeof buildAttendanceReport> | null>(null);
+  const [reconcileRows, setReconcileRows] = useState<ReconcileRow[] | null>(null);
   const [exportInfo, setExportInfo] = useState<string>("");
 
   if (!hasM06Permission(actor, "attendance.report")) {
@@ -29,7 +30,10 @@ export function ReportsSection() {
           data-testid="m06-report-build"
           small
           variant="teal"
-          onClick={() => setReport(buildAttendanceReport({ actor, clinicId }))}
+          onClick={() => {
+            setReconcileRows(null);
+            setReport(buildAttendanceReport({ actor, clinicId }));
+          }}
         >
           Build report
         </Button>
@@ -38,8 +42,9 @@ export function ReportsSection() {
           small
           onClick={() => {
             const r = reconcileRosterAttendance({ actor, clinicId });
-            pushToast(`Reconcile rows: ${r.rows.length}`);
+            setReconcileRows(r.rows);
             setReport(buildAttendanceReport({ actor, clinicId }));
+            pushToast(`Reconcile rows: ${r.rows.length}`);
           }}
         >
           Roster vs attendance
@@ -64,6 +69,21 @@ export function ReportsSection() {
       ) : (
         <p className="text-sm text-[#64748b]">Run a report to see operational totals.</p>
       )}
+      {reconcileRows ? (
+        <ul data-testid="m06-reconcile-output" className="grid gap-1 mt-3 text-sm">
+          {reconcileRows.map((row, i) => (
+            <li
+              key={`${row.assignmentId}-${row.personId}-${i}`}
+              data-testid={`m06-reconcile-row-${row.variance}`}
+              data-m06-reconcile-variance={row.variance}
+              data-m06-reconcile-shift={row.shiftId}
+              data-m06-reconcile-person={row.personId}
+            >
+              {row.variance} · shift {row.shiftId} · person {row.personId}
+            </li>
+          ))}
+        </ul>
+      ) : null}
       {exportInfo ? <p data-testid="m06-export-meta" className="text-sm">{exportInfo}</p> : null}
     </SectionFrame>
   );
