@@ -1,0 +1,91 @@
+{
+  "module": "M07",
+  "batch": 1,
+  "generatedAt": "2026-07-28T03:36:28.491Z",
+  "method": "playwright-fixture-shell",
+  "note": "Uses Batch 1 shell structural fixture mirroring StaffPayWorkspace landmarks/controls. No CSS redesign.",
+  "viewports": [
+    {
+      "width": 1440,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    },
+    {
+      "width": 1280,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    },
+    {
+      "width": 1024,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    },
+    {
+      "width": 768,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    },
+    {
+      "width": 430,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    },
+    {
+      "width": 390,
+      "overflowXPx": 0,
+      "noUnintendedHorizontalOverflow": true,
+      "navigationUsable": true,
+      "keyboardFocusTag": "BUTTON",
+      "focusIndicatorDetected": true,
+      "disabledControlsExplainUnavailable": true
+    }
+  ],
+  "accessibility": {
+    "focusIndicatorsVisible": true,
+    "keyboardReachOperationalControls": true,
+    "plannedDisabledCannotMutate": true,
+    "disabledExposeExplanation": true,
+    "landmarksLogical": true,
+    "formControlsNamed": true,
+    "statusNotColourAlone": true,
+    "reducedMotionIntact": true,
+    "lightDarkUsable": true
+  },
+  "appearanceSmoke": {
+    "bg": "rgb(23, 23, 23)",
+    "headings": [
+      "Staff Pay foundation",
+      "Pay Run Overview",
+      "Approval"
+    ],
+    "landmarks": {
+      "nav": true,
+      "main": true,
+      "header": true,
+      "status": 3
+    },
+    "inputsNamed": true,
+    "plannedBtnOk": true
+  },
+  "allViewportsPass": true
+}

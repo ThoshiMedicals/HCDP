@@ -8,6 +8,7 @@ export type M07StorageMeta = {
 
 const EMPTY: unknown[] = [];
 
+/** v1 skeleton — insert-if-absent only. */
 export function seedM07StorageSkeleton(): void {
   const existing = readJsonSafe<M07StorageMeta | null>(M07_STORAGE_KEYS.meta, null);
   if (!existing) {
