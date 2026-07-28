@@ -15,3 +15,4 @@ export * from "./reporting-service";
 export * from "./policy-service";
 export * from "./offline-sync-service";
 export * from "./manager-entry-service";
+export * from "./published-timesheet-outbox";

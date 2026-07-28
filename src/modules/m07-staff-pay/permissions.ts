@@ -28,6 +28,12 @@ export const M07_PERMISSION_CODES = [
   "payroll.settings.edit",
   "payroll.bulk",
   "payroll.override",
+  /** Checkpoint 2.6 — published-timesheet lifecycle decisions */
+  "payroll.lifecycle.review",
+  "payroll.lifecycle.hold.clear",
+  "payroll.lifecycle.supersede",
+  "payroll.lifecycle.requalify",
+  "payroll.lifecycle.exception.resolve",
 ] as const;
 
 export type M07PermissionCode = (typeof M07_PERMISSION_CODES)[number];
@@ -148,6 +154,10 @@ export const M07_ROLE_PACKS = {
     "payroll.exception.waive",
     "payroll.period.lock",
     "payroll.audit.view",
+    "payroll.lifecycle.review",
+    "payroll.lifecycle.hold.clear",
+    "payroll.lifecycle.supersede",
+    "payroll.lifecycle.exception.resolve",
   ] as M07PermissionCode[],
   exportOperator: [
     "payroll.view",
@@ -177,6 +187,11 @@ export const M07_ROLE_PACKS = {
     "payroll.externalId.edit",
     "payroll.report.view",
     "payroll.exception.view",
+    "payroll.lifecycle.review",
+    "payroll.lifecycle.hold.clear",
+    "payroll.lifecycle.supersede",
+    "payroll.lifecycle.requalify",
+    "payroll.lifecycle.exception.resolve",
   ] as M07PermissionCode[],
   clinicManager: [
     "payroll.view",

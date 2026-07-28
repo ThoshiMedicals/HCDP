@@ -16,6 +16,8 @@ import { resolvePersonIdentity, readM04ClassificationRef } from "../adapters/m04
 import { publishM07InboxProjection, listM07InboxProjections } from "../adapters/m02-inbox-publish";
 import { publishM07ExecutiveSummary, getLastM07ExecutiveSummary } from "../adapters/m01-summary-publish";
 import { createTimesheetRef } from "@/platform/workforce/contracts/timesheet-ref";
+import { publishTimesheetVersion } from "@/platform/workforce/services/published-timesheet-registry";
+import { acknowledgeApprovedTimesheetIntake } from "../../m06-time-attendance/adapters/m07-timesheet-bridge";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -53,13 +55,38 @@ describe("M07 read-only boundaries (Batch 1)", () => {
     assert.equal(M07_M05_ROSTER_READ_SOURCE, "pulse.m05.roster.*");
   });
 
-  it("reads approved timesheets but does not implement intake", () => {
-    writeJsonSafe("pulse.m06.attendance.timesheets", [
-      { id: "ts1", personId: "person_a", approved: true, organisationId: ORG_A },
-    ]);
-    const refs = listApprovedTimesheetRefs();
+  it("discovers platform published timesheets but does not implement intake", () => {
+    publishTimesheetVersion({
+      content: {
+        timesheetRecordId: "ts1",
+        workforcePersonId: "person_a",
+        organisationId: ORG_A,
+        legalEntityId: "le_demo_a",
+        clinicId: "loc_baldhills",
+        periodStart: "2026-07-01",
+        periodEnd: "2026-07-14",
+        attendanceSessionIds: ["s1"],
+        ordinaryHourInputs: [{ code: "ORD", hours: 38 }],
+        overtimeHourInputs: [],
+        penaltyHourInputs: [],
+        leaveInputs: [],
+        allowanceInputs: [],
+      },
+      sourceVersion: 1,
+      approvalRevision: 1,
+      approvalState: "approved",
+      publishedAt: new Date().toISOString(),
+      publisherId: "adapter-test",
+      eventId: "adapter-evt-1",
+      idempotencyKey: "adapter-evt-1",
+    });
+    const refs = listApprovedTimesheetRefs({
+      organisationId: ORG_A,
+      legalEntityId: "le_demo_a",
+    });
     assert.equal(refs.length, 1);
     assert.equal(refs[0]?.readOnly, true);
+    assert.equal(refs[0]?.intakeImplemented, false);
     const link = linkApprovedTimesheetToPeriod(
       "period_x",
       createTimesheetRef({
@@ -72,7 +99,7 @@ describe("M07 read-only boundaries (Batch 1)", () => {
       })
     );
     assert.equal(link.ok, false);
-    assert.equal(link.code, "BATCH1_INTAKE_NOT_IMPLEMENTED");
+    assert.equal(link.blockedM07, false);
     assert.equal(M07_INTAKE_BATCH1_STATUS, "not-implemented");
   });
 
@@ -96,14 +123,15 @@ describe("M07 read-only boundaries (Batch 1)", () => {
     assert.equal(getLastM07ExecutiveSummary()?.sourceModule, "staff-pay");
   });
 
-  it("keeps M06 bridge BLOCKED-M07 unresolved", () => {
+  it("keeps M06 bridge BLOCKED-M07 cleared", () => {
     const bridgePath = join(
       process.cwd(),
       "src/modules/m06-time-attendance/adapters/m07-timesheet-bridge.ts"
     );
     const src = readFileSync(bridgePath, "utf8");
-    assert.match(src, /BLOCKED-M07/);
-    assert.match(src, /blocked:\s*true/);
+    assert.match(src, /CLEARED-M07-BATCH2/);
+    assert.equal(acknowledgeApprovedTimesheetIntake("x").blocked, false);
+    assert.match(src, /blocked:\s*false/);
     assert.doesNotMatch(src, /writeJsonSafe/);
     assert.doesNotMatch(src, /pulse\.m07\.staffpay/);
   });

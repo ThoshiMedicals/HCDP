@@ -35,9 +35,10 @@ describe("m06 adapters", () => {
     assert.ok(findInboxActionForSource("time-attendance", `attendance-${ex.kind}`, ex.id));
   });
 
-  it("m07 bridge blocked", () => {
+  it("m07 bridge cleared", () => {
     const r = acknowledgeApprovedTimesheetIntake("x");
-    assert.equal(r.workflowEvidenceCode, "BLOCKED-M07");
+    assert.equal(r.blocked, false);
+    assert.equal(r.workflowEvidenceCode, "CLEARED-M07-BATCH2");
     assert.equal(assertNoM07KeysCreated(), true);
   });
 });

@@ -4,7 +4,7 @@
  */
 
 import { readJsonSafe, runMigrationOnce, writeJsonSafe } from "@/platform/storage/storage";
-import { M07_MIGRATION_V2_ID, M07_SCHEMA_VERSION, M07_STORAGE_KEYS } from "./keys";
+import { M07_MIGRATION_V2_ID, M07_STORAGE_KEYS } from "./keys";
 import type { M07StorageMeta } from "./migrations";
 import type { ExportProfile } from "../types/domain";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "../types/domain";
@@ -71,7 +71,7 @@ export function runM07SchemaV2Migration(): boolean {
     seedDefaultMinimumPiiProfileIfAbsent();
     const meta = readJsonSafe<M07StorageMeta | null>(M07_STORAGE_KEYS.meta, null);
     writeJsonSafe(M07_STORAGE_KEYS.meta, {
-      version: M07_SCHEMA_VERSION,
+      version: 2,
       initializedAt: meta?.initializedAt ?? new Date().toISOString(),
     } satisfies M07StorageMeta);
     // Disclaimer marker for operators (non-mutating documentation seed)

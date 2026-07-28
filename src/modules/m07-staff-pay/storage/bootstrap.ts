@@ -1,5 +1,8 @@
 import { runM07StorageMigrations } from "./migrations";
 import { runM07SchemaV2Migration } from "./migrate-v2";
+import { runM07SchemaV3Migration } from "./migrate-v3";
+import { runM07SchemaV4Migration } from "./migrate-v4";
+import { runM07SchemaV5Migration } from "./migrate-v5";
 import type { MigrationReport } from "../types/domain";
 import { bootstrapDefaultEntityPaySettings } from "../services/entity-settings-service";
 
@@ -28,9 +31,11 @@ export function ensureM07Bootstrapped(): MigrationReport {
   if (bootstrapped && lastReport) return lastReport;
   const v1Ran = runM07StorageMigrations();
   const v2Ran = runM07SchemaV2Migration();
-  // Authorised system bootstrap path — insert-if-absent entity settings only.
+  const v3Ran = runM07SchemaV3Migration();
+  const v4Ran = runM07SchemaV4Migration();
+  const v5Ran = runM07SchemaV5Migration();
   bootstrapDefaultEntityPaySettings([...M07_BOOTSTRAP_ENTITY_IDS]);
-  lastReport = { v1Ran, v2Ran, at: new Date().toISOString() };
+  lastReport = { v1Ran, v2Ran, v3Ran, v4Ran, v5Ran, at: new Date().toISOString() };
   bootstrapped = true;
   for (const cb of listeners) cb();
   return lastReport;

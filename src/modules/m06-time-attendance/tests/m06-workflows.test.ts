@@ -1,6 +1,6 @@
 /**
  * Independently evidenced M06 workflows WF-01…18, WF-19A, WF-20, WF-21.
- * WF-19B remains separately BLOCKED-M07.
+ * WF-19B acknowledgement boundary cleared at CP 2.7B (still no pulse.m07 write from bridge).
  * One successful operation must not credit multiple workflow IDs.
  */
 
@@ -723,15 +723,15 @@ describe("m06 workflows independent evidence", () => {
     recordWf("WF-19A", "TimesheetRef publication", "pass", `idempotency=${ts.publishIdempotencyKey}`);
   });
 
-  it("WF-19B BLOCKED-M07 intake does not write pulse.m07", () => {
+  it("WF-19B M07 acknowledgement boundary does not write pulse.m07", () => {
     const result = attemptM07Intake("ts-any");
-    assert.equal(result.blocked, true);
-    assert.equal(result.workflowEvidenceCode, "BLOCKED-M07");
+    assert.equal(result.blocked, false);
+    assert.equal(result.workflowEvidenceCode, "CLEARED-M07-BATCH2");
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       assert.ok(!k?.startsWith("pulse.m07."));
     }
-    recordWf("WF-19B", "M07 intake blocked", "blocked", "BLOCKED-M07");
+    recordWf("WF-19B", "M07 acknowledgement cleared; no pulse.m07 write", "pass", "CLEARED-M07-BATCH2");
   });
 
   it("WF-20 roster-versus-attendance reconciliation", () => {

@@ -5,6 +5,7 @@ import { runM06PortalSeed, runM06PolicySeed } from "../storage/seed-safe";
 import { rollbackSeedOwnedM06 } from "../storage/rollback-seed";
 import { runM06StorageMigrations } from "../storage/migrations";
 import { runM06SchemaV2Migration } from "../storage/migrate-v2";
+import { runM06SchemaV3Migration } from "../storage/migrate-v3";
 import { resetM06TestEnv } from "./_helpers";
 
 describe("m06 migration", () => {
@@ -24,8 +25,10 @@ describe("m06 migration", () => {
   it("MIG-02 interrupted recovery via repeat migrations", () => {
     runM06StorageMigrations();
     runM06SchemaV2Migration();
+    runM06SchemaV3Migration();
     runM06StorageMigrations();
     runM06SchemaV2Migration();
+    runM06SchemaV3Migration();
     assert.ok(true);
   });
 

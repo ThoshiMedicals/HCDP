@@ -8,6 +8,7 @@ import { clearM06LocalStoreCacheForTests } from "../repository/local-store";
 import { M06_STORAGE_KEYS } from "./keys";
 import { runM06StorageMigrations } from "./migrations";
 import { runM06SchemaV2Migration } from "./migrate-v2";
+import { runM06SchemaV3Migration } from "./migrate-v3";
 import { runM06PolicySeed, runM06PortalSeed } from "./seed-safe";
 
 let bootstrapped = false;
@@ -23,6 +24,7 @@ export function ensureM06Bootstrapped(options?: { seed?: boolean }): MigrationRe
   if (bootstrapped) return cachedReport;
   runM06StorageMigrations();
   runM06SchemaV2Migration();
+  runM06SchemaV3Migration();
   if (options?.seed !== false) {
     runM06PolicySeed();
     cachedReport = runM06PortalSeed();

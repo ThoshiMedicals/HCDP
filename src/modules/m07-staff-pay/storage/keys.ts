@@ -16,10 +16,24 @@ export const M07_STORAGE_KEYS = {
   classificationMaps: `${M07_STORAGE_PREFIX}classificationMaps`,
   codes: `${M07_STORAGE_PREFIX}codes`,
   exportProfiles: `${M07_STORAGE_PREFIX}exportProfiles`,
+  /** Legacy Batch 1 placeholder collection — non-authoritative; not used as snapshot store. */
   intake: `${M07_STORAGE_PREFIX}intake`,
   exceptions: `${M07_STORAGE_PREFIX}exceptions`,
   approvals: `${M07_STORAGE_PREFIX}approvals`,
   audit: `${M07_STORAGE_PREFIX}audit`,
+  /** Checkpoint 2.4 — immutable published-timesheet source snapshots. */
+  publishedTimesheetSnapshots: `${M07_STORAGE_PREFIX}publishedTimesheetSnapshots`,
+  publishedTimesheetSnapshotIndex: `${M07_STORAGE_PREFIX}publishedTimesheetSnapshotIndex`,
+  publishedTimesheetCurrentIntake: `${M07_STORAGE_PREFIX}publishedTimesheetCurrentIntake`,
+  /** Checkpoint 2.5 — ordered replay cursors and event outcomes. */
+  publishedTimesheetReplayCheckpoints: `${M07_STORAGE_PREFIX}publishedTimesheetReplayCheckpoints`,
+  publishedTimesheetReplayOutcomes: `${M07_STORAGE_PREFIX}publishedTimesheetReplayOutcomes`,
+  /** Checkpoint 2.6 — lifecycle projections, eligibility, decisions, exceptions. */
+  publishedTimesheetLifecycleProjections: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleProjections`,
+  publishedTimesheetSnapshotEligibility: `${M07_STORAGE_PREFIX}publishedTimesheetSnapshotEligibility`,
+  publishedTimesheetLifecycleDecisions: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleDecisions`,
+  publishedTimesheetLifecycleExceptions: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleExceptions`,
+  publishedTimesheetLifecycleEventApplications: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleEventApplications`,
 } as const;
 
 /** v1 migration flag version (frozen for workforce-migrations.test). */
@@ -27,5 +41,11 @@ export const M07_STORAGE_VERSION = 1 as const;
 export const M07_MIGRATION_ID = "m07-staffpay-storage-v1" as const;
 
 /** Additive Batch 1 schema. */
-export const M07_SCHEMA_VERSION = 2 as const;
 export const M07_MIGRATION_V2_ID = "m07-staffpay-storage-v2" as const;
+/** Checkpoint 2.4 snapshot collections. */
+export const M07_MIGRATION_V3_ID = "m07-staffpay-storage-v3" as const;
+/** Checkpoint 2.5 replay cursor collections. */
+export const M07_MIGRATION_V4_ID = "m07-staffpay-storage-v4" as const;
+/** Checkpoint 2.6 lifecycle projection collections. */
+export const M07_MIGRATION_V5_ID = "m07-staffpay-storage-v5" as const;
+export const M07_SCHEMA_VERSION = 5 as const;

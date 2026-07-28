@@ -23,6 +23,7 @@ import {
   InvalidLifecycleTransitionError,
   ValidationError,
 } from "./errors";
+import { enqueueAndAttemptPlatformPublication } from "./published-timesheet-outbox";
 
 function minutesBetween(a: string, b: string): number {
   return Math.max(0, Math.round((Date.parse(b) - Date.parse(a)) / 60000));
@@ -34,6 +35,10 @@ export function generateTimesheet(input: {
   clinicId: string;
   periodStart: string;
   periodEnd: string;
+  /** Tenant organisation — required for platform publication eligibility. */
+  organisationId?: string;
+  /** Employing/payroll entity — independent of organisationId. */
+  legalEntityId?: string;
 }): TimesheetRecord {
   assertM06Permission(input.actor, "attendance.timesheet.generate");
   assertM06ClinicScope(input.actor, [input.clinicId]);
@@ -61,6 +66,8 @@ export function generateTimesheet(input: {
       ...existing,
       sessionIds: sessions.map((s) => s.id),
       totalMinutes,
+      organisationId: input.organisationId ?? existing.organisationId,
+      legalEntityId: input.legalEntityId ?? existing.legalEntityId,
       version: existing.version + 1,
       updatedAt: now,
     };
@@ -70,6 +77,8 @@ export function generateTimesheet(input: {
     id: newTimesheetId(),
     personId: input.personId,
     clinicId: input.clinicId,
+    organisationId: input.organisationId,
+    legalEntityId: input.legalEntityId,
     periodStart: input.periodStart,
     periodEnd: input.periodEnd,
     state: "draft",
@@ -222,7 +231,13 @@ export function approveTimesheet(input: {
   upsertTimesheet(approved);
   closeTimesheetInbox(approved);
   const published = publishTimesheetApproved({ actor: input.actor, timesheet: approved });
-  return published.timesheet;
+  // Checkpoint 2.2 — outbound platform registry projection (non-blocking for approval SoT).
+  const platform = enqueueAndAttemptPlatformPublication({
+    timesheet: published.timesheet,
+    intent: "granted",
+    publisherId: input.actor.userId,
+  });
+  return platform.timesheet;
 }
 
 export function rejectTimesheet(input: {
@@ -288,6 +303,16 @@ export function reopenTimesheet(input: {
     clinicId: t.clinicId,
     detail: input.reason,
   });
+  // Map M06 reopen → platform approval.revoked lifecycle (does not delete published content).
+  if (next.platformPublicationAck) {
+    const platform = enqueueAndAttemptPlatformPublication({
+      timesheet: next,
+      intent: "revoked",
+      publisherId: input.actor.userId,
+      reasonCode: input.reason || "REOPENED",
+    });
+    return platform.timesheet;
+  }
   return next;
 }
 

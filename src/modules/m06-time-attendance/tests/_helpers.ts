@@ -11,6 +11,7 @@ import { clearM06LocalStoreCacheForTests } from "../repository/local-store";
 import { resetM06BootstrapCacheForTests } from "../storage/bootstrap";
 import { runM06StorageMigrations } from "../storage/migrations";
 import { runM06SchemaV2Migration } from "../storage/migrate-v2";
+import { runM06SchemaV3Migration } from "../storage/migrate-v3";
 import type { M06Actor } from "../permissions";
 import { M06_PERMISSION_CODES } from "../permissions";
 
@@ -89,6 +90,7 @@ export function resetM06TestEnv() {
   resetM06BootstrapCacheForTests();
   runM06StorageMigrations();
   runM06SchemaV2Migration();
+  runM06SchemaV3Migration();
 }
 
 export function actorAll(userId = "u-manager"): M06Actor {

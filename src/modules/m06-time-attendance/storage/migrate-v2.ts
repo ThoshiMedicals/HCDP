@@ -4,7 +4,7 @@
  */
 
 import { readJsonSafe, runMigrationOnce, writeJsonSafe } from "@/platform/storage/storage";
-import { M06_MIGRATION_V2_ID, M06_SCHEMA_VERSION, M06_STORAGE_KEYS } from "./keys";
+import { M06_MIGRATION_V2_ID, M06_STORAGE_KEYS } from "./keys";
 import type { M06StorageMeta } from "./migrations";
 
 const V2_KEYS = [
@@ -27,7 +27,7 @@ export function runM06SchemaV2Migration(): boolean {
     }
     const meta = readJsonSafe<M06StorageMeta | null>(M06_STORAGE_KEYS.meta, null);
     writeJsonSafe(M06_STORAGE_KEYS.meta, {
-      version: M06_SCHEMA_VERSION,
+      version: 2,
       initializedAt: meta?.initializedAt ?? new Date().toISOString(),
     } satisfies M06StorageMeta);
   });

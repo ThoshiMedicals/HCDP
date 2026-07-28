@@ -142,9 +142,12 @@ export interface TimesheetRecord {
   personId: string;
   clinicId: string;
   organisationId?: string;
+  /** Employing/payroll entity — independent of organisationId; required for platform publication. */
+  legalEntityId?: string;
   periodStart: string;
   periodEnd: string;
   state: TimesheetState;
+  /** Optimistic concurrency version — not platform sourceVersion. */
   version: number;
   sessionIds: string[];
   totalMinutes: number;
@@ -152,10 +155,75 @@ export interface TimesheetRecord {
   publishIdempotencyKey?: string;
   timesheetRefSnapshot?: Record<string, unknown>;
   reopenReason?: string;
+  /**
+   * Platform publication content version (Checkpoint 2.2).
+   * Advances only when published payroll-preparation content changes.
+   */
+  publicationSourceVersion?: number;
+  /** Platform approval lifecycle revision — independent of concurrency version. */
+  approvalRevision?: number;
+  /** Last platform-confirmed publication acknowledgement (never invent success). */
+  platformPublicationAck?: {
+    registryPublicationId: string;
+    contentHash: string;
+    sourceVersion: number;
+    approvalRevision: number;
+    eventId: string;
+    idempotencyKey: string;
+    eventSequence: number;
+    approvalState: string;
+    acknowledgedAt: string;
+  };
   seedBatchId?: string;
   createdAt: string;
   updatedAt: string;
 }
+
+/**
+ * Durable M06→platform publication obligation (Checkpoint 2.2 outbox).
+ * Approval remains authoritative even when status is pending/failed.
+ */
+export type PlatformPublicationIntent =
+  | "granted"
+  | "revised"
+  | "revoked"
+  | "restored"
+  | "withdrawn"
+  | "invalidated";
+
+export type PlatformPublicationOutboxStatus = "pending" | "published" | "failed";
+
+export interface PlatformPublicationOutboxItem {
+  id: string;
+  timesheetId: string;
+  organisationId: string;
+  legalEntityId: string;
+  clinicId: string;
+  intent: PlatformPublicationIntent;
+  sourceVersion: number;
+  approvalRevision: number;
+  eventId: string;
+  idempotencyKey: string;
+  eventSequence: number;
+  status: PlatformPublicationOutboxStatus;
+  attemptCount: number;
+  maxAttempts: number;
+  lastError?: string;
+  reasonCode?: string;
+  /** Snapshot fields needed to rebuild platform PublishTimesheetInput on retry. */
+  contentSnapshot: {
+    workforcePersonId: string;
+    periodStart: string;
+    periodEnd: string;
+    attendanceSessionIds: string[];
+    totalMinutes: number;
+    publisherId: string;
+    publishedAt: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+}
+
 
 export interface VerificationEvidence {
   id: string;

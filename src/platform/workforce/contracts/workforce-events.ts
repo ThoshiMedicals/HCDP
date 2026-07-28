@@ -29,6 +29,13 @@ export type WorkforceEventType =
   | "attendance.exception.created"
   | "attendance.exception.resolved"
   | "timesheet.approved"
+  /** Additive lifecycle events (Wave 6 / M07 CP 2.1) — do not replace timesheet.approved. */
+  | "timesheet.approval.granted"
+  | "timesheet.approval.revised"
+  | "timesheet.approval.revoked"
+  | "timesheet.approval.restored"
+  | "timesheet.record.withdrawn"
+  | "timesheet.record.invalidated"
   | "payperiod.status.changed"
   | "payroll.export.created"
   | "payroll.reconciliation.completed"
@@ -83,6 +90,12 @@ export const WORKFORCE_EVENT_TYPES: readonly WorkforceEventType[] = [
   "attendance.exception.created",
   "attendance.exception.resolved",
   "timesheet.approved",
+  "timesheet.approval.granted",
+  "timesheet.approval.revised",
+  "timesheet.approval.revoked",
+  "timesheet.approval.restored",
+  "timesheet.record.withdrawn",
+  "timesheet.record.invalidated",
   "payperiod.status.changed",
   "payroll.export.created",
   "payroll.reconciliation.completed",

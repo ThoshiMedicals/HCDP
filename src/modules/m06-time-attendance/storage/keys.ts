@@ -17,11 +17,16 @@ export const M06_STORAGE_KEYS = {
   evidence: `${M06_STORAGE_PREFIX}evidence`,
   devices: `${M06_STORAGE_PREFIX}devices`,
   declarations: `${M06_STORAGE_PREFIX}declarations`,
+  /** Checkpoint 2.2 — durable platform publication outbox (not pulse.m07.*). */
+  publishedTimesheetOutbox: `${M06_STORAGE_PREFIX}publishedTimesheetOutbox`,
+  publishedTimesheetOutboxMeta: `${M06_STORAGE_PREFIX}publishedTimesheetOutboxMeta`,
 } as const;
 
 export const M06_STORAGE_VERSION = 1 as const;
 export const M06_MIGRATION_ID = "m06-attendance-storage-v1" as const;
 export const M06_MIGRATION_V2_ID = "m06-attendance-storage-v2" as const;
-export const M06_SCHEMA_VERSION = 2 as const;
+export const M06_MIGRATION_V3_ID = "m06-attendance-storage-v3" as const;
+/** Schema marker after Checkpoint 2.2 outbox migration. */
+export const M06_SCHEMA_VERSION = 3 as const;
 export const M06_SEED_BATCH_ID = "m06-portal-seed-v1" as const;
 export const M06_POLICY_SEED_ID = "m06-policy-seed-v1" as const;

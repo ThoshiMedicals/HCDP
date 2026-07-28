@@ -11,6 +11,10 @@ export * from "./timesheet-ref";
 export * from "./pay-period-ref";
 export * from "./candidate-ref";
 export * from "./workforce-events";
+// Wave 6 / M07 Batch 2 Checkpoint 2.1 — published timesheet contract (platform-owned).
+export * from "./published-timesheet-contract";
+export * from "./published-timesheet-hash";
+export * from "./timesheet-approval-events";
 // Wave 4 (M05) additive refs — non-destructive additions.
 export * from "./roster-period-ref";
 export * from "./roster-publication-ref";
