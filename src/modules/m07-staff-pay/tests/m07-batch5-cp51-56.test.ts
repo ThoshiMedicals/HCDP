@@ -560,7 +560,7 @@ describe("M07 Batch 5 CP5.1–5.6", () => {
       clearM07LocalStoreCacheForTests();
       resetM07BootstrapCacheForTests();
       ensureM07Bootstrapped();
-      assert.equal(M07_SCHEMA_VERSION, 8);
+      assert.equal(M07_SCHEMA_VERSION, 9);
       assert.equal(hasMigration(M07_MIGRATION_V7_ID, 1), true);
       assert.equal(hasMigration(M07_MIGRATION_V8_ID, 1), true);
       writeJsonSafe(M07_STORAGE_KEYS.deductionPrepInputs, [{ id: "keep_ded" }]);

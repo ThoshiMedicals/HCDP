@@ -491,7 +491,7 @@ describe("M07 Batch 4 — allowance, deduction, variance, exceptions, integratio
         assert.doesNotMatch(stripped, /\bnetPay\b|\bmarkAsPaid\b|\bpaymentStatus\b/);
       }
       const ws = readFileSync(join(M07_ROOT, "StaffPayWorkspace.tsx"), "utf8");
-      assert.match(ws, /data-m07-shell="batch5-approval"/);
+      assert.match(ws, /data-m07-shell="batch6-export"/);
       assert.match(ws, /VariancesSection/);
       assert.match(ws, /ExceptionsSection/);
     });

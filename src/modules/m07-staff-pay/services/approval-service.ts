@@ -41,6 +41,7 @@ import {
 } from "./approval-invalidation";
 import { syncPeriodApprovalToInbox } from "../adapters/m02-inbox-publish";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-service";
 
 export { invalidateApprovalIfSourcesChanged, markPeriodApprovalStale } from "./approval-invalidation";
 
@@ -84,6 +85,7 @@ export function submitPeriodForReview(
   if (!period) throw new M07ValidationError("not-found", "Period not found");
   assertM07LegalEntityScope(actor, period.legalEntityId);
   assertM07ClinicScope(actor, period.clinicIds);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   if (period.state === "locked" || period.state === "exported" || period.state === "reconciled") {
     throw new M07ValidationError(

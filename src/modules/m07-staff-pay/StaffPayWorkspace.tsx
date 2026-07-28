@@ -19,6 +19,8 @@ import {
   VariancesSection,
   ExceptionsSection,
   ApprovalSection,
+  ExportSection,
+  ReconciliationSection,
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
@@ -45,6 +47,10 @@ function SectionBody({ section }: { section: M07SectionId }) {
       return <ExceptionsSection />;
     case "approval":
       return <ApprovalSection />;
+    case "export":
+      return <ExportSection />;
+    case "reconciliation":
+      return <ReconciliationSection />;
     default:
       return <PlannedSection section={section} />;
   }
@@ -81,7 +87,7 @@ function WorkspaceInner() {
   return (
     <div
       className="m07-shell space-y-4 overflow-x-hidden"
-      data-m07-shell="batch5-approval"
+      data-m07-shell="batch6-export"
     >
       <style>{`
         .m07-shell :focus-visible {
@@ -100,17 +106,17 @@ function WorkspaceInner() {
           Module 7 · Staff Pay & Payroll Preparation
         </p>
         <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">
-          Staff Pay — Batch 5 management approval
+          Staff Pay — Batch 6 export preparation
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
-          Non-certified preparation readiness, review submission and management approval.
-          Export, reconciliation, lock and payment remain unavailable. Management approval is not
-          payroll certification or payment authority.
+          Non-certified export preparation, package reconciliation and period locking from an
+          approved Batch 5 package. Not payment, bank, STP, superannuation or Xero execution.
+          Management approval remains non-certified and is not payment authority.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         {bootstrap ? (
           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
-            Storage bootstrap · schema v8 · v8Ran={String(bootstrap.v8Ran ?? false)}
+            Storage bootstrap · schema v9 · v9Ran={String(bootstrap.v9Ran ?? false)}
           </p>
         ) : null}
       </header>

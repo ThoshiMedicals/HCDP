@@ -320,3 +320,169 @@ export function syncPeriodApprovalToInbox(
   });
   return { inboxActionId: action?.id, projected: Boolean(action) };
 }
+
+function exportBatchSource(batch: import("../types/domain").PayrollExportBatch): SourceRecordRef {
+  return {
+    sourceModuleId: MODULE_ID,
+    sourceRecordType: "payroll-export-batch",
+    sourceRecordId: batch.identityKey,
+    sourceRecordTitle: `Payroll export preparation r${batch.batchRevision}`,
+    organisationId: batch.organisationId,
+    currentStatus: batch.status,
+    route: "/staffpay",
+    section: "export",
+  };
+}
+
+/** Deterministic M02 projection for export blockers / recon / finalize lifecycle. */
+export function syncExportBatchToInbox(
+  actor: M07Actor,
+  batch: import("../types/domain").PayrollExportBatch,
+  mode: "blocked" | "recon-blocked" | "finalized" | "stale-source"
+): { inboxActionId?: string; projected: boolean } {
+  const source = exportBatchSource(batch);
+  const bridgeKey = `${MODULE_ID}::payroll-export-batch::${batch.identityKey}`;
+  const existing = findInboxActionForSource(MODULE_ID, "payroll-export-batch", batch.identityKey);
+
+  if (mode === "finalized") {
+    const closed = dispatchActionInboxEvent({
+      kind: existing ? "close" : "update",
+      source,
+      actionTitle: "Payroll export preparation completed",
+      actionSummary: "Non-certified export finalized — not payment-ready",
+      category: "Exception",
+      owner: actor.userId,
+      requester: "staff-pay",
+      priority: "Medium",
+      dueAt: new Date().toISOString(),
+      requiredOutcome: "Acknowledged",
+      inboxStatus: "Completed",
+      projectionKey: bridgeKey,
+      sourceRecordVersion: batch.batchRevision,
+      sourceStatus: batch.status,
+    });
+    return { inboxActionId: closed?.id, projected: true };
+  }
+
+  const kind = existing ? "update" : "create";
+  const title =
+    mode === "recon-blocked"
+      ? "Export reconciliation mismatch"
+      : mode === "stale-source"
+        ? "Export source change on locked/exported period"
+        : "Payroll export preparation blocked";
+  const action = dispatchActionInboxEvent({
+    kind,
+    source,
+    actionTitle: title,
+    actionSummary:
+      batch.validationIssues
+        .filter((i) => i.severity === "blocking")
+        .map((i) => i.code)
+        .slice(0, 8)
+        .join(", ") || mode,
+    category: "Exception",
+    owner: actor.userId,
+    requester: "staff-pay",
+    priority: "High",
+    dueAt: new Date(Date.now() + 2 * 86400000).toISOString(),
+    requiredOutcome: "Remediate export blockers",
+    projectionKey: bridgeKey,
+    sourceRecordVersion: batch.batchRevision,
+    sourceStatus: batch.status,
+    inboxStatus: "Open",
+  });
+  publishM07InboxProjection({
+    kind: "export-blocker",
+    title: mode,
+    legalEntityId: batch.legalEntityId,
+    entityId: batch.id,
+    severity: "blocking",
+  });
+  recordM07Audit({
+    actor,
+    action: kind === "create" ? "m02.projection.create" : "m02.projection.update",
+    entityType: "payroll-export-batch",
+    entityId: batch.id,
+    legalEntityId: batch.legalEntityId,
+    meta: { mode, inboxActionId: action?.id, bridgeKey },
+  });
+  return { inboxActionId: action?.id, projected: Boolean(action) };
+}
+
+function unlockSource(req: import("../types/domain").PeriodUnlockRequest): SourceRecordRef {
+  return {
+    sourceModuleId: MODULE_ID,
+    sourceRecordType: "period-unlock-request",
+    sourceRecordId: req.logicalKey,
+    sourceRecordTitle: "Payroll period unlock review",
+    organisationId: req.organisationId,
+    currentStatus: req.status,
+    route: "/staffpay",
+    section: "export",
+  };
+}
+
+export function syncUnlockRequestToInbox(
+  actor: M07Actor,
+  req: import("../types/domain").PeriodUnlockRequest,
+  mode: "requested" | "approved" | "rejected"
+): { inboxActionId?: string; projected: boolean } {
+  const source = unlockSource(req);
+  const bridgeKey = `${MODULE_ID}::period-unlock-request::${req.logicalKey}`;
+  const existing = findInboxActionForSource(MODULE_ID, "period-unlock-request", req.logicalKey);
+
+  if (mode === "approved" || mode === "rejected") {
+    const closed = dispatchActionInboxEvent({
+      kind: existing ? "close" : "update",
+      source,
+      actionTitle: mode === "approved" ? "Period unlock approved" : "Period unlock rejected",
+      actionSummary: req.reviewReason ?? req.reason,
+      category: "Approval",
+      owner: actor.userId,
+      requester: "staff-pay",
+      priority: "Medium",
+      dueAt: new Date().toISOString(),
+      requiredOutcome: "Acknowledged",
+      inboxStatus: "Completed",
+      projectionKey: bridgeKey,
+      sourceRecordVersion: req.version,
+      sourceStatus: req.status,
+    });
+    return { inboxActionId: closed?.id, projected: true };
+  }
+
+  const kind = existing ? "update" : "create";
+  const action = dispatchActionInboxEvent({
+    kind,
+    source,
+    actionTitle: "Period unlock review required",
+    actionSummary: req.reason,
+    category: "Approval",
+    owner: actor.userId,
+    requester: "staff-pay",
+    priority: "High",
+    dueAt: new Date(Date.now() + 2 * 86400000).toISOString(),
+    requiredOutcome: "Approve or reject unlock",
+    projectionKey: bridgeKey,
+    sourceRecordVersion: req.version,
+    sourceStatus: req.status,
+    inboxStatus: "Open",
+  });
+  publishM07InboxProjection({
+    kind: "unlock-review",
+    title: "unlock-requested",
+    legalEntityId: req.legalEntityId,
+    entityId: req.id,
+    severity: "warning",
+  });
+  recordM07Audit({
+    actor,
+    action: kind === "create" ? "m02.projection.create" : "m02.projection.update",
+    entityType: "period-unlock-request",
+    entityId: req.id,
+    legalEntityId: req.legalEntityId,
+    meta: { mode, inboxActionId: action?.id, bridgeKey },
+  });
+  return { inboxActionId: action?.id, projected: Boolean(action) };
+}

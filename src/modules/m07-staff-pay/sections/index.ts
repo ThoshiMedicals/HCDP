@@ -6,3 +6,5 @@ export { LeavePrepSection } from "./LeavePrepSection";
 export { VariancesSection } from "./VariancesSection";
 export { ExceptionsSection } from "./ExceptionsSection";
 export { ApprovalSection } from "./ApprovalSection";
+export { ExportSection } from "./ExportSection";
+export { ReconciliationSection } from "./ReconciliationSection";

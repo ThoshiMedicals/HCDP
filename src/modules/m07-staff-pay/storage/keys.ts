@@ -38,6 +38,10 @@ export const M07_STORAGE_KEYS = {
   leavePrepLines: `${M07_STORAGE_PREFIX}leavePrepLines`,
   /** Batch 4 — manual deduction source inputs (distinct from calc outputs). */
   deductionPrepInputs: `${M07_STORAGE_PREFIX}deductionPrepInputs`,
+  /** Batch 6 — controlled unlock requests (explicit lock counterpart). */
+  unlockRequests: `${M07_STORAGE_PREFIX}unlockRequests`,
+  /** Batch 6 — period lock records. */
+  periodLocks: `${M07_STORAGE_PREFIX}periodLocks`,
 } as const;
 
 /** v1 migration flag version (frozen for workforce-migrations.test). */
@@ -58,4 +62,6 @@ export const M07_MIGRATION_V6_ID = "m07-staffpay-storage-v6" as const;
 export const M07_MIGRATION_V7_ID = "m07-staffpay-storage-v7" as const;
 /** Batch 5 — typed approvals (existing key; additive ensure). */
 export const M07_MIGRATION_V8_ID = "m07-staffpay-storage-v8" as const;
-export const M07_SCHEMA_VERSION = 8 as const;
+/** Batch 6 — typed exports, reconciliations, locks, unlock requests. */
+export const M07_MIGRATION_V9_ID = "m07-staffpay-storage-v9" as const;
+export const M07_SCHEMA_VERSION = 9 as const;

@@ -10,9 +10,13 @@ describe("M07 shell smoke (Batch 1)", () => {
       (k) => M07_SECTION_META[k].batch1 === "planned"
     );
     assert.ok(!planned.includes("approval"));
+    assert.ok(!planned.includes("export"));
+    assert.ok(!planned.includes("reconciliation"));
     assert.equal(M07_SECTION_META.approval.batch1, "available");
-    assert.ok(planned.includes("export"));
-    assert.ok(planned.includes("reconciliation"));
+    assert.equal(M07_SECTION_META.export.batch1, "available");
+    assert.equal(M07_SECTION_META.reconciliation.batch1, "available");
+    assert.ok(planned.includes("adjustments"));
+    assert.ok(planned.includes("history"));
     assert.equal(M07_SECTION_META.overview.batch1, "available");
     assert.equal(M07_SECTION_META.settings.batch1, "available");
     assert.equal(M07_SECTION_META.people.batch1, "available");
@@ -35,7 +39,7 @@ describe("M07 shell smoke (Batch 1)", () => {
 
   it("workspace declares responsive shell attribute and a11y affordances", () => {
     const ws = readFileSync(join(process.cwd(), "src/modules/m07-staff-pay/StaffPayWorkspace.tsx"), "utf8");
-    assert.match(ws, /data-m07-shell="batch5-approval"/);
+    assert.match(ws, /data-m07-shell="batch6-export"/);
     assert.match(ws, /max-width: 768px/);
     assert.match(ws, /aria-label="Staff Pay sections"/);
     assert.match(ws, /:focus-visible/);

@@ -12,17 +12,22 @@ import type {
   LeavePrepLine,
   LegalEntityPaySettings,
   M07AuditEvent,
+  PackageReconciliation,
   PayCalculationBatch,
   PayPeriodApproval,
   PayPeriodRecord,
   PayPrepException,
   PayProfile,
+  PayrollExportBatch,
+  PeriodLockRecord,
+  PeriodUnlockRequest,
   PreparationRule,
 } from "../types/domain";
 import { M07_STORAGE_KEYS } from "../storage/keys";
 import { runM07SchemaV6Migration } from "../storage/migrate-v6";
 import { runM07SchemaV7Migration } from "../storage/migrate-v7";
 import { runM07SchemaV8Migration } from "../storage/migrate-v8";
+import { runM07SchemaV9Migration } from "../storage/migrate-v9";
 
 const listCache = new Map<string, unknown[]>();
 
@@ -307,4 +312,168 @@ export function upsertApproval(a: PayPeriodApproval): PayPeriodApproval {
 
 export function approvalLogicalKey(legalEntityId: string, periodId: string): string {
   return `approval::${legalEntityId}::${periodId}`;
+}
+
+function ensureBatch6Collections() {
+  runM07SchemaV9Migration();
+}
+
+export function newExportBatchId(periodId: string, revision: number): string {
+  return `expb_${periodId}_r${revision}`;
+}
+export function newReconciliationId(): string {
+  return uid("precon");
+}
+export function newPeriodLockId(): string {
+  return uid("plock");
+}
+export function newUnlockRequestId(): string {
+  return uid("punl");
+}
+export function newDownloadRecordId(): string {
+  return uid("pdl");
+}
+
+function normalizeExportBatch(b: PayrollExportBatch): PayrollExportBatch {
+  return {
+    ...b,
+    status: b.status ?? "draft",
+    validationIssues: Array.isArray(b.validationIssues) ? b.validationIssues : [],
+    downloadHistory: Array.isArray(b.downloadHistory) ? b.downloadHistory : [],
+    totals: b.totals ?? {
+      lineCount: 0,
+      workerCount: 0,
+      ordinaryHours: 0,
+      overtimeHours: 0,
+      leaveDays: 0,
+      allowanceUnits: 0,
+      deductionUnits: 0,
+    },
+    lineCount: typeof b.lineCount === "number" ? b.lineCount : 0,
+    sourceVerificationOk: Boolean(b.sourceVerificationOk),
+    certified: false,
+    paymentReady: false,
+  };
+}
+
+// Export batches (Batch 6) — historical finalized rows retained; never silent overwrite
+export function listExportBatches(legalEntityId?: string): PayrollExportBatch[] {
+  ensureBatch6Collections();
+  const all = loadList<PayrollExportBatch>(M07_STORAGE_KEYS.exports)
+    .filter((b) => b && typeof b === "object" && typeof (b as PayrollExportBatch).id === "string")
+    .map(normalizeExportBatch);
+  return legalEntityId ? all.filter((b) => b.legalEntityId === legalEntityId) : all;
+}
+
+export function getExportBatch(id: string): PayrollExportBatch | null {
+  return listExportBatches().find((b) => b.id === id) ?? null;
+}
+
+export function listExportBatchesForPeriod(periodId: string): PayrollExportBatch[] {
+  return listExportBatches()
+    .filter((b) => b.periodId === periodId)
+    .sort((a, b) => b.batchRevision - a.batchRevision);
+}
+
+export function getCurrentExportBatchForPeriod(periodId: string): PayrollExportBatch | null {
+  const rows = listExportBatchesForPeriod(periodId).filter(
+    (b) => !["superseded", "cancelled"].includes(b.status)
+  );
+  return rows[0] ?? null;
+}
+
+export function upsertExportBatch(b: PayrollExportBatch): PayrollExportBatch {
+  ensureBatch6Collections();
+  return upsertById(M07_STORAGE_KEYS.exports, normalizeExportBatch(b));
+}
+
+export function exportIdentityKey(input: {
+  legalEntityId: string;
+  periodId: string;
+  approvalId: string;
+  sourceManifestChecksum: string;
+  formatVersion: string;
+  batchRevision: number;
+}): string {
+  return [
+    "export",
+    input.legalEntityId,
+    input.periodId,
+    input.approvalId,
+    input.sourceManifestChecksum,
+    input.formatVersion,
+    `r${input.batchRevision}`,
+  ].join("::");
+}
+
+// Reconciliations (Batch 6)
+export function listReconciliations(legalEntityId?: string): PackageReconciliation[] {
+  ensureBatch6Collections();
+  const all = loadList<PackageReconciliation>(M07_STORAGE_KEYS.reconciliations).filter(
+    (r) => r && typeof r === "object" && typeof (r as PackageReconciliation).id === "string"
+  );
+  return legalEntityId ? all.filter((r) => r.legalEntityId === legalEntityId) : all;
+}
+
+export function getReconciliation(id: string): PackageReconciliation | null {
+  return listReconciliations().find((r) => r.id === id) ?? null;
+}
+
+export function upsertReconciliation(r: PackageReconciliation): PackageReconciliation {
+  ensureBatch6Collections();
+  return upsertById(M07_STORAGE_KEYS.reconciliations, r);
+}
+
+// Period locks (Batch 6)
+export function listPeriodLocks(legalEntityId?: string): PeriodLockRecord[] {
+  ensureBatch6Collections();
+  const all = loadList<PeriodLockRecord>(M07_STORAGE_KEYS.periodLocks).filter(
+    (r) => r && typeof r === "object" && typeof (r as PeriodLockRecord).id === "string"
+  );
+  return legalEntityId ? all.filter((r) => r.legalEntityId === legalEntityId) : all;
+}
+
+export function getPeriodLock(id: string): PeriodLockRecord | null {
+  return listPeriodLocks().find((r) => r.id === id) ?? null;
+}
+
+export function getActivePeriodLockForPeriod(periodId: string): PeriodLockRecord | null {
+  return (
+    listPeriodLocks().find((r) => r.periodId === periodId && r.status === "active") ?? null
+  );
+}
+
+export function upsertPeriodLock(r: PeriodLockRecord): PeriodLockRecord {
+  ensureBatch6Collections();
+  return upsertById(M07_STORAGE_KEYS.periodLocks, r);
+}
+
+// Unlock requests (Batch 6)
+export function listUnlockRequests(legalEntityId?: string): PeriodUnlockRequest[] {
+  ensureBatch6Collections();
+  const all = loadList<PeriodUnlockRequest>(M07_STORAGE_KEYS.unlockRequests).filter(
+    (r) => r && typeof r === "object" && typeof (r as PeriodUnlockRequest).id === "string"
+  );
+  return legalEntityId ? all.filter((r) => r.legalEntityId === legalEntityId) : all;
+}
+
+export function getUnlockRequest(id: string): PeriodUnlockRequest | null {
+  return listUnlockRequests().find((r) => r.id === id) ?? null;
+}
+
+export function getOpenUnlockRequestForPeriod(periodId: string): PeriodUnlockRequest | null {
+  return (
+    listUnlockRequests().find(
+      (r) => r.periodId === periodId && r.status === "requested"
+    ) ?? null
+  );
+}
+
+export function upsertUnlockRequest(r: PeriodUnlockRequest): PeriodUnlockRequest {
+  ensureBatch6Collections();
+  return upsertById(M07_STORAGE_KEYS.unlockRequests, r);
+}
+
+export function unlockRequestLogicalKey(periodId: string, lockId: string): string {
+  return `unlock::${periodId}::${lockId}`;
 }

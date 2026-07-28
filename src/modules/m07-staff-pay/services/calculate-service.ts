@@ -38,6 +38,7 @@ import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-service";
 
 function redactBatch(actor: M07Actor, batch: PayCalculationBatch): PayCalculationBatch {
   if (hasM07Permission(actor, "payroll.rate.view")) return batch;
@@ -118,6 +119,7 @@ export function calculatePersonOrdinaryAndOvertime(
   if (!period) throw new M07ValidationError("not-found", `Period ${input.periodId} not found`);
   assertM07LegalEntityScope(actor, period.legalEntityId);
   assertM07ClinicScope(actor, period.clinicIds);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const legalEntityId = period.legalEntityId;
   const organisationId = legalEntityId;

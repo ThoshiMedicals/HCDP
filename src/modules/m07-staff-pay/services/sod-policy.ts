@@ -141,6 +141,46 @@ export function assertLockActorAllowed(actor: M07Actor): void {
   }
 }
 
+/**
+ * Batch 6 OD: when SoD enabled, management approver must not be the sole final export generator.
+ */
+export function assertExportFinalizeSeparation(input: {
+  actor: M07Actor;
+  legalEntityId: string;
+  approval: PayPeriodApproval;
+}): void {
+  assertM07Permission(input.actor, "payroll.export.create");
+  if (!isSeparationOfDutiesEnabled(input.legalEntityId)) return;
+  if (!input.approval.approvedBy) {
+    throw new M07ValidationError(
+      "material-actor-provenance-missing",
+      "Missing approvedBy provenance — cannot assess export finalization SoD"
+    );
+  }
+  if (input.approval.approvedBy === input.actor.userId) {
+    throw new M07SeparationOfDutiesError(
+      "Management approver cannot be the sole final export generator when separation of duties is enabled"
+    );
+  }
+}
+
+/** Unlock requester cannot approve their own unlock request. */
+export function assertUnlockApprovalSeparation(input: {
+  actor: M07Actor;
+  requestedByUserId: string;
+}): void {
+  assertM07Permission(input.actor, "payroll.period.unlock.approve");
+  if (!input.requestedByUserId) {
+    throw new M07ValidationError(
+      "material-actor-provenance-missing",
+      "Missing unlock requester provenance"
+    );
+  }
+  if (input.requestedByUserId === input.actor.userId) {
+    throw new M07SeparationOfDutiesError("Unlock requester cannot approve their own unlock request");
+  }
+}
+
 /** Export operator cannot self-approve. */
 export function assertExportOperatorCannotApprove(actor: M07Actor): void {
   if (hasM07Permission(actor, "payroll.approve")) return;

@@ -6,6 +6,7 @@ import { runM07SchemaV5Migration } from "./migrate-v5";
 import { runM07SchemaV6Migration } from "./migrate-v6";
 import { runM07SchemaV7Migration } from "./migrate-v7";
 import { runM07SchemaV8Migration } from "./migrate-v8";
+import { runM07SchemaV9Migration } from "./migrate-v9";
 import type { MigrationReport } from "../types/domain";
 import { bootstrapDefaultEntityPaySettings } from "../services/entity-settings-service";
 
@@ -40,6 +41,7 @@ export function ensureM07Bootstrapped(): MigrationReport {
   const v6Ran = runM07SchemaV6Migration();
   const v7Ran = runM07SchemaV7Migration();
   const v8Ran = runM07SchemaV8Migration();
+  const v9Ran = runM07SchemaV9Migration();
   bootstrapDefaultEntityPaySettings([...M07_BOOTSTRAP_ENTITY_IDS]);
   lastReport = {
     v1Ran,
@@ -50,6 +52,7 @@ export function ensureM07Bootstrapped(): MigrationReport {
     v6Ran,
     v7Ran,
     v8Ran,
+    v9Ran,
     at: new Date().toISOString(),
   };
   bootstrapped = true;

@@ -30,8 +30,16 @@ export const M07_SECTION_META: Record<
     batch1: "available",
     batchNote: "Batch 5 management approval (non-certified)",
   },
-  export: { label: "Export", batch1: "planned" },
-  reconciliation: { label: "Reconciliation", batch1: "planned" },
+  export: {
+    label: "Export",
+    batch1: "available",
+    batchNote: "Batch 6 non-certified export preparation (not payment)",
+  },
+  reconciliation: {
+    label: "Reconciliation",
+    batch1: "available",
+    batchNote: "Batch 6 package-level reconciliation (not provider return files)",
+  },
   history: { label: "History / Reports", batch1: "planned" },
   settings: { label: "Settings", batch1: "available" },
 };

@@ -218,6 +218,7 @@ export type MigrationReport = {
   v6Ran?: boolean;
   v7Ran?: boolean;
   v8Ran?: boolean;
+  v9Ran?: boolean;
   at: string;
 };
 
@@ -950,4 +951,258 @@ export type PayPeriodApproval = {
   certified: false;
   paymentReady: false;
   disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+// ---------------------------------------------------------------------------
+// Batch 6 — payroll export preparation, reconciliation, period lock (non-payment)
+// ---------------------------------------------------------------------------
+
+export const M07_CANONICAL_EXPORT_FORMAT_VERSION = "canonical-export-v1" as const;
+
+export type PayrollExportBatchStatus =
+  | "draft"
+  | "validating"
+  | "blocked"
+  | "ready"
+  | "finalized"
+  | "downloadable"
+  | "superseded"
+  | "cancelled";
+
+export type ExportValidationSeverity = "blocking" | "warning";
+
+export type ExportValidationIssue = {
+  code: string;
+  severity: ExportValidationSeverity;
+  message: string;
+  personId?: string;
+  profileId?: string;
+  sourceLineId?: string;
+  field?: string;
+  mapping?: string;
+  legalEntityId: string;
+  periodId: string;
+  batchId?: string;
+  remediation?: string;
+};
+
+export type CanonicalExportLineCategory =
+  | "ordinary"
+  | "overtime"
+  | "leave"
+  | "allowance"
+  | "deduction";
+
+/** Provider-neutral canonical export line — not a payroll-provider payload. */
+export type CanonicalExportLine = {
+  lineId: string;
+  externalPayrollEmployeeId: string;
+  personId: string;
+  legalEntityId: string;
+  periodId: string;
+  periodRef: string;
+  clinicId?: string;
+  category: CanonicalExportLineCategory;
+  lineClassification: string;
+  externalCode: string;
+  units: number;
+  unitKind: "hours" | "days" | "quantity";
+  /** Amount only when export profile allows rates/money; otherwise omitted. */
+  amount?: number;
+  rate?: number;
+  sourceLineId: string;
+  sourceBatchId?: string;
+  sourceRef: string;
+  reconRef: string;
+  ruleId?: string;
+  ruleVersion?: number;
+  exceptionIds?: string[];
+};
+
+export type CanonicalExportPackage = {
+  formatVersion: typeof M07_CANONICAL_EXPORT_FORMAT_VERSION;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  periodRef: string;
+  approvalId: string;
+  sourceManifestChecksum: string;
+  exportBatchId: string;
+  batchRevision: number;
+  lines: CanonicalExportLine[];
+  totals: ExportBatchTotals;
+  generatedAt: string;
+  previewOnly: boolean;
+  certified: false;
+  paymentReady: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+export type ExportBatchTotals = {
+  lineCount: number;
+  workerCount: number;
+  ordinaryHours: number;
+  overtimeHours: number;
+  leaveDays: number;
+  allowanceUnits: number;
+  deductionUnits: number;
+  /** Present only when amounts included. */
+  grossAmount?: number;
+};
+
+export type ExportArtifactMeta = {
+  contentType: "text/csv" | "application/json";
+  filename: string;
+  checksum: string;
+  byteLength: number;
+  formatVersion: string;
+  createdAt: string;
+};
+
+export type ExportDownloadRecord = {
+  id: string;
+  downloadedAt: string;
+  downloadedBy: string;
+  artifactChecksum: string;
+  correlationKey: string;
+};
+
+export type PayrollExportBatch = {
+  id: string;
+  /** Deterministic identity key (logical). */
+  identityKey: string;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  approvalId: string;
+  sourceManifestChecksum: string;
+  formatVersion: typeof M07_CANONICAL_EXPORT_FORMAT_VERSION;
+  exportProfileId: string;
+  exportProfileVersion: number;
+  batchRevision: number;
+  status: PayrollExportBatchStatus;
+  createdAt: string;
+  createdBy: string;
+  preparedAt?: string;
+  preparedBy?: string;
+  finalizedAt?: string;
+  finalizedBy?: string;
+  cancelledAt?: string;
+  cancelledBy?: string;
+  cancelReason?: string;
+  supersededAt?: string;
+  supersedesBatchId?: string | null;
+  supersededByBatchId?: string | null;
+  sourceVerificationOk: boolean;
+  sourceVerificationMessage?: string;
+  validationIssues: ExportValidationIssue[];
+  reconciliationId?: string | null;
+  reconciliationStatus?: ReconciliationStatus | null;
+  totals: ExportBatchTotals;
+  lineCount: number;
+  canonicalPreview?: CanonicalExportPackage | null;
+  /** Immutable finalized canonical snapshot (JSON). */
+  finalizedCanonical?: CanonicalExportPackage | null;
+  artifact?: ExportArtifactMeta | null;
+  /** Stored CSV body for secure download (demo local storage). */
+  artifactBody?: string | null;
+  downloadHistory: ExportDownloadRecord[];
+  lockId?: string | null;
+  certified: false;
+  paymentReady: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+export type ReconciliationMismatchCode =
+  | "population-mismatch"
+  | "line-count-mismatch"
+  | "source-line-coverage"
+  | "ordinary-total-mismatch"
+  | "overtime-total-mismatch"
+  | "leave-total-mismatch"
+  | "allowance-total-mismatch"
+  | "deduction-total-mismatch"
+  | "gross-total-mismatch"
+  | "legal-entity-mismatch"
+  | "period-mismatch"
+  | "manifest-checksum-mismatch"
+  | "zero-value-policy"
+  | "negative-value-policy"
+  | "line-reference-mismatch";
+
+export type ReconciliationStatus = "matched" | "warning" | "blocked" | "failed";
+
+export type ReconciliationMismatch = {
+  code: ReconciliationMismatchCode;
+  severity: ExportValidationSeverity;
+  message: string;
+  expected?: string | number;
+  actual?: string | number;
+  difference?: number;
+  personId?: string;
+  sourceLineId?: string;
+  exportLineId?: string;
+};
+
+export type PackageReconciliation = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  approvalId: string;
+  exportBatchId: string;
+  sourceManifestChecksum: string;
+  exportChecksum: string;
+  status: ReconciliationStatus;
+  expectedTotals: ExportBatchTotals;
+  actualTotals: ExportBatchTotals;
+  mismatches: ReconciliationMismatch[];
+  reconciledAt: string;
+  reconciledBy: string;
+  certified: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+export type PeriodLockRecord = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  approvalId: string;
+  exportBatchId: string;
+  reconciliationId: string;
+  sourceManifestChecksum: string;
+  exportChecksum: string;
+  lockedAt: string;
+  lockedBy: string;
+  reason: string;
+  status: "active" | "unlocked";
+  unlockedAt?: string;
+  unlockedBy?: string;
+  unlockRequestId?: string;
+};
+
+export type PeriodUnlockRequestStatus =
+  | "requested"
+  | "approved"
+  | "rejected"
+  | "cancelled";
+
+export type PeriodUnlockRequest = {
+  id: string;
+  logicalKey: string;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  lockId: string;
+  status: PeriodUnlockRequestStatus;
+  reason: string;
+  supportingNote?: string;
+  requestedAt: string;
+  requestedBy: string;
+  reviewedAt?: string;
+  reviewedBy?: string;
+  reviewReason?: string;
+  projectionKey: string;
+  version: number;
 };
