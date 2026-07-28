@@ -21,8 +21,8 @@ export const LEGACY_REDIRECTS: LegacyRedirect[] = [
   { from: "doctors", to: "/staff-doctors", section: "doctor-profiles" },
   { from: "hr-docs", to: "/staff-doctors", section: "credentials" },
 
-  { from: "timeclock", to: "/time-attendance", section: "attendance" },
-  { from: "sync-centre", to: "/time-attendance", section: "offline-reconciliation" },
+  { from: "timeclock", to: "/time-attendance", section: "clock" },
+  { from: "sync-centre", to: "/time-attendance", section: "clock" },
 
   { from: "tasks", to: "/tasks-actions", section: "tasks" },
   { from: "checklists", to: "/tasks-actions", section: "checklists" },

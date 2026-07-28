@@ -1,0 +1,901 @@
+{
+  "generatedAt": "2026-07-28T00:57:13.082Z",
+  "module": "m06-time-attendance",
+  "wave": 5,
+  "planningCheckpoint": "309e36b0719229fbc618a05b7fdc046be3952e85",
+  "ownerAccepted": false,
+  "productionApproved": false,
+  "workflowAccounting": {
+    "requiredM06Workflows": 21,
+    "requiredWorkflowsPassed": true,
+    "blockedIntake": "BLOCKED-M07",
+    "blockedM10OutsideTotals": true
+  },
+  "totals": {
+    "pass": 117,
+    "fail": 0,
+    "skipped": 0,
+    "blocked": 1
+  },
+  "informational": {
+    "BLOCKED_M10": "Inherited from Wave 4 — informational only; not counted in Wave 5 pass/fail/skipped/blocked totals"
+  },
+  "unit": {
+    "pass": 57,
+    "fail": 0
+  },
+  "results": [
+    {
+      "id": "unit.suite",
+      "name": "M06 unit/integration suite",
+      "expected": "fail=0",
+      "actual": "pass=57 fail=0",
+      "result": "pass",
+      "unitPass": 57,
+      "unitFail": 0
+    },
+    {
+      "id": "workflow.WF-01",
+      "name": "WF-01 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-02",
+      "name": "WF-02 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-03",
+      "name": "WF-03 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-04",
+      "name": "WF-04 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-05",
+      "name": "WF-05 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-06",
+      "name": "WF-06 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-07",
+      "name": "WF-07 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-08",
+      "name": "WF-08 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-09",
+      "name": "WF-09 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-10",
+      "name": "WF-10 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-11",
+      "name": "WF-11 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-12",
+      "name": "WF-12 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-13",
+      "name": "WF-13 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-14",
+      "name": "WF-14 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-15",
+      "name": "WF-15 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-16",
+      "name": "WF-16 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-17",
+      "name": "WF-17 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-18",
+      "name": "WF-18 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-19A",
+      "name": "WF-19A required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-20",
+      "name": "WF-20 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-21",
+      "name": "WF-21 required M06 workflow",
+      "expected": "pass",
+      "actual": "pass",
+      "result": "pass"
+    },
+    {
+      "id": "workflow.WF-19B",
+      "name": "WF-19B M07 intake",
+      "expected": "BLOCKED-M07",
+      "actual": "BLOCKED-M07",
+      "result": "blocked",
+      "workflowEvidenceCode": "BLOCKED-M07",
+      "note": "M06 publication (WF-19A) is separate and must pass; intake remains blocked."
+    },
+    {
+      "id": "perf.clock",
+      "name": "Clock-in/out submission",
+      "expected": "<=300ms",
+      "actual": "63.92ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "per-op typical",
+      "method": "clockIn+clockOut"
+    },
+    {
+      "id": "perf.eligibility",
+      "name": "Eligibility + roster lookup",
+      "expected": "<=150ms",
+      "actual": "0.04ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "per-op typical",
+      "method": "listPublishedAssignmentsForPerson"
+    },
+    {
+      "id": "perf.exception",
+      "name": "Exception calculation sample",
+      "expected": "<=1000ms",
+      "actual": "310.1ms",
+      "result": "pass",
+      "datasetSize": 100,
+      "metricType": "p95",
+      "method": "raiseMissedClockIn×100"
+    },
+    {
+      "id": "perf.break",
+      "name": "Break calculation sample",
+      "expected": "<=500ms",
+      "actual": "84.99ms",
+      "result": "pass",
+      "datasetSize": 100,
+      "metricType": "p95",
+      "method": "startBreak+endBreak×20"
+    },
+    {
+      "id": "perf.timesheet",
+      "name": "Timesheet generation",
+      "expected": "<=2000ms",
+      "actual": "0.29ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "max",
+      "method": "generateTimesheet"
+    },
+    {
+      "id": "perf.correction",
+      "name": "Correction submission",
+      "expected": "<=400ms",
+      "actual": "5.66ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "per-op",
+      "method": "requestCorrection"
+    },
+    {
+      "id": "perf.approval",
+      "name": "Approval",
+      "expected": "<=500ms",
+      "actual": "6.71ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "per-op",
+      "method": "approveCorrection"
+    },
+    {
+      "id": "perf.bulkPreview",
+      "name": "Bulk preview",
+      "expected": "<=2000ms",
+      "actual": "0.36ms",
+      "result": "pass",
+      "datasetSize": 200,
+      "metricType": "max",
+      "method": "previewBulkApprove"
+    },
+    {
+      "id": "perf.bulkSubmit",
+      "name": "Bulk submission",
+      "expected": "<=5000ms",
+      "actual": "172.94ms",
+      "result": "pass",
+      "datasetSize": 200,
+      "metricType": "max",
+      "method": "submitBulkApprove"
+    },
+    {
+      "id": "perf.offline",
+      "name": "Offline sync batch",
+      "expected": "<=3000ms",
+      "actual": "117.74ms",
+      "result": "pass",
+      "datasetSize": 100,
+      "metricType": "max",
+      "method": "enqueue+syncOfflineQueue"
+    },
+    {
+      "id": "perf.m02",
+      "name": "M02 projection single",
+      "expected": "<=50ms",
+      "actual": "8.35ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "typical",
+      "method": "raiseMissedClockIn→inbox"
+    },
+    {
+      "id": "perf.live",
+      "name": "Live attendance board load",
+      "expected": "<=2500ms",
+      "actual": "0.05ms",
+      "result": "pass",
+      "datasetSize": 50,
+      "metricType": "max/p95",
+      "method": "listSessionsForActor"
+    },
+    {
+      "id": "perf.report",
+      "name": "Reports build",
+      "expected": "<=3000ms",
+      "actual": "0.27ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "max",
+      "method": "buildAttendanceReport"
+    },
+    {
+      "id": "perf.export",
+      "name": "Scoped export",
+      "expected": "<=3000ms",
+      "actual": "0.84ms",
+      "result": "pass",
+      "datasetSize": 1,
+      "metricType": "max",
+      "method": "exportAttendance"
+    },
+    {
+      "id": "section.live",
+      "name": "Section live browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.clock",
+      "name": "Section clock browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.timesheets",
+      "name": "Section timesheets browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.exceptions",
+      "name": "Section exceptions browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.corrections",
+      "name": "Section corrections browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.approvals",
+      "name": "Section approvals browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.breaks",
+      "name": "Section breaks browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.history",
+      "name": "Section history browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.reports",
+      "name": "Section reports browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "section.settings",
+      "name": "Section settings browser proof",
+      "expected": "active nav + unique section + heading + control",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.live",
+      "name": "Responsive 1440px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.clock",
+      "name": "Responsive 1440px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.timesheets",
+      "name": "Responsive 1440px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.exceptions",
+      "name": "Responsive 1440px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.corrections",
+      "name": "Responsive 1440px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.approvals",
+      "name": "Responsive 1440px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.breaks",
+      "name": "Responsive 1440px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.history",
+      "name": "Responsive 1440px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.reports",
+      "name": "Responsive 1440px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1440.settings",
+      "name": "Responsive 1440px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.live",
+      "name": "Responsive 1280px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.clock",
+      "name": "Responsive 1280px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.timesheets",
+      "name": "Responsive 1280px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.exceptions",
+      "name": "Responsive 1280px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.corrections",
+      "name": "Responsive 1280px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.approvals",
+      "name": "Responsive 1280px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.breaks",
+      "name": "Responsive 1280px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.history",
+      "name": "Responsive 1280px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.reports",
+      "name": "Responsive 1280px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1280.settings",
+      "name": "Responsive 1280px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.live",
+      "name": "Responsive 1024px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.clock",
+      "name": "Responsive 1024px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.timesheets",
+      "name": "Responsive 1024px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.exceptions",
+      "name": "Responsive 1024px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.corrections",
+      "name": "Responsive 1024px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.approvals",
+      "name": "Responsive 1024px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.breaks",
+      "name": "Responsive 1024px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.history",
+      "name": "Responsive 1024px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.reports",
+      "name": "Responsive 1024px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.1024.settings",
+      "name": "Responsive 1024px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.live",
+      "name": "Responsive 768px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.clock",
+      "name": "Responsive 768px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.timesheets",
+      "name": "Responsive 768px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.exceptions",
+      "name": "Responsive 768px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.corrections",
+      "name": "Responsive 768px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.approvals",
+      "name": "Responsive 768px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.breaks",
+      "name": "Responsive 768px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.history",
+      "name": "Responsive 768px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.reports",
+      "name": "Responsive 768px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.768.settings",
+      "name": "Responsive 768px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.live",
+      "name": "Responsive 430px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.clock",
+      "name": "Responsive 430px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.timesheets",
+      "name": "Responsive 430px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.exceptions",
+      "name": "Responsive 430px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.corrections",
+      "name": "Responsive 430px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.approvals",
+      "name": "Responsive 430px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.breaks",
+      "name": "Responsive 430px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.history",
+      "name": "Responsive 430px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.reports",
+      "name": "Responsive 430px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.430.settings",
+      "name": "Responsive 430px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.live",
+      "name": "Responsive 390px · live",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.clock",
+      "name": "Responsive 390px · clock",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.timesheets",
+      "name": "Responsive 390px · timesheets",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.exceptions",
+      "name": "Responsive 390px · exceptions",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.corrections",
+      "name": "Responsive 390px · corrections",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.approvals",
+      "name": "Responsive 390px · approvals",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.breaks",
+      "name": "Responsive 390px · breaks",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.history",
+      "name": "Responsive 390px · history",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.reports",
+      "name": "Responsive 390px · reports",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "responsive.390.settings",
+      "name": "Responsive 390px · settings",
+      "expected": "section active, no page overflow",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.light",
+      "name": "Appearance explicit Light via app selector",
+      "expected": "stored=\"light\" and body without theme-dark",
+      "actual": "{\"stored\":\"light\",\"dark\":false}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.dark",
+      "name": "Appearance explicit Dark via app selector",
+      "expected": "stored=\"dark\" and body.theme-dark",
+      "actual": "{\"stored\":\"dark\",\"dark\":true}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.persist-nav",
+      "name": "Dark persists after navigation to Time & Attendance",
+      "expected": "theme-dark remains",
+      "actual": "{\"stored\":\"dark\",\"dark\":true}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.persist-reload",
+      "name": "Dark persists after reload",
+      "expected": "theme-dark remains",
+      "actual": "{\"stored\":\"dark\",\"dark\":true}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.device",
+      "name": "Appearance Device/System via app selector",
+      "expected": "stored=\"system\"",
+      "actual": "{\"stored\":\"system\",\"dark\":false}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.system-light",
+      "name": "OS light while Device/System selected",
+      "expected": "stored=system; not theme-dark",
+      "actual": "{\"stored\":\"system\",\"dark\":false}",
+      "result": "pass"
+    },
+    {
+      "id": "appearance.system-dark",
+      "name": "OS dark while Device/System selected",
+      "expected": "stored=system; theme-dark",
+      "actual": "{\"stored\":\"system\",\"dark\":true}",
+      "result": "pass"
+    },
+    {
+      "id": "a11y.keyboard-focus",
+      "name": "Keyboard measurable focus on M06 nav",
+      "expected": "visible focus",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
+      "id": "ux.restricted",
+      "name": "Restricted UX via forceRestricted flag",
+      "expected": "restricted state",
+      "actual": "1",
+      "result": "pass"
+    },
+    {
+      "id": "ux.offline",
+      "name": "Offline UX via forceOffline flag",
+      "expected": "offline state",
+      "actual": "1",
+      "result": "pass"
+    },
+    {
+      "id": "browser.suite",
+      "name": "Browser evidence completed",
+      "expected": "ok",
+      "actual": "ok",
+      "result": "pass"
+    }
+  ]
+}

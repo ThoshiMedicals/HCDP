@@ -19,8 +19,9 @@ const LEGACY_REDIRECTS = [
   ["staff", "/staff-doctors", { section: "people" }],
   ["doctors", "/staff-doctors", { section: "doctor-profiles" }],
   ["hr-docs", "/staff-doctors", { section: "credentials" }],
-  ["timeclock", "/time-attendance", { section: "attendance" }],
-  ["sync-centre", "/time-attendance", { section: "offline-reconciliation" }],
+  // Wave 5 M06: canonical section ids are clock (legacy attendance/offline-reconciliation aliases retired)
+  ["timeclock", "/time-attendance", { section: "clock" }],
+  ["sync-centre", "/time-attendance", { section: "clock" }],
   ["tasks", "/tasks-actions", { section: "tasks" }],
   ["checklists", "/tasks-actions", { section: "checklists" }],
   ["frontdesk", "/tasks-actions", { section: "opening-closing" }],

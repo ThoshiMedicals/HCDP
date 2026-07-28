@@ -10,6 +10,11 @@ export interface TimesheetRef extends WorkforceRefBase {
   periodStart: string;
   periodEnd: string;
   approved: boolean;
+  /** Additive optional publish metadata (Wave 5) — never required for existing consumers. */
+  sourceVersion?: number;
+  publishedAt?: string;
+  idempotencyKey?: string;
+  attendanceSessionIds?: string[];
 }
 
 export function createTimesheetRef(
@@ -33,5 +38,9 @@ export function createTimesheetRef(
     periodStart: input.periodStart,
     periodEnd: input.periodEnd,
     approved: input.approved,
+    sourceVersion: input.sourceVersion,
+    publishedAt: input.publishedAt,
+    idempotencyKey: input.idempotencyKey,
+    attendanceSessionIds: input.attendanceSessionIds,
   };
 }
