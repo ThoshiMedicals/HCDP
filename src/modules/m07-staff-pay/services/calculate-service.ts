@@ -14,6 +14,7 @@ import {
 import {
   getPeriod,
   listCalculationBatches,
+  listCodes,
   listProfiles,
   newCalculationBatchId,
   newPayPrepLineId,
@@ -33,6 +34,7 @@ import {
 } from "../types/domain";
 import { resolvePersonPreparationInputs } from "./classification-resolve";
 import { openPayPrepException } from "./exception-service";
+import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 
@@ -94,9 +96,10 @@ export type CalculatePersonResult =
   | { status: "blocked"; batch?: PayCalculationBatch; exceptionIds: string[] };
 
 /**
- * Calculate ordinary + OT prep lines for one person in a period.
+ * Calculate ordinary + OT + allowance + deduction prep lines for one person in a period.
  * Penalty inputs → unsupported-penalty-input exception (fail closed).
- * Allowance inputs ignored (Batch 4) — not calculated.
+ * Allowance from eligible snapshot allowanceInputs + active M07 codes (Batch 4).
+ * Deductions from active M07 deductionPrepInputs only (Batch 4).
  * Snapshot leaveInputs never used as leave SoT.
  */
 export function calculatePersonOrdinaryAndOvertime(
@@ -309,14 +312,129 @@ export function calculatePersonOrdinaryAndOvertime(
       snapshotId: snapshot.id,
       contentHash: snapshot.contentHash,
       timesheetRecordId: snapshot.timesheetRecordId,
+      sourceVersion: snapshot.sourceVersion,
       certified: false,
       disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
     });
   }
 
-  // Explicitly do not create allowance lines from snapshot.allowanceInputs (Batch 4)
-  // Explicitly do not treat snapshot.leaveInputs as approved leave (CP 3.4 / M04)
+  // Batch 4 — allowance prep from snapshot allowanceInputs (fail closed; no silent ignore)
+  for (const row of snapshot.allowanceInputs ?? []) {
+    const codeStr = String(row.allowanceCode ?? "").trim();
+    const qty = Number(row.quantity);
+    if (!codeStr || !Number.isFinite(qty) || qty <= 0) {
+      const ex = openPayPrepException(actor, {
+        legalEntityId,
+        organisationId,
+        clinicId: snapshot.clinicId ?? profile.clinicId,
+        periodId: period.id,
+        personId: input.personId,
+        kind: "unsupported-allowance-input",
+        message: "Allowance input is malformed or unsupported",
+        snapshotId: snapshot.id,
+        timesheetRecordId: snapshot.timesheetRecordId,
+      });
+      exceptionIds.push(ex.id);
+      return { status: "blocked", exceptionIds };
+    }
+    const matched = listCodes(legalEntityId).find(
+      (c) =>
+        c.code === codeStr &&
+        c.lineType === "allowance" &&
+        c.status === "active"
+    );
+    if (!matched) {
+      const inactive = listCodes(legalEntityId).find(
+        (c) => c.code === codeStr && c.lineType === "allowance"
+      );
+      const ex = openPayPrepException(actor, {
+        legalEntityId,
+        organisationId,
+        clinicId: snapshot.clinicId ?? profile.clinicId,
+        periodId: period.id,
+        personId: input.personId,
+        kind: inactive ? "inactive-allowance-code" : "unknown-allowance-code",
+        message: inactive
+          ? `Allowance code ${codeStr} is inactive`
+          : `Unknown allowance code ${codeStr}`,
+        snapshotId: snapshot.id,
+        timesheetRecordId: snapshot.timesheetRecordId,
+      });
+      exceptionIds.push(ex.id);
+      return { status: "blocked", exceptionIds };
+    }
+    lines.push({
+      id: newPayPrepLineId(),
+      lineType: "allowance",
+      hours: 0,
+      quantity: qty,
+      code: matched.code,
+      codeId: matched.id,
+      codeVersion: matched.version,
+      ruleId,
+      ruleVersion,
+      snapshotId: snapshot.id,
+      contentHash: snapshot.contentHash,
+      timesheetRecordId: snapshot.timesheetRecordId,
+      sourceVersion: snapshot.sourceVersion,
+      certified: false,
+      disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
+    });
+  }
 
+  // Batch 4 — deduction prep outputs from active manual M07 inputs (quantity/units only)
+  const deductionInputs = listActiveDeductionPrepInputs(actor, legalEntityId, {
+    periodId: period.id,
+    personId: input.personId,
+  });
+  for (const din of deductionInputs) {
+    const code = listCodes(legalEntityId).find((c) => c.id === din.codeId);
+    if (!code || code.lineType !== "deduction") {
+      const ex = openPayPrepException(actor, {
+        legalEntityId,
+        organisationId,
+        clinicId: din.clinicId ?? profile.clinicId,
+        periodId: period.id,
+        personId: input.personId,
+        kind: "unknown-deduction-code",
+        message: `Deduction code missing for input ${din.id}`,
+      });
+      exceptionIds.push(ex.id);
+      return { status: "blocked", exceptionIds };
+    }
+    if (code.status !== "active") {
+      const ex = openPayPrepException(actor, {
+        legalEntityId,
+        organisationId,
+        clinicId: din.clinicId ?? profile.clinicId,
+        periodId: period.id,
+        personId: input.personId,
+        kind: "inactive-deduction-code",
+        message: `Deduction code ${code.code} is inactive`,
+      });
+      exceptionIds.push(ex.id);
+      return { status: "blocked", exceptionIds };
+    }
+    lines.push({
+      id: newPayPrepLineId(),
+      lineType: "deduction",
+      hours: 0,
+      quantity: din.quantity,
+      unitDescription: din.unitDescription,
+      code: code.code,
+      codeId: code.id,
+      codeVersion: din.codeVersion,
+      ruleId,
+      ruleVersion,
+      deductionInputId: din.id,
+      deductionInputVersion: din.version,
+      certified: false,
+      disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
+    });
+  }
+
+  // Explicitly do not treat snapshot.leaveInputs as approved leave (CP 3.4 / M04)
+  // No monetary deduction/allowance formulas invented (OD-2)
   const prior = listCalculationBatches(legalEntityId)
     .filter(
       (b) =>

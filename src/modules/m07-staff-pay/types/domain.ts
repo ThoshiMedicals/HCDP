@@ -207,6 +207,7 @@ export type MigrationReport = {
   v4Ran?: boolean;
   v5Ran?: boolean;
   v6Ran?: boolean;
+  v7Ran?: boolean;
   at: string;
 };
 
@@ -485,9 +486,47 @@ export type PayPrepExceptionKind =
   | "unapproved-leave"
   | "unsupported-leave"
   | "missing-person"
-  | "missing-profile";
+  | "missing-profile"
+  | "unknown-allowance-code"
+  | "inactive-allowance-code"
+  | "unsupported-allowance-input"
+  | "unknown-deduction-code"
+  | "inactive-deduction-code"
+  | "unsupported-deduction-input"
+  | "malformed-deduction-quantity";
 
-export type PayPrepExceptionStatus = "open" | "resolved" | "cancelled";
+/** Boundary / safety kinds — never waivable (Batch 4 OD-5). */
+export const NON_WAIVABLE_EXCEPTION_KINDS: readonly PayPrepExceptionKind[] = [
+  "doctor-pay-excluded",
+  "tenant-boundary-mismatch",
+  "clinic-boundary-mismatch",
+  "legal-entity-boundary-mismatch",
+  "ineligible-intake",
+  "missing-snapshot",
+  "unsupported-penalty-input",
+  "unsupported-input",
+] as const;
+
+/** Explicitly waivable preparation kinds (Batch 4 OD-5). */
+export const WAIVABLE_EXCEPTION_KINDS: readonly PayPrepExceptionKind[] = [
+  "missing-rate",
+  "missing-classification",
+  "missing-classification-rule-map",
+  "leave-mapping-missing",
+  "unapproved-leave",
+  "unsupported-leave",
+  "missing-person",
+  "missing-profile",
+  "unknown-allowance-code",
+  "inactive-allowance-code",
+  "unsupported-allowance-input",
+  "unknown-deduction-code",
+  "inactive-deduction-code",
+  "unsupported-deduction-input",
+  "malformed-deduction-quantity",
+] as const;
+
+export type PayPrepExceptionStatus = "open" | "resolved" | "waived" | "cancelled";
 
 export type PayPrepException = {
   id: string;
@@ -511,27 +550,95 @@ export type PayPrepException = {
   resolvedAt?: string;
   resolvedBy?: string;
   resolutionReason?: string;
+  waivedAt?: string;
+  waivedBy?: string;
+  waiverReason?: string;
   /** M02 projection key — stable for dedupe. */
   projectionKey: string;
 };
 
-export type PayPrepLineType = "ordinary" | "overtime";
+export type PayPrepLineType = "ordinary" | "overtime" | "allowance" | "deduction";
 
-/** Non-certified ordinary/OT preparation line — not payable truth. */
+/** Non-certified preparation line — not payable truth. */
 export type PayPrepLine = {
   id: string;
   lineType: PayPrepLineType;
+  /** Ordinary/OT hours; unused (0) for allowance/deduction quantity lines. */
   hours: number;
+  /** Allowance/deduction quantity or units. */
+  quantity?: number;
+  unitDescription?: string;
   code?: string;
+  codeId?: string;
+  codeVersion?: number;
   localDate?: string;
   notes?: string;
   ruleId: string;
   ruleVersion: number;
-  snapshotId: string;
-  contentHash: string;
-  timesheetRecordId: string;
+  snapshotId?: string;
+  contentHash?: string;
+  timesheetRecordId?: string;
+  /** Source snapshot version when known. */
+  sourceVersion?: number;
+  deductionInputId?: string;
+  deductionInputVersion?: number;
   certified: false;
   disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+/** Manual M07 deduction source input — distinct from calculation outputs (OD-3). */
+export type DeductionPrepInputStatus = "active" | "superseded" | "cancelled";
+
+export type DeductionPrepInput = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  clinicId?: string;
+  personId: string;
+  periodId: string;
+  codeId: string;
+  codeVersion: number;
+  code: string;
+  quantity: number;
+  unitDescription?: string;
+  effectiveDate?: string;
+  reason: string;
+  status: DeductionPrepInputStatus;
+  version: number;
+  createdAt: string;
+  createdBy: string;
+  updatedAt: string;
+  updatedBy: string;
+  supersedesInputId?: string | null;
+  cancelledAt?: string;
+  cancelledBy?: string;
+  cancelReason?: string;
+  certified: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+/** Informational M05 vs M06 variance view — not blocking (OD-4). */
+export type VarianceComparisonStatus =
+  | "compared"
+  | "unavailable"
+  | "incomplete"
+  | "excluded";
+
+export type VariancePersonView = {
+  personId: string;
+  legalEntityId: string;
+  clinicId?: string;
+  periodId: string;
+  status: VarianceComparisonStatus;
+  message?: string;
+  rosterOrdinaryHours: number | null;
+  rosterOvertimeHours: number | null;
+  workedOrdinaryHours: number | null;
+  workedOvertimeHours: number | null;
+  ordinaryDelta: number | null;
+  overtimeDelta: number | null;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+  informationalOnly: true;
 };
 
 export type PayCalculationBatchStatus =

@@ -17,9 +17,22 @@ import {
   upsertException,
 } from "../repository/local-store";
 import type { PayPrepException, PayPrepExceptionKind } from "../types/domain";
+import {
+  NON_WAIVABLE_EXCEPTION_KINDS,
+  WAIVABLE_EXCEPTION_KINDS,
+} from "../types/domain";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncPayPrepExceptionToInbox } from "../adapters/m02-inbox-publish";
+import { assertExceptionWaiverSeparation } from "./sod-policy";
+
+export function isWaivableExceptionKind(kind: PayPrepExceptionKind): boolean {
+  return (WAIVABLE_EXCEPTION_KINDS as readonly string[]).includes(kind);
+}
+
+export function isNonWaivableExceptionKind(kind: PayPrepExceptionKind): boolean {
+  return (NON_WAIVABLE_EXCEPTION_KINDS as readonly string[]).includes(kind);
+}
 
 export function buildExceptionProjectionKey(input: {
   legalEntityId: string;
@@ -39,12 +52,33 @@ export function listOpenExceptions(
   legalEntityId: string,
   filter?: { personId?: string; periodId?: string }
 ): PayPrepException[] {
+  return listPayPrepExceptions(actor, legalEntityId, {
+    ...filter,
+    status: "open",
+  });
+}
+
+export function listPayPrepExceptions(
+  actor: M07Actor,
+  legalEntityId: string,
+  filter?: {
+    personId?: string;
+    periodId?: string;
+    kind?: PayPrepExceptionKind;
+    status?: PayPrepException["status"] | "all";
+    clinicId?: string;
+  }
+): PayPrepException[] {
   assertM07Permission(actor, "payroll.exception.view");
   assertM07LegalEntityScope(actor, legalEntityId);
   return listExceptions(legalEntityId)
-    .filter((e) => e.status === "open")
+    .filter((e) =>
+      filter?.status && filter.status !== "all" ? e.status === filter.status : true
+    )
     .filter((e) => (filter?.personId ? e.personId === filter.personId : true))
     .filter((e) => (filter?.periodId ? e.periodId === filter.periodId : true))
+    .filter((e) => (filter?.kind ? e.kind === filter.kind : true))
+    .filter((e) => (filter?.clinicId ? e.clinicId === filter.clinicId : true))
     .filter((e) => {
       try {
         assertM07ClinicScope(actor, [e.clinicId]);
@@ -185,6 +219,61 @@ export function resolvePayPrepException(
     legalEntityId: updated.legalEntityId,
     clinicId: updated.clinicId,
     reason,
+    before: existing,
+    after: updated,
+  });
+  syncPayPrepExceptionToInbox(actor, updated, "close");
+  return updated;
+}
+
+export function waivePayPrepException(
+  actor: M07Actor,
+  exceptionId: string,
+  reason: string
+): PayPrepException {
+  assertM07Permission(actor, "payroll.exception.waive");
+  if (!reason.trim()) {
+    throw new M07ValidationError("reason-required", "Waiver reason is required");
+  }
+  const existing = getException(exceptionId);
+  if (!existing) throw new M07ValidationError("not-found", `Exception ${exceptionId} not found`);
+  assertM07LegalEntityScope(actor, existing.legalEntityId);
+  assertM07ClinicScope(actor, [existing.clinicId]);
+  if (existing.status !== "open") {
+    throw new M07ValidationError("not-open", `Exception is already ${existing.status}`);
+  }
+  if (isNonWaivableExceptionKind(existing.kind) || !isWaivableExceptionKind(existing.kind)) {
+    throw new M07ValidationError(
+      "non-waivable",
+      `Exception kind ${existing.kind} cannot be waived`
+    );
+  }
+  assertExceptionWaiverSeparation({
+    actor,
+    legalEntityId: existing.legalEntityId,
+    exceptionCreatedByUserId: existing.createdBy,
+  });
+
+  const now = new Date().toISOString();
+  const updated: PayPrepException = {
+    ...existing,
+    status: "waived",
+    version: existing.version + 1,
+    updatedAt: now,
+    updatedBy: actor.userId,
+    waivedAt: now,
+    waivedBy: actor.userId,
+    waiverReason: reason.trim(),
+  };
+  upsertException(updated);
+  recordM07Audit({
+    actor,
+    action: "exception.waived",
+    entityType: "pay-prep-exception",
+    entityId: updated.id,
+    legalEntityId: updated.legalEntityId,
+    clinicId: updated.clinicId,
+    reason: reason.trim(),
     before: existing,
     after: updated,
   });

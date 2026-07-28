@@ -13,18 +13,18 @@ export type M07SectionId =
 
 export const M07_SECTION_META: Record<
   M07SectionId,
-  { label: string; batch1: "available" | "planned"; batch3Note?: string }
+  { label: string; batch1: "available" | "planned"; batchNote?: string }
 > = {
   overview: { label: "Pay Run Overview", batch1: "available" },
   people: { label: "People Review", batch1: "available" },
   leave: {
     label: "Leave & Allowances",
     batch1: "available",
-    batch3Note: "Leave preparation available; Allowances planned for Batch 4",
+    batchNote: "Leave, allowance and deduction preparation available (Batch 4)",
   },
   adjustments: { label: "Adjustments", batch1: "planned" },
-  exceptions: { label: "Exceptions", batch1: "planned" },
-  variances: { label: "Variances", batch1: "planned" },
+  exceptions: { label: "Exceptions", batch1: "available", batchNote: "Batch 4 resolve/waive" },
+  variances: { label: "Variances", batch1: "available", batchNote: "Batch 4 informational" },
   approval: { label: "Approval", batch1: "planned" },
   export: { label: "Export", batch1: "planned" },
   reconciliation: { label: "Reconciliation", batch1: "planned" },

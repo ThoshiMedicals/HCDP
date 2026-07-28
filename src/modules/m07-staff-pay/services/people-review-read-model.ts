@@ -1,6 +1,5 @@
 /**
- * People Review read model — Batch 3 CP 3.3.
- * Assembles M04 identity, mapping status, calc results, leave summary; redacts rates.
+ * People Review read model — Batch 3 + Batch 4 readiness fields.
  */
 
 import {
@@ -15,8 +14,10 @@ import { resolvePersonIdentity } from "../adapters/m04-person-read";
 import { resolvePersonPreparationInputs, isDoctorPayExcluded } from "./classification-resolve";
 import { listPersonCalculationBatches } from "./calculate-service";
 import { listLeavePreparation } from "./leave-prep-service";
+import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
+import { buildVarianceViews } from "./variance-service";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "../types/domain";
-import type { PayCalculationBatch, PayPrepException, LeavePrepLine } from "../types/domain";
+import type { PayCalculationBatch, PayPrepException } from "../types/domain";
 
 export type PeopleReviewRow = {
   personId: string;
@@ -32,6 +33,7 @@ export type PeopleReviewRow = {
   externalPayrollEmployeeId: string | null | "redacted" | undefined;
   doctorExcluded: boolean;
   openExceptions: Array<Pick<PayPrepException, "id" | "kind" | "message" | "status">>;
+  exceptionCounts: { open: number; resolved: number; waived: number };
   latestCalculation: null | {
     batchId: string;
     batchVersion: number;
@@ -39,12 +41,21 @@ export type PeopleReviewRow = {
     ruleVersion: number;
     ordinaryHours: number;
     overtimeHours: number;
+    allowanceCount: number;
+    deductionCount: number;
     disclaimer: string;
   };
   leavePrepSummary: {
     preparedCount: number;
     preparedDays: number;
     blockedHint: boolean;
+  };
+  allowanceReadiness: "none" | "prepared" | "blocked";
+  deductionReadiness: "none" | "inputs" | "prepared" | "blocked";
+  varianceSummary: {
+    status: string;
+    ordinaryDelta: number | null;
+    message?: string;
   };
   readiness: "ready" | "blocked" | "excluded";
   disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
@@ -67,6 +78,12 @@ export function buildPeopleReviewRows(
   if (!period || period.legalEntityId !== input.legalEntityId) return [];
 
   const profiles = listProfiles(input.legalEntityId).filter((p) => p.status === "active");
+  const varianceByPerson = new Map(
+    buildVarianceViews(actor, {
+      legalEntityId: input.legalEntityId,
+      periodId: input.periodId,
+    }).map((v) => [v.personId, v])
+  );
   const rows: PeopleReviewRow[] = [];
 
   for (const profile of profiles) {
@@ -93,8 +110,12 @@ export function buildPeopleReviewRows(
           : "redacted",
         doctorExcluded: true,
         openExceptions: [],
+        exceptionCounts: { open: 0, resolved: 0, waived: 0 },
         latestCalculation: null,
         leavePrepSummary: { preparedCount: 0, preparedDays: 0, blockedHint: false },
+        allowanceReadiness: "none",
+        deductionReadiness: "none",
+        varianceSummary: { status: "excluded", ordinaryDelta: null },
         readiness: "excluded",
         disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
       });
@@ -107,12 +128,12 @@ export function buildPeopleReviewRows(
       personId: profile.personId,
     });
 
-    const openExceptions = listExceptions(input.legalEntityId).filter(
+    const personExceptions = listExceptions(input.legalEntityId).filter(
       (e) =>
-        e.status === "open" &&
         e.personId === profile.personId &&
         (e.periodId === input.periodId || !e.periodId)
     );
+    const openExceptions = personExceptions.filter((e) => e.status === "open");
 
     const calcs = listPersonCalculationBatches(
       actor,
@@ -133,6 +154,23 @@ export function buildPeopleReviewRows(
         e.kind === "unsupported-leave"
     );
 
+    const allowanceBlocked = openExceptions.some((e) =>
+      e.kind.startsWith("unknown-allowance") ||
+      e.kind.startsWith("inactive-allowance") ||
+      e.kind === "unsupported-allowance-input"
+    );
+    const deductionBlocked = openExceptions.some((e) =>
+      e.kind.includes("deduction")
+    );
+    const allowanceLines = latest?.lines.filter((l) => l.lineType === "allowance") ?? [];
+    const deductionLines = latest?.lines.filter((l) => l.lineType === "deduction") ?? [];
+    const activeDeductionInputs = listActiveDeductionPrepInputs(actor, input.legalEntityId, {
+      periodId: input.periodId,
+      personId: profile.personId,
+    });
+
+    const variance = varianceByPerson.get(profile.personId);
+
     const rateVisible = hasM07Permission(actor, "payroll.rate.view");
     const extVisible = hasM07Permission(actor, "payroll.externalId.view");
 
@@ -149,9 +187,7 @@ export function buildPeopleReviewRows(
       classificationRef: resolved.classificationRef ?? profile.m04ClassificationRef,
       mappingStatus: resolved.status,
       mappingMessage: resolved.message,
-      ordinaryHourlyRate: rateVisible
-        ? profile.ordinaryHourlyRate ?? null
-        : "redacted",
+      ordinaryHourlyRate: rateVisible ? resolved.ordinaryHourlyRate ?? null : "redacted",
       externalPayrollEmployeeId: extVisible
         ? profile.externalPayrollEmployeeId ?? null
         : "redacted",
@@ -162,6 +198,11 @@ export function buildPeopleReviewRows(
         message: e.message,
         status: e.status,
       })),
+      exceptionCounts: {
+        open: personExceptions.filter((e) => e.status === "open").length,
+        resolved: personExceptions.filter((e) => e.status === "resolved").length,
+        waived: personExceptions.filter((e) => e.status === "waived").length,
+      },
       latestCalculation: latest
         ? {
             batchId: latest.id,
@@ -170,6 +211,8 @@ export function buildPeopleReviewRows(
             ruleVersion: latest.ruleVersion,
             ordinaryHours: sumHours(latest, "ordinary"),
             overtimeHours: sumHours(latest, "overtime"),
+            allowanceCount: allowanceLines.length,
+            deductionCount: deductionLines.length,
             disclaimer: latest.disclaimer,
           }
         : null,
@@ -178,6 +221,23 @@ export function buildPeopleReviewRows(
         preparedDays: leaveLines.reduce((a, l) => a + l.leaveDays, 0),
         blockedHint: leaveBlocked,
       },
+      allowanceReadiness: allowanceBlocked
+        ? "blocked"
+        : allowanceLines.length
+          ? "prepared"
+          : "none",
+      deductionReadiness: deductionBlocked
+        ? "blocked"
+        : deductionLines.length
+          ? "prepared"
+          : activeDeductionInputs.length
+            ? "inputs"
+            : "none",
+      varianceSummary: {
+        status: variance?.status ?? "unavailable",
+        ordinaryDelta: variance?.ordinaryDelta ?? null,
+        message: variance?.message,
+      },
       readiness,
       disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
     });
@@ -185,5 +245,3 @@ export function buildPeopleReviewRows(
 
   return rows;
 }
-
-export type { LeavePrepLine };

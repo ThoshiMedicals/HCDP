@@ -5,4 +5,5 @@ export * from "./migrate-v3";
 export * from "./migrate-v4";
 export * from "./migrate-v5";
 export * from "./migrate-v6";
+export * from "./migrate-v7";
 export * from "./bootstrap";

@@ -14,4 +14,6 @@ export * from "./classification-resolve";
 export * from "./exception-service";
 export * from "./calculate-service";
 export * from "./leave-prep-service";
+export * from "./deduction-prep-input-service";
+export * from "./variance-service";
 export * from "./people-review-read-model";

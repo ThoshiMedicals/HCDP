@@ -59,3 +59,21 @@ export function assertExportOperatorCannotApprove(actor: M07Actor): void {
     throw new M07SeparationOfDutiesError("Export operator cannot self-approve");
   }
 }
+
+/**
+ * Waiver SoD (Batch 4 OD-5): actor who created the exception cannot waive it
+ * when SoD is enabled.
+ */
+export function assertExceptionWaiverSeparation(input: {
+  actor: M07Actor;
+  legalEntityId: string;
+  exceptionCreatedByUserId: string;
+}): void {
+  assertM07Permission(input.actor, "payroll.exception.waive");
+  if (!isSeparationOfDutiesEnabled(input.legalEntityId)) return;
+  if (input.exceptionCreatedByUserId === input.actor.userId) {
+    throw new M07SeparationOfDutiesError(
+      "Actor who created the exception cannot waive it under separation of duties"
+    );
+  }
+}

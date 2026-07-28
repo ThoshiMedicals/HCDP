@@ -16,6 +16,8 @@ import {
   SettingsSection,
   PeopleReviewSection,
   LeavePrepSection,
+  VariancesSection,
+  ExceptionsSection,
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
@@ -23,7 +25,7 @@ const NAV = (Object.keys(M07_SECTION_META) as M07SectionId[]).map((id) => ({
   id,
   label: M07_SECTION_META[id].label,
   batch1: M07_SECTION_META[id].batch1,
-  batch3Note: M07_SECTION_META[id].batch3Note,
+  batchNote: M07_SECTION_META[id].batchNote,
 }));
 
 function SectionBody({ section }: { section: M07SectionId }) {
@@ -36,6 +38,10 @@ function SectionBody({ section }: { section: M07SectionId }) {
       return <PeopleReviewSection />;
     case "leave":
       return <LeavePrepSection />;
+    case "variances":
+      return <VariancesSection />;
+    case "exceptions":
+      return <ExceptionsSection />;
     default:
       return <PlannedSection section={section} />;
   }
@@ -72,7 +78,7 @@ function WorkspaceInner() {
   return (
     <div
       className="m07-shell space-y-4 overflow-x-hidden"
-      data-m07-shell="batch3-prep"
+      data-m07-shell="batch4-prep"
     >
       <style>{`
         .m07-shell :focus-visible {
@@ -91,16 +97,16 @@ function WorkspaceInner() {
           Module 7 · Staff Pay & Payroll Preparation
         </p>
         <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">
-          Staff Pay — Batch 3 preparation
+          Staff Pay — Batch 4 preparation
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
-          Non-certified ordinary/OT calculation, People Review and M04 leave preparation. Export,
-          reconciliation, lock, final approval and allowance calculations remain unavailable.
+          Non-certified ordinary/OT, allowance and deduction preparation, informational variances
+          and exception waiver. Export, reconciliation, lock and final approval remain unavailable.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         {bootstrap ? (
           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
-            Storage bootstrap · schema v6 · v6Ran={String(bootstrap.v6Ran ?? false)}
+            Storage bootstrap · schema v7 · v7Ran={String(bootstrap.v7Ran ?? false)}
           </p>
         ) : null}
       </header>
@@ -126,8 +132,8 @@ function WorkspaceInner() {
                     aria-label={
                       item.batch1 === "planned"
                         ? `${item.label} (planned — not operational)`
-                        : item.batch3Note
-                          ? `${item.label} (${item.batch3Note})`
+                        : item.batchNote
+                          ? `${item.label} (${item.batchNote})`
                           : item.label
                     }
                     onClick={() => go(item.id)}

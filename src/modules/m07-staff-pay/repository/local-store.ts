@@ -6,6 +6,7 @@
 import { readJsonSafe, uid, writeJsonSafe } from "@/platform/storage/storage";
 import type {
   ClassificationRuleMapping,
+  DeductionPrepInput,
   ExportProfile,
   GenericCode,
   LeavePrepLine,
@@ -19,6 +20,7 @@ import type {
 } from "../types/domain";
 import { M07_STORAGE_KEYS } from "../storage/keys";
 import { runM07SchemaV6Migration } from "../storage/migrate-v6";
+import { runM07SchemaV7Migration } from "../storage/migrate-v7";
 
 const listCache = new Map<string, unknown[]>();
 
@@ -165,6 +167,10 @@ function ensureBatch3Collections() {
   runM07SchemaV6Migration();
 }
 
+function ensureBatch4Collections() {
+  runM07SchemaV7Migration();
+}
+
 export function newExceptionId(): string {
   return uid("pex");
 }
@@ -176,6 +182,9 @@ export function newLeavePrepLineId(): string {
 }
 export function newPayPrepLineId(): string {
   return uid("pline");
+}
+export function newDeductionPrepInputId(): string {
+  return uid("pdin");
 }
 
 // Exceptions (Batch 3)
@@ -218,4 +227,18 @@ export function getLeavePrepLine(id: string): LeavePrepLine | null {
 export function upsertLeavePrepLine(l: LeavePrepLine): LeavePrepLine {
   ensureBatch3Collections();
   return upsertById(M07_STORAGE_KEYS.leavePrepLines, l);
+}
+
+// Deduction prep inputs (Batch 4) — source inputs distinct from calc outputs
+export function listDeductionPrepInputs(legalEntityId?: string): DeductionPrepInput[] {
+  ensureBatch4Collections();
+  const all = loadList<DeductionPrepInput>(M07_STORAGE_KEYS.deductionPrepInputs);
+  return legalEntityId ? all.filter((d) => d.legalEntityId === legalEntityId) : all;
+}
+export function getDeductionPrepInput(id: string): DeductionPrepInput | null {
+  return listDeductionPrepInputs().find((d) => d.id === id) ?? null;
+}
+export function upsertDeductionPrepInput(d: DeductionPrepInput): DeductionPrepInput {
+  ensureBatch4Collections();
+  return upsertById(M07_STORAGE_KEYS.deductionPrepInputs, d);
 }

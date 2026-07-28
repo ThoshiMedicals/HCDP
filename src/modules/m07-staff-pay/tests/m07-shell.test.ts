@@ -34,7 +34,7 @@ describe("M07 shell smoke (Batch 1)", () => {
 
   it("workspace declares responsive shell attribute and a11y affordances", () => {
     const ws = readFileSync(join(process.cwd(), "src/modules/m07-staff-pay/StaffPayWorkspace.tsx"), "utf8");
-    assert.match(ws, /data-m07-shell="batch3-prep"/);
+    assert.match(ws, /data-m07-shell="batch4-prep"/);
     assert.match(ws, /max-width: 768px/);
     assert.match(ws, /aria-label="Staff Pay sections"/);
     assert.match(ws, /:focus-visible/);

@@ -239,6 +239,9 @@ export function PeopleReviewSection() {
                         Ord {row.latestCalculation.ordinaryHours} / OT{" "}
                         {row.latestCalculation.overtimeHours}
                         <br />
+                        All {row.latestCalculation.allowanceCount} / Ded{" "}
+                        {row.latestCalculation.deductionCount}
+                        <br />
                         rule@{row.latestCalculation.ruleVersion}
                       </>
                     ) : (
@@ -251,6 +254,18 @@ export function PeopleReviewSection() {
                     {row.leavePrepSummary.blockedHint ? (
                       <div className="text-amber-800">Leave blockers</div>
                     ) : null}
+                    <div>Allow {row.allowanceReadiness}</div>
+                    <div>Ded {row.deductionReadiness}</div>
+                    <div>
+                      Var {row.varianceSummary.status}
+                      {row.varianceSummary.ordinaryDelta != null
+                        ? ` Δ${row.varianceSummary.ordinaryDelta}`
+                        : ""}
+                    </div>
+                    <div className="text-[var(--muted)]">
+                      Ex open {row.exceptionCounts.open} / res {row.exceptionCounts.resolved} / wav{" "}
+                      {row.exceptionCounts.waived}
+                    </div>
                   </td>
                   <td className="px-3 py-2">
                     <div className="flex flex-col gap-1">

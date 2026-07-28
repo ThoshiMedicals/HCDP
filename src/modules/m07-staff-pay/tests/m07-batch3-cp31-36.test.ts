@@ -95,6 +95,7 @@ function publishAndIntakeEligible(input: {
   ordinaryHours?: number;
   overtimeHours?: number;
   penaltyHours?: number;
+  allowanceInputs?: Array<{ allowanceCode: string; quantity: number }>;
 }) {
   const content = {
     timesheetRecordId: input.timesheetRecordId,
@@ -121,7 +122,8 @@ function publishAndIntakeEligible(input: {
         sourceVersion: 1,
       },
     ],
-    allowanceInputs: [{ allowanceCode: "MEAL", quantity: 1 }],
+    // Default empty — Batch 4 maps allowanceInputs; leave Batch 3 success path without allowances
+    allowanceInputs: input.allowanceInputs ?? [],
   };
   const published = publishTimesheetVersion({
     content,
@@ -375,13 +377,13 @@ describe("M07 Batch 3 — classification, calc, people, leave, M02, architecture
     it("marks people and leave sections available; allowances remain planned messaging", () => {
       assert.equal(M07_SECTION_META.people.batch1, "available");
       assert.equal(M07_SECTION_META.leave.batch1, "available");
-      assert.match(M07_SECTION_META.leave.batch3Note ?? "", /Batch 4/);
+      assert.match(M07_SECTION_META.leave.batchNote ?? "", /Batch 4/);
       const leaveUi = readFileSync(
         join(M07_ROOT, "sections/LeavePrepSection.tsx"),
         "utf8"
       );
-      assert.match(leaveUi, /Planned for Batch 4/);
-      assert.match(leaveUi, /data-m07-allowances="planned-batch4"/);
+      assert.match(leaveUi, /Allowances — preparation available/);
+      assert.match(leaveUi, /data-m07-allowances="available-batch4"/);
     });
   });
 
@@ -544,9 +546,9 @@ describe("M07 Batch 3 — classification, calc, people, leave, M02, architecture
       }
     });
 
-    it("workspace uses batch3 shell attribute", () => {
+    it("workspace uses batch4 shell attribute", () => {
       const ws = readFileSync(join(M07_ROOT, "StaffPayWorkspace.tsx"), "utf8");
-      assert.match(ws, /data-m07-shell="batch3-prep"/);
+      assert.match(ws, /data-m07-shell="batch4-prep"/);
       assert.match(ws, /PeopleReviewSection/);
       assert.match(ws, /LeavePrepSection/);
     });

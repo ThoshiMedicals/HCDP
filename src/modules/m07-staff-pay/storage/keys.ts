@@ -36,6 +36,8 @@ export const M07_STORAGE_KEYS = {
   publishedTimesheetLifecycleEventApplications: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleEventApplications`,
   /** Batch 3 — pay-prep exceptions, calculation batches, leave prep lines. */
   leavePrepLines: `${M07_STORAGE_PREFIX}leavePrepLines`,
+  /** Batch 4 — manual deduction source inputs (distinct from calc outputs). */
+  deductionPrepInputs: `${M07_STORAGE_PREFIX}deductionPrepInputs`,
 } as const;
 
 /** v1 migration flag version (frozen for workforce-migrations.test). */
@@ -52,4 +54,6 @@ export const M07_MIGRATION_V4_ID = "m07-staffpay-storage-v4" as const;
 export const M07_MIGRATION_V5_ID = "m07-staffpay-storage-v5" as const;
 /** Batch 3 — leavePrepLines (+ ensure exceptions/calculations ready). */
 export const M07_MIGRATION_V6_ID = "m07-staffpay-storage-v6" as const;
-export const M07_SCHEMA_VERSION = 6 as const;
+/** Batch 4 — deductionPrepInputs. */
+export const M07_MIGRATION_V7_ID = "m07-staffpay-storage-v7" as const;
+export const M07_SCHEMA_VERSION = 7 as const;
