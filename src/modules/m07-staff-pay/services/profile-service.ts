@@ -207,6 +207,9 @@ export function linkExternalPayrollEmployeeId(
   if (!externalPayrollEmployeeId.trim()) {
     throw new M07ValidationError("validation", "externalPayrollEmployeeId required");
   }
+  if (!reason.trim()) {
+    throw new M07ValidationError("reason-required", "Reason is required for external payroll employee id changes");
+  }
   assertNoProhibitedFields({ externalPayrollEmployeeId, reason });
   const existing = getProfile(profileId);
   if (!existing) throw new M07ValidationError("not-found", `Profile ${profileId} not found`);
@@ -231,10 +234,11 @@ export function linkExternalPayrollEmployeeId(
   upsertProfile(updated);
   recordM07Audit({
     actor,
-    action: "profile.externalId.link",
+    action: "profile.externalId.relink",
     entityType: "pay-profile",
     entityId: updated.id,
     legalEntityId: updated.legalEntityId,
+    clinicId: updated.clinicId,
     reason,
     before: { externalPayrollEmployeeId: existing.externalPayrollEmployeeId },
     after: { externalPayrollEmployeeId, historyEntry: entry },

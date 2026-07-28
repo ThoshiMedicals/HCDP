@@ -34,6 +34,8 @@ export const M07_STORAGE_KEYS = {
   publishedTimesheetLifecycleDecisions: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleDecisions`,
   publishedTimesheetLifecycleExceptions: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleExceptions`,
   publishedTimesheetLifecycleEventApplications: `${M07_STORAGE_PREFIX}publishedTimesheetLifecycleEventApplications`,
+  /** Batch 3 — pay-prep exceptions, calculation batches, leave prep lines. */
+  leavePrepLines: `${M07_STORAGE_PREFIX}leavePrepLines`,
 } as const;
 
 /** v1 migration flag version (frozen for workforce-migrations.test). */
@@ -48,4 +50,6 @@ export const M07_MIGRATION_V3_ID = "m07-staffpay-storage-v3" as const;
 export const M07_MIGRATION_V4_ID = "m07-staffpay-storage-v4" as const;
 /** Checkpoint 2.6 lifecycle projection collections. */
 export const M07_MIGRATION_V5_ID = "m07-staffpay-storage-v5" as const;
-export const M07_SCHEMA_VERSION = 5 as const;
+/** Batch 3 — leavePrepLines (+ ensure exceptions/calculations ready). */
+export const M07_MIGRATION_V6_ID = "m07-staffpay-storage-v6" as const;
+export const M07_SCHEMA_VERSION = 6 as const;

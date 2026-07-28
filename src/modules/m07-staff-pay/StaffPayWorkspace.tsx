@@ -10,13 +10,20 @@ import {
   useStaffPay,
   type M07SectionId,
 } from "./context";
-import { OverviewSection, PlannedSection, SettingsSection } from "./sections";
+import {
+  OverviewSection,
+  PlannedSection,
+  SettingsSection,
+  PeopleReviewSection,
+  LeavePrepSection,
+} from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
 const NAV = (Object.keys(M07_SECTION_META) as M07SectionId[]).map((id) => ({
   id,
   label: M07_SECTION_META[id].label,
   batch1: M07_SECTION_META[id].batch1,
+  batch3Note: M07_SECTION_META[id].batch3Note,
 }));
 
 function SectionBody({ section }: { section: M07SectionId }) {
@@ -25,6 +32,10 @@ function SectionBody({ section }: { section: M07SectionId }) {
       return <OverviewSection />;
     case "settings":
       return <SettingsSection />;
+    case "people":
+      return <PeopleReviewSection />;
+    case "leave":
+      return <LeavePrepSection />;
     default:
       return <PlannedSection section={section} />;
   }
@@ -61,7 +72,7 @@ function WorkspaceInner() {
   return (
     <div
       className="m07-shell space-y-4 overflow-x-hidden"
-      data-m07-shell="batch1-foundation"
+      data-m07-shell="batch3-prep"
     >
       <style>{`
         .m07-shell :focus-visible {
@@ -79,16 +90,17 @@ function WorkspaceInner() {
         <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
           Module 7 · Staff Pay & Payroll Preparation
         </p>
-        <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">Staff Pay foundation</h1>
+        <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">
+          Staff Pay — Batch 3 preparation
+        </h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
-          Batch 1 implements domain, storage, permissions and configuration services only. Screens
-          labelled Planned are not operational. Legacy HTML is not used as functional evidence.
+          Non-certified ordinary/OT calculation, People Review and M04 leave preparation. Export,
+          reconciliation, lock, final approval and allowance calculations remain unavailable.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         {bootstrap ? (
           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
-            Storage bootstrap · schema ready · v1Ran={String(bootstrap.v1Ran)} · v2Ran=
-            {String(bootstrap.v2Ran)}
+            Storage bootstrap · schema v6 · v6Ran={String(bootstrap.v6Ran ?? false)}
           </p>
         ) : null}
       </header>
@@ -113,8 +125,10 @@ function WorkspaceInner() {
                     aria-current={selected ? "page" : undefined}
                     aria-label={
                       item.batch1 === "planned"
-                        ? `${item.label} (planned — not operational in Batch 1)`
-                        : item.label
+                        ? `${item.label} (planned — not operational)`
+                        : item.batch3Note
+                          ? `${item.label} (${item.batch3Note})`
+                          : item.label
                     }
                     onClick={() => go(item.id)}
                     className={cn(

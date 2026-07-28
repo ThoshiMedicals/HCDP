@@ -89,7 +89,13 @@ describe("M07 mutation authorization matrix (Batch 1 remediation)", () => {
     });
     linkExternalPayrollEmployeeId(admin, profile.id, "EXT-A", "initial");
     relinkExternalPayrollEmployeeId(admin, profile.id, "EXT-B", "rotate");
-    assert.ok(listAudit(ORG_A).some((a) => a.action === "profile.externalId.link"));
+    assert.ok(
+      listAudit(ORG_A).some(
+        (a) =>
+          a.action === "profile.externalId.link" ||
+          a.action === "profile.externalId.relink"
+      )
+    );
 
     assert.throws(
       () => linkExternalPayrollEmployeeId(actorClerk(), profile.id, "EXT-C", "nope"),

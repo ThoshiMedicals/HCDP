@@ -5,6 +5,7 @@
 import { clearM07LocalStoreCacheForTests } from "../repository/local-store";
 import { resetM07BootstrapCacheForTests, ensureM07Bootstrapped } from "../storage";
 import { resetM04PersonReadForTests, injectTestPersonIdentity } from "../adapters/m04-person-read";
+import { resetM04LeaveReadForTests } from "../adapters/m04-leave-read";
 import { resetM02InboxPublishForTests } from "../adapters/m02-inbox-publish";
 import { resetM01SummaryPublishForTests } from "../adapters/m01-summary-publish";
 import type { M07Actor } from "../permissions";
@@ -40,6 +41,7 @@ export function resetM07TestEnv() {
   clearM07LocalStoreCacheForTests();
   resetM07BootstrapCacheForTests();
   resetM04PersonReadForTests();
+  resetM04LeaveReadForTests();
   resetM02InboxPublishForTests();
   resetM01SummaryPublishForTests();
   ensureM07Bootstrapped();
@@ -60,6 +62,16 @@ export function resetM07TestEnv() {
     organisationId: ORG_B,
     clinicId: CLINIC_B,
     classificationRef: "class_en",
+    readOnly: true,
+    source: "m04-adapter",
+  });
+  injectTestPersonIdentity({
+    personId: "person_doc",
+    displayLabel: "Doctor D",
+    personKind: "doctor",
+    organisationId: ORG_A,
+    clinicId: CLINIC_A,
+    classificationRef: "class_gp",
     readOnly: true,
     source: "m04-adapter",
   });

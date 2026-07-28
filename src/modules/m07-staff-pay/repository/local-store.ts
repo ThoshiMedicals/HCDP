@@ -8,13 +8,17 @@ import type {
   ClassificationRuleMapping,
   ExportProfile,
   GenericCode,
+  LeavePrepLine,
   LegalEntityPaySettings,
   M07AuditEvent,
+  PayCalculationBatch,
   PayPeriodRecord,
+  PayPrepException,
   PayProfile,
   PreparationRule,
 } from "../types/domain";
 import { M07_STORAGE_KEYS } from "../storage/keys";
+import { runM07SchemaV6Migration } from "../storage/migrate-v6";
 
 const listCache = new Map<string, unknown[]>();
 
@@ -155,4 +159,63 @@ export function appendAudit(event: M07AuditEvent): M07AuditEvent {
   list.push(event);
   saveList(M07_STORAGE_KEYS.audit, list);
   return event;
+}
+
+function ensureBatch3Collections() {
+  runM07SchemaV6Migration();
+}
+
+export function newExceptionId(): string {
+  return uid("pex");
+}
+export function newCalculationBatchId(): string {
+  return uid("pcalc");
+}
+export function newLeavePrepLineId(): string {
+  return uid("plv");
+}
+export function newPayPrepLineId(): string {
+  return uid("pline");
+}
+
+// Exceptions (Batch 3)
+export function listExceptions(legalEntityId?: string): PayPrepException[] {
+  ensureBatch3Collections();
+  const all = loadList<PayPrepException>(M07_STORAGE_KEYS.exceptions);
+  return legalEntityId ? all.filter((e) => e.legalEntityId === legalEntityId) : all;
+}
+export function getException(id: string): PayPrepException | null {
+  return listExceptions().find((e) => e.id === id) ?? null;
+}
+export function upsertException(e: PayPrepException): PayPrepException {
+  ensureBatch3Collections();
+  return upsertById(M07_STORAGE_KEYS.exceptions, e);
+}
+
+// Calculation batches (Batch 3) — stored under calculations key
+export function listCalculationBatches(legalEntityId?: string): PayCalculationBatch[] {
+  ensureBatch3Collections();
+  const all = loadList<PayCalculationBatch>(M07_STORAGE_KEYS.calculations);
+  return legalEntityId ? all.filter((c) => c.legalEntityId === legalEntityId) : all;
+}
+export function getCalculationBatch(id: string): PayCalculationBatch | null {
+  return listCalculationBatches().find((c) => c.id === id) ?? null;
+}
+export function upsertCalculationBatch(b: PayCalculationBatch): PayCalculationBatch {
+  ensureBatch3Collections();
+  return upsertById(M07_STORAGE_KEYS.calculations, b);
+}
+
+// Leave prep lines (Batch 3)
+export function listLeavePrepLines(legalEntityId?: string): LeavePrepLine[] {
+  ensureBatch3Collections();
+  const all = loadList<LeavePrepLine>(M07_STORAGE_KEYS.leavePrepLines);
+  return legalEntityId ? all.filter((l) => l.legalEntityId === legalEntityId) : all;
+}
+export function getLeavePrepLine(id: string): LeavePrepLine | null {
+  return listLeavePrepLines().find((l) => l.id === id) ?? null;
+}
+export function upsertLeavePrepLine(l: LeavePrepLine): LeavePrepLine {
+  ensureBatch3Collections();
+  return upsertById(M07_STORAGE_KEYS.leavePrepLines, l);
 }

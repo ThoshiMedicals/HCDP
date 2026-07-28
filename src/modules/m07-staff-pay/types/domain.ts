@@ -206,6 +206,7 @@ export type MigrationReport = {
   v3Ran?: boolean;
   v4Ran?: boolean;
   v5Ran?: boolean;
+  v6Ran?: boolean;
   at: string;
 };
 
@@ -462,4 +463,153 @@ export type PublishedTimesheetLifecycleEventApplication = {
   outcome: string;
   reason?: string;
   appliedAt: string;
+};
+
+// ---------------------------------------------------------------------------
+// Batch 3 — non-certified preparation calculation, exceptions, leave prep
+// ---------------------------------------------------------------------------
+
+export type PayPrepExceptionKind =
+  | "missing-rate"
+  | "missing-classification"
+  | "missing-classification-rule-map"
+  | "ineligible-intake"
+  | "doctor-pay-excluded"
+  | "tenant-boundary-mismatch"
+  | "clinic-boundary-mismatch"
+  | "legal-entity-boundary-mismatch"
+  | "missing-snapshot"
+  | "unsupported-input"
+  | "unsupported-penalty-input"
+  | "leave-mapping-missing"
+  | "unapproved-leave"
+  | "unsupported-leave"
+  | "missing-person"
+  | "missing-profile";
+
+export type PayPrepExceptionStatus = "open" | "resolved" | "cancelled";
+
+export type PayPrepException = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  clinicId?: string;
+  periodId?: string;
+  personId: string;
+  kind: PayPrepExceptionKind;
+  status: PayPrepExceptionStatus;
+  message: string;
+  snapshotId?: string;
+  timesheetRecordId?: string;
+  m04LeaveRecordId?: string;
+  calculationBatchId?: string;
+  version: number;
+  createdAt: string;
+  createdBy: string;
+  updatedAt: string;
+  updatedBy: string;
+  resolvedAt?: string;
+  resolvedBy?: string;
+  resolutionReason?: string;
+  /** M02 projection key — stable for dedupe. */
+  projectionKey: string;
+};
+
+export type PayPrepLineType = "ordinary" | "overtime";
+
+/** Non-certified ordinary/OT preparation line — not payable truth. */
+export type PayPrepLine = {
+  id: string;
+  lineType: PayPrepLineType;
+  hours: number;
+  code?: string;
+  localDate?: string;
+  notes?: string;
+  ruleId: string;
+  ruleVersion: number;
+  snapshotId: string;
+  contentHash: string;
+  timesheetRecordId: string;
+  certified: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+};
+
+export type PayCalculationBatchStatus =
+  | "completed"
+  | "blocked"
+  | "partial"
+  | "superseded";
+
+export type PayCalculationBatch = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  personId: string;
+  clinicId?: string;
+  profileId: string;
+  batchVersion: number;
+  status: PayCalculationBatchStatus;
+  ruleId: string;
+  ruleVersion: number;
+  snapshotId: string;
+  contentHash: string;
+  lines: PayPrepLine[];
+  exceptionIds: string[];
+  certified: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+  calculatedAt: string;
+  calculatedBy: string;
+  /** Prior batch id this recalculation supersedes (if any). */
+  supersedesBatchId?: string | null;
+};
+
+export type LeavePrepLineStatus = "prepared" | "blocked";
+
+/** Separate non-certified leave preparation line — M04 leave SoT only. */
+export type LeavePrepLine = {
+  id: string;
+  legalEntityId: string;
+  organisationId: string;
+  clinicId?: string;
+  periodId: string;
+  personId: string;
+  m04LeaveRecordId: string;
+  m04LeaveVersion: number;
+  leaveType: string;
+  startDate: string;
+  endDate: string;
+  /** Inclusive calendar days from M04 dates — not award hours. */
+  leaveDays: number;
+  leavePayMapping?: string | null;
+  status: LeavePrepLineStatus;
+  exceptionId?: string;
+  certified: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+  createdAt: string;
+  createdBy: string;
+  version: number;
+};
+
+export type ClassificationResolveStatus =
+  | "resolved"
+  | "missing-classification"
+  | "missing-classification-rule-map"
+  | "missing-rate"
+  | "doctor-pay-excluded"
+  | "missing-person"
+  | "missing-profile"
+  | "legal-entity-boundary-mismatch";
+
+export type ClassificationResolveResult = {
+  status: ClassificationResolveStatus;
+  personId: string;
+  legalEntityId: string;
+  classificationRef?: string | null;
+  mappingId?: string;
+  ruleId?: string;
+  ruleVersion?: number;
+  ordinaryHourlyRate?: number | null;
+  exceptionKind?: PayPrepExceptionKind;
+  message?: string;
 };
