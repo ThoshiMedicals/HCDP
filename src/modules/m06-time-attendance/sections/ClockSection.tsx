@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { SectionFrame } from "../components/SectionFrame";
 import {
@@ -16,10 +16,14 @@ import { findOpenSessionForPerson } from "../repository/local-store";
 import { ConcurrentConflictError } from "../services/errors";
 
 export function ClockSection() {
-  const { actor, clinicId, bump, pushToast } = useAttendance();
+  const { actor, clinicId, bump, pushToast, refreshKey } = useAttendance();
   const [localCivil, setLocalCivil] = useState("2026-07-28T09:00");
   const [errors, setErrors] = useState<string[]>([]);
   const [conflict, setConflict] = useState<{ type: string; id: string } | null>(null);
+  const open = useMemo(
+    () => findOpenSessionForPerson(actor.personId ?? actor.userId),
+    [actor, refreshKey]
+  );
   const offline =
     typeof navigator !== "undefined" && navigator.onLine === false
       ? true
@@ -74,17 +78,18 @@ export function ClockSection() {
             data-testid="m06-clock-in"
             variant="teal"
             small
+            disabled={Boolean(open)}
+            title={open ? "Already clocked in — clock out first" : undefined}
             onClick={() => {
               setErrors([]);
               try {
-                // Prefer published M05 assignment match; unrostered only when policy allows and no match
-                clockIn({
+                const { session } = clockIn({
                   actor,
                   clinicId,
                   localCivil,
                   clientEventId: `ui-in-${Date.now()}`,
                 });
-                pushToast("Clocked in", "default");
+                pushToast(session.rostered ? "Clocked in (rostered)" : "Clocked in (unrostered)", "default");
                 bump();
               } catch (e) {
                 setErrors([e instanceof Error ? e.message : String(e)]);
@@ -97,19 +102,21 @@ export function ClockSection() {
             data-testid="m06-clock-out"
             variant="line"
             small
+            disabled={!open}
+            title={!open ? "No open session" : undefined}
             onClick={() => {
               setErrors([]);
               try {
-                const open = findOpenSessionForPerson(actor.personId ?? actor.userId);
-                if (!open) {
+                const current = findOpenSessionForPerson(actor.personId ?? actor.userId);
+                if (!current) {
                   setErrors(["No open session"]);
                   return;
                 }
                 clockOut({
                   actor,
-                  sessionId: open.id,
+                  sessionId: current.id,
                   localCivil,
-                  expectedVersion: open.version,
+                  expectedVersion: current.version,
                   clientEventId: `ui-out-${Date.now()}`,
                 });
                 pushToast("Clocked out", "default");
@@ -126,6 +133,15 @@ export function ClockSection() {
             Clock out
           </Button>
         </div>
+        {open ? (
+          <p data-testid="m06-clock-open-session" className="text-sm rounded border p-2">
+            Open session {open.id} · rostered={String(open.rostered)} · {open.state} · {open.openedAt.localCivil}
+          </p>
+        ) : (
+          <p data-testid="m06-clock-no-session" className="text-sm text-[#64748b]">
+            No open attendance session for this person.
+          </p>
+        )}
       </div>
     </SectionFrame>
   );

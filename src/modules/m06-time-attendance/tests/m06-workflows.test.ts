@@ -767,59 +767,128 @@ describe("m06 workflows independent evidence", () => {
   });
 
   it("WF-21 bulk approval with partial success", () => {
-    const manager = actorAll("wf21-mgr");
-    const worker = actorWorker("wf21-worker");
-    const foreign = actorWorker("wf21-foreign");
-    foreign.clinicIds = [CLINIC_B];
+    const workerA = actorWorker("wf21-worker-a");
+    workerA.clinicIds = [CLINIC];
+    const workerB = actorWorker("wf21-worker-b");
+    workerB.clinicIds = [CLINIC_B];
 
-    const { session } = clockIn({
-      actor: worker,
+    // A — authorized pending in CLINIC
+    const { session: sessionA } = clockIn({
+      actor: workerA,
       clinicId: CLINIC,
       localCivil: "2026-07-28T09:00",
       unrostered: true,
-      clientEventId: "wf21-in",
+      clientEventId: "wf21-a-in",
     });
     clockOut({
-      actor: worker,
-      sessionId: session.id,
+      actor: workerA,
+      sessionId: sessionA.id,
       localCivil: "2026-07-28T17:00",
-      expectedVersion: session.version,
+      expectedVersion: sessionA.version,
     });
-    let ts = generateTimesheet({
-      actor: worker,
-      personId: worker.personId!,
+    let tsA = generateTimesheet({
+      actor: workerA,
+      personId: workerA.personId!,
       clinicId: CLINIC,
       periodStart: "2026-07-20",
       periodEnd: "2026-07-30",
     });
-    ts = submitTimesheet({ actor: worker, timesheetId: ts.id, expectedVersion: ts.version });
-    const pending = listApprovals(CLINIC).filter((a) => a.state === "pending" && a.targetId === ts.id);
-    assert.ok(pending.length >= 1);
-    const authorizedId = pending[0]!.id;
+    tsA = submitTimesheet({ actor: workerA, timesheetId: tsA.id, expectedVersion: tsA.version });
+    const itemA = listApprovals(CLINIC).find((a) => a.state === "pending" && a.targetId === tsA.id);
+    assert.ok(itemA, "authorized CLINIC approval must exist");
+    const authorizedId = itemA!.id;
+    const versionABefore = itemA!.version;
 
-    // Cross-clinic pending item that manager scoped to CLINIC only would skip — use missing id + authorized
-    const scopedManager: typeof manager = {
-      ...manager,
+    // B — existing pending in CLINIC_B (must exist before submission)
+    const { session: sessionB } = clockIn({
+      actor: workerB,
+      clinicId: CLINIC_B,
+      localCivil: "2026-07-28T09:00",
+      unrostered: true,
+      clientEventId: "wf21-b-in",
+    });
+    clockOut({
+      actor: workerB,
+      sessionId: sessionB.id,
+      localCivil: "2026-07-28T17:00",
+      expectedVersion: sessionB.version,
+    });
+    let tsB = generateTimesheet({
+      actor: workerB,
+      personId: workerB.personId!,
+      clinicId: CLINIC_B,
+      periodStart: "2026-07-20",
+      periodEnd: "2026-07-30",
+    });
+    tsB = submitTimesheet({ actor: workerB, timesheetId: tsB.id, expectedVersion: tsB.version });
+    const itemB = listApprovals(CLINIC_B).find((a) => a.state === "pending" && a.targetId === tsB.id);
+    assert.ok(itemB, "cross-clinic CLINIC_B approval must exist before bulk submit");
+    const crossClinicId = itemB!.id;
+    const versionBBefore = itemB!.version;
+    assert.equal(itemB!.clinicId, CLINIC_B);
+
+    const missingId = "missing-approval-wf21";
+    assert.ok(!getApproval(missingId));
+
+    // Manager scoped ONLY to CLINIC (no * — wildcards bypass clinic scope)
+    const scopedManager = {
+      userId: "wf21-scoped-mgr",
+      personId: "wf21-scoped-mgr",
       clinicIds: [CLINIC],
-      permissions: manager.permissions.filter((p) => p !== "*").concat(["attendance.bulk.approve", "attendance.approve"]),
+      permissions: [
+        "attendance.bulk.approve",
+        "attendance.approve",
+        "attendance.correction.apply",
+        "attendance.timesheet.view",
+      ],
     };
-    // Ensure permissions include bulk without relying on *
-    scopedManager.permissions = [
-      "attendance.bulk.approve",
-      "attendance.approve",
-      "attendance.correction.apply",
-      "attendance.timesheet.view",
-    ];
 
     const result = submitBulkApprove({
       actor: scopedManager,
-      approvalIds: [authorizedId, "missing-id"],
+      approvalIds: [authorizedId, crossClinicId, missingId],
+      rejectRest: true,
     });
-    assert.ok(result.results.some((r) => r.approvalId === authorizedId && r.ok));
-    assert.ok(result.results.some((r) => r.approvalId === "missing-id" && !r.ok));
-    assert.equal(getApproval(authorizedId)?.state, "approved");
+
+    const rowA = result.results.find((r) => r.approvalId === authorizedId);
+    const rowB = result.results.find((r) => r.approvalId === crossClinicId);
+    const rowC = result.results.find((r) => r.approvalId === missingId);
+    assert.ok(rowA?.ok === true, "A must succeed");
+    assert.ok(rowB?.ok === false && rowB.error === "clinic-scope-denied", `B must be scope-denied, got ${rowB?.error}`);
+    assert.ok(rowC?.ok === false && rowC.error === "not-found", `C must be not-found, got ${rowC?.error}`);
+
+    const afterA = getApproval(authorizedId)!;
+    assert.equal(afterA.state, "approved");
+    assert.ok(afterA.version > versionABefore);
+
+    const afterB = getApproval(crossClinicId)!;
+    assert.equal(afterB.state, "pending", "rejectRest must not reject cross-clinic item");
+    assert.equal(afterB.version, versionBBefore, "cross-clinic version must be unchanged");
+    assert.equal(afterB.clinicId, CLINIC_B);
+
+    assert.ok(!getApproval(missingId), "missing id must not create an approval");
+
     assert.ok(listAudit().some((a) => a.action === "bulk.approve.item.ok" && a.targetId === authorizedId));
-    assert.ok(listAudit().some((a) => a.action === "bulk.approve.item.skipped" && a.targetId === "missing-id"));
-    recordWf("WF-21", "bulk approval partial success", "pass", `ok=${authorizedId}; fail=missing-id`);
+    const skipB = listAudit().find((a) => a.action === "bulk.approve.item.skipped" && a.targetId === crossClinicId);
+    assert.ok(skipB);
+    assert.equal(skipB!.detail, "clinic-scope-denied");
+    assert.ok(!/password|ssn|location|biometric|device/i.test(JSON.stringify(skipB)));
+    assert.ok(
+      listAudit().some((a) => a.action === "bulk.approve.item.skipped" && a.targetId === missingId && a.detail === "not-found")
+    );
+    assert.ok(
+      listAudit().some((a) => a.action === "bulk.approve.item.rejectRest.blocked" && a.targetId === crossClinicId),
+      "rejectRest blocked audit required for cross-clinic item"
+    );
+
+    assert.equal(getApproval(authorizedId)?.state, "approved");
+    assert.equal(getApproval(crossClinicId)?.state, "pending");
+    assert.ok(!getApproval(missingId));
+
+    recordWf(
+      "WF-21",
+      "bulk approval partial success",
+      "pass",
+      `ok=${authorizedId}; scope-denied=${crossClinicId}; not-found=${missingId}; rejectRest-blocked`
+    );
   });
 });

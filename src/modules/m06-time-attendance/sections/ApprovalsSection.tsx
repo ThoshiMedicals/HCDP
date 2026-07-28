@@ -59,7 +59,8 @@ export function ApprovalsSection() {
                 variant="teal"
                 data-testid={`m06-approval-approve-${a.id}`}
                 onClick={() => {
-                  approveQueueItem({ actor, approvalId: a.id, expectedVersion: a.version });
+                  const next = approveQueueItem({ actor, approvalId: a.id, expectedVersion: a.version });
+                  pushToast(`Approved ${next.id} → ${next.state}`);
                   bump();
                 }}
               >
@@ -69,6 +70,9 @@ export function ApprovalsSection() {
           ))}
         </ul>
       )}
+      <p data-testid="m06-approval-count" className="text-xs text-[#64748b] mt-2">
+        {rows.length} pending approval(s)
+      </p>
     </SectionFrame>
   );
 }

@@ -37,9 +37,11 @@ export function SettingsSection() {
         variant="teal"
         className="mb-3"
         onClick={() => {
-          publishPolicy({ actor, clinicId, patch: { lateInGraceMinutes: 5 } });
-          pushToast("Policy published");
+          const before = rows[0]?.version ?? 0;
+          const published = publishPolicy({ actor, clinicId, patch: { lateInGraceMinutes: 5 } });
+          pushToast(`Policy published v${published.version}`);
           bump();
+          void before;
         }}
       >
         Publish policy
@@ -49,12 +51,20 @@ export function SettingsSection() {
       ) : (
         <ul data-testid="m06-policy-list" className="grid gap-2">
           {rows.map((p) => (
-            <li key={p.id} className="rounded border p-3 text-sm">
+            <li
+              key={p.id}
+              className="rounded border p-3 text-sm"
+              data-testid={`m06-policy-row-${p.id}`}
+              data-m06-policy-version={String(p.version)}
+            >
               v{p.version} · {p.state} · late grace {p.lateInGraceMinutes}m
             </li>
           ))}
         </ul>
       )}
+      <p data-testid="m06-policy-latest-version" className="text-xs text-[#64748b] mt-2">
+        Latest version: {rows[0]?.version ?? 0}
+      </p>
     </SectionFrame>
   );
 }

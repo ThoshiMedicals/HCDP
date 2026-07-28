@@ -1,4 +1,4 @@
-import { assertM06ClinicScope, assertM06Permission, type M06Actor } from "../permissions";
+import { assertM06ClinicScope, assertM06Permission, M06ClinicScopeError, type M06Actor } from "../permissions";
 import { getApproval, listApprovals } from "../repository/local-store";
 import { writeAudit } from "./audit-helpers";
 import { approveQueueItem, rejectQueueItem } from "./approval-service";
@@ -11,6 +11,15 @@ export type BulkItemResult = {
 };
 
 const NOTIFY_CAP = 25;
+
+function safeIneligibleReason(e: unknown): string {
+  if (e instanceof M06ClinicScopeError) return "clinic-scope-denied";
+  if (e instanceof Error) {
+    if (/outside the actor clinic scope/i.test(e.message)) return "clinic-scope-denied";
+    return e.message.slice(0, 80);
+  }
+  return "ineligible";
+}
 
 export function previewBulkApprove(input: {
   actor: M06Actor;
@@ -30,7 +39,7 @@ export function previewBulkApprove(input: {
       if (item.state !== "pending") ineligible.push({ id, reason: `state:${item.state}` });
       else eligible.push(id);
     } catch (e) {
-      ineligible.push({ id, reason: e instanceof Error ? e.message : "scope" });
+      ineligible.push({ id, reason: safeIneligibleReason(e) });
     }
   }
   return { eligible, ineligible, notifyCap: NOTIFY_CAP };
@@ -69,7 +78,7 @@ export function submitBulkApprove(input: {
         targetType: "approval",
         targetId: id,
         clinicId: item.clinicId,
-        detail: error,
+        detail: error.slice(0, 80),
       });
     }
   }
@@ -87,9 +96,29 @@ export function submitBulkApprove(input: {
       const item = getApproval(bad.id);
       if (item?.state === "pending") {
         try {
-          rejectQueueItem({ actor: input.actor, approvalId: bad.id, expectedVersion: item.version, reason: bad.reason });
+          rejectQueueItem({
+            actor: input.actor,
+            approvalId: bad.id,
+            expectedVersion: item.version,
+            reason: bad.reason,
+          });
+          writeAudit({
+            actorId: input.actor.userId,
+            action: "bulk.approve.item.rejectRest",
+            targetType: "approval",
+            targetId: bad.id,
+            clinicId: item.clinicId,
+            detail: "rejectRest applied",
+          });
         } catch {
-          /* keep partial failure */
+          writeAudit({
+            actorId: input.actor.userId,
+            action: "bulk.approve.item.rejectRest.blocked",
+            targetType: "approval",
+            targetId: bad.id,
+            clinicId: item.clinicId,
+            detail: bad.reason,
+          });
         }
       }
     }

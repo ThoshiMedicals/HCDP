@@ -169,46 +169,295 @@ async function runBrowser() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 
-  try {
+  async function goAttendance() {
     await page.goto(`${BASE}/time-attendance`, { waitUntil: "domcontentloaded", timeout: 60000 });
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(900);
+  }
 
-    for (const s of SECTIONS) {
-      await page.locator(`[data-testid="${s.nav}"]`).click();
-      await page.waitForTimeout(400);
-      const active = await page.locator(`[data-testid="${s.nav}"][data-m06-nav-active="true"]`).count();
-      const sectionEl = await page.locator(`[data-testid="${s.section}"]`).count();
-      const heading = await page.locator(`[data-testid="${s.heading}"]`).count();
-      const liveStill = await page.locator('[data-testid="m06-section-live"]').count();
-      const wrongDefault = s.id !== "live" && liveStill > 0 && sectionEl === 0;
-      let actionOk = false;
-      if (s.kind === "visible") {
-        actionOk = (await page.locator(`[data-testid="${s.action}"]`).count()) >= 0;
-        // list may be empty — empty state still ok if section mounted
-        actionOk = sectionEl > 0;
-      } else if (s.kind === "fill") {
-        const el = page.locator(`[data-testid="${s.action}"]`);
-        if (await el.count()) {
-          await el.fill("test");
-          actionOk = true;
-        }
-      } else {
-        const el = page.locator(`[data-testid="${s.action}"]`);
-        if (await el.count()) {
-          await el.click({ trial: false }).catch(() => {});
-          actionOk = true;
-        } else {
-          actionOk = sectionEl > 0;
-        }
+  async function clearM06State() {
+    await page.evaluate(() => {
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && (k.startsWith("pulse.m06") || k.startsWith("pulse.m05.roster"))) keys.push(k);
       }
-      const ok = active > 0 && sectionEl > 0 && heading > 0 && !wrongDefault && actionOk;
+      for (const k of keys) localStorage.removeItem(k);
+      localStorage.removeItem("pulse.m06.evidence.forceRestricted");
+      localStorage.removeItem("pulse.m06.evidence.forceOffline");
+      localStorage.removeItem("pulse.m06.evidence.forceSystemError");
+    });
+  }
+
+  async function activateSection(id) {
+    const meta = SECTIONS.find((s) => s.id === id);
+    await page.locator(`[data-testid="${meta.nav}"]`).click();
+    await page.waitForTimeout(350);
+    const active = await page.locator(`[data-testid="${meta.nav}"][data-m06-nav-active="true"]`).count();
+    const sectionEl = await page.locator(`[data-testid="${meta.section}"]`).count();
+    const heading = await page.locator(`[data-testid="${meta.heading}"]`).count();
+    if (!(active > 0 && sectionEl > 0 && heading > 0)) {
+      throw new Error(`Section ${id} not active (active=${active} section=${sectionEl} heading=${heading})`);
+    }
+    return meta;
+  }
+
+  async function countSessionsInStore() {
+    return page.evaluate(() => {
+      try {
+        const raw = localStorage.getItem("pulse.m06.attendance.sessions");
+        const rows = raw ? JSON.parse(raw) : [];
+        return Array.isArray(rows) ? rows.length : 0;
+      } catch {
+        return -1;
+      }
+    });
+  }
+
+  try {
+    await goAttendance();
+    await clearM06State();
+    await goAttendance();
+
+    // --- Live: refresh is functional and board/empty is service-backed ---
+    {
+      await activateSection("live");
+      const before = await page.locator('[data-testid="m06-live-refresh"]').count();
+      if (before < 1) throw new Error("live refresh control missing");
+      await page.locator('[data-testid="m06-live-refresh"]').click();
+      await page.waitForTimeout(200);
+      const emptyOrBoard =
+        (await page.locator('[data-testid="m06-live-board"]').count()) +
+        (await page.getByText("No live sessions").count());
+      record("section.live", "Section live functional proof", "refresh + service-backed board/empty", `hits=${emptyOrBoard}`, emptyOrBoard > 0 ? "pass" : "fail");
+    }
+
+    // --- Breaks (no session): disabled with reason, no mutation ---
+    {
+      await activateSection("breaks");
+      const start = page.locator('[data-testid="m06-break-start"]');
+      if ((await start.count()) < 1) throw new Error("break start missing");
+      const disabled = await start.isDisabled();
+      const reason = await page.locator('[data-testid="m06-break-disabled-reason"]').count();
+      const sessionsBefore = await countSessionsInStore();
+      if (!disabled) throw new Error("break start should be disabled without open session");
+      if (reason < 1) throw new Error("disabled reason missing");
+      await start.click({ force: true }).catch(() => {});
+      await page.waitForTimeout(150);
+      const sessionsAfter = await countSessionsInStore();
       record(
-        `section.${s.id}`,
-        `Section ${s.id} browser proof`,
-        "active nav + unique section + heading + control",
-        ok ? "ok" : `active=${active} section=${sectionEl} heading=${heading} action=${actionOk}`,
-        ok ? "pass" : "fail"
+        "section.breaks",
+        "Section breaks functional proof (disabled without session)",
+        "disabled + reason + no mutation",
+        `disabled=${disabled}; reason=${reason}; sessions=${sessionsBefore}->${sessionsAfter}`,
+        disabled && reason > 0 && sessionsBefore === sessionsAfter ? "pass" : "fail"
       );
+    }
+
+    // --- Clock: clock-in creates open session ---
+    {
+      await activateSection("clock");
+      const local = page.locator('[data-testid="m06-clock-local"]');
+      const clockInBtn = page.locator('[data-testid="m06-clock-in"]');
+      if ((await local.count()) < 1 || (await clockInBtn.count()) < 1) throw new Error("clock controls missing");
+      await local.fill("2026-07-28T09:00");
+      const sessionsBefore = await countSessionsInStore();
+      await clockInBtn.click();
+      await page.waitForTimeout(400);
+      const openUi = await page.locator('[data-testid="m06-clock-open-session"]').count();
+      const sessionsAfter = await countSessionsInStore();
+      record(
+        "section.clock",
+        "Section clock functional proof",
+        "clock-in creates open session",
+        `openUi=${openUi}; sessions=${sessionsBefore}->${sessionsAfter}`,
+        openUi > 0 && sessionsAfter > sessionsBefore ? "pass" : "fail"
+      );
+    }
+
+    // --- Breaks (with session): start break mutates break list ---
+    {
+      await activateSection("breaks");
+      const start = page.locator('[data-testid="m06-break-start"]');
+      if (await start.isDisabled()) throw new Error("break start still disabled after clock-in");
+      await start.click();
+      await page.waitForTimeout(350);
+      const listCount = await page.locator('[data-testid="m06-break-list"] li').count();
+      record(
+        "section.breaks.open",
+        "Section breaks functional proof (start with open session)",
+        "break list gains row",
+        `rows=${listCount}`,
+        listCount >= 1 ? "pass" : "fail"
+      );
+    }
+
+    // --- Timesheets: generate creates draft ---
+    {
+      await activateSection("timesheets");
+      const gen = page.locator('[data-testid="m06-timesheet-generate"]');
+      if ((await gen.count()) < 1) throw new Error("timesheet generate missing");
+      await gen.click();
+      await page.waitForTimeout(350);
+      const list = await page.locator('[data-testid="m06-timesheet-list"] li').count();
+      record("section.timesheets", "Section timesheets functional proof", "generate creates draft row", `rows=${list}`, list >= 1 ? "pass" : "fail");
+    }
+
+    // --- Exceptions: unrostered clock should have produced exception(s) ---
+    {
+      await activateSection("exceptions");
+      const listOrEmpty =
+        (await page.locator('[data-testid="m06-exception-list"]').count()) +
+        (await page.getByText("No exceptions").count());
+      // Prefer list with rows after unrostered clock-in
+      const rows = await page.locator('[data-testid="m06-exception-list"] li').count();
+      record(
+        "section.exceptions",
+        "Section exceptions functional proof",
+        "service-backed exception list after clock-in",
+        `rows=${rows}; surface=${listOrEmpty}`,
+        rows >= 1 ? "pass" : "fail"
+      );
+    }
+
+    // --- Clock out then Corrections: request creates requested record ---
+    {
+      await activateSection("clock");
+      const outBtn = page.locator('[data-testid="m06-clock-out"]');
+      if (!(await outBtn.isDisabled())) {
+        await page.locator('[data-testid="m06-clock-local"]').fill("2026-07-28T17:00");
+        await outBtn.click();
+        await page.waitForTimeout(350);
+      }
+      await activateSection("corrections");
+      const before = Number(await page.locator('[data-testid="m06-correction-count"]').innerText().catch(() => "0"));
+      const beforeN = Number(String(before).match(/\d+/)?.[0] ?? 0);
+      await page.locator('[data-testid="m06-correction-request"]').click();
+      await page.waitForTimeout(400);
+      const afterText = await page.locator('[data-testid="m06-correction-count"]').innerText();
+      const afterN = Number(String(afterText).match(/\d+/)?.[0] ?? 0);
+      const requested = await page.locator('[data-m06-correction-state="requested"]').count();
+      record(
+        "section.corrections",
+        "Section corrections functional proof",
+        "request creates requested correction",
+        `count ${beforeN}->${afterN}; requested=${requested}`,
+        afterN > beforeN && requested >= 1 ? "pass" : "fail"
+      );
+    }
+
+    // --- Approvals: approve changes pending count ---
+    {
+      await activateSection("approvals");
+      const pendingBefore = Number(
+        String(await page.locator('[data-testid="m06-approval-count"]').innerText()).match(/\d+/)?.[0] ?? 0
+      );
+      const approveBtn = page.locator('[data-testid^="m06-approval-approve-"]').first();
+      if ((await approveBtn.count()) < 1) {
+        // Submit a timesheet first to create pending approval
+        await activateSection("timesheets");
+        const submit = page.locator('[data-testid^="m06-timesheet-submit-"]').first();
+        if ((await submit.count()) > 0) {
+          await submit.click();
+          await page.waitForTimeout(350);
+        }
+        await activateSection("approvals");
+      }
+      const approveBtn2 = page.locator('[data-testid^="m06-approval-approve-"]').first();
+      if ((await approveBtn2.count()) < 1) throw new Error("no pending approval control after timesheet submit");
+      await approveBtn2.click();
+      await page.waitForTimeout(400);
+      const pendingAfter = Number(
+        String(await page.locator('[data-testid="m06-approval-count"]').innerText()).match(/\d+/)?.[0] ?? 0
+      );
+      record(
+        "section.approvals",
+        "Section approvals functional proof",
+        "approve reduces pending queue",
+        `pending ${pendingBefore}->${pendingAfter}`,
+        pendingAfter < pendingBefore || pendingAfter >= 0 ? (pendingAfter <= pendingBefore ? "pass" : "fail") : "fail"
+      );
+      // Stricter: must have decreased or been 1->0
+      if (!(pendingAfter < pendingBefore)) {
+        // overwrite last record as fail
+        results[results.length - 1].result = "fail";
+        results[results.length - 1].actual = `pending did not decrease (${pendingBefore}->${pendingAfter})`;
+      }
+    }
+
+    // --- History: filter changes visible rows ---
+    {
+      await activateSection("history");
+      const filter = page.locator('[data-testid="m06-history-filter"]');
+      if ((await filter.count()) < 1) throw new Error("history filter missing");
+      const beforeRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      await filter.fill("___no_match_filter___");
+      await page.waitForTimeout(200);
+      const filteredEmpty = await page.locator('[data-testid="m06-ux-filtered-empty"]').count();
+      const afterRows = await page.locator('[data-testid="m06-history-list"] li').count();
+      record(
+        "section.history",
+        "Section history functional proof",
+        "filter changes visible rows / filtered-empty",
+        `rows ${beforeRows}->${afterRows}; filteredEmpty=${filteredEmpty}`,
+        afterRows === 0 || filteredEmpty > 0 ? "pass" : "fail"
+      );
+      await page.locator('[data-testid="m06-history-clear-filter"]').click();
+    }
+
+    // --- Reports: build produces output that changes on reconcile ---
+    {
+      await activateSection("reports");
+      await page.locator('[data-testid="m06-report-build"]').click();
+      await page.waitForTimeout(250);
+      const out1 = await page.locator('[data-testid="m06-report-output"]').innerText();
+      await page.locator('[data-testid="m06-report-reconcile"]').click();
+      await page.waitForTimeout(250);
+      const out2 = await page.locator('[data-testid="m06-report-output"]').innerText();
+      record(
+        "section.reports",
+        "Section reports functional proof",
+        "build + reconcile update service-backed output",
+        `len ${out1.length}->${out2.length}`,
+        out1.length > 10 && out2.length > 10 ? "pass" : "fail"
+      );
+    }
+
+    // --- Settings: publish increases version; restricted cannot mutate ---
+    {
+      await activateSection("settings");
+      const before = Number(
+        String(await page.locator('[data-testid="m06-policy-latest-version"]').innerText()).match(/\d+/)?.[0] ?? 0
+      );
+      await page.locator('[data-testid="m06-policy-publish"]').click();
+      await page.waitForTimeout(350);
+      const after = Number(
+        String(await page.locator('[data-testid="m06-policy-latest-version"]').innerText()).match(/\d+/)?.[0] ?? 0
+      );
+      const publishPass = after > before;
+      record(
+        "section.settings",
+        "Section settings functional proof",
+        "authorized policy publish increases version",
+        `version ${before}->${after}`,
+        publishPass ? "pass" : "fail"
+      );
+
+      await page.evaluate(() => localStorage.setItem("pulse.m06.evidence.forceRestricted", "1"));
+      await page.reload({ waitUntil: "domcontentloaded" });
+      await page.waitForTimeout(700);
+      await activateSection("settings");
+      const restricted = await page.locator('[data-testid="m06-ux-restricted"]').count();
+      const publishGone = (await page.locator('[data-testid="m06-policy-publish"]').count()) === 0;
+      record(
+        "section.settings.restricted",
+        "Settings restricted actor cannot mutate",
+        "restricted state; publish control hidden",
+        `restricted=${restricted}; publishGone=${publishGone}`,
+        restricted > 0 && publishGone ? "pass" : "fail"
+      );
+      await page.evaluate(() => localStorage.removeItem("pulse.m06.evidence.forceRestricted"));
+      await page.reload({ waitUntil: "domcontentloaded" });
+      await page.waitForTimeout(600);
     }
 
     // Responsive matrix
@@ -222,12 +471,13 @@ async function runBrowser() {
           return doc.scrollWidth > doc.clientWidth + 1;
         });
         const sectionEl = await page.locator(`[data-testid="${s.section}"]`).count();
-        const ok = sectionEl > 0 && !overflow;
+        const active = await page.locator(`[data-testid="${s.nav}"][data-m06-nav-active="true"]`).count();
+        const ok = sectionEl > 0 && active > 0 && !overflow;
         record(
           `responsive.${w}.${s.id}`,
           `Responsive ${w}px · ${s.id}`,
           "section active, no page overflow",
-          ok ? "ok" : `overflow=${overflow} section=${sectionEl}`,
+          ok ? "ok" : `overflow=${overflow} section=${sectionEl} active=${active}`,
           ok ? "pass" : "fail"
         );
       }
@@ -331,7 +581,6 @@ async function runBrowser() {
       sysDark.stored === "system" && sysDark.dark ? "pass" : "fail"
     );
 
-    // Restore light for remaining checks
     await selectAgain.selectOption("light");
     await page.emulateMedia({ colorScheme: "light" });
 
@@ -347,7 +596,6 @@ async function runBrowser() {
         const cs = getComputedStyle(el);
         return {
           tid: el?.getAttribute("data-testid"),
-          outline: cs.outline,
           outlineWidth: cs.outlineWidth,
           boxShadow: cs.boxShadow,
         };
@@ -359,7 +607,6 @@ async function runBrowser() {
     }
     record("a11y.keyboard-focus", "Keyboard measurable focus on M06 nav", "visible focus", focused ? "ok" : "not measured", focused ? "pass" : "fail");
 
-    // Real UX states via storage flags
     await page.evaluate(() => localStorage.setItem("pulse.m06.evidence.forceRestricted", "1"));
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(700);

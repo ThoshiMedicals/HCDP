@@ -10,7 +10,7 @@ import { listCorrectionsForActor, requestCorrection } from "../services/correcti
 import { listSessionsForActor } from "../services/session-service";
 
 export function CorrectionsSection() {
-  const { actor, clinicId, bump, refreshKey } = useAttendance();
+  const { actor, clinicId, bump, refreshKey, pushToast } = useAttendance();
   const [errors, setErrors] = useState<string[]>([]);
   const rows = useMemo(() => listCorrectionsForActor(actor, clinicId), [actor, clinicId, refreshKey]);
 
@@ -33,12 +33,15 @@ export function CorrectionsSection() {
         onClick={() => {
           setErrors([]);
           try {
-            const session = listSessionsForActor(actor, clinicId)[0];
+            const session =
+              listSessionsForActor(actor, clinicId).find((s) => s.state === "closed" || s.state === "corrected") ??
+              listSessionsForActor(actor, clinicId)[0];
             if (!session) {
-              setErrors(["No session available to correct"]);
+              setErrors(["No session available to correct — clock in/out first"]);
               return;
             }
-            requestCorrection({ actor, sessionId: session.id, reason: "Forgot to clock out" });
+            const corr = requestCorrection({ actor, sessionId: session.id, reason: "Forgot to clock out" });
+            pushToast(`Correction requested: ${corr.id}`);
             bump();
           } catch (e) {
             setErrors([e instanceof Error ? e.message : String(e)]);
@@ -52,12 +55,20 @@ export function CorrectionsSection() {
       ) : (
         <ul className="grid gap-2" data-testid="m06-correction-list">
           {rows.map((c) => (
-            <li key={c.id} className="rounded border p-3 text-sm">
+            <li
+              key={c.id}
+              className="rounded border p-3 text-sm"
+              data-testid={`m06-correction-row-${c.id}`}
+              data-m06-correction-state={c.state}
+            >
               {c.state}: {c.reason}
             </li>
           ))}
         </ul>
       )}
+      <p data-testid="m06-correction-count" className="text-xs text-[#64748b] mt-2">
+        {rows.length} correction request(s)
+      </p>
     </SectionFrame>
   );
 }
