@@ -53,7 +53,7 @@ export function LiveAttendanceSection() {
       {sessions.length === 0 ? (
         <EmptyState
           title="No live sessions"
-          description="Open clock-ins will appear here."
+          description="Open clinic-scoped clock-ins appear here from the attendance store (not sample data)."
           action={{ label: "Refresh board", onClick: bump }}
         />
       ) : (

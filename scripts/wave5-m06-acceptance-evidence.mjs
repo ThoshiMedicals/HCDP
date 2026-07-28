@@ -57,37 +57,99 @@ function run(cmd, args, opts = {}) {
 
 async function runUnitSuite() {
   const r = await run("npx", ["tsx", "--test", "src/modules/m06-time-attendance/tests/**/*.test.ts"]);
-  const pass = Number((r.stdout.match(/info tests \d+[\s\S]*?info pass (\d+)/) || r.stdout.match(/✔/g) || []).length > 0
-    ? (r.stdout.match(/ℹ pass (\d+)/) || r.stdout.match(/info pass (\d+)/) || [, "0"])[1]
-    : "0");
-  // Node test reporter uses special chars; parse robustly
   const passMatch = r.stdout.match(/pass (\d+)/);
   const failMatch = r.stdout.match(/fail (\d+)/);
   const unitPass = passMatch ? Number(passMatch[1]) : 0;
-  const unitFail = failMatch ? Number(failMatch[1]) : (r.code === 0 ? 0 : 1);
+  const unitFail = failMatch ? Number(failMatch[1]) : r.code === 0 ? 0 : 1;
 
   record("unit.suite", "M06 unit/integration suite", "fail=0", `pass=${unitPass} fail=${unitFail}`, unitFail === 0 && r.code === 0 ? "pass" : "fail", {
     unitPass,
     unitFail,
   });
 
-  // Explicit workflow accounting rows
-  const workflows = [
+  // Unique workflow evidence — never credit from suite-green alone
+  const REQUIRED = [
     ...Array.from({ length: 18 }, (_, i) => `WF-${String(i + 1).padStart(2, "0")}`),
     "WF-19A",
     "WF-20",
     "WF-21",
   ];
-  for (const wf of workflows) {
-    record(`workflow.${wf}`, `${wf} required M06 workflow`, "pass", unitFail === 0 ? "pass" : "fail", unitFail === 0 ? "pass" : "fail");
+  const wfPath = path.join(REPO_ROOT, "docs", "audits", "wave5-m06-workflow-evidence.json");
+  let wfDoc = null;
+  if (fs.existsSync(wfPath)) {
+    try {
+      wfDoc = JSON.parse(fs.readFileSync(wfPath, "utf8"));
+    } catch {
+      wfDoc = null;
+    }
   }
 
-  record("workflow.WF-19B", "WF-19B M07 intake", "BLOCKED-M07", "BLOCKED-M07", "blocked", {
-    workflowEvidenceCode: "BLOCKED-M07",
-    note: "M06 publication (WF-19A) is separate and must pass; intake remains blocked.",
-  });
+  // Detect grouped/generic names in stdout (anti-pattern)
+  const grouped = [...r.stdout.matchAll(/[✔✖]\s+(WF-\d+[A-Z]?(?:\/\d+|\/WF-)[^\n]*)/g)].map((m) => m[1]);
+  if (grouped.length) {
+    record(
+      "workflow.grouping-guard",
+      "Reject grouped workflow test names",
+      "no multi-ID names",
+      grouped.join(" | "),
+      "fail"
+    );
+  } else {
+    record("workflow.grouping-guard", "Reject grouped workflow test names", "no multi-ID names", "ok", "pass");
+  }
 
-  return { unitPass, unitFail, code: r.code };
+  const byId = new Map();
+  for (const row of wfDoc?.required || []) {
+    if (byId.has(row.id)) {
+      record(`workflow.dup.${row.id}`, `Duplicate evidence for ${row.id}`, "unique", "duplicate", "fail");
+    }
+    byId.set(row.id, row);
+  }
+
+  let requiredPassed = 0;
+  for (const id of REQUIRED) {
+    const row = byId.get(id);
+    if (!row) {
+      record(`workflow.${id}`, `${id} required M06 workflow`, "independent pass evidence", "missing", "fail");
+      continue;
+    }
+    if (row.result !== "pass") {
+      record(`workflow.${id}`, `${id} required M06 workflow`, "pass", `${row.result}: ${row.detail || ""}`, "fail");
+      continue;
+    }
+    if (!row.detail || String(row.detail).trim().length < 3) {
+      record(`workflow.${id}`, `${id} required M06 workflow`, "business outcome detail", "empty detail", "fail");
+      continue;
+    }
+    record(`workflow.${id}`, `${id} ${row.name || "required M06 workflow"}`, "pass", row.detail, "pass");
+    requiredPassed += 1;
+  }
+
+  const blocked = wfDoc?.blockedIntake;
+  if (blocked?.result === "blocked" && blocked?.detail?.includes("BLOCKED-M07")) {
+    record("workflow.WF-19B", "WF-19B M07 intake", "BLOCKED-M07", blocked.detail, "blocked", {
+      workflowEvidenceCode: "BLOCKED-M07",
+      note: "M06 publication (WF-19A) is separate and must pass; intake remains blocked.",
+    });
+  } else {
+    record(
+      "workflow.WF-19B",
+      "WF-19B M07 intake",
+      "BLOCKED-M07",
+      blocked ? JSON.stringify(blocked) : "missing blocked evidence",
+      "fail"
+    );
+  }
+
+  record(
+    "workflow.accounting",
+    "21 required workflows independently passed",
+    "21",
+    String(requiredPassed),
+    requiredPassed === 21 ? "pass" : "fail"
+  );
+
+  return { unitPass, unitFail, code: r.code, requiredPassed };
 }
 
 async function runBrowser() {
@@ -374,9 +436,11 @@ async function main() {
     productionApproved: false,
     workflowAccounting: {
       requiredM06Workflows: 21,
-      requiredWorkflowsPassed: unit.unitFail === 0,
+      requiredWorkflowsPassed: unit.requiredPassed === 21,
+      requiredWorkflowsPassedCount: unit.requiredPassed,
       blockedIntake: "BLOCKED-M07",
       blockedM10OutsideTotals: true,
+      evidenceSource: "docs/audits/wave5-m06-workflow-evidence.json",
     },
     totals: { pass, fail, skipped, blocked },
     informational,

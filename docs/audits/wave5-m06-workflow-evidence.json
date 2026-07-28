@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-07-28T01:07:58.742Z",
+  "required": [
+    {
+      "id": "WF-01",
+      "name": "rostered employee clock-in",
+      "result": "pass",
+      "detail": "session=ats_ms3yidnr_3uow50; rostered=true; shift=shf-wf01"
+    },
+    {
+      "id": "WF-02",
+      "name": "unrostered clock-in",
+      "result": "pass",
+      "detail": "session=ats_ms3yido2_o1i42i; exception=aex_ms3yido2_ftuly9"
+    },
+    {
+      "id": "WF-03",
+      "name": "early clock-in",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidob_umt93b"
+    },
+    {
+      "id": "WF-04",
+      "name": "late arrival",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidok_m2m7w8; inbox=act-ms3yidol-0ed6g"
+    },
+    {
+      "id": "WF-05",
+      "name": "missed clock-in",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidon_ga0nor; idempotent"
+    },
+    {
+      "id": "WF-06",
+      "name": "break start",
+      "result": "pass",
+      "detail": "break=brk_ms3yidox_jq0oyg; session=on_break"
+    },
+    {
+      "id": "WF-07",
+      "name": "break end",
+      "result": "pass",
+      "detail": "break=brk_ms3yidp5_jk5vjj; session=open"
+    },
+    {
+      "id": "WF-08",
+      "name": "missed break",
+      "result": "pass",
+      "detail": "break=brk_ms3yidpe_e0prvz"
+    },
+    {
+      "id": "WF-09",
+      "name": "normal clock-out",
+      "result": "pass",
+      "detail": "session=ats_ms3yidpj_j4xf4q; no early-out"
+    },
+    {
+      "id": "WF-10",
+      "name": "early departure",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidpw_gazy4v"
+    },
+    {
+      "id": "WF-11",
+      "name": "missed clock-out",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidq1_26wa57"
+    },
+    {
+      "id": "WF-12",
+      "name": "cross-midnight attendance",
+      "result": "pass",
+      "detail": "in=2026-07-28T22:00; out=2026-07-29T06:00"
+    },
+    {
+      "id": "WF-13",
+      "name": "offline capture and sync",
+      "result": "pass",
+      "detail": "applied=off_ms3yidqh_lhea1c"
+    },
+    {
+      "id": "WF-14",
+      "name": "employee correction request",
+      "result": "pass",
+      "detail": "correction=acr_ms3yidqs_m9aoyy; state=requested"
+    },
+    {
+      "id": "WF-15",
+      "name": "manager correction",
+      "result": "pass",
+      "detail": "correction=acr_ms3yidr2_io4x68"
+    },
+    {
+      "id": "WF-16",
+      "name": "correction approval/rejection/apply",
+      "result": "pass",
+      "detail": "approve+reject+stale covered"
+    },
+    {
+      "id": "WF-17",
+      "name": "reopened timesheet",
+      "result": "pass",
+      "detail": "timesheet=atsheet_ms3yidsy_8fpn99"
+    },
+    {
+      "id": "WF-18",
+      "name": "exception escalation",
+      "result": "pass",
+      "detail": "exception=aex_ms3yidt4_xp35tw"
+    },
+    {
+      "id": "WF-19A",
+      "name": "TimesheetRef publication",
+      "result": "pass",
+      "detail": "idempotency=publish::atsheet_ms3yidtp_kqwi7c::3"
+    },
+    {
+      "id": "WF-20",
+      "name": "roster vs attendance reconcile",
+      "result": "pass",
+      "detail": "missing=asn-wf20"
+    },
+    {
+      "id": "WF-21",
+      "name": "bulk approval partial success",
+      "result": "pass",
+      "detail": "ok=aap_ms3yidu6_afhion; fail=missing-id"
+    }
+  ],
+  "blockedIntake": {
+    "id": "WF-19B",
+    "name": "M07 intake blocked",
+    "result": "blocked",
+    "detail": "BLOCKED-M07"
+  },
+  "requiredPassed": true,
+  "note": "BLOCKED-M10 is outside Wave 5 totals and is not listed here"
+}

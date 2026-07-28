@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T00:57:13.082Z",
+  "generatedAt": "2026-07-28T01:09:02.011Z",
   "module": "m06-time-attendance",
   "wave": 5,
   "planningCheckpoint": "309e36b0719229fbc618a05b7fdc046be3952e85",
@@ -8,11 +8,13 @@
   "workflowAccounting": {
     "requiredM06Workflows": 21,
     "requiredWorkflowsPassed": true,
+    "requiredWorkflowsPassedCount": 21,
     "blockedIntake": "BLOCKED-M07",
-    "blockedM10OutsideTotals": true
+    "blockedM10OutsideTotals": true,
+    "evidenceSource": "docs/audits/wave5-m06-workflow-evidence.json"
   },
   "totals": {
-    "pass": 117,
+    "pass": 119,
     "fail": 0,
     "skipped": 0,
     "blocked": 1
@@ -21,7 +23,7 @@
     "BLOCKED_M10": "Inherited from Wave 4 — informational only; not counted in Wave 5 pass/fail/skipped/blocked totals"
   },
   "unit": {
-    "pass": 57,
+    "pass": 64,
     "fail": 0
   },
   "results": [
@@ -29,156 +31,163 @@
       "id": "unit.suite",
       "name": "M06 unit/integration suite",
       "expected": "fail=0",
-      "actual": "pass=57 fail=0",
+      "actual": "pass=64 fail=0",
       "result": "pass",
-      "unitPass": 57,
+      "unitPass": 64,
       "unitFail": 0
     },
     {
+      "id": "workflow.grouping-guard",
+      "name": "Reject grouped workflow test names",
+      "expected": "no multi-ID names",
+      "actual": "ok",
+      "result": "pass"
+    },
+    {
       "id": "workflow.WF-01",
-      "name": "WF-01 required M06 workflow",
+      "name": "WF-01 rostered employee clock-in",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "session=ats_ms3yidnr_3uow50; rostered=true; shift=shf-wf01",
       "result": "pass"
     },
     {
       "id": "workflow.WF-02",
-      "name": "WF-02 required M06 workflow",
+      "name": "WF-02 unrostered clock-in",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "session=ats_ms3yido2_o1i42i; exception=aex_ms3yido2_ftuly9",
       "result": "pass"
     },
     {
       "id": "workflow.WF-03",
-      "name": "WF-03 required M06 workflow",
+      "name": "WF-03 early clock-in",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidob_umt93b",
       "result": "pass"
     },
     {
       "id": "workflow.WF-04",
-      "name": "WF-04 required M06 workflow",
+      "name": "WF-04 late arrival",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidok_m2m7w8; inbox=act-ms3yidol-0ed6g",
       "result": "pass"
     },
     {
       "id": "workflow.WF-05",
-      "name": "WF-05 required M06 workflow",
+      "name": "WF-05 missed clock-in",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidon_ga0nor; idempotent",
       "result": "pass"
     },
     {
       "id": "workflow.WF-06",
-      "name": "WF-06 required M06 workflow",
+      "name": "WF-06 break start",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "break=brk_ms3yidox_jq0oyg; session=on_break",
       "result": "pass"
     },
     {
       "id": "workflow.WF-07",
-      "name": "WF-07 required M06 workflow",
+      "name": "WF-07 break end",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "break=brk_ms3yidp5_jk5vjj; session=open",
       "result": "pass"
     },
     {
       "id": "workflow.WF-08",
-      "name": "WF-08 required M06 workflow",
+      "name": "WF-08 missed break",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "break=brk_ms3yidpe_e0prvz",
       "result": "pass"
     },
     {
       "id": "workflow.WF-09",
-      "name": "WF-09 required M06 workflow",
+      "name": "WF-09 normal clock-out",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "session=ats_ms3yidpj_j4xf4q; no early-out",
       "result": "pass"
     },
     {
       "id": "workflow.WF-10",
-      "name": "WF-10 required M06 workflow",
+      "name": "WF-10 early departure",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidpw_gazy4v",
       "result": "pass"
     },
     {
       "id": "workflow.WF-11",
-      "name": "WF-11 required M06 workflow",
+      "name": "WF-11 missed clock-out",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidq1_26wa57",
       "result": "pass"
     },
     {
       "id": "workflow.WF-12",
-      "name": "WF-12 required M06 workflow",
+      "name": "WF-12 cross-midnight attendance",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "in=2026-07-28T22:00; out=2026-07-29T06:00",
       "result": "pass"
     },
     {
       "id": "workflow.WF-13",
-      "name": "WF-13 required M06 workflow",
+      "name": "WF-13 offline capture and sync",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "applied=off_ms3yidqh_lhea1c",
       "result": "pass"
     },
     {
       "id": "workflow.WF-14",
-      "name": "WF-14 required M06 workflow",
+      "name": "WF-14 employee correction request",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "correction=acr_ms3yidqs_m9aoyy; state=requested",
       "result": "pass"
     },
     {
       "id": "workflow.WF-15",
-      "name": "WF-15 required M06 workflow",
+      "name": "WF-15 manager correction",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "correction=acr_ms3yidr2_io4x68",
       "result": "pass"
     },
     {
       "id": "workflow.WF-16",
-      "name": "WF-16 required M06 workflow",
+      "name": "WF-16 correction approval/rejection/apply",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "approve+reject+stale covered",
       "result": "pass"
     },
     {
       "id": "workflow.WF-17",
-      "name": "WF-17 required M06 workflow",
+      "name": "WF-17 reopened timesheet",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "timesheet=atsheet_ms3yidsy_8fpn99",
       "result": "pass"
     },
     {
       "id": "workflow.WF-18",
-      "name": "WF-18 required M06 workflow",
+      "name": "WF-18 exception escalation",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "exception=aex_ms3yidt4_xp35tw",
       "result": "pass"
     },
     {
       "id": "workflow.WF-19A",
-      "name": "WF-19A required M06 workflow",
+      "name": "WF-19A TimesheetRef publication",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "idempotency=publish::atsheet_ms3yidtp_kqwi7c::3",
       "result": "pass"
     },
     {
       "id": "workflow.WF-20",
-      "name": "WF-20 required M06 workflow",
+      "name": "WF-20 roster vs attendance reconcile",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "missing=asn-wf20",
       "result": "pass"
     },
     {
       "id": "workflow.WF-21",
-      "name": "WF-21 required M06 workflow",
+      "name": "WF-21 bulk approval partial success",
       "expected": "pass",
-      "actual": "pass",
+      "actual": "ok=aap_ms3yidu6_afhion; fail=missing-id",
       "result": "pass"
     },
     {
@@ -191,10 +200,17 @@
       "note": "M06 publication (WF-19A) is separate and must pass; intake remains blocked."
     },
     {
+      "id": "workflow.accounting",
+      "name": "21 required workflows independently passed",
+      "expected": "21",
+      "actual": "21",
+      "result": "pass"
+    },
+    {
       "id": "perf.clock",
       "name": "Clock-in/out submission",
       "expected": "<=300ms",
-      "actual": "63.92ms",
+      "actual": "51.86ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "per-op typical",
@@ -204,7 +220,7 @@
       "id": "perf.eligibility",
       "name": "Eligibility + roster lookup",
       "expected": "<=150ms",
-      "actual": "0.04ms",
+      "actual": "0.03ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "per-op typical",
@@ -214,7 +230,7 @@
       "id": "perf.exception",
       "name": "Exception calculation sample",
       "expected": "<=1000ms",
-      "actual": "310.1ms",
+      "actual": "558.26ms",
       "result": "pass",
       "datasetSize": 100,
       "metricType": "p95",
@@ -224,7 +240,7 @@
       "id": "perf.break",
       "name": "Break calculation sample",
       "expected": "<=500ms",
-      "actual": "84.99ms",
+      "actual": "446.07ms",
       "result": "pass",
       "datasetSize": 100,
       "metricType": "p95",
@@ -234,7 +250,7 @@
       "id": "perf.timesheet",
       "name": "Timesheet generation",
       "expected": "<=2000ms",
-      "actual": "0.29ms",
+      "actual": "0.68ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "max",
@@ -244,7 +260,7 @@
       "id": "perf.correction",
       "name": "Correction submission",
       "expected": "<=400ms",
-      "actual": "5.66ms",
+      "actual": "11.84ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "per-op",
@@ -254,7 +270,7 @@
       "id": "perf.approval",
       "name": "Approval",
       "expected": "<=500ms",
-      "actual": "6.71ms",
+      "actual": "29.34ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "per-op",
@@ -264,7 +280,7 @@
       "id": "perf.bulkPreview",
       "name": "Bulk preview",
       "expected": "<=2000ms",
-      "actual": "0.36ms",
+      "actual": "0.49ms",
       "result": "pass",
       "datasetSize": 200,
       "metricType": "max",
@@ -274,7 +290,7 @@
       "id": "perf.bulkSubmit",
       "name": "Bulk submission",
       "expected": "<=5000ms",
-      "actual": "172.94ms",
+      "actual": "691.15ms",
       "result": "pass",
       "datasetSize": 200,
       "metricType": "max",
@@ -284,7 +300,7 @@
       "id": "perf.offline",
       "name": "Offline sync batch",
       "expected": "<=3000ms",
-      "actual": "117.74ms",
+      "actual": "148.68ms",
       "result": "pass",
       "datasetSize": 100,
       "metricType": "max",
@@ -294,7 +310,7 @@
       "id": "perf.m02",
       "name": "M02 projection single",
       "expected": "<=50ms",
-      "actual": "8.35ms",
+      "actual": "10.81ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "typical",
@@ -304,7 +320,7 @@
       "id": "perf.live",
       "name": "Live attendance board load",
       "expected": "<=2500ms",
-      "actual": "0.05ms",
+      "actual": "0.06ms",
       "result": "pass",
       "datasetSize": 50,
       "metricType": "max/p95",
@@ -314,7 +330,7 @@
       "id": "perf.report",
       "name": "Reports build",
       "expected": "<=3000ms",
-      "actual": "0.27ms",
+      "actual": "0.34ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "max",
@@ -324,7 +340,7 @@
       "id": "perf.export",
       "name": "Scoped export",
       "expected": "<=3000ms",
-      "actual": "0.84ms",
+      "actual": "1.76ms",
       "result": "pass",
       "datasetSize": 1,
       "metricType": "max",

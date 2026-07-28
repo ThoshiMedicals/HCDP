@@ -6,6 +6,7 @@ import {
   clearClinicTimezoneOverridesForTests,
   registerClinicTimezone,
 } from "@/platform/workforce/services/clinic-timezone";
+import { resetWorkforceEventBusForTests } from "@/platform/workforce/services/workforce-event-bus";
 import { clearM06LocalStoreCacheForTests } from "../repository/local-store";
 import { resetM06BootstrapCacheForTests } from "../storage/bootstrap";
 import { runM06StorageMigrations } from "../storage/migrations";
@@ -36,8 +37,51 @@ export function installMemoryLocalStorage() {
   (globalThis as { window?: { localStorage: Storage } }).window = { localStorage: storage };
 }
 
+/** Controlled demo M05 published assignment via approved read-adapter keys (not live clinic data). */
+export function seedPublishedAssignment(input: {
+  personId: string;
+  clinicId?: string;
+  shiftId: string;
+  assignmentId: string;
+  localStart: string;
+  localEnd: string;
+  publicationId?: string;
+}) {
+  const clinicId = input.clinicId ?? CLINIC;
+  const publicationId = input.publicationId ?? `pub-${input.shiftId}`;
+  localStorage.setItem(
+    "pulse.m05.roster.publications",
+    JSON.stringify([{ id: publicationId, publicationVersion: 1, state: "published" }])
+  );
+  localStorage.setItem(
+    "pulse.m05.roster.shifts",
+    JSON.stringify([
+      {
+        id: input.shiftId,
+        clinicId,
+        localStart: input.localStart,
+        localEnd: input.localEnd,
+      },
+    ])
+  );
+  localStorage.setItem(
+    "pulse.m05.roster.assignments",
+    JSON.stringify([
+      {
+        id: input.assignmentId,
+        shiftId: input.shiftId,
+        personId: input.personId,
+        clinicId,
+        state: "assigned",
+        publicationId,
+      },
+    ])
+  );
+}
+
 export function resetM06TestEnv() {
   installMemoryLocalStorage();
+  resetWorkforceEventBusForTests();
   clearClinicTimezoneOverridesForTests();
   registerClinicTimezone(CLINIC, "Australia/Brisbane");
   registerClinicTimezone(CLINIC_B, "Pacific/Auckland");

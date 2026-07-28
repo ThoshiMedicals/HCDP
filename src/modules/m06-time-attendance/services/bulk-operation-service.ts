@@ -1,5 +1,6 @@
 import { assertM06ClinicScope, assertM06Permission, type M06Actor } from "../permissions";
 import { getApproval, listApprovals } from "../repository/local-store";
+import { writeAudit } from "./audit-helpers";
 import { approveQueueItem, rejectQueueItem } from "./approval-service";
 import { ValidationError } from "./errors";
 
@@ -41,6 +42,7 @@ export function submitBulkApprove(input: {
   rejectRest?: boolean;
 }): { results: BulkItemResult[]; notified: number } {
   assertM06Permission(input.actor, "attendance.bulk.approve");
+  if (!input.approvalIds.length) throw new ValidationError("No approval ids provided");
   const preview = previewBulkApprove(input);
   const results: BulkItemResult[] = [];
   let notified = 0;
@@ -49,13 +51,38 @@ export function submitBulkApprove(input: {
     try {
       approveQueueItem({ actor: input.actor, approvalId: id, expectedVersion: item.version });
       results.push({ approvalId: id, ok: true });
+      writeAudit({
+        actorId: input.actor.userId,
+        action: "bulk.approve.item.ok",
+        targetType: "approval",
+        targetId: id,
+        clinicId: item.clinicId,
+        detail: "authorized pending item approved",
+      });
       if (notified < NOTIFY_CAP) notified += 1;
     } catch (e) {
-      results.push({ approvalId: id, ok: false, error: e instanceof Error ? e.message : String(e) });
+      const error = e instanceof Error ? e.message : String(e);
+      results.push({ approvalId: id, ok: false, error });
+      writeAudit({
+        actorId: input.actor.userId,
+        action: "bulk.approve.item.fail",
+        targetType: "approval",
+        targetId: id,
+        clinicId: item.clinicId,
+        detail: error,
+      });
     }
   }
   for (const bad of preview.ineligible) {
     results.push({ approvalId: bad.id, ok: false, error: bad.reason });
+    writeAudit({
+      actorId: input.actor.userId,
+      action: "bulk.approve.item.skipped",
+      targetType: "approval",
+      targetId: bad.id,
+      clinicId: getApproval(bad.id)?.clinicId,
+      detail: bad.reason,
+    });
     if (input.rejectRest) {
       const item = getApproval(bad.id);
       if (item?.state === "pending") {
@@ -67,8 +94,6 @@ export function submitBulkApprove(input: {
       }
     }
   }
-  if (!input.approvalIds.length) throw new ValidationError("No approval ids provided");
-  // Ensure listApprovals is referenced for tree-shaking clarity in tests
   void listApprovals;
   return { results, notified };
 }

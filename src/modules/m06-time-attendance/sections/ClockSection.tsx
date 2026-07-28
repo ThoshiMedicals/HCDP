@@ -77,12 +77,12 @@ export function ClockSection() {
             onClick={() => {
               setErrors([]);
               try {
+                // Prefer published M05 assignment match; unrostered only when policy allows and no match
                 clockIn({
                   actor,
                   clinicId,
                   localCivil,
                   clientEventId: `ui-in-${Date.now()}`,
-                  unrostered: true,
                 });
                 pushToast("Clocked in", "default");
                 bump();
