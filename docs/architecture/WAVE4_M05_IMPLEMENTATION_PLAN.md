@@ -12,7 +12,8 @@
 
 Wave 4 execution was completed and **owner accepted** 28 July 2026.  
 Do **not** alter frozen Wave 2, Wave 3 or Wave 4 implementation without explicit owner instruction.  
-Do **not** start Wave 5 until explicit Wave 5 planning/execution approval.  
+Do **not** start Wave 5 runtime implementation until explicit Wave 5 execution approval.  
+Wave 5 planning document: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`.  
 **`BLOCKED-M10` remains blocked** (workflow 12) until a safe M10-owned task contract exists.
 
 Paths below are relative to the GitHub repository root (`ThoshiMedicals/HCDP`), which is the `Development folder/` working tree unless noted as a workspace-root documentation mirror.

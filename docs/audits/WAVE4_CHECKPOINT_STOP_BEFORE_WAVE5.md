@@ -33,6 +33,10 @@
 
 ## Next
 
-**Wave 5 execution is NOT approved.**
+**Wave 5 (M06) is PLANNING ONLY — execution NOT approved.**
 
-Do not begin Wave 5 (M06 Time & Attendance / related workspaces) until explicit Wave 5 planning and execution instructions are given.
+Plan: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`  
+Planning checkpoint: `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_EXECUTION.md`
+
+Do not begin Wave 5 runtime implementation or M07 / Wave 6 until explicit owner approval.
+

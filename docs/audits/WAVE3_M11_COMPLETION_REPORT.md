@@ -58,7 +58,9 @@ Evidence: `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`.
 **`BLOCKED-M10` remains blocked** (workflow 12).
 
 **WAVE 5 EXECUTION IS NOT APPROVED.**  
-Wave 5 remains planning-only until explicit owner instructions.
+Wave 5 planning document: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`.  
+Wave 5 remains planning-only until explicit owner execution approval.
+
 
 
 ---

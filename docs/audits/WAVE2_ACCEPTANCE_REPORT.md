@@ -48,7 +48,9 @@ Evidence: `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`.
 Wave 4 owner acceptance is **not** production approval.
 
 **WAVE 5 EXECUTION IS NOT APPROVED.**  
-Do not begin Wave 5 until explicit Wave 5 planning and execution instructions are given.
+Planning only: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`.  
+Do not begin Wave 5 runtime implementation until explicit Wave 5 execution approval.
+
 
 ## Evidence baseline (accepted)
 
