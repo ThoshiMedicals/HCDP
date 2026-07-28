@@ -92,7 +92,16 @@ export type PayProfile = {
   effectiveFrom: string;
   effectiveTo?: string | null;
   status: "active" | "archived";
+  /**
+   * General record revision — increments on every successful mutation (including rate /
+   * external-ID). Used for audit history; not pinned in Batch 5 approval manifests.
+   */
   version: number;
+  /**
+   * Manifest-material revision — increments only when Batch 5 approval-integrity fields
+   * change. Pinned in PayPeriodSourceManifest; rate/external-ID alone must not bump this.
+   */
+  materialProfileRevision: number;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
@@ -871,7 +880,11 @@ export type PayPeriodSourceManifest = {
   profiles: Array<{
     personId: string;
     profileId: string;
-    profileVersion: number;
+    /**
+     * Pinned Batch 5 material profile revision (not general `PayProfile.version`).
+     * Rate-only / external-ID mutations must not change this value.
+     */
+    materialProfileRevision: number;
     classificationRef: string | null;
     mappingId?: string;
     mappingVersion?: number;

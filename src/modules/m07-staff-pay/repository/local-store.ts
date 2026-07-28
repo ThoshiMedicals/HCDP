@@ -68,14 +68,24 @@ export function newEntitySettingsId(): string { return uid("pes"); }
 
 // Profiles
 export function listProfiles(legalEntityId?: string): PayProfile[] {
-  const all = loadList<PayProfile>(M07_STORAGE_KEYS.profiles);
+  const all = loadList<PayProfile>(M07_STORAGE_KEYS.profiles).map(normalizePayProfile);
   return legalEntityId ? all.filter((p) => p.legalEntityId === legalEntityId) : all;
 }
 export function getProfile(id: string): PayProfile | null {
   return listProfiles().find((p) => p.id === id) ?? null;
 }
 export function upsertProfile(p: PayProfile): PayProfile {
-  return upsertById(M07_STORAGE_KEYS.profiles, p);
+  return upsertById(M07_STORAGE_KEYS.profiles, normalizePayProfile(p));
+}
+
+/** Additive read/write normalize: materialProfileRevision defaults to version for legacy rows. */
+function normalizePayProfile(p: PayProfile): PayProfile {
+  const version = typeof p.version === "number" && p.version > 0 ? p.version : 1;
+  const material =
+    typeof p.materialProfileRevision === "number" && p.materialProfileRevision > 0
+      ? p.materialProfileRevision
+      : version;
+  return { ...p, version, materialProfileRevision: material };
 }
 
 // Rules

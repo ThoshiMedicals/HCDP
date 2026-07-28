@@ -101,6 +101,7 @@ export function createPayProfile(
     effectiveTo: input.effectiveTo ?? null,
     status: "active",
     version: 1,
+    materialProfileRevision: 1,
     createdAt: now,
     updatedAt: now,
     createdBy: actor.userId,
@@ -138,6 +139,15 @@ export function updatePayProfile(
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId, patch.clinicId]);
 
+  const material = isMaterialPayProfileChange(existing, {
+    ...existing,
+    ...patch,
+    id: existing.id,
+    legalEntityId: existing.legalEntityId,
+    externalPayrollEmployeeId: existing.externalPayrollEmployeeId,
+    externalPayrollEmployeeIdHistory: existing.externalPayrollEmployeeIdHistory,
+  });
+
   const updated: PayProfile = {
     ...existing,
     ...patch,
@@ -146,6 +156,9 @@ export function updatePayProfile(
     externalPayrollEmployeeId: existing.externalPayrollEmployeeId,
     externalPayrollEmployeeIdHistory: existing.externalPayrollEmployeeIdHistory,
     version: existing.version + 1,
+    materialProfileRevision: material
+      ? existing.materialProfileRevision + 1
+      : existing.materialProfileRevision,
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
@@ -159,7 +172,7 @@ export function updatePayProfile(
     before: redactProfile(actor, existing),
     after: redactProfile(actor, updated),
   });
-  if (isMaterialPayProfileChange(existing, updated)) {
+  if (material) {
     invalidateApprovalsForProfileMutation(actor, {
       legalEntityId: updated.legalEntityId,
       personId: updated.personId,
@@ -179,6 +192,7 @@ export function archivePayProfile(actor: M07Actor, profileId: string, reason: st
     ...existing,
     status: "archived",
     version: existing.version + 1,
+    materialProfileRevision: existing.materialProfileRevision + 1,
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
@@ -252,6 +266,8 @@ export function linkExternalPayrollEmployeeId(
     externalPayrollEmployeeId,
     externalPayrollEmployeeIdHistory: [...existing.externalPayrollEmployeeIdHistory, entry],
     version: existing.version + 1,
+    // External ID is not Batch 5 approval-authority — material revision unchanged.
+    materialProfileRevision: existing.materialProfileRevision,
     updatedAt: entry.at,
     updatedBy: actor.userId,
   };

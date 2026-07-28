@@ -50,6 +50,7 @@ import {
   markPeriodApprovalStale,
   notifyM04EmploymentContextChanged,
 } from "../services/approval-invalidation";
+import { verifyManifestAgainstCurrent } from "../services/source-manifest-service";
 import {
   assertMaterialActorProvenance,
   collectMaterialPreparerUserIds,
@@ -548,9 +549,14 @@ describe("M07 Batch 5 remediation — fail-closed employment + invalidation + So
       const period = prepareReadyPeriod("irr");
       approveReady(period.id);
       const profile = activeProfileFor("person_a");
+      const beforeMaterial = profile.materialProfileRevision;
+      const approved = getCurrentApprovalForPeriod(period.id)!;
       updatePayProfile(actorAll(), profile.id, { ordinaryHourlyRate: 55 });
+      const after = activeProfileFor("person_a");
+      assert.equal(after.materialProfileRevision, beforeMaterial);
       assert.equal(getCurrentApprovalForPeriod(period.id)?.status, "approved");
       assert.equal(getPeriod(period.id)?.state, "export-ready");
+      assert.equal(verifyManifestAgainstCurrent(actorAll(), approved.manifest).ok, true);
     });
 
     it("identical invalidation replay does not duplicate lifecycle, audit or M02 records", () => {

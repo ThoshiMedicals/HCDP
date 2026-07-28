@@ -109,7 +109,7 @@ export function buildSourceManifest(
     profiles.push({
       personId,
       profileId: profile.id,
-      profileVersion: profile.version,
+      materialProfileRevision: profile.materialProfileRevision,
       classificationRef: profile.m04ClassificationRef ?? null,
       mappingId: map?.id,
       mappingVersion: map?.version,

@@ -3,8 +3,9 @@
 **Status:** Implementation evidence (not independent owner acceptance)  
 **Commit baseline parent:** `db96703123cc4759c04ed5f6ad9c930012ab38ea` (Batch 4 accepted)  
 **Batch 5 implementation:** `3f982aaa144e88484f15f28899451f365c277d34`  
+**Final remediation:** `materialProfileRevision` pin + approve periodVersion re-pin (post re-audit qualification)  
 **Scope:** OD-1 Option A — readiness, review submission, management approval only  
-**Remediation:** employment fail-closed, profile/mapping invalidation, dedicated SoD (post-audit)
+**Remediation:** employment fail-closed, profile/mapping invalidation, dedicated SoD, material revision consistency
 
 ## Decisions applied
 
@@ -30,6 +31,7 @@
 | R-5.4-01 | 5.4 | Source manifest + checksum | `source-manifest-service.ts` | CP5.2–5.4 | proven |
 | R-5.4-02 | 5.4 | Invalidation on prep source change | `approval-invalidation.ts` | CP5.4 | proven |
 | R-5.4-02a | 5.4 | Profile/classification material invalidation | `profile-service` / `rule-service` | remediation | proven |
+| R-5.4-02b | 5.4 | Manifest pins `materialProfileRevision`; rate/external-ID non-material without unreproducible pin | `PayProfile.materialProfileRevision` + approve period re-pin | `m07-batch5-material-revision.test.ts` | proven |
 | R-5.5-01 | 5.5 | M02 bridge lifecycle | `m02-inbox-publish.ts` | CP5.5 + remediation idempotency | proven |
 | R-5.5-02 | 5.5 | Approval UI | `ApprovalSection.tsx` | CP5.5 + shell | proven |
 | R-5.6-01 | 5.6 | Schema v8 approvals ensure | `migrate-v8.ts` | CP5.6 | proven |

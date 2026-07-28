@@ -254,16 +254,34 @@ export function approvePeriodManagement(
   }
 
   const now = new Date().toISOString();
+  // Anticipate export-ready period version bump so the approved pin remains reproducible
+  // (same pattern as submit → in-review). Do not leave approved/export-ready with a
+  // period-version mismatch against the live period record.
+  const needsPeriodBump = period.state !== "export-ready";
+  const pinnedPeriodVersion = needsPeriodBump ? period.version + 1 : period.version;
+  const approvalManifest = buildSourceManifest(actor, {
+    legalEntityId: period.legalEntityId,
+    periodId: period.id,
+    submittedBy: current.submittedBy,
+    submittedAt: current.submittedAt,
+    readiness,
+    periodVersionOverride: pinnedPeriodVersion,
+  });
+
+  if (needsPeriodBump) {
+    touchPeriod(period, "export-ready", actor);
+  }
+
   const approved: PayPeriodApproval = {
     ...current,
     status: "approved",
+    manifest: approvalManifest,
     approvedBy: actor.userId,
     approvedAt: now,
     updatedAt: now,
     updatedBy: actor.userId,
   };
   upsertApproval(approved);
-  touchPeriod(period, "export-ready", actor);
 
   recordM07Audit({
     actor,

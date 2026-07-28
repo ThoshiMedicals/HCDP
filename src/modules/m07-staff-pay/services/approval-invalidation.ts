@@ -2,11 +2,14 @@
  * Batch 5 — lightweight approval invalidation hooks (no calculate import cycle).
  *
  * Materiality (profile / classification):
- * - Material profile fields: personId, clinicId, m04ClassificationRef,
- *   preparationRuleId/Version, effectiveFrom/To, status, allowanceCodes,
- *   deductionCodes, leavePayMapping, overtimeRulesRef.
- * - Immaterial (no auto-stale): ordinaryHourlyRate, externalPayrollEmployeeId
- *   (external-id mutations use dedicated path and do not stale).
+ * - Material profile fields (bump `materialProfileRevision` + invalidate): personId,
+ *   legalEntityId, clinicId, m04ClassificationRef, preparationRuleId/Version,
+ *   allowanceCodes, deductionCodes, leavePayMapping, overtimeRulesRef,
+ *   effectiveFrom/To, status.
+ * - Immaterial (bump general `version` only; do NOT bump material revision /
+ *   do NOT auto-stale): ordinaryHourlyRate, externalPayrollEmployeeId.
+ * - Manifest pins `materialProfileRevision`, never general `version`, so
+ *   immaterial updates cannot make an approved package unreproducible.
  * - Classification mapping create / retire / replace: always material for the LE
  *   (affects pinned mappingId/mappingVersion and eligible prep resolution).
  *
@@ -114,6 +117,7 @@ export function invalidateApprovalIfSourcesChanged(
 
 const MATERIAL_PROFILE_KEYS: Array<keyof PayProfile> = [
   "personId",
+  "legalEntityId",
   "clinicId",
   "m04ClassificationRef",
   "preparationRuleId",
@@ -126,6 +130,8 @@ const MATERIAL_PROFILE_KEYS: Array<keyof PayProfile> = [
   "effectiveTo",
   "status",
 ];
+
+export const M07_MATERIAL_PROFILE_KEYS = MATERIAL_PROFILE_KEYS;
 
 function stableJson(v: unknown): string {
   return JSON.stringify(v ?? null);

@@ -22,7 +22,9 @@
 ## CP5.3 — Management approve / reject / withdraw
 
 - Approve: `payroll.approve` + SoD (`assertManagementApproveSeparation`) + material-actor provenance fail-closed + manifest verify → `export-ready`
+- Approve re-pins manifest `periodVersion` to the post-`export-ready` period revision so unchanged approved packages remain `verifyManifestAgainstCurrent`-reproducible
 - SoD material actors derived from **pinned manifest** (submitter, calculator, deduction creator, exception creator/resolver/waiver). Dedicated proofs: `m07-batch5-remediation.test.ts`
+- Profile pin uses **`materialProfileRevision`** (not general `version`); rate/external-ID proofs: `m07-batch5-material-revision.test.ts`
 - UI/audit: “Ready for non-certified export preparation — not certified or payment-ready.”
 - Reject / withdraw: mandatory reason → period `open`; withdraw = submitter or Pay Admin
 - Types: `managementApprovalOnly: true`, `certified: false`, `paymentReady: false`
