@@ -1,0 +1,318 @@
+{
+  "generatedAt": "2026-07-28",
+  "planningOnly": true,
+  "cssRewriteAuthorised": false,
+  "referencePrototype": "Healthcare_Doctors_Pulse_Executive_Healthcare_Operations_Platform_v34_Stronger_Navigation_Palette.html",
+  "identicalCopy": "Development folder/public/pulse-html-prototype.html",
+  "markdownRegister": "docs/architecture/HCDP_PROTOTYPE_PARITY_REGISTER.md",
+  "countsAsImplementedNever": [
+    "sidebar presence",
+    "route presence",
+    "mounted placeholder",
+    "static demonstration card",
+    "button without service-backed mutation",
+    "legacy HTML fallback",
+    "local visual simulation without permission/validation/audit"
+  ],
+  "totalsByStatus": {
+    "IMPLEMENTED-EVIDENCED": 48,
+    "IMPLEMENTED-NOT-EVIDENCED": 12,
+    "PARTIAL": 36,
+    "PLANNED": 92,
+    "DEFERRED": 41,
+    "REJECTED": 18,
+    "total": 249,
+    "CONSOLIDATED_OR_RELOCATED": 2
+  },
+  "totalsByModule": {
+    "M01": {
+      "IMPLEMENTED-EVIDENCED": 2,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 2,
+      "PLANNED": 4,
+      "DEFERRED": 2,
+      "REJECTED": 0
+    },
+    "M02": {
+      "IMPLEMENTED-EVIDENCED": 3,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 2,
+      "PLANNED": 5,
+      "DEFERRED": 1,
+      "REJECTED": 0
+    },
+    "M03": {
+      "IMPLEMENTED-EVIDENCED": 2,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 2,
+      "PLANNED": 6,
+      "DEFERRED": 2,
+      "REJECTED": 0
+    },
+    "M04": {
+      "IMPLEMENTED-EVIDENCED": 8,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 3,
+      "PLANNED": 6,
+      "DEFERRED": 2,
+      "REJECTED": 1
+    },
+    "M05": {
+      "IMPLEMENTED-EVIDENCED": 10,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 2,
+      "PLANNED": 3,
+      "DEFERRED": 1,
+      "REJECTED": 0
+    },
+    "M06": {
+      "IMPLEMENTED-EVIDENCED": 12,
+      "IMPLEMENTED-NOT-EVIDENCED": 1,
+      "PARTIAL": 2,
+      "PLANNED": 2,
+      "DEFERRED": 1,
+      "REJECTED": 0
+    },
+    "M07": {
+      "IMPLEMENTED-EVIDENCED": 0,
+      "IMPLEMENTED-NOT-EVIDENCED": 0,
+      "PARTIAL": 1,
+      "PLANNED": 26,
+      "DEFERRED": 6,
+      "REJECTED": 8,
+      "CONSOLIDATED_OR_RELOCATED": 2
+    },
+    "M08": {
+      "IMPLEMENTED-EVIDENCED": 0,
+      "IMPLEMENTED-NOT-EVIDENCED": 0,
+      "PARTIAL": 1,
+      "PLANNED": 8,
+      "DEFERRED": 4,
+      "REJECTED": 2
+    },
+    "M09-M24": {
+      "IMPLEMENTED-EVIDENCED": 11,
+      "IMPLEMENTED-NOT-EVIDENCED": 6,
+      "PARTIAL": 19,
+      "PLANNED": 32,
+      "DEFERRED": 22,
+      "REJECTED": 7
+    }
+  },
+  "m07Gaps": {
+    "planned": [
+      "Eleven-section workspace rebuild",
+      "TimesheetRef intake + missed-event refresh (clears BLOCKED-M07 when evidenced)",
+      "One open ordinary period per legal entity",
+      "Exceptions with waivable/non-waivable matrix",
+      "Variances vs M05",
+      "Non-certified leave lines + allowance/deduction code list",
+      "Pay approver final approval + Export operator post-approval",
+      "Canonical CSV+JSON export (min PII)",
+      "Explicit post-reconciliation lock",
+      "Prior-period adjustments with audit linkage",
+      "DTO rate redaction",
+      "Rule table versioning",
+      "External payroll employee id on M07 profile",
+      "Export profiles admin-owned",
+      "Clinic readiness in final approval",
+      "Lock = approver/admin only"
+    ],
+    "deferred": [
+      "Named Xero/vendor adapter",
+      "Doctor-pay override",
+      "Break-glass unlock",
+      "Broad real-world allowance catalogue",
+      "Production persistence",
+      "Financial-forecast labour deep link"
+    ],
+    "rejected": [
+      "TFN/BSB/bank/super/payment instruction storage",
+      "Auto-lock",
+      "Ordinary unlock/reopen-as-unlock",
+      "Multiple concurrent ordinary open periods",
+      "Clerk blocker waiver",
+      "Waive cross-entity/doctor-M08/stale approval/duplicate intake",
+      "Xero-only domain model",
+      "Counting legacy HTML staffpay CRUD as evidenced",
+      "Process Final Pay as bank payment",
+      "Award/tax/super certification claims"
+    ],
+    "currentReact": {
+      "route": "/staffpay",
+      "component": "StaffPayModule landing stub",
+      "registryCondition": "legacy-html-fallback",
+      "status": "PARTIAL",
+      "note": "Not IMPLEMENTED-EVIDENCED"
+    },
+    "consolidated": [
+      "Approve Location → final approval + clinic readiness (Q21)",
+      "Staff-hub Award Rules → M07 Settings (Q23)"
+    ]
+  },
+  "designDirection": {
+    "name": "Premium Clinical Enterprise",
+    "canvas": "#FBFBFA",
+    "accentGold": "#C5A880",
+    "font": "Inter or approved minimalist sans",
+    "cssRewriteNow": false
+  },
+  "items": [
+    {
+      "id": "M07-NAV",
+      "prototypeRef": "nav staffpay / Finance family",
+      "label": "Staff Pay",
+      "module": "M07",
+      "reactRoute": "/staffpay",
+      "service": null,
+      "status": "PARTIAL",
+      "missing": "Full workspace; services; evidence",
+      "permission": "payroll.view",
+      "dependency": "M06 TimesheetRef",
+      "plannedWave": 6,
+      "evidenceRequired": "section functional proofs",
+      "reason": null
+    },
+    {
+      "id": "M07-TAB-PAYRUN",
+      "prototypeRef": "BRD M07 tab Pay Run",
+      "label": "Pay Run",
+      "module": "M07",
+      "reactRoute": null,
+      "service": "createPayPeriod (planned)",
+      "status": "PLANNED",
+      "missing": "Implementation",
+      "permission": "payroll.period.create",
+      "dependency": "organisation id",
+      "plannedWave": 6,
+      "evidenceRequired": "WF-01",
+      "reason": null
+    },
+    {
+      "id": "M07-ACT-EXPORT-XERO",
+      "prototypeRef": "Export to Xero / Export Xero File",
+      "label": "Export to Xero",
+      "module": "M07",
+      "reactRoute": null,
+      "service": "createExportPackage (canonical); vendor later",
+      "status": "PLANNED",
+      "missing": "Canonical export; Xero adapter deferred",
+      "permission": "payroll.export.create",
+      "dependency": "valid approval",
+      "plannedWave": 6,
+      "evidenceRequired": "WF-25 / export scenarios",
+      "reason": "Vendor adapter DEFERRED; canonical CSV+JSON in Wave 6"
+    },
+    {
+      "id": "M07-ACT-REOPEN",
+      "prototypeRef": "Reopen with Approval",
+      "label": "Reopen with Approval",
+      "module": "M07",
+      "reactRoute": null,
+      "service": null,
+      "status": "REJECTED",
+      "missing": null,
+      "permission": null,
+      "dependency": null,
+      "plannedWave": null,
+      "evidenceRequired": "OUT-UNLOCK",
+      "reason": "Q6 no ordinary unlock; prior-period adjustments instead"
+    },
+    {
+      "id": "M07-ACT-FINAL-PAY",
+      "prototypeRef": "Process Final Pay",
+      "label": "Process Final Pay",
+      "module": "M07",
+      "reactRoute": null,
+      "service": null,
+      "status": "REJECTED",
+      "missing": null,
+      "permission": null,
+      "dependency": null,
+      "plannedWave": null,
+      "evidenceRequired": "OUT-BANK",
+      "reason": "Payment execution out of M07 boundary"
+    },
+    {
+      "id": "M07-STORE-BANK",
+      "prototypeRef": "Request Bank Detail Change (M04 adjacency) / pay secrets",
+      "label": "Store banking/tax identifiers in M07",
+      "module": "M07",
+      "reactRoute": null,
+      "service": null,
+      "status": "REJECTED",
+      "missing": null,
+      "permission": null,
+      "dependency": "external payroll",
+      "plannedWave": null,
+      "evidenceRequired": "Q13 scenarios",
+      "reason": "Q13 forbid TFN/BSB/account/super/credentials/payment instructions"
+    },
+    {
+      "id": "M06-WORKSPACE",
+      "prototypeRef": "timeclock BRD tabs",
+      "label": "Time & Attendance workspace",
+      "module": "M06",
+      "reactRoute": "/time-attendance",
+      "service": "m06 services",
+      "status": "IMPLEMENTED-EVIDENCED",
+      "missing": null,
+      "permission": "attendance.*",
+      "dependency": null,
+      "plannedWave": 5,
+      "evidenceRequired": "Wave 5 acceptance",
+      "reason": null
+    },
+    {
+      "id": "M05-WORKSPACE",
+      "prototypeRef": "roster BRD tabs",
+      "label": "Roster & Shifts workspace",
+      "module": "M05",
+      "reactRoute": "/roster",
+      "service": "m05 services",
+      "status": "IMPLEMENTED-EVIDENCED",
+      "missing": null,
+      "permission": "roster.*",
+      "dependency": null,
+      "plannedWave": 4,
+      "evidenceRequired": "Wave 4 acceptance",
+      "reason": null
+    },
+    {
+      "id": "M04-WORKSPACE",
+      "prototypeRef": "staff/doctors",
+      "label": "Staff & Doctors workspace",
+      "module": "M04",
+      "reactRoute": "/staff-doctors",
+      "service": "m04 services",
+      "status": "IMPLEMENTED-EVIDENCED",
+      "missing": "Some prototype extras",
+      "permission": "workforce.*",
+      "dependency": null,
+      "plannedWave": 2,
+      "evidenceRequired": "Wave 2 acceptance",
+      "reason": null
+    },
+    {
+      "id": "M07-ACT-APPROVE-LOCATION",
+      "prototypeRef": "Approve Location",
+      "label": "Approve Location",
+      "module": "M07",
+      "status": "CONSOLIDATED",
+      "plannedWave": 6,
+      "reason": "Q21 folded into final approval + clinic readiness; no location-approved state",
+      "evidenceRequired": "WF-36"
+    },
+    {
+      "id": "M07-AWARD-RULES-STAFF-HUB",
+      "prototypeRef": "Award Rules in Staff hub",
+      "label": "Award Rules",
+      "module": "M07",
+      "status": "RELOCATED",
+      "plannedWave": 6,
+      "reason": "Q23 M07 Settings owns prep rules; M04 keeps classification SoT",
+      "evidenceRequired": "WF-38"
+    }
+  ],
+  "planningBatch4Decided": "2026-07-28"
+}

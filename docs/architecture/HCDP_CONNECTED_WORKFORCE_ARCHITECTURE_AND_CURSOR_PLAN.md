@@ -527,7 +527,7 @@ Build actual attendance, exceptions, offline reconciliation and timesheets linke
 
 M06 complete and approved timesheet output available to M07 contract. Stop.
 
-**Status (28 July 2026):** Wave 5 (M06) is **owner accepted and frozen** at checkpoint `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49` (planning checkpoint `309e36b0719229fbc618a05b7fdc046be3952e85`). Not production-approved. **WF-19B** M07-owned intake remains **`BLOCKED-M07`**. `BLOCKED-M10` is informational and outside Wave 5 M06 totals. Waves 1A–4 remain frozen. **Wave 6 / M07 is NOT authorized.** Evidence: `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`; freeze: `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`.
+**Status (28 July 2026):** Wave 5 (M06) is **owner accepted and frozen** at checkpoint `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49` (planning checkpoint `309e36b0719229fbc618a05b7fdc046be3952e85`). Not production-approved. **WF-19B** M07-owned intake remains **`BLOCKED-M07`**. `BLOCKED-M10` is informational and outside Wave 5 M06 totals. Waves 1A–4 remain frozen. **Wave 6 / M07 is PLANNING ONLY — execution NOT approved.** Evidence: `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`; freeze: `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`; Wave 6 plan: `docs/architecture/WAVE6_M07_IMPLEMENTATION_PLAN.md`.
 
 ---
 
@@ -580,6 +580,8 @@ Build payroll readiness and controlled export/reconciliation without replacing p
 ## Stop condition
 
 M07 complete. Do not develop final accounting or bank execution. Stop.
+
+**Status (28 July 2026):** Wave 6 (M07) is **PLANNING ONLY — execution NOT approved.** Batches 1–4 decided; prototype-parity + Premium Clinical Enterprise design direction recorded (`docs/architecture/HCDP_PROTOTYPE_PARITY_REGISTER.md`). Documentation checkpoint approved **in principle** only — commit/push requires a separate explicit instruction after readiness-report review. **`BLOCKED-M07` remains unresolved.** Do not implement until explicit Wave 6 execution approval. Do not write `pulse.m07.*` under planning. No CSS rewrite authorised. Waves 1A–5 frozen. Checkpoint: `docs/audits/WAVE6_CHECKPOINT_STOP_BEFORE_EXECUTION.md`.
 
 ---
 
