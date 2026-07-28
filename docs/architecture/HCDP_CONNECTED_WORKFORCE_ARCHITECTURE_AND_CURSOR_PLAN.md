@@ -478,7 +478,7 @@ Build shift-first roster planning using M04 and M11 authoritative readiness.
 
 M05 complete; do not build attendance or payroll beyond adapters. Stop.
 
-**Status (28 July 2026):** Wave 4 (M05) is **owner accepted and frozen** at checkpoint `15f020800bbca40702ef08ad25f94f1d1999112f` (planning checkpoint `03a0beff267c9aaf382d161cbfec9f3d0df013e1`). Not production-approved. **`BLOCKED-M10` remains blocked.** Wave 5 execution is **not** approved.
+**Status (28 July 2026):** Wave 4 (M05) is **owner accepted and frozen** at checkpoint `15f020800bbca40702ef08ad25f94f1d1999112f` (planning checkpoint `03a0beff267c9aaf382d161cbfec9f3d0df013e1`). Not production-approved. **`BLOCKED-M10` remains blocked.** Wave 5 (M06) is subsequently **owner accepted and frozen** at `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49` — see Wave 5 status below. Wave 6 is **not** authorized.
 
 ---
 
@@ -527,7 +527,7 @@ Build actual attendance, exceptions, offline reconciliation and timesheets linke
 
 M06 complete and approved timesheet output available to M07 contract. Stop.
 
-**Status (28 July 2026):** Wave 5 (M06) is **PLANNING ONLY — execution NOT approved.** Controlling plan: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md` (planning correction after `bfd83c268c9fe4bc07dd528265bfdb8c92e065a7`). Do not implement until explicit Wave 5 execution approval. **WF-19A** (M06 `TimesheetRef` + `timesheet.approved` publication) must pass in Wave 5; **WF-19B** M07-owned intake remains **`BLOCKED-M07`**. `BLOCKED-M10` is informational and outside Wave 5 M06 totals. Waves 1A–4 remain frozen.
+**Status (28 July 2026):** Wave 5 (M06) is **owner accepted and frozen** at checkpoint `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49` (planning checkpoint `309e36b0719229fbc618a05b7fdc046be3952e85`). Not production-approved. **WF-19B** M07-owned intake remains **`BLOCKED-M07`**. `BLOCKED-M10` is informational and outside Wave 5 M06 totals. Waves 1A–4 remain frozen. **Wave 6 / M07 is NOT authorized.** Evidence: `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`; freeze: `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`.
 
 ---
 

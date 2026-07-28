@@ -4,15 +4,25 @@
 **Codebase:** `Development folder/`  
 **Governing plan:** `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`  
 **Approved planning checkpoint:** `309e36b0719229fbc618a05b7fdc046be3952e85`  
-**Reviewed (not accepted) prior commit:** `23478527889192992321e3bdbb356b4c92538330`  
-**Status:** **Final browser-evidence correction complete — awaiting owner review**  
-**Owner acceptance:** **NOT granted**  
+**Accepted implementation checkpoint:** `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`  
+**Status:** **Owner accepted and frozen**  
+**Owner acceptance:** **GRANTED** 28 July 2026  
 **Production approval:** **NOT granted**  
-**Wave freeze:** **NOT frozen**
+**Wave freeze:** **FROZEN**
 
-## Verdict
+```json
+{
+  "ownerAccepted": true,
+  "waveFrozen": true,
+  "acceptedCommit": "6cfee6ca7ae2d0f58695569b9f61ffa939b97e49",
+  "acceptedDate": "2026-07-28",
+  "productionApproved": false
+}
+```
 
-Focused History/Reports browser-evidence correction only. History now requires beforeRows > 0, no-match empty + filtered-empty, and clear-filter restore. Reports seeds a roster-vs-attendance mismatch and asserts service-backed build fields plus exact `missing-attendance` classification with post-reconcile exception increase. Totals calculated from executed JSON.
+## Owner acceptance summary
+
+Wave 5 — Module 6 Time & Attendance is **owner accepted and frozen** at checkpoint `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`.
 
 | Totals | Value |
 |---|---|
@@ -20,6 +30,17 @@ Focused History/Reports browser-evidence correction only. History now requires b
 | Failed | **0** |
 | Skipped | **0** |
 | Blocked | **1** (`BLOCKED-M07` / WF-19B only) |
+
+Accepted coverage:
+
+- 21/21 required M06 workflows independently evidenced;
+- WF-19B remains separately **`BLOCKED-M07`**;
+- `BLOCKED-M10` remains inherited informational context **outside** Wave 5 totals;
+- M06 unit/integration tests **64/64**;
+- Platform QA **152/152**;
+- Ten M06 sections functionally evidenced;
+- Responsive matrix **60/60**;
+- Numeric performance evidence **14/14**.
 
 Workflow accounting — `docs/audits/wave5-m06-workflow-evidence.json`:
 
@@ -33,25 +54,37 @@ Workflow accounting — `docs/audits/wave5-m06-workflow-evidence.json`:
 
 ### Explicit non-claims
 
-- Wave 5 is **not** owner accepted and **not** frozen.
-- Production is **not** approved.
-- Local persistence is **not** production-grade.
-- Prototype performance is **not** a production SLA.
-- Attendance policies are **not** legal/award/payroll/clinical-safety certification.
-- Location/device checks do **not** prove work was performed.
-- M07 intake remains **`BLOCKED-M07`**.
-- Wave 6 / M07 was **not** started.
+- Wave 5 owner acceptance is **not** production approval.
+- Local persistence is **not** production-grade persistence.
+- Prototype performance results are **not** production SLAs.
+- Attendance rules are **not** legal, award, payroll or clinical-safety certification.
+- Location and device evidence does **not** prove work was performed.
+- M07 intake remains **`BLOCKED-M07`** until Wave 6 implements the receiving boundary.
+- Wave 6 / M07 was **not** started under this acceptance.
 
-## This correction
+Checkpoint: `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`
 
-| Area | Change |
-|---|---|
-| History evidence | Require service-backed rows; assert beforeRows > 0; no-match → afterRows === 0 + filtered-empty; clear restores original rows |
-| Reports evidence | Seed known mismatch; assert build JSON fields/sessions; assert exact `missing-attendance` row (shift/person); exceptionsOpen increases |
-| Permissive predicates | Approvals requires pendingBefore > 0 and strict decrease; removed length-only / empty-start History/Reports passes |
-| Minimal UI/service | `m06-reconcile-output` + clinic published-assignment walk so roster-only missing attendance is visible |
+## Frozen baseline (accepted commit)
 
-## Gates
+The following are frozen at `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`:
+
+- M06 runtime implementation;
+- M06 service and repository behaviour;
+- M06 permissions and clinic-scope rules;
+- M04/M05 read boundaries used by M06;
+- M02 and M01 integration behaviour;
+- M06 workflow evidence;
+- M06 browser, responsive, accessibility and performance evidence;
+- Wave 5 completion documentation (acceptance/freeze status may be amended only via owner-reviewed checkpoints).
+
+Future changes to frozen Wave 5 require:
+
+1. a documented defect or approved change request;
+2. impact analysis;
+3. focused regression evidence;
+4. owner review before the accepted baseline is replaced.
+
+## Gates (accepted evidence)
 
 | Gate | Result |
 |---|---|
@@ -68,7 +101,8 @@ Workflow accounting — `docs/audits/wave5-m06-workflow-evidence.json`:
 
 ## Numeric performance (§16)
 
-Source: `docs/audits/wave5-m06-performance-evidence.json`
+Source: `docs/audits/wave5-m06-performance-evidence.json`  
+Prototype measurements only — **not** production SLAs.
 
 | Evidence ID | Dataset | Target | Measured | Result |
 |---|---:|---:|---:|---|
@@ -90,8 +124,8 @@ Source: `docs/audits/wave5-m06-performance-evidence.json`
 ## Leftovers (not committed)
 
 - Untracked: `docs/audits/PLATFORM_INTEGRATION_QA.md.bak`
-- Preserved: `PLATFORM_INTEGRATION_QA.md`, `platform-integration-evidence.json`, `wave3-m11-performance-evidence.json`
+- Preserved: `PLATFORM_INTEGRATION_QA.md`, `platform-integration-evidence.json`, `wave3-m11-performance-evidence.json`, `wave4-m05-performance-evidence.json`
 
 ## Stop
 
-**Stop for explicit owner review.** Do not freeze Wave 5. Do not begin Wave 6.
+**Wave 5: Owner accepted and frozen. Not production-approved. Do not begin Wave 6 until separate explicit authorization.**

@@ -3,7 +3,10 @@
   "module": "m06-time-attendance",
   "wave": 5,
   "planningCheckpoint": "309e36b0719229fbc618a05b7fdc046be3952e85",
-  "ownerAccepted": false,
+  "ownerAccepted": true,
+  "waveFrozen": true,
+  "acceptedCommit": "6cfee6ca7ae2d0f58695569b9f61ffa939b97e49",
+  "acceptedDate": "2026-07-28",
   "productionApproved": false,
   "workflowAccounting": {
     "requiredM06Workflows": 21,

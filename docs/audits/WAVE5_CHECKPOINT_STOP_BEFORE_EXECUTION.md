@@ -1,14 +1,26 @@
 # Wave 5 Planning Checkpoint — Stop Before Execution
 
-**Date:** 28 July 2026
+**Date:** 28 July 2026  
+**Historical note:** This document records the **planning** stop before Wave 5 execution.  
+Execution completed and Wave 5 is now **owner accepted and frozen** — see `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`.
 
-## Status
+## Status (historical planning)
 
-**Wave 5 (M06 Time & Attendance): PLANNING ONLY — execution NOT approved.**
+**Wave 5 (M06 Time & Attendance): PLANNING ONLY — execution NOT approved** *(superseded 28 July 2026 by owner acceptance)*.
 
 Controlling plan: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`  
 Prior planning commit reviewed: `bfd83c268c9fe4bc07dd528265bfdb8c92e065a7`  
 This document accompanies the planning-document **correction** (exact inventory, full transition matrices, canonical permissions, WF-19A/B split, acceptance accounting).
+
+## Current freeze (superseding)
+
+| Field | Value |
+|---|---|
+| Wave 5 status | Owner accepted and frozen |
+| `acceptedCommit` | `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49` |
+| `acceptedDate` | 2026-07-28 |
+| `productionApproved` | false |
+| Freeze checkpoint | `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md` |
 
 ## Preserved Wave 4 freeze
 
@@ -30,8 +42,6 @@ This document accompanies the planning-document **correction** (exact inventory,
 
 ## Next
 
-**Wave 5 execution is NOT approved.**
+**Wave 6 (M07) is NOT authorized.**
 
-Do not create or modify M06 runtime implementation, tests, migrations or generated evidence until explicit Wave 5 execution approval.  
-Do not begin M07 / Wave 6.  
-Do not mark Wave 5 accepted or production-ready.
+See `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`.

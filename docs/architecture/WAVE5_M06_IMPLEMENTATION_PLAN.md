@@ -1,20 +1,35 @@
 # Wave 5 Implementation Plan — Module 6 Time & Attendance
 
 **Date:** 28 July 2026  
-**Status:** **PLANNING ONLY — Wave 5 execution NOT approved**  
+**Status:** **Owner accepted and frozen** — **NOT** production-approved  
+**Accepted implementation checkpoint:** `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`  
+**Accepted date:** 2026-07-28  
+**Planning checkpoint:** `309e36b0719229fbc618a05b7fdc046be3952e85`  
 **Planning correction of:** `bfd83c268c9fe4bc07dd528265bfdb8c92e065a7`  
 **Controlling plan:** `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`  
 **Prerequisites:** Waves 1A–4 **owner accepted and frozen**  
 **Wave 4 planning checkpoint:** `03a0beff267c9aaf382d161cbfec9f3d0df013e1`  
 **Wave 4 accepted implementation:** `15f020800bbca40702ef08ad25f94f1d1999112f`  
 **Wave 4 status closure:** `cdc0478322307bd484afcd3dcbdc517b0d3918e9`  
-**Wave 4 evidence:** `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`
+**Wave 4 evidence:** `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`  
+**Wave 5 freeze checkpoint:** `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`  
+**Wave 5 evidence:** `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`
 
-Do **not** implement until explicit Wave 5 execution approval.  
-Do **not** create/modify M06 runtime services, workspace sections, migrations beyond planning, or tests under this planning document.  
+```json
+{
+  "ownerAccepted": true,
+  "waveFrozen": true,
+  "acceptedCommit": "6cfee6ca7ae2d0f58695569b9f61ffa939b97e49",
+  "acceptedDate": "2026-07-28",
+  "productionApproved": false
+}
+```
+
+Do **not** alter frozen Wave 5 without documented defect/CR, impact analysis, focused regression and owner review.  
 Do **not** alter frozen Waves 1A–4 runtime code, tests or evidence.  
-Do **not** begin M07 (Wave 6) or any later wave.  
-Do **not** convert `BLOCKED-M10` or `BLOCKED-M07` into pass/skip/waive.
+Do **not** begin M07 (Wave 6) or any later wave without separate explicit authorization.  
+Do **not** convert `BLOCKED-M10` or `BLOCKED-M07` into pass/skip/waive.  
+Do **not** claim production approval.
 
 Paths are relative to the GitHub repository root (`ThoshiMedicals/HCDP` = `Development folder/`).
 
@@ -915,14 +930,17 @@ After planning documents only:
 
 ---
 
-## 22. Stop gate (planning)
+## 22. Stop gate (owner-accepted freeze)
 
-**Wave 5 execution remains NOT APPROVED.**
+**Wave 5 is owner accepted and frozen at `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`.**  
+**Wave 5 owner acceptance is not production approval.**  
+**Wave 6 / M07 is NOT AUTHORIZED.**
 
-After this documentation closure:
+After this status closure:
 
-- Return this plan as the controlling Wave 5 M06 specification.  
-- **Stop.** Wait for explicit Wave 5 execution approval.  
-- Do not alter frozen Waves 1A–4 runtime.  
-- Do not start M07 / Wave 6.  
-- Do not mark Wave 5 accepted or production-ready.
+- Preserve frozen Waves 1A–5.
+- Keep **`BLOCKED-M07`** explicitly blocked until Wave 6 implements a safe M07 receiving boundary.
+- Keep **`BLOCKED-M10`** informational and outside Wave 5 totals.
+- **Stop.** Wait for separate explicit Wave 6 authorization.
+- Do not begin Wave 6 / M07 implementation.
+- Do not write `pulse.m07.*` or create payroll records.
