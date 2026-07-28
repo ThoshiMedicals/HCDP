@@ -184,6 +184,7 @@ export function assessPeriodReadiness(
       clinics: [],
       people: [],
       exclusions: [],
+      populationBlockers: [],
       blockingReasons: ["period-not-found"],
       exportReadyWording: EXPORT_READY_WORDING,
       disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
@@ -210,6 +211,16 @@ export function assessPeriodReadiness(
         member.snapshotIds
       )
     );
+  }
+
+  // Population blockers remain visible as blocked readiness people (not silently omitted).
+  for (const b of population.populationBlockers) {
+    people.push({
+      personId: b.personId,
+      clinicId: b.clinicId,
+      status: "blocked",
+      blockingReasons: [`population-blocker:${b.field}:${b.message}`],
+    });
   }
 
   for (const ex of population.exclusions) {
@@ -284,6 +295,7 @@ export function assessPeriodReadiness(
     clinics,
     people: people.sort((a, b) => a.personId.localeCompare(b.personId)),
     exclusions: population.exclusions,
+    populationBlockers: population.populationBlockers,
     blockingReasons: uniqueBlock,
     exportReadyWording: EXPORT_READY_WORDING,
     disclaimer: M07_NON_CERTIFIED_DISCLAIMER,

@@ -7,6 +7,9 @@
 import type { EngagementRef } from "@/platform/workforce/contracts/engagement-ref";
 import type { WorkforcePersonRef } from "@/platform/workforce/contracts/workforce-person-ref";
 
+/** Sole approved marker for isolated demo employment soft-defaults (Batch 5 remediation). */
+export const M07_DEMO_PERSON_SEED_MARKER = "m07-demo-seed-v1" as const;
+
 export type M04PersonIdentityView = {
   personId: string;
   displayLabel: string;
@@ -24,6 +27,11 @@ export type M04PersonIdentityView = {
   employmentEffectiveTo?: string | null;
   clinicAssignmentEffectiveFrom?: string;
   clinicAssignmentEffectiveTo?: string | null;
+  /**
+   * Explicit demo-seed marker. Soft employment/clinic defaults apply ONLY when this
+   * equals M07_DEMO_PERSON_SEED_MARKER. Missing data must never imply demo status.
+   */
+  demoDataMarker?: typeof M07_DEMO_PERSON_SEED_MARKER;
   readOnly: true;
   source: "m04-adapter";
 };
@@ -83,7 +91,8 @@ export function resolvePersonIdentity(personId: string): M04PersonIdentityView |
       source: "m04-adapter",
     };
   }
-  // Soft demo fallback for foundation tests without demo bag
+  // Soft identity stub for foundation tests without demo bag — NOT a demo-seed.
+  // Missing employment/clinic dates remain absent; population resolver fail-closes.
   if (personId.startsWith("person_")) {
     return {
       personId,

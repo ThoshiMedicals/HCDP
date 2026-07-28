@@ -6,6 +6,7 @@ import {
   assertM07Permission,
   hasM07Permission,
   M07SeparationOfDutiesError,
+  M07ValidationError,
   type M07Actor,
 } from "../permissions";
 import {
@@ -20,6 +21,52 @@ export function isSeparationOfDutiesEnabled(legalEntityId: string): boolean {
   const settings = getEntitySettings(legalEntityId);
   // Q5 default on when unset
   return settings?.separationOfDuties ?? true;
+}
+
+/**
+ * Fail-closed: every pinned material calc/deduction/exception must have actor provenance.
+ * Incomplete provenance blocks management approval (does not invent actors).
+ */
+export function assertMaterialActorProvenance(approval: PayPeriodApproval): void {
+  for (const c of approval.manifest.calculations) {
+    const batch = listCalculationBatches(approval.legalEntityId).find((b) => b.id === c.batchId);
+    if (!batch?.calculatedBy) {
+      throw new M07ValidationError(
+        "material-actor-provenance-missing",
+        `Missing calculatedBy provenance for pinned calculation batch ${c.batchId}`
+      );
+    }
+  }
+  for (const d of approval.manifest.deductionInputs) {
+    const input = listDeductionPrepInputs(approval.legalEntityId).find((x) => x.id === d.inputId);
+    if (!input?.createdBy) {
+      throw new M07ValidationError(
+        "material-actor-provenance-missing",
+        `Missing createdBy provenance for pinned deduction input ${d.inputId}`
+      );
+    }
+  }
+  for (const ex of approval.manifest.exceptions) {
+    const full = listExceptions(approval.legalEntityId).find((e) => e.id === ex.id);
+    if (!full?.createdBy) {
+      throw new M07ValidationError(
+        "material-actor-provenance-missing",
+        `Missing createdBy provenance for pinned exception ${ex.id}`
+      );
+    }
+    if (ex.status === "resolved" && !full.resolvedBy) {
+      throw new M07ValidationError(
+        "material-actor-provenance-missing",
+        `Missing resolvedBy provenance for resolved exception ${ex.id}`
+      );
+    }
+    if (ex.status === "waived" && !(ex.waivedBy || full.waivedBy)) {
+      throw new M07ValidationError(
+        "material-actor-provenance-missing",
+        `Missing waivedBy provenance for waived exception ${ex.id}`
+      );
+    }
+  }
 }
 
 /** Collect material preparer user ids from pinned manifest for SoD. */
@@ -39,6 +86,7 @@ export function collectMaterialPreparerUserIds(approval: PayPeriodApproval): str
     const full = listExceptions(approval.legalEntityId).find((e) => e.id === ex.id);
     if (full?.resolvedBy) ids.add(full.resolvedBy);
     if (full?.createdBy) ids.add(full.createdBy);
+    if (full?.waivedBy) ids.add(full.waivedBy);
   }
   return [...ids];
 }
@@ -68,6 +116,7 @@ export function assertManagementApproveSeparation(input: {
   approval: PayPeriodApproval;
 }): void {
   assertM07Permission(input.actor, "payroll.approve");
+  assertMaterialActorProvenance(input.approval);
   if (!isSeparationOfDutiesEnabled(input.legalEntityId)) return;
   const material = collectMaterialPreparerUserIds(input.approval);
   if (material.includes(input.actor.userId)) {

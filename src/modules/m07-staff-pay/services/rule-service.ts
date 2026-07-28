@@ -25,6 +25,7 @@ import {
 } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { invalidateApprovalsForLegalEntity } from "./approval-invalidation";
 
 export function listPreparationRules(actor: M07Actor, legalEntityId: string): PreparationRule[] {
   assertM07Permission(actor, "payroll.view");
@@ -172,6 +173,11 @@ export function createClassificationMapping(
     legalEntityId: mapping.legalEntityId,
     after: mapping,
   });
+  invalidateApprovalsForLegalEntity(
+    actor,
+    mapping.legalEntityId,
+    "classification-mapping-create"
+  );
   return mapping;
 }
 
@@ -227,5 +233,41 @@ export function retireClassificationMapping(
     before: existing,
     after: updated,
   });
+  invalidateApprovalsForLegalEntity(
+    actor,
+    updated.legalEntityId,
+    "classification-mapping-retire"
+  );
   return updated;
+}
+
+/**
+ * Supersede an active mapping: retire prior then create replacement (single LE invalidation path).
+ */
+export function replaceClassificationMapping(
+  actor: M07Actor,
+  input: {
+    mappingId: string;
+    preparationRuleId: string;
+    effectiveFrom: string;
+    effectiveTo?: string | null;
+    reason: string;
+  }
+): ClassificationRuleMapping {
+  assertM07Permission(actor, "payroll.rules.edit");
+  if (!input.reason?.trim()) {
+    throw new M07ValidationError("reason-required", "Replacement reason is required");
+  }
+  const existing = getClassificationMap(input.mappingId);
+  if (!existing) throw new M07ValidationError("not-found", `Mapping ${input.mappingId} not found`);
+  assertM07LegalEntityScope(actor, existing.legalEntityId);
+
+  retireClassificationMapping(actor, input.mappingId, input.reason);
+  return createClassificationMapping(actor, {
+    legalEntityId: existing.legalEntityId,
+    m04ClassificationRef: existing.m04ClassificationRef,
+    preparationRuleId: input.preparationRuleId,
+    effectiveFrom: input.effectiveFrom,
+    effectiveTo: input.effectiveTo ?? null,
+  });
 }

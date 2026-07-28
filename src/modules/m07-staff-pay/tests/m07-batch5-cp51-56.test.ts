@@ -303,7 +303,10 @@ describe("M07 Batch 5 CP5.1–5.6", () => {
         periodId: period.id,
       });
       assert.equal(pop.status, "blocked");
-      assert.ok(pop.blockingReasons.some((r) => r.includes("missing-effective-clinic")));
+      assert.ok(
+        pop.populationBlockers.some((b) => b.field === "clinicId" && b.personId === "person_noclinic") ||
+          pop.blockingReasons.some((r) => r.includes("clinicId") || r.includes("missing-effective-clinic"))
+      );
     });
 
     it("blocks readiness when calculation missing / open exception", () => {

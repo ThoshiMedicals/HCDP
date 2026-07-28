@@ -1,13 +1,20 @@
 # Wave 6 / M07 Batch 5 — Checkpoint 5.4–5.6 Evidence
 
-**Status:** Implementation evidence (not owner acceptance)
+**Status:** Implementation evidence (not owner acceptance)  
+**Remediation:** profile/classification invalidation coverage corrected after acceptance audit
 
 ## CP5.4 — Manifest pinning and invalidation
 
 - Manifest covers tenant/LE/period version, clinics, eligible people, calc batch+snapshot versions, profiles/maps, deduction inputs, leave prep refs, exceptions/waivers, readiness, checksum
 - Canonical ordered hash via `canonical-checksum.ts`
 - Approve fails closed on checksum/period-version mismatch
-- Material changes (calc, deduction, exception, leave) call `invalidateApprovalIfSourcesChanged` → approved becomes `stale`, period leaves `export-ready` → `open`
+- Material prep changes (calc, deduction, exception, leave) call `invalidateApprovalIfSourcesChanged` → approved/submitted becomes `stale`, period leaves `export-ready` → `open`
+- **Remediation — profile/classification (was incomplete at first Batch 5 close):**
+  - `profile-service` create/update/archive call `invalidateApprovalsForProfileMutation` when material
+  - Materiality: personId, clinicId, classificationRef, preparation rule refs, allowance/deduction codes, leave/overtime refs, effectiveFrom/To, status — **not** ordinaryHourlyRate / externalPayrollEmployeeId alone
+  - `rule-service` create/retire/replace classification mapping call `invalidateApprovalsForLegalEntity`
+  - M04 employment-context bridge: `notifyM04EmploymentContextChanged` (M07 does not write M04)
+  - Idempotent stale replay; M02 review-required projection updated without duplicate fork
 - Status name is **stale** (not revoked)
 
 ## CP5.5 — M02 and UI
@@ -22,17 +29,21 @@
 - `M07_SCHEMA_VERSION = 8` / `m07-staffpay-storage-v8`
 - Additive ensure of `pulse.m07.staffpay.approvals`; malformed rows skipped on read
 - Architecture tests: no M04/M05/M06 writes; no M02 repository import; no export/lock/payment symbols
-- Tests: `m07-batch5-cp51-56.test.ts`
+- Tests: `m07-batch5-cp51-56.test.ts`, `m07-batch5-remediation.test.ts`
 
-## Validation (implementation gate)
+## Validation (remediation gate)
 
 | Suite | Result |
 |---|---|
-| `test:m07` | 148 pass / 0 fail |
+| `test:m07` | 169 pass / 0 fail |
+| Batch 5 + remediation focused | 40 pass |
 | `test:workforce` | 45 pass |
 | `test:auth` | 16 pass |
 | `test:m04` | 16 pass |
+| M02 lifecycle (m05-adapters) + M07 architecture/isolation | pass |
+| ESLint (changed files) | clean |
+| `tsc --noEmit` vs parent | 14 / 14 (no new errors) |
 
-Batch 5 production-path ESLint (new services/UI): clean. Root `context.tsx` setState-in-effect and root tsc debt remain **pre-existing** (unchanged by Batch 5).
+**Correction note:** Earlier Batch 5 evidence overstated “complete invalidation coverage” and “complete SoD proof.” Those claims are established only after this remediation and named tests.
 
 **Do not claim independent owner acceptance.**

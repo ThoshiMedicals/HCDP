@@ -745,6 +745,24 @@ export type EligiblePopulationExclusionReason =
   | "clinic-assignment-outside-period"
   | "authorised-period-exclusion";
 
+/** Fail-closed population blockers — person remains visible, not silently omitted. */
+export type EligiblePopulationBlocker = {
+  personId: string;
+  field:
+    | "employmentStatus"
+    | "employmentEffectiveFrom"
+    | "employmentEffectiveTo"
+    | "clinicId"
+    | "clinicAssignmentEffectiveFrom"
+    | "organisationId"
+    | "ambiguous-employment-dates"
+    | "ambiguous-clinic-assignment";
+  message: string;
+  legalEntityId: string;
+  periodId: string;
+  clinicId?: string;
+};
+
 export type EligiblePopulationMember = {
   personId: string;
   clinicId: string;
@@ -781,6 +799,8 @@ export type EligiblePopulationResult = {
   includedClinicIds: string[];
   eligible: EligiblePopulationMember[];
   exclusions: EligiblePopulationExclusion[];
+  /** Visible fail-closed blockers (missing/ambiguous employment or clinic context). */
+  populationBlockers: EligiblePopulationBlocker[];
   blockingReasons: string[];
   version: number;
   resolvedAt: string;
@@ -824,6 +844,8 @@ export type PeriodReadiness = {
   clinics: ClinicReadiness[];
   people: PersonReadiness[];
   exclusions: EligiblePopulationExclusion[];
+  /** Fail-closed population blockers — person remains visible. */
+  populationBlockers: EligiblePopulationBlocker[];
   blockingReasons: string[];
   /** UI copy — never payment/certification. */
   exportReadyWording: "Ready for non-certified export preparation — not certified or payment-ready.";

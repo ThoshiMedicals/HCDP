@@ -20,6 +20,10 @@ import type { ExternalIdHistoryEntry, PayProfile } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { resolvePersonIdentity } from "../adapters/m04-person-read";
+import {
+  invalidateApprovalsForProfileMutation,
+  isMaterialPayProfileChange,
+} from "./approval-invalidation";
 
 function redactProfile(actor: M07Actor, profile: PayProfile): PayProfile {
   const copy: PayProfile = { ...profile, externalPayrollEmployeeIdHistory: [...profile.externalPayrollEmployeeIdHistory] };
@@ -113,6 +117,12 @@ export function createPayProfile(
     clinicId: profile.clinicId,
     after: redactProfile(actor, profile),
   });
+  invalidateApprovalsForProfileMutation(actor, {
+    legalEntityId: profile.legalEntityId,
+    personId: profile.personId,
+    reason: "profile-create",
+    populationChanging: true,
+  });
   return redactProfile(actor, profile);
 }
 
@@ -149,6 +159,14 @@ export function updatePayProfile(
     before: redactProfile(actor, existing),
     after: redactProfile(actor, updated),
   });
+  if (isMaterialPayProfileChange(existing, updated)) {
+    invalidateApprovalsForProfileMutation(actor, {
+      legalEntityId: updated.legalEntityId,
+      personId: updated.personId,
+      reason: "profile-update-material",
+      populationChanging: existing.status !== updated.status,
+    });
+  }
   return redactProfile(actor, updated);
 }
 
@@ -174,6 +192,12 @@ export function archivePayProfile(actor: M07Actor, profileId: string, reason: st
     reason,
     before: existing,
     after: updated,
+  });
+  invalidateApprovalsForProfileMutation(actor, {
+    legalEntityId: updated.legalEntityId,
+    personId: updated.personId,
+    reason: "profile-archive",
+    populationChanging: true,
   });
   return redactProfile(actor, updated);
 }

@@ -2,8 +2,16 @@
  * Batch 5 — deterministic eligible population for a pay period (OD-3).
  * Aligns tenant/LE/period, M04 employment context, and M06 cleared snapshots.
  * Fail-closed on missing/ambiguous/cross-boundary data — never silently omits.
+ *
+ * Soft employment/clinic defaults apply ONLY when identity.demoDataMarker ===
+ * M07_DEMO_PERSON_SEED_MARKER (explicit demo adapter/seed). Ordinary persisted
+ * records without that marker never enter the soft-default path.
  */
 
+import {
+  M07_DEMO_PERSON_SEED_MARKER,
+  resolvePersonIdentity,
+} from "../adapters/m04-person-read";
 import {
   assertM07LegalEntityScope,
   assertM07Permission,
@@ -11,16 +19,22 @@ import {
   type M07Actor,
 } from "../permissions";
 import { getPeriod, listProfiles } from "../repository/local-store";
-import { listPublishedTimesheetSnapshots } from "../repository/published-timesheet-snapshots";
 import { getSnapshotEligibilityBySnapshotId } from "../repository/published-timesheet-lifecycle";
-import { resolvePersonIdentity } from "../adapters/m04-person-read";
-import { isDoctorPayExcluded } from "./classification-resolve";
+import { listPublishedTimesheetSnapshots } from "../repository/published-timesheet-snapshots";
 import type {
+  EligiblePopulationBlocker,
   EligiblePopulationExclusion,
   EligiblePopulationMember,
   EligiblePopulationResult,
   PayPeriodRecord,
 } from "../types/domain";
+import { isDoctorPayExcluded } from "./classification-resolve";
+
+function isDemoSeed(
+  identity: NonNullable<ReturnType<typeof resolvePersonIdentity>>
+): boolean {
+  return identity.demoDataMarker === M07_DEMO_PERSON_SEED_MARKER;
+}
 
 function overlapsPeriod(
   from: string | undefined,
@@ -36,16 +50,33 @@ function overlapsPeriod(
   return true;
 }
 
+function datesAmbiguous(from: string | undefined, to: string | null | undefined): boolean {
+  if (!from || !from.trim()) return false;
+  if (to == null || to === "") return false;
+  return from > to;
+}
+
+function pushBlocker(
+  blockers: EligiblePopulationBlocker[],
+  blockingReasons: string[],
+  b: EligiblePopulationBlocker
+): void {
+  blockers.push(b);
+  blockingReasons.push(
+    `population-blocker:${b.personId}:${b.field}:${b.legalEntityId}:${b.periodId}`
+  );
+}
+
 function classifyEmploymentExclusion(
   identity: NonNullable<ReturnType<typeof resolvePersonIdentity>>,
   period: PayPeriodRecord
 ): EligiblePopulationExclusion | null {
-  const status = identity.employmentStatus ?? "active";
-  const empFrom = identity.employmentEffectiveFrom;
+  const status = identity.employmentStatus!;
+  const empFrom = identity.employmentEffectiveFrom!;
   const empTo = identity.employmentEffectiveTo ?? null;
 
   if (status === "terminated") {
-    if (!empFrom || !overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
+    if (!overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
       return {
         personId: identity.personId,
         reason: "terminated-outside-period",
@@ -56,7 +87,7 @@ function classifyEmploymentExclusion(
     }
   }
   if (status === "inactive") {
-    if (!empFrom || !overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
+    if (!overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
       return {
         personId: identity.personId,
         reason: "inactive-outside-period",
@@ -66,7 +97,7 @@ function classifyEmploymentExclusion(
       };
     }
   }
-  if (empFrom && empFrom > period.periodEnd) {
+  if (empFrom > period.periodEnd) {
     return {
       personId: identity.personId,
       reason: "future-starter",
@@ -75,7 +106,7 @@ function classifyEmploymentExclusion(
       clinicId: identity.clinicId,
     };
   }
-  if (empFrom && !overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
+  if (!overlapsPeriod(empFrom, empTo, period.periodStart, period.periodEnd)) {
     return {
       personId: identity.personId,
       reason: "inactive-outside-period",
@@ -84,50 +115,136 @@ function classifyEmploymentExclusion(
       clinicId: identity.clinicId,
     };
   }
-  // Require known employment window for population decisions (fail closed if absent
-  // when person appears via M06 — handled by caller with blocking reason).
   return null;
 }
 
-function clinicEffective(
+/**
+ * Validate required employment/clinic context. Returns blockers (fail-closed) or null when OK.
+ * Demo-seed marker alone may soft-fill missing fields for isolated tests — never for ordinary records.
+ */
+function assertEmploymentAndClinicContext(
   identity: NonNullable<ReturnType<typeof resolvePersonIdentity>>,
   period: PayPeriodRecord
-): { ok: true; clinicId: string } | { ok: false; exclusion?: EligiblePopulationExclusion; block?: string } {
-  const clinicId = identity.clinicId;
-  if (!clinicId) {
-    return {
-      ok: false,
-      block: `missing-effective-clinic-assignment:${identity.personId}`,
-    };
+):
+  | { ok: true; clinicId: string; identity: NonNullable<ReturnType<typeof resolvePersonIdentity>> }
+  | { ok: false; blockers: EligiblePopulationBlocker[]; exclusion?: EligiblePopulationExclusion } {
+  const blockers: EligiblePopulationBlocker[] = [];
+  const base = {
+    personId: identity.personId,
+    legalEntityId: period.legalEntityId,
+    periodId: period.id,
+    clinicId: identity.clinicId,
+  };
+
+  let working = { ...identity };
+
+  if (isDemoSeed(identity)) {
+    // Isolated demo soft-defaults — explicit marker only; documented boundary.
+    if (!working.employmentStatus) working.employmentStatus = "active";
+    if (!working.employmentEffectiveFrom) {
+      working.employmentEffectiveFrom = "2000-01-01";
+    }
+    if (working.employmentEffectiveTo === undefined) {
+      working.employmentEffectiveTo = null;
+    }
+    if (!working.clinicId && working.organisationId) {
+      // Demo may still lack clinic — fail closed on clinic below
+    }
+    if (!working.clinicAssignmentEffectiveFrom && working.clinicId) {
+      working.clinicAssignmentEffectiveFrom =
+        working.employmentEffectiveFrom ?? "2000-01-01";
+    }
+    if (
+      working.clinicAssignmentEffectiveTo === undefined &&
+      working.clinicId
+    ) {
+      working.clinicAssignmentEffectiveTo = working.employmentEffectiveTo ?? null;
+    }
   }
-  const cFrom = identity.clinicAssignmentEffectiveFrom ?? identity.employmentEffectiveFrom;
+
+  if (!working.employmentStatus) {
+    blockers.push({
+      ...base,
+      field: "employmentStatus",
+      message:
+        "Missing employment status — cannot assume active; submission/approval blocked until authoritative status is available",
+    });
+  }
+
+  if (!working.employmentEffectiveFrom || !String(working.employmentEffectiveFrom).trim()) {
+    blockers.push({
+      ...base,
+      field: "employmentEffectiveFrom",
+      message:
+        "Missing employment-effective start date — cannot assume unlimited employment window",
+    });
+  }
+
+  if (datesAmbiguous(working.employmentEffectiveFrom, working.employmentEffectiveTo)) {
+    blockers.push({
+      ...base,
+      field: "ambiguous-employment-dates",
+      message: "Ambiguous employment dates (effectiveFrom after effectiveTo)",
+    });
+  }
+
+  if (!working.clinicId) {
+    blockers.push({
+      ...base,
+      field: "clinicId",
+      message: "Missing period-effective clinic assignment",
+    });
+  }
+
+  const cFrom =
+    working.clinicAssignmentEffectiveFrom ??
+    (isDemoSeed(identity) ? working.employmentEffectiveFrom : undefined);
   const cTo =
-    identity.clinicAssignmentEffectiveTo !== undefined
-      ? identity.clinicAssignmentEffectiveTo
-      : identity.employmentEffectiveTo ?? null;
-  if (cFrom && !overlapsPeriod(cFrom, cTo, period.periodStart, period.periodEnd)) {
+    working.clinicAssignmentEffectiveTo !== undefined
+      ? working.clinicAssignmentEffectiveTo
+      : isDemoSeed(identity)
+        ? (working.employmentEffectiveTo ?? null)
+        : undefined;
+
+  if (working.clinicId && (!cFrom || !String(cFrom).trim())) {
+    blockers.push({
+      ...base,
+      field: "clinicAssignmentEffectiveFrom",
+      message: "Missing clinic-assignment effective start date",
+    });
+  }
+
+  if (working.clinicId && datesAmbiguous(cFrom, cTo ?? null)) {
+    blockers.push({
+      ...base,
+      field: "ambiguous-clinic-assignment",
+      message: "Ambiguous clinic assignment dates",
+    });
+  }
+
+  if (blockers.length > 0) {
+    return { ok: false, blockers };
+  }
+
+  if (
+    working.clinicId &&
+    cFrom &&
+    !overlapsPeriod(cFrom, cTo ?? null, period.periodStart, period.periodEnd)
+  ) {
     return {
       ok: false,
+      blockers: [],
       exclusion: {
         personId: identity.personId,
         reason: "clinic-assignment-outside-period",
         rule: "m04-clinic-assignment-window",
         message: "Clinic assignment not effective during the payroll period",
-        clinicId,
+        clinicId: working.clinicId,
       },
     };
   }
-  if (!cFrom && !identity.employmentEffectiveFrom) {
-    // Soft demo identities without dates: allow only when employmentStatus active/undefined
-    if ((identity.employmentStatus ?? "active") === "active") {
-      return { ok: true, clinicId };
-    }
-    return {
-      ok: false,
-      block: `ambiguous-employment-context:${identity.personId}`,
-    };
-  }
-  return { ok: true, clinicId };
+
+  return { ok: true, clinicId: working.clinicId!, identity: working };
 }
 
 /**
@@ -149,6 +266,7 @@ export function resolveEligiblePopulation(
 
   const organisationId = period.legalEntityId;
   const blockingReasons: string[] = [];
+  const populationBlockers: EligiblePopulationBlocker[] = [];
   const exclusions: EligiblePopulationExclusion[] = [];
   const byPerson = new Map<
     string,
@@ -159,7 +277,6 @@ export function resolveEligiblePopulation(
     }
   >();
 
-  // M06 cleared eligible snapshots overlapping the period
   const snaps = listPublishedTimesheetSnapshots({
     organisationId,
     legalEntityId: period.legalEntityId,
@@ -192,7 +309,6 @@ export function resolveEligiblePopulation(
     byPerson.set(s.workforcePersonId, cur);
   }
 
-  // Active M07 profiles for LE (candidates) — filtered by M04 period-effective rules
   for (const p of listProfiles(period.legalEntityId).filter((x) => x.status === "active")) {
     const profileInPeriod =
       p.effectiveFrom <= period.periodEnd &&
@@ -237,60 +353,56 @@ export function resolveEligiblePopulation(
       });
       continue;
     }
-    if (!identity.organisationId && bag.sources.has("m06-snapshot")) {
-      blockingReasons.push(`ambiguous-organisation:${personId}`);
+    if (!identity.organisationId) {
+      pushBlocker(populationBlockers, blockingReasons, {
+        personId,
+        field: "organisationId",
+        message: "Missing or ambiguous legal-entity / organisation assignment",
+        legalEntityId: period.legalEntityId,
+        periodId: period.id,
+        clinicId: identity.clinicId,
+      });
       continue;
     }
 
-    // M06-only candidates require employment window; profile+active may use soft demo defaults
-    const needsStrictEmployment = bag.sources.has("m06-snapshot") || bag.sources.has("m07-profile");
-    if (needsStrictEmployment && !identity.employmentEffectiveFrom) {
-      if ((identity.employmentStatus ?? "active") !== "active") {
-        blockingReasons.push(`ambiguous-employment-context:${personId}`);
-        continue;
+    const ctx = assertEmploymentAndClinicContext(identity, period);
+    if (!ctx.ok) {
+      for (const b of ctx.blockers) {
+        pushBlocker(populationBlockers, blockingReasons, b);
       }
+      if (ctx.exclusion) exclusions.push(ctx.exclusion);
+      continue;
     }
 
-    const empEx = classifyEmploymentExclusion(identity, period);
+    const empEx = classifyEmploymentExclusion(ctx.identity, period);
     if (empEx) {
       exclusions.push(empEx);
       continue;
     }
 
-    const clinic = clinicEffective(identity, period);
-    if (!clinic.ok) {
-      if (clinic.exclusion) exclusions.push(clinic.exclusion);
-      if (clinic.block) blockingReasons.push(clinic.block);
-      continue;
-    }
-
-    // Explicit period clinic tags constrain membership; empty ⇒ discovered clinics
-    if (period.clinicIds.length > 0 && !period.clinicIds.includes(clinic.clinicId)) {
+    if (period.clinicIds.length > 0 && !period.clinicIds.includes(ctx.clinicId)) {
       exclusions.push({
         personId,
         reason: "clinic-assignment-outside-period",
         rule: "period-clinic-scope",
         message: "Person clinic is outside the period's included clinic tags",
-        clinicId: clinic.clinicId,
+        clinicId: ctx.clinicId,
       });
       continue;
     }
 
-    discoveredClinics.add(clinic.clinicId);
+    discoveredClinics.add(ctx.clinicId);
 
     let source: EligiblePopulationMember["source"] = "m07-profile";
     if (bag.sources.has("m06-snapshot") && bag.sources.has("m07-profile")) source = "both";
     else if (bag.sources.has("m06-snapshot")) source = "m06-snapshot";
 
-    // Eligible staff who appear only via profile without any eligible M06 snapshot
-    // remain in population but readiness will block until calc/snapshot exists —
-    // do not silently drop them (OD-3 silent-omission prevention).
     eligible.push({
       personId,
-      clinicId: clinic.clinicId,
+      clinicId: ctx.clinicId,
       organisationId: period.legalEntityId,
       legalEntityId: period.legalEntityId,
-      displayLabel: identity.displayLabel,
+      displayLabel: ctx.identity.displayLabel,
       source,
       snapshotIds: [...bag.snapshotIds].sort(),
       profileId: bag.profileId,
@@ -302,18 +414,8 @@ export function resolveEligiblePopulation(
       ? [...period.clinicIds].sort()
       : [...discoveredClinics].sort();
 
-  // Explicit clinics with zero discovered eligible people still appear as incomplete later;
-  // missing clinic tags with no people → incomplete (not silent ready).
-  if (period.clinicIds.length > 0) {
-    for (const c of period.clinicIds) {
-      if (!discoveredClinics.has(c) && !eligible.some((e) => e.clinicId === c)) {
-        // Clinic tagged but no eligible people — readiness incomplete, not a population block
-      }
-    }
-  }
-
   const status: EligiblePopulationResult["status"] =
-    blockingReasons.length > 0
+    populationBlockers.length > 0 || blockingReasons.length > 0
       ? "blocked"
       : eligible.length === 0 && exclusions.length === 0
         ? "incomplete"
@@ -328,6 +430,9 @@ export function resolveEligiblePopulation(
     includedClinicIds,
     eligible: eligible.sort((a, b) => a.personId.localeCompare(b.personId)),
     exclusions: exclusions.sort((a, b) => a.personId.localeCompare(b.personId)),
+    populationBlockers: populationBlockers.sort((a, b) =>
+      a.personId.localeCompare(b.personId)
+    ),
     blockingReasons: [...new Set(blockingReasons)].sort(),
     version: 1,
     resolvedAt: new Date().toISOString(),
