@@ -527,7 +527,7 @@ Build actual attendance, exceptions, offline reconciliation and timesheets linke
 
 M06 complete and approved timesheet output available to M07 contract. Stop.
 
-**Status (28 July 2026):** Wave 5 (M06) is **PLANNING ONLY — execution NOT approved.** Controlling plan: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md`. Do not implement until explicit Wave 5 execution approval. Proposed handoff intake remains **`BLOCKED-M07`** until Wave 6 provides a safe M07-owned contract. Waves 1A–4 remain frozen.
+**Status (28 July 2026):** Wave 5 (M06) is **PLANNING ONLY — execution NOT approved.** Controlling plan: `docs/architecture/WAVE5_M06_IMPLEMENTATION_PLAN.md` (planning correction after `bfd83c268c9fe4bc07dd528265bfdb8c92e065a7`). Do not implement until explicit Wave 5 execution approval. **WF-19A** (M06 `TimesheetRef` + `timesheet.approved` publication) must pass in Wave 5; **WF-19B** M07-owned intake remains **`BLOCKED-M07`**. `BLOCKED-M10` is informational and outside Wave 5 M06 totals. Waves 1A–4 remain frozen.
 
 ---
 
