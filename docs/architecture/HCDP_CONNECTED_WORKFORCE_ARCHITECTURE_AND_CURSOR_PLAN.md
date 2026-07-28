@@ -478,6 +478,8 @@ Build shift-first roster planning using M04 and M11 authoritative readiness.
 
 M05 complete; do not build attendance or payroll beyond adapters. Stop.
 
+**Status (28 July 2026):** Wave 4 (M05) is **owner accepted and frozen** at checkpoint `15f020800bbca40702ef08ad25f94f1d1999112f` (planning checkpoint `03a0beff267c9aaf382d161cbfec9f3d0df013e1`). Not production-approved. **`BLOCKED-M10` remains blocked.** Wave 5 execution is **not** approved.
+
 ---
 
 # WAVE 5 - Module 6 Time & Attendance

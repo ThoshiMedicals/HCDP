@@ -36,14 +36,19 @@ This acceptance covers:
 - storage and module ownership boundaries;
 - prohibition on legacy dual-write and destructive migration.
 
-## Wave 3 / Wave 4
+## Wave 3 / Wave 4 / Wave 5
 
 **Wave 3: Owner accepted and frozen** (27 July 2026).  
 Evidence: `docs/audits/WAVE3_M11_COMPLETION_REPORT.md`.
 
-**WAVE 4 EXECUTION IS NOT APPROVED.**  
-Planning only: `docs/architecture/WAVE4_M05_IMPLEMENTATION_PLAN.md`.  
-Do not create, modify, migrate or delete Wave 4 implementation files until explicit execution approval.
+**Wave 4 (M05): Owner accepted and frozen** (28 July 2026).  
+Accepted implementation checkpoint: `15f020800bbca40702ef08ad25f94f1d1999112f`.  
+Evidence: `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`.  
+**`BLOCKED-M10` remains blocked** (workflow 12).  
+Wave 4 owner acceptance is **not** production approval.
+
+**WAVE 5 EXECUTION IS NOT APPROVED.**  
+Do not begin Wave 5 until explicit Wave 5 planning and execution instructions are given.
 
 ## Evidence baseline (accepted)
 

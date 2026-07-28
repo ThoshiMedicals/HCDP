@@ -1,15 +1,19 @@
 # Wave 4 Implementation Plan — Module 5 Roster & Shift Management
 
-**Date:** 27 July 2026 (amended — documentation closure gate)  
-**Status:** **PLANNING ONLY — Wave 4 execution NOT approved**  
+**Date:** 28 July 2026 (owner-acceptance status closure)  
+**Status:** **Owner accepted and frozen** — **NOT** production-approved  
 **Controlling plan:** `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`  
 **Prerequisites:** Wave 2 and Wave 3 **owner accepted and frozen** (27 July 2026)  
-**Wave 3 evidence:** `Development folder/docs/audits/WAVE3_M11_COMPLETION_REPORT.md`
+**Wave 3 evidence:** `Development folder/docs/audits/WAVE3_M11_COMPLETION_REPORT.md`  
+**Accepted implementation checkpoint:** `15f020800bbca40702ef08ad25f94f1d1999112f`  
+**Planning checkpoint:** `03a0beff267c9aaf382d161cbfec9f3d0df013e1`  
+**Acceptance evidence:** `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`  
+**Stop checkpoint:** `docs/audits/WAVE4_CHECKPOINT_STOP_BEFORE_WAVE5.md`
 
-Do **not** implement until explicit Wave 4 execution approval.  
-Do **not** create/modify M05 implementation, migration, seed, test, workspace, or runtime registration files under this amendment.  
-Do **not** alter frozen Wave 2 or Wave 3 implementation.  
-Do **not** start Wave 5.
+Wave 4 execution was completed and **owner accepted** 28 July 2026.  
+Do **not** alter frozen Wave 2, Wave 3 or Wave 4 implementation without explicit owner instruction.  
+Do **not** start Wave 5 until explicit Wave 5 planning/execution approval.  
+**`BLOCKED-M10` remains blocked** (workflow 12) until a safe M10-owned task contract exists.
 
 Paths below are relative to the GitHub repository root (`ThoshiMedicals/HCDP`), which is the `Development folder/` working tree unless noted as a workspace-root documentation mirror.
 
@@ -27,14 +31,17 @@ Paths below are relative to the GitHub repository root (`ThoshiMedicals/HCDP`), 
 
 ### Explicit exclusions
 
-- Wave 4 **execution** until owner approval (this document is planning only).
+- Further Wave 4 runtime changes after owner acceptance without explicit instruction (Wave 4 is **frozen**).
 - M06 attendance SoT, M07 payroll SoT, M22 recruitment SoT.
-- Wave 5+ workflows.
+- Wave 5+ workflows (execution **not** approved).
 - Production DB auth / server-side persistence (deferred).
 - Dual-write to portal staff/doctors or cross-module repository imports/writes.
 - Treating M05 cost forecast as payroll truth.
-- Owning general tasks in M05 (M10 boundary — see §22; adapter deferred if unsafe).
+- Owning general tasks in M05 (M10 boundary — see §22; **`BLOCKED-M10` remains blocked** until a safe M10-owned contract exists — not passed, skipped, resolved or waived).
 - Silent UTC fallback when clinic IANA timezone is missing/invalid.
+- Treating local prototype performance as a production SLA.
+- Treating fatigue/conflict rules as legal, award or clinical-safety certification.
+- Treating Wave 4 owner acceptance as production approval.
 
 ---
 
@@ -742,13 +749,15 @@ After amending planning documents only:
 
 ---
 
-## 29. Stop gate (planning)
+## 29. Stop gate (owner-accepted freeze)
 
-**Wave 4 execution remains NOT APPROVED.**
+**Wave 4 is owner accepted and frozen at `15f020800bbca40702ef08ad25f94f1d1999112f`.**  
+**Wave 4 owner acceptance is not production approval.**  
+**Wave 5 execution is NOT APPROVED.**
 
-After this documentation closure:
+After this status closure:
 
-- Return corrected plan summary, exact file inventory, and every requested matrix.  
-- **Stop.** Wait for explicit Wave 4 execution approval.  
-- Do not alter frozen Wave 2 or Wave 3 implementation.  
-- Do not start Wave 5.
+- Preserve frozen Waves 1A–4.
+- Keep **`BLOCKED-M10`** explicitly blocked until a safe M10-owned task contract exists.
+- **Stop.** Wait for explicit Wave 5 planning instructions.
+- Do not begin Wave 5 implementation.

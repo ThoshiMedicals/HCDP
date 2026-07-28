@@ -4,13 +4,41 @@
 **Codebase:** `Development folder/`  
 **Governing plan:** `docs/architecture/WAVE4_M05_IMPLEMENTATION_PLAN.md`  
 **Planning checkpoint:** `03a0beff267c9aaf382d161cbfec9f3d0df013e1`  
-**Status:** **Focused M02 performance evidence correction completed; awaiting explicit owner acceptance**  
-**Owner acceptance:** **NOT granted**  
-**Production approval:** **NOT claimed**
+**Accepted implementation checkpoint:** `15f020800bbca40702ef08ad25f94f1d1999112f`  
+**Status:** **Owner accepted and frozen**  
+**Owner acceptance:** **GRANTED** 28 July 2026  
+**Production approval:** **NOT granted**
+
+## Owner acceptance summary
+
+Wave 4 — Module 5 Roster & Shift Management is **owner accepted and frozen** at checkpoint `15f020800bbca40702ef08ad25f94f1d1999112f`.
+
+| Totals | Value |
+|---|---|
+| Passed | **106** |
+| Failed | **0** |
+| Skipped | **0** |
+| Blocked | **1** (`BLOCKED-M10` only) |
+
+Accepted coverage:
+
+- all ten M05 sections;
+- workflows 1–11;
+- workflow 12 remains **blocked** pending a safe M10-owned contract (`BLOCKED-M10` — not passed, skipped, resolved or waived).
+
+### Explicit non-claims
+
+- Wave 4 owner acceptance is **not** production approval.
+- Local prototype performance is **not** a production SLA.
+- Fatigue and conflict rules are **not** legal, award or clinical-safety certification.
+- Production persistence and deployment remain **deferred**.
+- Wave 5 remains **planning-only**; Wave 5 execution is **not** approved.
+
+Checkpoint: `docs/audits/WAVE4_CHECKPOINT_STOP_BEFORE_WAVE5.md`
 
 ## Scope confirmation
 
-- Wave 4 M05 evidence correction only (harness + directly required testability/a11y/performance fixes).
+- Wave 4 M05 scope only (planning → execution → evidence → owner acceptance).
 - Preserved frozen Waves 1A–3 functionality, data, contracts and tests.
 - M04 remains authoritative eligibility owner; M05 consumes `authority: "m04-platform"`.
 - M11 contribution remains through M04 only.
@@ -195,8 +223,9 @@ Prototype measurements only — not production SLAs.
 - Clinic timezone registry available for demo clinics.
 
 ### Deferred production concerns
-- M10 duty bridge until safe M10-owned contract exists (`BLOCKED-M10`).
-- Production persistence and production-grade concurrency/SLA remain out of Wave 4 scope.
+- **`BLOCKED-M10`:** M10 duty bridge remains **blocked** (workflow 12). Not passed, skipped, resolved or waived. May be addressed only when a safe M10-owned task contract becomes available.
+- Production persistence and production-grade concurrency/SLA remain deferred.
+- Fatigue/conflict rules are operational prototype checks only — not legal, award or clinical-safety certification.
 
 ## Regression confirmation
 
@@ -206,14 +235,8 @@ Prototype measurements only — not production SLAs.
 
 ## File-scope summary
 
-Correction touched:
-- `src/modules/m05-roster/**` (section identity, focus, concurrency snapshot, coverage/store perf, evidence hooks);
-- `src/lib/portal-context.tsx` (system appearance subscription);
-- `src/styles/tokens.css` (measurable M05 nav focus);
-- `scripts/wave4-m05-acceptance-evidence.mjs`;
-- `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`;
-- `docs/audits/wave4-m05-acceptance-evidence.json`;
-- `docs/audits/wave4-m05-performance-evidence.json`.
+Wave 4 accepted implementation is frozen at `15f020800bbca40702ef08ad25f94f1d1999112f` (planning checkpoint `03a0beff267c9aaf382d161cbfec9f3d0df013e1`).
 
-No Wave 5 files were created or modified.
-**Wave 4 owner acceptance is not marked.**
+No Wave 5 files were created or modified under this acceptance.
+
+**Wave 4: Owner accepted and frozen. Not production-approved. Wave 5 execution not approved.**

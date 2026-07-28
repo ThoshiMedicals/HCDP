@@ -50,12 +50,16 @@ This acceptance is based on the final amended completion evidence in this file (
 - M11-to-M04 workforce-credential promotion;
 - any other deferred integration recorded below / historically in Wave 2–3 reports.
 
-## Wave 4
+## Wave 4 / Wave 5
 
-**WAVE 4 EXECUTION IS NOT APPROVED.**
+**Wave 4 (M05): Owner accepted and frozen** (28 July 2026).  
+Accepted implementation checkpoint: `15f020800bbca40702ef08ad25f94f1d1999112f`.  
+Evidence: `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`.  
+**`BLOCKED-M10` remains blocked** (workflow 12).
 
-Planning document only: `docs/architecture/WAVE4_M05_IMPLEMENTATION_PLAN.md`.  
-Do not create, modify, migrate or delete Wave 4 implementation files until explicit execution approval.
+**WAVE 5 EXECUTION IS NOT APPROVED.**  
+Wave 5 remains planning-only until explicit owner instructions.
+
 
 ---
 
