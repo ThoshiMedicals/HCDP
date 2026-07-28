@@ -1141,12 +1141,26 @@ async function main() {
   const perfRun = await runPerformanceSuite();
   if (perfRun.perf?.results) {
     for (const row of perfRun.perf.results) {
+      const m02Writes = Number(row.projectionsInvoked ?? row.m02Writes ?? 0);
+      const m02Fail =
+        row.id === "perf.m02.projection" && (!(m02Writes > 0) || !row.projectionKey);
+      const pass =
+        !m02Fail && (row.result === "pass" || row.pass === true);
+      const actualParts = [
+        `measuredMs=${row.measuredMs}`,
+        `method=${row.method}`,
+      ];
+      if (row.id === "perf.m02.projection") {
+        actualParts.push(`projectionsInvoked=${m02Writes}`);
+        actualParts.push(`projectionKey=${row.projectionKey ?? ""}`);
+        actualParts.push(`dedupeIdentity=${row.dedupeIdentity ?? row.projectionKey ?? ""}`);
+      }
       record(
         row.id,
         row.name,
         `targetMs=${row.targetMs}; metric=${row.metricType}; dataset=${row.datasetSize}`,
-        `measuredMs=${row.measuredMs}; method=${row.method}`,
-        row.result === "pass" || row.pass === true ? "pass" : "fail",
+        actualParts.join("; "),
+        pass ? "pass" : "fail",
         {
           workflow: "performance",
           evidenceClass: "performance",
@@ -1155,6 +1169,15 @@ async function main() {
           measuredMs: row.measuredMs,
           metricType: row.metricType,
           method: row.method,
+          ...(row.id === "perf.m02.projection"
+            ? {
+                projectionsInvoked: m02Writes,
+                projectionKey: row.projectionKey,
+                dedupeIdentity: row.dedupeIdentity ?? row.projectionKey,
+                sourceRecordId: row.sourceRecordId,
+                sourceRecordType: row.sourceRecordType,
+              }
+            : {}),
         }
       );
     }

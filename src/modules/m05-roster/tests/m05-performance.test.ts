@@ -31,10 +31,11 @@ import {
   registerWorkforceReadinessRecalculate,
   type WorkforceReadinessOutcome,
 } from "@/platform/workforce/services/workforce-eligibility";
-import {
-  registerRosterProjection,
-  resetRosterProjectionRegistryForTests,
-} from "@/platform/workforce/registries/roster-projection-registry";
+import { resetRosterProjectionRegistryForTests } from "@/platform/workforce/registries/roster-projection-registry";
+import { PLATFORM_KEYS, writeJsonSafe } from "@/platform/storage/storage";
+import { M2_STORAGE } from "@/lib/action-inbox/storage";
+import { loadActions } from "@/lib/action-inbox/repository";
+import { findInboxActionForSource } from "@/platform/services/action-inbox-bridge";
 
 import { resetM05BootstrapCacheForTests } from "../storage/bootstrap";
 import { runM05StorageMigrations } from "../storage/migrations";
@@ -72,7 +73,7 @@ import {
 } from "../services/reporting-service";
 import { syncCoverageGapToInbox } from "../adapters/m05-inbox-sync";
 import type { M05Actor } from "../permissions";
-import type { CoverageRequirement } from "../types/domain";
+import type { CoverageGap, CoverageRequirement } from "../types/domain";
 
 // ------------------------------------------------------------
 // In-memory localStorage — matches the other m05 tests.
@@ -226,6 +227,8 @@ describe("m05 wave4 performance", () => {
     resetM05BootstrapCacheForTests();
     resetRosterProjectionRegistryForTests();
     clearClinicTimezoneOverridesForTests();
+    writeJsonSafe(M2_STORAGE.actions, []);
+    writeJsonSafe(PLATFORM_KEYS.sourceLinks, {});
     registerWorkforceReadinessLookup((personId, asOf): WorkforceReadinessOutcome => ({
       personId,
       readiness: "ready",
@@ -690,38 +693,84 @@ describe("m05 wave4 performance", () => {
 
   // -----------------------------------------------------------------------
   // §23 · M02 projection single ≤ 50 ms
-  // Uses the roster-projection registry — same shape as M11 M02 projection.
+  //
+  // Diagnosis of prior false pass:
+  //   The previous harness registered a `registerRosterProjection` observer
+  //   (kind "action-inbox") and then called `syncCoverageGapToInbox`. That
+  //   adapter writes M02 via `dispatchActionInboxEvent` and never invokes the
+  //   roster-projection registry — so `projectionsInvoked` stayed 0 while the
+  //   row still claimed "M02 write". This test measures the real approved
+  //   M05 → M02 path and fails when no inbox write is delivered.
   // -----------------------------------------------------------------------
   it("M02 projection single ≤50ms typical", () => {
-    let received = 0;
-    registerRosterProjection({
-      id: "m05.perf.m02-inbox",
-      kind: "action-inbox",
-      handler: () => {
-        received += 1;
-      },
-    });
-    // Trigger a coverage-gap inbox sync — a realistic single-condition M02
-    // projection call. Iterate for a typical measurement.
-    const gap = {
-      requirementId: "req_perf",
-      rosterPeriodId: "prd_perf",
+    writeJsonSafe(M2_STORAGE.actions, []);
+    writeJsonSafe(PLATFORM_KEYS.sourceLinks, {});
+
+    const baseGap: CoverageGap = {
+      requirementId: "req_perf_probe",
+      rosterPeriodId: "prd_perf_m02",
       clinicId: CLINIC,
       roleLabel: "GP",
       localDate: "2027-01-04",
-      severity: "hard" as const,
+      severity: "hard",
       missingCount: 1,
       filledCount: 0,
       requiredCount: 1,
-      reason: "perf",
+      reason: "perf coverage gap",
       asOf: new Date().toISOString(),
     };
+
     const durations: number[] = [];
+    let writes = 0;
+    let lastProjectionKey = "";
+    let lastSourceRecordId = "";
+    let lastActionId: string | null = null;
+
     for (let i = 0; i < 30; i++) {
+      const gap: CoverageGap = {
+        ...baseGap,
+        requirementId: `req_perf_m02_${i}`,
+        asOf: new Date().toISOString(),
+      };
+      const expectedProjectionKey = `roster::coverage-gap::${gap.rosterPeriodId}::${gap.requirementId}`;
+      const expectedSourceId = `${gap.rosterPeriodId}::${gap.requirementId}`;
+
       const t0 = performance.now();
-      syncCoverageGapToInbox({ ...gap, requirementId: `req_perf_${i}` });
+      const written = syncCoverageGapToInbox(gap);
       durations.push(performance.now() - t0);
+
+      assert.ok(
+        written,
+        `M02 projection write returned null for ${expectedProjectionKey} — syncCoverageGapToInbox must deliver an inbox action`
+      );
+      assert.equal(written!.status, "Open");
+      assert.match(written!.title, /Coverage gap/);
+
+      const found = findInboxActionForSource("roster", "coverage-gap", expectedSourceId);
+      assert.ok(
+        found,
+        `Expected M02 inbox row missing for source ${expectedSourceId}`
+      );
+      assert.equal(found!.id, written!.id);
+
+      writes += 1;
+      lastProjectionKey = expectedProjectionKey;
+      lastSourceRecordId = expectedSourceId;
+      lastActionId = written!.id;
     }
+
+    assert.ok(writes > 0, "projectionsInvoked/write count must be > 0");
+    assert.equal(writes, 30, "each syncCoverageGapToInbox iteration must produce a write");
+    assert.ok(lastActionId, "expected last M02 action id");
+
+    const coverageRows = loadActions().filter(
+      (a) => a.sourceModule === "roster" && a.title.includes("Coverage gap")
+    );
+    assert.ok(
+      coverageRows.length >= 30,
+      `expected ≥30 M02 coverage-gap rows; found ${coverageRows.length}`
+    );
+
     const median = percentile(durations, 50);
     record({
       id: "perf.m02.projection",
@@ -729,11 +778,19 @@ describe("m05 wave4 performance", () => {
       datasetSize: 1,
       targetMs: 50,
       measuredMs: median,
-      method: "30 iterations of syncCoverageGapToInbox → M02 write, median",
+      method:
+        "30 iterations of syncCoverageGapToInbox → dispatchActionInboxEvent (real M05→M02 path), median; asserts write + findInboxActionForSource",
       metricType: "typical",
       extra: {
         p95: Math.round(percentile(durations, 95) * 100) / 100,
-        projectionsInvoked: received,
+        projectionsInvoked: writes,
+        m02Writes: writes,
+        projectionKey: lastProjectionKey,
+        sourceRecordType: "coverage-gap",
+        sourceRecordId: lastSourceRecordId,
+        dedupeIdentity: lastProjectionKey,
+        lastActionId,
+        inboxCoverageGapRows: coverageRows.length,
       },
     });
   });

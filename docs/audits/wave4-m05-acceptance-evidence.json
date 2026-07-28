@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-27T23:39:47.185Z",
-  "baseUrl": "http://localhost:3020",
+  "generatedAt": "2026-07-28T00:09:43.187Z",
+  "baseUrl": "http://localhost:3021",
   "unit": {
     "exitCode": 0,
     "tests": 117,
@@ -9,7 +9,7 @@
     "suites": 13
   },
   "performance": {
-    "generatedAt": "2026-07-27T23:39:12.216Z",
+    "generatedAt": "2026-07-28T00:09:16.528Z",
     "spec": "HCDP §23 M05 performance targets",
     "note": "Each row measures a single §23 target on a planned synthetic dataset. Unit test counts are NOT reported as performance.",
     "total": 14,
@@ -21,11 +21,11 @@
         "name": "Initial roster-board load simulation",
         "datasetSize": 200,
         "targetMs": 2500,
-        "measuredMs": 2.17,
+        "measuredMs": 0.22,
         "method": "listPeriodsForActor + listShiftsForActor over 200 shifts (single pass)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:06.661Z",
+        "executedAt": "2026-07-28T00:09:14.130Z",
         "periods": 1,
         "shifts": 200,
         "assigned": 200
@@ -35,13 +35,13 @@
         "name": "Board filtering 200+ rows",
         "datasetSize": 200,
         "targetMs": 300,
-        "measuredMs": 0.9,
+        "measuredMs": 0.07,
         "method": "20 iterations, in-memory filter across role/status/id, p95",
         "metricType": "p95",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:06.690Z",
-        "min": 0.03,
-        "max": 1.77,
+        "executedAt": "2026-07-28T00:09:14.133Z",
+        "min": 0.01,
+        "max": 0.09,
         "samples": 20
       },
       {
@@ -49,23 +49,23 @@
         "name": "Single eligibility lookup",
         "datasetSize": 1,
         "targetMs": 100,
-        "measuredMs": 0.23,
+        "measuredMs": 0.2,
         "method": "25 iterations, median (typical)",
         "metricType": "typical",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:06.701Z",
-        "p95": 0.88
+        "executedAt": "2026-07-28T00:09:14.141Z",
+        "p95": 0.48
       },
       {
         "id": "perf.conflict.recalc",
         "name": "Conflict recalculation 150+ assignments",
         "datasetSize": 160,
         "targetMs": 2000,
-        "measuredMs": 1.57,
+        "measuredMs": 1.41,
         "method": "evaluateConflicts across 160 candidate shifts (single pass)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:06.703Z",
+        "executedAt": "2026-07-28T00:09:14.143Z",
         "totalFindings": 0
       },
       {
@@ -73,22 +73,22 @@
         "name": "Coverage calculation",
         "datasetSize": 30,
         "targetMs": 500,
-        "measuredMs": 2.55,
+        "measuredMs": 2.04,
         "method": "20 iterations of evaluateCoverage over 30 requirements + 200 shifts, p95",
         "metricType": "p95",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:06.723Z"
+        "executedAt": "2026-07-28T00:09:14.159Z"
       },
       {
         "id": "perf.publication.preview",
         "name": "Publication preview",
         "datasetSize": 60,
         "targetMs": 2000,
-        "measuredMs": 19.01,
+        "measuredMs": 7.28,
         "method": "previewPublication over 60 assigned shifts (single pass)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:07.464Z",
+        "executedAt": "2026-07-28T00:09:14.497Z",
         "assignmentCount": 60,
         "warningCount": 0,
         "blockerCount": 0
@@ -98,12 +98,12 @@
         "name": "Publication submission",
         "datasetSize": 60,
         "targetMs": 3000,
-        "measuredMs": 68.86,
+        "measuredMs": 27.47,
         "method": "publishPeriod over 60 assigned shifts (immutable snapshot + event dispatch)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:07.533Z",
-        "publicationId": "pub_ms3vc47v_gyaew8",
+        "executedAt": "2026-07-28T00:09:14.524Z",
+        "publicationId": "pub_ms3weuiy_k4pp7w",
         "publicationVersion": 1,
         "requiredAcks": 60
       },
@@ -112,11 +112,11 @@
         "name": "Open-shift acceptance",
         "datasetSize": 1,
         "targetMs": 400,
-        "measuredMs": 4.49,
+        "measuredMs": 1.15,
         "method": "acceptOpenShift end-to-end (eligibility + transition + audit)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:07.549Z",
+        "executedAt": "2026-07-28T00:09:14.529Z",
         "finalStatus": "eoi_received"
       },
       {
@@ -124,24 +124,24 @@
         "name": "Swap approval",
         "datasetSize": 1,
         "targetMs": 500,
-        "measuredMs": 7.22,
+        "measuredMs": 2.51,
         "method": "approveSwap end-to-end (eligibility + assignPerson + audit)",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:07.572Z",
-        "assignmentId": "asn_ms3vc4a6_4g2wr1",
-        "originalAssignmentId": "asn_ms3vc49x_8id46d"
+        "executedAt": "2026-07-28T00:09:14.541Z",
+        "assignmentId": "asn_ms3weujv_fyo71q",
+        "originalAssignmentId": "asn_ms3weujp_jsvmtl"
       },
       {
         "id": "perf.bulk.preview",
         "name": "Bulk preview 500 ops",
         "datasetSize": 500,
         "targetMs": 2000,
-        "measuredMs": 0.89,
+        "measuredMs": 0.44,
         "method": "previewBulk(500 create-shift ops) single pass",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:07.578Z",
+        "executedAt": "2026-07-28T00:09:14.543Z",
         "willAttempt": 500,
         "duplicates": 0
       },
@@ -150,11 +150,11 @@
         "name": "Bulk submission 500 ops",
         "datasetSize": 500,
         "targetMs": 5000,
-        "measuredMs": 4572.32,
+        "measuredMs": 1934.46,
         "method": "submitBulk(500 create-shift ops) end-to-end",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:12.150Z",
+        "executedAt": "2026-07-28T00:09:16.478Z",
         "succeeded": 500,
         "failed": 0,
         "skippedDuplicate": 0,
@@ -165,24 +165,31 @@
         "name": "M02 projection single",
         "datasetSize": 1,
         "targetMs": 50,
-        "measuredMs": 1.03,
-        "method": "30 iterations of syncCoverageGapToInbox → M02 write, median",
+        "measuredMs": 0.58,
+        "method": "30 iterations of syncCoverageGapToInbox → dispatchActionInboxEvent (real M05→M02 path), median; asserts write + findInboxActionForSource",
         "metricType": "typical",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:12.187Z",
-        "p95": 2.19,
-        "projectionsInvoked": 0
+        "executedAt": "2026-07-28T00:09:16.510Z",
+        "p95": 1.6,
+        "projectionsInvoked": 30,
+        "m02Writes": 30,
+        "projectionKey": "roster::coverage-gap::prd_perf_m02::req_perf_m02_29",
+        "sourceRecordType": "coverage-gap",
+        "sourceRecordId": "prd_perf_m02::req_perf_m02_29",
+        "dedupeIdentity": "roster::coverage-gap::prd_perf_m02::req_perf_m02_29",
+        "lastActionId": "act-ms3wew2l-1rppa",
+        "inboxCoverageGapRows": 30
       },
       {
         "id": "perf.report.build",
         "name": "Scoped report build",
         "datasetSize": 1025,
         "targetMs": 3000,
-        "measuredMs": 7.95,
+        "measuredMs": 2.57,
         "method": "buildScopedReport over all seeded periods/shifts/assignments/publications",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:12.196Z",
+        "executedAt": "2026-07-28T00:09:16.513Z",
         "periods": 5,
         "shifts": 762,
         "assignments": 262,
@@ -194,11 +201,11 @@
         "name": "Scoped CSV export",
         "datasetSize": 762,
         "targetMs": 3000,
-        "measuredMs": 18.18,
+        "measuredMs": 12.6,
         "method": "exportShiftAssignmentsCsv over full clinic-scoped shift set",
         "metricType": "max",
         "result": "pass",
-        "executedAt": "2026-07-27T23:39:12.215Z",
+        "executedAt": "2026-07-28T00:09:16.526Z",
         "csvLineCount": 763,
         "csvBytes": 138138
       }
@@ -365,7 +372,7 @@
     "loading": {
       "state": "loading",
       "evidenceId": "UX-01",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "localStorage pulse.m05.evidence.forceLoading=1 then reload (delayed read-model gate)",
       "expected": "m05-ux-loading visible during delayed bootstrap",
       "actual": "loadingMarker=2",
@@ -375,7 +382,7 @@
     "empty": {
       "state": "empty",
       "evidenceId": "UX-02",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "seed once, then clear pulse.m05.roster.periods/shifts to [] while keeping seed migration flag so repository stays empty",
       "expected": "m05-ux-empty on Roster Board",
       "actual": "emptyMarker=1",
@@ -385,7 +392,7 @@
     "filtered-empty": {
       "state": "filtered-empty",
       "evidenceId": "UX-03",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "type zzz-no-match-999 into m05-board-filter with existing shifts",
       "expected": "m05-ux-filtered-empty",
       "actual": "filteredEmptyMarker=1",
@@ -395,7 +402,7 @@
     "restricted": {
       "state": "restricted",
       "evidenceId": "UX-04",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "localStorage pulse.m05.evidence.forceRestricted=1 then reload",
       "expected": "m05-ux-restricted (actor permissions cleared by provider)",
       "actual": "restrictedMarker=1",
@@ -405,7 +412,7 @@
     "validation-error": {
       "state": "validation-error",
       "evidenceId": "UX-05",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "click m05-create-period with empty required fields",
       "expected": "m05-ux-validation-error",
       "actual": "validationMarker=1",
@@ -415,7 +422,7 @@
     "system-error": {
       "state": "system-error",
       "evidenceId": "UX-06",
-      "route": "http://localhost:3020/roster?section=coverage",
+      "route": "http://localhost:3021/roster?section=coverage",
       "trigger": "localStorage pulse.m05.evidence.forceSystemError=1 then load coverage/board",
       "expected": "m05-ux-system-error",
       "actual": "systemErrorMarker=1",
@@ -425,7 +432,7 @@
     "offline": {
       "state": "offline",
       "evidenceId": "UX-07",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "Playwright context.setOffline(true) while Roster Board is mounted (browser offline event)",
       "expected": "m05-ux-offline banner",
       "actual": "offlineMarker=1; navigatorOffline=true",
@@ -435,7 +442,7 @@
     "concurrent-conflict": {
       "state": "concurrent-conflict",
       "evidenceId": "UX-08",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "ensure draft period, bump stored period.version without reload, click m05-period-submit-review (stale expectedVersion)",
       "expected": "m05-ux-concurrent-conflict",
       "actual": "concurrentConflictMarker=1",
@@ -820,7 +827,7 @@
       "expected": "all pass",
       "actual": "tests=117; pass=117; fail=0; suites=13",
       "result": "pass",
-      "executedAt": "2026-07-27T23:38:59.571Z",
+      "executedAt": "2026-07-28T00:09:10.775Z",
       "workflow": "unit",
       "evidenceClass": "unit"
     },
@@ -828,14 +835,14 @@
       "id": "perf.board.initial-load",
       "name": "Initial roster-board load simulation",
       "expected": "targetMs=2500; metric=max; dataset=200",
-      "actual": "measuredMs=2.17; method=listPeriodsForActor + listShiftsForActor over 200 shifts (single pass)",
+      "actual": "measuredMs=0.22; method=listPeriodsForActor + listShiftsForActor over 200 shifts (single pass)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.414Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 200,
       "targetMs": 2500,
-      "measuredMs": 2.17,
+      "measuredMs": 0.22,
       "metricType": "max",
       "method": "listPeriodsForActor + listShiftsForActor over 200 shifts (single pass)"
     },
@@ -843,14 +850,14 @@
       "id": "perf.board.filter",
       "name": "Board filtering 200+ rows",
       "expected": "targetMs=300; metric=p95; dataset=200",
-      "actual": "measuredMs=0.9; method=20 iterations, in-memory filter across role/status/id, p95",
+      "actual": "measuredMs=0.07; method=20 iterations, in-memory filter across role/status/id, p95",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.414Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 200,
       "targetMs": 300,
-      "measuredMs": 0.9,
+      "measuredMs": 0.07,
       "metricType": "p95",
       "method": "20 iterations, in-memory filter across role/status/id, p95"
     },
@@ -858,14 +865,14 @@
       "id": "perf.eligibility.single",
       "name": "Single eligibility lookup",
       "expected": "targetMs=100; metric=typical; dataset=1",
-      "actual": "measuredMs=0.23; method=25 iterations, median (typical)",
+      "actual": "measuredMs=0.2; method=25 iterations, median (typical)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.414Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 1,
       "targetMs": 100,
-      "measuredMs": 0.23,
+      "measuredMs": 0.2,
       "metricType": "typical",
       "method": "25 iterations, median (typical)"
     },
@@ -873,14 +880,14 @@
       "id": "perf.conflict.recalc",
       "name": "Conflict recalculation 150+ assignments",
       "expected": "targetMs=2000; metric=max; dataset=160",
-      "actual": "measuredMs=1.57; method=evaluateConflicts across 160 candidate shifts (single pass)",
+      "actual": "measuredMs=1.41; method=evaluateConflicts across 160 candidate shifts (single pass)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 160,
       "targetMs": 2000,
-      "measuredMs": 1.57,
+      "measuredMs": 1.41,
       "metricType": "max",
       "method": "evaluateConflicts across 160 candidate shifts (single pass)"
     },
@@ -888,14 +895,14 @@
       "id": "perf.coverage.calc",
       "name": "Coverage calculation",
       "expected": "targetMs=500; metric=p95; dataset=30",
-      "actual": "measuredMs=2.55; method=20 iterations of evaluateCoverage over 30 requirements + 200 shifts, p95",
+      "actual": "measuredMs=2.04; method=20 iterations of evaluateCoverage over 30 requirements + 200 shifts, p95",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 30,
       "targetMs": 500,
-      "measuredMs": 2.55,
+      "measuredMs": 2.04,
       "metricType": "p95",
       "method": "20 iterations of evaluateCoverage over 30 requirements + 200 shifts, p95"
     },
@@ -903,14 +910,14 @@
       "id": "perf.publication.preview",
       "name": "Publication preview",
       "expected": "targetMs=2000; metric=max; dataset=60",
-      "actual": "measuredMs=19.01; method=previewPublication over 60 assigned shifts (single pass)",
+      "actual": "measuredMs=7.28; method=previewPublication over 60 assigned shifts (single pass)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 60,
       "targetMs": 2000,
-      "measuredMs": 19.01,
+      "measuredMs": 7.28,
       "metricType": "max",
       "method": "previewPublication over 60 assigned shifts (single pass)"
     },
@@ -918,14 +925,14 @@
       "id": "perf.publication.submit",
       "name": "Publication submission",
       "expected": "targetMs=3000; metric=max; dataset=60",
-      "actual": "measuredMs=68.86; method=publishPeriod over 60 assigned shifts (immutable snapshot + event dispatch)",
+      "actual": "measuredMs=27.47; method=publishPeriod over 60 assigned shifts (immutable snapshot + event dispatch)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 60,
       "targetMs": 3000,
-      "measuredMs": 68.86,
+      "measuredMs": 27.47,
       "metricType": "max",
       "method": "publishPeriod over 60 assigned shifts (immutable snapshot + event dispatch)"
     },
@@ -933,14 +940,14 @@
       "id": "perf.open-shift.accept",
       "name": "Open-shift acceptance",
       "expected": "targetMs=400; metric=max; dataset=1",
-      "actual": "measuredMs=4.49; method=acceptOpenShift end-to-end (eligibility + transition + audit)",
+      "actual": "measuredMs=1.15; method=acceptOpenShift end-to-end (eligibility + transition + audit)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 1,
       "targetMs": 400,
-      "measuredMs": 4.49,
+      "measuredMs": 1.15,
       "metricType": "max",
       "method": "acceptOpenShift end-to-end (eligibility + transition + audit)"
     },
@@ -948,14 +955,14 @@
       "id": "perf.swap.approve",
       "name": "Swap approval",
       "expected": "targetMs=500; metric=max; dataset=1",
-      "actual": "measuredMs=7.22; method=approveSwap end-to-end (eligibility + assignPerson + audit)",
+      "actual": "measuredMs=2.51; method=approveSwap end-to-end (eligibility + assignPerson + audit)",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 1,
       "targetMs": 500,
-      "measuredMs": 7.22,
+      "measuredMs": 2.51,
       "metricType": "max",
       "method": "approveSwap end-to-end (eligibility + assignPerson + audit)"
     },
@@ -963,14 +970,14 @@
       "id": "perf.bulk.preview",
       "name": "Bulk preview 500 ops",
       "expected": "targetMs=2000; metric=max; dataset=500",
-      "actual": "measuredMs=0.89; method=previewBulk(500 create-shift ops) single pass",
+      "actual": "measuredMs=0.44; method=previewBulk(500 create-shift ops) single pass",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 500,
       "targetMs": 2000,
-      "measuredMs": 0.89,
+      "measuredMs": 0.44,
       "metricType": "max",
       "method": "previewBulk(500 create-shift ops) single pass"
     },
@@ -978,14 +985,14 @@
       "id": "perf.bulk.submit",
       "name": "Bulk submission 500 ops",
       "expected": "targetMs=5000; metric=max; dataset=500",
-      "actual": "measuredMs=4572.32; method=submitBulk(500 create-shift ops) end-to-end",
+      "actual": "measuredMs=1934.46; method=submitBulk(500 create-shift ops) end-to-end",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 500,
       "targetMs": 5000,
-      "measuredMs": 4572.32,
+      "measuredMs": 1934.46,
       "metricType": "max",
       "method": "submitBulk(500 create-shift ops) end-to-end"
     },
@@ -993,29 +1000,34 @@
       "id": "perf.m02.projection",
       "name": "M02 projection single",
       "expected": "targetMs=50; metric=typical; dataset=1",
-      "actual": "measuredMs=1.03; method=30 iterations of syncCoverageGapToInbox → M02 write, median",
+      "actual": "measuredMs=0.58; method=30 iterations of syncCoverageGapToInbox → dispatchActionInboxEvent (real M05→M02 path), median; asserts write + findInboxActionForSource; projectionsInvoked=30; projectionKey=roster::coverage-gap::prd_perf_m02::req_perf_m02_29; dedupeIdentity=roster::coverage-gap::prd_perf_m02::req_perf_m02_29",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 1,
       "targetMs": 50,
-      "measuredMs": 1.03,
+      "measuredMs": 0.58,
       "metricType": "typical",
-      "method": "30 iterations of syncCoverageGapToInbox → M02 write, median"
+      "method": "30 iterations of syncCoverageGapToInbox → dispatchActionInboxEvent (real M05→M02 path), median; asserts write + findInboxActionForSource",
+      "projectionsInvoked": 30,
+      "projectionKey": "roster::coverage-gap::prd_perf_m02::req_perf_m02_29",
+      "dedupeIdentity": "roster::coverage-gap::prd_perf_m02::req_perf_m02_29",
+      "sourceRecordId": "prd_perf_m02::req_perf_m02_29",
+      "sourceRecordType": "coverage-gap"
     },
     {
       "id": "perf.report.build",
       "name": "Scoped report build",
       "expected": "targetMs=3000; metric=max; dataset=1025",
-      "actual": "measuredMs=7.95; method=buildScopedReport over all seeded periods/shifts/assignments/publications",
+      "actual": "measuredMs=2.57; method=buildScopedReport over all seeded periods/shifts/assignments/publications",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 1025,
       "targetMs": 3000,
-      "measuredMs": 7.95,
+      "measuredMs": 2.57,
       "metricType": "max",
       "method": "buildScopedReport over all seeded periods/shifts/assignments/publications"
     },
@@ -1023,14 +1035,14 @@
       "id": "perf.report.export",
       "name": "Scoped CSV export",
       "expected": "targetMs=3000; metric=max; dataset=762",
-      "actual": "measuredMs=18.18; method=exportShiftAssignmentsCsv over full clinic-scoped shift set",
+      "actual": "measuredMs=12.6; method=exportShiftAssignmentsCsv over full clinic-scoped shift set",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:12.415Z",
+      "executedAt": "2026-07-28T00:09:16.657Z",
       "workflow": "performance",
       "evidenceClass": "performance",
       "datasetSize": 762,
       "targetMs": 3000,
-      "measuredMs": 18.18,
+      "measuredMs": 12.6,
       "metricType": "max",
       "method": "exportShiftAssignmentsCsv over full clinic-scoped shift set"
     },
@@ -1040,8 +1052,8 @@
       "expected": "id=roster-board; heading=\"Roster Board\"; navActive; unique; action",
       "actual": "actualId=roster-board; heading=\"Roster Board\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:15.717Z",
-      "route": "http://localhost:3020/roster",
+      "executedAt": "2026-07-28T00:09:20.180Z",
+      "route": "http://localhost:3021/roster",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1051,8 +1063,8 @@
       "expected": "id=coverage; heading=\"Coverage\"; navActive; unique; action",
       "actual": "actualId=coverage; heading=\"Coverage\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:16.273Z",
-      "route": "http://localhost:3020/roster?section=coverage",
+      "executedAt": "2026-07-28T00:09:20.563Z",
+      "route": "http://localhost:3021/roster?section=coverage",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1062,8 +1074,8 @@
       "expected": "id=open-shifts; heading=\"Open Shifts\"; navActive; unique; action",
       "actual": "actualId=open-shifts; heading=\"Open Shifts\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:16.754Z",
-      "route": "http://localhost:3020/roster?section=open-shifts",
+      "executedAt": "2026-07-28T00:09:20.880Z",
+      "route": "http://localhost:3021/roster?section=open-shifts",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1073,8 +1085,8 @@
       "expected": "id=availability-leave; heading=\"Availability & Leave\"; navActive; unique; action",
       "actual": "actualId=availability-leave; heading=\"Availability & Leave\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:17.486Z",
-      "route": "http://localhost:3020/roster?section=availability-leave",
+      "executedAt": "2026-07-28T00:09:21.216Z",
+      "route": "http://localhost:3021/roster?section=availability-leave",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1084,8 +1096,8 @@
       "expected": "id=requests; heading=\"Requests\"; navActive; unique; action",
       "actual": "actualId=requests; heading=\"Requests\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:18.084Z",
-      "route": "http://localhost:3020/roster?section=requests",
+      "executedAt": "2026-07-28T00:09:21.531Z",
+      "route": "http://localhost:3021/roster?section=requests",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1095,8 +1107,8 @@
       "expected": "id=conflicts-warnings; heading=\"Conflicts & Warnings\"; navActive; unique; action",
       "actual": "actualId=conflicts-warnings; heading=\"Conflicts & Warnings\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:18.909Z",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings",
+      "executedAt": "2026-07-28T00:09:21.831Z",
+      "route": "http://localhost:3021/roster?section=conflicts-warnings",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1106,8 +1118,8 @@
       "expected": "id=published-history; heading=\"Published History\"; navActive; unique; action",
       "actual": "actualId=published-history; heading=\"Published History\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:19.755Z",
-      "route": "http://localhost:3020/roster?section=published-history",
+      "executedAt": "2026-07-28T00:09:22.084Z",
+      "route": "http://localhost:3021/roster?section=published-history",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1117,8 +1129,8 @@
       "expected": "id=cost-forecast; heading=\"Cost Forecast\"; navActive; unique; action",
       "actual": "actualId=cost-forecast; heading=\"Cost Forecast\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:20.522Z",
-      "route": "http://localhost:3020/roster?section=cost-forecast",
+      "executedAt": "2026-07-28T00:09:22.446Z",
+      "route": "http://localhost:3021/roster?section=cost-forecast",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1128,8 +1140,8 @@
       "expected": "id=reports; heading=\"Reports\"; navActive; unique; action",
       "actual": "actualId=reports; heading=\"Reports\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:20.972Z",
-      "route": "http://localhost:3020/roster?section=reports",
+      "executedAt": "2026-07-28T00:09:22.755Z",
+      "route": "http://localhost:3021/roster?section=reports",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1139,8 +1151,8 @@
       "expected": "id=settings; heading=\"Settings\"; navActive; unique; action",
       "actual": "actualId=settings; heading=\"Settings\"; navActive=true; unique=true; boardStill=false; actionOk=true; phraseOk=true; approach=nav-click",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:21.627Z",
-      "route": "http://localhost:3020/roster?section=settings",
+      "executedAt": "2026-07-28T00:09:23.020Z",
+      "route": "http://localhost:3021/roster?section=settings",
       "workflow": "sections.functional",
       "evidenceClass": "browser-functional"
     },
@@ -1150,10 +1162,10 @@
       "expected": "m05-ux-loading visible during delayed bootstrap",
       "actual": "loadingMarker=2",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:22.127Z",
+      "executedAt": "2026-07-28T00:09:23.245Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "localStorage pulse.m05.evidence.forceLoading=1 then reload (delayed read-model gate)",
       "recovery": "auto-clear flag after ~700ms"
     },
@@ -1163,10 +1175,10 @@
       "expected": "m05-ux-empty on Roster Board",
       "actual": "emptyMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:23.324Z",
+      "executedAt": "2026-07-28T00:09:24.156Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "seed once, then clear pulse.m05.roster.periods/shifts to [] while keeping seed migration flag so repository stays empty",
       "recovery": "clear seed migration flag + remove empty arrays so seed can restore"
     },
@@ -1176,10 +1188,10 @@
       "expected": "m05-ux-filtered-empty",
       "actual": "filteredEmptyMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:24.015Z",
+      "executedAt": "2026-07-28T00:09:24.655Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "type zzz-no-match-999 into m05-board-filter with existing shifts",
       "recovery": "clear filter"
     },
@@ -1189,10 +1201,10 @@
       "expected": "m05-ux-restricted (actor permissions cleared by provider)",
       "actual": "restrictedMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:24.833Z",
+      "executedAt": "2026-07-28T00:09:25.361Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "localStorage pulse.m05.evidence.forceRestricted=1 then reload",
       "recovery": "clear forceRestricted + reload"
     },
@@ -1202,10 +1214,10 @@
       "expected": "m05-ux-validation-error",
       "actual": "validationMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:25.513Z",
+      "executedAt": "2026-07-28T00:09:25.899Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "click m05-create-period with empty required fields",
       "recovery": "fill required fields"
     },
@@ -1215,10 +1227,10 @@
       "expected": "m05-ux-system-error",
       "actual": "systemErrorMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:26.333Z",
+      "executedAt": "2026-07-28T00:09:26.627Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster?section=coverage",
+      "route": "http://localhost:3021/roster?section=coverage",
       "trigger": "localStorage pulse.m05.evidence.forceSystemError=1 then load coverage/board",
       "recovery": "clear forceSystemError + reload"
     },
@@ -1228,10 +1240,10 @@
       "expected": "m05-ux-offline banner",
       "actual": "offlineMarker=1; navigatorOffline=true",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:27.590Z",
+      "executedAt": "2026-07-28T00:09:27.725Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "Playwright context.setOffline(true) while Roster Board is mounted (browser offline event)",
       "recovery": "setOffline(false)"
     },
@@ -1241,10 +1253,10 @@
       "expected": "m05-ux-concurrent-conflict",
       "actual": "concurrentConflictMarker=1",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:28.764Z",
+      "executedAt": "2026-07-28T00:09:28.663Z",
       "workflow": "ux.states",
       "evidenceClass": "functional",
-      "route": "http://localhost:3020/roster",
+      "route": "http://localhost:3021/roster",
       "trigger": "ensure draft period, bump stored period.version without reload, click m05-period-submit-review (stale expectedVersion)",
       "recovery": "refresh / re-read latest version via ConcurrentConflictState onRefresh"
     },
@@ -1254,7 +1266,7 @@
       "expected": "stored=\"light\" and body without theme-dark",
       "actual": "{\"stored\":\"light\",\"dark\":false,\"ink\":\"rgb(11, 23, 32)\",\"bg\":\"rgb(241, 245, 250)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:30.197Z",
+      "executedAt": "2026-07-28T00:09:29.638Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional",
       "viewport": "1280x800"
@@ -1265,7 +1277,7 @@
       "expected": "stored=\"dark\" and body.theme-dark",
       "actual": "{\"stored\":\"dark\",\"dark\":true,\"ink\":\"rgb(241, 245, 249)\",\"bg\":\"rgb(7, 17, 31)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:30.569Z",
+      "executedAt": "2026-07-28T00:09:29.917Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional",
       "viewport": "1280x800"
@@ -1276,7 +1288,7 @@
       "expected": "theme-dark remains after navigation",
       "actual": "{\"stored\":\"dark\",\"dark\":true,\"ink\":\"rgb(241, 245, 249)\",\"bg\":\"rgb(7, 17, 31)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:31.038Z",
+      "executedAt": "2026-07-28T00:09:30.292Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional"
     },
@@ -1286,7 +1298,7 @@
       "expected": "theme-dark remains after full reload",
       "actual": "{\"stored\":\"dark\",\"dark\":true,\"ink\":\"rgb(241, 245, 249)\",\"bg\":\"rgb(7, 17, 31)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:31.453Z",
+      "executedAt": "2026-07-28T00:09:30.683Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional"
     },
@@ -1296,7 +1308,7 @@
       "expected": "stored=\"system\" (OS media alone is NOT reported as explicit Light/Dark)",
       "actual": "{\"stored\":\"system\",\"dark\":false,\"ink\":\"rgb(11, 23, 32)\",\"bg\":\"rgb(241, 245, 250)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:32.635Z",
+      "executedAt": "2026-07-28T00:09:31.530Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional"
     },
@@ -1306,7 +1318,7 @@
       "expected": "stored=system; body without theme-dark under light preference (via app applyAppearance)",
       "actual": "{\"stored\":\"system\",\"dark\":false,\"ink\":\"rgb(11, 23, 32)\",\"bg\":\"rgb(241, 245, 250)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:33.074Z",
+      "executedAt": "2026-07-28T00:09:31.974Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional"
     },
@@ -1316,7 +1328,7 @@
       "expected": "stored=system; body.theme-dark under dark preference (via app applyAppearance)",
       "actual": "{\"stored\":\"system\",\"dark\":true,\"ink\":\"rgb(241, 245, 249)\",\"bg\":\"rgb(7, 17, 31)\"}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:33.540Z",
+      "executedAt": "2026-07-28T00:09:32.392Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional"
     },
@@ -1326,7 +1338,7 @@
       "expected": "ink differs from background",
       "actual": "{\"ink\":\"rgb(11, 23, 32)\",\"bg\":\"rgb(241, 245, 250)\",\"differ\":true}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:33.752Z",
+      "executedAt": "2026-07-28T00:09:32.510Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900"
@@ -1337,7 +1349,7 @@
       "expected": "ink differs from background",
       "actual": "{\"ink\":\"rgb(11, 23, 32)\",\"bg\":\"rgb(241, 245, 250)\",\"differ\":true}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:34.001Z",
+      "executedAt": "2026-07-28T00:09:32.645Z",
       "workflow": "ux.appearance",
       "evidenceClass": "browser-functional",
       "viewport": "390x900"
@@ -1348,7 +1360,7 @@
       "expected": "Tab to m05-nav-coverage with measurable outline/box-shadow/border; fail if no indicator",
       "actual": "{\"focusedCoverage\":true,\"focusStyle\":{\"testId\":\"m05-nav-coverage\",\"tag\":\"BUTTON\",\"outlineWidth\":\"2px\",\"outlineStyle\":\"solid\",\"outlineColor\":\"rgb(82, 100, 121)\",\"boxShadow\":\"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px\",\"borderColor\":\"rgb(82, 100, 121)\",\"borderWidth\":\"0px\"},\"hasOutline\":true,\"hasShadow\":true,\"hasBorder\":false,\"visibleFocus\":true,\"invalidPass\":false}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:35.750Z",
+      "executedAt": "2026-07-28T00:09:33.941Z",
       "workflow": "ux.keyboard",
       "evidenceClass": "browser-functional"
     },
@@ -1358,7 +1370,7 @@
       "expected": "m05-section-coverage visible after Enter",
       "actual": "coverageActive=true",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:36.188Z",
+      "executedAt": "2026-07-28T00:09:34.353Z",
       "workflow": "ux.keyboard",
       "evidenceClass": "browser-functional"
     },
@@ -1368,7 +1380,7 @@
       "expected": "m05-section-open-shifts visible after Space",
       "actual": "openActive=true",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:36.574Z",
+      "executedAt": "2026-07-28T00:09:34.675Z",
       "workflow": "ux.keyboard",
       "evidenceClass": "browser-functional"
     },
@@ -1378,7 +1390,7 @@
       "expected": "≥3 distinct focused test ids; all m05-nav-* labelled",
       "actual": "{\"distinct\":[\"m05-nav-coverage\",\"m05-nav-open-shifts\",\"m05-nav-availability-leave\",\"m05-nav-requests\",\"m05-nav-conflicts-warnings\",\"m05-nav-published-history\",\"m05-nav-cost-forecast\",\"m05-nav-reports\",\"m05-nav-settings\"],\"labelled\":true}",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:37.225Z",
+      "executedAt": "2026-07-28T00:09:34.869Z",
       "workflow": "ux.keyboard",
       "evidenceClass": "browser-functional"
     },
@@ -1388,11 +1400,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:37.685Z",
+      "executedAt": "2026-07-28T00:09:35.117Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.1440.coverage",
@@ -1400,11 +1412,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:37.786Z",
+      "executedAt": "2026-07-28T00:09:35.195Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.1440.open-shifts",
@@ -1412,11 +1424,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:37.940Z",
+      "executedAt": "2026-07-28T00:09:35.290Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.1440.availability-leave",
@@ -1424,11 +1436,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.077Z",
+      "executedAt": "2026-07-28T00:09:35.400Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.1440.requests",
@@ -1436,11 +1448,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.209Z",
+      "executedAt": "2026-07-28T00:09:35.526Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.1440.conflicts-warnings",
@@ -1448,11 +1460,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.317Z",
+      "executedAt": "2026-07-28T00:09:35.668Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.1440.published-history",
@@ -1460,11 +1472,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.416Z",
+      "executedAt": "2026-07-28T00:09:35.785Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.1440.cost-forecast",
@@ -1472,11 +1484,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.540Z",
+      "executedAt": "2026-07-28T00:09:35.894Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.1440.reports",
@@ -1484,11 +1496,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.643Z",
+      "executedAt": "2026-07-28T00:09:35.991Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.1440.settings",
@@ -1496,11 +1508,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1440; client=1440",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:38.777Z",
+      "executedAt": "2026-07-28T00:09:36.046Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1440x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "responsive.1280.roster-board",
@@ -1508,11 +1520,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.177Z",
+      "executedAt": "2026-07-28T00:09:36.277Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.1280.coverage",
@@ -1520,11 +1532,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.379Z",
+      "executedAt": "2026-07-28T00:09:36.383Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.1280.open-shifts",
@@ -1532,11 +1544,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.550Z",
+      "executedAt": "2026-07-28T00:09:36.482Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.1280.availability-leave",
@@ -1544,11 +1556,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.700Z",
+      "executedAt": "2026-07-28T00:09:36.580Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.1280.requests",
@@ -1556,11 +1568,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.833Z",
+      "executedAt": "2026-07-28T00:09:36.690Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.1280.conflicts-warnings",
@@ -1568,11 +1580,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:39.940Z",
+      "executedAt": "2026-07-28T00:09:36.766Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.1280.published-history",
@@ -1580,11 +1592,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:40.036Z",
+      "executedAt": "2026-07-28T00:09:36.882Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.1280.cost-forecast",
@@ -1592,11 +1604,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:40.172Z",
+      "executedAt": "2026-07-28T00:09:36.967Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.1280.reports",
@@ -1604,11 +1616,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:40.292Z",
+      "executedAt": "2026-07-28T00:09:37.067Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.1280.settings",
@@ -1616,11 +1628,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1280; client=1280",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:40.530Z",
+      "executedAt": "2026-07-28T00:09:37.162Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1280x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "responsive.1024.roster-board",
@@ -1628,11 +1640,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:40.917Z",
+      "executedAt": "2026-07-28T00:09:37.418Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.1024.coverage",
@@ -1640,11 +1652,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.024Z",
+      "executedAt": "2026-07-28T00:09:37.543Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.1024.open-shifts",
@@ -1652,11 +1664,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.110Z",
+      "executedAt": "2026-07-28T00:09:37.718Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.1024.availability-leave",
@@ -1664,11 +1676,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.211Z",
+      "executedAt": "2026-07-28T00:09:37.831Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.1024.requests",
@@ -1676,11 +1688,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.333Z",
+      "executedAt": "2026-07-28T00:09:37.930Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.1024.conflicts-warnings",
@@ -1688,11 +1700,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.426Z",
+      "executedAt": "2026-07-28T00:09:37.997Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.1024.published-history",
@@ -1700,11 +1712,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.522Z",
+      "executedAt": "2026-07-28T00:09:38.101Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.1024.cost-forecast",
@@ -1712,11 +1724,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.606Z",
+      "executedAt": "2026-07-28T00:09:38.200Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.1024.reports",
@@ -1724,11 +1736,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.723Z",
+      "executedAt": "2026-07-28T00:09:38.300Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.1024.settings",
@@ -1736,11 +1748,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=1024; client=1024",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:41.810Z",
+      "executedAt": "2026-07-28T00:09:38.392Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "1024x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "responsive.768.roster-board",
@@ -1748,11 +1760,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:42.194Z",
+      "executedAt": "2026-07-28T00:09:38.630Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.768.coverage",
@@ -1760,11 +1772,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:42.322Z",
+      "executedAt": "2026-07-28T00:09:38.734Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.768.open-shifts",
@@ -1772,11 +1784,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:42.408Z",
+      "executedAt": "2026-07-28T00:09:38.851Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.768.availability-leave",
@@ -1784,11 +1796,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:42.521Z",
+      "executedAt": "2026-07-28T00:09:38.945Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.768.requests",
@@ -1796,11 +1808,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:42.679Z",
+      "executedAt": "2026-07-28T00:09:39.029Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.768.conflicts-warnings",
@@ -1808,11 +1820,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:43.188Z",
+      "executedAt": "2026-07-28T00:09:39.144Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.768.published-history",
@@ -1820,11 +1832,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:43.415Z",
+      "executedAt": "2026-07-28T00:09:39.230Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.768.cost-forecast",
@@ -1832,11 +1844,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:43.649Z",
+      "executedAt": "2026-07-28T00:09:39.314Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.768.reports",
@@ -1844,11 +1856,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:43.806Z",
+      "executedAt": "2026-07-28T00:09:39.420Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.768.settings",
@@ -1856,11 +1868,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=768; client=768",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:43.896Z",
+      "executedAt": "2026-07-28T00:09:39.513Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "768x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "responsive.430.roster-board",
@@ -1868,11 +1880,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:44.310Z",
+      "executedAt": "2026-07-28T00:09:39.771Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.430.coverage",
@@ -1880,11 +1892,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:44.433Z",
+      "executedAt": "2026-07-28T00:09:39.848Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.430.open-shifts",
@@ -1892,11 +1904,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:44.564Z",
+      "executedAt": "2026-07-28T00:09:39.973Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.430.availability-leave",
@@ -1904,11 +1916,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:44.814Z",
+      "executedAt": "2026-07-28T00:09:40.416Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.430.requests",
@@ -1916,11 +1928,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:44.917Z",
+      "executedAt": "2026-07-28T00:09:40.528Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.430.conflicts-warnings",
@@ -1928,11 +1940,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:45.183Z",
+      "executedAt": "2026-07-28T00:09:40.809Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.430.published-history",
@@ -1940,11 +1952,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:45.316Z",
+      "executedAt": "2026-07-28T00:09:41.045Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.430.cost-forecast",
@@ -1952,11 +1964,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:45.428Z",
+      "executedAt": "2026-07-28T00:09:41.252Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.430.reports",
@@ -1964,11 +1976,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:45.563Z",
+      "executedAt": "2026-07-28T00:09:41.402Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.430.settings",
@@ -1976,11 +1988,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=430; client=430",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:45.664Z",
+      "executedAt": "2026-07-28T00:09:41.649Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "430x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "responsive.390.roster-board",
@@ -1988,11 +2000,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.033Z",
+      "executedAt": "2026-07-28T00:09:42.146Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster"
+      "route": "http://localhost:3021/roster"
     },
     {
       "id": "responsive.390.coverage",
@@ -2000,11 +2012,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.140Z",
+      "executedAt": "2026-07-28T00:09:42.271Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=coverage"
+      "route": "http://localhost:3021/roster?section=coverage"
     },
     {
       "id": "responsive.390.open-shifts",
@@ -2012,11 +2024,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.259Z",
+      "executedAt": "2026-07-28T00:09:42.352Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=open-shifts"
+      "route": "http://localhost:3021/roster?section=open-shifts"
     },
     {
       "id": "responsive.390.availability-leave",
@@ -2024,11 +2036,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.345Z",
+      "executedAt": "2026-07-28T00:09:42.460Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=availability-leave"
+      "route": "http://localhost:3021/roster?section=availability-leave"
     },
     {
       "id": "responsive.390.requests",
@@ -2036,11 +2048,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.447Z",
+      "executedAt": "2026-07-28T00:09:42.538Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=requests"
+      "route": "http://localhost:3021/roster?section=requests"
     },
     {
       "id": "responsive.390.conflicts-warnings",
@@ -2048,11 +2060,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.566Z",
+      "executedAt": "2026-07-28T00:09:42.635Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=conflicts-warnings"
+      "route": "http://localhost:3021/roster?section=conflicts-warnings"
     },
     {
       "id": "responsive.390.published-history",
@@ -2060,11 +2072,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.655Z",
+      "executedAt": "2026-07-28T00:09:42.747Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=published-history"
+      "route": "http://localhost:3021/roster?section=published-history"
     },
     {
       "id": "responsive.390.cost-forecast",
@@ -2072,11 +2084,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.773Z",
+      "executedAt": "2026-07-28T00:09:42.838Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=cost-forecast"
+      "route": "http://localhost:3021/roster?section=cost-forecast"
     },
     {
       "id": "responsive.390.reports",
@@ -2084,11 +2096,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:46.864Z",
+      "executedAt": "2026-07-28T00:09:42.931Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=reports"
+      "route": "http://localhost:3021/roster?section=reports"
     },
     {
       "id": "responsive.390.settings",
@@ -2096,11 +2108,11 @@
       "expected": "correct section active + no page overflow",
       "actual": "visible=true; headingOk=true; overflow=false; scroll=390; client=390",
       "result": "pass",
-      "executedAt": "2026-07-27T23:39:47.045Z",
+      "executedAt": "2026-07-28T00:09:43.030Z",
       "workflow": "ux.responsive",
       "evidenceClass": "browser-functional",
       "viewport": "390x900",
-      "route": "http://localhost:3020/roster?section=settings"
+      "route": "http://localhost:3021/roster?section=settings"
     },
     {
       "id": "wf.12.m10-duty-bridge",
@@ -2108,7 +2120,7 @@
       "expected": "safe M10 contract available",
       "actual": "M10 duty task contract not present — adapter deferred",
       "result": "blocked",
-      "executedAt": "2026-07-27T23:39:47.185Z",
+      "executedAt": "2026-07-28T00:09:43.187Z",
       "workflow": "wf.12",
       "evidenceClass": "blocked",
       "workflowEvidenceCode": "BLOCKED-M10"

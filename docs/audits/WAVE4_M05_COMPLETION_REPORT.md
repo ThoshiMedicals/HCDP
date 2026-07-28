@@ -4,7 +4,7 @@
 **Codebase:** `Development folder/`  
 **Governing plan:** `docs/architecture/WAVE4_M05_IMPLEMENTATION_PLAN.md`  
 **Planning checkpoint:** `03a0beff267c9aaf382d161cbfec9f3d0df013e1`  
-**Status:** **Evidence correction completed; awaiting explicit owner acceptance**  
+**Status:** **Focused M02 performance evidence correction completed; awaiting explicit owner acceptance**  
 **Owner acceptance:** **NOT granted**  
 **Production approval:** **NOT claimed**
 
@@ -128,20 +128,36 @@ Unit-test counts are **not** substituted for performance results.
 
 | Operation | Dataset | Target | Measured | Metric | Result |
 |---|---:|---:|---:|---|---|
-| Initial roster-board load | 200 | ≤2500ms | 0.59ms | max | pass |
-| Board filtering | 200 | ≤300ms | 0.18ms | p95 | pass |
-| Eligibility lookup | 1 | ≤100ms | 0.17ms | typical | pass |
-| Conflict recalculation | 160 | ≤2000ms | 1.7ms | max | pass |
-| Coverage calculation | 30 | ≤500ms | 1.89ms | p95 | pass |
-| Publication preview | 60 | ≤2000ms | 28.47ms | max | pass |
-| Publication submission | 60 | ≤3000ms | 216.35ms | max | pass |
-| Open-shift acceptance | 1 | ≤400ms | 4.03ms | max | pass |
-| Swap approval | 1 | ≤500ms | 5.12ms | max | pass |
-| Bulk preview | 500 | ≤2000ms | 1.29ms | max | pass |
-| Bulk submission | 500 | ≤5000ms | 3905.37ms | max | pass |
-| M02 projection | 1 | ≤50ms | 1.15ms | typical | pass |
-| Reports | scoped | ≤3000ms | 3.5ms | max | pass |
-| Scoped export | scoped | ≤3000ms | 14.16ms | max | pass |
+| Initial roster-board load | 200 | ≤2500ms | 0.22ms | max | pass |
+| Board filtering | 200 | ≤300ms | 0.07ms | p95 | pass |
+| Eligibility lookup | 1 | ≤100ms | 0.2ms | typical | pass |
+| Conflict recalculation | 160 | ≤2000ms | 1.41ms | max | pass |
+| Coverage calculation | 30 | ≤500ms | 2.04ms | p95 | pass |
+| Publication preview | 60 | ≤2000ms | 7.28ms | max | pass |
+| Publication submission | 60 | ≤3000ms | 27.47ms | max | pass |
+| Open-shift acceptance | 1 | ≤400ms | 1.15ms | max | pass |
+| Swap approval | 1 | ≤500ms | 2.51ms | max | pass |
+| Bulk preview | 500 | ≤2000ms | 0.44ms | max | pass |
+| Bulk submission | 500 | ≤5000ms | 1934.46ms | max | pass |
+| M02 projection | 1 | ≤50ms | 0.58ms | typical | pass |
+| Reports | 1025 | ≤3000ms | 2.57ms | max | pass |
+| Scoped export | 762 | ≤3000ms | 12.6ms | max | pass |
+
+### M02 projection row detail (`perf.m02.projection`)
+
+| Field | Value |
+|---|---|
+| Dataset size | 1 (single-condition sync) |
+| Target | ≤50ms |
+| Measured | 0.58ms (median of 30) |
+| Measurement type | typical |
+| projectionsInvoked / m02Writes | **30** (> 0 required) |
+| Projection / dedupe identity | `roster::coverage-gap::prd_perf_m02::req_perf_m02_29` |
+| Source record | `coverage-gap` / `prd_perf_m02::req_perf_m02_29` |
+| Method | Real `syncCoverageGapToInbox` → `dispatchActionInboxEvent` (not roster-projection-registry observer) |
+| Result | pass |
+
+Prior false pass (`projectionsInvoked: 0` while registering an unused `registerRosterProjection` observer) has been corrected.
 
 Prototype measurements only — not production SLAs.
 
