@@ -56,4 +56,6 @@ export const M07_MIGRATION_V5_ID = "m07-staffpay-storage-v5" as const;
 export const M07_MIGRATION_V6_ID = "m07-staffpay-storage-v6" as const;
 /** Batch 4 — deductionPrepInputs. */
 export const M07_MIGRATION_V7_ID = "m07-staffpay-storage-v7" as const;
-export const M07_SCHEMA_VERSION = 7 as const;
+/** Batch 5 — typed approvals (existing key; additive ensure). */
+export const M07_MIGRATION_V8_ID = "m07-staffpay-storage-v8" as const;
+export const M07_SCHEMA_VERSION = 8 as const;

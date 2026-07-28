@@ -181,6 +181,8 @@ export const M07_ROLE_PACKS = {
     "payroll.settings.edit",
     "payroll.adjust",
     "payroll.exception.waive",
+    /** Batch 5 — Pay Admin may withdraw a submission (OD-2). */
+    "payroll.review.submit",
     "payroll.audit.view",
     "payroll.bulk",
     "payroll.externalId.view",

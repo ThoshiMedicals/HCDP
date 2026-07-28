@@ -13,6 +13,7 @@ import type {
   LegalEntityPaySettings,
   M07AuditEvent,
   PayCalculationBatch,
+  PayPeriodApproval,
   PayPeriodRecord,
   PayPrepException,
   PayProfile,
@@ -21,6 +22,7 @@ import type {
 import { M07_STORAGE_KEYS } from "../storage/keys";
 import { runM07SchemaV6Migration } from "../storage/migrate-v6";
 import { runM07SchemaV7Migration } from "../storage/migrate-v7";
+import { runM07SchemaV8Migration } from "../storage/migrate-v8";
 
 const listCache = new Map<string, unknown[]>();
 
@@ -171,6 +173,10 @@ function ensureBatch4Collections() {
   runM07SchemaV7Migration();
 }
 
+function ensureBatch5Collections() {
+  runM07SchemaV8Migration();
+}
+
 export function newExceptionId(): string {
   return uid("pex");
 }
@@ -185,6 +191,9 @@ export function newPayPrepLineId(): string {
 }
 export function newDeductionPrepInputId(): string {
   return uid("pdin");
+}
+export function newApprovalId(periodId: string, version: number): string {
+  return `aprv_${periodId}_v${version}`;
 }
 
 // Exceptions (Batch 3)
@@ -241,4 +250,51 @@ export function getDeductionPrepInput(id: string): DeductionPrepInput | null {
 export function upsertDeductionPrepInput(d: DeductionPrepInput): DeductionPrepInput {
   ensureBatch4Collections();
   return upsertById(M07_STORAGE_KEYS.deductionPrepInputs, d);
+}
+
+// Approvals (Batch 5) — historical versions retained; never delete
+export function listApprovals(legalEntityId?: string): PayPeriodApproval[] {
+  ensureBatch5Collections();
+  const all = loadList<PayPeriodApproval>(M07_STORAGE_KEYS.approvals);
+  // Skip malformed / partial records safely
+  const valid = all.filter(
+    (a) =>
+      a &&
+      typeof a === "object" &&
+      typeof (a as PayPeriodApproval).id === "string" &&
+      typeof (a as PayPeriodApproval).logicalKey === "string" &&
+      typeof (a as PayPeriodApproval).periodId === "string"
+  );
+  return legalEntityId ? valid.filter((a) => a.legalEntityId === legalEntityId) : valid;
+}
+
+export function getApproval(id: string): PayPeriodApproval | null {
+  return listApprovals().find((a) => a.id === id) ?? null;
+}
+
+export function listApprovalsForPeriod(periodId: string): PayPeriodApproval[] {
+  return listApprovals()
+    .filter((a) => a.periodId === periodId)
+    .sort((a, b) => b.approvalVersion - a.approvalVersion);
+}
+
+export function getCurrentApprovalForPeriod(periodId: string): PayPeriodApproval | null {
+  const rows = listApprovalsForPeriod(periodId).filter(
+    (a) => !["superseded"].includes(a.status)
+  );
+  // Prefer active lifecycle states over historical terminal ones when multiple
+  const active = rows.find((a) =>
+    ["draft", "submitted", "approved"].includes(a.status)
+  );
+  if (active) return active;
+  return rows[0] ?? null;
+}
+
+export function upsertApproval(a: PayPeriodApproval): PayPeriodApproval {
+  ensureBatch5Collections();
+  return upsertById(M07_STORAGE_KEYS.approvals, a);
+}
+
+export function approvalLogicalKey(legalEntityId: string, periodId: string): string {
+  return `approval::${legalEntityId}::${periodId}`;
 }

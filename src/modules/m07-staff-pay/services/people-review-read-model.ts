@@ -16,6 +16,7 @@ import { listPersonCalculationBatches } from "./calculate-service";
 import { listLeavePreparation } from "./leave-prep-service";
 import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
 import { buildVarianceViews } from "./variance-service";
+import { getCurrentApprovalForPeriod } from "../repository/local-store";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "../types/domain";
 import type { PayCalculationBatch, PayPrepException } from "../types/domain";
 
@@ -58,6 +59,7 @@ export type PeopleReviewRow = {
     message?: string;
   };
   readiness: "ready" | "blocked" | "excluded";
+  periodApprovalStatus?: string | null;
   disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
 };
 
@@ -76,6 +78,8 @@ export function buildPeopleReviewRows(
 
   const period = getPeriod(input.periodId);
   if (!period || period.legalEntityId !== input.legalEntityId) return [];
+
+  const periodApprovalStatus = getCurrentApprovalForPeriod(input.periodId)?.status ?? null;
 
   const profiles = listProfiles(input.legalEntityId).filter((p) => p.status === "active");
   const varianceByPerson = new Map(
@@ -117,6 +121,7 @@ export function buildPeopleReviewRows(
         deductionReadiness: "none",
         varianceSummary: { status: "excluded", ordinaryDelta: null },
         readiness: "excluded",
+        periodApprovalStatus,
         disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
       });
       continue;
@@ -239,6 +244,7 @@ export function buildPeopleReviewRows(
         message: variance?.message,
       },
       readiness,
+      periodApprovalStatus,
       disclaimer: M07_NON_CERTIFIED_DISCLAIMER,
     });
   }

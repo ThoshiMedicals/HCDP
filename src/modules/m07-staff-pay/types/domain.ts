@@ -208,6 +208,7 @@ export type MigrationReport = {
   v5Ran?: boolean;
   v6Ran?: boolean;
   v7Ran?: boolean;
+  v8Ran?: boolean;
   at: string;
 };
 
@@ -719,4 +720,199 @@ export type ClassificationResolveResult = {
   ordinaryHourlyRate?: number | null;
   exceptionKind?: PayPrepExceptionKind;
   message?: string;
+};
+
+// ---------------------------------------------------------------------------
+// Batch 5 — preparation readiness + management approval (non-certified)
+// ---------------------------------------------------------------------------
+
+/** Management approval of a non-certified payroll-preparation dataset — not certification or payment. */
+export type PayPeriodApprovalStatus =
+  | "draft"
+  | "submitted"
+  | "approved"
+  | "rejected"
+  | "withdrawn"
+  | "stale"
+  | "superseded";
+
+export type EligiblePopulationExclusionReason =
+  | "doctor-m08-excluded"
+  | "inactive-outside-period"
+  | "terminated-outside-period"
+  | "future-starter"
+  | "not-assigned-to-legal-entity"
+  | "clinic-assignment-outside-period"
+  | "authorised-period-exclusion";
+
+export type EligiblePopulationMember = {
+  personId: string;
+  clinicId: string;
+  organisationId: string;
+  legalEntityId: string;
+  displayLabel: string;
+  source: "m06-snapshot" | "m07-profile" | "both";
+  snapshotIds: string[];
+  profileId?: string;
+};
+
+export type EligiblePopulationExclusion = {
+  personId: string;
+  reason: EligiblePopulationExclusionReason;
+  rule: string;
+  message: string;
+  actor?: string;
+  timestamp?: string;
+  clinicId?: string;
+};
+
+export type EligiblePopulationResolveStatus =
+  | "resolved"
+  | "incomplete"
+  | "blocked";
+
+export type EligiblePopulationResult = {
+  status: EligiblePopulationResolveStatus;
+  legalEntityId: string;
+  periodId: string;
+  periodStart: string;
+  periodEnd: string;
+  /** Clinics in scope for this period (explicit tags or discovered eligible set). */
+  includedClinicIds: string[];
+  eligible: EligiblePopulationMember[];
+  exclusions: EligiblePopulationExclusion[];
+  blockingReasons: string[];
+  version: number;
+  resolvedAt: string;
+};
+
+export type PersonReadinessStatus = "ready" | "blocked" | "excluded" | "incomplete";
+
+export type PersonReadiness = {
+  personId: string;
+  clinicId?: string;
+  status: PersonReadinessStatus;
+  blockingReasons: string[];
+  calculationBatchId?: string;
+  calculationBatchVersion?: number;
+  snapshotId?: string;
+  exclusionReason?: EligiblePopulationExclusionReason;
+};
+
+export type ClinicReadiness = {
+  clinicId: string;
+  status: "ready" | "incomplete" | "blocked";
+  eligibleCount: number;
+  readyCount: number;
+  blockedCount: number;
+  excludedCount: number;
+  blockingReasons: string[];
+};
+
+export type PeriodReadinessStatus = "ready" | "incomplete" | "blocked";
+
+export type PeriodReadiness = {
+  legalEntityId: string;
+  periodId: string;
+  status: PeriodReadinessStatus;
+  version: number;
+  includedClinicIds: string[];
+  eligiblePersonCount: number;
+  readyPersonCount: number;
+  blockedPersonCount: number;
+  excludedPersonCount: number;
+  clinics: ClinicReadiness[];
+  people: PersonReadiness[];
+  exclusions: EligiblePopulationExclusion[];
+  blockingReasons: string[];
+  /** UI copy — never payment/certification. */
+  exportReadyWording: "Ready for non-certified export preparation — not certified or payment-ready.";
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
+  assessedAt: string;
+};
+
+export type PayPeriodSourceManifest = {
+  tenantId: string;
+  legalEntityId: string;
+  periodId: string;
+  periodVersion: number;
+  includedClinicIds: string[];
+  eligiblePersonIds: string[];
+  calculations: Array<{
+    personId: string;
+    batchId: string;
+    batchVersion: number;
+    snapshotId: string;
+    snapshotSourceVersion: number;
+    contentHash: string;
+  }>;
+  profiles: Array<{
+    personId: string;
+    profileId: string;
+    profileVersion: number;
+    classificationRef: string | null;
+    mappingId?: string;
+    mappingVersion?: number;
+  }>;
+  deductionInputs: Array<{
+    personId: string;
+    inputId: string;
+    inputVersion: number;
+  }>;
+  leavePrep: Array<{
+    personId: string;
+    leavePrepLineId: string;
+    m04LeaveRecordId: string;
+    m04LeaveVersion?: number | string;
+  }>;
+  exceptions: Array<{
+    id: string;
+    personId: string;
+    status: PayPrepExceptionStatus;
+    version: number;
+    kind: PayPrepExceptionKind;
+    waivedBy?: string;
+    waiverReason?: string;
+  }>;
+  exclusions: EligiblePopulationExclusion[];
+  readinessStatus: PeriodReadinessStatus;
+  readinessVersion: number;
+  /** Canonical checksum over ordered manifest body (excluding this field). */
+  checksum: string;
+  submittedBy?: string;
+  submittedAt?: string;
+};
+
+export type PayPeriodApproval = {
+  id: string;
+  /** Stable logical identity: approval::{legalEntityId}::{periodId} */
+  logicalKey: string;
+  approvalVersion: number;
+  status: PayPeriodApprovalStatus;
+  legalEntityId: string;
+  organisationId: string;
+  periodId: string;
+  manifest: PayPeriodSourceManifest;
+  submittedBy?: string;
+  submittedAt?: string;
+  approvedBy?: string;
+  approvedAt?: string;
+  rejectedBy?: string;
+  rejectedAt?: string;
+  rejectionReason?: string;
+  withdrawnBy?: string;
+  withdrawnAt?: string;
+  withdrawalReason?: string;
+  staleAt?: string;
+  staleReason?: string;
+  supersedesApprovalId?: string | null;
+  createdAt: string;
+  createdBy: string;
+  updatedAt: string;
+  updatedBy: string;
+  /** Always management approval of non-certified prep — never certification/payment. */
+  managementApprovalOnly: true;
+  certified: false;
+  paymentReady: false;
+  disclaimer: typeof M07_NON_CERTIFIED_DISCLAIMER;
 };

@@ -26,6 +26,7 @@ import {
 import { isDoctorPayExcluded } from "./classification-resolve";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
 
 function activeDeductionCode(codeId: string, legalEntityId: string) {
   const code = getCode(codeId);
@@ -158,6 +159,7 @@ export function createDeductionPrepInput(
     reason: row.reason,
     after: row,
   });
+  invalidateApprovalIfSourcesChanged(actor, row.periodId, "deduction-input-create");
   return row;
 }
 
@@ -245,6 +247,7 @@ export function supersedeDeductionPrepInput(
     after: next,
     meta: { supersededInputId: existing.id },
   });
+  invalidateApprovalIfSourcesChanged(actor, next.periodId, "deduction-input-supersede");
   return next;
 }
 
@@ -288,5 +291,6 @@ export function cancelDeductionPrepInput(
     before: existing,
     after: updated,
   });
+  invalidateApprovalIfSourcesChanged(actor, updated.periodId, "deduction-input-cancel");
   return updated;
 }

@@ -18,6 +18,7 @@ import {
   LeavePrepSection,
   VariancesSection,
   ExceptionsSection,
+  ApprovalSection,
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
@@ -42,6 +43,8 @@ function SectionBody({ section }: { section: M07SectionId }) {
       return <VariancesSection />;
     case "exceptions":
       return <ExceptionsSection />;
+    case "approval":
+      return <ApprovalSection />;
     default:
       return <PlannedSection section={section} />;
   }
@@ -78,7 +81,7 @@ function WorkspaceInner() {
   return (
     <div
       className="m07-shell space-y-4 overflow-x-hidden"
-      data-m07-shell="batch4-prep"
+      data-m07-shell="batch5-approval"
     >
       <style>{`
         .m07-shell :focus-visible {
@@ -97,16 +100,17 @@ function WorkspaceInner() {
           Module 7 · Staff Pay & Payroll Preparation
         </p>
         <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">
-          Staff Pay — Batch 4 preparation
+          Staff Pay — Batch 5 management approval
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
-          Non-certified ordinary/OT, allowance and deduction preparation, informational variances
-          and exception waiver. Export, reconciliation, lock and final approval remain unavailable.
+          Non-certified preparation readiness, review submission and management approval.
+          Export, reconciliation, lock and payment remain unavailable. Management approval is not
+          payroll certification or payment authority.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         {bootstrap ? (
           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
-            Storage bootstrap · schema v7 · v7Ran={String(bootstrap.v7Ran ?? false)}
+            Storage bootstrap · schema v8 · v8Ran={String(bootstrap.v8Ran ?? false)}
           </p>
         ) : null}
       </header>

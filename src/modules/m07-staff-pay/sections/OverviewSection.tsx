@@ -50,8 +50,8 @@ export function OverviewSection() {
           Pay Run Overview
         </h2>
         <p className="mt-2 text-sm text-[var(--muted)]">
-          Create and list ordinary pay periods for one legal entity. Intake, calculation, approval,
-          export, reconciliation and lock are not authorised in Batch 1.
+          Create and list ordinary pay periods for one legal entity. Batch 5 management approval is
+          available on the Approval section. Export, reconciliation and lock remain unavailable.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
       </div>

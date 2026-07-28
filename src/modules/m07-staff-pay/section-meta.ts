@@ -25,7 +25,11 @@ export const M07_SECTION_META: Record<
   adjustments: { label: "Adjustments", batch1: "planned" },
   exceptions: { label: "Exceptions", batch1: "available", batchNote: "Batch 4 resolve/waive" },
   variances: { label: "Variances", batch1: "available", batchNote: "Batch 4 informational" },
-  approval: { label: "Approval", batch1: "planned" },
+  approval: {
+    label: "Approval",
+    batch1: "available",
+    batchNote: "Batch 5 management approval (non-certified)",
+  },
   export: { label: "Export", batch1: "planned" },
   reconciliation: { label: "Reconciliation", batch1: "planned" },
   history: { label: "History / Reports", batch1: "planned" },

@@ -29,6 +29,7 @@ import { isDoctorPayExcluded } from "./classification-resolve";
 import { openPayPrepException } from "./exception-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
 
 export function listLeavePreparation(
   actor: M07Actor,
@@ -217,6 +218,14 @@ export function generateLeavePreparationForPerson(
       },
     });
     prepared.push(line);
+  }
+
+  if (prepared.length || blockedExceptionIds.length) {
+    invalidateApprovalIfSourcesChanged(
+      actor,
+      period.id,
+      "leave-prep-change"
+    );
   }
 
   return { prepared, blockedExceptionIds };

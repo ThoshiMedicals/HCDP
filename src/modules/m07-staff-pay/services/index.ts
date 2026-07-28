@@ -17,3 +17,8 @@ export * from "./leave-prep-service";
 export * from "./deduction-prep-input-service";
 export * from "./variance-service";
 export * from "./people-review-read-model";
+export * from "./eligible-population-service";
+export * from "./readiness-service";
+export * from "./source-manifest-service";
+export * from "./approval-invalidation";
+export * from "./approval-service";

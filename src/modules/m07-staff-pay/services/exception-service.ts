@@ -25,6 +25,7 @@ import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncPayPrepExceptionToInbox } from "../adapters/m02-inbox-publish";
 import { assertExceptionWaiverSeparation } from "./sod-policy";
+import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
 
 export function isWaivableExceptionKind(kind: PayPrepExceptionKind): boolean {
   return (WAIVABLE_EXCEPTION_KINDS as readonly string[]).includes(kind);
@@ -143,6 +144,9 @@ export function openPayPrepException(
       after: bumped,
     });
     syncPayPrepExceptionToInbox(actor, bumped, "update");
+    if (bumped.periodId) {
+      invalidateApprovalIfSourcesChanged(actor, bumped.periodId, "exception-update");
+    }
     return bumped;
   }
 
@@ -179,6 +183,9 @@ export function openPayPrepException(
     after: row,
   });
   syncPayPrepExceptionToInbox(actor, row, "create");
+  if (row.periodId) {
+    invalidateApprovalIfSourcesChanged(actor, row.periodId, "exception-opened");
+  }
   return row;
 }
 
@@ -223,6 +230,9 @@ export function resolvePayPrepException(
     after: updated,
   });
   syncPayPrepExceptionToInbox(actor, updated, "close");
+  if (updated.periodId) {
+    invalidateApprovalIfSourcesChanged(actor, updated.periodId, "exception-resolved");
+  }
   return updated;
 }
 
@@ -278,5 +288,8 @@ export function waivePayPrepException(
     after: updated,
   });
   syncPayPrepExceptionToInbox(actor, updated, "close");
+  if (updated.periodId) {
+    invalidateApprovalIfSourcesChanged(actor, updated.periodId, "exception-waived");
+  }
   return updated;
 }

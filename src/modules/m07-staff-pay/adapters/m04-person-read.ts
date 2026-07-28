@@ -15,6 +15,15 @@ export type M04PersonIdentityView = {
   clinicId?: string;
   engagementId?: string;
   classificationRef?: string | null;
+  /**
+   * Period-effective M04 employment context (read-only).
+   * Used by Batch 5 eligible-population resolver — never written by M07.
+   */
+  employmentStatus?: "active" | "inactive" | "terminated";
+  employmentEffectiveFrom?: string;
+  employmentEffectiveTo?: string | null;
+  clinicAssignmentEffectiveFrom?: string;
+  clinicAssignmentEffectiveTo?: string | null;
   readOnly: true;
   source: "m04-adapter";
 };

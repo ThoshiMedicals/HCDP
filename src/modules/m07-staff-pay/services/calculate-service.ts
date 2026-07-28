@@ -37,6 +37,7 @@ import { openPayPrepException } from "./exception-service";
 import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
 
 function redactBatch(actor: M07Actor, batch: PayCalculationBatch): PayCalculationBatch {
   if (hasM07Permission(actor, "payroll.rate.view")) return batch;
@@ -492,6 +493,8 @@ export function calculatePersonOrdinaryAndOvertime(
     },
     meta: { supersedesBatchId: batch.supersedesBatchId },
   });
+
+  invalidateApprovalIfSourcesChanged(actor, period.id, "recalculation");
 
   return { status: "completed", batch: redactBatch(actor, batch) };
 }

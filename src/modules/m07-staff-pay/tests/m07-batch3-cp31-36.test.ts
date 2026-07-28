@@ -548,7 +548,7 @@ describe("M07 Batch 3 — classification, calc, people, leave, M02, architecture
 
     it("workspace uses batch4 shell attribute", () => {
       const ws = readFileSync(join(M07_ROOT, "StaffPayWorkspace.tsx"), "utf8");
-      assert.match(ws, /data-m07-shell="batch4-prep"/);
+      assert.match(ws, /data-m07-shell="batch5-approval"/);
       assert.match(ws, /PeopleReviewSection/);
       assert.match(ws, /LeavePrepSection/);
     });

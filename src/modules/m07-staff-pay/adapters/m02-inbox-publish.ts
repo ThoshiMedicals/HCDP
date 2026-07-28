@@ -171,3 +171,152 @@ export function syncPayPrepExceptionToInbox(
 
   return { inboxActionId: action?.id, projected: Boolean(action) };
 }
+
+function approvalSource(approval: import("../types/domain").PayPeriodApproval): SourceRecordRef {
+  return {
+    sourceModuleId: MODULE_ID,
+    sourceRecordType: "pay-period-approval",
+    sourceRecordId: approval.logicalKey,
+    sourceRecordTitle: `Pay prep management approval v${approval.approvalVersion}`,
+    organisationId: approval.organisationId,
+    currentStatus: approval.status,
+    route: "/staffpay",
+    section: "approval",
+  };
+}
+
+/**
+ * Batch 5 — M02 lifecycle for period management approval (bridge only).
+ * Does not create a standalone “approved” informational action unless closing/updating.
+ */
+export function syncPeriodApprovalToInbox(
+  actor: M07Actor,
+  approval: import("../types/domain").PayPeriodApproval,
+  mode:
+    | "submitted"
+    | "approved"
+    | "rejected"
+    | "withdrawn"
+    | "stale"
+    | "review-required"
+): { inboxActionId?: string; projected: boolean } {
+  const source = approvalSource(approval);
+  const bridgeKey = `${MODULE_ID}::pay-period-approval::${approval.logicalKey}`;
+  const existing = findInboxActionForSource(MODULE_ID, "pay-period-approval", approval.logicalKey);
+
+  if (mode === "approved" || mode === "withdrawn") {
+    const closed = dispatchActionInboxEvent({
+      kind: existing ? "close" : "update",
+      source,
+      actionTitle: "Pay preparation management approval closed",
+      actionSummary:
+        mode === "approved"
+          ? "Management approval recorded for non-certified prep — not certified or payment-ready"
+          : "Submission withdrawn",
+      category: "Approval",
+      owner: actor.userId,
+      requester: "staff-pay",
+      priority: "Medium",
+      dueAt: new Date().toISOString(),
+      requiredOutcome: "Acknowledged",
+      inboxStatus: "Completed",
+      projectionKey: bridgeKey,
+      sourceRecordVersion: approval.approvalVersion,
+      sourceStatus: approval.status,
+    });
+    publishM07InboxProjection({
+      kind: mode === "approved" ? "approval-closed" : "approval-withdrawn",
+      title: mode,
+      legalEntityId: approval.legalEntityId,
+      entityId: approval.id,
+      severity: "info",
+    });
+    recordM07Audit({
+      actor,
+      action: "m02.projection.close",
+      entityType: "pay-period-approval",
+      entityId: approval.id,
+      legalEntityId: approval.legalEntityId,
+      meta: { mode, inboxActionId: closed?.id, bridgeKey },
+    });
+    return { inboxActionId: closed?.id, projected: true };
+  }
+
+  if (mode === "rejected" || mode === "stale" || mode === "review-required") {
+    const kind = existing ? "update" : "create";
+    const action = dispatchActionInboxEvent({
+      kind,
+      source,
+      actionTitle:
+        mode === "rejected"
+          ? "Pay preparation remediation required"
+          : "Pay preparation review required",
+      actionSummary:
+        mode === "rejected"
+          ? approval.rejectionReason ?? "Management rejected preparation package"
+          : approval.staleReason ?? "Pinned sources changed — resubmit for management approval",
+      category: "Approval",
+      owner: approval.submittedBy ?? actor.userId,
+      requester: "staff-pay",
+      priority: "High",
+      dueAt: new Date(Date.now() + 2 * 86400000).toISOString(),
+      requiredOutcome: "Remediate and resubmit",
+      projectionKey: bridgeKey,
+      sourceRecordVersion: approval.approvalVersion,
+      sourceStatus: approval.status,
+      inboxStatus: "Open",
+    });
+    publishM07InboxProjection({
+      kind: mode === "rejected" ? "approval-rejected-remediation" : "review-required",
+      title: mode,
+      legalEntityId: approval.legalEntityId,
+      entityId: approval.id,
+      severity: "warning",
+    });
+    recordM07Audit({
+      actor,
+      action: kind === "create" ? "m02.projection.create" : "m02.projection.update",
+      entityType: "pay-period-approval",
+      entityId: approval.id,
+      legalEntityId: approval.legalEntityId,
+      meta: { mode, inboxActionId: action?.id, bridgeKey },
+    });
+    return { inboxActionId: action?.id, projected: Boolean(action) };
+  }
+
+  // submitted → approval-required
+  const kind = existing ? "update" : "create";
+  const action = dispatchActionInboxEvent({
+    kind,
+    source,
+    actionTitle: "Pay preparation management approval required",
+    actionSummary:
+      "Non-certified payroll-preparation package submitted for management approval — not payment authority",
+    category: "Approval",
+    owner: actor.userId,
+    requester: "staff-pay",
+    priority: "High",
+    dueAt: new Date(Date.now() + 2 * 86400000).toISOString(),
+    requiredOutcome: "Approve or reject management approval",
+    projectionKey: bridgeKey,
+    sourceRecordVersion: approval.approvalVersion,
+    sourceStatus: approval.status,
+    inboxStatus: "Open",
+  });
+  publishM07InboxProjection({
+    kind: "approval-required",
+    title: "submitted",
+    legalEntityId: approval.legalEntityId,
+    entityId: approval.id,
+    severity: "warning",
+  });
+  recordM07Audit({
+    actor,
+    action: kind === "create" ? "m02.projection.create" : "m02.projection.update",
+    entityType: "pay-period-approval",
+    entityId: approval.id,
+    legalEntityId: approval.legalEntityId,
+    meta: { mode: "submitted", inboxActionId: action?.id, bridgeKey },
+  });
+  return { inboxActionId: action?.id, projected: Boolean(action) };
+}
