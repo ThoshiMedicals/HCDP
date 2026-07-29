@@ -1,0 +1,77 @@
+---
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; PPA planned only
+alwaysApply: true
+---
+
+# HCDP Wave Control
+
+Controlling plan: `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`  
+Wave 6 plan: `Development folder/docs/architecture/WAVE6_M07_IMPLEMENTATION_PLAN.md`  
+PPA readiness/design (approved planning source; **not** implementation authority): `Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`  
+Accepted Wave 5 runtime: `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`  
+Wave 5 acceptance checkpoint: `39f892e81f5aa76f6690d6af8c82273def5a6e0f`  
+Accepted Wave 4 implementation: `15f020800bbca40702ef08ad25f94f1d1999112f`  
+Wave 6 Batch 4 HEAD: `db96703123cc4759c04ed5f6ad9c930012ab38ea` (accepted with qualifications)  
+Wave 6 Batch 5 accepted baseline: `db9550bac5e3995b095d3143b49e17549e81582b`  
+Wave 6 Batch 6 accepted technical target: `ce1f4af68917c9988efff327d521d94b8289f2fc` (owner accepted with qualifications; closed 29 July 2026)  
+Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`
+
+```text
+Wave 1A: Owner accepted and frozen
+Wave 1 expansion: Owner accepted and frozen
+Wave 2 (M04): Owner accepted and frozen
+Wave 3 (M11): Owner accepted and frozen
+Wave 4 (M05): Owner accepted and frozen — NOT production-approved
+Wave 5 (M06): Owner accepted and frozen at 6cfee6ca7ae2d0f58695569b9f61ffa939b97e49 — NOT production-approved
+Wave 6 / M07 Batches 1–6: Owner accepted and closed within approved scope
+  (Batches 3–4 and 6 with qualifications; Batch 6 closure is NOT production approval)
+Wave 6 / M07 PPA: Planned only — Prior-Period Adjustment; not authorised for implementation
+```
+
+## Order
+
+0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)
+
+## Preserve (Waves 2–5 freeze)
+
+- Frozen M04/M05/M06/M11 SoT, evidence and permissions
+- M06 publishes `TimesheetRef` / `timesheet.approved`; must not write `pulse.m07.*` except via authorised M07 intake contracts
+- **`BLOCKED-M07` was cleared by M07 Batch 2** (`CLEARED-M07-BATCH2`)
+- **`BLOCKED-M10` remains blocked** (informational; outside M07 totals)
+- Contract/adapters/events only — no cross-module repository imports
+- Accepted Batch 1–6 M07 history must not be rewritten by migrations
+
+## Batches 1–6 ordinary M07 payroll preparation (closed)
+
+Ordinary staff-pay payroll-preparation capability through Batch 6 is **complete within approved scope**:
+
+- Batches 1–2: foundation, intake/replay/lifecycle, blocker clearance
+- Batch 3: calculation / People Review
+- Batch 4: leave, allowances, deductions, variances, exceptions
+- Batch 5: readiness, review, management approval (non-certified)
+- Batch 6: export preparation, package reconciliation, period lock, controlled unlock
+
+Batch 6 evidence: `Development folder/docs/audits/WAVE6_BATCH6_*`  
+Batch 6 closure does **not** constitute production approval, certification, payment readiness, or statutory/monetary correctness.
+
+## PPA (Prior-Period Adjustment) — planned only
+
+- **PPA means prior-period adjustment** — a controlled post-lock / post-export correction cycle.
+- PPA is **separate** from ordinary payroll preparation (Batches 1–6).
+- Controlled **unlock / reopen is not itself a PPA** and must not be treated as prior-period adjustment.
+- Authoritative readiness/design source: `Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`
+- That document is **not** owner authorisation to implement; await explicit PPA batch authorisation.
+
+## Do not
+
+- Implement PPA until the owner expressly authorises a named PPA implementation batch
+- Treat unlock/reopen as prior-period adjustment
+- Process payment execution, net-pay disbursement, bank-file generation, STP, superannuation, or mark-as-paid
+- Implement payment-provider return processing or named Xero production integration under M07 PPA scope
+- Calculate doctor pay (M08) inside M07 / PPA
+- Claim award/tax/super/employment-law certification
+- Treat export packages as paid
+- Alter frozen Waves 1A–5 without documented defect/CR, impact analysis, focused regression and owner review
+- Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
+- Claim production approval
+- Begin Module 8
