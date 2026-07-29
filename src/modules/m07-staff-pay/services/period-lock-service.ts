@@ -39,6 +39,7 @@ export {
   profileAffectsLockedPeriod,
   listLockedPeriodsForLegalEntity,
   effectiveRangeOverlapsPeriod,
+  isCanonicalCalendarDate,
   hasIncompleteUnlockControls,
 } from "./period-lock-guard";
 

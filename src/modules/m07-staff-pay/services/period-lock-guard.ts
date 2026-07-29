@@ -91,36 +91,78 @@ export function listLockedPeriodsForLegalEntity(legalEntityId: string): PayPerio
   return listPeriods(legalEntityId).filter((p) => isPayrollPeriodLocked(p.id));
 }
 
-/** YYYY-MM-DD or ISO datetime prefix — anything else cannot safely prove non-overlap. */
-function isComparableDateBound(value: string): boolean {
-  return /^\d{4}-\d{2}-\d{2}([T\s].*)?$/.test(value);
+/** True Gregorian leap year (proleptic). */
+function isGregorianLeapYear(year: number): boolean {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+/**
+ * Strict canonical calendar date: exact `YYYY-MM-DD`, real Gregorian day,
+ * round-trip identical. Rejects datetime, whitespace, and impossible dates.
+ * Does not trust JS Date normalization.
+ */
+export function isCanonicalCalendarDate(value: unknown): boolean {
+  if (typeof value !== "string") return false;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const y = Number(value.slice(0, 4));
+  const m = Number(value.slice(5, 7));
+  const d = Number(value.slice(8, 10));
+  if (!Number.isInteger(y) || !Number.isInteger(m) || !Number.isInteger(d)) return false;
+  if (y < 1 || m < 1 || m > 12 || d < 1) return false;
+  const daysInMonth = [
+    31,
+    isGregorianLeapYear(y) ? 29 : 28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31,
+  ];
+  if (d > daysInMonth[m - 1]!) return false;
+  const rebuilt = `${String(y).padStart(4, "0")}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  return rebuilt === value;
+}
+
+/**
+ * Classify a caller-supplied effective-date bound.
+ * - missing: null / undefined / empty string → open end (fail-closed full-range sentinel)
+ * - invalid: whitespace, datetime, non-canonical, impossible calendar → fail closed
+ */
+function classifyEffectiveDateBound(raw: unknown): "missing" | "invalid" | string {
+  if (raw == null) return "missing";
+  if (typeof raw !== "string") return "invalid";
+  if (raw.length === 0) return "missing";
+  // Leading/trailing whitespace or non-exact form — do not trim-to-accept
+  if (raw.trim() !== raw) return "invalid";
+  if (!isCanonicalCalendarDate(raw)) return "invalid";
+  return raw;
 }
 
 /**
  * Effective-date overlap with a period.
- * Missing / empty / malformed / inverted bounds fail closed (cannot safely prove non-overlap).
+ * Missing / empty open ends use full-range sentinels (fail closed when impact cannot be excluded).
+ * Malformed / impossible / non-canonical bounds fail closed as overlap (never “future non-overlap”).
  */
 export function effectiveRangeOverlapsPeriod(
   period: PayPeriodRecord,
   effectiveFrom?: string | null,
   effectiveTo?: string | null
 ): boolean {
-  const fromRaw =
-    effectiveFrom == null || String(effectiveFrom).trim() === ""
-      ? null
-      : String(effectiveFrom).trim();
-  const toRaw =
-    effectiveTo == null || String(effectiveTo).trim() === ""
-      ? null
-      : String(effectiveTo).trim();
-
-  // Missing / open-ended → full-range (fail closed)
-  const from = fromRaw ?? "0000-01-01";
-  const to = toRaw ?? "9999-12-31";
-
-  if (!isComparableDateBound(from) || !isComparableDateBound(to)) {
+  const fromClass = classifyEffectiveDateBound(effectiveFrom);
+  const toClass = classifyEffectiveDateBound(effectiveTo);
+  if (fromClass === "invalid" || toClass === "invalid") {
     return true;
   }
+
+  // Internal sentinels only — never accepted as caller-supplied open markers
+  const from = fromClass === "missing" ? "0001-01-01" : fromClass;
+  const to = toClass === "missing" ? "9999-12-31" : toClass;
+
   if (from > to) {
     return true;
   }

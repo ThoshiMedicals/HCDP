@@ -1,6 +1,6 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.3–6.4 Evidence
 
-**Status:** Implementation evidence after third remediation of `87ab37e…` — **not** independent owner acceptance  
+**Status:** Implementation evidence after fourth remediation of `58296f6…` — **not** independent owner acceptance  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`
 
 ## Implemented and tested
@@ -30,6 +30,6 @@
 
 ## Non-claims
 
-- Not independent owner acceptance (Batch 6 remains unaccepted pending final re-verification)
+- Not independent owner acceptance (Batch 6 remains unaccepted pending final date-validation re-verification)
 - Not statutory payroll correctness
 - Not payment readiness

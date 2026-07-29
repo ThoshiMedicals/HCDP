@@ -1,6 +1,6 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.1–6.2 Evidence
 
-**Status:** Implementation evidence after third remediation of `87ab37e…` — **not** independent owner acceptance  
+**Status:** Implementation evidence after fourth remediation of `58296f6…` — **not** independent owner acceptance  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
 **Scope:** Domain/lifecycle/storage + approved-manifest consumer / pre-export readiness
 
@@ -18,6 +18,7 @@
 | Missing external payroll employee ID blocks | validation code `missing-external-payroll-employee-id` | C. test |
 | External ID mutation lock | `linkExternalPayrollEmployeeId` + period lock guard | rem2 |
 | Platform (`*`) export-profile lock | `assertNoLockedPeriodAffectedByExportProfileMutation` | rem3 |
+| Strict Gregorian effective-date bounds | `isCanonicalCalendarDate` / `effectiveRangeOverlapsPeriod` | rem4 |
 
 ## Deferred / excluded
 
@@ -27,6 +28,6 @@
 
 ## Non-claims
 
-- Not owner acceptance (Batch 6 remains unaccepted pending final re-verification)
+- Not owner acceptance (Batch 6 remains unaccepted pending final date-validation re-verification)
 - Not production payroll certification
 - Not payment-ready
