@@ -29,6 +29,7 @@ import { assertNoProhibitedFields } from "./sensitive-fields";
 
 export {
   assertPeriodNotLockedForOrdinaryMutation,
+  assertPeriodLegalEntityConsistency,
   isPayrollPeriodLocked,
   rejectLockedPeriodSourceChange,
   assertNoLockedPeriodAffectedByPersonMutation,
@@ -36,6 +37,8 @@ export {
   assertNoLockedPeriodAffectedBySnapshot,
   profileAffectsLockedPeriod,
   listLockedPeriodsForLegalEntity,
+  effectiveRangeOverlapsPeriod,
+  hasIncompleteUnlockControls,
 } from "./period-lock-guard";
 
 /**

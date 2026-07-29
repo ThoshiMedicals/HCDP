@@ -49,6 +49,13 @@ export function createPreparationRule(
   assertM07Permission(actor, "payroll.rules.edit");
   assertM07LegalEntityScope(actor, input.legalEntityId);
   assertNoProhibitedFields(input);
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    input.legalEntityId,
+    "preparation-rule-create",
+    input.effectiveFrom,
+    input.effectiveTo ?? null
+  );
   const now = new Date().toISOString();
   const rule: PreparationRule = {
     id: newRuleId(),
@@ -99,6 +106,13 @@ export function versionPreparationRule(
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    existing.legalEntityId,
+    "preparation-rule-version",
+    patch.effectiveFrom ?? existing.effectiveFrom,
+    patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo
+  );
   upsertRule(updated);
   recordM07Audit({
     actor,
@@ -140,7 +154,9 @@ export function createClassificationMapping(
   assertNoLockedPeriodsForLegalEntity(
     actor,
     input.legalEntityId,
-    "classification-mapping-create"
+    "classification-mapping-create",
+    input.effectiveFrom,
+    input.effectiveTo ?? null
   );
 
   const ambiguous = listClassificationMaps(input.legalEntityId).find(
@@ -183,7 +199,9 @@ export function createClassificationMapping(
   invalidateApprovalsForLegalEntity(
     actor,
     mapping.legalEntityId,
-    "classification-mapping-create"
+    "classification-mapping-create",
+    mapping.effectiveFrom,
+    mapping.effectiveTo
   );
   return mapping;
 }
@@ -225,7 +243,9 @@ export function retireClassificationMapping(
   assertNoLockedPeriodsForLegalEntity(
     actor,
     existing.legalEntityId,
-    "classification-mapping-retire"
+    "classification-mapping-retire",
+    existing.effectiveFrom,
+    existing.effectiveTo
   );
   const updated: ClassificationRuleMapping = {
     ...existing,
@@ -248,7 +268,9 @@ export function retireClassificationMapping(
   invalidateApprovalsForLegalEntity(
     actor,
     updated.legalEntityId,
-    "classification-mapping-retire"
+    "classification-mapping-retire",
+    updated.effectiveFrom,
+    updated.effectiveTo
   );
   return updated;
 }

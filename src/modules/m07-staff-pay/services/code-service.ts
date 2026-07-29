@@ -11,6 +11,7 @@ import {
 import { getCode, listCodes, newCodeId, upsertCode } from "../repository/local-store";
 import type { GenericCode, GenericCodeLineType } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
+import { assertNoLockedPeriodsForLegalEntity } from "./period-lock-guard";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 
 export function listGenericCodes(actor: M07Actor, legalEntityId: string): GenericCode[] {
@@ -35,6 +36,13 @@ export function createGenericCode(
   assertM07Permission(actor, "payroll.codes.edit");
   assertM07LegalEntityScope(actor, input.legalEntityId);
   assertNoProhibitedFields(input);
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    input.legalEntityId,
+    "generic-code-create",
+    input.effectiveFrom,
+    input.effectiveTo ?? null
+  );
   const now = new Date().toISOString();
   const row: GenericCode = {
     id: newCodeId(),
@@ -84,6 +92,13 @@ export function versionGenericCode(
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    existing.legalEntityId,
+    "generic-code-version",
+    patch.effectiveFrom ?? existing.effectiveFrom,
+    patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo
+  );
   upsertCode(updated);
   recordM07Audit({
     actor,

@@ -1,6 +1,8 @@
 /**
  * Authoritative Batch 6 period-lock guard for ordinary mutations.
  * Service-layer only — UI is not a control.
+ *
+ * Missing / empty / ambiguous period context fails closed for period-scoped mutations.
  */
 
 import { M07ValidationError, type M07Actor } from "../permissions";
@@ -9,7 +11,9 @@ import {
   getCurrentApprovalForPeriod,
   getCurrentExportBatchForPeriod,
   getPeriod,
+  getUnlockRequest,
   listPeriods,
+  listUnlockRequests,
 } from "../repository/local-store";
 import type { PayPeriodRecord } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
@@ -19,29 +23,94 @@ import {
 } from "../adapters/m02-inbox-publish";
 
 export function isPayrollPeriodLocked(periodId: string): boolean {
+  if (!periodId?.trim()) return false;
   const period = getPeriod(periodId);
   if (period?.state === "locked") return true;
-  return Boolean(getActivePeriodLockForPeriod(periodId));
+  if (Boolean(getActivePeriodLockForPeriod(periodId))) return true;
+  // Unlock controls-incomplete keeps period operationally locked
+  const incomplete = listUnlockRequests().find(
+    (r) =>
+      r.periodId === periodId &&
+      (r.status === "controls-incomplete" || r.controlsIncomplete === true)
+  );
+  return Boolean(incomplete);
 }
 
 /**
  * Reject ordinary mutations when the payroll period is locked.
- * Does not mutate history — fail closed.
+ * Empty / missing periodId fails closed — never silently allows period-scoped work.
  */
 export function assertPeriodNotLockedForOrdinaryMutation(periodId: string): void {
-  if (!periodId) return;
-  if (!isPayrollPeriodLocked(periodId)) return;
+  if (!periodId?.trim()) {
+    throw new M07ValidationError(
+      "missing-period-context",
+      "Period identity is required for this mutation; lock context cannot be resolved"
+    );
+  }
+  const period = getPeriod(periodId);
+  if (!period) {
+    throw new M07ValidationError(
+      "period-not-found",
+      `Pay period ${periodId} not found — lock context cannot be resolved`
+    );
+  }
+  if (!isPayrollPeriodLocked(period.id)) return;
   throw new M07ValidationError(
     "period-locked",
     "Period is locked — ordinary mutations are prohibited; use controlled unlock remediation"
   );
 }
 
-/** Locked periods for a legal entity (state or active lock record). */
+/** Assert period belongs to expected legal entity before mutation. */
+export function assertPeriodLegalEntityConsistency(
+  periodId: string,
+  legalEntityId: string
+): void {
+  if (!periodId?.trim() || !legalEntityId?.trim()) {
+    throw new M07ValidationError(
+      "missing-period-context",
+      "Period and legal entity identity are required"
+    );
+  }
+  const period = getPeriod(periodId);
+  if (!period) {
+    throw new M07ValidationError("period-not-found", `Pay period ${periodId} not found`);
+  }
+  if (period.legalEntityId !== legalEntityId) {
+    throw new M07ValidationError(
+      "period-legal-entity-mismatch",
+      "Period does not belong to the stated legal entity"
+    );
+  }
+}
+
+/** Locked periods for a legal entity (state, active lock, or incomplete unlock controls). */
 export function listLockedPeriodsForLegalEntity(legalEntityId: string): PayPeriodRecord[] {
-  return listPeriods(legalEntityId).filter(
-    (p) => p.state === "locked" || Boolean(getActivePeriodLockForPeriod(p.id))
-  );
+  return listPeriods(legalEntityId).filter((p) => isPayrollPeriodLocked(p.id));
+}
+
+/**
+ * Effective-date overlap with a period.
+ * Missing / empty bounds fail closed as full-range (cannot safely prove non-overlap).
+ */
+export function effectiveRangeOverlapsPeriod(
+  period: PayPeriodRecord,
+  effectiveFrom?: string | null,
+  effectiveTo?: string | null
+): boolean {
+  const from =
+    effectiveFrom == null || String(effectiveFrom).trim() === ""
+      ? "0000-01-01"
+      : String(effectiveFrom).trim();
+  const to =
+    effectiveTo == null || String(effectiveTo).trim() === ""
+      ? "9999-12-31"
+      : String(effectiveTo).trim();
+  if (from > to) {
+    // Ambiguous inverted range — treat as overlap (fail closed)
+    return true;
+  }
+  return from <= period.periodEnd && to >= period.periodStart;
 }
 
 export function profileAffectsLockedPeriod(
@@ -57,9 +126,7 @@ export function profileAffectsLockedPeriod(
     Boolean(approval?.manifest.eligiblePersonIds.includes(personId)) ||
     Boolean(approval?.manifest.profiles.some((p) => p.personId === personId));
   if (!inManifest) return false;
-  const from = effectiveFrom ?? "0000-01-01";
-  const to = effectiveTo ?? "9999-12-31";
-  return from <= period.periodEnd && to >= period.periodStart;
+  return effectiveRangeOverlapsPeriod(period, effectiveFrom, effectiveTo);
 }
 
 /**
@@ -75,6 +142,18 @@ export function assertNoLockedPeriodAffectedBySnapshot(
     personId?: string;
   }
 ): void {
+  if (!input.legalEntityId?.trim()) {
+    throw new M07ValidationError(
+      "missing-legal-entity-context",
+      "Legal entity is required to resolve locked-period impact"
+    );
+  }
+  if (!input.periodStart?.trim() || !input.periodEnd?.trim()) {
+    throw new M07ValidationError(
+      "ambiguous-period-coverage",
+      "Snapshot period bounds are required; cannot safely prove non-overlap with locked periods"
+    );
+  }
   for (const period of listLockedPeriodsForLegalEntity(input.legalEntityId)) {
     const overlaps =
       input.periodStart <= period.periodEnd && input.periodEnd >= period.periodStart;
@@ -92,6 +171,9 @@ export function assertNoLockedPeriodAffectedBySnapshot(
  * Fail-closed when an authoritative source change targets a locked period.
  * Preserves lock/approval/export history; projects deterministic M02; audits; throws.
  * Does not implement PPA.
+ *
+ * Atomicity note: audit and M02 are sequenced, not transactional — either may be written
+ * while the overall control pair is reported incomplete.
  */
 export function rejectLockedPeriodSourceChange(
   actor: M07Actor,
@@ -164,7 +246,9 @@ export function rejectLockedPeriodSourceChange(
 }
 
 /**
- * Assert no locked period for this LE is materially affected by a person/profile change.
+ * Assert no locked period for this LE is materially / financially affected by a person change.
+ * When `financiallyAuthoritative` is true (rates, external IDs), overlap alone with locked
+ * period population (or population-changing) is enough — not only Batch 5 material keys.
  */
 export function assertNoLockedPeriodAffectedByPersonMutation(
   actor: M07Actor,
@@ -175,12 +259,33 @@ export function assertNoLockedPeriodAffectedByPersonMutation(
     effectiveFrom?: string | null;
     effectiveTo?: string | null;
     populationChanging?: boolean;
+    /** Rate / external-ID / monetary fields that affect locked export amounts or identity. */
+    financiallyAuthoritative?: boolean;
   }
 ): void {
+  if (!input.legalEntityId?.trim() || !input.personId?.trim()) {
+    throw new M07ValidationError(
+      "missing-person-context",
+      "Legal entity and person identity are required for locked-period impact checks"
+    );
+  }
   const locked = listLockedPeriodsForLegalEntity(input.legalEntityId);
   for (const period of locked) {
+    const overlaps = effectiveRangeOverlapsPeriod(
+      period,
+      input.effectiveFrom,
+      input.effectiveTo
+    );
+    if (!overlaps) continue;
+
+    if (input.populationChanging) {
+      rejectLockedPeriodSourceChange(actor, {
+        periodId: period.id,
+        reason: input.reason,
+        personId: input.personId,
+      });
+    }
     if (
-      input.populationChanging ||
       profileAffectsLockedPeriod(
         period,
         input.personId,
@@ -194,20 +299,72 @@ export function assertNoLockedPeriodAffectedByPersonMutation(
         personId: input.personId,
       });
     }
+    if (input.financiallyAuthoritative) {
+      const approval = getCurrentApprovalForPeriod(period.id);
+      const inPop =
+        Boolean(approval?.manifest.eligiblePersonIds.includes(input.personId)) ||
+        Boolean(approval?.manifest.profiles.some((p) => p.personId === input.personId));
+      if (inPop) {
+        rejectLockedPeriodSourceChange(actor, {
+          periodId: period.id,
+          reason: input.reason,
+          personId: input.personId,
+        });
+      }
+    }
   }
 }
 
-/** Assert LE has no locked periods before LE-wide material mutations (rules/maps). */
+/** Assert LE has no locked periods before LE-wide material / financial mutations. */
 export function assertNoLockedPeriodsForLegalEntity(
   actor: M07Actor,
   legalEntityId: string,
-  reason: string
+  reason: string,
+  effectiveFrom?: string | null,
+  effectiveTo?: string | null
 ): void {
+  if (!legalEntityId?.trim()) {
+    throw new M07ValidationError(
+      "missing-legal-entity-context",
+      "Legal entity is required for locked-period impact checks"
+    );
+  }
   const locked = listLockedPeriodsForLegalEntity(legalEntityId);
-  if (locked[0]) {
+  for (const period of locked) {
+    if (
+      effectiveFrom !== undefined ||
+      effectiveTo !== undefined
+    ) {
+      if (!effectiveRangeOverlapsPeriod(period, effectiveFrom, effectiveTo)) {
+        continue;
+      }
+    }
     rejectLockedPeriodSourceChange(actor, {
-      periodId: locked[0].id,
+      periodId: period.id,
       reason,
     });
   }
+}
+
+/** True when an incomplete unlock recovery is outstanding for the period. */
+export function hasIncompleteUnlockControls(periodId: string): boolean {
+  return listUnlockRequests().some(
+    (r) =>
+      r.periodId === periodId &&
+      (r.status === "controls-incomplete" || r.controlsIncomplete === true)
+  );
+}
+
+export function getIncompleteUnlockRequest(periodId: string) {
+  return (
+    listUnlockRequests().find(
+      (r) =>
+        r.periodId === periodId &&
+        (r.status === "controls-incomplete" || r.controlsIncomplete === true)
+    ) ?? null
+  );
+}
+
+export function getUnlockRequestById(id: string) {
+  return getUnlockRequest(id);
 }

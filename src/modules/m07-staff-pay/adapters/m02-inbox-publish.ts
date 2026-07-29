@@ -27,8 +27,28 @@ export type M02InboxProjection = {
 
 const projections: M02InboxProjection[] = [];
 
+let __m02FailForTests = false;
+
+function allowTestHooks(): boolean {
+  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
+}
+
+/** Test-only. No-ops in production builds. */
+export function __setM02InboxFailForTests(fail: boolean): void {
+  if (!allowTestHooks()) return;
+  __m02FailForTests = fail;
+}
+
 export function resetM02InboxPublishForTests(): void {
   projections.length = 0;
+  __m02FailForTests = false;
+}
+
+function m02FailClosed(): { inboxActionId?: string; projected: boolean } | null {
+  if (__m02FailForTests && allowTestHooks()) {
+    return { projected: false };
+  }
+  return null;
 }
 
 /** Legacy Batch 1 interface retained for existing tests. */
@@ -340,6 +360,8 @@ export function syncExportBatchToInbox(
   batch: import("../types/domain").PayrollExportBatch,
   mode: "blocked" | "recon-blocked" | "finalized" | "stale-source"
 ): { inboxActionId?: string; projected: boolean } {
+  const forced = m02FailClosed();
+  if (forced) return forced;
   const source = exportBatchSource(batch);
   const bridgeKey = `${MODULE_ID}::payroll-export-batch::${batch.identityKey}`;
   const existing = findInboxActionForSource(MODULE_ID, "payroll-export-batch", batch.identityKey);
@@ -428,6 +450,8 @@ export function syncUnlockRequestToInbox(
   req: import("../types/domain").PeriodUnlockRequest,
   mode: "requested" | "approved" | "rejected"
 ): { inboxActionId?: string; projected: boolean } {
+  const forced = m02FailClosed();
+  if (forced) return forced;
   const source = unlockSource(req);
   const bridgeKey = `${MODULE_ID}::period-unlock-request::${req.logicalKey}`;
   const existing = findInboxActionForSource(MODULE_ID, "period-unlock-request", req.logicalKey);
@@ -498,6 +522,8 @@ export function syncLockedPeriodSourceChangeToInbox(
     reason: string;
   }
 ): { inboxActionId?: string; projected: boolean } {
+  const forced = m02FailClosed();
+  if (forced) return forced;
   const logicalKey = `locked-source::${input.periodId}::${input.lockId ?? "none"}`;
   const source: SourceRecordRef = {
     sourceModuleId: MODULE_ID,

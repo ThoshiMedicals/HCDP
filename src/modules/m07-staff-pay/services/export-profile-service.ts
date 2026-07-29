@@ -18,6 +18,7 @@ import {
 } from "../repository/local-store";
 import type { ExportProfile } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
+import { assertNoLockedPeriodsForLegalEntity } from "./period-lock-guard";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 
 export function listExportProfilesForEntity(
@@ -59,6 +60,14 @@ export function createExportProfile(
       );
     }
   }
+
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    input.legalEntityId,
+    "export-profile-create",
+    input.effectiveFrom,
+    input.effectiveTo ?? null
+  );
 
   const now = new Date().toISOString();
   const profile: ExportProfile = {
@@ -138,6 +147,15 @@ export function versionExportProfile(
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
+  if (existing.legalEntityId !== "*") {
+    assertNoLockedPeriodsForLegalEntity(
+      actor,
+      existing.legalEntityId,
+      "export-profile-version",
+      patch.effectiveFrom ?? existing.effectiveFrom,
+      patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo
+    );
+  }
   upsertExportProfile(updated);
   recordM07Audit({
     actor,

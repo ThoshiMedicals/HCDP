@@ -37,6 +37,7 @@ import {
 } from "../repository/published-timesheet-snapshots";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { assertNoLockedPeriodAffectedBySnapshot } from "./period-lock-guard";
 import { runM07SchemaV3Migration } from "../storage/migrate-v3";
 import type {
   PublishedTimesheetIntakeStatus,
@@ -363,6 +364,15 @@ export function intakePublishedTimesheet(input: {
   }
 
   // Different event key for same version/hash is covered by business-key uniqueness above.
+  // Lock guard BEFORE any authoritative snapshot write.
+  assertNoLockedPeriodAffectedBySnapshot(input.actor, {
+    legalEntityId: version.legalEntityId,
+    periodStart: version.periodStart,
+    periodEnd: version.periodEnd,
+    reason: "published-timesheet-intake",
+    personId: version.workforcePersonId,
+  });
+
   const snapshot = buildSnapshot(version, input.actor.userId);
   const stored = appendPublishedTimesheetSnapshot(snapshot);
 

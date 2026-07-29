@@ -518,6 +518,20 @@ export const NON_WAIVABLE_EXCEPTION_KINDS: readonly PayPrepExceptionKind[] = [
   "unsupported-input",
 ] as const;
 
+export const NON_PERIOD_EXCEPTION_KINDS: readonly PayPrepExceptionKind[] = [
+  "doctor-pay-excluded",
+  "tenant-boundary-mismatch",
+  "clinic-boundary-mismatch",
+  "legal-entity-boundary-mismatch",
+  "ineligible-intake",
+  "missing-person",
+] as const;
+
+/** Period-scoped kinds require an explicit valid periodId. */
+export function isPeriodScopedExceptionKind(kind: PayPrepExceptionKind): boolean {
+  return !(NON_PERIOD_EXCEPTION_KINDS as readonly string[]).includes(kind);
+}
+
 /** Explicitly waivable preparation kinds (Batch 4 OD-5). */
 export const WAIVABLE_EXCEPTION_KINDS: readonly PayPrepExceptionKind[] = [
   "missing-rate",
@@ -1188,6 +1202,7 @@ export type PeriodLockRecord = {
 
 export type PeriodUnlockRequestStatus =
   | "requested"
+  | "controls-incomplete"
   | "approved"
   | "rejected"
   | "cancelled";
@@ -1207,6 +1222,10 @@ export type PeriodUnlockRequest = {
   reviewedAt?: string;
   reviewedBy?: string;
   reviewReason?: string;
+  /** True while mandatory M02/audit controls after unlock approval are outstanding. */
+  controlsIncomplete?: boolean;
+  controlsIncompleteAt?: string;
+  controlsIncompleteReason?: string;
   projectionKey: string;
   version: number;
 };

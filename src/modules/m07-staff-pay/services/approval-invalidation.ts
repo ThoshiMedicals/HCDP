@@ -32,6 +32,7 @@ import { syncPeriodApprovalToInbox } from "../adapters/m02-inbox-publish";
 import {
   assertNoLockedPeriodAffectedByPersonMutation,
   assertNoLockedPeriodsForLegalEntity,
+  effectiveRangeOverlapsPeriod,
   isPayrollPeriodLocked,
   rejectLockedPeriodSourceChange,
 } from "./period-lock-guard";
@@ -177,10 +178,28 @@ function periodsNeedingInvalidation(legalEntityId: string): string[] {
 export function invalidateApprovalsForLegalEntity(
   actor: M07Actor,
   legalEntityId: string,
-  reason: string
+  reason: string,
+  effectiveFrom?: string | null,
+  effectiveTo?: string | null
 ): void {
-  assertNoLockedPeriodsForLegalEntity(actor, legalEntityId, reason);
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    legalEntityId,
+    reason,
+    effectiveFrom,
+    effectiveTo
+  );
   for (const periodId of periodsNeedingInvalidation(legalEntityId)) {
+    const period = getPeriod(periodId);
+    if (
+      period &&
+      (effectiveFrom !== undefined || effectiveTo !== undefined) &&
+      !effectiveRangeOverlapsPeriod(period, effectiveFrom, effectiveTo)
+    ) {
+      continue;
+    }
+    // Never silently stale a locked period — locked impact already asserted above
+    if (period && isPayrollPeriodLocked(period.id)) continue;
     invalidateApprovalIfSourcesChanged(actor, periodId, reason);
   }
 }
@@ -197,6 +216,9 @@ export function invalidateApprovalsForProfileMutation(
     reason: string;
     /** When true (create/archive), invalidate all LE packages — population may change. */
     populationChanging?: boolean;
+    effectiveFrom?: string | null;
+    effectiveTo?: string | null;
+    financiallyAuthoritative?: boolean;
   }
 ): void {
   assertNoLockedPeriodAffectedByPersonMutation(actor, {
@@ -204,9 +226,18 @@ export function invalidateApprovalsForProfileMutation(
     personId: input.personId,
     reason: input.reason,
     populationChanging: input.populationChanging,
+    effectiveFrom: input.effectiveFrom,
+    effectiveTo: input.effectiveTo,
+    financiallyAuthoritative: input.financiallyAuthoritative,
   });
   if (input.populationChanging) {
-    invalidateApprovalsForLegalEntity(actor, input.legalEntityId, input.reason);
+    invalidateApprovalsForLegalEntity(
+      actor,
+      input.legalEntityId,
+      input.reason,
+      input.effectiveFrom,
+      input.effectiveTo
+    );
     return;
   }
   for (const periodId of periodsNeedingInvalidation(input.legalEntityId)) {

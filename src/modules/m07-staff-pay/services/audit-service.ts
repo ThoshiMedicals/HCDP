@@ -4,14 +4,26 @@ import { appendAudit, newAuditId } from "../repository/local-store";
 import type { M07AuditEvent } from "../types/domain";
 
 /**
- * Test-only fail-closed hook. When set, `recordM07Audit` throws so callers
- * must refuse success (download / unlock / locked-source controls).
- * Never enable in production UI paths.
+ * Internal audit fail flag. Production builds (NODE_ENV=production) ignore setters.
  */
 let __m07AuditFailForTests = false;
 
-export function setM07AuditFailForTests(fail: boolean): void {
+function allowTestHooks(): boolean {
+  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
+}
+
+/**
+ * Test-only. No-ops when NODE_ENV === "production".
+ * Prefer importing via tests/_helpers rather than production UI.
+ */
+export function __setM07AuditFailForTests(fail: boolean): void {
+  if (!allowTestHooks()) return;
   __m07AuditFailForTests = fail;
+}
+
+/** @deprecated Use __setM07AuditFailForTests — retained for older remediation tests. */
+export function setM07AuditFailForTests(fail: boolean): void {
+  __setM07AuditFailForTests(fail);
 }
 
 export function recordM07Audit(input: {
@@ -26,7 +38,7 @@ export function recordM07Audit(input: {
   reason?: string;
   meta?: Record<string, unknown>;
 }): M07AuditEvent {
-  if (__m07AuditFailForTests) {
+  if (__m07AuditFailForTests && allowTestHooks()) {
     throw new Error("m07-audit-fail-for-tests");
   }
   const event: M07AuditEvent = {

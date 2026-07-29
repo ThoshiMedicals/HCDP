@@ -89,6 +89,7 @@ export function createPayProfile(
     effectiveFrom: input.effectiveFrom,
     effectiveTo: input.effectiveTo ?? null,
     populationChanging: true,
+    financiallyAuthoritative: true,
   });
 
   const now = new Date().toISOString();
@@ -133,6 +134,9 @@ export function createPayProfile(
     personId: profile.personId,
     reason: "profile-create",
     populationChanging: true,
+    effectiveFrom: profile.effectiveFrom,
+    effectiveTo: profile.effectiveTo,
+    financiallyAuthoritative: true,
   });
   return redactProfile(actor, profile);
 }
@@ -158,16 +162,29 @@ export function updatePayProfile(
     externalPayrollEmployeeIdHistory: existing.externalPayrollEmployeeIdHistory,
   });
 
-  if (material) {
+  const rateChanging =
+    patch.ordinaryHourlyRate !== undefined &&
+    patch.ordinaryHourlyRate !== existing.ordinaryHourlyRate;
+  const financial =
+    rateChanging ||
+    (patch.overtimeRulesRef !== undefined &&
+      patch.overtimeRulesRef !== existing.overtimeRulesRef) ||
+    (patch.allowanceCodes !== undefined &&
+      JSON.stringify(patch.allowanceCodes) !== JSON.stringify(existing.allowanceCodes)) ||
+    (patch.deductionCodes !== undefined &&
+      JSON.stringify(patch.deductionCodes) !== JSON.stringify(existing.deductionCodes));
+
+  if (material || financial) {
     assertNoLockedPeriodAffectedByPersonMutation(actor, {
       legalEntityId: existing.legalEntityId,
       personId: existing.personId,
-      reason: "profile-update-material",
+      reason: material ? "profile-update-material" : "profile-update-financial",
       effectiveFrom: patch.effectiveFrom ?? existing.effectiveFrom,
       effectiveTo:
         patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo,
       populationChanging:
         patch.status !== undefined && patch.status !== existing.status,
+      financiallyAuthoritative: financial || material,
     });
   }
 
@@ -201,6 +218,9 @@ export function updatePayProfile(
       personId: updated.personId,
       reason: "profile-update-material",
       populationChanging: existing.status !== updated.status,
+      effectiveFrom: updated.effectiveFrom,
+      effectiveTo: updated.effectiveTo,
+      financiallyAuthoritative: financial,
     });
   }
   return redactProfile(actor, updated);
@@ -218,6 +238,7 @@ export function archivePayProfile(actor: M07Actor, profileId: string, reason: st
     effectiveFrom: existing.effectiveFrom,
     effectiveTo: existing.effectiveTo,
     populationChanging: true,
+    financiallyAuthoritative: true,
   });
   const updated: PayProfile = {
     ...existing,
@@ -243,6 +264,9 @@ export function archivePayProfile(actor: M07Actor, profileId: string, reason: st
     personId: updated.personId,
     reason: "profile-archive",
     populationChanging: true,
+    effectiveFrom: updated.effectiveFrom,
+    effectiveTo: updated.effectiveTo,
+    financiallyAuthoritative: true,
   });
   return redactProfile(actor, updated);
 }
@@ -284,6 +308,15 @@ export function linkExternalPayrollEmployeeId(
   if (!existing) throw new M07ValidationError("not-found", `Profile ${profileId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertExternalIdUnique(existing.legalEntityId, externalPayrollEmployeeId, existing.id);
+
+  assertNoLockedPeriodAffectedByPersonMutation(actor, {
+    legalEntityId: existing.legalEntityId,
+    personId: existing.personId,
+    reason: "external-payroll-employee-id-link",
+    effectiveFrom: existing.effectiveFrom,
+    effectiveTo: existing.effectiveTo,
+    financiallyAuthoritative: true,
+  });
 
   const entry: ExternalIdHistoryEntry = {
     previousId: existing.externalPayrollEmployeeId ?? null,

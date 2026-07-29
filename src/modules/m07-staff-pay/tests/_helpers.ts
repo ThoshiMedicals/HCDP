@@ -6,9 +6,9 @@ import { clearM07LocalStoreCacheForTests } from "../repository/local-store";
 import { resetM07BootstrapCacheForTests, ensureM07Bootstrapped } from "../storage";
 import { resetM04PersonReadForTests, injectTestPersonIdentity } from "../adapters/m04-person-read";
 import { resetM04LeaveReadForTests } from "../adapters/m04-leave-read";
-import { resetM02InboxPublishForTests } from "../adapters/m02-inbox-publish";
+import { resetM02InboxPublishForTests, __setM02InboxFailForTests } from "../adapters/m02-inbox-publish";
 import { resetM01SummaryPublishForTests } from "../adapters/m01-summary-publish";
-import { setM07AuditFailForTests } from "../services/audit-service";
+import { setM07AuditFailForTests, __setM07AuditFailForTests } from "../services/audit-service";
 import type { M07Actor } from "../permissions";
 import { M07_PERMISSION_CODES, M07_ROLE_PACKS } from "../permissions";
 
@@ -46,6 +46,8 @@ export function resetM07TestEnv() {
   resetM02InboxPublishForTests();
   resetM01SummaryPublishForTests();
   setM07AuditFailForTests(false);
+  __setM07AuditFailForTests(false);
+  __setM02InboxFailForTests(false);
   ensureM07Bootstrapped();
   injectTestPersonIdentity({
     personId: "person_a",

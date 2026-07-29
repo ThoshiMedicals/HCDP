@@ -70,21 +70,29 @@ export function reconcileExportBatchAgainstApproval(
   }
 
   const profile = getExportProfile(batch.exportProfileId);
-  // Rebuild expected from the same pins for population/line coverage checks
-  const expectedPkg = profile
-    ? buildCanonicalExportPackage({
-        period,
-        approval,
-        exportBatchId: batch.id,
-        batchRevision: batch.batchRevision,
-        exportProfile: profile,
-        previewOnly: canonical.previewOnly,
-        generatedAt: canonical.generatedAt,
-      })
-    : canonical;
+  if (!profile) {
+    throw new M07ValidationError(
+      "export-profile-missing",
+      "Export profile required for independent reconciliation expected package"
+    );
+  }
+  // Rebuild expected independently from approval pins — never reuse actual canonical as expected
+  const expectedPkg = buildCanonicalExportPackage({
+    period,
+    approval,
+    exportBatchId: batch.id,
+    batchRevision: batch.batchRevision,
+    exportProfile: profile,
+    previewOnly: canonical.previewOnly,
+    generatedAt: canonical.generatedAt,
+  });
 
   const expectedTotals = expectedTotalsFromApprovalCanonical(expectedPkg);
-  const actualTotals = canonical.totals;
+  // Actual totals must be derived from actual lines — never trust a cached totals blob alone
+  const actualTotals = computeTotalsFromLines(
+    canonical.lines,
+    canonical.totals.grossAmount != null
+  );
   const mismatches: ReconciliationMismatch[] = [];
 
   if (expectedPkg.legalEntityId !== canonical.legalEntityId) {

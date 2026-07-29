@@ -1,6 +1,15 @@
 /**
  * Batch 6 — controlled unlock request / approval (not silent admin override).
  * Does not implement prior-period adjustments.
+ *
+ * Unlock approval order (approach A — controls before operational open):
+ * 1. Validate SoD / lock match / permissions.
+ * 2. Mark request `controls-incomplete` (period remains locked).
+ * 3. Complete mandatory M02 + unlock-approved audit.
+ * 4. Only then apply domain unlock (lock unlocked, period open, approval stale, export superseded).
+ * 5. Record period.unlocked audit; mark request `approved`.
+ * Retry of `controls-incomplete` resumes from step 3 without opening the period early.
+ * Fully `approved` remains idempotent success.
  */
 
 import {
@@ -25,12 +34,148 @@ import {
   upsertPeriodLock,
   upsertUnlockRequest,
 } from "../repository/local-store";
-import type { PeriodUnlockRequest } from "../types/domain";
+import type { PeriodLockRecord, PeriodUnlockRequest } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
 import { assertUnlockApprovalSeparation } from "./sod-policy";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncUnlockRequestToInbox } from "../adapters/m02-inbox-publish";
 import { assertExportBatchTransition, isFinalizedExportStatus } from "./export-lifecycle";
+import { isPayrollPeriodLocked } from "./period-lock-guard";
+
+function markControlsIncomplete(
+  req: PeriodUnlockRequest,
+  actor: M07Actor,
+  reason: string
+): PeriodUnlockRequest {
+  const now = new Date().toISOString();
+  const next: PeriodUnlockRequest = {
+    ...req,
+    status: "controls-incomplete",
+    controlsIncomplete: true,
+    controlsIncompleteAt: now,
+    controlsIncompleteReason: reason,
+    reviewedAt: req.reviewedAt ?? now,
+    reviewedBy: req.reviewedBy ?? actor.userId,
+    version: req.version + 1,
+  };
+  return upsertUnlockRequest(next);
+}
+
+function runUnlockControlPair(
+  actor: M07Actor,
+  req: PeriodUnlockRequest,
+  lock: PeriodLockRecord,
+  reason?: string
+): { m02Ok: boolean; auditOk: boolean } {
+  let m02Ok = false;
+  try {
+    m02Ok = syncUnlockRequestToInbox(actor, req, "approved").projected;
+  } catch {
+    m02Ok = false;
+  }
+
+  let auditOk = false;
+  try {
+    recordM07Audit({
+      actor,
+      action: "period.unlock-approved",
+      entityType: "period-unlock-request",
+      entityId: req.id,
+      legalEntityId: req.legalEntityId,
+      reason,
+      before: { status: req.status },
+      after: { status: "controls-pending", periodStillLocked: true },
+      meta: {
+        periodId: req.periodId,
+        lockId: lock.id,
+        sourceManifestChecksum: lock.sourceManifestChecksum,
+        artifactChecksum: lock.exportChecksum,
+        controlsComplete: false,
+        stage: "pre-domain-unlock",
+      },
+    });
+    auditOk = true;
+  } catch {
+    auditOk = false;
+  }
+  return { m02Ok, auditOk };
+}
+
+function applyDomainUnlock(
+  actor: M07Actor,
+  req: PeriodUnlockRequest,
+  lock: PeriodLockRecord,
+  reason?: string
+): PeriodUnlockRequest {
+  const period = getPeriod(req.periodId);
+  if (!period) throw new M07ValidationError("not-found", "Period not found");
+  const now = new Date().toISOString();
+
+  upsertPeriodLock({
+    ...lock,
+    status: "unlocked",
+    unlockedAt: now,
+    unlockedBy: actor.userId,
+    unlockRequestId: req.id,
+  });
+
+  upsertPeriod({
+    ...period,
+    state: "open",
+    lockedAt: null,
+    lockedBy: null,
+    exportCreated: false,
+    version: period.version + 1,
+    updatedAt: now,
+    updatedBy: actor.userId,
+  });
+
+  const approval = getCurrentApprovalForPeriod(period.id);
+  if (approval && approval.status === "approved") {
+    upsertApproval({
+      ...approval,
+      status: "stale",
+      staleAt: now,
+      staleReason: "period-unlocked",
+      updatedAt: now,
+      updatedBy: actor.userId,
+    });
+  }
+
+  const exportBatch = getCurrentExportBatchForPeriod(period.id);
+  if (exportBatch && isFinalizedExportStatus(exportBatch.status)) {
+    assertExportBatchTransition(exportBatch.status, "superseded");
+    upsertExportBatch({
+      ...exportBatch,
+      status: "superseded",
+      supersededAt: now,
+    });
+  }
+
+  const approved: PeriodUnlockRequest = {
+    ...req,
+    status: "approved",
+    controlsIncomplete: false,
+    controlsIncompleteReason: undefined,
+    reviewedAt: now,
+    reviewedBy: actor.userId,
+    reviewReason: reason ?? req.reviewReason,
+    version: req.version + 1,
+  };
+  upsertUnlockRequest(approved);
+
+  recordM07Audit({
+    actor,
+    action: "period.unlocked",
+    entityType: "period-lock",
+    entityId: lock.id,
+    legalEntityId: lock.legalEntityId,
+    after: { status: "unlocked" },
+    meta: { unlockRequestId: approved.id, periodId: period.id },
+  });
+
+  return approved;
+}
 
 export function requestPeriodUnlock(
   actor: M07Actor,
@@ -52,7 +197,7 @@ export function requestPeriodUnlock(
   }
 
   const open = getOpenUnlockRequestForPeriod(period.id);
-  if (open) return open; // idempotent replay
+  if (open) return open; // idempotent replay (requested or controls-incomplete)
 
   const now = new Date().toISOString();
   const logicalKey = unlockRequestLogicalKey(period.id, lock.id);
@@ -110,8 +255,19 @@ export function approvePeriodUnlock(
   if (!req) throw new M07ValidationError("not-found", "Unlock request not found");
   assertM07LegalEntityScope(actor, req.legalEntityId);
 
-  if (req.status === "approved") return req; // idempotent
-  if (req.status !== "requested") {
+  // Fully completed unlock — idempotent success only when period is actually open
+  if (req.status === "approved" && !req.controlsIncomplete) {
+    const period = getPeriod(req.periodId);
+    if (period && period.state !== "locked" && !isPayrollPeriodLocked(req.periodId)) {
+      return req;
+    }
+    // Approved flag without open period — treat as recoverable incomplete
+  }
+
+  if (req.status === "rejected" || req.status === "cancelled") {
+    throw new M07ValidationError("lifecycle", `Cannot approve unlock in status ${req.status}`);
+  }
+  if (req.status !== "requested" && req.status !== "controls-incomplete" && req.status !== "approved") {
     throw new M07ValidationError("lifecycle", `Cannot approve unlock in status ${req.status}`);
   }
 
@@ -122,111 +278,53 @@ export function approvePeriodUnlock(
 
   const lock = getActivePeriodLockForPeriod(req.periodId);
   if (!lock || lock.id !== req.lockId) {
+    // If already unlocked and request approved with controls done, handled above.
+    // If incomplete / requested but lock missing — fail closed.
+    if (req.status === "approved" && !req.controlsIncomplete) {
+      return req;
+    }
     throw new M07ValidationError("lock-mismatch", "Active lock does not match unlock request");
   }
 
   const period = getPeriod(req.periodId);
   if (!period) throw new M07ValidationError("not-found", "Period not found");
 
-  const now = new Date().toISOString();
-  const approved: PeriodUnlockRequest = {
-    ...req,
-    status: "approved",
-    reviewedAt: now,
-    reviewedBy: actor.userId,
-    reviewReason: input.reason,
-    version: req.version + 1,
-  };
-  upsertUnlockRequest(approved);
-
-  // Unlock lock record — do not delete history
-  upsertPeriodLock({
-    ...lock,
-    status: "unlocked",
-    unlockedAt: now,
-    unlockedBy: actor.userId,
-    unlockRequestId: approved.id,
-  });
-
-  // Period returns to open (non-authoritative for export until new approval)
-  upsertPeriod({
-    ...period,
-    state: "open",
-    lockedAt: null,
-    lockedBy: null,
-    exportCreated: false,
-    version: period.version + 1,
-    updatedAt: now,
-    updatedBy: actor.userId,
-  });
-
-  // Mark approval + export non-authoritative
-  const approval = getCurrentApprovalForPeriod(period.id);
-  if (approval && approval.status === "approved") {
-    upsertApproval({
-      ...approval,
-      status: "stale",
-      staleAt: now,
-      staleReason: "period-unlocked",
-      updatedAt: now,
-      updatedBy: actor.userId,
-    });
-  }
-
-  const exportBatch = getCurrentExportBatchForPeriod(period.id);
-  if (exportBatch && isFinalizedExportStatus(exportBatch.status)) {
-    assertExportBatchTransition(exportBatch.status, "superseded");
-    upsertExportBatch({
-      ...exportBatch,
-      status: "superseded",
-      supersededAt: now,
-    });
-  }
-
-  const m02 = syncUnlockRequestToInbox(actor, approved, "approved");
-
-  let auditOk = false;
-  try {
-    recordM07Audit({
-      actor,
-      action: "period.unlock-approved",
-      entityType: "period-unlock-request",
-      entityId: approved.id,
-      legalEntityId: approved.legalEntityId,
-      reason: input.reason,
-      before: { status: "requested" },
-      after: { status: "approved", periodState: "open" },
-      meta: {
-        periodId: period.id,
-        lockId: lock.id,
-        sourceManifestChecksum: lock.sourceManifestChecksum,
-        artifactChecksum: lock.exportChecksum,
-        controlsComplete: Boolean(m02.projected),
+  // Stage: period remains locked while controls run
+  let staged = req;
+  if (req.status === "requested" || (req.status === "approved" && req.controlsIncomplete)) {
+    staged = markControlsIncomplete(
+      {
+        ...req,
+        reviewedAt: new Date().toISOString(),
+        reviewedBy: actor.userId,
+        reviewReason: input.reason,
       },
-    });
-    auditOk = true;
-  } catch {
-    auditOk = false;
+      actor,
+      "awaiting-m02-and-audit"
+    );
+  } else if (req.status === "controls-incomplete") {
+    staged = req;
   }
 
-  if (!m02.projected || !auditOk) {
+  const { m02Ok, auditOk } = runUnlockControlPair(actor, staged, lock, input.reason);
+  if (!m02Ok || !auditOk) {
+    markControlsIncomplete(
+      staged,
+      actor,
+      !m02Ok && !auditOk
+        ? "m02-and-audit-incomplete"
+        : !m02Ok
+          ? "m02-incomplete"
+          : "audit-incomplete"
+    );
+    // Period still locked — ordinary mutations remain blocked
     throw new M07ValidationError(
       "unlock-control-incomplete",
-      "Unlock domain changes applied but required M02/audit controls did not complete — do not treat as fully controlled success"
+      "Unlock controls incomplete — period remains locked; retry approvePeriodUnlock to resume"
     );
   }
 
-  recordM07Audit({
-    actor,
-    action: "period.unlocked",
-    entityType: "period-lock",
-    entityId: lock.id,
-    legalEntityId: lock.legalEntityId,
-    after: { status: "unlocked" },
-    meta: { unlockRequestId: approved.id, periodId: period.id },
-  });
-
-  return approved;
+  return applyDomainUnlock(actor, staged, lock, input.reason);
 }
 
 export function rejectPeriodUnlock(
@@ -241,7 +339,7 @@ export function rejectPeriodUnlock(
   if (!req) throw new M07ValidationError("not-found", "Unlock request not found");
   assertM07LegalEntityScope(actor, req.legalEntityId);
   if (req.status === "rejected") return req;
-  if (req.status !== "requested") {
+  if (req.status !== "requested" && req.status !== "controls-incomplete") {
     throw new M07ValidationError("lifecycle", `Cannot reject unlock in status ${req.status}`);
   }
   assertUnlockApprovalSeparation({
@@ -253,6 +351,7 @@ export function rejectPeriodUnlock(
   const rejected: PeriodUnlockRequest = {
     ...req,
     status: "rejected",
+    controlsIncomplete: false,
     reviewedAt: now,
     reviewedBy: actor.userId,
     reviewReason: input.reason,
@@ -267,7 +366,7 @@ export function rejectPeriodUnlock(
     entityId: rejected.id,
     legalEntityId: rejected.legalEntityId,
     reason: input.reason,
-    before: { status: "requested" },
+    before: { status: req.status },
     after: { status: "rejected" },
     meta: { periodId: req.periodId, lockId: req.lockId },
   });

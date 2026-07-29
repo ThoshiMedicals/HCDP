@@ -464,7 +464,9 @@ export function getUnlockRequest(id: string): PeriodUnlockRequest | null {
 export function getOpenUnlockRequestForPeriod(periodId: string): PeriodUnlockRequest | null {
   return (
     listUnlockRequests().find(
-      (r) => r.periodId === periodId && r.status === "requested"
+      (r) =>
+        r.periodId === periodId &&
+        (r.status === "requested" || r.status === "controls-incomplete")
     ) ?? null
   );
 }

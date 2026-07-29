@@ -193,8 +193,6 @@ describe("M07 Batch 6 remediation — high-risk controls", () => {
 
   describe("A. Lock enforcement", () => {
     it("rejects direct service mutations on a locked period; unrelated LE unaffected", () => {
-      const { period } = lockPeriod("lockmut");
-      const profileId = listProfiles(ORG_A).find((p) => p.personId === "person_a")!.id;
       const dedCode = createGenericCode(actorAll(), {
         legalEntityId: ORG_A,
         code: "DED_R",
@@ -202,7 +200,20 @@ describe("M07 Batch 6 remediation — high-risk controls", () => {
         lineType: "deduction",
         effectiveFrom: "2026-01-01",
       });
+      const { period } = lockPeriod("lockmut");
+      const profileId = listProfiles(ORG_A).find((p) => p.personId === "person_a")!.id;
 
+      assert.throws(
+        () =>
+          createGenericCode(actorAll(), {
+            legalEntityId: ORG_A,
+            code: "DED_LOCKED",
+            label: "blocked while locked",
+            lineType: "deduction",
+            effectiveFrom: "2026-01-01",
+          }),
+        isLockedErr
+      );
       assert.throws(
         () =>
           calculatePersonOrdinaryAndOvertime(actorClerk(), {
@@ -487,6 +498,8 @@ describe("M07 Batch 6 remediation — high-risk controls", () => {
           e instanceof M07ValidationError && e.reason === "unlock-control-incomplete"
       );
       setM07AuditFailForTests(false);
+      // Period remains operationally locked until controls complete
+      assert.equal(getPeriod(period.id)?.state, "locked");
       assert.ok(req.id);
     });
   });

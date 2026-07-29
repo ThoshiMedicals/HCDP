@@ -26,7 +26,37 @@ import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncPayPrepExceptionToInbox } from "../adapters/m02-inbox-publish";
 import { assertExceptionWaiverSeparation } from "./sod-policy";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
-import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
+import {
+  assertPeriodLegalEntityConsistency,
+  assertPeriodNotLockedForOrdinaryMutation,
+} from "./period-lock-guard";
+import { isPeriodScopedExceptionKind } from "../types/domain";
+
+function assertExceptionPeriodLock(
+  legalEntityId: string,
+  periodId: string | undefined,
+  kind: PayPrepExceptionKind,
+  mode: "create" | "mutate-existing"
+): void {
+  if (isPeriodScopedExceptionKind(kind)) {
+    if (!periodId?.trim()) {
+      throw new M07ValidationError(
+        "missing-period-context",
+        mode === "create"
+          ? "Period-scoped exceptions require an explicit valid periodId"
+          : "Existing period-scoped exception is missing periodId — fail closed"
+      );
+    }
+    assertPeriodLegalEntityConsistency(periodId, legalEntityId);
+    assertPeriodNotLockedForOrdinaryMutation(periodId);
+    return;
+  }
+  // Non-period kinds: if a periodId is supplied, it must be consistent and unlocked
+  if (periodId?.trim()) {
+    assertPeriodLegalEntityConsistency(periodId, legalEntityId);
+    assertPeriodNotLockedForOrdinaryMutation(periodId);
+  }
+}
 
 export function isWaivableExceptionKind(kind: PayPrepExceptionKind): boolean {
   return (WAIVABLE_EXCEPTION_KINDS as readonly string[]).includes(kind);
@@ -111,7 +141,7 @@ export function openPayPrepException(
   assertM07LegalEntityScope(actor, input.legalEntityId);
   assertM07ClinicScope(actor, [input.clinicId]);
   assertNoProhibitedFields(input);
-  if (input.periodId) assertPeriodNotLockedForOrdinaryMutation(input.periodId);
+  assertExceptionPeriodLock(input.legalEntityId, input.periodId, input.kind, "create");
 
   if (input.organisationId !== input.legalEntityId) {
     // legalEntityId === organisation id (Q8); mismatch is itself a boundary error
@@ -204,7 +234,12 @@ export function resolvePayPrepException(
   if (!existing) throw new M07ValidationError("not-found", `Exception ${exceptionId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
-  if (existing.periodId) assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
+  assertExceptionPeriodLock(
+    existing.legalEntityId,
+    existing.periodId,
+    existing.kind,
+    "mutate-existing"
+  );
   if (existing.status !== "open") {
     throw new M07ValidationError("not-open", `Exception is already ${existing.status}`);
   }
@@ -252,7 +287,12 @@ export function waivePayPrepException(
   if (!existing) throw new M07ValidationError("not-found", `Exception ${exceptionId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
-  if (existing.periodId) assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
+  assertExceptionPeriodLock(
+    existing.legalEntityId,
+    existing.periodId,
+    existing.kind,
+    "mutate-existing"
+  );
   if (existing.status !== "open") {
     throw new M07ValidationError("not-open", `Exception is already ${existing.status}`);
   }
