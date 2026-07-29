@@ -1,8 +1,11 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.1–6.2 Evidence
 
-**Status:** Implementation evidence after fourth remediation of `58296f6…` — **not** independent owner acceptance  
+**Status:** **Owner accepted with qualifications** — Batch 6 **closed** (29 July 2026)  
+**Accepted technical target:** `ce1f4af68917c9988efff327d521d94b8289f2fc`  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
-**Scope:** Domain/lifecycle/storage + approved-manifest consumer / pre-export readiness
+**Scope:** Domain/lifecycle/storage + approved-manifest consumer / pre-export readiness  
+
+**Distinction:** This document records implementation evidence under the owner decision of 29 July 2026. Owner acceptance is separate from technical verification and is **not** certification, production deployment, or payment readiness. See `WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md` for the full owner-acceptance record, qualifications, and exclusions.
 
 ## Implemented and tested
 
@@ -28,6 +31,6 @@
 
 ## Non-claims
 
-- Not owner acceptance (Batch 6 remains unaccepted pending final date-validation re-verification)
 - Not production payroll certification
 - Not payment-ready
+- Qualifications and exclusions retained in Batch 6 closure evidence (`WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md`)

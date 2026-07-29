@@ -1,8 +1,11 @@
 # Wave 6 / M07 Batch 6 — Requirement Traceability
 
-**Status:** Implementation evidence after fourth remediation of `58296f6…` — **not** independent owner acceptance  
+**Status:** **Owner accepted with qualifications** — Batch 6 **closed** (29 July 2026)  
+**Accepted technical target:** `ce1f4af68917c9988efff327d521d94b8289f2fc`  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
-**Scope:** Payroll export preparation, package reconciliation, period lock + controlled unlock
+**Scope:** Payroll export preparation, package reconciliation, period lock + controlled unlock  
+
+**Distinction:** Traceability and suite evidence support technical readiness; **owner acceptance** is the product-owner decision recorded on 29 July 2026 and is separate from independent verification. Not certification, production deployment, statutory/monetary correctness, payment readiness, or full repository health.
 
 ## Approved owner decisions applied
 
@@ -34,7 +37,7 @@
 | R-TERM | all | Non-certified / non-payment | types + UI copy | suite | proven |
 | R-EXCL | excl | PPA, payment, bank, STP, super, Xero, M08, provider return files | — | architecture | excluded |
 
-## Named test totals (post fourth remediation)
+## Named test totals (at accepted target)
 
 | Suite | Pass |
 |---|---|
@@ -46,20 +49,26 @@
 | Full `m07-staff-pay/tests/**/*.test.ts` | **221** |
 | Batch 5 material + CP + remediation | **49** |
 
-## Lock / unlock qualifications (corrected)
+## Lock / unlock qualifications (retained)
 
 - Missing/empty/ambiguous `periodId` on ordinary period-scoped mutations **fails closed**.
 - Financial effective dates: missing/open-ended/malformed/**impossible Gregorian** fail closed; valid leap dates accepted; future non-overlap allowed when proven.
 - Platform export profiles (`legalEntityId === "*"`) use authoritative export-batch reference resolution.
+- Live export-profile protection is mutation-side rather than profile-version pinning.
 - Intake asserts lock **before** snapshot append.
-- Unlock: stage `controls-incomplete` → M02 + audit → domain unlock → `approved`. Idempotent success requires open period + unlock history + consistent export transition.
+- Unlock: stage `controls-incomplete` → M02 + audit → domain unlock → `approved`. Idempotent success requires open period + unlock history + consistent export transition; does not explicitly reassert approval-stale state (domain sequence establishes it before approval).
 - Locked-source audit+M02 pair is **not** transactional.
 - Download-before-lock remains permitted (`finalize → download → optional lock`).
+- Open-period profile creation and legal-entity seed behaviour remain qualified.
+- Fourteen existing TypeScript errors and M06 `published-timesheet-outbox.ts:235` build failure remain unrelated pre-existing debt.
+
+## Explicitly deferred / excluded (outside this acceptance)
+
+- PPA; provider-return processing; payment or net-pay; bank-file generation; STP; superannuation; Xero production integration; Module 8
 
 ## Explicit non-claims
 
-- Not independent owner acceptance (Batch 6 still unaccepted pending final date-validation re-verification)
-- Not production deployment or payroll certification
+- Owner acceptance with qualifications is **not** production deployment or payroll certification
 - Not payment / bank / STP / super / Xero readiness
 - Not prior-period adjustment support
 - Not automated provider-result reconciliation

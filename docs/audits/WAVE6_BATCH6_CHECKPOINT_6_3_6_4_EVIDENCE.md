@@ -1,7 +1,10 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.3–6.4 Evidence
 
-**Status:** Implementation evidence after fourth remediation of `58296f6…` — **not** independent owner acceptance  
-**Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`
+**Status:** **Owner accepted with qualifications** — Batch 6 **closed** (29 July 2026)  
+**Accepted technical target:** `ce1f4af68917c9988efff327d521d94b8289f2fc`  
+**Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
+
+**Distinction:** Implementation evidence under the owner decision of 29 July 2026. Owner acceptance is separate from technical verification and is **not** certification, production deployment, statutory correctness, or payment readiness. Full owner-acceptance record, qualifications, and exclusions: `WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md`.
 
 ## Implemented and tested
 
@@ -19,7 +22,7 @@
 | Category composition independence (gross equal ≠ matched) | rem2 category test | rem2 |
 | Population / line-ref independence | rem C | rem C |
 | Structured mismatches + line refs | `ReconciliationMismatch` | E |
-| Live export-profile read protected for locked periods | platform `*` version/retire blocked when referenced | rem3 |
+| Live export-profile read protected for locked periods | platform `*` version/retire blocked when referenced (mutation-side) | rem3 |
 | M02 export blocker + stale-source | `syncExportBatchToInbox` | I / rem B |
 | Secure audited download (fail-closed audit; test hook gated) | `export-download-service` / `__setM07AuditFailForTests` | H / rem D / rem2 |
 
@@ -30,6 +33,6 @@
 
 ## Non-claims
 
-- Not independent owner acceptance (Batch 6 remains unaccepted pending final date-validation re-verification)
 - Not statutory payroll correctness
 - Not payment readiness
+- Qualifications and exclusions retained in Batch 6 closure evidence (`WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md`)

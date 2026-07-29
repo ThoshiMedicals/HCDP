@@ -1,8 +1,15 @@
-# Wave 6 / M07 Batch 6 — Checkpoint 6.5–6.6 Evidence (fourth remediation)
+# Wave 6 / M07 Batch 6 — Checkpoint 6.5–6.6 Evidence
 
-**Status:** Implementation evidence after fourth targeted remediation of `58296f6…`  
-**Not independent owner acceptance. Batch 6 remains unaccepted pending final date-validation re-verification.**  
-**Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`
+**Status:** **Owner accepted with qualifications** — Batch 6 **closed**  
+**Owner acceptance date:** 29 July 2026  
+**Accepted technical target:** `ce1f4af68917c9988efff327d521d94b8289f2fc`  
+**Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
+
+**Distinction:** Independent technical verification (including final date-validation re-verification) confirmed readiness; this section records the **product-owner decision**, which is separate from that verification. This acceptance is **not** certification, production deployment approval, statutory or monetary correctness, payment readiness, or full repository health.
+
+## Owner decision
+
+Wave 6 / Module 7 / Batch 6 is **accepted with qualifications** at commit `ce1f4af68917c9988efff327d521d94b8289f2fc`. Batch 6 is **closed**. No subsequent M07 batch, PPA, provider-return work, or Module 8 has begun under this decision.
 
 ## Download-versus-lock policy (owner qualification)
 
@@ -24,7 +31,7 @@ Platform `*` export-profile batch-reference enforcement unchanged.
 
 Unchanged from third remediation.
 
-## Tests (post fourth remediation)
+## Tests (at accepted target)
 
 | Suite | Pass |
 |---|---|
@@ -36,8 +43,31 @@ Unchanged from third remediation.
 | Full M07 | **221** |
 | Batch 5 CP + material + remediation | **49** |
 
+## Recorded qualifications (not resolved by this acceptance)
+
+1. Export-profile impact is resolved through authoritative export-batch references.
+2. Live export-profile protection is mutation-side rather than based on profile-version pinning.
+3. Download may occur before optional period locking.
+4. Locked-source audit and M02 notification controls are non-transactional.
+5. Unlock idempotency does not explicitly reassert approval-stale state, although the verified domain sequence establishes it before approval.
+6. Open-period profile creation and legal-entity seed behaviour remain qualified.
+7. Fourteen existing TypeScript errors remain unrelated pre-existing debt.
+8. The existing M06 `published-timesheet-outbox.ts:235` build failure remains unrelated pre-existing debt.
+
+## Explicitly deferred / excluded (outside this acceptance)
+
+- PPA
+- Provider-return processing
+- Payment or net-pay execution
+- Bank-file generation
+- STP
+- Superannuation processing
+- Xero production integration
+- Module 8
+
 ## Non-claims
 
-- Not owner acceptance / production / certification  
-- Not PPA / payment / bank / STP / super / Xero / M08  
+- Not production deployment approval  
+- Not payroll certification or statutory/monetary correctness  
+- Not payment / bank / STP / super / Xero readiness  
 - Not full-repo TypeScript/build health (14 pre-existing TS errors; M06 outbox build)
