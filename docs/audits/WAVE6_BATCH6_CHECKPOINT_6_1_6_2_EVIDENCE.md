@@ -1,14 +1,14 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.1–6.2 Evidence
 
-**Status:** Implementation evidence (not independent owner acceptance)  
-**Accepted baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
+**Status:** Implementation evidence after remediation (not independent owner acceptance)  
+**Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`  
 **Scope:** Domain/lifecycle/storage + approved-manifest consumer / pre-export readiness
 
 ## Implemented and tested
 
 | Item | Location | Evidence |
 |---|---|---|
-| PayrollExportBatch domain + lifecycle | `types/domain.ts`, `export-lifecycle.ts` | A. Domain tests |
+| PayrollExportBatch domain + lifecycle | `types/domain.ts`, `export-lifecycle.ts` (incl. `failed`) | A / rem F |
 | Deterministic identity key | `exportIdentityKey` in `local-store.ts` | A. idempotency |
 | Schema v9 additive collections | `migrate-v9.ts`, keys `exports`/`reconciliations`/`periodLocks`/`unlockRequests` | J. Storage |
 | Approved Batch 5 manifest gate | `export-manifest-gate.ts` → `verifyManifestAgainstCurrent` | B. Manifest |

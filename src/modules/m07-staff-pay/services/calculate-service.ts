@@ -38,7 +38,7 @@ import { listActiveDeductionPrepInputs } from "./deduction-prep-input-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
-import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-service";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 function redactBatch(actor: M07Actor, batch: PayCalculationBatch): PayCalculationBatch {
   if (hasM07Permission(actor, "payroll.rate.view")) return batch;

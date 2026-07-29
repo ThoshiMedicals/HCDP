@@ -8,6 +8,7 @@ import { resetM04PersonReadForTests, injectTestPersonIdentity } from "../adapter
 import { resetM04LeaveReadForTests } from "../adapters/m04-leave-read";
 import { resetM02InboxPublishForTests } from "../adapters/m02-inbox-publish";
 import { resetM01SummaryPublishForTests } from "../adapters/m01-summary-publish";
+import { setM07AuditFailForTests } from "../services/audit-service";
 import type { M07Actor } from "../permissions";
 import { M07_PERMISSION_CODES, M07_ROLE_PACKS } from "../permissions";
 
@@ -44,6 +45,7 @@ export function resetM07TestEnv() {
   resetM04LeaveReadForTests();
   resetM02InboxPublishForTests();
   resetM01SummaryPublishForTests();
+  setM07AuditFailForTests(false);
   ensureM07Bootstrapped();
   injectTestPersonIdentity({
     personId: "person_a",

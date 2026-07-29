@@ -24,6 +24,7 @@ import {
   invalidateApprovalsForProfileMutation,
   isMaterialPayProfileChange,
 } from "./approval-invalidation";
+import { assertNoLockedPeriodAffectedByPersonMutation } from "./period-lock-guard";
 
 function redactProfile(actor: M07Actor, profile: PayProfile): PayProfile {
   const copy: PayProfile = { ...profile, externalPayrollEmployeeIdHistory: [...profile.externalPayrollEmployeeIdHistory] };
@@ -80,6 +81,15 @@ export function createPayProfile(
   if (!person) {
     throw new M07ValidationError("missing-person", `M04 person not found: ${input.personId}`);
   }
+
+  assertNoLockedPeriodAffectedByPersonMutation(actor, {
+    legalEntityId: input.legalEntityId,
+    personId: input.personId,
+    reason: "profile-create",
+    effectiveFrom: input.effectiveFrom,
+    effectiveTo: input.effectiveTo ?? null,
+    populationChanging: true,
+  });
 
   const now = new Date().toISOString();
   const profile: PayProfile = {
@@ -148,6 +158,19 @@ export function updatePayProfile(
     externalPayrollEmployeeIdHistory: existing.externalPayrollEmployeeIdHistory,
   });
 
+  if (material) {
+    assertNoLockedPeriodAffectedByPersonMutation(actor, {
+      legalEntityId: existing.legalEntityId,
+      personId: existing.personId,
+      reason: "profile-update-material",
+      effectiveFrom: patch.effectiveFrom ?? existing.effectiveFrom,
+      effectiveTo:
+        patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo,
+      populationChanging:
+        patch.status !== undefined && patch.status !== existing.status,
+    });
+  }
+
   const updated: PayProfile = {
     ...existing,
     ...patch,
@@ -188,6 +211,14 @@ export function archivePayProfile(actor: M07Actor, profileId: string, reason: st
   const existing = getProfile(profileId);
   if (!existing) throw new M07ValidationError("not-found", `Profile ${profileId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
+  assertNoLockedPeriodAffectedByPersonMutation(actor, {
+    legalEntityId: existing.legalEntityId,
+    personId: existing.personId,
+    reason: "profile-archive",
+    effectiveFrom: existing.effectiveFrom,
+    effectiveTo: existing.effectiveTo,
+    populationChanging: true,
+  });
   const updated: PayProfile = {
     ...existing,
     status: "archived",

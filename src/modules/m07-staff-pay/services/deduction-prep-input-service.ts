@@ -27,6 +27,7 @@ import { isDoctorPayExcluded } from "./classification-resolve";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 function activeDeductionCode(codeId: string, legalEntityId: string) {
   const code = getCode(codeId);
@@ -115,6 +116,7 @@ export function createDeductionPrepInput(
   if (!period) throw new M07ValidationError("not-found", `Period ${input.periodId} not found`);
   assertM07LegalEntityScope(actor, period.legalEntityId);
   assertM07ClinicScope(actor, [input.clinicId, ...(period.clinicIds ?? [])]);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const profile = listProfiles(period.legalEntityId).find(
     (p) => p.personId === input.personId && p.status === "active"
@@ -188,6 +190,7 @@ export function supersedeDeductionPrepInput(
   }
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
+  assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
   assertNoProhibitedFields(patch);
 
   const quantity = patch.quantity ?? existing.quantity;
@@ -267,6 +270,7 @@ export function cancelDeductionPrepInput(
   }
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
+  assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
 
   const now = new Date().toISOString();
   const updated: DeductionPrepInput = {

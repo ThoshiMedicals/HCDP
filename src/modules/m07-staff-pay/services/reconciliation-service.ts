@@ -37,6 +37,7 @@ import { diffUnits, unitsEqual } from "./export-decimal";
 import { getExportProfile } from "../repository/local-store";
 import { getPeriod } from "../repository/local-store";
 import { assertNoProhibitedFields } from "./sensitive-fields";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 function expectedTotalsFromApprovalCanonical(canonical: CanonicalExportPackage): ExportBatchTotals {
   return computeTotalsFromLines(canonical.lines, canonical.totals.grossAmount != null);
@@ -52,6 +53,7 @@ export function reconcileExportBatchAgainstApproval(
   const batch = getExportBatch(input.exportBatchId);
   if (!batch) throw new M07ValidationError("not-found", "Export batch not found");
   assertM07LegalEntityScope(actor, batch.legalEntityId);
+  assertPeriodNotLockedForOrdinaryMutation(batch.periodId);
 
   const approval = getApproval(batch.approvalId);
   const period = getPeriod(batch.periodId);

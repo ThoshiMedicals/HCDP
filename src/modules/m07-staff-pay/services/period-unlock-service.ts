@@ -30,7 +30,7 @@ import { recordM07Audit } from "./audit-service";
 import { assertUnlockApprovalSeparation } from "./sod-policy";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncUnlockRequestToInbox } from "../adapters/m02-inbox-publish";
-import { isFinalizedExportStatus } from "./export-lifecycle";
+import { assertExportBatchTransition, isFinalizedExportStatus } from "./export-lifecycle";
 
 export function requestPeriodUnlock(
   actor: M07Actor,
@@ -175,6 +175,7 @@ export function approvePeriodUnlock(
 
   const exportBatch = getCurrentExportBatchForPeriod(period.id);
   if (exportBatch && isFinalizedExportStatus(exportBatch.status)) {
+    assertExportBatchTransition(exportBatch.status, "superseded");
     upsertExportBatch({
       ...exportBatch,
       status: "superseded",
@@ -182,23 +183,38 @@ export function approvePeriodUnlock(
     });
   }
 
-  syncUnlockRequestToInbox(actor, approved, "approved");
+  const m02 = syncUnlockRequestToInbox(actor, approved, "approved");
 
-  recordM07Audit({
-    actor,
-    action: "period.unlock-approved",
-    entityType: "period-unlock-request",
-    entityId: approved.id,
-    legalEntityId: approved.legalEntityId,
-    reason: input.reason,
-    before: { status: "requested" },
-    after: { status: "approved", periodState: "open" },
-    meta: {
-      periodId: period.id,
-      lockId: lock.id,
-      sourceManifestChecksum: lock.sourceManifestChecksum,
-    },
-  });
+  let auditOk = false;
+  try {
+    recordM07Audit({
+      actor,
+      action: "period.unlock-approved",
+      entityType: "period-unlock-request",
+      entityId: approved.id,
+      legalEntityId: approved.legalEntityId,
+      reason: input.reason,
+      before: { status: "requested" },
+      after: { status: "approved", periodState: "open" },
+      meta: {
+        periodId: period.id,
+        lockId: lock.id,
+        sourceManifestChecksum: lock.sourceManifestChecksum,
+        artifactChecksum: lock.exportChecksum,
+        controlsComplete: Boolean(m02.projected),
+      },
+    });
+    auditOk = true;
+  } catch {
+    auditOk = false;
+  }
+
+  if (!m02.projected || !auditOk) {
+    throw new M07ValidationError(
+      "unlock-control-incomplete",
+      "Unlock domain changes applied but required M02/audit controls did not complete — do not treat as fully controlled success"
+    );
+  }
 
   recordM07Audit({
     actor,

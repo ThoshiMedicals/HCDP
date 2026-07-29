@@ -27,23 +27,16 @@ import { isFinalizedExportStatus } from "./export-lifecycle";
 import { assertLockActorAllowed } from "./sod-policy";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 
-export function assertPeriodNotLockedForOrdinaryMutation(periodId: string): void {
-  const period = getPeriod(periodId);
-  if (!period) return;
-  if (period.state === "locked") {
-    throw new M07ValidationError(
-      "period-locked",
-      "Period is locked — ordinary mutations are prohibited"
-    );
-  }
-  const lock = getActivePeriodLockForPeriod(periodId);
-  if (lock) {
-    throw new M07ValidationError(
-      "period-locked",
-      "Active period lock prohibits ordinary mutations"
-    );
-  }
-}
+export {
+  assertPeriodNotLockedForOrdinaryMutation,
+  isPayrollPeriodLocked,
+  rejectLockedPeriodSourceChange,
+  assertNoLockedPeriodAffectedByPersonMutation,
+  assertNoLockedPeriodsForLegalEntity,
+  assertNoLockedPeriodAffectedBySnapshot,
+  profileAffectsLockedPeriod,
+  listLockedPeriodsForLegalEntity,
+} from "./period-lock-guard";
 
 /**
  * Explicit lock after successful final export + package reconciliation.

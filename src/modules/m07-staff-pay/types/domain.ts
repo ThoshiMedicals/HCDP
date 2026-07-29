@@ -967,7 +967,8 @@ export type PayrollExportBatchStatus =
   | "finalized"
   | "downloadable"
   | "superseded"
-  | "cancelled";
+  | "cancelled"
+  | "failed";
 
 export type ExportValidationSeverity = "blocking" | "warning";
 
@@ -1090,6 +1091,9 @@ export type PayrollExportBatch = {
   cancelledAt?: string;
   cancelledBy?: string;
   cancelReason?: string;
+  /** Set when transitioned to terminal failed (e.g. post-finalize reconciliation). */
+  failureReason?: string | null;
+  failedAt?: string;
   supersededAt?: string;
   supersedesBatchId?: string | null;
   supersededByBatchId?: string | null;

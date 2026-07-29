@@ -7,13 +7,14 @@ import type { PayrollExportBatchStatus } from "../types/domain";
 
 const ALLOWED: Record<PayrollExportBatchStatus, PayrollExportBatchStatus[]> = {
   draft: ["validating", "cancelled"],
-  validating: ["blocked", "ready", "cancelled"],
+  validating: ["blocked", "ready", "cancelled", "failed"],
   blocked: ["validating", "cancelled"],
-  ready: ["validating", "finalized", "cancelled", "superseded"],
-  finalized: ["downloadable", "superseded", "cancelled"],
+  ready: ["validating", "finalized", "cancelled", "superseded", "failed"],
+  finalized: ["downloadable", "superseded", "cancelled", "failed"],
   downloadable: ["superseded", "cancelled"],
   superseded: [],
   cancelled: [],
+  failed: ["superseded"],
 };
 
 export function assertExportBatchTransition(
@@ -36,4 +37,8 @@ export function isFinalizedExportStatus(status: PayrollExportBatchStatus): boole
 
 export function isMutableExportStatus(status: PayrollExportBatchStatus): boolean {
   return ["draft", "validating", "blocked", "ready"].includes(status);
+}
+
+export function isTerminalExportStatus(status: PayrollExportBatchStatus): boolean {
+  return status === "superseded" || status === "cancelled" || status === "failed";
 }

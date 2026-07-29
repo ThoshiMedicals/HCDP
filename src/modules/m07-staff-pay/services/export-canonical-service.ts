@@ -19,7 +19,7 @@ import {
   type PayPeriodApproval,
   type PayPeriodRecord,
 } from "../types/domain";
-import { addUnits, roundUnits } from "./export-decimal";
+import { addUnits, multiplyUnitsRate, roundUnits } from "./export-decimal";
 import { checksumCanonical } from "./canonical-checksum";
 
 export function emptyTotals(): ExportBatchTotals {
@@ -125,7 +125,7 @@ export function buildCanonicalExportPackage(input: {
         let amount: number | undefined;
         if (includeAmounts && rate != null && (category === "ordinary" || category === "overtime")) {
           const mult = category === "overtime" ? 1.5 : 1;
-          amount = roundUnits(units * rate * mult);
+          amount = multiplyUnitsRate(units, rate, mult);
         }
         lines.push({
           lineId: `cline_${batch.id}_${line.id}`,

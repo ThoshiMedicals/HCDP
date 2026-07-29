@@ -26,6 +26,7 @@ import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncPayPrepExceptionToInbox } from "../adapters/m02-inbox-publish";
 import { assertExceptionWaiverSeparation } from "./sod-policy";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 export function isWaivableExceptionKind(kind: PayPrepExceptionKind): boolean {
   return (WAIVABLE_EXCEPTION_KINDS as readonly string[]).includes(kind);
@@ -110,6 +111,7 @@ export function openPayPrepException(
   assertM07LegalEntityScope(actor, input.legalEntityId);
   assertM07ClinicScope(actor, [input.clinicId]);
   assertNoProhibitedFields(input);
+  if (input.periodId) assertPeriodNotLockedForOrdinaryMutation(input.periodId);
 
   if (input.organisationId !== input.legalEntityId) {
     // legalEntityId === organisation id (Q8); mismatch is itself a boundary error
@@ -202,6 +204,7 @@ export function resolvePayPrepException(
   if (!existing) throw new M07ValidationError("not-found", `Exception ${exceptionId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
+  if (existing.periodId) assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
   if (existing.status !== "open") {
     throw new M07ValidationError("not-open", `Exception is already ${existing.status}`);
   }
@@ -249,6 +252,7 @@ export function waivePayPrepException(
   if (!existing) throw new M07ValidationError("not-found", `Exception ${exceptionId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
   assertM07ClinicScope(actor, [existing.clinicId]);
+  if (existing.periodId) assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
   if (existing.status !== "open") {
     throw new M07ValidationError("not-open", `Exception is already ${existing.status}`);
   }

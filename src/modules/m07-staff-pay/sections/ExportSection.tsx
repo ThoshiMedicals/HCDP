@@ -179,6 +179,10 @@ export function ExportSection() {
           </strong>
         </p>
       </div>
+      <p className="text-xs text-slate-600 dark:text-slate-400">
+        Operational sequence: finalize → download → optional lock. Download does not require
+        lock. Lock rejects ordinary mutations; unlock is controlled remediation (not PPA).
+      </p>
 
       {batch?.canonicalPreview?.previewOnly ? (
         <p className="rounded-lg border border-amber-700/40 bg-amber-500/10 px-3 py-2 text-sm" role="status">

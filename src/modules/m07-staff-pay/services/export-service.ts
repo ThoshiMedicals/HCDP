@@ -39,8 +39,9 @@ import { assertApprovedManifestForExport } from "./export-manifest-gate";
 import { validateExportReadiness } from "./export-validation-service";
 import { assertExportFinalizeSeparation } from "./sod-policy";
 import { assertNoProhibitedFields } from "./sensitive-fields";
-import { reconcileExportBatchAgainstApproval } from "./reconciliation-service";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 import { syncExportBatchToInbox } from "../adapters/m02-inbox-publish";
+import { reconcileExportBatchAgainstApproval } from "./reconciliation-service";
 
 function resolveDefaultExportProfile(legalEntityId: string) {
   const profiles = listExportProfiles(legalEntityId).filter((p) => p.status === "active");
@@ -118,8 +119,23 @@ export function createOrRefreshPayrollExportBatch(
   }
 
   // Supersede mutable prior if sources changed
-  if (current && !isFinalizedExportStatus(current.status) && current.status !== "cancelled") {
+  if (
+    current &&
+    !isFinalizedExportStatus(current.status) &&
+    current.status !== "cancelled" &&
+    current.status !== "failed" &&
+    current.status !== "superseded"
+  ) {
     assertExportBatchTransition(current.status, "superseded");
+    upsertExportBatch({
+      ...current,
+      status: "superseded",
+      supersededAt: new Date().toISOString(),
+    });
+  }
+
+  if (current && current.status === "failed") {
+    assertExportBatchTransition("failed", "superseded");
     upsertExportBatch({
       ...current,
       status: "superseded",
@@ -377,7 +393,9 @@ export function finalizePayrollExportBatch(
     batchId: current.id,
   });
   if (!validation.ok) {
+    assertExportBatchTransition(current.status, "validating");
     upsertExportBatch({ ...current, status: "validating" });
+    assertExportBatchTransition("validating", "blocked");
     const blocked: PayrollExportBatch = {
       ...current,
       status: "blocked",
@@ -436,8 +454,12 @@ export function finalizePayrollExportBatch(
     exportBatchId: batch.id,
   });
   if (recon.status === "blocked" || recon.status === "failed") {
+    assertExportBatchTransition("finalized", "failed");
     batch = {
       ...batch,
+      status: "failed",
+      failureReason: "Package reconciliation blocked final downloadable state",
+      failedAt: now,
       reconciliationId: recon.id,
       reconciliationStatus: recon.status,
     };
@@ -448,7 +470,7 @@ export function finalizePayrollExportBatch(
       entityType: "payroll-export-batch",
       entityId: batch.id,
       legalEntityId: batch.legalEntityId,
-      after: { reconciliationStatus: recon.status },
+      after: { status: "failed", reconciliationStatus: recon.status },
       meta: { reconciliationId: recon.id, sourceManifestChecksum: approval.manifest.checksum },
     });
     syncExportBatchToInbox(actor, batch, "recon-blocked");
@@ -524,6 +546,7 @@ export function cancelPayrollExportBatch(
   const existing = getExportBatch(input.exportBatchId);
   if (!existing) throw new M07ValidationError("not-found", "Export batch not found");
   assertM07LegalEntityScope(actor, existing.legalEntityId);
+  assertPeriodNotLockedForOrdinaryMutation(existing.periodId);
   if (existing.status === "cancelled" || existing.status === "superseded") return existing;
   if (isFinalizedExportStatus(existing.status)) {
     // Allowed to cancel downloadable as non-authoritative

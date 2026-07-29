@@ -43,6 +43,7 @@ import {
 import { runM07SchemaV5Migration } from "../storage/migrate-v5";
 import { m07GlobalBlockerFields } from "../adapters/m06-timesheet-read";
 import { recordM07Audit } from "./audit-service";
+import { assertNoLockedPeriodAffectedBySnapshot } from "./period-lock-guard";
 import type {
   OperationalHoldKind,
   PreparationProgressKind,
@@ -253,6 +254,14 @@ export function seedEligibilityForImportedSnapshot(input: {
   assertM07Permission(input.actor, "payroll.intake.run");
   assertM07LegalEntityScope(input.actor, input.snapshot.legalEntityId);
 
+  assertNoLockedPeriodAffectedBySnapshot(input.actor, {
+    legalEntityId: input.snapshot.legalEntityId,
+    periodStart: input.snapshot.periodStart,
+    periodEnd: input.snapshot.periodEnd,
+    reason: "published-timesheet-eligibility-seed",
+    personId: input.snapshot.workforcePersonId,
+  });
+
   const existing = getSnapshotEligibility({
     organisationId: input.snapshot.organisationId,
     legalEntityId: input.snapshot.legalEntityId,
@@ -348,6 +357,14 @@ export function applyMaterialRevisionAfterIntake(input: {
       ...lifecycleBlockerFields(),
     };
   }
+
+  assertNoLockedPeriodAffectedBySnapshot(input.actor, {
+    legalEntityId: input.snapshot.legalEntityId,
+    periodStart: input.snapshot.periodStart,
+    periodEnd: input.snapshot.periodEnd,
+    reason: "published-timesheet-material-revision",
+    personId: input.snapshot.workforcePersonId,
+  });
 
   let projection = ensureLifecycleProjection({
     organisationId: input.snapshot.organisationId,

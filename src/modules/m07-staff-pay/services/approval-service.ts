@@ -41,7 +41,7 @@ import {
 } from "./approval-invalidation";
 import { syncPeriodApprovalToInbox } from "../adapters/m02-inbox-publish";
 import { assertNoProhibitedFields } from "./sensitive-fields";
-import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-service";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 export { invalidateApprovalIfSourcesChanged, markPeriodApprovalStale } from "./approval-invalidation";
 
@@ -214,6 +214,7 @@ export function approvePeriodManagement(
   if (!period) throw new M07ValidationError("not-found", "Period not found");
   assertM07LegalEntityScope(actor, period.legalEntityId);
   assertM07ClinicScope(actor, period.clinicIds);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const current = getCurrentApprovalForPeriod(period.id);
   if (current?.status === "approved") {
@@ -315,6 +316,7 @@ export function rejectPeriodManagement(
   const period = getPeriod(input.periodId);
   if (!period) throw new M07ValidationError("not-found", "Period not found");
   assertM07LegalEntityScope(actor, period.legalEntityId);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const current = getCurrentApprovalForPeriod(period.id);
   if (!current || current.status !== "submitted") {
@@ -367,6 +369,7 @@ export function withdrawPeriodSubmission(
   const period = getPeriod(input.periodId);
   if (!period) throw new M07ValidationError("not-found", "Period not found");
   assertM07LegalEntityScope(actor, period.legalEntityId);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const current = getCurrentApprovalForPeriod(period.id);
   if (!current || current.status !== "submitted") {

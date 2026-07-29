@@ -30,6 +30,7 @@ import { openPayPrepException } from "./exception-service";
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { invalidateApprovalIfSourcesChanged } from "./approval-invalidation";
+import { assertPeriodNotLockedForOrdinaryMutation } from "./period-lock-guard";
 
 export function listLeavePreparation(
   actor: M07Actor,
@@ -70,6 +71,7 @@ export function generateLeavePreparationForPerson(
   if (!period) throw new M07ValidationError("not-found", `Period ${input.periodId} not found`);
   assertM07LegalEntityScope(actor, period.legalEntityId);
   assertM07ClinicScope(actor, period.clinicIds);
+  assertPeriodNotLockedForOrdinaryMutation(period.id);
 
   const legalEntityId = period.legalEntityId;
   const organisationId = legalEntityId;

@@ -29,9 +29,17 @@ import {
 import type { PayPeriodApproval, PayPeriodRecord, PayProfile } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
 import { syncPeriodApprovalToInbox } from "../adapters/m02-inbox-publish";
+import {
+  assertNoLockedPeriodAffectedByPersonMutation,
+  assertNoLockedPeriodsForLegalEntity,
+  isPayrollPeriodLocked,
+  rejectLockedPeriodSourceChange,
+} from "./period-lock-guard";
 
 function touchPeriodOpen(period: PayPeriodRecord, actor: M07Actor): void {
   if (period.state !== "export-ready") return;
+  // Never silently reopen a locked period via invalidation
+  if (isPayrollPeriodLocked(period.id)) return;
   const next: PayPeriodRecord = {
     ...period,
     state: "open",
@@ -108,6 +116,9 @@ export function invalidateApprovalIfSourcesChanged(
   periodId: string,
   reason: string
 ): void {
+  if (isPayrollPeriodLocked(periodId)) {
+    rejectLockedPeriodSourceChange(actor, { periodId, reason });
+  }
   const current = getCurrentApprovalForPeriod(periodId);
   if (!current) return;
   if (current.status === "approved" || current.status === "submitted") {
@@ -168,6 +179,7 @@ export function invalidateApprovalsForLegalEntity(
   legalEntityId: string,
   reason: string
 ): void {
+  assertNoLockedPeriodsForLegalEntity(actor, legalEntityId, reason);
   for (const periodId of periodsNeedingInvalidation(legalEntityId)) {
     invalidateApprovalIfSourcesChanged(actor, periodId, reason);
   }
@@ -187,6 +199,12 @@ export function invalidateApprovalsForProfileMutation(
     populationChanging?: boolean;
   }
 ): void {
+  assertNoLockedPeriodAffectedByPersonMutation(actor, {
+    legalEntityId: input.legalEntityId,
+    personId: input.personId,
+    reason: input.reason,
+    populationChanging: input.populationChanging,
+  });
   if (input.populationChanging) {
     invalidateApprovalsForLegalEntity(actor, input.legalEntityId, input.reason);
     return;

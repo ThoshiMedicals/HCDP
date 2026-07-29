@@ -486,3 +486,66 @@ export function syncUnlockRequestToInbox(
   });
   return { inboxActionId: action?.id, projected: Boolean(action) };
 }
+
+/** Deterministic M02 action when an authoritative source change hits a locked period. */
+export function syncLockedPeriodSourceChangeToInbox(
+  actor: M07Actor,
+  input: {
+    periodId: string;
+    legalEntityId: string;
+    organisationId: string;
+    lockId?: string;
+    reason: string;
+  }
+): { inboxActionId?: string; projected: boolean } {
+  const logicalKey = `locked-source::${input.periodId}::${input.lockId ?? "none"}`;
+  const source: SourceRecordRef = {
+    sourceModuleId: MODULE_ID,
+    sourceRecordType: "period-lock-source-change",
+    sourceRecordId: logicalKey,
+    sourceRecordTitle: "Locked payroll period — source change blocked",
+    organisationId: input.organisationId,
+    currentStatus: "blocked",
+    route: "/staffpay",
+    section: "export",
+  };
+  const bridgeKey = `${MODULE_ID}::period-lock-source-change::${logicalKey}`;
+  const existing = findInboxActionForSource(
+    MODULE_ID,
+    "period-lock-source-change",
+    logicalKey
+  );
+  const kind = existing ? "update" : "create";
+  const action = dispatchActionInboxEvent({
+    kind,
+    source,
+    actionTitle: "Locked period source change — unlock remediation required",
+    actionSummary: input.reason,
+    category: "Exception",
+    owner: actor.userId,
+    requester: "staff-pay",
+    priority: "High",
+    dueAt: new Date(Date.now() + 2 * 86400000).toISOString(),
+    requiredOutcome: "Controlled unlock then remediate",
+    projectionKey: bridgeKey,
+    sourceRecordVersion: 1,
+    sourceStatus: "blocked",
+    inboxStatus: "Open",
+  });
+  publishM07InboxProjection({
+    kind: "locked-source-change",
+    title: "stale-source",
+    legalEntityId: input.legalEntityId,
+    entityId: input.periodId,
+    severity: "blocking",
+  });
+  recordM07Audit({
+    actor,
+    action: kind === "create" ? "m02.projection.create" : "m02.projection.update",
+    entityType: "period-lock-source-change",
+    entityId: logicalKey,
+    legalEntityId: input.legalEntityId,
+    meta: { inboxActionId: action?.id, bridgeKey, periodId: input.periodId },
+  });
+  return { inboxActionId: action?.id, projected: Boolean(action) };
+}

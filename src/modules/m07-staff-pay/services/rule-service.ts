@@ -26,6 +26,7 @@ import {
 import { recordM07Audit } from "./audit-service";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 import { invalidateApprovalsForLegalEntity } from "./approval-invalidation";
+import { assertNoLockedPeriodsForLegalEntity } from "./period-lock-guard";
 
 export function listPreparationRules(actor: M07Actor, legalEntityId: string): PreparationRule[] {
   assertM07Permission(actor, "payroll.view");
@@ -136,6 +137,12 @@ export function createClassificationMapping(
     throw new M07ValidationError("rule-inactive", "Cannot map to inactive/retired rule");
   }
 
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    input.legalEntityId,
+    "classification-mapping-create"
+  );
+
   const ambiguous = listClassificationMaps(input.legalEntityId).find(
     (m) =>
       m.status === "active" &&
@@ -215,6 +222,11 @@ export function retireClassificationMapping(
   const existing = getClassificationMap(mappingId);
   if (!existing) throw new M07ValidationError("not-found", `Mapping ${mappingId} not found`);
   assertM07LegalEntityScope(actor, existing.legalEntityId);
+  assertNoLockedPeriodsForLegalEntity(
+    actor,
+    existing.legalEntityId,
+    "classification-mapping-retire"
+  );
   const updated: ClassificationRuleMapping = {
     ...existing,
     status: "retired",
