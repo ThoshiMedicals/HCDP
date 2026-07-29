@@ -1,7 +1,7 @@
-# Wave 6 / M07 Batch 6 — Checkpoint 6.5–6.6 Evidence (second remediation)
+# Wave 6 / M07 Batch 6 — Checkpoint 6.5–6.6 Evidence (third remediation)
 
-**Status:** Implementation evidence after second targeted remediation of `a91aa459…`  
-**Not independent owner acceptance. Batch 6 remains unaccepted pending re-verification.**  
+**Status:** Implementation evidence after third targeted remediation of `87ab37e…`  
+**Not independent owner acceptance. Batch 6 remains unaccepted pending final re-verification.**  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`
 
 ## Download-versus-lock policy (owner qualification)
@@ -13,53 +13,44 @@ Download does not require lock. Documented consistently in UI, services, tests a
 
 | Mutation surface | Guard |
 |---|---|
-| Calculate / recalculate | `assertPeriodNotLockedForOrdinaryMutation` (empty periodId fails closed) |
-| Submit / approve / reject / withdraw | approval-service |
-| Leave / deductions | period assert before write |
-| Exceptions | period-scoped kinds require periodId; derive+assert on resolve/waive; non-period kinds explicit (`NON_PERIOD_EXCEPTION_KINDS`) |
-| Material + **financial** profile create/update/archive | `assertNoLockedPeriodAffectedByPersonMutation` with effective-date overlap; rates/allowance/deduction codes treated financially authoritative |
-| External payroll employee ID link/relink | financially authoritative lock assert before write |
-| Preparation rule create/version/retire | `assertNoLockedPeriodsForLegalEntity` with effective dates |
-| Generic code create/version/retire | same effective-date LE lock assert |
-| Export profile create/version/retire (non-platform) | same effective-date LE lock assert |
-| Classification map create/retire | same effective-date LE lock assert |
-| Approval invalidation | reject locked source; skip locked periods when mutation does not overlap |
-| Intake snapshot write | `assertNoLockedPeriodAffectedBySnapshot` **before** append |
-| Eligibility seed / material revision | snapshot guard |
+| Calculate / approvals / leave / deductions | `assertPeriodNotLockedForOrdinaryMutation` (empty periodId fails closed) |
+| Exceptions | period-scoped kinds require periodId; `NON_PERIOD_EXCEPTION_KINDS` explicit |
+| Material + financial profile create/update/archive | person mutation assert + effective-date overlap (malformed/missing/open-ended fail closed) |
+| External payroll employee ID link/relink | financially authoritative lock assert |
+| Preparation rule / classification / generic code | LE lock assert with effective dates |
+| Export profile create/version/retire (including `legalEntityId === "*"`) | `assertNoLockedPeriodAffectedByExportProfileMutation` — platform profiles resolved via authoritative export-batch references |
+| Intake snapshot / eligibility seed | snapshot guard before write |
 | Export cancel / re-reconcile | period lock assert |
-| Export create/finalize | manifest gate rejects locked |
 
-## Unlock atomicity (approach A)
+## Platform-wide export profile
+
+- `*` no longer skips lock enforcement.
+- Impact: any export batch whose `exportProfileId` references the profile and whose period is locked → reject-before-mutate.
+- Unused new `*` profiles (no batch references) may still be created/versioned.
+- Caller-supplied LE is ignored when a profile id is present; store scope is authoritative.
+
+## Unlock atomicity (approach A) + idempotency
 
 1. Validate SoD / lock match  
-2. Stage request as `controls-incomplete` — **period remains locked**  
-3. Run M02 + unlock-approved audit  
-4. On failure: keep locked; throw `unlock-control-incomplete`; retry resumes  
-5. On success: apply domain unlock; mark `approved`; audit `period.unlocked`  
-6. Fully approved + open period is idempotent success  
+2. Stage `controls-incomplete` — period remains locked  
+3. M02 + unlock-approved audit  
+4. Failure → stay locked; `unlock-control-incomplete`; retry resumes  
+5. Success → domain unlock → `approved` → `period.unlocked`  
+6. Idempotent success only when approved + controls complete + period open + unlock history present + export transition consistent; otherwise `unlock-state-inconsistent`
 
-Ordinary mutations remain blocked while controls are incomplete.
+## Locked-source / reconciliation / decimal
 
-## Locked-source control pair
+Unchanged from second remediation: non-transactional audit+M02; independent expected/actual recon; scaled multiply.
 
-Reject-before-mutate retained. Audit then M02 sequenced — **not transactional**; either may be written while overall result is `locked-source-control-incomplete`. Tests cover audit-only and M02-only failure.
-
-## Reconciliation
-
-Actual totals recomputed from lines (not trusted cached totals blob). Expected rebuilt from approval pins. Category composition mismatch blocks match/download/lock.
-
-## Decimal
-
-`multiplyUnitsRate` scale-100 for export amounts.
-
-## Tests (post second remediation)
+## Tests (post third remediation)
 
 | Suite | Pass |
 |---|---|
 | `m07-batch6-cp61-66.test.ts` | **18** |
 | `m07-batch6-remediation.test.ts` | **9** |
 | `m07-batch6-second-remediation.test.ts` | **9** |
-| Full M07 | **214** (expected; confirm in validation) |
+| `m07-batch6-third-remediation.test.ts` | **5** |
+| Full M07 | **219** |
 | Batch 5 CP + material + remediation | **49** |
 
 ## Non-claims

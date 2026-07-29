@@ -10,8 +10,10 @@ import {
   getActivePeriodLockForPeriod,
   getCurrentApprovalForPeriod,
   getCurrentExportBatchForPeriod,
+  getExportProfile,
   getPeriod,
   getUnlockRequest,
+  listExportBatches,
   listPeriods,
   listUnlockRequests,
 } from "../repository/local-store";
@@ -89,25 +91,37 @@ export function listLockedPeriodsForLegalEntity(legalEntityId: string): PayPerio
   return listPeriods(legalEntityId).filter((p) => isPayrollPeriodLocked(p.id));
 }
 
+/** YYYY-MM-DD or ISO datetime prefix — anything else cannot safely prove non-overlap. */
+function isComparableDateBound(value: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}([T\s].*)?$/.test(value);
+}
+
 /**
  * Effective-date overlap with a period.
- * Missing / empty bounds fail closed as full-range (cannot safely prove non-overlap).
+ * Missing / empty / malformed / inverted bounds fail closed (cannot safely prove non-overlap).
  */
 export function effectiveRangeOverlapsPeriod(
   period: PayPeriodRecord,
   effectiveFrom?: string | null,
   effectiveTo?: string | null
 ): boolean {
-  const from =
+  const fromRaw =
     effectiveFrom == null || String(effectiveFrom).trim() === ""
-      ? "0000-01-01"
+      ? null
       : String(effectiveFrom).trim();
-  const to =
+  const toRaw =
     effectiveTo == null || String(effectiveTo).trim() === ""
-      ? "9999-12-31"
+      ? null
       : String(effectiveTo).trim();
+
+  // Missing / open-ended → full-range (fail closed)
+  const from = fromRaw ?? "0000-01-01";
+  const to = toRaw ?? "9999-12-31";
+
+  if (!isComparableDateBound(from) || !isComparableDateBound(to)) {
+    return true;
+  }
   if (from > to) {
-    // Ambiguous inverted range — treat as overlap (fail closed)
     return true;
   }
   return from <= period.periodEnd && to >= period.periodStart;
@@ -329,6 +343,12 @@ export function assertNoLockedPeriodsForLegalEntity(
       "Legal entity is required for locked-period impact checks"
     );
   }
+  if (legalEntityId === "*") {
+    throw new M07ValidationError(
+      "ambiguous-platform-scope",
+      "Platform-wide (*) mutations require export-profile impact resolution, not LE period listing"
+    );
+  }
   const locked = listLockedPeriodsForLegalEntity(legalEntityId);
   for (const period of locked) {
     if (
@@ -342,6 +362,84 @@ export function assertNoLockedPeriodsForLegalEntity(
     rejectLockedPeriodSourceChange(actor, {
       periodId: period.id,
       reason,
+    });
+  }
+}
+
+/**
+ * Lock guard for export-profile create/version/retire.
+ * Platform (`*`) profiles are resolved from authoritative export-batch references —
+ * never skipped merely because legalEntityId === "*".
+ */
+export function assertNoLockedPeriodAffectedByExportProfileMutation(
+  actor: M07Actor,
+  input: {
+    /** Empty for create of a brand-new profile id (no references yet). */
+    profileId: string | null | undefined;
+    /** Caller-supplied LE — must match store when profileId is present. */
+    legalEntityId: string;
+    reason: string;
+    effectiveFrom?: string | null;
+    effectiveTo?: string | null;
+  }
+): void {
+  if (!input.legalEntityId?.trim()) {
+    throw new M07ValidationError(
+      "missing-legal-entity-context",
+      "Legal entity is required for export-profile lock impact checks"
+    );
+  }
+
+  let legalEntityId = input.legalEntityId.trim();
+  let profileId = input.profileId?.trim() ?? "";
+
+  if (profileId) {
+    const stored = getExportProfile(profileId);
+    if (!stored) {
+      throw new M07ValidationError(
+        "export-profile-not-found",
+        "Export profile not found — lock impact cannot be resolved"
+      );
+    }
+    // Authoritative scope from store — ignore falsified caller LE
+    legalEntityId = stored.legalEntityId;
+    profileId = stored.id;
+  }
+
+  if (legalEntityId !== "*") {
+    assertNoLockedPeriodsForLegalEntity(
+      actor,
+      legalEntityId,
+      input.reason,
+      input.effectiveFrom,
+      input.effectiveTo
+    );
+    return;
+  }
+
+  // Platform-wide profile: new unused id cannot yet be referenced by locked batches
+  if (!profileId) {
+    return;
+  }
+
+  const referencing = listExportBatches().filter((b) => b.exportProfileId === profileId);
+  const lockedPeriodIds = new Set<string>();
+  for (const batch of referencing) {
+    if (!batch.periodId?.trim() || !batch.legalEntityId?.trim()) {
+      throw new M07ValidationError(
+        "ambiguous-export-profile-impact",
+        "Export batch referencing this platform profile lacks period/legal-entity context"
+      );
+    }
+    if (isPayrollPeriodLocked(batch.periodId)) {
+      lockedPeriodIds.add(batch.periodId);
+    }
+  }
+
+  for (const periodId of lockedPeriodIds) {
+    rejectLockedPeriodSourceChange(actor, {
+      periodId,
+      reason: input.reason,
     });
   }
 }

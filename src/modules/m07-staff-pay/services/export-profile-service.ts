@@ -18,7 +18,7 @@ import {
 } from "../repository/local-store";
 import type { ExportProfile } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
-import { assertNoLockedPeriodsForLegalEntity } from "./period-lock-guard";
+import { assertNoLockedPeriodAffectedByExportProfileMutation } from "./period-lock-guard";
 import { assertNoProhibitedFields } from "./sensitive-fields";
 
 export function listExportProfilesForEntity(
@@ -61,13 +61,14 @@ export function createExportProfile(
     }
   }
 
-  assertNoLockedPeriodsForLegalEntity(
-    actor,
-    input.legalEntityId,
-    "export-profile-create",
-    input.effectiveFrom,
-    input.effectiveTo ?? null
-  );
+  // Platform (*) create of a new unused id is allowed; LE profiles check locked periods.
+  assertNoLockedPeriodAffectedByExportProfileMutation(actor, {
+    profileId: null,
+    legalEntityId: input.legalEntityId,
+    reason: "export-profile-create",
+    effectiveFrom: input.effectiveFrom,
+    effectiveTo: input.effectiveTo ?? null,
+  });
 
   const now = new Date().toISOString();
   const profile: ExportProfile = {
@@ -140,6 +141,15 @@ export function versionExportProfile(
   if (existing.legalEntityId !== "*") {
     assertM07LegalEntityScope(actor, existing.legalEntityId);
   }
+
+  assertNoLockedPeriodAffectedByExportProfileMutation(actor, {
+    profileId: existing.id,
+    legalEntityId: existing.legalEntityId,
+    reason: "export-profile-version",
+    effectiveFrom: patch.effectiveFrom ?? existing.effectiveFrom,
+    effectiveTo: patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo,
+  });
+
   const updated: ExportProfile = {
     ...existing,
     ...patch,
@@ -147,15 +157,6 @@ export function versionExportProfile(
     updatedAt: new Date().toISOString(),
     updatedBy: actor.userId,
   };
-  if (existing.legalEntityId !== "*") {
-    assertNoLockedPeriodsForLegalEntity(
-      actor,
-      existing.legalEntityId,
-      "export-profile-version",
-      patch.effectiveFrom ?? existing.effectiveFrom,
-      patch.effectiveTo !== undefined ? patch.effectiveTo : existing.effectiveTo
-    );
-  }
   upsertExportProfile(updated);
   recordM07Audit({
     actor,

@@ -35,6 +35,7 @@ export {
   assertNoLockedPeriodAffectedByPersonMutation,
   assertNoLockedPeriodsForLegalEntity,
   assertNoLockedPeriodAffectedBySnapshot,
+  assertNoLockedPeriodAffectedByExportProfileMutation,
   profileAffectsLockedPeriod,
   listLockedPeriodsForLegalEntity,
   effectiveRangeOverlapsPeriod,

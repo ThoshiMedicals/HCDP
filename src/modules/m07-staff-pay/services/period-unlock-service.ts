@@ -22,8 +22,10 @@ import {
   getActivePeriodLockForPeriod,
   getCurrentApprovalForPeriod,
   getCurrentExportBatchForPeriod,
+  getExportBatch,
   getOpenUnlockRequestForPeriod,
   getPeriod,
+  getPeriodLock,
   getUnlockRequest,
   listUnlockRequests,
   newUnlockRequestId,
@@ -41,6 +43,43 @@ import { assertNoProhibitedFields } from "./sensitive-fields";
 import { syncUnlockRequestToInbox } from "../adapters/m02-inbox-publish";
 import { assertExportBatchTransition, isFinalizedExportStatus } from "./export-lifecycle";
 import { isPayrollPeriodLocked } from "./period-lock-guard";
+
+/**
+ * Idempotent success only when unlock is authoritatively complete:
+ * approved + controls complete + period open + unlock history present + export transition consistent.
+ */
+function tryCompletedUnlockIdempotent(req: PeriodUnlockRequest): PeriodUnlockRequest | null {
+  if (req.status !== "approved" || req.controlsIncomplete === true) {
+    return null;
+  }
+  const period = getPeriod(req.periodId);
+  if (!period || period.state !== "open") {
+    return null;
+  }
+  if (isPayrollPeriodLocked(req.periodId)) {
+    return null;
+  }
+  const lockHist = getPeriodLock(req.lockId);
+  if (
+    !lockHist ||
+    lockHist.periodId !== req.periodId ||
+    lockHist.status !== "unlocked" ||
+    lockHist.unlockRequestId !== req.id
+  ) {
+    return null;
+  }
+  if (lockHist.exportBatchId) {
+    const batch = getExportBatch(lockHist.exportBatchId);
+    if (
+      batch &&
+      isFinalizedExportStatus(batch.status) &&
+      batch.status !== "superseded"
+    ) {
+      return null;
+    }
+  }
+  return req;
+}
 
 function markControlsIncomplete(
   req: PeriodUnlockRequest,
@@ -255,13 +294,9 @@ export function approvePeriodUnlock(
   if (!req) throw new M07ValidationError("not-found", "Unlock request not found");
   assertM07LegalEntityScope(actor, req.legalEntityId);
 
-  // Fully completed unlock — idempotent success only when period is actually open
-  if (req.status === "approved" && !req.controlsIncomplete) {
-    const period = getPeriod(req.periodId);
-    if (period && period.state !== "locked" && !isPayrollPeriodLocked(req.periodId)) {
-      return req;
-    }
-    // Approved flag without open period — treat as recoverable incomplete
+  const completed = tryCompletedUnlockIdempotent(req);
+  if (completed) {
+    return completed;
   }
 
   if (req.status === "rejected" || req.status === "cancelled") {
@@ -278,10 +313,12 @@ export function approvePeriodUnlock(
 
   const lock = getActivePeriodLockForPeriod(req.periodId);
   if (!lock || lock.id !== req.lockId) {
-    // If already unlocked and request approved with controls done, handled above.
-    // If incomplete / requested but lock missing — fail closed.
+    // Approved without proven open/unlocked history must not return success
     if (req.status === "approved" && !req.controlsIncomplete) {
-      return req;
+      throw new M07ValidationError(
+        "unlock-state-inconsistent",
+        "Approved unlock lacks consistent open period and unlock history; cannot treat as complete"
+      );
     }
     throw new M07ValidationError("lock-mismatch", "Active lock does not match unlock request");
   }

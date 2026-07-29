@@ -1,6 +1,6 @@
 # Wave 6 / M07 Batch 6 — Checkpoint 6.3–6.4 Evidence
 
-**Status:** Implementation evidence after second remediation of `a91aa459…` — **not** independent owner acceptance  
+**Status:** Implementation evidence after third remediation of `87ab37e…` — **not** independent owner acceptance  
 **Accepted Batch 5 baseline:** `db9550bac5e3995b095d3143b49e17549e81582b`
 
 ## Implemented and tested
@@ -19,6 +19,7 @@
 | Category composition independence (gross equal ≠ matched) | rem2 category test | rem2 |
 | Population / line-ref independence | rem C | rem C |
 | Structured mismatches + line refs | `ReconciliationMismatch` | E |
+| Live export-profile read protected for locked periods | platform `*` version/retire blocked when referenced | rem3 |
 | M02 export blocker + stale-source | `syncExportBatchToInbox` | I / rem B |
 | Secure audited download (fail-closed audit; test hook gated) | `export-download-service` / `__setM07AuditFailForTests` | H / rem D / rem2 |
 
@@ -29,6 +30,6 @@
 
 ## Non-claims
 
-- Not independent owner acceptance (Batch 6 remains unaccepted pending re-verification)
+- Not independent owner acceptance (Batch 6 remains unaccepted pending final re-verification)
 - Not statutory payroll correctness
 - Not payment readiness
