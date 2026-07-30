@@ -34,50 +34,47 @@ function ControlStatusCard({
   detail,
   actionLabel,
   href,
-  onAction,
+  nonOperationalNote,
 }: {
   title: string;
   detail: string;
-  actionLabel: string;
+  actionLabel?: string;
   href?: string;
-  onAction?: () => void;
+  /** Explanatory label only — never a clickable fake success control. */
+  nonOperationalNote?: string;
 }) {
   return (
     <CcCard className="flex flex-col gap-1.5 p-3">
       <strong className="text-[12px] font-extrabold leading-tight text-[var(--cc-ink)]">{title}</strong>
       <p className="m-0 flex-1 text-[11px] leading-snug text-[var(--cc-muted)]">{detail}</p>
-      {href ? (
+      {href && actionLabel ? (
         <Link
           href={href}
           className="cc-ctrl inline-flex w-fit items-center justify-center whitespace-nowrap text-[11px]"
         >
           {actionLabel}
         </Link>
-      ) : (
-        <Button small variant="line" className="w-fit" onClick={onAction}>
-          {actionLabel}
-        </Button>
-      )}
+      ) : null}
+      {nonOperationalNote ? (
+        <p className="m-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--cc-muted)]" role="status">
+          {nonOperationalNote}
+        </p>
+      ) : null}
     </CcCard>
   );
 }
 
-/** Local-demo shell chrome above the Command Centre — enterprise sign-in, access scope,
+/** Shell chrome above the Command Centre — enterprise sign-in, access scope,
  *  connection health, offline reconciliation, emergency intervention and management controls.
- *  Backend-dependent actions are labelled as demo-only; no Module 2 / action-inbox logic here. */
+ *  Interactive controls are navigation-only; non-operational status is labelled, never toast-faked. */
 function DashboardShellStrip() {
-  const { pushToast } = usePortal();
-
   return (
     <div className="mx-auto w-full max-w-[1480px] px-3 pt-2.5 lg:px-5">
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         <ControlStatusCard
           title="Enterprise Sign-In (MFA enforced)"
           detail="MFA is enforced before entry. Passwords are not stored in this platform."
-          actionLabel="Review sign-in journey"
-          onAction={() =>
-            pushToast("Reviewing the sign-in journey requires a live authentication backend (demo only).", "default")
-          }
+          nonOperationalNote="Non-operational — live authentication backend required"
         />
         <ControlStatusCard
           title="Clinic & Workspace Scope"
@@ -88,8 +85,7 @@ function DashboardShellStrip() {
         <ControlStatusCard
           title="Connection Healthy"
           detail="Operational summaries are current."
-          actionLabel="Simulate outage"
-          onAction={() => pushToast("Outage simulated locally — no live connectivity is affected (demo).", "warn")}
+          nonOperationalNote="Status display only — outage simulation is not available"
         />
         <ControlStatusCard
           title="Restoration Reconciliation"
@@ -110,17 +106,16 @@ function DashboardShellStrip() {
                 Issue a mandatory action to every affected Practice Manager and track local completion.
               </p>
             </div>
-            <div className="flex shrink-0 flex-wrap gap-1.5">
+            <div className="flex shrink-0 flex-wrap items-center gap-1.5">
               <Link href="/emergency-centre" className="cc-ctrl text-[11px]">
                 Open Emergency Control
               </Link>
-              <Button
-                small
-                variant="danger"
-                onClick={() => pushToast("Starting an intervention requires a live escalation backend (demo only).", "warn")}
+              <span
+                className="inline-flex items-center rounded-md border border-[var(--cc-card-line)] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--cc-muted)]"
+                role="status"
               >
-                Start Intervention
-              </Button>
+                Start intervention — non-operational
+              </span>
             </div>
           </div>
           <div className="grid gap-1.5">

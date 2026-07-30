@@ -98,6 +98,16 @@ function defaultState(): ClinicSelectionState {
   };
 }
 
+/** Stable referential snapshot for useSyncExternalStore SSR/hydration (React requires Object.is cache). */
+const CLINIC_SERVER_SNAPSHOT: ClinicSelectionState = {
+  version: VERSION,
+  mode: "all",
+  selectedClinicIds: [],
+  groupId: null,
+  label: "All Clinics",
+  updatedAt: "1970-01-01T00:00:00.000Z",
+};
+
 function migrateFromLegacy(): ClinicSelectionState {
   const existing = readJsonSafe<ClinicSelectionState | null>(PLATFORM_KEYS.clinics, null);
   if (existing && existing.version === VERSION && existing.label) return existing;
@@ -209,12 +219,12 @@ function subscribe(listener: () => void) {
 }
 
 function getSnapshot() {
-  if (!hydrated) return defaultState();
+  if (!hydrated) return CLINIC_SERVER_SNAPSHOT;
   return memory;
 }
 
 function getServerSnapshot() {
-  return defaultState();
+  return CLINIC_SERVER_SNAPSHOT;
 }
 
 export function getClinicSelection(): ClinicSelectionState {
