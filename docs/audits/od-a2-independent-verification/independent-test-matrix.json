@@ -1,0 +1,52 @@
+{
+  "verificationBranch": "cursor/od-a2-independent-verification",
+  "correctionCommit": "6d633ce1da75a4450d1c1fe186c0d3d502bc6a87",
+  "parentBase": "c8c99950eaad6a2440a9fb91744d37a7d5dfdacc",
+  "ranAt": "2026-07-30T16:20:00+10:00",
+  "odA2PreChange": {
+    "file": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+    "line": 235,
+    "errors": [
+      "TS2339: Property 'code' does not exist on type 'PublishFromOutboxResult'",
+      "TS2339: Property 'message' does not exist on type 'PublishFromOutboxResult'"
+    ],
+    "outboxErrorCount": 2,
+    "fullRepoErrorCount": 23
+  },
+  "odA2PostChange": {
+    "outboxTsErrors": 0,
+    "fullRepoErrorCount": 21,
+    "remainingPreExistingTsErrors": 21,
+    "newErrors": 0
+  },
+  "hashVector": {
+    "exact": true,
+    "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+  },
+  "build": {
+    "cmd": "npx next build --webpack",
+    "exit": 1,
+    "failure": "UnhandledSchemeError node:crypto via published-timesheet-hash.ts → m06-published-timesheet-publisher → adapters barrel → ModuleWorkspace",
+    "odA2Reached": false,
+    "newFailure": false,
+    "browserCryptoCommit": "a1efd472ea086d98e82b6ca60da8b9071b1808e2",
+    "browserCryptoAncestorOfVerificationTip": false,
+    "classification": "expected_pre_remediation_crypto_sequencing_deferral"
+  },
+  "suites": [
+    { "name": "OD-A2 focused", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts", "exit": 0, "pass": 8, "fail": 0, "skipped": 0, "tests": 8 },
+    { "name": "M06 published-timesheet outbox/create/verify", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts", "exit": 0, "pass": 19, "fail": 0, "skipped": 0, "tests": 19 },
+    { "name": "Published-timesheet registry create/verify", "cmd": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts", "exit": 0, "pass": 27, "fail": 0, "skipped": 0, "tests": 27 },
+    { "name": "Exact hash vector", "cmd": "npx tsx -e calculatePayrollContentHash+node sha256 of canonical ts_vector_1", "exit": 0, "exact": true, "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83" },
+    { "name": "PPA-1 focused", "cmd": "npx tsx --test five m07-ppa1-*.test.*", "exit": 0, "pass": 46, "fail": 0, "skipped": 0, "tests": 46 },
+    { "name": "Architecture/boundary/authz", "cmd": "npx tsx --test m07-architecture-cp27 + m07-boundary-cp23 + m07-authz", "exit": 0, "pass": 28, "fail": 0, "skipped": 0, "tests": 28 },
+    { "name": "Batch 5", "cmd": "npx tsx --test three m07-batch5-*.test.*", "exit": 0, "pass": 49, "fail": 0, "skipped": 0, "tests": 49 },
+    { "name": "Batch 6", "cmd": "npx tsx --test five m07-batch6-*.test.*", "exit": 0, "pass": 43, "fail": 0, "skipped": 0, "tests": 43 },
+    { "name": "Full M06", "cmd": "npm run test:m06", "exit": 0, "pass": 91, "fail": 0, "skipped": 0, "tests": 91 },
+    { "name": "Full M07", "cmd": "npm run test:m07", "exit": 0, "pass": 246, "fail": 0, "skipped": 0, "tests": 246 },
+    { "name": "Workforce / context", "cmd": "npm run test:workforce", "exit": 0, "pass": 45, "fail": 0, "skipped": 0, "tests": 45 },
+    { "name": "Scoped OD-A2 typecheck", "cmd": "npx tsc --noEmit | filter published-timesheet-outbox", "exit": 0, "odA2Errors": 0 },
+    { "name": "Full repository typecheck", "cmd": "npx tsc --noEmit", "exit": 1, "errors": 21, "odA2Fixed": true, "remainingPreExisting": 21, "newErrors": 0 },
+    { "name": "Production build", "cmd": "npx next build --webpack", "exit": 1, "cryptoSequencingDeferral": true }
+  ]
+}
