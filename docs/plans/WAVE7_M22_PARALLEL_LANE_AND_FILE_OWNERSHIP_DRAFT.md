@@ -162,25 +162,29 @@ Each batch PR should list **Claimed by** paths from this matrix.
 
 - All new/extended files under `src/modules/m22-recruitment/**`
 - `src/platform/module-registry/module-register.ts`
+- `src/components/workspaces/ModuleWorkspace.tsx` — only if mount wiring needs update (prefer keep thin)
 - New: `src/modules/m04-staff-doctors/adapters/m04-promotion-intake.ts` (name TBD)
-- New: M22 inbox/executive adapter files
+- New: M22 inbox/executive adapter files (mirror `m04-inbox-sync` / `m04-executive`)
+- `PLATFORM_STORAGE_REGISTER.md` — document additive M22 keys when schemas expand
 - New: `docs/audits/WAVE7_*` evidence
 - Possibly: thin `src/app/api/recruitment/promote/route.ts` (or similar)
 
 ### Possible (owner/Integration dependent)
 
-- `src/platform/workforce/contracts/workforce-events.ts` — **only** if payload typing added additively  
+- `src/platform/workforce/contracts/workforce-events.ts` / `candidate-ref.ts` — **only** if payload/`personKind` added additively  
 - `docs/architecture/WORKFORCE_CONTRACTS.md`  
 - `src/platform/workforce/demo/workforce-demo-refs.ts`  
 - `src/modules/index.ts` if export surface changes  
-- `src/lib/extracted/nav.json` / access extracts if still mirrored  
+- `src/lib/extracted/nav.json` / `module-blueprints.json` / access extracts if still mirrored  
+- `src/platform/workforce/services/identity-workforce-resolver.ts` — consume; change only with INT CR  
 
 ### Must not change for Wave 7 feature work
 
 - Accepted Wave 2–6 audit JSON/MD evidence  
 - M07 lock/export/PPA semantics  
 - Auth core identity separation contracts (consume only)  
-- Unrelated enterprise modules (website studio, etc.)
+- Unrelated enterprise modules (website studio, etc.)  
+- `public/pulse-html-prototype.html` as live SoT (reference for parity only; do not revive portal staff dual-write)
 
 ---
 

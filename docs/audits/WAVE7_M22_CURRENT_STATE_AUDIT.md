@@ -27,9 +27,9 @@
 
 ## B. Verdict
 
-M22 Recruitment exists as a **Wave 1 skeleton + ModuleLanding shell**. There is **no** candidate SoT runtime, **no** promotion journey, **no** M22 permissions catalogue, **no** M02/M01 projections from recruitment, and **no** AuthAdmin invite path from promotion.
+M22 Recruitment exists as a **Wave 1 skeleton + ModuleLanding shell**, plus a separate **HTML prototype demo** that must not be treated as Next SoT. There is **no** candidate SoT runtime in Next, **no** promotion journey, **no** M22 permissions catalogue, **no** M02/M01 projections from recruitment, and **no** AuthAdmin invite path from promotion.
 
-Shared workforce contracts already define `CandidateRef`, `candidate.promoted`, storage prefix `pulse.m22.recruitment.*`, and a demo candidate fixture. M04 already owns people (including duplicate-person checks) and Auth already owns invite + `workforcePersonId` linking. Wave 7 must **compose** those frozen boundaries — not duplicate them.
+Shared workforce contracts already define `CandidateRef`, `candidate.promoted`, storage prefix `pulse.m22.recruitment.*`, and a demo candidate fixture. M04 already owns people (including duplicate-person checks) and Auth already owns invite + `workforcePersonId` linking. Wave 7 must **compose** those frozen boundaries — not duplicate them. Do **not** port HTML `promoteCandidateV32` dual-write into portal `records.staff` as the live promote path.
 
 | Capability | Current state |
 |---|---|
@@ -98,6 +98,8 @@ Prefix: `pulse.m22.recruitment.`
 
 Migration id: `m22-recruitment-storage-v1`. Migrations must remain additive and must not rewrite accepted frozen-wave history.
 
+**Register note:** `PLATFORM_STORAGE_REGISTER.md` already lists `pulse.m22.recruitment.*` as skeleton-only (v1 / `m22-recruitment-storage-v1`). Historical `WORKFORCE_FAMILY_CURRENT_STATE.md` text that said “no M04–M22 keys” is superseded for M22 skeleton registration — operational collections remain empty.
+
 ---
 
 ## F. Shared contracts already available (frozen Wave 1 — do not rewrite)
@@ -135,7 +137,13 @@ Architecture Wave 7 target sections (not yet registered): Overview, Requisitions
 
 Legacy landing chips historically noted: `vacancies` | `candidates` | `onboarding` (`WORKFORCE_FAMILY_CURRENT_STATE.md` — historical snapshot; M04/M05/M06/M07/M11 have since advanced; **M22 has not**).
 
-App routing: no dedicated `src/app/**/recruitment` tree found; module is mounted via platform workspace / module registry patterns (same family as other forceNext modules).
+**App routing (current):** no dedicated `src/app/**/recruitment/` tree. `/recruitment` resolves via:
+
+| Path | Role |
+|---|---|
+| `src/app/(portal)/[module]/page.tsx` | Dynamic portal route |
+| `src/components/workspaces/ModuleWorkspace.tsx` | `case "recruitment"` → `<RecruitmentModule />` |
+| `src/lib/extracted/module-blueprints.json` (`"22"`) | Extracted IA / flow hints (not runtime SoT) |
 
 ---
 
@@ -161,6 +169,10 @@ App routing: no dedicated `src/app/**/recruitment` tree found; module is mounted
 
 **Gap:** There is **no** M04-facing **promotion intake adapter** today that M22 can call without importing M04 repositories. Wave 7 must add an authorised write path (platform/M04 adapter) owned carefully so M22 never imports `m04-staff-doctors/repository/**`.
 
+**Read-adapter analogues to mirror (not promotion writers):** `m05-roster/adapters/m04-person-read.ts`, `m06-time-attendance/adapters/m04-person-read.ts`, `m07-staff-pay/adapters/m04-person-read.ts` — consumers must not import M04 repositories.
+
+**Closest publish/consume analogue:** M06 `TimesheetRef` + `timesheet.approved` → M07 intake (publisher does not write consumer storage). M22 should mirror: publish `CandidateRef` + `candidate.promoted`; M04 owns person create via intake adapter.
+
 ### H.3 Auth invite / identity link (frozen Wave 1A)
 
 | Asset | Path | Notes |
@@ -168,6 +180,7 @@ App routing: no dedicated `src/app/**/recruitment` tree found; module is mounted
 | `AuthAdminAdapter` | `src/platform/auth/services/auth-admin-adapter.ts` | Server-only; `createInvitedIdentity` accepts optional `workforcePersonId` |
 | Invitation APIs | `src/app/api/auth/invitations/**` | Permission `users.invite` |
 | `relinkWorkforcePerson` | `src/platform/auth/services/workforce-link-service.ts` | Audited; one active profile per person |
+| `identity-workforce-resolver` | `src/platform/workforce/services/identity-workforce-resolver.ts` | Resolve profile→person without M04 repo import |
 | Identity separation | `docs/architecture/WORKFORCE_CONTRACTS.md`, auth contracts | Login ≠ person; suspend/archive login must not delete M04 person |
 
 **Gap:** Promotion may create an M04 person **without** immediately inviting login. Owner must decide whether invite is mandatory on promote, optional, or a separate step. Browser M22 code must not call AuthAdminAdapter directly.
@@ -178,11 +191,11 @@ App routing: no dedicated `src/app/**/recruitment` tree found; module is mounted
 
 | Surface | Pattern to mirror | M22 today |
 |---|---|---|
-| M02 Action Inbox | Module adapter → `dispatchActionInboxEvent` / workforce action-inbox adapter | Disabled in register |
-| M01 Executive | Module executive adapter → summary slice | Disabled in register |
+| M02 Action Inbox | Module adapter → `dispatchActionInboxEvent` (`action-inbox-bridge.ts`); e.g. `m04-inbox-sync`, `m05-inbox-sync`, `m07` `m02-inbox-publish` | Disabled in register |
+| M01 Executive | Module executive adapter → summary slice (e.g. `m04-executive`, `m05-executive`, `m01-summary-publish`) | Disabled in register |
 | Architecture tests | M02 stage actions; M01 vacancy summary | Not implemented |
 
-Frozen-wave evidence confirms M04/M05/M06/M07 project via adapters only. M22 must follow the same path when enabled.
+Frozen-wave evidence confirms M04/M05/M06/M07 project via adapters only. M22 must follow the same path when enabled. Bridge path must not import M02 repositories.
 
 ---
 
@@ -224,14 +237,17 @@ Frozen-wave evidence confirms M04/M05/M06/M07 project via adapters only. M22 mus
 |---|---|
 | `DEMO_CANDIDATE` | Present; not promoted |
 | Portal HTML / `primaryHtmlId: recruitment` | Legacy fallback classification; Next forceNext landing is authoritative shell |
+| `public/pulse-html-prototype.html` | Full recruitment Kanban/offers demo; `promoteCandidateV32` / `confirmPromoteV32` writes **portal** `state.records.staff` (Pending) and locks candidate — **demo only**, not Wave 7 SoT |
+| HTML demo storage | `hdp_v32_enterprise_expansion` (`state.v32`) — stages include “Promoted to Staff”; must not become Next `pulse.m22.*` dual-write |
 | Portal `records.*` staff/doctors | Must **not** become a second post-promotion person store |
 | Generic portal schemas | Not wired as M22 SoT |
+| Parallel ownership | Control pack may mark `src/modules/m22-recruitment/**` as `EXCL` until Wave 7 authorised — consistent with this discovery |
 
 ---
 
 ## M. Risks and readiness gaps (ranked)
 
-1. **No M04 promotion intake adapter** — highest integration risk; without it agents will be tempted to import M04 repositories.
+1. **No M04 promotion intake adapter** — highest integration risk; without it agents will be tempted to import M04 repositories (or copy HTML portal dual-write).
 2. **Register IA under-represents Wave 7 sections** — registry + workspace must expand under Integration ownership.
 3. **Auth invite sequencing undecided** — person-without-login vs invite-on-promote.
 4. **Credential/document transfer rules undecided** — risk of duplicate credential stores.

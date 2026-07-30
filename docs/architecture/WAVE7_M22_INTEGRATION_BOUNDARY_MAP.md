@@ -98,7 +98,18 @@ Until promotion, **Candidate** is the person-shaped SoT. After successful promot
 
 ## 6. `candidate.promoted` event contract (consume as defined)
 
-Envelope fields already required by workforce events:
+### 6.1 Mirror accepted TimesheetRef publish pattern (M06 → M07)
+
+| Timesheet pattern | Candidate analogue |
+|---|---|
+| M06 owns timesheet SoT | M22 owns candidate SoT until promote |
+| `TimesheetRef` + `timesheet.approved` | `CandidateRef` (with `promotedPersonId`) + `candidate.promoted` |
+| Stable idempotency key + early return if already published | Promotions ledger + replay returns same person |
+| Payload carries versioned ref | Payload should carry candidate + person refs |
+| Consumer owns intake; publisher does not write consumer storage | M04 intake adapter creates person; M22 does not import M04 `repository/` |
+| Snapshot retained on source | Candidate retains history; `promotedPersonId` set |
+
+### 6.2 Envelope fields (already required)
 
 - `eventId`, `eventType: "candidate.promoted"`, `sourceVersion`, `occurredAt`
 - `activeIdentityId`, clinic/organisation scope
@@ -112,6 +123,7 @@ Envelope fields already required by workforce events:
 |---|---|
 | `candidateId` | Source candidate |
 | `personId` | New or existing M04 person id |
+| `candidateRef` / `personRef` | Versioned refs (TimesheetRef-in-payload analogue) |
 | `vacancyId` | Optional context |
 | `organisationId` / `clinicIds` | Scope |
 | `engagementId` | If created in same transaction |
@@ -119,6 +131,10 @@ Envelope fields already required by workforce events:
 | `promotionId` | M22 ledger id |
 
 Consumers (future): M02 projections, M01 summaries, audit, optionally M04 onboarding listeners. M05/M06/M07 must **not** auto-create operational records from this event in Wave 7.
+
+### 6.3 Forbidden legacy promote pattern
+
+HTML prototype `promoteCandidateV32` → portal `records.staff` is **out of bounds** for Wave 7 Next SoT. Promotion must create M04 person via adapter, not dual-write session portal staff rows.
 
 ---
 

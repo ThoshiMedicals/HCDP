@@ -134,6 +134,9 @@ M05/M06/M07/M11 domain, accepted Wave 2–6 evidence JSON/MD, wave-control rule 
 | Replay | Second promote returns same person; does not create second M04 row |
 | Bus | Prefer `eventId === idempotencyKey` |
 | Failure | Partial failure (person created, event not published) recoverable by republish without new person |
+| Pattern mirror | Follow M06 `publishTimesheetApproved` / `TimesheetRef` publish then consumer intake — not HTML portal staff dual-write |
+
+**Explicit anti-pattern:** do not implement Next promote as a port of `public/pulse-html-prototype.html` `promoteCandidateV32` writing `records.staff`.
 
 ---
 
@@ -233,8 +236,10 @@ Batch-level rules in boundary map. Minimum Wave 7: store recruitment docs in M22
 | Q8 | Talent pool vs closed-candidate retention period? | Soft-retain; no hard delete; archive status |
 | Q9 | Who holds `recruitment.promote` vs `workforce.create`? | Distinct M22 permission; intake adapter uses system/service actor rules owner-approved |
 | Q10 | M04 intake adapter location (M04 adapters vs platform port)? | **M04 adapters** + thin platform façade if needed; M22 calls façade only |
-| Q11 | Minimum `candidate.promoted` payload fields? | Per boundary map §6 |
+| Q11 | Minimum `candidate.promoted` payload fields? | Per boundary map §6 — include versioned `CandidateRef` + `WorkforcePersonRef` |
 | Q12 | Wave 7 UI design: reuse Premium Clinical Enterprise tokens only vs visual CR? | Tokens/patterns only; no global CSS rewrite |
+| Q13 | HTML prototype parity: which Kanban/offer behaviours are in-scope vs REJECTED dual-write? | Parity for recruitment UX flows only; **REJECT** portal `records.staff` promote |
+| Q14 | Does `CandidateRef` need `personKind` (staff\|doctor) before promote? | Add via additive contract or vacancy-declared kind mapped at intake (Integration CR if contract change) |
 
 ---
 
