@@ -200,6 +200,9 @@ function defaultIdentity(): DemoIdentity {
   return DEMO_IDENTITIES[1]; // Sarah — Senior Administrator (primary dual approver)
 }
 
+/** Stable referential snapshot for useSyncExternalStore SSR/hydration. */
+const IDENTITY_SERVER_SNAPSHOT: DemoIdentity = DEMO_IDENTITIES[1];
+
 function mapLegacyExecRole(saved: string | null): string | null {
   if (!saved) return null;
   const map: Record<string, string> = {
@@ -321,12 +324,12 @@ function subscribe(listener: () => void) {
 }
 
 function getSnapshot(): DemoIdentity {
-  if (!hydrated) return defaultIdentity();
+  if (!hydrated) return IDENTITY_SERVER_SNAPSHOT;
   return getActiveIdentity();
 }
 
 function getServerSnapshot(): DemoIdentity {
-  return defaultIdentity();
+  return IDENTITY_SERVER_SNAPSHOT;
 }
 
 export function identityToInboxDemoRole(identity: DemoIdentity): DemoRole {
