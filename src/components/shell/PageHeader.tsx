@@ -7,40 +7,27 @@ import { usePortal } from "@/lib/portal-context";
 import { Icon } from "@/components/ui/Icon";
 
 export function PageHeader({ module }: { module: ModuleDef }) {
-  const { activeLocation, activeLocationId, locations, pushToast } = usePortal();
+  const { activeLocation, activeLocationId, locations } = usePortal();
 
   return (
-    <header className="flex min-h-[74px] items-center justify-between gap-3 border-b border-[var(--v34-card-line)] bg-white px-4 py-3 lg:px-7">
+    <header className="flex min-h-[74px] items-center justify-between gap-3 border-b border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 lg:px-7">
       <div className="page-title min-w-0">
-        <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[var(--muted)]">
-          {module.group}
-        </div>
-        <h1 className="mb-1.5 truncate text-[22px] font-extrabold tracking-tight">
-          {module.title}
-        </h1>
-        <p className="m-0 text-[13px] text-[#657287]">
+        <div className="hcdp-type-meta mb-1">{module.group}</div>
+        <h1 className="hcdp-type-display mb-1.5 truncate">{module.title}</h1>
+        <p className="hcdp-type-body m-0 text-[var(--muted)]">
           {module.subtitle}
           {" · "}
-          <span className="font-semibold text-[#334155]">
+          <span className="font-semibold text-[var(--ink)]">
             {activeLocation?.shortName ?? locationName(activeLocationId, locations)}
           </span>
         </p>
       </div>
       <div className="flex items-center gap-2">
-        <button
-          type="button"
-          className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--v34-card-line)] bg-white text-[#54657a] shadow-sm"
-          title="Refresh"
-          onClick={() =>
-            pushToast("View refreshed from extracted HTML mock data.", "success")
-          }
-        >
-          <Icon name="task" />
-        </button>
         <Link
           href="/action-inbox"
-          className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--v34-card-line)] bg-white text-[#54657a] shadow-sm"
-          title="Notifications"
+          className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--v34-card-line)] bg-[var(--card)] text-[var(--muted)] shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+          title="Open Action Inbox"
+          aria-label="Open Action Inbox"
         >
           <Icon name="bell" />
         </Link>

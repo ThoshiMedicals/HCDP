@@ -23,9 +23,9 @@ export function Panel({
 }
 
 export function PanelTitle({ children }: { children: React.ReactNode }) {
-  return <h3 className="m-0 mb-1 text-base font-extrabold tracking-tight">{children}</h3>;
+  return <h3 className="hcdp-type-title m-0 mb-1 tracking-tight">{children}</h3>;
 }
 
 export function PanelSub({ children }: { children: React.ReactNode }) {
-  return <p className="m-0 text-[13px] text-[#526479]">{children}</p>;
+  return <p className="hcdp-type-body m-0 text-[var(--muted)]">{children}</p>;
 }

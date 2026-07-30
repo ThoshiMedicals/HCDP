@@ -1,4 +1,4 @@
-/* Theme tokens extracted from HTML v34 prototype */
+/* Theme tokens ? Premium Clinical Enterprise (owner UI register UI-TOK-01) */
 :root {
   --teal: #0f3f7a;
   --teal-2: #155ea8;
@@ -20,7 +20,20 @@
   --sidebar: 288px;
   --sidebar-current: 288px;
 
-  --v34-canvas: #f1f5fa;
+  /* Premium Clinical canvas + Champagne accent (restrained use only) */
+  --pce-canvas: #fbfbfa;
+  --accent-champagne: #c5a880;
+  --accent-champagne-soft: color-mix(in srgb, #c5a880 18%, #ffffff);
+  --accent-champagne-line: color-mix(in srgb, #c5a880 55%, #d7e1ec);
+  --accent-positive: #047857;
+  --status-success: #047857;
+  --status-warning: #b45309;
+  --status-critical: #b91c1c;
+  --status-info: #1d4ed8;
+  --status-neutral: #64758b;
+  --focus-ring: var(--accent-champagne);
+
+  --v34-canvas: #fbfbfa;
   --v34-card-line: #cfd9e6;
   --v34-card-shadow: 0 5px 18px rgba(15, 23, 42, 0.055);
 
@@ -32,17 +45,17 @@
   --v33-muted: #64758b;
   --v33-focus: #2563eb;
 
-  --theme-bg: #f2f6fb;
+  --theme-bg: #fbfbfa;
   --theme-surface: #ffffff;
   --theme-text: #10233d;
   --theme-muted: #64748b;
   --theme-line: #dce6f2;
   --theme-primary: #0b3b72;
   --theme-primary-2: #155ea8;
-  --theme-accent: #2563eb;
+  --theme-accent: #c5a880;
 
   /* Owner/Director Command Centre */
-  --cc-canvas: #eef2f7;
+  --cc-canvas: #fbfbfa;
   --cc-card: #ffffff;
   --cc-card-line: #d5dee9;
   --cc-ink: #0b1f3a;
@@ -50,18 +63,35 @@
   --cc-soft: #f7f9fc;
   --cc-shadow: 0 4px 16px rgba(15, 37, 64, 0.06);
   --cc-exec: #0f3f7a;
+
+  /* Typography scale ? existing production stack (UI Batch 1 font standardisation) */
+  --type-display: 1.375rem;
+  --type-heading: 1.125rem;
+  --type-title: 1rem;
+  --type-body: 0.875rem;
+  --type-label: 0.8125rem;
+  --type-meta: 0.6875rem;
+  --type-table: 0.8125rem;
+  --type-numeric: 0.8125rem;
+  --font-weight-display: 800;
+  --font-weight-heading: 800;
+  --font-weight-body: 400;
+  --font-weight-label: 700;
+  --font-weight-meta: 650;
+  --tracking-display: -0.02em;
+  --tracking-label: 0.04em;
 }
 
 body.theme-emerald {
-  --theme-bg: #f2f8f6;
+  --theme-bg: #fbfbfa;
   --theme-surface: #ffffff;
   --theme-text: #12352c;
   --theme-muted: #617a73;
   --theme-line: #d9e9e3;
   --theme-primary: #0f766e;
   --theme-primary-2: #0d9488;
-  --theme-accent: #10b981;
-  --v34-canvas: #f2f8f6;
+  --theme-accent: #c5a880;
+  --v34-canvas: #fbfbfa;
 }
 
 body.theme-dark {
@@ -72,7 +102,18 @@ body.theme-dark {
   --theme-line: #26384e;
   --theme-primary: #3b82f6;
   --theme-primary-2: #60a5fa;
-  --theme-accent: #38bdf8;
+  --theme-accent: #d4b896;
+  --pce-canvas: #07111f;
+  --accent-champagne: #d4b896;
+  --accent-champagne-soft: color-mix(in srgb, #d4b896 22%, #101d2d);
+  --accent-champagne-line: color-mix(in srgb, #d4b896 45%, #26384e);
+  --accent-positive: #86efac;
+  --status-success: #86efac;
+  --status-warning: #fbbf24;
+  --status-critical: #fca5a5;
+  --status-info: #93c5fd;
+  --status-neutral: #94a3b8;
+  --focus-ring: var(--accent-champagne);
   --v34-canvas: #07111f;
   --v34-card-line: #26384e;
   --card: #101d2d;
@@ -90,7 +131,7 @@ body.theme-dark {
   --cc-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* Semantic status chips — readable in light and dark */
+/* Semantic status chips ? readable in light and dark */
 .cc-badge-danger {
   background: color-mix(in srgb, #b91c1c 14%, var(--cc-card));
   color: #fecaca;
@@ -213,7 +254,7 @@ body:not(.theme-dark) .cc-surface-success {
   white-space: nowrap;
 }
 .cc-ctrl:focus {
-  outline: 2px solid #1e40af;
+  outline: 2px solid var(--focus-ring, var(--accent-champagne));
   outline-offset: 2px;
 }
 .cc-chip {
@@ -231,14 +272,14 @@ body:not(.theme-dark) .cc-surface-success {
   line-height: 1.2;
 }
 .cc-chip-active {
-  border-color: #bfdbfe;
-  background: #eff6ff;
-  color: #1e40af;
+  border-color: var(--accent-champagne-line);
+  background: var(--accent-champagne-soft);
+  color: var(--ink);
 }
 body.theme-dark .cc-chip-active {
-  border-color: #1e3a5f;
-  background: #132033;
-  color: #93c5fd;
+  border-color: var(--accent-champagne-line);
+  background: var(--accent-champagne-soft);
+  color: var(--ink);
 }
 .cc-view-tabs {
   display: flex;
@@ -257,13 +298,14 @@ body.theme-dark .cc-chip-active {
   cursor: pointer;
 }
 .cc-view-tabs button:focus-visible {
-  outline: 2px solid #1e40af;
+  outline: 2px solid var(--focus-ring, var(--accent-champagne));
   outline-offset: 2px;
 }
 .cc-view-tabs button.active {
-  background: #1e40af;
-  border-color: #1e40af;
+  background: var(--ink);
+  border-color: var(--accent-champagne);
   color: #fff;
+  box-shadow: inset 0 -2px 0 var(--accent-champagne);
 }
 .cc-action-btns {
   display: flex;
@@ -342,7 +384,7 @@ body.theme-dark .cc-text-info {
   }
 }
 
-/* ——— Top ribbon brand + clinic (prototype v25 shell) ——— */
+/* ??? Top ribbon brand + clinic (prototype v25 shell) ??? */
 .brand-compact {
   display: inline-flex;
   align-items: center;
@@ -419,7 +461,7 @@ body.theme-dark .cc-text-info {
   color: #fff;
 }
 
-/* ——— Left sidebar (prototype v32/v33 carbon copy) ——— */
+/* ??? Left sidebar (prototype v32/v33 carbon copy) ??? */
 .v33-nav-tools {
   padding: 10px 12px;
   border-bottom: 1px solid var(--v33-line);
@@ -632,13 +674,17 @@ body.theme-dark .cc-text-info {
   border-left-color: var(--family);
   color: #15243a;
 }
+.v32-nav-group .nav-btn:focus-visible {
+  outline: 2px solid var(--focus-ring, var(--accent-champagne));
+  outline-offset: 2px;
+}
 .v32-nav-group .nav-btn.active {
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--family) 100%, #111827),
     color-mix(in srgb, var(--family) 84%, #ffffff)
   );
-  border-left: 4px solid #ffffff;
+  border-left: 4px solid var(--accent-champagne);
   color: #ffffff;
   box-shadow: 0 7px 16px color-mix(in srgb, var(--family) 30%, transparent);
   font-weight: 850;
@@ -652,7 +698,7 @@ body.theme-dark .cc-text-info {
   height: 18px;
   border-radius: 999px;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--accent-champagne);
 }
 .v32-nav-group .nav-btn.active .nav-icon {
   background: rgba(255, 255, 255, 0.22);
@@ -815,7 +861,7 @@ body.theme-dark .v33-context-btn {
 }
 
 
-/* M05 roster section nav � measurable keyboard focus indicator */
+/* M05 roster section nav ? measurable keyboard focus indicator */
 [data-testid^='m05-nav-']:focus-visible {
   outline: 2px solid var(--theme-accent, #2563eb) !important;
   outline-offset: 2px !important;

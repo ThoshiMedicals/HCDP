@@ -43,15 +43,20 @@ export function OverviewSection() {
   return (
     <section className="space-y-4 min-w-0" aria-labelledby="m07-overview-heading">
       <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+        <p className="hcdp-type-meta text-[var(--accent-positive)]" role="status">
           Batch 1 foundation — periods · available
         </p>
-        <h2 id="m07-overview-heading" className="mt-1 text-lg font-bold">
+        <h2 id="m07-overview-heading" className="hcdp-type-heading mt-1">
           Pay Run Overview
         </h2>
-        <p className="mt-2 text-sm text-[var(--muted)]">
-          Create and list ordinary pay periods for one legal entity. Batch 5 management approval is
-          available on the Approval section. Export, reconciliation and lock remain unavailable.
+        <p className="hcdp-type-body mt-2 text-[var(--muted)]">
+          Create and list ordinary pay periods for one legal entity. Ordinary payroll preparation
+          (including management approval, export preparation, package reconciliation, and period
+          lock) remains available on the relevant sections according to your permissions and period
+          state — non-certified; export is not payment. Prior-period adjustments currently support
+          the adjustment register, creation against a locked ordinary source, immutable source pins,
+          and draft cancellation. PPA calculation lines, approval, reconciliation, export, and
+          payment are not available for adjustments.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
       </div>
