@@ -1,0 +1,218 @@
+﻿{
+    "browser":  {
+                    "cryptoConsoleHits":  0,
+                    "widthsFail":  0,
+                    "pass":  true,
+                    "screenshots":  28,
+                    "base":  "http://localhost:3464"
+                },
+    "ranAt":  "2026-07-30T15:22:38.9676235+10:00",
+    "head":  "9d98d6e57ba3afaef4aa38e20640d2bfbc128122",
+    "suites":  [
+                   {
+                       "fail":  0,
+                       "name":  "QC-1 focused",
+                       "cmd":  "npx tsx --test src/components/workspaces/tests/ui-batch1-qualification-chrome.test.ts",
+                       "pass":  6,
+                       "cat":  1,
+                       "exit":  0,
+                       "tests":  6
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "QC-1 chrome/appearance/hydrate (same suite)",
+                       "cmd":  "(included in QC-1 focused)",
+                       "pass":  6,
+                       "cat":  "2+3+4",
+                       "note":  "categories 1-4 covered by same 6 tests; not re-counted",
+                       "tests":  6
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "UI Batch 1 presentation",
+                       "cmd":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+                       "pass":  5,
+                       "cat":  5,
+                       "exit":  0,
+                       "tests":  5
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "M07 shell",
+                       "cmd":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+                       "pass":  6,
+                       "cat":  8,
+                       "exit":  0,
+                       "tests":  6
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "PPA-1 UI",
+                       "cmd":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx",
+                       "pass":  10,
+                       "cat":  9,
+                       "exit":  0,
+                       "tests":  10
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "PPA-1 integration",
+                       "cmd":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx",
+                       "pass":  11,
+                       "cat":  10,
+                       "exit":  0,
+                       "tests":  11
+                   },
+                   {
+                       "exit":  0,
+                       "pass":  25,
+                       "fail":  0,
+                       "name":  "PPA-1 security+core+atomicity",
+                       "cmd":  "hook-security + core + atomicity",
+                       "tests":  25,
+                       "breakdown":  {
+                                         "core":  10,
+                                         "atomicity":  9,
+                                         "security":  6
+                                     },
+                       "cat":  11
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Crypto remediation",
+                       "cmd":  "npx tsx --test src/platform/workforce/tests/browser-crypto-remediation.test.ts",
+                       "pass":  8,
+                       "cat":  12,
+                       "exit":  0,
+                       "tests":  8
+                   },
+                   {
+                       "cmd":  "npx tsx _qa_refs/hash-vector.mts",
+                       "hex":  "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+                       "cat":  13,
+                       "name":  "Hash-vector independent",
+                       "exact":  true
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Published-timesheet registry",
+                       "cmd":  "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts",
+                       "pass":  27,
+                       "cat":  14,
+                       "exit":  0,
+                       "tests":  27
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "M06 published create/verify",
+                       "cmd":  "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
+                       "pass":  19,
+                       "cat":  "14b",
+                       "exit":  0,
+                       "tests":  19
+                   },
+                   {
+                       "cat":  16,
+                       "note":  "same as 14b; not double-counted in full M06",
+                       "name":  "M06 affected (published)"
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Full M06",
+                       "cmd":  "npm run test:m06",
+                       "pass":  83,
+                       "cat":  17,
+                       "exit":  0,
+                       "tests":  83
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Full M07",
+                       "cmd":  "npm run test:m07",
+                       "pass":  252,
+                       "cat":  18,
+                       "exit":  0,
+                       "tests":  252
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Batch 5",
+                       "cmd":  "npx tsx --test m07-batch5-*.test.ts (3 files)",
+                       "pass":  49,
+                       "cat":  19,
+                       "exit":  0,
+                       "tests":  49
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Batch 6",
+                       "cmd":  "npx tsx --test m07-batch6-*.test.ts (5 files)",
+                       "pass":  43,
+                       "cat":  20,
+                       "exit":  0,
+                       "tests":  43
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Architecture/boundary",
+                       "cmd":  "architecture-cp27 + boundary-cp23",
+                       "pass":  15,
+                       "cat":  21,
+                       "exit":  0,
+                       "tests":  15
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Permissions/authz",
+                       "cmd":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+                       "pass":  13,
+                       "cat":  22,
+                       "exit":  0,
+                       "tests":  13
+                   },
+                   {
+                       "cmd":  "browser crawl aliases",
+                       "result":  "all 307/200 redirects OK",
+                       "cat":  23,
+                       "name":  "Legacy alias/redirect"
+                   },
+                   {
+                       "cat":  24,
+                       "note":  "M06 83 + M07 252 + workforce 53; overlapping PPA/batch included inside M07",
+                       "name":  "Full affected regression"
+                   },
+                   {
+                       "fail":  0,
+                       "name":  "Workforce",
+                       "cmd":  "npm run test:workforce",
+                       "pass":  53,
+                       "cat":  "workforce",
+                       "exit":  0,
+                       "tests":  53
+                   },
+                   {
+                       "name":  "Scoped typecheck",
+                       "cmd":  "npx tsc --noEmit",
+                       "outbox":  "published-timesheet-outbox.ts:235 code/message on union",
+                       "cat":  25,
+                       "exit":  2,
+                       "preExisting":  true,
+                       "qc1Touched":  false
+                   },
+                   {
+                       "cat":  6,
+                       "note":  "covered by browser matrix + presentation",
+                       "name":  "Shell/nav"
+                   },
+                   {
+                       "cat":  7,
+                       "note":  "covered by QC-1 suite + browser",
+                       "name":  "Dashboard"
+                   },
+                   {
+                       "cat":  15,
+                       "note":  "crypto remediation + barrels + browser cryptoConsoleHits=0",
+                       "name":  "Browser/server boundary"
+                   }
+               ]
+}
