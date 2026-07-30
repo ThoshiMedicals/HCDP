@@ -1,0 +1,251 @@
+{
+  "generatedAt": "2026-07-30T00:06:03.840Z",
+  "source": "src/platform/module-registry/module-register.ts",
+  "note": "Code-derived intended dashboard catalogue — live /dashboard returns HTTP 500 (node:crypto webpack UnhandledSchemeError).",
+  "runtimeBlocker": {
+    "status": 500,
+    "message": "UnhandledSchemeError: Reading from node:crypto is not handled by plugins",
+    "importTrace": [
+      "node:crypto",
+      "src/platform/workforce/contracts/published-timesheet-hash.ts",
+      "m06/m07 adapters -> ModuleWorkspace.tsx"
+    ]
+  },
+  "modules": [
+    {
+      "number": 1,
+      "id": "executive-command-centre",
+      "displayName": "Executive Command Centre",
+      "shortName": "Command Centre",
+      "mainRoute": "/dashboard",
+      "family": "Executive",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 2,
+      "id": "action-inbox",
+      "displayName": "Action Inbox & Notifications",
+      "shortName": "Action Inbox",
+      "mainRoute": "/action-inbox",
+      "family": "Executive",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 3,
+      "id": "organisation-access",
+      "displayName": "Organisation, Locations, Users & Permissions",
+      "shortName": "Organisation & Access",
+      "mainRoute": "/settings",
+      "family": "Organisation",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 4,
+      "id": "staff-doctors",
+      "displayName": "Staff & Doctor Management",
+      "shortName": "Staff & Doctors",
+      "mainRoute": "/staff-doctors",
+      "family": "People",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 5,
+      "id": "roster",
+      "displayName": "Roster & Shift Management",
+      "shortName": "Roster & Shifts",
+      "mainRoute": "/roster",
+      "family": "Roster",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 6,
+      "id": "time-attendance",
+      "displayName": "Time & Attendance",
+      "shortName": "Time & Attendance",
+      "mainRoute": "/time-attendance",
+      "family": "Roster",
+      "condition": "complete-interactive-rebuild"
+    },
+    {
+      "number": 7,
+      "id": "staff-pay",
+      "displayName": "Staff Pay & Payroll Preparation",
+      "shortName": "Staff Pay",
+      "mainRoute": "/staffpay",
+      "family": "Commercial",
+      "condition": "partially-implemented"
+    },
+    {
+      "number": 8,
+      "id": "doctor-pay",
+      "displayName": "Doctor Pay Command Centre",
+      "shortName": "Doctor Pay",
+      "mainRoute": "/doctorpay",
+      "family": "Commercial",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 9,
+      "id": "bbpip",
+      "displayName": "BBPIP Forecast & Reconciliation",
+      "shortName": "BBPIP",
+      "mainRoute": "/bbpip",
+      "family": "Commercial",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 10,
+      "id": "tasks-actions",
+      "displayName": "Tasks, Checklists, Meetings & Actions",
+      "shortName": "Tasks & Actions",
+      "mainRoute": "/tasks-actions",
+      "family": "Operations",
+      "condition": "partially-implemented"
+    },
+    {
+      "number": 11,
+      "id": "training",
+      "displayName": "Training & Learning Management",
+      "shortName": "Training",
+      "mainRoute": "/training",
+      "family": "People",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 12,
+      "id": "compliance-quality",
+      "displayName": "Accreditation, Quality & Regulatory Compliance",
+      "shortName": "Compliance & Quality",
+      "mainRoute": "/compliance-quality",
+      "family": "Governance",
+      "condition": "partially-implemented"
+    },
+    {
+      "number": 13,
+      "id": "documents-policies",
+      "displayName": "Documents, Policies, SOPs & Intake",
+      "shortName": "Documents & Policies",
+      "mainRoute": "/documents-policies",
+      "family": "Governance",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 14,
+      "id": "ticketing",
+      "displayName": "Ticketing Desk & Work Orders",
+      "shortName": "Ticketing Desk",
+      "mainRoute": "/ticket-desk",
+      "family": "Operations",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 15,
+      "id": "inventory-assets",
+      "displayName": "Inventory, Suppliers, Finance & Assets",
+      "shortName": "Inventory & Assets",
+      "mainRoute": "/inventory-assets",
+      "family": "Assets",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 16,
+      "id": "incidents-risk",
+      "displayName": "Incidents, Complaints, Risk & Continuity",
+      "shortName": "Incidents & Risk",
+      "mainRoute": "/incidents-risk",
+      "family": "Governance",
+      "condition": "partially-implemented"
+    },
+    {
+      "number": 17,
+      "id": "communications",
+      "displayName": "Email & SMS Communications",
+      "shortName": "Communications",
+      "mainRoute": "/communications",
+      "family": "Communications",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 18,
+      "id": "digital-ops",
+      "displayName": "Digital Operations & Security",
+      "shortName": "Digital Operations",
+      "mainRoute": "/digital-ops",
+      "family": "Digital",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 19,
+      "id": "analytics",
+      "displayName": "Clinic Analytics, Data Quality & Change",
+      "shortName": "Clinic Analytics",
+      "mainRoute": "/analytics",
+      "family": "Analytics",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 20,
+      "id": "saas",
+      "displayName": "Commercial SaaS & Organisation Workspaces",
+      "shortName": "Commercial SaaS",
+      "mainRoute": "/saas",
+      "family": "Commercial",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 21,
+      "id": "vendor-console",
+      "displayName": "SaaS Vendor Operations & Tenant Provisioning",
+      "shortName": "Vendor Console",
+      "mainRoute": "/vendor-console",
+      "family": "Enterprise",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 22,
+      "id": "recruitment",
+      "displayName": "Recruitment & Talent Acquisition",
+      "shortName": "Recruitment",
+      "mainRoute": "/recruitment",
+      "family": "Enterprise",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 23,
+      "id": "website-studio",
+      "displayName": "Tenant Website Infrastructure & SEO Engine",
+      "shortName": "Website Studio",
+      "mainRoute": "/website-studio",
+      "family": "Enterprise",
+      "condition": "legacy-html-fallback"
+    },
+    {
+      "number": 24,
+      "id": "financial-forecast",
+      "displayName": "Practice Financial Forecast & Ledger Control",
+      "shortName": "Financial Forecast",
+      "mainRoute": "/financial-forecast",
+      "family": "Enterprise",
+      "condition": "legacy-html-fallback"
+    }
+  ],
+  "byCondition": {
+    "complete-interactive-rebuild": 6,
+    "partially-implemented": 4,
+    "legacy-html-fallback": 14
+  },
+  "navFamilies": [
+    "Executive",
+    "Organisation",
+    "People",
+    "Roster",
+    "Commercial",
+    "Operations",
+    "Governance",
+    "Assets",
+    "Communications",
+    "Digital",
+    "Analytics",
+    "Enterprise"
+  ]
+}

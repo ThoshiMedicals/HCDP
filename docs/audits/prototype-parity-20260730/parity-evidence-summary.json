@@ -1,0 +1,349 @@
+{
+  "auditId": "prototype-parity-20260730",
+  "startedAt": "2026-07-30T00:01:44.300Z",
+  "finishedAt": "2026-07-30T00:05:15.908Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "summary": {
+    "dashboardRouteCount": 24,
+    "dashboardRouteErrors": 24,
+    "rebuildPendingCount": 0,
+    "prototypeHashCount": 50,
+    "legacyRedirectFailures": 11,
+    "widthsTested": [
+      1440,
+      1280,
+      1024,
+      768,
+      430,
+      390
+    ],
+    "appearancesTested": [
+      "light",
+      "dark",
+      "system"
+    ]
+  },
+  "consolidationChecks": {
+    "approvalsTopNavAbsent": true,
+    "approvalsLegacyRedirects": {
+      "from": "/approvals",
+      "expectPath": "/action-inbox",
+      "landedUrl": "http://127.0.0.1:3000/approvals",
+      "ok": false
+    },
+    "tasksCombinedRoute": {
+      "route": "/tasks-actions",
+      "status": 500,
+      "url": "http://127.0.0.1:3000/tasks-actions",
+      "title": "",
+      "ms": 987,
+      "error": null,
+      "bodySnippet": "",
+      "badges": {
+        "rebuildPending": false,
+        "interactiveRebuild": false,
+        "legacyHtmlFallback": false,
+        "permissionDenied": false,
+        "emptyState": false,
+        "loading": false,
+        "errorState": false
+      },
+      "headings": [],
+      "controlSample": [],
+      "a11y": {
+        "hasMain": false,
+        "hasNav": false,
+        "hasSkipLink": false,
+        "imgsMissingAlt": 0,
+        "lang": ""
+      }
+    },
+    "inventoryCombinedRoute": {
+      "route": "/inventory-assets",
+      "status": 500,
+      "url": "http://127.0.0.1:3000/inventory-assets",
+      "title": "",
+      "ms": 1124,
+      "error": null,
+      "bodySnippet": "",
+      "badges": {
+        "rebuildPending": false,
+        "interactiveRebuild": false,
+        "legacyHtmlFallback": false,
+        "permissionDenied": false,
+        "emptyState": false,
+        "loading": false,
+        "errorState": false
+      },
+      "headings": [],
+      "controlSample": [],
+      "a11y": {
+        "hasMain": false,
+        "hasNav": false,
+        "hasSkipLink": false,
+        "imgsMissingAlt": 0,
+        "lang": ""
+      }
+    },
+    "staffHubHasCredentialsLeave": {
+      "routeOk": false,
+      "bodyMentionsCredentials": false,
+      "bodyMentionsLeave": false
+    },
+    "doctorPayLandingOnly": {
+      "rebuildPending": false,
+      "headings": []
+    },
+    "inventoryOcrOnLanding": false,
+    "prototypeHasOcrOnInventory": true,
+    "prototypeApprovalsNav": true
+  },
+  "dashboardRouteStatuses": [
+    {
+      "route": "/dashboard",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/action-inbox",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/settings",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/staff-doctors",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/roster",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/time-attendance",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/staffpay",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/doctorpay",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/bbpip",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/tasks-actions",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/training",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/compliance-quality",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/documents-policies",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/ticket-desk",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/inventory-assets",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/incidents-risk",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/communications",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/digital-ops",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/analytics",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/saas",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/vendor-console",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/recruitment",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/website-studio",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    },
+    {
+      "route": "/financial-forecast",
+      "status": 500,
+      "rebuildPending": false,
+      "error": null,
+      "headings": []
+    }
+  ],
+  "legacyRedirects": [
+    {
+      "from": "/approvals",
+      "expectPath": "/action-inbox",
+      "landedUrl": "http://127.0.0.1:3000/approvals",
+      "ok": false
+    },
+    {
+      "from": "/tasks",
+      "expectPath": "/tasks-actions",
+      "landedUrl": "http://127.0.0.1:3000/tasks",
+      "ok": false
+    },
+    {
+      "from": "/checklists",
+      "expectPath": "/tasks-actions",
+      "landedUrl": "http://127.0.0.1:3000/checklists",
+      "ok": false
+    },
+    {
+      "from": "/frontdesk",
+      "expectPath": "/tasks-actions",
+      "landedUrl": "http://127.0.0.1:3000/frontdesk",
+      "ok": false
+    },
+    {
+      "from": "/hr-docs",
+      "expectPath": "/staff-doctors",
+      "landedUrl": "http://127.0.0.1:3000/hr-docs",
+      "ok": false
+    },
+    {
+      "from": "/staff",
+      "expectPath": "/staff-doctors",
+      "landedUrl": "http://127.0.0.1:3000/staff",
+      "ok": false
+    },
+    {
+      "from": "/doctors",
+      "expectPath": "/staff-doctors",
+      "landedUrl": "http://127.0.0.1:3000/doctors",
+      "ok": false
+    },
+    {
+      "from": "/inventory",
+      "expectPath": "/inventory-assets",
+      "landedUrl": "http://127.0.0.1:3000/inventory",
+      "ok": false
+    },
+    {
+      "from": "/stock",
+      "expectPath": "/inventory-assets",
+      "landedUrl": "http://127.0.0.1:3000/stock",
+      "ok": false
+    },
+    {
+      "from": "/equipment",
+      "expectPath": "/inventory-assets",
+      "landedUrl": "http://127.0.0.1:3000/equipment",
+      "ok": false
+    },
+    {
+      "from": "/timeclock",
+      "expectPath": "/time-attendance",
+      "landedUrl": "http://127.0.0.1:3000/timeclock",
+      "ok": false
+    }
+  ],
+  "runtimeBlocker": {
+    "status": 500,
+    "message": "UnhandledSchemeError node:crypto via published-timesheet-hash -> ModuleWorkspace",
+    "staticPrototypeOk": "/pulse-html-prototype.html"
+  },
+  "notes": [
+    "Dashboard routes HTTP 500 under next dev --webpack",
+    "Static HTML prototype used as live prototype surface",
+    "Browser MCP could not reach localhost"
+  ]
+}
