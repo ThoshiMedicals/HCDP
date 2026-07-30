@@ -3,8 +3,10 @@
  * Platform-owned — publishers may not supply an unverified trusted hash.
  */
 
-import { createHash } from "node:crypto";
 import type { PublishedTimesheetPayrollContent } from "./published-timesheet-contract";
+import { sha256HexUtf8 } from "./sha256-hex-utf8";
+
+export { sha256HexUtf8 } from "./sha256-hex-utf8";
 
 export class CanonicalizationError extends Error {
   field: string;
@@ -151,10 +153,6 @@ export function canonicalPayrollJson(content: PublishedTimesheetPayrollContent):
   const payload = buildCanonicalPayrollPayload(content);
   // Keys already sorted recursively; stringify without insignificant whitespace.
   return JSON.stringify(payload);
-}
-
-export function sha256HexUtf8(input: string): string {
-  return createHash("sha256").update(input, "utf8").digest("hex");
 }
 
 /** Platform calculates contentHash from validated canonical payroll payload. */
