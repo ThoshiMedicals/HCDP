@@ -203,40 +203,44 @@ export function processPublicationOutboxItem(
   upsertOutboxItem(attempted);
 
   const result = publishOutboxItemToPlatform(attempted, options);
-  if (result.status === "published" || result.status === "idempotent") {
-    const published: PlatformPublicationOutboxItem = {
+
+  // Discriminated narrowing must use the failure status first. Checking
+  // `published || idempotent` does not narrow the complementary branch for the
+  // success-arm status union, so `code`/`message` were not proven (OD-A2).
+  if (result.status === "rejected") {
+    const failed: PlatformPublicationOutboxItem = {
       ...attempted,
-      status: "published",
-      lastError: undefined,
+      status: "failed",
+      lastError: `${result.code}: ${result.message}`,
       updatedAt: new Date().toISOString(),
     };
-    upsertOutboxItem(published);
-    const version = result.result.version;
-    acknowledgeOnTimesheet(published.timesheetId, {
-      registryPublicationId: version.registryPublicationId,
-      contentHash: result.contentHash,
-      sourceVersion: published.sourceVersion,
-      approvalRevision: published.approvalRevision,
-      eventId: published.eventId,
-      idempotencyKey: published.idempotencyKey,
-      eventSequence: published.eventSequence,
-      approvalState: INTENT_APPROVAL_STATE[published.intent],
-      acknowledgedAt: new Date().toISOString(),
-    });
-    return {
-      item: published,
-      outcome: result.status === "idempotent" ? "idempotent" : "published",
-    };
+    upsertOutboxItem(failed);
+    return { item: failed, outcome: "failed" };
   }
 
-  const failed: PlatformPublicationOutboxItem = {
+  const published: PlatformPublicationOutboxItem = {
     ...attempted,
-    status: "failed",
-    lastError: `${result.code}: ${result.message}`,
+    status: "published",
+    lastError: undefined,
     updatedAt: new Date().toISOString(),
   };
-  upsertOutboxItem(failed);
-  return { item: failed, outcome: "failed" };
+  upsertOutboxItem(published);
+  const version = result.result.version;
+  acknowledgeOnTimesheet(published.timesheetId, {
+    registryPublicationId: version.registryPublicationId,
+    contentHash: result.contentHash,
+    sourceVersion: published.sourceVersion,
+    approvalRevision: published.approvalRevision,
+    eventId: published.eventId,
+    idempotencyKey: published.idempotencyKey,
+    eventSequence: published.eventSequence,
+    approvalState: INTENT_APPROVAL_STATE[published.intent],
+    acknowledgedAt: new Date().toISOString(),
+  });
+  return {
+    item: published,
+    outcome: result.status === "idempotent" ? "idempotent" : "published",
+  };
 }
 
 /** Explicit bounded batch process — callers choose when to retry. */

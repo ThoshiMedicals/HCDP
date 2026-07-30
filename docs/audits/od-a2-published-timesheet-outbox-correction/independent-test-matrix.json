@@ -1,0 +1,42 @@
+{
+  "headBase": "c8c99950eaad6a2440a9fb91744d37a7d5dfdacc",
+  "branch": "cursor/od-a2-published-timesheet-outbox-correction",
+  "ranAt": "2026-07-30T16:00:00+10:00",
+  "odA2PreChange": {
+    "file": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+    "line": 235,
+    "errors": [
+      "TS2339: Property 'code' does not exist on type 'PublishFromOutboxResult'",
+      "TS2339: Property 'message' does not exist on type 'PublishFromOutboxResult'"
+    ]
+  },
+  "odA2PostChange": {
+    "outboxTsErrors": 0,
+    "remainingPreExistingTsErrors": 21
+  },
+  "hashVector": {
+    "exact": true,
+    "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+  },
+  "build": {
+    "cmd": "npx next build --webpack",
+    "exit": 1,
+    "failure": "UnhandledSchemeError node:crypto via published-timesheet-hash.ts (pre-crypto remediation sequencing deferral)",
+    "odA2Reached": false,
+    "newFailure": false
+  },
+  "suites": [
+    { "name": "OD-A2 focused", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts", "exit": 0, "pass": 8, "fail": 0, "tests": 8 },
+    { "name": "M06 published-timesheet outbox/create/verify", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts", "exit": 0, "pass": 19, "fail": 0, "tests": 19 },
+    { "name": "Published-timesheet registry", "cmd": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts", "exit": 0, "pass": 27, "fail": 0, "tests": 27 },
+    { "name": "PPA-1 focused", "cmd": "npx tsx --test five m07-ppa1-*.test.*", "exit": 0, "pass": 46, "fail": 0, "tests": 46 },
+    { "name": "Architecture/boundary/authz", "cmd": "npx tsx --test architecture+boundary+authz", "exit": 0, "pass": 28, "fail": 0, "tests": 28 },
+    { "name": "Batch 5", "cmd": "npx tsx --test three m07-batch5-*.test.*", "exit": 0, "pass": 49, "fail": 0, "tests": 49 },
+    { "name": "Batch 6", "cmd": "npx tsx --test five m07-batch6-*.test.*", "exit": 0, "pass": 43, "fail": 0, "tests": 43 },
+    { "name": "Full M06", "cmd": "npm run test:m06", "exit": 0, "pass": 91, "fail": 0, "tests": 91, "note": "includes new OD-A2 suite; was 83 before this lane" },
+    { "name": "Full M07", "cmd": "npm run test:m07", "exit": 0, "pass": 246, "fail": 0, "tests": 246 },
+    { "name": "Workforce contracts", "cmd": "npm run test:workforce", "exit": 0, "pass": 45, "fail": 0, "tests": 45 },
+    { "name": "Typecheck", "cmd": "npx tsc --noEmit", "exit": 2, "odA2Fixed": true, "remainingPreExisting": 21 },
+    { "name": "Production build", "cmd": "npx next build --webpack", "exit": 1, "cryptoSequencingDeferral": true }
+  ]
+}
