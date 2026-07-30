@@ -12,10 +12,15 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.ok(!planned.includes("approval"));
     assert.ok(!planned.includes("export"));
     assert.ok(!planned.includes("reconciliation"));
+    assert.ok(!planned.includes("adjustments"));
     assert.equal(M07_SECTION_META.approval.batch1, "available");
     assert.equal(M07_SECTION_META.export.batch1, "available");
     assert.equal(M07_SECTION_META.reconciliation.batch1, "available");
-    assert.ok(planned.includes("adjustments"));
+    assert.equal(M07_SECTION_META.adjustments.batch1, "available");
+    assert.match(
+      M07_SECTION_META.adjustments.batchNote ?? "",
+      /PPA-1 prior-period adjustment foundation/i
+    );
     assert.ok(planned.includes("history"));
     assert.equal(M07_SECTION_META.overview.batch1, "available");
     assert.equal(M07_SECTION_META.settings.batch1, "available");
@@ -45,6 +50,8 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.match(ws, /:focus-visible/);
     assert.match(ws, /prefers-reduced-motion/);
     assert.match(ws, /overflow-x-hidden/);
+    assert.match(ws, /ConnectedAdjustmentsSection/);
+    assert.match(ws, /case "adjustments"/);
   });
 
   it("overview and settings expose labelled controls and non-colour status", () => {

@@ -21,6 +21,7 @@ import {
   ApprovalSection,
   ExportSection,
   ReconciliationSection,
+  ConnectedAdjustmentsSection,
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
@@ -51,6 +52,8 @@ function SectionBody({ section }: { section: M07SectionId }) {
       return <ExportSection />;
     case "reconciliation":
       return <ReconciliationSection />;
+    case "adjustments":
+      return <ConnectedAdjustmentsSection />;
     default:
       return <PlannedSection section={section} />;
   }

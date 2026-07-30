@@ -31,8 +31,25 @@ import { runM07SchemaV9Migration } from "../storage/migrate-v9";
 
 const listCache = new Map<string, unknown[]>();
 
+/** Test-only: force the next N period upserts to fail (PPA-1 atomicity injection). */
+let __periodWriteFailRemaining = 0;
+
+function allowLocalStoreTestHooks(): boolean {
+  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
+}
+
+/**
+ * Test-only. No-ops when NODE_ENV === "production".
+ * Causes the next `count` calls to `upsertPeriod` to throw before persistence.
+ */
+export function __setPeriodWriteFailForTests(count: number): void {
+  if (!allowLocalStoreTestHooks()) return;
+  __periodWriteFailRemaining = Math.max(0, Math.floor(count));
+}
+
 export function clearM07LocalStoreCacheForTests(): void {
   listCache.clear();
+  __periodWriteFailRemaining = 0;
 }
 
 export function invalidateM07LocalStoreCache(key?: string): void {
@@ -151,6 +168,10 @@ export function getPeriod(id: string): PayPeriodRecord | null {
   return listPeriods().find((p) => p.id === id) ?? null;
 }
 export function upsertPeriod(p: PayPeriodRecord): PayPeriodRecord {
+  if (__periodWriteFailRemaining > 0 && allowLocalStoreTestHooks()) {
+    __periodWriteFailRemaining -= 1;
+    throw new Error("m07-period-write-fail-for-tests");
+  }
   return upsertById(M07_STORAGE_KEYS.periods, p);
 }
 

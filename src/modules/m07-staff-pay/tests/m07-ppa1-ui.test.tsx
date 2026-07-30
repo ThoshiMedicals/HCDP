@@ -259,12 +259,17 @@ describe("M07 PPA-1 UI (isolated · pending integration)", () => {
       join(ROOT, "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx"),
       "utf8"
     );
-    for (const src of [createSrc, detailSrc, sectionSrc]) {
+    for (const src of [createSrc, detailSrc]) {
       assert.doesNotMatch(src, /from ["'].*ppa-service/);
       assert.doesNotMatch(src, /from ["'].*calculate-service/);
       assert.doesNotMatch(src, /from ["'].*export-service/);
       assert.doesNotMatch(src, /from ["'].*approval-service/);
     }
+    // Integration lane: AdjustmentsSection host may import ppa-service; must not import calc/export/approval.
+    assert.match(sectionSrc, /from ["'].*ppa-service/);
+    assert.doesNotMatch(sectionSrc, /from ["'].*calculate-service/);
+    assert.doesNotMatch(sectionSrc, /from ["'].*export-service/);
+    assert.doesNotMatch(sectionSrc, /from ["'].*approval-service/);
   });
 
   it("keyboard/a11y: labelled controls, status/error roles, focus and reduced-motion shell", () => {
@@ -296,17 +301,19 @@ describe("M07 PPA-1 UI (isolated · pending integration)", () => {
     assert.match(register, /scope="col"/);
   });
 
-  it("does not modify section-meta or navigation wiring on this lane", () => {
+  it("integration lane wires section-meta available and shell ConnectedAdjustmentsSection", () => {
     const meta = readFileSync(join(ROOT, "src/modules/m07-staff-pay/section-meta.ts"), "utf8");
-    assert.match(meta, /adjustments: \{ label: "Adjustments", batch1: "planned" \}/);
+    assert.match(meta, /batch1: "available"/);
+    assert.match(meta, /PPA-1 prior-period adjustment foundation/);
 
     const workspace = readFileSync(
       join(ROOT, "src/modules/m07-staff-pay/StaffPayWorkspace.tsx"),
       "utf8"
     );
-    assert.doesNotMatch(workspace, /AdjustmentsSection/);
+    assert.match(workspace, /ConnectedAdjustmentsSection/);
+    assert.match(workspace, /case "adjustments"/);
 
     const index = readFileSync(join(ROOT, "src/modules/m07-staff-pay/sections/index.ts"), "utf8");
-    assert.doesNotMatch(index, /AdjustmentsSection/);
+    assert.match(index, /ConnectedAdjustmentsSection/);
   });
 });

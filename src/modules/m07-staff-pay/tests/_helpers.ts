@@ -8,7 +8,8 @@ import { resetM04PersonReadForTests, injectTestPersonIdentity } from "../adapter
 import { resetM04LeaveReadForTests } from "../adapters/m04-leave-read";
 import { resetM02InboxPublishForTests, __setM02InboxFailForTests } from "../adapters/m02-inbox-publish";
 import { resetM01SummaryPublishForTests } from "../adapters/m01-summary-publish";
-import { setM07AuditFailForTests, __setM07AuditFailForTests } from "../services/audit-service";
+import { setM07AuditFailForTests, __setM07AuditFailForTests, __setM07AuditFailActionsForTests } from "../services/audit-service";
+import { __resetPpaRepositoryTestHooks } from "../storage/ppa-repository";
 import type { M07Actor } from "../permissions";
 import { M07_PERMISSION_CODES, M07_ROLE_PACKS } from "../permissions";
 
@@ -40,6 +41,7 @@ export function installMemoryLocalStorage() {
 export function resetM07TestEnv() {
   installMemoryLocalStorage();
   clearM07LocalStoreCacheForTests();
+  __resetPpaRepositoryTestHooks();
   resetM07BootstrapCacheForTests();
   resetM04PersonReadForTests();
   resetM04LeaveReadForTests();
@@ -47,6 +49,7 @@ export function resetM07TestEnv() {
   resetM01SummaryPublishForTests();
   setM07AuditFailForTests(false);
   __setM07AuditFailForTests(false);
+  __setM07AuditFailActionsForTests(null);
   __setM02InboxFailForTests(false);
   ensureM07Bootstrapped();
   injectTestPersonIdentity({

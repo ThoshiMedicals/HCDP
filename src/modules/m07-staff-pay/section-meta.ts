@@ -22,7 +22,12 @@ export const M07_SECTION_META: Record<
     batch1: "available",
     batchNote: "Leave, allowance and deduction preparation available (Batch 4)",
   },
-  adjustments: { label: "Adjustments", batch1: "planned" },
+  adjustments: {
+    label: "Adjustments",
+    batch1: "available",
+    batchNote:
+      "PPA-1 prior-period adjustment foundation: register, create and cancel draft only",
+  },
   exceptions: { label: "Exceptions", batch1: "available", batchNote: "Batch 4 resolve/waive" },
   variances: { label: "Variances", batch1: "available", batchNote: "Batch 4 informational" },
   approval: {

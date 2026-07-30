@@ -8,3 +8,7 @@ export { ExceptionsSection } from "./ExceptionsSection";
 export { ApprovalSection } from "./ApprovalSection";
 export { ExportSection } from "./ExportSection";
 export { ReconciliationSection } from "./ReconciliationSection";
+export {
+  AdjustmentsSection,
+  ConnectedAdjustmentsSection,
+} from "./AdjustmentsSection";

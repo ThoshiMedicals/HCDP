@@ -89,6 +89,7 @@ function archiveOrphanAdjustmentPeriod(
 ): void {
   const period = getPeriod(periodId);
   if (!period) return;
+  if (period.state === "archived") return;
   const now = new Date().toISOString();
   upsertPeriod({
     ...period,
@@ -109,6 +110,34 @@ function archiveOrphanAdjustmentPeriod(
     });
   } catch {
     /* audit failure must not mask primary create failure */
+  }
+}
+
+/** Fail-closed: cancel a draft case residual so it is not an open PPA after compensation. */
+function cancelOrphanPpaCaseResidual(
+  actor: M07Actor,
+  ppaId: string,
+  reason: string
+): void {
+  const existing = getPriorPeriodAdjustment(ppaId);
+  if (!existing) return;
+  if (existing.status === "cancelled") return;
+  const now = new Date().toISOString();
+  try {
+    upsertPriorPeriodAdjustment({
+      ...existing,
+      status: "cancelled",
+      // Free the original idempotency key so a deterministic retry can succeed.
+      idempotencyKey: `${existing.idempotencyKey}__compensated-${now}`,
+      version: existing.version + 1,
+      updatedAt: now,
+      updatedBy: actor.userId,
+      cancelledAt: now,
+      cancelledBy: actor.userId,
+      cancelReason: reason,
+    });
+  } catch {
+    /* best-effort compensation — residual may remain; qualify for QA */
   }
 }
 
@@ -215,11 +244,12 @@ export function createPriorPeriodAdjustment(
   }
 
   // Idempotent replay (same key + same material payload) — before duplicate-open check.
+  // Cancelled / compensated residuals do not satisfy replay (key was freed or status terminal).
   const byKey = findPriorPeriodAdjustmentByIdempotencyKey(
     legalEntityId,
     input.idempotencyKey
   );
-  if (byKey) {
+  if (byKey && byKey.status !== "cancelled") {
     if (!isIdempotentReplayMatch(byKey, input)) {
       throw new M07ValidationError(
         "conflicting-idempotency-replay",
@@ -227,6 +257,20 @@ export function createPriorPeriodAdjustment(
       );
     }
     assertConsistentCaseAndPeriod(byKey);
+    try {
+      recordM07Audit({
+        actor,
+        action: "ppa.create.replay",
+        entityType: "prior-period-adjustment",
+        entityId: byKey.id,
+        legalEntityId: byKey.legalEntityId,
+        after: byKey,
+        reason: "idempotent replay",
+        meta: { idempotencyKey: byKey.idempotencyKey },
+      });
+    } catch {
+      /* replay audit is best-effort; business result remains the existing case */
+    }
     return byKey;
   }
 
@@ -277,22 +321,32 @@ export function createPriorPeriodAdjustment(
     cancelReason: null,
   };
 
-  // Pre-write complete. Dual write: period first, then case; verify; compensate on case failure.
+  // Pre-write complete. Dual write: period first, then case; verify; compensate on failure.
+  // Platform localStorage is not multi-key transactional — fail-closed compensation only.
   let periodWritten = false;
+  let caseWritten = false;
   try {
-    createAdjustmentPayPeriod(actor, {
-      legalEntityId,
-      sourcePeriodId: source.id,
-      priorPeriodAdjustmentId: ppaId,
-      clinicIds: source.clinicIds,
-      periodStart: source.periodStart,
-      periodEnd: source.periodEnd,
-      cadence: source.cadence,
-      periodId: adjustmentPeriodId,
-    });
-    periodWritten = true;
+    try {
+      createAdjustmentPayPeriod(actor, {
+        legalEntityId,
+        sourcePeriodId: source.id,
+        priorPeriodAdjustmentId: ppaId,
+        clinicIds: source.clinicIds,
+        periodStart: source.periodStart,
+        periodEnd: source.periodEnd,
+        cadence: source.cadence,
+        periodId: adjustmentPeriodId,
+      });
+      periodWritten = true;
+    } catch (periodErr) {
+      // Period may already be persisted if createAdjustmentPayPeriod failed after upsert
+      // (e.g. audit-write failure). Treat residual as written for fail-closed archive.
+      if (getPeriod(adjustmentPeriodId)) periodWritten = true;
+      throw periodErr;
+    }
 
     upsertPriorPeriodAdjustment(draft);
+    caseWritten = true;
     const storedCase = getPriorPeriodAdjustment(ppaId);
     if (!storedCase) {
       throw new M07ValidationError(
@@ -334,11 +388,20 @@ export function createPriorPeriodAdjustment(
 
     return storedCase;
   } catch (err) {
-    if (periodWritten) {
+    // Fail-closed: no success response; archive residual adjustment period; cancel residual open case.
+    // True cross-key atomicity is NOT proven — residual archived periods / cancelled cases may remain.
+    if (periodWritten || getPeriod(adjustmentPeriodId)) {
       archiveOrphanAdjustmentPeriod(
         actor,
         adjustmentPeriodId,
-        "compensating archive after PPA case write/consistency failure"
+        "compensating archive after PPA create failure"
+      );
+    }
+    if (caseWritten || getPriorPeriodAdjustment(ppaId)) {
+      cancelOrphanPpaCaseResidual(
+        actor,
+        ppaId,
+        "compensating cancel after PPA create failure"
       );
     }
     throw err;
