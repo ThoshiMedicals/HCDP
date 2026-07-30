@@ -1,559 +1,598 @@
-# HCDP Prototype vs Dashboard Gap Register — 30 July 2026
+# HCDP Prototype vs Dashboard Gap Register — 2026-07-30
 
-**Companion audit:** `docs/audits/HCDP_PROTOTYPE_VS_DASHBOARD_PARITY_AUDIT_20260730.md`  
-**Evidence folder:** `docs/audits/prototype-parity-20260730/`  
-**Base commit:** `0afe878`  
-**Branch:** `agent/prototype-parity-audit-20260730`  
+**Audit:** [`HCDP_PROTOTYPE_VS_DASHBOARD_PARITY_AUDIT_20260730.md`](./HCDP_PROTOTYPE_VS_DASHBOARD_PARITY_AUDIT_20260730.md)  
+**Evidence:** [`prototype-parity-20260730/parity-evidence-live-pass.json`](./prototype-parity-20260730/parity-evidence-live-pass.json) (+ `screenshots/live-pass-20260730/`)  
+**Branch:** `agent/prototype-parity-audit-20260730` @ base `0afe878`  
+**Lane:** Audit-only — classifications guide future batches; **do not treat this file as implementation authority**
 
-### Field legend
+### Severity scale
 
-| Field | Meaning |
+| Severity | Meaning |
 |---|---|
-| Classification | missing / partial / changed / duplicate / intentional / deferred / defect |
-| Severity | critical / high / medium / low / info |
-| Frozen touch? | Would remediation alter Waves 1A–5 or accepted M07 Batches 1–6 ordinary prep? |
-| File collision risk | Likelihood of merge conflict with active module work |
+| critical | Commercial/ops workflow unusable in dashboard vs expected product direction |
+| high | Material interactive depth absent; blocks day-to-day module use |
+| medium | Partial depth or quality issue with workaround |
+| low | Polish, copy, register drift, or non-blocking IA difference |
+
+### Classification legend
+
+`missing` · `partial` · `changed` · `duplicate` · `intentional` · `deferred` · `defect`
 
 ---
 
-## GAP-001 — Dashboard portal compile failure (`node:crypto`)
+## A. Intentional consolidations / architecture supersedes prototype
+
+### GAP-INT-001 — Tasks + Checklists combined
 
 | Field | Value |
 |---|---|
-| ID | GAP-001 |
-| Module/route | Platform shell / all `/dashboard` + approved module routes + `/prototype` via portal graph |
-| Prototype behaviour | HTML SPA loads and is interactive at `/pulse-html-prototype.html` |
-| Dashboard behaviour | HTTP 500; Next Build Error `UnhandledSchemeError: Reading from "node:crypto"` via `published-timesheet-hash.ts` → ModuleWorkspace |
-| Classification | defect |
-| Severity | critical |
-| User impact | Entire Next dashboard unusable; owner cannot compare live UI; modules unreachable |
-| Evidence | `parity-evidence.json` (24/24 routes status 500); `screenshots/dashboard-1440.png`; next-dev log import trace |
-| Likely owning module | Platform / workforce contracts (M06–M07 import boundary) |
-| Recommended future batch | Urgent defect CR before further module UI work |
-| File collision risk | High — `ModuleWorkspace.tsx`, M06/M07 index barrels, `published-timesheet-hash.ts` |
-| Frozen accepted behaviour touched? | **Yes if fixed carelessly** — M06 publisher / M07 intake hash path is accepted surface; needs impact analysis |
-
----
-
-## GAP-002 — Approvals still top-level in prototype nav
-
-| Field | Value |
-|---|---|
-| ID | GAP-002 |
-| Module/route | Prototype `#approvals` vs dashboard `/approvals` → `/action-inbox` |
-| Prototype behaviour | Left nav still lists Approvals; dedicated Approvals page exists |
-| Dashboard behaviour | Approvals removed from approved main slugs; legacy redirect to Action Inbox category |
-| Classification | duplicate (prototype) / intentional (dashboard) |
-| Severity | medium (proto confusion) / info (dashboard) |
-| User impact | Prototype teaches a duplicate approvals inbox; dashboard correctly consolidates |
-| Evidence | `prototypeHashes[approvals]`; `legacy-routes.ts`; screenshot `proto-approvals-1440.png` |
-| Likely owning module | M02 Action Inbox + prototype HTML maintenance |
-| Recommended future batch | Prototype nav cleanup (docs/HTML) — not M02 behaviour change |
-| File collision risk | Low for dashboard; medium for HTML prototype file |
-| Frozen accepted behaviour touched? | No (if only prototype chrome cleaned) |
-
----
-
-## GAP-003 — Tasks / Checklists / Opening-Closing fragmented in prototype nav
-
-| Field | Value |
-|---|---|
-| ID | GAP-003 |
-| Module/route | `#tasks` / `#checklists` / `#frontdesk` vs `/tasks-actions` |
-| Prototype behaviour | Hub merges Tasks & Checklists with Opening tab; **nav still shows separate Tasks, Checklists, Opening/Closing** |
-| Dashboard behaviour | Single `/tasks-actions` with sections; legacy redirects for old slugs |
-| Classification | partial (proto) / intentional (dashboard route model) |
-| Severity | medium |
-| User impact | Users see conflicting IA between chrome and hub content |
-| Evidence | `proto-tasks-1440.png`; navLabels include Tasks/Checklists/Opening; `legacy-routes.ts` |
-| Likely owning module | M10 + prototype HTML |
-| Recommended future batch | Prototype nav alignment + M10 interactive rebuild |
-| File collision risk | Medium |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-004 — Tasks & Actions interactive depth on dashboard
-
-| Field | Value |
-|---|---|
-| ID | GAP-004 |
-| Module/route | `/tasks-actions` (M10) |
-| Prototype behaviour | Create Task, checklist wizard, opening/closing duties, manager review, meetings flows |
-| Dashboard behaviour | `partially-implemented`: ModuleLanding + partial `TasksWorkspace` / `ChecklistsWorkspace` seeds; not full service-backed ops |
-| Classification | partial / missing (depth) |
-| Severity | high |
-| User impact | Daily ops staff cannot run prototype-equivalent workflows in Next |
-| Evidence | `TasksActionsModule.tsx`; `ModuleWorkspace` PartialBody; register condition |
+| ID | GAP-INT-001 |
+| Module / route | M10 `/tasks-actions` (legacy `/tasks`, `/checklists`) |
+| Prototype behaviour | Separate **Tasks** and **Checklists** nav items with independent CRUD/workflows |
+| Dashboard behaviour | Single **Tasks & Actions**; aliases redirect to sections |
+| Classification | intentional |
+| Severity | low (IA) |
+| User impact | Users look for two nav items; find one consolidated module |
+| Evidence | Live HTML nav screenshot `16-…`; redirects in `parity-evidence.json` aliasRedirects; register M10 |
 | Likely owning module | M10 |
-| Recommended future batch | Post-M07 authorised M10 rebuild batch |
-| File collision risk | Medium |
-| Frozen accepted behaviour touched? | No |
+| Recommended future batch | M10 depth batch (not re-split nav) |
+| File collision risk | Low if limited to `m10-tasks-actions` + navigation aliases |
+| Touches frozen accepted behaviour? | No |
 
----
-
-## GAP-005 — Inventory & Assets OCR missing on dashboard
+### GAP-INT-002 — Opening/Closing inside Checklists / Tasks hub
 
 | Field | Value |
 |---|---|
-| ID | GAP-005 |
-| Module/route | `#inventory` vs `/inventory-assets` |
-| Prototype behaviour | “Scan Document / OCR”, Inventory OCR tab, row entry, supplier invoices, stock, transfers, equipment, printers |
-| Dashboard behaviour | ModuleLanding section chips only; no OCR UI; condition `legacy-html-fallback` |
-| Classification | missing |
-| Severity | high |
-| User impact | No invoice/OCR intake path in developed app |
-| Evidence | `proto-inventory-1440.png`; `hasOcr: true` on inventory hash; `InventoryAssetsModule.tsx` |
-| Likely owning module | M15 |
-| Recommended future batch | M15 interactive rebuild (OCR first) |
-| File collision risk | Low–medium |
-| Frozen accepted behaviour touched? | No |
+| ID | GAP-INT-002 |
+| Module / route | M10 `?section=opening-closing` |
+| Prototype behaviour | Distinct **Opening / Closing** ops nav + front-desk templates |
+| Dashboard behaviour | Section under Tasks & Actions (intentional placement) |
+| Classification | intentional (placement) — see also GAP-PAR-010 for depth |
+| Severity | low (placement) |
+| User impact | Nav mental model changes; feature expected under Tasks & Actions |
+| Evidence | Product reference; module-register `opening-closing`; HTML nav |
+| Likely owning module | M10 |
+| Recommended future batch | M10 duty-runner batch |
+| File collision risk | Low–medium (`ModuleWorkspace` PartialBody, M10) |
+| Touches frozen accepted behaviour? | No |
 
----
-
-## GAP-006 — Printer Management detail missing on dashboard
+### GAP-INT-003 — Approvals removed as Action Inbox duplicate
 
 | Field | Value |
 |---|---|
-| ID | GAP-006 |
-| Module/route | `#printers` vs `/inventory-assets?section=printers` |
-| Prototype behaviour | Tabs: Fleet Register, Work Orders, Network Map, Toner & Counters; hostname/queue/VLAN/fallback fields |
-| Dashboard behaviour | Section label “Printers” on landing only |
-| Classification | missing |
-| Severity | medium |
-| User impact | Clinic printer fleet/network/support data not operable in Next |
-| Evidence | `prototypeHashes[printers].tabs`; MODULES.printers in HTML |
-| Likely owning module | M15 |
-| Recommended future batch | M15 printers sub-batch |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-007 — Stock / Equipment / Rooms still separate in prototype nav
-
-| Field | Value |
-|---|---|
-| ID | GAP-007 |
-| Module/route | `#stock` `#equipment` `#rooms` vs consolidated `/inventory-assets` |
-| Prototype behaviour | Consolidated Inventory & Assets hub **and** separate nav buttons for Stock/Equipment/Rooms |
-| Dashboard behaviour | Single Inventory & Assets module + legacy redirects |
-| Classification | duplicate (proto nav) / intentional (dashboard) |
-| Severity | low–medium |
-| User impact | Prototype overstates fragmentation; dashboard IA is the consolidation target |
-| Evidence | navLabels; `legacy-routes.ts`; module register M15 |
-| Likely owning module | Prototype HTML / M15 |
-| Recommended future batch | Prototype nav cleanup |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-008 — Staff hub Award Rules (prototype) vs M07 Settings (architecture)
-
-| Field | Value |
-|---|---|
-| ID | GAP-008 |
-| Module/route | `#staff` Award Rules tab vs `/staff-doctors` + `/staffpay?section=settings` |
-| Prototype behaviour | Award Rules nested inside Staff Management hub |
-| Dashboard behaviour | M04 has credentials & leave; no Award Rules section; parity register relocates prep rules to M07 Settings (Q23) |
-| Classification | intentional / changed |
-| Severity | info–medium |
-| User impact | Looking for Award Rules under Staff on dashboard is expected to fail; use M07 Settings when available |
-| Evidence | `hasAwardRules: true` on `#staff`; M04 section list; parity register §3.2 |
-| Likely owning module | M04 (classification SoT) / M07 Settings |
-| Recommended future batch | UX copy/deep-link from Staff → M07 Settings after GAP-001 |
-| File collision risk | Medium (M07 settings) |
-| Frozen accepted behaviour touched? | **Possibly** if M04/M07 contracts changed — prefer link-only |
-
----
-
-## GAP-009 — HR Documents top-level vs Staff credentials
-
-| Field | Value |
-|---|---|
-| ID | GAP-009 |
-| Module/route | `#hrDocs` vs `/staff-doctors?section=credentials` |
-| Prototype behaviour | Separate HR Documents nav item remains |
-| Dashboard behaviour | Legacy `/hr-docs` → staff-doctors credentials; M04 Credentials section service-backed (Wave 2) |
-| Classification | intentional (dashboard) / duplicate (proto nav) |
-| Severity | low |
-| User impact | Bookmark/HR Docs still works via redirect when shell compiles |
-| Evidence | `legacy-routes.ts`; M04 CredentialsSection |
-| Likely owning module | M04 |
-| Recommended future batch | Prototype nav cleanup |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No if redirect-only |
-
----
-
-## GAP-010 — Leave / Away Days placement
-
-| Field | Value |
-|---|---|
-| ID | GAP-010 |
-| Module/route | Staff Leave tab vs M04 `leave-availability` (+ roster availability) |
-| Prototype behaviour | Leave / Away inside Staff hub |
-| Dashboard behaviour | M04 Leave & Availability (accepted Wave 2); roster also has availability/leave section |
-| Classification | intentional / changed (split with roster views) |
-| Severity | low |
-| User impact | Leave exists in Staff; roster mirrors availability — not a single missing feature |
-| Evidence | M04 workspace nav; module register sections |
-| Likely owning module | M04 / M05 |
-| Recommended future batch | UX clarity only |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | Avoid behaviour change without CR |
-
----
-
-## GAP-011 — Doctor Pay interactive workflow absent on dashboard
-
-| Field | Value |
-|---|---|
-| ID | GAP-011 |
-| Module/route | `#doctorpay` vs `/doctorpay` |
-| Prototype behaviour | BP Sync, Create Pay Run, sandbox calculation, owner approval, payslip/manual bank narrative |
-| Dashboard behaviour | ModuleLanding stub; condition `legacy-html-fallback`; Module 8 **not authorised** to begin under wave control |
-| Classification | deferred / missing (interactive) |
-| Severity | high (product expectation) / info (governance: correctly deferred) |
-| User impact | Finance cannot run doctor pay in Next; must use prototype reference only |
-| Evidence | `proto-doctorpay-1440.png`; `DoctorPayModule.tsx`; wave-control “Do not begin Module 8” |
-| Likely owning module | M08 |
-| Recommended future batch | Explicit M08 authorisation batch |
-| File collision risk | Low today |
-| Frozen accepted behaviour touched? | No (new module) |
-
----
-
-## GAP-012 — BBPIP interactive forecast/reconciliation absent on dashboard
-
-| Field | Value |
-|---|---|
-| ID | GAP-012 |
-| Module/route | `#bbpip` vs `/bbpip` |
-| Prototype behaviour | Forecast, gaps, reconciliation sample flows |
-| Dashboard behaviour | ModuleLanding only |
-| Classification | deferred / missing |
-| Severity | high |
-| User impact | No Next BBPIP operational workspace |
-| Evidence | `proto-bbpip-1440.png`; `BbpipModule` pattern same as M08 landing |
-| Likely owning module | M09 |
-| Recommended future batch | After M08 or owner-prioritised commercial batch |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-013 — Staff Pay: prototype vs M07 React (when compilable)
-
-| Field | Value |
-|---|---|
-| ID | GAP-013 |
-| Module/route | `#staffpay` vs `/staffpay` |
-| Prototype behaviour | HTML prep tower including rejected/deferred cues (final pay, Xero-ish export) |
-| Dashboard behaviour | M07 Batches 1–6 React sections (overview, people, leave, exceptions, variances, approval, export, reconciliation, settings); Adjustments/History planned; non-certified; PPA not implemented |
-| Classification | partial / intentional differences |
-| Severity | medium (proto overclaims) / low (M07 within closed scope) |
-| User impact | When shell works, Next is the authoritative prep path — not HTML simulation |
-| Evidence | `StaffPayWorkspace.tsx`; section-meta; Wave 6 audits; parity register REJECTED list |
-| Likely owning module | M07 |
-| Recommended future batch | PPA only when expressly authorised; History/Adjustments as planned |
-| File collision risk | High on M07 tree |
-| Frozen accepted behaviour touched? | **Yes** if ordinary prep behaviour altered — require CR |
-
----
-
-## GAP-014 — Departments removed from daily navigation
-
-| Field | Value |
-|---|---|
-| ID | GAP-014 |
-| Module/route | Departments |
-| Prototype behaviour | `hasDepartmentsNav: false` on live sample; departments remain as task form options / SaaS concepts |
-| Dashboard behaviour | Not an approved top-level slug; Organisation section “Departments & Rooms”; SaaS “Departments” |
+| ID | GAP-INT-003 |
+| Module / route | Legacy `/approvals` → `/action-inbox?category=Approval` |
+| Prototype behaviour | Top-level **Approvals** under Finance |
+| Dashboard behaviour | No top-level Approvals; Action Inbox Approvals category; redirect works |
 | Classification | intentional |
-| Severity | info |
-| User impact | None as a gap — correctly de-emphasised |
-| Evidence | prototypeHashes `hasDepartmentsNav`; module register M03/M20 |
+| Severity | low |
+| User impact | Finance users go to Action Inbox / module approvals instead |
+| Evidence | aliasRedirects ok; sidebar `hasApprovalsTopLevel: false` |
+| Likely owning module | M02 |
+| Recommended future batch | None for nav; keep redirect |
+| File collision risk | None |
+| Touches frozen accepted behaviour? | No (preserves M02 patterns) |
+
+### GAP-INT-004 — Departments removed from daily navigation
+
+| Field | Value |
+|---|---|
+| ID | GAP-INT-004 |
+| Module / route | M03 `/settings` (departments section); M20 SaaS departments |
+| Prototype behaviour | Departments not emphasised as daily primary in consolidated direction |
+| Dashboard behaviour | No daily **Departments** nav item; Organisation & Access owns structure |
+| Classification | intentional |
+| Severity | low |
+| User impact | Department admin via Organisation, not daily rail |
+| Evidence | dashboard shell `hasDepartmentsDailyNav: false` |
 | Likely owning module | M03 / M20 |
-| Recommended future batch | None |
-| File collision risk | n/a |
-| Frozen accepted behaviour touched? | No |
+| Recommended future batch | None for nav |
+| File collision risk | None |
+| Touches frozen accepted behaviour? | No |
 
----
-
-## GAP-015 — Offline Reconciliation separate in prototype
+### GAP-INT-005 — HR Documents / Leave inside Staff Management
 
 | Field | Value |
 |---|---|
-| ID | GAP-015 |
-| Module/route | `#syncCentre` / Offline Reconciliation vs `/time-attendance` settings/sync |
-| Prototype behaviour | Separate nav item “Offline Reconciliation” |
-| Dashboard behaviour | Consolidated into Time & Attendance (legacy `/sync-centre` → time-attendance) |
+| ID | GAP-INT-005 |
+| Module / route | M04 `/staff-doctors` (`credentials`, `leave-availability`); `/hr-docs` redirect |
+| Prototype behaviour | Separate **HR Documents** People nav item |
+| Dashboard behaviour | No separate HR Docs nav; Credentials / Leave sections; `/hr-docs` → credentials |
 | Classification | intentional |
 | Severity | low |
-| User impact | Bookmark still redirects when shell works |
-| Evidence | `legacy-routes.ts`; M06 sections |
-| Likely owning module | M06 |
-| Recommended future batch | Prototype nav cleanup |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | Avoid M06 behaviour change |
+| User impact | HR docs managed inside Staff & Doctors |
+| Evidence | aliasRedirects; sidebar `hasSeparateHrDocsNav: false` |
+| Likely owning module | M04 |
+| Recommended future batch | M04 polish only if credential UX gaps appear |
+| File collision risk | **High** if editing frozen Wave 2 M04 without CR |
+| Touches frozen accepted behaviour? | **Yes if M04 behaviour changed** — avoid without defect/CR |
 
----
-
-## GAP-016 — Training register condition drift
+### GAP-INT-006 — Award Rules relocated to M07 Settings
 
 | Field | Value |
 |---|---|
-| ID | GAP-016 |
-| Module/route | `/training` (M11) |
-| Prototype behaviour | Full HTML training module |
-| Dashboard behaviour | `TrainingModule` → `TrainingWorkspace` (Wave 3 accepted) but register `condition: legacy-html-fallback` |
-| Classification | changed (label incorrect) |
-| Severity | medium (governance accuracy) |
-| User impact | Owners may under-count Training as unimplemented |
-| Evidence | `TrainingModule.tsx`; module-register.ts; Wave 3 completion reports |
-| Likely owning module | Platform registry / M11 |
-| Recommended future batch | Documentation/register correction CR |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No if label-only |
+| ID | GAP-INT-006 |
+| Module / route | M07 Settings (not M04) |
+| Prototype behaviour | Award rules historically under Staff hub / awardRules records |
+| Dashboard behaviour | Parity register: **RELOCATED** to M07 prep rules; M04 classification SoT only |
+| Classification | intentional |
+| Severity | low |
+| User impact | Looking under Staff for award tables is wrong place by design |
+| Evidence | `HCDP_PROTOTYPE_PARITY_REGISTER.md` Q23 |
+| Likely owning module | M07 |
+| Recommended future batch | M07 settings depth (non-PPA) |
+| File collision risk | Medium (M07 settings) |
+| Touches frozen accepted behaviour? | M07 Batch 1–6 closed — change only with CR/owner review |
 
----
-
-## GAP-017 — Compliance / Incidents partial Next vs rich HTML
+### GAP-INT-007 — Inventory / Stock / Transfers / Equipment / Printers → Inventory & Assets
 
 | Field | Value |
 |---|---|
-| ID | GAP-017 |
-| Module/route | `/compliance-quality`, `/incidents-risk` |
-| Prototype behaviour | Multiple gov/risk routes with operational samples |
-| Dashboard behaviour | `partially-implemented` landings + HTML seed workspaces for some sections |
+| ID | GAP-INT-007 |
+| Module / route | M15 `/inventory-assets` (+ legacy `/inventory` etc.) |
+| Prototype behaviour | Separate Assets nav items + printers/finance extensions |
+| Dashboard behaviour | Single consolidated module with section chips |
+| Classification | intentional (routing) — depth = GAP-MIS-003 |
+| Severity | low (routing) |
+| User impact | One Assets entry instead of many |
+| Evidence | module-register M15; alias `/inventory` |
+| Likely owning module | M15 |
+| Recommended future batch | M15 rebuild batch |
+| File collision risk | Low until M15 implementation starts |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-INT-008 — M07 payment / STP / Xero / bank execution rejected
+
+| Field | Value |
+|---|---|
+| ID | GAP-INT-008 |
+| Module / route | M07 `/staffpay` |
+| Prototype behaviour | Export-to-Xero / paid-style language in places; final pay narrative |
+| Dashboard behaviour | Explicit non-certified prep; export ≠ paid; no bank/STP/super |
+| Classification | intentional / deferred (architecture REJECTED items) |
+| Severity | n/a (not a gap vs architecture) |
+| User impact | Prototype “paid/Xero” expectations must not drive M07 defects |
+| Evidence | Wave-control; M07 parity register REJECTED table; live Staff Pay disclaimer |
+| Likely owning module | M07 / vendor adapter later |
+| Recommended future batch | Post-canonical export vendor adapter (deferred) |
+| File collision risk | High if forced into closed Batches 1–6 |
+| Touches frozen accepted behaviour? | Would if altered — **do not** |
+
+### GAP-DEF-001 — PPA (prior-period adjustment) planned only
+
+| Field | Value |
+|---|---|
+| ID | GAP-DEF-001 |
+| Module / route | M07 PPA (not ordinary prep) |
+| Prototype behaviour | Corrections / final-pay style narratives |
+| Dashboard behaviour | PPA readiness/design docs only; unlock ≠ PPA |
+| Classification | deferred |
+| Severity | medium (product roadmap) |
+| User impact | Post-lock corrections not available as PPA cycle |
+| Evidence | wave-control; `WAVE6_M07_PPA_READINESS_AND_DESIGN.md` |
+| Likely owning module | M07 PPA |
+| Recommended future batch | **Named PPA batch only after explicit owner authorisation** |
+| File collision risk | High (M07 services/storage) |
+| Touches frozen accepted behaviour? | Must not rewrite accepted Batch 1–6 history |
+
+---
+
+## B. Critical / high — genuine missing interactive depth
+
+### GAP-MIS-001 — Doctor Pay React workspace missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-001 |
+| Module / route | M08 `/doctorpay` |
+| Prototype behaviour | Interactive doctor pay runs: BP billing, rate %, GST, adjustments, BP report flag, statuses Draft→Paid; splits/payslips surfaces |
+| Dashboard behaviour | ModuleLanding **Rebuild pending**; section chips Pay Runs / Splits / Payslips only; no BP extraction / recon / approval / payslip email / bank transfer UI |
+| Classification | missing |
+| Severity | critical |
+| User impact | Commercial doctor-pay workflow cannot be run in dashboard |
+| Evidence | `09-dash-doctorpay-landing.png`, `17-dashboard-doctorpay-landing.png`; route crawl rebuildPending; browser snapshot 2026-07-30 |
+| Likely owning module | M08 |
+| Recommended future batch | **Authorised M08 implementation batch** (wave-control currently forbids beginning Module 8 without owner change) |
+| File collision risk | Low until M08 authorised (`src/modules/m08-doctor-pay`) |
+| Touches frozen accepted behaviour? | No (M08 not frozen accepted) |
+
+### GAP-MIS-002 — BBPIP React workspace missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-002 |
+| Module / route | M09 `/bbpip` |
+| Prototype behaviour | Estimate / review / recon / split CRUD with BP-related fields |
+| Dashboard behaviour | Rebuild-pending landing only |
+| Classification | missing |
+| Severity | critical |
+| User impact | Forecast/reconciliation cannot be operated in dashboard |
+| Evidence | `10-dash-bbpip-landing.png`; landingOnly crawl |
+| Likely owning module | M09 |
+| Recommended future batch | M09 after/with M08 commercial family planning |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-003 — Inventory & Assets React workspace missing (incl. OCR & printers)
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-003 |
+| Module / route | M15 `/inventory-assets` |
+| Prototype behaviour | Inventory/stock/equipment/rooms + OCR scan entry, finance OCR review, printers with IP/toner/service/network-style fields and fleet checks |
+| Dashboard behaviour | Rebuild-pending landing; Printers listed as section chip only; **no OCR**, no fleet management |
+| Classification | missing |
+| Severity | critical |
+| User impact | Asset/stock/OCR/printer operations stay in HTML prototype |
+| Evidence | `12-dash-inventory-landing.png`; prototype STORE/`openInventoryOCR`/`printers` schema; evidence `inventory-assets.hasOcr: false` |
+| Likely owning module | M15 |
+| Recommended future batch | M15 rebuild (OCR + printers as explicit slices) |
+| File collision risk | Low until implementation |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-004 — Ticketing Desk React missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-004 |
+| Module / route | M14 `/ticket-desk` |
+| Prototype behaviour | Ticketing CRUD, SLA, printer-ticket cross-links |
+| Dashboard behaviour | Landing only |
+| Classification | missing |
+| Severity | high |
+| User impact | No operational ticket queue in React |
+| Evidence | route crawl landingOnly |
+| Likely owning module | M14 |
+| Recommended future batch | M14 ops batch |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-005 — Documents & Policies React missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-005 |
+| Module / route | M13 `/documents-policies` |
+| Prototype behaviour | Policies / documents control CRUD |
+| Dashboard behaviour | Landing only |
+| Classification | missing |
+| Severity | high |
+| User impact | Document control remains prototype-only |
+| Evidence | landing crawl |
+| Likely owning module | M13 |
+| Recommended future batch | M13 governance batch |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-006 — Communications React missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-006 |
+| Module / route | M17 `/communications` |
+| Prototype behaviour | Email/SMS/memos/commbook/noticeboards interactive |
+| Dashboard behaviour | Landing only |
+| Classification | missing |
+| Severity | high |
+| User impact | Campaigns/comms only in prototype |
+| Evidence | landing crawl |
+| Likely owning module | M17 |
+| Recommended future batch | M17 |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-007 — Digital Operations React missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-007 |
+| Module / route | M18 `/digital-ops` |
+| Prototype behaviour | Website monitoring, remote, vault, cameras |
+| Dashboard behaviour | Landing only |
+| Classification | missing |
+| Severity | high |
+| User impact | Security/digital ops prototype-only |
+| Evidence | landing crawl |
+| Likely owning module | M18 |
+| Recommended future batch | M18 |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-008 — Analytics React missing
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-008 |
+| Module / route | M19 `/analytics` |
+| Prototype behaviour | Executive analytics module |
+| Dashboard behaviour | Landing only |
+| Classification | missing |
+| Severity | high |
+| User impact | Analytics workspace not rebuilt |
+| Evidence | landing crawl |
+| Likely owning module | M19 |
+| Recommended future batch | M19 |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-MIS-009 — SaaS / Vendor / Recruitment / Website Studio / Financial Forecast landings
+
+| Field | Value |
+|---|---|
+| ID | GAP-MIS-009 |
+| Module / route | M20–M24 `/saas`, `/vendor-console`, `/recruitment`, `/website-studio`, `/financial-forecast` |
+| Prototype behaviour | Interactive (or Phase-2 flagged) surfaces in HTML catalogue |
+| Dashboard behaviour | Rebuild-pending landings (enterprise role gates on some) |
+| Classification | missing / deferred (enterprise timing) |
+| Severity | high (core SaaS/recruitment) · medium (enterprise extensions by tier) |
+| User impact | Tenant/vendor/talent/SEO/forecast not operable in React |
+| Evidence | landing crawl set |
+| Likely owning module | M20–M24 respectively |
+| Recommended future batch | Per-module enterprise/core backlog |
+| File collision risk | Low |
+| Touches frozen accepted behaviour? | No |
+
+---
+
+## C. Partial — present but incomplete
+
+### GAP-PAR-001 — M07 Adjustments section stub
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-001 |
+| Module / route | M07 `/staffpay?section=adjustments` |
+| Prototype behaviour | Corrections / over-underpayment style records in staffpay/corrections narrative |
+| Dashboard behaviour | Section labelled **Planned**; PlannedSection non-mutating stub |
+| Classification | partial / deferred |
+| Severity | medium |
+| User impact | Cannot record adjustment lines in UI (ordinary prep); PPA separate |
+| Evidence | Staff Pay browser snapshot: AdjustmentsPlanned; `hasPlannedStub: true` |
+| Likely owning module | M07 |
+| Recommended future batch | Non-PPA adjustments slice **or** authorised PPA batch (do not conflate) |
+| File collision risk | High (closed M07) |
+| Touches frozen accepted behaviour? | **Yes risk** — requires CR/owner review |
+
+### GAP-PAR-002 — M07 History / Reports stub
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-002 |
+| Module / route | M07 History / Reports |
+| Prototype behaviour | History of pay periods / exports |
+| Dashboard behaviour | **Planned** stub |
+| Classification | partial |
+| Severity | medium |
+| User impact | Limited historical review UI |
+| Evidence | Staff Pay nav listitem History / ReportsPlanned |
+| Likely owning module | M07 |
+| Recommended future batch | M07 history UI batch |
+| File collision risk | High |
+| Touches frozen accepted behaviour? | **Yes risk** |
+
+### GAP-PAR-003 — M07 Overview copy vs Available Export/Recon sections
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-003 |
+| Module / route | M07 Pay Run Overview |
+| Prototype behaviour | N/A |
+| Dashboard behaviour | Overview text still says export/recon/lock “remain unavailable” while Export/Reconciliation sections show **Available** (Batch 6) |
+| Classification | defect (copy inconsistency) / partial UX |
+| Severity | low–medium |
+| User impact | Confusing readiness messaging |
+| Evidence | `/staffpay` snapshot 2026-07-30 |
+| Likely owning module | M07 |
+| Recommended future batch | Copy-only CR (avoid logic change) |
+| File collision risk | Medium |
+| Touches frozen accepted behaviour? | Copy-only preferably; avoid behavioural rewrite |
+
+### GAP-PAR-004 — M10 Opening/Closing not a duty runner
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-004 |
+| Module / route | M10 opening-closing |
+| Prototype behaviour | Roster-linked opening/closing checklists with templates |
+| Dashboard behaviour | Consolidated section + ChecklistsWorkspace seed — not full duty runner |
 | Classification | partial |
 | Severity | high |
-| User impact | Accreditation/QI/incident depth incomplete in Next |
-| Evidence | module conditions; `ModuleWorkspace` PartialBody |
-| Likely owning module | M12 / M16 |
-| Recommended future batch | Governance rebuild waves |
+| User impact | Front-desk open/close process incomplete in React |
+| Evidence | Explore inventory; ModuleWorkspace PartialBody |
+| Likely owning module | M10 |
+| Recommended future batch | M10 opening/closing batch |
 | File collision risk | Medium |
-| Frozen accepted behaviour touched? | No |
+| Touches frozen accepted behaviour? | No |
 
----
-
-## GAP-018 — Documents, Ticketing, Communications, Digital Ops landings only
+### GAP-PAR-005 — M10 Meetings / Handovers thin
 
 | Field | Value |
 |---|---|
-| ID | GAP-018 |
-| Module/route | `/documents-policies`, `/ticket-desk`, `/communications`, `/digital-ops` |
-| Prototype behaviour | Interactive HTML modules/campaigns/vault/cameras |
-| Dashboard behaviour | ModuleLanding stubs (`legacy-html-fallback`) |
-| Classification | missing / deferred |
-| Severity | high |
-| User impact | Core ops surfaces unavailable in developed app |
-| Evidence | respective `*Module.tsx` landing pattern; catalogue counts |
-| Likely owning module | M13 / M14 / M17 / M18 |
-| Recommended future batch | Prioritised ops rebuild roadmap |
-| File collision risk | Low–medium each |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-019 — Analytics / SaaS / Enterprise extensions landings only
-
-| Field | Value |
-|---|---|
-| ID | GAP-019 |
-| Module/route | `/analytics`, `/saas`, `/vendor-console`, `/recruitment`, `/website-studio`, `/financial-forecast` |
-| Prototype behaviour | Present with sample flows (incl. financial forecast labour ticker) |
-| Dashboard behaviour | Landings; enterprise role gates on several |
-| Classification | deferred / missing |
-| Severity | medium–high |
-| User impact | Executive/commercial extensions not operable in Next |
-| Evidence | module register; ModuleLanding entries |
-| Likely owning module | M19–M24 |
-| Recommended future batch | Enterprise backlog |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-020 — Appearance / theme parity unverified on dashboard
-
-| Field | Value |
-|---|---|
-| ID | GAP-020 |
-| Module/route | Global shell |
-| Prototype behaviour | Multiple visual themes (v27/v33/v34) |
-| Dashboard behaviour | `theme-dark` / Command Centre appearance store exists; live light/dark/system not verifiable under 500 |
-| Classification | defect (blocked) / partial (code present) |
+| ID | GAP-PAR-005 |
+| Module / route | M10 meetings / handovers |
+| Prototype behaviour | Meetings & Actions nav + workflows |
+| Dashboard behaviour | Title/seed panels; incomplete |
+| Classification | partial |
 | Severity | medium |
-| User impact | Cannot confirm appearance modes for owner review |
-| Evidence | appearance screenshots (error chrome); `setAppearanceStore` |
-| Likely owning module | Platform shell / M01 |
-| Recommended future batch | Re-test after GAP-001 |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-021 — Responsive / mobile dashboard unverified
-
-| Field | Value |
-|---|---|
-| ID | GAP-021 |
-| Module/route | Shell at 1440–390 |
-| Prototype behaviour | Width sweeps captured on HTML; sidebar collapses in CSS |
-| Dashboard behaviour | Width screenshots only show build error; sidebar/mobile drawer unverified |
-| Classification | defect (blocked) |
-| Severity | medium |
-| User impact | No assurance of mobile operability for Next shell |
-| Evidence | `responsive` block in `parity-evidence.json` |
-| Likely owning module | Platform shell |
-| Recommended future batch | Re-run evidence script after GAP-001 |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-022 — Keyboard / a11y dashboard unverified
-
-| Field | Value |
-|---|---|
-| ID | GAP-022 |
-| Module/route | Global |
-| Prototype behaviour | Basic focusable nav/controls |
-| Dashboard behaviour | Tab smoke hit empty error document |
-| Classification | defect (blocked) / deferred (full a11y) |
-| Severity | medium |
-| User impact | No live keyboard access confirmation |
-| Evidence | `parity-evidence.json` → `keyboard` |
-| Likely owning module | Platform shell |
-| Recommended future batch | A11y pass after GAP-001 |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-023 — Permission-denied / empty / loading states on dashboard unverified
-
-| Field | Value |
-|---|---|
-| ID | GAP-023 |
-| Module/route | Cross-cutting |
-| Prototype behaviour | Empty states observed (Doctor Pay, Inventory) |
-| Dashboard behaviour | Only compile error state observed live |
-| Classification | defect (blocked) |
-| Severity | medium |
-| User impact | Cannot validate role denial or empty UX |
-| Evidence | route probes bodySnippet empty; status 500 |
-| Likely owning module | Platform + each module |
-| Recommended future batch | Re-audit after GAP-001 |
-| File collision risk | n/a |
-| Frozen accepted behaviour touched? | No |
-
----
-
-## GAP-024 — Prototype `/prototype` route not usable under portal compile failure
-
-| Field | Value |
-|---|---|
-| ID | GAP-024 |
-| Module/route | `/prototype` → `/prototype-reference` |
-| Prototype behaviour | Static HTML works; framed reference page fails with same ModuleWorkspace graph error |
-| Dashboard behaviour | n/a |
-| Classification | defect |
-| Severity | high |
-| User impact | Documented QA entry `/prototype` does not load; auditors must open `/pulse-html-prototype.html` directly |
-| Evidence | `prototypeRedirect` / `prototypeReference` status 500; static HTML 200 |
-| Likely owning module | App layout / ModuleWorkspace import graph |
-| Recommended future batch | Same as GAP-001; optionally isolate prototype-reference layout from module barrels |
+| User impact | Meeting actions not operationally complete |
+| Evidence | ModuleWorkspace PartialBody; TasksWorkspace |
+| Likely owning module | M10 |
+| Recommended future batch | M10 meetings batch |
 | File collision risk | Medium |
-| Frozen accepted behaviour touched? | Unlikely if layout isolation only |
+| Touches frozen accepted behaviour? | No |
 
----
-
-## GAP-025 — Legacy redirects unverified live (expected intentional)
+### GAP-PAR-006 — M12 Compliance / QI / PDSA / Audit / Expiry incomplete
 
 | Field | Value |
 |---|---|
-| ID | GAP-025 |
-| Module/route | `/approvals`,`/tasks`,`/checklists`,`/hr-docs`,`/inventory`,… |
-| Prototype behaviour | Hash routes still addressable |
-| Dashboard behaviour | Code defines redirects; live probes stayed on source URL with 500 (redirect not observable) |
-| Classification | defect (blocked verification) / intentional (design) |
+| ID | GAP-PAR-006 |
+| Module / route | M12 `/compliance-quality` |
+| Prototype behaviour | Separate accreditation, QI, audit, expiry, compliance centre surfaces |
+| Dashboard behaviour | Landing + accreditation/risk seed reuse |
+| Classification | partial / missing subsections |
+| Severity | high |
+| User impact | Governance pack incomplete in React |
+| Evidence | landing + PartialBody |
+| Likely owning module | M12 |
+| Recommended future batch | M12 rebuild slices |
+| File collision risk | Medium |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-PAR-007 — M16 Incidents / CAPA / Continuity / Emergency incomplete
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-007 |
+| Module / route | M16 `/incidents-risk` |
+| Prototype behaviour | Incidents + risk + emergency control |
+| Dashboard behaviour | Landing + RiskCentre seed; CAPA/continuity/emergency not rebuilt |
+| Classification | partial |
+| Severity | high |
+| User impact | Incident lifecycle incomplete |
+| Evidence | landing crawl; PartialBody |
+| Likely owning module | M16 |
+| Recommended future batch | M16 |
+| File collision risk | Medium |
+| Touches frozen accepted behaviour? | No |
+
+### GAP-PAR-008 — M01 chrome verbs partially decorative
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-008 |
+| Module / route | M01 `/dashboard` |
+| Prototype behaviour | Rich command-centre actions |
+| Dashboard behaviour | Real workspace; some ribbon/actions toast/demo-only (parity register pattern) |
+| Classification | partial |
 | Severity | medium |
-| User impact | Bookmarks may appear broken until compile fixed |
-| Evidence | `legacyRedirects` all `ok: false` under 500 |
+| User impact | Some executive actions feel live but do not mutate SoT |
+| Evidence | Prior M1 audits; live CC present |
+| Likely owning module | M01 |
+| Recommended future batch | M01 wiring polish |
+| File collision risk | Medium |
+| Touches frozen accepted behaviour? | Careful — M01 not wave-frozen like M04–M06 but treat as accepted UX |
+
+### GAP-PAR-009 — Register condition drift for M11 Training
+
+| Field | Value |
+|---|---|
+| ID | GAP-PAR-009 |
+| Module / route | M11 `/training` |
+| Prototype behaviour | Training HTML |
+| Dashboard behaviour | **Live TrainingWorkspace** (Wave 3) but register `condition: legacy-html-fallback` |
+| Classification | defect (metadata) / changed |
+| Severity | low |
+| User impact | Misleading rebuild-pending labelling if any UI reads condition |
+| Evidence | module-register vs live `/training` interactiveSignals |
+| Likely owning module | Platform registry / M11 |
+| Recommended future batch | Registry correction CR |
+| File collision risk | Low (register metadata) |
+| Touches frozen accepted behaviour? | Metadata only preferred; do not regress Wave 3 |
+
+---
+
+## D. Changed IA (architecture vs prototype grouping)
+
+### GAP-CHG-001 — Navigation family regrouping
+
+| Field | Value |
+|---|---|
+| ID | GAP-CHG-001 |
+| Module / route | Platform sidebar |
+| Prototype behaviour | Executive / Operations / People / Rostering / Assets / Governance / Finance / Security… |
+| Dashboard behaviour | Executive / Organisation / People / Roster / Operations / Governance / Assets / Communications / Digital / Analytics / Commercial / Enterprise |
+| Classification | changed / intentional |
+| Severity | low |
+| User impact | Different grouping; modules redistributed (e.g. Risk/Compliance not under Executive rail) |
+| Evidence | screenshots `02` vs `16` |
 | Likely owning module | Platform navigation |
-| Recommended future batch | Re-verify after GAP-001 |
-| File collision risk | Low |
-| Frozen accepted behaviour touched? | No |
+| Recommended future batch | None required |
+| File collision risk | High if wholesale nav rewrite |
+| Touches frozen accepted behaviour? | Possible — avoid casual IA churn |
 
----
-
-## GAP-026 — Cross-module Action Inbox projections unverified live
+### GAP-CHG-002 — Offline Reconciliation / Sync Centre placement
 
 | Field | Value |
 |---|---|
-| ID | GAP-026 |
-| Module/route | M04/M05/M06/M07 → `/action-inbox` |
-| Prototype behaviour | Module chrome shows Action Inbox panels |
-| Dashboard behaviour | Adapters exist in code with wave evidence historically; live projection UI blocked |
-| Classification | defect (blocked re-verification) |
-| Severity | high |
-| User impact | Cannot freshly prove inbox projections in this audit window |
-| Evidence | adapter source files; prior wave audits; live 500 |
-| Likely owning module | M02 + workforce family |
-| Recommended future batch | Focused regression after GAP-001 |
-| File collision risk | High on adapter files |
-| Frozen accepted behaviour touched? | **Yes** if adapters changed — regression required |
+| ID | GAP-CHG-002 |
+| Module / route | M06 settings / prototype Offline Reconciliation |
+| Prototype behaviour | Distinct ops nav **Offline Reconciliation** |
+| Dashboard behaviour | Folded into Time & Attendance Settings (Wave 5) |
+| Classification | changed / intentional |
+| Severity | low |
+| User impact | Users seek separate Sync Centre item |
+| Evidence | module-register M06 settings legacyTerms |
+| Likely owning module | M06 |
+| Recommended future batch | None (document only) |
+| File collision risk | **High** — Wave 5 frozen |
+| Touches frozen accepted behaviour? | **Yes** if behaviour altered |
 
----
-
-## GAP-027 — M01–M06 “complete” modules unreachable
+### GAP-CHG-003 — Expiry Centre consolidation
 
 | Field | Value |
 |---|---|
-| ID | GAP-027 |
-| Module/route | `/dashboard`,`/action-inbox`,`/settings`,`/staff-doctors`,`/roster`,`/time-attendance` |
-| Prototype behaviour | Corresponding HTML modules interactive |
-| Dashboard behaviour | Register marks complete-interactive-rebuild; runtime 500 prevents use |
+| ID | GAP-CHG-003 |
+| Module / route | Prototype Expiry Centre vs M04/M12/M15 expiry concerns |
+| Prototype behaviour | Cross-cutting Expiry Centre special module |
+| Dashboard behaviour | No single Expiry Centre nav; spread across modules |
+| Classification | changed / intentional |
+| Severity | medium |
+| User impact | No single expiry cockpit in dashboard |
+| Evidence | HTML MODULES.expiry; dashboard nav absence |
+| Likely owning module | Platform / M12 |
+| Recommended future batch | Optional expiry cockpit later |
+| File collision risk | Medium |
+| Touches frozen accepted behaviour? | Depends on design |
+
+---
+
+## E. Defects (runtime quality — not repaired)
+
+### GAP-DEF-002 — Hydration / getServerSnapshot console failures
+
+| Field | Value |
+|---|---|
+| ID | GAP-DEF-002 |
+| Module / route | Cross-cutting portal shell |
+| Prototype behaviour | N/A |
+| Dashboard behaviour | Repeated console errors; `hydrationOk: false` in evidence |
 | Classification | defect |
-| Severity | critical |
-| User impact | Accepted rebuilds cannot be demonstrated to owner in browser |
-| Evidence | catalogue `byCondition`; route statuses |
-| Likely owning module | Platform (GAP-001) |
-| Recommended future batch | GAP-001 then smoke re-acceptance |
-| File collision risk | High |
-| Frozen accepted behaviour touched? | Fix should not change behaviour — only bundling boundary |
+| Severity | medium |
+| User impact | Unstable SSR/client sync; possible flicker/perf issues |
+| Evidence | `parity-evidence.json` console[] |
+| Likely owning module | Platform / portal-context |
+| Recommended future batch | Platform stability batch |
+| File collision risk | Medium–high (shared shell) |
+| Touches frozen accepted behaviour? | Possible collateral — needs careful CR |
+
+### GAP-DEF-003 — Webpack `node:crypto` client import breaks `next dev --webpack`
+
+| Field | Value |
+|---|---|
+| ID | GAP-DEF-003 |
+| Module / route | M06/M07 published-timesheet hash import chain |
+| Prototype behaviour | N/A |
+| Dashboard behaviour | `next dev --webpack` fails UnhandledSchemeError `node:crypto`; Turbopack works |
+| Classification | defect |
+| Severity | medium (dev ergonomics) |
+| User impact | Default webpack dev server unusable for module routes |
+| Evidence | terminal `741892.txt` compile errors; Turbopack audit success |
+| Likely owning module | Platform workforce contracts / bundler boundary |
+| Recommended future batch | Platform bundler fix (server-only boundary) |
+| File collision risk | Medium (shared contracts used by frozen M06/M07) |
+| Touches frozen accepted behaviour? | Should be build-boundary only — avoid logic change |
 
 ---
 
-## Summary counts
+## F. Summary counts
 
-| Classification | Count (this register) |
-|---|---:|
-| defect | 8 |
-| missing | 4 |
-| partial | 3 |
-| intentional | 5 |
-| deferred | 3 |
-| changed | 2 |
-| duplicate | 2 |
+| Classification | IDs |
+|---|---|
+| intentional | GAP-INT-001 … 008 |
+| deferred | GAP-DEF-001 |
+| missing | GAP-MIS-001 … 009 |
+| partial | GAP-PAR-001 … 009 |
+| changed | GAP-CHG-001 … 003 |
+| defect | GAP-DEF-002, GAP-DEF-003, GAP-PAR-003 (copy) |
 
-*(Some rows carry dual labels; counts above use primary class.)*
-
-| Severity | Count |
-|---|---:|
-| critical | 2 |
-| high | 9 |
-| medium | 11 |
-| low / info | 5 |
-
-## Stop / non-actions
-
-- No production repairs performed  
-- No accepted evidence files modified  
-- PPA not implemented  
-- Module 8 not started  
-- Branch not merged
+**Do not schedule M08 work or PPA implementation from this register alone** — await explicit owner authorisation per wave-control.

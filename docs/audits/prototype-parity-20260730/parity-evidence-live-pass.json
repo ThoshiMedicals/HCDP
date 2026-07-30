@@ -1,0 +1,1009 @@
+{
+  "auditId": "prototype-parity-20260730",
+  "startedAt": "2026-07-30T00:11:38.421Z",
+  "base": "http://localhost:3000",
+  "branchHint": "agent/prototype-parity-audit-20260730",
+  "methodology": "Independent live comparison of /prototype(-reference) HTML prototype vs Next dashboard routes. Architecture consolidations are classified intentional, not missing.",
+  "console": [
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "pageerror: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.no",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop",
+    "error: The result of getServerSnapshot should be cached to avoid an infinite loop"
+  ],
+  "hydrationOk": false,
+  "prototype": {
+    "redirectFromPrototype": {
+      "requested": "http://localhost:3000/prototype",
+      "landed": "http://localhost:3000/prototype-reference",
+      "redirectedToReference": true
+    },
+    "referenceChrome": {
+      "hasQaBanner": true,
+      "hasReturnLink": true
+    },
+    "nav": {
+      "groupCount": 0,
+      "groups": [],
+      "active": null,
+      "roleSnippet": null,
+      "hasApprovalsNav": false,
+      "hasSeparateTasksAndChecklists": false,
+      "hasHrDocs": false,
+      "hasSeparateInventoryEquipmentStock": false,
+      "bodySample": "DEVELOPMENT / QA REFERENCE\nHTML prototype — not the default module experience\nReturn to Next platform"
+    }
+  },
+  "dashboard": {
+    "shell": {
+      "hasCommandCentre": true,
+      "sidebarSnippet": "EX\nOR\nPE\nRO\nOP\nGO\nAS\nCO\nDI\nAN\nCO\nFAVOURITES\n3\nExecutive Command Centre\n×\nAction Inbox & Notifications\n×\nRoster & Shift Management\n×\nEXECUTIVE COMMAND\n⌄\nCommand Centre\n★\nAction Inbox\n6\n★\nORGANISATION\n⌄\nOrganisation & Access\n☆\nPEOPLE\n⌄\nStaff & Doctors\n☆\nTraining\n☆\nROSTER\n⌄\nRoster & Shifts\n★\nTime & Attendance\n☆\nOPERATIONS\n⌄\nTasks & Actions\n☆\nTicketing Desk\n☆\nGOVERNANCE\n⌄\nCompliance & Quality\n☆\nDocuments & Policies\n☆\nIncidents & Risk\n☆\nASSETS\n⌄\nInventory & Assets\n☆\nCOMMUNICATIONS\n⌄\nCommunications\n☆\nDIGITAL\n⌄\nDigital Operations\n☆\nANALYTICS\n⌄\nClinic Analytics\n☆\nCOMMERCIAL\n⌄\nStaff Pay\n☆\nDoctor Pay\n☆\nBBPIP\n☆\nCommercial SaaS\n☆\nENTERPRISE EXTENSIONS\n⌄\nSM\nSarah Mitchell\nSenior Administrator\nDavid King · Director\nSarah Mitchell · Senior Administrator\nJames Okafor · Clinic Manager\nElena Brooks · Practice Manager\nOwen Fraser · Finance Manager\nAmelia Grant · HR Manager\nPriya Nair · Compliance Manager\nLucy Wright · Staff Member\nRead-Only Auditor · Read-Only Auditor\nVendor Admin · SaaS Vendor Administrator\n\nDemo Act-as — not production auth",
+      "navLabelSample": [
+        "EX",
+        "OR",
+        "PE",
+        "RO",
+        "OP",
+        "GO",
+        "AS",
+        "CO",
+        "DI",
+        "AN",
+        "CO",
+        "Executive Command Centre×",
+        "×",
+        "Action Inbox & Notifications×",
+        "×",
+        "Roster & Shift Management×",
+        "×",
+        "Executive Command⌄",
+        "Command Centre★",
+        "★",
+        "Action Inbox6★",
+        "★",
+        "Organisation⌄",
+        "Organisation & Access☆",
+        "☆",
+        "People⌄",
+        "Staff & Doctors☆",
+        "☆",
+        "Training☆",
+        "☆",
+        "Roster⌄",
+        "Roster & Shifts★",
+        "★",
+        "Time & Attendance☆",
+        "☆",
+        "Operations⌄",
+        "Tasks & Actions☆",
+        "☆",
+        "Ticketing Desk☆",
+        "☆",
+        "Governance⌄",
+        "Compliance & Quality☆",
+        "☆",
+        "Documents & Policies☆",
+        "☆",
+        "Incidents & Risk☆",
+        "☆",
+        "Assets⌄",
+        "Inventory & Assets☆",
+        "☆",
+        "Communications⌄",
+        "Communications☆",
+        "☆",
+        "Digital⌄",
+        "Digital Operations☆",
+        "☆",
+        "Analytics⌄",
+        "Clinic Analytics☆",
+        "☆",
+        "Commercial⌄",
+        "Staff Pay☆",
+        "☆",
+        "Doctor Pay☆",
+        "☆",
+        "BBPIP☆",
+        "☆",
+        "Commercial SaaS☆",
+        "☆",
+        "Enterprise Extensions⌄",
+        "Vendor Console☆",
+        "☆",
+        "Recruitment☆",
+        "☆",
+        "Website Studio☆",
+        "☆",
+        "Financial Forecast☆",
+        "☆"
+      ],
+      "hasApprovalsTopLevel": false,
+      "hasTasksActions": true,
+      "hasInventoryAssets": true,
+      "hasStaffDoctors": true,
+      "hasOrganisation": true,
+      "hasDepartmentsDailyNav": false,
+      "hasSeparateHrDocsNav": false
+    },
+    "aliasRedirects": [
+      {
+        "from": "/approvals",
+        "landed": "http://localhost:3000/action-inbox?category=Approval",
+        "expectSlug": "action-inbox",
+        "ok": true
+      },
+      {
+        "from": "/tasks",
+        "landed": "http://localhost:3000/tasks-actions?section=tasks",
+        "expectSlug": "tasks-actions",
+        "ok": true
+      },
+      {
+        "from": "/checklists",
+        "landed": "http://localhost:3000/tasks-actions?section=checklists",
+        "expectSlug": "tasks-actions",
+        "ok": true
+      },
+      {
+        "from": "/hr-docs",
+        "landed": "http://localhost:3000/staff-doctors?section=credentials",
+        "expectSlug": "staff-doctors",
+        "ok": true
+      },
+      {
+        "from": "/inventory",
+        "landed": "http://localhost:3000/inventory-assets?section=inventory",
+        "expectSlug": "inventory-assets",
+        "ok": true
+      },
+      {
+        "from": "/staff",
+        "landed": "http://localhost:3000/staff-doctors?section=people",
+        "expectSlug": "staff-doctors",
+        "ok": true
+      },
+      {
+        "from": "/doctors",
+        "landed": "http://localhost:3000/staff-doctors?section=doctor-profiles",
+        "expectSlug": "staff-doctors",
+        "ok": true
+      }
+    ],
+    "staffPay": {
+      "hasOverview": true,
+      "hasPeople": true,
+      "hasExport": true,
+      "hasPlannedStub": true,
+      "rebuildPending": false
+    },
+    "doctorpay": {
+      "rebuildPending": true,
+      "hasOcr": false,
+      "hasBpExtraction": true,
+      "hasPrintersSection": false,
+      "sectionChips": ""
+    },
+    "bbpip": {
+      "rebuildPending": true,
+      "hasOcr": false,
+      "hasBpExtraction": false,
+      "hasPrintersSection": false,
+      "sectionChips": ""
+    },
+    "inventory-assets": {
+      "rebuildPending": true,
+      "hasOcr": false,
+      "hasBpExtraction": false,
+      "hasPrintersSection": true,
+      "sectionChips": ""
+    },
+    "roleProbe": {
+      "hasSelect": true,
+      "hasActAs": true,
+      "optionSample": [
+        "David King · Director",
+        "Sarah Mitchell · Senior Administrator",
+        "James Okafor · Clinic Manager",
+        "Elena Brooks · Practice Manager",
+        "Owen Fraser · Finance Manager",
+        "Amelia Grant · HR Manager",
+        "Priya Nair · Compliance Manager",
+        "Lucy Wright · Staff Member",
+        "Read-Only Auditor · Read-Only Auditor",
+        "Vendor Admin · SaaS Vendor Administrator"
+      ]
+    }
+  },
+  "routes": [
+    {
+      "route": "/dashboard",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/dashboard",
+      "title": "Owner/Director Command Centre",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": true,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/action-inbox",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/action-inbox",
+      "title": "Action Inbox & Notifications",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": true,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/settings",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/settings",
+      "title": "Organisation, Locations, Users & Permissions",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/staff-doctors",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/staff-doctors",
+      "title": "Staff & Doctor Management",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+    },
+    {
+      "route": "/roster",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/roster",
+      "title": "Roster & Shift Management",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+    },
+    {
+      "route": "/time-attendance",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/time-attendance",
+      "title": "Time & Attendance",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/staffpay",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/staffpay",
+      "title": "Staff Pay & Payroll Preparation",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/doctorpay",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/doctorpay",
+      "title": "Doctor Pay Command Centre",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/bbpip",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/bbpip",
+      "title": "BBPIP Forecast & Reconciliation",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/tasks-actions",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/tasks-actions",
+      "title": "Tasks, Checklists, Meetings & Actions",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/training",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/training",
+      "title": "Training & Learning Management",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+    },
+    {
+      "route": "/compliance-quality",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/compliance-quality",
+      "title": "Accreditation, Quality & Regulatory Compliance",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+    },
+    {
+      "route": "/documents-policies",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/documents-policies",
+      "title": "Documents, Policies, SOPs & Intake",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/ticket-desk",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/ticket-desk",
+      "title": "Ticketing Desk & Work Orders",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/inventory-assets",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/inventory-assets",
+      "title": "Inventory, Suppliers, Finance & Assets",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/incidents-risk",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/incidents-risk",
+      "title": "Incidents, Complaints, Risk & Continuity",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/communications",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/communications",
+      "title": "Email & SMS Communications",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/digital-ops",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/digital-ops",
+      "title": "Digital Operations & Security",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/analytics",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/analytics",
+      "title": "Clinic Analytics, Data Quality & Change",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/saas",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/saas",
+      "title": "Commercial SaaS & Organisation Workspaces",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/vendor-console",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/vendor-console",
+      "title": "SaaS Vendor Operations & Tenant Provisioning",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/recruitment",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/recruitment",
+      "title": "Recruitment & Talent Acquisition",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+    },
+    {
+      "route": "/website-studio",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/website-studio",
+      "title": "Tenant Website Infrastructure & SEO Engine",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/financial-forecast",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/financial-forecast",
+      "title": "Practice Financial Forecast & Ledger Control",
+      "crashed": false,
+      "rebuildPending": true,
+      "interactiveSignals": true,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+    },
+    {
+      "route": "/prototype",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/prototype-reference",
+      "title": "DEVELOPMENT / QA REFERENCE",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": false,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "DEVELOPMENT / QA REFERENCE HTML prototype — not the default module experience Return to Next platform"
+    },
+    {
+      "route": "/prototype-reference",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/prototype-reference",
+      "title": "DEVELOPMENT / QA REFERENCE",
+      "crashed": false,
+      "rebuildPending": false,
+      "interactiveSignals": false,
+      "restrictedSignals": false,
+      "emptySignals": false,
+      "textSample": "DEVELOPMENT / QA REFERENCE HTML prototype — not the default module experience Return to Next platform"
+    }
+  ],
+  "widths": [
+    {
+      "target": "/dashboard",
+      "width": 1440,
+      "ok": true,
+      "scrollWidth": 1440,
+      "crashed": false
+    },
+    {
+      "target": "/dashboard",
+      "width": 1280,
+      "ok": true,
+      "scrollWidth": 1280,
+      "crashed": false
+    },
+    {
+      "target": "/dashboard",
+      "width": 1024,
+      "ok": true,
+      "scrollWidth": 1024,
+      "crashed": false
+    },
+    {
+      "target": "/dashboard",
+      "width": 768,
+      "ok": true,
+      "scrollWidth": 768,
+      "crashed": false
+    },
+    {
+      "target": "/dashboard",
+      "width": 430,
+      "ok": true,
+      "scrollWidth": 430,
+      "crashed": false
+    },
+    {
+      "target": "/dashboard",
+      "width": 390,
+      "ok": true,
+      "scrollWidth": 390,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 1440,
+      "ok": true,
+      "scrollWidth": 1440,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 1280,
+      "ok": true,
+      "scrollWidth": 1280,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 1024,
+      "ok": true,
+      "scrollWidth": 1024,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 768,
+      "ok": true,
+      "scrollWidth": 768,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 430,
+      "ok": true,
+      "scrollWidth": 430,
+      "crashed": false
+    },
+    {
+      "target": "/inventory-assets",
+      "width": 390,
+      "ok": true,
+      "scrollWidth": 390,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 1440,
+      "ok": true,
+      "scrollWidth": 1440,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 1280,
+      "ok": true,
+      "scrollWidth": 1280,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 1024,
+      "ok": true,
+      "scrollWidth": 1024,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 768,
+      "ok": true,
+      "scrollWidth": 768,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 430,
+      "ok": true,
+      "scrollWidth": 430,
+      "crashed": false
+    },
+    {
+      "target": "/prototype-reference",
+      "width": 390,
+      "ok": true,
+      "scrollWidth": 390,
+      "crashed": false
+    }
+  ],
+  "appearances": [
+    {
+      "mode": "light",
+      "appliedViaSelect": true,
+      "bodyBg": "rgb(241, 245, 250)"
+    },
+    {
+      "mode": "dark",
+      "appliedViaSelect": true,
+      "bodyBg": "rgb(7, 17, 31)"
+    },
+    {
+      "mode": "system",
+      "appliedViaSelect": true,
+      "bodyBg": "rgb(241, 245, 250)"
+    }
+  ],
+  "a11y": [
+    {
+      "check": "tab-focus-after-2-tabs",
+      "activeTag": {
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open Executive Command"
+      }
+    },
+    {
+      "check": "landmarks-and-unnamed-buttons",
+      "nav": 1,
+      "main": 1,
+      "buttonsWithoutName": 1
+    }
+  ],
+  "consolidationsVerified": [
+    {
+      "id": "CONS-01",
+      "topic": "Tasks + Checklists combined",
+      "prototype": "Separate Tasks and Checklists nav items",
+      "dashboard": "Single Tasks & Actions module",
+      "classification": "intentional"
+    },
+    {
+      "id": "CONS-02",
+      "topic": "Approvals removed as duplicate of Action Inbox",
+      "prototype": "Approvals present in NAV_GROUPS source",
+      "dashboard": "No top-level Approvals in sidebar; Action Inbox owns approvals category",
+      "classification": "intentional"
+    },
+    {
+      "id": "CONS-03",
+      "topic": "Departments removed from daily navigation",
+      "prototype": "Not a dedicated daily nav item in v34 primary NAV_GROUPS (lives under Settings/SaaS elsewhere)",
+      "dashboard": "Departments not daily nav; Organisation & Access / SaaS sections own it",
+      "classification": "intentional"
+    },
+    {
+      "id": "CONS-04",
+      "topic": "HR Documents inside Staff Management",
+      "prototype": "HR Documents in People group",
+      "dashboard": "No separate HR Documents nav; Staff & Doctors Credentials section",
+      "classification": "intentional"
+    },
+    {
+      "id": "CONS-05",
+      "topic": "Inventory/Stock/Equipment/Printers → Inventory & Assets",
+      "prototype": "Assets group split items",
+      "dashboard": "Consolidated Inventory & Assets route",
+      "classification": "intentional"
+    }
+  ],
+  "screenshots": [
+    "01-prototype-reference-1440.png",
+    "02-dashboard-1440.png",
+    "03-dash-command-centre.png",
+    "04-dash-action-inbox.png",
+    "05-dash-staff-doctors.png",
+    "06-dash-roster.png",
+    "07-dash-time-attendance.png",
+    "08-dash-staffpay.png",
+    "09-dash-doctorpay-landing.png",
+    "10-dash-bbpip-landing.png",
+    "11-dash-tasks-actions.png",
+    "12-dash-inventory-landing.png",
+    "13-dash-training.png",
+    "14-dashboard-w1440.png",
+    "14-dashboard-w768.png",
+    "14-dashboard-w390.png",
+    "15-appearance-light.png",
+    "15-appearance-dark.png",
+    "15-appearance-system.png"
+  ],
+  "gapsObserved": [
+    {
+      "id": "LANDING-_doctorpay",
+      "moduleRoute": "/doctorpay",
+      "classification": "missing",
+      "severity": "critical",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Doctor Pay Command Centre",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_bbpip",
+      "moduleRoute": "/bbpip",
+      "classification": "missing",
+      "severity": "critical",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "BBPIP Forecast & Reconciliation",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_tasks_actions",
+      "moduleRoute": "/tasks-actions",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Tasks, Checklists, Meetings & Actions",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_compliance_quality",
+      "moduleRoute": "/compliance-quality",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Accreditation, Quality & Regulatory Compliance",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+      }
+    },
+    {
+      "id": "LANDING-_documents_policies",
+      "moduleRoute": "/documents-policies",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Documents, Policies, SOPs & Intake",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_ticket_desk",
+      "moduleRoute": "/ticket-desk",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Ticketing Desk & Work Orders",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_inventory_assets",
+      "moduleRoute": "/inventory-assets",
+      "classification": "missing",
+      "severity": "critical",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Inventory, Suppliers, Finance & Assets",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_incidents_risk",
+      "moduleRoute": "/incidents-risk",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Incidents, Complaints, Risk & Continuity",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_communications",
+      "moduleRoute": "/communications",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Email & SMS Communications",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_digital_ops",
+      "moduleRoute": "/digital-ops",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Digital Operations & Security",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_analytics",
+      "moduleRoute": "/analytics",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Clinic Analytics, Data Quality & Change",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_saas",
+      "moduleRoute": "/saas",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Commercial SaaS & Organisation Workspaces",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_vendor_console",
+      "moduleRoute": "/vendor-console",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "SaaS Vendor Operations & Tenant Provisioning",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_recruitment",
+      "moduleRoute": "/recruitment",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Recruitment & Talent Acquisition",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S"
+      }
+    },
+    {
+      "id": "LANDING-_website_studio",
+      "moduleRoute": "/website-studio",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Tenant Website Infrastructure & SEO Engine",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    },
+    {
+      "id": "LANDING-_financial_forecast",
+      "moduleRoute": "/financial-forecast",
+      "classification": "missing",
+      "severity": "high",
+      "note": "Dashboard shows ModuleLanding rebuild-pending; interactive depth lives in HTML prototype only",
+      "evidence": {
+        "title": "Practice Financial Forecast & Ledger Control",
+        "sample": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster &"
+      }
+    }
+  ],
+  "finishedAt": "2026-07-30T00:14:28.838Z",
+  "summary": {
+    "routesCrawled": 26,
+    "routesCrashed": 0,
+    "landingOnlyCount": 16,
+    "widthFailures": 0,
+    "consolidations": 5,
+    "gapsObserved": 16,
+    "screenshots": 19,
+    "hydrationOk": false,
+    "consoleNoise": 74
+  }
+}

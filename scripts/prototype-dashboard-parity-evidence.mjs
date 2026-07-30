@@ -11,7 +11,8 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const BASE = process.env.BASE_URL || "http://localhost:3000";
-const OUT_DIR = path.join(ROOT, "docs/audits/evidence/prototype-parity-20260730");
+const OUT_DIR = path.join(ROOT, "docs/audits/prototype-parity-20260730/screenshots/live-pass-20260730");
+const JSON_OUT = path.join(ROOT, "docs/audits/prototype-parity-20260730/parity-evidence-live-pass.json");
 const WIDTHS = [1440, 1280, 1024, 768, 430, 390];
 const APPEARANCES = ["light", "dark", "system"];
 
@@ -78,13 +79,13 @@ function pushGap(id, payload) {
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
 const page = await context.newPage();
-page.setDefaultTimeout(15000);
+page.setDefaultTimeout(20000);
 
 page.on("console", (msg) => {
   if (!["error", "warning"].includes(msg.type())) return;
   const t = msg.text();
   if (/Hydration|hydration/i.test(t)) evidence.hydrationOk = false;
-  if (/Fast Refresh|React DevTools|Download the React/i.test(t)) return;
+  if (/Fast Refresh|React DevTools|Download the React|Turbopack/i.test(t)) return;
   evidence.console.push(`${msg.type()}: ${t.slice(0, 280)}`);
 });
 page.on("pageerror", (e) => {
@@ -93,9 +94,14 @@ page.on("pageerror", (e) => {
 });
 
 async function safeGoto(url) {
-  const res = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
-  await page.waitForTimeout(900);
-  return res;
+  try {
+    const res = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
+    await page.waitForTimeout(500);
+    return res;
+  } catch (e) {
+    evidence.console.push(`goto-fail ${url}: ${String(e.message || e).slice(0, 200)}`);
+    return null;
+  }
 }
 
 // ── Prototype surface ──────────────────────────────────────────────
@@ -488,8 +494,9 @@ evidence.summary = {
   consoleNoise: evidence.console.length,
 };
 
-const jsonPath = path.join(OUT_DIR, "parity-evidence.json");
-fs.writeFileSync(jsonPath, JSON.stringify(evidence, null, 2));
+fs.mkdirSync(path.dirname(JSON_OUT), { recursive: true });
+fs.writeFileSync(JSON_OUT, JSON.stringify(evidence, null, 2));
 console.log(JSON.stringify(evidence.summary, null, 2));
-console.log(`Wrote ${jsonPath}`);
+console.log(`Wrote ${JSON_OUT}`);
+console.log(`Screenshots → ${OUT_DIR}`);
 await browser.close();
