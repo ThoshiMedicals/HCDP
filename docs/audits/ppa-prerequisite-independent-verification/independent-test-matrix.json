@@ -1,0 +1,97 @@
+{
+  "head": "c8c99950eaad6a2440a9fb91744d37a7d5dfdacc",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "ranAt": "2026-07-30T15:45:00+10:00",
+  "hashVector": {
+    "exact": true,
+    "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+  },
+  "suites": [
+    {
+      "name": "PPA-1 focused (core+ui+integration+security+atomicity)",
+      "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-core.test.ts src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
+      "exit": 0,
+      "pass": 46,
+      "fail": 0,
+      "tests": 46
+    },
+    {
+      "name": "Architecture + boundary + authz",
+      "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-architecture-cp27.test.ts src/modules/m07-staff-pay/tests/m07-boundary-cp23.test.ts src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+      "exit": 0,
+      "pass": 28,
+      "fail": 0,
+      "tests": 28
+    },
+    {
+      "name": "Batch 5",
+      "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch5-cp51-56.test.ts src/modules/m07-staff-pay/tests/m07-batch5-material-revision.test.ts src/modules/m07-staff-pay/tests/m07-batch5-remediation.test.ts",
+      "exit": 0,
+      "pass": 49,
+      "fail": 0,
+      "tests": 49
+    },
+    {
+      "name": "Batch 6",
+      "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch6-cp61-66.test.ts src/modules/m07-staff-pay/tests/m07-batch6-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-third-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+      "exit": 0,
+      "pass": 43,
+      "fail": 0,
+      "tests": 43
+    },
+    {
+      "name": "Published-timesheet registry + M06 published",
+      "cmd": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
+      "exit": 0,
+      "pass": 46,
+      "fail": 0,
+      "tests": 46
+    },
+    {
+      "name": "Full M06",
+      "cmd": "npm run test:m06",
+      "exit": 0,
+      "pass": 83,
+      "fail": 0,
+      "tests": 83
+    },
+    {
+      "name": "Full M07",
+      "cmd": "npm run test:m07",
+      "exit": 0,
+      "pass": 246,
+      "fail": 0,
+      "tests": 246
+    },
+    {
+      "name": "Workforce",
+      "cmd": "npm run test:workforce",
+      "exit": 0,
+      "pass": 45,
+      "fail": 0,
+      "tests": 45
+    },
+    {
+      "name": "Hash vector",
+      "cmd": "npx tsx calculatePayrollContentHash + node:crypto sha256 of canonicalPayrollJson",
+      "exact": true,
+      "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+    },
+    {
+      "name": "Scoped/full typecheck",
+      "cmd": "npx tsc --noEmit",
+      "exit": 2,
+      "odA2": "published-timesheet-outbox.ts:235 Property 'code'/'message' on PublishFromOutboxResult",
+      "preExisting": true,
+      "ppaCaused": false,
+      "totalTsErrorsObserved": 23
+    },
+    {
+      "name": "Production build webpack",
+      "cmd": "npx next build --webpack",
+      "exit": 1,
+      "failure": "UnhandledSchemeError node:crypto via published-timesheet-hash.ts barrel (pre-crypto remediation; NOT OD-A2; NOT introduced by PPA)",
+      "odA2Reached": false
+    }
+  ]
+}
