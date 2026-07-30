@@ -238,8 +238,8 @@ export function AdjustmentsSection({
         <p
           className={
             wired
-              ? "text-xs font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-200"
-              : "text-xs font-semibold uppercase tracking-wide text-amber-900 dark:text-amber-200"
+              ? "hcdp-type-meta text-[var(--accent-positive)]"
+              : "hcdp-type-meta text-[var(--status-warning)]"
           }
           role="status"
         >
@@ -247,10 +247,10 @@ export function AdjustmentsSection({
             ? "PPA-1 foundation · available · register / create / cancel draft"
             : "PPA-1 foundation UI · isolated · pending integration"}
         </p>
-        <h2 id="m07-adjustments-heading" className="mt-1 text-lg font-bold text-[var(--ink)]">
+        <h2 id="m07-adjustments-heading" className="hcdp-type-heading mt-1 text-[var(--ink)]">
           Prior-period adjustments
         </h2>
-        <p className="mt-2 text-sm text-[var(--muted)]">
+        <p className="hcdp-type-body mt-2 text-[var(--muted)]">
           {wired
             ? "Create and review prior-period adjustment cases against locked ordinary sources. Unlock/reopen is not a PPA."
             : "Create and review prior-period adjustment cases against locked ordinary sources. This lane is not wired to production navigation or the PPA service yet. Unlock/reopen is not a PPA."}

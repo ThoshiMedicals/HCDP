@@ -69,4 +69,20 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.match(settings, /requires \{action\.permission\}/);
     assert.match(settings, /role="status"/);
   });
+
+  it("overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)", () => {
+    const overview = readFileSync(
+      join(process.cwd(), "src/modules/m07-staff-pay/sections/OverviewSection.tsx"),
+      "utf8"
+    );
+    assert.doesNotMatch(overview, /Export, reconciliation and lock remain unavailable/i);
+    assert.match(overview, /Ordinary payroll preparation/i);
+    assert.match(overview, /export preparation/i);
+    assert.match(overview, /package reconciliation/i);
+    assert.match(overview, /period\s+lock/i);
+    assert.match(overview, /adjustment register/i);
+    assert.match(overview, /draft cancellation/i);
+    assert.match(overview, /PPA calculation lines/i);
+    assert.doesNotMatch(overview, /PPA-2/);
+  });
 });

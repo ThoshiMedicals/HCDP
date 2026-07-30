@@ -2,12 +2,12 @@ import { cn } from "@/lib/cn";
 import type { BadgeTone } from "@/lib/types";
 
 const tones: Record<BadgeTone, string> = {
-  default: "bg-[#eef2f7] text-[#556575]",
-  success: "bg-[#dcfce7] text-[#166534]",
-  warn: "bg-[#fef3c7] text-[#92400e]",
-  danger: "bg-[#fee2e2] text-[#991b1b]",
-  info: "bg-[#dbeafe] text-[#1d4ed8]",
-  teal: "bg-[var(--teal-3)] text-[#1d4ed8]",
+  default: "bg-[var(--soft)] text-[var(--status-neutral)] border border-[var(--v34-card-line)]",
+  success: "bg-[color-mix(in_srgb,var(--status-success)_12%,var(--card))] text-[var(--status-success)] border border-[color-mix(in_srgb,var(--status-success)_35%,var(--v34-card-line))]",
+  warn: "bg-[color-mix(in_srgb,var(--status-warning)_12%,var(--card))] text-[var(--status-warning)] border border-[color-mix(in_srgb,var(--status-warning)_35%,var(--v34-card-line))]",
+  danger: "bg-[color-mix(in_srgb,var(--status-critical)_12%,var(--card))] text-[var(--status-critical)] border border-[color-mix(in_srgb,var(--status-critical)_35%,var(--v34-card-line))]",
+  info: "bg-[color-mix(in_srgb,var(--status-info)_12%,var(--card))] text-[var(--status-info)] border border-[color-mix(in_srgb,var(--status-info)_35%,var(--v34-card-line))]",
+  teal: "bg-[var(--teal-3)] text-[var(--status-info)] border border-[color-mix(in_srgb,var(--status-info)_30%,var(--v34-card-line))]",
 };
 
 export function Badge({
@@ -22,10 +22,11 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-extrabold",
+        "inline-flex items-center gap-1 rounded-full px-2 py-1 text-[length:var(--type-meta)] font-extrabold",
         tones[tone],
         className
       )}
+      role="status"
     >
       {children}
     </span>

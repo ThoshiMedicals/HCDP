@@ -94,7 +94,7 @@ function WorkspaceInner() {
     >
       <style>{`
         .m07-shell :focus-visible {
-          outline: 2px solid var(--ink, #111);
+          outline: 2px solid var(--focus-ring, var(--accent-champagne));
           outline-offset: 2px;
         }
         @media (prefers-reduced-motion: reduce) {
@@ -104,14 +104,14 @@ function WorkspaceInner() {
           }
         }
       `}</style>
-      <header className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
+      <header className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-5 shadow-[var(--v34-card-shadow)]">
+        <p className="hcdp-type-meta">
           Module 7 · Staff Pay & Payroll Preparation
         </p>
-        <h1 className="mt-1 text-2xl font-bold text-[var(--ink)]">
+        <h1 className="hcdp-type-display mt-1">
           Staff Pay — Batch 6 export preparation
         </h1>
-        <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
+        <p className="hcdp-type-body mt-2 max-w-3xl text-[var(--muted)]">
           Non-certified export preparation, package reconciliation and period locking from an
           approved Batch 5 package. Not payment, bank, STP, superannuation or Xero execution.
           Management approval remains non-certified and is not payment authority.

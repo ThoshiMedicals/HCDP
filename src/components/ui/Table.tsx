@@ -1,7 +1,7 @@
 export function Table({ children }: { children: React.ReactNode }) {
   return (
-    <div className="overflow-auto rounded-2xl border border-[var(--line)] bg-white">
-      <table className="w-full min-w-[800px] border-collapse">{children}</table>
+    <div className="overflow-auto rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)]">
+      <table className="hcdp-type-table w-full min-w-[800px] border-collapse">{children}</table>
     </div>
   );
 }
@@ -9,7 +9,7 @@ export function Table({ children }: { children: React.ReactNode }) {
 export function THead({ children }: { children: React.ReactNode }) {
   return (
     <thead>
-      <tr className="border-b border-[var(--line)] bg-[#fbfcfd] text-left text-xs font-bold text-[#526479]">
+      <tr className="border-b border-[var(--v34-card-line)] bg-[var(--soft)] text-left text-[length:var(--type-meta)] font-bold uppercase tracking-[0.04em] text-[var(--muted)]">
         {children}
       </tr>
     </thead>
@@ -34,7 +34,9 @@ export function Td({
   className?: string;
 }) {
   return (
-    <td className={`border-b border-[#f0f3f6] px-3.5 py-3.5 align-middle text-[#24364a] last:border-0 ${className}`}>
+    <td
+      className={`border-b border-[var(--line)] px-3.5 py-3.5 align-middle text-[var(--ink)] last:border-0 ${className}`}
+    >
       {children}
     </td>
   );
