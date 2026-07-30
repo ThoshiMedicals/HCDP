@@ -207,6 +207,13 @@ export type PayPeriodRecord = {
   lockedAt?: string | null;
   lockedBy?: string | null;
   exportCreated: boolean;
+  /**
+   * PPA-1 — when kind === "adjustment", immutable link to the locked ordinary source period.
+   * Ordinary periods must leave this unset/null.
+   */
+  sourcePeriodId?: string | null;
+  /** PPA-1 — back-link to the PriorPeriodAdjustment case that owns this adjustment period. */
+  priorPeriodAdjustmentId?: string | null;
 };
 
 export type MigrationReport = {
@@ -1228,4 +1235,42 @@ export type PeriodUnlockRequest = {
   controlsIncompleteReason?: string;
   projectionKey: string;
   version: number;
+};
+
+/**
+ * PPA-1 Foundation — Prior-Period Adjustment case.
+ * Links a locked ordinary source period to a dedicated kind=adjustment period.
+ * Does not calculate deltas, approve, export, reconcile, or pay.
+ */
+export type PriorPeriodAdjustmentStatus = "draft" | "cancelled";
+
+export type PriorPeriodAdjustment = {
+  id: string;
+  legalEntityId: string;
+  sourcePeriodId: string;
+  adjustmentPeriodId: string;
+  status: PriorPeriodAdjustmentStatus;
+  reasonCode: string;
+  reasonText: string;
+  /** Optional evidence references — not mandatory in PPA-1. */
+  evidenceRefs?: string[];
+  /** Source period identity / revision pin at create time. */
+  sourcePeriodVersion: number;
+  sourceLockedAt?: string | null;
+  sourceLockedBy?: string | null;
+  sourceLockId?: string | null;
+  sourceExportBatchId?: string | null;
+  sourceExportChecksum?: string | null;
+  sourceManifestChecksum?: string | null;
+  sourceReconciliationId?: string | null;
+  sourceApprovalId?: string | null;
+  version: number;
+  idempotencyKey: string;
+  createdAt: string;
+  createdBy: string;
+  updatedAt: string;
+  updatedBy: string;
+  cancelledAt?: string | null;
+  cancelledBy?: string | null;
+  cancelReason?: string | null;
 };
