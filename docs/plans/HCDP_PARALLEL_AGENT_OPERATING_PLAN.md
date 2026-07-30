@@ -5,7 +5,7 @@
 **Pinned baseline HEAD:** `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76`
 **Expected prompt baseline (superseded):** `79e6b10dc247fd0593e4fbc71565c237abba865a`
 **Branch for this readiness pack:** `agent/parallel-controller-readiness-20260730`
-**Status:** Documentation only â€” does **not** authorise PPA, M08, payment, or any new module feature
+**Status:** Documentation only -- does **not** authorise PPA, M08, payment, or any new module feature
 
 **Companion documents:**
 
@@ -18,7 +18,7 @@
 - `.cursor/rules/hcdp-wave-control.mdc`
 - `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`
 - `docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`
-- `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` (planning only â€” not implementation authority)
+- `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` (planning only -- not implementation authority)
 - `docs/audits/WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md` (Batch 6 owner acceptance)
 - `package.json`
 
@@ -35,9 +35,9 @@ After mandatory `git fetch` / `pull --ff-only`, repository `main` / `origin/main
 | Actual HEAD | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` |
 | Ahead/behind vs `origin/main` | `0/0` |
 | Working tree | Clean |
-| Delta since expected | One commit: `0afe878` â€” `docs(m07): add PPA prior-period adjustment implementation plan` adding `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` |
+| Delta since expected | One commit: `0afe878` -- `docs(m07): add PPA prior-period adjustment implementation plan` adding `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` |
 
-**Rule:** All parallel agents pin to the **newer** verified `main` tip (`0afe878â€¦`) unless the Parallel Development Controller re-pins after a later owner-accepted merge.
+**Rule:** All parallel agents pin to the **newer** verified `main` tip (`0afe878...`) unless the Parallel Development Controller re-pins after a later owner-accepted merge.
 
 ---
 
@@ -66,7 +66,7 @@ This pack is **repository readiness and operating protocol only**.
 3. Planning documents (PPA readiness, PPA implementation plan, this pack) are **not** batch authorisation.
 4. Parallel agents may split **within** one authorised batch only when the File Ownership Matrix assigns non-overlapping paths and an Integration Agent owns hotspots.
 
-**Current authorised product scope:** none for new M07/PPA/M08 features. Ordinary M07 Batches 1â€“6 are closed. PPA remains planning-only.
+**Current authorised product scope:** none for new M07/PPA/M08 features. Ordinary M07 Batches 1-6 are closed. PPA remains planning-only.
 
 ---
 
@@ -109,7 +109,7 @@ Rules:
 |---|---|
 | Fast-forward merges via reviewed PR after owner acceptance | Direct commits |
 | Controller re-pin announcements after merge | Force-push |
-| Documentation merges that owner expressly routes to `main` | Agent â€œquick fixesâ€ |
+| Documentation merges that owner expressly routes to `main` | Agent "quick fixes" |
 
 Agents:
 
@@ -130,7 +130,7 @@ See matrix for full list. Critical hotspots:
 |---|---|
 | `package.json` / `package-lock.json` | Scripts, deps, test gates |
 | `tsconfig.json` / `next.config.*` / `eslint.config.*` / `postcss.config.*` | Tooling shared by all modules |
-| `src/app/**` | Route shell â€” thin wiring only |
+| `src/app/**` | Route shell -- thin wiring only |
 | `src/platform/module-registry/**` | 24-module register |
 | `src/platform/context/**` | Shared clinic/identity |
 | `src/platform/contracts/**` | Cross-module platform contracts |
@@ -139,7 +139,7 @@ See matrix for full list. Critical hotspots:
 | `src/platform/storage/**` | Shared storage helpers |
 | `src/components/shell/**` | Application chrome |
 | `src/lib/modules.ts` / `src/lib/portal-context.tsx` | Compatibility shims |
-| `.cursor/rules/hcdp-wave-control.mdc` | Wave-control â€” **Controller + owner only**; never by feature agents |
+| `.cursor/rules/hcdp-wave-control.mdc` | Wave-control -- **Controller + owner only**; never by feature agents |
 | Accepted `docs/audits/WAVE*_*.md` evidence for closed waves/batches | Immutable history |
 
 Feature agents may **read** hotspots; they may add module-local adapters that *consume* platform contracts without editing the contract files unless Integration owns a coordinated change.
@@ -149,15 +149,15 @@ Feature agents may **read** hotspots; they may add module-local adapters that *c
 ## 7. File ownership and collision protocol
 
 1. Before coding, each agent claims paths from `docs/plans/HCDP_PARALLEL_AGENT_FILE_OWNERSHIP_MATRIX.md`.
-2. Overlap â‡’ re-slice or serialize; do not â€œhope merge worksâ€.
+2. Overlap => re-slice or serialize; do not "hope merge works".
 3. If two agents touch the same file:
    - stop both,
    - Integration Agent owns the merge on the integration branch,
    - losers rebase onto integration after Integration commits.
-4. Docs under `docs/audits/` for a **new** batch are owned by the Evidence Agent for that batch only; closed Batch 1â€“6 / Wave 1Aâ€“5 evidence is **read-only**.
+4. Docs under `docs/audits/` for a **new** batch are owned by the Evidence Agent for that batch only; closed Batch 1-6 / Wave 1A-5 evidence is **read-only**.
 5. Collision severity:
    - **Hard stop:** any hotspot, permissions matrices already accepted, frozen module SoT, storage key migrations that rewrite history.
-   - **Soft:** parallel new test files with distinct names â€” Integration merges last.
+   - **Soft:** parallel new test files with distinct names -- Integration merges last.
 
 ---
 
@@ -170,17 +170,17 @@ Default merge order for an authorised batch with parallel slices:
 2. Services / repository (module-local)
 3. Adapters (module-local; consume frozen platform contracts)
 4. UI sections/components
-5. Tests for slices 1â€“4
+5. Tests for slices 1-4
 6. Integration branch: hotspots + cross-slice wiring
 7. Evidence docs (new batch only)
 8. Independent QA branch review / verification commits (docs only unless defect CR)
 9. Owner acceptance
-10. Merge integration (or single PR) to main â†’ Controller re-pins
+10. Merge integration (or single PR) to main -> Controller re-pins
 ```
 
 Do not merge UI before domain contracts it depends on. Do not merge export/payment-adjacent work before approval/lock gates for that batch. Do not start dependent batch N+1 before owner acceptance of batch N.
 
-**Frozen dependency rule:** M04/M05/M06/M11 remain frozen. M07 may consume published contracts (`TimesheetRef`, readiness, person refs) via adapters only â€” no cross-module repository imports.
+**Frozen dependency rule:** M04/M05/M06/M11 remain frozen. M07 may consume published contracts (`TimesheetRef`, readiness, person refs) via adapters only -- no cross-module repository imports.
 
 ---
 
@@ -196,19 +196,19 @@ Use scripts from `package.json`:
 | Lint | Integration / QA | `npm run lint` |
 | Build | Integration / QA / owner gate | `npm run build` |
 | Platform QA | When shell/integration touched | `npm run test:platform-qa` |
-| Wave evidence scripts | Only if authorised regression | `npm run test:wave2-evidence` â€¦ `test:wave5-evidence` |
+| Wave evidence scripts | Only if authorised regression | `npm run test:wave2-evidence` ... `test:wave5-evidence` |
 
 Rules:
 
-- Green scoped tests are **not** sufficient for merge when hotspots or cross-module contracts changed â€” run full `npm test` + build.
-- Do not claim â€œfull repo healthyâ€ if known pre-existing TS/M06 outbox debt remains; record as qualification (Batch 6 precedent).
+- Green scoped tests are **not** sufficient for merge when hotspots or cross-module contracts changed -- run full `npm test` + build.
+- Do not claim "full repo healthy" if known pre-existing TS/M06 outbox debt remains; record as qualification (Batch 6 precedent).
 - New batch evidence must cite exact commands and pass counts.
 
 ---
 
 ## 10. Browser / responsive / permission / storage evidence gates
 
-Per controlling plan Â§1 and wave completion requirements, every owner-facing batch PR must include evidence of:
+Per controlling plan section 1 and wave completion requirements, every owner-facing batch PR must include evidence of:
 
 | Gate | Minimum |
 |---|---|
@@ -218,7 +218,7 @@ Per controlling plan Â§1 and wave completion requirements, every owner-facing 
 | Storage | Keys under correct `pulse.mXX.*` prefix; repository-mediated writes; no component direct `localStorage` writes; migrations idempotent and **non-rewriting** of accepted history |
 | Regression | Frozen waves/modules smoke as specified by Controller for that batch |
 
-Absence of these gates â‡’ PR checklist fails â‡’ no owner acceptance.
+Absence of these gates => PR checklist fails => no owner acceptance.
 
 ---
 
@@ -228,7 +228,7 @@ Absence of these gates â‡’ PR checklist fails â‡’ no owner acceptance.
 2. Independent QA uses a separate branch/worktree from the pin or from the integration tip.
 3. QA may add **evidence/doc** commits and failing reproduction tests; production fixes return to the owning feature/Integration agent unless owner authorises QA hotfix.
 4. QA records results in the completion report template and PR checklist.
-5. â€œBuild passedâ€ alone is never completion.
+5. "Build passed" alone is never completion.
 
 ---
 
@@ -250,11 +250,11 @@ Owner acceptance of a batch is **not** production approval, certification, payme
 
 | Scope | State | Agent duty |
 |---|---|---|
-| Waves 1Aâ€“5 (M04/M05/M06/M11 + auth/foundation) | Owner accepted and frozen | No edits without documented defect/CR, impact analysis, focused regression, owner review |
-| Wave 6 M07 Batches 1â€“6 | Owner accepted and closed (3â€“4, 6 with qualifications) | Do not alter ordinary prep behaviour without defect/CR + owner review; do not rewrite accepted evidence |
+| Waves 1A-5 (M04/M05/M06/M11 + auth/foundation) | Owner accepted and frozen | No edits without documented defect/CR, impact analysis, focused regression, owner review |
+| Wave 6 M07 Batches 1-6 | Owner accepted and closed (3-4, 6 with qualifications) | Do not alter ordinary prep behaviour without defect/CR + owner review; do not rewrite accepted evidence |
 | `BLOCKED-M07` | Cleared by Batch 2 | Do not re-introduce as active M07 intake blocker |
 | `BLOCKED-M10` | Remains blocked | Informational; outside M07 totals |
-| Platform Baseline V1 / M01â€“M03 shell contracts | Protected | Integration-only; preserve register, clinic/identity, inbox/summary projections |
+| Platform Baseline V1 / M01-M03 shell contracts | Protected | Integration-only; preserve register, clinic/identity, inbox/summary projections |
 
 M06 publishes `TimesheetRef` / `timesheet.approved`. M06 must not write `pulse.m07.*` except via authorised M07 intake contracts.
 
@@ -264,8 +264,8 @@ M06 publishes `TimesheetRef` / `timesheet.approved`. M06 must not write `pulse.m
 
 - **PPA = Prior-Period Adjustment** (post-lock / post-export correction cycle).
 - Authoritative readiness/design: `docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`.
-- Implementation plan exists: `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` â€” **still not implementation authority**.
-- Controlled unlock/reopen â‰  PPA.
+- Implementation plan exists: `docs/plans/WAVE6_M07_PPA_IMPLEMENTATION_PLAN.md` -- **still not implementation authority**.
+- Controlled unlock/reopen != PPA.
 - **Do not implement PPA** until the owner expressly authorises a named PPA implementation batch (e.g. PPA-1).
 
 ---
@@ -284,8 +284,8 @@ Parallel agents must **not**:
 - Claim award/tax/super/employment-law certification
 - Claim production approval or deployment readiness
 - Edit `.cursor/rules/hcdp-wave-control.mdc` without Controller + owner
-- Edit accepted Batch 1â€“6 / Wave 1Aâ€“5 evidence to rewrite history
-- Import another moduleâ€™s `repository/` across boundaries
+- Edit accepted Batch 1-6 / Wave 1A-5 evidence to rewrite history
+- Import another module's `repository/` across boundaries
 - Commit directly to `main` or merge without instruction
 
 ---
@@ -308,7 +308,7 @@ Parallel agents must **not**:
 [ ] Read hcdp-wave-control.mdc
 [ ] Confirm pinned baseline SHA
 [ ] Confirm named authorised batch (or stop if none)
-[ ] Confirm exclusions (PPA/payment/M08/â€¦)
+[ ] Confirm exclusions (PPA/payment/M08/...)
 [ ] Claim paths from ownership matrix
 [ ] Create named branch/worktree from pin
 [ ] No commits on main

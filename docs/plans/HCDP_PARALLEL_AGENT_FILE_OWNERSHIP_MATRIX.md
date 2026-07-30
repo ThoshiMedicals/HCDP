@@ -4,7 +4,7 @@
 **Created:** 30 July 2026
 **Pinned baseline:** `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76`
 **Companion:** `docs/plans/HCDP_PARALLEL_AGENT_OPERATING_PLAN.md`
-**Status:** Documentation only â€” path claims for future authorised batches; **no** feature work authorised by this matrix alone
+**Status:** Documentation only -- path claims for future authorised batches; **no** feature work authorised by this matrix alone
 
 ---
 
@@ -25,8 +25,8 @@
 | `EVID` | Evidence Agent (new batch docs only) |
 | `QA` | Independent QA (verify; docs/repro only unless hotfix authorised) |
 | `FROZEN` | Read-only without defect/CR + owner review |
-| `PLAN` | Planning docs â€” editable only when authorised as planning task |
-| `EXCL` | Explicitly out of scope â€” do not touch for feature work |
+| `PLAN` | Planning docs -- editable only when authorised as planning task |
+| `EXCL` | Explicitly out of scope -- do not touch for feature work |
 
 ---
 
@@ -59,7 +59,7 @@
 | `src/components/shell/**` | `INT` | Hard | Chrome |
 | `src/components/ui/**` | `INT` | Hard | Design primitives |
 | `src/components/shared/**` | `INT` | Hard | Cross-module visuals |
-| `src/components/workspaces/**` | `FROZEN` / `INT` | Hard | M01â€“M03 temporary UIs â€” defect/CR only |
+| `src/components/workspaces/**` | `FROZEN` / `INT` | Hard | M01-M03 temporary UIs -- defect/CR only |
 | `src/components/forms/**` | `INT` | Soft | Prefer module-local forms when possible |
 | `src/lib/modules.ts` | `INT` | Hard | Compatibility catalogue |
 | `src/lib/portal-context.tsx` | `INT` | Hard | Shell toasts/sidebar |
@@ -76,7 +76,7 @@
 | `src/platform/module-registry/**` | `INT` | Hard | 24-module register |
 | `src/platform/context/**` | `INT` | Hard | Clinic + identity |
 | `src/platform/contracts/**` | `INT` | Hard | Inbox/audit/notification/summary |
-| `src/platform/workforce/contracts/**` | `INT` | Hard | Shared refs/events â€” additive versioning only |
+| `src/platform/workforce/contracts/**` | `INT` | Hard | Shared refs/events -- additive versioning only |
 | `src/platform/workforce/services/**` | `INT` | Hard | |
 | `src/platform/workforce/validation/**` | `INT` | Hard | |
 | `src/platform/workforce/tests/**` | `INT` / `QA` | Soft | Contract tests |
@@ -84,14 +84,14 @@
 | `src/platform/navigation/**` | `INT` | Hard | |
 | `src/platform/permissions/**` | `INT` | Hard | Shell visibility |
 | `src/platform/storage/**` | `INT` | Hard | Shared helpers |
-| `src/platform/auth/**` | `FROZEN` / `INT` | Hard | Wave 1A â€” defect/CR only |
+| `src/platform/auth/**` | `FROZEN` / `INT` | Hard | Wave 1A -- defect/CR only |
 | `src/platform/demo/**` | `INT` | Soft | Demo identities |
 | `src/platform/status/**` | `INT` | Soft | |
 | `src/platform/validation/**` | `INT` | Soft | |
 
 ---
 
-## D. Frozen workforce modules (Waves 2â€“5)
+## D. Frozen workforce modules (Waves 2-5)
 
 Edits require documented defect/CR, impact analysis, focused regression, and owner review.
 
@@ -108,14 +108,14 @@ Edits require documented defect/CR, impact analysis, focused regression, and own
 
 ---
 
-## E. M07 Staff Pay (Batches 1â€“6 closed)
+## E. M07 Staff Pay (Batches 1-6 closed)
 
 Ordinary prep behaviour is closed. New feature ownership applies **only** after a named authorised batch (e.g. future PPA-1). Until then treat as `FROZEN` except Controller-authorised defect/CR.
 
 | Path | Default owner (when batch authorised) | Collision | Notes |
 |---|---|---|---|
-| `src/modules/m07-staff-pay/types/**` | `FEAT-m07` â†’ then `INT` if shared | Hard | Additive types preferred |
-| `src/modules/m07-staff-pay/storage/**` | `FEAT-m07` / `INT` | Hard | Additive migrations only; **no rewrite** of accepted Batch 1â€“6 history |
+| `src/modules/m07-staff-pay/types/**` | `FEAT-m07` then `INT` if shared | Hard | Additive types preferred |
+| `src/modules/m07-staff-pay/storage/**` | `FEAT-m07` / `INT` | Hard | Additive migrations only; **no rewrite** of accepted Batch 1-6 history |
 | `src/modules/m07-staff-pay/permissions.ts` | `INT` | Hard | Authz catalogue |
 | `src/modules/m07-staff-pay/section-meta.ts` | `INT` | Hard | Nav/section availability |
 | `src/modules/m07-staff-pay/module.config.ts` | `INT` | Hard | |
@@ -123,24 +123,24 @@ Ordinary prep behaviour is closed. New feature ownership applies **only** after 
 | `src/modules/m07-staff-pay/StaffPayWorkspace.tsx` | `INT` | Hard | Shell workspace |
 | `src/modules/m07-staff-pay/index.ts` | `INT` | Soft | Public exports |
 | `src/modules/m07-staff-pay/services/period-service.ts` | `FEAT-m07` | Hard | Single writer per batch |
-| `src/modules/m07-staff-pay/services/period-lock-service.ts` | `FEAT-m07` / `INT` | Hard | Lock semantics â€” serialize |
-| `src/modules/m07-staff-pay/services/period-unlock-service.ts` | `FEAT-m07` / `INT` | Hard | Unlock â‰  PPA |
+| `src/modules/m07-staff-pay/services/period-lock-service.ts` | `FEAT-m07` / `INT` | Hard | Lock semantics -- serialize |
+| `src/modules/m07-staff-pay/services/period-unlock-service.ts` | `FEAT-m07` / `INT` | Hard | Unlock != PPA |
 | `src/modules/m07-staff-pay/services/period-lock-guard.ts` | `FEAT-m07` / `INT` | Hard | |
 | `src/modules/m07-staff-pay/services/calculate-service.ts` | `FEAT-m07` | Hard | |
 | `src/modules/m07-staff-pay/services/approval-service.ts` | `FEAT-m07` | Hard | |
 | `src/modules/m07-staff-pay/services/approval-invalidation.ts` | `FEAT-m07` | Hard | |
-| `src/modules/m07-staff-pay/services/export-*.ts` | `FEAT-m07` / `INT` | Hard | Export cluster â€” one owner per batch |
-| `src/modules/m07-staff-pay/services/reconciliation-service.ts` | `FEAT-m07` | Hard | Package recon â‰  provider returns |
+| `src/modules/m07-staff-pay/services/export-*.ts` | `FEAT-m07` / `INT` | Hard | Export cluster -- one owner per batch |
+| `src/modules/m07-staff-pay/services/reconciliation-service.ts` | `FEAT-m07` | Hard | Package recon != provider returns |
 | `src/modules/m07-staff-pay/services/published-timesheet-*.ts` | `FEAT-m07` | Hard | Intake/replay/lifecycle |
 | `src/modules/m07-staff-pay/services/*` (other) | `FEAT-m07` | Soft/Hard | Claim per file before edit |
 | `src/modules/m07-staff-pay/adapters/**` | `FEAT-m07` | Hard | No foreign repository imports |
 | `src/modules/m07-staff-pay/repository/**` | `FEAT-m07` | Hard | M07 SoT only |
 | `src/modules/m07-staff-pay/sections/**` | `FEAT-m07` | Soft | Prefer one section file per agent |
 | `src/modules/m07-staff-pay/tests/**` | `FEAT-m07` / `QA` | Soft | Distinct test file names |
-| `docs/audits/WAVE6_BATCH1_*.md` â€¦ `WAVE6_BATCH6_*.md` | `FROZEN` | Hard | Accepted evidence â€” do not rewrite |
+| `docs/audits/WAVE6_BATCH1_*.md` ... `WAVE6_BATCH6_*.md` | `FROZEN` | Hard | Accepted evidence -- do not rewrite |
 | `docs/architecture/WAVE6_M07_*.md` | `PLAN` / `CTRL` | Soft | Architecture; not silent scope expansion |
 
-**PPA-related paths (planned only â€” `EXCL` until PPA batch authorised):**
+**PPA-related paths (planned only -- `EXCL` until PPA batch authorised):**
 
 | Path / concern | Owner until authorised | Notes |
 |---|---|---|
@@ -159,7 +159,7 @@ Ordinary prep behaviour is closed. New feature ownership applies **only** after 
 | `src/modules/m02-action-inbox/**` | `FROZEN` / `INT` | Hard | Projections only |
 | `src/modules/m03-organisation-access/**` | `FROZEN` / `INT` | Hard | Identity/access |
 | `src/modules/m08-doctor-pay/**` | `EXCL` | Hard | Do not begin Module 8 |
-| `src/modules/m09-bbpip/**` â€¦ `m24-financial-forecast/**` (except noted) | `EXCL` / out of workforce wave | Soft | Outside current parallel workforce programme unless owner names batch |
+| `src/modules/m09-bbpip/**` ... `m24-financial-forecast/**` (except noted) | `EXCL` / out of workforce wave | Soft | Outside current parallel workforce programme unless owner names batch |
 | `src/modules/m10-tasks-actions/**` | `EXCL` | Hard | `BLOCKED-M10` remains |
 | `src/modules/m22-recruitment/**` | `EXCL` | Hard | Wave 7 not authorised |
 
@@ -187,23 +187,25 @@ Ordinary prep behaviour is closed. New feature ownership applies **only** after 
 
 | Agent | Batch | Slice | Claimed paths | Out of bounds |
 |---|---|---|---|---|
-| _name_ | _none today_ | â€” | â€” | All production feature paths |
+| _name_ | _none today_ | -- | -- | All production feature paths |
 
 ---
 
 ## I. Collision protocol (summary)
 
-1. Duplicate claim â†’ Controller reassigns or serializes.
-2. Accidental dual edit â†’ Integration branch owns resolution; others rebase.
-3. Hotspot touch by Feature Agent â†’ revert and file Integration request.
-4. Frozen path touch without CR â†’ reject PR.
-5. Excluded path (PPA/M08/payment/â€¦) â†’ reject PR regardless of tests.
+1. Duplicate claim -> Controller reassigns or serializes.
+2. Accidental dual edit -> Integration branch owns resolution; others rebase.
+3. Hotspot touch by Feature Agent -> revert and file Integration request.
+4. Frozen path touch without CR -> reject PR.
+5. Excluded path (PPA/M08/payment/...) -> reject PR regardless of tests.
 
 ---
 
 ## J. Validation note
 
 All paths in this matrix were checked against repository layout at pin `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76`. Config filenames that use globs (`next.config.*`, `eslint.config.*`) must be resolved to the file present at pin before editing.
+
+At pin resolution: `next.config.ts`, `eslint.config.mjs`, `postcss.config.mjs`.
 
 ---
 

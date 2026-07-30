@@ -68,7 +68,7 @@
 |---|---|
 | | |
 
-Integration hotspot edits (if any) â€” list and justify:
+Integration hotspot edits (if any) -- list and justify:
 
 -
 
@@ -80,7 +80,7 @@ Integration hotspot edits (if any) â€” list and justify:
 |---|---|
 | Contracts added/changed | |
 | Storage keys (`pulse.mXX.*`) | |
-| Migrations | Additive only? Y/N â€” describe |
+| Migrations | Additive only? Y/N -- describe |
 | Cross-module repository imports | Must be **none** |
 
 ---
@@ -141,8 +141,8 @@ Known pre-existing qualifications retained (e.g. Batch 6 TS debt / M06 outbox):
 
 - Not production deployment approval: **confirmed**
 - Not statutory/monetary certification: **confirmed**
-- Export â‰  paid: **confirmed** (if export touched)
-- Unlock â‰  PPA: **confirmed** (if unlock touched)
+- Export != paid: **confirmed** (if export touched)
+- Unlock != PPA: **confirmed** (if unlock touched)
 - Other qualifications:
 
 ---

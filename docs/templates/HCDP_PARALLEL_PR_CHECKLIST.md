@@ -30,7 +30,7 @@
 - [ ] File ownership claims respected (`docs/plans/HCDP_PARALLEL_AGENT_FILE_OWNERSHIP_MATRIX.md`)
 - [ ] Hotspot files touched only by Integration/Controller
 - [ ] No edits to `.cursor/rules/hcdp-wave-control.mdc` unless Controller+owner authorised
-- [ ] No rewrites of accepted Wave 1Aâ€“5 / M07 Batch 1â€“6 evidence files
+- [ ] No rewrites of accepted Wave 1A-5 / M07 Batch 1-6 evidence files
 - [ ] `git diff --check` clean
 
 ---
@@ -70,7 +70,7 @@
 - [ ] `npm run lint` (integration/QA)
 - [ ] `npm run build` (integration/QA/owner gate)
 - [ ] `npm run test:platform-qa` if shell/platform touched
-- [ ] Failures explained; pre-existing Batch 6 qualifications not silently â€œfixedâ€ out of scope
+- [ ] Failures explained; pre-existing Batch 6 qualifications not silently "fixed" out of scope
 
 Commands run:
 
@@ -96,7 +96,7 @@ Evidence links/paths:
 
 ## F. Independent QA
 
-- [ ] QA agent â‰  implementer
+- [ ] QA agent != implementer
 - [ ] QA reviewed against pin or integration tip
 - [ ] QA result: Accept / Rework / Block
 - [ ] Rework items (if any) returned to owning agent
@@ -111,7 +111,7 @@ QA summary:
 
 - [ ] Completion report complete
 - [ ] This checklist complete
-- [ ] **Stop** â€” awaiting owner acceptance
+- [ ] **Stop** -- awaiting owner acceptance
 - [ ] Merge only after explicit instruction
 - [ ] After merge, Controller re-pins baseline
 
