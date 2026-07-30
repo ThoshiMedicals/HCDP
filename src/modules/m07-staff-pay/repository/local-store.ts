@@ -28,22 +28,19 @@ import { runM07SchemaV6Migration } from "../storage/migrate-v6";
 import { runM07SchemaV7Migration } from "../storage/migrate-v7";
 import { runM07SchemaV8Migration } from "../storage/migrate-v8";
 import { runM07SchemaV9Migration } from "../storage/migrate-v9";
+import { areM07TestHooksAllowed } from "../testing/m07-test-hooks-gate";
 
 const listCache = new Map<string, unknown[]>();
 
 /** Test-only: force the next N period upserts to fail (PPA-1 atomicity injection). */
 let __periodWriteFailRemaining = 0;
 
-function allowLocalStoreTestHooks(): boolean {
-  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
-}
-
 /**
- * Test-only. No-ops when NODE_ENV === "production".
+ * Test-only. No-ops unless `areM07TestHooksAllowed()` (fail-closed; never when process is undefined).
  * Causes the next `count` calls to `upsertPeriod` to throw before persistence.
  */
 export function __setPeriodWriteFailForTests(count: number): void {
-  if (!allowLocalStoreTestHooks()) return;
+  if (!areM07TestHooksAllowed()) return;
   __periodWriteFailRemaining = Math.max(0, Math.floor(count));
 }
 
@@ -168,7 +165,7 @@ export function getPeriod(id: string): PayPeriodRecord | null {
   return listPeriods().find((p) => p.id === id) ?? null;
 }
 export function upsertPeriod(p: PayPeriodRecord): PayPeriodRecord {
-  if (__periodWriteFailRemaining > 0 && allowLocalStoreTestHooks()) {
+  if (__periodWriteFailRemaining > 0 && areM07TestHooksAllowed()) {
     __periodWriteFailRemaining -= 1;
     throw new Error("m07-period-write-fail-for-tests");
   }

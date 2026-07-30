@@ -12,6 +12,7 @@ import type { SourceRecordRef } from "@/platform/contracts/source-record";
 import type { M07Actor } from "../permissions";
 import type { PayPrepException } from "../types/domain";
 import { recordM07Audit } from "../services/audit-service";
+import { areM07TestHooksAllowed } from "../testing/m07-test-hooks-gate";
 
 const MODULE_ID = "staff-pay";
 
@@ -29,13 +30,9 @@ const projections: M02InboxProjection[] = [];
 
 let __m02FailForTests = false;
 
-function allowTestHooks(): boolean {
-  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
-}
-
-/** Test-only. No-ops in production builds. */
+/** Test-only. No-ops unless `areM07TestHooksAllowed()` (fail-closed). */
 export function __setM02InboxFailForTests(fail: boolean): void {
-  if (!allowTestHooks()) return;
+  if (!areM07TestHooksAllowed()) return;
   __m02FailForTests = fail;
 }
 
@@ -45,7 +42,7 @@ export function resetM02InboxPublishForTests(): void {
 }
 
 function m02FailClosed(): { inboxActionId?: string; projected: boolean } | null {
-  if (__m02FailForTests && allowTestHooks()) {
+  if (__m02FailForTests && areM07TestHooksAllowed()) {
     return { projected: false };
   }
   return null;

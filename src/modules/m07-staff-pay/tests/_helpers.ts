@@ -10,6 +10,7 @@ import { resetM02InboxPublishForTests, __setM02InboxFailForTests } from "../adap
 import { resetM01SummaryPublishForTests } from "../adapters/m01-summary-publish";
 import { setM07AuditFailForTests, __setM07AuditFailForTests, __setM07AuditFailActionsForTests } from "../services/audit-service";
 import { __resetPpaRepositoryTestHooks } from "../storage/ppa-repository";
+import { enableM07TestHooksForTests } from "../testing/m07-test-hooks-gate";
 import type { M07Actor } from "../permissions";
 import { M07_PERMISSION_CODES, M07_ROLE_PACKS } from "../permissions";
 
@@ -39,6 +40,8 @@ export function installMemoryLocalStorage() {
 }
 
 export function resetM07TestEnv() {
+  // Explicit opt-in required: tsx does not set NODE_ENV=test by default.
+  enableM07TestHooksForTests();
   installMemoryLocalStorage();
   clearM07LocalStoreCacheForTests();
   __resetPpaRepositoryTestHooks();

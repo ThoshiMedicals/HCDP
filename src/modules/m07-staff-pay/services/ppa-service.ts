@@ -33,7 +33,9 @@ import {
   getPriorPeriodAdjustment,
   listPriorPeriodAdjustments,
   newPriorPeriodAdjustmentId,
+  PpaOpenUniquenessError,
   upsertPriorPeriodAdjustment,
+  withOpenPpaCreateGate,
 } from "../storage/ppa-repository";
 import type { PriorPeriodAdjustment } from "../types/domain";
 import { recordM07Audit } from "./audit-service";
@@ -180,6 +182,13 @@ export function getPriorPeriodAdjustmentForActor(
   return row;
 }
 
+function mapPpaStorageError(err: unknown): never {
+  if (err instanceof PpaOpenUniquenessError) {
+    throw new M07ValidationError("duplicate-open-ppa", err.message);
+  }
+  throw err;
+}
+
 export function createPriorPeriodAdjustment(
   actor: M07Actor,
   input: {
@@ -243,7 +252,7 @@ export function createPriorPeriodAdjustment(
     );
   }
 
-  // Idempotent replay (same key + same material payload) — before duplicate-open check.
+  // Idempotent replay (same key + same material payload) — before duplicate-open / create gate.
   // Cancelled / compensated residuals do not satisfy replay (key was freed or status terminal).
   const byKey = findPriorPeriodAdjustmentByIdempotencyKey(
     legalEntityId,
@@ -274,6 +283,29 @@ export function createPriorPeriodAdjustment(
     return byKey;
   }
 
+  // Storage-level serialization + uniqueness (QA-PPA1-002). Pre-write check alone is insufficient.
+  try {
+    return withOpenPpaCreateGate(source.id, () =>
+      createPriorPeriodAdjustmentUnderGate(actor, input, source, legalEntityId)
+    );
+  } catch (err) {
+    mapPpaStorageError(err);
+  }
+}
+
+function createPriorPeriodAdjustmentUnderGate(
+  actor: M07Actor,
+  input: {
+    sourcePeriodId: string;
+    reasonCode: string;
+    reasonText: string;
+    idempotencyKey: string;
+    evidenceRefs?: string[];
+    legalEntityId?: string;
+  },
+  source: NonNullable<ReturnType<typeof getPeriod>>,
+  legalEntityId: string
+): PriorPeriodAdjustment {
   const openExisting = findOpenPriorPeriodAdjustmentForSource(source.id);
   if (openExisting) {
     throw new M07ValidationError(
@@ -321,8 +353,8 @@ export function createPriorPeriodAdjustment(
     cancelReason: null,
   };
 
-  // Pre-write complete. Dual write: period first, then case; verify; compensate on failure.
-  // Platform localStorage is not multi-key transactional — fail-closed compensation only.
+  // Dual write: period first, then case; verify; compensate on failure.
+  // Platform localStorage is not multi-key transactional — fail-closed compensation only (QA-PPA1-003).
   let periodWritten = false;
   let caseWritten = false;
   try {
@@ -339,13 +371,15 @@ export function createPriorPeriodAdjustment(
       });
       periodWritten = true;
     } catch (periodErr) {
-      // Period may already be persisted if createAdjustmentPayPeriod failed after upsert
-      // (e.g. audit-write failure). Treat residual as written for fail-closed archive.
       if (getPeriod(adjustmentPeriodId)) periodWritten = true;
       throw periodErr;
     }
 
-    upsertPriorPeriodAdjustment(draft);
+    try {
+      upsertPriorPeriodAdjustment(draft);
+    } catch (err) {
+      mapPpaStorageError(err);
+    }
     caseWritten = true;
     const storedCase = getPriorPeriodAdjustment(ppaId);
     if (!storedCase) {
@@ -356,7 +390,6 @@ export function createPriorPeriodAdjustment(
     }
     assertConsistentCaseAndPeriod(storedCase);
 
-    // Source must remain unchanged.
     const sourceAfter = getPeriod(source.id);
     if (
       !sourceAfter ||
@@ -388,8 +421,6 @@ export function createPriorPeriodAdjustment(
 
     return storedCase;
   } catch (err) {
-    // Fail-closed: no success response; archive residual adjustment period; cancel residual open case.
-    // True cross-key atomicity is NOT proven — residual archived periods / cancelled cases may remain.
     if (periodWritten || getPeriod(adjustmentPeriodId)) {
       archiveOrphanAdjustmentPeriod(
         actor,

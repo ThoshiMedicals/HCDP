@@ -2,34 +2,31 @@ import { uid } from "@/platform/storage/storage";
 import type { M07Actor } from "../permissions";
 import { appendAudit, newAuditId } from "../repository/local-store";
 import type { M07AuditEvent } from "../types/domain";
+import { areM07TestHooksAllowed } from "../testing/m07-test-hooks-gate";
 
 /**
- * Internal audit fail flag. Production builds (NODE_ENV=production) ignore setters.
+ * Internal audit fail flag. Production / browser / unknown runtimes ignore setters (fail-closed).
  */
 let __m07AuditFailForTests = false;
 /** Test-only: fail only when action is in this list (takes precedence when non-null). */
 let __m07AuditFailActionsForTests: string[] | null = null;
 
-function allowTestHooks(): boolean {
-  return typeof process === "undefined" || process.env.NODE_ENV !== "production";
-}
-
 /**
- * Test-only. No-ops when NODE_ENV === "production".
+ * Test-only. No-ops unless `areM07TestHooksAllowed()`.
  * Prefer importing via tests/_helpers rather than production UI.
  */
 export function __setM07AuditFailForTests(fail: boolean): void {
-  if (!allowTestHooks()) return;
+  if (!areM07TestHooksAllowed()) return;
   __m07AuditFailForTests = fail;
   if (!fail) __m07AuditFailActionsForTests = null;
 }
 
 /**
  * Test-only. Fail recordM07Audit only for the listed action names (e.g. `["ppa.create"]`).
- * No-ops when NODE_ENV === "production".
+ * No-ops unless `areM07TestHooksAllowed()`.
  */
 export function __setM07AuditFailActionsForTests(actions: string[] | null): void {
-  if (!allowTestHooks()) return;
+  if (!areM07TestHooksAllowed()) return;
   __m07AuditFailActionsForTests = actions ? [...actions] : null;
   __m07AuditFailForTests = false;
 }
@@ -51,7 +48,7 @@ export function recordM07Audit(input: {
   reason?: string;
   meta?: Record<string, unknown>;
 }): M07AuditEvent {
-  if (allowTestHooks()) {
+  if (areM07TestHooksAllowed()) {
     if (__m07AuditFailActionsForTests && __m07AuditFailActionsForTests.includes(input.action)) {
       throw new Error("m07-audit-fail-for-tests");
     }

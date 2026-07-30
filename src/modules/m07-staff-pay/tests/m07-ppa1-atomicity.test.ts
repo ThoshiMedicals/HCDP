@@ -42,6 +42,7 @@ import { explicitLockPayPeriod } from "../services/period-lock-service";
 import {
   countPriorPeriodAdjustmentsForSource,
   createPriorPeriodAdjustment,
+  cancelPriorPeriodAdjustmentDraft,
   listAdjustmentPeriodsForSource,
 } from "../services/ppa-service";
 import {
@@ -49,6 +50,8 @@ import {
   listPriorPeriodAdjustments,
   __setPpaCaseWriteFailForTests,
   __setPpaCorruptAfterWriteForTests,
+  __setPpaCreateInterleaveHookForTests,
+  __isOpenPpaCreateGateHeldForTests,
 } from "../storage/ppa-repository";
 import {
   getPeriod,
@@ -355,33 +358,85 @@ describe("M07 PPA-1 atomicity / fail-closed compensation", () => {
     assert.equal(countPriorPeriodAdjustmentsForSource(source.id), 1);
   });
 
-  it("8. near-concurrent interleaved creates — one open PPA only; loser fail-closed", () => {
+  it("8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed", () => {
     const source = lockOrdinaryPeriod("race");
     const before = structuredClone(source);
-    // Model interleaved creates as sequential racing attempts with distinct keys.
-    const a = createPriorPeriodAdjustment(actorClerk("u-a"), {
-      sourcePeriodId: source.id,
-      reasonCode: "manual",
-      reasonText: "racer-a",
-      idempotencyKey: "atom-race-a",
-    });
-    assert.throws(
-      () =>
+    let nestedThrew = false;
+    let gateHeldDuringNested = false;
+
+    // Nested create runs while the outer create holds the open-PPA gate (not sequential awaits).
+    __setPpaCreateInterleaveHookForTests(() => {
+      gateHeldDuringNested = __isOpenPpaCreateGateHeldForTests(source.id);
+      try {
         createPriorPeriodAdjustment(actorClerk("u-b"), {
           sourcePeriodId: source.id,
           reasonCode: "manual",
-          reasonText: "racer-b",
+          reasonText: "racer-b-nested",
           idempotencyKey: "atom-race-b",
-        }),
-      (err: unknown) =>
-        err instanceof M07ValidationError && err.reason === "duplicate-open-ppa"
-    );
+        });
+      } catch (err) {
+        nestedThrew = true;
+        assert.ok(
+          err instanceof M07ValidationError && err.reason === "duplicate-open-ppa",
+          `nested must fail closed, got ${String(err)}`
+        );
+      }
+    });
+
+    const a = createPriorPeriodAdjustment(actorClerk("u-a"), {
+      sourcePeriodId: source.id,
+      reasonCode: "manual",
+      reasonText: "racer-a-outer",
+      idempotencyKey: "atom-race-a",
+    });
+
+    assert.equal(gateHeldDuringNested, true, "nested create must run while outer gate is held");
+    assert.equal(nestedThrew, true, "nested overlapping create must fail");
     assert.equal(findOpenPriorPeriodAdjustmentForSource(source.id)?.id, a.id);
     assert.equal(
-      listPriorPeriodAdjustments(ORG_A).filter((r) => r.sourcePeriodId === source.id && r.status !== "cancelled")
-        .length,
+      listPriorPeriodAdjustments(ORG_A).filter(
+        (r) => r.sourcePeriodId === source.id && r.status !== "cancelled"
+      ).length,
       1
     );
+    const activeAdj = listAdjustmentPeriodsForSource(source.id).filter((p) => p.state !== "archived");
+    assert.equal(activeAdj.length, 1);
+    assert.equal(activeAdj[0]?.priorPeriodAdjustmentId, a.id);
     assertSourceUnchanged(source.id, before);
+  });
+
+  it("9. cancel audit failure — cancel persists but no success return; source unchanged", () => {
+    const source = lockOrdinaryPeriod("caf");
+    const before = structuredClone(source);
+    const created = createPriorPeriodAdjustment(actorClerk(), {
+      sourcePeriodId: source.id,
+      reasonCode: "manual",
+      reasonText: "cancel audit",
+      idempotencyKey: "atom-caf",
+    });
+    __setM07AuditFailActionsForTests(["ppa.cancel"]);
+    assert.throws(
+      () =>
+        cancelPriorPeriodAdjustmentDraft(actorClerk(), {
+          ppaId: created.id,
+          reason: "cancel with audit fail",
+        }),
+      /m07-audit-fail-for-tests/
+    );
+    __setM07AuditFailActionsForTests(null);
+    const after = findOpenPriorPeriodAdjustmentForSource(source.id);
+    // Cancel wrote before audit — case must not remain open; no ppa.cancel success audit.
+    assert.equal(after, null);
+    const cancelled = listPriorPeriodAdjustments(ORG_A).find((r) => r.id === created.id);
+    assert.equal(cancelled?.status, "cancelled");
+    assert.equal(getPeriod(created.adjustmentPeriodId)?.state, "archived");
+    assert.equal(listAudit(ORG_A).some((a) => a.action === "ppa.cancel"), false);
+    assertSourceUnchanged(source.id, before);
+    // Idempotent retry of cancel after audit recovered.
+    const retry = cancelPriorPeriodAdjustmentDraft(actorClerk(), {
+      ppaId: created.id,
+      reason: "retry cancel",
+    });
+    assert.equal(retry.status, "cancelled");
   });
 });
