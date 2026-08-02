@@ -1,0 +1,20 @@
+﻿{
+    "adjustmentsUrl":  "http://localhost:3000/staffpay?section=adjustments",
+    "serverStatus":  "running",
+    "listenPid":  22348,
+    "verifiedAt":  "2026-08-03T09:59:26.7218254+10:00",
+    "head":  "def2c691fdd2a3a747c9487764963492bddb69b4",
+    "mergedToMain":  false,
+    "originMain":  "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+    "adjustmentsBrowserColdNote":  "First playwright navigation during compile returned 500; warm retry 200",
+    "adjustmentsHttp":  200,
+    "startCommand":  "node node_modules/next/dist/bin/next dev --webpack -p 3000",
+    "branch":  "cursor/ui-batch1-controlled-integration",
+    "evidenceTipAtFirstPush":  "def2c691fdd2a3a747c9487764963492bddb69b4",
+    "adjustmentsBrowserWarm":  200,
+    "dashboardUrl":  "http://localhost:3000/dashboard",
+    "dashboardHttp":  200,
+    "productTipAfterCherryPicks":  "25de6f1d4497893a36ea1ac4ed491929726255fc",
+    "port":  3000,
+    "uiBatch2Started":  false
+}

@@ -1,10 +1,10 @@
-# HCDP — UI Batch 1 Controlled Integration Report
+﻿# HCDP â€” UI Batch 1 Controlled Integration Report
 
 **Lane:** Controlled integration (candidate only)  
 **Branch:** `cursor/ui-batch1-controlled-integration`  
-**Final tip:** `25de6f1d4497893a36ea1ac4ed491929726255fc`  
+**Final tip:** `def2c691fdd2a3a747c9487764963492bddb69b4` (evidence); product integration tip `25de6f1d4497893a36ea1ac4ed491929726255fc`  
 **Date:** 3 August 2026  
-**Status:** Candidate ready for independent integration verification — **not** merged; **not** production-approved; UI Batch 2 **not** started.
+**Status:** Candidate ready for independent integration verification â€” **not** merged; **not** production-approved; UI Batch 2 **not** started.
 
 ---
 
@@ -17,8 +17,8 @@
 | Working tree before construction | Clean |
 | Implementation branch pre-existence | Absent locally and on `origin` |
 | Required source commits on origin | Present |
-| Production parent links | Exact (0afe8780→…→c8c99950→6d633ce1) |
-| UI source parent links | Exact (c8c99950→834cf22a→a1efd472→9d98d6e) |
+| Production parent links | Exact (0afe8780â†’â€¦â†’c8c99950â†’6d633ce1) |
+| UI source parent links | Exact (c8c99950â†’834cf22aâ†’a1efd472â†’9d98d6e) |
 | Base `6d633ce1` content | OD-A2 outbox narrowing + evidence; ancestry includes accepted PPA prerequisite through `c8c9995` |
 | Evidence-only commits | `da2dd1c5`, `acff2972`, `8ede3a0` confirmed docs-only; not required at runtime; not cherry-picked |
 
@@ -43,12 +43,12 @@ Not included (as authorised): `da2dd1c5`, `acff2972`, `8ede3a0`, planning commit
 ### Ancestry graph (tip)
 
 ```text
-* 25de6f1 fix(ui): close UI Batch 1 QC-1 … (cherry picked from 9d98d6e…)
-* 0e24d35 fix(platform): remove node:crypto … (cherry picked from a1efd47…)
-* 1565f50 feat(ui): Premium Clinical Batch 1 … (cherry picked from 834cf22…)
-* 6d633ce fix(m06): narrow PublishFromOutboxResult … (OD-A2)
-* c8c9995 fix(m07): harden PPA-1 test hooks …
-* 739e42a feat(m07): wire PPA-1 Adjustments …
+* 25de6f1 fix(ui): close UI Batch 1 QC-1 â€¦ (cherry picked from 9d98d6eâ€¦)
+* 0e24d35 fix(platform): remove node:crypto â€¦ (cherry picked from a1efd47â€¦)
+* 1565f50 feat(ui): Premium Clinical Batch 1 â€¦ (cherry picked from 834cf22â€¦)
+* 6d633ce fix(m06): narrow PublishFromOutboxResult â€¦ (OD-A2)
+* c8c9995 fix(m07): harden PPA-1 test hooks â€¦
+* 739e42a feat(m07): wire PPA-1 Adjustments â€¦
 * 2ad5f4d feat(m07): isolated PPA-1 foundation UI
 * 995ee86 feat(m07): PPA-1 core domain/service
 * 0afe878 (origin/main)
@@ -60,8 +60,8 @@ Not included (as authorised): `da2dd1c5`, `acff2972`, `8ede3a0`, planning commit
 
 | Gate | Result |
 | --- | --- |
-| Patch bytes source ↔ cherry-pick (all three) | **Identical** |
-| `git range-diff` UI range → integration range | Maps 1:1; only `(cherry picked from …)` trailer differences |
+| Patch bytes source â†” cherry-pick (all three) | **Identical** |
+| `git range-diff` UI range â†’ integration range | Maps 1:1; only `(cherry picked from â€¦)` trailer differences |
 | Tree `HEAD` vs `9d98d6e` | **Only** OD-A2 five paths |
 | Tree `HEAD` vs `6d633ce1` | **Only** UI Batch 1 + crypto + QC-1 paths |
 | Evidence-only ancestry | Absent |
@@ -98,15 +98,15 @@ No payroll-calc, PPA repository/security/concurrency semantics, lock/unlock, has
 
 | Suite | Command | Result |
 | --- | --- | --- |
-| OD-A2 focused | `npx tsx --test …/m06-od-a2-outbox-narrowing.test.ts` | **8/8** |
-| UI Batch 1 chrome | `npx tsx --test …/ui-batch1-qualification-chrome.test.ts` | **6/6** |
-| M07 presentation | `npx tsx --test …/m07-ui-batch1-presentation.test.ts` | **5/5** |
-| M07 shell | `npx tsx --test …/m07-shell.test.ts` | **6/6** |
-| Browser-crypto | `npx tsx --test …/browser-crypto-remediation.test.ts` | **8/8** |
-| M06 published-timesheet | `npx tsx --test …/m06-published-timesheet.test.ts` | **19/19** |
-| Registry | `npx tsx --test …/published-timesheet-registry.test.ts` | **27/27** |
-| PPA-1 UI | `npx tsx --test …/m07-ppa1-ui.test.tsx` | **10/10** |
-| PPA-1 integration | `npx tsx --test …/m07-ppa1-integration.test.tsx` | **11/11** |
+| OD-A2 focused | `npx tsx --test â€¦/m06-od-a2-outbox-narrowing.test.ts` | **8/8** |
+| UI Batch 1 chrome | `npx tsx --test â€¦/ui-batch1-qualification-chrome.test.ts` | **6/6** |
+| M07 presentation | `npx tsx --test â€¦/m07-ui-batch1-presentation.test.ts` | **5/5** |
+| M07 shell | `npx tsx --test â€¦/m07-shell.test.ts` | **6/6** |
+| Browser-crypto | `npx tsx --test â€¦/browser-crypto-remediation.test.ts` | **8/8** |
+| M06 published-timesheet | `npx tsx --test â€¦/m06-published-timesheet.test.ts` | **19/19** |
+| Registry | `npx tsx --test â€¦/published-timesheet-registry.test.ts` | **27/27** |
+| PPA-1 UI | `npx tsx --test â€¦/m07-ppa1-ui.test.tsx` | **10/10** |
+| PPA-1 integration | `npx tsx --test â€¦/m07-ppa1-integration.test.tsx` | **11/11** |
 | PPA-1 security/core/atomicity | three files | **25/25** |
 | Architecture + boundary | cp27 + cp23 | **15/15** |
 | Authz | `m07-authz.test.ts` | **13/13** |
@@ -116,8 +116,8 @@ No payroll-calc, PPA repository/security/concurrency semantics, lock/unlock, has
 | Full M06 | `npm run test:m06` | **91/91** |
 | Full M07 | `npm run test:m07` | **252/252** |
 | Workforce | `npm run test:workforce` | **53/53** |
-| Lint | `npm run lint` | exit 1 — **2 errors / 24 warnings** (pre-existing hooks debt; not repaired) |
-| `tsc --noEmit` | full repo | **21** errors — **identical** to OD-A2 baseline `6d633ce1` |
+| Lint | `npm run lint` | exit 1 â€” **2 errors / 24 warnings** (pre-existing hooks debt; not repaired) |
+| `tsc --noEmit` | full repo | **21** errors â€” **identical** to OD-A2 baseline `6d633ce1` |
 | Scoped tsc (OD-A2 / UI / crypto / context) | filter of full log | **0** each |
 | `npx next build --webpack` | production | **exit 0** |
 | `npm run build` | default (Turbopack) | **exit 0** |
@@ -143,9 +143,9 @@ Expected and actual (calc / pure `sha256HexUtf8` / Node `createHash`):
 | Metric | OD-A2 baseline `6d633ce1` | Integration tip |
 | --- | --- | --- |
 | Full-repo `error TS` count | 21 | 21 |
-| Exact error set | — | **Identical** (`Compare-Object` empty) |
+| Exact error set | â€” | **Identical** (`Compare-Object` empty) |
 | Outbox OD-A2 `code`/`message` errors | 0 | 0 |
-| New UI/crypto/QC-1 errors | — | 0 |
+| New UI/crypto/QC-1 errors | â€” | 0 |
 
 The previously recorded 21 unrelated errors remain; none were repaired in this lane.
 
@@ -169,13 +169,13 @@ Validation served from tip worktree on `http://localhost:3461` (same SHA as bran
 | Check | Result |
 | --- | --- |
 | QC-1 script (`scripts/ui-batch1-qualification-browser-validate.mjs` via `QA_BASE`) | **PASS** (`pass: true`, `cryptoConsoleHits: 0`) |
-| Crypto remediation script | Script `pass: false` — **0** `node:crypto` / UnhandledScheme hits; failures are pre-existing module hydration mismatches (same class as accepted `a1efd47` historical report `pass: false`, 0 node:crypto) |
+| Crypto remediation script | Script `pass: false` â€” **0** `node:crypto` / UnhandledScheme hits; failures are pre-existing module hydration mismatches (same class as accepted `a1efd47` historical report `pass: false`, 0 node:crypto) |
 | Routes | `/dashboard`, `/action-inbox`, `/settings`, `/staff-doctors`, `/roster`, `/time-attendance`, `/staffpay`, overview, adjustments + aliases |
-| Completed M07 sections | overview, people, leave, adjustments, exceptions, variances, approval, export, reconciliation, settings — all 200, no unintended overflow at all widths |
+| Completed M07 sections | overview, people, leave, adjustments, exceptions, variances, approval, export, reconciliation, settings â€” all 200, no unintended overflow at all widths |
 | Widths | 1440, 1280, 1024, 768, 430, 390 |
 | Light / Dark / System (in-app) | PASS |
 | Persistence after reload | PASS |
-| System + OS dark (`colorScheme: dark`) | PASS — `themeDark: true`, canvas `rgb(7, 17, 31)` |
+| System + OS dark (`colorScheme: dark`) | PASS â€” `themeDark: true`, canvas `rgb(7, 17, 31)` |
 | Horizontal overflow | None observed on exercised matrix |
 | `node:crypto` browser import | **0** hits |
 | Keyboard focus / labelled controls / reduced-motion | Exercised by QC-1 script (focus outline observed; `reducedMotion: reduce` context) |
@@ -193,7 +193,7 @@ No candidate changes expand or alter:
 - locks/unlocks  
 - published-timesheet canonicalisation / stored hash format  
 - permissions; clinic/legal-entity; workforce identity semantics (hydration snapshot stability only)  
-- M06–M07 contracts  
+- M06â€“M07 contracts  
 - module availability; legacy aliases  
 - M08; Auth; Postgres  
 - payment / export / provider integrations  
@@ -206,19 +206,23 @@ No fake data, decorative non-functional controls, dependency upgrades, or broad 
 
 ## 11. Localhost handoff
 
-Recorded at stop-checkpoint time (see final section after push):
-
-- Branch checked out: `cursor/ui-batch1-controlled-integration`
-- URL remains `http://localhost:3000/dashboard` (and adjustments section)
-- Start command and PID filled in handoff subsection after server restart on tip
-
----
+| Item | Value |
+| --- | --- |
+| Branch checked out | `cursor/ui-batch1-controlled-integration` |
+| Product tip (after three cherry-picks) | `25de6f1d4497893a36ea1ac4ed491929726255fc` |
+| Branch tip (with integration evidence) | `def2c691fdd2a3a747c9487764963492bddb69b4` |
+| Start command | `node node_modules/next/dist/bin/next dev --webpack -p 3000` |
+| Port | `3000` |
+| Listen PID | `22348` |
+| Dashboard | `http://localhost:3000/dashboard` — HTTP/browser **200** |
+| Adjustments | `http://localhost:3000/staffpay?section=adjustments` — HTTP/browser **200** (warm) |
+| Server status | **Running** (left up) |
 
 ## 12. Findings and residual risks
 
-1. **Pre-existing full-repo TypeScript debt (21 errors)** remains — QUALIFIED for typecheck non-regression, not a clean tsc tree.  
-2. **Lint** still reports 2 `react-hooks/set-state-in-effect` errors in M07 context/Adjustments — pre-existing relative to this integration; not in scope to repair.  
-3. **Module hydration console noise** (M04 metrics, M05 offline flash, M07 status line) still trips the crypto browser script’s broad `hydration` pattern — historical accepted crypto evidence showed the same script-level `pass: false` with **zero** `node:crypto` hits. Classified as residual Observation, not crypto regression.  
+1. **Pre-existing full-repo TypeScript debt (21 errors)** remains â€” QUALIFIED for typecheck non-regression, not a clean tsc tree.  
+2. **Lint** still reports 2 `react-hooks/set-state-in-effect` errors in M07 context/Adjustments â€” pre-existing relative to this integration; not in scope to repair.  
+3. **Module hydration console noise** (M04 metrics, M05 offline flash, M07 status line) still trips the crypto browser scriptâ€™s broad `hydration` pattern â€” historical accepted crypto evidence showed the same script-level `pass: false` with **zero** `node:crypto` hits. Classified as residual Observation, not crypto regression.  
 4. Candidate is **not** production approval and does **not** authorise PPA-2 / payment / UI Batch 2.
 
 ---
@@ -231,7 +235,7 @@ Reset/recreate candidate from:
 
 or discard branch `cursor/ui-batch1-controlled-integration`.
 
-`origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` — untouched by this lane.
+`origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` â€” untouched by this lane.
 
 ---
 
@@ -272,3 +276,4 @@ or discard branch `cursor/ui-batch1-controlled-integration`.
 - Independent integration verifier **not** run concurrently with this task  
 
 Machine matrix: `docs/audits/ui-batch1-controlled-integration/independent-test-matrix.json`.
+
