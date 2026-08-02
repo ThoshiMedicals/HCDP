@@ -1,0 +1,68 @@
+OK section=overview w=1440 status=200 overflow=false
+OK section=overview w=1280 status=200 overflow=false
+OK section=overview w=1024 status=200 overflow=false
+OK section=overview w=768 status=200 overflow=false
+OK section=overview w=430 status=200 overflow=false
+OK section=overview w=390 status=200 overflow=false
+OK section=people w=1440 status=200 overflow=false
+OK section=people w=1280 status=200 overflow=false
+OK section=people w=1024 status=200 overflow=false
+OK section=people w=768 status=200 overflow=false
+OK section=people w=430 status=200 overflow=false
+OK section=people w=390 status=200 overflow=false
+OK section=leave w=1440 status=200 overflow=false
+OK section=leave w=1280 status=200 overflow=false
+OK section=leave w=1024 status=200 overflow=false
+OK section=leave w=768 status=200 overflow=false
+OK section=leave w=430 status=200 overflow=false
+OK section=leave w=390 status=200 overflow=false
+OK section=adjustments w=1440 status=200 overflow=false
+OK section=adjustments w=1280 status=200 overflow=false
+OK section=adjustments w=1024 status=200 overflow=false
+OK section=adjustments w=768 status=200 overflow=false
+OK section=adjustments w=430 status=200 overflow=false
+OK section=adjustments w=390 status=200 overflow=false
+OK section=exceptions w=1440 status=200 overflow=false
+OK section=exceptions w=1280 status=200 overflow=false
+OK section=exceptions w=1024 status=200 overflow=false
+OK section=exceptions w=768 status=200 overflow=false
+OK section=exceptions w=430 status=200 overflow=false
+OK section=exceptions w=390 status=200 overflow=false
+OK section=variances w=1440 status=200 overflow=false
+OK section=variances w=1280 status=200 overflow=false
+OK section=variances w=1024 status=200 overflow=false
+OK section=variances w=768 status=200 overflow=false
+OK section=variances w=430 status=200 overflow=false
+OK section=variances w=390 status=200 overflow=false
+OK section=approval w=1440 status=200 overflow=false
+OK section=approval w=1280 status=200 overflow=false
+OK section=approval w=1024 status=200 overflow=false
+OK section=approval w=768 status=200 overflow=false
+OK section=approval w=430 status=200 overflow=false
+OK section=approval w=390 status=200 overflow=false
+OK section=export w=1440 status=200 overflow=false
+OK section=export w=1280 status=200 overflow=false
+OK section=export w=1024 status=200 overflow=false
+OK section=export w=768 status=200 overflow=false
+OK section=export w=430 status=200 overflow=false
+OK section=export w=390 status=200 overflow=false
+OK section=reconciliation w=1440 status=200 overflow=false
+OK section=reconciliation w=1280 status=200 overflow=false
+OK section=reconciliation w=1024 status=200 overflow=false
+OK section=reconciliation w=768 status=200 overflow=false
+OK section=reconciliation w=430 status=200 overflow=false
+OK section=reconciliation w=390 status=200 overflow=false
+OK section=settings w=1440 status=200 overflow=false
+OK section=settings w=1280 status=200 overflow=false
+OK section=settings w=1024 status=200 overflow=false
+OK section=settings w=768 status=200 overflow=false
+OK section=settings w=430 status=200 overflow=false
+OK section=settings w=390 status=200 overflow=false
+OK alias /approvals -> 200 http://localhost:3461/action-inbox?category=Approval
+OK alias /tasks -> 200 http://localhost:3461/tasks-actions?section=tasks
+OK alias /checklists -> 200 http://localhost:3461/tasks-actions?section=checklists
+OK alias /hr-docs -> 200 http://localhost:3461/staff-doctors?section=credentials
+OK alias /inventory -> 200 http://localhost:3461/inventory-assets?section=inventory
+OK alias /prototype -> 200 http://localhost:3461/prototype-reference
+FAIL system+os-dark {"stored":"system","themeDark":false,"canvas":"rgb(251, 251, 250)"}
+PASS false

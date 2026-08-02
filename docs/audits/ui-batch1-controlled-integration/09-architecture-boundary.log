@@ -1,0 +1,35 @@
+▶ CP2.7A architecture / static boundaries
+  ✔ M07 production has no pulse.m06 access or M06 internal imports (66.3611ms)
+  ✔ M07 does not mutate platform registry storage; discovery health probe is the only KEYS import (33.5753ms)
+  ✔ single intake and hash implementations; replay uses platform query + CP2.4 intake (106.714ms)
+  ✔ M06 production does not write pulse.m07 or import M07 modules (28.5631ms)
+  ✔ prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores (2.54ms)
+  ✔ does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07 (31.6601ms)
+  ✔ documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped (17.2148ms)
+✔ CP2.7A architecture / static boundaries (289.1415ms)
+▶ CP2.3 M07 platform boundary — no legacy M06 scrape
+  ▶ A. Legacy removal / static enforcement
+    ✔ M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape (51.6943ms)
+    ✔ writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape) (4.0342ms)
+  ✔ A. Legacy removal / static enforcement (57.8038ms)
+  ▶ B. Controlled behaviour
+    ✔ returns empty when no platform publication exists (1.6298ms)
+    ✔ returns unavailable for corrupt registry (1.1836ms)
+    ✔ returns unavailable for unsupported contract versions only (2.6487ms)
+    ✔ discovers platform publications without implying intake (6.3077ms)
+  ✔ B. Controlled behaviour (12.4448ms)
+  ▶ C. Tenant isolation
+    ✔ does not return cross-org or cross-legal-entity publications; guessed ids fail closed (2.7644ms)
+  ✔ C. Tenant isolation (2.9708ms)
+  ▶ D. Preservation / blocker
+    ✔ does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared (1.0605ms)
+  ✔ D. Preservation / blocker (1.2176ms)
+✔ CP2.3 M07 platform boundary — no legacy M06 scrape (75.5132ms)
+ℹ tests 15
+ℹ suites 6
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 780.4771

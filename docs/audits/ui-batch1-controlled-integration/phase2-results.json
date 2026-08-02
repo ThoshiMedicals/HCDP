@@ -1,0 +1,37 @@
+[
+    {
+        "Name":  "08-ppa1-ui",
+        "Exit":  0,
+        "Ms":  3397
+    },
+    {
+        "Name":  "08-ppa1-integration",
+        "Exit":  0,
+        "Ms":  3532
+    },
+    {
+        "Name":  "08-ppa1-security-core-atomicity",
+        "Exit":  0,
+        "Ms":  3227
+    },
+    {
+        "Name":  "09-architecture-boundary",
+        "Exit":  0,
+        "Ms":  3523
+    },
+    {
+        "Name":  "09-authz",
+        "Exit":  0,
+        "Ms":  3252
+    },
+    {
+        "Name":  "10-batch5",
+        "Exit":  0,
+        "Ms":  3516
+    },
+    {
+        "Name":  "11-batch6",
+        "Exit":  0,
+        "Ms":  4304
+    }
+]

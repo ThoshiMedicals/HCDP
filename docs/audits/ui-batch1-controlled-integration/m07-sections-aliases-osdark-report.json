@@ -1,0 +1,479 @@
+{
+    "startedAt":  "2026-08-02T23:49:45.535Z",
+    "base":  "http://localhost:3461",
+    "tipExpected":  "25de6f1",
+    "routes":  [
+                   {
+                       "section":  "overview",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "overview",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "overview",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "overview",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "overview",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "overview",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "people",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "leave",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "adjustments",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "exceptions",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "variances",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "approval",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "export",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "reconciliation",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  1440,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  1280,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  1024,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  768,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  430,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   },
+                   {
+                       "section":  "settings",
+                       "width":  390,
+                       "status":  200,
+                       "overflowX":  false,
+                       "ok":  true
+                   }
+               ],
+    "aliases":  [
+                    {
+                        "route":  "/approvals",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/action-inbox?category=Approval",
+                        "ok":  true
+                    },
+                    {
+                        "route":  "/tasks",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/tasks-actions?section=tasks",
+                        "ok":  true
+                    },
+                    {
+                        "route":  "/checklists",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/tasks-actions?section=checklists",
+                        "ok":  true
+                    },
+                    {
+                        "route":  "/hr-docs",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/staff-doctors?section=credentials",
+                        "ok":  true
+                    },
+                    {
+                        "route":  "/inventory",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/inventory-assets?section=inventory",
+                        "ok":  true
+                    },
+                    {
+                        "route":  "/prototype",
+                        "status":  200,
+                        "finalUrl":  "http://localhost:3461/prototype-reference",
+                        "ok":  true
+                    }
+                ],
+    "appearanceOsDark":  {
+                             "stored":  "system",
+                             "themeDark":  true,
+                             "selectValue":  "system",
+                             "canvas":  "rgb(7, 17, 31)",
+                             "mqDark":  true,
+                             "ok":  true
+                         },
+    "pass":  true,
+    "consoleErrors":  [
+
+                      ],
+    "finishedAt":  "2026-08-02T23:50:54.563Z",
+    "note":  "appearanceOsDark revalidated with Appearance selector under colorScheme:dark"
+}

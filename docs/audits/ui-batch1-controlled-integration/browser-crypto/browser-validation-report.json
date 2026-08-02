@@ -1,0 +1,756 @@
+{
+  "startedAt": "2026-08-02T23:47:59.991Z",
+  "base": "http://localhost:3461",
+  "routes": [
+    {
+      "route": "/dashboard",
+      "url": "http://localhost:3461/dashboard",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/action-inbox",
+      "url": "http://localhost:3461/action-inbox",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/settings",
+      "url": "http://localhost:3461/settings",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "url": "http://localhost:3461/staff-doctors",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/roster",
+      "url": "http://localhost:3461/roster",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/time-attendance",
+      "url": "http://localhost:3461/time-attendance",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/staffpay",
+      "url": "http://localhost:3461/staffpay",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "url": "http://localhost:3461/staffpay?section=adjustments",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "url": "http://localhost:3461/staffpay?section=overview",
+      "ok": true,
+      "status": 200,
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox 6 ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff ",
+      "errors": []
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dashboard-1440.png",
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-overview-1440.png",
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-adjustments-1440.png",
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 3,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 2,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 2,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 63,
+        "tabCount": 4,
+        "tableCount": 2,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dashboard-390.png",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "/staffpay",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 1,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-overview-390.png",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 3,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-adjustments-390.png",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 0,
+        "tabCount": 0,
+        "tableCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 40,
+        "labelledFocusableCount": 40,
+        "statusSurfaceCount": 4,
+        "tabCount": 0,
+        "tableCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dashboard-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\shell-nav-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-overview-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-adjustments-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dashboard-390.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\shell-nav-390.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-overview-390.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\staffpay-adjustments-390.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dark-_dashboard-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dark-_staffpay-1440.png",
+    "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\browser-crypto-remediation\\dark-_staffpay_section_adjustments-1440.png"
+  ],
+  "consoleErrors": [
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid gap-[...\">\n            <aside>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalProvider>\n      <ClinicContextProvider>\n        <IdentityProvider>\n          <PortalChrome>\n            <CreateFormProvider>\n              <div className=\"app flex m...\">\n                <Sidebar>\n                <main className=\"main flex ...\">\n                  <Topbar>\n                    <div className=\"pulse-top-...\">\n                      <div>\n                      <div className=\"ribbon-cen...\">\n                        <label className=\"search-com...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] outl...\"\n                            placeholder=\"Search modules and sections...\"\n                            aria-label=\"Search modules and sections\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                      ...\n                  ...\n                ...\n              ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"dashboard\", ...}}>\n          <section className=\"content w-...\">\n            <Suspense fallback={null}>\n              <ModuleBody module={{id:\"dashboard\", ...}}>\n                <DashboardWorkspace>\n                  <ModuleContextStrip>\n                  <DashboardShellStrip>\n                  <CommandCentre>\n                    <div className=\"cc-root\">\n                      <div>\n                      <header>\n                      <ControlBar locations={[...]} health={[...]} clinicGroups={[...]} ...>\n                        <div className=\"sticky top...\">\n                          <div className=\"mx-auto w-...\">\n                            <div className=\"flex flex-...\">\n                              <div>\n                              <div>\n                              <select>\n                              <div className=\"min-w-[180...\">\n                                <input\n                                  value=\"\"\n                                  onChange={function onChange}\n                                  placeholder=\"Search or Ask…\"\n                                  aria-label=\"Search or ask a question across the platform\"\n                                  className=\"cc-ctrl w-full font-semibold\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                            ...\n                      <div className=\"mx-auto gr...\">\n                        <SearchResultsPanel>\n                        <AnnouncementCarousel>\n                        <div className=\"grid items...\">\n                          <div className=\"grid min-w...\">\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <FilterSentenceBar>\n                            <div className=\"flex flex-...\">\n                              <select>\n                              <input\n                                className=\"cc-ctrl\"\n                                placeholder=\"Assigned person…\"\n                                value=\"\"\n                                onChange={function onChange}\n                                aria-label=\"Assigned person filter\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            <CardStateFrame>\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            ...\n                          ...\n                            <CcCard>\n                              <section className=\"rounded-2x...\" style={undefined}>\n                                <CcCardHeader>\n                                <div className=\"grid gap-2...\">\n                                  <select>\n                                  <textarea\n                                    className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card...\"\n                                    rows={2}\n                                    value=\"\"\n                                    onChange={function onChange}\n                                    placeholder=\"Personal reminder…\"\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  ...\n                      ...\n    ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "remediationHit": true
+    }
+  ],
+  "pass": false,
+  "keyboardFocus": {
+    "tag": "BUTTON",
+    "role": null,
+    "text": "OR"
+  },
+  "remediationConsoleHits": 27
+}

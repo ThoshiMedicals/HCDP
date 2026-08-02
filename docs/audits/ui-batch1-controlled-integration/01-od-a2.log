@@ -1,0 +1,23 @@
+▶ OD-A2 PublishFromOutboxResult narrowing
+  ✔ success: published path acknowledges and does not write lastError (45.5711ms)
+  ✔ success: re-process of published item stays idempotent (not failed) (4.6564ms)
+  ✔ rejected: eligibility failure preserves exact code and message in lastError (6.6919ms)
+  ✔ rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message (4.736ms)
+  ✔ retryable failure: attemptCount increments; identity preserved on retry after fixable state (3.9875ms)
+  ✔ terminal: exhausted attempts skip without treating as success (3.6638ms)
+  ✔ publisher union: rejected arm has code/message; success arms do not (9.3588ms)
+  ✔ source still uses rejected discriminant for failure path (no published||idempotent else-access) (0.7883ms)
+✔ OD-A2 PublishFromOutboxResult narrowing (80.9308ms)
+ℹ tests 8
+ℹ suites 1
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 881.499
+npm notice
+npm notice New major version of npm available! 11.12.1 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice

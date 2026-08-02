@@ -1,0 +1,82 @@
+--- cold/warm dashboard ---
+OK cold /dashboard status=200
+OK warm /dashboard status=200
+INFO /organisation-access status=404 (accepted non-defect)
+OK /dashboard status=200
+OK /action-inbox status=200
+OK /settings status=200
+OK /staff-doctors status=200
+OK /roster status=200
+OK /time-attendance status=200
+OK /staffpay status=200
+OK /staffpay?section=overview status=200
+OK /staffpay?section=adjustments status=200
+OK alias /approvals -> http://localhost:3461/action-inbox?category=Approval status=200
+OK alias /tasks -> http://localhost:3461/tasks-actions?section=tasks status=200
+OK alias /checklists -> http://localhost:3461/tasks-actions?section=checklists status=200
+OK alias /hr-docs -> http://localhost:3461/staff-doctors?section=credentials status=200
+OK alias /inventory -> http://localhost:3461/inventory-assets?section=inventory status=200
+OK alias /prototype -> http://localhost:3461/prototype-reference status=200
+chromeTruthfulness {"hasSimulateOutage":false,"hasStartIntervention":false,"hasReviewSignIn":false,"hasNonOperational":true,"hasAccessNav":true,"hasEmergencyNav":true,"toastOnlyButtonsAbsent":true}
+OK width=1440 dashboard overflowX=false
+OK width=1440 action-inbox overflowX=false
+OK width=1440 organisation-access overflowX=false
+OK width=1440 staff-doctors overflowX=false
+OK width=1440 roster overflowX=false
+OK width=1440 time-attendance overflowX=false
+OK width=1440 staffpay-overview overflowX=false
+OK width=1440 staffpay-adjustments overflowX=false
+OK width=1280 dashboard overflowX=false
+OK width=1280 action-inbox overflowX=false
+OK width=1280 organisation-access overflowX=false
+OK width=1280 staff-doctors overflowX=false
+OK width=1280 roster overflowX=false
+OK width=1280 time-attendance overflowX=false
+OK width=1280 staffpay-overview overflowX=false
+OK width=1280 staffpay-adjustments overflowX=false
+OK width=1024 dashboard overflowX=false
+OK width=1024 action-inbox overflowX=false
+OK width=1024 organisation-access overflowX=false
+OK width=1024 staff-doctors overflowX=false
+OK width=1024 roster overflowX=false
+OK width=1024 time-attendance overflowX=false
+OK width=1024 staffpay-overview overflowX=false
+OK width=1024 staffpay-adjustments overflowX=false
+OK width=768 dashboard overflowX=false
+OK width=768 action-inbox overflowX=false
+OK width=768 organisation-access overflowX=false
+OK width=768 staff-doctors overflowX=false
+OK width=768 roster overflowX=false
+OK width=768 time-attendance overflowX=false
+OK width=768 staffpay-overview overflowX=false
+OK width=768 staffpay-adjustments overflowX=false
+OK width=430 dashboard overflowX=false
+OK width=430 action-inbox overflowX=false
+OK width=430 organisation-access overflowX=false
+OK width=430 staff-doctors overflowX=false
+OK width=430 roster overflowX=false
+OK width=430 time-attendance overflowX=false
+OK width=430 staffpay-overview overflowX=false
+OK width=430 staffpay-adjustments overflowX=false
+OK width=390 dashboard overflowX=false
+OK width=390 action-inbox overflowX=false
+OK width=390 organisation-access overflowX=false
+OK width=390 staff-doctors overflowX=false
+OK width=390 roster overflowX=false
+OK width=390 time-attendance overflowX=false
+OK width=390 staffpay-overview overflowX=false
+OK width=390 staffpay-adjustments overflowX=false
+OK roster confirm status=200 overflowX=false
+mobile 430 {"hasHamburgerOrNav":true,"primaryLinkCount":7,"primaryVisible":true,"truncatedLabels":[{"text":"Executive Command","scrollWidth":122,"clientWidth":122,"clipped":false},{"text":"Organisation","scrollWidth":86,"clientWidth":86,"clipped":false},{"text":"People","scrollWidth":40,"clientWidth":40,"clipped":false},{"text":"Roster","scrollWidth":42,"clientWidth":42,"clipped":false},{"text":"Operations","scrollWidth":70,"clientWidth":70,"clipped":false},{"text":"Governance","scrollWidth":75,"clientWidth":75,"clipped":false},{"text":"Assets","scrollWidth":40,"clientWidth":40,"clipped":false},{"text":"Communications","scrollWidth":105,"clientWidth":105,"clipped":false}]}
+mobile 390 {"hasHamburgerOrNav":true,"primaryLinkCount":7,"primaryVisible":true,"truncatedLabels":[{"text":"Executive Command","scrollWidth":122,"clientWidth":122,"clipped":false},{"text":"Organisation","scrollWidth":86,"clientWidth":86,"clipped":false},{"text":"People","scrollWidth":40,"clientWidth":40,"clipped":false},{"text":"Roster","scrollWidth":42,"clientWidth":42,"clipped":false},{"text":"Operations","scrollWidth":70,"clientWidth":70,"clipped":false},{"text":"Governance","scrollWidth":75,"clientWidth":75,"clipped":false},{"text":"Assets","scrollWidth":40,"clientWidth":40,"clipped":false},{"text":"Communications","scrollWidth":105,"clientWidth":105,"clipped":false}]}
+OK appearance Light {"stored":"light","themeDark":false,"selectValue":"light","canvas":"rgb(251, 251, 250)"}
+OK appearance Dark {"stored":"dark","themeDark":true,"selectValue":"dark","canvas":"rgb(7, 17, 31)"}
+OK appearance Device setting {"stored":"system","themeDark":false,"selectValue":"system","canvas":"rgb(251, 251, 250)"}
+OK appearance persist {"afterNav":{"stored":"dark","themeDark":true,"selectValue":null,"canvas":"rgb(7, 17, 31)"},"afterAdj":{"stored":"dark","themeDark":true,"selectValue":null,"canvas":"rgb(7, 17, 31)"},"afterReload":{"stored":"dark","themeDark":true,"selectValue":null,"canvas":"rgb(7, 17, 31)"}}
+keyboardFocus {"tag":"BUTTON","role":null,"text":"OR","outline":"solid","outlineWidth":"2px"}
+
+REPORT C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-browser\docs\audits\ui-batch1-qualification-completion\browser-validation-report.json
+PASS true
+screenshots 27
+cryptoConsoleHits 0
+consoleErrors 38

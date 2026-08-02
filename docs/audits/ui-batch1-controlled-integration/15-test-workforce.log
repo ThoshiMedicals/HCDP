@@ -1,0 +1,81 @@
+
+> healthcare-doctors-pulse@0.1.0 test:workforce
+> tsx --test "src/platform/workforce/tests/**/*.test.ts"
+
+▶ browser-crypto remediation: known hash vector
+  ✔ preserves pre-captured canonical JSON and SHA-256 hex (5.8358ms)
+  ✔ matches node:crypto createHash sha256 utf8 digest for known vector (1.3061ms)
+  ✔ matches node:crypto for empty, ascii, and multi-byte UTF-8 strings (3.7569ms)
+✔ browser-crypto remediation: known hash vector (15.8534ms)
+▶ browser-crypto remediation: source boundary
+  ✔ published-timesheet-hash.ts does not import node:crypto (2.1462ms)
+  ✔ sha256-hex-utf8.ts is pure sync (no crypto module imports / Web Crypto) (1.2886ms)
+  ✔ m06 client barrel does not re-export adapters (0.7973ms)
+  ✔ m07 client barrel does not re-export adapters or services (1.1876ms)
+  ✔ ModuleWorkspace imports UI modules from client barrels only (3.3979ms)
+✔ browser-crypto remediation: source boundary (10.3452ms)
+▶ CP2.1 published timesheet contract validation
+  ✔ requires record identity, org/LE separation fields, versions, and event identity (2.3549ms)
+  ✔ accepts supported contract version and rejects unsupported/unknown (0.5121ms)
+  ✔ rejects prohibited banking/TFN/super fields (0.5308ms)
+  ✔ validates clinic membership when checker provided (0.5442ms)
+  ✔ requires reasonCode for revoke/withdraw/invalidate lifecycle events (0.6423ms)
+✔ CP2.1 published timesheet contract validation (6.7154ms)
+▶ CP2.1 canonical hashing
+  ✔ produces identical hashes for logically equivalent payloads (3.2662ms)
+  ✔ changes hash on material source change (1.4826ms)
+  ✔ does not include approval lifecycle metadata in hash boundary (2.2379ms)
+  ✔ preserves business order for hour inputs but sorts set-like session ids (1.8818ms)
+  ✔ treats omitted optional clinicId as distinct from present clinicId (1.2717ms)
+  ✔ rejects NaN, Infinity, and invalid timestamps (1.9404ms)
+  ✔ rejects mismatched supplied contentHash (1.6058ms)
+✔ CP2.1 canonical hashing (15.127ms)
+▶ CP2.1 published timesheet registry
+  ✔ migrates additively and is idempotent (5.8959ms)
+  ✔ resumes after partial migration (flag cleared, data present) (0.7047ms)
+  ✔ appends versions without overwrite and resolves exact history (4.8571ms)
+  ✔ enforces tenant/legal-entity isolation on lookups (2.1251ms)
+  ✔ returns idempotent success on identical retry (1.7653ms)
+  ✔ rejects same version with different hash (1.7703ms)
+  ✔ rejects reused eventId with different payload (1.2939ms)
+  ✔ rejects lower sourceVersion and stale approvalRevision (7.3553ms)
+  ✔ supports lifecycle-only revoke without changing content hash or overwriting version (1.3176ms)
+  ✔ rejects out-of-order eventSequence (1.5083ms)
+  ✔ recovers current index after interrupted publication (1.1965ms)
+  ✔ rebuilds from history when current index is stale (0.7031ms)
+  ✔ exposes intake identity without using idempotencyKey as business uniqueness (0.645ms)
+  ✔ replays events in sequence order (1.0985ms)
+  ✔ boundary: registry module has no M07 mutation API surface beyond publication/read (5.095ms)
+✔ CP2.1 published timesheet registry (38.9738ms)
+▶ workforce contracts
+  ✔ uses contract version 1 on created refs (2.2938ms)
+  ✔ validates demo refs (1.1676ms)
+  ✔ rejects missing reference (0.8607ms)
+  ✔ rejects invalid person ref (0.4925ms)
+  ✔ rejects wrong owning module for shift (1.1568ms)
+  ✔ resolves workforce deep links (0.9682ms)
+  ✔ fails link resolve for missing ref (0.2653ms)
+  ✔ projects blocked readiness from expired credential (5.4567ms)
+  ✔ projects ready when credentials and training clear (9.9048ms)
+  ✔ keeps engagement linked to person id (0.7028ms)
+  ✔ candidate remains recruitment-owned until promotion (0.4702ms)
+✔ workforce contracts (28.7283ms)
+▶ workforce event idempotency
+  ✔ accepts a valid event once (8.9541ms)
+  ✔ ignores duplicate eventId (0.8976ms)
+  ✔ rejects invalid event (0.5367ms)
+  ✔ rejects unknown event type (0.6452ms)
+✔ workforce event idempotency (15.0354ms)
+▶ workforce storage migrations
+  ✔ runs M04 skeleton once and is idempotent on repeat (3.8119ms)
+  ✔ runs all six module migrations once each (2.2363ms)
+  ✔ does not wipe existing collection on re-seed path (0.8499ms)
+✔ workforce storage migrations (8.5249ms)
+ℹ tests 53
+ℹ suites 8
+ℹ pass 53
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1802.5179

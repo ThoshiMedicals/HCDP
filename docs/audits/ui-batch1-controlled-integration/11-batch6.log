@@ -1,0 +1,117 @@
+▶ M07 Batch 6 — export / recon / lock
+  ▶ A. Domain and lifecycle
+    ✔ allows legal transitions and rejects illegal ones (12.0078ms)
+    ✔ deterministic identity + idempotent create (117.277ms)
+    ✔ does not overwrite finalized history — successor revision (17.5058ms)
+    ✔ cancel supersedes mutable batch (14.5503ms)
+  ✔ A. Domain and lifecycle (163.3516ms)
+  ▶ B. Manifest consumption
+    ✔ accepts valid approved package (15.2052ms)
+    ✔ rejects missing / non-approved package (2.831ms)
+  ✔ B. Manifest consumption (18.5348ms)
+  ▶ C. Validation
+    ✔ missing external payroll employee ID blocks (12.8052ms)
+    ✔ rejects cross-tenant / cross-legal-entity actor scope (10.8016ms)
+  ✔ C. Validation (24.6251ms)
+  ▶ D. Export preparation
+    ✔ preview and final share validation; final re-verifies; checksum reproducible (12.8706ms)
+  ✔ D. Export preparation (13.1343ms)
+  ▶ E. Reconciliation
+    ✔ matching package passes with structured totals (15.7074ms)
+  ✔ E. Reconciliation (16.3605ms)
+  ▶ F. Permissions and SoD
+    ✔ enforces export.create permission (16.0238ms)
+    ✔ management approver cannot be sole final export generator when SoD on (12.7176ms)
+  ✔ F. Permissions and SoD (29.1112ms)
+  ▶ G. Locking and unlocking
+    ✔ locks only after matched recon; unlock requires reason + separate approver (22.5843ms)
+    ✔ unlock reject is separate and idempotent request replay (13.6721ms)
+  ✔ G. Locking and unlocking (36.5836ms)
+  ▶ H. Download
+    ✔ downloads only downloadable matched artifact and audits each download (14.2453ms)
+  ✔ H. Download (14.5702ms)
+  ▶ I. M02 and audit
+    ✔ writes export lifecycle audits without sensitive payloads (8.9952ms)
+  ✔ I. M02 and audit (9.2258ms)
+  ▶ J. Storage and schema
+    ✔ schema v9 and failure-closed legacy export defaults (5.9897ms)
+  ✔ J. Storage and schema (6.165ms)
+  ▶ K. Architecture
+    ✔ no createExportPackage / lockPeriod( / cross-module repos / excluded payment features (29.064ms)
+  ✔ K. Architecture (29.1894ms)
+✔ M07 Batch 6 — export / recon / lock (363.4857ms)
+▶ M07 Batch 6 fourth remediation — strict calendar dates
+  ✔ rejects impossible ISO-shaped dates on financial update before write (174.4577ms)
+  ✔ rejects impossible dates on create and archive; leap validation; future isolation (27.6599ms)
+✔ M07 Batch 6 fourth remediation — strict calendar dates (204.1285ms)
+▶ M07 Batch 6 remediation — high-risk controls
+  ▶ A. Lock enforcement
+    ✔ rejects direct service mutations on a locked period; unrelated LE unaffected (134.5968ms)
+  ✔ A. Lock enforcement (137.0448ms)
+  ▶ B. Locked-source-change controls
+    ✔ fails closed, projects deterministic M02, audits, preserves history; no silent mutate (22.1987ms)
+    ✔ does not report success when audit control fails (21.0304ms)
+  ✔ B. Locked-source-change controls (44.1152ms)
+  ▶ C. Reconciliation independence
+    ✔ fails when totals match but population differs (18.2459ms)
+    ✔ fails when totals match but source-line references differ (15.6497ms)
+  ✔ C. Reconciliation independence (34.4602ms)
+  ▶ D. Download audit failure
+    ✔ refuses download, records no success history, leaves artifact unchanged (13.0539ms)
+  ✔ D. Download audit failure (13.7647ms)
+  ▶ E. Unlock partial failure
+    ✔ does not report complete success when audit fails during unlock approval (17.2811ms)
+  ✔ E. Unlock partial failure (17.5255ms)
+  ▶ F. Lifecycle matrix
+    ✔ covers legal and illegal Batch 6 transitions including failed (1.7698ms)
+  ✔ F. Lifecycle matrix (1.9812ms)
+  ▶ J. Decimal arithmetic
+    ✔ uses scaled multiply for overtime amount edge cases (1.3959ms)
+  ✔ J. Decimal arithmetic (1.5826ms)
+✔ M07 Batch 6 remediation — high-risk controls (253.0279ms)
+▶ M07 Batch 6 second remediation
+  ▶ omit-metadata and exceptions
+    ✔ rejects period-scoped exception without periodId (23.5558ms)
+    ✔ allows non-period boundary exception without periodId (9.6737ms)
+  ✔ omit-metadata and exceptions (35.35ms)
+  ▶ rate / effective-date lock
+    ✔ blocks rate overlapping locked period; allows future non-overlapping rate (88.5139ms)
+  ✔ rate / effective-date lock (88.936ms)
+  ▶ external payroll employee id
+    ✔ rejects link/relink affecting locked period (18.7865ms)
+  ✔ external payroll employee id (19.1287ms)
+  ▶ preparation rules
+    ✔ rejects rule create for LE with locked overlapping period; allows other LE (16.6416ms)
+  ✔ preparation rules (16.9758ms)
+  ▶ unlock atomicity and recovery
+    ✔ keeps period locked on control failure; retry completes after recovery (25.4018ms)
+    ✔ retries after M02-only failure without opening period early (20.5826ms)
+  ✔ unlock atomicity and recovery (46.4853ms)
+  ▶ locked-source control pair
+    ✔ reports incomplete on M02-only and audit-only failures; preserves lock (18.3339ms)
+  ✔ locked-source control pair (18.6267ms)
+  ▶ reconciliation category independence
+    ✔ fails when category composition differs but gross totals match (25.0045ms)
+  ✔ reconciliation category independence (25.2337ms)
+✔ M07 Batch 6 second remediation (253.0567ms)
+▶ M07 Batch 6 third remediation
+  ▶ platform-wide export profile lock
+    ✔ blocks version and retire of * profile used by a locked period before write (122.7717ms)
+    ✔ allows unrelated unused * profile mutation; falsified LE cannot bypass (27.9235ms)
+  ✔ platform-wide export profile lock (153.3429ms)
+  ▶ financial effective-date edge cases
+    ✔ fails closed on open-ended, missing and malformed dates; allows proven future (34.0117ms)
+  ✔ financial effective-date edge cases (34.3578ms)
+  ▶ unlock idempotency and both-control failure
+    ✔ rejects inconsistent approved unlock without open period / history (21.076ms)
+    ✔ handles simultaneous audit+M02 failure, reject while incomplete, and recovery (23.695ms)
+  ✔ unlock idempotency and both-control failure (45.3913ms)
+✔ M07 Batch 6 third remediation (234.5657ms)
+ℹ tests 43
+ℹ suites 33
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1649.5317

@@ -1,0 +1,1373 @@
+{
+  "startedAt": "2026-08-02T23:44:43.728Z",
+  "base": "http://localhost:3461",
+  "lane": "ui-batch1-qualification-completion",
+  "routes": [
+    {
+      "route": "/dashboard",
+      "url": "http://localhost:3461/dashboard",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/dashboard",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/action-inbox",
+      "url": "http://localhost:3461/action-inbox",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/action-inbox",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/settings",
+      "url": "http://localhost:3461/settings",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/settings",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "url": "http://localhost:3461/staff-doctors",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/staff-doctors",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/roster",
+      "url": "http://localhost:3461/roster",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/roster",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/time-attendance",
+      "url": "http://localhost:3461/time-attendance",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/time-attendance",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/staffpay",
+      "url": "http://localhost:3461/staffpay",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/staffpay",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "url": "http://localhost:3461/staffpay?section=overview",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/staffpay?section=overview",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "url": "http://localhost:3461/staffpay?section=adjustments",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/staffpay?section=adjustments",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    }
+  ],
+  "coldWarm": [
+    {
+      "pass": "cold",
+      "route": "/dashboard",
+      "url": "http://localhost:3461/dashboard",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/dashboard",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    },
+    {
+      "pass": "warm",
+      "route": "/dashboard",
+      "url": "http://localhost:3461/dashboard",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "http://localhost:3461/dashboard",
+      "title": "Healthcare Doctors Pulse",
+      "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+      "cryptoCrash": false,
+      "errors": []
+    }
+  ],
+  "aliases": [
+    {
+      "route": "/approvals",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/action-inbox?category=Approval",
+      "redirected": true,
+      "ok": true
+    },
+    {
+      "route": "/tasks",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/tasks-actions?section=tasks",
+      "redirected": true,
+      "ok": true
+    },
+    {
+      "route": "/checklists",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/tasks-actions?section=checklists",
+      "redirected": true,
+      "ok": true
+    },
+    {
+      "route": "/hr-docs",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/staff-doctors?section=credentials",
+      "redirected": true,
+      "ok": true
+    },
+    {
+      "route": "/inventory",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/inventory-assets?section=inventory",
+      "redirected": true,
+      "ok": true
+    },
+    {
+      "route": "/prototype",
+      "status": 200,
+      "finalUrl": "http://localhost:3461/prototype-reference",
+      "redirected": true,
+      "ok": true
+    }
+  ],
+  "widths": [
+    {
+      "width": 1440,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\dashboard-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\action-inbox-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\organisation-access-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staff-doctors-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\roster-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 0,
+        "labelledFocusableCount": 0,
+        "statusSurfaceCount": 1,
+        "hasMain": false,
+        "hasNav": false
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\time-attendance-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staffpay-overview-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1440,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staffpay-adjustments-1440.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1280,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 1024,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 768,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 430,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": null,
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/dashboard",
+      "name": "dashboard",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 47,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\dashboard-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/action-inbox",
+      "name": "action-inbox",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\action-inbox-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/settings",
+      "name": "organisation-access",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\organisation-access-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/staff-doctors",
+      "name": "staff-doctors",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staff-doctors-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/roster",
+      "name": "roster",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\roster-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/time-attendance",
+      "name": "time-attendance",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 0,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\time-attendance-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/staffpay?section=overview",
+      "name": "staffpay-overview",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staffpay-overview-390.png",
+      "ok": true,
+      "flake": false
+    },
+    {
+      "width": 390,
+      "route": "/staffpay?section=adjustments",
+      "name": "staffpay-adjustments",
+      "overflowX": false,
+      "a11y": {
+        "focusableCount": 80,
+        "labelledFocusableCount": 80,
+        "statusSurfaceCount": 1,
+        "hasMain": true,
+        "hasNav": true
+      },
+      "screenshot": "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-controlled-integration-browser\\docs\\audits\\ui-batch1-qualification-completion\\staffpay-adjustments-390.png",
+      "ok": true,
+      "flake": false
+    }
+  ],
+  "screenshots": [
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/dashboard-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/shell-nav-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/action-inbox-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/organisation-access-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staff-doctors-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/roster-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/time-attendance-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staffpay-overview-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staffpay-adjustments-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/dashboard-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/shell-nav-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/action-inbox-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/organisation-access-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staff-doctors-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/roster-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/time-attendance-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staffpay-overview-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/staffpay-adjustments-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/dashboard-mobile-primary-430.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/dashboard-mobile-primary-390.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-light-dashboard-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-dark-dashboard-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-system-dashboard-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-dark-staffpay-overview-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-dark-staffpay-adjustments-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-light-staffpay-overview-1440.png",
+    "C:/Users/ETB Sri Lanka/Desktop/HCDP/.worktrees/ui-batch1-controlled-integration-browser/docs/audits/ui-batch1-qualification-completion/inapp-light-staffpay-adjustments-1440.png"
+  ],
+  "consoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"dashboard\", ...}}>\n          <section className=\"content w-...\">\n            <Suspense fallback={null}>\n              <ModuleBody module={{id:\"dashboard\", ...}}>\n                <DashboardWorkspace>\n                  <ModuleContextStrip>\n                  <DashboardShellStrip>\n                  <CommandCentre>\n                    <div className=\"cc-root\">\n                      <div>\n                      <header>\n                      <ControlBar locations={[...]} health={[...]} clinicGroups={[...]} ...>\n                        <div className=\"sticky top...\">\n                          <div className=\"mx-auto w-...\">\n                            <div className=\"flex flex-...\">\n                              <div>\n                              <div>\n                              <select>\n                              <div className=\"min-w-[180...\">\n                                <input\n                                  value=\"\"\n                                  onChange={function onChange}\n                                  placeholder=\"Search or Ask…\"\n                                  aria-label=\"Search or ask a question across the platform\"\n                                  className=\"cc-ctrl w-full font-semibold\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                            ...\n                      <div className=\"mx-auto gr...\">\n                        <SearchResultsPanel>\n                        <AnnouncementCarousel>\n                        <div className=\"grid items...\">\n                          <div className=\"grid min-w...\">\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <FilterSentenceBar>\n                            <div className=\"flex flex-...\">\n                              <select>\n                              <input\n                                className=\"cc-ctrl\"\n                                placeholder=\"Assigned person…\"\n                                value=\"\"\n                                onChange={function onChange}\n                                aria-label=\"Assigned person filter\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            <CardStateFrame>\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            ...\n                          ...\n                            <CcCard>\n                              <section className=\"rounded-2x...\" style={undefined}>\n                                <CcCardHeader>\n                                <div className=\"grid gap-2...\">\n                                  <select>\n                                  <textarea\n                                    className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card...\"\n                                    rows={2}\n                                    value=\"\"\n                                    onChange={function onChange}\n                                    placeholder=\"Personal reminder…\"\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  ...\n                      ...\n    ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"settings\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"settings\", ...}}>\n              <OrganisationWorkspace>\n                <OrganisationProvider>\n                  <Suspense>\n                  <OrganisationWorkspaceInner>\n                    <div className=\"grid gap-[...\">\n                      <aside>\n                      <div className=\"min-w-0 gr...\">\n                        <SectionHeader>\n                        <div>\n                        <Modal>\n                        <div className=\"relative\">\n                          <SearchBox value=\"\" onChange={function onChange}>\n                            <div className=\"relative\">\n                              <Icon>\n                              <input\n                                type=\"search\"\n                                value=\"\"\n                                onChange={function onChange}\n                                placeholder=\"Search users, clinics, requests, audit…\"\n                                className=\"w-full rounded-xl border border-[var(--line)] bg-white py-2.5 pl-9 pr-3 tex...\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                        ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid gap-[...\">\n            <aside>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "SyntaxError: Unexpected end of JSON input",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid gap-[...\">\n                  <aside>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[#526479]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"dashboard\", ...}}>\n          <section className=\"content w-...\">\n            <Suspense fallback={null}>\n              <ModuleBody module={{id:\"dashboard\", ...}}>\n                <DashboardWorkspace>\n                  <ModuleContextStrip>\n                  <DashboardShellStrip>\n                  <CommandCentre>\n                    <div className=\"cc-root\">\n                      <div>\n                      <header>\n                      <ControlBar locations={[...]} health={[...]} clinicGroups={[...]} ...>\n                        <div className=\"sticky top...\">\n                          <div className=\"mx-auto w-...\">\n                            <div className=\"flex flex-...\">\n                              <div>\n                              <div>\n                              <select>\n                              <div className=\"min-w-[180...\">\n                                <input\n                                  value=\"\"\n                                  onChange={function onChange}\n                                  placeholder=\"Search or Ask…\"\n                                  aria-label=\"Search or ask a question across the platform\"\n                                  className=\"cc-ctrl w-full font-semibold\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                            ...\n                      <div className=\"mx-auto gr...\">\n                        <SearchResultsPanel>\n                        <AnnouncementCarousel>\n                        <div className=\"grid items...\">\n                          <div className=\"grid min-w...\">\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <FilterSentenceBar>\n                            <div className=\"flex flex-...\">\n                              <select>\n                              <input\n                                className=\"cc-ctrl\"\n                                placeholder=\"Assigned person…\"\n                                value=\"\"\n                                onChange={function onChange}\n                                aria-label=\"Assigned person filter\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            <CardStateFrame>\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            ...\n                          ...\n                            <CcCard>\n                              <section className=\"rounded-2x...\" style={undefined}>\n                                <CcCardHeader>\n                                <div className=\"grid gap-2...\">\n                                  <select>\n                                  <textarea\n                                    className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card...\"\n                                    rows={2}\n                                    value=\"\"\n                                    onChange={function onChange}\n                                    placeholder=\"Personal reminder…\"\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  ...\n                      ...\n    ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalProvider>\n      <ClinicContextProvider>\n        <IdentityProvider>\n          <PortalChrome>\n            <CreateFormProvider>\n              <div className=\"app flex m...\">\n                <Sidebar>\n                <main className=\"main flex ...\">\n                  <Topbar>\n                    <div className=\"pulse-top-...\">\n                      <div>\n                      <div className=\"ribbon-cen...\">\n                        <label className=\"search-com...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] outl...\"\n                            placeholder=\"Search modules and sections...\"\n                            aria-label=\"Search modules and sections\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                      ...\n                  ...\n                ...\n              ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"dashboard\", ...}}>\n          <section className=\"content w-...\">\n            <Suspense fallback={null}>\n              <ModuleBody module={{id:\"dashboard\", ...}}>\n                <DashboardWorkspace>\n                  <ModuleContextStrip>\n                  <DashboardShellStrip>\n                  <CommandCentre>\n                    <div className=\"cc-root\">\n                      <div>\n                      <header>\n                      <ControlBar locations={[...]} health={[...]} clinicGroups={[...]} ...>\n                        <div className=\"sticky top...\">\n                          <div className=\"mx-auto w-...\">\n                            <div className=\"flex flex-...\">\n                              <div>\n                              <div>\n                              <select>\n                              <div className=\"min-w-[180...\">\n                                <input\n                                  value=\"\"\n                                  onChange={function onChange}\n                                  placeholder=\"Search or Ask…\"\n                                  aria-label=\"Search or ask a question across the platform\"\n                                  className=\"cc-ctrl w-full font-semibold\"\n-                                 style={{caret-color:\"transparent\"}}\n                                >\n                              ...\n                            ...\n                      <div className=\"mx-auto gr...\">\n                        <SearchResultsPanel>\n                        <AnnouncementCarousel>\n                        <div className=\"grid items...\">\n                          <div className=\"grid min-w...\">\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <CardStateFrame>\n                            <FilterSentenceBar>\n                            <div className=\"flex flex-...\">\n                              <select>\n                              <input\n                                className=\"cc-ctrl\"\n                                placeholder=\"Assigned person…\"\n                                value=\"\"\n                                onChange={function onChange}\n                                aria-label=\"Assigned person filter\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            <CardStateFrame>\n                            ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                              <div className=\"rounded-xl...\">\n                                <div className=\"flex flex-...\">\n                                  <input\n                                    type=\"checkbox\"\n                                    checked={false}\n                                    onChange={function onChange}\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  <div className=\"min-w-0 fl...\">\n                                    <div>\n                                    <strong>\n                                    <div>\n                                    <div>\n                                    <div className=\"mt-2 grid ...\">\n                                      <div className=\"flex flex-...\">\n                                        <input\n                                          className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--c...\"\n                                          placeholder=\"Add comment…\"\n                                          value=\"\"\n                                          onChange={function onChange}\n-                                         style={{caret-color:\"transparent\"}}\n                                        >\n                                        ...\n                                      ...\n                            ...\n                          ...\n                            <CcCard>\n                              <section className=\"rounded-2x...\" style={undefined}>\n                                <CcCardHeader>\n                                <div className=\"grid gap-2...\">\n                                  <select>\n                                  <textarea\n                                    className=\"w-full rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card...\"\n                                    rows={2}\n                                    value=\"\"\n                                    onChange={function onChange}\n                                    placeholder=\"Personal reminder…\"\n-                                   style={{caret-color:\"transparent\"}}\n                                  >\n                                  ...\n                      ...\n    ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalProvider>\n      <ClinicContextProvider>\n        <IdentityProvider>\n          <PortalChrome>\n            <CreateFormProvider>\n              <div className=\"app flex m...\">\n                <Sidebar>\n                <main className=\"main flex ...\">\n                  <Topbar>\n                    <div className=\"pulse-top-...\">\n                      <div>\n                      <div className=\"ribbon-cen...\">\n                        <label className=\"search-com...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] outl...\"\n                            placeholder=\"Search modules and sections...\"\n                            aria-label=\"Search modules and sections\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                      ...\n                  ...\n                ...\n              ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "error",
+      "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <PortalLayout params={Promise}>\n      <PortalProvider>\n        <ClinicContextProvider>\n          <IdentityProvider>\n            <PortalChrome>\n              <CreateFormProvider>\n                <div className=\"app flex m...\">\n                  <Sidebar>\n                    <div>\n                    <aside className=\"pulse-side...\">\n                      <div className=\"v33-nav-tools\">\n                        <label className=\"v33-nav-se...\">\n                          <Icon>\n                          <input\n                            type=\"search\"\n                            autoComplete=\"off\"\n                            placeholder=\"Find a module or section\"\n                            aria-label=\"Find a module or section\"\n                            value=\"\"\n                            onChange={function onChange}\n                            onKeyDown={function onKeyDown}\n-                           style={{caret-color:\"transparent\"}}\n                          >\n                        ...\n                      ...\n                  <main className=\"main flex ...\">\n                    <Topbar>\n                      <div className=\"pulse-top-...\">\n                        <div>\n                        <div className=\"ribbon-cen...\">\n                          <label className=\"search-com...\">\n                            <Icon>\n                            <input\n                              type=\"search\"\n                              className=\"w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] ou...\"\n                              placeholder=\"Search modules and sections...\"\n                              aria-label=\"Search modules and sections\"\n                              value=\"\"\n                              onChange={function onChange}\n                              onKeyDown={function onKeyDown}\n-                             style={{caret-color:\"transparent\"}}\n                            >\n                        ...\n                    ...\n                  ...\n                ...\n",
+      "cryptoHit": false
+    },
+    {
+      "type": "pageerror",
+      "text": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <h1>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n                          ...\n",
+      "cryptoHit": false
+    }
+  ],
+  "appearance": [
+    {
+      "mode": "Light",
+      "value": "light",
+      "stored": "light",
+      "themeDark": false,
+      "selectValue": "light",
+      "canvas": "rgb(251, 251, 250)",
+      "ok": true
+    },
+    {
+      "mode": "Dark",
+      "value": "dark",
+      "stored": "dark",
+      "themeDark": true,
+      "selectValue": "dark",
+      "canvas": "rgb(7, 17, 31)",
+      "ok": true
+    },
+    {
+      "mode": "Device setting",
+      "value": "system",
+      "stored": "system",
+      "themeDark": false,
+      "selectValue": "system",
+      "canvas": "rgb(251, 251, 250)",
+      "ok": true
+    },
+    {
+      "mode": "persist-nav-reload",
+      "afterNav": {
+        "stored": "dark",
+        "themeDark": true,
+        "selectValue": null,
+        "canvas": "rgb(7, 17, 31)"
+      },
+      "afterAdj": {
+        "stored": "dark",
+        "themeDark": true,
+        "selectValue": null,
+        "canvas": "rgb(7, 17, 31)"
+      },
+      "afterReload": {
+        "stored": "dark",
+        "themeDark": true,
+        "selectValue": null,
+        "canvas": "rgb(7, 17, 31)"
+      },
+      "ok": true
+    }
+  ],
+  "chromeTruthfulness": {
+    "hasSimulateOutage": false,
+    "hasStartIntervention": false,
+    "hasReviewSignIn": false,
+    "hasNonOperational": true,
+    "hasAccessNav": true,
+    "hasEmergencyNav": true,
+    "toastOnlyButtonsAbsent": true
+  },
+  "mobilePrimary": {
+    "390": {
+      "hasHamburgerOrNav": true,
+      "primaryLinkCount": 7,
+      "primaryVisible": true,
+      "truncatedLabels": [
+        {
+          "text": "Executive Command",
+          "scrollWidth": 122,
+          "clientWidth": 122,
+          "clipped": false
+        },
+        {
+          "text": "Organisation",
+          "scrollWidth": 86,
+          "clientWidth": 86,
+          "clipped": false
+        },
+        {
+          "text": "People",
+          "scrollWidth": 40,
+          "clientWidth": 40,
+          "clipped": false
+        },
+        {
+          "text": "Roster",
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "clipped": false
+        },
+        {
+          "text": "Operations",
+          "scrollWidth": 70,
+          "clientWidth": 70,
+          "clipped": false
+        },
+        {
+          "text": "Governance",
+          "scrollWidth": 75,
+          "clientWidth": 75,
+          "clipped": false
+        },
+        {
+          "text": "Assets",
+          "scrollWidth": 40,
+          "clientWidth": 40,
+          "clipped": false
+        },
+        {
+          "text": "Communications",
+          "scrollWidth": 105,
+          "clientWidth": 105,
+          "clipped": false
+        }
+      ]
+    },
+    "430": {
+      "hasHamburgerOrNav": true,
+      "primaryLinkCount": 7,
+      "primaryVisible": true,
+      "truncatedLabels": [
+        {
+          "text": "Executive Command",
+          "scrollWidth": 122,
+          "clientWidth": 122,
+          "clipped": false
+        },
+        {
+          "text": "Organisation",
+          "scrollWidth": 86,
+          "clientWidth": 86,
+          "clipped": false
+        },
+        {
+          "text": "People",
+          "scrollWidth": 40,
+          "clientWidth": 40,
+          "clipped": false
+        },
+        {
+          "text": "Roster",
+          "scrollWidth": 42,
+          "clientWidth": 42,
+          "clipped": false
+        },
+        {
+          "text": "Operations",
+          "scrollWidth": 70,
+          "clientWidth": 70,
+          "clipped": false
+        },
+        {
+          "text": "Governance",
+          "scrollWidth": 75,
+          "clientWidth": 75,
+          "clipped": false
+        },
+        {
+          "text": "Assets",
+          "scrollWidth": 40,
+          "clientWidth": 40,
+          "clipped": false
+        },
+        {
+          "text": "Communications",
+          "scrollWidth": 105,
+          "clientWidth": 105,
+          "clipped": false
+        }
+      ]
+    }
+  },
+  "keyboardFocus": {
+    "tag": "BUTTON",
+    "role": null,
+    "text": "OR",
+    "outline": "solid",
+    "outlineWidth": "2px"
+  },
+  "organisationAccess404": {
+    "status": 404,
+    "acceptedAsNonDefect": true
+  },
+  "pass": true,
+  "deferredColdDashboardFlake": {
+    "deferred": false,
+    "decision": "OD-MIN-01",
+    "coldOk": true,
+    "coldStatus": 200,
+    "warmOk": true,
+    "warmStatus": 200
+  },
+  "rosterConfirm": {
+    "route": "/roster",
+    "url": "http://localhost:3461/roster",
+    "ok": true,
+    "status": 200,
+    "finalUrl": "http://localhost:3461/roster",
+    "title": "Healthcare Doctors Pulse",
+    "bodySnippet": "EX OR PE RO OP GO AS CO DI AN CO FAVOURITES 3 Executive Command Centre × Action Inbox & Notifications × Roster & Shift Management × EXECUTIVE COMMAND ⌄ Command Centre ★ Action Inbox ★ ORGANISATION ⌄ Organisation & Access ☆ PEOPLE ⌄ Staff & Doctors ☆ Training ☆ ROSTER ⌄ Roster & S",
+    "cryptoCrash": false,
+    "errors": [],
+    "overflowX": false
+  },
+  "cryptoConsoleHits": 0,
+  "finishedAt": "2026-08-02T23:47:45.614Z"
+}

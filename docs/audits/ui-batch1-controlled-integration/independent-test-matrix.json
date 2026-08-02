@@ -1,0 +1,96 @@
+{
+  "lane": "ui-batch1-controlled-integration",
+  "branch": "cursor/ui-batch1-controlled-integration",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "localMainObserved": "739e42a39c51558311d030bcd96017c9056159fb",
+  "integrationBase": "6d633ce1da75a4450d1c1fe186c0d3d502bc6a87",
+  "sourceCommits": [
+    "834cf22a63efc36423533586d56e8913d8bedd8b",
+    "a1efd472ea086d98e82b6ca60da8b9071b1808e2",
+    "9d98d6e57ba3afaef4aa38e20640d2bfbc128122"
+  ],
+  "cherryPickCommits": [
+    "1565f5022c9f3c6f7b47031afa7f78d425724726",
+    "0e24d3559881281b5becffe265c3872dff366db3",
+    "25de6f1d4497893a36ea1ac4ed491929726255fc"
+  ],
+  "finalTip": "25de6f1d4497893a36ea1ac4ed491929726255fc",
+  "excludedEvidenceOnly": [
+    "da2dd1c5a901e21cead3c949d1d0770874919fa7",
+    "acff2972eea8db4b9859de18dc31e5df427b6cb6",
+    "8ede3a0698d99d644c62a0e84f2d6c8850b101b9"
+  ],
+  "patchEquivalence": {
+    "patchBytesIdentical": true,
+    "rangeDiffUnexplainedChanges": false,
+    "rangeDiffOnlyCherryPickTrailers": true,
+    "treeVs9d98d6e": "OD-A2 five files only",
+    "treeVs6d633ce1": "UI Batch 1 + crypto + QC-1 only",
+    "forbiddenAncestryAbsent": true,
+    "duplicatePpaAbsent": true,
+    "uiBatch2Absent": true
+  },
+  "hashVector": {
+    "exact": true,
+    "digest": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+  },
+  "typecheck": {
+    "fullRepoErrors": 21,
+    "identicalToOdA2Baseline6d633ce1": true,
+    "odA2ScopedErrors": 0,
+    "uiBatch1ScopedErrors": 0,
+    "browserCryptoScopedErrors": 0,
+    "contextHydrationScopedErrors": 0
+  },
+  "build": {
+    "nextWebpack": { "cmd": "npx next build --webpack", "exit": 0 },
+    "npmRunBuild": { "cmd": "npm run build", "exit": 0 },
+    "nodeCryptoRecurrence": false,
+    "odA2CodeMessageRecurrence": false
+  },
+  "lint": {
+    "cmd": "npm run lint",
+    "exit": 1,
+    "errors": 2,
+    "warnings": 24,
+    "note": "Pre-existing react-hooks/set-state-in-effect on m07 context.tsx and AdjustmentsSection.tsx; not introduced by cherry-picks; not repaired in this lane"
+  },
+  "suites": [
+    { "name": "OD-A2 focused", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts", "exit": 0, "tests": 8, "pass": 8, "fail": 0 },
+    { "name": "UI Batch 1 chrome qualification", "cmd": "npx tsx --test src/components/workspaces/tests/ui-batch1-qualification-chrome.test.ts", "exit": 0, "tests": 6, "pass": 6, "fail": 0 },
+    { "name": "M07 UI Batch 1 presentation", "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts", "exit": 0, "tests": 5, "pass": 5, "fail": 0 },
+    { "name": "M07 shell", "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts", "exit": 0, "tests": 6, "pass": 6, "fail": 0 },
+    { "name": "Browser-crypto remediation", "cmd": "npx tsx --test src/platform/workforce/tests/browser-crypto-remediation.test.ts", "exit": 0, "tests": 8, "pass": 8, "fail": 0 },
+    { "name": "M06 published-timesheet", "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts", "exit": 0, "tests": 19, "pass": 19, "fail": 0 },
+    { "name": "Published-timesheet registry", "cmd": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts", "exit": 0, "tests": 27, "pass": 27, "fail": 0 },
+    { "name": "PPA-1 UI", "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx", "exit": 0, "tests": 10, "pass": 10, "fail": 0 },
+    { "name": "PPA-1 integration", "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx", "exit": 0, "tests": 11, "pass": 11, "fail": 0 },
+    { "name": "PPA-1 security/core/atomicity", "cmd": "npx tsx --test m07-ppa1-hook-security + m07-ppa1-core + m07-ppa1-atomicity", "exit": 0, "tests": 25, "pass": 25, "fail": 0 },
+    { "name": "Architecture + boundary", "cmd": "npx tsx --test m07-architecture-cp27 + m07-boundary-cp23", "exit": 0, "tests": 15, "pass": 15, "fail": 0 },
+    { "name": "Authorisation", "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-authz.test.ts", "exit": 0, "tests": 13, "pass": 13, "fail": 0 },
+    { "name": "Batch 5", "cmd": "npx tsx --test three m07-batch5-*.test.*", "exit": 0, "tests": 49, "pass": 49, "fail": 0 },
+    { "name": "Batch 6", "cmd": "npx tsx --test five m07-batch6-*.test.*", "exit": 0, "tests": 43, "pass": 43, "fail": 0 },
+    { "name": "Full M05", "cmd": "npm run test:m05", "exit": 0, "tests": 117, "pass": 117, "fail": 0 },
+    { "name": "Full M06", "cmd": "npm run test:m06", "exit": 0, "tests": 91, "pass": 91, "fail": 0 },
+    { "name": "Full M07", "cmd": "npm run test:m07", "exit": 0, "tests": 252, "pass": 252, "fail": 0 },
+    { "name": "Workforce/contracts", "cmd": "npm run test:workforce", "exit": 0, "tests": 53, "pass": 53, "fail": 0 },
+    { "name": "Full typecheck", "cmd": "npx tsc --noEmit", "exit": 2, "errors": 21, "newErrors": 0 },
+    { "name": "Production webpack build", "cmd": "npx next build --webpack", "exit": 0 },
+    { "name": "Default production build", "cmd": "npm run build", "exit": 0 },
+    { "name": "QC-1 browser validate", "cmd": "QA_BASE=http://localhost:3461 node scripts/ui-batch1-qualification-browser-validate.mjs", "exit": 0, "pass": true, "cryptoConsoleHits": 0 },
+    { "name": "Browser-crypto validate script", "cmd": "node scripts/browser-crypto-remediation-validate.mjs", "exit": 1, "pass": false, "nodeCryptoHits": 0, "note": "Script overall fail matches historical a1efd47 evidence: pre-existing module hydration noise matched by hydration ERROR_PATTERNS; not node:crypto recurrence" },
+    { "name": "M07 sections + aliases + system OS dark", "cmd": "playwright matrix on tip :3461", "exit": 0, "pass": true, "nodeCryptoHits": 0 }
+  ],
+  "browser": {
+    "validationServer": "http://localhost:3461 from tip worktree 25de6f1",
+    "qc1Pass": true,
+    "cryptoScriptPass": false,
+    "cryptoScriptNodeCryptoHits": 0,
+    "systemOsDarkPass": true,
+    "m07CompletedSectionsPass": true,
+    "aliasesPass": true,
+    "widths": [1440, 1280, 1024, 768, 430, 390],
+    "appearances": ["light", "dark", "system", "system+os-dark", "persist-reload"]
+  },
+  "ranAt": "2026-08-03T00:00:00+10:00"
+}

@@ -1,0 +1,44 @@
+OK /dashboard status=200
+OK /action-inbox status=200
+OK /settings status=200
+OK /staff-doctors status=200
+OK /roster status=200
+OK /time-attendance status=200
+OK /staffpay status=200
+OK /staffpay?section=adjustments status=200
+OK /staffpay?section=overview status=200
+OK width=1440 dashboard overflowX=false
+OK width=1440 staffpay-overview overflowX=false
+OK width=1440 staffpay-adjustments overflowX=false
+OK width=1440 time-attendance overflowX=false
+OK width=1440 roster overflowX=false
+OK width=1280 dashboard overflowX=false
+OK width=1280 staffpay-overview overflowX=false
+OK width=1280 staffpay-adjustments overflowX=false
+OK width=1280 time-attendance overflowX=false
+OK width=1280 roster overflowX=false
+OK width=1024 dashboard overflowX=false
+OK width=1024 staffpay-overview overflowX=false
+OK width=1024 staffpay-adjustments overflowX=false
+OK width=1024 time-attendance overflowX=false
+OK width=1024 roster overflowX=false
+OK width=768 dashboard overflowX=false
+OK width=768 staffpay-overview overflowX=false
+OK width=768 staffpay-adjustments overflowX=false
+OK width=768 time-attendance overflowX=false
+OK width=768 roster overflowX=false
+OK width=430 dashboard overflowX=false
+OK width=430 staffpay-overview overflowX=false
+OK width=430 staffpay-adjustments overflowX=false
+OK width=430 time-attendance overflowX=false
+OK width=430 roster overflowX=false
+OK width=390 dashboard overflowX=false
+OK width=390 staffpay-overview overflowX=false
+OK width=390 staffpay-adjustments overflowX=false
+OK width=390 time-attendance overflowX=false
+OK width=390 roster overflowX=false
+
+REPORT C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-browser\docs\audits\browser-crypto-remediation\browser-validation-report.json
+PASS false
+screenshots 11
+remediationConsoleHits 27

@@ -1,0 +1,41 @@
+▶ CP2.2 M06 platform published-timesheet publication
+  ▶ A. Eligibility
+    ✔ approved eligible record publishes to platform registry (77.5723ms)
+    ✔ draft is rejected for granted publication (6.1465ms)
+    ✔ submitted/unapproved is rejected for granted publication (11.2811ms)
+    ✔ rejected record is rejected for granted publication (9.4699ms)
+    ✔ incomplete contract (missing legalEntityId) fails publication but approval remains (15.1929ms)
+    ✔ unsupported contract version is rejected by platform (no silent coerce) (16.4512ms)
+  ✔ A. Eligibility (138.7596ms)
+  ▶ B. Mapping
+    ✔ maps required fields with independent organisationId and legalEntityId (14.2821ms)
+    ✔ rejects prohibited fields via platform validation path (11.4311ms)
+  ✔ B. Mapping (26.0797ms)
+  ▶ C. Versioning
+    ✔ first publication creates sourceVersion history; exact retry is idempotent (8.2753ms)
+    ✔ material revision creates new sourceVersion/hash; prior version remains (14.3867ms)
+    ✔ approval-only reopen/revoke retains sourceVersion/hash (9.5893ms)
+  ✔ C. Versioning (32.7276ms)
+  ▶ D. Lifecycle
+    ✔ granted, revoke, and restore publish correctly (8.9925ms)
+    ✔ typed withdrawn/invalidated compatibility support (not operationally triggered) (6.049ms)
+    ✔ stale approval revision cannot regress platform projection (5.3855ms)
+  ✔ D. Lifecycle (20.7332ms)
+  ▶ E. Failure / retry
+    ✔ failed publication remains retryable and survives reload semantics (7.4179ms)
+    ✔ registry-success before local ack does not duplicate on retry (7.899ms)
+    ✔ interrupted publication recovers via rebuild; obligation not silently lost (7.8288ms)
+  ✔ E. Failure / retry (23.4285ms)
+  ▶ F. Boundaries
+    ✔ enforces tenant isolation and clinic membership rejection (6.2855ms)
+    ✔ no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher (4.351ms)
+  ✔ F. Boundaries (10.8564ms)
+✔ CP2.2 M06 platform published-timesheet publication (257.6529ms)
+ℹ tests 19
+ℹ suites 7
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 907.5846
