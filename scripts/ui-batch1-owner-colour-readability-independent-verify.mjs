@@ -636,7 +636,11 @@ const report = {
 const legacyInfo = loadLegacyRedirects();
 report.aliases.registry = legacyInfo;
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: true,
+  // Use system Chrome — do not download/install Playwright browser binaries in this verification lane.
+  channel: "chrome",
+});
 const context = await browser.newContext({ colorScheme: "light" });
 const page = await context.newPage();
 const consoleBag = [];

@@ -1,0 +1,26 @@
+[
+  {
+    "attempt": 1,
+    "method": "http",
+    "status": 200,
+    "ms": 6011,
+    "error": null,
+    "bodyHead": "<!DOCTYPE html><html lang=\"en\" class=\"h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/app/layout.css?v=1785800737540\" data-precedence=\""
+  },
+  {
+    "attempt": 2,
+    "method": "http",
+    "status": 200,
+    "ms": 78,
+    "error": null,
+    "bodyHead": "<!DOCTYPE html><html lang=\"en\" class=\"h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/app/layout.css?v=1785800738062\" data-precedence=\""
+  },
+  {
+    "attempt": 3,
+    "method": "http",
+    "status": 200,
+    "ms": 128,
+    "error": null,
+    "bodyHead": "<!DOCTYPE html><html lang=\"en\" class=\"h-full\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/app/layout.css?v=1785800738130\" data-precedence=\""
+  }
+]
