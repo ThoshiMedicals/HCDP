@@ -1,0 +1,42 @@
+{
+    "arch":  [
+                 "19-arch exit=0",
+                 0
+             ],
+    "ppa1-atomicity":  [
+                           "13-ppa1-atomicity exit=0",
+                           0
+                       ],
+    "ppa1-ui":  [
+                    "09-ppa1-ui exit=0",
+                    0
+                ],
+    "ppa1-security":  [
+                          "11-ppa1-security exit=0",
+                          0
+                      ],
+    "authz":  [
+                  "20-authz exit=0",
+                  0
+              ],
+    "m05":  [
+                "11-m05 exit=1",
+                1
+            ],
+    "ppa1-integration":  [
+                             "10-ppa1-integration exit=0",
+                             0
+                         ],
+    "ppa1-core":  [
+                      "12-ppa1-core exit=0",
+                      0
+                  ],
+    "batch5":  [
+                   "21-batch5 exit=0",
+                   0
+               ],
+    "batch6":  [
+                   "22-batch6 exit=0",
+                   0
+               ]
+}

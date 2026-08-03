@@ -1,0 +1,20 @@
+▶ browser-crypto remediation: known hash vector
+  ✔ preserves pre-captured canonical JSON and SHA-256 hex (6.9749ms)
+  ✔ matches node:crypto createHash sha256 utf8 digest for known vector (1.2011ms)
+  ✔ matches node:crypto for empty, ascii, and multi-byte UTF-8 strings (5.8809ms)
+✔ browser-crypto remediation: known hash vector (17.223ms)
+▶ browser-crypto remediation: source boundary
+  ✔ published-timesheet-hash.ts does not import node:crypto (1.5045ms)
+  ✔ sha256-hex-utf8.ts is pure sync (no crypto module imports / Web Crypto) (22.7431ms)
+  ✔ m06 client barrel does not re-export adapters (1.0762ms)
+  ✔ m07 client barrel does not re-export adapters or services (1.0238ms)
+  ✔ ModuleWorkspace imports UI modules from client barrels only (1.0784ms)
+✔ browser-crypto remediation: source boundary (28.218ms)
+ℹ tests 8
+ℹ suites 2
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2565.5807

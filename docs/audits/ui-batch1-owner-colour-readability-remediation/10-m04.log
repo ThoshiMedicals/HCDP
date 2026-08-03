@@ -1,0 +1,30 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m04
+> tsx --test "src/modules/m04-staff-doctors/tests/**/*.test.ts"
+
+▶ m04 domain
+  ✔ prevents duplicate people by name+email (50.3541ms)
+  ✔ rejects overlapping engagements at the same clinic (12.1216ms)
+  ✔ invalidates readiness when sources change; stale is not Ready (18.6529ms)
+  ✔ masks sensitive restriction fields without view_sensitive (3.7589ms)
+  ✔ rejects leave self-approval (6.7329ms)
+  ✔ portal seed migration is idempotent and does not wipe people (51.3537ms)
+  ✔ inbox sync dedupes expired credential projections (5.426ms)
+  ✔ soft-archives people without hard delete (1.8907ms)
+  ✔ suspends and reinstates (5.4178ms)
+  ✔ maps demo identity permissions for managers without sensitive clearance (1.7311ms)
+  ✔ incomplete offboarding can sync without duplicating (5.9503ms)
+  ✔ rejects unauthorized service calls without permission (0.6146ms)
+  ✔ enforces clinic-scoped person mutations (1.3157ms)
+  ✔ M01 workforce counts respect clinic filter (1.196ms)
+  ✔ availability changes invalidate readiness cache freshness (1.3549ms)
+  ✔ portal seed verifies uniqueness, classification, required fields, idempotency and rollback scope (22.3869ms)
+✔ m04 domain (195.0299ms)
+ℹ tests 16
+ℹ suites 1
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4320.0381

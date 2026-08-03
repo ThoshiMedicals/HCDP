@@ -1,0 +1,9 @@
+{
+  "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "exact": true,
+  "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+  "verifiedAt": "2026-08-03T06:13:13.662Z"
+}

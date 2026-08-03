@@ -1,0 +1,132 @@
+{
+  "base": "http://localhost:3465",
+  "modes": {
+    "light": {
+      "themeDark": false,
+      "tokens": {
+        "canvas": "#f5f7fa",
+        "surface": "#ffffff",
+        "text": "#17233a",
+        "muted": "#5f7085",
+        "action": "#123e68",
+        "controlBorder": "#768397",
+        "card": "#ffffff"
+      },
+      "body": {
+        "color": "rgb(23, 35, 58)",
+        "background": "rgb(245, 247, 250)"
+      },
+      "primaryTextOnCanvas": 14.62,
+      "mutedOnSurface": {
+        "color": "",
+        "background": "",
+        "contrast": 5.07
+      },
+      "onActionOnAction": {
+        "color": "",
+        "background": "",
+        "contrast": 10.97
+      },
+      "controlBorderOnSurface": {
+        "color": "",
+        "background": "",
+        "contrast": 3.84
+      },
+      "activeSample": {
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(18, 62, 104)",
+        "contrast": 10.97,
+        "fontSize": 13
+      },
+      "brandSample": {
+        "color": "rgb(18, 62, 104)",
+        "background": "rgb(255, 255, 255)",
+        "contrast": 10.97
+      }
+    },
+    "dark": {
+      "themeDark": true,
+      "tokens": {
+        "canvas": "#0f1724",
+        "surface": "#172335",
+        "text": "#e3eaf2",
+        "muted": "#a7b3c2",
+        "action": "#245f98",
+        "controlBorder": "#5b7088",
+        "card": "#172335"
+      },
+      "body": {
+        "color": "rgb(227, 234, 242)",
+        "background": "rgb(15, 23, 36)"
+      },
+      "primaryTextOnCanvas": 14.82,
+      "mutedOnSurface": {
+        "color": "",
+        "background": "",
+        "contrast": 7.43
+      },
+      "onActionOnAction": {
+        "color": "",
+        "background": "",
+        "contrast": 6.63
+      },
+      "controlBorderOnSurface": {
+        "color": "",
+        "background": "",
+        "contrast": 3.1
+      },
+      "activeSample": {
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(36, 95, 152)",
+        "contrast": 6.63,
+        "fontSize": 13
+      },
+      "brandSample": {
+        "color": "rgb(227, 234, 242)",
+        "background": "rgb(23, 35, 53)",
+        "contrast": 13.04
+      }
+    }
+  },
+  "screenshots": [
+    "light-dashboard-1440.png",
+    "light-dashboard-390.png",
+    "light-sidebar-1440.png",
+    "light-sidebar-390.png",
+    "light-m04-1440.png",
+    "light-m04-390.png",
+    "light-m05-1440.png",
+    "light-m05-390.png",
+    "light-m06-1440.png",
+    "light-m06-390.png",
+    "light-m07-overview-1440.png",
+    "light-m07-overview-390.png",
+    "light-m07-adjustments-1440.png",
+    "light-m07-adjustments-390.png",
+    "dark-dashboard-1440.png",
+    "dark-dashboard-390.png",
+    "dark-sidebar-1440.png",
+    "dark-sidebar-390.png",
+    "dark-m04-1440.png",
+    "dark-m04-390.png",
+    "dark-m05-1440.png",
+    "dark-m05-390.png",
+    "dark-m06-1440.png",
+    "dark-m06-390.png",
+    "dark-m07-overview-1440.png",
+    "dark-m07-overview-390.png",
+    "dark-m07-adjustments-1440.png",
+    "dark-m07-adjustments-390.png",
+    "system-osdark-dashboard-1440.png"
+  ],
+  "persistence": {
+    "darkAfterReload": true,
+    "osDarkSystem": {
+      "prefersDark": true,
+      "themeDark": false,
+      "appearance": "system"
+    }
+  },
+  "startedAt": "2026-08-03T06:31:20.830Z",
+  "finishedAt": "2026-08-03T06:35:40.387Z"
+}

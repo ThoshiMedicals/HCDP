@@ -1,0 +1,41 @@
+▶ CP2.1 published timesheet contract validation
+  ✔ requires record identity, org/LE separation fields, versions, and event identity (5.7739ms)
+  ✔ accepts supported contract version and rejects unsupported/unknown (0.7198ms)
+  ✔ rejects prohibited banking/TFN/super fields (0.858ms)
+  ✔ validates clinic membership when checker provided (0.5939ms)
+  ✔ requires reasonCode for revoke/withdraw/invalidate lifecycle events (0.7676ms)
+✔ CP2.1 published timesheet contract validation (11.2882ms)
+▶ CP2.1 canonical hashing
+  ✔ produces identical hashes for logically equivalent payloads (3.9909ms)
+  ✔ changes hash on material source change (2.0006ms)
+  ✔ does not include approval lifecycle metadata in hash boundary (8.8448ms)
+  ✔ preserves business order for hour inputs but sorts set-like session ids (0.867ms)
+  ✔ treats omitted optional clinicId as distinct from present clinicId (0.7388ms)
+  ✔ rejects NaN, Infinity, and invalid timestamps (1.4666ms)
+  ✔ rejects mismatched supplied contentHash (2.5327ms)
+✔ CP2.1 canonical hashing (21.4365ms)
+▶ CP2.1 published timesheet registry
+  ✔ migrates additively and is idempotent (10.1987ms)
+  ✔ resumes after partial migration (flag cleared, data present) (0.6542ms)
+  ✔ appends versions without overwrite and resolves exact history (3.5377ms)
+  ✔ enforces tenant/legal-entity isolation on lookups (1.4557ms)
+  ✔ returns idempotent success on identical retry (1.5451ms)
+  ✔ rejects same version with different hash (4.4999ms)
+  ✔ rejects reused eventId with different payload (2.6125ms)
+  ✔ rejects lower sourceVersion and stale approvalRevision (3.1607ms)
+  ✔ supports lifecycle-only revoke without changing content hash or overwriting version (1.3149ms)
+  ✔ rejects out-of-order eventSequence (1.2543ms)
+  ✔ recovers current index after interrupted publication (1.1659ms)
+  ✔ rebuilds from history when current index is stale (0.713ms)
+  ✔ exposes intake identity without using idempotencyKey as business uniqueness (0.7296ms)
+  ✔ replays events in sequence order (5.2706ms)
+  ✔ boundary: registry module has no M07 mutation API surface beyond publication/read (27.2485ms)
+✔ CP2.1 published timesheet registry (67.2311ms)
+ℹ tests 27
+ℹ suites 3
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2986.0745

@@ -1,0 +1,191 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m05
+> tsx --test "src/modules/m05-roster/tests/**/*.test.ts"
+
+▶ m05 adapters
+  ✔ M02-LG-01 coverage-gap: create → dedupe → update → close → stale replay blocked (26.1086ms)
+  ✔ M02-LG-02 unacked-publication: create → dedupe → close on `full` ack → stale replay blocked (5.1433ms)
+  ✔ M02-LG-03 swap-action: create → dedupe → close on terminal state → stale replay blocked (9.2049ms)
+  ✔ M02-LG-04 open-shift-escalation: create → dedupe → close on `closed` status → stale replay blocked (4.2192ms)
+  ✔ M02-LG-05 assignment-invalidated: create → dedupe; non-invalidated state does not create a row (42.7137ms)
+  ✔ M01: getRosterCounts returns aggregate operational counts only (no person-sensitive dumps) (3.7585ms)
+  ✔ M01 clinic-scoped counts filter to a single clinic (0.657ms)
+  ✔ M10 (workflow #12): transferOpeningClosingDuties is BLOCKED with reason and evidence code — not silent pass (1.6246ms)
+✔ m05 adapters (102.3889ms)
+▶ m05 authz
+  ✔ PERM-POS-01: coordinator can create a shift in their own clinic (277.0173ms)
+  ✔ PERM-NEG-01: worker cannot publish a period (missing roster.publish) (41.6338ms)
+  ✔ PERM-NEG-02: cross-clinic assign is denied (clinic scope) (6.5939ms)
+  ✔ PERM-POS-02: bulk partial success — in-scope succeed, out-of-scope skip (14.9992ms)
+  ✔ PERM-NEG-03: finance viewer cannot mutate assignments (12.9872ms)
+  ✔ PRIV-01: cost forecast rates masked without roster.cost.view (104.9802ms)
+  ✔ PRIV-02: export cannot bypass clinic scope, and empty-scope actor is denied (13.6551ms)
+  ✔ PERM-OV-01: override without reason denied; with reason + roster.override allowed (18.6129ms)
+  ✔ assign without any permission throws M05PermissionError (10.5987ms)
+  ✔ mapDemoIdentityPermissions honours workforce roles (2.2098ms)
+✔ m05 authz (526.6491ms)
+▶ m05 bulk
+  ✔ BULK-01: preview reports totals, in-scope, out-of-scope, duplicates, notification cap (92.7563ms)
+  ✔ BULK-02 + BULK-04: partial success — in-scope succeed, out-of-scope skip (14.0004ms)
+  ✔ BULK-03: retry idempotency — same idempotencyKey submitted twice does not create duplicates (6.957ms)
+  ✔ BULK-05: notification cap — succeeded > cap ⇒ notificationsSuppressed > 0 (19.7906ms)
+  ✔ bulk requires roster.bulk permission (38.1678ms)
+  ✔ bulk failure inside try/catch is captured in `failed` (partial-success guarantee) (1.427ms)
+✔ m05 bulk (182.0406ms)
+▶ m05 conflict policy
+  ✔ policy publish archives prior published version — only one active per org (6.9298ms)
+  ✔ overlap is a BLOCK severity finding with explainable rule id + version (356.8764ms)
+  ✔ min_break is a WARN finding when gap between shifts < 8h (16.5805ms)
+  ✔ max_daily_hours warns above the daily cap (default 12h) (8.851ms)
+  ✔ consecutive_days warns above the streak cap (default 6) (64.2429ms)
+  ✔ approved_leave_clash is a BLOCK finding using the M04 leave cache setter (10.2219ms)
+  ✔ no conflicts when candidate is well-separated + no leave clash (48.5749ms)
+  ✔ evaluateConflicts returns [] when no active policy exists (6.0716ms)
+✔ m05 conflict policy (521.8311ms)
+▶ m05 cost + privacy
+  ✔ PRIV-01: maskForecastForActor zeroes rate/cost totals without roster.cost.view (86.644ms)
+  ✔ PRIV-01: listCostForecastsForActor masks results at the service layer (19.1669ms)
+  ✔ PRIV-02: exportShiftAssignmentsCsv is clinic-scoped and does NOT include cost columns without roster.cost.view (16.4063ms)
+  ✔ PRIV-02: finance viewer WITH cost.view can request cost columns in export (14.9144ms)
+  ✔ PRIV-02: empty clinic-scope actor sees zero rows on export/report (15.2993ms)
+  ✔ buildScopedReport respects scope.clinicIds filter (10.9277ms)
+  ✔ cost forecast body always carries planningOnly: true (never payroll truth) (9.9001ms)
+✔ m05 cost + privacy (198.9873ms)
+▶ m05 domain
+  ✔ period lifecycle: draft→under_review→ready_to_publish→published (no partially_acknowledged period state) (177.543ms)
+  ✔ period version mismatch throws ConcurrentConflictError (2.9223ms)
+  ✔ period cancel requires reason (1.9343ms)
+  ✔ shift lifecycle valid + invalid transitions (20.7865ms)
+  ✔ assignment history is append-only; replacing a worker preserves prior state as replaced (31.2008ms)
+  ✔ assignment cancel + invalidate append audit and do not rewrite prior append-only rows (49.4512ms)
+  ✔ publication body is immutable; supersede requires a new publication (19.7317ms)
+  ✔ acknowledgement is a DERIVED publication status (none|partial|full); period stays `published` (27.57ms)
+  ✔ ack on superseded publication is rejected (21.0032ms)
+  ✔ publish denied when period lifecycle is `superseded`/`cancelled`/`archived` (5.685ms)
+  ✔ recomputePublicationAckStatus is a no-op on missing publication (0.8494ms)
+  ✔ permission code inventory covers §17 codes (1.0053ms)
+✔ m05 domain (363.8432ms)
+▶ m05 eligibility
+  ✔ authority is always `m04-platform`, and eligible when readiness=ready + no blockers (89.4974ms)
+  ✔ hard-block when M04 returns a blocking readiness blocker (1.0333ms)
+  ✔ warning when readiness=advisory (never blocking) — assignment permitted (4.0463ms)
+  ✔ stale readiness is NEVER overridable (§7 rule) (1.8094ms)
+  ✔ unresolved clinic timezone is NEVER overridable — no silent UTC (§4/§7) (1.7222ms)
+  ✔ unknown_person (no readiness lookup available) is never overridable (0.7219ms)
+  ✔ approved-leave clash blocks assignment (populated via setApprovedLeaveForTests) (1.6823ms)
+  ✔ authorised override with reason lets a hard-blocked assignment through (assignPerson requires roster.override) (16.361ms)
+  ✔ actor missing roster.override cannot override a hard-block even with reason (102.9677ms)
+  ✔ stale readiness cannot be overridden by assignPerson (12.4092ms)
+✔ m05 eligibility (235.2734ms)
+▶ m05 migration + seed
+  ✔ initial migration + seed initialises all M05 collections and marks flags (79.5753ms)
+  ✔ MIG-01: repeat-run is idempotent — no duplicate seed rows on re-run (1.2979ms)
+  ✔ seed never overwrites existing non-seed rows (4.4246ms)
+  ✔ MIG-02: interrupted-run recovery — clearing the flag replays seed once (8.0561ms)
+  ✔ MIG-03: NO M06 / M07 / M22 record keys are ever created by M05 migrations/seed (2.0584ms)
+  ✔ seed-only rollback removes only seed-tagged rows + clears seed flags (1.446ms)
+  ✔ preserves Wave 2 (m04.*) and Wave 3 (m11.*) stores — no writes into those keys (2.6644ms)
+  ✔ M05 storage key inventory matches the planned pulse.m05.roster.* register (0.834ms)
+✔ m05 migration + seed (103.0877ms)
+▶ m05 wave4 performance
+  ✔ initial roster-board load simulation ≤2500ms max (3443.3189ms)
+  ✔ board filtering 200+ rows ≤300ms p95 (16.8353ms)
+  ✔ eligibility lookup single ≤100ms typical (74.849ms)
+  ✔ conflict recalculation 150+ assignments ≤2000ms max (4.1326ms)
+  ✔ coverage calculation ≤500ms p95 (43.5903ms)
+  ✔ publication preview ≤2000ms max and submission ≤3000ms max (1325.6009ms)
+  ✔ open-shift acceptance ≤400ms max (24.1222ms)
+  ✔ swap approval ≤500ms max (41.2583ms)
+  ✖ bulk preview ≤500 ops ≤2000ms and submission ≤500 ops ≤5000ms (8776.5783ms)
+  ✔ M02 projection single ≤50ms typical (210.1189ms)
+  ✔ reports build ≤3000ms max (5.1435ms)
+  ✔ scoped export ≤3000ms max (50.1741ms)
+  ✖ writes wave4 M05 performance evidence json (10.3869ms)
+✖ m05 wave4 performance (14039.9486ms)
+▶ m05 publication + acknowledgement
+  ✔ preview lists required acknowledgers + eligibility warnings vs blockers (80.3344ms)
+  ✔ publish denied without emergency override when preview has blockers (18.028ms)
+  ✔ immutable snapshot cannot be re-appended; supersede creates a new publication (25.0904ms)
+  ✔ stale expected period version rejected with ConcurrentConflictError (7.5042ms)
+  ✔ acknowledge against a superseded publication is rejected (stale-replay guard) (13.5461ms)
+  ✔ acknowledge with wrong publicationVersion is rejected (11.6865ms)
+  ✔ acknowledge by person NOT in required set is rejected (7.1636ms)
+  ✔ period lifecycle stays `published` through all ack states; ack status is derived (18.8819ms)
+  ✔ preview eligibility recalculates each assigned shift with clinic timezone (10.5928ms)
+✔ m05 publication + acknowledgement (196.0576ms)
+▶ m05 swap + open-shift
+  ✔ swap: request → propose → recipient_accept → approve creates a new assignment (82.3767ms)
+  ✔ swap approve: self-approval is denied (9.9142ms)
+  ✔ swap approve: stale swap version throws ConcurrentConflictError (5.5759ms)
+  ✔ swap approve: stale shift version throws ConcurrentConflictError (10.1043ms)
+  ✔ swap reject and withdraw terminate the swap (6.1814ms)
+  ✔ open shift: offer → accept (audience person) → select (version-checked) (9.6891ms)
+  ✔ open shift: withdraw closes the row and rejects double-fill via version check (5.2551ms)
+✔ m05 swap + open-shift (131.8945ms)
+▶ m05 timezone / DST
+  ✔ TZ-01: cross-midnight shift keeps localEnd date > localStart date and computes UTC correctly (261.7294ms)
+  ✔ TZ-02: clinic-calendar date differs from UTC for the same instant (Pacific/Auckland) (3.6189ms)
+  ✔ TZ-03: DST spring-forward gap → unresolved with reason `dst-gap` (3.4181ms)
+  ✔ TZ-04: DST fall-back repeated hour stored with fold (default fold=0 → earlier) (11.4773ms)
+  ✔ TZ-05: explicit fold=1 selects the LATER occurrence of the repeated local hour (16.9976ms)
+  ✔ TZ-06: two clinics in different IANA TZs produce different UTC instants for the same wall time (10.1166ms)
+  ✔ TZ-07: same asOf produces deterministic resolved window (8.4761ms)
+  ✔ TZ-08: invalid / unavailable timezone → explainable unresolved; NO silent UTC (0.8503ms)
+  ✔ invalid local time format → `invalid-local-time` reason (defensive) (9.3095ms)
+  ✔ end must fall after start in same TZ (not end-before-start) (4.2935ms)
+✔ m05 timezone / DST (334.1867ms)
+▶ m05 ux-state contract
+  ✔ UX-08: ConcurrentConflictError carries version/target metadata for retry UI (3.455ms)
+  ✔ UX-05: OverrideReasonRequiredError has a stable name and default message (7.2978ms)
+  ✔ UX-05: InvalidLifecycleTransitionError encodes from/to for validation UI (1.7316ms)
+  ✔ UX-06 / immutable publication guard raises a distinct error (3.1754ms)
+  ✔ §25: eight UX state identifiers are covered by the plan vocabulary (1.8476ms)
+  ✔ LoadingState prerequisite: ensureM05Bootstrapped returns null when window is unavailable (1.3924ms)
+  ✔ OfflineState retry: ensureM05Bootstrapped is idempotent once storage is available (18.1098ms)
+  ✔ errors thrown by services are `instanceof Error` — enables `SystemErrorState` fallback (2.0409ms)
+  ✔ `ConcurrentConflictError.message` is human-readable (used verbatim in `ConcurrentConflictState`) (0.964ms)
+✔ m05 ux-state contract (71.0255ms)
+ℹ tests 117
+ℹ suites 13
+ℹ pass 115
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25432.518
+
+✖ failing tests:
+
+test at src\modules\m05-roster\tests\m05-performance.test.ts:2:15813
+✖ bulk preview ≤500 ops ≤2000ms and submission ≤500 ops ≤5000ms (8776.5783ms)
+  AssertionError [ERR_ASSERTION]: Bulk submission 500 ops: 8752.77ms > 5000ms (dataset=500, max)
+      at record (C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-owner-colour-readability-remediation\src\modules\m05-roster\tests\m05-performance.test.ts:137:10)
+      at TestContext.<anonymous> (C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-owner-colour-readability-remediation\src\modules\m05-roster\tests\m05-performance.test.ts:677:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at src\modules\m05-roster\tests\m05-performance.test.ts:2:21364
+✖ writes wave4 M05 performance evidence json (10.3869ms)
+  AssertionError [ERR_ASSERTION]: 1 performance target(s) failed
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-owner-colour-readability-remediation\src\modules\m05-roster\tests\m05-performance.test.ts:866:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

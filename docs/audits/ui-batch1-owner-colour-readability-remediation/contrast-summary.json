@@ -1,0 +1,68 @@
+{
+  "beforeDefectBaseline": {
+    "activeTabDark": {
+      "approx": 1.1
+    },
+    "brandStrongDark": {
+      "approx": 1.81
+    },
+    "darkBoundary": {
+      "approx": 1.42
+    },
+    "tealButtonDark": {
+      "approx": 3.68
+    },
+    "tealBadgeDark": {
+      "approx": 1.53
+    }
+  },
+  "afterFocused": {
+    "light": {
+      "primaryTextOnCanvas": 14.62,
+      "mutedOnSurface": 5.07,
+      "onActionOnAction": 10.97,
+      "controlBorderOnSurface": 3.84,
+      "activeTab": 10.97,
+      "brand": 10.97
+    },
+    "dark": {
+      "primaryTextOnCanvas": 14.82,
+      "mutedOnSurface": 7.43,
+      "onActionOnAction": 6.63,
+      "controlBorderOnSurface": 3.1,
+      "activeTab": 6.63,
+      "brand": 13.04
+    }
+  },
+  "persistence": {
+    "darkAfterReload": true,
+    "osDarkSystem": {
+      "prefersDark": true,
+      "themeDark": true,
+      "appearance": "system",
+      "canvas": "#0f1724"
+    },
+    "note": "OS-dark System verified with colorScheme=dark + hydrate settle (~2.5s)",
+    "verifiedAt": "2026-08-03T06:38:12.279Z"
+  },
+  "tokens": {
+    "light": {
+      "canvas": "#f5f7fa",
+      "surface": "#ffffff",
+      "text": "#17233a",
+      "muted": "#5f7085",
+      "action": "#123e68",
+      "controlBorder": "#768397",
+      "card": "#ffffff"
+    },
+    "dark": {
+      "canvas": "#0f1724",
+      "surface": "#172335",
+      "text": "#e3eaf2",
+      "muted": "#a7b3c2",
+      "action": "#245f98",
+      "controlBorder": "#5b7088",
+      "card": "#172335"
+    }
+  }
+}

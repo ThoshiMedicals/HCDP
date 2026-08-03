@@ -1,0 +1,16 @@
+▶ M07 shell smoke (Batch 1)
+  ✔ marks unfinished sections as planned (6.5669ms)
+  ✔ resolves legacy section aliases (0.5603ms)
+  ✔ planned section UI disables actions and does not claim parity (1.3066ms)
+  ✔ workspace declares responsive shell attribute and a11y affordances (2.1591ms)
+  ✔ overview and settings expose labelled controls and non-colour status (3.9648ms)
+  ✔ overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003) (1.1579ms)
+✔ M07 shell smoke (Batch 1) (18.7581ms)
+ℹ tests 6
+ℹ suites 1
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1480.1937

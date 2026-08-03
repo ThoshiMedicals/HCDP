@@ -1,0 +1,462 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m07
+> tsx --test "src/modules/m07-staff-pay/tests/**/*.test.ts"
+
+▶ M07 read-only boundaries (Batch 1)
+  ✔ reads M04 identity as read-only (12.0089ms)
+  ✔ reads M05 published roster keys without writing (2.1059ms)
+  ✔ discovers platform published timesheets but does not implement intake (8.8895ms)
+  ✔ publishes M02/M01 interface-only projections without rates (2.8829ms)
+  ✔ keeps M06 bridge BLOCKED-M07 cleared (3.555ms)
+✔ M07 read-only boundaries (Batch 1) (32.1723ms)
+▶ CP2.7A architecture / static boundaries
+  ✔ M07 production has no pulse.m06 access or M06 internal imports (272.5039ms)
+  ✔ M07 does not mutate platform registry storage; discovery health probe is the only KEYS import (159.7544ms)
+  ✔ single intake and hash implementations; replay uses platform query + CP2.4 intake (288.2004ms)
+  ✔ M06 production does not write pulse.m07 or import M07 modules (360.5381ms)
+  ✔ prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores (7.901ms)
+  ✔ does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07 (211.7719ms)
+  ✔ documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped (35.5945ms)
+✔ CP2.7A architecture / static boundaries (1339.8443ms)
+▶ M07 authz / scope / SoD / prohibited fields (Batch 1)
+  ✔ denies period create without permission (15.2983ms)
+  ✔ enforces legal-entity isolation (1.7504ms)
+  ✔ rejects second open ordinary period (37.923ms)
+  ✔ rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path (7.1969ms)
+  ✔ enforces external id uniqueness within legal entity (39.9998ms)
+  ✔ redacts external id from clinic manager views (1.8557ms)
+  ✔ rejects prohibited banking/tax/super fields (6.2044ms)
+  ✔ denies export operator from creating export profiles (2.1655ms)
+  ✔ allows export operator to select but not mutate profile (2.2825ms)
+  ✔ denies clerk rule/code edits (1.4153ms)
+  ✔ SoD: export operator cannot lock; clerk cannot final-approve self (1.0062ms)
+  ✔ writes audit for authorised mutations (1.0209ms)
+  ✔ admin can mutate configuration (1.6806ms)
+✔ M07 authz / scope / SoD / prohibited fields (Batch 1) (123.4806ms)
+▶ CP2.7A Batch 2 final-gate E2E
+  ✔ E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared (246.8218ms)
+  ✔ global eventSequence tenant-filter: cross-tenant holes are not tenant gaps (24.9485ms)
+✔ CP2.7A Batch 2 final-gate E2E (275.3866ms)
+▶ M07 Batch 3 — classification, calc, people, leave, M02, architecture
+  ▶ CP3.1 classification + blockers
+    ✔ resolves mapping when profile, classification, rule and rate exist (50.8301ms)
+    ✔ fails closed for missing rate and doctor exclusion (1.6062ms)
+    ✔ fails closed for missing classification→rule map (12.6818ms)
+  ✔ CP3.1 classification + blockers (66.5761ms)
+  ▶ CP3.2 ordinary/OT calculation + ruleVersion
+    ✔ calculates ordinary and overtime from eligible snapshot and pins ruleVersion (81.5028ms)
+    ✔ recalculation creates new batch version and keeps prior ruleVersion on old lines (15.4076ms)
+    ✔ blocks penalty inputs and ineligible/missing snapshots (15.717ms)
+  ✔ CP3.2 ordinary/OT calculation + ruleVersion (113.2563ms)
+  ▶ CP3.3 People Review + redaction + external id
+    ✔ redacts rates for clinic managers and requires reason for external id (4.7858ms)
+    ✔ marks people and leave sections available; allowances remain planned messaging (1.8569ms)
+  ✔ CP3.3 People Review + redaction + external id (7.1483ms)
+  ▶ CP3.4 leave preparation from M04 only
+    ✔ creates leave prep lines from approved M04 leave and ignores snapshot leaveInputs (32.6556ms)
+    ✔ opens leave-mapping-missing when mapping absent (5.32ms)
+  ✔ CP3.4 leave preparation from M04 only (38.354ms)
+  ▶ CP3.5 M02 projections
+    ✔ projects blockers with dedupe and closes on resolve (26.0194ms)
+  ✔ CP3.5 M02 projections (26.3858ms)
+  ▶ CP3.6 architecture + section shell
+    ✔ forbids M04/M05/M06 repository imports and payment fields in production (118.8746ms)
+    ✔ workspace uses batch4 shell attribute (2.1053ms)
+  ✔ CP3.6 architecture + section shell (121.4704ms)
+✔ M07 Batch 3 — classification, calc, people, leave, M02, architecture (384.258ms)
+▶ M07 Batch 4 — allowance, deduction, variance, exceptions, integration
+  ▶ CP4.1 allowance preparation
+    ✔ maps snapshot allowanceInputs to versioned code lines (79ms)
+    ✔ blocks unknown and inactive allowance codes without payable lines (21.158ms)
+  ✔ CP4.1 allowance preparation (111.0681ms)
+  ▶ CP4.2 deduction inputs
+    ✔ creates supersedes and cancels with history retained (19.1378ms)
+    ✔ calculation emits deduction prep lines from active inputs (34.9329ms)
+    ✔ rejects doctor deduction inputs and cross-org period use (18.795ms)
+  ✔ CP4.2 deduction inputs (74.1153ms)
+  ▶ CP4.3 variance informational
+    ✔ returns compared or unavailable without inventing blockers (26.3252ms)
+  ✔ CP4.3 variance informational (32.5113ms)
+  ▶ CP4.4 exceptions waive
+    ✔ waives waivable kinds with SoD and rejects non-waivable / self-waiver (13.9726ms)
+  ✔ CP4.4 exceptions waive (14.3588ms)
+  ▶ CP4.5 people review + M02
+    ✔ surfaces allowance/deduction/variance fields and projects allowance blockers (24.807ms)
+  ✔ CP4.5 people review + M02 (25.1886ms)
+  ▶ CP4.6 architecture
+    ✔ forbids M04/M05/M06/M02 repository imports and payment fields (74.8237ms)
+    ✔ rejects cross-legal-entity deduction isolation (2.2636ms)
+  ✔ CP4.6 architecture (77.5351ms)
+✔ M07 Batch 4 — allowance, deduction, variance, exceptions, integration (336.9505ms)
+▶ M07 Batch 5 CP5.1–5.6
+  ▶ CP5.1 eligible population + readiness
+    ✔ excludes doctors and inactive/terminated/future-start workforce (150.4569ms)
+    ✔ fails closed on missing effective clinic assignment (3.9232ms)
+    ✔ blocks readiness when calculation missing / open exception (31.785ms)
+  ✔ CP5.1 eligible population + readiness (218.0619ms)
+  ▶ CP5.2–5.3 submit / approve / reject / withdraw + SoD
+    ✔ submits, approves with SoD, and sets export-ready wording state (50.6286ms)
+    ✔ blocks submitter self-approval and material preparer approval (17.8753ms)
+    ✔ rejects and withdraws with mandatory reason; supports resubmission (84.4217ms)
+    ✔ unauthorised submit / wrong-scope approver fail closed (12.1731ms)
+    ✔ submit and approve replay are idempotent (21.0578ms)
+  ✔ CP5.2–5.3 submit / approve / reject / withdraw + SoD (197.1559ms)
+  ▶ CP5.4 invalidation
+    ✔ recalculation after approval marks stale and leaves export-ready (29.2803ms)
+    ✔ deduction change and new exception after approval invalidate (87.7711ms)
+    ✔ approval fails when source manifest changed before approve (17.3345ms)
+  ✔ CP5.4 invalidation (137.1346ms)
+  ▶ CP5.5 M02 + UI meta
+    ✔ projects approval-required and closes on approve without duplicate fork (27.9305ms)
+    ✔ Approval section is available in section meta (1.0601ms)
+    ✔ getPeriodApprovalView surfaces readiness and history (3.9665ms)
+  ✔ CP5.5 M02 + UI meta (33.5466ms)
+  ▶ CP5.6 migration, architecture, exclusions
+    ✔ migration v8 idempotent and preserves v7 data (12.8704ms)
+    ✔ malformed stored approval is skipped safely (1.0877ms)
+    ✔ no M04/M05/M06 writes and no direct M02 repository import (168.6468ms)
+    ✔ blocked period cannot submit as approved/export-ready (12.1172ms)
+    ✔ tenant/LE mismatch on population for org B actor (4.5873ms)
+  ✔ CP5.6 migration, architecture, exclusions (200.0923ms)
+✔ M07 Batch 5 CP5.1–5.6 (787.4907ms)
+▶ M07 Batch 5 final — materialProfileRevision pin consistency
+  ✔ approved manifest verifies before mutation (118.6763ms)
+  ✔ rate-only update cannot leave approved/export-ready with checksum mismatch (18.0974ms)
+  ✔ external-ID update cannot leave approved/export-ready with checksum mismatch (57.6063ms)
+  ✔ non-material update preserves approval only when manifest reconstruction still succeeds (27.9965ms)
+  ✔ every material profile update immediately stales approval (64.283ms)
+  ✔ material classification change bumps materialProfileRevision and stales (49.8743ms)
+  ✔ stale invalidation remains idempotent (23.3207ms)
+  ✔ unrelated historical or audit-only record changes do not incorrectly invalidate (27.3002ms)
+  ✔ direct approval verification never suppresses a genuine authoritative-source mismatch (68.5734ms)
+✔ M07 Batch 5 final — materialProfileRevision pin consistency (464.8963ms)
+▶ M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+  ▶ employment / clinic fail-closed
+    ✔ missing employment status blocks and keeps person visible (30.3401ms)
+    ✔ missing employment-effective start date blocks (3.3543ms)
+    ✔ ambiguous employment dates block (1.8979ms)
+    ✔ missing period-effective clinic assignment blocks (6.3698ms)
+    ✔ ambiguous clinic assignment blocks (3.8174ms)
+    ✔ ordinary persisted record cannot use demo defaults (48.059ms)
+    ✔ explicitly marked demo seed follows only approved isolated demo behaviour (5.1926ms)
+  ✔ employment / clinic fail-closed (101.9917ms)
+  ▶ profile / classification invalidation
+    ✔ profile change after approval immediately produces stale (74.2851ms)
+    ✔ employment-date change after approval immediately produces stale (17.2155ms)
+    ✔ clinic-assignment change after approval immediately produces stale where supported (22.429ms)
+    ✔ classification mapping replacement after approval immediately produces stale (19.8464ms)
+    ✔ classification mapping deactivation after approval immediately produces stale (18.3316ms)
+    ✔ irrelevant profile change does not incorrectly stale approval (18.0978ms)
+    ✔ identical invalidation replay does not duplicate lifecycle, audit or M02 records (14.4864ms)
+    ✔ alternate mutation paths cannot bypass invalidation (81.1267ms)
+  ✔ profile / classification invalidation (512.125ms)
+  ▶ dedicated SoD proofs
+    ✔ rejects approval when approver is material deduction creator (16.2325ms)
+    ✔ rejects approval when approver is material exception resolver (20.1911ms)
+    ✔ rejects approval when approver is material exception waiver actor (59.063ms)
+    ✔ incomplete or missing material-actor provenance fails closed (4.5422ms)
+    ✔ unrelated historical actors do not incorrectly block approval (11.9709ms)
+    ✔ material actors are derived from the pinned manifest; no dual approval (8.9301ms)
+  ✔ dedicated SoD proofs (121.8205ms)
+✔ M07 Batch 5 remediation — fail-closed employment + invalidation + SoD (756.3674ms)
+▶ M07 Batch 6 — export / recon / lock
+  ▶ A. Domain and lifecycle
+    ✔ allows legal transitions and rejects illegal ones (52.0507ms)
+    ✔ deterministic identity + idempotent create (167.4346ms)
+    ✔ does not overwrite finalized history — successor revision (44.9444ms)
+    ✔ cancel supersedes mutable batch (18.9003ms)
+  ✔ A. Domain and lifecycle (285.4416ms)
+  ▶ B. Manifest consumption
+    ✔ accepts valid approved package (29.1882ms)
+    ✔ rejects missing / non-approved package (3.1847ms)
+  ✔ B. Manifest consumption (32.9902ms)
+  ▶ C. Validation
+    ✔ missing external payroll employee ID blocks (21.8022ms)
+    ✔ rejects cross-tenant / cross-legal-entity actor scope (12.2756ms)
+  ✔ C. Validation (38.0347ms)
+  ▶ D. Export preparation
+    ✔ preview and final share validation; final re-verifies; checksum reproducible (27.1724ms)
+  ✔ D. Export preparation (27.4311ms)
+  ▶ E. Reconciliation
+    ✔ matching package passes with structured totals (14.8128ms)
+  ✔ E. Reconciliation (15.0062ms)
+  ▶ F. Permissions and SoD
+    ✔ enforces export.create permission (69.9323ms)
+    ✔ management approver cannot be sole final export generator when SoD on (13.4102ms)
+  ✔ F. Permissions and SoD (83.7211ms)
+  ▶ G. Locking and unlocking
+    ✔ locks only after matched recon; unlock requires reason + separate approver (96.6996ms)
+    ✔ unlock reject is separate and idempotent request replay (21.2698ms)
+  ✔ G. Locking and unlocking (118.327ms)
+  ▶ H. Download
+    ✔ downloads only downloadable matched artifact and audits each download (68.9923ms)
+  ✔ H. Download (69.2565ms)
+  ▶ I. M02 and audit
+    ✔ writes export lifecycle audits without sensitive payloads (12.1919ms)
+  ✔ I. M02 and audit (12.3825ms)
+  ▶ J. Storage and schema
+    ✔ schema v9 and failure-closed legacy export defaults (10.3003ms)
+  ✔ J. Storage and schema (10.8762ms)
+  ▶ K. Architecture
+    ✔ no createExportPackage / lockPeriod( / cross-module repos / excluded payment features (66.2483ms)
+  ✔ K. Architecture (66.4681ms)
+✔ M07 Batch 6 — export / recon / lock (762.2481ms)
+▶ M07 Batch 6 fourth remediation — strict calendar dates
+  ✔ rejects impossible ISO-shaped dates on financial update before write (173.909ms)
+  ✔ rejects impossible dates on create and archive; leap validation; future isolation (35.0782ms)
+✔ M07 Batch 6 fourth remediation — strict calendar dates (211.3762ms)
+▶ M07 Batch 6 remediation — high-risk controls
+  ▶ A. Lock enforcement
+    ✔ rejects direct service mutations on a locked period; unrelated LE unaffected (476.861ms)
+  ✔ A. Lock enforcement (483.6665ms)
+  ▶ B. Locked-source-change controls
+    ✔ fails closed, projects deterministic M02, audits, preserves history; no silent mutate (73.4966ms)
+    ✔ does not report success when audit control fails (101.6831ms)
+  ✔ B. Locked-source-change controls (175.7262ms)
+  ▶ C. Reconciliation independence
+    ✔ fails when totals match but population differs (99.562ms)
+    ✔ fails when totals match but source-line references differ (93.0626ms)
+  ✔ C. Reconciliation independence (193.13ms)
+  ▶ D. Download audit failure
+    ✔ refuses download, records no success history, leaves artifact unchanged (18.8192ms)
+  ✔ D. Download audit failure (51.8917ms)
+  ▶ E. Unlock partial failure
+    ✔ does not report complete success when audit fails during unlock approval (30.105ms)
+  ✔ E. Unlock partial failure (30.6386ms)
+  ▶ F. Lifecycle matrix
+    ✔ covers legal and illegal Batch 6 transitions including failed (2.9822ms)
+  ✔ F. Lifecycle matrix (3.2816ms)
+  ▶ J. Decimal arithmetic
+    ✔ uses scaled multiply for overtime amount edge cases (1.3362ms)
+  ✔ J. Decimal arithmetic (1.6273ms)
+✔ M07 Batch 6 remediation — high-risk controls (943.6551ms)
+▶ M07 Batch 6 second remediation
+  ▶ omit-metadata and exceptions
+    ✔ rejects period-scoped exception without periodId (9.4186ms)
+    ✔ allows non-period boundary exception without periodId (10.6399ms)
+  ✔ omit-metadata and exceptions (36.3317ms)
+  ▶ rate / effective-date lock
+    ✔ blocks rate overlapping locked period; allows future non-overlapping rate (113.1649ms)
+  ✔ rate / effective-date lock (113.5236ms)
+  ▶ external payroll employee id
+    ✔ rejects link/relink affecting locked period (22.8421ms)
+  ✔ external payroll employee id (23.129ms)
+  ▶ preparation rules
+    ✔ rejects rule create for LE with locked overlapping period; allows other LE (64.4464ms)
+  ✔ preparation rules (64.8105ms)
+  ▶ unlock atomicity and recovery
+    ✔ keeps period locked on control failure; retry completes after recovery (32.1344ms)
+    ✔ retries after M02-only failure without opening period early (32.8371ms)
+  ✔ unlock atomicity and recovery (65.4831ms)
+  ▶ locked-source control pair
+    ✔ reports incomplete on M02-only and audit-only failures; preserves lock (24.3603ms)
+  ✔ locked-source control pair (28.6542ms)
+  ▶ reconciliation category independence
+    ✔ fails when category composition differs but gross totals match (20.5065ms)
+  ✔ reconciliation category independence (20.831ms)
+✔ M07 Batch 6 second remediation (355.6825ms)
+▶ M07 Batch 6 third remediation
+  ▶ platform-wide export profile lock
+    ✔ blocks version and retire of * profile used by a locked period before write (137.2407ms)
+    ✔ allows unrelated unused * profile mutation; falsified LE cannot bypass (35.546ms)
+  ✔ platform-wide export profile lock (174.6525ms)
+  ▶ financial effective-date edge cases
+    ✔ fails closed on open-ended, missing and malformed dates; allows proven future (67.1906ms)
+  ✔ financial effective-date edge cases (67.631ms)
+  ▶ unlock idempotency and both-control failure
+    ✔ rejects inconsistent approved unlock without open period / history (58.8629ms)
+    ✔ handles simultaneous audit+M02 failure, reject while incomplete, and recovery (39.8876ms)
+  ✔ unlock idempotency and both-control failure (99.3932ms)
+✔ M07 Batch 6 third remediation (348.9765ms)
+▶ CP2.7B BLOCKED-M07 clearance
+  ✔ authoritative helpers are cleared and cannot disagree (10.0506ms)
+  ✔ successful intake, replay and authorised lifecycle report blockedM07: false (30.1883ms)
+  ✔ no production hardcoded blockedM07: true remains for the retired global blocker (319.6991ms)
+  ✔ fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor (53.5532ms)
+✔ CP2.7B BLOCKED-M07 clearance (433.37ms)
+▶ CP2.3 M07 platform boundary — no legacy M06 scrape
+  ▶ A. Legacy removal / static enforcement
+    ✔ M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape (286.8957ms)
+    ✔ writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape) (19.4721ms)
+  ✔ A. Legacy removal / static enforcement (415.3069ms)
+  ▶ B. Controlled behaviour
+    ✔ returns empty when no platform publication exists (2.3307ms)
+    ✔ returns unavailable for corrupt registry (1.7741ms)
+    ✔ returns unavailable for unsupported contract versions only (6.1438ms)
+    ✔ discovers platform publications without implying intake (7.6827ms)
+  ✔ B. Controlled behaviour (18.7997ms)
+  ▶ C. Tenant isolation
+    ✔ does not return cross-org or cross-legal-entity publications; guessed ids fail closed (11.5315ms)
+  ✔ C. Tenant isolation (11.9128ms)
+  ▶ D. Preservation / blocker
+    ✔ does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared (1.5137ms)
+  ✔ D. Preservation / blocker (1.7551ms)
+✔ CP2.3 M07 platform boundary — no legacy M06 scrape (449.6411ms)
+▶ M07 domain model (Batch 1)
+  ✔ creates ordinary pay period with entity scope and SoD snapshot (18.4117ms)
+  ✔ stores external payroll employee id history on relink (25.7849ms)
+  ✔ labels preparation rules as non-certified (8.4583ms)
+  ✔ blocks missing classification mapping (6.0645ms)
+  ✔ creates classification mapping to active rule (9.4544ms)
+✔ M07 domain model (Batch 1) (78.9883ms)
+▶ M07 entity settings — no write under view (remediation)
+  ✔ 1. view-only actor cannot create or persist entity settings (18.7866ms)
+  ✔ 2. reading absent settings causes no storage mutation (2.528ms)
+  ✔ 3. authorised bootstrap/admin path can create defaults (2.9912ms)
+  ✔ 4. re-running bootstrap is idempotent (1.3094ms)
+  ✔ 5. existing entity settings are not overwritten by seed (1.7154ms)
+  ✔ 6. period creation still requires period.create (8.4062ms)
+  ✔ 7. period creation cannot bypass legal-entity isolation (1.4045ms)
+  ✔ 8. authorised settings mutation produces an audit event (1.243ms)
+  ✔ period create with clerk does not persist new settings when using ephemeral defaults (1.6801ms)
+✔ M07 entity settings — no write under view (remediation) (46.9092ms)
+▶ CP2.4 M07 published-timesheet intake
+  ▶ A. Eligibility
+    ✔ eligible approved publication creates a snapshot (22.1548ms)
+    ✔ revoked publications are not intaken (7.3738ms)
+    ✔ rejects incomplete scope and clinic mismatch (3.6447ms)
+  ✔ A. Eligibility (38.311ms)
+  ▶ B. Snapshot fidelity
+    ✔ preserves structured inputs and platform contentHash without payroll fields (25.6391ms)
+  ✔ B. Snapshot fidelity (26.8624ms)
+  ▶ C. Identity and idempotency
+    ✔ exact retry and new event id for same version/hash are idempotent; hash conflict is hard (5.5069ms)
+    ✔ newer sourceVersion creates a second snapshot; older remains resolvable (16.8807ms)
+  ✔ C. Identity and idempotency (22.8689ms)
+  ▶ D. Isolation
+    ✔ denies cross-org and cross-LE; guessed publication id fails closed (8.8505ms)
+  ✔ D. Isolation (9.1752ms)
+  ▶ E. Recovery
+    ✔ rebuilds indexes; partial migration resumes; Batch1 data preserved (4.7598ms)
+  ✔ E. Recovery (5.2038ms)
+  ▶ F. Boundaries
+    ✔ keeps BLOCKED-M07 cleared, no M06 scrape, no registry mutation from intake module (11.3902ms)
+  ✔ F. Boundaries (11.8098ms)
+✔ CP2.4 M07 published-timesheet intake (117.3015ms)
+▶ CP2.6 M07 published-timesheet lifecycle
+  ▶ A. Materiality and history
+    ✔ material content creates new snapshot pending-review; no auto supersession; prior unchanged (208.962ms)
+    ✔ lifecycle-only same-hash does not rewrite snapshots; same-version hash conflict remains hard (21.2436ms)
+  ✔ A. Materiality and history (231.9622ms)
+  ▶ B. Holds and eligibility
+    ✔ revoke/withdraw/invalidate apply holds; blocks ordinary use; duplicate replay idempotent (65.3509ms)
+  ✔ B. Holds and eligibility (65.772ms)
+  ▶ C. Restore and authorised decisions
+    ✔ restore alone does not clear hold; authorised acknowledgement does; stale fails closed (20.8628ms)
+  ✔ C. Restore and authorised decisions (21.271ms)
+  ▶ D. Supersession
+    ✔ requires authorised selection; denies cross-timesheet/org/held targets; no payroll approval (9.0428ms)
+  ✔ D. Supersession (19.0716ms)
+  ▶ E. Preparation progress
+    ✔ blocks held use; freezes started/approved/exported; no payment inference (11.6723ms)
+  ✔ E. Preparation progress (12.0053ms)
+  ▶ F. Isolation, permissions and audit
+    ✔ enforces org/LE independence, clinic, guessed ids, audit lineage (6.4852ms)
+  ✔ F. Isolation, permissions and audit (6.746ms)
+  ▶ G. Architecture and blocker
+    ✔ keeps boundaries and BLOCKED-M07 cleared (159.1356ms)
+  ✔ G. Architecture and blocker (159.3683ms)
+✔ CP2.6 M07 published-timesheet lifecycle (519.3052ms)
+▶ CP2.7A M07 migration matrix through v5
+  ✔ empty bootstrap reaches schema v9 with export/lock collections (7.3528ms)
+  ✔ v1 → v5 preserves periods (3.0212ms)
+  ✔ v2 → v5 preserves Batch 1 profiles (0.8447ms)
+  ✔ v3 → v5 preserves immutable snapshots (10.3277ms)
+  ✔ v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent (1.8156ms)
+  ✔ repeated v5 is idempotent; interrupted v5 resumes without wipe (1.0735ms)
+✔ CP2.7A M07 migration matrix through v5 (45.921ms)
+▶ M07 migrations (Batch 1)
+  ✔ runs v1 once and is idempotent (18.1919ms)
+  ✔ runs v2 additively without wiping existing periods (2.2295ms)
+  ✔ runs v3 snapshot migration additively and idempotently (1.5174ms)
+  ✔ runs v4 replay migration additively and idempotently (1.5807ms)
+  ✔ runs v5 lifecycle migration additively and idempotently (1.471ms)
+  ✔ seeds default minimum-PII export profile insert-if-absent (17.6695ms)
+  ✔ does not touch M04/M05/M06 keys (2.1117ms)
+✔ M07 migrations (Batch 1) (69.3287ms)
+▶ M07 mutation authorization matrix (Batch 1 remediation)
+  ✔ pay profile create/update/archive — permission + entity + audit (34.3466ms)
+  ✔ external id link/relink — permission + uniqueness entity + audit (17.4906ms)
+  ✔ preparation rule create/version/retire — permission + entity + audit (32.9705ms)
+  ✔ generic code create/version/retire — permission + entity + audit (3.2075ms)
+  ✔ export profile create/version/activate/retire — admin only + entity + audit (16.0984ms)
+  ✔ ordinary pay period create — period.create + entity + audit (14.8797ms)
+  ✔ entity settings upsert — entity.settings + entity + audit (34.2538ms)
+  ✔ wildcard admin can mutate across entities when unrestricted (11.6358ms)
+✔ M07 mutation authorization matrix (Batch 1 remediation) (181.6556ms)
+▶ M07 PPA-1 atomicity / fail-closed compensation
+  ✔ 1. adjustment-period write fail — no success, source unchanged, no open PPA (369.0879ms)
+  ✔ 2. case write fail after period create — compensates; no open PPA; residual archived (29.9217ms)
+  ✔ 3. consistency verify fail after both writes — compensates; no open PPA (56.7948ms)
+  ✔ 4. audit fail after business writes — no success response; no false-success audit; compensate (32.8827ms)
+  ✔ 5. duplicate create same source — rejected; source unchanged (83.3132ms)
+  ✔ 6. identical idempotency replay — returns same case; no second open PPA (41.863ms)
+  ✔ 7. conflicting idempotency replay — rejected; source unchanged (21.3796ms)
+  ✔ 8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed (36.2302ms)
+  ✔ 9. cancel audit failure — cancel persists but no success return; source unchanged (46.3618ms)
+✔ M07 PPA-1 atomicity / fail-closed compensation (721.4571ms)
+▶ M07 PPA-1 core — prior-period adjustment foundation
+  ✔ creates PPA against locked ordinary source; source unchanged; adjustment period linked (231.1423ms)
+  ✔ rejects unlocked ordinary source pre-write (3.4986ms)
+  ✔ rejects missing / unknown source and adjustment-kind source (29.6904ms)
+  ✔ rejects cross-LE caller widening and Org B access (43.0173ms)
+  ✔ rejects missing reasonCode and blank reasonText pre-write (27.0561ms)
+  ✔ enforces at most one open PPA per source; idempotent and conflicting replay (38.5981ms)
+  ✔ list/get are LE-scoped; missing adjust permission denied (20.5455ms)
+  ✔ cancels draft idempotently; rejects invalid cancel state (34.1234ms)
+  ✔ controlled unlock does not create a PPA case (33.2701ms)
+  ✔ rejects prohibited identifier fields on create input (22.9333ms)
+✔ M07 PPA-1 core — prior-period adjustment foundation (492.1187ms)
+▶ M07 test-hook security gate (QA-PPA1-001)
+  ✔ allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node (15.7577ms)
+  ✔ allows hooks when NODE_ENV=test even without allow flag (1.9604ms)
+  ✔ disables hooks when NODE_ENV=production (setters no-op; failures do not fire) (3.5358ms)
+  ✔ disables hooks in unknown/development runtime without explicit allow (10.8924ms)
+  ✔ browser-like undefined process must never enable hooks (35.4714ms)
+  ✔ production gate prevents arming then re-enabling from leaking prior arms after reset (11.8633ms)
+✔ M07 test-hook security gate (QA-PPA1-001) (82.5562ms)
+▶ CP2.5 M07 published-timesheet ordered replay
+  ▶ A. Ordered replay
+    ✔ processes events in authoritative sequence and reports moreAvailable (66.3435ms)
+    ✔ duplicate delivery is idempotent; completed events do not create another snapshot (15.2464ms)
+    ✔ sequence gaps stop advancement; out-of-order cannot regress checkpoint (19.4931ms)
+    ✔ conflicting reuse of an event identity is detected (8.5953ms)
+  ✔ A. Ordered replay (111.6973ms)
+  ▶ B. Recovery
+    ✔ interruption before checkpoint advancement resumes without duplicate snapshots (17.479ms)
+    ✔ corrupt cursor data fails closed; registry unavailability preserves last safe checkpoint (4.0609ms)
+  ✔ B. Recovery (22.1582ms)
+  ▶ C. Isolation
+    ✔ denies cross-organisation and cross-legal-entity replay; guessed ids reveal nothing (32.6491ms)
+    ✔ cursors are independently tenant and legal-entity scoped (15.9418ms)
+  ✔ C. Isolation (50.6137ms)
+  ▶ D. Lifecycle boundary
+    ✔ records revocation with hold application; later versions do not overwrite; BLOCKED-M07 cleared (100.9659ms)
+  ✔ D. Lifecycle boundary (101.2029ms)
+  ▶ E. Architectural boundaries
+    ✔ M07 has no pulse.m06 scrape; replay uses CP2.4 intake; no registry mutation (364.3041ms)
+  ✔ E. Architectural boundaries (364.5427ms)
+✔ CP2.5 M07 published-timesheet ordered replay (651.9957ms)
+▶ M07 shell smoke (Batch 1)
+  ✔ marks unfinished sections as planned (2.2352ms)
+  ✔ resolves legacy section aliases (0.4932ms)
+  ✔ planned section UI disables actions and does not claim parity (1.873ms)
+  ✔ workspace declares responsive shell attribute and a11y affordances (3.4617ms)
+  ✔ overview and settings expose labelled controls and non-colour status (0.8897ms)
+  ✔ overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003) (0.8791ms)
+✔ M07 shell smoke (Batch 1) (18.8024ms)
+▶ UI Batch 1 — Premium Clinical tokens and shared presentation
+  ✔ defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01) (3.1654ms)
+  ✔ standardises portal typography on the existing production font stack (9.0221ms)
+  ✔ shared Tabs use Champagne selected accent and accessible tab roles (3.7185ms)
+  ✔ PageHeader removes decorative mock-refresh toast action (UI-FAKE-01) (3.9302ms)
+  ✔ shared Table remains neutral denseness without Champagne row fills (9.6731ms)
+✔ UI Batch 1 — Premium Clinical tokens and shared presentation (32.4492ms)
+ℹ tests 252
+ℹ suites 99
+ℹ pass 252
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43179.4044

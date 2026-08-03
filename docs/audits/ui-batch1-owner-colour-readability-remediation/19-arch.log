@@ -1,0 +1,31 @@
+▶ CP2.7A architecture / static boundaries
+  ✔ M07 production has no pulse.m06 access or M06 internal imports (169.1168ms)
+  ✔ M07 does not mutate platform registry storage; discovery health probe is the only KEYS import (56.1685ms)
+  ✔ single intake and hash implementations; replay uses platform query + CP2.4 intake (219.069ms)
+  ✔ M06 production does not write pulse.m07 or import M07 modules (85.0406ms)
+  ✔ prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores (10.6913ms)
+  ✔ does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07 (76.9496ms)
+  ✔ documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped (25.2734ms)
+✔ CP2.7A architecture / static boundaries (651.0612ms)
+▶ CP2.7B BLOCKED-M07 clearance
+  ✔ authoritative helpers are cleared and cannot disagree (22.6073ms)
+  ✔ successful intake, replay and authorised lifecycle report blockedM07: false (42.2798ms)
+  ✔ no production hardcoded blockedM07: true remains for the retired global blocker (130.5333ms)
+  ✔ fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor (56.5212ms)
+✔ CP2.7B BLOCKED-M07 clearance (254.3454ms)
+▶ CP2.7A M07 migration matrix through v5
+  ✔ empty bootstrap reaches schema v9 with export/lock collections (17.9065ms)
+  ✔ v1 → v5 preserves periods (7.2406ms)
+  ✔ v2 → v5 preserves Batch 1 profiles (1.4723ms)
+  ✔ v3 → v5 preserves immutable snapshots (1.2985ms)
+  ✔ v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent (1.7115ms)
+  ✔ repeated v5 is idempotent; interrupted v5 resumes without wipe (1.4817ms)
+✔ CP2.7A M07 migration matrix through v5 (34.6197ms)
+ℹ tests 17
+ℹ suites 3
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3743.4565
