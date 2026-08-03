@@ -147,14 +147,15 @@ import {
 import { isInactiveAction, KpiScorecardView, MyDayOwnerView, ReportsView } from "./ExtraViews";
 import { CardStateFrame, FilterSentenceBar, type CardDataState } from "./CcStates";
 import { HealthBreakdownDrawer } from "./HealthBreakdown";
+import { DashboardShellControlsPanel } from "../DashboardShellControls";
 
 const REFRESH_MS = 5 * 60 * 1000;
 const DRAFT_STORAGE = CC_STORAGE.draftForm;
 
 type CcView = "command" | "myday" | "kpi" | "reports";
 
-// Prototype m1-layout: main column (~1.6fr) vs side column (~0.9fr) at desktop widths.
-const MAIN_SECTION_IDS = ["priority", "categories", "ai", "actions", "positive", "completed", "clinics", "trends"];
+// Secondary detail — disclosed, not stacked in the first viewport.
+const SECONDARY_MAIN_SECTIONS = ["categories", "ai", "positive", "completed", "trends"];
 const SIDE_SECTION_IDS = [
   "executive",
   "staffing",
@@ -166,6 +167,7 @@ const SIDE_SECTION_IDS = [
   "digital",
   "activity",
 ];
+const EXEC_PRIMARY_KEYS = ["Emergency", "Urgent", "Overdue", "Attention Required"] as const;
 
 function clinicMatch(locationId: string, selected: string[], allCount: number) {
   if (!selected.length || selected.length === allCount) return true;
@@ -903,6 +905,7 @@ export function CommandCentre() {
               onSelect={(k) => setPriorityFilter(k)}
               onClear={() => setPriorityFilter(null)}
               lastUpdated={lastUpdated}
+              keys={EXEC_PRIMARY_KEYS}
               clinicScopeLabel={
                 selectedClinicIds.length === locations.length
                   ? "All clinics"
@@ -1317,18 +1320,8 @@ export function CommandCentre() {
 
         {viewTab === "command" ? (
           <>
-            {!mobileUrgent ? (
-              <AnnouncementCarousel
-                items={normalAnnouncements}
-                index={annIndex % Math.max(normalAnnouncements.length, 1)}
-                onPrev={() => setAnnIndex((i) => (i - 1 + normalAnnouncements.length) % normalAnnouncements.length)}
-                onNext={() => setAnnIndex((i) => (i + 1) % normalAnnouncements.length)}
-                onViewAll={() => setAnnouncementsAllOpen(true)}
-              />
-            ) : null}
-
             {mobileUrgent ? (
-              <div className="grid gap-3">
+              <div className="grid gap-3" data-dashboard-primary="urgent">
                 <p className="cc-layer-label">Urgent review</p>
                 {renderSection("priority")}
                 {renderSection("executive")}
@@ -1344,12 +1337,12 @@ export function CommandCentre() {
                 {renderSection("actions")}
               </div>
             ) : (
-              <div className="grid items-start gap-3 min-[1100px]:grid-cols-[1.6fr_0.9fr]">
-                <div className="grid min-w-0 gap-3">
-                  {orderedSectionIds
-                    .filter((id) => MAIN_SECTION_IDS.slice(0, 3).includes(id))
-                    .map((id) => renderSection(id))}
+              <div className="grid gap-3" data-dashboard-primary="executive">
+                <section aria-label="Executive indicators" data-dashboard-area="indicators">
+                  {renderSection("priority")}
+                </section>
 
+                <section aria-label="Priority actions" data-dashboard-area="priority-actions">
                   <FilterSentenceBar
                     sentence={filterSentence}
                     onClear={() => {
@@ -1359,8 +1352,7 @@ export function CommandCentre() {
                       setAssigneeFilter(null);
                     }}
                   />
-
-                  <div className="flex flex-wrap gap-2">
+                  <div className="mt-2 flex flex-wrap gap-2">
                     <select
                       className="cc-ctrl"
                       value={statusFilter ?? ""}
@@ -1382,28 +1374,67 @@ export function CommandCentre() {
                       aria-label="Assigned person filter"
                     />
                   </div>
+                  <div className="mt-3">{renderSection("actions")}</div>
+                </section>
 
-                  {orderedSectionIds
-                    .filter((id) => MAIN_SECTION_IDS.slice(3).includes(id))
-                    .map((id) => renderSection(id))}
-                </div>
-                <div className="grid min-w-0 gap-3 min-[1100px]:sticky min-[1100px]:top-[64px]">
-                  {orderedSectionIds
-                    .filter((id) => SIDE_SECTION_IDS.includes(id))
-                    .map((id) => renderSection(id))}
-                  <PrivateNotesCard
-                    notes={privateNotes}
-                    onSave={(n) => setPrivateNotes((prev) => [...prev, n])}
-                    onDelete={(nid) => {
-                      setPrivateNotes((prev) => prev.filter((n) => n.id !== nid));
-                      pushToast("Private note deleted locally.", "success");
-                    }}
-                    onUpdate={(n) => {
-                      setPrivateNotes((prev) => prev.map((x) => (x.id === n.id ? n : x)));
-                      pushToast("Reminder saved on private note (local demo).", "success");
-                    }}
-                  />
-                </div>
+                <section aria-label="Operational health" data-dashboard-area="operational-health">
+                  {renderSection("clinics")}
+                  {renderSection("executive")}
+                </section>
+
+                <details className="rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-3" data-dashboard-area="secondary-detail">
+                  <summary className="cursor-pointer text-[13px] font-extrabold text-[var(--cc-ink)]">
+                    More dashboard detail
+                  </summary>
+                  <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+                    Announcements, categories, AI findings, completed items, trends, private notes,
+                    side panels and shell/management controls remain available here.
+                  </p>
+                  <div className="mt-3 grid gap-3">
+                    {!mobileUrgent ? (
+                      <AnnouncementCarousel
+                        items={normalAnnouncements}
+                        index={annIndex % Math.max(normalAnnouncements.length, 1)}
+                        onPrev={() =>
+                          setAnnIndex((i) => (i - 1 + normalAnnouncements.length) % normalAnnouncements.length)
+                        }
+                        onNext={() => setAnnIndex((i) => (i + 1) % normalAnnouncements.length)}
+                        onViewAll={() => setAnnouncementsAllOpen(true)}
+                      />
+                    ) : null}
+                    {orderedSectionIds
+                      .filter((id) => SECONDARY_MAIN_SECTIONS.includes(id))
+                      .map((id) => renderSection(id))}
+                    {orderedSectionIds
+                      .filter((id) => SIDE_SECTION_IDS.includes(id) && id !== "executive")
+                      .map((id) => renderSection(id))}
+                    <PrivateNotesCard
+                      notes={privateNotes}
+                      onSave={(n) => setPrivateNotes((prev) => [...prev, n])}
+                      onDelete={(nid) => {
+                        setPrivateNotes((prev) => prev.filter((n) => n.id !== nid));
+                        pushToast("Private note deleted locally.", "success");
+                      }}
+                      onUpdate={(n) => {
+                        setPrivateNotes((prev) => prev.map((x) => (x.id === n.id ? n : x)));
+                        pushToast("Reminder saved on private note (local demo).", "success");
+                      }}
+                    />
+                    <DashboardShellControlsPanel />
+                    <PrioritySummary
+                      counts={priorityCounts}
+                      selected={priorityFilter}
+                      onSelect={(k) => setPriorityFilter(k)}
+                      onClear={() => setPriorityFilter(null)}
+                      lastUpdated={lastUpdated}
+                      clinicScopeLabel={
+                        selectedClinicIds.length === locations.length
+                          ? "All clinics"
+                          : `${selectedClinicIds.length} clinic(s) selected`
+                      }
+                    />
+                  </div>
+                </details>
               </div>
             )}
           </>

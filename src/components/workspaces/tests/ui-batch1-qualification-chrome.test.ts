@@ -1,6 +1,10 @@
 /**
  * UI Batch 1 Qualification Completion (QC-1) — dashboard chrome truthfulness
  * and appearance preference application (OD-A1 NARROW / F-MAJ-01 / F-MIN-04).
+ *
+ * Owner visual remediation relocated DashboardShellStrip into
+ * DashboardShellControlsPanel (secondary disclosure). Truthfulness assertions
+ * follow that surface; stacked ModuleContextStrip chrome is intentionally removed.
  */
 
 import assert from "node:assert/strict";
@@ -22,18 +26,9 @@ function read(rel: string): string {
   return readFileSync(join(root, rel), "utf8");
 }
 
-function extractDashboardShellStrip(source: string): string {
-  const start = source.indexOf("function DashboardShellStrip");
-  assert.ok(start >= 0, "DashboardShellStrip function missing");
-  const next = source.indexOf("\nfunction ModuleContextStrip", start);
-  assert.ok(next > start, "ModuleContextStrip boundary missing");
-  return source.slice(start, next);
-}
-
-describe("QC-1 — DashboardShellStrip chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01)", () => {
-  it("removes toast-only demo verbs from DashboardShellStrip", () => {
-    const source = read("src/components/workspaces/DashboardWorkspace.tsx");
-    const strip = extractDashboardShellStrip(source);
+describe("QC-1 — Dashboard shell controls chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01)", () => {
+  it("removes toast-only demo verbs from relocated DashboardShellControlsPanel", () => {
+    const strip = read("src/components/workspaces/DashboardShellControls.tsx");
 
     assert.doesNotMatch(strip, /pushToast\(/);
     assert.doesNotMatch(strip, /demo only/i);
@@ -45,8 +40,7 @@ describe("QC-1 — DashboardShellStrip chrome truthfulness (F-MAJ-01 / UI-DASH-0
   });
 
   it("retains navigation-only shell controls and labels non-operational status", () => {
-    const source = read("src/components/workspaces/DashboardWorkspace.tsx");
-    const strip = extractDashboardShellStrip(source);
+    const strip = read("src/components/workspaces/DashboardShellControls.tsx");
 
     assert.match(strip, /href="\/organisation"/);
     assert.match(strip, /Review access controls/);
@@ -58,8 +52,15 @@ describe("QC-1 — DashboardShellStrip chrome truthfulness (F-MAJ-01 / UI-DASH-0
     assert.match(strip, /role="status"/);
   });
 
+  it("does not stack ModuleContextStrip / DashboardShellStrip above Command Centre", () => {
+    const dash = read("src/components/workspaces/DashboardWorkspace.tsx");
+    assert.doesNotMatch(dash, /ModuleContextStrip/);
+    assert.doesNotMatch(dash, /DashboardShellStrip/);
+    assert.match(dash, /CommandCentre/);
+    assert.match(dash, /data-dashboard-hierarchy="executive-v2"/);
+  });
+
   it("does not widen QC-1 into CommandCentre toast inventory (OD-A1 NARROW)", () => {
-    // Guard: this suite owns DashboardWorkspace strip only; CC redesign remains Group B.
     const cc = read("src/components/workspaces/command-centre/CommandCentre.tsx");
     assert.match(cc, /pushToast\(/);
     assert.ok(cc.includes("CommandCentre"), "Command Centre file remains present and unmodified by this assertion");
