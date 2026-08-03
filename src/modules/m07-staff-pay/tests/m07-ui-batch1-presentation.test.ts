@@ -27,7 +27,8 @@ describe("UI Batch 1 — Premium Clinical tokens and shared presentation", () =>
     assert.match(tokens, /body\.theme-dark/);
     assert.match(tokens, /--focus-ring:/);
     // Champagne used sparingly for selected nav accent — not as table fill utility
-    assert.match(tokens, /\.nav-btn\.active[\s\S]*border-left:\s*4px solid var\(--accent-champagne\)/);
+    assert.match(tokens, /\.nav-row\.active[\s\S]*border-left-color:\s*var\(--sidebar-champagne\)/);
+    assert.doesNotMatch(tokens, /\.v32-nav-group\s+\.nav-btn\.active\s*\{[^}]*linear-gradient/);
     assert.doesNotMatch(tokens, /tr\s*\{[^}]*--accent-champagne/);
   });
 

@@ -2,7 +2,7 @@
 
 import { Suspense, useCallback, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { cn } from "@/lib/cn";
+import { ModuleSectionNav } from "@/components/shell/ModuleSectionNav";
 import { StaffDoctorsProvider, resolveM04Section, useStaffDoctors } from "./context";
 import type { M04SectionId } from "./types/domain";
 import {
@@ -98,32 +98,23 @@ function StaffDoctorsWorkspaceChrome({
   const { actorName } = useStaffDoctors();
 
   return (
-    <div className="grid gap-[18px] lg:grid-cols-[220px_minmax(0,1fr)]">
-      <aside className="h-fit rounded-[16px] border border-[var(--v34-card-line)] bg-white p-3 shadow-[var(--v34-card-shadow)] lg:sticky lg:top-4">
-        <div className="mb-3 px-2">
-          <div className="text-xs font-bold uppercase tracking-wide text-[#526479]">Module 4</div>
-          <div className="text-sm font-extrabold text-[var(--ink)]">Staff & Doctor Management</div>
-          <div className="mt-1 text-xs text-[#64748b]">{actorName}</div>
+    <div className="grid min-w-0 gap-4" data-workspace-nav="horizontal">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 shadow-[var(--v34-card-shadow)]">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <p className="hcdp-type-meta m-0">Module 4 · sections</p>
+          <p className="m-0 text-xs text-[var(--muted)]" role="status">
+            Acting as {actorName}
+          </p>
         </div>
-        <nav className="grid gap-0.5" aria-label="Staff and Doctor Management sections">
-          {NAV.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onNavigate(item.id)}
-              aria-current={section === item.id ? "page" : undefined}
-              className={cn(
-                "rounded-lg px-3 py-2 text-left text-sm font-semibold transition",
-                section === item.id
-                  ? "bg-[var(--teal-3)] text-[#1d4ed8]"
-                  : "text-[#526479] hover:bg-[#f8fafc]"
-              )}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
-      </aside>
+        <div className="mt-2">
+          <ModuleSectionNav
+            items={NAV}
+            value={section}
+            onChange={onNavigate}
+            ariaLabel="Staff and Doctor Management sections"
+          />
+        </div>
+      </div>
       <div className="min-w-0">
         <SectionBody section={section} />
       </div>

@@ -44,9 +44,12 @@ describe("M07 shell smoke (Batch 1)", () => {
 
   it("workspace declares responsive shell attribute and a11y affordances", () => {
     const ws = readFileSync(join(process.cwd(), "src/modules/m07-staff-pay/StaffPayWorkspace.tsx"), "utf8");
+    const sectionNav = readFileSync(join(process.cwd(), "src/components/shell/ModuleSectionNav.tsx"), "utf8");
     assert.match(ws, /data-m07-shell="batch6-export"/);
-    assert.match(ws, /max-width: 768px/);
-    assert.match(ws, /aria-label="Staff Pay sections"/);
+    assert.match(ws, /ModuleSectionNav/);
+    assert.match(ws, /ariaLabel="Staff Pay sections"/);
+    assert.match(sectionNav, /module-section-nav__compact-only/);
+    assert.match(readFileSync(join(process.cwd(), "src/styles/tokens.css"), "utf8"), /max-width:\s*768px/);
     assert.match(ws, /:focus-visible/);
     assert.match(ws, /prefers-reduced-motion/);
     assert.match(ws, /overflow-x-hidden/);
