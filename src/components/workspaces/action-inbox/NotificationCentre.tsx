@@ -85,7 +85,7 @@ export function NotificationCentre({
     >
       <div className="grid gap-4">
         {settings.quietHoursStart && settings.quietHoursEnd ? (
-          <p className="m-0 rounded-lg bg-[#f8fafc] px-3 py-2 text-[11px] text-[#64748b]">
+          <p className="m-0 rounded-lg bg-[var(--soft)] px-3 py-2 text-[length:var(--type-control)] text-[var(--muted)]">
             Quiet hours: {settings.quietHoursStart} – {settings.quietHoursEnd} (routine may be
             deferred; critical alerts still deliver)
           </p>
@@ -121,13 +121,13 @@ export function NotificationCentre({
               return (
                 <div
                   key={key}
-                  className="mb-2 rounded-xl border border-[var(--line)] bg-[#f8fafc] p-3"
+                  className="mb-2 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3"
                 >
                   <div className="mb-1 flex items-center gap-2">
                     <Badge tone="default">Grouped ×{items.length}</Badge>
                     <span className="text-sm font-bold">{latest.title}</span>
                   </div>
-                  <p className="m-0 text-[12px] text-[#64748b]">{latest.reason}</p>
+                  <p className="m-0 text-[12px] text-[var(--muted)]">{latest.reason}</p>
                   <div className="mt-2 flex gap-2">
                     <Button small variant="teal" onClick={() => onOpenAction(latest.actionId)}>
                       Open Action
@@ -174,7 +174,7 @@ function NotifRow({
 }) {
   return (
     <div
-      className={`mb-2 rounded-xl border border-[var(--line)] p-3 ${n.read ? "bg-white" : "bg-[#f8fbff]"}`}
+      className={`mb-2 rounded-xl border border-[var(--line)] p-3 ${n.read ? "bg-[var(--card)]" : "bg-[var(--soft)]"}`}
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
@@ -193,8 +193,8 @@ function NotifRow({
               {n.priority}
             </Badge>
           </div>
-          <p className="m-0 mt-1 text-[12px] text-[#64748b]">{n.reason}</p>
-          <p className="m-0 text-[11px] text-[#94a3b8]">
+          <p className="m-0 mt-1 text-[12px] text-[var(--muted)]">{n.reason}</p>
+          <p className="m-0 text-[length:var(--type-control)] text-[#94a3b8]">
             {n.actionNumber} · {n.clinicName} · {formatDateTime(n.at)}
           </p>
         </div>

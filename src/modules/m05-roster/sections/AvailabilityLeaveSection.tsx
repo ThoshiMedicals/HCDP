@@ -122,7 +122,7 @@ export function AvailabilityLeaveSection() {
     <SectionFrame sectionId="availability-leave" title="Availability & Leave">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           M05 owns roster-side preferences/declarations. Approved leave is READ from
           the M05-side contract cache — M05 never mutates M04 leave records.
         </p>

@@ -26,7 +26,7 @@ export function OffboardingSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Offboarding</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Transfer open responsibilities before completion. Incomplete offboarding projects to Action Inbox.
         </p>
       </div>

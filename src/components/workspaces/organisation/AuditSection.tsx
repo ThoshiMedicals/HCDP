@@ -70,7 +70,7 @@ export function AuditSection() {
               <Td>{a.actorName}</Td>
               <Td>
                 <strong>{a.entityLabel}</strong>
-                <div className="text-xs text-[#64748b]">{a.entityType} · {a.entityId}</div>
+                <div className="text-xs text-[var(--muted)]">{a.entityType} · {a.entityId}</div>
               </Td>
               <Td>{a.field}: {a.previousValue} → {a.newValue}</Td>
               <Td>{a.reason}</Td>
@@ -95,10 +95,10 @@ export function AuditSection() {
           <Button variant="teal" onClick={submitNote}>Append note</Button>
         </>
       }>
-        <p className="text-sm text-[#526479]">Correction notes do not alter the original audit entry.</p>
+        <p className="text-sm text-[var(--muted)]">Correction notes do not alter the original audit entry.</p>
         <textarea className="mt-3 w-full rounded-lg border px-3 py-2" rows={4} value={note} onChange={(e) => setNote(e.target.value)} />
         {noteModal ? (
-          <div className="mt-3 text-xs text-[#64748b]">
+          <div className="mt-3 text-xs text-[var(--muted)]">
             Existing notes: {state.audit.find((a) => a.id === noteModal)?.correctionNotes.map((n) => n.note).join("; ") || "None"}
           </div>
         ) : null}

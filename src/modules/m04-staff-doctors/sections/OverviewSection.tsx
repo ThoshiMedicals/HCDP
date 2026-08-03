@@ -21,7 +21,7 @@ export function OverviewSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Workforce overview</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Authoritative staff and doctor management. Recalculate readiness from credentials and lifecycle state.
         </p>
       </div>
@@ -121,7 +121,7 @@ export function OverviewSection() {
                       {ready.stale ? "unknown/stale" : ready.readiness}
                     </Badge>
                   </Td>
-                  <Td className="text-xs text-[#64748b]">{actor.userId}</Td>
+                  <Td className="text-xs text-[var(--muted)]">{actor.userId}</Td>
                 </tr>
               );
             })}
@@ -140,7 +140,7 @@ export function OverviewSection() {
         </Panel>
         <Panel>
           <PanelTitle>Lifecycle</PanelTitle>
-          <div className="text-sm text-[#526479]">
+          <div className="text-sm text-[var(--muted)]">
             Onboarding {listOnboarding().length} · Offboarding {listOffboarding().length}
           </div>
         </Panel>

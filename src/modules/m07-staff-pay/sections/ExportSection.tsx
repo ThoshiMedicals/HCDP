@@ -179,7 +179,7 @@ export function ExportSection() {
           </strong>
         </p>
       </div>
-      <p className="text-xs text-slate-600 dark:text-slate-400">
+      <p className="text-xs text-[var(--muted)]">
         Operational sequence: finalize → download → optional lock. Download does not require
         lock. Lock rejects ordinary mutations; unlock is controlled remediation (not PPA).
       </p>

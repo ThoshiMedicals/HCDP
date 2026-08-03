@@ -151,7 +151,7 @@ th{background:#f8fafc;}
               <div key={r.id} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[var(--line)] p-4">
                 <div>
                   <strong className="text-sm">{r.name}</strong>
-                  <p className="m-0 mt-1 text-xs text-[#526479]">{r.description}</p>
+                  <p className="m-0 mt-1 text-xs text-[var(--muted)]">{r.description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <Button small variant="line" onClick={() => exportReport(r.id, r.name, "PDF")} title="Download PDF/print preview (.html)">PDF</Button>

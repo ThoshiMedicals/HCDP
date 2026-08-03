@@ -100,7 +100,7 @@ export function AccessRequestsSection() {
           <div className="grid gap-4">
             <Panel>
               <PanelTitle>Risk summary</PanelTitle>
-              <p className="text-sm text-[#526479]">{detail.riskSummary}</p>
+              <p className="text-sm text-[var(--muted)]">{detail.riskSummary}</p>
               {detail.subjectUserId === actor.id ? (
                 <WarningBanner>Self-approval blocked — you cannot approve your own request.</WarningBanner>
               ) : null}
@@ -122,7 +122,7 @@ export function AccessRequestsSection() {
             </Panel>
             <Panel>
               <PanelTitle>Approvers</PanelTitle>
-              <ul className="text-sm text-[#526479]">
+              <ul className="text-sm text-[var(--muted)]">
                 {detail.approvals.map((a) => (
                   <li key={a.approverId}>{a.approverName}: {a.decision || "Pending"} {a.decidedAt ? `@ ${a.decidedAt}` : ""}</li>
                 ))}
@@ -135,7 +135,7 @@ export function AccessRequestsSection() {
             {detail.decisionHistory.length ? (
               <Panel>
                 <PanelTitle>Decision history</PanelTitle>
-                <ul className="text-sm text-[#526479]">{detail.decisionHistory.map((h) => <li key={h}>{h}</li>)}</ul>
+                <ul className="text-sm text-[var(--muted)]">{detail.decisionHistory.map((h) => <li key={h}>{h}</li>)}</ul>
               </Panel>
             ) : null}
           </div>

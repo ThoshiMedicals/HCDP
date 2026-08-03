@@ -4,11 +4,11 @@ import type { IconName } from "@/lib/modules";
 import { Icon } from "./Icon";
 
 const tones: Record<MetricTone, string> = {
-  default: "bg-white border-[var(--line)]",
-  warning: "bg-[#fffbf3] border-[#f5d08d]",
-  danger: "bg-[#fff6f6] border-[#f4b4b4]",
-  info: "bg-[#f6f9ff] border-[#c9dafd]",
-  success: "bg-[#f6fff8] border-[#c8f0ce]",
+  default: "bg-[var(--card)] border-[var(--line)]",
+  warning: "bg-[var(--hcdp-status-warning-surface)] border-[var(--hcdp-status-warning-border)]",
+  danger: "bg-[var(--hcdp-status-critical-surface)] border-[var(--hcdp-status-critical-border)]",
+  info: "bg-[var(--hcdp-status-info-surface)] border-[var(--hcdp-status-info-border)]",
+  success: "bg-[var(--hcdp-status-success-surface)] border-[var(--hcdp-status-success-border)]",
 };
 
 export function Metric({
@@ -30,14 +30,14 @@ export function Metric({
       )}
     >
       <div>
-        <div className="text-xs font-extrabold uppercase tracking-[0.04em] text-[#5d6e82]">
+        <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-[0.04em] text-[var(--muted)]">
           {label}
         </div>
         <div className="mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]">
           {value}
         </div>
       </div>
-      <div className="grid h-[39px] w-[39px] place-items-center rounded-xl bg-[var(--teal-3)] text-[var(--teal)]">
+      <div className="grid h-[39px] w-[39px] place-items-center rounded-xl bg-[var(--hcdp-status-info-surface)] text-[var(--hcdp-action)]">
         <Icon name={icon} />
       </div>
     </div>

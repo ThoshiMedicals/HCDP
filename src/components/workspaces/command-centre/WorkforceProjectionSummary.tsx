@@ -55,7 +55,7 @@ export function WorkforceProjectionSummary() {
               Credentials
             </Button>
           </Link>
-          <span className="self-center text-[11px] text-[var(--cc-muted)]">
+          <span className="self-center text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Authoritative people and readiness remain in Module 4.
           </span>
         </div>

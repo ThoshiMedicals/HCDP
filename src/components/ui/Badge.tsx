@@ -2,12 +2,18 @@ import { cn } from "@/lib/cn";
 import type { BadgeTone } from "@/lib/types";
 
 const tones: Record<BadgeTone, string> = {
-  default: "bg-[var(--soft)] text-[var(--status-neutral)] border border-[var(--v34-card-line)]",
-  success: "bg-[color-mix(in_srgb,var(--status-success)_12%,var(--card))] text-[var(--status-success)] border border-[color-mix(in_srgb,var(--status-success)_35%,var(--v34-card-line))]",
-  warn: "bg-[color-mix(in_srgb,var(--status-warning)_12%,var(--card))] text-[var(--status-warning)] border border-[color-mix(in_srgb,var(--status-warning)_35%,var(--v34-card-line))]",
-  danger: "bg-[color-mix(in_srgb,var(--status-critical)_12%,var(--card))] text-[var(--status-critical)] border border-[color-mix(in_srgb,var(--status-critical)_35%,var(--v34-card-line))]",
-  info: "bg-[color-mix(in_srgb,var(--status-info)_12%,var(--card))] text-[var(--status-info)] border border-[color-mix(in_srgb,var(--status-info)_35%,var(--v34-card-line))]",
-  teal: "bg-[var(--teal-3)] text-[var(--status-info)] border border-[color-mix(in_srgb,var(--status-info)_30%,var(--v34-card-line))]",
+  default:
+    "bg-[var(--hcdp-status-neutral-surface)] text-[var(--hcdp-status-neutral-text)] border border-[var(--hcdp-status-neutral-border)]",
+  success:
+    "bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)] border border-[var(--hcdp-status-success-border)]",
+  warn:
+    "bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)] border border-[var(--hcdp-status-warning-border)]",
+  danger:
+    "bg-[var(--hcdp-status-critical-surface)] text-[var(--hcdp-status-critical-text)] border border-[var(--hcdp-status-critical-border)]",
+  info:
+    "bg-[var(--hcdp-status-info-surface)] text-[var(--hcdp-status-info-text)] border border-[var(--hcdp-status-info-border)]",
+  teal:
+    "bg-[var(--hcdp-status-info-surface)] text-[var(--hcdp-status-info-text)] border border-[var(--hcdp-status-info-border)]",
 };
 
 export function Badge({

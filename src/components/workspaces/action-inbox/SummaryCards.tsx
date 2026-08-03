@@ -40,13 +40,13 @@ export function SummaryCards({
             onClick={() => onSelect(card.id)}
             aria-pressed={selected}
             className={cn(
-              "rounded-[14px] border bg-white p-3.5 text-left shadow-[var(--v34-card-shadow)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+              "rounded-[14px] border bg-[var(--card)] p-3.5 text-left shadow-[var(--v34-card-shadow)] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
               selected ? "ring-2" : "hover:border-[#cbd5e1]"
             )}
             style={{
               borderColor: selected ? color : "var(--v34-card-line)",
               boxShadow: selected ? `0 0 0 2px ${color}` : undefined,
-              background: selected ? soft : "#fff",
+              background: selected ? soft : "var(--card)",
             }}
           >
             <div className="mb-2 flex items-center gap-2">
@@ -62,8 +62,8 @@ export function SummaryCards({
               </span>
             </div>
             <div className="text-[28px] font-black leading-none text-[var(--ink)]">{stats.total}</div>
-            <div className="mt-1 text-[11px] font-semibold text-[#64748b]">Total open</div>
-            <div className="mt-2.5 grid grid-cols-3 gap-1.5 text-[11px]">
+            <div className="mt-1 text-[length:var(--type-control)] font-semibold text-[var(--muted)]">Total open</div>
+            <div className="mt-2.5 grid grid-cols-3 gap-1.5 text-[length:var(--type-control)]">
               <div>
                 <div className="font-extrabold text-[#b45309]">{stats.overdue}</div>
                 <div className="text-[#94a3b8]">Overdue</div>
@@ -77,7 +77,7 @@ export function SummaryCards({
                 <div className="text-[#94a3b8]">Urgent</div>
               </div>
             </div>
-            <div className="mt-2 text-[11px] font-semibold text-[#64748b]">{changeLabel}</div>
+            <div className="mt-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]">{changeLabel}</div>
           </button>
         );
       })}

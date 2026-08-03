@@ -23,7 +23,7 @@ export function EngagementsSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Engagements</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Effective-dated role/clinic assignments with overlap protection.
         </p>
       </div>

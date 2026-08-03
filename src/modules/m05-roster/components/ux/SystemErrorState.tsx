@@ -19,7 +19,7 @@ export function SystemErrorState({
           </div>
           <div>
             <div className="font-semibold text-[var(--ink)]">Something went wrong</div>
-            <p className="mt-1 text-sm text-[#64748b]">{error}</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">{error}</p>
           </div>
           {onRetry ? (
             <Button variant="line" small onClick={onRetry}>

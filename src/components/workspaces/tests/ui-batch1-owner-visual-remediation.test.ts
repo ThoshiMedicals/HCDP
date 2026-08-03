@@ -61,7 +61,7 @@ describe("Owner visual remediation — global sidebar", () => {
     const css = tokens();
     assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*#0b1f3a/i);
     assert.match(css, /--sidebar-champagne:\s*var\(--accent-champagne/);
-    assert.match(css, /body\.theme-dark\s+\.pulse-sidebar[\s\S]*#d4b896/i);
+    assert.match(css, /body\.theme-dark\s+\.pulse-sidebar[\s\S]*#d6be97/i);
     assert.doesNotMatch(css, /\.v32-nav-group\s+\.nav-btn\.active\s*\{[^}]*linear-gradient/);
     assert.doesNotMatch(css, /\.sidebar-user\s+\.avatar\s*\{[^}]*linear-gradient/);
     assert.match(css, /\.v33-family-palette,\s*\.v33-family-jump\s*\{[\s\S]*display:\s*none/);

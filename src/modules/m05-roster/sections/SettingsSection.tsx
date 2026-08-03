@@ -75,7 +75,7 @@ export function SettingsSection() {
     <SectionFrame sectionId="settings" title="Settings">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Manage versioned roster conflict/fatigue policies. Publishing archives the
           prior published policy for the organisation.
         </p>
@@ -89,7 +89,7 @@ export function SettingsSection() {
             {migrationReport.duplicates} · rejected {migrationReport.rejected}
           </PanelSub>
           {migrationReport.warnings.length > 0 ? (
-            <ul className="mt-2 text-xs text-[#64748b]">
+            <ul className="mt-2 text-xs text-[var(--muted)]">
               {migrationReport.warnings.map((w, i) => (
                 <li key={i}>{w}</li>
               ))}
@@ -171,7 +171,7 @@ export function SettingsSection() {
                         Publish
                       </Button>
                     ) : (
-                      <span className="text-xs text-[#64748b]">—</span>
+                      <span className="text-xs text-[var(--muted)]">—</span>
                     )}
                   </Td>
                 </tr>
@@ -184,7 +184,7 @@ export function SettingsSection() {
 
       <Panel>
         <PanelTitle>Actor</PanelTitle>
-        <div className="text-sm text-[#526479]">
+        <div className="text-sm text-[var(--muted)]">
           {actor.userId} · {actor.permissions.includes("*") ? "superuser" : `${actor.permissions.length} permissions`} ·{" "}
           {actor.clinicIds === undefined ? "all clinics" : `${actor.clinicIds.length} clinic(s)`}
         </div>

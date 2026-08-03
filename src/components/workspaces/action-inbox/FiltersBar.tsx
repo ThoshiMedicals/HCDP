@@ -6,7 +6,7 @@ import type { InboxFilters, SavedView } from "@/lib/action-inbox/types";
 import { cn } from "@/lib/cn";
 
 const inputCls =
-  "rounded-[10px] border border-[var(--line)] bg-white px-2.5 py-[0.45rem] text-[12px] font-semibold text-[#0f172a] min-h-[34px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#2563eb]";
+  "rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-[0.45rem] text-[12px] font-semibold text-[var(--ink)] min-h-[34px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#2563eb]";
 
 export function FiltersBar({
   filters,
@@ -35,7 +35,7 @@ export function FiltersBar({
   const patch = (partial: Partial<InboxFilters>) => setFilters((f) => ({ ...f, ...partial }));
 
   return (
-    <div className="rounded-[14px] border border-[var(--v34-card-line)] bg-white p-3">
+    <div className="rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
       <div className="flex flex-wrap items-center gap-2">
         <input
           className={inputCls + " min-w-[200px] flex-1"}
@@ -191,7 +191,7 @@ export function FiltersBar({
       ) : null}
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#94a3b8]">
+        <span className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[#94a3b8]">
           Saved views
         </span>
         {savedViews
@@ -203,10 +203,10 @@ export function FiltersBar({
                 type="button"
                 onClick={() => onApplyView(v)}
                 className={cn(
-                  "rounded-full border px-2.5 py-1 text-[11px] font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]",
+                  "rounded-full border px-2.5 py-1 text-[length:var(--type-control)] font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]",
                   v.pinned
                     ? "border-[#2563eb] bg-[#eff6ff] text-[#1d4ed8]"
-                    : "border-[var(--line)] bg-[#f8fafc]"
+                    : "border-[var(--line)] bg-[var(--soft)]"
                 )}
                 title={`${v.scope} · ${v.createdBy}`}
               >
@@ -217,7 +217,7 @@ export function FiltersBar({
               {onTogglePin ? (
                 <button
                   type="button"
-                  className="rounded-full border border-[var(--line)] bg-white px-1.5 py-1 text-[10px] font-bold text-[#64748b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-full border border-[var(--line)] bg-[var(--card)] px-1.5 py-1 text-[length:var(--type-meta)] font-bold text-[var(--muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   onClick={() => onTogglePin(v.id)}
                   aria-label={v.pinned ? `Unpin ${v.name}` : `Pin ${v.name}`}
                 >

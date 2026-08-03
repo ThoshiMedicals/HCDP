@@ -138,7 +138,7 @@ export function ClockSection() {
             Open session {open.id} · rostered={String(open.rostered)} · {open.state} · {open.openedAt.localCivil}
           </p>
         ) : (
-          <p data-testid="m06-clock-no-session" className="text-sm text-[#64748b]">
+          <p data-testid="m06-clock-no-session" className="text-sm text-[var(--muted)]">
             No open attendance session for this person.
           </p>
         )}

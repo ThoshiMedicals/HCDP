@@ -12,14 +12,14 @@ export function SettingsSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Settings</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">M04 storage ownership and rollback notes.</p>
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">M04 storage ownership and rollback notes.</p>
       </div>
       <Panel>
         <PanelTitle>Active actor</PanelTitle>
         <PanelSub>
           {actorName} ({actor.userId})
         </PanelSub>
-        <ul className="mt-2 max-h-40 overflow-auto text-xs text-[#526479]">
+        <ul className="mt-2 max-h-40 overflow-auto text-xs text-[var(--muted)]">
           {actor.permissions.includes("*") ? (
             <li>* (all M04 permissions)</li>
           ) : (
@@ -30,16 +30,16 @@ export function SettingsSection() {
       <Panel>
         <PanelTitle>Storage keys</PanelTitle>
         <PanelSub>Repositories own these keys — components must not write localStorage directly.</PanelSub>
-        <ul className="mt-2 text-xs text-[#526479]">
+        <ul className="mt-2 text-xs text-[var(--muted)]">
           {Object.entries(M04_STORAGE_KEYS).map(([k, v]) => (
             <li key={k}>
               <code>{v}</code>
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-[#526479]">People in store: {peopleCount}</p>
+        <p className="mt-3 text-sm text-[var(--muted)]">People in store: {peopleCount}</p>
         {migrationReport ? (
-          <p className="mt-1 text-sm text-[#526479]">
+          <p className="mt-1 text-sm text-[var(--muted)]">
             Last portal seed: {migrationReport.migratedCount}/{migrationReport.sourceCount} at {migrationReport.ranAt}
           </p>
         ) : null}

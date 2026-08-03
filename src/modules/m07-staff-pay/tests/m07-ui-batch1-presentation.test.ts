@@ -17,9 +17,11 @@ function read(rel: string): string {
 describe("UI Batch 1 — Premium Clinical tokens and shared presentation", () => {
   it("defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)", () => {
     const tokens = read("src/styles/tokens.css");
-    assert.match(tokens, /--pce-canvas:\s*#fbfbfa/i);
-    assert.match(tokens, /--v34-canvas:\s*#fbfbfa/i);
-    assert.match(tokens, /--accent-champagne:\s*#c5a880/i);
+    assert.match(tokens, /--hcdp-canvas:\s*#f5f7fa/i);
+    assert.match(tokens, /--pce-canvas:\s*var\(--hcdp-canvas\)/i);
+    assert.match(tokens, /--v34-canvas:\s*var\(--hcdp-canvas\)/i);
+    assert.match(tokens, /--hcdp-accent:\s*#9b7440/i);
+    assert.match(tokens, /--accent-champagne:\s*var\(--hcdp-accent\)/i);
     assert.match(tokens, /--status-success:/);
     assert.match(tokens, /--status-warning:/);
     assert.match(tokens, /--status-critical:/);

@@ -23,7 +23,7 @@ export function HtmlPrototypeFrame({
       key={src}
       src={src}
       title="Healthcare Doctors Pulse — HTML prototype (complete)"
-      className={className || "h-[calc(100vh-52px)] w-full border-0 bg-white"}
+      className={className || "h-[calc(100vh-52px)] w-full border-0 bg-[var(--card)]"}
     />
   );
 }

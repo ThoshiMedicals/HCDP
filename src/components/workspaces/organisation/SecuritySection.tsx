@@ -111,7 +111,7 @@ export function SecuritySection() {
           </Button>
         </>
       }>
-        <p className="text-sm text-[#526479]">{resolveModal?.title}</p>
+        <p className="text-sm text-[var(--muted)]">{resolveModal?.title}</p>
         {resolveModal?.risk === "Critical" ? (
           <label className="mt-3 grid gap-1 text-sm">
             <span className="font-bold">Resolution note (required for Critical)</span>

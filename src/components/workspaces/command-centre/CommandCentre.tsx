@@ -1146,7 +1146,7 @@ export function CommandCentre() {
       <header className="mx-auto w-full max-w-[1480px] px-3 pb-2 pt-1.5 lg:px-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="cc-text-info text-[10px] font-extrabold uppercase tracking-[0.08em]">
+            <div className="cc-text-info text-[length:var(--type-meta)] font-extrabold uppercase tracking-[0.08em]">
               Module 1 · Owner / Director
             </div>
             <h1 className="m-0 mt-1 text-[22px] font-black tracking-tight text-[var(--cc-ink)] sm:text-[26px]">
@@ -1386,7 +1386,7 @@ export function CommandCentre() {
                   <summary className="cursor-pointer text-[13px] font-extrabold text-[var(--cc-ink)]">
                     More dashboard detail
                   </summary>
-                  <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+                  <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                     Announcements, categories, AI findings, completed items, trends, private notes,
                     side panels and shell/management controls remain available here.
                   </p>
@@ -1768,19 +1768,19 @@ export function CommandCentre() {
       >
         <div className="grid gap-2 text-sm">
           <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Emergency</div>
+            <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Emergency</div>
             <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.emergency}</div>
-            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Require immediate Owner acknowledgement</p>
+            <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">Require immediate Owner acknowledgement</p>
           </div>
           <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Unread</div>
+            <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Unread</div>
             <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.unread}</div>
-            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Announcements and activity not yet marked read</p>
+            <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">Announcements and activity not yet marked read</p>
           </div>
           <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-            <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Approvals</div>
+            <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">Approvals</div>
             <div className="text-[22px] font-black text-[var(--cc-ink)]">{notificationCounts.approvals}</div>
-            <p className="m-0 text-[11px] text-[var(--cc-muted)]">Executive decisions waiting</p>
+            <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">Executive decisions waiting</p>
           </div>
         </div>
       </Modal>
@@ -1789,10 +1789,10 @@ export function CommandCentre() {
         <div className="grid gap-3">
           {announcements.map((a) => (
             <div key={a.id} className="rounded-xl border border-[var(--cc-card-line)] p-3">
-              <div className="cc-text-info text-[10px] font-extrabold uppercase">{a.type}</div>
+              <div className="cc-text-info text-[length:var(--type-meta)] font-extrabold uppercase">{a.type}</div>
               <strong>{a.title}</strong>
               <p className="m-0 mt-1 text-sm">{a.message}</p>
-              <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+              <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                 Clinics: {clinicNameFn(a.clinics)} · Read {a.readership.read}/{a.readership.total} · Delivered{" "}
                 {a.delivery.delivered}/{a.delivery.total} · Ack {a.acknowledgements.acked}/{a.acknowledgements.total}
               </p>
@@ -1885,7 +1885,7 @@ export function CommandCentre() {
             <strong>AI briefing themes:</strong> Stabilise Beachmere restoration plan; clear Indooroopilly staffing and
             pay variance; sustain Forest Lake / Woolloongabba performance.
           </p>
-          <p className="text-[11px] text-[var(--cc-muted)]">
+          <p className="text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Scheduled email delivery of this pack requires a future reporting backend.
           </p>
         </div>

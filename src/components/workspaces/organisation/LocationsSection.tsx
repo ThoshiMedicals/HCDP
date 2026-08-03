@@ -276,14 +276,14 @@ export function LocationsSection() {
                   <WarningBanner>{w}</WarningBanner>
                 </div>
               ))}
-              <div className="mt-3 grid gap-1 text-xs text-[#526479]">
+              <div className="mt-3 grid gap-1 text-xs text-[var(--muted)]">
                 <div><strong>Manager:</strong> {loc.practiceManager}</div>
                 <div><strong>Hours:</strong> {loc.openingHoursSummary}</div>
                 <div><strong>Active users:</strong> {loc.activeUsers}</div>
               </div>
               {loc.isDraft || loc.readiness.some((r) => !r.done) ? (
                 <div className="mt-3 rounded-lg bg-[#fbfcfd] p-3">
-                  <div className="text-xs font-bold text-[#526479]">Readiness checklist</div>
+                  <div className="text-xs font-bold text-[var(--muted)]">Readiness checklist</div>
                   <ul className="mt-2 grid gap-1 text-xs">
                     {loc.readiness.map((r) => (
                       <li key={r.id} className="flex items-center gap-2">
@@ -304,7 +304,7 @@ export function LocationsSection() {
                 ) : null}
               </div>
               {loc.mergerPartnerId ? (
-                <p className="mt-2 text-xs text-[#64748b]">
+                <p className="mt-2 text-xs text-[var(--muted)]">
                   Merger with {state.clinics.find((c) => c.id === loc.mergerPartnerId)?.shortName} ({loc.mergerMethod})
                 </p>
               ) : null}
@@ -324,7 +324,7 @@ export function LocationsSection() {
           </>
         }
       >
-        <p className="text-sm text-[#526479]">Reason and effective date are required for every status change.</p>
+        <p className="text-sm text-[var(--muted)]">Reason and effective date are required for every status change.</p>
         <div className="mt-3 grid gap-3">
           <label className="grid gap-1 text-sm">
             <span className="font-bold">New status</span>
@@ -366,9 +366,9 @@ export function LocationsSection() {
             </label>
           </div>
         ) : wizardStep === 1 ? (
-          <p className="text-sm text-[#526479]">Confirm region and business group. Service hours and holidays are configured after draft creation.</p>
+          <p className="text-sm text-[var(--muted)]">Confirm region and business group. Service hours and holidays are configured after draft creation.</p>
         ) : (
-          <p className="text-sm text-[#526479]">Draft will appear under Drafts tab. Complete readiness checklist before activation.</p>
+          <p className="text-sm text-[var(--muted)]">Draft will appear under Drafts tab. Complete readiness checklist before activation.</p>
         )}
       </Modal>
 
@@ -384,7 +384,7 @@ export function LocationsSection() {
               <div className="mt-2 overflow-auto">
                 <table className="w-full min-w-[560px] text-xs">
                   <thead>
-                    <tr className="text-left text-[#526479]">
+                    <tr className="text-left text-[var(--muted)]">
                       <th className="py-1 pr-2">Service</th>
                       {DAY_KEYS.map((d) => <th key={d} className="py-1 pr-2">{DAY_LABELS[d]}</th>)}
                     </tr>
@@ -407,7 +407,7 @@ export function LocationsSection() {
 
             <Panel>
               <PanelTitle>Holidays & closures</PanelTitle>
-              <ul className="mt-2 grid gap-2 text-sm text-[#526479]">
+              <ul className="mt-2 grid gap-2 text-sm text-[var(--muted)]">
                 {detail.holidays.map((h) => (
                   <li key={h.id} className="flex flex-wrap items-center justify-between gap-2 border-b border-[#f0f3f6] pb-2">
                     <span><strong>{h.date}</strong> — {h.name}</span>
@@ -418,7 +418,7 @@ export function LocationsSection() {
               </ul>
 
               <div className="mt-4 rounded-lg bg-[#fbfcfd] p-3">
-                <div className="text-xs font-bold text-[#526479]">Add temporary closure</div>
+                <div className="text-xs font-bold text-[var(--muted)]">Add temporary closure</div>
                 <div className="mt-2 grid gap-2 md:grid-cols-3">
                   <input type="date" className="rounded-lg border px-3 py-2 text-sm" value={closureForm.date} onChange={(e) => setClosureForm({ ...closureForm, date: e.target.value })} />
                   <input className="rounded-lg border px-3 py-2 text-sm" placeholder="Name" value={closureForm.name} onChange={(e) => setClosureForm({ ...closureForm, name: e.target.value })} />

@@ -51,9 +51,9 @@ export function InboxList({
   if (!actions.length) {
     if (emptyKind === "inbox") {
       return (
-        <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-white p-10 text-center">
+        <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center">
           <h3 className="m-0 text-lg font-extrabold text-[#334155]">You’re all caught up</h3>
-          <p className="mt-1 text-sm text-[#64748b]">
+          <p className="mt-1 text-sm text-[var(--muted)]">
             There are no open actions requiring your attention.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
@@ -71,7 +71,7 @@ export function InboxList({
       );
     }
     return (
-      <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-white p-10 text-center">
+      <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center">
         <h3 className="m-0 text-lg font-extrabold text-[#334155]">No actions match these filters</h3>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           <Button variant="teal" onClick={() => onEmptyAction("clear")}>
@@ -86,10 +86,10 @@ export function InboxList({
   }
 
   return (
-    <div className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] bg-white shadow-[var(--v34-card-shadow)]">
+    <div className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]">
       <div
         className={cn(
-          "hidden grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] gap-2 border-b border-[var(--v34-card-line)] bg-[#f8fafc] px-3 text-[10px] font-extrabold uppercase tracking-wide text-[#64748b] lg:grid",
+          "hidden grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] gap-2 border-b border-[var(--v34-card-line)] bg-[var(--soft)] px-3 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--muted)] lg:grid",
           density === "compact" ? "py-1.5" : "py-2.5"
         )}
       >
@@ -114,7 +114,7 @@ export function InboxList({
             key={action.id}
             className={cn(
               "border-b border-[#eef2f6] last:border-0",
-              action.unread && !restricted && "bg-[#f8fbff]",
+              action.unread && !restricted && "bg-[var(--soft)]",
               overdue && "border-l-4 border-l-[#dc2626]"
             )}
           >
@@ -150,7 +150,7 @@ export function InboxList({
                   <span className="h-2 w-2" />
                 )}
               </div>
-              <div className="text-[11px] font-bold text-[#64748b]">{action.number}</div>
+              <div className="text-[length:var(--type-control)] font-bold text-[var(--muted)]">{action.number}</div>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span
@@ -162,25 +162,25 @@ export function InboxList({
                     {title}
                   </span>
                   {action.unread && !restricted ? (
-                    <span className="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[10px] font-extrabold text-[#1d4ed8]">
+                    <span className="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[length:var(--type-meta)] font-extrabold text-[#1d4ed8]">
                       New
                     </span>
                   ) : null}
                   {action.isDemo ? (
-                    <span className="rounded bg-[#e2e8f0] px-1.5 py-0.5 text-[9px] font-bold text-[#475569]">
+                    <span className="rounded bg-[#e2e8f0] px-1.5 py-0.5 text-[length:var(--type-meta)] font-bold text-[#475569]">
                       Demonstration Data
                     </span>
                   ) : null}
                   {overdue ? <Badge tone="danger">Overdue</Badge> : null}
                 </div>
                 {!restricted ? (
-                  <div className="mt-0.5 truncate text-[11px] text-[#64748b]">{action.explanation}</div>
+                  <div className="mt-0.5 truncate text-[length:var(--type-control)] text-[var(--muted)]">{action.explanation}</div>
                 ) : (
-                  <div className="mt-0.5 text-[11px] text-[#64748b]">
+                  <div className="mt-0.5 text-[length:var(--type-control)] text-[var(--muted)]">
                     You do not have permission to view details for this sensitivity level.
                   </div>
                 )}
-                <div className="mt-1 flex flex-wrap gap-2 text-[10px] text-[#94a3b8]">
+                <div className="mt-1 flex flex-wrap gap-2 text-[length:var(--type-meta)] text-[#94a3b8]">
                   {!restricted && action.attachments.length ? (
                     <span>📎 {action.attachments.length}</span>
                   ) : null}
@@ -195,7 +195,7 @@ export function InboxList({
               <div>
                 {!restricted ? (
                   <span
-                    className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-extrabold"
+                    className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[length:var(--type-meta)] font-extrabold"
                     style={{
                       color: categoryColor(action.category),
                       background: `${categoryColor(action.category)}18`,
@@ -204,7 +204,7 @@ export function InboxList({
                     {action.category}
                   </span>
                 ) : (
-                  <span className="text-[11px] text-[#94a3b8]">—</span>
+                  <span className="text-[length:var(--type-control)] text-[#94a3b8]">—</span>
                 )}
               </div>
               <div className="truncate text-[12px] text-[#475569]">
@@ -230,10 +230,10 @@ export function InboxList({
                   "—"
                 )}
               </div>
-              <div className="truncate text-[11px] font-semibold text-[#475569]">
+              <div className="truncate text-[length:var(--type-control)] font-semibold text-[#475569]">
                 {restricted ? "—" : action.status}
               </div>
-              <div className="text-[11px]">
+              <div className="text-[length:var(--type-control)]">
                 {!restricted ? (
                   <>
                     <div className={overdue ? "font-bold text-[#dc2626]" : "text-[#475569]"}>

@@ -141,7 +141,7 @@ export function DepartmentsSection() {
             <Panel key={d.id}>
               <PanelTitle>{d.name}</PanelTitle>
               <PanelSub>{clinics.find((c) => c.id === d.clinicId)?.shortName} · {d.zone}</PanelSub>
-              <div className="mt-2 text-xs text-[#526479]">
+              <div className="mt-2 text-xs text-[var(--muted)]">
                 Primary: {d.primaryPersonName}<br />
                 Backup: {d.backupPersonName}
               </div>
@@ -177,7 +177,7 @@ export function DepartmentsSection() {
         <Panel>
           <PanelTitle>Archived rooms</PanelTitle>
           <PanelSub>Immutable history — rooms are archived, not deleted.</PanelSub>
-          <ul className="mt-3 grid gap-1 text-sm text-[#526479]">
+          <ul className="mt-3 grid gap-1 text-sm text-[var(--muted)]">
             {archivedOnly.map((d) => (
               <li key={d.id}>{d.name} · {clinics.find((c) => c.id === d.clinicId)?.shortName}</li>
             ))}

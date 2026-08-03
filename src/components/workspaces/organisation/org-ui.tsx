@@ -46,7 +46,7 @@ export function StatusPill({
     <span
       title={title || label}
       className={cn(
-        "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-extrabold",
+        "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[length:var(--type-control)] font-extrabold",
         s.bg,
         s.text
       )}
@@ -59,7 +59,7 @@ export function StatusPill({
 
 export function WarningBanner({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-xl border border-[#f5d08d] bg-[#fffbf3] px-4 py-3 text-sm text-[#92400e]">
+    <div className="rounded-xl border border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] px-4 py-3 text-sm text-[#92400e]">
       <strong className="mr-1">⚠</strong>
       {children}
     </div>
@@ -119,7 +119,7 @@ export function SearchBox({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-[var(--line)] bg-white py-2.5 pl-9 pr-3 text-sm text-[var(--ink)] shadow-sm focus:border-[var(--teal)] focus:outline-none"
+        className="w-full rounded-xl border border-[var(--line)] bg-[var(--card)] py-2.5 pl-9 pr-3 text-sm text-[var(--ink)] shadow-sm focus:border-[var(--teal)] focus:outline-none"
       />
     </div>
   );
@@ -134,7 +134,7 @@ export function FilterBar({
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-[#fbfcfd] px-3 py-2">
-      <span className="text-xs font-bold text-[#526479]">Filters</span>
+      <span className="text-xs font-bold text-[var(--muted)]">Filters</span>
       {children}
       {onClear ? (
         <Button small variant="line" onClick={onClear}>
@@ -159,10 +159,10 @@ export function FilterChip({
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-full border px-2.5 py-1 text-[11px] font-bold transition",
+        "rounded-full border px-2.5 py-1 text-[length:var(--type-control)] font-bold transition",
         active
           ? "border-[var(--teal)] bg-[var(--teal-3)] text-[#1d4ed8]"
-          : "border-[var(--line)] bg-white text-[#526479] hover:bg-[#f8fafc]"
+          : "border-[var(--line)] bg-[var(--card)] text-[var(--muted)] hover:bg-[var(--soft)]"
       )}
     >
       {label}
@@ -209,7 +209,7 @@ export function ConfirmDialog({
         </>
       }
     >
-      <p className="m-0 text-sm text-[#526479]">{message}</p>
+      <p className="m-0 text-sm text-[var(--muted)]">{message}</p>
     </Modal>
   );
 }
@@ -225,7 +225,7 @@ export function SimpleChartBar({
 }) {
   const max = Math.max(...items.map((i) => i.value), 1);
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--card)] p-4">
       <h4 className="m-0 mb-3 text-sm font-extrabold text-[var(--ink)]">{title}</h4>
       <div className="grid gap-2">
         {items.map((item) => (
@@ -237,11 +237,11 @@ export function SimpleChartBar({
             onClick={() => onItemClick?.(item.label)}
             className={cn(
               "grid gap-1 rounded-lg text-left",
-              onItemClick && "cursor-pointer hover:bg-[#f8fafc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--theme-accent,#2563eb)]"
+              onItemClick && "cursor-pointer hover:bg-[var(--soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--theme-accent,#2563eb)]"
             )}
           >
             <div className="flex justify-between text-xs">
-              <span className="font-semibold text-[#526479]">{item.label}</span>
+              <span className="font-semibold text-[var(--muted)]">{item.label}</span>
               <span className="font-bold tabular-nums">{item.value}</span>
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-[#eef2f7]">
@@ -303,7 +303,7 @@ export function SectionHeader({
     <div className="flex flex-wrap items-start justify-between gap-3">
       <div>
         <h2 className="m-0 text-lg font-extrabold tracking-tight">{title}</h2>
-        {subtitle ? <p className="m-0 mt-1 text-sm text-[#526479]">{subtitle}</p> : null}
+        {subtitle ? <p className="m-0 mt-1 text-sm text-[var(--muted)]">{subtitle}</p> : null}
       </div>
       {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
     </div>
@@ -354,8 +354,8 @@ export function SavedViewsBar({ section }: { section: OrgSectionId }) {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 py-2">
-      <span className="text-xs font-bold text-[#526479]">Saved views</span>
+    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--card)] px-3 py-2">
+      <span className="text-xs font-bold text-[var(--muted)]">Saved views</span>
       {views.length === 0 ? <span className="text-xs text-[#94a3b8]">None yet</span> : null}
       {views.map((v) => (
         <button
@@ -363,7 +363,7 @@ export function SavedViewsBar({ section }: { section: OrgSectionId }) {
           type="button"
           title={v.shared ? "Shared view" : "Private view"}
           onClick={() => setFilters(v.filters)}
-          className="rounded-full border border-[var(--line)] bg-white px-2.5 py-1 text-[11px] font-bold text-[#526479] transition hover:bg-[#f8fafc]"
+          className="rounded-full border border-[var(--line)] bg-[var(--card)] px-2.5 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] transition hover:bg-[var(--soft)]"
         >
           {v.name}
           {v.shared ? " · shared" : ""}

@@ -44,7 +44,7 @@ export function ModuleLanding({
       <header className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-5 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="text-[11px] font-extrabold uppercase tracking-wide text-[var(--muted)]">
+            <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--muted)]">
               Module {plat.number}
               {plat.tier === "enterprise" ? " · Enterprise Extension" : ""}
             </div>

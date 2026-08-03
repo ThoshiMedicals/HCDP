@@ -65,9 +65,9 @@ export function CardStateFrame({
         <div className="text-[13px] font-extrabold">{c.title}</div>
         <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">{c.body}</p>
         {lastUpdated ? (
-          <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">Last successful update: {lastUpdated}</p>
+          <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">Last successful update: {lastUpdated}</p>
         ) : null}
-        {source ? <p className="m-0 text-[11px] text-[var(--cc-muted)]">Source: {source}</p> : null}
+        {source ? <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">Source: {source}</p> : null}
         <div className="mt-3 flex flex-wrap gap-2">
           {onRetry ? (
             <Button small variant="line" onClick={onRetry}>
@@ -85,7 +85,7 @@ export function CardStateFrame({
             </Button>
           ) : null}
         </div>
-        <p className="m-0 mt-3 text-[10px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-3 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
           Live source connectivity requires a future backend connection.
         </p>
       </div>
@@ -113,5 +113,5 @@ export function FilterSentenceBar({
 }
 
 export function BackendHint({ children }: { children: React.ReactNode }) {
-  return <p className="m-0 text-[10px] leading-snug text-[var(--cc-muted)]">{children}</p>;
+  return <p className="m-0 text-[length:var(--type-meta)] leading-snug text-[var(--cc-muted)]">{children}</p>;
 }

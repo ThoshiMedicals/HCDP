@@ -44,17 +44,17 @@ function ControlStatusCard({
   return (
     <CcCard className="flex flex-col gap-1.5 p-3">
       <strong className="text-[12px] font-extrabold leading-tight text-[var(--cc-ink)]">{title}</strong>
-      <p className="m-0 flex-1 text-[11px] leading-snug text-[var(--cc-muted)]">{detail}</p>
+      <p className="m-0 flex-1 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">{detail}</p>
       {href && actionLabel ? (
         <Link
           href={href}
-          className="cc-ctrl inline-flex w-fit items-center justify-center whitespace-nowrap text-[11px]"
+          className="cc-ctrl inline-flex w-fit items-center justify-center whitespace-nowrap text-[length:var(--type-control)]"
         >
           {actionLabel}
         </Link>
       ) : null}
       {nonOperationalNote ? (
-        <p className="m-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--cc-muted)]" role="status">
+        <p className="m-0 text-[length:var(--type-meta)] font-semibold uppercase tracking-wide text-[var(--cc-muted)]" role="status">
           {nonOperationalNote}
         </p>
       ) : null}
@@ -101,16 +101,16 @@ export function DashboardShellControlsPanel() {
               <strong className="block text-[12px] font-extrabold text-[var(--cc-ink)]">
                 Cross-Location Emergency Intervention
               </strong>
-              <p className="m-0 mt-0.5 text-[11px] leading-snug text-[var(--cc-muted)]">
+              <p className="m-0 mt-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
                 Issue a mandatory action to every affected Practice Manager and track local completion.
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap items-center gap-1.5">
-              <Link href="/emergency-centre" className="cc-ctrl text-[11px]">
+              <Link href="/emergency-centre" className="cc-ctrl text-[length:var(--type-control)]">
                 Open Emergency Control
               </Link>
               <span
-                className="inline-flex items-center rounded-md border border-[var(--cc-card-line)] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--cc-muted)]"
+                className="inline-flex items-center rounded-md border border-[var(--cc-card-line)] px-2 py-1 text-[length:var(--type-meta)] font-semibold uppercase tracking-wide text-[var(--cc-muted)]"
                 role="status"
               >
                 Start intervention — non-operational
@@ -119,7 +119,7 @@ export function DashboardShellControlsPanel() {
           </div>
           <div className="grid gap-1.5">
             {EMERGENCY_INTERVENTION_PROGRESS.map((row) => (
-              <div key={row.name} className="flex items-center gap-2 text-[11px]">
+              <div key={row.name} className="flex items-center gap-2 text-[length:var(--type-control)]">
                 <span className="w-[76px] shrink-0 font-bold text-[var(--cc-ink)]">{row.name}</span>
                 <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-[var(--cc-soft)]">
                   <span
@@ -139,7 +139,7 @@ export function DashboardShellControlsPanel() {
           <strong className="block text-[12px] font-extrabold text-[var(--cc-ink)]">
             Management Control Status
           </strong>
-          <p className="m-0 mt-0.5 text-[11px] leading-snug text-[var(--cc-muted)]">
+          <p className="m-0 mt-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
             Business controls introduced in the research-amended BRD. Demo-seed sample — not live
             production status.
           </p>
@@ -149,14 +149,14 @@ export function DashboardShellControlsPanel() {
                 key={row.label}
                 className="flex items-center justify-between gap-2 rounded-lg border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-2.5 py-1.5"
               >
-                <span className="w-[68px] shrink-0 text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+                <span className="w-[68px] shrink-0 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
                   {row.label}
                 </span>
-                <span className="min-w-0 flex-1 truncate text-[11px] font-semibold text-[var(--cc-ink)]">
+                <span className="min-w-0 flex-1 truncate text-[length:var(--type-control)] font-semibold text-[var(--cc-ink)]">
                   {row.detail}
                 </span>
                 <span
-                  className={`inline-flex shrink-0 items-center rounded-md px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wide ${statusToneClass(row.tone)}`}
+                  className={`inline-flex shrink-0 items-center rounded-md px-1.5 py-0.5 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide ${statusToneClass(row.tone)}`}
                 >
                   {row.status}
                 </span>

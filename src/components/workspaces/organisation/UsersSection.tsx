@@ -181,7 +181,7 @@ export function UsersSection() {
           <tbody>
             {users.map((u) => (
               <tr key={u.id}>
-                <Td><strong>{u.firstName} {u.lastName}</strong><div className="text-xs text-[#64748b]">{u.email}</div></Td>
+                <Td><strong>{u.firstName} {u.lastName}</strong><div className="text-xs text-[var(--muted)]">{u.email}</div></Td>
                 <Td><StatusPill label={u.status} tone={u.status === "Active" ? "success" : u.status === "Locked" ? "danger" : "warn"} /></Td>
                 <Td>{u.role}</Td>
                 <Td>{clinics.find((c) => c.id === u.primaryClinicId)?.shortName || u.primaryClinicId}</Td>
@@ -200,7 +200,7 @@ export function UsersSection() {
         </>
       }>
         {createMode === "Bulk import" ? (
-          <p className="text-sm text-[#526479]">Bulk import demo: adds one sample user. Full CSV import is out of scope for this prototype.</p>
+          <p className="text-sm text-[var(--muted)]">Bulk import demo: adds one sample user. Full CSV import is out of scope for this prototype.</p>
         ) : (
           <div className="grid gap-3">
             <input className="rounded-lg border px-3 py-2" placeholder="First name" value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} />
@@ -236,7 +236,7 @@ export function UsersSection() {
             {profileTab === "personal" ? (
               <Panel>
                 <PanelTitle>Personal & contact</PanelTitle>
-                <div className="mt-2 grid gap-1 text-sm text-[#526479]">
+                <div className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
                   <div><strong>Name:</strong> {selected.firstName} {selected.lastName}</div>
                   <div><strong>Email:</strong> {selected.email}</div>
                   <div><strong>Phone:</strong> {selected.phone || "—"}</div>
@@ -248,7 +248,7 @@ export function UsersSection() {
             {profileTab === "employment" ? (
               <Panel>
                 <PanelTitle>Employment</PanelTitle>
-                <div className="mt-2 grid gap-1 text-sm text-[#526479]">
+                <div className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
                   <div><strong>Job title:</strong> {selected.jobTitle}</div>
                   <div><strong>Employment type:</strong> {selected.employmentType}</div>
                   <div><strong>Manager:</strong> {selected.managerName || "—"}</div>
@@ -280,7 +280,7 @@ export function UsersSection() {
                       </li>
                     );
                   })}
-                  {userAssignments.length === 0 ? <li className="text-[#64748b]">No clinic assignments.</li> : null}
+                  {userAssignments.length === 0 ? <li className="text-[var(--muted)]">No clinic assignments.</li> : null}
                 </ul>
                 <PanelSub>Changing primary clinic triggers an access review.</PanelSub>
                 <select
@@ -296,14 +296,14 @@ export function UsersSection() {
             {profileTab === "roles" ? (
               <Panel>
                 <PanelTitle>Roles & permissions</PanelTitle>
-                <div className="mt-2 grid gap-1 text-sm text-[#526479]">
+                <div className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
                   <div><strong>Primary role:</strong> {selected.role}</div>
                   <div><strong>Secondary roles:</strong> {selected.secondaryRoles.length ? selected.secondaryRoles.join(", ") : "None"}</div>
                 </div>
                 {userExceptions.length ? (
                   <div className="mt-3">
-                    <div className="text-xs font-bold text-[#526479]">Permission exceptions</div>
-                    <ul className="mt-1 grid gap-1 text-sm text-[#526479]">
+                    <div className="text-xs font-bold text-[var(--muted)]">Permission exceptions</div>
+                    <ul className="mt-1 grid gap-1 text-sm text-[var(--muted)]">
                       {userExceptions.map((e) => (
                         <li key={e.id}>{e.permissionKey} — {e.level} (reviews {e.reviewDate})</li>
                       ))}
@@ -326,7 +326,7 @@ export function UsersSection() {
             {profileTab === "security" ? (
               <Panel>
                 <PanelTitle>Login & security</PanelTitle>
-                <div className="mt-2 grid gap-1 text-sm text-[#526479]">
+                <div className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
                   <div><strong>Last login:</strong> {selected.lastLogin ? new Date(selected.lastLogin).toLocaleString() : "Never"}</div>
                   <div><strong>Failed sign-ins:</strong> {selected.failedSignIns}</div>
                   <div><strong>Emergency access active:</strong> {selected.emergencyAccessActive ? "Yes" : "No"}</div>
@@ -342,7 +342,7 @@ export function UsersSection() {
             {profileTab === "history" ? (
               <Panel>
                 <PanelTitle>Access history</PanelTitle>
-                <div className="mt-2 grid gap-2 text-sm text-[#526479]">
+                <div className="mt-2 grid gap-2 text-sm text-[var(--muted)]">
                   {userRequests.map((r) => (
                     <div key={r.id} className="border-b border-[#f0f3f6] pb-2">
                       <strong>{r.title}</strong> — <StatusPill label={r.status} tone="info" />
@@ -361,7 +361,7 @@ export function UsersSection() {
             {profileTab === "audit" ? (
               <Panel>
                 <PanelTitle>Audit records</PanelTitle>
-                <ul className="mt-2 grid gap-2 text-sm text-[#526479]">
+                <ul className="mt-2 grid gap-2 text-sm text-[var(--muted)]">
                   {userAudit.map((a) => (
                     <li key={a.id} className="border-b border-[#f0f3f6] pb-2">
                       <div className="text-xs text-[#94a3b8]">{new Date(a.at).toLocaleString()} · {a.actorName}</div>

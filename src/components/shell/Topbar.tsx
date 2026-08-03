@@ -159,14 +159,14 @@ export function Topbar() {
               <option value="multiple">Multiple Clinics · {selection.selectedClinicIds.length}</option>
             ) : null}
           </select>
-          <span className="hidden pl-1 text-[10px] font-semibold text-[var(--muted)] sm:block">
+          <span className="hidden pl-1 text-[length:var(--type-meta)] font-semibold text-[var(--muted)] sm:block">
             Scope: {scopeLabel}
           </span>
         </div>
       </div>
 
       <div className="ribbon-center order-3 flex w-full min-w-0 justify-center lg:order-none lg:max-w-[440px] lg:flex-1">
-        <label className="search-compact flex h-9 w-full max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[#f7fafc] px-2.5 text-[#718096]">
+        <label className="search-compact flex h-9 w-full max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
           <Icon name="search" className="h-3.5 w-3.5 shrink-0" />
           <input
             type="search"
@@ -193,7 +193,7 @@ export function Topbar() {
         </div>
         <button
           type="button"
-          className="hidden rounded-[10px] border border-[var(--line)] bg-[color-mix(in_srgb,#155ea8_12%,var(--card))] px-2.5 py-1.5 text-sm font-bold text-[#155ea8] md:inline-flex"
+          className="hidden rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] md:inline-flex"
           onClick={() => openCreate("locations")}
         >
           + New Entry
@@ -209,7 +209,7 @@ export function Topbar() {
         </button>
         <button
           type="button"
-          className="hidden items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[10px] font-bold text-[var(--muted)] lg:inline-flex"
+          className="hidden items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-meta)] font-bold text-[var(--muted)] lg:inline-flex"
           onClick={() =>
             pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
           }
@@ -220,10 +220,10 @@ export function Topbar() {
         <button
           type="button"
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[10px] font-bold",
+            "inline-flex items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-meta)] font-bold",
             online
-              ? "border-[color-mix(in_srgb,#126846_35%,var(--line))] bg-[color-mix(in_srgb,#126846_10%,var(--card))] text-[#126846]"
-              : "border-[color-mix(in_srgb,#b45309_35%,var(--line))] bg-[color-mix(in_srgb,#b45309_10%,var(--card))] text-[#b45309]"
+              ? "border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)]"
+              : "border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)]"
           )}
           onClick={toggleOnline}
           aria-label={online ? "Online" : "Offline"}

@@ -177,7 +177,8 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
 
     const tokens = read("src/styles/tokens.css");
     assert.match(tokens, /body\.theme-dark/);
-    assert.match(tokens, /--pce-canvas:\s*#fbfbfa/i);
+    assert.match(tokens, /--hcdp-canvas:\s*#f5f7fa/i);
+    assert.match(tokens, /--pce-canvas:\s*var\(--hcdp-canvas\)/i);
 
     const controlBar = read("src/components/workspaces/command-centre/ControlBar.tsx");
     assert.match(controlBar, /aria-label="Appearance"/);

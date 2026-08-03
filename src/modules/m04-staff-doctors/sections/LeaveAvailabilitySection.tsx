@@ -21,7 +21,7 @@ export function LeaveAvailabilitySection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Leave & availability</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">Self-approval of leave is rejected.</p>
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">Self-approval of leave is rejected.</p>
       </div>
 
       <Panel>
@@ -160,7 +160,7 @@ export function LeaveAvailabilitySection() {
         >
           Add Mon 09:00–17:00
         </Button>
-        <ul className="mt-3 list-disc pl-5 text-sm text-[#526479]">
+        <ul className="mt-3 list-disc pl-5 text-sm text-[var(--muted)]">
           {listAvailability().slice(0, 10).map((a) => (
             <li key={a.id}>
               {a.personId} · dow {a.dayOfWeek} · {a.startTime}-{a.endTime}

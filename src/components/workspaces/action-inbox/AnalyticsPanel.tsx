@@ -128,7 +128,7 @@ export function AnalyticsPanel({
           </Button>
         ))}
         <select
-          className="rounded-[10px] border border-[var(--line)] bg-white px-2 text-[12px] font-semibold"
+          className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2 text-[12px] font-semibold"
           value={period}
           onChange={(e) => setPeriod(e.target.value)}
         >
@@ -145,13 +145,13 @@ export function AnalyticsPanel({
             <button
               key={m.label}
               type="button"
-              className="rounded-xl border border-[var(--line)] bg-white p-3 text-left hover:border-[#2563eb]"
+              className="rounded-xl border border-[var(--line)] bg-[var(--card)] p-3 text-left hover:border-[#2563eb]"
               onClick={() => onDrillDown(m.ids)}
               title={m.def}
             >
-              <div className="text-[11px] font-bold text-[#64748b]">{m.label}</div>
+              <div className="text-[length:var(--type-control)] font-bold text-[var(--muted)]">{m.label}</div>
               <div className="text-2xl font-black">{m.value}</div>
-              <div className="mt-1 text-[10px] text-[#94a3b8]">{m.def}</div>
+              <div className="mt-1 text-[length:var(--type-meta)] text-[#94a3b8]">{m.def}</div>
             </button>
           ))}
         </div>
@@ -182,7 +182,7 @@ export function AnalyticsPanel({
           <h4 className="m-0 mb-2 text-sm font-extrabold">Longest outstanding actions</h4>
           <table className="w-full border-collapse text-left text-[12px]">
             <thead>
-              <tr className="border-b border-[var(--line)] text-[#64748b]">
+              <tr className="border-b border-[var(--line)] text-[var(--muted)]">
                 <th className="py-2">Number</th>
                 <th>Title</th>
                 <th>Clinic</th>
@@ -194,7 +194,7 @@ export function AnalyticsPanel({
               {longest.map((a) => (
                 <tr
                   key={a.id}
-                  className="cursor-pointer border-b border-[#f1f5f9] hover:bg-[#f8fafc]"
+                  className="cursor-pointer border-b border-[#f1f5f9] hover:bg-[var(--soft)]"
                   onClick={() => onDrillDown([a.id])}
                 >
                   <td className="py-2 font-bold">{a.number}</td>
@@ -223,7 +223,7 @@ function groupCount(actions: InboxAction[], keyFn: (a: InboxAction) => string) {
 
 function ChartBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-3">
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--card)] p-3">
       <h4 className="m-0 mb-2 text-[12px] font-extrabold text-[#475569]">{title}</h4>
       {children}
     </div>
@@ -256,7 +256,7 @@ function BarChart({
         <button
           key={label}
           type="button"
-          className="grid grid-cols-[100px_1fr_28px] items-center gap-2 text-left text-[11px]"
+          className="grid grid-cols-[100px_1fr_28px] items-center gap-2 text-left text-[length:var(--type-control)]"
           onClick={() => onClick(label)}
         >
           <span className="truncate font-semibold">{label}</span>
@@ -294,7 +294,7 @@ function Donut({ data }: { data: [string, number][] }) {
         ))}
         <circle cx="21" cy="21" r="10" fill="#fff" />
       </svg>
-      <div className="grid gap-1 text-[11px]">
+      <div className="grid gap-1 text-[length:var(--type-control)]">
         {data.map(([label, n], i) => (
           <div key={label} className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-sm" style={{ background: colors[i] }} />
@@ -351,12 +351,12 @@ function Heatmap({ actions }: { actions: InboxAction[] }) {
   );
   return (
     <div className="overflow-x-auto">
-      <table className="text-[10px]">
+      <table className="text-[length:var(--type-meta)]">
         <thead>
           <tr>
             <th className="p-1" />
             {days.map((d) => (
-              <th key={d} className="p-1 font-bold text-[#64748b]">
+              <th key={d} className="p-1 font-bold text-[var(--muted)]">
                 {d}
               </th>
             ))}

@@ -66,7 +66,7 @@ export function CorrectionsSection() {
           ))}
         </ul>
       )}
-      <p data-testid="m06-correction-count" className="text-xs text-[#64748b] mt-2">
+      <p data-testid="m06-correction-count" className="text-xs text-[var(--muted)] mt-2">
         {rows.length} correction request(s)
       </p>
     </SectionFrame>

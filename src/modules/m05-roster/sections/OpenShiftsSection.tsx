@@ -183,7 +183,7 @@ export function OpenShiftsSection() {
     <SectionFrame sectionId="open-shifts" title="Open Shifts">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Offer, accept and select workers for open shifts. Every acceptance re-checks
           authoritative eligibility.
         </p>
@@ -271,7 +271,7 @@ export function OpenShiftsSection() {
                     <Td className="text-xs">
                       {o.applicants.length}
                       {o.applicants.length > 0 ? (
-                        <span className="ml-1 text-[10px] text-[#64748b]">
+                        <span className="ml-1 text-[length:var(--type-meta)] text-[var(--muted)]">
                           ({o.applicants.map((a) => a.personId).join(", ")})
                         </span>
                       ) : null}

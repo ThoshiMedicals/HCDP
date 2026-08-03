@@ -88,7 +88,7 @@ export function CostForecastSection() {
     <SectionFrame sectionId="cost-forecast" title="Cost Forecast">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Planning-only forecasts. Rate and cost figures are masked without{" "}
           <code>roster.cost.view</code>.
         </p>
@@ -205,8 +205,8 @@ export function CostForecastSection() {
 
 function Metric({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="rounded-lg border border-[var(--line)] bg-white p-3">
-      <div className="text-[11px] font-bold uppercase text-[#64748b]">{label}</div>
+    <div className="rounded-lg border border-[var(--line)] bg-[var(--card)] p-3">
+      <div className="text-[length:var(--type-control)] font-bold uppercase text-[var(--muted)]">{label}</div>
       <div className="mt-1 text-lg font-extrabold text-[var(--ink)]">{value}</div>
     </div>
   );

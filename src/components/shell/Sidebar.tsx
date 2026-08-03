@@ -379,7 +379,7 @@ export function Sidebar() {
                 </option>
               ))}
             </select>
-            <p className="mt-1 text-[10px] leading-snug text-[var(--sidebar-muted)]">
+            <p className="mt-1 text-[length:var(--type-meta)] leading-snug text-[var(--sidebar-muted)]">
               Demo Act-as — not production auth
             </p>
           </div>

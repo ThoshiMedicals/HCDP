@@ -119,7 +119,7 @@ export function OverviewSection() {
         <Panel>
           <PanelTitle>Access warnings</PanelTitle>
           <PanelSub>Items needing attention across users and clinics.</PanelSub>
-          <ul className="mt-3 grid gap-2 text-sm text-[#526479]">
+          <ul className="mt-3 grid gap-2 text-sm text-[var(--muted)]">
             {accessWarnings.map((w) => (
               <li key={w}>
                 <WarningBanner>{w}</WarningBanner>

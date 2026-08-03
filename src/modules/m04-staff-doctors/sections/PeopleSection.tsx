@@ -47,7 +47,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
         <h2 className="m-0 text-xl font-extrabold">
           {kindFilter === "doctor" ? "Doctor profiles" : kindFilter === "staff" ? "Staff profiles" : "People directory"}
         </h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Duplicate check on name + email. Soft-archive only — history is retained.
         </p>
       </div>

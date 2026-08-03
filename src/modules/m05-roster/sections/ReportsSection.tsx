@@ -66,7 +66,7 @@ export function ReportsSection() {
     <SectionFrame sectionId="reports" title="Reports">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Scoped roster reports. Export requires <code>roster.export</code>. Cost
           columns require <code>roster.cost.view</code>.
         </p>
@@ -105,7 +105,7 @@ export function ReportsSection() {
               Export CSV
             </Button>
           ) : (
-            <div className="text-sm text-[#64748b]">
+            <div className="text-sm text-[var(--muted)]">
               You do not have <code>roster.export</code>.
             </div>
           )}
@@ -115,7 +115,7 @@ export function ReportsSection() {
       {csvPreview ? (
         <Panel>
           <PanelTitle>CSV preview</PanelTitle>
-          <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-[var(--line)] bg-[#0f172a] p-3 text-[11px] leading-relaxed text-[#e2e8f0]">
+          <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-[var(--line)] bg-[#0f172a] p-3 text-[length:var(--type-control)] leading-relaxed text-[#e2e8f0]">
             {csvPreview}
           </pre>
         </Panel>
@@ -127,7 +127,7 @@ export function ReportsSection() {
 function StatPanel({ label, value }: { label: string; value: number }) {
   return (
     <Panel>
-      <div className="text-[11px] font-bold uppercase text-[#64748b]">{label}</div>
+      <div className="text-[length:var(--type-control)] font-bold uppercase text-[var(--muted)]">{label}</div>
       <div className="mt-1 text-2xl font-extrabold text-[var(--ink)]">{value}</div>
     </Panel>
   );

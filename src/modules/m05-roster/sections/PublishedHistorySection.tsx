@@ -82,7 +82,7 @@ export function PublishedHistorySection() {
     <SectionFrame sectionId="published-history" title="Published History">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Publications are IMMUTABLE. Ack status is DERIVED from acknowledgement rows —
           period stays in <code>published</code> while acks are in flight.
         </p>
@@ -185,7 +185,7 @@ export function PublishedHistorySection() {
                                 Cancel
                               </Button>
                             </div>
-                            <div className="text-[11px] text-[#64748b]">
+                            <div className="text-[length:var(--type-control)] text-[var(--muted)]">
                               {acks.length} ack row(s) recorded.
                             </div>
                           </div>
@@ -199,7 +199,7 @@ export function PublishedHistorySection() {
                           </Button>
                         )
                       ) : (
-                        <span className="text-xs text-[#64748b]">—</span>
+                        <span className="text-xs text-[var(--muted)]">—</span>
                       )}
                     </Td>
                   </tr>

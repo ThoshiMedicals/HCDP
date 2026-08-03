@@ -286,7 +286,7 @@ export function CreateActionModal({
       >
         <div className="grid gap-3">
           {draftMeta ? (
-            <p className="m-0 text-[11px] text-[var(--cc-muted)]">
+            <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">
               Draft saved · Created {new Date(draftMeta.createdAt).toLocaleString("en-AU")} · Last edited{" "}
               {new Date(draftMeta.lastEdited).toLocaleString("en-AU")}
               {missing.length ? ` · Missing: ${missing.join(", ")}` : ""}
@@ -357,7 +357,7 @@ export function CreateActionModal({
               ))}
             </select>
           </Field>
-          <p className="m-0 text-[11px] text-[var(--cc-muted)]">
+          <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Public holidays default to next working day. Next occurrence is created even if the previous is incomplete.
             Team members are not required to Accept Responsibility.
           </p>
@@ -591,7 +591,7 @@ export function PublishAnnouncementModal({
             </label>
           ))}
         </div>
-        <p className="m-0 text-[11px] text-[var(--cc-muted)]">
+        <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Dashboard delivery is demonstrated locally. Email and SMS are recorded as chosen channels only — no live
           message is sent without a future messaging backend.
         </p>
@@ -712,7 +712,7 @@ export function CustomiseDashboardModal({
       ) : null}
       {layouts?.length ? (
         <div className="mb-4">
-          <div className="mb-2 text-[11px] font-extrabold uppercase text-[var(--cc-muted)]">Saved layouts</div>
+          <div className="mb-2 text-[length:var(--type-control)] font-extrabold uppercase text-[var(--cc-muted)]">Saved layouts</div>
           <div className="grid max-h-40 gap-1 overflow-auto">
             {layouts.map((l) => (
               <div
@@ -813,7 +813,7 @@ export function CustomiseDashboardModal({
             </div>
           ))}
         {extraSections.length ? (
-          <p className="m-0 text-[10px] text-[var(--cc-muted)]">Custom sections: {extraSections.map((s) => s.label).join(", ")}</p>
+          <p className="m-0 text-[length:var(--type-meta)] text-[var(--cc-muted)]">Custom sections: {extraSections.map((s) => s.label).join(", ")}</p>
         ) : null}
       </div>
     </Modal>
@@ -1048,7 +1048,7 @@ export function ScheduleReportModal({
       }
     >
       <div className="grid gap-3">
-        <div className="cc-demo-banner text-[11px]">
+        <div className="cc-demo-banner text-[length:var(--type-control)]">
           Scheduled locally — backend delivery connection required for live email.
         </div>
         <Field label="Report">
@@ -1262,13 +1262,13 @@ export function RecurringTemplatesModal({
         <div className="grid gap-2">
           {(["Organisation", "Personal"] as const).map((scope) => (
             <div key={scope}>
-              <div className="mb-1 text-[11px] font-extrabold uppercase text-[var(--cc-muted)]">{scope}</div>
+              <div className="mb-1 text-[length:var(--type-control)] font-extrabold uppercase text-[var(--cc-muted)]">{scope}</div>
               {templates
                 .filter((t) => t.scope === scope && !t.archived)
                 .map((t) => (
                   <div key={t.id} className="mb-2 rounded-xl border border-[var(--cc-card-line)] p-2.5 text-sm">
                     <strong>{t.name}</strong>
-                    <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+                    <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                       {t.priority} · {t.category} · {t.owner}
                     </p>
                   </div>
@@ -1321,7 +1321,7 @@ export function RecurringTemplatesModal({
           {recurring.map((r) => (
             <div key={r.id} className="rounded-xl border border-[var(--cc-card-line)] p-3 text-sm">
               <strong>{r.templateName}</strong>
-              <p className="m-0 text-[11px] text-[var(--cc-muted)]">
+              <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                 {r.frequency} · {r.status} · Holidays: {r.holidayHandling}
               </p>
               {r.status === "Active" ? (
@@ -1437,7 +1437,7 @@ export function SearchResultsPanel({
       <p className="m-0 mb-3 text-xs text-[var(--cc-muted)]">Whole permitted platform · plain-language questions supported</p>
       {Object.entries(grouped).map(([type, rows]) => (
         <div key={type} className="mb-3">
-          <div className="cc-text-info mb-1 text-[11px] font-extrabold uppercase">{type}</div>
+          <div className="cc-text-info mb-1 text-[length:var(--type-control)] font-extrabold uppercase">{type}</div>
           <div className="grid gap-1.5">
             {rows.map((r) => (
               <button

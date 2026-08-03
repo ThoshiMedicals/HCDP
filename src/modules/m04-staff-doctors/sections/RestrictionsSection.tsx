@@ -22,7 +22,7 @@ export function RestrictionsSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Restrictions & adjustments</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Sensitive detail is masked without restriction.view_sensitive.
         </p>
       </div>

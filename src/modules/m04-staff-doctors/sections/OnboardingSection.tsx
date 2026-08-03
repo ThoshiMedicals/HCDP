@@ -23,7 +23,7 @@ export function OnboardingSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Onboarding</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">Start and complete workforce onboarding.</p>
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">Start and complete workforce onboarding.</p>
       </div>
       <Panel>
         <PanelTitle>Start onboarding</PanelTitle>

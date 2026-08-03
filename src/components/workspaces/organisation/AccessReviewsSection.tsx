@@ -66,7 +66,7 @@ export function AccessReviewsSection() {
       <div className="grid gap-3 md:grid-cols-2">
         <Panel>
           <PanelTitle>Review triggers (frequency)</PanelTitle>
-          <ul className="mt-2 grid gap-1 text-sm text-[#526479]">
+          <ul className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
             {triggers.map(([t, n]) => (
               <li key={t} className="flex justify-between"><span>{t}</span><strong>{n}</strong></li>
             ))}
@@ -113,7 +113,7 @@ export function AccessReviewsSection() {
                 {r.status !== "Completed" ? (
                   <Button small variant="teal" onClick={() => { setModal(r); setDecision("Confirm"); }}>Decide</Button>
                 ) : (
-                  <span className="text-xs text-[#64748b]">{r.decision}</span>
+                  <span className="text-xs text-[var(--muted)]">{r.decision}</span>
                 )}
               </Td>
             </tr>

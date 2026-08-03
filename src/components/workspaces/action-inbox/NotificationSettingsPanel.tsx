@@ -6,7 +6,7 @@ import { Drawer } from "@/components/ui/Drawer";
 import type { NotificationSettings } from "@/lib/action-inbox/types";
 
 const inputCls =
-  "rounded-[10px] border border-[var(--line)] bg-white px-2.5 py-2 text-[13px] text-[#0f172a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
+  "rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-2 text-[13px] text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
 
 export function NotificationSettingsPanel({
   settings,
@@ -75,7 +75,7 @@ export function NotificationSettingsPanel({
           <input type="checkbox" checked disabled />
           Escalation alerts (cannot silence)
         </label>
-        <p className="m-0 text-[11px] text-[#64748b]">
+        <p className="m-0 text-[length:var(--type-control)] text-[var(--muted)]">
           Urgent, escalation, emergency and mandatory approval alerts cannot be silenced.
         </p>
 

@@ -1111,10 +1111,10 @@ export function ActionInboxApp() {
 
   if (loadState === "loading") {
     return (
-      <div className="grid min-h-[40vh] place-items-center rounded-2xl border border-[var(--v34-card-line)] bg-white p-10">
+      <div className="grid min-h-[40vh] place-items-center rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-10">
         <div className="text-center">
           <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-2 border-[#cbd5e1] border-t-[#2563eb]" />
-          <p className="m-0 text-sm font-semibold text-[#64748b]">Loading your actions…</p>
+          <p className="m-0 text-sm font-semibold text-[var(--muted)]">Loading your actions…</p>
         </div>
       </div>
     );
@@ -1159,20 +1159,20 @@ export function ActionInboxApp() {
         </div>
       ) : null}
 
-      <header className="rounded-[14px] border border-[var(--v34-card-line)] bg-white p-4 shadow-[var(--v34-card-shadow)]">
+      <header className="rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] p-4 shadow-[var(--v34-card-shadow)]">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <h1 className="m-0 text-[22px] font-black tracking-tight text-[var(--ink)]">
               Action Inbox & Notifications
             </h1>
-            <p className="mt-1 max-w-2xl text-sm text-[#64748b]">
+            <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
               Review, decide and complete work requiring your attention.
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-2">
-              <label className="flex items-center gap-1.5 text-[11px] font-bold text-[#475569]">
+              <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
                 Demo role
                 <select
-                  className="rounded-lg border border-[var(--line)] bg-white px-2 py-1 text-[12px] font-semibold text-[#0f172a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[12px] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   value={demoRole}
                   onChange={(e) => {
                     const next = e.target.value as DemoRole;
@@ -1191,10 +1191,10 @@ export function ActionInboxApp() {
                 </select>
               </label>
               <Badge tone="info">{identity.displayName} · {identity.role}</Badge>
-              <label className="flex items-center gap-1.5 text-[11px] font-bold text-[#475569]">
+              <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
                 Sensitivity
                 <select
-                  className="rounded-lg border border-[var(--line)] bg-white px-2 py-1 text-[12px] font-semibold text-[#0f172a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[12px] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   value={canSeeSensitive ? "full" : "restricted"}
                   onChange={(e) => {
                     const full = e.target.value === "full";
@@ -1215,7 +1215,7 @@ export function ActionInboxApp() {
                 {canSeeSensitive ? "Full sensitivity" : "Restricted sensitivity"}
               </Badge>
               {unreadNotifs ? <Badge tone="danger">{unreadNotifs} unread</Badge> : null}
-              <span className="text-[11px] text-[#94a3b8]">Signed in as {actor}</span>
+              <span className="text-[length:var(--type-control)] text-[#94a3b8]">Signed in as {actor}</span>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -1239,7 +1239,7 @@ export function ActionInboxApp() {
                 More Actions
               </Button>
               {moreOpen ? (
-                <div className="absolute right-0 z-30 mt-1 min-w-[240px] rounded-[12px] border border-[var(--v34-card-line)] bg-white p-1.5 shadow-lg">
+                <div className="absolute right-0 z-30 mt-1 min-w-[240px] rounded-[12px] border border-[var(--v34-card-line)] bg-[var(--card)] p-1.5 shadow-lg">
                   <MoreItem
                     label="Notifications"
                     onClick={() => {
@@ -1316,7 +1316,7 @@ export function ActionInboxApp() {
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="text-[11px] font-extrabold uppercase tracking-wide text-[#64748b]">
+          <span className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--muted)]">
             Density
           </span>
           <Button
@@ -1346,7 +1346,7 @@ export function ActionInboxApp() {
         onSelect={onSummarySelect}
       />
 
-      <div className="flex flex-wrap gap-1.5 rounded-[14px] border border-[var(--v34-card-line)] bg-white p-2">
+      <div className="flex flex-wrap gap-1.5 rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] p-2">
         {visibleViews.map((v) => (
           <button
             key={v.id}
@@ -1360,7 +1360,7 @@ export function ActionInboxApp() {
               "rounded-[10px] px-3 py-2 text-[12px] font-extrabold transition",
               mainView === v.id
                 ? "bg-[#0f172a] text-white"
-                : "bg-[#f8fafc] text-[#475569] hover:bg-[#eef2f7]"
+                : "bg-[var(--soft)] text-[#475569] hover:bg-[#eef2f7]"
             )}
           >
             {v.label}
@@ -1381,7 +1381,7 @@ export function ActionInboxApp() {
               "rounded-full px-3 py-1.5 text-[12px] font-bold transition",
               category === t.id
                 ? "bg-[#2563eb] text-white"
-                : "border border-[var(--line)] bg-white text-[#475569] hover:border-[#94a3b8]"
+                : "border border-[var(--line)] bg-[var(--card)] text-[#475569] hover:border-[#94a3b8]"
             )}
           >
             {t.label}
@@ -1683,7 +1683,7 @@ function DelegationsOverlay({
   const [reason, setReason] = useState("");
 
   const inputCls =
-    "w-full rounded-[10px] border border-[var(--line)] bg-white px-2.5 py-2 text-[13px] text-[#0f172a]";
+    "w-full rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-2 text-[13px] text-[var(--ink)]";
 
   return (
     <Modal
@@ -1697,11 +1697,11 @@ function DelegationsOverlay({
       }
     >
       <div className="grid gap-4">
-        <p className="m-0 text-sm text-[#64748b]">
+        <p className="m-0 text-sm text-[var(--muted)]">
           Time-bounded delegation keeps the original owner responsible. Active cover routes approval
           and ownership work to the nominated delegate.
         </p>
-        <div className="grid gap-2 rounded-xl border border-[var(--line)] bg-[#f8fafc] p-3">
+        <div className="grid gap-2 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
           <h4 className="m-0 text-[13px] font-extrabold">Create absence cover</h4>
           <div className="grid gap-2 sm:grid-cols-2">
             <label className="grid gap-1 text-[12px] font-bold">
@@ -1791,13 +1791,13 @@ function DelegationsOverlay({
             delegations.map((d) => (
               <div
                 key={d.id}
-                className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
               >
                 <div>
                   <strong>
                     {d.fromOwner} → {d.delegate}
                   </strong>
-                  <div className="text-[11px] text-[#64748b]">
+                  <div className="text-[length:var(--type-control)] text-[var(--muted)]">
                     {d.startDate} – {d.endDate} · {d.active ? "Active" : "Ended"} · {d.reason}
                   </div>
                 </div>
@@ -1855,11 +1855,11 @@ function DraftsOverlay({
             drafts.map((d) => (
               <div
                 key={d.id}
-                className="mb-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="mb-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
               >
                 <div>
                   <strong>{d.title || "Untitled draft"}</strong>
-                  <div className="text-[11px] text-[#64748b]">
+                  <div className="text-[length:var(--type-control)] text-[var(--muted)]">
                     {d.category} · updated {formatDateTime(d.updatedAt)}
                     {d.isPrivate ? " · Private" : ""}
                   </div>
@@ -1876,10 +1876,10 @@ function DraftsOverlay({
           {templates.map((t) => (
             <div
               key={t.id}
-              className="mb-2 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+              className="mb-2 rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
             >
               <strong>{t.name}</strong>
-              <div className="text-[11px] text-[#64748b]">
+              <div className="text-[length:var(--type-control)] text-[var(--muted)]">
                 {t.scope} · {t.category} — {t.description}
               </div>
             </div>

@@ -322,7 +322,7 @@ export function FullActionFile({
               Approval: {action.dismissMeta.approval}
             </div>
           ) : null}
-          <p className="mt-2 text-[11px] text-[var(--cc-muted)]">
+          <p className="mt-2 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Dismissed actions leave the active queue but remain searchable. Reopen sets stage to Reopened after completion.
           </p>
         </section>
@@ -332,7 +332,7 @@ export function FullActionFile({
           <div className="grid gap-2">
             {action.comments.map((c) => (
               <div key={c.id} className="rounded-lg border border-[var(--line)] bg-[var(--cc-soft)] p-2.5 text-sm">
-                <div className="text-[11px] font-bold text-[var(--cc-muted)]">
+                <div className="text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">
                   {c.author} · {new Date(c.at).toLocaleString("en-AU")}
                   {c.private ? " · Private" : ""}
                 </div>
@@ -397,7 +397,7 @@ export function FullActionFile({
             {action.timeline.map((t) => (
               <div key={t.id} className="flex gap-3 border-l-2 border-[var(--cc-exec,#1e40af)] pl-3 text-sm">
                 <div>
-                  <div className="text-[11px] font-bold text-[var(--cc-muted)]">
+                  <div className="text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">
                     {new Date(t.at).toLocaleString("en-AU")} · {t.actor}
                   </div>
                   <div>{t.event}</div>

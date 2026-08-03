@@ -273,7 +273,7 @@ export function ChecklistsWorkspace() {
             <Panel key={String(c.id)}>
               <PanelTitle>{String(c.name)}</PanelTitle>
               <PanelSub>{String(c.clockoutRule || c.assignment || "")}</PanelSub>
-              <pre className="mt-3 max-h-48 overflow-auto rounded-xl bg-[#f8fafc] p-3 text-xs text-[#334155] whitespace-pre-wrap">
+              <pre className="mt-3 max-h-48 overflow-auto rounded-xl bg-[var(--soft)] p-3 text-xs text-[#334155] whitespace-pre-wrap">
                 {Array.isArray(c.items) ? (c.items as string[]).join("\n") : String(c.items || "")}
               </pre>
             </Panel>
@@ -361,7 +361,7 @@ export function RiskCentreWorkspace() {
         {HTML_RISKS.map((r, i) => (
           <div
             key={String(r.id || i)}
-            className="rounded-[14px] border border-[var(--v34-card-line)] bg-white p-4 shadow-[var(--v34-card-shadow)]"
+            className="rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] p-4 shadow-[var(--v34-card-shadow)]"
           >
             <div className="mb-2 flex flex-wrap gap-1.5">
               <Badge tone="danger">{String(r.severity || r.priority || "Risk")}</Badge>
@@ -370,7 +370,7 @@ export function RiskCentreWorkspace() {
             <strong className="block text-[15px]">
               {String(r.title || r.name || `Risk ${i + 1}`)}
             </strong>
-            <p className="mb-0 mt-1 text-sm text-[#526479]">
+            <p className="mb-0 mt-1 text-sm text-[var(--muted)]">
               {String(r.route || r.summary || r.description || "")}
             </p>
           </div>
@@ -458,7 +458,7 @@ export function HtmlModuleFallback({
                 <strong>
                   {String(row.name || row.title || row.id)}
                 </strong>
-                <pre className="mb-0 mt-2 overflow-auto text-[11px] text-[#64748b]">
+                <pre className="mb-0 mt-2 overflow-auto text-[length:var(--type-control)] text-[var(--muted)]">
                   {JSON.stringify(row, null, 2)}
                 </pre>
               </div>

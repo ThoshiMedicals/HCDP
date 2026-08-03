@@ -148,11 +148,11 @@ function OrganisationWorkspaceInner() {
 
   return (
     <div className="grid gap-[18px] lg:grid-cols-[220px_minmax(0,1fr)]">
-      <aside className="h-fit rounded-[16px] border border-[var(--v34-card-line)] bg-white p-3 shadow-[var(--v34-card-shadow)] lg:sticky lg:top-4">
+      <aside className="h-fit rounded-[16px] border border-[var(--v34-card-line)] bg-[var(--card)] p-3 shadow-[var(--v34-card-shadow)] lg:sticky lg:top-4">
         <div className="mb-3 px-2">
-          <div className="text-xs font-bold uppercase tracking-wide text-[#526479]">Module 3</div>
+          <div className="text-xs font-bold uppercase tracking-wide text-[var(--muted)]">Module 3</div>
           <div className="text-sm font-extrabold text-[var(--ink)]">Organisation & Access</div>
-          <div className="mt-1 text-xs text-[#64748b]">{actor.name} · {actor.role}</div>
+          <div className="mt-1 text-xs text-[var(--muted)]">{actor.name} · {actor.role}</div>
         </div>
         <nav className="grid gap-0.5">
           {NAV.map((item) => (
@@ -164,7 +164,7 @@ function OrganisationWorkspaceInner() {
                 "rounded-lg px-3 py-2 text-left text-sm font-semibold transition",
                 section === item.id
                   ? "bg-[var(--teal-3)] text-[#1d4ed8]"
-                  : "text-[#526479] hover:bg-[#f8fafc]"
+                  : "text-[var(--muted)] hover:bg-[var(--soft)]"
               )}
             >
               {item.label}
@@ -172,7 +172,7 @@ function OrganisationWorkspaceInner() {
           ))}
         </nav>
         <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
-          <span className="px-2 text-[10px] font-bold uppercase text-[#94a3b8]">Acting as</span>
+          <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">Acting as</span>
           {demoActors.map((a) => (
             <Button
               key={a.id}
@@ -186,7 +186,7 @@ function OrganisationWorkspaceInner() {
           ))}
         </div>
         <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
-          <span className="px-2 text-[10px] font-bold uppercase text-[#94a3b8]">Demo controls</span>
+          <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">Demo controls</span>
           <Button small variant="line" onClick={() => advanceClock(1)} title="Advance demo clock one day">
             +1 day
           </Button>
@@ -223,13 +223,13 @@ function OrganisationWorkspaceInner() {
 
         {visibleNotifications.length > 0 ? (
           <div className="rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3">
-            <div className="mb-2 text-xs font-bold uppercase text-[#526479]">Notifications</div>
+            <div className="mb-2 text-xs font-bold uppercase text-[var(--muted)]">Notifications</div>
             <div className="grid gap-2">
               {visibleNotifications.slice(0, 6).map((n) => (
-                <div key={n.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-white px-3 py-2 text-sm shadow-sm">
+                <div key={n.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-[var(--card)] px-3 py-2 text-sm shadow-sm">
                   <div>
                     <strong>{n.title}</strong>
-                    <div className="text-xs text-[#64748b]">{n.body}</div>
+                    <div className="text-xs text-[var(--muted)]">{n.body}</div>
                     <div className="mt-1 flex gap-1">
                       {n.mandatory ? <StatusPill label="Mandatory" tone="warn" /> : null}
                       {n.type === "Critical alert" ? <StatusPill label="Critical" tone="danger" /> : null}
@@ -277,7 +277,7 @@ function OrganisationWorkspaceInner() {
             </>
           }
         >
-          <p className="m-0 text-sm text-[#526479]">
+          <p className="m-0 text-sm text-[var(--muted)]">
             Critical alerts require a formal resolution note before they can be cleared.
           </p>
           <textarea
@@ -292,12 +292,12 @@ function OrganisationWorkspaceInner() {
         <div className="relative">
           <SearchBox value={query} onChange={(v) => { setQuery(v); setSearchOpen(!!v.trim()); }} />
           {searchOpen && results.length > 0 ? (
-            <div className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-xl border border-[var(--line)] bg-white shadow-lg">
+            <div className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-xl border border-[var(--line)] bg-[var(--card)] shadow-lg">
               {results.map((r) => (
                 <button
                   key={`${r.section}-${r.id}`}
                   type="button"
-                  className="flex w-full flex-col gap-0.5 border-b border-[#f0f3f6] px-3 py-2 text-left hover:bg-[#f8fafc]"
+                  className="flex w-full flex-col gap-0.5 border-b border-[#f0f3f6] px-3 py-2 text-left hover:bg-[var(--soft)]"
                   onClick={() => {
                     navigate(r.section, { card: r.id, query: undefined });
                     setQuery("");
@@ -305,13 +305,13 @@ function OrganisationWorkspaceInner() {
                   }}
                 >
                   <strong className="text-sm">{r.title}</strong>
-                  <span className="text-xs text-[#64748b]">{r.subtitle} · {NAV.find((n) => n.id === r.section)?.label}</span>
+                  <span className="text-xs text-[var(--muted)]">{r.subtitle} · {NAV.find((n) => n.id === r.section)?.label}</span>
                 </button>
               ))}
             </div>
           ) : null}
           {searchOpen && query.trim() && results.length === 0 ? (
-            <div className="absolute z-20 mt-1 w-full rounded-xl border border-[var(--line)] bg-white px-3 py-4 text-sm text-[#64748b] shadow-lg">
+            <div className="absolute z-20 mt-1 w-full rounded-xl border border-[var(--line)] bg-[var(--card)] px-3 py-4 text-sm text-[var(--muted)] shadow-lg">
               No matches for &ldquo;{query}&rdquo;
             </div>
           ) : null}

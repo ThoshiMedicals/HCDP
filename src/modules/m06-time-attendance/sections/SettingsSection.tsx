@@ -28,7 +28,7 @@ export function SettingsSection() {
 
   return (
     <SectionFrame sectionId="settings" title="Settings & Policies">
-      <p className="text-sm text-[#64748b] m-0 mb-3">
+      <p className="text-sm text-[var(--muted)] m-0 mb-3">
         Prototype policies are not employment-law, award, payroll or clinical-safety certification.
       </p>
       <Button
@@ -62,7 +62,7 @@ export function SettingsSection() {
           ))}
         </ul>
       )}
-      <p data-testid="m06-policy-latest-version" className="text-xs text-[#64748b] mt-2">
+      <p data-testid="m06-policy-latest-version" className="text-xs text-[var(--muted)] mt-2">
         Latest version: {rows[0]?.version ?? 0}
       </p>
     </SectionFrame>

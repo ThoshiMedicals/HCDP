@@ -33,10 +33,10 @@ export function EmergencyBanner({
     <div className="cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm">
       <div className="flex flex-wrap items-center gap-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[10px] font-extrabold uppercase tracking-wide">Emergency announcement</div>
+          <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide">Emergency announcement</div>
           <strong className="mt-0.5 block text-base leading-snug">{a.title}</strong>
           <p className="m-0 mt-1 text-sm leading-snug">{a.message}</p>
-          <div className="mt-2 grid gap-0.5 text-[11px] opacity-90 sm:grid-cols-2">
+          <div className="mt-2 grid gap-0.5 text-[length:var(--type-control)] opacity-90 sm:grid-cols-2">
             <span>Clinics: {locationNames(a.clinics)}</span>
             <span>Required action: {a.requireAck ? "Acknowledgement required" : "Read and note"}</span>
             <span>Published: {new Date(a.publishAt).toLocaleString("en-AU")}</span>
@@ -101,10 +101,10 @@ export function AnnouncementCarousel({
     <CcCard accent="#1e40af" className="overflow-hidden">
       <div className="flex flex-wrap items-start justify-between gap-3 px-4 py-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[10px] font-extrabold uppercase tracking-wide cc-text-info">Announcement</div>
+          <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide cc-text-info">Announcement</div>
           <strong className="mt-0.5 block text-[15px]">{current.title}</strong>
           <p className="m-0 mt-1 text-sm text-[var(--cc-muted)]">{current.message}</p>
-          <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+          <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Channels: {current.channels.join(", ")} · Read {current.readership.read}/{current.readership.total}
           </p>
         </div>
@@ -176,7 +176,7 @@ export function PrioritySummary({
       <div className="flex flex-wrap items-center justify-between gap-2 px-4 pt-3.5">
         <div>
           <h3 className="m-0 text-[14px] font-extrabold">Priority Summary</h3>
-          <p className="m-0 mt-0.5 text-[11px] text-[var(--cc-muted)]">
+          <p className="m-0 mt-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             {clinicScopeLabel} · Updated {formatClock(lastUpdated)}
           </p>
         </div>
@@ -216,12 +216,12 @@ export function PrioritySummary({
               <PriorityBadge priority={key as PriorityLevel} short />
               <div className="pt-2">
                 {zeroOk ? (
-                  <div className="text-[11px] font-bold leading-snug cc-text-success">No urgent issues</div>
+                  <div className="text-[length:var(--type-control)] font-bold leading-snug cc-text-success">No urgent issues</div>
                 ) : (
                   <div className="text-[26px] font-black leading-none tracking-tight tabular-nums">{count}</div>
                 )}
                 {delta !== 0 ? (
-                  <div className="mt-1 text-[10px] text-[var(--cc-muted)]">
+                  <div className="mt-1 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
                     {`${delta > 0 ? "+" : ""}${delta} vs yesterday`}
                   </div>
                 ) : null}
@@ -247,7 +247,7 @@ export function CategoryFilters({
     <CcCard accent="#334155">
       <div className="px-4 pt-3.5">
         <h3 className="m-0 text-[14px] font-extrabold">Category Filters</h3>
-        <p className="m-0 mt-0.5 text-[11px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Select several. Combined with priority, clinic, status and assignee on the Active Action List. Period labels the
           reporting window (demonstration data is seeded for Today).
         </p>

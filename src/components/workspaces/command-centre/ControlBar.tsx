@@ -191,7 +191,7 @@ export function ControlBar({
                     Saved group: North corridor
                   </Button>
                 </div>
-                <div className="mb-1 text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+                <div className="mb-1 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
                   Saved groups
                 </div>
                 {otherClinicGroups.map((g) => (
@@ -202,7 +202,7 @@ export function ControlBar({
                     onClick={() => onChangeClinics(g.locationIds)}
                   >
                     {g.name}
-                    <span className="text-[10px] text-[var(--cc-muted)]">{g.locationIds.length}</span>
+                    <span className="text-[length:var(--type-meta)] text-[var(--cc-muted)]">{g.locationIds.length}</span>
                   </button>
                 ))}
                 {canSaveGroup ? (
@@ -237,7 +237,7 @@ export function ControlBar({
                       {h ? (
                         <span className="flex shrink-0 items-center gap-1.5">
                           <HealthDot band={h.override?.band ?? h.band} score={h.overallScore} />
-                          <span className="whitespace-nowrap text-[10px] font-bold text-[var(--cc-muted)]">
+                          <span className="whitespace-nowrap text-[length:var(--type-meta)] font-bold text-[var(--cc-muted)]">
                             {h.override?.band ?? h.band}
                             {h.emergencyStatus ? " · Emergency" : ""}
                           </span>
@@ -280,7 +280,7 @@ export function ControlBar({
                   >
                     {l.name}
                     {l.isDefault ? (
-                      <span className="ml-auto text-[10px] text-[var(--cc-muted)]">Default</span>
+                      <span className="ml-auto text-[length:var(--type-meta)] text-[var(--cc-muted)]">Default</span>
                     ) : null}
                   </button>
                 ))}
@@ -332,7 +332,7 @@ export function ControlBar({
                 }
                 aria-label="Custom range start"
               />
-              <span className="text-[11px] text-[var(--cc-muted)]">→</span>
+              <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">→</span>
               <input
                 type="date"
                 className="cc-ctrl text-xs"
@@ -386,7 +386,7 @@ export function ControlBar({
           >
             Notifications
             {totalNotes > 0 ? (
-              <span className="ml-1 inline-flex min-w-[18px] items-center justify-center rounded-full bg-[var(--cc-exec,#1e40af)] px-1 text-[10px] font-black text-white">
+              <span className="ml-1 inline-flex min-w-[18px] items-center justify-center rounded-full bg-[var(--cc-exec,#1e40af)] px-1 text-[length:var(--type-meta)] font-black text-white">
                 {totalNotes}
               </span>
             ) : null}
@@ -460,9 +460,9 @@ export function ControlBar({
             </button>
             {userOpen ? (
               <div className="absolute right-0 top-[110%] z-40 w-[240px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-2 shadow-xl">
-                <div className="px-2 py-1 text-[11px] font-bold text-[var(--cc-muted)]">Owner / Director</div>
+                <div className="px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">Owner / Director</div>
                 <div className="px-2 pb-2 text-xs font-semibold">Demonstration user · local session only</div>
-                <p className="m-0 px-2 pb-2 text-[10px] text-[var(--cc-muted)]">
+                <p className="m-0 px-2 pb-2 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
                   Sign-in, SSO and role switching require a future authentication backend.
                 </p>
                 {[
@@ -509,7 +509,7 @@ export function ControlBar({
                   {h ? <HealthDot band={h.override?.band ?? h.band} score={h.overallScore} /> : null}
                   <span className="max-w-[110px] truncate">{loc?.shortName ?? id}</span>
                   {h ? (
-                    <span className="whitespace-nowrap text-[9px] font-bold text-[var(--cc-muted)]">
+                    <span className="whitespace-nowrap text-[length:var(--type-meta)] font-bold text-[var(--cc-muted)]">
                       {h.override?.band ?? h.band}
                     </span>
                   ) : null}
@@ -528,7 +528,7 @@ export function ControlBar({
 
           <div
             className={cn(
-              "ml-auto flex flex-wrap items-center gap-2 text-[11px] text-[var(--cc-muted)]",
+              "ml-auto flex flex-wrap items-center gap-2 text-[length:var(--type-control)] text-[var(--cc-muted)]",
               paused && "font-semibold cc-text-warn"
             )}
           >

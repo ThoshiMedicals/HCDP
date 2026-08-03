@@ -166,12 +166,12 @@ function HealthBreakdownBody({
           tone={change === null ? undefined : change >= 0 ? "success" : "danger"}
         />
         <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-          <div className="text-[10px] font-bold uppercase text-[var(--cc-muted)]">Automatic status</div>
+          <div className="text-[length:var(--type-meta)] font-bold uppercase text-[var(--cc-muted)]">Automatic status</div>
           <div className="mt-1">
             <HealthBadge band={profile.band} score={profile.overallScore} />
           </div>
           {profile.emergencyStatus ? (
-            <div className="cc-text-danger mt-1 text-[11px] font-extrabold">Emergency (separate)</div>
+            <div className="cc-text-danger mt-1 text-[length:var(--type-control)] font-extrabold">Emergency (separate)</div>
           ) : null}
         </div>
       </div>
@@ -271,7 +271,7 @@ function HealthBreakdownBody({
 
       <div className="rounded-xl border border-[var(--cc-card-line)] p-3">
         <h4 className="m-0 text-[13px] font-extrabold">Temporary manager override</h4>
-        <p className="m-0 mt-1 text-[11px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Password confirmation is a demonstration until real authentication exists. Automatic status remains visible
           after approval.
         </p>
@@ -350,7 +350,7 @@ function HealthBreakdownBody({
       {profile.auditTimeline?.length ? (
         <div>
           <h4 className="m-0 mb-1 text-[13px] font-extrabold">Local audit timeline</h4>
-          <ul className="m-0 space-y-1 pl-0 text-[11px] text-[var(--cc-muted)]">
+          <ul className="m-0 space-y-1 pl-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             {profile.auditTimeline.map((t) => (
               <li key={t.id} className="list-none rounded-lg border border-[var(--cc-card-line)] px-2 py-1.5">
                 <strong className="text-[var(--cc-ink)]">{t.event}</strong> · {t.actor} ·{" "}
@@ -375,7 +375,7 @@ function Stat({
 }) {
   return (
     <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-      <div className="text-[10px] font-bold uppercase text-[var(--cc-muted)]">{label}</div>
+      <div className="text-[length:var(--type-meta)] font-bold uppercase text-[var(--cc-muted)]">{label}</div>
       <div
         className={cn(
           "mt-1 text-[18px] font-black tabular-nums",

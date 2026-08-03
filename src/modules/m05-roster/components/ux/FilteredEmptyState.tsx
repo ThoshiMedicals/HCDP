@@ -21,7 +21,7 @@ export function FilteredEmptyState({
           </div>
           <div>
             <div className="font-semibold text-[var(--ink)]">{title}</div>
-            <p className="mt-1 text-sm text-[#64748b]">{description}</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">{description}</p>
           </div>
           {onClear ? (
             <Button variant="line" small onClick={onClear}>

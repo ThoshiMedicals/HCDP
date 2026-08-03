@@ -24,7 +24,7 @@ export function CredentialsSection() {
     <div className="grid gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Credentials</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Verify credentials and recalculate readiness. Expired credentials project to Action Inbox.
         </p>
       </div>

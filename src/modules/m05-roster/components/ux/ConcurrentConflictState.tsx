@@ -29,7 +29,7 @@ export function ConcurrentConflictState({
             <div className="font-semibold text-[var(--ink)]">
               Concurrent update detected
             </div>
-            <p className="mt-1 text-sm text-[#64748b]">{message}</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">{message}</p>
             {targetType && targetId ? (
               <p className="mt-1 text-xs text-[#94a3b8]">
                 {targetType} · {targetId}

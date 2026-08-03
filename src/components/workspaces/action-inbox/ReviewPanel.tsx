@@ -80,7 +80,7 @@ export function ReviewPanel({
           </Button>
         }
       >
-        <p className="text-sm text-[#64748b]">
+        <p className="text-sm text-[var(--muted)]">
           You do not have permission to view the title, owner, description or attachments for this
           sensitivity level ({action.sensitivity}).
         </p>
@@ -181,7 +181,7 @@ export function ReviewPanel({
         </div>
 
         {(action.expectedResult || action.actualResult) && (
-          <div className="grid gap-2 rounded-xl border border-[#fde68a] bg-[#fffbeb] p-3">
+          <div className="grid gap-2 rounded-xl border border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] p-3">
             <Field label="Expected result" value={action.expectedResult || "—"} />
             <Field label="Actual result" value={action.actualResult || "—"} />
             <Field label="Possible cause" value={action.possibleCause || "—"} />
@@ -204,10 +204,10 @@ export function ReviewPanel({
               ))}
             </ol>
             {action.approvalPurpose ? (
-              <p className="mt-2 text-[12px] text-[#64748b]">Purpose: {action.approvalPurpose}</p>
+              <p className="mt-2 text-[12px] text-[var(--muted)]">Purpose: {action.approvalPurpose}</p>
             ) : null}
             {action.decisionEffect ? (
-              <p className="text-[12px] text-[#64748b]">Effect: {action.decisionEffect}</p>
+              <p className="text-[12px] text-[var(--muted)]">Effect: {action.decisionEffect}</p>
             ) : null}
           </div>
         ) : null}
@@ -220,7 +220,7 @@ export function ReviewPanel({
             action.attachments.map((att) => (
               <div
                 key={att.id}
-                className="mb-1 flex items-center justify-between rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="mb-1 flex items-center justify-between rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
               >
                 <span>
                   {att.hidden ? (
@@ -257,7 +257,7 @@ export function ReviewPanel({
               </div>
             ))
           )}
-          <p className="mt-1 text-[12px] text-[#64748b]">
+          <p className="mt-1 text-[12px] text-[var(--muted)]">
             Source record: {action.sourceModule} / {action.sourceRecord || "—"}
           </p>
         </div>
@@ -277,9 +277,9 @@ export function ReviewPanel({
             action.comments.map((c) => (
               <div
                 key={c.id}
-                className="mb-2 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="mb-2 rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm"
               >
-                <div className="text-[11px] font-bold text-[#64748b]">
+                <div className="text-[length:var(--type-control)] font-bold text-[var(--muted)]">
                   {c.author} · {formatDateTime(c.at)}
                   {c.mentions.length ? ` · mentions ${c.mentions.join(", ")}` : ""}
                 </div>
@@ -309,14 +309,14 @@ export function ReviewPanel({
               audit.map((e) => (
                 <div
                   key={e.id}
-                  className="rounded-lg border-l-4 bg-[#f8fafc] px-3 py-2 text-[12px]"
+                  className="rounded-lg border-l-4 bg-[var(--soft)] px-3 py-2 text-[12px]"
                   style={{ borderColor: categoryColor(action.category) }}
                 >
                   <strong>{e.event}</strong> · {e.user} · {formatDateTime(e.at)}
                   {e.detail ? ` — ${e.detail}` : ""}
                   {isManager && e.reason ? ` · Reason: ${e.reason}` : ""}
                   {isManager && e.previousValue ? (
-                    <div className="text-[#64748b]">
+                    <div className="text-[var(--muted)]">
                       {e.previousValue} → {e.newValue}
                     </div>
                   ) : null}
@@ -329,7 +329,7 @@ export function ReviewPanel({
         <div>
           <h4 className="m-0 mb-2 text-[13px] font-extrabold">More Actions</h4>
           {archived ? (
-            <p className="m-0 text-[12px] text-[#64748b]">
+            <p className="m-0 text-[12px] text-[var(--muted)]">
               Archived records may be searched, filtered, viewed, printed, exported and used to create
               a linked follow-up. They cannot be edited or deleted. Reopen is not available.
             </p>
@@ -359,7 +359,7 @@ export function ReviewPanel({
               </Button>
             ))}
           </div>
-          <p className="mt-2 text-[11px] text-[#94a3b8]">
+          <p className="mt-2 text-[length:var(--type-control)] text-[#94a3b8]">
             Signed in as {DEMO_USER.name}. Reopen is not available — use Create Linked Follow-up.
           </p>
         </div>
@@ -380,7 +380,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[120px_1fr] gap-2 border-b border-[#f1f5f9] py-1.5 text-sm">
-      <span className="text-[11px] font-bold text-[#758397]">{label}</span>
+      <span className="text-[length:var(--type-control)] font-bold text-[#758397]">{label}</span>
       <span>{value}</span>
     </div>
   );

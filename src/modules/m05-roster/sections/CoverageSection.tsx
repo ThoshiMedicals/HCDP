@@ -133,7 +133,7 @@ export function CoverageSection() {
     <SectionFrame sectionId="coverage" title="Coverage">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Compare coverage requirements against assigned shifts and escalate hard gaps.
         </p>
       </div>
@@ -206,7 +206,7 @@ export function CoverageSection() {
             <PanelSub>Evaluated at {evaluation.asOf}.</PanelSub>
           </div>
           {evaluation.gaps.length === 0 ? (
-            <div className="p-4 text-sm text-[#64748b]">No coverage gaps detected.</div>
+            <div className="p-4 text-sm text-[var(--muted)]">No coverage gaps detected.</div>
           ) : (
             <Table>
               <THead>

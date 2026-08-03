@@ -51,7 +51,7 @@ export function InboxProjectionSummary() {
               key={c.category}
               className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-3 py-2 text-sm"
             >
-              <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+              <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
                 {c.category}
               </div>
               <div className="font-bold">
@@ -64,7 +64,7 @@ export function InboxProjectionSummary() {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
             <thead>
-              <tr className="border-b border-[var(--cc-card-line)] text-[11px] uppercase tracking-wide text-[var(--cc-muted)]">
+              <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-control)] uppercase tracking-wide text-[var(--cc-muted)]">
                 <th className="py-2 pr-2">Action</th>
                 <th className="py-2 pr-2">Clinic</th>
                 <th className="py-2 pr-2">Priority</th>
@@ -110,7 +110,7 @@ export function InboxProjectionSummary() {
               Approvals only
             </Button>
           </Link>
-          <span className="self-center text-[11px] text-[var(--cc-muted)]">
+          <span className="self-center text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Executive-only actions remain in Module 1 stores on this dashboard.
           </span>
         </div>

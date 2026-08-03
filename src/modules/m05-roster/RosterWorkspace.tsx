@@ -120,10 +120,10 @@ function PanelForceOffline() {
     <div
       role="status"
       data-testid="m05-ux-offline-forced"
-      className="rounded-[16px] border border-[var(--v34-card-line)] bg-white p-5 shadow-[var(--v34-card-shadow)]"
+      className="rounded-[16px] border border-[var(--v34-card-line)] bg-[var(--card)] p-5 shadow-[var(--v34-card-shadow)]"
     >
       <div className="font-extrabold text-[var(--ink)]">You are offline</div>
-      <p className="mt-1 text-sm text-[#64748b]">
+      <p className="mt-1 text-sm text-[var(--muted)]">
         Changes cannot be saved until your connection is restored. Read-only data may
         still be available from local storage.
       </p>
@@ -251,7 +251,7 @@ export function RosterWorkspace() {
     <RosterProvider>
       <Suspense
         fallback={
-          <div className="text-sm text-[#64748b]" role="status">
+          <div className="text-sm text-[var(--muted)]" role="status">
             Loading Roster &amp; Shift Management…
           </div>
         }

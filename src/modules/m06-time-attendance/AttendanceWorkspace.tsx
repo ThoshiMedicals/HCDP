@@ -209,7 +209,7 @@ export function AttendanceWorkspace() {
     <AttendanceProvider>
       <Suspense
         fallback={
-          <div className="text-sm text-[#64748b]" role="status">
+          <div className="text-sm text-[var(--muted)]" role="status">
             Loading Time &amp; Attendance…
           </div>
         }

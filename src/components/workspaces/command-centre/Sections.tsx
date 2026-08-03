@@ -41,7 +41,7 @@ export function PositiveHealthSummary({ messages }: { messages: PositiveMessage[
                 : "border-[var(--cc-card-line)] bg-[var(--cc-soft)]"
             )}
           >
-            {m.period ? <span className="mr-2 text-[10px] font-extrabold uppercase">{m.period}</span> : null}
+            {m.period ? <span className="mr-2 text-[length:var(--type-meta)] font-extrabold uppercase">{m.period}</span> : null}
             {m.message}
           </div>
         ))}
@@ -66,7 +66,7 @@ export function MyExecutiveActions({
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? items : items.slice(0, 5);
   return (
-    <CcCard accent="#0f3f7a">
+    <CcCard accent="var(--hcdp-action)">
       <CcCardHeader
         title="My Executive Actions"
         subtitle="Approvals, escalations, decisions and delegated work awaiting final executive approval"
@@ -82,10 +82,10 @@ export function MyExecutiveActions({
             <div className="mb-1 flex flex-wrap gap-1.5">
               <Badge tone="info">{item.type}</Badge>
               {item.priority ? <PriorityBadge priority={item.priority} short /> : null}
-              <span className="cc-text-warn text-[11px] font-bold">Decision by {item.decisionBy}</span>
+              <span className="cc-text-warn text-[length:var(--type-control)] font-bold">Decision by {item.decisionBy}</span>
             </div>
             <strong className="block text-[13px] leading-snug">{item.title}</strong>
-            <div className="mt-1 grid gap-0.5 text-[11px] leading-snug text-[var(--cc-muted)]">
+            <div className="mt-1 grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
               <span>{locationShort(item.locationId, locations)}</span>
               {item.reason ? <span>Reason: {item.reason}</span> : null}
               <span>
@@ -110,7 +110,7 @@ export function MyExecutiveActions({
                 Approve with Conditions
               </Button>
               <details className="relative">
-                <summary className="cc-ctrl cursor-pointer list-none text-[11px]">More</summary>
+                <summary className="cc-ctrl cursor-pointer list-none text-[length:var(--type-control)]">More</summary>
                 <div className="absolute left-0 top-[110%] z-20 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1 shadow-lg">
                   {[
                     "Reject",
@@ -195,12 +195,12 @@ export function ClinicOperationsPanel({
       <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 xl:grid-cols-4">
         {(Object.keys(groups) as Array<keyof typeof groups>).map((g) => (
           <div key={g} className="min-w-0">
-            <div className="mb-1.5 truncate text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+            <div className="mb-1.5 truncate text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g} ({groups[g].length})
             </div>
             <div className="grid gap-2">
               {groups[g].length === 0 ? (
-                <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-3 py-4 text-center text-[11px] text-[var(--cc-muted)]">
+                <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-3 py-4 text-center text-[length:var(--type-control)] text-[var(--cc-muted)]">
                   None
                 </div>
               ) : null}
@@ -218,19 +218,19 @@ export function ClinicOperationsPanel({
                       </span>
                     </div>
                     {h.emergencyStatus ? (
-                      <div className="cc-text-danger mb-1 text-[10px] font-extrabold">
+                      <div className="cc-text-danger mb-1 text-[length:var(--type-meta)] font-extrabold">
                         Emergency status active (separate from score)
                       </div>
                     ) : null}
                     {h.openingChecklist === "Late" ? (
-                      <div className="cc-text-warn mb-1 text-[10px] font-bold">Warning: opening checklist late</div>
+                      <div className="cc-text-warn mb-1 text-[length:var(--type-meta)] font-bold">Warning: opening checklist late</div>
                     ) : null}
                     {h.missingInfo?.length ? (
-                      <div className="mb-1 text-[10px] text-[var(--cc-muted)]">
+                      <div className="mb-1 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
                         Data incomplete: {h.missingInfo.join(", ")} (score not reduced)
                       </div>
                     ) : null}
-                    <div className="grid gap-0.5 text-[11px] leading-snug text-[var(--cc-muted)]">
+                    <div className="grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
                       <span>
                         {h.openingStatus} · Checklist {h.openingChecklist}
                       </span>
@@ -259,9 +259,9 @@ export function ClinicOperationsPanel({
                       className="mt-1.5"
                     >
                       {h.override ? (
-                        <div className="cc-text-warn mb-1 text-[10px] font-extrabold">Manager Override Active</div>
+                        <div className="cc-text-warn mb-1 text-[length:var(--type-meta)] font-extrabold">Manager Override Active</div>
                       ) : null}
-                      <div className="grid gap-0.5 text-[10px] leading-snug text-[var(--cc-muted)]">
+                      <div className="grid gap-0.5 text-[length:var(--type-meta)] leading-snug text-[var(--cc-muted)]">
                         <span>Last refreshed {new Date(h.lastUpdate).toLocaleString("en-AU")}</span>
                       </div>
                     </ExpandableBlock>
@@ -277,7 +277,7 @@ export function ClinicOperationsPanel({
         <div className="overflow-x-auto">
           <table className="w-full min-w-[820px] text-left text-xs">
             <thead>
-              <tr className="text-[10px] uppercase text-[var(--cc-muted)]">
+              <tr className="text-[length:var(--type-meta)] uppercase text-[var(--cc-muted)]">
                 <th className="py-1 pr-2">Rank</th>
                 <th className="pr-2">Clinic</th>
                 <th className="pr-2">Score</th>
@@ -311,7 +311,7 @@ export function ClinicOperationsPanel({
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-[11px] text-[var(--cc-muted)]">
+        <p className="mt-2 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Normalisation prevents larger clinics from looking worse simply because they have higher absolute volumes.
           Actual totals remain visible beside fair rates.
         </p>
@@ -504,7 +504,7 @@ export function CompliancePanel({
       <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 lg:grid-cols-4">
         {groups.map((g) => (
           <div key={g} className="min-w-0">
-            <div className="mb-1.5 truncate text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+            <div className="mb-1.5 truncate text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g}
             </div>
             <div className="grid gap-2">
@@ -519,11 +519,11 @@ export function CompliancePanel({
                     )}
                   >
                     <strong className="block text-[13px] leading-snug">{i.title}</strong>
-                    <span className="text-[11px] text-[var(--cc-muted)]">
+                    <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">
                       {i.subject} · Due {i.due}
                     </span>
                     {i.temporaryContinuedUse ? (
-                      <p className="m-0 mt-1 text-[11px] leading-snug">
+                      <p className="m-0 mt-1 text-[length:var(--type-control)] leading-snug">
                         Temporary continued use: {i.temporaryContinuedUse.reason}. Controls:{" "}
                         {i.temporaryContinuedUse.controls}
                       </p>
@@ -535,7 +535,7 @@ export function CompliancePanel({
                   </div>
                 ))}
               {!items.some((i) => i.group === g) ? (
-                <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-3 py-3 text-center text-[11px] text-[var(--cc-muted)]">
+                <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-3 py-3 text-center text-[length:var(--type-control)] text-[var(--cc-muted)]">
                   None
                 </div>
               ) : null}
@@ -559,7 +559,7 @@ export function FinancePanel({
   const org = finance.find((f) => f.locationId === "all") ?? finance[0];
   const clinics = finance.filter((f) => f.locationId !== "all");
   return (
-    <CcCard accent="#0f3f7a">
+    <CcCard accent="var(--hcdp-action)">
       <CcCardHeader
         title="Finance & Pay"
         subtitle="Organisation totals first — expand a clinic for full pay and variance detail"
@@ -670,7 +670,7 @@ export function IncidentsPanel({
               <Badge tone="info">{i.stage}</Badge>
             </div>
             <strong>{i.title}</strong>
-            <div className="mt-1 grid gap-0.5 text-[11px] text-[var(--cc-muted)] sm:grid-cols-2">
+            <div className="mt-1 grid gap-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)] sm:grid-cols-2">
               <span>Investigator: {i.investigator}</span>
               <span>Due: {i.due}</span>
               <span>RCA: {i.rca}</span>
@@ -877,7 +877,7 @@ export function DigitalPanel({
 export function TrendsPanel({ trends, period }: { trends: TrendCard[]; period?: LayoutPeriod }) {
   const compare = period ? comparePeriodLabel(period) : "Previous period";
   return (
-    <CcCard accent="#0f3f7a">
+    <CcCard accent="var(--hcdp-action)">
       <CcCardHeader
         title="Performance Trends"
         subtitle={`Every chart has title, period, comparison (${compare}), labels and View as Table`}
@@ -892,7 +892,7 @@ export function TrendsPanel({ trends, period }: { trends: TrendCard[]; period?: 
               t.size === "Medium" && "xl:col-span-1"
             )}
           >
-            <div className="mb-1 text-[10px] font-extrabold uppercase text-[var(--cc-muted)]">
+            <div className="mb-1 text-[length:var(--type-meta)] font-extrabold uppercase text-[var(--cc-muted)]">
               {t.area} · {t.size}
             </div>
             {(t.size === "Medium" || t.size === "Large") && (
@@ -931,7 +931,7 @@ export function TrendsPanel({ trends, period }: { trends: TrendCard[]; period?: 
             {t.size === "Large" ? (
               <div className="mt-2 grid gap-2 lg:grid-cols-2">
                 <div>
-                  <div className="text-[11px] font-bold">Clinic comparison</div>
+                  <div className="text-[length:var(--type-control)] font-bold">Clinic comparison</div>
                   <ul className="m-0 pl-4 text-xs">
                     {t.clinicComparison.map((c) => (
                       <li key={c.clinic}>
@@ -941,7 +941,7 @@ export function TrendsPanel({ trends, period }: { trends: TrendCard[]; period?: 
                   </ul>
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold">Recommendations</div>
+                  <div className="text-[length:var(--type-control)] font-bold">Recommendations</div>
                   <ul className="m-0 pl-4 text-xs">
                     {t.recommendations.map((r) => (
                       <li key={r}>{r}</li>
@@ -997,7 +997,7 @@ export function RecentActivityPanel({
                 {i.pinned && !i.read ? <Badge tone="teal">Pinned</Badge> : null}
               </div>
               <strong className="block text-sm">{i.title}</strong>
-              <span className="text-[11px] text-[var(--cc-muted)]">
+              <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">
                 {new Date(i.at).toLocaleString("en-AU")} · {i.summary}
               </span>
             </div>
@@ -1070,7 +1070,7 @@ export function PrivateNotesCard({
                   <span className="font-bold">{n.cardId}: </span>
                   {n.note}
                   {n.reminderAt ? (
-                    <div className="mt-0.5 text-[10px] font-semibold cc-text-warn">
+                    <div className="mt-0.5 text-[length:var(--type-meta)] font-semibold cc-text-warn">
                       Reminder: {new Date(n.reminderAt).toLocaleString("en-AU")}
                     </div>
                   ) : null}

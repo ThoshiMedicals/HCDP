@@ -130,7 +130,7 @@ export function SettingsSection() {
               }))
             }
           />
-          <span className="text-sm text-[#526479]">Allow clinic-level setting exceptions</span>
+          <span className="text-sm text-[var(--muted)]">Allow clinic-level setting exceptions</span>
         </div>
       </Panel>
 
@@ -140,7 +140,7 @@ export function SettingsSection() {
         <div className="mt-4 overflow-auto">
           <table className="w-full min-w-[640px] text-sm">
             <thead>
-              <tr className="text-left text-xs text-[#526479]">
+              <tr className="text-left text-xs text-[var(--muted)]">
                 <th className="pb-2">Type</th>
                 {CHANNELS.map((c) => <th key={c}>{c}</th>)}
                 <th>Mandatory</th>

@@ -98,7 +98,7 @@ export function MyDayOwnerView({
               {b.rows.map((r) => (
                 <div key={r.title} className="rounded-lg border border-[var(--cc-card-line)] bg-[var(--cc-card)] px-2.5 py-2">
                   <strong className="block text-[13px] leading-snug">{r.title}</strong>
-                  <span className="text-[11px] text-[var(--cc-muted)]">{r.meta}</span>
+                  <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">{r.meta}</span>
                   <div className="mt-1.5">
                     {r.actionId ? (
                       <Button small variant="teal" onClick={() => onOpenAction(r.actionId!)}>
@@ -121,7 +121,7 @@ export function MyDayOwnerView({
                       </Button>
                     ) : null}
                     {!r.actionId && !r.kind ? (
-                      <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
+                      <span className="text-[length:var(--type-meta)] font-semibold text-[var(--cc-muted)]">
                         No linked action in this demonstration
                       </span>
                     ) : null}
@@ -272,9 +272,9 @@ export function KpiScorecardView({
         </p>
       </div>
       <div className="overflow-auto p-4">
-        <table className="w-full min-w-[1220px] border-collapse text-left text-[11px]">
+        <table className="w-full min-w-[1220px] border-collapse text-left text-[length:var(--type-control)]">
           <thead>
-            <tr className="border-b border-[var(--cc-card-line)] text-[10px] uppercase text-[var(--cc-muted)]">
+            <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-meta)] uppercase text-[var(--cc-muted)]">
               <th className="py-2 pr-2">KPI</th>
               <th className="pr-2">Result</th>
               <th className="pr-2">Definition</th>
@@ -479,7 +479,7 @@ export function ReportSchedulesList({
     <CcCard>
       <div className="px-4 pt-3">
         <h3 className="m-0 text-[14px] font-extrabold">Saved report schedules</h3>
-        <p className="m-0 mt-0.5 text-[11px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Stored locally — pause, resume, edit or delete. Live email delivery requires a future backend.
         </p>
       </div>
@@ -598,7 +598,7 @@ function ReportConfigCard({
           : "rounded-xl border border-[var(--cc-card-line)] p-4"
       }
     >
-      <div className="text-[10px] font-extrabold uppercase tracking-wide text-[var(--cc-exec,#1e40af)]">Saved report</div>
+      <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-exec,#1e40af)]">Saved report</div>
       <h3 className="m-0 mt-1 text-[15px] font-extrabold">{title}</h3>
       <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">{blurb}</p>
 
@@ -629,7 +629,7 @@ function ReportConfigCard({
             </select>
           </Field>
         </div>
-        <div className="text-[11px] font-bold text-[var(--cc-muted)]">Sections</div>
+        <div className="text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">Sections</div>
         <div className="flex flex-wrap gap-2">
           {sections.map((s) => (
             <label key={s} className="flex items-center gap-1 text-xs font-semibold">
@@ -701,7 +701,7 @@ function ReportConfigCard({
           </Button>
         ) : null}
       </div>
-      <p className="m-0 mt-2 text-[10px] text-[var(--cc-muted)]">
+      <p className="m-0 mt-2 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
         Local export demonstration only. Live email and scheduled delivery require a future backend.
       </p>
     </div>

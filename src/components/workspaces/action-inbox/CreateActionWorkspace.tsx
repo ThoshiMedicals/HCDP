@@ -20,7 +20,7 @@ import { DEMO_USER } from "@/lib/action-inbox/types";
 import { nowIso, uid } from "@/lib/action-inbox/utils";
 
 const inputCls =
-  "w-full rounded-[10px] border border-[var(--line)] bg-white px-2.5 py-2 text-[13px] text-[#0f172a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
+  "w-full rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-2 text-[13px] text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
 
 export function CreateActionWorkspace({
   drafts,
@@ -238,11 +238,11 @@ export function CreateActionWorkspace({
   return (
     <>
       <div className="fixed inset-0 z-40 bg-[rgba(15,23,42,0.28)]" onClick={onClose} />
-      <aside className="fixed bottom-0 right-0 top-0 z-50 flex w-[min(920px,98vw)] flex-col bg-white text-[#0f172a] shadow-[-20px_0_60px_rgba(15,23,42,0.2)]">
+      <aside className="fixed bottom-0 right-0 top-0 z-50 flex w-[min(920px,98vw)] flex-col bg-[var(--card)] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)]">
         <div className="flex h-[70px] items-center justify-between border-b border-[var(--line)] px-5">
           <div>
             <h2 className="m-0 text-[19px] font-extrabold">Create Action</h2>
-            <p className="m-0 text-[13px] text-[#64748b]">Wide workspace · demonstration form</p>
+            <p className="m-0 text-[13px] text-[var(--muted)]">Wide workspace · demonstration form</p>
           </div>
           <Button variant="line" className="h-10 w-10 min-h-0 justify-center px-0" onClick={onClose}>
             ×
@@ -259,7 +259,7 @@ export function CreateActionWorkspace({
                     <button
                       key={t.id}
                       type="button"
-                      className="rounded-lg border border-[var(--line)] bg-[#f8fafc] px-2.5 py-1.5 text-[11px] font-bold"
+                      className="rounded-lg border border-[var(--line)] bg-[var(--soft)] px-2.5 py-1.5 text-[length:var(--type-control)] font-bold"
                       onClick={() => applyTemplate(t)}
                     >
                       {t.name} <Badge tone="default">{t.scope}</Badge>
@@ -267,7 +267,7 @@ export function CreateActionWorkspace({
                   ))}
                 </div>
                 {drafts[0] ? (
-                  <p className="mt-2 text-[11px] text-[#64748b]">
+                  <p className="mt-2 text-[length:var(--type-control)] text-[var(--muted)]">
                     Latest draft: {drafts[0].title || "Untitled"} (drafts never enter the inbox)
                   </p>
                 ) : null}
@@ -402,7 +402,7 @@ export function CreateActionWorkspace({
               ) : null}
 
               {category === "Exception" ? (
-                <fieldset className="grid gap-2 rounded-xl border border-[#fde68a] bg-[#fffbeb] p-3">
+                <fieldset className="grid gap-2 rounded-xl border border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] p-3">
                   <legend className="px-1 text-[12px] font-extrabold text-[#b45309]">Exception fields</legend>
                   <label className="grid gap-1 text-[12px] font-bold">
                     What was expected?
@@ -526,7 +526,7 @@ export function CreateActionWorkspace({
               </Button>
 
               {showMore ? (
-                <div className="grid gap-3 rounded-xl border border-[var(--line)] bg-[#f8fafc] p-3">
+                <div className="grid gap-3 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
                   <label className="grid gap-1 text-[12px] font-bold">
                     Team
                     <input className={inputCls} value={team} onChange={(e) => setTeam(e.target.value)} />
@@ -574,7 +574,7 @@ export function CreateActionWorkspace({
               ) : null}
 
               {duplicates.length > 0 ? (
-                <div className="rounded-xl border border-[#fde68a] bg-[#fffbeb] p-3 text-sm text-[#92400e]">
+                <div className="rounded-xl border border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] p-3 text-sm text-[var(--hcdp-status-warning-text)]">
                   <strong>Possible duplicate warning:</strong> similar open actions exist —{" "}
                   {duplicates.map((d) => d.number).join(", ")}
                 </div>
@@ -604,16 +604,16 @@ export function CreateActionWorkspace({
                 ["Sensitivity", sensitivity],
               ].map(([k, v]) => (
                 <div key={k} className="grid grid-cols-[140px_1fr] gap-2 border-b border-[#f1f5f9] py-2">
-                  <span className="font-bold text-[#64748b]">{k}</span>
+                  <span className="font-bold text-[var(--muted)]">{k}</span>
                   <span>{v}</span>
                 </div>
               ))}
-              <p className="text-[12px] text-[#64748b]">{description}</p>
+              <p className="text-[12px] text-[var(--muted)]">{description}</p>
             </div>
           )}
         </div>
 
-        <div className="flex flex-wrap justify-end gap-2 border-t border-[var(--line)] bg-[#f8fafc] px-5 py-3.5">
+        <div className="flex flex-wrap justify-end gap-2 border-t border-[var(--line)] bg-[var(--soft)] px-5 py-3.5">
           <Button variant="line" onClick={onClose}>
             Cancel
           </Button>

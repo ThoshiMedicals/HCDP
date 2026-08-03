@@ -7,7 +7,7 @@ import type { InboxAction } from "@/lib/action-inbox/types";
 import { snoozeOptions } from "@/lib/action-inbox/utils";
 
 const inputCls =
-  "w-full rounded-[10px] border border-[var(--line)] bg-white px-2.5 py-2 text-[13px] text-[#0f172a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
+  "w-full rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-2 text-[13px] text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]";
 
 export function ReasonModal({
   kind,
@@ -108,7 +108,7 @@ export function ReasonModal({
     >
       <div className="grid gap-3">
         {action ? (
-          <p className="m-0 text-sm text-[#64748b]">
+          <p className="m-0 text-sm text-[var(--muted)]">
             {action.number} — {action.title}
           </p>
         ) : null}
@@ -203,14 +203,14 @@ export function ReasonModal({
               />
               Send updates to original owner
             </label>
-            <p className="m-0 text-[11px] text-[#64748b]">
+            <p className="m-0 text-[length:var(--type-control)] text-[var(--muted)]">
               Delegate means the original owner remains responsible.
             </p>
           </>
         ) : null}
 
         {kind === "reassign" ? (
-          <p className="m-0 text-[11px] text-[#64748b]">
+          <p className="m-0 text-[length:var(--type-control)] text-[var(--muted)]">
             Reassign moves full responsibility. Due date is kept. Old and new owners are notified.
           </p>
         ) : null}
@@ -290,7 +290,7 @@ export function ConfirmExportModal({
         </Button>
       }
     >
-      <p className="mb-3 text-sm text-[#64748b]">
+      <p className="mb-3 text-sm text-[var(--muted)]">
         Permission-controlled demonstration exports. Each export or print is recorded in audit
         history.
       </p>

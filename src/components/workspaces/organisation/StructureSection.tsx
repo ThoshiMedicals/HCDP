@@ -174,7 +174,7 @@ export function StructureSection() {
           {LEVELS.map((level) => (
             <Panel key={level}>
               <h4 className="m-0 text-sm font-extrabold">{level}</h4>
-              <ul className="mt-2 grid gap-1 text-sm text-[#526479]">
+              <ul className="mt-2 grid gap-1 text-sm text-[var(--muted)]">
                 {state.nodes.filter((n) => n.level === level).map((n) => (
                   <li key={n.id}>{n.name}</li>
                 ))}
@@ -188,7 +188,7 @@ export function StructureSection() {
         <Panel>
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-left text-xs text-[#526479]">
+              <tr className="text-left text-xs text-[var(--muted)]">
                 <th className="pb-2">Name</th>
                 <th>Level</th>
                 <th>Parent</th>
@@ -240,14 +240,14 @@ export function StructureSection() {
 
       {view === "map" ? (
         <Panel>
-          <p className="m-0 text-sm text-[#526479]">
+          <p className="m-0 text-sm text-[var(--muted)]">
             Clinic map pins use latitude/longitude from clinic profiles. Open Locations for full map controls.
           </p>
           <div className="mt-4 grid gap-2 md:grid-cols-3">
             {state.clinics.slice(0, 6).map((c) => (
               <div key={c.id} className="rounded-lg border border-[var(--line)] p-3 text-xs">
                 <strong>{c.shortName}</strong>
-                <div className="text-[#64748b]">
+                <div className="text-[var(--muted)]">
                   {c.lat.toFixed(3)}, {c.lng.toFixed(3)}
                 </div>
               </div>

@@ -84,7 +84,7 @@ export function ConflictsWarningsSection() {
     <SectionFrame sectionId="conflicts-warnings" title="Conflicts & Warnings">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Evaluate conflicts and fatigue rules for a candidate shift and person against
           the current published policy.
         </p>

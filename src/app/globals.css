@@ -26,9 +26,9 @@ body {
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  font-size: var(--type-body, 0.875rem);
+  font-size: var(--type-body, 0.9375rem);
   font-weight: var(--font-weight-body, 400);
-  line-height: 1.45;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -58,21 +58,21 @@ body {
 }
 
 .hcdp-type-body {
-  font-size: var(--type-body, 0.875rem);
+  font-size: var(--type-body, 0.9375rem);
   font-weight: var(--font-weight-body, 400);
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--text);
 }
 
 .hcdp-type-label {
-  font-size: var(--type-label, 0.8125rem);
+  font-size: var(--type-label, 0.875rem);
   font-weight: var(--font-weight-label, 700);
   line-height: 1.3;
   color: var(--ink);
 }
 
 .hcdp-type-meta {
-  font-size: var(--type-meta, 0.6875rem);
+  font-size: var(--type-meta, 0.75rem);
   font-weight: var(--font-weight-meta, 650);
   letter-spacing: var(--tracking-label, 0.04em);
   text-transform: uppercase;
@@ -80,14 +80,14 @@ body {
 }
 
 .hcdp-type-table {
-  font-size: var(--type-table, 0.8125rem);
+  font-size: var(--type-table, 0.875rem);
   font-weight: 650;
   line-height: 1.35;
   color: var(--ink);
 }
 
 .hcdp-type-numeric {
-  font-size: var(--type-numeric, 0.8125rem);
+  font-size: var(--type-numeric, 0.875rem);
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   color: var(--ink);

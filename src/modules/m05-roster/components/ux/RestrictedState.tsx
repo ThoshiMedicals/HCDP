@@ -18,7 +18,7 @@ export function RestrictedState({
           </div>
           <div>
             <div className="font-semibold text-[var(--ink)]">Access restricted</div>
-            <p className="mt-1 text-sm text-[#64748b]">
+            <p className="mt-1 text-sm text-[var(--muted)]">
               {message ??
                 (permission
                   ? `You need the "${permission}" permission to view this section.`

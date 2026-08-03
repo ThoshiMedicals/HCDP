@@ -17,7 +17,7 @@ export function EmptyState({
       <Panel>
         <div className="flex flex-col items-center gap-3 py-8 text-center">
           <div className="font-semibold text-[var(--ink)]">{title}</div>
-          {description ? <p className="mt-1 text-sm text-[#64748b]">{description}</p> : null}
+          {description ? <p className="mt-1 text-sm text-[var(--muted)]">{description}</p> : null}
           {action ? (
             <Button variant="teal" small onClick={action.onClick}>
               {action.label}

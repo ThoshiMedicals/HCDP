@@ -221,7 +221,7 @@ export function RequestsSection() {
     <SectionFrame sectionId="requests" title="Requests">
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
           Manage swap requests — request, propose, recipient-accept, approve, reject and
           withdraw.
         </p>

@@ -99,10 +99,10 @@ export function ActiveActionList({
             {verb}
           </Button>
         ))}
-        <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
+        <span className="text-[length:var(--type-meta)] font-semibold text-[var(--cc-muted)]">
           {selected.length > 0 ? `${selected.length} selected` : "Select one or more actions."}
         </span>
-        <span className="text-[10px] font-semibold text-[var(--cc-muted)]">
+        <span className="text-[length:var(--type-meta)] font-semibold text-[var(--cc-muted)]">
           Change Priority, Due Date, Reminder and Export require a future workflow backend.
         </span>
       </div>
@@ -115,15 +115,15 @@ export function ActiveActionList({
                 <input type="checkbox" checked={selected.includes(a.id)} onChange={() => toggle(a.id)} />
                 <div className="min-w-0 flex-1">
                   <div className="mb-1 flex flex-wrap items-center gap-1.5">
-                    <span className="font-mono text-[11px] font-bold cc-text-info">{a.reference}</span>
+                    <span className="font-mono text-[length:var(--type-control)] font-bold cc-text-info">{a.reference}</span>
                     <PriorityBadge priority={a.priority} />
                     <Badge tone="info">{a.stage}</Badge>
                     {a.linkedReferences[0] ? (
-                      <span className="text-[10px] text-[var(--cc-muted)]">Linked {a.linkedReferences[0]}</span>
+                      <span className="text-[length:var(--type-meta)] text-[var(--cc-muted)]">Linked {a.linkedReferences[0]}</span>
                     ) : null}
                   </div>
                   <strong className="block text-[15px]">{a.title}</strong>
-                  <div className="mt-1 grid gap-0.5 text-[11px] leading-snug text-[var(--cc-muted)] sm:grid-cols-2">
+                  <div className="mt-1 grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)] sm:grid-cols-2">
                     <span>
                       {locationShort(a.locationId === "all" ? "all" : a.locationId, locations)} · {a.category}
                     </span>
@@ -153,7 +153,7 @@ export function ActiveActionList({
                       </Button>
                     ))}
                     <details className="relative">
-                      <summary className="cc-ctrl cursor-pointer list-none text-[11px]">More</summary>
+                      <summary className="cc-ctrl cursor-pointer list-none text-[length:var(--type-control)]">More</summary>
                       <div className="absolute left-0 top-[110%] z-20 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1 shadow-lg">
                         {["Reassign", "Reject", "Request More Information"].map((label) => (
                           <button
@@ -196,7 +196,7 @@ export function ActiveActionList({
                         Post Update
                       </Button>
                     </div>
-                    <div className="flex flex-wrap gap-1.5 text-[10px] font-semibold text-[var(--cc-muted)]">
+                    <div className="flex flex-wrap gap-1.5 text-[length:var(--type-meta)] font-semibold text-[var(--cc-muted)]">
                       <button
                         type="button"
                         className="rounded-md border border-[var(--cc-card-line)] px-1.5 py-0.5 opacity-60"
@@ -253,7 +253,7 @@ export function ActiveActionList({
         <div className="overflow-auto px-4 pb-4">
           <table className="w-full min-w-[900px] border-collapse text-left text-xs">
             <thead>
-              <tr className="border-b border-[var(--cc-card-line)] text-[10px] uppercase text-[var(--cc-muted)]">
+              <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-meta)] uppercase text-[var(--cc-muted)]">
                 <th className="py-2 pr-2">Ref</th>
                 <th className="py-2 pr-2">Priority</th>
                 <th className="py-2 pr-2">Title</th>
