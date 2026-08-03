@@ -47,6 +47,6 @@
                ],
     "pid":  17288,
     "command":  "npx next dev --webpack -p 3000",
-    "tip":  "badc2f6a3ef49fd3a43f06700e9b7d77bffc6e9a",
+    "tip":  "a27ab533c66485868f3b03483f469af13a2ec188",
     "url":  "http://localhost:3000"
 }
