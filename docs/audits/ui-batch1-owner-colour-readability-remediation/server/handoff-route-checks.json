@@ -1,0 +1,42 @@
+[
+    {
+        "route":  "/dashboard",
+        "status":  200
+    },
+    {
+        "route":  "/action-inbox",
+        "status":  200
+    },
+    {
+        "route":  "/settings",
+        "status":  200
+    },
+    {
+        "route":  "/staff-doctors",
+        "status":  200
+    },
+    {
+        "route":  "/roster",
+        "status":  200
+    },
+    {
+        "route":  "/time-attendance",
+        "status":  200
+    },
+    {
+        "route":  "/staffpay?section=overview",
+        "status":  200
+    },
+    {
+        "route":  "/staffpay?section=adjustments",
+        "status":  500
+    },
+    {
+        "route":  "/staff-pay",
+        "status":  404
+    },
+    {
+        "route":  "/m07",
+        "status":  404
+    }
+]

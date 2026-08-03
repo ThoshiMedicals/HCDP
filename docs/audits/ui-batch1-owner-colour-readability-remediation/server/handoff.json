@@ -1,0 +1,52 @@
+{
+    "verifiedAt":  "2026-08-03T16:43:43.7778195+10:00",
+    "routes":  [
+                   {
+                       "status":  200,
+                       "route":  "/dashboard"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/action-inbox"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/settings"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/staff-doctors"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/roster"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/time-attendance"
+                   },
+                   {
+                       "status":  200,
+                       "route":  "/staffpay?section=overview"
+                   },
+                   {
+                       "status":  200,
+                       "note":  "200 after cold-compile retry; first hit 500 JSON parse during compile",
+                       "route":  "/staffpay?section=adjustments"
+                   },
+                   {
+                       "status":  404,
+                       "note":  "alias may be client/middleware only; pre-existing outside colour rem",
+                       "route":  "/staff-pay"
+                   },
+                   {
+                       "status":  404,
+                       "note":  "alias may be client/middleware only; pre-existing outside colour rem",
+                       "route":  "/m07"
+                   }
+               ],
+    "pid":  17288,
+    "command":  "npx next dev --webpack -p 3000",
+    "tip":  "badc2f6a3ef49fd3a43f06700e9b7d77bffc6e9a",
+    "url":  "http://localhost:3000"
+}
