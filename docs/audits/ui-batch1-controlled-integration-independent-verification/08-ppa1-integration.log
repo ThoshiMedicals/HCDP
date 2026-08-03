@@ -1,0 +1,22 @@
+▶ M07 PPA-1 integration — shell + real service + mounted section
+  ✔ section-meta marks adjustments available with PPA-1 foundation wording (24.2043ms)
+  ✔ StaffPayWorkspace mounts ConnectedAdjustmentsSection for adjustments (7.598ms)
+  ✔ empty repo mounts genuine empty wired register (60.8387ms)
+  ✔ denied actor shows permission alert; no create affordance enabled path (5.4926ms)
+  ✔ locked-source selector: ordinary+locked only; excludes adjustment; preserves IDs (243.3935ms)
+  ✔ clinic-scoped selector excludes out-of-scope locked ordinary (48.8351ms)
+  ✔ register/create/cancel via real service; mounts mapped cases; source unchanged; pins present (135.9068ms)
+  ✔ create validation and payload fields required; idempotency preserved at service (62.3559ms)
+  ✔ cross-LE create fail-closed; Org B list empty for Org A source (50.2092ms)
+  ✔ missing adjust permission denied at service; error state mountable (10.6383ms)
+  ✔ unlock ≠ PPA; loading/empty/error states covered; no decorative calc/export actions (73.1989ms)
+✔ M07 PPA-1 integration — shell + real service + mounted section (731.2388ms)
+ℹ tests 11
+ℹ suites 1
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6684.6212
+

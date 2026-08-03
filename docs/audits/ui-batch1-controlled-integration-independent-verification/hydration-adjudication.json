@@ -1,0 +1,49 @@
+{
+  "adjudicatedAt": "2026-08-03T02:07:48.816Z",
+  "cryptoScriptPass": false,
+  "cryptoNodeCryptoHits": 0,
+  "genuineHydrationMismatchCount": 29,
+  "bySurface": {
+    "M04 StaffDoctorsWorkspaceChrome": 1,
+    "M05 Roster OfflineState/board": 7,
+    "M07 StaffPay shell status line": 16,
+    "portal chrome caret-color inputs": 5
+  },
+  "sample": [
+    {
+      "type": "pageerror",
+      "surface": "M04 StaffDoctorsWorkspaceChrome",
+      "excerpt": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== '"
+    },
+    {
+      "type": "pageerror",
+      "surface": "M05 Roster OfflineState/board",
+      "excerpt": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== '"
+    },
+    {
+      "type": "pageerror",
+      "surface": "M07 StaffPay shell status line",
+      "excerpt": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== '"
+    },
+    {
+      "type": "pageerror",
+      "surface": "M07 StaffPay shell status line",
+      "excerpt": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== '"
+    },
+    {
+      "type": "pageerror",
+      "surface": "M07 StaffPay shell status line",
+      "excerpt": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== '"
+    }
+  ],
+  "qc1CryptoConsoleHits": 0,
+  "qc1Pass": true,
+  "classification": "GENUINE_UNCHANGED_PREEXISTING_HYDRATION_DEBT",
+  "rationale": [
+    "Messages are explicit React hydration failures/mismatches, not mere broad-pattern word hits.",
+    "Surfaces are M04 StaffDoctors, M05 Roster OfflineState, M07 StaffPay header status, and portal chrome caret-color — outside QC-1 clinic/identity snapshot fixes.",
+    "Same class observed in accepted a1efd47 / controlled-integration crypto report (pass:false, 0 node:crypto).",
+    "QC-1 script still pass:true for appearance/chrome gates; no node:crypto recurrence.",
+    "No evidence of a new candidate-only hydration family beyond this pre-existing debt."
+  ]
+}

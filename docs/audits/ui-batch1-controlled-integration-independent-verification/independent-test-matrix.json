@@ -1,0 +1,34 @@
+{
+  "lane": "ui-batch1-controlled-integration-independent-verification",
+  "branch": "cursor/ui-batch1-controlled-integration-independent-verification",
+  "candidateBranch": "cursor/ui-batch1-controlled-integration",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "candidateTip": "e5e41a0d79c8b84d3380c4c85372dcc95b0a78b8",
+  "productTip": "25de6f1d4497893a36ea1ac4ed491929726255fc",
+  "integrationBase": "6d633ce1da75a4450d1c1fe186c0d3d502bc6a87",
+  "hash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "hashExact": true,
+  "typecheck": {
+    "errors": 21,
+    "identicalToEvidence": true
+  },
+  "lint": {
+    "errors": 2,
+    "warnings": 24
+  },
+  "builds": {
+    "webpack": 0,
+    "npmBuild": 0
+  },
+  "browser": {
+    "qc1Pass": true,
+    "cryptoPass": false,
+    "cryptoNodeCryptoHits": 0,
+    "matrixPass": true,
+    "port": 3461
+  },
+  "hydrationClassification": "GENUINE_UNCHANGED_PREEXISTING_HYDRATION_DEBT",
+  "executiveVerdict": "QUALIFIED",
+  "localhostPid": 22348,
+  "ranAt": "2026-08-03T02:08:32.636Z"
+}

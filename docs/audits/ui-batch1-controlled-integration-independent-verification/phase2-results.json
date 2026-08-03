@@ -1,0 +1,93 @@
+[
+  {
+    "name": "08-ppa1-ui",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx",
+    "exit": 0,
+    "ms": 21807,
+    "tests": 10,
+    "pass": 10,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "08-ppa1-integration",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx",
+    "exit": 0,
+    "ms": 32609,
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "08-ppa1-security-core-atomicity",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts src/modules/m07-staff-pay/tests/m07-ppa1-core.test.ts src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
+    "exit": 0,
+    "ms": 24163,
+    "tests": 25,
+    "pass": 25,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "09-architecture-boundary",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-architecture-cp27.test.ts src/modules/m07-staff-pay/tests/m07-boundary-cp23.test.ts",
+    "exit": 0,
+    "ms": 19302,
+    "tests": 15,
+    "pass": 15,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "09-authz",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+    "exit": 0,
+    "ms": 19543,
+    "tests": 13,
+    "pass": 13,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "10-batch5",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch5-cp51-56.test.ts src/modules/m07-staff-pay/tests/m07-batch5-material-revision.test.ts src/modules/m07-staff-pay/tests/m07-batch5-remediation.test.ts",
+    "exit": 0,
+    "ms": 27610,
+    "tests": 49,
+    "pass": 49,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "11-batch6",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch6-cp61-66.test.ts src/modules/m07-staff-pay/tests/m07-batch6-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-third-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+    "exit": 0,
+    "ms": 19110,
+    "tests": 43,
+    "pass": 43,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  }
+]

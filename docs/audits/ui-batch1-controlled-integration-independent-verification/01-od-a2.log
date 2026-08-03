@@ -1,0 +1,19 @@
+▶ OD-A2 PublishFromOutboxResult narrowing
+  ✔ success: published path acknowledges and does not write lastError (131.9155ms)
+  ✔ success: re-process of published item stays idempotent (not failed) (21.9186ms)
+  ✔ rejected: eligibility failure preserves exact code and message in lastError (17.9046ms)
+  ✔ rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message (15.9476ms)
+  ✔ retryable failure: attemptCount increments; identity preserved on retry after fixable state (33.8855ms)
+  ✔ terminal: exhausted attempts skip without treating as success (29.0395ms)
+  ✔ publisher union: rejected arm has code/message; success arms do not (36.9698ms)
+  ✔ source still uses rejected discriminant for failure path (no published||idempotent else-access) (3.312ms)
+✔ OD-A2 PublishFromOutboxResult narrowing (299.5383ms)
+ℹ tests 8
+ℹ suites 1
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3122.3216
+

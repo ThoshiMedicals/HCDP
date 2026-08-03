@@ -1,0 +1,28 @@
+[
+  {
+    "name": "16-lint",
+    "cmd": "npm run lint",
+    "exit": 1,
+    "ms": 204963,
+    "tests": null,
+    "pass": null,
+    "fail": null,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": 5,
+    "lintWarnings": 78
+  },
+  {
+    "name": "17-tsc",
+    "cmd": "npx tsc --noEmit",
+    "exit": 2,
+    "ms": 18554,
+    "tests": null,
+    "pass": null,
+    "fail": null,
+    "skipped": null,
+    "tsErrors": 21,
+    "lintErrors": null,
+    "lintWarnings": null
+  }
+]

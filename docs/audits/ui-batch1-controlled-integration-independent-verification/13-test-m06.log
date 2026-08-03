@@ -1,0 +1,166 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m06
+> tsx --test "src/modules/m06-time-attendance/tests/**/*.test.ts"
+
+▶ m06 adapters
+  ✔ m04 person read source is platform demo (5970.9649ms)
+  ✔ m05 shift read does not import m05 repository (14.9552ms)
+  ✔ m01 aggregates only (4.7251ms)
+  ✔ m02 lifecycle write (32.4066ms)
+  ✔ m07 bridge cleared (10.361ms)
+✔ m06 adapters (6048.8442ms)
+▶ m06 authz
+  ✔ positive: worker can clock self (143.8361ms)
+  ✔ negative: worker denied approve permission (3.2598ms)
+  ✔ cross-clinic denial (4.4372ms)
+  ✔ self vs team boundary (20.8675ms)
+  ✔ export bypass prevention requires clinic scope (4.6322ms)
+  ✔ evidence masking without evidence.view (18.5805ms)
+  ✔ mapDemoIdentityPermissions worker vs full senior (8.3563ms)
+✔ m06 authz (213.4055ms)
+▶ m06 bulk
+  ✔ bulk preview and partial success (250.6592ms)
+✔ m06 bulk (257.6257ms)
+▶ m06 domain / lifecycle
+  ✔ session open → on_break → open → closed (150.5783ms)
+  ✔ concurrent conflict on stale version (12.5378ms)
+  ✔ invalid transition cancelled is terminal (13.6783ms)
+  ✔ override requires reason (7.5984ms)
+  ✔ missed break records exception path (13.5059ms)
+✔ m06 domain / lifecycle (204.531ms)
+▶ m06 migration
+  ✔ MIG-01 idempotent seed insert-if-missing (19.8082ms)
+  ✔ MIG-02 interrupted recovery via repeat migrations (3.2958ms)
+  ✔ MIG-03 seed rollback only + no m07 (6.2503ms)
+✔ m06 migration (45.0542ms)
+▶ OD-A2 PublishFromOutboxResult narrowing
+  ✔ success: published path acknowledges and does not write lastError (161.4468ms)
+  ✔ success: re-process of published item stays idempotent (not failed) (24.8576ms)
+  ✔ rejected: eligibility failure preserves exact code and message in lastError (28.4214ms)
+  ✔ rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message (18.3558ms)
+  ✔ retryable failure: attemptCount increments; identity preserved on retry after fixable state (27.2808ms)
+  ✔ terminal: exhausted attempts skip without treating as success (70.8883ms)
+  ✔ publisher union: rejected arm has code/message; success arms do not (131.8842ms)
+  ✔ source still uses rejected discriminant for failure path (no published||idempotent else-access) (4.5595ms)
+✔ OD-A2 PublishFromOutboxResult narrowing (472.341ms)
+▶ m06 offline
+  ✔ idempotent enqueue by clientEventId (31.8017ms)
+  ✔ ordered sync applies then conflicts resolve (189.3973ms)
+✔ m06 offline (251.121ms)
+▶ m06 performance
+  ✖ records §16 prototype performance rows (5600.2615ms)
+✖ m06 performance (5606.0455ms)
+▶ m06 privacy
+  ✔ masks sensitive evidence without attendance.evidence.view (220.6881ms)
+  ✔ audit view restricted for manager without audit.view (4.2952ms)
+  ✔ senior can export unmasked evidence (18.6787ms)
+✔ m06 privacy (253.5645ms)
+▶ CP2.2 M06 platform published-timesheet publication
+  ▶ A. Eligibility
+    ✔ approved eligible record publishes to platform registry (762.3965ms)
+    ✔ draft is rejected for granted publication (38.344ms)
+    ✔ submitted/unapproved is rejected for granted publication (50.1102ms)
+    ✔ rejected record is rejected for granted publication (77.6654ms)
+    ✔ incomplete contract (missing legalEntityId) fails publication but approval remains (117.6268ms)
+    ✔ unsupported contract version is rejected by platform (no silent coerce) (219.9251ms)
+  ✔ A. Eligibility (1271.4549ms)
+  ▶ B. Mapping
+    ✔ maps required fields with independent organisationId and legalEntityId (125.997ms)
+    ✔ rejects prohibited fields via platform validation path (57.1486ms)
+  ✔ B. Mapping (184.978ms)
+  ▶ C. Versioning
+    ✔ first publication creates sourceVersion history; exact retry is idempotent (116.2795ms)
+    ✔ material revision creates new sourceVersion/hash; prior version remains (88.0438ms)
+    ✔ approval-only reopen/revoke retains sourceVersion/hash (54.6582ms)
+  ✔ C. Versioning (262.7767ms)
+  ▶ D. Lifecycle
+    ✔ granted, revoke, and restore publish correctly (199.16ms)
+    ✔ typed withdrawn/invalidated compatibility support (not operationally triggered) (58.6024ms)
+    ✔ stale approval revision cannot regress platform projection (42.2889ms)
+  ✔ D. Lifecycle (302.6653ms)
+  ▶ E. Failure / retry
+    ✔ failed publication remains retryable and survives reload semantics (312.5208ms)
+    ✔ registry-success before local ack does not duplicate on retry (33.604ms)
+    ✔ interrupted publication recovers via rebuild; obligation not silently lost (34.7463ms)
+  ✔ E. Failure / retry (381.9394ms)
+  ▶ F. Boundaries
+    ✔ enforces tenant isolation and clinic membership rejection (101.8538ms)
+    ✔ no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher (33.9431ms)
+  ✔ F. Boundaries (136.9732ms)
+✔ CP2.2 M06 platform published-timesheet publication (2561.0551ms)
+▶ m06 timezone / DST
+  ✔ TZ-01: Brisbane cross-midnight civil dates differ (228.4401ms)
+  ✔ TZ-02: clinic calendar date differs from UTC (14.8681ms)
+  ✔ TZ-03: DST spring-forward gap unresolved (12.1544ms)
+  ✔ TZ-04: fall-back fold=0 earlier (13.6372ms)
+  ✔ TZ-05: fall-back fold=1 later (21.9635ms)
+  ✔ TZ-06: device skew recorded (22.1308ms)
+  ✔ TZ-07: stale timezone unresolved (3.5104ms)
+  ✔ TZ-08: invalid clinic timezone unresolved — no silent UTC (1.5183ms)
+✔ m06 timezone / DST (354.7935ms)
+▶ m06 ux-state contracts
+  ✔ UX concurrent conflict carries version metadata (10.0439ms)
+  ✔ UX validation lifecycle encodes from/to (1.9493ms)
+  ✔ UX override reason required (3.4178ms)
+  ✔ errors are instanceof Error for SystemErrorState (2.3421ms)
+✔ m06 ux-state contracts (24.7347ms)
+▶ m06 workflows independent evidence
+  ✔ WF-01 rostered employee clock-in (307.0357ms)
+  ✔ WF-02 unrostered clock-in (53.5173ms)
+  ✔ WF-03 early clock-in (27.6089ms)
+  ✔ WF-04 late arrival (31.7468ms)
+  ✔ WF-05 missed clock-in (21.5545ms)
+  ✔ WF-06 break start (42.5659ms)
+  ✔ WF-07 break end (92.8025ms)
+  ✔ WF-08 missed break (34.448ms)
+  ✔ WF-09 normal clock-out (65.0539ms)
+  ✔ WF-10 early departure (60.6453ms)
+  ✔ WF-11 missed clock-out (21.5109ms)
+  ✔ WF-12 cross-midnight attendance (34.1806ms)
+  ✔ WF-13 offline capture and synchronization (24.3018ms)
+  ✔ WF-14 employee correction request (40.6482ms)
+  ✔ WF-15 manager correction (40.6611ms)
+  ▶ WF-16 correction approval rejection and approved application
+    ✔ approve applies correction once (46.3301ms)
+    ✔ reject leaves correction rejected and not applied (84.8615ms)
+    ✔ stale version is rejected (36.0667ms)
+  ✔ WF-16 correction approval rejection and approved application (176.8758ms)
+  ✔ WF-17 reopened timesheet (49.9372ms)
+  ✔ WF-18 exception escalation (12.6778ms)
+  ✔ WF-19A approved TimesheetRef publication (47.5684ms)
+  ✔ WF-19B M07 acknowledgement boundary does not write pulse.m07 (1.7493ms)
+  ✔ WF-20 roster-versus-attendance reconciliation (94.2434ms)
+  ✔ WF-21 bulk approval with partial success (83.8022ms)
+✔ m06 workflows independent evidence (1497.208ms)
+ℹ tests 91
+ℹ suites 19
+ℹ pass 90
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29058.0746
+
+✖ failing tests:
+
+test at src\modules\m06-time-attendance\tests\m06-performance.test.ts:2:2906
+✖ records §16 prototype performance rows (5600.2615ms)
+  AssertionError [ERR_ASSERTION]: perf.exception measured 2032.81 > 1000
+  
+  'fail' !== 'pass'
+  
+      at measure (C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\tests\m06-performance.test.ts:70:10)
+      at TestContext.<anonymous> (C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\tests\m06-performance.test.ts:100:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1619:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'fail',
+    expected: 'pass',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+

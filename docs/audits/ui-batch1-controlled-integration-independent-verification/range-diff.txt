@@ -1,0 +1,73 @@
+﻿=== RANGE DIFF: UI Batch1 source vs cherry ===
+git range-diff 834cf22^..834cf22 1565f502^..1565f502
+1:  834cf22 ! 1:  1565f50 feat(ui): Premium Clinical Batch 1 for completed surfaces
+    @@ Commit message
+         Apply accepted owner UI register tokens, typography, shared component styling, remove decorative PageHeader refresh toast, and correct M07 Overview copy for GAP-PAR-003 without domain changes.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit 834cf22a63efc36423533586d56e8913d8bedd8b)
+     
+      ## src/app/globals.css ##
+     @@ src/app/globals.css: body {
+
+=== RANGE DIFF: crypto source vs cherry ===
+1:  a1efd47 ! 1:  0e24d35 fix(platform): remove node:crypto from browser published-timesheet hash path
+    @@ Commit message
+         Client module barrels no longer re-export Node-heavy adapters/services, and SHA-256 is a pure sync UTF-8 digest that preserves the known payroll contentHash vector so UI Batch 1 can validate without UnhandledSchemeError.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit a1efd472ea086d98e82b6ca60da8b9071b1808e2)
+     
+      ## docs/audits/browser-crypto-remediation/browser-validation-report.json (new) ##
+     @@
+
+=== RANGE DIFF: QC1 source vs cherry ===
+1:  9d98d6e ! 1:  25de6f1 fix(ui): close UI Batch 1 QC-1 chrome truthfulness and appearance gates
+    @@ Commit message
+         Remove toast-only DashboardShellStrip verbs under OD-A1 NARROW, and stabilize clinic/identity useSyncExternalStore server snapshots so in-app Light/Dark/System appearance hydrates and persists.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit 9d98d6e57ba3afaef4aa38e20640d2bfbc128122)
+     
+      ## docs/audits/ui-batch1-qualification-completion/action-inbox-1440.png (new) ##
+      Binary files /dev/null and docs/audits/ui-batch1-qualification-completion/action-inbox-1440.png differ
+
+=== PATCH-ID COMPARISON ===
+ui-batch1 src=f3bd1b29d0adc6f27217e5b998a91f0ef43fa32f 0000000000000000000000000000000000000000
+ui-batch1 dst=f3bd1b29d0adc6f27217e5b998a91f0ef43fa32f 0000000000000000000000000000000000000000
+ui-batch1 patch_id_equal=True
+crypto src=05cb328ad0d4be1a7fd735767c9fd5ddb386fdfe 0000000000000000000000000000000000000000
+crypto dst=05cb328ad0d4be1a7fd735767c9fd5ddb386fdfe 0000000000000000000000000000000000000000
+crypto patch_id_equal=True
+qc1 src=65659925490849eeb48716940bbb82f31b2b726c 0000000000000000000000000000000000000000
+qc1 dst=65659925490849eeb48716940bbb82f31b2b726c 0000000000000000000000000000000000000000
+qc1 patch_id_equal=True
+
+=== FULL SOURCE CHAIN RANGE-DIFF (834cf22..9d98d6e vs 1565f502..25de6f1) ===
+1:  834cf22 ! 1:  1565f50 feat(ui): Premium Clinical Batch 1 for completed surfaces
+    @@ Commit message
+         Apply accepted owner UI register tokens, typography, shared component styling, remove decorative PageHeader refresh toast, and correct M07 Overview copy for GAP-PAR-003 without domain changes.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit 834cf22a63efc36423533586d56e8913d8bedd8b)
+     
+      ## src/app/globals.css ##
+     @@ src/app/globals.css: body {
+2:  a1efd47 ! 2:  0e24d35 fix(platform): remove node:crypto from browser published-timesheet hash path
+    @@ Commit message
+         Client module barrels no longer re-export Node-heavy adapters/services, and SHA-256 is a pure sync UTF-8 digest that preserves the known payroll contentHash vector so UI Batch 1 can validate without UnhandledSchemeError.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit a1efd472ea086d98e82b6ca60da8b9071b1808e2)
+     
+      ## docs/audits/browser-crypto-remediation/browser-validation-report.json (new) ##
+     @@
+3:  9d98d6e ! 3:  25de6f1 fix(ui): close UI Batch 1 QC-1 chrome truthfulness and appearance gates
+    @@ Commit message
+         Remove toast-only DashboardShellStrip verbs under OD-A1 NARROW, and stabilize clinic/identity useSyncExternalStore server snapshots so in-app Light/Dark/System appearance hydrates and persists.
+     
+         Co-authored-by: Cursor <cursoragent@cursor.com>
+    +    (cherry picked from commit 9d98d6e57ba3afaef4aa38e20640d2bfbc128122)
+     
+      ## docs/audits/ui-batch1-qualification-completion/action-inbox-1440.png (new) ##
+      Binary files /dev/null and docs/audits/ui-batch1-qualification-completion/action-inbox-1440.png differ

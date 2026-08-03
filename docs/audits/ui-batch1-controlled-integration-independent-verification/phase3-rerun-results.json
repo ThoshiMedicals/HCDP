@@ -1,0 +1,6 @@
+[
+  {"name":"12b-test-m05","exit":0,"ms":6367,"tests":117,"pass":117,"fail":0},
+  {"name":"13b-test-m06","exit":0,"ms":6849,"tests":91,"pass":91,"fail":0},
+  {"name":"14b-test-m07","exit":0,"ms":8057,"tests":252,"pass":252,"fail":0},
+  {"note":"First phase3 attempt had load-related perf failures (M05 bulk, M06 perf) and one Batch6 audit flake under parallel lint/tsc; isolated re-run PASS"}
+]

@@ -1,0 +1,28 @@
+=== a15d325...e5e41a0 name-status ===
+M	docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md
+=== git diff --check ===
+(clean)
+BOM=false
+starts_with_exact=true
+first_20="# HCDP — UI Batch 1 "
+corrupted_emdash_mojibake_present=false
+corrupted_arrow_mojibake_present=false
+corrupted_ellipsis_mojibake_present=false
+corrupted_apos_mojibake_present=false
+corrupted_bom_mojibake_present=false
+contains_real_emdash=true
+contains_real_arrow=true
+non_docs_diff_empty=true
+marker_25de6f1=true
+marker_def2c69=true
+marker_a15d325=true
+marker_22348=true
+marker_localhost:3000=true
+marker_7c14854a=true
+marker_PASS=true
+marker_QUALIFIED=true
+marker_FAIL=false
+marker_residual=true
+verdict_table_rows=2
+VERDICT_ROW: | Light / Dark / System (in-app) | PASS |
+VERDICT_ROW: | Persistence after reload | PASS |

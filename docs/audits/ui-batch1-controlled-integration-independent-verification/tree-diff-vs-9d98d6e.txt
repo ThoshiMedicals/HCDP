@@ -1,0 +1,5 @@
+﻿A	docs/audits/HCDP_OD_A2_PUBLISHED_TIMESHEET_OUTBOX_CORRECTION_REPORT.md
+A	docs/audits/od-a2-published-timesheet-outbox-correction/hash-vector-result.json
+A	docs/audits/od-a2-published-timesheet-outbox-correction/independent-test-matrix.json
+M	src/modules/m06-time-attendance/services/published-timesheet-outbox.ts
+A	src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts

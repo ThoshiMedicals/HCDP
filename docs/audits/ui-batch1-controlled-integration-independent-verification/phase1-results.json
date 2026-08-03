@@ -1,0 +1,93 @@
+[
+  {
+    "name": "01-od-a2",
+    "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts",
+    "exit": 0,
+    "ms": 12800,
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "02-ui-chrome",
+    "cmd": "npx tsx --test src/components/workspaces/tests/ui-batch1-qualification-chrome.test.ts",
+    "exit": 0,
+    "ms": 24000,
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "03-m07-presentation",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+    "exit": 0,
+    "ms": 24757,
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "04-m07-shell",
+    "cmd": "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+    "exit": 0,
+    "ms": 25533,
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "05-browser-crypto",
+    "cmd": "npx tsx --test src/platform/workforce/tests/browser-crypto-remediation.test.ts",
+    "exit": 0,
+    "ms": 21010,
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "06-m06-published",
+    "cmd": "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
+    "exit": 0,
+    "ms": 20522,
+    "tests": 19,
+    "pass": 19,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "07-registry",
+    "cmd": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts",
+    "exit": 0,
+    "ms": 17515,
+    "tests": 27,
+    "pass": 27,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  }
+]

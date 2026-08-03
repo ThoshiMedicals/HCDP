@@ -1,0 +1,54 @@
+[
+  {
+    "name": "12-test-m05",
+    "cmd": "npm run test:m05",
+    "exit": 1,
+    "ms": 65505,
+    "tests": 117,
+    "pass": 115,
+    "fail": 2,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "13-test-m06",
+    "cmd": "npm run test:m06",
+    "exit": 1,
+    "ms": 50111,
+    "tests": 91,
+    "pass": 90,
+    "fail": 1,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "14-test-m07",
+    "cmd": "npm run test:m07",
+    "exit": 1,
+    "ms": 58181,
+    "tests": 252,
+    "pass": 251,
+    "fail": 1,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  },
+  {
+    "name": "15-test-workforce",
+    "cmd": "npm run test:workforce",
+    "exit": 0,
+    "ms": 19157,
+    "tests": 53,
+    "pass": 53,
+    "fail": 0,
+    "skipped": null,
+    "tsErrors": 0,
+    "lintErrors": null,
+    "lintWarnings": null
+  }
+]

@@ -1,0 +1,142 @@
+﻿
+> healthcare-doctors-pulse@0.1.0 test:m06
+> tsx --test "src/modules/m06-time-attendance/tests/**/*.test.ts"
+
+Γû╢ m06 adapters
+  Γ£ö m04 person read source is platform demo (131.3353ms)
+  Γ£ö m05 shift read does not import m05 repository (4.0364ms)
+  Γ£ö m01 aggregates only (2.043ms)
+  Γ£ö m02 lifecycle write (6.49ms)
+  Γ£ö m07 bridge cleared (0.98ms)
+Γ£ö m06 adapters (148.1352ms)
+Γû╢ m06 authz
+  Γ£ö positive: worker can clock self (60.7985ms)
+  Γ£ö negative: worker denied approve permission (1.3457ms)
+  Γ£ö cross-clinic denial (1.0861ms)
+  Γ£ö self vs team boundary (4.0305ms)
+  Γ£ö export bypass prevention requires clinic scope (1.03ms)
+  Γ£ö evidence masking without evidence.view (3.2832ms)
+  Γ£ö mapDemoIdentityPermissions worker vs full senior (0.8462ms)
+Γ£ö m06 authz (75.0939ms)
+Γû╢ m06 bulk
+  Γ£ö bulk preview and partial success (73.4138ms)
+Γ£ö m06 bulk (78.7333ms)
+Γû╢ m06 domain / lifecycle
+  Γ£ö session open ΓåÆ on_break ΓåÆ open ΓåÆ closed (70.6632ms)
+  Γ£ö concurrent conflict on stale version (5.5961ms)
+  Γ£ö invalid transition cancelled is terminal (5.1167ms)
+  Γ£ö override requires reason (4.9726ms)
+  Γ£ö missed break records exception path (5.8219ms)
+Γ£ö m06 domain / lifecycle (94.4042ms)
+Γû╢ m06 migration
+  Γ£ö MIG-01 idempotent seed insert-if-missing (5.9872ms)
+  Γ£ö MIG-02 interrupted recovery via repeat migrations (0.9362ms)
+  Γ£ö MIG-03 seed rollback only + no m07 (1.4299ms)
+Γ£ö m06 migration (10.907ms)
+Γû╢ OD-A2 PublishFromOutboxResult narrowing
+  Γ£ö success: published path acknowledges and does not write lastError (98.8786ms)
+  Γ£ö success: re-process of published item stays idempotent (not failed) (12.5628ms)
+  Γ£ö rejected: eligibility failure preserves exact code and message in lastError (8.4412ms)
+  Γ£ö rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message (8.6401ms)
+  Γ£ö retryable failure: attemptCount increments; identity preserved on retry after fixable state (17.2628ms)
+  Γ£ö terminal: exhausted attempts skip without treating as success (7.1227ms)
+  Γ£ö publisher union: rejected arm has code/message; success arms do not (23.4013ms)
+  Γ£ö source still uses rejected discriminant for failure path (no published||idempotent else-access) (1.4003ms)
+Γ£ö OD-A2 PublishFromOutboxResult narrowing (180.6125ms)
+Γû╢ m06 offline
+  Γ£ö idempotent enqueue by clientEventId (6.4848ms)
+  Γ£ö ordered sync applies then conflicts resolve (101.5425ms)
+Γ£ö m06 offline (109.9114ms)
+Γû╢ m06 performance
+  Γ£ö records ┬º16 prototype performance rows (3436.0964ms)
+Γ£ö m06 performance (3437.5959ms)
+Γû╢ m06 privacy
+  Γ£ö masks sensitive evidence without attendance.evidence.view (66.9352ms)
+  Γ£ö audit view restricted for manager without audit.view (0.8134ms)
+  Γ£ö senior can export unmasked evidence (2.8312ms)
+Γ£ö m06 privacy (72.2593ms)
+Γû╢ CP2.2 M06 platform published-timesheet publication
+  Γû╢ A. Eligibility
+    Γ£ö approved eligible record publishes to platform registry (73.4537ms)
+    Γ£ö draft is rejected for granted publication (5.1076ms)
+    Γ£ö submitted/unapproved is rejected for granted publication (8.4969ms)
+    Γ£ö rejected record is rejected for granted publication (7.0495ms)
+    Γ£ö incomplete contract (missing legalEntityId) fails publication but approval remains (9.7236ms)
+    Γ£ö unsupported contract version is rejected by platform (no silent coerce) (7.5893ms)
+  Γ£ö A. Eligibility (113.4854ms)
+  Γû╢ B. Mapping
+    Γ£ö maps required fields with independent organisationId and legalEntityId (11.1203ms)
+    Γ£ö rejects prohibited fields via platform validation path (6.9093ms)
+  Γ£ö B. Mapping (18.4025ms)
+  Γû╢ C. Versioning
+    Γ£ö first publication creates sourceVersion history; exact retry is idempotent (8.2732ms)
+    Γ£ö material revision creates new sourceVersion/hash; prior version remains (12.6812ms)
+    Γ£ö approval-only reopen/revoke retains sourceVersion/hash (7.5767ms)
+  Γ£ö C. Versioning (29.1387ms)
+  Γû╢ D. Lifecycle
+    Γ£ö granted, revoke, and restore publish correctly (9.6174ms)
+    Γ£ö typed withdrawn/invalidated compatibility support (not operationally triggered) (5.8901ms)
+    Γ£ö stale approval revision cannot regress platform projection (7.3404ms)
+  Γ£ö D. Lifecycle (23.2308ms)
+  Γû╢ E. Failure / retry
+    Γ£ö failed publication remains retryable and survives reload semantics (8.507ms)
+    Γ£ö registry-success before local ack does not duplicate on retry (4.9843ms)
+    Γ£ö interrupted publication recovers via rebuild; obligation not silently lost (7.3198ms)
+  Γ£ö E. Failure / retry (21.0987ms)
+  Γû╢ F. Boundaries
+    Γ£ö enforces tenant isolation and clinic membership rejection (7.1405ms)
+    Γ£ö no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher (6.8549ms)
+  Γ£ö F. Boundaries (14.1926ms)
+Γ£ö CP2.2 M06 platform published-timesheet publication (221.5722ms)
+Γû╢ m06 timezone / DST
+  Γ£ö TZ-01: Brisbane cross-midnight civil dates differ (54.8458ms)
+  Γ£ö TZ-02: clinic calendar date differs from UTC (3.1779ms)
+  Γ£ö TZ-03: DST spring-forward gap unresolved (2.2405ms)
+  Γ£ö TZ-04: fall-back fold=0 earlier (2.1857ms)
+  Γ£ö TZ-05: fall-back fold=1 later (3.4408ms)
+  Γ£ö TZ-06: device skew recorded (1.8296ms)
+  Γ£ö TZ-07: stale timezone unresolved (2.755ms)
+  Γ£ö TZ-08: invalid clinic timezone unresolved ΓÇö no silent UTC (0.5195ms)
+Γ£ö m06 timezone / DST (73.4681ms)
+Γû╢ m06 ux-state contracts
+  Γ£ö UX concurrent conflict carries version metadata (1.6112ms)
+  Γ£ö UX validation lifecycle encodes from/to (0.4393ms)
+  Γ£ö UX override reason required (0.2754ms)
+  Γ£ö errors are instanceof Error for SystemErrorState (0.5287ms)
+Γ£ö m06 ux-state contracts (5.0033ms)
+Γû╢ m06 workflows independent evidence
+  Γ£ö WF-01 rostered employee clock-in (55.242ms)
+  Γ£ö WF-02 unrostered clock-in (6.5588ms)
+  Γ£ö WF-03 early clock-in (5.7157ms)
+  Γ£ö WF-04 late arrival (4.8327ms)
+  Γ£ö WF-05 missed clock-in (2.2746ms)
+  Γ£ö WF-06 break start (12.4035ms)
+  Γ£ö WF-07 break end (5.9845ms)
+  Γ£ö WF-08 missed break (2.7551ms)
+  Γ£ö WF-09 normal clock-out (10.0229ms)
+  Γ£ö WF-10 early departure (5.9531ms)
+  Γ£ö WF-11 missed clock-out (4.5998ms)
+  Γ£ö WF-12 cross-midnight attendance (4.7699ms)
+  Γ£ö WF-13 offline capture and synchronization (4.6632ms)
+  Γ£ö WF-14 employee correction request (8.4549ms)
+  Γ£ö WF-15 manager correction (3.7258ms)
+  Γû╢ WF-16 correction approval rejection and approved application
+    Γ£ö approve applies correction once (3.7475ms)
+    Γ£ö reject leaves correction rejected and not applied (3.359ms)
+    Γ£ö stale version is rejected (5.7019ms)
+  Γ£ö WF-16 correction approval rejection and approved application (13.7146ms)
+  Γ£ö WF-17 reopened timesheet (7.9569ms)
+  Γ£ö WF-18 exception escalation (2.5656ms)
+  Γ£ö WF-19A approved TimesheetRef publication (7.3136ms)
+  Γ£ö WF-19B M07 acknowledgement boundary does not write pulse.m07 (0.4787ms)
+  Γ£ö WF-20 roster-versus-attendance reconciliation (3.2765ms)
+  Γ£ö WF-21 bulk approval with partial success (12.7257ms)
+Γ£ö m06 workflows independent evidence (191.9064ms)
+Γä╣ tests 91
+Γä╣ suites 19
+Γä╣ pass 91
+Γä╣ fail 0
+Γä╣ cancelled 0
+Γä╣ skipped 0
+Γä╣ todo 0
+Γä╣ duration_ms 5686.7225

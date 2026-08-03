@@ -1,0 +1,104 @@
+
+> healthcare-doctors-pulse@0.1.0 lint
+> eslint .
+
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\AvailabilityLeaveSection.tsx
+  47:78  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  60:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  67:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\ConflictsWarningsSection.tsx
+  40:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\CostForecastSection.tsx
+  36:78  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  49:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\CoverageSection.tsx
+  54:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  63:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  68:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\OpenShiftsSection.tsx
+  50:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  61:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\PublishedHistorySection.tsx
+  46:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\ReportsSection.tsx
+  34:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\RequestsSection.tsx
+  55:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m05-roster\sections\SettingsSection.tsx
+  38:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\ApprovalsSection.tsx
+  20:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\AttendanceHistorySection.tsx
+  14:69  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\BreaksSection.tsx
+  16:77  warning  React Hook useMemo has an unnecessary dependency: 'bump'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\ClockSection.tsx
+  25:5  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\CorrectionsSection.tsx
+  15:72  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\ExceptionsSection.tsx
+  23:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\LiveAttendanceSection.tsx
+  31:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\SettingsSection.tsx
+  19:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m06-time-attendance\sections\TimesheetsSection.tsx
+  18:71  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m07-staff-pay\context.tsx
+  57:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m07-staff-pay\context.tsx:57:5
+  55 |   useEffect(() => {
+  56 |     ensureM07Bootstrapped();
+> 57 |     setBootstrap(getM07BootstrapReport());
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  58 |     return subscribeM07Bootstrap(() => setBootstrap(getM07BootstrapReport()));
+  59 |   }, []);
+  60 |  react-hooks/set-state-in-effect
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m07-staff-pay\sections\AdjustmentsSection.tsx
+  386:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-controlled-integration-independent-verification\src\modules\m07-staff-pay\sections\AdjustmentsSection.tsx:386:5
+  384 |
+  385 |   useEffect(() => {
+> 386 |     load();
+      |     ^^^^ Avoid calling setState() directly within an effect
+  387 |   }, [load, tick]);
+  388 |
+  389 |   const deniedReason = "Requires payroll.adjust";  react-hooks/set-state-in-effect
+
+✖ 26 problems (2 errors, 24 warnings)
+
+

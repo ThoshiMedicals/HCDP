@@ -1,0 +1,21 @@
+▶ M07 PPA-1 UI (isolated · pending integration)
+  ✔ labels lane as isolated UI pending integration (61.2248ms)
+  ✔ register renders rows with status, source, adjustment period, LE, reason, created actor (10.0655ms)
+  ✔ register empty state offers create CTA (3.3624ms)
+  ✔ validates mandatory reason code and text; allows optional evidence (32.7054ms)
+  ✔ create form shows unlock≠PPA warning, labelled fields, and disables while submitting (52.5672ms)
+  ✔ surfaces create error and denied state via props (5.5731ms)
+  ✔ detail shows pins and cancel only for draft (35.6951ms)
+  ✔ exposes no calculation, approval, export, or payment controls (22.3858ms)
+  ✔ keyboard/a11y: labelled controls, status/error roles, focus and reduced-motion shell (21.1483ms)
+  ✔ integration lane wires section-meta available and shell ConnectedAdjustmentsSection (2.5024ms)
+✔ M07 PPA-1 UI (isolated · pending integration) (257.507ms)
+ℹ tests 10
+ℹ suites 1
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6417.609
+

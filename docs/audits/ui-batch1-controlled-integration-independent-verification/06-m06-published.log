@@ -1,0 +1,42 @@
+▶ CP2.2 M06 platform published-timesheet publication
+  ▶ A. Eligibility
+    ✔ approved eligible record publishes to platform registry (165.693ms)
+    ✔ draft is rejected for granted publication (19.5674ms)
+    ✔ submitted/unapproved is rejected for granted publication (33.2575ms)
+    ✔ rejected record is rejected for granted publication (19.4629ms)
+    ✔ incomplete contract (missing legalEntityId) fails publication but approval remains (26.3158ms)
+    ✔ unsupported contract version is rejected by platform (no silent coerce) (34.5308ms)
+  ✔ A. Eligibility (305.9402ms)
+  ▶ B. Mapping
+    ✔ maps required fields with independent organisationId and legalEntityId (35.7268ms)
+    ✔ rejects prohibited fields via platform validation path (36.5499ms)
+  ✔ B. Mapping (73.2215ms)
+  ▶ C. Versioning
+    ✔ first publication creates sourceVersion history; exact retry is idempotent (28.375ms)
+    ✔ material revision creates new sourceVersion/hash; prior version remains (37.761ms)
+    ✔ approval-only reopen/revoke retains sourceVersion/hash (29.1298ms)
+  ✔ C. Versioning (96.2353ms)
+  ▶ D. Lifecycle
+    ✔ granted, revoke, and restore publish correctly (53.3ms)
+    ✔ typed withdrawn/invalidated compatibility support (not operationally triggered) (22.0672ms)
+    ✔ stale approval revision cannot regress platform projection (24.9708ms)
+  ✔ D. Lifecycle (101.4112ms)
+  ▶ E. Failure / retry
+    ✔ failed publication remains retryable and survives reload semantics (23.7898ms)
+    ✔ registry-success before local ack does not duplicate on retry (27.8836ms)
+    ✔ interrupted publication recovers via rebuild; obligation not silently lost (33.445ms)
+  ✔ E. Failure / retry (85.9963ms)
+  ▶ F. Boundaries
+    ✔ enforces tenant isolation and clinic membership rejection (47.5213ms)
+    ✔ no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher (40.622ms)
+  ✔ F. Boundaries (89.0595ms)
+✔ CP2.2 M06 platform published-timesheet publication (755.5609ms)
+ℹ tests 19
+ℹ suites 7
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6452.0463
+

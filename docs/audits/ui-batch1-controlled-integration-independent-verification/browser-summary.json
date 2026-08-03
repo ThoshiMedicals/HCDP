@@ -1,0 +1,66 @@
+{
+  "qc1Pass": true,
+  "qc1CryptoHits": 0,
+  "qc1ConsoleErrors": 38,
+  "cryptoPass": false,
+  "cryptoRemediationHits": 29,
+  "cryptoNodeCryptoHits": 0,
+  "genuineHydrationCount": 29,
+  "hydrationModules": {
+    "m04": 1,
+    "m05": 7,
+    "m07": 16,
+    "chrome": 5,
+    "other": 0
+  },
+  "matrixPass": true,
+  "matrixSectionFail": 0,
+  "matrixAliasFail": 0,
+  "matrixOverflow": 0,
+  "matrixHydrationClass": "GENUINE_HYDRATION_MISMATCH_PRESENT",
+  "matrixGenuine": 35,
+  "appearance": {
+    "light": {
+      "clicked": false,
+      "before": {
+        "className": "h-full",
+        "dataTheme": null,
+        "colorScheme": "normal",
+        "stored": null
+      },
+      "after": {
+        "className": "h-full",
+        "dataTheme": null,
+        "colorScheme": "normal",
+        "stored": null
+      },
+      "persistOk": true
+    },
+    "dark": {
+      "clicked": false,
+      "before": {
+        "className": "h-full",
+        "dataTheme": null,
+        "colorScheme": "normal",
+        "stored": null
+      },
+      "after": {
+        "className": "h-full",
+        "dataTheme": null,
+        "colorScheme": "normal",
+        "stored": null
+      },
+      "persistOk": false
+    },
+    "systemOsDark": {
+      "clicked": false,
+      "theme": {
+        "className": "h-full",
+        "dataTheme": null,
+        "colorScheme": "normal",
+        "stored": null
+      },
+      "osColorScheme": "dark"
+    }
+  }
+}

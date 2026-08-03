@@ -1,0 +1,131 @@
+﻿origin/main=0afe87806cdc1e3e8e90da5293183ef1b2fd9c76
+candidate_tip=e5e41a0d79c8b84d3380c4c85372dcc95b0a78b8
+expected_tip=e5e41a0d79c8b84d3380c4c85372dcc95b0a78b8
+tip_match=True
+main_match=True
+
+=== ANCESTRY GRAPH (6d633ce1..HEAD) ===
+e5e41a0 (HEAD -> cursor/ui-batch1-controlled-integration-independent-verification, origin/cursor/ui-batch1-controlled-integration, cursor/ui-batch1-controlled-integration) docs(audits): repair UI Batch 1 report UTF-8 encoding
+a15d325 docs(audits): record controlled-integration localhost handoff
+def2c69 docs(audits): add UI Batch 1 controlled integration evidence
+25de6f1 fix(ui): close UI Batch 1 QC-1 chrome truthfulness and appearance gates
+0e24d35 fix(platform): remove node:crypto from browser published-timesheet hash path
+1565f50 feat(ui): Premium Clinical Batch 1 for completed surfaces
+
+=== PARENTS ===
+e5e41a0d79c8b84d3380c4c85372dcc95b0a78b8 parent=a15d325a5e6dd13a6da216e929aaef38440b8361 subject=docs(audits): repair UI Batch 1 report UTF-8 encoding
+a15d325a5e6dd13a6da216e929aaef38440b8361 parent=def2c691fdd2a3a747c9487764963492bddb69b4 subject=docs(audits): record controlled-integration localhost handoff
+def2c691fdd2a3a747c9487764963492bddb69b4 parent=25de6f1d4497893a36ea1ac4ed491929726255fc subject=docs(audits): add UI Batch 1 controlled integration evidence
+25de6f1d4497893a36ea1ac4ed491929726255fc parent=0e24d3559881281b5becffe265c3872dff366db3 subject=fix(ui): close UI Batch 1 QC-1 chrome truthfulness and appearance gates
+0e24d3559881281b5becffe265c3872dff366db3 parent=1565f5022c9f3c6f7b47031afa7f78d425724726 subject=fix(platform): remove node:crypto from browser published-timesheet hash path
+1565f5022c9f3c6f7b47031afa7f78d425724726 parent=6d633ce1da75a4450d1c1fe186c0d3d502bc6a87 subject=feat(ui): Premium Clinical Batch 1 for completed surfaces
+
+=== MERGE COMMITS IN RANGE ===
+(none)
+
+=== EXCLUDED EVIDENCE COMMITS PRESENT? ===
+da2dd1c5a901e21cead3c949d1d0770874919fa7 ancestor_of_HEAD=False
+acff2972eea8db4b9859de18dc31e5df427b6cb6 ancestor_of_HEAD=False
+8ede3a0698d99d644c62a0e84f2d6c8850b101b9 ancestor_of_HEAD=False
+
+=== PRODUCT COMMITS AFTER BASE (first-parent) ===
+25de6f1 fix(ui): close UI Batch 1 QC-1 chrome truthfulness and appearance gates
+0e24d35 fix(platform): remove node:crypto from browser published-timesheet hash path
+1565f50 feat(ui): Premium Clinical Batch 1 for completed surfaces
+
+=== POST-PRODUCT COMMITS FILE DIFFS ===
+--- 25de6f1d4497893a36ea1ac4ed491929726255fc..def2c691fdd2a3a747c9487764963492bddb69b4 ---
+A	docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md
+A	docs/audits/ui-batch1-controlled-integration/01-od-a2.log
+A	docs/audits/ui-batch1-controlled-integration/02-ui-chrome.log
+A	docs/audits/ui-batch1-controlled-integration/03-m07-presentation.log
+A	docs/audits/ui-batch1-controlled-integration/04-m07-shell.log
+A	docs/audits/ui-batch1-controlled-integration/05-browser-crypto.log
+A	docs/audits/ui-batch1-controlled-integration/06-m06-published.log
+A	docs/audits/ui-batch1-controlled-integration/07-registry.log
+A	docs/audits/ui-batch1-controlled-integration/08-ppa1-integration.log
+A	docs/audits/ui-batch1-controlled-integration/08-ppa1-security-core-atomicity.log
+A	docs/audits/ui-batch1-controlled-integration/08-ppa1-ui.log
+A	docs/audits/ui-batch1-controlled-integration/09-architecture-boundary.log
+A	docs/audits/ui-batch1-controlled-integration/09-authz.log
+A	docs/audits/ui-batch1-controlled-integration/10-batch5.log
+A	docs/audits/ui-batch1-controlled-integration/11-batch6.log
+A	docs/audits/ui-batch1-controlled-integration/12-test-m05.log
+A	docs/audits/ui-batch1-controlled-integration/13-test-m06.log
+A	docs/audits/ui-batch1-controlled-integration/14-test-m07.log
+A	docs/audits/ui-batch1-controlled-integration/15-test-workforce.log
+A	docs/audits/ui-batch1-controlled-integration/16-lint.log
+A	docs/audits/ui-batch1-controlled-integration/17-tsc-baseline-6d633ce1.txt
+A	docs/audits/ui-batch1-controlled-integration/17-tsc-errors.txt
+A	docs/audits/ui-batch1-controlled-integration/17-tsc-scoped.json
+A	docs/audits/ui-batch1-controlled-integration/17-tsc.log
+A	docs/audits/ui-batch1-controlled-integration/19-build-exit.txt
+A	docs/audits/ui-batch1-controlled-integration/19-next-build-webpack.log
+A	docs/audits/ui-batch1-controlled-integration/20-build-exit.txt
+A	docs/audits/ui-batch1-controlled-integration/20-npm-run-build.log
+A	docs/audits/ui-batch1-controlled-integration/ancestry-graph.txt
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto-run.log
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/browser-validation-report.json
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/dark-_dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/dark-_staffpay-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/dark-_staffpay_section_adjustments-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/dashboard-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/shell-nav-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/shell-nav-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/staffpay-adjustments-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/staffpay-adjustments-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/staffpay-overview-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-crypto/staffpay-overview-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1-run.log
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/action-inbox-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/action-inbox-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/browser-validation-report.json
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/dashboard-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/dashboard-mobile-primary-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/dashboard-mobile-primary-430.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-dark-dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-dark-staffpay-adjustments-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-dark-staffpay-overview-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-light-dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-light-staffpay-adjustments-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-light-staffpay-overview-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/inapp-system-dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/organisation-access-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/organisation-access-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/roster-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/roster-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/shell-nav-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/shell-nav-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staff-doctors-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staff-doctors-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staffpay-adjustments-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staffpay-adjustments-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staffpay-overview-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/staffpay-overview-390.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/time-attendance-1440.png
+A	docs/audits/ui-batch1-controlled-integration/browser-qc1/time-attendance-390.png
+A	docs/audits/ui-batch1-controlled-integration/cherry-pick-shas.txt
+A	docs/audits/ui-batch1-controlled-integration/hash-vector-result.json
+A	docs/audits/ui-batch1-controlled-integration/inapp-system-os-dark-dashboard-1440.png
+A	docs/audits/ui-batch1-controlled-integration/independent-test-matrix.json
+A	docs/audits/ui-batch1-controlled-integration/m07-extra-browser-run.log
+A	docs/audits/ui-batch1-controlled-integration/m07-sections-aliases-osdark-report.json
+A	docs/audits/ui-batch1-controlled-integration/osdark-run.log
+A	docs/audits/ui-batch1-controlled-integration/phase1-results.json
+A	docs/audits/ui-batch1-controlled-integration/phase2-results.json
+A	docs/audits/ui-batch1-controlled-integration/phase3-results.json
+A	docs/audits/ui-batch1-controlled-integration/range-diff.txt
+A	docs/audits/ui-batch1-controlled-integration/system-os-dark-and-crypto-console.json
+A	docs/audits/ui-batch1-controlled-integration/tree-diff-vs-6d633ce1.txt
+A	docs/audits/ui-batch1-controlled-integration/tree-diff-vs-9d98d6e.txt
+--- def2c691fdd2a3a747c9487764963492bddb69b4..a15d325a5e6dd13a6da216e929aaef38440b8361 ---
+M	docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md
+A	docs/audits/ui-batch1-controlled-integration/localhost-adjustments-retry.json
+A	docs/audits/ui-batch1-controlled-integration/localhost-handoff.json
+--- a15d325a5e6dd13a6da216e929aaef38440b8361..e5e41a0d79c8b84d3380c4c85372dcc95b0a78b8 ---
+M	docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md
+
+=== PRODUCT TREE vs PRODUCT TIP (25de6f1) excluding docs ===
+(no non-docs product diff)

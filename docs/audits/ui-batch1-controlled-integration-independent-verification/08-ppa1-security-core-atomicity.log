@@ -1,0 +1,40 @@
+▶ M07 PPA-1 atomicity / fail-closed compensation
+  ✔ 1. adjustment-period write fail — no success, source unchanged, no open PPA (245.951ms)
+  ✔ 2. case write fail after period create — compensates; no open PPA; residual archived (46.5287ms)
+  ✔ 3. consistency verify fail after both writes — compensates; no open PPA (48.3894ms)
+  ✔ 4. audit fail after business writes — no success response; no false-success audit; compensate (57.3726ms)
+  ✔ 5. duplicate create same source — rejected; source unchanged (54.5576ms)
+  ✔ 6. identical idempotency replay — returns same case; no second open PPA (36.5688ms)
+  ✔ 7. conflicting idempotency replay — rejected; source unchanged (61.3105ms)
+  ✔ 8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed (44.0607ms)
+  ✔ 9. cancel audit failure — cancel persists but no success return; source unchanged (65.4186ms)
+✔ M07 PPA-1 atomicity / fail-closed compensation (664.823ms)
+▶ M07 PPA-1 core — prior-period adjustment foundation
+  ✔ creates PPA against locked ordinary source; source unchanged; adjustment period linked (223.8417ms)
+  ✔ rejects unlocked ordinary source pre-write (5.6467ms)
+  ✔ rejects missing / unknown source and adjustment-kind source (52.7838ms)
+  ✔ rejects cross-LE caller widening and Org B access (61.9776ms)
+  ✔ rejects missing reasonCode and blank reasonText pre-write (42.5143ms)
+  ✔ enforces at most one open PPA per source; idempotent and conflicting replay (50.6601ms)
+  ✔ list/get are LE-scoped; missing adjust permission denied (53.0216ms)
+  ✔ cancels draft idempotently; rejects invalid cancel state (52.4688ms)
+  ✔ controlled unlock does not create a PPA case (52.5841ms)
+  ✔ rejects prohibited identifier fields on create input (40.9426ms)
+✔ M07 PPA-1 core — prior-period adjustment foundation (644.9676ms)
+▶ M07 test-hook security gate (QA-PPA1-001)
+  ✔ allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node (20.0565ms)
+  ✔ allows hooks when NODE_ENV=test even without allow flag (2.5651ms)
+  ✔ disables hooks when NODE_ENV=production (setters no-op; failures do not fire) (12.3962ms)
+  ✔ disables hooks in unknown/development runtime without explicit allow (2.7271ms)
+  ✔ browser-like undefined process must never enable hooks (1.9982ms)
+  ✔ production gate prevents arming then re-enabling from leaking prior arms after reset (3.9155ms)
+✔ M07 test-hook security gate (QA-PPA1-001) (55.759ms)
+ℹ tests 25
+ℹ suites 3
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5687.1917
+
