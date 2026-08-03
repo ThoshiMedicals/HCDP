@@ -1,0 +1,23 @@
+[
+    {
+        "name":  "15-m04",
+        "exit":  0,
+        "tests":  16,
+        "pass":  16,
+        "fail":  0
+    },
+    {
+        "name":  "16-m05",
+        "exit":  0,
+        "tests":  117,
+        "pass":  117,
+        "fail":  0
+    },
+    {
+        "name":  "17-m06",
+        "exit":  0,
+        "tests":  91,
+        "pass":  91,
+        "fail":  0
+    }
+]

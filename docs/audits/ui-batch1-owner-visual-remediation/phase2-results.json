@@ -1,0 +1,44 @@
+[
+    {
+        "name":  "09-ppa1-ui",
+        "exit":  0,
+        "tests":  10,
+        "pass":  10,
+        "fail":  0
+    },
+    {
+        "name":  "10-ppa1-integration",
+        "exit":  0,
+        "tests":  11,
+        "pass":  11,
+        "fail":  0
+    },
+    {
+        "name":  "11-ppa1-security",
+        "exit":  0,
+        "tests":  6,
+        "pass":  6,
+        "fail":  0
+    },
+    {
+        "name":  "12-ppa1-core",
+        "exit":  0,
+        "tests":  10,
+        "pass":  10,
+        "fail":  0
+    },
+    {
+        "name":  "13-ppa1-atomicity",
+        "exit":  0,
+        "tests":  9,
+        "pass":  9,
+        "fail":  0
+    },
+    {
+        "name":  "14-workforce",
+        "exit":  0,
+        "tests":  53,
+        "pass":  53,
+        "fail":  0
+    }
+]

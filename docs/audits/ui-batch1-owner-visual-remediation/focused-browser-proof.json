@@ -1,0 +1,294 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "name": "dashboard",
+      "w": 1440,
+      "route": "/dashboard",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Owner/Director Command Centre"
+        ],
+        "desktop": false,
+        "compact": false,
+        "rails": 0,
+        "primary": true,
+        "secondary": true,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "dashboard",
+      "w": 390,
+      "route": "/dashboard",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Owner/Director Command Centre"
+        ],
+        "desktop": false,
+        "compact": false,
+        "rails": 0,
+        "primary": true,
+        "secondary": true,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m04",
+      "w": 1440,
+      "route": "/staff-doctors",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff & Doctor Management"
+        ],
+        "desktop": true,
+        "compact": false,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m04",
+      "w": 390,
+      "route": "/staff-doctors",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff & Doctor Management"
+        ],
+        "desktop": false,
+        "compact": true,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m05",
+      "w": 1440,
+      "route": "/roster",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Roster & Shift Management"
+        ],
+        "desktop": true,
+        "compact": false,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m05",
+      "w": 390,
+      "route": "/roster",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Roster & Shift Management"
+        ],
+        "desktop": false,
+        "compact": true,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m06",
+      "w": 1440,
+      "route": "/time-attendance",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Time & Attendance"
+        ],
+        "desktop": true,
+        "compact": false,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m06",
+      "w": 390,
+      "route": "/time-attendance",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Time & Attendance"
+        ],
+        "desktop": false,
+        "compact": true,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m07-overview",
+      "w": 1440,
+      "route": "/staffpay?section=overview",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff Pay & Payroll Preparation"
+        ],
+        "desktop": true,
+        "compact": false,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m07-overview",
+      "w": 390,
+      "route": "/staffpay?section=overview",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff Pay & Payroll Preparation"
+        ],
+        "desktop": false,
+        "compact": true,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m07-adjustments",
+      "w": 1440,
+      "route": "/staffpay?section=adjustments",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff Pay & Payroll Preparation"
+        ],
+        "desktop": true,
+        "compact": false,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    },
+    {
+      "name": "m07-adjustments",
+      "w": 390,
+      "route": "/staffpay?section=adjustments",
+      "ok": true,
+      "audit": {
+        "sidebars": 1,
+        "familyVisible": false,
+        "fav": false,
+        "nested": 0,
+        "h1": [
+          "Staff Pay & Payroll Preparation"
+        ],
+        "desktop": false,
+        "compact": true,
+        "rails": 0,
+        "primary": false,
+        "secondary": false,
+        "unique": true,
+        "bg": "rgb(11, 31, 58)",
+        "activeBorder": "rgb(197, 168, 128)",
+        "gradientActive": false
+      }
+    }
+  ],
+  "finishedAt": "2026-08-03T03:53:11.633Z"
+}

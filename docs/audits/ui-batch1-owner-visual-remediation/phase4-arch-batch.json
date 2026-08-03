@@ -1,0 +1,30 @@
+[
+    {
+        "name":  "19-arch",
+        "exit":  0,
+        "tests":  9,
+        "pass":  9,
+        "fail":  0
+    },
+    {
+        "name":  "20-authz",
+        "exit":  0,
+        "tests":  13,
+        "pass":  13,
+        "fail":  0
+    },
+    {
+        "name":  "21-batch5",
+        "exit":  0,
+        "tests":  49,
+        "pass":  49,
+        "fail":  0
+    },
+    {
+        "name":  "22-batch6",
+        "exit":  0,
+        "tests":  43,
+        "pass":  43,
+        "fail":  0
+    }
+]
