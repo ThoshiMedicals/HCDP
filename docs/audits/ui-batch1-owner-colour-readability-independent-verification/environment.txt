@@ -1,0 +1,12 @@
+node=v22.14.0
+npm=10.9.7
+playwright=Version 1.49.0
+chrome=Google Chrome 148.0.7778.96 
+os=Linux cursor 6.12.94+ #1 SMP PREEMPT_DYNAMIC Wed Jul 22 16:29:09 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+date=2026-08-03T23:43:46Z
+pwd=/tmp/hcdp-verify/ui-batch1-colour-iv
+head=ee9731e38e7d20d6d825e6c243503f4aea9564c3
+branch=cursor/ui-batch1-owner-colour-readability-independent-verification
+origin_main=0afe87806cdc1e3e8e90da5293183ef1b2fd9c76
+port3000=ABSENT
+pid17288=ABSENT

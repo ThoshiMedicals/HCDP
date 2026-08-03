@@ -1,0 +1,171 @@
+{
+  "title": "HCDP UI Batch 1 colour/readability independent verification plan",
+  "derivedBeforePriorReports": true,
+  "ownerDecision": {
+    "date": "2026-08-04",
+    "status": "ACCEPTED FOR INDEPENDENT VERIFICATION ONLY",
+    "not": [
+      "merge authorisation",
+      "production approval",
+      "permission to create a pull request",
+      "permission to update main",
+      "permission to begin UI Batch 2"
+    ]
+  },
+  "refs": {
+    "originMainExpected": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+    "priorVisualRemediationBase": "f3333b6f27b6c0afc5a29bcff45e9bccea392c35",
+    "candidateBranch": "cursor/ui-batch1-owner-colour-readability-remediation",
+    "candidateTip": "ee9731e38e7d20d6d825e6c243503f4aea9564c3",
+    "independentBranch": "cursor/ui-batch1-owner-colour-readability-independent-verification"
+  },
+  "sourcesOfRequirements": [
+    "docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md",
+    "docs/architecture/HCDP_PROTOTYPE_PARITY_REGISTER.md",
+    ".cursor/rules/hcdp-wave-control.mdc",
+    "src/styles/tokens.css semantic theme layer",
+    "src/platform/module-registry/module-register.ts",
+    "src/platform/navigation/legacy-routes.ts",
+    "M04/M05/M06/M07 section id types and aliases",
+    "WCAG 2.x contrast minima and owner primary-text 7:1 target",
+    "owner colour/readability remediation instruction gates (as verification criteria, not proof)"
+  ],
+  "gates": {
+    "normalTextContrast": 4.5,
+    "largeTextContrast": 3.0,
+    "controlsFocusIconsContrast": 3.0,
+    "primaryTextTarget": 7.0,
+    "secondaryMutedBadgeText": 4.5,
+    "minMeaningfulTextPx": 12,
+    "minNavActionHelperFormTablePx": 13,
+    "bodyTextApproxPx": 15
+  },
+  "routes": {
+    "core": ["/dashboard", "/action-inbox", "/settings"],
+    "m04": {
+      "base": "/staff-doctors",
+      "sections": [
+        "overview",
+        "people",
+        "staff-profiles",
+        "doctor-profiles",
+        "engagements",
+        "credentials",
+        "leave-availability",
+        "restrictions",
+        "onboarding",
+        "offboarding",
+        "reports",
+        "settings"
+      ]
+    },
+    "m05": {
+      "base": "/roster",
+      "sections": [
+        "roster-board",
+        "coverage",
+        "open-shifts",
+        "availability-leave",
+        "requests",
+        "conflicts-warnings",
+        "published-history",
+        "cost-forecast",
+        "reports",
+        "settings"
+      ]
+    },
+    "m06": {
+      "base": "/time-attendance",
+      "sections": [
+        "live",
+        "clock",
+        "timesheets",
+        "exceptions",
+        "corrections",
+        "approvals",
+        "breaks",
+        "history",
+        "reports",
+        "settings"
+      ]
+    },
+    "m07": {
+      "base": "/staffpay",
+      "availableSections": [
+        "overview",
+        "people",
+        "leave",
+        "adjustments",
+        "exceptions",
+        "variances",
+        "approval",
+        "export",
+        "reconciliation",
+        "settings"
+      ],
+      "plannedSections": ["history"]
+    },
+    "aliasCandidatesForAdjudication": ["/staff-pay", "/m07"],
+    "legacyRedirectsSource": "src/platform/navigation/legacy-routes.ts"
+  },
+  "matrix": {
+    "widths": [1440, 1280, 1024, 768, 430, 390],
+    "appearances": [
+      "light",
+      "dark",
+      "system-os-light",
+      "system-os-dark",
+      "reload-persistence",
+      "clean-storage-default"
+    ]
+  },
+  "ports": {
+    "ownerInspectionPreserve": 3000,
+    "candidate": 3465,
+    "baseline": 3466
+  },
+  "evidenceRoot": "docs/audits/ui-batch1-owner-colour-readability-independent-verification/",
+  "independence": {
+    "mayAdd": [
+      "independent validation script",
+      "independent machine-readable evidence",
+      "independent screenshots",
+      "independent verification report"
+    ],
+    "mustNot": [
+      "repair defects",
+      "change application source",
+      "alter existing tests or expected results",
+      "weaken thresholds",
+      "modify configuration",
+      "install or upgrade dependencies",
+      "overwrite remediation evidence",
+      "copy prior screenshots/logs as independent evidence",
+      "merge",
+      "create PR",
+      "start UI Batch 2"
+    ]
+  },
+  "ownerGates": [
+    "Branch/base integrity",
+    "Light-mode readability",
+    "Dark-mode readability",
+    "Semantic-token consistency",
+    "Text contrast",
+    "Controls/boundaries/focus contrast",
+    "Typography readability",
+    "Semantic status readability",
+    "Sidebar readability",
+    "Dashboard readability",
+    "M04–M07 readability",
+    "Appearance persistence",
+    "Responsive behaviour",
+    "Accessibility",
+    "Function preservation",
+    "Hydration non-regression",
+    "Automated regressions",
+    "Builds and exact hash",
+    "Protected-scope compliance",
+    "Readiness for controlled-integration planning"
+  ]
+}
