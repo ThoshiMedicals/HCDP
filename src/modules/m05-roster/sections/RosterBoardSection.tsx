@@ -339,9 +339,9 @@ export function RosterBoardSection() {
           <PanelTitle>Create roster period</PanelTitle>
           <PanelSub>Requires roster.period.create.</PanelSub>
           <ValidationErrorState errors={periodErrors} onDismiss={() => setPeriodErrors([])} />
-          <div className="mt-3 grid gap-2 md:grid-cols-5">
+          <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-5">
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               placeholder="Label (e.g. Week B)"
               value={newLabel}
               onChange={(e) => setNewLabel(e.target.value)}
@@ -350,20 +350,20 @@ export function RosterBoardSection() {
             />
             <input
               type="date"
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={newStartsOn}
               onChange={(e) => setNewStartsOn(e.target.value)}
               aria-label="Starts on"
             />
             <input
               type="date"
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={newEndsOn}
               onChange={(e) => setNewEndsOn(e.target.value)}
               aria-label="Ends on"
             />
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               placeholder="Clinic id"
               value={newClinic}
               onChange={(e) => setNewClinic(e.target.value)}
@@ -371,6 +371,7 @@ export function RosterBoardSection() {
             />
             <Button
               variant="teal"
+              className="min-w-0 w-full max-w-full"
               onClick={handleCreatePeriod}
               data-testid="m05-create-period"
             >

@@ -1,6 +1,6 @@
 export function Table({ children }: { children: React.ReactNode }) {
   return (
-    <div className="overflow-auto rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)]">
+    <div className="min-w-0 max-w-full overflow-auto rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)]">
       <table className="hcdp-type-table w-full min-w-[800px] border-collapse">{children}</table>
     </div>
   );

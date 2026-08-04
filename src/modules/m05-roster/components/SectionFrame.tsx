@@ -24,7 +24,7 @@ export function SectionFrame({
 }) {
   return (
     <div
-      className="grid gap-4"
+      className="grid min-w-0 gap-4"
       data-testid={`m05-section-${sectionId}`}
       data-m05-section={sectionId}
       data-m05-section-title={title}

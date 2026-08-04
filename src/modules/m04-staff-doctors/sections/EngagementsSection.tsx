@@ -20,7 +20,7 @@ export function EngagementsSection() {
   const engagements = listEngagements();
 
   return (
-    <div className="grid gap-4">
+    <div className="grid min-w-0 gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Engagements</h2>
         <p className="m-0 mt-1 text-sm text-[var(--muted)]">
@@ -30,9 +30,9 @@ export function EngagementsSection() {
       <Panel>
         <PanelTitle>Create engagement</PanelTitle>
         <PanelSub>Overlapping active engagements at the same clinic are rejected.</PanelSub>
-        <div className="mt-3 grid gap-2 md:grid-cols-5">
+        <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-5">
           <select
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={personId}
             onChange={(e) => setPersonId(e.target.value)}
           >
@@ -43,25 +43,26 @@ export function EngagementsSection() {
             ))}
           </select>
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={clinicId}
             onChange={(e) => setClinicId(e.target.value)}
             placeholder="Clinic id"
           />
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={roleLabel}
             onChange={(e) => setRoleLabel(e.target.value)}
             placeholder="Role"
           />
           <input
             type="date"
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
           />
           <Button
             variant="teal"
+            className="min-w-0 w-full max-w-full"
             onClick={() => {
               try {
                 createEngagement(actor, {

@@ -26,7 +26,7 @@ export function OverviewSection() {
     : [];
 
   return (
-    <div className="grid gap-4">
+    <div className="grid min-w-0 gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Workforce overview</h2>
         <p className="m-0 mt-1 text-sm text-[var(--muted)]">
@@ -34,17 +34,17 @@ export function OverviewSection() {
         </p>
       </div>
 
-      <div className="grid gap-3.5 md:grid-cols-2 xl:grid-cols-4">
-        <button type="button" className="text-left" onClick={() => setSection("staff-profiles")}>
+      <div className="grid min-w-0 gap-3.5 md:grid-cols-2 xl:grid-cols-4">
+        <button type="button" className="w-full min-w-0 max-w-full text-left" onClick={() => setSection("staff-profiles")}>
           <Metric label="Active staff" value={displayCounts.activeStaff} icon="users" tone="success" />
         </button>
-        <button type="button" className="text-left" onClick={() => setSection("doctor-profiles")}>
+        <button type="button" className="w-full min-w-0 max-w-full text-left" onClick={() => setSection("doctor-profiles")}>
           <Metric label="Active doctors" value={displayCounts.activeDoctors} icon="users" tone="info" />
         </button>
-        <button type="button" className="text-left" onClick={() => setSection("credentials")}>
+        <button type="button" className="w-full min-w-0 max-w-full text-left" onClick={() => setSection("credentials")}>
           <Metric label="Blocked readiness" value={displayCounts.blockedReadiness} icon="alert" tone="warning" />
         </button>
-        <button type="button" className="text-left" onClick={() => setSection("leave-availability")}>
+        <button type="button" className="w-full min-w-0 max-w-full text-left" onClick={() => setSection("leave-availability")}>
           <Metric label="On leave today" value={displayCounts.onLeave} icon="calendar" tone="default" />
         </button>
       </div>

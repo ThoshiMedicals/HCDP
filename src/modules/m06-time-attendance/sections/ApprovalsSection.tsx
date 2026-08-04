@@ -30,20 +30,22 @@ export function ApprovalsSection() {
   return (
     <SectionFrame sectionId="approvals" title="Approvals">
       {hasM06Permission(actor, "attendance.bulk.approve") ? (
-        <Button
-          data-testid="m06-bulk-approve"
-          small
-          className="mb-3"
-          onClick={() => {
-            const ids = rows.map((r) => r.id);
-            previewBulkApprove({ actor, approvalIds: ids });
-            const result = submitBulkApprove({ actor, approvalIds: ids });
-            pushToast(`Bulk approve: ${result.results.filter((r) => r.ok).length} ok`);
-            bump();
-          }}
-        >
-          Bulk approve pending
-        </Button>
+        <div className="mb-3 flex flex-wrap gap-2">
+          <Button
+            data-testid="m06-bulk-approve"
+            small
+            className="w-auto max-w-full"
+            onClick={() => {
+              const ids = rows.map((r) => r.id);
+              previewBulkApprove({ actor, approvalIds: ids });
+              const result = submitBulkApprove({ actor, approvalIds: ids });
+              pushToast(`Bulk approve: ${result.results.filter((r) => r.ok).length} ok`);
+              bump();
+            }}
+          >
+            Bulk approve pending
+          </Button>
+        </div>
       ) : null}
       {rows.length === 0 ? (
         <EmptyState title="No pending approvals" />

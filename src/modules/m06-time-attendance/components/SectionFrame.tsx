@@ -13,7 +13,7 @@ export function SectionFrame({
 }) {
   return (
     <div
-      className="grid gap-4"
+      className="grid min-w-0 gap-4"
       data-testid={`m06-section-${sectionId}`}
       data-m06-section={sectionId}
       data-m06-section-title={title}

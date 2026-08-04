@@ -929,9 +929,13 @@ html.theme-dark .v33-context-btn, body.theme-dark .v33-context-btn {
 .module-section-nav {
   width: 100%;
   min-width: 0;
+  max-width: 100%;
 }
 .module-section-nav__desktop-only {
   display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .module-section-nav__compact-only {
   display: none;
@@ -947,6 +951,9 @@ html.theme-dark .v33-context-btn, body.theme-dark .v33-context-btn {
 .module-section-nav__scroller {
   display: flex;
   gap: 6px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 2px 2px 6px;

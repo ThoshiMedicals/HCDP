@@ -194,9 +194,9 @@ export function OpenShiftsSection() {
           <PanelTitle>Offer open shift</PanelTitle>
           <PanelSub>Requires roster.open_shift.manage.</PanelSub>
           <ValidationErrorState errors={offerErrors} onDismiss={() => setOfferErrors([])} />
-          <div className="mt-3 grid gap-2 md:grid-cols-3">
+          <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-3">
             <select
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={offerShiftId}
               onChange={(e) => setOfferShiftId(e.target.value)}
               aria-label="Shift"
@@ -209,13 +209,13 @@ export function OpenShiftsSection() {
               ))}
             </select>
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               placeholder="Audience personIds (comma-separated)"
               value={offerAudience}
               onChange={(e) => setOfferAudience(e.target.value)}
               aria-label="Audience"
             />
-            <Button variant="teal" onClick={handleOffer}>
+            <Button variant="teal" className="min-w-0 w-full max-w-full" onClick={handleOffer}>
               Offer
             </Button>
           </div>

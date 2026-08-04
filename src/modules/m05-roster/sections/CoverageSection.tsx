@@ -142,9 +142,9 @@ export function CoverageSection() {
         <PanelTitle>Run coverage evaluation</PanelTitle>
         <PanelSub>Select a period, then run coverage calculation.</PanelSub>
         <ValidationErrorState errors={errors} onDismiss={() => setErrors([])} />
-        <div className="mt-3 grid gap-2 md:grid-cols-3">
+        <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-3">
           <select
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={activePeriodId ?? ""}
             onChange={(e) => setSelectedPeriodId(e.target.value || null)}
             aria-label="Period"
@@ -156,7 +156,7 @@ export function CoverageSection() {
               </option>
             ))}
           </select>
-          <Button variant="teal" onClick={handleRun} data-testid="m05-coverage-run">
+          <Button variant="teal" className="min-w-0 w-full max-w-full" onClick={handleRun} data-testid="m05-coverage-run">
             Evaluate coverage
           </Button>
         </div>

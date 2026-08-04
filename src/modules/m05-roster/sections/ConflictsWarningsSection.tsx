@@ -97,9 +97,9 @@ export function ConflictsWarningsSection() {
           policy.
         </PanelSub>
         <ValidationErrorState errors={errors} onDismiss={() => setErrors([])} />
-        <div className="mt-3 grid gap-2 md:grid-cols-3">
+        <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-3">
           <select
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             value={candidateShiftId}
             onChange={(e) => setCandidateShiftId(e.target.value)}
             aria-label="Candidate shift"
@@ -112,7 +112,7 @@ export function ConflictsWarningsSection() {
             ))}
           </select>
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             placeholder="Person id"
             value={personId}
             onChange={(e) => setPersonId(e.target.value)}
@@ -120,6 +120,7 @@ export function ConflictsWarningsSection() {
           />
           <Button
             variant="teal"
+            className="min-w-0 w-full max-w-full"
             onClick={handleEvaluate}
             data-testid="m05-conflicts-run"
           >

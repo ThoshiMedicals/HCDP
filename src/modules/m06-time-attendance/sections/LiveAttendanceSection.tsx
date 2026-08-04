@@ -57,21 +57,25 @@ export function LiveAttendanceSection() {
           action={{ label: "Refresh board", onClick: bump }}
         />
       ) : (
-        <div className="grid gap-2" data-testid="m06-live-board">
+        <div className="grid min-w-0 gap-2" data-testid="m06-live-board">
           {sessions.map((s) => (
-            <div key={s.id} className="rounded border border-[var(--v34-card-border)] p-3 text-sm">
+            <div key={s.id} className="min-w-0 rounded border border-[var(--v34-card-border)] p-3 text-sm">
               <strong>{s.personId}</strong> · {s.state} · {s.openedAt.localCivil} ({s.openedAt.timeZoneId})
             </div>
           ))}
-          <Button small variant="line" data-testid="m06-live-refresh" onClick={bump}>
-            Refresh live board
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button small variant="line" className="w-auto max-w-full" data-testid="m06-live-refresh" onClick={bump}>
+              Refresh live board
+            </Button>
+          </div>
         </div>
       )}
       {sessions.length === 0 ? (
-        <Button small variant="line" className="mt-2" data-testid="m06-live-refresh" onClick={bump}>
-          Refresh live board
-        </Button>
+        <div className="mt-2 flex flex-wrap gap-2">
+          <Button small variant="line" className="w-auto max-w-full" data-testid="m06-live-refresh" onClick={bump}>
+            Refresh live board
+          </Button>
+        </div>
       ) : null}
     </SectionFrame>
   );

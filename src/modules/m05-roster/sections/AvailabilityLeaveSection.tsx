@@ -130,9 +130,9 @@ export function AvailabilityLeaveSection() {
 
       <Panel>
         <PanelTitle>Filter</PanelTitle>
-        <div className="mt-3 grid gap-2 md:grid-cols-2">
+        <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-2">
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             placeholder="Person id filter"
             value={personFilter}
             onChange={(e) => setPersonFilter(e.target.value)}
@@ -140,7 +140,7 @@ export function AvailabilityLeaveSection() {
             data-testid="m05-availability-filter-person"
           />
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             placeholder="Clinic id filter"
             value={clinicFilter}
             onChange={(e) => setClinicFilter(e.target.value)}
@@ -156,9 +156,9 @@ export function AvailabilityLeaveSection() {
             Preferences or declared unavailability — layer 3 / 8 of precedence.
           </PanelSub>
           <ValidationErrorState errors={errors} onDismiss={() => setErrors([])} />
-          <div className="mt-3 grid gap-2 md:grid-cols-6">
+          <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-6">
             <select
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-2"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-2"
               value={selectedPeriodId}
               onChange={(e) => setSelectedPeriodId(e.target.value)}
               aria-label="Period"
@@ -171,14 +171,14 @@ export function AvailabilityLeaveSection() {
               ))}
             </select>
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               placeholder="Person id"
               value={declPerson}
               onChange={(e) => setDeclPerson(e.target.value)}
               aria-label="Declaration person id"
             />
             <select
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={declKind}
               onChange={(e) =>
                 setDeclKind(e.target.value === "unavailable" ? "unavailable" : "preferred")
@@ -190,26 +190,26 @@ export function AvailabilityLeaveSection() {
             </select>
             <input
               type="date"
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={declFrom}
               onChange={(e) => setDeclFrom(e.target.value)}
               aria-label="From date"
             />
             <input
               type="date"
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={declTo}
               onChange={(e) => setDeclTo(e.target.value)}
               aria-label="To date"
             />
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-5"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-5"
               placeholder="Note (optional)"
               value={declNote}
               onChange={(e) => setDeclNote(e.target.value)}
               aria-label="Note"
             />
-            <Button variant="teal" onClick={handleCreateDeclaration}>
+            <Button variant="teal" className="min-w-0 w-full max-w-full" onClick={handleCreateDeclaration}>
               Save declaration
             </Button>
           </div>

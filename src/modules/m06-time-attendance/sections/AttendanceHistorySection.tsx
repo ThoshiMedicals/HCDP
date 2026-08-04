@@ -24,11 +24,11 @@ export function AttendanceHistorySection() {
 
   return (
     <SectionFrame sectionId="history" title="Attendance History">
-      <label className="grid gap-1 text-sm mb-3 max-w-sm">
+      <label className="mb-3 grid min-w-0 max-w-sm gap-1 text-sm">
         Filter
         <input
           data-testid="m06-history-filter"
-          className="rounded border px-2 py-1"
+          className="min-w-0 w-full max-w-full rounded border px-2 py-1"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
         />
@@ -47,9 +47,11 @@ export function AttendanceHistorySection() {
           ))}
         </ul>
       )}
-      <Button small variant="line" className="mt-2" data-testid="m06-history-clear-filter" onClick={() => setFilter("")}>
-        Clear filter
-      </Button>
+      <div className="mt-2 flex flex-wrap gap-2">
+        <Button small variant="line" className="w-auto max-w-full" data-testid="m06-history-clear-filter" onClick={() => setFilter("")}>
+          Clear filter
+        </Button>
+      </div>
     </SectionFrame>
   );
 }

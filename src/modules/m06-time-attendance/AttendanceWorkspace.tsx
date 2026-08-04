@@ -170,7 +170,7 @@ function AttendanceWorkspaceChrome({
 
   return (
     <div className="grid min-w-0 gap-4" data-workspace-nav="horizontal">
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 shadow-[var(--v34-card-shadow)]">
+      <div className="min-w-0 max-w-full rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 shadow-[var(--v34-card-shadow)]">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <p className="hcdp-type-meta m-0">Module 6 · sections</p>
           <p className="m-0 text-xs text-[var(--muted)]" role="status">

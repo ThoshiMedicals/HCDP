@@ -103,15 +103,15 @@ export function SettingsSection() {
           <PanelTitle>Create draft policy version</PanelTitle>
           <PanelSub>Requires roster.policy.manage.</PanelSub>
           <ValidationErrorState errors={errors} onDismiss={() => setErrors([])} />
-          <div className="mt-3 grid gap-2 md:grid-cols-3">
+          <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-3">
             <input
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-2"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm md:col-span-2"
               placeholder="Policy label"
               value={label}
               onChange={(e) => setLabel(e.target.value)}
               aria-label="Policy label"
             />
-            <Button variant="teal" onClick={handleCreate}>
+            <Button variant="teal" className="min-w-0 w-full max-w-full" onClick={handleCreate}>
               Create draft
             </Button>
           </div>

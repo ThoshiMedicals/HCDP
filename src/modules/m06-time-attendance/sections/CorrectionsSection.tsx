@@ -25,31 +25,33 @@ export function CorrectionsSection() {
   return (
     <SectionFrame sectionId="corrections" title="Corrections">
       {errors.length ? <ValidationErrorState errors={errors} /> : null}
-      <Button
-        data-testid="m06-correction-request"
-        small
-        variant="teal"
-        className="mb-3"
-        onClick={() => {
-          setErrors([]);
-          try {
-            const session =
-              listSessionsForActor(actor, clinicId).find((s) => s.state === "closed" || s.state === "corrected") ??
-              listSessionsForActor(actor, clinicId)[0];
-            if (!session) {
-              setErrors(["No session available to correct — clock in/out first"]);
-              return;
+      <div className="mb-3 flex flex-wrap gap-2">
+        <Button
+          data-testid="m06-correction-request"
+          small
+          variant="teal"
+          className="w-auto max-w-full"
+          onClick={() => {
+            setErrors([]);
+            try {
+              const session =
+                listSessionsForActor(actor, clinicId).find((s) => s.state === "closed" || s.state === "corrected") ??
+                listSessionsForActor(actor, clinicId)[0];
+              if (!session) {
+                setErrors(["No session available to correct — clock in/out first"]);
+                return;
+              }
+              const corr = requestCorrection({ actor, sessionId: session.id, reason: "Forgot to clock out" });
+              pushToast(`Correction requested: ${corr.id}`);
+              bump();
+            } catch (e) {
+              setErrors([e instanceof Error ? e.message : String(e)]);
             }
-            const corr = requestCorrection({ actor, sessionId: session.id, reason: "Forgot to clock out" });
-            pushToast(`Correction requested: ${corr.id}`);
-            bump();
-          } catch (e) {
-            setErrors([e instanceof Error ? e.message : String(e)]);
-          }
-        }}
-      >
-        Request correction
-      </Button>
+          }}
+        >
+          Request correction
+        </Button>
+      </div>
       {rows.length === 0 ? (
         <EmptyState title="No correction requests" />
       ) : (

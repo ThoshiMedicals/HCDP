@@ -42,7 +42,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
   };
 
   return (
-    <div className="grid gap-4">
+    <div className="grid min-w-0 gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">
           {kindFilter === "doctor" ? "Doctor profiles" : kindFilter === "staff" ? "Staff profiles" : "People directory"}
@@ -55,10 +55,10 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
       <Panel>
         <PanelTitle>Add {kindFilter ?? "person"}</PanelTitle>
         <PanelSub>Workflow: add staff / add doctor / duplicate prevention.</PanelSub>
-        <div className="mt-3 grid gap-2 md:grid-cols-4">
+        <div className="mt-3 grid min-w-0 gap-2 md:grid-cols-4">
           {!kindFilter ? (
             <select
-              className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+              className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
               value={kind}
               onChange={(e) => setKind(e.target.value as PersonKind)}
             >
@@ -67,7 +67,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
             </select>
           ) : null}
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             placeholder="Preferred name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -75,7 +75,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
             aria-label="Preferred name"
           />
           <input
-            className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
+            className="min-w-0 w-full max-w-full rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -84,6 +84,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
           />
           <Button
             variant="teal"
+            className="min-w-0 w-full max-w-full"
             onClick={onCreate}
             disabled={!name.trim() || !email.trim()}
             data-testid="m04-person-create"

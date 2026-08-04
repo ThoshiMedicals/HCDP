@@ -31,21 +31,23 @@ export function SettingsSection() {
       <p className="text-sm text-[var(--muted)] m-0 mb-3">
         Prototype policies are not employment-law, award, payroll or clinical-safety certification.
       </p>
-      <Button
-        data-testid="m06-policy-publish"
-        small
-        variant="teal"
-        className="mb-3"
-        onClick={() => {
-          const before = rows[0]?.version ?? 0;
-          const published = publishPolicy({ actor, clinicId, patch: { lateInGraceMinutes: 5 } });
-          pushToast(`Policy published v${published.version}`);
-          bump();
-          void before;
-        }}
-      >
-        Publish policy
-      </Button>
+      <div className="mb-3 flex flex-wrap gap-2">
+        <Button
+          data-testid="m06-policy-publish"
+          small
+          variant="teal"
+          className="w-auto max-w-full"
+          onClick={() => {
+            const before = rows[0]?.version ?? 0;
+            const published = publishPolicy({ actor, clinicId, patch: { lateInGraceMinutes: 5 } });
+            pushToast(`Policy published v${published.version}`);
+            bump();
+            void before;
+          }}
+        >
+          Publish policy
+        </Button>
+      </div>
       {rows.length === 0 ? (
         <EmptyState title="No policies" />
       ) : (
