@@ -1,0 +1,23 @@
+[
+  {
+    "attempt": 1,
+    "status": 200,
+    "ms": 109,
+    "jsonParseErrors": [],
+    "consoleErrors": []
+  },
+  {
+    "attempt": 2,
+    "status": 200,
+    "ms": 82,
+    "jsonParseErrors": [],
+    "consoleErrors": []
+  },
+  {
+    "attempt": 3,
+    "status": 200,
+    "ms": 82,
+    "jsonParseErrors": [],
+    "consoleErrors": []
+  }
+]

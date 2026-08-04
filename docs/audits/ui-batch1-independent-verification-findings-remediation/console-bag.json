@@ -1,0 +1,497 @@
+[
+  {
+    "phase": "appearance",
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=Buipw6_66YTfoWTxuFPFZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "phase": "appearance",
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=q-3ADXbKNh6TDvIsHJthj' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "phase": "appearance",
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=jM3YSWESujVN6WbnumHY5' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "phase": "appearance",
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=aSZ-vS6NaoXnWgEa16Jcy' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "phase": "appearance",
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=yRh3wgQ-JwzOPr-WV6_3X' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=ASkXO1vETdGzNzt5B-u3A' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=2LS0MpbsyxXVFyPfk71CQ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=8LYK5LyWCwPPh3tX0pA09' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=7g3OYWNm4Trc-ufOYfIF-' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=S3r8fzEjxXi80qH_ZATEE' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=OKgh7X4J_CbA9Z_chIH57' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=SDJp3DKb8QPgyAtVIViqY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=7pg-4sPsp3eX23N2TWi_0' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=-UFqdaRHpZjWqJtQLdRxC' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=dbuNJjpcvrpNKPMuf6gD4' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=a8IC0yaHFYjOmgLMTi3JL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=X-8bux7jv7JSxx4sGBabE' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=35-Noju6WPXbT0aEzKxGt' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "pageerror": "SyntaxError: Unexpected end of JSON input"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=z7eAX73gZbF-bcYftpauC' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=6Au2BuE-vuRARFTlAreUo' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=P9WbkvXKXQRawInorwUSe' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=8Go80pj7dTP53M15LmyEV' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=urft37WHLHFy1ZKyQweSF' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=AiT6eNNXJ1UpH80nND_2a' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=WQBJAZxnm8mYB6xwzd5vk' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=EZl_LGReb8w7dyPvVYZ-C' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=SD-t8PkOGBsCjT3tlVnkV' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=1QDNEYh2WajO74b0ESwsX' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=GIojcc3BLzYrEAHlvwXJe' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=t_OT9NthkVqVs7rlwbD10' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=qzBZGM5HGqgxVMMv8May7' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=VxkZcUti-Pj3i56Fr0nrN' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=_0qb7NzHrtX5rYVR1OF27' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=sDOEc6hSxia2ITPgF5z5B' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=t-6LQM1xE0XGKDZHFj0Vv' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=WR4jDLriUoBm0XY5ebLtp' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=4naZXqPVw-y__Psg5feK4' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=vBt35KN9QOK2gz4PIvghh' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=YRKbkyTApQI5KyBJFBq2b' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=ZTm8EnXpAA_NKtN46mPEo' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=8LnoCLdNdxs72aef0sPX9' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "system",
+    "width": 1440,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=CYBpw50O_IJVC4NkX99ML' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=_gy_IDgG_svDobf_Sx-lI' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=CM31Jtzf6flMefBsGrbSQ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=TxAWZSMzLpE15cwSPTXdS' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=U5Daa0rInSrI96G7LOmzZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=B7L1hvPLf_qu2izBhTnnX' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=3GHswZU8CL9KtF3yrgB6M' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=-Ys5QvI2aHvNqD7AqSGTY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=xrmxIrC8P3oW8C6bJrozl' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=7t4jp-56L4qtQdBeTkB3F' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=C3j91_ncBytPXm0jqvc0-' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=eFH3Udk3dd7PajuO1jP7v' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=_lpq-XAAntQTtJXUPXjiR' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=HakT70KB2z3p5q5-VXLup' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=zwRZo9Hi3OSuQ2IdVHPz3' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=FBI8NjQ0dmi1uAkp38Et1' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=BELaqPMF2nrNf5VwT3jhH' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=9yx6Y900JGTekStcPdHhM' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=ySwqNsnCHtYTDN4HmjuL_' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=essIQOzJf01KSxUY3fWBF' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=9n4kGiYZRsCwAtYVEIfbH' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=kpWPw-8TAbQU9XORFNNHN' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=0Tdj84EyxgBeofzYe4RjI' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=9K6SXgEqr5uHESTf6Kubk' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=h0Y8DUewvVEOhy8HKdo_6' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=MFdcpvkUXM4ro5MHPf8WA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=PK2gJDATeQv3asbXbVaBF' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1280,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=32ZGGRDMk3NTD-nlWjGS4' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=h_9eqCa--Jpp_u0I0JNOH' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=P5XOy1ZDMoLAqlQjy5nNL' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=OM1UwLC8teJ4MIc0VEBJb' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=b73EMUrtpbzxX-y7OhLdm' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=fS8bPOjNewFEp9lkL67a_' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=hMYVD1_qcI7EDHdCtZHvZ' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=JOSwUyJLY7nMcbjRvTx2d' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=1eJLhZyCNRc51Yobt35tY' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=lZ2H89FaeNYl6X36GuvuT' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=yKKalOs1FHJZaPr6r52jH' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=7Ik0NL78UOPr_xgnqHk3E' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "light",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=K4mdjazTfksz54NOLwgGc' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=DawEu-puWAagq1IdMrf8W' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=KXXdekLcAZdDPVQBqBmbN' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=-aK0d8mdxLMX8oO93rQoA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=9HRwLP-3XRRehOQWLWsoM' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=d9puVFBUZWL3tMQvUPYNG' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=R8uvPMUohU3JQ5DN6wZty' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=gkM2EK3qKvKZzXcM3y2Ci' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=L5DmUZV_DnFLDx3ApCiWO' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=aw_kTRHmihMRt_TmbBNJn' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=k1u8JTzEIFyrKgrKe5LPH' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=8JddBk7MmDIwE9hTCvRnA' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=Z3pNo3gl9aLPTVx2KJ1on' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=dUbTVP8oUcdDOehesOvzh' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  },
+  {
+    "appearance": "dark",
+    "width": 1024,
+    "text": "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=toM3fH14LRDPJthdLn8Fb' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+  }
+]

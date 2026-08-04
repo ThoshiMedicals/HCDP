@@ -1,0 +1,133 @@
+TAP version 13
+# Subtest: CP2.7A architecture / static boundaries
+    # Subtest: M07 production has no pulse.m06 access or M06 internal imports
+    ok 1 - M07 production has no pulse.m06 access or M06 internal imports
+      ---
+      duration_ms: 10.813037
+      ...
+    # Subtest: M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+    ok 2 - M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+      ---
+      duration_ms: 8.370311
+      ...
+    # Subtest: single intake and hash implementations; replay uses platform query + CP2.4 intake
+    ok 3 - single intake and hash implementations; replay uses platform query + CP2.4 intake
+      ---
+      duration_ms: 9.561351
+      ...
+    # Subtest: M06 production does not write pulse.m07 or import M07 modules
+    ok 4 - M06 production does not write pulse.m07 or import M07 modules
+      ---
+      duration_ms: 2.844944
+      ...
+    # Subtest: prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+    ok 5 - prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+      ---
+      duration_ms: 1.274658
+      ...
+    # Subtest: does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+    ok 6 - does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+      ---
+      duration_ms: 6.482402
+      ...
+    # Subtest: documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+    ok 7 - documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+      ---
+      duration_ms: 1.858187
+      ...
+    1..7
+ok 1 - CP2.7A architecture / static boundaries
+  ---
+  duration_ms: 42.036451
+  type: 'suite'
+  ...
+# Subtest: CP2.7A Batch 2 final-gate E2E
+    # Subtest: E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+    ok 1 - E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+      ---
+      duration_ms: 49.082308
+      ...
+    # Subtest: global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+    ok 2 - global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+      ---
+      duration_ms: 3.702799
+      ...
+    1..2
+ok 2 - CP2.7A Batch 2 final-gate E2E
+  ---
+  duration_ms: 53.381298
+  type: 'suite'
+  ...
+# Subtest: CP2.7B BLOCKED-M07 clearance
+    # Subtest: authoritative helpers are cleared and cannot disagree
+    ok 1 - authoritative helpers are cleared and cannot disagree
+      ---
+      duration_ms: 2.227747
+      ...
+    # Subtest: successful intake, replay and authorised lifecycle report blockedM07: false
+    ok 2 - successful intake, replay and authorised lifecycle report blockedM07: false
+      ---
+      duration_ms: 7.977151
+      ...
+    # Subtest: no production hardcoded blockedM07: true remains for the retired global blocker
+    ok 3 - no production hardcoded blockedM07: true remains for the retired global blocker
+      ---
+      duration_ms: 8.366226
+      ...
+    # Subtest: fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor
+    ok 4 - fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor
+      ---
+      duration_ms: 4.679062
+      ...
+    1..4
+ok 3 - CP2.7B BLOCKED-M07 clearance
+  ---
+  duration_ms: 24.006047
+  type: 'suite'
+  ...
+# Subtest: CP2.7A M07 migration matrix through v5
+    # Subtest: empty bootstrap reaches schema v9 with export/lock collections
+    ok 1 - empty bootstrap reaches schema v9 with export/lock collections
+      ---
+      duration_ms: 1.891749
+      ...
+    # Subtest: v1 → v5 preserves periods
+    ok 2 - v1 → v5 preserves periods
+      ---
+      duration_ms: 0.663395
+      ...
+    # Subtest: v2 → v5 preserves Batch 1 profiles
+    ok 3 - v2 → v5 preserves Batch 1 profiles
+      ---
+      duration_ms: 0.290313
+      ...
+    # Subtest: v3 → v5 preserves immutable snapshots
+    ok 4 - v3 → v5 preserves immutable snapshots
+      ---
+      duration_ms: 0.294102
+      ...
+    # Subtest: v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent
+    ok 5 - v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent
+      ---
+      duration_ms: 0.396411
+      ...
+    # Subtest: repeated v5 is idempotent; interrupted v5 resumes without wipe
+    ok 6 - repeated v5 is idempotent; interrupted v5 resumes without wipe
+      ---
+      duration_ms: 0.3769
+      ...
+    1..6
+ok 4 - CP2.7A M07 migration matrix through v5
+  ---
+  duration_ms: 4.588461
+  type: 'suite'
+  ...
+1..4
+# tests 19
+# suites 4
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 453.429483

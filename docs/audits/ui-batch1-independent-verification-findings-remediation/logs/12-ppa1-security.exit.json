@@ -1,0 +1,7 @@
+{
+  "name": "12-ppa1-security",
+  "exit": 0,
+  "tests": "6",
+  "pass": "6",
+  "fail": "0"
+}

@@ -1,0 +1,151 @@
+[
+  {
+    "name": "01-ui-colour",
+    "exit": 0
+  },
+  {
+    "name": "02-ui-visual",
+    "exit": 0
+  },
+  {
+    "name": "03-ui-chrome",
+    "exit": 0
+  },
+  {
+    "name": "04-m07-presentation",
+    "exit": 0
+  },
+  {
+    "name": "05-m07-shell",
+    "exit": 0
+  },
+  {
+    "name": "06-od-a2",
+    "exit": 0,
+    "tests": "8",
+    "pass": "8",
+    "fail": "0"
+  },
+  {
+    "name": "07-browser-crypto",
+    "exit": 0,
+    "tests": "8",
+    "pass": "8",
+    "fail": "0"
+  },
+  {
+    "name": "07-crypto",
+    "exit": 0
+  },
+  {
+    "name": "08-m06-published",
+    "exit": 0,
+    "tests": "19",
+    "pass": "19",
+    "fail": "0"
+  },
+  {
+    "name": "09-registry",
+    "exit": 0,
+    "tests": "27",
+    "pass": "27",
+    "fail": "0"
+  },
+  {
+    "name": "10-ppa1-ui",
+    "exit": 0
+  },
+  {
+    "name": "11-ppa1-integration",
+    "exit": 0
+  },
+  {
+    "name": "12-ppa1-security",
+    "exit": 0,
+    "tests": "6",
+    "pass": "6",
+    "fail": "0"
+  },
+  {
+    "name": "13-ppa1-core",
+    "exit": 0
+  },
+  {
+    "name": "14-ppa1-atomicity",
+    "exit": 0
+  },
+  {
+    "name": "15-m04",
+    "exit": 0
+  },
+  {
+    "name": "16-m05",
+    "exit": 0
+  },
+  {
+    "name": "17-m06",
+    "exit": 0
+  },
+  {
+    "name": "18-m07",
+    "exit": 0
+  },
+  {
+    "name": "19-arch",
+    "exit": 0,
+    "tests": "19",
+    "pass": "19",
+    "fail": "0"
+  },
+  {
+    "name": "19-workforce",
+    "exit": 0
+  },
+  {
+    "name": "20-authz",
+    "exit": 0,
+    "tests": "13",
+    "pass": "13",
+    "fail": "0"
+  },
+  {
+    "name": "21-batch5",
+    "exit": 0,
+    "tests": "49",
+    "pass": "49",
+    "fail": "0"
+  },
+  {
+    "name": "22-batch6",
+    "exit": 0,
+    "tests": "43",
+    "pass": "43",
+    "fail": "0"
+  },
+  {
+    "name": "24-tsc",
+    "exit": 2,
+    "tscErrors": 21
+  },
+  {
+    "name": "25-lint",
+    "exit": 1,
+    "errors": "2",
+    "warnings": "24",
+    "note": "exact baseline debt"
+  },
+  {
+    "name": "26-next-build-webpack",
+    "exit": 0,
+    "tests": null,
+    "pass": null,
+    "fail": null
+  },
+  {
+    "name": "27-npm-run-build",
+    "exit": 0,
+    "tests": null,
+    "pass": null,
+    "fail": null
+  }
+]

@@ -1,0 +1,159 @@
+{
+  "hydration": [],
+  "hydrationM07": [
+    {
+      "section": "overview",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "people",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "leave",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "adjustments",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "exceptions",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "variances",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "approval",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "export",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "reconciliation",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "history",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "settings",
+      "appearance": "light",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "overview",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "people",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "leave",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "adjustments",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "exceptions",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "variances",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "approval",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "export",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "reconciliation",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "history",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    },
+    {
+      "section": "settings",
+      "appearance": "dark",
+      "hydrationCount": 0,
+      "samples": [],
+      "bootstrap": 1
+    }
+  ]
+}

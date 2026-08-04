@@ -1,0 +1,54 @@
+{
+  "firstHit": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "ms": 2118,
+      "jsonParseErrors": [],
+      "consoleErrors": [
+        "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=HDd1WF1hJGuNheEaLXkCw' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+      ]
+    },
+    {
+      "attempt": 2,
+      "status": 200,
+      "ms": 1627,
+      "jsonParseErrors": [],
+      "consoleErrors": [
+        "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=rEW1BhaCb-lzHEXJXBmIt' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+      ]
+    },
+    {
+      "attempt": 3,
+      "status": 200,
+      "ms": 1641,
+      "jsonParseErrors": [],
+      "consoleErrors": [
+        "WebSocket connection to 'ws://127.0.0.1:3470/_next/webpack-hmr?id=5EUltHP-T6IECirM3f3hI' failed: Error during WebSocket handshake: net::ERR_INVALID_HTTP_RESPONSE"
+      ]
+    }
+  ],
+  "firstHitWarm": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "ms": 93,
+      "jsonParseErrors": [],
+      "consoleErrors": []
+    },
+    {
+      "attempt": 2,
+      "status": 200,
+      "ms": 67,
+      "jsonParseErrors": [],
+      "consoleErrors": []
+    },
+    {
+      "attempt": 3,
+      "status": 200,
+      "ms": 66,
+      "jsonParseErrors": [],
+      "consoleErrors": []
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "25-lint",
+  "exit": 1,
+  "errors": "2",
+  "warnings": "24",
+  "note": "exact baseline debt"
+}

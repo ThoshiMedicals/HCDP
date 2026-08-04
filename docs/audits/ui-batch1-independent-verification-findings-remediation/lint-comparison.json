@@ -1,0 +1,11 @@
+{
+  "candidate": {
+    "errors": 2,
+    "warnings": 24
+  },
+  "baseline": {
+    "errors": 2,
+    "warnings": 24
+  },
+  "exactMatch": true
+}
