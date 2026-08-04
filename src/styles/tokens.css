@@ -431,6 +431,9 @@ html.theme-dark, body.theme-dark {
   font-size: 13px;
   font-weight: 900;
 }
+.brand-compact-text {
+  min-width: 0;
+}
 .brand-compact strong {
   display: block;
   font-size: 13px;
@@ -450,6 +453,20 @@ html.theme-dark .brand-compact strong, body.theme-dark .brand-compact strong {
   color: var(--hcdp-text-muted);
   line-height: 1;
 }
+/* Hide brand wordmark below lg — keep .brand-dot H mark only (no partial “Doctors Pulse”). */
+@media (max-width: 1023px) {
+  .brand-compact-text {
+    display: none;
+  }
+  .clinic-select-compact {
+    max-width: 120px;
+  }
+}
+@media (max-width: 430px) {
+  .clinic-select-compact {
+    max-width: 100px;
+  }
+}
 .clinic-select-compact {
   height: 32px;
   max-width: 160px;
@@ -466,14 +483,23 @@ html.theme-dark .brand-compact strong, body.theme-dark .brand-compact strong {
   outline: 2px solid var(--theme-accent);
   outline-offset: 2px;
 }
+/*
+ * Default hide: .seg-mini { display: inline-flex } previously overrode Tailwind `hidden`
+ * so Dashboard/Action Inbox appeared at 390px and overlapped the brand. Media show ≥640px.
+ */
 .seg-mini {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 2px;
   padding: 2px;
   border-radius: 10px;
   background: var(--hcdp-canvas);
   border: 1px solid var(--hcdp-divider);
+}
+@media (min-width: 640px) {
+  .seg-mini {
+    display: inline-flex;
+  }
 }
 .seg-mini a {
   height: 28px;
@@ -794,10 +820,13 @@ html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
 .sidebar-user {
   border-top: 1px solid var(--sidebar-line);
   padding: 12px 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: 10px;
+  row-gap: 8px;
   background: var(--sidebar-navy);
+  flex-shrink: 0;
 }
 .sidebar-user .avatar {
   width: 36px;
@@ -816,18 +845,24 @@ html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
   font-size: 13px;
   font-weight: 700;
   color: var(--sidebar-text);
+  overflow-wrap: anywhere;
 }
 .sidebar-user .user-role {
   font-size: var(--type-control);
   color: var(--sidebar-muted);
+  overflow-wrap: anywhere;
 }
 .v27-sidebar-role {
   display: grid;
   gap: 4px;
-  margin-left: auto;
+  grid-column: 1 / -1;
+  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
 }
 .v27-sidebar-role select {
-  max-width: 112px;
+  max-width: 100%;
+  width: 100%;
   height: 28px;
   border: 1px solid var(--sidebar-line);
   border-radius: 7px;

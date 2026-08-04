@@ -31,8 +31,8 @@ export function EmergencyBanner({
   const a = items[((index % items.length) + items.length) % items.length];
   return (
     <div className="cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm">
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="min-w-0 flex-1">
+      <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto]">
+        <div className="min-w-0">
           <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide">Emergency announcement</div>
           <strong className="mt-0.5 block text-base leading-snug">{a.title}</strong>
           <p className="m-0 mt-1 text-sm leading-snug">{a.message}</p>
@@ -48,7 +48,7 @@ export function EmergencyBanner({
             <span>Channels: {a.channels.join(", ")} (dashboard live · email/SMS demo only)</span>
           </div>
         </div>
-        <div className="flex shrink-0 flex-wrap gap-1.5 self-center">
+        <div className="flex w-full min-w-0 flex-wrap gap-1.5 self-center md:w-auto">
           <Button small variant="line" onClick={onPrev} disabled={items.length < 2}>
             Previous
           </Button>

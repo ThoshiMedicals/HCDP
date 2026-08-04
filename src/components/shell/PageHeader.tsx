@@ -13,7 +13,7 @@ export function PageHeader({ module }: { module: ModuleDef }) {
     <header className="flex min-h-[74px] items-center justify-between gap-3 border-b border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 lg:px-7">
       <div className="page-title min-w-0">
         <div className="hcdp-type-control mb-1">{module.group}</div>
-        <h1 className="hcdp-type-display mb-1.5 truncate">{module.title}</h1>
+        <h1 className="hcdp-type-display mb-1.5 min-w-0">{module.title}</h1>
         <p className="hcdp-type-body m-0 text-[var(--muted)]">
           {module.subtitle}
           {" · "}

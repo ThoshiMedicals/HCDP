@@ -127,11 +127,11 @@ export function Topbar() {
         >
           ☰
         </button>
-        <div className="brand-compact">
+        <div className="brand-compact" aria-label="Doctors Pulse Operations Portal">
           <div className="brand-dot" aria-hidden>
             H
           </div>
-          <div>
+          <div className="brand-compact-text">
             <strong>Doctors Pulse</strong>
             <small>Operations Portal</small>
           </div>
@@ -183,7 +183,7 @@ export function Topbar() {
       </div>
 
       <div className="ribbon-right flex shrink-0 items-center gap-1.5 overflow-x-auto sm:gap-2">
-        <div className="seg-mini hidden sm:inline-flex">
+        <div className="seg-mini">
           <Link href="/dashboard" className={cn(onDashboard && "active")}>
             Dashboard
           </Link>
