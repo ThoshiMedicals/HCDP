@@ -210,12 +210,14 @@ export function Topbar() {
         <button
           type="button"
           className="hidden shrink-0 items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] 2xl:inline-flex"
+          aria-label="Enterprise Sign-In · MFA"
+          title="Enterprise Sign-In · MFA"
           onClick={() =>
             pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
           }
         >
           <Icon name="shield" className="h-3.5 w-3.5 text-[var(--theme-primary)]" />
-          Enterprise Sign-In · MFA
+          Enterprise MFA
         </button>
         <button
           type="button"
