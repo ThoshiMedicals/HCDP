@@ -1,0 +1,11 @@
+{
+  "mode": "production",
+  "profile": "full-matrix",
+  "base": "http://127.0.0.1:3480",
+  "out": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/prod-matrix-v2",
+  "startedAt": "2026-08-04T01:38:57.699Z",
+  "appSha": "24ce5f3edbfdfc04292342d749bb0809a3bf0b9d",
+  "node": "v22.14.0",
+  "endedAt": "2026-08-04T01:44:05.551Z",
+  "matrixEntries": 338
+}

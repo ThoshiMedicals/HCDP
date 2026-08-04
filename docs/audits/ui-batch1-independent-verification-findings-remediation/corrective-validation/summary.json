@@ -1,0 +1,113 @@
+{
+  "applicationSourceShaTested": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+  "requiredStartTip": "575fc32ec8d74d0a984cff5c9522349f95439325",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "productionMatrix": {
+    "matrixEntries": 338,
+    "matrixFail": 0,
+    "matrixPass": 338,
+    "hydrationTotal": 0,
+    "pageErrorCount": 0,
+    "consoleAppErrorCount": 0,
+    "overflowFailCount": 0,
+    "http500": 0,
+    "http403": 0,
+    "jsonParse": 0,
+    "appearanceAllPass": true,
+    "unresolvedApplicationEventCount": 0
+  },
+  "devFocused": {
+    "matrixEntries": 20,
+    "matrixFail": 0,
+    "hydrationTotal": 0,
+    "unresolvedApplicationEventCount": 0,
+    "allowlistedEnvironmentalEventCount": 46,
+    "http500": 0,
+    "http403": 0,
+    "jsonParse": 0
+  },
+  "cleanWarm": {
+    "port": 3482,
+    "cleanStarts": [
+      {
+        "attempt": 1,
+        "healthyStatus": 200,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "error": null
+      },
+      {
+        "attempt": 2,
+        "healthyStatus": 200,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "error": null
+      },
+      {
+        "attempt": 3,
+        "healthyStatus": 200,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "error": null
+      }
+    ],
+    "warmFirstRequests": [
+      {
+        "attempt": 1,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "sampleEvents": []
+      },
+      {
+        "attempt": 2,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "sampleEvents": []
+      },
+      {
+        "attempt": 3,
+        "nav": 200,
+        "http500": 0,
+        "http403": 0,
+        "jsonParse": 0,
+        "eventCount": 0,
+        "sampleEvents": []
+      }
+    ],
+    "adjudication": {
+      "anyHttp500": [],
+      "anyHttp403": [],
+      "anyJsonParse": [],
+      "allNavStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ]
+    }
+  },
+  "hashExact": true,
+  "applicationCodeChanged": true,
+  "priorContradictionWithdrawn": true,
+  "ownerInspectionReady": true,
+  "merged": false,
+  "prCreated": false,
+  "uiBatch2Started": false
+}

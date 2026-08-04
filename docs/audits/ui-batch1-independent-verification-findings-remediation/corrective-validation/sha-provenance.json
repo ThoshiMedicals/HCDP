@@ -1,0 +1,14 @@
+{
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "failedCandidate": "ee9731e38e7d20d6d825e6c243503f4aea9564c3",
+  "independentVerificationEvidence": "51fbfa980b9c834184a384ddcf956340397bf205",
+  "requiredStartTip": "575fc32ec8d74d0a984cff5c9522349f95439325",
+  "applicationSourceShaTested": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+  "priorIncorrectAppShaClaim": "1ca3ba10fa73a3fdedf23dc55373e6f5e79d46f7",
+  "noteOn1ca3ba1To575fc32": "Git history between 1ca3ba1 and 575fc32 is docs/report/summary tip pins only \u2014 no src/ application changes.",
+  "lastSrcBeforeCorrectiveValidator": "24ce5f3edbfdfc04292342d749bb0809a3bf0b9d",
+  "validatorRewriteCommit": "51425d6ef3c9f13f99e27b982bc934d9605c3b5c",
+  "classifierCommit": "aeedecb020e5dab20008609339ca7fa2d28393b9",
+  "firstHydrationAppFixCommit": "4a2ad4b83d3ca100f0e81556d0b42c7bfc6c9f45",
+  "finalAppSha": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742"
+}

@@ -1,0 +1,77 @@
+{
+  "port": 3482,
+  "cleanStarts": [
+    {
+      "attempt": 1,
+      "healthyStatus": 200,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "error": null
+    },
+    {
+      "attempt": 2,
+      "healthyStatus": 200,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "error": null
+    },
+    {
+      "attempt": 3,
+      "healthyStatus": 200,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "error": null
+    }
+  ],
+  "warmFirstRequests": [
+    {
+      "attempt": 1,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "sampleEvents": []
+    },
+    {
+      "attempt": 2,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "sampleEvents": []
+    },
+    {
+      "attempt": 3,
+      "nav": 200,
+      "http500": 0,
+      "http403": 0,
+      "jsonParse": 0,
+      "eventCount": 0,
+      "sampleEvents": []
+    }
+  ],
+  "adjudication": {
+    "anyHttp500": [],
+    "anyHttp403": [],
+    "anyJsonParse": [],
+    "allNavStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  }
+}

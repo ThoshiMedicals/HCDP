@@ -1,0 +1,119 @@
+{
+  "port": 3482,
+  "cwd": "/tmp/hcdp-fix/ui-batch1-vf-fixes-clean3482",
+  "startedAt": "2026-08-04T02:13:10.073Z",
+  "cleanStarts": [
+    {
+      "attempt": 1,
+      "serverPid": 60342,
+      "logPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/clean-server-starts-v2/next-dev-3482-1785809590073.log",
+      "healthyStatus": 200,
+      "error": null,
+      "probe": {
+        "label": "clean-server-start",
+        "attempt": 1,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T02:13:21.418Z",
+        "endedAt": "2026-08-04T02:13:24.812Z",
+        "events": [],
+        "http500": [],
+        "http403": [],
+        "jsonParse": []
+      }
+    },
+    {
+      "attempt": 2,
+      "serverPid": 60747,
+      "logPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/clean-server-starts-v2/next-dev-3482-1785809608869.log",
+      "healthyStatus": 200,
+      "error": null,
+      "probe": {
+        "label": "clean-server-start",
+        "attempt": 2,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T02:13:29.305Z",
+        "endedAt": "2026-08-04T02:13:32.448Z",
+        "events": [],
+        "http500": [],
+        "http403": [],
+        "jsonParse": []
+      }
+    },
+    {
+      "attempt": 3,
+      "serverPid": 60965,
+      "logPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/clean-server-starts-v2/next-dev-3482-1785809616509.log",
+      "healthyStatus": 200,
+      "error": null,
+      "probe": {
+        "label": "clean-server-start",
+        "attempt": 3,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T02:13:36.992Z",
+        "endedAt": "2026-08-04T02:13:40.230Z",
+        "events": [],
+        "http500": [],
+        "http403": [],
+        "jsonParse": []
+      }
+    }
+  ],
+  "warmFirstRequests": [
+    {
+      "label": "warm-server-first-request",
+      "attempt": 1,
+      "route": "/staffpay?section=adjustments",
+      "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+      "navigationStatus": 200,
+      "navError": null,
+      "startedAt": "2026-08-04T02:13:44.832Z",
+      "endedAt": "2026-08-04T02:13:48.097Z",
+      "events": [],
+      "http500": [],
+      "http403": [],
+      "jsonParse": []
+    },
+    {
+      "label": "warm-server-first-request",
+      "attempt": 2,
+      "route": "/staffpay?section=adjustments",
+      "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+      "navigationStatus": 200,
+      "navError": null,
+      "startedAt": "2026-08-04T02:13:48.335Z",
+      "endedAt": "2026-08-04T02:13:51.536Z",
+      "events": [],
+      "http500": [],
+      "http403": [],
+      "jsonParse": []
+    },
+    {
+      "label": "warm-server-first-request",
+      "attempt": 3,
+      "route": "/staffpay?section=adjustments",
+      "finalUrl": "http://127.0.0.1:3482/staffpay?section=adjustments",
+      "navigationStatus": 200,
+      "navError": null,
+      "startedAt": "2026-08-04T02:13:51.784Z",
+      "endedAt": "2026-08-04T02:13:54.768Z",
+      "events": [],
+      "http500": [],
+      "http403": [],
+      "jsonParse": []
+    }
+  ],
+  "warmServer": {
+    "pid": 61185,
+    "logPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/clean-server-starts-v2/next-dev-3482-1785809624323.log",
+    "healthyStatus": 200
+  }
+}

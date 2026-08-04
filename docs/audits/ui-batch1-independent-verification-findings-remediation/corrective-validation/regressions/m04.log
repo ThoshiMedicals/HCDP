@@ -1,0 +1,97 @@
+TAP version 13
+# Subtest: m04 domain
+    # Subtest: prevents duplicate people by name+email
+    ok 1 - prevents duplicate people by name+email
+      ---
+      duration_ms: 1.863021
+      ...
+    # Subtest: rejects overlapping engagements at the same clinic
+    ok 2 - rejects overlapping engagements at the same clinic
+      ---
+      duration_ms: 0.571695
+      ...
+    # Subtest: invalidates readiness when sources change; stale is not Ready
+    ok 3 - invalidates readiness when sources change; stale is not Ready
+      ---
+      duration_ms: 3.567541
+      ...
+    # Subtest: masks sensitive restriction fields without view_sensitive
+    ok 4 - masks sensitive restriction fields without view_sensitive
+      ---
+      duration_ms: 0.579611
+      ...
+    # Subtest: rejects leave self-approval
+    ok 5 - rejects leave self-approval
+      ---
+      duration_ms: 0.538667
+      ...
+    # Subtest: portal seed migration is idempotent and does not wipe people
+    ok 6 - portal seed migration is idempotent and does not wipe people
+      ---
+      duration_ms: 2.495111
+      ...
+    # Subtest: inbox sync dedupes expired credential projections
+    ok 7 - inbox sync dedupes expired credential projections
+      ---
+      duration_ms: 1.250493
+      ...
+    # Subtest: soft-archives people without hard delete
+    ok 8 - soft-archives people without hard delete
+      ---
+      duration_ms: 0.34204
+      ...
+    # Subtest: suspends and reinstates
+    ok 9 - suspends and reinstates
+      ---
+      duration_ms: 0.406808
+      ...
+    # Subtest: maps demo identity permissions for managers without sensitive clearance
+    ok 10 - maps demo identity permissions for managers without sensitive clearance
+      ---
+      duration_ms: 0.254574
+      ...
+    # Subtest: incomplete offboarding can sync without duplicating
+    ok 11 - incomplete offboarding can sync without duplicating
+      ---
+      duration_ms: 1.296586
+      ...
+    # Subtest: rejects unauthorized service calls without permission
+    ok 12 - rejects unauthorized service calls without permission
+      ---
+      duration_ms: 0.156181
+      ...
+    # Subtest: enforces clinic-scoped person mutations
+    ok 13 - enforces clinic-scoped person mutations
+      ---
+      duration_ms: 0.344222
+      ...
+    # Subtest: M01 workforce counts respect clinic filter
+    ok 14 - M01 workforce counts respect clinic filter
+      ---
+      duration_ms: 0.373454
+      ...
+    # Subtest: availability changes invalidate readiness cache freshness
+    ok 15 - availability changes invalidate readiness cache freshness
+      ---
+      duration_ms: 0.387195
+      ...
+    # Subtest: portal seed verifies uniqueness, classification, required fields, idempotency and rollback scope
+    ok 16 - portal seed verifies uniqueness, classification, required fields, idempotency and rollback scope
+      ---
+      duration_ms: 2.66323
+      ...
+    1..16
+ok 1 - m04 domain
+  ---
+  duration_ms: 18.188528
+  type: 'suite'
+  ...
+1..1
+# tests 16
+# suites 1
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 226.14794

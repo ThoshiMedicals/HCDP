@@ -1,0 +1,13 @@
+{
+  "allowlist": "Only Next.js webpack-hmr WebSocket / HMR status and DevTools install hints are allowlisted. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
+  "failPredicate": [
+    "navigation status ≥ 400",
+    "unallowlisted resource response ≥ 400",
+    "application page error",
+    "application console error",
+    "hydration mismatch",
+    "horizontal page overflow",
+    "typography / contrast / dark-surface hard-gate failure",
+    "unallowlisted requestfailed"
+  ]
+}

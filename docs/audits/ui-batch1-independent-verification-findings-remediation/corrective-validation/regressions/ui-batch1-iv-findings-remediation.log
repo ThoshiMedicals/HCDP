@@ -1,0 +1,90 @@
+TAP version 13
+# Subtest: IV findings remediation — hydration
+    # Subtest: M07 shell always renders deterministic bootstrap status markup
+    ok 1 - M07 shell always renders deterministic bootstrap status markup
+      ---
+      duration_ms: 0.692334
+      ...
+    # Subtest: root html allows theme-init attribute divergence via suppressHydrationWarning
+    ok 2 - root html allows theme-init attribute divergence via suppressHydrationWarning
+      ---
+      duration_ms: 0.145355
+      ...
+    # Subtest: M04 workforce counts stay zero through hydration
+    ok 3 - M04 workforce counts stay zero through hydration
+      ---
+      duration_ms: 0.154864
+      ...
+    # Subtest: M05 offline banner uses server snapshot false
+    ok 4 - M05 offline banner uses server snapshot false
+      ---
+      duration_ms: 0.085604
+      ...
+    1..4
+ok 1 - IV findings remediation — hydration
+  ---
+  duration_ms: 1.633354
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — typography tokens
+    # Subtest: nav toggles, favourites and section captions use ≥13px control token
+    ok 1 - nav toggles, favourites and section captions use ≥13px control token
+      ---
+      duration_ms: 0.401191
+      ...
+    1..1
+ok 2 - IV findings remediation — typography tokens
+  ---
+  duration_ms: 0.482023
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — favourite contrast
+    # Subtest: favourite active/hover colours use high-contrast champagne on navy
+    ok 1 - favourite active/hover colours use high-contrast champagne on navy
+      ---
+      duration_ms: 0.362792
+      ...
+    1..1
+ok 3 - IV findings remediation — favourite contrast
+  ---
+  duration_ms: 0.554396
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — dark surfaces
+    # Subtest: settings and action-inbox drop near-white hard-coded surfaces
+    ok 1 - settings and action-inbox drop near-white hard-coded surfaces
+      ---
+      duration_ms: 0.722924
+      ...
+    1..1
+ok 4 - IV findings remediation — dark surfaces
+  ---
+  duration_ms: 0.816282
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — appearance persistence host
+    # Subtest: theme tokens key off html.theme-dark and init script exists
+    ok 1 - theme tokens key off html.theme-dark and init script exists
+      ---
+      duration_ms: 1.156226
+      ...
+    # Subtest: applyAppearance toggles html theme-dark and syncs body
+    ok 2 - applyAppearance toggles html theme-dark and syncs body
+      ---
+      duration_ms: 0.137603
+      ...
+    1..2
+ok 5 - IV findings remediation — appearance persistence host
+  ---
+  duration_ms: 1.515009
+  type: 'suite'
+  ...
+1..5
+# tests 9
+# suites 5
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 171.028739

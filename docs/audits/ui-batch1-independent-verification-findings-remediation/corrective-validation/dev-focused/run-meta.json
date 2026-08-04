@@ -1,0 +1,1090 @@
+{
+  "mode": "next-dev-webpack",
+  "profile": "dev-focused",
+  "base": "http://127.0.0.1:3481",
+  "out": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/dev-focused",
+  "startedAt": "2026-08-04T01:38:57.724Z",
+  "appSha": "24ce5f3edbfdfc04292342d749bb0809a3bf0b9d",
+  "node": "v22.14.0",
+  "endedAt": "2026-08-04T01:39:42.559Z",
+  "summary": {
+    "mode": "next-dev-webpack",
+    "base": "http://127.0.0.1:3481",
+    "appShaEnv": "24ce5f3edbfdfc04292342d749bb0809a3bf0b9d",
+    "matrixEntries": 20,
+    "matrixFail": 20,
+    "matrixPass": 0,
+    "issueTotals": {},
+    "rawEventCount": 85,
+    "unresolvedApplicationEventCount": 39,
+    "allowlistedEnvironmentalEventCount": 46,
+    "eventsByClass": {
+      "environmental-devtools-hint": 23,
+      "environmental-hmr": 23,
+      "application-hydration": 39
+    },
+    "hydrationTotal": 33,
+    "overflowFailCount": 0,
+    "consoleAppErrorCount": 20,
+    "pageErrorCount": 13,
+    "http500": [],
+    "http403": [],
+    "jsonParse": [],
+    "appearanceResults": {},
+    "appearanceAllPass": true,
+    "failSamples": [
+      {
+        "route": "/dashboard",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/dashboard\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:00.115Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/action-inbox",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/action-inbox\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:02.212Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/settings",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/settings\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:04.005Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staff-doctors",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:5466:11)\n    at prepareToHydrateHostInstance (webpack-internal:///(",
+            "at": "2026-08-04T01:39:05.719Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staff-doc...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:05.624Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staff-doctors?section=people",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:5466:11)\n    at prepareToHydrateHostInstance (webpack-internal:///(",
+            "at": "2026-08-04T01:39:07.322Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staff-doc...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:07.227Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staff-doctors?section=credentials",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <Suspense fallback={<div>}>\n      <DeepLinkSync>\n        <StaffDoctorsWorkspaceChrome section=\"overview\" onNavigate={function DeepLinkSync.useCallback[navigateSection]}>\n          <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n            <div>\n            <div className=\"min-w-0\">\n              <SectionBody section=\"overview\">\n                <OverviewSection>\n                  <div className=\"grid gap-4\">\n                    <div>\n                    <div className=\"grid gap-3...\">\n                      <button type=\"button\" className=\"text-left\" onClick={function onClick}>\n                        <Metric label=\"Active staff\" value={41} icon=\"users\" tone=\"success\">\n                          <div className=\"flex items...\">\n                            <div>\n                              <div>\n                              <div className=\"mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]\">\n+                               41\n-                               0\n                            ...\n                      ...\n                    ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:5466:11)\n    at prepareToHydrateHostInstance (webpack-internal:///(",
+            "at": "2026-08-04T01:39:09.005Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staff-doc...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:08.910Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/roster",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+            "stack": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/com",
+            "at": "2026-08-04T01:39:10.596Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/roster\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:10.545Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/roster?section=coverage",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+            "stack": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/com",
+            "at": "2026-08-04T01:39:12.224Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/roster\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:12.175Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/roster?section=open-shifts",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n",
+            "stack": "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <RosterModule>\n      <RosterWorkspace>\n        <RosterProvider>\n          <Suspense fallback={<div>}>\n            <DeepLinkSync>\n              <RosterWorkspaceChrome section=\"roster-board\" ...>\n                <div className=\"grid min-w...\" data-workspace-nav=\"horizontal\">\n                  <div>\n                  <div className=\"min-w-0\">\n                    <SectionBody section=\"roster-board\">\n                      <RosterBoardSection>\n                        <SectionFrame sectionId=\"roster-board\" title=\"Roster Board\">\n                          <div className=\"grid gap-4\" data-testid=\"m05-sectio...\" data-m05-section=\"roster-board\" ...>\n                            <div>\n                            <OfflineState>\n                            <div\n-                             data-ux-state=\"offline\"\n-                             data-testid=\"m05-ux-offline\"\n                            >\n+                             <p className=\"m-0 mt-1 text-sm text-[var(--muted)]\">\n-                             <div\n-                               className=\"rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card...\"\n-                             >\n                            ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/com",
+            "at": "2026-08-04T01:39:13.827Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/roster\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:13.777Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/time-attendance",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/time-atte...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:15.653Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/time-attendance?section=timesheets",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/time-atte...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:17.271Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/time-attendance?section=approvals",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/time-atte...\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:18.887Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=overview",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:20.945Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:20.842Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=people",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:22.969Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:22.807Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=approval",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:24.818Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:24.709Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=export",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:26.567Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:26.486Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=reconciliation",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:28.489Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:28.392Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=adjustments",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:30.268Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:30.187Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=overview",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=false\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-p",
+            "at": "2026-08-04T01:39:32.036Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:31.941Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      },
+      {
+        "route": "/staffpay?section=adjustments",
+        "appearance": "dark",
+        "viewport": 1440,
+        "navigationStatus": 200,
+        "failReasons": [
+          "console-error-1",
+          "hydration-1"
+        ],
+        "unallowlistedHttpErrors": [],
+        "appPageErrors": [],
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n+                         className=\"h-full\"\n-                         className=\"h-full theme-dark\"\n-                         data-appearance=\"dark\"\n-                         style={{color-scheme:\"dark\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:34.163Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ]
+      }
+    ],
+    "firstHitWarm": [
+      {
+        "label": "warm-server-first-request",
+        "attempt": 1,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3481/staffpay?section=adjustments",
+        "appearance": "dark",
+        "viewport": 1440,
+        "mode": "next-dev-webpack",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T01:39:34.400Z",
+        "endedAt": "2026-08-04T01:39:36.895Z",
+        "ms": 2495,
+        "htmlDark": false,
+        "sidebarCount": 1,
+        "bootstrapStatus": "Storage bootstrap · schema v9 · v9Ran=true",
+        "visualIssues": [],
+        "horizontalOverflow": false,
+        "overflowHits": [],
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:36.004Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:36.098Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "hydrationSignatures": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:36.004Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:36.098Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "failedRequests": [],
+        "unallowlistedFailedRequests": [],
+        "httpErrors": [],
+        "unallowlistedHttpErrors": [],
+        "allowlistedEvents": [],
+        "rawEvents": [
+          {
+            "type": "console",
+            "level": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:35.765Z",
+            "class": "environmental-devtools-hint",
+            "allowlisted": true,
+            "rationale": "Browser DevTools install hint — not application failure"
+          },
+          {
+            "type": "console",
+            "level": "log",
+            "text": "[HMR] connected",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:35.945Z",
+            "class": "environmental-hmr",
+            "allowlisted": true,
+            "rationale": "HMR status log on next dev"
+          },
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:36.004Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:36.098Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "sweep": false,
+        "fail": true,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ]
+      },
+      {
+        "label": "warm-server-first-request",
+        "attempt": 2,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3481/staffpay?section=adjustments",
+        "appearance": "dark",
+        "viewport": 1440,
+        "mode": "next-dev-webpack",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T01:39:37.016Z",
+        "endedAt": "2026-08-04T01:39:40.570Z",
+        "ms": 3554,
+        "htmlDark": false,
+        "sidebarCount": 1,
+        "bootstrapStatus": "Storage bootstrap · schema v9 · v9Ran=true",
+        "visualIssues": [],
+        "horizontalOverflow": false,
+        "overflowHits": [],
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:39.629Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:39.778Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "hydrationSignatures": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:39.629Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:39.778Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "failedRequests": [],
+        "unallowlistedFailedRequests": [],
+        "httpErrors": [],
+        "unallowlistedHttpErrors": [],
+        "allowlistedEvents": [],
+        "rawEvents": [
+          {
+            "type": "console",
+            "level": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:38.644Z",
+            "class": "environmental-devtools-hint",
+            "allowlisted": true,
+            "rationale": "Browser DevTools install hint — not application failure"
+          },
+          {
+            "type": "console",
+            "level": "log",
+            "text": "[HMR] connected",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:39.498Z",
+            "class": "environmental-hmr",
+            "allowlisted": true,
+            "rationale": "HMR status log on next dev"
+          },
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:39.629Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:39.778Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "sweep": false,
+        "fail": true,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ]
+      },
+      {
+        "label": "warm-server-first-request",
+        "attempt": 3,
+        "route": "/staffpay?section=adjustments",
+        "finalUrl": "http://127.0.0.1:3481/staffpay?section=adjustments",
+        "appearance": "dark",
+        "viewport": 1440,
+        "mode": "next-dev-webpack",
+        "navigationStatus": 200,
+        "navError": null,
+        "startedAt": "2026-08-04T01:39:40.627Z",
+        "endedAt": "2026-08-04T01:39:42.532Z",
+        "ms": 1905,
+        "htmlDark": false,
+        "sidebarCount": 1,
+        "bootstrapStatus": "Storage bootstrap · schema v9 · v9Ran=true",
+        "visualIssues": [],
+        "horizontalOverflow": false,
+        "overflowHits": [],
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "appConsoleErrors": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:41.649Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "appPageErrors": [
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:41.739Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "hydrationSignatures": [
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:41.649Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:41.739Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "failedRequests": [],
+        "unallowlistedFailedRequests": [],
+        "httpErrors": [],
+        "unallowlistedHttpErrors": [],
+        "allowlistedEvents": [],
+        "rawEvents": [
+          {
+            "type": "console",
+            "level": "info",
+            "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:41.422Z",
+            "class": "environmental-devtools-hint",
+            "allowlisted": true,
+            "rationale": "Browser DevTools install hint — not application failure"
+          },
+          {
+            "type": "console",
+            "level": "log",
+            "text": "[HMR] connected",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js",
+            "line": 27,
+            "column": 27,
+            "at": "2026-08-04T01:39:41.589Z",
+            "class": "environmental-hmr",
+            "allowlisted": true,
+            "rationale": "HMR status log on next dev"
+          },
+          {
+            "type": "console",
+            "level": "error",
+            "text": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>\n      <AppDevOverlayErrorBoundary globalError={[...]}>\n        <ReplaySsrOnlyErrors>\n        <DevRootHTTPAccessFallbackBoundary>\n          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>\n            <HTTPAccessFallbackErrorBoundary pathname=\"/staffpay\" notFound={<NotAllowedRootHTTPFallbackError>} ...>\n              <RedirectBoundary>\n                <RedirectErrorBoundary router={{...}}>\n                  <Head>\n                  <__next_root_layout_boundary__>\n                    <SegmentViewNode type=\"layout\" pagePath=\"layout.tsx\">\n                      <SegmentTrieNode>\n                      <link>\n                      <RootLayout>\n                        <html\n                          lang=\"en\"\n                          className=\"h-full\"\n-                         data-appearance=\"light\"\n-                         style={{color-scheme:\"light\"}}\n                        >\n                  ...\n",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+            "line": 57,
+            "column": 31,
+            "at": "2026-08-04T01:39:41.649Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          },
+          {
+            "type": "pageerror",
+            "text": "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n",
+            "stack": "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n                            <p\n                              className=\"mt-2 text-[length:var(--type-control)] text-[var(--muted)]\"\n                              role=\"status\"\n                              data-m07-bootstrap-status=\"1\"\n                            >\n+                             Storage bootstrap · schema v9 · v9Ran=true\n-                             Storage bootstrap · schema v9\n                            ...\n                          ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pa",
+            "at": "2026-08-04T01:39:41.739Z",
+            "class": "application-hydration",
+            "allowlisted": false,
+            "rationale": "Hydration mismatch (incl. React #418)"
+          }
+        ],
+        "sweep": false,
+        "fail": true,
+        "failReasons": [
+          "pageerror-1",
+          "console-error-1",
+          "hydration-2"
+        ]
+      }
+    ]
+  }
+}

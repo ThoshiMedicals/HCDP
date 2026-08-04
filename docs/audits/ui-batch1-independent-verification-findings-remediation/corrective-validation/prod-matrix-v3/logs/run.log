@@ -1,0 +1,57 @@
+{
+  "mode": "production",
+  "base": "http://127.0.0.1:3480",
+  "appShaEnv": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+  "matrixEntries": 338,
+  "matrixFail": 0,
+  "matrixPass": 338,
+  "issueTotals": {},
+  "rawEventCount": 6446,
+  "unresolvedApplicationEventCount": 0,
+  "allowlistedEnvironmentalEventCount": 6446,
+  "eventsByClass": {
+    "environmental-nav-abort": 6446
+  },
+  "hydrationTotal": 0,
+  "overflowFailCount": 0,
+  "consoleAppErrorCount": 0,
+  "pageErrorCount": 0,
+  "http500": [],
+  "http403": [],
+  "jsonParse": [],
+  "appearanceResults": {
+    "cleanDefault": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "darkReload": {
+      "htmlDark": true,
+      "appearance": "dark",
+      "pass": true
+    },
+    "lightReload": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "systemOsLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsDark": {
+      "htmlDark": true,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsChangeToLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    }
+  },
+  "appearanceAllPass": true,
+  "failSamples": []
+}
+EXIT:0

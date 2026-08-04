@@ -1,0 +1,62 @@
+TAP version 13
+# Subtest: m05 ux-state contract
+    # Subtest: UX-08: ConcurrentConflictError carries version/target metadata for retry UI
+    ok 1 - UX-08: ConcurrentConflictError carries version/target metadata for retry UI
+      ---
+      duration_ms: 0.852211
+      ...
+    # Subtest: UX-05: OverrideReasonRequiredError has a stable name and default message
+    ok 2 - UX-05: OverrideReasonRequiredError has a stable name and default message
+      ---
+      duration_ms: 0.212074
+      ...
+    # Subtest: UX-05: InvalidLifecycleTransitionError encodes from/to for validation UI
+    ok 3 - UX-05: InvalidLifecycleTransitionError encodes from/to for validation UI
+      ---
+      duration_ms: 0.234368
+      ...
+    # Subtest: UX-06 / immutable publication guard raises a distinct error
+    ok 4 - UX-06 / immutable publication guard raises a distinct error
+      ---
+      duration_ms: 0.205252
+      ...
+    # Subtest: §25: eight UX state identifiers are covered by the plan vocabulary
+    ok 5 - §25: eight UX state identifiers are covered by the plan vocabulary
+      ---
+      duration_ms: 0.271069
+      ...
+    # Subtest: LoadingState prerequisite: ensureM05Bootstrapped returns null when window is unavailable
+    ok 6 - LoadingState prerequisite: ensureM05Bootstrapped returns null when window is unavailable
+      ---
+      duration_ms: 0.189219
+      ...
+    # Subtest: OfflineState retry: ensureM05Bootstrapped is idempotent once storage is available
+    ok 7 - OfflineState retry: ensureM05Bootstrapped is idempotent once storage is available
+      ---
+      duration_ms: 0.54065
+      ...
+    # Subtest: errors thrown by services are `instanceof Error` — enables `SystemErrorState` fallback
+    ok 8 - errors thrown by services are `instanceof Error` — enables `SystemErrorState` fallback
+      ---
+      duration_ms: 0.156228
+      ...
+    # Subtest: `ConcurrentConflictError.message` is human-readable (used verbatim in `ConcurrentConflictState`)
+    ok 9 - `ConcurrentConflictError.message` is human-readable (used verbatim in `ConcurrentConflictState`)
+      ---
+      duration_ms: 0.161523
+      ...
+    1..9
+ok 1 - m05 ux-state contract
+  ---
+  duration_ms: 3.602164
+  type: 'suite'
+  ...
+1..1
+# tests 9
+# suites 1
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 203.187773

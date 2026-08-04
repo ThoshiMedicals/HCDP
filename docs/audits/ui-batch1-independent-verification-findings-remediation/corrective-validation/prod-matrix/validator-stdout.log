@@ -1,0 +1,812 @@
+{
+  "mode": "production",
+  "base": "http://127.0.0.1:3480",
+  "appShaEnv": "24ce5f3edbfdfc04292342d749bb0809a3bf0b9d",
+  "matrixEntries": 338,
+  "matrixFail": 338,
+  "matrixPass": 0,
+  "issueTotals": {},
+  "rawEventCount": 6301,
+  "unresolvedApplicationEventCount": 6301,
+  "allowlistedEnvironmentalEventCount": 0,
+  "eventsByClass": {
+    "application-console": 6301
+  },
+  "hydrationTotal": 0,
+  "overflowFailCount": 0,
+  "consoleAppErrorCount": 0,
+  "pageErrorCount": 234,
+  "http500": [],
+  "http403": [],
+  "jsonParse": [],
+  "appearanceResults": {
+    "cleanDefault": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "darkReload": {
+      "htmlDark": true,
+      "appearance": "dark",
+      "pass": true
+    },
+    "lightReload": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "systemOsLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsDark": {
+      "htmlDark": true,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsChangeToLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    }
+  },
+  "appearanceAllPass": true,
+  "failSamples": [
+    {
+      "route": "/dashboard",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:46.369Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:47.230Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-24"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:48.109Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:29:48.986Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:29:49.839Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:29:50.714Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=timesheets",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-23"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-23"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:54.147Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=people",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-23"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:55.079Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=approval",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:55.953Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=export",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:56.810Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=reconciliation",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:57.669Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-18"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:29:58.522Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/dashboard",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-15"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-17"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:03.161Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-18"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:04.031Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-18"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:04.921Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-23"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:30:05.784Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:30:06.645Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-21"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at id (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:87958)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128648)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128493\n    at sm (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128501)\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123641)\n    at sY (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150326)\n    at sj (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:148539)\n    at sP (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:146616)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:139692",
+          "at": "2026-08-04T01:30:07.506Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-23"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=timesheets",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-22"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:10.944Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=people",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-18"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:11.909Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=approval",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-17"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:12.788Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=export",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:13.647Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=reconciliation",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:14.512Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-20"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:15.364Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/dashboard",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-16"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "requestfailed-21"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "pageerror-1",
+        "requestfailed-19"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [
+        {
+          "type": "pageerror",
+          "text": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rZ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:36737)\n    at rJ (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:37770)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:132299\n    at sy (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:137461)\n    at sh (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:128709)\n    at http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123534\n    at sr (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:123635)\n    at sq (http://127.0.0.1:3480/_next/static/chunks/4bd1b696-215e5051988c3dde.js:1:150205)\n    at MessagePort.A (http://127.0.0.1:3480/_next/static/chunks/794-0fc36bf1952fbc29.js:1:48890)",
+          "at": "2026-08-04T01:30:19.622Z",
+          "class": "application-console",
+          "allowlisted": false,
+          "rationale": "Unclassified application console/page error"
+        }
+      ],
+      "appConsoleErrors": []
+    }
+  ]
+}
