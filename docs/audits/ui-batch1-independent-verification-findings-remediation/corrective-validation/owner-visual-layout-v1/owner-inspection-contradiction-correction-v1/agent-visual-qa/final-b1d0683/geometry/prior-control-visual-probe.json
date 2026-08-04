@@ -1,0 +1,282 @@
+[
+  {
+    "route": "/staff-doctors",
+    "w": 430,
+    "h": 932,
+    "labels": [
+      "ACTIVE STAFF",
+      "ACTIVE DOCTORS",
+      "BLOCKED READINESS",
+      "ON LEAVE TODAY"
+    ],
+    "hits": [
+      {
+        "lab": "ACTIVE STAFF",
+        "found": false
+      },
+      {
+        "lab": "ACTIVE DOCTORS",
+        "found": false
+      },
+      {
+        "lab": "BLOCKED READINESS",
+        "found": false
+      },
+      {
+        "lab": "ON LEAVE TODAY",
+        "found": false
+      }
+    ]
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "w": 430,
+    "h": 932,
+    "labels": [
+      "Preferred name",
+      "Email",
+      "Create"
+    ],
+    "hits": [
+      {
+        "lab": "Preferred name",
+        "found": true,
+        "label": "",
+        "x": 37,
+        "y": 642.6875,
+        "w": 356,
+        "h": 40.5,
+        "right": 393,
+        "bottom": 683.1875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "block",
+        "visibility": "visible"
+      },
+      {
+        "lab": "Email",
+        "found": true,
+        "label": "",
+        "x": 37,
+        "y": 691.1875,
+        "w": 356,
+        "h": 40.5,
+        "right": 393,
+        "bottom": 731.6875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "block",
+        "visibility": "visible"
+      },
+      {
+        "lab": "Create",
+        "found": true,
+        "label": "Create",
+        "x": 37,
+        "y": 739.6875,
+        "w": 356,
+        "h": 42.5,
+        "right": 393,
+        "bottom": 782.1875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "w": 430,
+    "h": 932,
+    "labels": [
+      "Add"
+    ],
+    "hits": [
+      {
+        "lab": "Add",
+        "found": true,
+        "label": "☆",
+        "x": -45,
+        "y": 248,
+        "w": 36,
+        "h": 44,
+        "right": -9,
+        "bottom": 292,
+        "outsideX": true,
+        "outsideY": false,
+        "display": "block",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "w": 390,
+    "h": 844,
+    "labels": [
+      "Offer",
+      "Audience"
+    ],
+    "hits": [
+      {
+        "lab": "Offer",
+        "found": true,
+        "label": "Offer",
+        "x": 37,
+        "y": 684.6875,
+        "w": 316,
+        "h": 42.5,
+        "right": 353,
+        "bottom": 727.1875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      },
+      {
+        "lab": "Audience",
+        "found": true,
+        "label": "",
+        "x": 37,
+        "y": 636.1875,
+        "w": 316,
+        "h": 40.5,
+        "right": 353,
+        "bottom": 676.6875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "block",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/roster?section=coverage",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Evaluate"
+    ],
+    "hits": [
+      {
+        "lab": "Evaluate",
+        "found": true,
+        "label": "Evaluate coverage",
+        "x": 552.328125,
+        "y": 475.1875,
+        "w": 207.328125,
+        "h": 42.5,
+        "right": 759.65625,
+        "bottom": 517.6875,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/time-attendance",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Refresh"
+    ],
+    "hits": [
+      {
+        "lab": "Refresh",
+        "found": true,
+        "label": "Refresh board",
+        "x": 592.25,
+        "y": 478.390625,
+        "w": 127.5,
+        "h": 42.5,
+        "right": 719.75,
+        "bottom": 520.890625,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Bulk"
+    ],
+    "hits": [
+      {
+        "lab": "Bulk",
+        "found": true,
+        "label": "Bulk approve pending",
+        "x": 316,
+        "y": 354.890625,
+        "w": 182.875,
+        "h": 42.5,
+        "right": 498.875,
+        "bottom": 397.390625,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      }
+    ]
+  },
+  {
+    "route": "/time-attendance?section=corrections",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Request Correction"
+    ],
+    "hits": [
+      {
+        "lab": "Request Correction",
+        "found": false
+      }
+    ]
+  },
+  {
+    "route": "/time-attendance?section=history",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Clear Filter"
+    ],
+    "hits": [
+      {
+        "lab": "Clear Filter",
+        "found": false
+      }
+    ]
+  },
+  {
+    "route": "/time-attendance?section=settings",
+    "w": 1024,
+    "h": 768,
+    "labels": [
+      "Publish"
+    ],
+    "hits": [
+      {
+        "lab": "Publish",
+        "found": true,
+        "label": "Publish policy",
+        "x": 316,
+        "y": 402.890625,
+        "w": 124.5625,
+        "h": 42.5,
+        "right": 440.5625,
+        "bottom": 445.390625,
+        "outsideX": false,
+        "outsideY": false,
+        "display": "flex",
+        "visibility": "visible"
+      }
+    ]
+  }
+]

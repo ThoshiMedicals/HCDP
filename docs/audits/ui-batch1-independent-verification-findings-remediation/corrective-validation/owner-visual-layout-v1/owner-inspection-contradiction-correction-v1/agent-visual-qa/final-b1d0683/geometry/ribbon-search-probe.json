@@ -1,0 +1,58 @@
+[
+  {
+    "w": 44.484375,
+    "found": true,
+    "placeholder": "Search modules and sections...",
+    "value": "",
+    "right": 706.859375,
+    "x": 662.375,
+    "scrollW": 44,
+    "clientW": 44,
+    "overflow": "clip",
+    "textOverflow": "clip",
+    "truncated": false,
+    "vp": 1024
+  },
+  {
+    "w": 109.6875,
+    "found": true,
+    "placeholder": "Search modules and sections...",
+    "value": "",
+    "right": 772.0625,
+    "x": 662.375,
+    "scrollW": 110,
+    "clientW": 110,
+    "overflow": "clip",
+    "textOverflow": "clip",
+    "truncated": false,
+    "vp": 1280
+  },
+  {
+    "w": 269.6875,
+    "found": true,
+    "placeholder": "Search modules and sections...",
+    "value": "",
+    "right": 932.0625,
+    "x": 662.375,
+    "scrollW": 270,
+    "clientW": 270,
+    "overflow": "clip",
+    "textOverflow": "clip",
+    "truncated": false,
+    "vp": 1440
+  },
+  {
+    "w": 150.890625,
+    "found": true,
+    "placeholder": "Search modules and sections...",
+    "value": "",
+    "right": 813.265625,
+    "x": 662.375,
+    "scrollW": 151,
+    "clientW": 151,
+    "overflow": "clip",
+    "textOverflow": "clip",
+    "truncated": false,
+    "vp": 1536
+  }
+]

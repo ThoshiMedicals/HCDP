@@ -1,0 +1,72 @@
+TAP version 13
+# Subtest: M07 PPA-1 integration — shell + real service + mounted section
+    # Subtest: section-meta marks adjustments available with PPA-1 foundation wording
+    ok 1 - section-meta marks adjustments available with PPA-1 foundation wording
+      ---
+      duration_ms: 2.166656
+      ...
+    # Subtest: StaffPayWorkspace mounts ConnectedAdjustmentsSection for adjustments
+    ok 2 - StaffPayWorkspace mounts ConnectedAdjustmentsSection for adjustments
+      ---
+      duration_ms: 0.475055
+      ...
+    # Subtest: empty repo mounts genuine empty wired register
+    ok 3 - empty repo mounts genuine empty wired register
+      ---
+      duration_ms: 6.556601
+      ...
+    # Subtest: denied actor shows permission alert; no create affordance enabled path
+    ok 4 - denied actor shows permission alert; no create affordance enabled path
+      ---
+      duration_ms: 0.825838
+      ...
+    # Subtest: locked-source selector: ordinary+locked only; excludes adjustment; preserves IDs
+    ok 5 - locked-source selector: ordinary+locked only; excludes adjustment; preserves IDs
+      ---
+      duration_ms: 21.268818
+      ...
+    # Subtest: clinic-scoped selector excludes out-of-scope locked ordinary
+    ok 6 - clinic-scoped selector excludes out-of-scope locked ordinary
+      ---
+      duration_ms: 6.485454
+      ...
+    # Subtest: register/create/cancel via real service; mounts mapped cases; source unchanged; pins present
+    ok 7 - register/create/cancel via real service; mounts mapped cases; source unchanged; pins present
+      ---
+      duration_ms: 11.152585
+      ...
+    # Subtest: create validation and payload fields required; idempotency preserved at service
+    ok 8 - create validation and payload fields required; idempotency preserved at service
+      ---
+      duration_ms: 4.632737
+      ...
+    # Subtest: cross-LE create fail-closed; Org B list empty for Org A source
+    ok 9 - cross-LE create fail-closed; Org B list empty for Org A source
+      ---
+      duration_ms: 5.097404
+      ...
+    # Subtest: missing adjust permission denied at service; error state mountable
+    ok 10 - missing adjust permission denied at service; error state mountable
+      ---
+      duration_ms: 1.141653
+      ...
+    # Subtest: unlock ≠ PPA; loading/empty/error states covered; no decorative calc/export actions
+    ok 11 - unlock ≠ PPA; loading/empty/error states covered; no decorative calc/export actions
+      ---
+      duration_ms: 6.881906
+      ...
+    1..11
+ok 1 - M07 PPA-1 integration — shell + real service + mounted section
+  ---
+  duration_ms: 67.71951
+  type: 'suite'
+  ...
+1..1
+# tests 11
+# suites 1
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 444.148088

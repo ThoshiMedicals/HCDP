@@ -1,11 +1,9 @@
 # Frozen application source SHA
 
-**Prior invalidated freezes:**
-- `b661b6c` — VQA-C-001 Export clip at 1024
-- `f397c5a` — Online still past viewport at 1280 with Enterprise at xl
+**Prior invalidated freezes:** `b661b6c`, `f397c5a`, `b1d0683` (VQA-C-017)
 
-**Current frozen SHA:** `b1d0683057882546b68c73b1ae679630d8dbbcb8`
+**Current frozen SHA:** `5f2887b7faf5ffd276a03735835b7b61ec873508`
 
-Presentation-only Topbar ribbon density fix on top of complete clipping gate and M04–M06 containment.
+Complete meaningful-control clipping gate + M04–M06 containment + topbar density/search presentation fixes.
 
 Any later source change invalidates final Visual QA, Work-Step QA, and regression.

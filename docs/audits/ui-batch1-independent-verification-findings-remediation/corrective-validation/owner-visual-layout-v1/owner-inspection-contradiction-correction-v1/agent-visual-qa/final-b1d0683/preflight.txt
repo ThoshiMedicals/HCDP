@@ -1,0 +1,9 @@
+frozen_sha=b1d0683057882546b68c73b1ae679630d8dbbcb8
+head_sha=d8e49074053f2a41603c93b0e916963471585afe
+src_scripts_diff_bytes=0
+css_url=/_next/static/css/aef84fda6bfb6c30.css
+css_http=200
+css_has_hidden=1
+dashboard_http=200
+base=http://127.0.0.1:3501
+captured_note=production webpack next start on :3501

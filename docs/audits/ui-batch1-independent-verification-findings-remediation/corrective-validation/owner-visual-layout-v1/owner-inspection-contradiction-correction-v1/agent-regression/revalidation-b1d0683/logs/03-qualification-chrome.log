@@ -1,0 +1,59 @@
+TAP version 13
+# Subtest: QC-1 — Dashboard shell controls chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01)
+    # Subtest: removes toast-only demo verbs from relocated DashboardShellControlsPanel
+    ok 1 - removes toast-only demo verbs from relocated DashboardShellControlsPanel
+      ---
+      duration_ms: 0.745703
+      ...
+    # Subtest: retains navigation-only shell controls and labels non-operational status
+    ok 2 - retains navigation-only shell controls and labels non-operational status
+      ---
+      duration_ms: 0.227891
+      ...
+    # Subtest: does not stack ModuleContextStrip / DashboardShellStrip above Command Centre
+    ok 3 - does not stack ModuleContextStrip / DashboardShellStrip above Command Centre
+      ---
+      duration_ms: 0.105737
+      ...
+    # Subtest: does not widen QC-1 into CommandCentre toast inventory (OD-A1 NARROW)
+    ok 4 - does not widen QC-1 into CommandCentre toast inventory (OD-A1 NARROW)
+      ---
+      duration_ms: 0.58091
+      ...
+    1..4
+ok 1 - QC-1 — Dashboard shell controls chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01)
+  ---
+  duration_ms: 2.330871
+  type: 'suite'
+  ...
+# Subtest: QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEAR-01)
+    # Subtest: applies Light / Dark / System via existing appearance store helpers
+    ok 1 - applies Light / Dark / System via existing appearance store helpers
+      ---
+      duration_ms: 0.611759
+      ...
+    # Subtest: persists appearance preference without requiring a second theme system
+    ok 2 - persists appearance preference without requiring a second theme system
+      ---
+      duration_ms: 0.607927
+      ...
+    # Subtest: keeps clinic/identity useSyncExternalStore server snapshots referentially stable
+    ok 3 - keeps clinic/identity useSyncExternalStore server snapshots referentially stable
+      ---
+      duration_ms: 0.439067
+      ...
+    1..3
+ok 2 - QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEAR-01)
+  ---
+  duration_ms: 1.932716
+  type: 'suite'
+  ...
+1..2
+# tests 7
+# suites 2
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 227.467427

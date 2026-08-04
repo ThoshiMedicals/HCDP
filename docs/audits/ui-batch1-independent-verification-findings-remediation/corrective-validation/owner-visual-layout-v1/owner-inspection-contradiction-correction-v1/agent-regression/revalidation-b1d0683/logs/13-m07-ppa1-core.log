@@ -1,0 +1,67 @@
+TAP version 13
+# Subtest: M07 PPA-1 core — prior-period adjustment foundation
+    # Subtest: creates PPA against locked ordinary source; source unchanged; adjustment period linked
+    ok 1 - creates PPA against locked ordinary source; source unchanged; adjustment period linked
+      ---
+      duration_ms: 24.232312
+      ...
+    # Subtest: rejects unlocked ordinary source pre-write
+    ok 2 - rejects unlocked ordinary source pre-write
+      ---
+      duration_ms: 0.929376
+      ...
+    # Subtest: rejects missing / unknown source and adjustment-kind source
+    ok 3 - rejects missing / unknown source and adjustment-kind source
+      ---
+      duration_ms: 6.026273
+      ...
+    # Subtest: rejects cross-LE caller widening and Org B access
+    ok 4 - rejects cross-LE caller widening and Org B access
+      ---
+      duration_ms: 4.637746
+      ...
+    # Subtest: rejects missing reasonCode and blank reasonText pre-write
+    ok 5 - rejects missing reasonCode and blank reasonText pre-write
+      ---
+      duration_ms: 4.425963
+      ...
+    # Subtest: enforces at most one open PPA per source; idempotent and conflicting replay
+    ok 6 - enforces at most one open PPA per source; idempotent and conflicting replay
+      ---
+      duration_ms: 5.165912
+      ...
+    # Subtest: list/get are LE-scoped; missing adjust permission denied
+    ok 7 - list/get are LE-scoped; missing adjust permission denied
+      ---
+      duration_ms: 5.279577
+      ...
+    # Subtest: cancels draft idempotently; rejects invalid cancel state
+    ok 8 - cancels draft idempotently; rejects invalid cancel state
+      ---
+      duration_ms: 3.983575
+      ...
+    # Subtest: controlled unlock does not create a PPA case
+    ok 9 - controlled unlock does not create a PPA case
+      ---
+      duration_ms: 5.57407
+      ...
+    # Subtest: rejects prohibited identifier fields on create input
+    ok 10 - rejects prohibited identifier fields on create input
+      ---
+      duration_ms: 5.044637
+      ...
+    1..10
+ok 1 - M07 PPA-1 core — prior-period adjustment foundation
+  ---
+  duration_ms: 67.280545
+  type: 'suite'
+  ...
+1..1
+# tests 10
+# suites 1
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 358.882388
