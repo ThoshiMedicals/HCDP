@@ -1,0 +1,92 @@
+{
+  "agent": "Work-Step / Functional QA",
+  "phase": "Phase 4 FINAL REVALIDATION",
+  "frozenApplicationSourceSha": "fe8bc37fa370b299a4fbe721209761272f27265f",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-wqa-3491",
+  "portUsed": "http://127.0.0.1:3491",
+  "recordedAt": "2026-08-04T04:15:23.665Z",
+  "totals": {
+    "pass": 7,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "total": 8,
+    "openFindings": 0
+  },
+  "workflows": [
+    {
+      "docId": "WQA-001",
+      "workflowId": "WF-EMERGENCY-DESKTOP1440",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-001.md"
+    },
+    {
+      "docId": "WQA-002",
+      "workflowId": "WF-EMERGENCY-MID1024",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-002.md"
+    },
+    {
+      "docId": "WQA-003",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-003.md"
+    },
+    {
+      "docId": "WQA-004",
+      "workflowId": "WF-TOPBAR",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-004.md"
+    },
+    {
+      "docId": "WQA-005",
+      "workflowId": "WF-SIDEBAR",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-005.md"
+    },
+    {
+      "docId": "WQA-006",
+      "workflowId": "WF-ROUTES",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-006.md"
+    },
+    {
+      "docId": "WQA-007",
+      "workflowId": "WF-APPEARANCE",
+      "outcome": "PASS",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-007.md"
+    },
+    {
+      "docId": "WQA-008",
+      "workflowId": "WF-PAYMENTS-OOS",
+      "outcome": "OUT OF SCOPE",
+      "evidence": "revalidation-fe8bc37/workflows/WQA-008.md"
+    }
+  ],
+  "openFindings": [],
+  "wqaFindingIdsOpen": [],
+  "viewAllInsideCard": {
+    "DESKTOP1440": {
+      "insideParentFully": true,
+      "fullyInViewport": true,
+      "pageHorizontalScroll": false
+    },
+    "MID1024": {
+      "insideParentFully": true,
+      "fullyInViewport": true,
+      "pageHorizontalScroll": false
+    },
+    "MOBILE390": {
+      "insideParentFully": true,
+      "fullyInViewport": true,
+      "pageHorizontalScroll": false
+    }
+  },
+  "noFunctionalRegressions": true,
+  "applicationSourceOrTestsEdited": false,
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false
+  },
+  "workflowSummaryPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-fe8bc37/WORKFLOW_SUMMARY.json"
+}
