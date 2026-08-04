@@ -36,3 +36,10 @@ None at baseline close (`wqaFindingIds: []`).
 - Playwright launched successfully (system Chrome); not BLOCKED.
 - Early false miss on emergency banner (hydration/locator race) was re-probed and closed as PASS; historical `*-missing.png` retained under baseline screenshots.
 - No application source or tests were edited by this agent.
+
+
+---
+
+## Phase 4 FINAL update
+
+See `after/REQUIREMENT_TO_EVIDENCE_CHECKLIST.md` and `after/WORKFLOW_SUMMARY.json` for frozen SHA `d822dfd4a80ed0c98635a0ff8631f9e39fe781f0` on :3491.

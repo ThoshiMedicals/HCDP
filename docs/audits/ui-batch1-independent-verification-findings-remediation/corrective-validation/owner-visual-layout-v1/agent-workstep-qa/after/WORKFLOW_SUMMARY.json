@@ -1,0 +1,98 @@
+{
+  "agent": "Work-Step / Functional QA",
+  "phase": "Phase 4 FINAL",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-wqa-3491",
+  "finalApplicationSourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+  "portUsed": "http://127.0.0.1:3491",
+  "serverMode": "production next start",
+  "recordedAt": "2026-08-04T03:29:28.148Z",
+  "controlInventoryPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/CONTROL_INVENTORY.md",
+  "workflowSummaryPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/WORKFLOW_SUMMARY.json",
+  "rawResultsPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/_raw-results.json",
+  "screenshotsDir": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots",
+  "totals": {
+    "pass": 6,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "total": 7,
+    "openFindings": 0,
+    "closedFindings": 1
+  },
+  "workflows": [
+    {
+      "docId": "WQA-001",
+      "workflowId": "WF-EMERGENCY-DESKTOP",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-001.md"
+    },
+    {
+      "docId": "WQA-002",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-002.md"
+    },
+    {
+      "docId": "WQA-003",
+      "workflowId": "WF-TOPBAR",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-003.md"
+    },
+    {
+      "docId": "WQA-004",
+      "workflowId": "WF-SIDEBAR",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-004.md"
+    },
+    {
+      "docId": "WQA-005",
+      "workflowId": "WF-ROUTES",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-005.md"
+    },
+    {
+      "docId": "WQA-006",
+      "workflowId": "WF-APPEARANCE",
+      "outcome": "PASS",
+      "evidence": "after/workflows/WQA-006.md"
+    },
+    {
+      "docId": "WQA-007",
+      "workflowId": "WF-PAYMENTS-OOS",
+      "outcome": "OUT OF SCOPE",
+      "evidence": "after/workflows/WQA-007.md"
+    }
+  ],
+  "openFindings": [],
+  "closedFindings": [
+    {
+      "id": "WQA-BRAND-MOBILE390",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "severity": "major",
+      "title": "Brand partial or clipped in topbar",
+      "detail": "{\"brandGeom\":{\"text\":\"HDoctors PulseOperations Portal\",\"tag\":\"DIV\",\"rect\":{\"top\":12,\"left\":58,\"right\":86,\"bottom\":40,\"width\":28,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":28,\"clientWidth\":28,\"pageHorizontalScroll\":false,\"disabled\":false},\"brandStrong\":{\"text\":\"Doctors Pulse\",\"tag\":\"STRONG\",\"rect\":{\"top\":0,\"left\":0,\"right\":0,\"bottom\":0,\"width\":0,\"height\":0},\"visible\":false,\"fullyInViewport\":true,\"insideParentFully\":false,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":0,\"clientWidth\":0,\"pageHorizontalScroll\":false,\"disabled\":false}}",
+      "status": "CLOSED",
+      "resolution": "Not a defect. tokens.css intentionally hides .brand-compact-text below lg; only .brand-dot H mark shown to prevent partial wordmark. Desktop brand full. Matches owner 'brand not partial' intent.",
+      "closedBy": "Work-Step / Functional QA",
+      "closedAt": "2026-08-04T03:29:00.427Z"
+    }
+  ],
+  "wqaFindingIdsOpen": [],
+  "applicationSourceOrTestsEdited": false,
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false,
+    "productionApproval": false
+  },
+  "specialAttention": {
+    "viewAllInsideCard": "PASS (desktop+mobile)",
+    "brandNotPartial": "PASS — desktop full; mobile intentional H-mark only (no partial wordmark)",
+    "actAs1440x900": "PASS usable",
+    "actAs1440x720": "PASS usable",
+    "h1NoEllipsisSettingsM07": "PASS",
+    "noHorizontalScrollForClippedControls": "PASS on exercised routes",
+    "keyboardEmergencyViewAll": "PASS",
+    "keyboardTopbarSearchEnter": "PASS",
+    "keyboardDrawerFocusReturn": "PASS"
+  }
+}

@@ -1,0 +1,3067 @@
+{
+  "meta": {
+    "agent": "Work-Step / Functional QA",
+    "phase": "Phase 4 FINAL",
+    "appSourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+    "worktree": "/tmp/hcdp-fix/ui-batch1-wqa-3491",
+    "base": "http://127.0.0.1:3491",
+    "startedAt": "2026-08-04T03:26:31.576Z",
+    "finishedAt": "2026-08-04T03:28:09.518Z",
+    "brandReclassification": "WQA-BRAND-MOBILE390 CLOSED — intentional responsive H-mark-only below lg"
+  },
+  "inventory": {
+    "desktop1440x900": {
+      "url": "http://127.0.0.1:3491/dashboard",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "pageHorizontalScroll": false,
+      "emergency": {
+        "title": "Beachmere clinic temporary closure — utilities fault",
+        "buttons": [
+          {
+            "text": "Previous",
+            "disabled": true,
+            "rect": {
+              "t": 251.75,
+              "l": 600.625,
+              "r": 690.78125,
+              "b": 296.25,
+              "w": 90.15625,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Next",
+            "disabled": true,
+            "rect": {
+              "t": 251.75,
+              "l": 696.78125,
+              "r": 759.703125,
+              "b": 296.25,
+              "w": 62.921875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "View All Announcements",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 765.703125,
+              "r": 969.40625,
+              "b": 296.25,
+              "w": 203.703125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Open Full Notice",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 975.40625,
+              "r": 1122.09375,
+              "b": 296.25,
+              "w": 146.6875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Acknowledge",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 1128.09375,
+              "r": 1251.96875,
+              "b": 296.25,
+              "w": 123.875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Withdraw notice",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 1257.96875,
+              "r": 1403,
+              "b": 296.25,
+              "w": 145.03125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          }
+        ],
+        "bannerRect": {
+          "t": 74.5,
+          "l": 308,
+          "r": 1420,
+          "b": 473.5,
+          "w": 1112,
+          "h": 399
+        }
+      },
+      "brand": {
+        "text": "HDoctors PulseOperations Portal",
+        "strongText": "Doctors Pulse",
+        "strongEllipsis": false,
+        "strongScrollOverflow": false,
+        "fullyInViewport": true,
+        "rect": {
+          "x": 302,
+          "y": 17.75,
+          "width": 151.375,
+          "height": 28,
+          "top": 17.75,
+          "right": 453.375,
+          "bottom": 45.75,
+          "left": 302
+        }
+      },
+      "topbarControls": [
+        {
+          "tag": "button",
+          "text": "☰",
+          "ariaLabel": "Open menu",
+          "disabled": false,
+          "href": null,
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "select",
+          "text": "All ClinicsClinic Group · Brisbane SouthClinic Group · Brisbane WestClinic Group · Northside Corrido",
+          "ariaLabel": "Clinic scope",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 6,
+            "l": 461.375,
+            "r": 621.375,
+            "b": 38,
+            "w": 160,
+            "h": 32
+          }
+        },
+        {
+          "tag": "input",
+          "text": "",
+          "ariaLabel": "Search modules and sections",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 20.5,
+            "l": 662.375,
+            "r": 717.265625,
+            "b": 43,
+            "w": 54.890625,
+            "h": 22.5
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Dashboard",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/dashboard",
+          "visible": true,
+          "rect": {
+            "t": 17.75,
+            "l": 739.265625,
+            "r": 829.75,
+            "b": 45.75,
+            "w": 90.484375,
+            "h": 28
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Action Inbox 6",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/action-inbox",
+          "visible": true,
+          "rect": {
+            "t": 17.75,
+            "l": 831.75,
+            "r": 944.9375,
+            "b": 45.75,
+            "w": 113.1875,
+            "h": 28
+          }
+        },
+        {
+          "tag": "button",
+          "text": "+ New Entry",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 13.5,
+            "l": 955.9375,
+            "r": 1062.546875,
+            "b": 50,
+            "w": 106.609375,
+            "h": 36.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Export",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 13.5,
+            "l": 1070.546875,
+            "r": 1138.734375,
+            "b": 50,
+            "w": 68.1875,
+            "h": 36.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Enterprise Sign-In · MFA",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 15.5,
+            "l": 1146.734375,
+            "r": 1353.53125,
+            "b": 48,
+            "w": 206.796875,
+            "h": 32.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Online",
+          "ariaLabel": "Online",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 15.5,
+            "l": 1361.53125,
+            "r": 1426,
+            "b": 48,
+            "w": 64.46875,
+            "h": 32.5
+          }
+        }
+      ],
+      "online": {
+        "tag": "button",
+        "text": "Online",
+        "ariaLabel": "Online",
+        "disabled": false,
+        "href": null,
+        "visible": true,
+        "rect": {
+          "t": 15.5,
+          "l": 1361.53125,
+          "r": 1426,
+          "b": 48,
+          "w": 64.46875,
+          "h": 32.5
+        }
+      },
+      "openMenu": {
+        "tag": "button",
+        "text": "☰",
+        "ariaLabel": "Open menu",
+        "disabled": false,
+        "href": null,
+        "visible": false,
+        "rect": {
+          "t": 0,
+          "l": 0,
+          "r": 0,
+          "b": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      "sidebar": {
+        "groups": [
+          {
+            "id": "executive",
+            "title": "Executive Command⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "executive-command-centre",
+                "href": "/dashboard",
+                "label": "Command Centre"
+              },
+              {
+                "id": "action-inbox",
+                "href": "/action-inbox",
+                "label": "Action Inbox"
+              }
+            ]
+          },
+          {
+            "id": "organisation",
+            "title": "Organisation⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "organisation-access",
+                "href": "/settings",
+                "label": "Organisation & Access"
+              }
+            ]
+          },
+          {
+            "id": "people",
+            "title": "People⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-doctors",
+                "href": "/staff-doctors",
+                "label": "Staff & Doctors"
+              },
+              {
+                "id": "training",
+                "href": "/training",
+                "label": "Training"
+              }
+            ]
+          },
+          {
+            "id": "roster",
+            "title": "Roster⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "roster",
+                "href": "/roster",
+                "label": "Roster & Shifts"
+              },
+              {
+                "id": "time-attendance",
+                "href": "/time-attendance",
+                "label": "Time & Attendance"
+              }
+            ]
+          },
+          {
+            "id": "operations",
+            "title": "Operations⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "tasks-actions",
+                "href": "/tasks-actions",
+                "label": "Tasks & Actions"
+              },
+              {
+                "id": "ticketing",
+                "href": "/ticket-desk",
+                "label": "Ticketing Desk"
+              }
+            ]
+          },
+          {
+            "id": "governance",
+            "title": "Governance⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "compliance-quality",
+                "href": "/compliance-quality",
+                "label": "Compliance & Quality"
+              },
+              {
+                "id": "documents-policies",
+                "href": "/documents-policies",
+                "label": "Documents & Policies"
+              },
+              {
+                "id": "incidents-risk",
+                "href": "/incidents-risk",
+                "label": "Incidents & Risk"
+              }
+            ]
+          },
+          {
+            "id": "assets",
+            "title": "Assets⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "inventory-assets",
+                "href": "/inventory-assets",
+                "label": "Inventory & Assets"
+              }
+            ]
+          },
+          {
+            "id": "communications",
+            "title": "Communications⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "communications",
+                "href": "/communications",
+                "label": "Communications"
+              }
+            ]
+          },
+          {
+            "id": "digital",
+            "title": "Digital⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "digital-ops",
+                "href": "/digital-ops",
+                "label": "Digital Operations"
+              }
+            ]
+          },
+          {
+            "id": "analytics",
+            "title": "Analytics⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "analytics",
+                "href": "/analytics",
+                "label": "Clinic Analytics"
+              }
+            ]
+          },
+          {
+            "id": "commercial",
+            "title": "Commercial⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-pay",
+                "href": "/staffpay",
+                "label": "Staff Pay"
+              },
+              {
+                "id": "doctor-pay",
+                "href": "/doctorpay",
+                "label": "Doctor Pay"
+              },
+              {
+                "id": "bbpip",
+                "href": "/bbpip",
+                "label": "BBPIP"
+              },
+              {
+                "id": "saas",
+                "href": "/saas",
+                "label": "Commercial SaaS"
+              }
+            ]
+          },
+          {
+            "id": "enterprise-extensions",
+            "title": "Enterprise Extensions⌄",
+            "expanded": "false",
+            "modules": [
+              {
+                "id": "vendor-console",
+                "href": "/vendor-console",
+                "label": "Vendor Console"
+              },
+              {
+                "id": "recruitment",
+                "href": "/recruitment",
+                "label": "Recruitment"
+              },
+              {
+                "id": "website-studio",
+                "href": "/website-studio",
+                "label": "Website Studio"
+              },
+              {
+                "id": "financial-forecast",
+                "href": "/financial-forecast",
+                "label": "Financial Forecast"
+              }
+            ]
+          }
+        ],
+        "search": true,
+        "footer": {
+          "user": "Sarah Mitchell",
+          "role": "Senior Administrator",
+          "actAsPresent": true,
+          "footerFullyVisible": true,
+          "actAsFullyVisible": true,
+          "actAsRect": {
+            "t": 834.125,
+            "l": 12,
+            "r": 275,
+            "b": 862.125,
+            "w": 263,
+            "h": 28
+          },
+          "footerRect": {
+            "t": 774.125,
+            "l": 0,
+            "r": 287,
+            "b": 900,
+            "w": 287,
+            "h": 125.875
+          }
+        }
+      },
+      "appearance": {
+        "value": "light",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "system",
+            "label": "Device setting"
+          }
+        ],
+        "disabled": false
+      },
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "ellipsisClass": false,
+        "scrollOverflow": false,
+        "rect": {
+          "x": 308,
+          "y": 503,
+          "width": 418.890625,
+          "height": 39,
+          "top": 503,
+          "right": 726.890625,
+          "bottom": 542,
+          "left": 308
+        }
+      },
+      "htmlThemeDark": false,
+      "dataAppearance": "light",
+      "shot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/INV-desktop1440x900-dashboard.png"
+    },
+    "desktop1440x720": {
+      "url": "http://127.0.0.1:3491/dashboard",
+      "viewport": {
+        "w": 1440,
+        "h": 720
+      },
+      "pageHorizontalScroll": false,
+      "emergency": {
+        "title": "Beachmere clinic temporary closure — utilities fault",
+        "buttons": [
+          {
+            "text": "Previous",
+            "disabled": true,
+            "rect": {
+              "t": 251.75,
+              "l": 600.625,
+              "r": 690.78125,
+              "b": 296.25,
+              "w": 90.15625,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Next",
+            "disabled": true,
+            "rect": {
+              "t": 251.75,
+              "l": 696.78125,
+              "r": 759.703125,
+              "b": 296.25,
+              "w": 62.921875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "View All Announcements",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 765.703125,
+              "r": 969.40625,
+              "b": 296.25,
+              "w": 203.703125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Open Full Notice",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 975.40625,
+              "r": 1122.09375,
+              "b": 296.25,
+              "w": 146.6875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Acknowledge",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 1128.09375,
+              "r": 1251.96875,
+              "b": 296.25,
+              "w": 123.875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Withdraw notice",
+            "disabled": false,
+            "rect": {
+              "t": 251.75,
+              "l": 1257.96875,
+              "r": 1403,
+              "b": 296.25,
+              "w": 145.03125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          }
+        ],
+        "bannerRect": {
+          "t": 74.5,
+          "l": 308,
+          "r": 1420,
+          "b": 473.5,
+          "w": 1112,
+          "h": 399
+        }
+      },
+      "brand": {
+        "text": "HDoctors PulseOperations Portal",
+        "strongText": "Doctors Pulse",
+        "strongEllipsis": false,
+        "strongScrollOverflow": false,
+        "fullyInViewport": true,
+        "rect": {
+          "x": 302,
+          "y": 17.75,
+          "width": 151.375,
+          "height": 28,
+          "top": 17.75,
+          "right": 453.375,
+          "bottom": 45.75,
+          "left": 302
+        }
+      },
+      "topbarControls": [
+        {
+          "tag": "button",
+          "text": "☰",
+          "ariaLabel": "Open menu",
+          "disabled": false,
+          "href": null,
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "select",
+          "text": "All ClinicsClinic Group · Brisbane SouthClinic Group · Brisbane WestClinic Group · Northside Corrido",
+          "ariaLabel": "Clinic scope",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 6,
+            "l": 461.375,
+            "r": 621.375,
+            "b": 38,
+            "w": 160,
+            "h": 32
+          }
+        },
+        {
+          "tag": "input",
+          "text": "",
+          "ariaLabel": "Search modules and sections",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 20.5,
+            "l": 662.375,
+            "r": 717.265625,
+            "b": 43,
+            "w": 54.890625,
+            "h": 22.5
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Dashboard",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/dashboard",
+          "visible": true,
+          "rect": {
+            "t": 17.75,
+            "l": 739.265625,
+            "r": 829.75,
+            "b": 45.75,
+            "w": 90.484375,
+            "h": 28
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Action Inbox 6",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/action-inbox",
+          "visible": true,
+          "rect": {
+            "t": 17.75,
+            "l": 831.75,
+            "r": 944.9375,
+            "b": 45.75,
+            "w": 113.1875,
+            "h": 28
+          }
+        },
+        {
+          "tag": "button",
+          "text": "+ New Entry",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 13.5,
+            "l": 955.9375,
+            "r": 1062.546875,
+            "b": 50,
+            "w": 106.609375,
+            "h": 36.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Export",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 13.5,
+            "l": 1070.546875,
+            "r": 1138.734375,
+            "b": 50,
+            "w": 68.1875,
+            "h": 36.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Enterprise Sign-In · MFA",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 15.5,
+            "l": 1146.734375,
+            "r": 1353.53125,
+            "b": 48,
+            "w": 206.796875,
+            "h": 32.5
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Online",
+          "ariaLabel": "Online",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 15.5,
+            "l": 1361.53125,
+            "r": 1426,
+            "b": 48,
+            "w": 64.46875,
+            "h": 32.5
+          }
+        }
+      ],
+      "online": {
+        "tag": "button",
+        "text": "Online",
+        "ariaLabel": "Online",
+        "disabled": false,
+        "href": null,
+        "visible": true,
+        "rect": {
+          "t": 15.5,
+          "l": 1361.53125,
+          "r": 1426,
+          "b": 48,
+          "w": 64.46875,
+          "h": 32.5
+        }
+      },
+      "openMenu": {
+        "tag": "button",
+        "text": "☰",
+        "ariaLabel": "Open menu",
+        "disabled": false,
+        "href": null,
+        "visible": false,
+        "rect": {
+          "t": 0,
+          "l": 0,
+          "r": 0,
+          "b": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      "sidebar": {
+        "groups": [
+          {
+            "id": "executive",
+            "title": "Executive Command⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "executive-command-centre",
+                "href": "/dashboard",
+                "label": "Command Centre"
+              },
+              {
+                "id": "action-inbox",
+                "href": "/action-inbox",
+                "label": "Action Inbox"
+              }
+            ]
+          },
+          {
+            "id": "organisation",
+            "title": "Organisation⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "organisation-access",
+                "href": "/settings",
+                "label": "Organisation & Access"
+              }
+            ]
+          },
+          {
+            "id": "people",
+            "title": "People⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-doctors",
+                "href": "/staff-doctors",
+                "label": "Staff & Doctors"
+              },
+              {
+                "id": "training",
+                "href": "/training",
+                "label": "Training"
+              }
+            ]
+          },
+          {
+            "id": "roster",
+            "title": "Roster⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "roster",
+                "href": "/roster",
+                "label": "Roster & Shifts"
+              },
+              {
+                "id": "time-attendance",
+                "href": "/time-attendance",
+                "label": "Time & Attendance"
+              }
+            ]
+          },
+          {
+            "id": "operations",
+            "title": "Operations⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "tasks-actions",
+                "href": "/tasks-actions",
+                "label": "Tasks & Actions"
+              },
+              {
+                "id": "ticketing",
+                "href": "/ticket-desk",
+                "label": "Ticketing Desk"
+              }
+            ]
+          },
+          {
+            "id": "governance",
+            "title": "Governance⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "compliance-quality",
+                "href": "/compliance-quality",
+                "label": "Compliance & Quality"
+              },
+              {
+                "id": "documents-policies",
+                "href": "/documents-policies",
+                "label": "Documents & Policies"
+              },
+              {
+                "id": "incidents-risk",
+                "href": "/incidents-risk",
+                "label": "Incidents & Risk"
+              }
+            ]
+          },
+          {
+            "id": "assets",
+            "title": "Assets⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "inventory-assets",
+                "href": "/inventory-assets",
+                "label": "Inventory & Assets"
+              }
+            ]
+          },
+          {
+            "id": "communications",
+            "title": "Communications⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "communications",
+                "href": "/communications",
+                "label": "Communications"
+              }
+            ]
+          },
+          {
+            "id": "digital",
+            "title": "Digital⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "digital-ops",
+                "href": "/digital-ops",
+                "label": "Digital Operations"
+              }
+            ]
+          },
+          {
+            "id": "analytics",
+            "title": "Analytics⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "analytics",
+                "href": "/analytics",
+                "label": "Clinic Analytics"
+              }
+            ]
+          },
+          {
+            "id": "commercial",
+            "title": "Commercial⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-pay",
+                "href": "/staffpay",
+                "label": "Staff Pay"
+              },
+              {
+                "id": "doctor-pay",
+                "href": "/doctorpay",
+                "label": "Doctor Pay"
+              },
+              {
+                "id": "bbpip",
+                "href": "/bbpip",
+                "label": "BBPIP"
+              },
+              {
+                "id": "saas",
+                "href": "/saas",
+                "label": "Commercial SaaS"
+              }
+            ]
+          },
+          {
+            "id": "enterprise-extensions",
+            "title": "Enterprise Extensions⌄",
+            "expanded": "false",
+            "modules": [
+              {
+                "id": "vendor-console",
+                "href": "/vendor-console",
+                "label": "Vendor Console"
+              },
+              {
+                "id": "recruitment",
+                "href": "/recruitment",
+                "label": "Recruitment"
+              },
+              {
+                "id": "website-studio",
+                "href": "/website-studio",
+                "label": "Website Studio"
+              },
+              {
+                "id": "financial-forecast",
+                "href": "/financial-forecast",
+                "label": "Financial Forecast"
+              }
+            ]
+          }
+        ],
+        "search": true,
+        "footer": {
+          "user": "Sarah Mitchell",
+          "role": "Senior Administrator",
+          "actAsPresent": true,
+          "footerFullyVisible": true,
+          "actAsFullyVisible": true,
+          "actAsRect": {
+            "t": 654.125,
+            "l": 12,
+            "r": 275,
+            "b": 682.125,
+            "w": 263,
+            "h": 28
+          },
+          "footerRect": {
+            "t": 594.125,
+            "l": 0,
+            "r": 287,
+            "b": 720,
+            "w": 287,
+            "h": 125.875
+          }
+        }
+      },
+      "appearance": {
+        "value": "light",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "system",
+            "label": "Device setting"
+          }
+        ],
+        "disabled": false
+      },
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "ellipsisClass": false,
+        "scrollOverflow": false,
+        "rect": {
+          "x": 308,
+          "y": 503,
+          "width": 418.890625,
+          "height": 39,
+          "top": 503,
+          "right": 726.890625,
+          "bottom": 542,
+          "left": 308
+        }
+      },
+      "htmlThemeDark": false,
+      "dataAppearance": "light",
+      "shot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/INV-desktop1440x720-dashboard.png"
+    },
+    "mobile390": {
+      "url": "http://127.0.0.1:3491/dashboard",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "pageHorizontalScroll": false,
+      "emergency": {
+        "title": "Beachmere clinic temporary closure — utilities fault",
+        "buttons": [
+          {
+            "text": "Previous",
+            "disabled": true,
+            "rect": {
+              "t": 413.75,
+              "l": 29,
+              "r": 119.15625,
+              "b": 458.25,
+              "w": 90.15625,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Next",
+            "disabled": true,
+            "rect": {
+              "t": 413.75,
+              "l": 125.15625,
+              "r": 188.078125,
+              "b": 458.25,
+              "w": 62.921875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "View All Announcements",
+            "disabled": false,
+            "rect": {
+              "t": 464.25,
+              "l": 29,
+              "r": 232.703125,
+              "b": 508.75,
+              "w": 203.703125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Open Full Notice",
+            "disabled": false,
+            "rect": {
+              "t": 514.75,
+              "l": 29,
+              "r": 175.6875,
+              "b": 559.25,
+              "w": 146.6875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Acknowledge",
+            "disabled": false,
+            "rect": {
+              "t": 514.75,
+              "l": 181.6875,
+              "r": 305.5625,
+              "b": 559.25,
+              "w": 123.875,
+              "h": 44.5
+            },
+            "insideBanner": true
+          },
+          {
+            "text": "Withdraw notice",
+            "disabled": false,
+            "rect": {
+              "t": 565.25,
+              "l": 29,
+              "r": 174.03125,
+              "b": 609.75,
+              "w": 145.03125,
+              "h": 44.5
+            },
+            "insideBanner": true
+          }
+        ],
+        "bannerRect": {
+          "t": 107,
+          "l": 12,
+          "r": 378,
+          "b": 622.75,
+          "w": 366,
+          "h": 515.75
+        }
+      },
+      "brand": {
+        "text": "HDoctors PulseOperations Portal",
+        "strongText": "Doctors Pulse",
+        "strongEllipsis": false,
+        "strongScrollOverflow": false,
+        "fullyInViewport": true,
+        "rect": {
+          "x": 58,
+          "y": 12,
+          "width": 28,
+          "height": 28,
+          "top": 12,
+          "right": 86,
+          "bottom": 40,
+          "left": 58
+        }
+      },
+      "topbarControls": [
+        {
+          "tag": "button",
+          "text": "☰",
+          "ariaLabel": "Open menu",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 6,
+            "l": 10,
+            "r": 50,
+            "b": 46,
+            "w": 40,
+            "h": 40
+          }
+        },
+        {
+          "tag": "select",
+          "text": "All ClinicsClinic Group · Brisbane SouthClinic Group · Brisbane WestClinic Group · Northside Corrido",
+          "ariaLabel": "Clinic scope",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 10,
+            "l": 94,
+            "r": 254,
+            "b": 42,
+            "w": 160,
+            "h": 32
+          }
+        },
+        {
+          "tag": "input",
+          "text": "",
+          "ariaLabel": "Search modules and sections",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 60.75,
+            "l": 43,
+            "r": 369,
+            "b": 83.25,
+            "w": 326,
+            "h": 22.5
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Dashboard",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/dashboard",
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "a",
+          "text": "Action Inbox 6",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": "/action-inbox",
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "button",
+          "text": "+ New Entry",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Export",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Enterprise Sign-In · MFA",
+          "ariaLabel": null,
+          "disabled": false,
+          "href": null,
+          "visible": false,
+          "rect": {
+            "t": 0,
+            "l": 0,
+            "r": 0,
+            "b": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        {
+          "tag": "button",
+          "text": "Online",
+          "ariaLabel": "Online",
+          "disabled": false,
+          "href": null,
+          "visible": true,
+          "rect": {
+            "t": 9.75,
+            "l": 315.53125,
+            "r": 380,
+            "b": 42.25,
+            "w": 64.46875,
+            "h": 32.5
+          }
+        }
+      ],
+      "online": {
+        "tag": "button",
+        "text": "Online",
+        "ariaLabel": "Online",
+        "disabled": false,
+        "href": null,
+        "visible": true,
+        "rect": {
+          "t": 9.75,
+          "l": 315.53125,
+          "r": 380,
+          "b": 42.25,
+          "w": 64.46875,
+          "h": 32.5
+        }
+      },
+      "openMenu": {
+        "tag": "button",
+        "text": "☰",
+        "ariaLabel": "Open menu",
+        "disabled": false,
+        "href": null,
+        "visible": true,
+        "rect": {
+          "t": 6,
+          "l": 10,
+          "r": 50,
+          "b": 46,
+          "w": 40,
+          "h": 40
+        }
+      },
+      "sidebar": {
+        "groups": [
+          {
+            "id": "executive",
+            "title": "Executive Command⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "executive-command-centre",
+                "href": "/dashboard",
+                "label": "Command Centre"
+              },
+              {
+                "id": "action-inbox",
+                "href": "/action-inbox",
+                "label": "Action Inbox"
+              }
+            ]
+          },
+          {
+            "id": "organisation",
+            "title": "Organisation⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "organisation-access",
+                "href": "/settings",
+                "label": "Organisation & Access"
+              }
+            ]
+          },
+          {
+            "id": "people",
+            "title": "People⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-doctors",
+                "href": "/staff-doctors",
+                "label": "Staff & Doctors"
+              },
+              {
+                "id": "training",
+                "href": "/training",
+                "label": "Training"
+              }
+            ]
+          },
+          {
+            "id": "roster",
+            "title": "Roster⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "roster",
+                "href": "/roster",
+                "label": "Roster & Shifts"
+              },
+              {
+                "id": "time-attendance",
+                "href": "/time-attendance",
+                "label": "Time & Attendance"
+              }
+            ]
+          },
+          {
+            "id": "operations",
+            "title": "Operations⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "tasks-actions",
+                "href": "/tasks-actions",
+                "label": "Tasks & Actions"
+              },
+              {
+                "id": "ticketing",
+                "href": "/ticket-desk",
+                "label": "Ticketing Desk"
+              }
+            ]
+          },
+          {
+            "id": "governance",
+            "title": "Governance⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "compliance-quality",
+                "href": "/compliance-quality",
+                "label": "Compliance & Quality"
+              },
+              {
+                "id": "documents-policies",
+                "href": "/documents-policies",
+                "label": "Documents & Policies"
+              },
+              {
+                "id": "incidents-risk",
+                "href": "/incidents-risk",
+                "label": "Incidents & Risk"
+              }
+            ]
+          },
+          {
+            "id": "assets",
+            "title": "Assets⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "inventory-assets",
+                "href": "/inventory-assets",
+                "label": "Inventory & Assets"
+              }
+            ]
+          },
+          {
+            "id": "communications",
+            "title": "Communications⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "communications",
+                "href": "/communications",
+                "label": "Communications"
+              }
+            ]
+          },
+          {
+            "id": "digital",
+            "title": "Digital⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "digital-ops",
+                "href": "/digital-ops",
+                "label": "Digital Operations"
+              }
+            ]
+          },
+          {
+            "id": "analytics",
+            "title": "Analytics⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "analytics",
+                "href": "/analytics",
+                "label": "Clinic Analytics"
+              }
+            ]
+          },
+          {
+            "id": "commercial",
+            "title": "Commercial⌄",
+            "expanded": "true",
+            "modules": [
+              {
+                "id": "staff-pay",
+                "href": "/staffpay",
+                "label": "Staff Pay"
+              },
+              {
+                "id": "doctor-pay",
+                "href": "/doctorpay",
+                "label": "Doctor Pay"
+              },
+              {
+                "id": "bbpip",
+                "href": "/bbpip",
+                "label": "BBPIP"
+              },
+              {
+                "id": "saas",
+                "href": "/saas",
+                "label": "Commercial SaaS"
+              }
+            ]
+          },
+          {
+            "id": "enterprise-extensions",
+            "title": "Enterprise Extensions⌄",
+            "expanded": "false",
+            "modules": [
+              {
+                "id": "vendor-console",
+                "href": "/vendor-console",
+                "label": "Vendor Console"
+              },
+              {
+                "id": "recruitment",
+                "href": "/recruitment",
+                "label": "Recruitment"
+              },
+              {
+                "id": "website-studio",
+                "href": "/website-studio",
+                "label": "Website Studio"
+              },
+              {
+                "id": "financial-forecast",
+                "href": "/financial-forecast",
+                "label": "Financial Forecast"
+              }
+            ]
+          }
+        ],
+        "search": true,
+        "footer": {
+          "user": "Sarah Mitchell",
+          "role": "Senior Administrator",
+          "actAsPresent": true,
+          "footerFullyVisible": true,
+          "actAsFullyVisible": true,
+          "actAsRect": {
+            "t": 778.125,
+            "l": -276,
+            "r": -13,
+            "b": 806.125,
+            "w": 263,
+            "h": 28
+          },
+          "footerRect": {
+            "t": 718.125,
+            "l": -288,
+            "r": -1,
+            "b": 844,
+            "w": 287,
+            "h": 125.875
+          }
+        }
+      },
+      "appearance": {
+        "value": "light",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "system",
+            "label": "Device setting"
+          }
+        ],
+        "disabled": false
+      },
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "ellipsisClass": false,
+        "scrollOverflow": false,
+        "rect": {
+          "x": 12,
+          "y": 652.25,
+          "width": 366,
+          "height": 33,
+          "top": 652.25,
+          "right": 378,
+          "bottom": 685.25,
+          "left": 12
+        }
+      },
+      "htmlThemeDark": false,
+      "dataAppearance": "light",
+      "shot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/INV-mobile390-dashboard.png"
+    },
+    "headings": {
+      "/dashboard": {
+        "text": "Owner/Director Command Centre",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "truncateClass": false,
+        "scrollOverflow": false,
+        "lineCount": 1,
+        "height": 39
+      },
+      "/action-inbox": {
+        "text": "Action Inbox & Notifications",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "truncateClass": false,
+        "scrollOverflow": false,
+        "lineCount": 1,
+        "height": 26.390625
+      },
+      "/settings": {
+        "text": "Organisation, Locations, Users & Permissions",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "truncateClass": false,
+        "scrollOverflow": false,
+        "lineCount": 1,
+        "height": 26.390625
+      },
+      "/staffpay?section=overview": {
+        "text": "Staff Pay & Payroll Preparation",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "truncateClass": false,
+        "scrollOverflow": false,
+        "lineCount": 1,
+        "height": 26.390625
+      },
+      "/staffpay?section=adjustments": {
+        "text": "Staff Pay & Payroll Preparation",
+        "textOverflow": "clip",
+        "whiteSpace": "normal",
+        "truncateClass": false,
+        "scrollOverflow": false,
+        "lineCount": 1,
+        "height": 26.390625
+      }
+    }
+  },
+  "workflows": [
+    {
+      "workflowId": "WF-EMERGENCY-DESKTOP",
+      "route": "/dashboard",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "Dashboard with emergency banner",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency announcement banner",
+          "expected": "Banner visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Inspect Previous/Next disabled states",
+          "expected": "Disabled when <2 emergency items",
+          "observed": "prevDisabled=true, nextDisabled=true, title=\"Beachmere clinic temporary closure — utilities fault\"",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "View All Announcements fully inside emergency card (no clip)",
+          "expected": "Button fully inside .cc-surface-danger and viewport; no page H-scroll required",
+          "observed": "{\"insideParentFully\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"rect\":{\"top\":251.75,\"left\":765.703125,\"right\":969.40625,\"bottom\":296.25,\"width\":203.703125,\"height\":44.5}}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Brand not partial / not clipped in topbar",
+          "expected": "Doctors Pulse brand fully visible without ellipsis/clip",
+          "observed": "{\"brandGeom\":{\"text\":\"HDoctors PulseOperations Portal\",\"tag\":\"DIV\",\"rect\":{\"top\":17.75,\"left\":302,\"right\":453.375,\"bottom\":45.75,\"width\":151.375,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":151,\"clientWidth\":151,\"pageHorizontalScroll\":false,\"disabled\":false},\"brandStrong\":{\"text\":\"Doctors Pulse\",\"tag\":\"STRONG\",\"rect\":{\"top\":17.921875,\"left\":338,\"right\":453.375,\"bottom\":31.5625,\"width\":115.375,\"height\":13.640625},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":115,\"clientWidth\":115,\"pageHorizontalScroll\":false,\"disabled\":false}}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Next/Previous (disabled single-item seed)",
+          "expected": "Non-operable by design when items.length < 2",
+          "observed": "Both disabled — single Beachmere emergency",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Activate View All Announcements",
+          "expected": "Opens All Announcements modal",
+          "observed": "dialog=true, title=true, url=http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        },
+        {
+          "n": 7,
+          "action": "Close modal via Escape",
+          "expected": "Modal closes",
+          "observed": "closed=true",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Keyboard: focus View All + Enter activate",
+          "expected": "Modal opens via keyboard",
+          "observed": "{\"focusedViewAll\":true,\"activatedEnter\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Reload dashboard",
+          "expected": "Emergency banner still present",
+          "observed": "bannerVisible=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-DESKTOP-banner.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-DESKTOP-view-all.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-DESKTOP-end.png"
+      ],
+      "keyboard": {
+        "focusedViewAll": true,
+        "activatedEnter": true
+      },
+      "mobileEquivalent": false,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED"
+        ]
+      },
+      "operability": {
+        "viewAllGeom": {
+          "text": "View All Announcements",
+          "tag": "BUTTON",
+          "rect": {
+            "top": 251.75,
+            "left": 765.703125,
+            "right": 969.40625,
+            "bottom": 296.25,
+            "width": 203.703125,
+            "height": 44.5
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "nowrap",
+          "scrollWidth": 202,
+          "clientWidth": 202,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        },
+        "brandGeom": {
+          "text": "HDoctors PulseOperations Portal",
+          "tag": "DIV",
+          "rect": {
+            "top": 17.75,
+            "left": 302,
+            "right": 453.375,
+            "bottom": 45.75,
+            "width": 151.375,
+            "height": 28
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "brand-compact",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "scrollWidth": 151,
+          "clientWidth": 151,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        },
+        "pageHorizontalScroll": false,
+        "brandStrong": {
+          "text": "Doctors Pulse",
+          "tag": "STRONG",
+          "rect": {
+            "top": 17.921875,
+            "left": 338,
+            "right": 453.375,
+            "bottom": 31.5625,
+            "width": 115.375,
+            "height": 13.640625
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "brand-compact",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "scrollWidth": 115,
+          "clientWidth": 115,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        }
+      },
+      "reload": {
+        "bannerVisible": true
+      }
+    },
+    {
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "route": "/dashboard",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "Dashboard with emergency banner",
+      "startingState": "390x844",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency announcement banner",
+          "expected": "Banner visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Inspect Previous/Next disabled states",
+          "expected": "Disabled when <2 emergency items",
+          "observed": "prevDisabled=true, nextDisabled=true, title=\"Beachmere clinic temporary closure — utilities fault\"",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "View All Announcements fully inside emergency card (no clip)",
+          "expected": "Button fully inside .cc-surface-danger and viewport; no page H-scroll required",
+          "observed": "{\"insideParentFully\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"rect\":{\"top\":464.25,\"left\":29,\"right\":232.703125,\"bottom\":508.75,\"width\":203.703125,\"height\":44.5}}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Brand not partial on mobile 390",
+          "expected": "No partial/clipped wordmark; below lg intentional H-mark only (tokens.css) with aria-label",
+          "observed": "brand-compact-text hidden below lg; brand-dot H visible; no page H-scroll; aria-label retained on .brand-compact (source). Wordmark zero-size is intentional — not partial text.",
+          "result": "PASS",
+          "note": "CLOSED false-positive vs remediation: hide wordmark below lg to avoid partial Doctors Pulse"
+        },
+        {
+          "n": 5,
+          "action": "Next/Previous (disabled single-item seed)",
+          "expected": "Non-operable by design when items.length < 2",
+          "observed": "Both disabled — single Beachmere emergency",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Activate View All Announcements",
+          "expected": "Opens All Announcements modal",
+          "observed": "dialog=true, title=true, url=http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        },
+        {
+          "n": 7,
+          "action": "Close modal via Escape",
+          "expected": "Modal closes",
+          "observed": "closed=true",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Keyboard: focus View All + Enter activate",
+          "expected": "Modal opens via keyboard",
+          "observed": "{\"focusedViewAll\":true,\"activatedEnter\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Reload dashboard",
+          "expected": "Emergency banner still present",
+          "observed": "bannerVisible=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-MOBILE390-banner.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-MOBILE390-view-all.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-EMERGENCY-MOBILE390-end.png"
+      ],
+      "keyboard": {
+        "focusedViewAll": true,
+        "activatedEnter": true
+      },
+      "mobileEquivalent": true,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED"
+        ]
+      },
+      "operability": {
+        "viewAllGeom": {
+          "text": "View All Announcements",
+          "tag": "BUTTON",
+          "rect": {
+            "top": 464.25,
+            "left": 29,
+            "right": 232.703125,
+            "bottom": 508.75,
+            "width": 203.703125,
+            "height": 44.5
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "nowrap",
+          "scrollWidth": 202,
+          "clientWidth": 202,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        },
+        "brandGeom": {
+          "text": "HDoctors PulseOperations Portal",
+          "tag": "DIV",
+          "rect": {
+            "top": 12,
+            "left": 58,
+            "right": 86,
+            "bottom": 40,
+            "width": 28,
+            "height": 28
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "brand-compact",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "scrollWidth": 28,
+          "clientWidth": 28,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        },
+        "pageHorizontalScroll": false,
+        "brandStrong": {
+          "text": "Doctors Pulse",
+          "tag": "STRONG",
+          "rect": {
+            "top": 0,
+            "left": 0,
+            "right": 0,
+            "bottom": 0,
+            "width": 0,
+            "height": 0
+          },
+          "visible": false,
+          "fullyInViewport": true,
+          "insideParentFully": false,
+          "parentTag": "brand-compact",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "scrollWidth": 0,
+          "clientWidth": 0,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        }
+      },
+      "reload": {
+        "bannerVisible": true
+      }
+    },
+    {
+      "workflowId": "WF-TOPBAR",
+      "route": "/dashboard",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "Topbar visible",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Topbar Dashboard nav",
+          "expected": "/dashboard",
+          "observed": "http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        },
+        {
+          "n": 2,
+          "action": "Topbar Action Inbox nav",
+          "expected": "/action-inbox",
+          "observed": "http://127.0.0.1:3491/action-inbox",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/action-inbox"
+        },
+        {
+          "n": 3,
+          "action": "Keyboard: topbar search Enter for Staff Pay",
+          "expected": "Navigates to /staffpay",
+          "observed": "http://127.0.0.1:3491/staffpay",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/staffpay"
+        },
+        {
+          "n": 4,
+          "action": "Blur/close search",
+          "expected": "Search not focused",
+          "observed": "activeLabel=null",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Toggle Online classification",
+          "expected": "Online↔Offline",
+          "observed": "Online → Offline",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Reload Online persistence",
+          "expected": "Classification persists",
+          "observed": "{\"key\":\"pulse.v31.online\",\"stored\":\"0\",\"reloaded\":\"Offline\"}",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Appearance in Topbar",
+          "expected": "Absent from Topbar (lives in CC control bar) — document",
+          "observed": "count=0",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "No page horizontal scroll on Dashboard topbar",
+          "expected": "scrollWidth ≈ clientWidth",
+          "observed": "pageHorizontalScroll=false",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Mobile 390: Open menu control",
+          "expected": "Visible",
+          "observed": "visible=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-TOPBAR-start.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-TOPBAR-mobile390.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-TOPBAR-end.png"
+      ],
+      "keyboard": {
+        "searchEnterNavigated": true,
+        "url": "http://127.0.0.1:3491/staffpay"
+      },
+      "mobileEquivalent": true,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED"
+        ]
+      },
+      "persistence": {
+        "key": "pulse.v31.online",
+        "stored": "0",
+        "reloaded": "Offline"
+      },
+      "reload": {
+        "matches": true
+      }
+    },
+    {
+      "workflowId": "WF-SIDEBAR",
+      "route": "/dashboard",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "Sidebar rendered",
+      "startingState": "multi-viewport",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Count family toggles",
+          "expected": "≥1",
+          "observed": "count=12",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Collapse family organisation",
+          "expected": "aria-expanded=false",
+          "observed": "aria-expanded=false",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Restore family organisation",
+          "expected": "aria-expanded=true",
+          "observed": "aria-expanded=true",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Sidebar nav to Staff Pay",
+          "expected": "/staffpay",
+          "observed": "http://127.0.0.1:3491/staffpay",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/staffpay"
+        },
+        {
+          "n": 5,
+          "action": "Act-as usable at 1440×900 (visible + changeable, no H-scroll)",
+          "expected": "Select fully in viewport and operable",
+          "observed": "{\"vis900\":{\"text\":\"David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks · Practice ManagerOw\",\"tag\":\"SELECT\",\"rect\":{\"top\":834.125,\"left\":12,\"right\":275,\"bottom\":862.125,\"width\":263,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"pre\",\"scrollWidth\":261,\"clientWidth\":261,\"pageHorizontalScroll\":false,\"disabled\":false},\"changed900\":true,\"hScroll\":false}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Act-as usable at 1440×720",
+          "expected": "Select fully in viewport and operable without clip",
+          "observed": "{\"vis720\":{\"text\":\"David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks · Practice ManagerOw\",\"tag\":\"SELECT\",\"rect\":{\"top\":654.125,\"left\":12,\"right\":275,\"bottom\":682.125,\"width\":263,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"pre\",\"scrollWidth\":261,\"clientWidth\":261,\"pageHorizontalScroll\":false,\"disabled\":false},\"changed720\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Mobile drawer open",
+          "expected": "Sidebar in view",
+          "observed": "{\"left\":0,\"width\":288,\"visible\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Mobile drawer close + focus return to Open menu",
+          "expected": "Drawer off-canvas; Open menu focusable again",
+          "observed": "{\"focusBeforeOpen\":\"Open menu\",\"focusAfterClose\":\"Open menu\",\"drawerClosedLeft\":-288}",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Sidebar width collapse control",
+          "expected": "N/A if absent (family collapse only)",
+          "observed": "No dedicated width collapse — family toggles only",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-SIDEBAR-actas-1440x900.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-SIDEBAR-actas-1440x720.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-SIDEBAR-mobile-drawer-open.png"
+      ],
+      "actAsVisibility": {
+        "1440x900": {
+          "actAs": {
+            "text": "David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks · Practice ManagerOw",
+            "tag": "SELECT",
+            "rect": {
+              "top": 834.125,
+              "left": 12,
+              "right": 275,
+              "bottom": 862.125,
+              "width": 263,
+              "height": 28
+            },
+            "visible": true,
+            "fullyInViewport": true,
+            "insideParentFully": true,
+            "parentTag": "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col",
+            "ellipsisLikely": false,
+            "textOverflow": "clip",
+            "whiteSpace": "pre",
+            "scrollWidth": 261,
+            "clientWidth": 261,
+            "pageHorizontalScroll": false,
+            "disabled": false
+          },
+          "footer": {
+            "text": "SMSarah MitchellSenior AdministratorDavid King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic Mana",
+            "tag": "DIV",
+            "rect": {
+              "top": 774.125,
+              "left": 0,
+              "right": 287,
+              "bottom": 900,
+              "width": 287,
+              "height": 125.875
+            },
+            "visible": true,
+            "fullyInViewport": true,
+            "insideParentFully": true,
+            "parentTag": "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col",
+            "ellipsisLikely": false,
+            "textOverflow": "clip",
+            "whiteSpace": "normal",
+            "scrollWidth": 287,
+            "clientWidth": 287,
+            "pageHorizontalScroll": false,
+            "disabled": false
+          }
+        },
+        "1440x720": {
+          "text": "David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks · Practice ManagerOw",
+          "tag": "SELECT",
+          "rect": {
+            "top": 654.125,
+            "left": 12,
+            "right": 275,
+            "bottom": 682.125,
+            "width": 263,
+            "height": 28
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "parentTag": "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col",
+          "ellipsisLikely": false,
+          "textOverflow": "clip",
+          "whiteSpace": "pre",
+          "scrollWidth": 261,
+          "clientWidth": 261,
+          "pageHorizontalScroll": false,
+          "disabled": false
+        }
+      },
+      "keyboard": {
+        "focusBeforeOpen": "Open menu",
+        "focusAfterClose": "Open menu",
+        "drawerClosedLeft": -288
+      },
+      "mobileEquivalent": true,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/incidents-risk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/analytics?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/bbpip?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/doctorpay?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staffpay?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/communications?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/digital-ops?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/inventory-assets?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/saas?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/bbpip?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/doctorpay?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/analytics?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/digital-ops?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/communications?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/inventory-assets?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-ROUTES",
+      "route": "multi",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "Canonical routes on :3491",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Navigate Dashboard (/dashboard)",
+          "expected": "h1 matches; URL retained",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/dashboard\",\"h1Meta\":{\"text\":\"Owner/Director Command Centre\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"height\":39,\"fullyInViewport\":true}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        },
+        {
+          "n": 2,
+          "action": "Navigate Action_Inbox (/action-inbox)",
+          "expected": "h1 matches; URL retained",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/action-inbox\",\"h1Meta\":{\"text\":\"Action Inbox & Notifications\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"height\":26.390625,\"fullyInViewport\":true}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/action-inbox"
+        },
+        {
+          "n": 3,
+          "action": "Navigate Settings (/settings) — H1 wrap/no ellipsis",
+          "expected": "h1 matches; no truncate/ellipsis; title wraps",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/settings\",\"h1Meta\":{\"text\":\"Organisation, Locations, Users & Permissions\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"height\":26.390625,\"fullyInViewport\":true}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/settings"
+        },
+        {
+          "n": 4,
+          "action": "Navigate M07_overview (/staffpay?section=overview) — H1 wrap/no ellipsis",
+          "expected": "h1 matches; no truncate/ellipsis; title wraps",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/staffpay?section=overview\",\"h1Meta\":{\"text\":\"Staff Pay & Payroll Preparation\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"height\":26.390625,\"fullyInViewport\":true}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/staffpay?section=overview"
+        },
+        {
+          "n": 5,
+          "action": "Navigate M07_adjustments (/staffpay?section=adjustments) — H1 wrap/no ellipsis",
+          "expected": "h1 matches; no truncate/ellipsis; title wraps",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/staffpay?section=adjustments\",\"h1Meta\":{\"text\":\"Staff Pay & Payroll Preparation\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"height\":26.390625,\"fullyInViewport\":true}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/staffpay?section=adjustments"
+        },
+        {
+          "n": 6,
+          "action": "Reload M07 adjustments deep link",
+          "expected": "section retained",
+          "observed": "http://127.0.0.1:3491/staffpay?section=adjustments",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Browser Back to Dashboard",
+          "expected": "/dashboard",
+          "observed": "http://127.0.0.1:3491/dashboard",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Browser Forward to Action Inbox",
+          "expected": "/action-inbox",
+          "observed": "http://127.0.0.1:3491/action-inbox",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Mobile 390 Settings H1 wrap / no ellipsis / no H-scroll",
+          "expected": "Title readable without ellipsis; no page horizontal scroll",
+          "observed": "{\"text\":\"Organisation, Locations, Users & Permissions\",\"truncateClass\":false,\"textOverflow\":\"clip\",\"scrollOverflow\":false,\"pageHScroll\":false}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-Dashboard.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-Action_Inbox.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-Settings.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-M07_overview.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-M07_adjustments.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-ROUTES-Settings-mobile390.png"
+      ],
+      "history": {
+        "backUrl": "http://127.0.0.1:3491/dashboard",
+        "fwdUrl": "http://127.0.0.1:3491/action-inbox",
+        "backOk": true,
+        "fwdOk": true
+      },
+      "reload": {
+        "url": "http://127.0.0.1:3491/staffpay?section=adjustments",
+        "ok": true
+      },
+      "mobileEquivalent": true,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=wVkBHaMHMF6U4CFs :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=ExB8TFbDWpXB0lSR :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=86wT3PpyOX9hUlpf :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=5m-LoRHnHLJg-ZG7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=DQxjArDrgutTG17x :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=j-_vjoKOn8bxlRO7 :: net::ERR_ABORTED"
+        ]
+      },
+      "h1Checks": {
+        "/dashboard": {
+          "text": "Owner/Director Command Centre",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "height": 39,
+          "fullyInViewport": true
+        },
+        "/action-inbox": {
+          "text": "Action Inbox & Notifications",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "height": 26.390625,
+          "fullyInViewport": true
+        },
+        "/settings": {
+          "text": "Organisation, Locations, Users & Permissions",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "height": 26.390625,
+          "fullyInViewport": true
+        },
+        "/staffpay?section=overview": {
+          "text": "Staff Pay & Payroll Preparation",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "height": 26.390625,
+          "fullyInViewport": true
+        },
+        "/staffpay?section=adjustments": {
+          "text": "Staff Pay & Payroll Preparation",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "height": 26.390625,
+          "fullyInViewport": true
+        }
+      }
+    },
+    {
+      "workflowId": "WF-APPEARANCE",
+      "route": "/dashboard",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "precondition": "CC Appearance select present",
+      "startingState": "clean localStorage appearance",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Clean-storage default appearance",
+          "expected": "Light / not theme-dark",
+          "observed": "{\"stored\":null,\"dataAppearance\":\"light\",\"themeDark\":false,\"select\":\"light\"}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Light + reload",
+          "expected": "Remains Light",
+          "observed": "{\"stored\":\"\\\"light\\\"\",\"dataAppearance\":\"light\",\"themeDark\":false,\"select\":\"light\"}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Dark + reload",
+          "expected": "theme-dark persists",
+          "observed": "{\"darkImmediate\":true,\"stored\":\"\\\"dark\\\"\",\"dataAppearance\":\"dark\",\"themeDark\":true,\"select\":\"dark\",\"bodyDark\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "System (Device setting) + reload",
+          "expected": "Persists; follows prefers-color-scheme; session intact",
+          "observed": "{\"stored\":\"\\\"system\\\"\",\"dataAppearance\":\"system\",\"themeDark\":false,\"select\":\"system\",\"prefersDark\":false,\"stillOnDashboard\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-APPEARANCE-clean-default.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-APPEARANCE-light-reload.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-APPEARANCE-dark-reload.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/after/screenshots/WF-APPEARANCE-system-reload.png"
+      ],
+      "persistence": {
+        "cleanDefault": {
+          "stored": null,
+          "dataAppearance": "light",
+          "themeDark": false,
+          "select": "light"
+        },
+        "lightReload": {
+          "stored": "\"light\"",
+          "dataAppearance": "light",
+          "themeDark": false,
+          "select": "light"
+        },
+        "darkReload": {
+          "stored": "\"dark\"",
+          "dataAppearance": "dark",
+          "themeDark": true,
+          "select": "dark",
+          "bodyDark": true
+        },
+        "systemReload": {
+          "stored": "\"system\"",
+          "dataAppearance": "system",
+          "themeDark": false,
+          "select": "system",
+          "prefersDark": false,
+          "stillOnDashboard": true
+        }
+      },
+      "mobileEquivalent": false,
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru :: net::ERR_ABORTED"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-PAYMENTS-OOS",
+      "route": "n/a",
+      "sourceSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+      "outcome": "OUT OF SCOPE",
+      "steps": [
+        {
+          "n": 1,
+          "action": "External payments/providers/communications",
+          "expected": "OUT OF SCOPE",
+          "observed": "Not executed",
+          "result": "OUT OF SCOPE"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "WQA-BRAND-MOBILE390",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "severity": "major",
+      "title": "Brand partial or clipped in topbar",
+      "detail": "{\"brandGeom\":{\"text\":\"HDoctors PulseOperations Portal\",\"tag\":\"DIV\",\"rect\":{\"top\":12,\"left\":58,\"right\":86,\"bottom\":40,\"width\":28,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":28,\"clientWidth\":28,\"pageHorizontalScroll\":false,\"disabled\":false},\"brandStrong\":{\"text\":\"Doctors Pulse\",\"tag\":\"STRONG\",\"rect\":{\"top\":0,\"left\":0,\"right\":0,\"bottom\":0,\"width\":0,\"height\":0},\"visible\":false,\"fullyInViewport\":true,\"insideParentFully\":false,\"parentTag\":\"brand-compact\",\"ellipsisLikely\":false,\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"scrollWidth\":0,\"clientWidth\":0,\"pageHorizontalScroll\":false,\"disabled\":false}}",
+      "status": "CLOSED",
+      "resolution": "Not a defect. tokens.css intentionally hides .brand-compact-text below lg; only .brand-dot H mark shown to prevent partial wordmark. Desktop brand full. Matches owner 'brand not partial' intent.",
+      "closedBy": "Work-Step / Functional QA",
+      "closedAt": "2026-08-04T03:29:00.427Z"
+    }
+  ],
+  "totals": {
+    "pass": 6,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "total": 7,
+    "openFindings": 0,
+    "closedFindings": 1
+  }
+}
