@@ -1,0 +1,8 @@
+worktree=/tmp/hcdp-fix/ui-batch1-vf-fixes
+input_sha=f837bdd08e1db30e68c63cfb2542e3120bc40d00
+app_source_sha=e6e2f90ea42f39ddab1d5ce39c1e306f214a1742
+recorded_at=2026-08-04T03:10:00Z
+agent=Work-Step / Functional QA
+phase=Phase 2 baseline (pre-remediation)
+port=http://127.0.0.1:3000
+note=READ-ONLY against application source/tests. Evidence only under agent-workstep-qa/.

@@ -1,0 +1,95 @@
+{
+  "agent": "Work-Step / Functional QA",
+  "phase": "Phase 2 baseline (pre-remediation)",
+  "roleSeparation": "READ-ONLY against application source/tests; evidence only under agent-workstep-qa/",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+  "inputSha": "f837bdd08e1db30e68c63cfb2542e3120bc40d00",
+  "appSourceSha": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+  "portUsed": "http://127.0.0.1:3000",
+  "portPolicy": "Used existing owner server on :3000; did not stop :3000; did not start competing server",
+  "playwright": {
+    "available": true,
+    "version": "1.49.0",
+    "browser": "chromium via /usr/bin/google-chrome-stable",
+    "launchBlocked": false
+  },
+  "controlInventoryPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/baseline/CONTROL_INVENTORY.md",
+  "rawResultsPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/baseline/_raw-results.json",
+  "screenshotsDir": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/baseline/screenshots",
+  "recordedAt": "2026-08-04T03:16:00Z",
+  "totals": {
+    "pass": 6,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "totalWorkflows": 7,
+    "openFindings": 0
+  },
+  "workflows": [
+    {
+      "docId": "WQA-001",
+      "workflowId": "WF-EMERGENCY-DESKTOP",
+      "route": "/dashboard",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-001.md"
+    },
+    {
+      "docId": "WQA-002",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "route": "/dashboard",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-002.md"
+    },
+    {
+      "docId": "WQA-003",
+      "workflowId": "WF-TOPBAR",
+      "route": "/dashboard",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-003.md"
+    },
+    {
+      "docId": "WQA-004",
+      "workflowId": "WF-SIDEBAR",
+      "route": "/dashboard",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-004.md"
+    },
+    {
+      "docId": "WQA-005",
+      "workflowId": "WF-ROUTES",
+      "route": "multi",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-005.md"
+    },
+    {
+      "docId": "WQA-006",
+      "workflowId": "WF-APPEARANCE",
+      "route": "/dashboard",
+      "outcome": "PASS",
+      "evidence": "workflows/WQA-006.md"
+    },
+    {
+      "docId": "WQA-007",
+      "workflowId": "WF-PAYMENTS-OOS",
+      "route": "n/a",
+      "outcome": "OUT OF SCOPE",
+      "evidence": "workflows/WQA-007.md",
+      "note": "External payments/providers/communications — never PASS"
+    }
+  ],
+  "openFindings": [],
+  "wqaFindingIds": [],
+  "informationalNotes": [
+    "Emergency Previous/Next disabled with single seeded unacknowledged Emergency announcement (source contract disabled={items.length < 2}).",
+    "Appearance control is in Command Centre control bar, not Topbar.",
+    "No dedicated sidebar width collapse control; family expand/collapse only.",
+    "Initial emergency locator race produced false miss screenshots (*-missing.png); rerun with stronger waits confirmed PASS — see workflow docs.",
+    "Does not claim independent verification or merge readiness."
+  ],
+  "applicationSourceOrTestsEdited": false,
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false,
+    "productionApproval": false
+  }
+}
