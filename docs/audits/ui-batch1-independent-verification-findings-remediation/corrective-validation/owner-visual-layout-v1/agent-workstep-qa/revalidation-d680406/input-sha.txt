@@ -1,0 +1,12 @@
+phase=Phase 4 REVALIDATION
+worktree=/tmp/hcdp-fix/ui-batch1-wqa-3491
+frozen_application_source_sha=d68040688cbf76fb1f8715c27aa06ad6ff72242c
+confirmed_head=d68040688cbf76fb1f8715c27aa06ad6ff72242c
+head_matches_freeze=true
+live_server=http://127.0.0.1:3491
+server_mode=production next start
+evidence_root=/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-d680406
+prior_after_intact=true
+agent=Work-Step / Functional QA
+recorded_at=2026-08-04T03:41:00Z
+note=READ-ONLY. No src/test edits. prior after/ kept intact.
