@@ -1,0 +1,8 @@
+{
+  "startedUtc": "2026-08-04T06:19:11Z",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-contradiction-v1",
+  "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+  "frozenExpected": "05f07119ec2883b7ec7a2da6bbe3b5162257c2ec",
+  "shaMatch": false,
+  "evidenceRoot": "/tmp/hcdp-fix/ui-batch1-contradiction-v1/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v1/agent-regression/revalidation-05f0711"
+}

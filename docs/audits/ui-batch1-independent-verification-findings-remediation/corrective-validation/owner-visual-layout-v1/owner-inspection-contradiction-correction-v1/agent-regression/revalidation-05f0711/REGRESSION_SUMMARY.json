@@ -1,0 +1,620 @@
+{
+  "frozenSha": "05f07119ec2883b7ec7a2da6bbe3b5162257c2ec",
+  "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+  "shaMatch": false,
+  "worktree": "/tmp/hcdp-fix/ui-batch1-contradiction-v1",
+  "evidenceRoot": "/tmp/hcdp-fix/ui-batch1-contradiction-v1/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v1/agent-regression/revalidation-05f0711",
+  "startedUtc": "2026-08-04T06:19:11Z",
+  "finishedUtc": "2026-08-04T06:20:41Z",
+  "rows": [
+    {
+      "id": "01",
+      "name": "colour+iv-findings-unit",
+      "command": "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-colour-readability.test.ts src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts",
+      "startUtc": "2026-08-04T06:19:11Z",
+      "finishUtc": "2026-08-04T06:19:12Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 20,
+        "pass": 20,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/01-colour+iv-findings-unit.log",
+      "notes": null
+    },
+    {
+      "id": "02",
+      "name": "owner-visual-unit",
+      "command": "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+      "startUtc": "2026-08-04T06:19:12Z",
+      "finishUtc": "2026-08-04T06:19:12Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 14,
+        "pass": 14,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/02-owner-visual-unit.log",
+      "notes": null
+    },
+    {
+      "id": "03",
+      "name": "qualification-chrome",
+      "command": "npx tsx --test src/components/workspaces/tests/ui-batch1-qualification-chrome.test.ts",
+      "startUtc": "2026-08-04T06:19:12Z",
+      "finishUtc": "2026-08-04T06:19:13Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/03-qualification-chrome.log",
+      "notes": null
+    },
+    {
+      "id": "04",
+      "name": "m07-presentation",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+      "startUtc": "2026-08-04T06:19:13Z",
+      "finishUtc": "2026-08-04T06:19:13Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/04-m07-presentation.log",
+      "notes": null
+    },
+    {
+      "id": "05",
+      "name": "m07-shell",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+      "startUtc": "2026-08-04T06:19:13Z",
+      "finishUtc": "2026-08-04T06:19:14Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/05-m07-shell.log",
+      "notes": null
+    },
+    {
+      "id": "06",
+      "name": "m06-od-a2",
+      "command": "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts",
+      "startUtc": "2026-08-04T06:19:14Z",
+      "finishUtc": "2026-08-04T06:19:14Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/06-m06-od-a2.log",
+      "notes": null
+    },
+    {
+      "id": "07",
+      "name": "browser-crypto",
+      "command": "npx tsx --test src/platform/workforce/tests/browser-crypto-remediation.test.ts",
+      "startUtc": "2026-08-04T06:19:14Z",
+      "finishUtc": "2026-08-04T06:19:15Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/07-browser-crypto.log",
+      "notes": null
+    },
+    {
+      "id": "08",
+      "name": "m06-published",
+      "command": "npx tsx --test src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
+      "startUtc": "2026-08-04T06:19:15Z",
+      "finishUtc": "2026-08-04T06:19:15Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 19,
+        "pass": 19,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/08-m06-published.log",
+      "notes": null
+    },
+    {
+      "id": "09",
+      "name": "published-timesheet-registry",
+      "command": "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts",
+      "startUtc": "2026-08-04T06:19:15Z",
+      "finishUtc": "2026-08-04T06:19:16Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 27,
+        "pass": 27,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/09-published-timesheet-registry.log",
+      "notes": null
+    },
+    {
+      "id": "10",
+      "name": "m07-ppa1-ui",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx",
+      "startUtc": "2026-08-04T06:19:16Z",
+      "finishUtc": "2026-08-04T06:19:16Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/10-m07-ppa1-ui.log",
+      "notes": null
+    },
+    {
+      "id": "11",
+      "name": "m07-ppa1-integration",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx",
+      "startUtc": "2026-08-04T06:19:16Z",
+      "finishUtc": "2026-08-04T06:19:17Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 11,
+        "pass": 11,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/11-m07-ppa1-integration.log",
+      "notes": null
+    },
+    {
+      "id": "12",
+      "name": "m07-ppa1-hook-security",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts",
+      "startUtc": "2026-08-04T06:19:17Z",
+      "finishUtc": "2026-08-04T06:19:17Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/12-m07-ppa1-hook-security.log",
+      "notes": null
+    },
+    {
+      "id": "13",
+      "name": "m07-ppa1-core",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-core.test.ts",
+      "startUtc": "2026-08-04T06:19:17Z",
+      "finishUtc": "2026-08-04T06:19:18Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/13-m07-ppa1-core.log",
+      "notes": null
+    },
+    {
+      "id": "14",
+      "name": "m07-ppa1-atomicity",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
+      "startUtc": "2026-08-04T06:19:18Z",
+      "finishUtc": "2026-08-04T06:19:18Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 9,
+        "pass": 9,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/14-m07-ppa1-atomicity.log",
+      "notes": null
+    },
+    {
+      "id": "15",
+      "name": "test-m04",
+      "command": "npm run test:m04",
+      "startUtc": "2026-08-04T06:19:18Z",
+      "finishUtc": "2026-08-04T06:19:19Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 16,
+        "pass": 16,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/15-test-m04.log",
+      "notes": null
+    },
+    {
+      "id": "16",
+      "name": "test-m05",
+      "command": "npm run test:m05",
+      "startUtc": "2026-08-04T06:19:19Z",
+      "finishUtc": "2026-08-04T06:19:21Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 117,
+        "pass": 117,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/16-test-m05.log",
+      "notes": "Performance JSON restored after suite."
+    },
+    {
+      "id": "17",
+      "name": "test-m06",
+      "command": "npm run test:m06",
+      "startUtc": "2026-08-04T06:19:21Z",
+      "finishUtc": "2026-08-04T06:19:23Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 91,
+        "pass": 91,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/17-test-m06.log",
+      "notes": "Performance JSON restored after suite."
+    },
+    {
+      "id": "18",
+      "name": "test-m07",
+      "command": "npm run test:m07",
+      "startUtc": "2026-08-04T06:19:23Z",
+      "finishUtc": "2026-08-04T06:19:26Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 252,
+        "pass": 252,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/18-test-m07.log",
+      "notes": null
+    },
+    {
+      "id": "19",
+      "name": "test-workforce",
+      "command": "npm run test:workforce",
+      "startUtc": "2026-08-04T06:19:26Z",
+      "finishUtc": "2026-08-04T06:19:26Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 53,
+        "pass": 53,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/19-test-workforce.log",
+      "notes": null
+    },
+    {
+      "id": "20",
+      "name": "m07-architecture-boundary",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-architecture-cp27.test.ts src/modules/m07-staff-pay/tests/m07-boundary-cp23.test.ts src/modules/m07-staff-pay/tests/m07-batch2-final-gate-cp27.test.ts",
+      "startUtc": "2026-08-04T06:19:26Z",
+      "finishUtc": "2026-08-04T06:19:27Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/20-m07-architecture-boundary.log",
+      "notes": null
+    },
+    {
+      "id": "21",
+      "name": "m07-authz",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+      "startUtc": "2026-08-04T06:19:27Z",
+      "finishUtc": "2026-08-04T06:19:27Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 13,
+        "pass": 13,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/21-m07-authz.log",
+      "notes": null
+    },
+    {
+      "id": "22",
+      "name": "m07-batch5",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch5-cp51-56.test.ts src/modules/m07-staff-pay/tests/m07-batch5-material-revision.test.ts src/modules/m07-staff-pay/tests/m07-batch5-remediation.test.ts",
+      "startUtc": "2026-08-04T06:19:27Z",
+      "finishUtc": "2026-08-04T06:19:28Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 49,
+        "pass": 49,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/22-m07-batch5.log",
+      "notes": null
+    },
+    {
+      "id": "23",
+      "name": "m07-batch6",
+      "command": "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch6-cp61-66.test.ts src/modules/m07-staff-pay/tests/m07-batch6-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-third-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+      "startUtc": "2026-08-04T06:19:28Z",
+      "finishUtc": "2026-08-04T06:19:29Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": 43,
+        "pass": 43,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "cancelled": 0
+      },
+      "logPath": "logs/23-m07-batch6.log",
+      "notes": null
+    },
+    {
+      "id": "24",
+      "name": "tsc",
+      "command": "npx tsc --noEmit",
+      "startUtc": "2026-08-04T06:19:29Z",
+      "finishUtc": "2026-08-04T06:19:31Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 2,
+      "verdict": "PASS",
+      "totals": {
+        "tests": null,
+        "pass": null,
+        "fail": null,
+        "skipped": null,
+        "todo": null,
+        "cancelled": null
+      },
+      "logPath": "logs/24-tsc.log",
+      "notes": "Accepted TypeScript debt: exactly 21 errors.",
+      "tscErrorCount": 21,
+      "expected": 21
+    },
+    {
+      "id": "25",
+      "name": "lint",
+      "command": "npm run lint",
+      "startUtc": "2026-08-04T06:19:31Z",
+      "finishUtc": "2026-08-04T06:19:48Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 1,
+      "verdict": "PASS",
+      "totals": {
+        "tests": null,
+        "pass": null,
+        "fail": null,
+        "skipped": null,
+        "todo": null,
+        "cancelled": null
+      },
+      "logPath": "logs/25-lint.log",
+      "notes": "Accepted lint debt exact: ✖ 26 problems (2 errors, 24 warnings).",
+      "errors": 2,
+      "warnings": 24,
+      "summaryLine": "2 errors, 24 warnings",
+      "expectedErrors": 2,
+      "expectedWarnings": 24,
+      "expectedSummary": "✖ 26 problems (2 errors, 24 warnings)"
+    },
+    {
+      "id": "26",
+      "name": "next-build-webpack",
+      "command": "npx next build --webpack",
+      "startUtc": "2026-08-04T06:19:48Z",
+      "finishUtc": "2026-08-04T06:20:15Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": null,
+        "pass": null,
+        "fail": null,
+        "skipped": null,
+        "todo": null,
+        "cancelled": null
+      },
+      "logPath": "logs/26-next-build-webpack.log",
+      "notes": null
+    },
+    {
+      "id": "27",
+      "name": "npm-build",
+      "command": "npm run build -- --webpack",
+      "startUtc": "2026-08-04T06:20:15Z",
+      "finishUtc": "2026-08-04T06:20:41Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": null,
+        "pass": null,
+        "fail": null,
+        "skipped": null,
+        "todo": null,
+        "cancelled": null
+      },
+      "logPath": "logs/27-npm-build.log",
+      "notes": null
+    },
+    {
+      "id": "28",
+      "name": "hash-gate",
+      "command": "node --import tsx scripts/ui-batch1-iv-findings-remediation-hash-gate.mjs",
+      "startUtc": "2026-08-04T06:20:41Z",
+      "finishUtc": "2026-08-04T06:20:41Z",
+      "inputSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+      "exitCode": 0,
+      "verdict": "PASS",
+      "totals": {
+        "tests": null,
+        "pass": null,
+        "fail": null,
+        "skipped": null,
+        "todo": null,
+        "cancelled": null
+      },
+      "logPath": "logs/28-hash-gate.log",
+      "notes": "Hash vector exact match 7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+      "hashJson": {
+        "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "exact": true,
+        "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+        "verifiedAt": "2026-08-04T06:20:41.522Z"
+      },
+      "expectedHash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+      "result": {
+        "exitCode": 0,
+        "command": "node --import tsx scripts/ui-batch1-iv-findings-remediation-hash-gate.mjs",
+        "literalNodeCommand": "node scripts/ui-batch1-iv-findings-remediation-hash-gate.mjs",
+        "literalNodeLog": "logs/28-hash-gate-literal-node.log",
+        "expectedHash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "parsed": {
+          "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+          "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+          "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+          "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+          "exact": true,
+          "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+          "verifiedAt": "2026-08-04T06:20:41.522Z"
+        },
+        "exact": true,
+        "recordedUtc": "2026-08-04T06:20:41Z",
+        "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+        "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+        "verifiedAt": "2026-08-04T06:20:41.522Z"
+      }
+    }
+  ],
+  "counts": {
+    "pass": 28,
+    "fail": 0,
+    "blocked": 0,
+    "notRun": 0,
+    "outOfScope": 0
+  }
+}

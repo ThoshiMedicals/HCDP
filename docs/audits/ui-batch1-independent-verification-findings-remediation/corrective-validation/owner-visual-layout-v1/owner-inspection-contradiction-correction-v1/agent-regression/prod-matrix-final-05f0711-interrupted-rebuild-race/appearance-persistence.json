@@ -1,0 +1,32 @@
+{
+  "cleanDefault": {
+    "htmlDark": false,
+    "appearance": "light",
+    "pass": true
+  },
+  "darkReload": {
+    "htmlDark": true,
+    "appearance": "dark",
+    "pass": true
+  },
+  "lightReload": {
+    "htmlDark": false,
+    "appearance": "light",
+    "pass": true
+  },
+  "systemOsLight": {
+    "htmlDark": false,
+    "appearance": "system",
+    "pass": true
+  },
+  "systemOsDark": {
+    "htmlDark": true,
+    "appearance": "system",
+    "pass": true
+  },
+  "systemOsChangeToLight": {
+    "htmlDark": false,
+    "appearance": "system",
+    "pass": true
+  }
+}

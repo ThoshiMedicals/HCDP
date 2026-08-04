@@ -1,0 +1,47 @@
+TAP version 13
+# Subtest: M07 test-hook security gate (QA-PPA1-001)
+    # Subtest: allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node
+    ok 1 - allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node
+      ---
+      duration_ms: 1.505617
+      ...
+    # Subtest: allows hooks when NODE_ENV=test even without allow flag
+    ok 2 - allows hooks when NODE_ENV=test even without allow flag
+      ---
+      duration_ms: 1.358207
+      ...
+    # Subtest: disables hooks when NODE_ENV=production (setters no-op; failures do not fire)
+    ok 3 - disables hooks when NODE_ENV=production (setters no-op; failures do not fire)
+      ---
+      duration_ms: 0.751464
+      ...
+    # Subtest: disables hooks in unknown/development runtime without explicit allow
+    ok 4 - disables hooks in unknown/development runtime without explicit allow
+      ---
+      duration_ms: 0.353736
+      ...
+    # Subtest: browser-like undefined process must never enable hooks
+    ok 5 - browser-like undefined process must never enable hooks
+      ---
+      duration_ms: 0.338409
+      ...
+    # Subtest: production gate prevents arming then re-enabling from leaking prior arms after reset
+    ok 6 - production gate prevents arming then re-enabling from leaking prior arms after reset
+      ---
+      duration_ms: 0.183207
+      ...
+    1..6
+ok 1 - M07 test-hook security gate (QA-PPA1-001)
+  ---
+  duration_ms: 5.244571
+  type: 'suite'
+  ...
+1..1
+# tests 6
+# suites 1
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 181.618681

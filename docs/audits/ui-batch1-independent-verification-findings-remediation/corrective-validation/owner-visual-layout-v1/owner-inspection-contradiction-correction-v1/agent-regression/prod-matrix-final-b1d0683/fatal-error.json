@@ -1,0 +1,4 @@
+{
+  "error": "Error: browserContext.close: Target page, context or browser has been closed",
+  "stack": "browserContext.close: Target page, context or browser has been closed\n    at async runMatrix (/tmp/hcdp-fix/ui-batch1-contradiction-v1/scripts/ui-batch1-iv-findings-remediation-validate.mjs:1175:7)\n    at async main (/tmp/hcdp-fix/ui-batch1-contradiction-v1/scripts/ui-batch1-iv-findings-remediation-validate.mjs:1416:30)"
+}

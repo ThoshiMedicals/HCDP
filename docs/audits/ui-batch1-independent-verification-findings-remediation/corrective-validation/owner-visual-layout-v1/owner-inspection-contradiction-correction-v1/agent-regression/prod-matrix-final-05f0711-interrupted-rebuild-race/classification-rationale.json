@@ -1,0 +1,15 @@
+{
+  "allowlist": "HMR WebSocket / HMR status and DevTools install hints are allowlisted. Same-origin net::ERR_ABORTED is allowlisted only when the URL contains _rsc= OR verified Next prefetch headers (next-router-prefetch / Purpose|Sec-Purpose: prefetch). Bare resourceType()==='fetch' or bare /_next/ path alone is NOT sufficient. 403, 500, JSON parse, and unknown resource failures are never allowlisted. Historical prod-matrix-v3 proof: 6446/6446 environmental-nav-abort events were same-origin _rsc= ERR_ABORTED (see agent-implementation/ABORT_ALLOWLIST_RSC_PROOF.md).",
+  "failPredicate": [
+    "navigation status ≥ 400",
+    "unallowlisted resource response ≥ 400",
+    "application page error",
+    "application console error",
+    "hydration mismatch",
+    "horizontal page overflow",
+    "chrome-scoped element clip / occlusion / unintended truncation",
+    "typography / contrast / dark-surface hard-gate failure",
+    "unallowlisted requestfailed"
+  ],
+  "priorContradiction": "Previous validator used a global console bag, excluded console/page/hydration/overflow from fail, and truncated consoleBag to 100 — it could not support matrixFail:0."
+}

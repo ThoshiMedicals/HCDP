@@ -1,0 +1,332 @@
+{
+  "agent": "Visual QA Agent",
+  "phase": "owner-inspection-contradiction-correction-v1/final-05f0711",
+  "frozenAppSha": "05f07119ec2883b7ec7a2da6bbe3b5162257c2ec",
+  "headSha": "f8d27ea177b31697c664068436fdb7c329b4e61a",
+  "liveBase": "http://127.0.0.1:3501",
+  "capturedAt": "2026-08-04T06:27:22.414Z",
+  "deviceScaleFactor": 1,
+  "adjudicationResolution": "original viewport CSS pixels (deviceScaleFactor=1); no downscale",
+  "cssPreflight": {
+    "asset": "/_next/static/css/fc4fccb65dcb8256.css",
+    "http": 200,
+    "containsHiddenUtility": true
+  },
+  "srcScriptsDiffBytes": 0,
+  "totals": {
+    "screensInspected": 858,
+    "routes": 46,
+    "viewports": 9,
+    "primaryViewports": 8,
+    "extraVqaC001Viewport": "1536x900",
+    "modes": [
+      "light",
+      "dark",
+      "system"
+    ],
+    "captureErrors": 0,
+    "topbarProbes": 84,
+    "topbarProbeFails": 0,
+    "searchProbes": 84,
+    "searchProbeFails": 0,
+    "vqaFindingsOpen": 0,
+    "vqaFindingsClosed": 9,
+    "prior110VisuallyOpen": 0,
+    "prior110VisuallyClosed": 110
+  },
+  "verdict": "PASS",
+  "verdictReason": "VQA-C-001 (Export/New Entry hide-until-2xl + Online/Enterprise at 1536), VQA-C-017 (ribbon search ≥160px mid-desktop / usable at 1536), and the prior 110 content-control clipping defects are visually CLOSED with screenshot proof at 05f0711. No OPEN VQA findings remain.",
+  "openFindings": [],
+  "closedFindings": [
+    "VQA-C-001",
+    "VQA-C-017",
+    "VQA-C-010",
+    "VQA-C-011",
+    "VQA-C-012",
+    "VQA-C-013",
+    "VQA-C-014",
+    "VQA-C-015",
+    "VQA-C-016"
+  ],
+  "findings": [
+    {
+      "id": "VQA-C-001",
+      "title": "Topbar Export / New Entry / Enterprise / Online responsive containment",
+      "status": "CLOSED",
+      "severity": "Medium",
+      "routes": [
+        "/dashboard",
+        "/roster",
+        "/roster?section=coverage",
+        "/time-attendance",
+        "/time-attendance?section=settings",
+        "/staff-doctors"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "1024x768",
+        "1024x600",
+        "1280x900",
+        "1440x900",
+        "1536x900"
+      ],
+      "observation": "At 1024/1280/1440 Export and + New Entry are intentionally hidden until 2xl (1536); Enterprise MFA also hidden until 2xl. Online remains fully inside the viewport. At 1536 Export, + New Entry, Enterprise MFA, and Online all sit fully inside the viewport. 84/84 topbar probes passAll=true.",
+      "criteria": [
+        "clipping",
+        "responsive transformation",
+        "alignment"
+      ],
+      "evidence": [
+        "defect-crops/VQA-C-001-light-1024x768-topbar-right.png",
+        "defect-crops/VQA-C-001-light-1280x900-topbar-right.png",
+        "defect-crops/VQA-C-001-light-1440x900-topbar-right.png",
+        "defect-crops/VQA-C-001-light-1536x900-topbar-right.png",
+        "defect-crops/VQA-C-001-dark-1024x768-topbar-right.png",
+        "defect-crops/VQA-C-001-system-1280x900-topbar-right.png",
+        "screenshots/light-1024x768-dashboard.png",
+        "screenshots/light-1536x900-dashboard.png",
+        "geometry/topbar-export-probe.json"
+      ],
+      "notes": "Owner criteria updated: hide Export/New Entry until 2xl (not xl). Intentional hide is accepted remediation, not clipping."
+    },
+    {
+      "id": "VQA-C-017",
+      "title": "Topbar ribbon search field crushed at mid-desktop width",
+      "status": "CLOSED",
+      "severity": "Medium",
+      "routes": [
+        "/dashboard",
+        "/roster",
+        "/time-attendance",
+        "/staff-doctors",
+        "/action-inbox",
+        "/settings",
+        "/staffpay"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "1024x768",
+        "1024x600",
+        "1280x900",
+        "1440x900",
+        "1536x900"
+      ],
+      "observation": "Ribbon search input widths: 1024=476px, 1280=300.5px, 1440=396px (≥160), 1536=212.5px usable with full placeholder. 84/84 search probes pass. Closes OPEN finding from final-b1d0683.",
+      "criteria": [
+        "clipping",
+        "responsive transformation",
+        "alignment"
+      ],
+      "evidence": [
+        "defect-crops/VQA-C-017-light-1024x768-topbar-search-zone-tall.png",
+        "defect-crops/VQA-C-017-light-1024x768-ribbon-search-usable.png",
+        "defect-crops/VQA-C-017-dark-1024x768-ribbon-search-usable.png",
+        "defect-crops/VQA-C-017-system-1024x768-ribbon-search-usable.png",
+        "screenshots/light-1024x768-dashboard.png",
+        "geometry/ribbon-search-probe.json",
+        "geometry/ribbon-search-visual-supplement.json"
+      ],
+      "notes": "At 1024 (<xl) search wraps to second ribbon row at full usable width; not crushed."
+    },
+    {
+      "id": "VQA-C-010",
+      "title": "M04 KPI buttons no longer clip at 430",
+      "status": "CLOSED",
+      "severity": "Critical",
+      "routes": [
+        "/staff-doctors"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "430x932",
+        "390x844",
+        "768x1024",
+        "1024x768",
+        "1280x900"
+      ],
+      "observation": "ACTIVE STAFF / ACTIVE DOCTORS / BLOCKED READINESS / ON LEAVE TODAY stack full-width within content column; no viewport/ancestor horizontal clip.",
+      "evidence": [
+        "screenshots/light-430x932-staff-doctors.png",
+        "screenshots/dark-430x932-staff-doctors.png",
+        "screenshots/system-430x932-staff-doctors.png"
+      ]
+    },
+    {
+      "id": "VQA-C-011",
+      "title": "M04 People Directory form controls contained",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "/staff-doctors?section=people"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "430x932",
+        "390x844"
+      ],
+      "observation": "People directory form controls remain within content column; no horizontal content-control clip.",
+      "evidence": [
+        "screenshots/light-430x932-staff-doctors_section_people.png",
+        "screenshots/dark-430x932-staff-doctors_section_people.png",
+        "screenshots/system-430x932-staff-doctors_section_people.png"
+      ]
+    },
+    {
+      "id": "VQA-C-012",
+      "title": "M04 Credentials form controls contained",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "/staff-doctors?section=credentials"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "430x932",
+        "390x844"
+      ],
+      "observation": "Credentials form controls contained; table min-w scroll remains intentional.",
+      "evidence": [
+        "screenshots/light-430x932-staff-doctors_section_credentials.png",
+        "screenshots/dark-430x932-staff-doctors_section_credentials.png"
+      ]
+    },
+    {
+      "id": "VQA-C-013",
+      "title": "M05 Open Shifts Offer form contained",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "/roster?section=open-shifts"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "390x844",
+        "430x932"
+      ],
+      "observation": "Open-shifts offer/form controls contained on mobile widths.",
+      "evidence": [
+        "screenshots/light-390x844-roster_section_open-shifts.png",
+        "screenshots/light-430x932-roster_section_open-shifts.png"
+      ]
+    },
+    {
+      "id": "VQA-C-014",
+      "title": "M05 Coverage / Availability / Conflicts / Settings / Board controls contained",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "/roster",
+        "/roster?section=coverage",
+        "/roster?section=availability-leave",
+        "/roster?section=conflicts-warnings",
+        "/roster?section=settings"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "1024x768",
+        "1280x900",
+        "1440x900"
+      ],
+      "observation": "M05 Evaluate / Create Draft / board controls remain contained. Section-nav last-tab edge-cut is intentional horizontal scroll.",
+      "evidence": [
+        "screenshots/light-1024x768-roster.png",
+        "screenshots/light-1024x768-roster_section_coverage.png",
+        "screenshots/light-1024x768-roster_section_settings.png"
+      ]
+    },
+    {
+      "id": "VQA-C-015",
+      "title": "M06 Refresh / Bulk Approve / Request Correction / Clear Filter / Publish contained",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "/time-attendance",
+        "/time-attendance?section=approvals",
+        "/time-attendance?section=corrections",
+        "/time-attendance?section=history",
+        "/time-attendance?section=settings"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "1024x768",
+        "1280x900",
+        "1440x900"
+      ],
+      "observation": "M06 action controls no longer appear as horizontal hot-clip hits at mid-desktop; visually contained.",
+      "evidence": [
+        "screenshots/light-1024x768-time-attendance.png",
+        "screenshots/light-1024x768-time-attendance_section_approvals.png",
+        "screenshots/light-1024x768-time-attendance_section_corrections.png",
+        "screenshots/light-1024x768-time-attendance_section_history.png",
+        "screenshots/light-1024x768-time-attendance_section_settings.png"
+      ]
+    },
+    {
+      "id": "VQA-C-016",
+      "title": "Remaining prior 110 meaningful-control surfaces visually closed",
+      "status": "CLOSED",
+      "severity": "High",
+      "routes": [
+        "*"
+      ],
+      "themes": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "viewports": [
+        "*"
+      ],
+      "observation": "Prior 110 reconciliation: 0 visually open / 110 visually closed. Residual probe noise is intentional scroll, off-canvas drawer, or below-fold sidebar — not content-control horizontal clipping.",
+      "evidence": [
+        "geometry/prior-defect-reprobe.json",
+        "geometry/prior-control-visual-probe.json",
+        "geometry/clip-signals.json"
+      ]
+    }
+  ],
+  "searchWidthSummaryPx": {
+    "1024": 476,
+    "1280": 300.484375,
+    "1440": 396,
+    "1536": 212.484375
+  },
+  "exemptions": [
+    "module-section-nav intentional horizontal scroll",
+    "table min-w-[800px] intentional overflow-auto",
+    "closed mobile drawer Act-as off-canvas (negative X)",
+    "sidebar nav below-fold vertical scroll"
+  ]
+}

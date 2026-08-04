@@ -1,0 +1,24 @@
+{
+  "exitCode": 0,
+  "command": "node --import tsx scripts/ui-batch1-iv-findings-remediation-hash-gate.mjs",
+  "literalNodeCommand": "node scripts/ui-batch1-iv-findings-remediation-hash-gate.mjs",
+  "literalNodeLog": "logs/28-hash-gate-literal-node.log",
+  "expectedHash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "parsed": {
+    "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+    "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+    "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+    "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+    "exact": true,
+    "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+    "verifiedAt": "2026-08-04T06:20:41.522Z"
+  },
+  "exact": true,
+  "recordedUtc": "2026-08-04T06:20:41Z",
+  "expected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "calc": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "pure": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "node": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "canonical": "{\"allowanceInputs\":[],\"attendanceSessionIds\":[\"sess_a\",\"sess_b\"],\"leaveInputs\":[],\"legalEntityId\":\"org_demo_a\",\"ordinaryHourInputs\":[{\"code\":\"ORD\",\"hours\":8,\"localDate\":\"2026-07-02\"}],\"organisationId\":\"org_demo_a\",\"overtimeHourInputs\":[],\"penaltyHourInputs\":[],\"periodEnd\":\"2026-07-14\",\"periodStart\":\"2026-07-01\",\"timesheetRecordId\":\"ts_vector_1\",\"workforcePersonId\":\"person_a\"}",
+  "verifiedAt": "2026-08-04T06:20:41.522Z"
+}

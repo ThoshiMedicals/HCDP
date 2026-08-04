@@ -1,0 +1,110 @@
+[
+  {
+    "mode": "light",
+    "id": "1024x768",
+    "searchW": 476,
+    "searchY": 72.25,
+    "searchH": 22.5,
+    "ribbonH": 108.5,
+    "searchX": 429
+  },
+  {
+    "mode": "light",
+    "id": "1280x900",
+    "searchW": 300.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  },
+  {
+    "mode": "light",
+    "id": "1440x900",
+    "searchW": 396,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 694.609375
+  },
+  {
+    "mode": "light",
+    "id": "1536x900",
+    "searchW": 212.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  },
+  {
+    "mode": "dark",
+    "id": "1024x768",
+    "searchW": 476,
+    "searchY": 72.25,
+    "searchH": 22.5,
+    "ribbonH": 108.5,
+    "searchX": 429
+  },
+  {
+    "mode": "dark",
+    "id": "1280x900",
+    "searchW": 300.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  },
+  {
+    "mode": "dark",
+    "id": "1440x900",
+    "searchW": 396,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 694.609375
+  },
+  {
+    "mode": "dark",
+    "id": "1536x900",
+    "searchW": 212.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  },
+  {
+    "mode": "system",
+    "id": "1024x768",
+    "searchW": 476,
+    "searchY": 72.25,
+    "searchH": 22.5,
+    "ribbonH": 108.5,
+    "searchX": 429
+  },
+  {
+    "mode": "system",
+    "id": "1280x900",
+    "searchW": 300.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  },
+  {
+    "mode": "system",
+    "id": "1440x900",
+    "searchW": 396,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 694.609375
+  },
+  {
+    "mode": "system",
+    "id": "1536x900",
+    "searchW": 212.484375,
+    "searchY": 20.5,
+    "searchH": 22.5,
+    "ribbonH": 64.5,
+    "searchX": 662.375
+  }
+]

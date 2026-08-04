@@ -1,0 +1,287 @@
+{
+  "appSha": "05f07119ec2883b7ec7a2da6bbe3b5162257c2ec",
+  "rows": [
+    {
+      "route": "/staff-doctors",
+      "viewport": "430x932",
+      "screenshot": "light-430x932-staff-doctors.png",
+      "matched": [
+        {
+          "label": "On leave today0",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "rect": {
+            "x": 16,
+            "y": 844.39,
+            "w": 398,
+            "h": 103.5,
+            "right": 414,
+            "bottom": 947.89
+          },
+          "horizClip": false,
+          "offcanvas": false
+        },
+        {
+          "label": "On leave today0",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "rect": {
+            "x": 16,
+            "y": 844.39,
+            "w": 398,
+            "h": 103.5,
+            "right": 414,
+            "bottom": 947.89
+          },
+          "horizClip": false,
+          "offcanvas": false
+        }
+      ],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "viewport": "430x932",
+      "screenshot": "light-430x932-staff-doctors_section_people.png",
+      "matched": [
+        {
+          "label": "Act as User / Role",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": -276,
+            "y": 866.13,
+            "w": 263,
+            "h": 28,
+            "right": -13,
+            "bottom": 894.13
+          },
+          "horizClip": false,
+          "offcanvas": true
+        },
+        {
+          "label": "Act as User / Role",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": -276,
+            "y": 866.13,
+            "w": 263,
+            "h": 28,
+            "right": -13,
+            "bottom": 894.13
+          },
+          "horizClip": false,
+          "offcanvas": true
+        }
+      ],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "viewport": "430x932",
+      "screenshot": "light-430x932-staff-doctors_section_credentials.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "viewport": "390x844",
+      "screenshot": "light-390x844-roster_section_open-shifts.png",
+      "matched": [
+        {
+          "label": "Clinic Analytics",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": -277,
+            "y": 1233,
+            "w": 232,
+            "h": 44,
+            "right": -45,
+            "bottom": 1277
+          },
+          "horizClip": false,
+          "offcanvas": true
+        },
+        {
+          "label": "Clinic Analytics",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": -277,
+            "y": 1233,
+            "w": 232,
+            "h": 44,
+            "right": -45,
+            "bottom": 1277
+          },
+          "horizClip": false,
+          "offcanvas": true
+        }
+      ],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-roster_section_coverage.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/roster",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-roster.png",
+      "matched": [
+        {
+          "label": "Clinic Analytics",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "horizClip": false,
+          "offcanvas": false
+        },
+        {
+          "label": "Clinic id",
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "clippedByAncestor": false,
+            "truncated": true
+          },
+          "rect": {
+            "x": 724.59,
+            "y": 539.19,
+            "w": 121.2,
+            "h": 42.5,
+            "right": 845.8,
+            "bottom": 581.69
+          },
+          "horizClip": false,
+          "offcanvas": false
+        },
+        {
+          "label": "Clinic Analytics",
+          "flags": {
+            "outsideViewport": true,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "horizClip": false,
+          "offcanvas": false
+        },
+        {
+          "label": "Clinic id",
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "clippedByAncestor": false,
+            "truncated": true
+          },
+          "rect": {
+            "x": 724.59,
+            "y": 539.19,
+            "w": 121.2,
+            "h": 42.5,
+            "right": 845.8,
+            "bottom": 581.69
+          },
+          "horizClip": false,
+          "offcanvas": false
+        }
+      ],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/time-attendance",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-time-attendance.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-time-attendance_section_approvals.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/time-attendance?section=corrections",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-time-attendance_section_corrections.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/time-attendance?section=history",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-time-attendance_section_history.png",
+      "matched": [],
+      "openHorizContentClip": []
+    },
+    {
+      "route": "/time-attendance?section=settings",
+      "viewport": "1024x768",
+      "screenshot": "light-1024x768-time-attendance_section_settings.png",
+      "matched": [],
+      "openHorizContentClip": []
+    }
+  ],
+  "openCount": 0
+}

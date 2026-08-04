@@ -1,0 +1,42 @@
+TAP version 13
+# Subtest: UI Batch 1 — Premium Clinical tokens and shared presentation
+    # Subtest: defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)
+    ok 1 - defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)
+      ---
+      duration_ms: 0.896189
+      ...
+    # Subtest: standardises portal typography on the existing production font stack
+    ok 2 - standardises portal typography on the existing production font stack
+      ---
+      duration_ms: 0.193665
+      ...
+    # Subtest: shared Tabs use Champagne selected accent and accessible tab roles
+    ok 3 - shared Tabs use Champagne selected accent and accessible tab roles
+      ---
+      duration_ms: 0.129735
+      ...
+    # Subtest: PageHeader removes decorative mock-refresh toast action (UI-FAKE-01)
+    ok 4 - PageHeader removes decorative mock-refresh toast action (UI-FAKE-01)
+      ---
+      duration_ms: 0.176238
+      ...
+    # Subtest: shared Table remains neutral denseness without Champagne row fills
+    ok 5 - shared Table remains neutral denseness without Champagne row fills
+      ---
+      duration_ms: 0.104153
+      ...
+    1..5
+ok 1 - UI Batch 1 — Premium Clinical tokens and shared presentation
+  ---
+  duration_ms: 2.186125
+  type: 'suite'
+  ...
+1..1
+# tests 5
+# suites 1
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 162.20221

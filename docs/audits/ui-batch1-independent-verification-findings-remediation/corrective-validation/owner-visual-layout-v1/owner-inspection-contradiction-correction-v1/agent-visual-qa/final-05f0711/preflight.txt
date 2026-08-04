@@ -1,0 +1,6 @@
+frozenAppSha=05f07119ec2883b7ec7a2da6bbe3b5162257c2ec
+headSha=f8d27ea177b31697c664068436fdb7c329b4e61a
+srcScriptsDiffBytes=0
+css=200
+base=http://127.0.0.1:3501
+2026-08-04T06:20:32Z

@@ -1,0 +1,1967 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m07
+> tsx --test "src/modules/m07-staff-pay/tests/**/*.test.ts"
+
+TAP version 13
+# Subtest: M07 read-only boundaries (Batch 1)
+    # Subtest: reads M04 identity as read-only
+    ok 1 - reads M04 identity as read-only
+      ---
+      duration_ms: 2.005156
+      ...
+    # Subtest: reads M05 published roster keys without writing
+    ok 2 - reads M05 published roster keys without writing
+      ---
+      duration_ms: 0.601233
+      ...
+    # Subtest: discovers platform published timesheets but does not implement intake
+    ok 3 - discovers platform published timesheets but does not implement intake
+      ---
+      duration_ms: 2.490999
+      ...
+    # Subtest: publishes M02/M01 interface-only projections without rates
+    ok 4 - publishes M02/M01 interface-only projections without rates
+      ---
+      duration_ms: 0.550216
+      ...
+    # Subtest: keeps M06 bridge BLOCKED-M07 cleared
+    ok 5 - keeps M06 bridge BLOCKED-M07 cleared
+      ---
+      duration_ms: 0.732041
+      ...
+    1..5
+ok 1 - M07 read-only boundaries (Batch 1)
+  ---
+  duration_ms: 7.095763
+  type: 'suite'
+  ...
+# Subtest: CP2.7A architecture / static boundaries
+    # Subtest: M07 production has no pulse.m06 access or M06 internal imports
+    ok 1 - M07 production has no pulse.m06 access or M06 internal imports
+      ---
+      duration_ms: 9.833451
+      ...
+    # Subtest: M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+    ok 2 - M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+      ---
+      duration_ms: 6.50984
+      ...
+    # Subtest: single intake and hash implementations; replay uses platform query + CP2.4 intake
+    ok 3 - single intake and hash implementations; replay uses platform query + CP2.4 intake
+      ---
+      duration_ms: 9.803789
+      ...
+    # Subtest: M06 production does not write pulse.m07 or import M07 modules
+    ok 4 - M06 production does not write pulse.m07 or import M07 modules
+      ---
+      duration_ms: 2.665744
+      ...
+    # Subtest: prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+    ok 5 - prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+      ---
+      duration_ms: 1.349087
+      ...
+    # Subtest: does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+    ok 6 - does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+      ---
+      duration_ms: 9.62253
+      ...
+    # Subtest: documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+    ok 7 - documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+      ---
+      duration_ms: 1.080776
+      ...
+    1..7
+ok 2 - CP2.7A architecture / static boundaries
+  ---
+  duration_ms: 41.638334
+  type: 'suite'
+  ...
+# Subtest: M07 authz / scope / SoD / prohibited fields (Batch 1)
+    # Subtest: denies period create without permission
+    ok 1 - denies period create without permission
+      ---
+      duration_ms: 2.779562
+      ...
+    # Subtest: enforces legal-entity isolation
+    ok 2 - enforces legal-entity isolation
+      ---
+      duration_ms: 0.461872
+      ...
+    # Subtest: rejects second open ordinary period
+    ok 3 - rejects second open ordinary period
+      ---
+      duration_ms: 0.732696
+      ...
+    # Subtest: rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path
+    ok 4 - rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path
+      ---
+      duration_ms: 0.606321
+      ...
+    # Subtest: enforces external id uniqueness within legal entity
+    ok 5 - enforces external id uniqueness within legal entity
+      ---
+      duration_ms: 1.316506
+      ...
+    # Subtest: redacts external id from clinic manager views
+    ok 6 - redacts external id from clinic manager views
+      ---
+      duration_ms: 0.604263
+      ...
+    # Subtest: rejects prohibited banking/tax/super fields
+    ok 7 - rejects prohibited banking/tax/super fields
+      ---
+      duration_ms: 0.404736
+      ...
+    # Subtest: denies export operator from creating export profiles
+    ok 8 - denies export operator from creating export profiles
+      ---
+      duration_ms: 0.388164
+      ...
+    # Subtest: allows export operator to select but not mutate profile
+    ok 9 - allows export operator to select but not mutate profile
+      ---
+      duration_ms: 0.754414
+      ...
+    # Subtest: denies clerk rule/code edits
+    ok 10 - denies clerk rule/code edits
+      ---
+      duration_ms: 0.540811
+      ...
+    # Subtest: SoD: export operator cannot lock; clerk cannot final-approve self
+    ok 11 - SoD: export operator cannot lock; clerk cannot final-approve self
+      ---
+      duration_ms: 0.452725
+      ...
+    # Subtest: writes audit for authorised mutations
+    ok 12 - writes audit for authorised mutations
+      ---
+      duration_ms: 0.439641
+      ...
+    # Subtest: admin can mutate configuration
+    ok 13 - admin can mutate configuration
+      ---
+      duration_ms: 0.613192
+      ...
+    1..13
+ok 3 - M07 authz / scope / SoD / prohibited fields (Batch 1)
+  ---
+  duration_ms: 11.113217
+  type: 'suite'
+  ...
+# Subtest: CP2.7A Batch 2 final-gate E2E
+    # Subtest: E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+    ok 1 - E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+      ---
+      duration_ms: 35.70838
+      ...
+    # Subtest: global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+    ok 2 - global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+      ---
+      duration_ms: 5.255419
+      ...
+    1..2
+ok 4 - CP2.7A Batch 2 final-gate E2E
+  ---
+  duration_ms: 41.563358
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 3 — classification, calc, people, leave, M02, architecture
+    # Subtest: CP3.1 classification + blockers
+        # Subtest: resolves mapping when profile, classification, rule and rate exist
+        ok 1 - resolves mapping when profile, classification, rule and rate exist
+          ---
+          duration_ms: 3.15198
+          ...
+        # Subtest: fails closed for missing rate and doctor exclusion
+        ok 2 - fails closed for missing rate and doctor exclusion
+          ---
+          duration_ms: 0.563369
+          ...
+        # Subtest: fails closed for missing classification→rule map
+        ok 3 - fails closed for missing classification→rule map
+          ---
+          duration_ms: 0.380002
+          ...
+        1..3
+    ok 1 - CP3.1 classification + blockers
+      ---
+      duration_ms: 4.545727
+      type: 'suite'
+      ...
+    # Subtest: CP3.2 ordinary/OT calculation + ruleVersion
+        # Subtest: calculates ordinary and overtime from eligible snapshot and pins ruleVersion
+        ok 1 - calculates ordinary and overtime from eligible snapshot and pins ruleVersion
+          ---
+          duration_ms: 4.996432
+          ...
+        # Subtest: recalculation creates new batch version and keeps prior ruleVersion on old lines
+        ok 2 - recalculation creates new batch version and keeps prior ruleVersion on old lines
+          ---
+          duration_ms: 4.098849
+          ...
+        # Subtest: blocks penalty inputs and ineligible/missing snapshots
+        ok 3 - blocks penalty inputs and ineligible/missing snapshots
+          ---
+          duration_ms: 3.268579
+          ...
+        1..3
+    ok 2 - CP3.2 ordinary/OT calculation + ruleVersion
+      ---
+      duration_ms: 12.585724
+      type: 'suite'
+      ...
+    # Subtest: CP3.3 People Review + redaction + external id
+        # Subtest: redacts rates for clinic managers and requires reason for external id
+        ok 1 - redacts rates for clinic managers and requires reason for external id
+          ---
+          duration_ms: 1.505963
+          ...
+        # Subtest: marks people and leave sections available; allowances remain planned messaging
+        ok 2 - marks people and leave sections available; allowances remain planned messaging
+          ---
+          duration_ms: 0.362439
+          ...
+        1..2
+    ok 3 - CP3.3 People Review + redaction + external id
+      ---
+      duration_ms: 2.03921
+      type: 'suite'
+      ...
+    # Subtest: CP3.4 leave preparation from M04 only
+        # Subtest: creates leave prep lines from approved M04 leave and ignores snapshot leaveInputs
+        ok 1 - creates leave prep lines from approved M04 leave and ignores snapshot leaveInputs
+          ---
+          duration_ms: 2.583482
+          ...
+        # Subtest: opens leave-mapping-missing when mapping absent
+        ok 2 - opens leave-mapping-missing when mapping absent
+          ---
+          duration_ms: 0.982836
+          ...
+        1..2
+    ok 4 - CP3.4 leave preparation from M04 only
+      ---
+      duration_ms: 3.661768
+      type: 'suite'
+      ...
+    # Subtest: CP3.5 M02 projections
+        # Subtest: projects blockers with dedupe and closes on resolve
+        ok 1 - projects blockers with dedupe and closes on resolve
+          ---
+          duration_ms: 3.320359
+          ...
+        1..1
+    ok 5 - CP3.5 M02 projections
+      ---
+      duration_ms: 3.387517
+      type: 'suite'
+      ...
+    # Subtest: CP3.6 architecture + section shell
+        # Subtest: forbids M04/M05/M06 repository imports and payment fields in production
+        ok 1 - forbids M04/M05/M06 repository imports and payment fields in production
+          ---
+          duration_ms: 9.702459
+          ...
+        # Subtest: workspace uses batch4 shell attribute
+        ok 2 - workspace uses batch4 shell attribute
+          ---
+          duration_ms: 0.322234
+          ...
+        1..2
+    ok 6 - CP3.6 architecture + section shell
+      ---
+      duration_ms: 10.120424
+      type: 'suite'
+      ...
+    1..6
+ok 5 - M07 Batch 3 — classification, calc, people, leave, M02, architecture
+  ---
+  duration_ms: 36.949497
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 4 — allowance, deduction, variance, exceptions, integration
+    # Subtest: CP4.1 allowance preparation
+        # Subtest: maps snapshot allowanceInputs to versioned code lines
+        ok 1 - maps snapshot allowanceInputs to versioned code lines
+          ---
+          duration_ms: 6.935285
+          ...
+        # Subtest: blocks unknown and inactive allowance codes without payable lines
+        ok 2 - blocks unknown and inactive allowance codes without payable lines
+          ---
+          duration_ms: 3.084968
+          ...
+        1..2
+    ok 1 - CP4.1 allowance preparation
+      ---
+      duration_ms: 10.445532
+      type: 'suite'
+      ...
+    # Subtest: CP4.2 deduction inputs
+        # Subtest: creates supersedes and cancels with history retained
+        ok 1 - creates supersedes and cancels with history retained
+          ---
+          duration_ms: 1.536823
+          ...
+        # Subtest: calculation emits deduction prep lines from active inputs
+        ok 2 - calculation emits deduction prep lines from active inputs
+          ---
+          duration_ms: 2.85521
+          ...
+        # Subtest: rejects doctor deduction inputs and cross-org period use
+        ok 3 - rejects doctor deduction inputs and cross-org period use
+          ---
+          duration_ms: 0.803009
+          ...
+        1..3
+    ok 2 - CP4.2 deduction inputs
+      ---
+      duration_ms: 5.392795
+      type: 'suite'
+      ...
+    # Subtest: CP4.3 variance informational
+        # Subtest: returns compared or unavailable without inventing blockers
+        ok 1 - returns compared or unavailable without inventing blockers
+          ---
+          duration_ms: 1.79753
+          ...
+        1..1
+    ok 3 - CP4.3 variance informational
+      ---
+      duration_ms: 2.011358
+      type: 'suite'
+      ...
+    # Subtest: CP4.4 exceptions waive
+        # Subtest: waives waivable kinds with SoD and rejects non-waivable / self-waiver
+        ok 1 - waives waivable kinds with SoD and rejects non-waivable / self-waiver
+          ---
+          duration_ms: 2.142206
+          ...
+        1..1
+    ok 4 - CP4.4 exceptions waive
+      ---
+      duration_ms: 2.228204
+      type: 'suite'
+      ...
+    # Subtest: CP4.5 people review + M02
+        # Subtest: surfaces allowance/deduction/variance fields and projects allowance blockers
+        ok 1 - surfaces allowance/deduction/variance fields and projects allowance blockers
+          ---
+          duration_ms: 2.296247
+          ...
+        1..1
+    ok 5 - CP4.5 people review + M02
+      ---
+      duration_ms: 2.364188
+      type: 'suite'
+      ...
+    # Subtest: CP4.6 architecture
+        # Subtest: forbids M04/M05/M06/M02 repository imports and payment fields
+        ok 1 - forbids M04/M05/M06/M02 repository imports and payment fields
+          ---
+          duration_ms: 8.863844
+          ...
+        # Subtest: rejects cross-legal-entity deduction isolation
+        ok 2 - rejects cross-legal-entity deduction isolation
+          ---
+          duration_ms: 0.654341
+          ...
+        1..2
+    ok 6 - CP4.6 architecture
+      ---
+      duration_ms: 9.613169
+      type: 'suite'
+      ...
+    1..6
+ok 6 - M07 Batch 4 — allowance, deduction, variance, exceptions, integration
+  ---
+  duration_ms: 32.577042
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 5 CP5.1–5.6
+    # Subtest: CP5.1 eligible population + readiness
+        # Subtest: excludes doctors and inactive/terminated/future-start workforce
+        ok 1 - excludes doctors and inactive/terminated/future-start workforce
+          ---
+          duration_ms: 12.198781
+          ...
+        # Subtest: fails closed on missing effective clinic assignment
+        ok 2 - fails closed on missing effective clinic assignment
+          ---
+          duration_ms: 0.756375
+          ...
+        # Subtest: blocks readiness when calculation missing / open exception
+        ok 3 - blocks readiness when calculation missing / open exception
+          ---
+          duration_ms: 11.286075
+          ...
+        1..3
+    ok 1 - CP5.1 eligible population + readiness
+      ---
+      duration_ms: 24.750273
+      type: 'suite'
+      ...
+    # Subtest: CP5.2–5.3 submit / approve / reject / withdraw + SoD
+        # Subtest: submits, approves with SoD, and sets export-ready wording state
+        ok 1 - submits, approves with SoD, and sets export-ready wording state
+          ---
+          duration_ms: 4.60403
+          ...
+        # Subtest: blocks submitter self-approval and material preparer approval
+        ok 2 - blocks submitter self-approval and material preparer approval
+          ---
+          duration_ms: 2.305642
+          ...
+        # Subtest: rejects and withdraws with mandatory reason; supports resubmission
+        ok 3 - rejects and withdraws with mandatory reason; supports resubmission
+          ---
+          duration_ms: 4.297405
+          ...
+        # Subtest: unauthorised submit / wrong-scope approver fail closed
+        ok 4 - unauthorised submit / wrong-scope approver fail closed
+          ---
+          duration_ms: 6.633803
+          ...
+        # Subtest: submit and approve replay are idempotent
+        ok 5 - submit and approve replay are idempotent
+          ---
+          duration_ms: 3.972246
+          ...
+        1..5
+    ok 2 - CP5.2–5.3 submit / approve / reject / withdraw + SoD
+      ---
+      duration_ms: 22.266929
+      type: 'suite'
+      ...
+    # Subtest: CP5.4 invalidation
+        # Subtest: recalculation after approval marks stale and leaves export-ready
+        ok 1 - recalculation after approval marks stale and leaves export-ready
+          ---
+          duration_ms: 9.177153
+          ...
+        # Subtest: deduction change and new exception after approval invalidate
+        ok 2 - deduction change and new exception after approval invalidate
+          ---
+          duration_ms: 13.847049
+          ...
+        # Subtest: approval fails when source manifest changed before approve
+        ok 3 - approval fails when source manifest changed before approve
+          ---
+          duration_ms: 2.176125
+          ...
+        1..3
+    ok 3 - CP5.4 invalidation
+      ---
+      duration_ms: 25.383966
+      type: 'suite'
+      ...
+    # Subtest: CP5.5 M02 + UI meta
+        # Subtest: projects approval-required and closes on approve without duplicate fork
+        ok 1 - projects approval-required and closes on approve without duplicate fork
+          ---
+          duration_ms: 2.940269
+          ...
+        # Subtest: Approval section is available in section meta
+        ok 2 - Approval section is available in section meta
+          ---
+          duration_ms: 0.217504
+          ...
+        # Subtest: getPeriodApprovalView surfaces readiness and history
+        ok 3 - getPeriodApprovalView surfaces readiness and history
+          ---
+          duration_ms: 0.727947
+          ...
+        1..3
+    ok 4 - CP5.5 M02 + UI meta
+      ---
+      duration_ms: 3.995771
+      type: 'suite'
+      ...
+    # Subtest: CP5.6 migration, architecture, exclusions
+        # Subtest: migration v8 idempotent and preserves v7 data
+        ok 1 - migration v8 idempotent and preserves v7 data
+          ---
+          duration_ms: 0.761886
+          ...
+        # Subtest: malformed stored approval is skipped safely
+        ok 2 - malformed stored approval is skipped safely
+          ---
+          duration_ms: 0.312136
+          ...
+        # Subtest: no M04/M05/M06 writes and no direct M02 repository import
+        ok 3 - no M04/M05/M06 writes and no direct M02 repository import
+          ---
+          duration_ms: 14.147432
+          ...
+        # Subtest: blocked period cannot submit as approved/export-ready
+        ok 4 - blocked period cannot submit as approved/export-ready
+          ---
+          duration_ms: 0.525728
+          ...
+        # Subtest: tenant/LE mismatch on population for org B actor
+        ok 5 - tenant/LE mismatch on population for org B actor
+          ---
+          duration_ms: 1.4156
+          ...
+        1..5
+    ok 5 - CP5.6 migration, architecture, exclusions
+      ---
+      duration_ms: 17.349368
+      type: 'suite'
+      ...
+    1..5
+ok 7 - M07 Batch 5 CP5.1–5.6
+  ---
+  duration_ms: 94.181467
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 5 final — materialProfileRevision pin consistency
+    # Subtest: approved manifest verifies before mutation
+    ok 1 - approved manifest verifies before mutation
+      ---
+      duration_ms: 12.18478
+      ...
+    # Subtest: rate-only update cannot leave approved/export-ready with checksum mismatch
+    ok 2 - rate-only update cannot leave approved/export-ready with checksum mismatch
+      ---
+      duration_ms: 10.109729
+      ...
+    # Subtest: external-ID update cannot leave approved/export-ready with checksum mismatch
+    ok 3 - external-ID update cannot leave approved/export-ready with checksum mismatch
+      ---
+      duration_ms: 6.230517
+      ...
+    # Subtest: non-material update preserves approval only when manifest reconstruction still succeeds
+    ok 4 - non-material update preserves approval only when manifest reconstruction still succeeds
+      ---
+      duration_ms: 3.986906
+      ...
+    # Subtest: every material profile update immediately stales approval
+    ok 5 - every material profile update immediately stales approval
+      ---
+      duration_ms: 3.423378
+      ...
+    # Subtest: material classification change bumps materialProfileRevision and stales
+    ok 6 - material classification change bumps materialProfileRevision and stales
+      ---
+      duration_ms: 5.066073
+      ...
+    # Subtest: stale invalidation remains idempotent
+    ok 7 - stale invalidation remains idempotent
+      ---
+      duration_ms: 2.941918
+      ...
+    # Subtest: unrelated historical or audit-only record changes do not incorrectly invalidate
+    ok 8 - unrelated historical or audit-only record changes do not incorrectly invalidate
+      ---
+      duration_ms: 2.742785
+      ...
+    # Subtest: direct approval verification never suppresses a genuine authoritative-source mismatch
+    ok 9 - direct approval verification never suppresses a genuine authoritative-source mismatch
+      ---
+      duration_ms: 3.738034
+      ...
+    1..9
+ok 8 - M07 Batch 5 final — materialProfileRevision pin consistency
+  ---
+  duration_ms: 51.418922
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+    # Subtest: employment / clinic fail-closed
+        # Subtest: missing employment status blocks and keeps person visible
+        ok 1 - missing employment status blocks and keeps person visible
+          ---
+          duration_ms: 10.390818
+          ...
+        # Subtest: missing employment-effective start date blocks
+        ok 2 - missing employment-effective start date blocks
+          ---
+          duration_ms: 0.728274
+          ...
+        # Subtest: ambiguous employment dates block
+        ok 3 - ambiguous employment dates block
+          ---
+          duration_ms: 0.678332
+          ...
+        # Subtest: missing period-effective clinic assignment blocks
+        ok 4 - missing period-effective clinic assignment blocks
+          ---
+          duration_ms: 0.776045
+          ...
+        # Subtest: ambiguous clinic assignment blocks
+        ok 5 - ambiguous clinic assignment blocks
+          ---
+          duration_ms: 0.854952
+          ...
+        # Subtest: ordinary persisted record cannot use demo defaults
+        ok 6 - ordinary persisted record cannot use demo defaults
+          ---
+          duration_ms: 10.663657
+          ...
+        # Subtest: explicitly marked demo seed follows only approved isolated demo behaviour
+        ok 7 - explicitly marked demo seed follows only approved isolated demo behaviour
+          ---
+          duration_ms: 0.69828
+          ...
+        1..7
+    ok 1 - employment / clinic fail-closed
+      ---
+      duration_ms: 25.576426
+      type: 'suite'
+      ...
+    # Subtest: profile / classification invalidation
+        # Subtest: profile change after approval immediately produces stale
+        ok 1 - profile change after approval immediately produces stale
+          ---
+          duration_ms: 13.031465
+          ...
+        # Subtest: employment-date change after approval immediately produces stale
+        ok 2 - employment-date change after approval immediately produces stale
+          ---
+          duration_ms: 3.71706
+          ...
+        # Subtest: clinic-assignment change after approval immediately produces stale where supported
+        ok 3 - clinic-assignment change after approval immediately produces stale where supported
+          ---
+          duration_ms: 9.715576
+          ...
+        # Subtest: classification mapping replacement after approval immediately produces stale
+        ok 4 - classification mapping replacement after approval immediately produces stale
+          ---
+          duration_ms: 3.348184
+          ...
+        # Subtest: classification mapping deactivation after approval immediately produces stale
+        ok 5 - classification mapping deactivation after approval immediately produces stale
+          ---
+          duration_ms: 7.167134
+          ...
+        # Subtest: irrelevant profile change does not incorrectly stale approval
+        ok 6 - irrelevant profile change does not incorrectly stale approval
+          ---
+          duration_ms: 4.033803
+          ...
+        # Subtest: identical invalidation replay does not duplicate lifecycle, audit or M02 records
+        ok 7 - identical invalidation replay does not duplicate lifecycle, audit or M02 records
+          ---
+          duration_ms: 3.254898
+          ...
+        # Subtest: alternate mutation paths cannot bypass invalidation
+        ok 8 - alternate mutation paths cannot bypass invalidation
+          ---
+          duration_ms: 7.989996
+          ...
+        1..8
+    ok 2 - profile / classification invalidation
+      ---
+      duration_ms: 52.68997
+      type: 'suite'
+      ...
+    # Subtest: dedicated SoD proofs
+        # Subtest: rejects approval when approver is material deduction creator
+        ok 1 - rejects approval when approver is material deduction creator
+          ---
+          duration_ms: 9.051573
+          ...
+        # Subtest: rejects approval when approver is material exception resolver
+        ok 2 - rejects approval when approver is material exception resolver
+          ---
+          duration_ms: 3.617627
+          ...
+        # Subtest: rejects approval when approver is material exception waiver actor
+        ok 3 - rejects approval when approver is material exception waiver actor
+          ---
+          duration_ms: 4.838678
+          ...
+        # Subtest: incomplete or missing material-actor provenance fails closed
+        ok 4 - incomplete or missing material-actor provenance fails closed
+          ---
+          duration_ms: 1.278197
+          ...
+        # Subtest: unrelated historical actors do not incorrectly block approval
+        ok 5 - unrelated historical actors do not incorrectly block approval
+          ---
+          duration_ms: 2.044367
+          ...
+        # Subtest: material actors are derived from the pinned manifest; no dual approval
+        ok 6 - material actors are derived from the pinned manifest; no dual approval
+          ---
+          duration_ms: 4.79643
+          ...
+        1..6
+    ok 3 - dedicated SoD proofs
+      ---
+      duration_ms: 25.858321
+      type: 'suite'
+      ...
+    1..3
+ok 9 - M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+  ---
+  duration_ms: 104.536037
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 — export / recon / lock
+    # Subtest: A. Domain and lifecycle
+        # Subtest: allows legal transitions and rejects illegal ones
+        ok 1 - allows legal transitions and rejects illegal ones
+          ---
+          duration_ms: 2.193926
+          ...
+        # Subtest: deterministic identity + idempotent create
+        ok 2 - deterministic identity + idempotent create
+          ---
+          duration_ms: 17.545774
+          ...
+        # Subtest: does not overwrite finalized history — successor revision
+        ok 3 - does not overwrite finalized history — successor revision
+          ---
+          duration_ms: 7.176738
+          ...
+        # Subtest: cancel supersedes mutable batch
+        ok 4 - cancel supersedes mutable batch
+          ---
+          duration_ms: 3.346822
+          ...
+        1..4
+    ok 1 - A. Domain and lifecycle
+      ---
+      duration_ms: 30.893935
+      type: 'suite'
+      ...
+    # Subtest: B. Manifest consumption
+        # Subtest: accepts valid approved package
+        ok 1 - accepts valid approved package
+          ---
+          duration_ms: 3.338666
+          ...
+        # Subtest: rejects missing / non-approved package
+        ok 2 - rejects missing / non-approved package
+          ---
+          duration_ms: 0.724464
+          ...
+        1..2
+    ok 2 - B. Manifest consumption
+      ---
+      duration_ms: 4.198149
+      type: 'suite'
+      ...
+    # Subtest: C. Validation
+        # Subtest: missing external payroll employee ID blocks
+        ok 1 - missing external payroll employee ID blocks
+          ---
+          duration_ms: 3.511771
+          ...
+        # Subtest: rejects cross-tenant / cross-legal-entity actor scope
+        ok 2 - rejects cross-tenant / cross-legal-entity actor scope
+          ---
+          duration_ms: 4.453393
+          ...
+        1..2
+    ok 3 - C. Validation
+      ---
+      duration_ms: 8.113034
+      type: 'suite'
+      ...
+    # Subtest: D. Export preparation
+        # Subtest: preview and final share validation; final re-verifies; checksum reproducible
+        ok 1 - preview and final share validation; final re-verifies; checksum reproducible
+          ---
+          duration_ms: 3.630741
+          ...
+        1..1
+    ok 4 - D. Export preparation
+      ---
+      duration_ms: 3.703405
+      type: 'suite'
+      ...
+    # Subtest: E. Reconciliation
+        # Subtest: matching package passes with structured totals
+        ok 1 - matching package passes with structured totals
+          ---
+          duration_ms: 3.973988
+          ...
+        1..1
+    ok 5 - E. Reconciliation
+      ---
+      duration_ms: 4.048782
+      type: 'suite'
+      ...
+    # Subtest: F. Permissions and SoD
+        # Subtest: enforces export.create permission
+        ok 1 - enforces export.create permission
+          ---
+          duration_ms: 7.327971
+          ...
+        # Subtest: management approver cannot be sole final export generator when SoD on
+        ok 2 - management approver cannot be sole final export generator when SoD on
+          ---
+          duration_ms: 2.99439
+          ...
+        1..2
+    ok 6 - F. Permissions and SoD
+      ---
+      duration_ms: 10.425138
+      type: 'suite'
+      ...
+    # Subtest: G. Locking and unlocking
+        # Subtest: locks only after matched recon; unlock requires reason + separate approver
+        ok 1 - locks only after matched recon; unlock requires reason + separate approver
+          ---
+          duration_ms: 5.774179
+          ...
+        # Subtest: unlock reject is separate and idempotent request replay
+        ok 2 - unlock reject is separate and idempotent request replay
+          ---
+          duration_ms: 5.643251
+          ...
+        1..2
+    ok 7 - G. Locking and unlocking
+      ---
+      duration_ms: 11.520929
+      type: 'suite'
+      ...
+    # Subtest: H. Download
+        # Subtest: downloads only downloadable matched artifact and audits each download
+        ok 1 - downloads only downloadable matched artifact and audits each download
+          ---
+          duration_ms: 3.210695
+          ...
+        1..1
+    ok 8 - H. Download
+      ---
+      duration_ms: 3.280758
+      type: 'suite'
+      ...
+    # Subtest: I. M02 and audit
+        # Subtest: writes export lifecycle audits without sensitive payloads
+        ok 1 - writes export lifecycle audits without sensitive payloads
+          ---
+          duration_ms: 2.491713
+          ...
+        1..1
+    ok 9 - I. M02 and audit
+      ---
+      duration_ms: 2.55952
+      type: 'suite'
+      ...
+    # Subtest: J. Storage and schema
+        # Subtest: schema v9 and failure-closed legacy export defaults
+        ok 1 - schema v9 and failure-closed legacy export defaults
+          ---
+          duration_ms: 1.878631
+          ...
+        1..1
+    ok 10 - J. Storage and schema
+      ---
+      duration_ms: 1.951241
+      type: 'suite'
+      ...
+    # Subtest: K. Architecture
+        # Subtest: no createExportPackage / lockPeriod( / cross-module repos / excluded payment features
+        ok 1 - no createExportPackage / lockPeriod( / cross-module repos / excluded payment features
+          ---
+          duration_ms: 7.425699
+          ...
+        1..1
+    ok 11 - K. Architecture
+      ---
+      duration_ms: 7.489843
+      type: 'suite'
+      ...
+    1..11
+ok 10 - M07 Batch 6 — export / recon / lock
+  ---
+  duration_ms: 89.041785
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 fourth remediation — strict calendar dates
+    # Subtest: rejects impossible ISO-shaped dates on financial update before write
+    ok 1 - rejects impossible ISO-shaped dates on financial update before write
+      ---
+      duration_ms: 26.095251
+      ...
+    # Subtest: rejects impossible dates on create and archive; leap validation; future isolation
+    ok 2 - rejects impossible dates on create and archive; leap validation; future isolation
+      ---
+      duration_ms: 6.651093
+      ...
+    1..2
+ok 11 - M07 Batch 6 fourth remediation — strict calendar dates
+  ---
+  duration_ms: 33.353691
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 remediation — high-risk controls
+    # Subtest: A. Lock enforcement
+        # Subtest: rejects direct service mutations on a locked period; unrelated LE unaffected
+        ok 1 - rejects direct service mutations on a locked period; unrelated LE unaffected
+          ---
+          duration_ms: 31.204423
+          ...
+        1..1
+    ok 1 - A. Lock enforcement
+      ---
+      duration_ms: 31.791847
+      type: 'suite'
+      ...
+    # Subtest: B. Locked-source-change controls
+        # Subtest: fails closed, projects deterministic M02, audits, preserves history; no silent mutate
+        ok 1 - fails closed, projects deterministic M02, audits, preserves history; no silent mutate
+          ---
+          duration_ms: 6.335821
+          ...
+        # Subtest: does not report success when audit control fails
+        ok 2 - does not report success when audit control fails
+          ---
+          duration_ms: 4.824447
+          ...
+        1..2
+    ok 2 - B. Locked-source-change controls
+      ---
+      duration_ms: 11.415349
+      type: 'suite'
+      ...
+    # Subtest: C. Reconciliation independence
+        # Subtest: fails when totals match but population differs
+        ok 1 - fails when totals match but population differs
+          ---
+          duration_ms: 4.649873
+          ...
+        # Subtest: fails when totals match but source-line references differ
+        ok 2 - fails when totals match but source-line references differ
+          ---
+          duration_ms: 5.557256
+          ...
+        1..2
+    ok 3 - C. Reconciliation independence
+      ---
+      duration_ms: 10.348477
+      type: 'suite'
+      ...
+    # Subtest: D. Download audit failure
+        # Subtest: refuses download, records no success history, leaves artifact unchanged
+        ok 1 - refuses download, records no success history, leaves artifact unchanged
+          ---
+          duration_ms: 3.483704
+          ...
+        1..1
+    ok 4 - D. Download audit failure
+      ---
+      duration_ms: 3.585496
+      type: 'suite'
+      ...
+    # Subtest: E. Unlock partial failure
+        # Subtest: does not report complete success when audit fails during unlock approval
+        ok 1 - does not report complete success when audit fails during unlock approval
+          ---
+          duration_ms: 7.867809
+          ...
+        1..1
+    ok 5 - E. Unlock partial failure
+      ---
+      duration_ms: 7.992248
+      type: 'suite'
+      ...
+    # Subtest: F. Lifecycle matrix
+        # Subtest: covers legal and illegal Batch 6 transitions including failed
+        ok 1 - covers legal and illegal Batch 6 transitions including failed
+          ---
+          duration_ms: 0.531151
+          ...
+        1..1
+    ok 6 - F. Lifecycle matrix
+      ---
+      duration_ms: 0.596631
+      type: 'suite'
+      ...
+    # Subtest: J. Decimal arithmetic
+        # Subtest: uses scaled multiply for overtime amount edge cases
+        ok 1 - uses scaled multiply for overtime amount edge cases
+          ---
+          duration_ms: 2.534242
+          ...
+        1..1
+    ok 7 - J. Decimal arithmetic
+      ---
+      duration_ms: 2.596031
+      type: 'suite'
+      ...
+    1..7
+ok 12 - M07 Batch 6 remediation — high-risk controls
+  ---
+  duration_ms: 68.904242
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 second remediation
+    # Subtest: omit-metadata and exceptions
+        # Subtest: rejects period-scoped exception without periodId
+        ok 1 - rejects period-scoped exception without periodId
+          ---
+          duration_ms: 3.867828
+          ...
+        # Subtest: allows non-period boundary exception without periodId
+        ok 2 - allows non-period boundary exception without periodId
+          ---
+          duration_ms: 1.841109
+          ...
+        1..2
+    ok 1 - omit-metadata and exceptions
+      ---
+      duration_ms: 6.119432
+      type: 'suite'
+      ...
+    # Subtest: rate / effective-date lock
+        # Subtest: blocks rate overlapping locked period; allows future non-overlapping rate
+        ok 1 - blocks rate overlapping locked period; allows future non-overlapping rate
+          ---
+          duration_ms: 21.91693
+          ...
+        1..1
+    ok 2 - rate / effective-date lock
+      ---
+      duration_ms: 22.098194
+      type: 'suite'
+      ...
+    # Subtest: external payroll employee id
+        # Subtest: rejects link/relink affecting locked period
+        ok 1 - rejects link/relink affecting locked period
+          ---
+          duration_ms: 5.48938
+          ...
+        1..1
+    ok 3 - external payroll employee id
+      ---
+      duration_ms: 5.585475
+      type: 'suite'
+      ...
+    # Subtest: preparation rules
+        # Subtest: rejects rule create for LE with locked overlapping period; allows other LE
+        ok 1 - rejects rule create for LE with locked overlapping period; allows other LE
+          ---
+          duration_ms: 5.071719
+          ...
+        1..1
+    ok 4 - preparation rules
+      ---
+      duration_ms: 5.226082
+      type: 'suite'
+      ...
+    # Subtest: unlock atomicity and recovery
+        # Subtest: keeps period locked on control failure; retry completes after recovery
+        ok 1 - keeps period locked on control failure; retry completes after recovery
+          ---
+          duration_ms: 6.995633
+          ...
+        # Subtest: retries after M02-only failure without opening period early
+        ok 2 - retries after M02-only failure without opening period early
+          ---
+          duration_ms: 4.52907
+          ...
+        1..2
+    ok 5 - unlock atomicity and recovery
+      ---
+      duration_ms: 11.656139
+      type: 'suite'
+      ...
+    # Subtest: locked-source control pair
+        # Subtest: reports incomplete on M02-only and audit-only failures; preserves lock
+        ok 1 - reports incomplete on M02-only and audit-only failures; preserves lock
+          ---
+          duration_ms: 3.803616
+          ...
+        1..1
+    ok 6 - locked-source control pair
+      ---
+      duration_ms: 3.877628
+      type: 'suite'
+      ...
+    # Subtest: reconciliation category independence
+        # Subtest: fails when category composition differs but gross totals match
+        ok 1 - fails when category composition differs but gross totals match
+          ---
+          duration_ms: 4.652804
+          ...
+        1..1
+    ok 7 - reconciliation category independence
+      ---
+      duration_ms: 4.726501
+      type: 'suite'
+      ...
+    1..7
+ok 13 - M07 Batch 6 second remediation
+  ---
+  duration_ms: 59.889445
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 third remediation
+    # Subtest: platform-wide export profile lock
+        # Subtest: blocks version and retire of * profile used by a locked period before write
+        ok 1 - blocks version and retire of * profile used by a locked period before write
+          ---
+          duration_ms: 28.349057
+          ...
+        # Subtest: allows unrelated unused * profile mutation; falsified LE cannot bypass
+        ok 2 - allows unrelated unused * profile mutation; falsified LE cannot bypass
+          ---
+          duration_ms: 8.256335
+          ...
+        1..2
+    ok 1 - platform-wide export profile lock
+      ---
+      duration_ms: 37.03635
+      type: 'suite'
+      ...
+    # Subtest: financial effective-date edge cases
+        # Subtest: fails closed on open-ended, missing and malformed dates; allows proven future
+        ok 1 - fails closed on open-ended, missing and malformed dates; allows proven future
+          ---
+          duration_ms: 7.449138
+          ...
+        1..1
+    ok 2 - financial effective-date edge cases
+      ---
+      duration_ms: 7.547919
+      type: 'suite'
+      ...
+    # Subtest: unlock idempotency and both-control failure
+        # Subtest: rejects inconsistent approved unlock without open period / history
+        ok 1 - rejects inconsistent approved unlock without open period / history
+          ---
+          duration_ms: 8.801644
+          ...
+        # Subtest: handles simultaneous audit+M02 failure, reject while incomplete, and recovery
+        ok 2 - handles simultaneous audit+M02 failure, reject while incomplete, and recovery
+          ---
+          duration_ms: 6.112431
+          ...
+        1..2
+    ok 3 - unlock idempotency and both-control failure
+      ---
+      duration_ms: 15.053537
+      type: 'suite'
+      ...
+    1..3
+ok 14 - M07 Batch 6 third remediation
+  ---
+  duration_ms: 60.082791
+  type: 'suite'
+  ...
+# Subtest: CP2.7B BLOCKED-M07 clearance
+    # Subtest: authoritative helpers are cleared and cannot disagree
+    ok 1 - authoritative helpers are cleared and cannot disagree
+      ---
+      duration_ms: 1.896095
+      ...
+    # Subtest: successful intake, replay and authorised lifecycle report blockedM07: false
+    ok 2 - successful intake, replay and authorised lifecycle report blockedM07: false
+      ---
+      duration_ms: 7.341344
+      ...
+    # Subtest: no production hardcoded blockedM07: true remains for the retired global blocker
+    ok 3 - no production hardcoded blockedM07: true remains for the retired global blocker
+      ---
+      duration_ms: 7.557466
+      ...
+    # Subtest: fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor
+    ok 4 - fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor
+      ---
+      duration_ms: 5.305944
+      ...
+    1..4
+ok 15 - CP2.7B BLOCKED-M07 clearance
+  ---
+  duration_ms: 22.862253
+  type: 'suite'
+  ...
+# Subtest: CP2.3 M07 platform boundary — no legacy M06 scrape
+    # Subtest: A. Legacy removal / static enforcement
+        # Subtest: M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape
+        ok 1 - M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape
+          ---
+          duration_ms: 17.958176
+          ...
+        # Subtest: writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape)
+        ok 2 - writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape)
+          ---
+          duration_ms: 0.739934
+          ...
+        1..2
+    ok 1 - A. Legacy removal / static enforcement
+      ---
+      duration_ms: 19.161755
+      type: 'suite'
+      ...
+    # Subtest: B. Controlled behaviour
+        # Subtest: returns empty when no platform publication exists
+        ok 1 - returns empty when no platform publication exists
+          ---
+          duration_ms: 0.489693
+          ...
+        # Subtest: returns unavailable for corrupt registry
+        ok 2 - returns unavailable for corrupt registry
+          ---
+          duration_ms: 0.381331
+          ...
+        # Subtest: returns unavailable for unsupported contract versions only
+        ok 3 - returns unavailable for unsupported contract versions only
+          ---
+          duration_ms: 0.693388
+          ...
+        # Subtest: discovers platform publications without implying intake
+        ok 4 - discovers platform publications without implying intake
+          ---
+          duration_ms: 1.85487
+          ...
+        1..4
+    ok 2 - B. Controlled behaviour
+      ---
+      duration_ms: 3.623047
+      type: 'suite'
+      ...
+    # Subtest: C. Tenant isolation
+        # Subtest: does not return cross-org or cross-legal-entity publications; guessed ids fail closed
+        ok 1 - does not return cross-org or cross-legal-entity publications; guessed ids fail closed
+          ---
+          duration_ms: 1.107641
+          ...
+        1..1
+    ok 3 - C. Tenant isolation
+      ---
+      duration_ms: 1.201737
+      type: 'suite'
+      ...
+    # Subtest: D. Preservation / blocker
+        # Subtest: does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared
+        ok 1 - does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared
+          ---
+          duration_ms: 0.30729
+          ...
+        1..1
+    ok 4 - D. Preservation / blocker
+      ---
+      duration_ms: 0.372115
+      type: 'suite'
+      ...
+    1..4
+ok 16 - CP2.3 M07 platform boundary — no legacy M06 scrape
+  ---
+  duration_ms: 24.85241
+  type: 'suite'
+  ...
+# Subtest: M07 domain model (Batch 1)
+    # Subtest: creates ordinary pay period with entity scope and SoD snapshot
+    ok 1 - creates ordinary pay period with entity scope and SoD snapshot
+      ---
+      duration_ms: 2.320346
+      ...
+    # Subtest: stores external payroll employee id history on relink
+    ok 2 - stores external payroll employee id history on relink
+      ---
+      duration_ms: 1.198047
+      ...
+    # Subtest: labels preparation rules as non-certified
+    ok 3 - labels preparation rules as non-certified
+      ---
+      duration_ms: 0.649717
+      ...
+    # Subtest: blocks missing classification mapping
+    ok 4 - blocks missing classification mapping
+      ---
+      duration_ms: 0.639489
+      ...
+    # Subtest: creates classification mapping to active rule
+    ok 5 - creates classification mapping to active rule
+      ---
+      duration_ms: 0.807808
+      ...
+    1..5
+ok 17 - M07 domain model (Batch 1)
+  ---
+  duration_ms: 6.321705
+  type: 'suite'
+  ...
+# Subtest: M07 entity settings — no write under view (remediation)
+    # Subtest: 1. view-only actor cannot create or persist entity settings
+    ok 1 - 1. view-only actor cannot create or persist entity settings
+      ---
+      duration_ms: 2.332495
+      ...
+    # Subtest: 2. reading absent settings causes no storage mutation
+    ok 2 - 2. reading absent settings causes no storage mutation
+      ---
+      duration_ms: 0.438105
+      ...
+    # Subtest: 3. authorised bootstrap/admin path can create defaults
+    ok 3 - 3. authorised bootstrap/admin path can create defaults
+      ---
+      duration_ms: 0.797749
+      ...
+    # Subtest: 4. re-running bootstrap is idempotent
+    ok 4 - 4. re-running bootstrap is idempotent
+      ---
+      duration_ms: 0.403846
+      ...
+    # Subtest: 5. existing entity settings are not overwritten by seed
+    ok 5 - 5. existing entity settings are not overwritten by seed
+      ---
+      duration_ms: 0.466844
+      ...
+    # Subtest: 6. period creation still requires period.create
+    ok 6 - 6. period creation still requires period.create
+      ---
+      duration_ms: 0.427467
+      ...
+    # Subtest: 7. period creation cannot bypass legal-entity isolation
+    ok 7 - 7. period creation cannot bypass legal-entity isolation
+      ---
+      duration_ms: 0.304396
+      ...
+    # Subtest: 8. authorised settings mutation produces an audit event
+    ok 8 - 8. authorised settings mutation produces an audit event
+      ---
+      duration_ms: 0.488616
+      ...
+    # Subtest: period create with clerk does not persist new settings when using ephemeral defaults
+    ok 9 - period create with clerk does not persist new settings when using ephemeral defaults
+      ---
+      duration_ms: 0.548709
+      ...
+    1..9
+ok 18 - M07 entity settings — no write under view (remediation)
+  ---
+  duration_ms: 7.134356
+  type: 'suite'
+  ...
+# Subtest: CP2.4 M07 published-timesheet intake
+    # Subtest: A. Eligibility
+        # Subtest: eligible approved publication creates a snapshot
+        ok 1 - eligible approved publication creates a snapshot
+          ---
+          duration_ms: 13.822388
+          ...
+        # Subtest: revoked publications are not intaken
+        ok 2 - revoked publications are not intaken
+          ---
+          duration_ms: 2.747252
+          ...
+        # Subtest: rejects incomplete scope and clinic mismatch
+        ok 3 - rejects incomplete scope and clinic mismatch
+          ---
+          duration_ms: 3.522248
+          ...
+        1..3
+    ok 1 - A. Eligibility
+      ---
+      duration_ms: 24.929628
+      type: 'suite'
+      ...
+    # Subtest: B. Snapshot fidelity
+        # Subtest: preserves structured inputs and platform contentHash without payroll fields
+        ok 1 - preserves structured inputs and platform contentHash without payroll fields
+          ---
+          duration_ms: 1.698127
+          ...
+        1..1
+    ok 2 - B. Snapshot fidelity
+      ---
+      duration_ms: 1.867243
+      type: 'suite'
+      ...
+    # Subtest: C. Identity and idempotency
+        # Subtest: exact retry and new event id for same version/hash are idempotent; hash conflict is hard
+        ok 1 - exact retry and new event id for same version/hash are idempotent; hash conflict is hard
+          ---
+          duration_ms: 1.91369
+          ...
+        # Subtest: newer sourceVersion creates a second snapshot; older remains resolvable
+        ok 2 - newer sourceVersion creates a second snapshot; older remains resolvable
+          ---
+          duration_ms: 9.838729
+          ...
+        1..2
+    ok 3 - C. Identity and idempotency
+      ---
+      duration_ms: 11.925342
+      type: 'suite'
+      ...
+    # Subtest: D. Isolation
+        # Subtest: denies cross-org and cross-LE; guessed publication id fails closed
+        ok 1 - denies cross-org and cross-LE; guessed publication id fails closed
+          ---
+          duration_ms: 0.791673
+          ...
+        1..1
+    ok 4 - D. Isolation
+      ---
+      duration_ms: 0.879399
+      type: 'suite'
+      ...
+    # Subtest: E. Recovery
+        # Subtest: rebuilds indexes; partial migration resumes; Batch1 data preserved
+        ok 1 - rebuilds indexes; partial migration resumes; Batch1 data preserved
+          ---
+          duration_ms: 1.224084
+          ...
+        1..1
+    ok 5 - E. Recovery
+      ---
+      duration_ms: 1.291891
+      type: 'suite'
+      ...
+    # Subtest: F. Boundaries
+        # Subtest: keeps BLOCKED-M07 cleared, no M06 scrape, no registry mutation from intake module
+        ok 1 - keeps BLOCKED-M07 cleared, no M06 scrape, no registry mutation from intake module
+          ---
+          duration_ms: 1.63465
+          ...
+        1..1
+    ok 6 - F. Boundaries
+      ---
+      duration_ms: 1.723651
+      type: 'suite'
+      ...
+    1..6
+ok 19 - CP2.4 M07 published-timesheet intake
+  ---
+  duration_ms: 43.195686
+  type: 'suite'
+  ...
+# Subtest: CP2.6 M07 published-timesheet lifecycle
+    # Subtest: A. Materiality and history
+        # Subtest: material content creates new snapshot pending-review; no auto supersession; prior unchanged
+        ok 1 - material content creates new snapshot pending-review; no auto supersession; prior unchanged
+          ---
+          duration_ms: 10.405861
+          ...
+        # Subtest: lifecycle-only same-hash does not rewrite snapshots; same-version hash conflict remains hard
+        ok 2 - lifecycle-only same-hash does not rewrite snapshots; same-version hash conflict remains hard
+          ---
+          duration_ms: 2.63968
+          ...
+        1..2
+    ok 1 - A. Materiality and history
+      ---
+      duration_ms: 13.49271
+      type: 'suite'
+      ...
+    # Subtest: B. Holds and eligibility
+        # Subtest: revoke/withdraw/invalidate apply holds; blocks ordinary use; duplicate replay idempotent
+        ok 1 - revoke/withdraw/invalidate apply holds; blocks ordinary use; duplicate replay idempotent
+          ---
+          duration_ms: 12.451979
+          ...
+        1..1
+    ok 2 - B. Holds and eligibility
+      ---
+      duration_ms: 12.595284
+      type: 'suite'
+      ...
+    # Subtest: C. Restore and authorised decisions
+        # Subtest: restore alone does not clear hold; authorised acknowledgement does; stale fails closed
+        ok 1 - restore alone does not clear hold; authorised acknowledgement does; stale fails closed
+          ---
+          duration_ms: 4.598048
+          ...
+        1..1
+    ok 3 - C. Restore and authorised decisions
+      ---
+      duration_ms: 4.685298
+      type: 'suite'
+      ...
+    # Subtest: D. Supersession
+        # Subtest: requires authorised selection; denies cross-timesheet/org/held targets; no payroll approval
+        ok 1 - requires authorised selection; denies cross-timesheet/org/held targets; no payroll approval
+          ---
+          duration_ms: 2.466637
+          ...
+        1..1
+    ok 4 - D. Supersession
+      ---
+      duration_ms: 2.629267
+      type: 'suite'
+      ...
+    # Subtest: E. Preparation progress
+        # Subtest: blocks held use; freezes started/approved/exported; no payment inference
+        ok 1 - blocks held use; freezes started/approved/exported; no payment inference
+          ---
+          duration_ms: 7.24972
+          ...
+        1..1
+    ok 5 - E. Preparation progress
+      ---
+      duration_ms: 7.341308
+      type: 'suite'
+      ...
+    # Subtest: F. Isolation, permissions and audit
+        # Subtest: enforces org/LE independence, clinic, guessed ids, audit lineage
+        ok 1 - enforces org/LE independence, clinic, guessed ids, audit lineage
+          ---
+          duration_ms: 1.056632
+          ...
+        1..1
+    ok 6 - F. Isolation, permissions and audit
+      ---
+      duration_ms: 1.130682
+      type: 'suite'
+      ...
+    # Subtest: G. Architecture and blocker
+        # Subtest: keeps boundaries and BLOCKED-M07 cleared
+        ok 1 - keeps boundaries and BLOCKED-M07 cleared
+          ---
+          duration_ms: 11.058742
+          ...
+        1..1
+    ok 7 - G. Architecture and blocker
+      ---
+      duration_ms: 11.13374
+      type: 'suite'
+      ...
+    1..7
+ok 20 - CP2.6 M07 published-timesheet lifecycle
+  ---
+  duration_ms: 53.546956
+  type: 'suite'
+  ...
+# Subtest: CP2.7A M07 migration matrix through v5
+    # Subtest: empty bootstrap reaches schema v9 with export/lock collections
+    ok 1 - empty bootstrap reaches schema v9 with export/lock collections
+      ---
+      duration_ms: 4.743691
+      ...
+    # Subtest: v1 → v5 preserves periods
+    ok 2 - v1 → v5 preserves periods
+      ---
+      duration_ms: 0.638698
+      ...
+    # Subtest: v2 → v5 preserves Batch 1 profiles
+    ok 3 - v2 → v5 preserves Batch 1 profiles
+      ---
+      duration_ms: 0.278059
+      ...
+    # Subtest: v3 → v5 preserves immutable snapshots
+    ok 4 - v3 → v5 preserves immutable snapshots
+      ---
+      duration_ms: 0.283595
+      ...
+    # Subtest: v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent
+    ok 5 - v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent
+      ---
+      duration_ms: 0.38812
+      ...
+    # Subtest: repeated v5 is idempotent; interrupted v5 resumes without wipe
+    ok 6 - repeated v5 is idempotent; interrupted v5 resumes without wipe
+      ---
+      duration_ms: 0.528883
+      ...
+    1..6
+ok 21 - CP2.7A M07 migration matrix through v5
+  ---
+  duration_ms: 7.56567
+  type: 'suite'
+  ...
+# Subtest: M07 migrations (Batch 1)
+    # Subtest: runs v1 once and is idempotent
+    ok 1 - runs v1 once and is idempotent
+      ---
+      duration_ms: 1.504971
+      ...
+    # Subtest: runs v2 additively without wiping existing periods
+    ok 2 - runs v2 additively without wiping existing periods
+      ---
+      duration_ms: 0.560673
+      ...
+    # Subtest: runs v3 snapshot migration additively and idempotently
+    ok 3 - runs v3 snapshot migration additively and idempotently
+      ---
+      duration_ms: 0.411482
+      ...
+    # Subtest: runs v4 replay migration additively and idempotently
+    ok 4 - runs v4 replay migration additively and idempotently
+      ---
+      duration_ms: 0.433922
+      ...
+    # Subtest: runs v5 lifecycle migration additively and idempotently
+    ok 5 - runs v5 lifecycle migration additively and idempotently
+      ---
+      duration_ms: 0.494186
+      ...
+    # Subtest: seeds default minimum-PII export profile insert-if-absent
+    ok 6 - seeds default minimum-PII export profile insert-if-absent
+      ---
+      duration_ms: 0.654949
+      ...
+    # Subtest: does not touch M04/M05/M06 keys
+    ok 7 - does not touch M04/M05/M06 keys
+      ---
+      duration_ms: 0.326407
+      ...
+    1..7
+ok 22 - M07 migrations (Batch 1)
+  ---
+  duration_ms: 5.119848
+  type: 'suite'
+  ...
+# Subtest: M07 mutation authorization matrix (Batch 1 remediation)
+    # Subtest: pay profile create/update/archive — permission + entity + audit
+    ok 1 - pay profile create/update/archive — permission + entity + audit
+      ---
+      duration_ms: 3.530784
+      ...
+    # Subtest: external id link/relink — permission + uniqueness entity + audit
+    ok 2 - external id link/relink — permission + uniqueness entity + audit
+      ---
+      duration_ms: 0.909663
+      ...
+    # Subtest: preparation rule create/version/retire — permission + entity + audit
+    ok 3 - preparation rule create/version/retire — permission + entity + audit
+      ---
+      duration_ms: 0.79311
+      ...
+    # Subtest: generic code create/version/retire — permission + entity + audit
+    ok 4 - generic code create/version/retire — permission + entity + audit
+      ---
+      duration_ms: 0.727902
+      ...
+    # Subtest: export profile create/version/activate/retire — admin only + entity + audit
+    ok 5 - export profile create/version/activate/retire — admin only + entity + audit
+      ---
+      duration_ms: 1.102097
+      ...
+    # Subtest: ordinary pay period create — period.create + entity + audit
+    ok 6 - ordinary pay period create — period.create + entity + audit
+      ---
+      duration_ms: 0.587959
+      ...
+    # Subtest: entity settings upsert — entity.settings + entity + audit
+    ok 7 - entity settings upsert — entity.settings + entity + audit
+      ---
+      duration_ms: 0.420852
+      ...
+    # Subtest: wildcard admin can mutate across entities when unrestricted
+    ok 8 - wildcard admin can mutate across entities when unrestricted
+      ---
+      duration_ms: 0.379952
+      ...
+    1..8
+ok 23 - M07 mutation authorization matrix (Batch 1 remediation)
+  ---
+  duration_ms: 9.335722
+  type: 'suite'
+  ...
+# Subtest: M07 PPA-1 atomicity / fail-closed compensation
+    # Subtest: 1. adjustment-period write fail — no success, source unchanged, no open PPA
+    ok 1 - 1. adjustment-period write fail — no success, source unchanged, no open PPA
+      ---
+      duration_ms: 25.422029
+      ...
+    # Subtest: 2. case write fail after period create — compensates; no open PPA; residual archived
+    ok 2 - 2. case write fail after period create — compensates; no open PPA; residual archived
+      ---
+      duration_ms: 7.380556
+      ...
+    # Subtest: 3. consistency verify fail after both writes — compensates; no open PPA
+    ok 3 - 3. consistency verify fail after both writes — compensates; no open PPA
+      ---
+      duration_ms: 5.895069
+      ...
+    # Subtest: 4. audit fail after business writes — no success response; no false-success audit; compensate
+    ok 4 - 4. audit fail after business writes — no success response; no false-success audit; compensate
+      ---
+      duration_ms: 4.976502
+      ...
+    # Subtest: 5. duplicate create same source — rejected; source unchanged
+    ok 5 - 5. duplicate create same source — rejected; source unchanged
+      ---
+      duration_ms: 6.760149
+      ...
+    # Subtest: 6. identical idempotency replay — returns same case; no second open PPA
+    ok 6 - 6. identical idempotency replay — returns same case; no second open PPA
+      ---
+      duration_ms: 4.846896
+      ...
+    # Subtest: 7. conflicting idempotency replay — rejected; source unchanged
+    ok 7 - 7. conflicting idempotency replay — rejected; source unchanged
+      ---
+      duration_ms: 3.639074
+      ...
+    # Subtest: 8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed
+    ok 8 - 8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed
+      ---
+      duration_ms: 4.743743
+      ...
+    # Subtest: 9. cancel audit failure — cancel persists but no success return; source unchanged
+    ok 9 - 9. cancel audit failure — cancel persists but no success return; source unchanged
+      ---
+      duration_ms: 7.613708
+      ...
+    1..9
+ok 24 - M07 PPA-1 atomicity / fail-closed compensation
+  ---
+  duration_ms: 72.250356
+  type: 'suite'
+  ...
+# Subtest: M07 PPA-1 core — prior-period adjustment foundation
+    # Subtest: creates PPA against locked ordinary source; source unchanged; adjustment period linked
+    ok 1 - creates PPA against locked ordinary source; source unchanged; adjustment period linked
+      ---
+      duration_ms: 22.890462
+      ...
+    # Subtest: rejects unlocked ordinary source pre-write
+    ok 2 - rejects unlocked ordinary source pre-write
+      ---
+      duration_ms: 3.333535
+      ...
+    # Subtest: rejects missing / unknown source and adjustment-kind source
+    ok 3 - rejects missing / unknown source and adjustment-kind source
+      ---
+      duration_ms: 5.720603
+      ...
+    # Subtest: rejects cross-LE caller widening and Org B access
+    ok 4 - rejects cross-LE caller widening and Org B access
+      ---
+      duration_ms: 4.736787
+      ...
+    # Subtest: rejects missing reasonCode and blank reasonText pre-write
+    ok 5 - rejects missing reasonCode and blank reasonText pre-write
+      ---
+      duration_ms: 4.32871
+      ...
+    # Subtest: enforces at most one open PPA per source; idempotent and conflicting replay
+    ok 6 - enforces at most one open PPA per source; idempotent and conflicting replay
+      ---
+      duration_ms: 5.846985
+      ...
+    # Subtest: list/get are LE-scoped; missing adjust permission denied
+    ok 7 - list/get are LE-scoped; missing adjust permission denied
+      ---
+      duration_ms: 3.743245
+      ...
+    # Subtest: cancels draft idempotently; rejects invalid cancel state
+    ok 8 - cancels draft idempotently; rejects invalid cancel state
+      ---
+      duration_ms: 4.351204
+      ...
+    # Subtest: controlled unlock does not create a PPA case
+    ok 9 - controlled unlock does not create a PPA case
+      ---
+      duration_ms: 5.824762
+      ...
+    # Subtest: rejects prohibited identifier fields on create input
+    ok 10 - rejects prohibited identifier fields on create input
+      ---
+      duration_ms: 5.383121
+      ...
+    1..10
+ok 25 - M07 PPA-1 core — prior-period adjustment foundation
+  ---
+  duration_ms: 67.199207
+  type: 'suite'
+  ...
+# Subtest: M07 test-hook security gate (QA-PPA1-001)
+    # Subtest: allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node
+    ok 1 - allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node
+      ---
+      duration_ms: 1.450344
+      ...
+    # Subtest: allows hooks when NODE_ENV=test even without allow flag
+    ok 2 - allows hooks when NODE_ENV=test even without allow flag
+      ---
+      duration_ms: 1.635596
+      ...
+    # Subtest: disables hooks when NODE_ENV=production (setters no-op; failures do not fire)
+    ok 3 - disables hooks when NODE_ENV=production (setters no-op; failures do not fire)
+      ---
+      duration_ms: 0.768572
+      ...
+    # Subtest: disables hooks in unknown/development runtime without explicit allow
+    ok 4 - disables hooks in unknown/development runtime without explicit allow
+      ---
+      duration_ms: 0.352652
+      ...
+    # Subtest: browser-like undefined process must never enable hooks
+    ok 5 - browser-like undefined process must never enable hooks
+      ---
+      duration_ms: 0.311915
+      ...
+    # Subtest: production gate prevents arming then re-enabling from leaking prior arms after reset
+    ok 6 - production gate prevents arming then re-enabling from leaking prior arms after reset
+      ---
+      duration_ms: 0.174847
+      ...
+    1..6
+ok 26 - M07 test-hook security gate (QA-PPA1-001)
+  ---
+  duration_ms: 5.468226
+  type: 'suite'
+  ...
+# Subtest: CP2.5 M07 published-timesheet ordered replay
+    # Subtest: A. Ordered replay
+        # Subtest: processes events in authoritative sequence and reports moreAvailable
+        ok 1 - processes events in authoritative sequence and reports moreAvailable
+          ---
+          duration_ms: 10.187708
+          ...
+        # Subtest: duplicate delivery is idempotent; completed events do not create another snapshot
+        ok 2 - duplicate delivery is idempotent; completed events do not create another snapshot
+          ---
+          duration_ms: 1.695557
+          ...
+        # Subtest: sequence gaps stop advancement; out-of-order cannot regress checkpoint
+        ok 3 - sequence gaps stop advancement; out-of-order cannot regress checkpoint
+          ---
+          duration_ms: 2.895042
+          ...
+        # Subtest: conflicting reuse of an event identity is detected
+        ok 4 - conflicting reuse of an event identity is detected
+          ---
+          duration_ms: 2.544527
+          ...
+        1..4
+    ok 1 - A. Ordered replay
+      ---
+      duration_ms: 17.964955
+      type: 'suite'
+      ...
+    # Subtest: B. Recovery
+        # Subtest: interruption before checkpoint advancement resumes without duplicate snapshots
+        ok 1 - interruption before checkpoint advancement resumes without duplicate snapshots
+          ---
+          duration_ms: 1.871878
+          ...
+        # Subtest: corrupt cursor data fails closed; registry unavailability preserves last safe checkpoint
+        ok 2 - corrupt cursor data fails closed; registry unavailability preserves last safe checkpoint
+          ---
+          duration_ms: 1.040434
+          ...
+        1..2
+    ok 2 - B. Recovery
+      ---
+      duration_ms: 3.084733
+      type: 'suite'
+      ...
+    # Subtest: C. Isolation
+        # Subtest: denies cross-organisation and cross-legal-entity replay; guessed ids reveal nothing
+        ok 1 - denies cross-organisation and cross-legal-entity replay; guessed ids reveal nothing
+          ---
+          duration_ms: 2.08772
+          ...
+        # Subtest: cursors are independently tenant and legal-entity scoped
+        ok 2 - cursors are independently tenant and legal-entity scoped
+          ---
+          duration_ms: 1.018059
+          ...
+        1..2
+    ok 3 - C. Isolation
+      ---
+      duration_ms: 3.282226
+      type: 'suite'
+      ...
+    # Subtest: D. Lifecycle boundary
+        # Subtest: records revocation with hold application; later versions do not overwrite; BLOCKED-M07 cleared
+        ok 1 - records revocation with hold application; later versions do not overwrite; BLOCKED-M07 cleared
+          ---
+          duration_ms: 2.456984
+          ...
+        1..1
+    ok 4 - D. Lifecycle boundary
+      ---
+      duration_ms: 2.530299
+      type: 'suite'
+      ...
+    # Subtest: E. Architectural boundaries
+        # Subtest: M07 has no pulse.m06 scrape; replay uses CP2.4 intake; no registry mutation
+        ok 1 - M07 has no pulse.m06 scrape; replay uses CP2.4 intake; no registry mutation
+          ---
+          duration_ms: 8.413418
+          ...
+        1..1
+    ok 5 - E. Architectural boundaries
+      ---
+      duration_ms: 8.475042
+      type: 'suite'
+      ...
+    1..5
+ok 27 - CP2.5 M07 published-timesheet ordered replay
+  ---
+  duration_ms: 35.816793
+  type: 'suite'
+  ...
+# Subtest: M07 shell smoke (Batch 1)
+    # Subtest: marks unfinished sections as planned
+    ok 1 - marks unfinished sections as planned
+      ---
+      duration_ms: 0.704229
+      ...
+    # Subtest: resolves legacy section aliases
+    ok 2 - resolves legacy section aliases
+      ---
+      duration_ms: 0.113002
+      ...
+    # Subtest: planned section UI disables actions and does not claim parity
+    ok 3 - planned section UI disables actions and does not claim parity
+      ---
+      duration_ms: 0.140492
+      ...
+    # Subtest: workspace declares responsive shell attribute and a11y affordances
+    ok 4 - workspace declares responsive shell attribute and a11y affordances
+      ---
+      duration_ms: 0.351678
+      ...
+    # Subtest: overview and settings expose labelled controls and non-colour status
+    ok 5 - overview and settings expose labelled controls and non-colour status
+      ---
+      duration_ms: 0.169098
+      ...
+    # Subtest: overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)
+    ok 6 - overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)
+      ---
+      duration_ms: 0.256215
+      ...
+    1..6
+ok 28 - M07 shell smoke (Batch 1)
+  ---
+  duration_ms: 2.419944
+  type: 'suite'
+  ...
+# Subtest: UI Batch 1 — Premium Clinical tokens and shared presentation
+    # Subtest: defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)
+    ok 1 - defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)
+      ---
+      duration_ms: 0.901834
+      ...
+    # Subtest: standardises portal typography on the existing production font stack
+    ok 2 - standardises portal typography on the existing production font stack
+      ---
+      duration_ms: 0.226236
+      ...
+    # Subtest: shared Tabs use Champagne selected accent and accessible tab roles
+    ok 3 - shared Tabs use Champagne selected accent and accessible tab roles
+      ---
+      duration_ms: 0.129159
+      ...
+    # Subtest: PageHeader removes decorative mock-refresh toast action (UI-FAKE-01)
+    ok 4 - PageHeader removes decorative mock-refresh toast action (UI-FAKE-01)
+      ---
+      duration_ms: 0.135525
+      ...
+    # Subtest: shared Table remains neutral denseness without Champagne row fills
+    ok 5 - shared Table remains neutral denseness without Champagne row fills
+      ---
+      duration_ms: 0.095244
+      ...
+    1..5
+ok 29 - UI Batch 1 — Premium Clinical tokens and shared presentation
+  ---
+  duration_ms: 2.180573
+  type: 'suite'
+  ...
+1..29
+# tests 252
+# suites 99
+# pass 252
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2624.347282
