@@ -117,7 +117,7 @@ export function Topbar() {
   }
 
   return (
-    <div className="pulse-top-ribbon sticky top-0 z-[3] flex min-h-[52px] w-full min-w-0 max-w-full flex-wrap items-center justify-between gap-2 overflow-x-auto border-b border-[var(--v34-card-line)] bg-[var(--card)] px-[10px] py-1.5 text-[var(--ink)] lg:flex-nowrap lg:px-[14px]">
+    <div className="pulse-top-ribbon sticky top-0 z-[3] flex min-h-[52px] w-full min-w-0 max-w-full flex-wrap items-center justify-between gap-2 overflow-x-auto border-b border-[var(--v34-card-line)] bg-[var(--card)] px-[10px] py-1.5 text-[var(--ink)] xl:flex-nowrap xl:px-[14px]">
       <div className="ribbon-left flex min-w-0 flex-1 items-center gap-2 lg:flex-none">
         <button
           type="button"
@@ -165,8 +165,8 @@ export function Topbar() {
         </div>
       </div>
 
-      <div className="ribbon-center order-3 flex w-full min-w-0 justify-center lg:order-none lg:max-w-[440px] lg:flex-1">
-        <label className="search-compact flex h-9 w-full max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
+      <div className="ribbon-center order-3 flex w-full min-w-0 justify-center xl:order-none xl:min-w-[12rem] xl:max-w-[440px] xl:flex-1">
+        <label className="search-compact flex h-9 w-full min-w-0 max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
           <Icon name="search" className="h-3.5 w-3.5 shrink-0" />
           <input
             type="search"
