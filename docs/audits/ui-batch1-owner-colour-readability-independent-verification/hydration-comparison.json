@@ -1,0 +1,11 @@
+{
+  "candidateUnique": 1,
+  "baselineUnique": 0,
+  "both": [],
+  "onlyCandidate": [
+    "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used: - A server/client branch `if (typeof window !== 'u"
+  ],
+  "onlyBaseline": [],
+  "candidateHitCount": 1,
+  "baselineHitCount": 0
+}

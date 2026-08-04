@@ -1,0 +1,35 @@
+▶ CP2.7A architecture / static boundaries
+  ✔ M07 production has no pulse.m06 access or M06 internal imports (447.2654ms)
+  ✔ M07 does not mutate platform registry storage; discovery health probe is the only KEYS import (143.8936ms)
+  ✔ single intake and hash implementations; replay uses platform query + CP2.4 intake (402.5048ms)
+  ✔ M06 production does not write pulse.m07 or import M07 modules (64.6077ms)
+  ✔ prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores (5.2759ms)
+  ✔ does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07 (102.5834ms)
+  ✔ documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped (19.8209ms)
+✔ CP2.7A architecture / static boundaries (1205.6871ms)
+▶ CP2.7A Batch 2 final-gate E2E
+  ✔ E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared (130.683ms)
+  ✔ global eventSequence tenant-filter: cross-tenant holes are not tenant gaps (13.5795ms)
+✔ CP2.7A Batch 2 final-gate E2E (145.714ms)
+▶ CP2.7B BLOCKED-M07 clearance
+  ✔ authoritative helpers are cleared and cannot disagree (11.2765ms)
+  ✔ successful intake, replay and authorised lifecycle report blockedM07: false (21.7952ms)
+  ✔ no production hardcoded blockedM07: true remains for the retired global blocker (119.537ms)
+  ✔ fail-closed paths remain independent: isolation, holds, restore, supersession, unsafe cursor (29.6728ms)
+✔ CP2.7B BLOCKED-M07 clearance (186.0962ms)
+▶ CP2.7A M07 migration matrix through v5
+  ✔ empty bootstrap reaches schema v9 with export/lock collections (9.4083ms)
+  ✔ v1 → v5 preserves periods (8.2961ms)
+  ✔ v2 → v5 preserves Batch 1 profiles (0.8687ms)
+  ✔ v3 → v5 preserves immutable snapshots (0.7506ms)
+  ✔ v4 → v5 preserves replay cursors and inserts lifecycle arrays if absent (0.9534ms)
+  ✔ repeated v5 is idempotent; interrupted v5 resumes without wipe (0.9613ms)
+✔ CP2.7A M07 migration matrix through v5 (29.3926ms)
+ℹ tests 19
+ℹ suites 4
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1955.487

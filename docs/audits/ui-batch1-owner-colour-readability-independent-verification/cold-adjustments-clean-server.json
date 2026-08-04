@@ -1,0 +1,36 @@
+[
+  {
+    "attempt": 1,
+    "status": 200,
+    "ms": 57544,
+    "error": null,
+    "jsonParseErrors": [],
+    "consoleErrors": [
+      "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n-                           <div className=\"mt-4\">\n                            ...\n                          ...\n"
+    ],
+    "bodySnippet": "EXECUTIVE COMMAND\n⌄\nCommand Centre\n★\nAction Inbox\n6\nopen actions, includes overdue or urgent\n★\nORGANISATION\n⌄\nOrganisation & Access\n☆\nPEOPLE\n⌄\nStaff & Doctors\n☆\nTraining\n☆\nROSTER\n⌄\nRoster & Shifts\n★\nTime & Attendance\n☆\nOPERATIONS\n⌄\nTasks & Actions\n☆\nTicketing Desk\n☆\nGOVERNANCE\n⌄\nCompliance & Quality",
+    "looksLike500": false
+  },
+  {
+    "attempt": 2,
+    "status": 200,
+    "ms": 9012,
+    "error": null,
+    "jsonParseErrors": [],
+    "consoleErrors": [],
+    "bodySnippet": "EXECUTIVE COMMAND\n⌄\nCommand Centre\n★\nAction Inbox\n6\nopen actions, includes overdue or urgent\n★\nORGANISATION\n⌄\nOrganisation & Access\n☆\nPEOPLE\n⌄\nStaff & Doctors\n☆\nTraining\n☆\nROSTER\n⌄\nRoster & Shifts\n★\nTime & Attendance\n☆\nOPERATIONS\n⌄\nTasks & Actions\n☆\nTicketing Desk\n☆\nGOVERNANCE\n⌄\nCompliance & Quality",
+    "looksLike500": false
+  },
+  {
+    "attempt": 3,
+    "status": 200,
+    "ms": 6137,
+    "error": null,
+    "jsonParseErrors": [],
+    "consoleErrors": [
+      "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <SegmentViewNode type=\"page\" pagePath=\"(portal)/[...\">\n      <SegmentTrieNode>\n      <ModulePage>\n        <ModuleWorkspace module={{id:\"staffpay\", ...}}>\n          <PageHeader>\n          ...\n            <ModuleBody module={{id:\"staffpay\", ...}}>\n              <StaffPayModule>\n                <StaffPayWorkspace>\n                  <StaffPayProvider>\n                    <Suspense fallback={<div>}>\n                      <DeepLinkSync>\n                      <WorkspaceInner>\n                        <div className=\"m07-shell ...\" data-m07-shell=\"batch6-export\" data-workspace-nav=\"horizontal\">\n                          <style>\n                          <header className=\"rounded-2x...\">\n                            <p>\n                            <p>\n                            <p>\n+                           <p className=\"mt-2 text-xs text-[var(--muted)]\" role=\"status\">\n-                           <div className=\"mt-4\">\n                            ...\n                          ...\n"
+    ],
+    "bodySnippet": "EXECUTIVE COMMAND\n⌄\nCommand Centre\n★\nAction Inbox\n6\nopen actions, includes overdue or urgent\n★\nORGANISATION\n⌄\nOrganisation & Access\n☆\nPEOPLE\n⌄\nStaff & Doctors\n☆\nTraining\n☆\nROSTER\n⌄\nRoster & Shifts\n★\nTime & Attendance\n☆\nOPERATIONS\n⌄\nTasks & Actions\n☆\nTicketing Desk\n☆\nGOVERNANCE\n⌄\nCompliance & Quality",
+    "looksLike500": false
+  }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "port":  3465,
+        "label":  "candidate",
+        "finalUrl":  "http://localhost:3465/staff-pay",
+        "error":  null,
+        "route":  "/staff-pay",
+        "status":  404
+    },
+    {
+        "port":  3465,
+        "label":  "candidate",
+        "finalUrl":  "http://localhost:3465/m07",
+        "error":  null,
+        "route":  "/m07",
+        "status":  404
+    },
+    {
+        "port":  3465,
+        "label":  "candidate",
+        "finalUrl":  "http://localhost:3465/staffpay",
+        "error":  null,
+        "route":  "/staffpay",
+        "status":  200
+    },
+    {
+        "port":  3466,
+        "label":  "baseline-f3333b6",
+        "finalUrl":  "http://localhost:3466/staff-pay",
+        "error":  null,
+        "route":  "/staff-pay",
+        "status":  404
+    },
+    {
+        "port":  3466,
+        "label":  "baseline-f3333b6",
+        "finalUrl":  "http://localhost:3466/m07",
+        "error":  null,
+        "route":  "/m07",
+        "status":  404
+    },
+    {
+        "port":  3466,
+        "label":  "baseline-f3333b6",
+        "finalUrl":  "http://localhost:3466/staffpay",
+        "error":  null,
+        "route":  "/staffpay",
+        "status":  200
+    }
+]

@@ -1,0 +1,15 @@
+▶ UI Batch 1 — Premium Clinical tokens and shared presentation
+  ✔ defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01) (3.2831ms)
+  ✔ standardises portal typography on the existing production font stack (4.0932ms)
+  ✔ shared Tabs use Champagne selected accent and accessible tab roles (2.0173ms)
+  ✔ PageHeader removes decorative mock-refresh toast action (UI-FAKE-01) (1.4321ms)
+  ✔ shared Table remains neutral denseness without Champagne row fills (1.1033ms)
+✔ UI Batch 1 — Premium Clinical tokens and shared presentation (13.6771ms)
+ℹ tests 5
+ℹ suites 1
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 640.1674

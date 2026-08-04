@@ -1,0 +1,13 @@
+{
+    "id":  "25-lint",
+    "command":  "npm run lint",
+    "start":  "2026-08-03T23:46:59.2370524Z",
+    "end":  "2026-08-03T23:47:43.4214715Z",
+    "ms":  44184,
+    "exit":  1,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/25-lint.log",
+    "tests":  "?",
+    "pass":  "?",
+    "fail":  "?",
+    "skip":  "0"
+}

@@ -1,0 +1,13 @@
+{
+    "id":  "04-m07-presentation",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+    "start":  "2026-08-03T23:43:53.9078381Z",
+    "end":  "2026-08-03T23:44:02.4616252Z",
+    "ms":  8554,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/04-m07-presentation.log",
+    "tests":  "5",
+    "pass":  "5",
+    "fail":  "0",
+    "skip":  "0"
+}

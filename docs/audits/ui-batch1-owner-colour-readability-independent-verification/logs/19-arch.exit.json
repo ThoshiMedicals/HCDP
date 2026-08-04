@@ -1,0 +1,13 @@
+{
+    "id":  "19-arch",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-architecture-cp27.test.ts src/modules/m07-staff-pay/tests/m07-batch2-final-gate-cp27.test.ts src/modules/m07-staff-pay/tests/m07-blocker-clearance-cp27b.test.ts src/modules/m07-staff-pay/tests/m07-migration-cp27.test.ts",
+    "start":  "2026-08-03T23:45:51.2214858Z",
+    "end":  "2026-08-03T23:45:56.7881731Z",
+    "ms":  5567,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/19-arch.log",
+    "tests":  "19",
+    "pass":  "19",
+    "fail":  "0",
+    "skip":  "0"
+}

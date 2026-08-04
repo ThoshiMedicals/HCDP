@@ -1,0 +1,11 @@
+{
+    "onlyBaseline":  [
+
+                     ],
+    "onlyCandidate":  [
+
+                      ],
+    "exactPathMessageMatch":  true,
+    "candidateCount":  21,
+    "baselineCount":  21
+}

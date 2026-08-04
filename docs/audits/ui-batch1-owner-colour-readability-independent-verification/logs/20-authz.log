@@ -1,0 +1,23 @@
+▶ M07 authz / scope / SoD / prohibited fields (Batch 1)
+  ✔ denies period create without permission (12.2728ms)
+  ✔ enforces legal-entity isolation (1.5957ms)
+  ✔ rejects second open ordinary period (2.3797ms)
+  ✔ rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path (1.3159ms)
+  ✔ enforces external id uniqueness within legal entity (7.0499ms)
+  ✔ redacts external id from clinic manager views (1.4529ms)
+  ✔ rejects prohibited banking/tax/super fields (1.0699ms)
+  ✔ denies export operator from creating export profiles (1.2248ms)
+  ✔ allows export operator to select but not mutate profile (1.6269ms)
+  ✔ denies clerk rule/code edits (1.7199ms)
+  ✔ SoD: export operator cannot lock; clerk cannot final-approve self (1.0225ms)
+  ✔ writes audit for authorised mutations (0.9747ms)
+  ✔ admin can mutate configuration (3.4539ms)
+✔ M07 authz / scope / SoD / prohibited fields (Batch 1) (39.9261ms)
+ℹ tests 13
+ℹ suites 1
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1175.1231

@@ -1,0 +1,13 @@
+{
+    "id":  "11-ppa1-integration",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx",
+    "start":  "2026-08-03T23:44:58.6646041Z",
+    "end":  "2026-08-03T23:45:04.5159785Z",
+    "ms":  5851,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/11-ppa1-integration.log",
+    "tests":  "11",
+    "pass":  "11",
+    "fail":  "0",
+    "skip":  "0"
+}

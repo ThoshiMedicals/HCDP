@@ -1,0 +1,20 @@
+▶ M07 PPA-1 core — prior-period adjustment foundation
+  ✔ creates PPA against locked ordinary source; source unchanged; adjustment period linked (81.3316ms)
+  ✔ rejects unlocked ordinary source pre-write (1.7974ms)
+  ✔ rejects missing / unknown source and adjustment-kind source (15.033ms)
+  ✔ rejects cross-LE caller widening and Org B access (16.5513ms)
+  ✔ rejects missing reasonCode and blank reasonText pre-write (13.7322ms)
+  ✔ enforces at most one open PPA per source; idempotent and conflicting replay (17.3362ms)
+  ✔ list/get are LE-scoped; missing adjust permission denied (14.1886ms)
+  ✔ cancels draft idempotently; rejects invalid cancel state (9.9412ms)
+  ✔ controlled unlock does not create a PPA case (14.14ms)
+  ✔ rejects prohibited identifier fields on create input (14.1283ms)
+✔ M07 PPA-1 core — prior-period adjustment foundation (201.0421ms)
+ℹ tests 10
+ℹ suites 1
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1605.7099

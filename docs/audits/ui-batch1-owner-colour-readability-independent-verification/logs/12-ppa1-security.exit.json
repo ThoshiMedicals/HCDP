@@ -1,0 +1,13 @@
+{
+    "id":  "12-ppa1-security",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts",
+    "start":  "2026-08-03T23:45:04.5343501Z",
+    "end":  "2026-08-03T23:45:08.6189141Z",
+    "ms":  4085,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/12-ppa1-security.log",
+    "tests":  "6",
+    "pass":  "6",
+    "fail":  "0",
+    "skip":  "0"
+}

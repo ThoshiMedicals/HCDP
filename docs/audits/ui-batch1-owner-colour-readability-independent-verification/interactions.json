@@ -1,0 +1,24 @@
+{
+  "search": {
+    "ok": true,
+    "value": "staff"
+  },
+  "favourite": {
+    "ok": true
+  },
+  "sidebarCollapse": {
+    "ok": true
+  },
+  "appearanceControl": {
+    "ok": true
+  },
+  "sectionTab": {
+    "ok": true,
+    "before": "http://localhost:3465/staff-doctors",
+    "after": "http://localhost:3465/staff-doctors"
+  },
+  "disclosure": {
+    "ok": true
+  },
+  "errors": []
+}

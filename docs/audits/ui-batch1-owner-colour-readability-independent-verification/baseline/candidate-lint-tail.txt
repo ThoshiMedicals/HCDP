@@ -1,0 +1,28 @@
+  47:78  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  60:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  67:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+C:\Users\ETB Sri Lanka\Desktop\HCDP\.worktrees\ui-batch1-owner-colour-readability-independent-verification\src\modules\m05-roster\sections\ConflictsWarningsSection.tsx
+  40:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  36:78  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  49:6   warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  54:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  63:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  68:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  50:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  61:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  46:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  34:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  55:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  38:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  20:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  14:69  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  16:77  warning  React Hook useMemo has an unnecessary dependency: 'bump'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  25:5  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  15:72  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  23:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  31:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  19:6  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  18:71  warning  React Hook useMemo has an unnecessary dependency: 'refreshKey'. Either exclude it or remove the dependency array  react-hooks/exhaustive-deps
+  57:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+  386:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+? 26 problems (2 errors, 24 warnings)

@@ -1,0 +1,13 @@
+{
+    "id":  "22-batch6",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch6-cp61-66.test.ts src/modules/m07-staff-pay/tests/m07-batch6-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-third-remediation.test.ts src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+    "start":  "2026-08-03T23:46:06.6071654Z",
+    "end":  "2026-08-03T23:46:13.3885832Z",
+    "ms":  6781,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/22-batch6.log",
+    "tests":  "43",
+    "pass":  "43",
+    "fail":  "0",
+    "skip":  "0"
+}

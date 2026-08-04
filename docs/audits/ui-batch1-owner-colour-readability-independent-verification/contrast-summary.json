@@ -1,0 +1,49 @@
+{
+  "focusedLight": {
+    "primaryTextOnCanvas": {
+      "fg": "",
+      "bg": "",
+      "ratio": 14.62
+    },
+    "mutedOnSurface": {
+      "fg": "",
+      "bg": "",
+      "ratio": 5.07
+    },
+    "onActionOnAction": {
+      "fg": "",
+      "bg": "",
+      "ratio": 10.97
+    },
+    "controlBorderOnSurface": {
+      "fg": "",
+      "bg": "",
+      "ratio": 3.84
+    }
+  },
+  "focusedDark": {
+    "primaryTextOnCanvas": {
+      "fg": "",
+      "bg": "",
+      "ratio": 14.82
+    },
+    "mutedOnSurface": {
+      "fg": "",
+      "bg": "",
+      "ratio": 7.43
+    },
+    "onActionOnAction": {
+      "fg": "",
+      "bg": "",
+      "ratio": 6.63
+    },
+    "controlBorderOnSurface": {
+      "fg": "",
+      "bg": "",
+      "ratio": 3.1
+    }
+  },
+  "matrixPass": 0,
+  "matrixFail": 252,
+  "failIssues": 3916
+}

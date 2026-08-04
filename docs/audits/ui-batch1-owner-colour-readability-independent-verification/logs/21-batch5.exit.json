@@ -1,0 +1,13 @@
+{
+    "id":  "21-batch5",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-batch5-cp51-56.test.ts src/modules/m07-staff-pay/tests/m07-batch5-material-revision.test.ts src/modules/m07-staff-pay/tests/m07-batch5-remediation.test.ts",
+    "start":  "2026-08-03T23:46:01.6338472Z",
+    "end":  "2026-08-03T23:46:06.5829319Z",
+    "ms":  4949,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/21-batch5.log",
+    "tests":  "49",
+    "pass":  "49",
+    "fail":  "0",
+    "skip":  "0"
+}

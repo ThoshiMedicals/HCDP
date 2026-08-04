@@ -1,0 +1,17 @@
+▲ Next.js 16.2.10 (webpack)
+- Local:         http://localhost:3466
+- Network:       http://192.168.30.129:3466
+✓ Ready in 1446ms
+
+○ Compiling /[module] ...
+ GET /dashboard 200 in 19.0s (next.js: 17.0s, generate-params: 2.3s, application-code: 2.0s)
+ GET /staff-pay 404 in 187ms (next.js: 19ms, generate-params: 11ms, application-code: 168ms)
+ GET /m07 404 in 166ms (next.js: 5ms, generate-params: 28µs, application-code: 161ms)
+ GET /staffpay 200 in 159ms (next.js: 11ms, generate-params: 43µs, application-code: 149ms)
+ GET /dashboard 200 in 709ms (next.js: 16ms, generate-params: 11ms, application-code: 693ms)
+ GET /staff-doctors 200 in 686ms (next.js: 52ms, generate-params: 26ms, application-code: 634ms)
+ GET /roster 200 in 451ms (next.js: 33ms, generate-params: 114µs, application-code: 418ms)
+ GET /time-attendance 200 in 257ms (next.js: 22ms, generate-params: 13ms, application-code: 236ms)
+ GET /staffpay?section=overview 200 in 244ms (next.js: 10ms, generate-params: 51µs, application-code: 235ms)
+ GET /staffpay?section=adjustments 200 in 331ms (next.js: 22ms, generate-params: 12ms, application-code: 309ms)
+[?25h

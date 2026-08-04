@@ -1,0 +1,106 @@
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="(portal)/[...">
+      <SegmentTrieNode>
+      <ModulePage>
+        <ModuleWorkspace module={{id:"staffpay", ...}}>
+          <PageHeader>
+          ...
+            <ModuleBody module={{id:"staffpay", ...}}>
+              <StaffPayModule>
+                <StaffPayWorkspace>
+                  <StaffPayProvider>
+                    <Suspense fallback={<div>}>
+                      <DeepLinkSync>
+                      <WorkspaceInner>
+                        <div className="m07-shell ..." data-m07-shell="batch6-export" data-workspace-nav="horizontal">
+                          <style>
+                          <header className="rounded-2x...">
+                            <p>
+                            <p>
+                            <p>
++                           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
+-                           <div className="mt-4">
+                            ...
+                          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at p (<anonymous>)
+    at WorkspaceInner (src\modules\m07-staff-pay\StaffPayWorkspace.tsx:114:11)
+    at StaffPayWorkspace (src\modules\m07-staff-pay\StaffPayWorkspace.tsx:140:9)
+    at StaffPayModule (src\modules\m07-staff-pay\StaffPayModule.tsx:10:10)
+    at resolveModuleEntry (src\components\workspaces\ModuleWorkspace.tsx:81:14)
+    at ModuleBody (src\components\workspaces\ModuleWorkspace.tsx:122:17)
+    at ModuleWorkspace (src\components\workspaces\ModuleWorkspace.tsx:177:11)
+    at ModulePage (src\app\(portal)\[module]\page.tsx:78:10)
+  112 |         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
+  113 |         {bootstrap ? (
+> 114 |           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
+      |           ^
+  115 |             Storage bootstrap · schema v9 · v9Ran={String(bootstrap.v9Ran ?? false)}
+  116 |           </p>
+  117 |         ) : null}
+[browser] Uncaught Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="(portal)/[...">
+      <SegmentTrieNode>
+      <ModulePage>
+        <ModuleWorkspace module={{id:"staffpay", ...}}>
+          <PageHeader>
+          ...
+            <ModuleBody module={{id:"staffpay", ...}}>
+              <StaffPayModule>
+                <StaffPayWorkspace>
+                  <StaffPayProvider>
+                    <Suspense fallback={<div>}>
+                      <DeepLinkSync>
+                      <WorkspaceInner>
+                        <div className="m07-shell ..." data-m07-shell="batch6-export" data-workspace-nav="horizontal">
+                          <style>
+                          <header className="rounded-2x...">
+                            <p>
+                            <p>
+                            <p>
++                           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
+-                           <div className="mt-4">
+                            ...
+                          ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at p (<anonymous>)
+    at WorkspaceInner (src\modules\m07-staff-pay\StaffPayWorkspace.tsx:114:11)
+    at StaffPayWorkspace (src\modules\m07-staff-pay\StaffPayWorkspace.tsx:140:9)
+    at StaffPayModule (src\modules\m07-staff-pay\StaffPayModule.tsx:10:10)
+    at resolveModuleEntry (src\components\workspaces\ModuleWorkspace.tsx:81:14)
+    at ModuleBody (src\components\workspaces\ModuleWorkspace.tsx:122:17)
+    at ModuleWorkspace (src\components\workspaces\ModuleWorkspace.tsx:177:11)
+    at ModulePage (src\app\(portal)\[module]\page.tsx:78:10)
+  112 |         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
+  113 |         {bootstrap ? (
+> 114 |           <p className="mt-2 text-xs text-[var(--muted)]" role="status">
+      |           ^
+  115 |             Storage bootstrap · schema v9 · v9Ran={String(bootstrap.v9Ran ?? false)}
+  116 |           </p>
+  117 |         ) : null}

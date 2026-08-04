@@ -1,0 +1,13 @@
+{
+    "id":  "02-ui-visual",
+    "command":  "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+    "start":  "2026-08-03T23:43:43.4579518Z",
+    "end":  "2026-08-03T23:43:48.1754517Z",
+    "ms":  4717,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/02-ui-visual.log",
+    "tests":  "10",
+    "pass":  "10",
+    "fail":  "0",
+    "skip":  "0"
+}

@@ -1,0 +1,10 @@
+▲ Next.js 16.2.10 (webpack)
+- Local:         http://localhost:3465
+- Network:       http://192.168.30.129:3465
+✓ Ready in 1411ms
+
+○ Compiling /[module] ...
+ GET /staffpay?section=adjustments 200 in 49s (next.js: 47s, generate-params: 3.3s, application-code: 1852ms)
+ GET /staffpay?section=adjustments 200 in 770ms (next.js: 79ms, generate-params: 60ms, application-code: 690ms)
+ GET /staffpay?section=adjustments 200 in 636ms (next.js: 20ms, generate-params: 91µs, application-code: 616ms)
+[?25h

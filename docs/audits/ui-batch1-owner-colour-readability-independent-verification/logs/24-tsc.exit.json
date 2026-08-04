@@ -1,0 +1,13 @@
+{
+    "id":  "24-tsc",
+    "command":  "npx tsc --noEmit",
+    "start":  "2026-08-03T23:46:38.2826413Z",
+    "end":  "2026-08-03T23:46:59.2150255Z",
+    "ms":  20932,
+    "exit":  2,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/24-tsc.log",
+    "tests":  "?",
+    "pass":  "?",
+    "fail":  "?",
+    "skip":  "0"
+}

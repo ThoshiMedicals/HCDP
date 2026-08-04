@@ -1,0 +1,9 @@
+﻿{
+    "lintExit":  1,
+    "tscExit":  2,
+    "tscErrorCount":  21,
+    "lint":  {
+                 "errors":  2,
+                 "warnings":  24
+             }
+}

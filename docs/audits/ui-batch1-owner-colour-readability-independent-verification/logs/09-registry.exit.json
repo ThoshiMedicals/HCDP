@@ -1,0 +1,13 @@
+{
+    "id":  "09-registry",
+    "command":  "npx tsx --test src/platform/workforce/tests/published-timesheet-registry.test.ts",
+    "start":  "2026-08-03T23:44:49.6055660Z",
+    "end":  "2026-08-03T23:44:54.2152490Z",
+    "ms":  4610,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/09-registry.log",
+    "tests":  "27",
+    "pass":  "27",
+    "fail":  "0",
+    "skip":  "0"
+}

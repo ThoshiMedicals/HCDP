@@ -1,0 +1,13 @@
+{
+    "id":  "06-od-a2",
+    "command":  "npx tsx --test src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts",
+    "start":  "2026-08-03T23:44:35.7551432Z",
+    "end":  "2026-08-03T23:44:41.2139696Z",
+    "ms":  5459,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/06-od-a2.log",
+    "tests":  "8",
+    "pass":  "8",
+    "fail":  "0",
+    "skip":  "0"
+}

@@ -1,0 +1,67 @@
+﻿[
+    {
+        "id":  "01-ui-colour",
+        "command":  "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-colour-readability.test.ts",
+        "start":  "2026-08-03T23:43:37.6012282Z",
+        "end":  "2026-08-03T23:43:43.2895445Z",
+        "ms":  5688,
+        "exit":  0,
+        "tests":  "?",
+        "pass":  "?",
+        "fail":  "?",
+        "skip":  "0",
+        "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/01-ui-colour.log"
+    },
+    {
+        "id":  "02-ui-visual",
+        "command":  "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+        "start":  "2026-08-03T23:43:43.4579518Z",
+        "end":  "2026-08-03T23:43:48.1754517Z",
+        "ms":  4717,
+        "exit":  0,
+        "tests":  "?",
+        "pass":  "?",
+        "fail":  "?",
+        "skip":  "0",
+        "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/02-ui-visual.log"
+    },
+    {
+        "id":  "03-ui-chrome",
+        "command":  "npx tsx --test src/components/workspaces/tests/ui-batch1-qualification-chrome.test.ts",
+        "start":  "2026-08-03T23:43:48.2025248Z",
+        "end":  "2026-08-03T23:43:53.8839009Z",
+        "ms":  5681,
+        "exit":  0,
+        "tests":  "?",
+        "pass":  "?",
+        "fail":  "?",
+        "skip":  "0",
+        "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/03-ui-chrome.log"
+    },
+    {
+        "id":  "04-m07-presentation",
+        "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+        "start":  "2026-08-03T23:43:53.9078381Z",
+        "end":  "2026-08-03T23:44:02.4616252Z",
+        "ms":  8554,
+        "exit":  0,
+        "tests":  "?",
+        "pass":  "?",
+        "fail":  "?",
+        "skip":  "0",
+        "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/04-m07-presentation.log"
+    },
+    {
+        "id":  "05-m07-shell",
+        "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+        "start":  "2026-08-03T23:44:02.5151555Z",
+        "end":  "2026-08-03T23:44:09.4824271Z",
+        "ms":  6967,
+        "exit":  0,
+        "tests":  "?",
+        "pass":  "?",
+        "fail":  "?",
+        "skip":  "0",
+        "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/05-m07-shell.log"
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "candidateSummary":  "✖ 26 problems (2 errors, 24 warnings)",
+    "baselineSummary":  "✖ 26 problems (2 errors, 24 warnings)",
+    "candidateLines":  27,
+    "exactMatch":  true,
+    "onlyCandidate":  [
+
+                      ],
+    "onlyBaseline":  [
+
+                     ],
+    "baselineLines":  27
+}

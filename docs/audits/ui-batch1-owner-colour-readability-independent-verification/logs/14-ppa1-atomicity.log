@@ -1,0 +1,19 @@
+▶ M07 PPA-1 atomicity / fail-closed compensation
+  ✔ 1. adjustment-period write fail — no success, source unchanged, no open PPA (54.6106ms)
+  ✔ 2. case write fail after period create — compensates; no open PPA; residual archived (11.4421ms)
+  ✔ 3. consistency verify fail after both writes — compensates; no open PPA (12.3875ms)
+  ✔ 4. audit fail after business writes — no success response; no false-success audit; compensate (6.668ms)
+  ✔ 5. duplicate create same source — rejected; source unchanged (11.9873ms)
+  ✔ 6. identical idempotency replay — returns same case; no second open PPA (5.809ms)
+  ✔ 7. conflicting idempotency replay — rejected; source unchanged (11.5608ms)
+  ✔ 8. genuinely overlapping nested create mid-gate — one open PPA; loser fail-closed (5.5219ms)
+  ✔ 9. cancel audit failure — cancel persists but no success return; source unchanged (11.2219ms)
+✔ M07 PPA-1 atomicity / fail-closed compensation (132.7819ms)
+ℹ tests 9
+ℹ suites 1
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1764.269

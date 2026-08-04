@@ -1,0 +1,16 @@
+▶ Owner colour readability — semantic tokens
+  ✔ defines one semantic theme layer and maps legacy variables (4.5938ms)
+  ✔ fixes active tabs, brand ribbon and badge teal surface tokens (2.9166ms)
+  ✔ enforces readable typography minima in tokens and globals (1.0963ms)
+✔ Owner colour readability — semantic tokens (11.661ms)
+▶ Owner colour readability — hard-coded leak guards
+  ✔ removes light-surface and slate hard-codes from owner inspection modules (2.1333ms)
+✔ Owner colour readability — hard-coded leak guards (2.3679ms)
+ℹ tests 4
+ℹ suites 2
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 746.1961

@@ -1,0 +1,13 @@
+{
+    "id":  "05-m07-shell",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+    "start":  "2026-08-03T23:44:02.5151555Z",
+    "end":  "2026-08-03T23:44:09.4824271Z",
+    "ms":  6967,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/05-m07-shell.log",
+    "tests":  "6",
+    "pass":  "6",
+    "fail":  "0",
+    "skip":  "0"
+}

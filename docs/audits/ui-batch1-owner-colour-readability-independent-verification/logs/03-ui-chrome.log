@@ -1,0 +1,19 @@
+▶ QC-1 — Dashboard shell controls chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01)
+  ✔ removes toast-only demo verbs from relocated DashboardShellControlsPanel (2.0525ms)
+  ✔ retains navigation-only shell controls and labels non-operational status (1.317ms)
+  ✔ does not stack ModuleContextStrip / DashboardShellStrip above Command Centre (0.817ms)
+  ✔ does not widen QC-1 into CommandCentre toast inventory (OD-A1 NARROW) (1.077ms)
+✔ QC-1 — Dashboard shell controls chrome truthfulness (F-MAJ-01 / UI-DASH-03 / UI-FAKE-01) (7.7393ms)
+▶ QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEAR-01)
+  ✔ applies Light / Dark / System via existing appearance store helpers (2.1917ms)
+  ✔ persists appearance preference without requiring a second theme system (7.1726ms)
+  ✔ keeps clinic/identity useSyncExternalStore server snapshots referentially stable (1.3069ms)
+✔ QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEAR-01) (11.1609ms)
+ℹ tests 7
+ℹ suites 2
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 784.2375

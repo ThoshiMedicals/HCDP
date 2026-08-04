@@ -1,0 +1,34 @@
+﻿{
+    "worktree":  "C:\\Users\\ETB Sri Lanka\\Desktop\\HCDP\\.worktrees\\ui-batch1-owner-colour-readability-independent-verification",
+    "expectedOriginMain":  "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+    "candidateTip":  "ee9731e38e7d20d6d825e6c243503f4aea9564c3",
+    "expectedCandidateTip":  "ee9731e38e7d20d6d825e6c243503f4aea9564c3",
+    "candidateBranch":  "cursor/ui-batch1-owner-colour-readability-remediation",
+    "ownerInspectionPort3000":  {
+                                    "listening":  true,
+                                    "pid":  17288,
+                                    "processName":  "node"
+                                },
+    "candidateTipMatch":  true,
+    "os":  "Microsoft Windows NT 10.0.19045.0",
+    "independence":  [
+                         "Evidence-only verifier",
+                         "No application source repairs",
+                         "No test weakening",
+                         "No dependency upgrades",
+                         "No overwrite of remediation evidence",
+                         "No merge/PR/main update/UI Batch 2"
+                     ],
+    "playwright":  "Version 1.49.0",
+    "osCaption":  "Microsoft Windows 10 Pro",
+    "git":  "git version 2.54.0.windows.1",
+    "descendsFromPriorVisual":  true,
+    "npm":  "11.12.1",
+    "node":  "v24.15.0",
+    "priorVisualBase":  "f3333b6f27b6c0afc5a29bcff45e9bccea392c35",
+    "recordedAt":  "2026-08-03T23:17:20.8004758Z",
+    "decision":  "Owner accepted for independent verification only — 4 August 2026",
+    "originMain":  "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+    "originMainMatch":  true,
+    "verificationBranch":  "cursor/ui-batch1-owner-colour-readability-independent-verification"
+}

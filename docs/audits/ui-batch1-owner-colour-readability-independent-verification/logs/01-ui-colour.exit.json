@@ -1,0 +1,13 @@
+{
+    "id":  "01-ui-colour",
+    "command":  "npx tsx --test src/components/workspaces/tests/ui-batch1-owner-colour-readability.test.ts",
+    "start":  "2026-08-03T23:43:37.6012282Z",
+    "end":  "2026-08-03T23:43:43.2895445Z",
+    "ms":  5688,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/01-ui-colour.log",
+    "tests":  "4",
+    "pass":  "4",
+    "fail":  "0",
+    "skip":  "0"
+}

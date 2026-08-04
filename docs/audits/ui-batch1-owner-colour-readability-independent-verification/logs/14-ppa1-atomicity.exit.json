@@ -1,0 +1,13 @@
+{
+    "id":  "14-ppa1-atomicity",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
+    "start":  "2026-08-03T23:45:14.0212615Z",
+    "end":  "2026-08-03T23:45:18.7660291Z",
+    "ms":  4745,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/14-ppa1-atomicity.log",
+    "tests":  "9",
+    "pass":  "9",
+    "fail":  "0",
+    "skip":  "0"
+}

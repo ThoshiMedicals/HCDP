@@ -1,0 +1,760 @@
+{
+  "typo13": [
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "EXECUTIVE COMMAND\n⌄",
+      "accessibleName": "EXECUTIVE COMMAND\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row.active:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(22, 52, 86)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(22, 52, 86)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 2.99,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row:nth-of-type(2) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "ORGANISATION\n⌄",
+      "accessibleName": "ORGANISATION\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(2) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "PEOPLE\n⌄",
+      "accessibleName": "PEOPLE\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(3) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "ROSTER\n⌄",
+      "accessibleName": "ROSTER\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "OPERATIONS\n⌄",
+      "accessibleName": "OPERATIONS\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(5) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "GOVERNANCE\n⌄",
+      "accessibleName": "GOVERNANCE\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(6) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "ASSETS\n⌄",
+      "accessibleName": "ASSETS\n⌄",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(7) > button.v32-nav-toggle",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 950,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "Demo Act-as — not production auth",
+      "accessibleName": "Demo Act-as — not production auth",
+      "selector": "div.app.flex:nth-of-type(2) > aside.pulse-sidebar.fixed > div.sidebar-user:nth-of-type(2) > div.v27-sidebar-role:nth-of-type(3) > p.mt-1.text-[length:var(--type-meta)]",
+      "foreground": "rgb(183, 196, 214)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 9.34,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "Scope: All Clinics",
+      "accessibleName": "Scope: All Clinics",
+      "selector": "main.main.flex > div.pulse-top-ribbon.sticky:nth-of-type(1) > div.ribbon-left.flex:nth-of-type(1) > div.flex.min-w-0:nth-of-type(2) > span.hidden.pl-1",
+      "foreground": "rgb(95, 112, 133)",
+      "background": "rgb(255, 255, 255)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(255, 255, 255)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 600,
+      "ratio": 5.07,
+      "required": 13,
+      "adjudication": "FAIL",
+      "kind": "typography-control-below-13"
+    }
+  ],
+  "contrast": [
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row.active:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(22, 52, 86)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(22, 52, 86)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 2.99,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row:nth-of-type(2) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row.active:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(22, 52, 86)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(22, 52, 86)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 2.99,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row:nth-of-type(2) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/dashboard",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row.active:nth-of-type(2) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(22, 52, 86)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(22, 52, 86)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 2.99,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "light",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(1) > div.v32-nav-children > div.nav-row.active:nth-of-type(2) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(22, 52, 86)",
+      "backgroundChain": [
+        {
+          "tag": "div",
+          "color": "rgb(22, 52, 86)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 2.99,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    },
+    {
+      "route": "/action-inbox",
+      "section": null,
+      "appearance": "system",
+      "viewport": 1440,
+      "text": "★",
+      "accessibleName": "Remove favourite",
+      "selector": "nav.mt-1.flex-1 > div.v32-nav-group:nth-of-type(4) > div.v32-nav-children > div.nav-row:nth-of-type(1) > button.v33-fav-star.is-fav",
+      "foreground": "rgb(155, 116, 64)",
+      "background": "rgb(11, 31, 58)",
+      "backgroundChain": [
+        {
+          "tag": "aside",
+          "color": "rgb(11, 31, 58)",
+          "a": 1
+        }
+      ],
+      "fontSize": 12,
+      "fontWeight": 400,
+      "ratio": 3.91,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "kind": "contrast-aa"
+    }
+  ],
+  "primary": [
+    {
+      "kind": "primary-text-7-1",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 7,
+      "adjudication": "FAIL",
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440
+    },
+    {
+      "kind": "primary-text-7-1",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 7,
+      "adjudication": "FAIL",
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440
+    }
+  ],
+  "muted": [
+    {
+      "kind": "muted-4-5",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440
+    },
+    {
+      "kind": "muted-4-5",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440
+    }
+  ],
+  "onAction": [
+    {
+      "kind": "on-action-4-5",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440
+    },
+    {
+      "kind": "on-action-4-5",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 4.5,
+      "adjudication": "FAIL",
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440
+    }
+  ],
+  "boundary": [
+    {
+      "kind": "boundary-3-1",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 3,
+      "adjudication": "FAIL",
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440
+    },
+    {
+      "kind": "boundary-3-1",
+      "fg": "",
+      "bg": "",
+      "ratio": 1,
+      "required": 3,
+      "adjudication": "FAIL",
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440
+    }
+  ],
+  "leak": [
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 1440,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "dark",
+      "viewport": 1280,
+      "kind": "light-surface-leak",
+      "selector": "div.grid.gap-3 > div.rounded-[14px].border:nth-of-type(5) > div.mt-3.flex:nth-of-type(2) > div.inline-flex.items-center:nth-of-type(1) > button.rounded-full.border:nth-of-type(1)",
+      "background": "rgb(239, 246, 255)",
+      "className": "rounded-full border px-2.5 py-1 text-[length:var(--type-control)] font-bold focus-visible:outline fo",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "dark",
+      "viewport": 1280,
+      "kind": "light-surface-leak",
+      "selector": "div.grid.gap-3 > div.rounded-[14px].border:nth-of-type(5) > div.mt-3.flex:nth-of-type(2) > div.inline-flex.items-center:nth-of-type(2) > button.rounded-full.border:nth-of-type(1)",
+      "background": "rgb(239, 246, 255)",
+      "className": "rounded-full border px-2.5 py-1 text-[length:var(--type-control)] font-bold focus-visible:outline fo",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 1280,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 1024,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 768,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 430,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 390,
+      "kind": "light-surface-leak",
+      "selector": "div.min-w-0.w-full:nth-of-type(2) > section.content.mx-auto > div.grid.gap-[18px] > div.min-w-0.grid > div.rounded-xl.border:nth-of-type(2)",
+      "background": "rgb(251, 252, 253)",
+      "className": "rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3",
+      "adjudication": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+▶ M07 Batch 5 CP5.1–5.6
+  ▶ CP5.1 eligible population + readiness
+    ✔ excludes doctors and inactive/terminated/future-start workforce (81.9103ms)
+    ✔ fails closed on missing effective clinic assignment (33.8408ms)
+    ✔ blocks readiness when calculation missing / open exception (31.0473ms)
+  ✔ CP5.1 eligible population + readiness (149.228ms)
+  ▶ CP5.2–5.3 submit / approve / reject / withdraw + SoD
+    ✔ submits, approves with SoD, and sets export-ready wording state (28.9411ms)
+    ✔ blocks submitter self-approval and material preparer approval (7.3344ms)
+    ✔ rejects and withdraws with mandatory reason; supports resubmission (25.5483ms)
+    ✔ unauthorised submit / wrong-scope approver fail closed (6.7025ms)
+    ✔ submit and approve replay are idempotent (16.0947ms)
+  ✔ CP5.2–5.3 submit / approve / reject / withdraw + SoD (87.0433ms)
+  ▶ CP5.4 invalidation
+    ✔ recalculation after approval marks stale and leaves export-ready (16.5785ms)
+    ✔ deduction change and new exception after approval invalidate (14.8087ms)
+    ✔ approval fails when source manifest changed before approve (10.9531ms)
+  ✔ CP5.4 invalidation (42.9365ms)
+  ▶ CP5.5 M02 + UI meta
+    ✔ projects approval-required and closes on approve without duplicate fork (8.4496ms)
+    ✔ Approval section is available in section meta (0.6523ms)
+    ✔ getPeriodApprovalView surfaces readiness and history (8.2965ms)
+  ✔ CP5.5 M02 + UI meta (17.8656ms)
+  ▶ CP5.6 migration, architecture, exclusions
+    ✔ migration v8 idempotent and preserves v7 data (3.88ms)
+    ✔ malformed stored approval is skipped safely (1.1344ms)
+    ✔ no M04/M05/M06 writes and no direct M02 repository import (119.123ms)
+    ✔ blocked period cannot submit as approved/export-ready (1.8174ms)
+    ✔ tenant/LE mismatch on population for org B actor (4.744ms)
+  ✔ CP5.6 migration, architecture, exclusions (131.2868ms)
+✔ M07 Batch 5 CP5.1–5.6 (430.1816ms)
+▶ M07 Batch 5 final — materialProfileRevision pin consistency
+  ✔ approved manifest verifies before mutation (115.685ms)
+  ✔ rate-only update cannot leave approved/export-ready with checksum mismatch (16.7841ms)
+  ✔ external-ID update cannot leave approved/export-ready with checksum mismatch (16.5226ms)
+  ✔ non-material update preserves approval only when manifest reconstruction still succeeds (13.9672ms)
+  ✔ every material profile update immediately stales approval (16.765ms)
+  ✔ material classification change bumps materialProfileRevision and stales (17.2118ms)
+  ✔ stale invalidation remains idempotent (18.0976ms)
+  ✔ unrelated historical or audit-only record changes do not incorrectly invalidate (12.0974ms)
+  ✔ direct approval verification never suppresses a genuine authoritative-source mismatch (10.5654ms)
+✔ M07 Batch 5 final — materialProfileRevision pin consistency (241.5327ms)
+▶ M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+  ▶ employment / clinic fail-closed
+    ✔ missing employment status blocks and keeps person visible (50.2818ms)
+    ✔ missing employment-effective start date blocks (7.0042ms)
+    ✔ ambiguous employment dates block (3.7052ms)
+    ✔ missing period-effective clinic assignment blocks (2.2386ms)
+    ✔ ambiguous clinic assignment blocks (2.9879ms)
+    ✔ ordinary persisted record cannot use demo defaults (32.6006ms)
+    ✔ explicitly marked demo seed follows only approved isolated demo behaviour (6.2544ms)
+  ✔ employment / clinic fail-closed (108.9173ms)
+  ▶ profile / classification invalidation
+    ✔ profile change after approval immediately produces stale (54.8325ms)
+    ✔ employment-date change after approval immediately produces stale (16.9406ms)
+    ✔ clinic-assignment change after approval immediately produces stale where supported (14.165ms)
+    ✔ classification mapping replacement after approval immediately produces stale (14.9972ms)
+    ✔ classification mapping deactivation after approval immediately produces stale (13.4096ms)
+    ✔ irrelevant profile change does not incorrectly stale approval (10.6562ms)
+    ✔ identical invalidation replay does not duplicate lifecycle, audit or M02 records (15.2311ms)
+    ✔ alternate mutation paths cannot bypass invalidation (84.6543ms)
+  ✔ profile / classification invalidation (226.2861ms)
+  ▶ dedicated SoD proofs
+    ✔ rejects approval when approver is material deduction creator (16.5232ms)
+    ✔ rejects approval when approver is material exception resolver (24.2236ms)
+    ✔ rejects approval when approver is material exception waiver actor (7.2737ms)
+    ✔ incomplete or missing material-actor provenance fails closed (2.946ms)
+    ✔ unrelated historical actors do not incorrectly block approval (10.3146ms)
+    ✔ material actors are derived from the pinned manifest; no dual approval (5.7534ms)
+  ✔ dedicated SoD proofs (67.7724ms)
+✔ M07 Batch 5 remediation — fail-closed employment + invalidation + SoD (405.0232ms)
+ℹ tests 49
+ℹ suites 11
+ℹ pass 49
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2040.6167

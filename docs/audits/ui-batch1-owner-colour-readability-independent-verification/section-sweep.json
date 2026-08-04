@@ -1,0 +1,1464 @@
+[
+  {
+    "route": "/staff-doctors?section=overview",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=overview",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=people",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=staff-profiles",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=staff-profiles",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=doctor-profiles",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=doctor-profiles",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=engagements",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=engagements",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=credentials",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=leave-availability",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=leave-availability",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=restrictions",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=restrictions",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=onboarding",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=onboarding",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=offboarding",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=offboarding",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=reports",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=reports",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staff-doctors?section=settings",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 12,
+    "mobileOptionCount": 12,
+    "sectionQuery": "http://localhost:3465/staff-doctors?section=settings",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=roster-board",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=roster-board",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=coverage",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=open-shifts",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=availability-leave",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=availability-leave",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=requests",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=requests",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=conflicts-warnings",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=conflicts-warnings",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=published-history",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=published-history",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=cost-forecast",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=cost-forecast",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=reports",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=reports",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/roster?section=settings",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/roster?section=settings",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=live",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=live",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=clock",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=clock",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=timesheets",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=exceptions",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=exceptions",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=corrections",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=corrections",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=approvals",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=breaks",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=breaks",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=history",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=history",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=reports",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=reports",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/time-attendance?section=settings",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 10,
+    "mobileOptionCount": 10,
+    "sectionQuery": "http://localhost:3465/time-attendance?section=settings",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=overview",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=people",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=leave",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=leave",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=adjustments",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=exceptions",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=exceptions",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=variances",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=variances",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=approval",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=export",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=reconciliation",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=history",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=history",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  },
+  {
+    "route": "/staffpay?section=settings",
+    "appearance": "light",
+    "width": 1440,
+    "ok": true,
+    "issues": [],
+    "sidebarCount": 1,
+    "h1Count": 1,
+    "desktopTabCount": 11,
+    "mobileOptionCount": 11,
+    "sectionQuery": "http://localhost:3465/staffpay?section=settings",
+    "focusedContrasts": {
+      "primaryTextOnCanvas": {
+        "fg": "",
+        "bg": "",
+        "ratio": 14.62
+      },
+      "mutedOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 5.07
+      },
+      "onActionOnAction": {
+        "fg": "",
+        "bg": "",
+        "ratio": 10.97
+      },
+      "controlBorderOnSurface": {
+        "fg": "",
+        "bg": "",
+        "ratio": 3.84
+      }
+    }
+  }
+]

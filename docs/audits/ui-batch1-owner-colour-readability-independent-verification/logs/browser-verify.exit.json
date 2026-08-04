@@ -1,0 +1,7 @@
+﻿{
+    "exit":  2,
+    "command":  "HCDP_BASE_URL=http://localhost:3465 node scripts/ui-batch1-owner-colour-readability-independent-verify.mjs",
+    "ms":  1362302,
+    "end":  "2026-08-03T23:43:02.2026755Z",
+    "start":  "2026-08-03T23:20:19.9005505Z"
+}

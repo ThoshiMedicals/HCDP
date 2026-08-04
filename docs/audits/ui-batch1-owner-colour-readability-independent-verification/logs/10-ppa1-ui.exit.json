@@ -1,0 +1,13 @@
+{
+    "id":  "10-ppa1-ui",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx",
+    "start":  "2026-08-03T23:44:54.2402714Z",
+    "end":  "2026-08-03T23:44:58.6372935Z",
+    "ms":  4397,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/10-ppa1-ui.log",
+    "tests":  "10",
+    "pass":  "10",
+    "fail":  "0",
+    "skip":  "0"
+}

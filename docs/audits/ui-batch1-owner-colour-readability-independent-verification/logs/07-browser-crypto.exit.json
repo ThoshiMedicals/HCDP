@@ -1,0 +1,13 @@
+{
+    "id":  "07-browser-crypto",
+    "command":  "npx tsx --test src/platform/workforce/tests/browser-crypto-remediation.test.ts",
+    "start":  "2026-08-03T23:44:41.3310034Z",
+    "end":  "2026-08-03T23:44:45.4286191Z",
+    "ms":  4098,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/07-browser-crypto.log",
+    "tests":  "8",
+    "pass":  "8",
+    "fail":  "0",
+    "skip":  "0"
+}

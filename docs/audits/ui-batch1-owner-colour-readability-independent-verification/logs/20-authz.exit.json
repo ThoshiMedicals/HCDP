@@ -1,0 +1,13 @@
+{
+    "id":  "20-authz",
+    "command":  "npx tsx --test src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+    "start":  "2026-08-03T23:45:56.8151020Z",
+    "end":  "2026-08-03T23:46:01.6039474Z",
+    "ms":  4789,
+    "exit":  0,
+    "log":  "docs/audits/ui-batch1-owner-colour-readability-independent-verification/logs/20-authz.log",
+    "tests":  "13",
+    "pass":  "13",
+    "fail":  "0",
+    "skip":  "0"
+}

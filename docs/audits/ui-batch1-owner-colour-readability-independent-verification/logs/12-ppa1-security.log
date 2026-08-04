@@ -1,0 +1,16 @@
+▶ M07 test-hook security gate (QA-PPA1-001)
+  ✔ allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node (6.8811ms)
+  ✔ allows hooks when NODE_ENV=test even without allow flag (1.7397ms)
+  ✔ disables hooks when NODE_ENV=production (setters no-op; failures do not fire) (1.7712ms)
+  ✔ disables hooks in unknown/development runtime without explicit allow (0.7571ms)
+  ✔ browser-like undefined process must never enable hooks (0.6956ms)
+  ✔ production gate prevents arming then re-enabling from leaking prior arms after reset (0.6389ms)
+✔ M07 test-hook security gate (QA-PPA1-001) (15.0286ms)
+ℹ tests 6
+ℹ suites 1
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1201.0611

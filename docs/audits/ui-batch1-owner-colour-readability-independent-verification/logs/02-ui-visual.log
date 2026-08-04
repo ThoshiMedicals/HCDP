@@ -1,0 +1,24 @@
+▶ Owner visual remediation — global sidebar
+  ✔ keeps one pulse-sidebar and does not render family palette / Favourites / Recent lists (2.0001ms)
+  ✔ renders search results instead of grouped modules when searching (0.6905ms)
+  ✔ keeps favourite control as sibling of Link (not nested interactive) (0.5779ms)
+  ✔ deduplicates canonical modules by platformId (3.6018ms)
+  ✔ applies Premium Clinical sidebar palette without family gradients (3.5565ms)
+✔ Owner visual remediation — global sidebar (12.4983ms)
+▶ Owner visual remediation — M04–M07 section navigation
+  ✔ provides shared ModuleSectionNav with desktop tabs and mobile selector (1.6246ms)
+  ✔ applies shared nav to M04–M07 without 220px left rails (1.5251ms)
+  ✔ preserves section query behaviour and M05/M06 test ids (1.2303ms)
+✔ Owner visual remediation — M04–M07 section navigation (4.9834ms)
+▶ Owner visual remediation — dashboard hierarchy
+  ✔ exposes one Command Centre heading owner and primary areas only (4.2439ms)
+  ✔ keeps secondary functions reachable including reports / eod / create action (4.0435ms)
+✔ Owner visual remediation — dashboard hierarchy (9.3079ms)
+ℹ tests 10
+ℹ suites 3
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 684.5901
