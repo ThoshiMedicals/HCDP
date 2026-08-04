@@ -21,4 +21,4 @@
 
 ## New application source SHA
 
-See commit `test(ui): chrome-scope element-clip hard fails only` on this branch.
+`97a83d7beb219ce01a7b12c6f70a975a44614d59` — commit `test(ui): chrome-scope element-clip hard fails only`.
