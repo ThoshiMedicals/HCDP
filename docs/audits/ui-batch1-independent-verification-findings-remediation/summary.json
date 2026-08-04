@@ -99,5 +99,7 @@
     "hashExact": true,
     "firstHitReproduced": false,
     "hydrationSignatures": 0
-  }
+  },
+  "remediationTip": "6b03efdb2fc4d867e6cb03f702f8a2026a4d7485",
+  "branch": "cursor/ui-batch1-owner-colour-readability-verification-fixes"
 }
