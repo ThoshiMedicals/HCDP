@@ -1,0 +1,10 @@
+{
+  "source": "revalidation-97a83d7/prod-matrix (committed)",
+  "appSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "matrixEntries": 338,
+  "matrixPass": 338,
+  "matrixFail": 0,
+  "elementClipFailCount": 0,
+  "nonChromeElementClipHits": 24953,
+  "note": "Matrix A reproduces chrome-only bypass: 338/0 with nonChromeElementClipHits recorded but not hard-failed."
+}
