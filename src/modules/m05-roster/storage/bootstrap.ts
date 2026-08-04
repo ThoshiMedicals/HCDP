@@ -32,8 +32,9 @@ export function ensureM05Bootstrapped(): MigrationReport | null {
   return cachedReport;
 }
 
+/** Pure snapshot read — must not bootstrap/side-effect (useSyncExternalStore). */
 export function getM05BootstrapReport(): MigrationReport | null {
-  return ensureM05Bootstrapped();
+  return cachedReport;
 }
 
 export function subscribeM05Bootstrap(listener: () => void): () => void {

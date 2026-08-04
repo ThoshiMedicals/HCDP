@@ -28,13 +28,18 @@ export function ensureM04Bootstrapped(): MigrationReport | null {
   return cachedReport;
 }
 
+/** Pure snapshot read — must not bootstrap/side-effect (useSyncExternalStore). */
 export function getM04BootstrapReport(): MigrationReport | null {
-  return ensureM04Bootstrapped();
+  return cachedReport;
 }
 
 export function subscribeM04Bootstrap(listener: () => void): () => void {
   listeners.add(listener);
   return () => listeners.delete(listener);
+}
+
+export function notifyM04BootstrapListeners(): void {
+  notify();
 }
 
 /** Test helper — clears bootstrap cache (does not clear storage). */

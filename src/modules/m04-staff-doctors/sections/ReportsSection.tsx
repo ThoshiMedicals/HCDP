@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import { Metric } from "@/components/ui/Metric";
 import { Panel, PanelSub, PanelTitle } from "@/components/ui/Panel";
+import { useHydrated } from "@/lib/use-hydrated";
 import { useStaffDoctors } from "../context";
 import { assertM04Permission } from "../permissions";
 import { listPeople } from "../services/person-service";
@@ -12,6 +13,10 @@ import { listLeave } from "../services/leave-service";
 
 export function ReportsSection() {
   const { actor, counts, pushToast, refreshKey } = useStaffDoctors();
+  const hydrated = useHydrated();
+  const displayCounts = hydrated
+    ? counts
+    : { activeStaff: 0, activeDoctors: 0, blockedReadiness: 0, onLeave: 0 };
   void refreshKey;
 
   const exportReport = () => {
@@ -40,10 +45,10 @@ export function ReportsSection() {
         <p className="m-0 mt-1 text-sm text-[var(--muted)]">Workforce counts and export (permission-gated).</p>
       </div>
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-        <Metric label="Active staff" value={counts.activeStaff} icon="users" />
-        <Metric label="Active doctors" value={counts.activeDoctors} icon="users" tone="info" />
-        <Metric label="Blocked readiness" value={counts.blockedReadiness} icon="alert" tone="warning" />
-        <Metric label="On leave" value={counts.onLeave} icon="calendar" />
+        <Metric label="Active staff" value={displayCounts.activeStaff} icon="users" />
+        <Metric label="Active doctors" value={displayCounts.activeDoctors} icon="users" tone="info" />
+        <Metric label="Blocked readiness" value={displayCounts.blockedReadiness} icon="alert" tone="warning" />
+        <Metric label="On leave" value={displayCounts.onLeave} icon="calendar" />
       </div>
       <Panel>
         <PanelTitle>Export workforce summary</PanelTitle>

@@ -12,7 +12,6 @@ import {
 } from "react";
 import type { ToastTone } from "@/components/ui/Toast";
 import { usePortal } from "@/lib/portal-context";
-import { useHydrated } from "@/lib/use-hydrated";
 import { useIdentity } from "@/platform/context/identity-context";
 import { registerWorkforcePersonLookup } from "@/platform/workforce/services/identity-workforce-resolver";
 import {
@@ -23,6 +22,7 @@ import { mapDemoIdentityPermissions, type M04Actor } from "./permissions";
 import {
   ensureM04Bootstrapped,
   getM04BootstrapReport,
+  notifyM04BootstrapListeners,
   subscribeM04Bootstrap,
 } from "./storage";
 import { toWorkforcePersonRef, listPeople, getPerson } from "./services/person-service";
@@ -84,7 +84,6 @@ export function StaffDoctorsProvider({ children }: { children: ReactNode }) {
     getM04BootstrapReport,
     () => null
   );
-  const hydrated = useHydrated();
 
   const bump = useCallback(() => setRefreshKey((k) => k + 1), []);
 
@@ -98,7 +97,16 @@ export function StaffDoctorsProvider({ children }: { children: ReactNode }) {
     [identity]
   );
 
-  // Bootstrap runs inside getM04BootstrapReport (useSyncExternalStore snapshot).
+  // Counts stay at SSR zeros through hydration; populate only after mount.
+  const [counts, setCounts] = useState<WorkforceCounts>(EMPTY_WORKFORCE_COUNTS);
+  const [peopleCount, setPeopleCount] = useState(0);
+
+  useEffect(() => {
+    ensureM04Bootstrapped();
+    notifyM04BootstrapListeners();
+    setCounts(getWorkforceCounts());
+    setPeopleCount(listPeople().length);
+  }, [refreshKey]);
 
   useEffect(() => {
     registerWorkforcePersonLookup((id) => {
@@ -132,20 +140,6 @@ export function StaffDoctorsProvider({ children }: { children: ReactNode }) {
     },
     [portalToast]
   );
-
-  const counts = useMemo(() => {
-    void refreshKey;
-    if (!hydrated) return EMPTY_WORKFORCE_COUNTS;
-    ensureM04Bootstrapped();
-    return getWorkforceCounts();
-  }, [refreshKey, hydrated]);
-
-  const peopleCount = useMemo(() => {
-    void refreshKey;
-    if (!hydrated) return 0;
-    ensureM04Bootstrapped();
-    return listPeople().length;
-  }, [refreshKey, hydrated]);
 
   const value: StaffDoctorsContextValue = {
     section,

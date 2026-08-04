@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Metric } from "@/components/ui/Metric";
 import { Panel, PanelSub, PanelTitle } from "@/components/ui/Panel";
 import { Table, THead, Th, Td } from "@/components/ui/Table";
+import { useHydrated } from "@/lib/use-hydrated";
 import { useStaffDoctors } from "../context";
 import { listPeople } from "../services/person-service";
 import { getEffectiveReadiness, calculateReadiness } from "../services/readiness-service";
@@ -14,8 +15,15 @@ import { listOnboarding, listOffboarding } from "../services/lifecycle-service";
 
 export function OverviewSection() {
   const { counts, setSection, bump, pushToast, actor, migrationReport, refreshKey } = useStaffDoctors();
+  const hydrated = useHydrated();
   void refreshKey;
-  const people = listPeople().filter((p) => p.status !== "Archived").slice(0, 8);
+  // Leaf-level hydrate gate: parent effects may update counts before this section finishes hydrating.
+  const displayCounts = hydrated
+    ? counts
+    : { activeStaff: 0, activeDoctors: 0, blockedReadiness: 0, onLeave: 0 };
+  const people = hydrated
+    ? listPeople().filter((p) => p.status !== "Archived").slice(0, 8)
+    : [];
 
   return (
     <div className="grid gap-4">
@@ -28,16 +36,16 @@ export function OverviewSection() {
 
       <div className="grid gap-3.5 md:grid-cols-2 xl:grid-cols-4">
         <button type="button" className="text-left" onClick={() => setSection("staff-profiles")}>
-          <Metric label="Active staff" value={counts.activeStaff} icon="users" tone="success" />
+          <Metric label="Active staff" value={displayCounts.activeStaff} icon="users" tone="success" />
         </button>
         <button type="button" className="text-left" onClick={() => setSection("doctor-profiles")}>
-          <Metric label="Active doctors" value={counts.activeDoctors} icon="users" tone="info" />
+          <Metric label="Active doctors" value={displayCounts.activeDoctors} icon="users" tone="info" />
         </button>
         <button type="button" className="text-left" onClick={() => setSection("credentials")}>
-          <Metric label="Blocked readiness" value={counts.blockedReadiness} icon="alert" tone="warning" />
+          <Metric label="Blocked readiness" value={displayCounts.blockedReadiness} icon="alert" tone="warning" />
         </button>
         <button type="button" className="text-left" onClick={() => setSection("leave-availability")}>
-          <Metric label="On leave today" value={counts.onLeave} icon="calendar" tone="default" />
+          <Metric label="On leave today" value={displayCounts.onLeave} icon="calendar" tone="default" />
         </button>
       </div>
 
@@ -76,7 +84,7 @@ export function OverviewSection() {
         </div>
       </Panel>
 
-      {migrationReport ? (
+      {hydrated && migrationReport ? (
         <Panel>
           <PanelTitle>Portal seed report</PanelTitle>
           <PanelSub>
@@ -132,16 +140,19 @@ export function OverviewSection() {
       <div className="grid gap-3 md:grid-cols-3">
         <Panel>
           <PanelTitle>Credentials</PanelTitle>
-          <div className="text-2xl font-extrabold">{listCredentials().length}</div>
+          <div className="text-2xl font-extrabold">
+            {hydrated ? listCredentials().length : 0}
+          </div>
         </Panel>
         <Panel>
           <PanelTitle>Leave requests</PanelTitle>
-          <div className="text-2xl font-extrabold">{listLeave().length}</div>
+          <div className="text-2xl font-extrabold">{hydrated ? listLeave().length : 0}</div>
         </Panel>
         <Panel>
           <PanelTitle>Lifecycle</PanelTitle>
           <div className="text-sm text-[var(--muted)]">
-            Onboarding {listOnboarding().length} · Offboarding {listOffboarding().length}
+            Onboarding {hydrated ? listOnboarding().length : 0} · Offboarding{" "}
+            {hydrated ? listOffboarding().length : 0}
           </div>
         </Panel>
       </div>

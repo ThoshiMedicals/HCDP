@@ -29,8 +29,9 @@ describe("IV findings remediation — hydration", () => {
 
   it("M04 workforce counts stay zero through hydration", () => {
     const ctx = read("src/modules/m04-staff-doctors/context.tsx");
-    assert.match(ctx, /useHydrated/);
     assert.match(ctx, /EMPTY_WORKFORCE_COUNTS/);
+    assert.match(ctx, /useState<WorkforceCounts>\(EMPTY_WORKFORCE_COUNTS\)/);
+    assert.match(ctx, /setCounts\(getWorkforceCounts\(\)\)/);
   });
 
   it("M05 offline banner uses server snapshot false", () => {

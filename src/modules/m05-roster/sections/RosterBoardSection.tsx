@@ -31,7 +31,7 @@ import { SectionFrame } from "../components/SectionFrame";
 const DEFAULT_CLINIC = "loc_woolloongabba";
 
 export function RosterBoardSection() {
-  const { actor, bump, pushToast, refreshKey } = useRoster();
+  const { actor, bump, pushToast, refreshKey, migrationReport } = useRoster();
 
   const canView = hasM05Permission(actor, "roster.view");
   const canCreatePeriod = hasM05Permission(actor, "roster.period.create");
@@ -68,9 +68,10 @@ export function RosterBoardSection() {
 
   // Snapshot periods against refreshKey so optimistic concurrency can detect
   // stale expectedVersion after an out-of-band storage write (second tab / evidence).
+  // Gate on migrationReport so SSR/hydration see empty (getServerSnapshot null).
   const periodRead = useMemo(() => {
     void refreshKey;
-    if (!canView) {
+    if (!migrationReport || !canView) {
       return { periods: [] as RosterPeriod[], restrictedError: null as string | null, systemError: null as string | null };
     }
     try {
@@ -93,7 +94,7 @@ export function RosterBoardSection() {
         systemError: e instanceof Error ? e.message : "Unexpected error",
       };
     }
-  }, [actor, canView, refreshKey]);
+  }, [actor, canView, refreshKey, migrationReport]);
 
   const periods = periodRead.periods;
   const restrictedError = periodRead.restrictedError;

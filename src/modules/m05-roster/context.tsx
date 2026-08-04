@@ -118,6 +118,8 @@ export function RosterProvider({ children }: { children: ReactNode }) {
     ensureM05Bootstrapped();
     runM05PortalSeed();
     runM05PolicySeed();
+    // Bust section memo caches after client seed (notify alone may keep same report ref).
+    setRefreshKey((k) => k + 1);
   }, []);
 
   const pushToast = useCallback(
