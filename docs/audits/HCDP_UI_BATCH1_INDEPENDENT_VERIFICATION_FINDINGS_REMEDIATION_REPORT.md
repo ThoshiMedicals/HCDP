@@ -4,7 +4,7 @@
 **Branch:** `cursor/ui-batch1-owner-colour-readability-verification-fixes`  
 **Application source SHA tested (final):** `e6e2f90ea42f39ddab1d5ce39c1e306f214a1742`  
 **Evidence/report commit:** `925fa1be127a00b3d843fa796f0cbb30eabdd495`  
-**Branch tip:** `a592b4873097a8fe00e6122e9957da395e51feb8` (tip pin docs-only after evidence)  
+**Branch tip:** `774ad71a5e071dfa94409a11a51b7db39c521110` (tip pin docs-only after evidence)  
 **Proof:** commits after application SHA `e6e2f90` are evidence/docs-only (`925fa1b`, `a592b48`)  
 **Base (failed candidate tip):** `ee9731e38e7d20d6d825e6c243503f4aea9564c3`  
 **Independent-verification evidence tip (read-only):** `51fbfa980b9c834184a384ddcf956340397bf205`  
