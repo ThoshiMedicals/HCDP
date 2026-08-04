@@ -1,0 +1,738 @@
+{
+  "capturedAt": "2026-08-04T05:45:26.379Z",
+  "results": [
+    {
+      "route": "/staff-doctors",
+      "w": 430,
+      "h": 932,
+      "kind": "button",
+      "labels": [
+        "/ACTIVE STAFF/i",
+        "/ACTIVE DOCTORS/i",
+        "/BLOCKED READINESS/i",
+        "/ON LEAVE/i"
+      ],
+      "probe": {
+        "contentRect": {
+          "w": 430,
+          "right": 430
+        },
+        "matched": [
+          {
+            "label": "Active staff41",
+            "tag": "button",
+            "rect": {
+              "x": 16,
+              "y": 491.9,
+              "w": 398,
+              "h": 103.5,
+              "right": 414,
+              "bottom": 595.4
+            },
+            "contentRight": 430,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          },
+          {
+            "label": "Active doctors48",
+            "tag": "button",
+            "rect": {
+              "x": 16,
+              "y": 609.4,
+              "w": 398,
+              "h": 103.5,
+              "right": 414,
+              "bottom": 712.9
+            },
+            "contentRight": 430,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          },
+          {
+            "label": "Blocked readiness89",
+            "tag": "button",
+            "rect": {
+              "x": 16,
+              "y": 726.9,
+              "w": 398,
+              "h": 103.5,
+              "right": 414,
+              "bottom": 830.4
+            },
+            "contentRight": 430,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          },
+          {
+            "label": "On leave today0",
+            "tag": "button",
+            "rect": {
+              "x": 16,
+              "y": 844.4,
+              "w": 398,
+              "h": 103.5,
+              "right": 414,
+              "bottom": 947.9
+            },
+            "contentRight": 430,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          }
+        ],
+        "vp": {
+          "w": 430,
+          "h": 932
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-430x932-_staff-doctors.png"
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "w": 430,
+      "h": 932,
+      "labels": [
+        "/Preferred name/i",
+        "/Email/i",
+        "/^Create$/i",
+        "/Staff/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 430,
+          "right": 430
+        },
+        "matched": [],
+        "vp": {
+          "w": 430,
+          "h": 932
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-430x932-_staff-doctors_section_people.png"
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "w": 430,
+      "h": 932,
+      "labels": [
+        "/^Add$/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 430,
+          "right": 430
+        },
+        "matched": [],
+        "vp": {
+          "w": 430,
+          "h": 932
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-430x932-_staff-doctors_section_credentials.png"
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "w": 430,
+      "h": 932,
+      "labels": [
+        "/Audience/i",
+        "/^Offer$/i",
+        "/Select shift/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 430,
+          "right": 430
+        },
+        "matched": [],
+        "vp": {
+          "w": 430,
+          "h": 932
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-430x932-_roster_section_open-shifts.png"
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "w": 390,
+      "h": 844,
+      "labels": [
+        "/Audience/i",
+        "/^Offer$/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 390,
+          "right": 390
+        },
+        "matched": [],
+        "vp": {
+          "w": 390,
+          "h": 844
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-390x844-_roster_section_open-shifts.png"
+    },
+    {
+      "route": "/roster?section=coverage",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Evaluate coverage/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster_section_coverage.png"
+    },
+    {
+      "route": "/roster?section=availability-leave",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Declare|Save|Filter|Clinic/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster_section_availability-leave.png"
+    },
+    {
+      "route": "/roster?section=conflicts-warnings",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Evaluate/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster_section_conflicts-warnings.png"
+    },
+    {
+      "route": "/roster?section=settings",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Create Draft|Create draft|Draft/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster_section_settings.png"
+    },
+    {
+      "route": "/roster",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Clinic id/i",
+        "/Ends on/i",
+        "/Create period|Create/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster.png"
+    },
+    {
+      "route": "/time-attendance",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Refresh live board/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_time-attendance.png"
+    },
+    {
+      "route": "/time-attendance",
+      "w": 1280,
+      "h": 900,
+      "labels": [
+        "/Refresh live board/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 992,
+          "right": 1280
+        },
+        "matched": [],
+        "vp": {
+          "w": 1280,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1280x900-_time-attendance.png"
+    },
+    {
+      "route": "/time-attendance",
+      "w": 1440,
+      "h": 900,
+      "labels": [
+        "/Refresh live board/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 1152,
+          "right": 1440
+        },
+        "matched": [],
+        "vp": {
+          "w": 1440,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1440x900-_time-attendance.png"
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Bulk approve/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_time-attendance_section_approvals.png"
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "w": 1280,
+      "h": 900,
+      "labels": [
+        "/Bulk approve/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 992,
+          "right": 1280
+        },
+        "matched": [],
+        "vp": {
+          "w": 1280,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1280x900-_time-attendance_section_approvals.png"
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "w": 1440,
+      "h": 900,
+      "labels": [
+        "/Bulk approve/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 1152,
+          "right": 1440
+        },
+        "matched": [],
+        "vp": {
+          "w": 1440,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1440x900-_time-attendance_section_approvals.png"
+    },
+    {
+      "route": "/time-attendance?section=corrections",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Request Correction|Request correction/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_time-attendance_section_corrections.png"
+    },
+    {
+      "route": "/time-attendance?section=history",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Clear Filter|Clear filter/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_time-attendance_section_history.png"
+    },
+    {
+      "route": "/time-attendance?section=settings",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Publish/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_time-attendance_section_settings.png"
+    },
+    {
+      "route": "/staff-doctors",
+      "w": 1280,
+      "h": 900,
+      "kind": "button",
+      "labels": [
+        "/BLOCKED READINESS/i"
+      ],
+      "probe": {
+        "contentRect": {
+          "w": 992,
+          "right": 1280
+        },
+        "matched": [
+          {
+            "label": "Blocked readiness89",
+            "tag": "button",
+            "rect": {
+              "x": 791,
+              "y": 378.9,
+              "w": 223.5,
+              "h": 123,
+              "right": 1014.5,
+              "bottom": 501.9
+            },
+            "contentRight": 1280,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          }
+        ],
+        "vp": {
+          "w": 1280,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1280x900-_staff-doctors.png"
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "w": 1280,
+      "h": 900,
+      "labels": [
+        "/Email/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 992,
+          "right": 1280
+        },
+        "matched": [],
+        "vp": {
+          "w": 1280,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1280x900-_staff-doctors_section_people.png"
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "w": 1280,
+      "h": 900,
+      "labels": [
+        "/^Add$/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 992,
+          "right": 1280
+        },
+        "matched": [],
+        "vp": {
+          "w": 1280,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1280x900-_staff-doctors_section_credentials.png"
+    },
+    {
+      "route": "/staff-doctors",
+      "w": 1024,
+      "h": 768,
+      "kind": "button",
+      "labels": [
+        "/ACTIVE STAFF/i",
+        "/BLOCKED READINESS/i"
+      ],
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [
+          {
+            "label": "Active staff41",
+            "tag": "button",
+            "rect": {
+              "x": 316,
+              "y": 401.4,
+              "w": 333,
+              "h": 103.5,
+              "right": 649,
+              "bottom": 504.9
+            },
+            "contentRight": 1024,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          },
+          {
+            "label": "Blocked readiness89",
+            "tag": "button",
+            "rect": {
+              "x": 316,
+              "y": 518.9,
+              "w": 333,
+              "h": 103.5,
+              "right": 649,
+              "bottom": 622.4
+            },
+            "contentRight": 1024,
+            "overflowContentX": false,
+            "overflowVpX": false,
+            "clippedHidden": false,
+            "widthOk": true
+          }
+        ],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_staff-doctors.png"
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Preferred name/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_staff-doctors_section_people.png"
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "w": 1440,
+      "h": 900,
+      "labels": [
+        "/^Offer$/i"
+      ],
+      "kind": "button",
+      "probe": {
+        "contentRect": {
+          "w": 1152,
+          "right": 1440
+        },
+        "matched": [],
+        "vp": {
+          "w": 1440,
+          "h": 900
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1440x900-_roster_section_open-shifts.png"
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "w": 1024,
+      "h": 768,
+      "labels": [
+        "/Audience/i",
+        "/^Offer$/i"
+      ],
+      "kind": "form",
+      "probe": {
+        "contentRect": {
+          "w": 736,
+          "right": 1024
+        },
+        "matched": [],
+        "vp": {
+          "w": 1024,
+          "h": 768
+        }
+      },
+      "failCount": 0,
+      "fails": [],
+      "crop": "focused-1024x768-_roster_section_open-shifts.png"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "findings": [
+    {
+      "w": 1024,
+      "h": 768,
+      "Export": {
+        "label": "Export",
+        "x": 971.7,
+        "w": 68.2,
+        "right": 1039.8,
+        "clippedVp": true,
+        "partiallyVisible": true,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 857,
+        "w": 106.6,
+        "right": 963.7,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 1047.8,
+        "w": 206.8,
+        "right": 1254.6,
+        "clippedVp": true,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 1262.6,
+        "w": 64.5,
+        "right": 1327.1,
+        "clippedVp": true,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 646,
+        "clientWidth": 646,
+        "canScroll": false
+      }
+    },
+    {
+      "w": 1024,
+      "h": 600,
+      "Export": {
+        "label": "Export",
+        "x": 971.7,
+        "w": 68.2,
+        "right": 1039.8,
+        "clippedVp": true,
+        "partiallyVisible": true,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 857,
+        "w": 106.6,
+        "right": 963.7,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 1047.8,
+        "w": 206.8,
+        "right": 1254.6,
+        "clippedVp": true,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 1262.6,
+        "w": 64.5,
+        "right": 1327.1,
+        "clippedVp": true,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 646,
+        "clientWidth": 646,
+        "canScroll": false
+      }
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "Export": {
+        "label": "Export",
+        "x": 617.3,
+        "w": 68.2,
+        "right": 685.5,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 502.7,
+        "w": 106.6,
+        "right": 609.3,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 693.5,
+        "w": 64.5,
+        "right": 758,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 702,
+        "clientWidth": 702,
+        "canScroll": false
+      }
+    },
+    {
+      "w": 1280,
+      "h": 900,
+      "Export": {
+        "label": "Export",
+        "x": 971.7,
+        "w": 68.2,
+        "right": 1039.8,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 857,
+        "w": 106.6,
+        "right": 963.7,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 1047.8,
+        "w": 206.8,
+        "right": 1254.6,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 1262.6,
+        "w": 64.5,
+        "right": 1327.1,
+        "clippedVp": true,
+        "partiallyVisible": true,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 902,
+        "clientWidth": 902,
+        "canScroll": false
+      }
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "Export": {
+        "label": "Export",
+        "x": 1070.5,
+        "w": 68.2,
+        "right": 1138.7,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 955.9,
+        "w": 106.6,
+        "right": 1062.5,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 1146.7,
+        "w": 206.8,
+        "right": 1353.5,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 1361.5,
+        "w": 64.5,
+        "right": 1426,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 1062,
+        "clientWidth": 1062,
+        "canScroll": false
+      }
+    },
+    {
+      "w": 430,
+      "h": 932,
+      "Export": {
+        "label": "Export",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "NewEntry": {
+        "label": "+ New Entry",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Enterprise": {
+        "label": "Enterprise Sign-In · MFA",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "Online": {
+        "label": "Online",
+        "x": 355.5,
+        "w": 64.5,
+        "right": 420,
+        "clippedVp": false,
+        "partiallyVisible": false,
+        "inScrollParent": false,
+        "scrollParent": null
+      },
+      "navInfo": {
+        "className": "module-section-nav",
+        "overflowX": "visible",
+        "scrollWidth": 364,
+        "clientWidth": 364,
+        "canScroll": false
+      }
+    }
+  ],
+  "contrast": {
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(36, 95, 152)",
+    "contrast": 6.63
+  }
+}
