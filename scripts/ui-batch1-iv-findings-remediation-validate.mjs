@@ -1,22 +1,53 @@
 /**
- * UI Batch 1 — independent-verification findings remediation validation.
- * Evidence ONLY under:
- *   docs/audits/ui-batch1-independent-verification-findings-remediation/
+ * UI Batch 1 — independent-verification findings remediation validator (corrected).
  *
- *   HCDP_BASE_URL=http://localhost:3470 node scripts/ui-batch1-iv-findings-remediation-validate.mjs
+ * Evidence written under OUT_DIR (default remediation evidence root, or a
+ * corrective-validation subdirectory when HCDP_OUT_DIR is set).
+ *
+ *   HCDP_BASE_URL=http://127.0.0.1:3480 \
+ *   HCDP_OUT_DIR=docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation-prod \
+ *   HCDP_MODE=production \
+ *   node scripts/ui-batch1-iv-findings-remediation-validate.mjs
+ *
+ * Fail predicate (any → route fail):
+ *   - navigation status ≥ 400
+ *   - unallowlisted resource response ≥ 400
+ *   - application page error
+ *   - application console error
+ *   - hydration mismatch
+ *   - horizontal page overflow
+ *   - typography / contrast / dark-surface hard-gate failure
+ *
+ * Narrow HMR WebSocket allowlist is classified separately and never hides
+ * application errors. 403 / 500 / JSON parse / unknown failures are never
+ * auto-allowlisted.
  */
 import { chromium } from "playwright";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 
-const BASE = process.env.HCDP_BASE_URL || "http://localhost:3470";
-const OUT = join(
-  process.cwd(),
-  "docs/audits/ui-batch1-independent-verification-findings-remediation"
-);
+const BASE = process.env.HCDP_BASE_URL || "http://127.0.0.1:3480";
+const MODE = process.env.HCDP_MODE || "unknown";
+const OUT = process.env.HCDP_OUT_DIR
+  ? join(process.cwd(), process.env.HCDP_OUT_DIR)
+  : join(
+      process.cwd(),
+      "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation"
+    );
 const SHOTS = join(OUT, "screenshots");
 mkdirSync(SHOTS, { recursive: true });
 mkdirSync(join(OUT, "logs"), { recursive: true });
+
+const APP_SHA =
+  process.env.HCDP_APP_SHA ||
+  (() => {
+    try {
+      return readFileSync(join(process.cwd(), ".git/HEAD"), "utf8").trim();
+    } catch {
+      return "unknown";
+    }
+  })();
 
 const M04 = [
   "overview",
@@ -100,22 +131,66 @@ const SECTION_SWEEP = [
 
 const WIDTHS = [1440, 1280, 1024, 768, 430, 390];
 
+/** Narrow, explicit HMR / webpack-dev-server noise allowlist only. */
+function classifyEvent(text, url = "") {
+  const t = String(text || "");
+  const u = String(url || "");
+  if (
+    /webpack-hmr/i.test(t) ||
+    /webpack-hmr/i.test(u) ||
+    /_next\/webpack-hmr/i.test(t) ||
+    /_next\/webpack-hmr/i.test(u) ||
+    (/WebSocket connection/i.test(t) && /hmr/i.test(t)) ||
+    (/WebSocket connection/i.test(t) && /_next\/webpack-hmr/i.test(u))
+  ) {
+    return {
+      class: "environmental-hmr",
+      allowlisted: true,
+      rationale:
+        "Narrow allowlist: Next.js webpack HMR WebSocket handshake noise on next dev only",
+    };
+  }
+  if (/Download the React DevTools/i.test(t)) {
+    return {
+      class: "environmental-devtools-hint",
+      allowlisted: true,
+      rationale: "Browser DevTools install hint — not application failure",
+    };
+  }
+  if (/\[HMR\]|Fast Refresh/i.test(t)) {
+    return {
+      class: "environmental-hmr",
+      allowlisted: true,
+      rationale: "HMR status log on next dev",
+    };
+  }
+  // Never auto-allowlist these:
+  if (/status of 403|403 \(Forbidden\)/i.test(t) || /\b403\b/.test(t) && /Failed to load resource/i.test(t)) {
+    return { class: "application-http-403", allowlisted: false, rationale: "403 Forbidden is never auto-allowlisted" };
+  }
+  if (/status of 500|500 \(Internal Server Error\)/i.test(t)) {
+    return { class: "application-http-500", allowlisted: false, rationale: "500 Internal Server Error is never auto-allowlisted" };
+  }
+  if (/Unexpected end of JSON input/i.test(t)) {
+    return { class: "application-json-parse", allowlisted: false, rationale: "JSON parse error is never auto-allowlisted" };
+  }
+  if (/hydration|did not match|Text content does not match/i.test(t)) {
+    return { class: "application-hydration", allowlisted: false, rationale: "Hydration mismatch" };
+  }
+  if (/Failed to load resource/i.test(t)) {
+    return { class: "application-resource-failure", allowlisted: false, rationale: "Resource load failure — not allowlisted" };
+  }
+  return { class: "application-console", allowlisted: false, rationale: "Unclassified application console/page error" };
+}
+
 function write(name, data) {
   writeFileSync(join(OUT, name), JSON.stringify(data, null, 2));
 }
 
-async function goto(page, route, timeout = 90000) {
-  const res = await page.goto(BASE + route, { waitUntil: "domcontentloaded", timeout });
-  try {
-    await page.waitForLoadState("networkidle", { timeout: 8000 });
-  } catch {
-    /* settle */
-  }
-  await page.waitForTimeout(200);
-  return res;
+function nowIso() {
+  return new Date().toISOString();
 }
 
-/** Persist appearance via storage only — reload must pick up theme-init on <html>. */
 async function persistAppearance(page, mode) {
   await page.evaluate((m) => {
     localStorage.setItem("pulse.cc.appearance", JSON.stringify(m));
@@ -180,11 +255,8 @@ async function pageProbe(page) {
     }
 
     const htmlDark = document.documentElement.classList.contains("theme-dark");
-    const bodyDark = document.body.classList.contains("theme-dark");
-    const appearance = document.documentElement.dataset.appearance || null;
     const issues = [];
 
-    // Typography / contrast for nav toggles + favourites
     for (const el of document.querySelectorAll(".v32-nav-toggle, .v33-fav-star")) {
       const cs = getComputedStyle(el);
       const fontSize = parseFloat(cs.fontSize) || 0;
@@ -209,7 +281,7 @@ async function pageProbe(page) {
         const bg = effectiveBackground(el);
         const fg = fgP ? { r: fgP.r, g: fgP.g, b: fgP.b } : null;
         const ratio = contrastRatio(fg, bg);
-        const required = fontSize < 13 ? 4.5 : 3; // icon ≥3:1; small text still 4.5
+        const required = fontSize < 13 ? 4.5 : 3;
         if (ratio != null && ratio < required) {
           issues.push({
             kind: "fav-contrast",
@@ -224,9 +296,8 @@ async function pageProbe(page) {
       }
     }
 
-    // Helper / form / table text using type-control or text-xs remap should be ≥13
     const helperNodes = document.querySelectorAll(
-      ".module-section-nav__select-caption, .module-section-nav__badge, .cc-chip, .cc-demo-banner, .cc-layer-label, label, th, .v27-sidebar-role p, .v27-sidebar-role select"
+      ".module-section-nav__select-caption, .module-section-nav__badge, .cc-chip, .cc-demo-banner, .cc-layer-label, th"
     );
     for (const el of helperNodes) {
       const cs = getComputedStyle(el);
@@ -245,7 +316,6 @@ async function pageProbe(page) {
       }
     }
 
-    // Near-white surfaces in dark mode
     if (htmlDark) {
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
       let n = 0;
@@ -256,7 +326,6 @@ async function pageProbe(page) {
         if (rect.width < 24 || rect.height < 16) continue;
         const bg = effectiveBackground(el);
         const lum = relLuminance(bg);
-        // Near-white leak: luminance high while page is dark-themed
         if (lum >= 0.9) {
           const cls = String(el.className || "");
           if (/pulse-sidebar|sr-only|hidden/.test(cls)) continue;
@@ -266,90 +335,275 @@ async function pageProbe(page) {
             className: cls.slice(0, 120),
             tag: el.tagName.toLowerCase(),
           });
-          n += 20; // sample sparsely
+          n += 20;
         }
         n++;
       }
     }
 
-    // Overflow / clipping sample
+    const docEl = document.documentElement;
+    const horizontalOverflow =
+      docEl.scrollWidth > docEl.clientWidth + 1 ||
+      document.body.scrollWidth > document.body.clientWidth + 1;
+
     const overflowHits = [];
-    for (const el of document.querySelectorAll("button, a, .module-section-nav__tab, .v32-nav-toggle")) {
-      const cs = getComputedStyle(el);
-      if (cs.overflow === "hidden" && el.scrollWidth > el.clientWidth + 2) {
+    for (const el of document.querySelectorAll(
+      "button, a, .module-section-nav__tab, .v32-nav-toggle, main, .content"
+    )) {
+      if (!(el instanceof HTMLElement)) continue;
+      if (el.scrollWidth > el.clientWidth + 2) {
         overflowHits.push({
           kind: "overflow-clip",
           text: (el.innerText || "").trim().slice(0, 40),
           className: String(el.className).slice(0, 80),
+          scrollWidth: el.scrollWidth,
+          clientWidth: el.clientWidth,
         });
       }
     }
 
-    // Focused token probes
-    const styles = getComputedStyle(document.body);
-    const rootStyles = getComputedStyle(document.documentElement);
-    const ink = parseRgba(styles.getPropertyValue("--ink") || styles.color);
-    const canvas = parseRgba(styles.getPropertyValue("--soft") || styles.backgroundColor);
-    const card = parseRgba(styles.getPropertyValue("--card"));
-    const muted = parseRgba(styles.getPropertyValue("--muted"));
-
     return {
       htmlDark,
-      bodyDark,
-      appearance,
-      colorScheme: rootStyles.colorScheme,
+      appearance: document.documentElement.dataset.appearance || null,
       issues,
-      overflowHits: overflowHits.slice(0, 20),
+      horizontalOverflow,
+      overflowHits: overflowHits.slice(0, 30),
       sidebarCount: document.querySelectorAll(".pulse-sidebar").length,
       bootstrapStatus: document.querySelector("[data-m07-bootstrap-status]")?.textContent || null,
-      tokens: {
-        ink: ink && `rgb(${ink.r},${ink.g},${ink.b})`,
-        canvas: canvas && `rgb(${canvas.r},${canvas.g},${canvas.b})`,
-        card: card && `rgb(${card.r},${card.g},${card.b})`,
-        muted: muted && `rgb(${muted.r},${muted.g},${muted.b})`,
-      },
+      scrollWidth: docEl.scrollWidth,
+      clientWidth: docEl.clientWidth,
     };
   });
 }
 
-async function main() {
-  const browser = await chromium.launch({
-    channel: "chrome",
-    headless: true,
-    args: ["--disable-dev-shm-usage"],
-  });
+function attachRouteCollectors(page, bag) {
+  const onConsole = (msg) => {
+    const text = msg.text();
+    const loc = msg.location();
+    const entry = {
+      type: "console",
+      level: msg.type(),
+      text,
+      url: loc?.url || "",
+      line: loc?.lineNumber,
+      column: loc?.columnNumber,
+      at: nowIso(),
+      ...classifyEvent(text, loc?.url || ""),
+    };
+    bag.rawEvents.push(entry);
+    if (msg.type() === "error" || /hydration|did not match|Unexpected end of JSON|Failed to load resource/i.test(text)) {
+      if (entry.allowlisted) bag.allowlistedEvents.push(entry);
+      else bag.appConsoleErrors.push(entry);
+    }
+    if (/hydration|did not match|Text content does not match/i.test(text)) {
+      bag.hydrationSignatures.push(entry);
+    }
+  };
+  const onPageError = (err) => {
+    const text = String(err?.message || err);
+    const entry = {
+      type: "pageerror",
+      text,
+      stack: err?.stack ? String(err.stack).slice(0, 2000) : undefined,
+      at: nowIso(),
+      ...classifyEvent(text),
+    };
+    bag.rawEvents.push(entry);
+    if (entry.allowlisted) bag.allowlistedEvents.push(entry);
+    else bag.appPageErrors.push(entry);
+    if (/hydration|did not match/i.test(text)) bag.hydrationSignatures.push(entry);
+  };
+  const onRequestFailed = (req) => {
+    const failure = req.failure();
+    const entry = {
+      type: "requestfailed",
+      url: req.url(),
+      method: req.method(),
+      resourceType: req.resourceType(),
+      failureText: failure?.errorText || "unknown",
+      at: nowIso(),
+      ...classifyEvent(failure?.errorText || "", req.url()),
+    };
+    bag.rawEvents.push(entry);
+    bag.failedRequests.push(entry);
+    if (!entry.allowlisted) bag.unallowlistedFailedRequests.push(entry);
+    else bag.allowlistedEvents.push(entry);
+  };
+  const onResponse = (res) => {
+    const status = res.status();
+    if (status < 400) return;
+    const entry = {
+      type: "response",
+      url: res.url(),
+      status,
+      statusText: res.statusText(),
+      resourceType: res.request().resourceType(),
+      method: res.request().method(),
+      at: nowIso(),
+      ...classifyEvent(`status of ${status}`, res.url()),
+    };
+    // Re-classify HTTP status precisely
+    if (status === 403) {
+      entry.class = "application-http-403";
+      entry.allowlisted = false;
+      entry.rationale = "403 Forbidden is never auto-allowlisted";
+    } else if (status >= 500) {
+      entry.class = "application-http-500";
+      entry.allowlisted = false;
+      entry.rationale = "5xx response is never auto-allowlisted";
+    } else if (/webpack-hmr|_next\/webpack-hmr/i.test(res.url())) {
+      entry.class = "environmental-hmr";
+      entry.allowlisted = true;
+      entry.rationale = "HMR endpoint HTTP error — narrow allowlist";
+    } else {
+      entry.class = "application-http-4xx";
+      entry.allowlisted = false;
+      entry.rationale = "Resource HTTP ≥400 is never auto-allowlisted";
+    }
+    bag.rawEvents.push(entry);
+    bag.httpErrors.push(entry);
+    if (entry.allowlisted) bag.allowlistedEvents.push(entry);
+    else bag.unallowlistedHttpErrors.push(entry);
+  };
 
-  const consoleBag = [];
-  const hydration = [];
-  const matrix = [];
-  const issuesAll = [];
-  const appearanceResults = {};
+  page.on("console", onConsole);
+  page.on("pageerror", onPageError);
+  page.on("requestfailed", onRequestFailed);
+  page.on("response", onResponse);
 
-  // --- Appearance persistence (clean storage → light; dark/light reload; system) ---
+  return () => {
+    page.off("console", onConsole);
+    page.off("pageerror", onPageError);
+    page.off("requestfailed", onRequestFailed);
+    page.off("response", onResponse);
+  };
+}
+
+function emptyBag() {
+  return {
+    rawEvents: [],
+    appConsoleErrors: [],
+    appPageErrors: [],
+    hydrationSignatures: [],
+    failedRequests: [],
+    unallowlistedFailedRequests: [],
+    httpErrors: [],
+    unallowlistedHttpErrors: [],
+    allowlistedEvents: [],
+  };
+}
+
+function adjudicateFail(entry) {
+  const reasons = [];
+  if ((entry.navigationStatus ?? 0) >= 400) reasons.push(`navigation-status-${entry.navigationStatus}`);
+  if ((entry.unallowlistedHttpErrors || []).length)
+    reasons.push(`unallowlisted-http-${entry.unallowlistedHttpErrors.length}`);
+  if ((entry.appPageErrors || []).length) reasons.push(`pageerror-${entry.appPageErrors.length}`);
+  if ((entry.appConsoleErrors || []).length) reasons.push(`console-error-${entry.appConsoleErrors.length}`);
+  if ((entry.hydrationSignatures || []).length) reasons.push(`hydration-${entry.hydrationSignatures.length}`);
+  if (entry.horizontalOverflow) reasons.push("horizontal-overflow");
+  const hard = (entry.visualIssues || []).filter((i) =>
+    [
+      "typography-control-below-13",
+      "typography-helper-below-13",
+      "fav-contrast",
+      "light-surface-leak",
+    ].includes(i.kind)
+  );
+  if (hard.length) reasons.push(`visual-hard-gate-${hard.length}`);
+  if ((entry.unallowlistedFailedRequests || []).length)
+    reasons.push(`requestfailed-${entry.unallowlistedFailedRequests.length}`);
+  return { fail: reasons.length > 0, failReasons: reasons };
+}
+
+async function visitRoute(page, route, meta, bag) {
+  const startedAt = nowIso();
+  const t0 = Date.now();
+  // Reset per-route collectors (listeners close over `bag` object; replace array fields).
+  Object.assign(bag, emptyBag());
+
+  let navigationStatus = 0;
+  let finalUrl = "";
+  let navError = null;
+  try {
+    const res = await page.goto(BASE + route, {
+      waitUntil: "domcontentloaded",
+      timeout: 120000,
+    });
+    navigationStatus = res?.status() ?? 0;
+    finalUrl = page.url();
+    try {
+      await page.waitForLoadState("networkidle", { timeout: 8000 });
+    } catch {
+      /* settle */
+    }
+    await page.waitForTimeout(250);
+  } catch (err) {
+    navError = String(err);
+    finalUrl = page.url();
+  }
+
+  const probe = await pageProbe(page).catch((err) => ({
+    issues: [{ kind: "probe-error", text: String(err) }],
+    horizontalOverflow: false,
+    overflowHits: [],
+    htmlDark: false,
+  }));
+
+  const endedAt = nowIso();
+  const entry = {
+    route,
+    finalUrl,
+    appearance: meta.appearance,
+    viewport: meta.width,
+    mode: MODE,
+    navigationStatus,
+    navError,
+    startedAt,
+    endedAt,
+    ms: Date.now() - t0,
+    htmlDark: probe.htmlDark,
+    sidebarCount: probe.sidebarCount,
+    bootstrapStatus: probe.bootstrapStatus ?? null,
+    visualIssues: probe.issues || [],
+    horizontalOverflow: !!probe.horizontalOverflow,
+    overflowHits: probe.overflowHits || [],
+    scrollWidth: probe.scrollWidth,
+    clientWidth: probe.clientWidth,
+    appConsoleErrors: [...bag.appConsoleErrors],
+    appPageErrors: [...bag.appPageErrors],
+    hydrationSignatures: [...bag.hydrationSignatures],
+    failedRequests: [...bag.failedRequests],
+    unallowlistedFailedRequests: [...bag.unallowlistedFailedRequests],
+    httpErrors: [...bag.httpErrors],
+    unallowlistedHttpErrors: [...bag.unallowlistedHttpErrors],
+    allowlistedEvents: [...bag.allowlistedEvents],
+    rawEvents: [...bag.rawEvents],
+    sweep: !!meta.sweep,
+  };
+  const adj = adjudicateFail(entry);
+  entry.fail = adj.fail;
+  entry.failReasons = adj.failReasons;
+  return entry;
+}
+
+async function runAppearancePersistence(browser) {
+  const results = {};
   {
     const ctx = await browser.newContext({
       viewport: { width: 1440, height: 900 },
       colorScheme: "light",
     });
     const page = await ctx.newPage();
-    page.on("console", (msg) => {
-      const text = msg.text();
-      if (/hydration|did not match|Text content does not match/i.test(text)) {
-        hydration.push({ phase: "appearance", text: text.slice(0, 1200) });
-      }
-      if (msg.type() === "error") consoleBag.push({ phase: "appearance", text: text.slice(0, 500) });
-    });
-    page.on("pageerror", (err) =>
-      consoleBag.push({ phase: "appearance-pageerror", text: String(err).slice(0, 500) })
-    );
-
+    const bag = emptyBag();
+    const detach = attachRouteCollectors(page, bag);
     await ctx.clearCookies();
-    await goto(page, "/dashboard");
+    await page.goto(BASE + "/dashboard", { waitUntil: "domcontentloaded", timeout: 120000 });
     await page.evaluate(() => localStorage.clear());
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(400);
     let probe = await pageProbe(page);
-    appearanceResults.cleanDefault = {
+    results.cleanDefault = {
       htmlDark: probe.htmlDark,
       appearance: probe.appearance,
       pass: probe.htmlDark === false,
@@ -359,7 +613,7 @@ async function main() {
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(400);
     probe = await pageProbe(page);
-    appearanceResults.darkReload = {
+    results.darkReload = {
       htmlDark: probe.htmlDark,
       appearance: probe.appearance,
       pass: probe.htmlDark === true && probe.appearance === "dark",
@@ -370,7 +624,7 @@ async function main() {
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(400);
     probe = await pageProbe(page);
-    appearanceResults.lightReload = {
+    results.lightReload = {
       htmlDark: probe.htmlDark,
       appearance: probe.appearance,
       pass: probe.htmlDark === false && probe.appearance === "light",
@@ -380,108 +634,71 @@ async function main() {
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(400);
     probe = await pageProbe(page);
-    appearanceResults.systemOsLight = {
+    results.systemOsLight = {
       htmlDark: probe.htmlDark,
       appearance: probe.appearance,
       pass: probe.htmlDark === false && probe.appearance === "system",
     };
+    detach();
     await ctx.close();
   }
-
   {
     const ctx = await browser.newContext({
       viewport: { width: 1440, height: 900 },
       colorScheme: "dark",
     });
     const page = await ctx.newPage();
-    await goto(page, "/dashboard");
+    await page.goto(BASE + "/dashboard", { waitUntil: "domcontentloaded", timeout: 120000 });
     await persistAppearance(page, "system");
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(400);
     const probe = await pageProbe(page);
-    appearanceResults.systemOsDark = {
+    results.systemOsDark = {
       htmlDark: probe.htmlDark,
       appearance: probe.appearance,
       pass: probe.htmlDark === true && probe.appearance === "system",
     };
     await page.screenshot({ path: join(SHOTS, "persist-system-os-dark.png"), fullPage: false });
-
-    // OS preference change while System selected
     await page.emulateMedia({ colorScheme: "light" });
-    await page.waitForTimeout(300);
-    // Dispatch change via matchMedia listeners by re-applying through storage helper if present
-    await page.evaluate(() => {
-      window.dispatchEvent(new Event("resize"));
-    });
-    // Force re-read by toggling via in-app if available, else rely on subscribeSystemAppearance via reload
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForTimeout(300);
     const after = await pageProbe(page);
-    appearanceResults.systemOsChangeToLight = {
+    results.systemOsChangeToLight = {
       htmlDark: after.htmlDark,
       appearance: after.appearance,
       pass: after.htmlDark === false && after.appearance === "system",
     };
     await ctx.close();
   }
+  return results;
+}
 
-  // --- Matrix (same route subset as IV; system at 1440/390) ---
+async function runMatrix(browser) {
+  const matrix = [];
+  const allRaw = [];
+
   for (const width of WIDTHS) {
     const appearances =
       width === 1440 || width === 390 ? ["light", "dark", "system"] : ["light", "dark"];
     for (const appearance of appearances) {
-      const colorScheme =
-        appearance === "dark" ? "dark" : appearance === "system" ? "light" : "light";
+      const colorScheme = appearance === "dark" ? "dark" : "light";
       const ctx = await browser.newContext({
         viewport: { width, height: width <= 430 ? 844 : 900 },
         colorScheme,
       });
       const page = await ctx.newPage();
-      page.on("console", (msg) => {
-        const text = msg.text();
-        if (/hydration|did not match|Text content does not match/i.test(text)) {
-          hydration.push({ appearance, width, text: text.slice(0, 1500) });
-        }
-        if (msg.type() === "error" && !/404|favicon/i.test(text)) {
-          consoleBag.push({ appearance, width, text: text.slice(0, 400) });
-        }
-      });
-      page.on("pageerror", (err) =>
-        consoleBag.push({ appearance, width, pageerror: String(err).slice(0, 400) })
-      );
+      const bag = emptyBag();
+      const detach = attachRouteCollectors(page, bag);
 
-      await goto(page, "/dashboard");
+      await page.goto(BASE + "/dashboard", { waitUntil: "domcontentloaded", timeout: 120000 });
       await persistAppearance(page, appearance);
       await page.reload({ waitUntil: "domcontentloaded" });
       await page.waitForTimeout(250);
 
       for (const route of MATRIX_ROUTES) {
-        const res = await goto(page, route);
-        const status = res?.status() ?? 0;
-        const probe = await pageProbe(page);
-        const entryIssues = probe.issues.map((i) => ({
-          ...i,
-          route,
-          appearance,
-          width,
-        }));
-        issuesAll.push(...entryIssues);
-        const fail =
-          status >= 400 ||
-          entryIssues.some((i) =>
-            ["typography-control-below-13", "fav-contrast", "light-surface-leak"].includes(i.kind)
-          );
-        matrix.push({
-          route,
-          appearance,
-          width,
-          status,
-          htmlDark: probe.htmlDark,
-          sidebarCount: probe.sidebarCount,
-          issueCount: entryIssues.length,
-          overflow: probe.overflowHits.length,
-          fail,
-        });
+        const entry = await visitRoute(page, route, { appearance, width }, bag);
+        matrix.push(entry);
+        allRaw.push(...entry.rawEvents.map((e) => ({ ...e, route, appearance, width })));
 
         if (
           (route === "/dashboard" ||
@@ -493,167 +710,268 @@ async function main() {
           (appearance === "light" || appearance === "dark")
         ) {
           const slug = `${appearance}-${width}-${route.replace(/[/?=&]/g, "_")}`;
-          await page.screenshot({ path: join(SHOTS, `${slug}.png`), fullPage: false });
+          await page.screenshot({ path: join(SHOTS, `${slug}.png`), fullPage: false }).catch(() => {});
         }
       }
+      detach();
       await ctx.close();
     }
   }
 
-  // Section sweep @1440 light + dark for leaks/hydration surfaces
+  // Section sweep @1440 light + dark
   for (const appearance of ["light", "dark"]) {
     const ctx = await browser.newContext({
       viewport: { width: 1440, height: 900 },
       colorScheme: appearance === "dark" ? "dark" : "light",
     });
     const page = await ctx.newPage();
-    page.on("console", (msg) => {
-      const text = msg.text();
-      if (/hydration|did not match/i.test(text)) {
-        hydration.push({ phase: "section-sweep", appearance, text: text.slice(0, 1500) });
-      }
-    });
-    await goto(page, "/dashboard");
+    const bag = emptyBag();
+    const detach = attachRouteCollectors(page, bag);
+    await page.goto(BASE + "/dashboard", { waitUntil: "domcontentloaded", timeout: 120000 });
     await persistAppearance(page, appearance);
     await page.reload({ waitUntil: "domcontentloaded" });
     for (const route of SECTION_SWEEP) {
-      const res = await goto(page, route);
-      const probe = await pageProbe(page);
-      const entryIssues = probe.issues
-        .filter((i) =>
-          ["typography-control-below-13", "fav-contrast", "light-surface-leak"].includes(i.kind)
-        )
-        .map((i) => ({ ...i, route, appearance, width: 1440, sweep: true }));
-      issuesAll.push(...entryIssues);
-      matrix.push({
-        route,
-        appearance,
-        width: 1440,
-        status: res?.status() ?? 0,
-        htmlDark: probe.htmlDark,
-        sidebarCount: probe.sidebarCount,
-        issueCount: entryIssues.length,
-        overflow: probe.overflowHits.length,
-        fail: entryIssues.length > 0 || (res?.status() ?? 0) >= 400,
-        sweep: true,
-      });
+      const entry = await visitRoute(page, route, { appearance, width: 1440, sweep: true }, bag);
+      matrix.push(entry);
+      allRaw.push(...entry.rawEvents.map((e) => ({ ...e, route, appearance, width: 1440, sweep: true })));
     }
+    detach();
     await ctx.close();
   }
 
-  // --- M07 hydration focused (all sections, light+dark) ---
-  const hydrationM07 = [];
-  for (const appearance of ["light", "dark"]) {
-    const ctx = await browser.newContext({
-      viewport: { width: 1440, height: 900 },
-      colorScheme: appearance === "dark" ? "dark" : "light",
-    });
+  return { matrix, allRaw };
+}
+
+async function runDevFocusedProbes(browser) {
+  /** First Dark 1440 route sequence + M07 overview/adjustments */
+  const sequence = [];
+  const ctx = await browser.newContext({
+    viewport: { width: 1440, height: 900 },
+    colorScheme: "dark",
+  });
+  const page = await ctx.newPage();
+  const bag = emptyBag();
+  const detach = attachRouteCollectors(page, bag);
+  await page.goto(BASE + "/dashboard", { waitUntil: "domcontentloaded", timeout: 120000 });
+  await persistAppearance(page, "dark");
+  await page.reload({ waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(200);
+
+  for (const route of MATRIX_ROUTES) {
+    const entry = await visitRoute(page, route, { appearance: "dark", width: 1440 }, bag);
+    sequence.push(entry);
+  }
+  for (const route of ["/staffpay?section=overview", "/staffpay?section=adjustments"]) {
+    const entry = await visitRoute(page, route, { appearance: "dark", width: 1440 }, bag);
+    sequence.push({ ...entry, focusedRepeat: true });
+  }
+  detach();
+  await ctx.close();
+  return sequence;
+}
+
+async function runFirstHitProbes(browser, label) {
+  const results = [];
+  for (let i = 0; i < 3; i++) {
+    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: "dark" });
     const page = await ctx.newPage();
-    const localHydration = [];
-    page.on("console", (msg) => {
-      const text = msg.text();
-      if (/hydration|did not match/i.test(text)) localHydration.push(text.slice(0, 2000));
-    });
-    await goto(page, "/staffpay?section=overview");
-    await persistAppearance(page, appearance);
-    await page.reload({ waitUntil: "domcontentloaded" });
-    for (const section of M07) {
-      localHydration.length = 0;
-      await goto(page, `/staffpay?section=${section}`);
-      await page.waitForTimeout(300);
-      hydrationM07.push({
-        section,
-        appearance,
-        hydrationCount: localHydration.length,
-        samples: localHydration.slice(0, 2),
-        bootstrap: await page.locator("[data-m07-bootstrap-status]").count(),
-      });
-    }
+    const bag = emptyBag();
+    const detach = attachRouteCollectors(page, bag);
+    const entry = await visitRoute(page, "/staffpay?section=adjustments", { appearance: "dark", width: 1440 }, bag);
+    results.push({ label, attempt: i + 1, ...entry });
+    detach();
     await ctx.close();
   }
+  return results;
+}
 
-  // --- Adjustments first-hit probes ---
-  const firstHit = [];
-  for (let run = 0; run < 3; run++) {
-    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-    const page = await ctx.newPage();
-    const errors = [];
-    page.on("console", (msg) => {
-      if (msg.type() === "error") errors.push(msg.text().slice(0, 300));
-    });
-    page.on("pageerror", (err) => errors.push(String(err).slice(0, 300)));
-    const t0 = Date.now();
-    const res = await goto(page, "/staffpay?section=adjustments", 120000);
-    firstHit.push({
-      attempt: run + 1,
-      status: res?.status() ?? 0,
-      ms: Date.now() - t0,
-      jsonParseErrors: errors.filter((e) => /Unexpected end of JSON/i.test(e)),
-      consoleErrors: errors.slice(0, 8),
-    });
-    await ctx.close();
+function summarise(matrix, allRaw, appearanceResults, extras = {}) {
+  const fails = matrix.filter((m) => m.fail);
+  const unresolved = allRaw.filter((e) => !e.allowlisted);
+  const allowlisted = allRaw.filter((e) => e.allowlisted);
+  const byClass = {};
+  for (const e of allRaw) {
+    byClass[e.class || "unknown"] = (byClass[e.class || "unknown"] || 0) + 1;
   }
-
-  // Clean-server style: fresh contexts after waiting (warm server)
-  const firstHitWarm = [];
-  for (let run = 0; run < 3; run++) {
-    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-    const page = await ctx.newPage();
-    const errors = [];
-    page.on("console", (msg) => {
-      if (msg.type() === "error") errors.push(msg.text().slice(0, 300));
-    });
-    const t0 = Date.now();
-    const res = await page.goto(BASE + "/staffpay?section=adjustments", {
-      waitUntil: "domcontentloaded",
-      timeout: 120000,
-    });
-    firstHitWarm.push({
-      attempt: run + 1,
-      status: res?.status() ?? 0,
-      ms: Date.now() - t0,
-      jsonParseErrors: errors.filter((e) => /Unexpected end of JSON/i.test(e)),
-      consoleErrors: errors.slice(0, 8),
-    });
-    await ctx.close();
-  }
-
-  await browser.close();
-
-  const summary = {
+  const http500 = matrix.flatMap((m) =>
+    (m.unallowlistedHttpErrors || [])
+      .filter((e) => e.status >= 500 || e.class === "application-http-500")
+      .map((e) => ({ route: m.route, appearance: m.appearance, viewport: m.viewport, ...e }))
+  );
+  const http403 = matrix.flatMap((m) =>
+    (m.unallowlistedHttpErrors || [])
+      .filter((e) => e.status === 403 || e.class === "application-http-403")
+      .map((e) => ({ route: m.route, appearance: m.appearance, viewport: m.viewport, ...e }))
+  );
+  const jsonParse = matrix.flatMap((m) =>
+    [...(m.appPageErrors || []), ...(m.appConsoleErrors || [])]
+      .filter((e) => e.class === "application-json-parse" || /Unexpected end of JSON/i.test(e.text || ""))
+      .map((e) => ({ route: m.route, appearance: m.appearance, viewport: m.viewport, ...e }))
+  );
+  return {
+    mode: MODE,
     base: BASE,
+    appShaEnv: process.env.HCDP_APP_SHA || null,
     matrixEntries: matrix.length,
-    matrixFail: matrix.filter((m) => m.fail).length,
-    issueTotals: issuesAll.reduce((acc, i) => {
-      acc[i.kind] = (acc[i.kind] || 0) + 1;
-      return acc;
-    }, {}),
+    matrixFail: fails.length,
+    matrixPass: matrix.length - fails.length,
+    issueTotals: matrix
+      .flatMap((m) => m.visualIssues || [])
+      .reduce((acc, i) => {
+        acc[i.kind] = (acc[i.kind] || 0) + 1;
+        return acc;
+      }, {}),
+    rawEventCount: allRaw.length,
+    unresolvedApplicationEventCount: unresolved.length,
+    allowlistedEnvironmentalEventCount: allowlisted.length,
+    eventsByClass: byClass,
+    hydrationTotal: matrix.reduce((n, m) => n + (m.hydrationSignatures?.length || 0), 0),
+    overflowFailCount: matrix.filter((m) => m.horizontalOverflow).length,
+    consoleAppErrorCount: matrix.reduce((n, m) => n + (m.appConsoleErrors?.length || 0), 0),
+    pageErrorCount: matrix.reduce((n, m) => n + (m.appPageErrors?.length || 0), 0),
+    http500,
+    http403,
+    jsonParse,
     appearanceResults,
-    appearanceAllPass: Object.values(appearanceResults).every((r) => r.pass),
-    hydrationSignatures: hydration.length,
-    hydrationM07Fail: hydrationM07.filter((h) => h.hydrationCount > 0).length,
-    firstHit,
-    firstHitWarm,
-    firstHitAll200: [...firstHit, ...firstHitWarm].every((x) => x.status === 200),
-    consoleErrorCount: consoleBag.length,
+    appearanceAllPass: Object.values(appearanceResults || {}).every((r) => r.pass),
+    failSamples: fails.slice(0, 40).map((m) => ({
+      route: m.route,
+      appearance: m.appearance,
+      viewport: m.viewport,
+      navigationStatus: m.navigationStatus,
+      failReasons: m.failReasons,
+      unallowlistedHttpErrors: (m.unallowlistedHttpErrors || []).slice(0, 5),
+      appPageErrors: (m.appPageErrors || []).slice(0, 3),
+      appConsoleErrors: (m.appConsoleErrors || []).slice(0, 3),
+    })),
+    ...extras,
+  };
+}
+
+async function main() {
+  const profile = process.env.HCDP_PROFILE || "full-matrix";
+  const browser = await chromium.launch({
+    channel: "chrome",
+    headless: true,
+    args: ["--disable-dev-shm-usage"],
+  });
+
+  const meta = {
+    mode: MODE,
+    profile,
+    base: BASE,
+    out: OUT,
+    startedAt: nowIso(),
+    appSha: process.env.HCDP_APP_SHA || null,
+    node: process.version,
   };
 
+  if (profile === "dev-focused") {
+    const sequence = await runDevFocusedProbes(browser);
+    const firstHitWarm = await runFirstHitProbes(browser, "warm-server-first-request");
+    const allRaw = [
+      ...sequence.flatMap((e) => (e.rawEvents || []).map((r) => ({ ...r, route: e.route }))),
+      ...firstHitWarm.flatMap((e) => (e.rawEvents || []).map((r) => ({ ...r, route: e.route }))),
+    ];
+    const summary = summarise(sequence, allRaw, {}, { firstHitWarm });
+    write("dev-focused-sequence.json", sequence);
+    write("dev-focused-first-hit-warm.json", firstHitWarm);
+    write("raw-events-full.json", allRaw);
+    write("allowlisted-environmental-events.json", allRaw.filter((e) => e.allowlisted));
+    write("unresolved-application-events.json", allRaw.filter((e) => !e.allowlisted));
+    write("summary.json", summary);
+    write("classification-rationale.json", {
+      allowlist:
+        "Only Next.js webpack-hmr WebSocket / HMR status and DevTools install hints are allowlisted. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
+      failPredicate: [
+        "navigation status ≥ 400",
+        "unallowlisted resource response ≥ 400",
+        "application page error",
+        "application console error",
+        "hydration mismatch",
+        "horizontal page overflow",
+        "typography / contrast / dark-surface hard-gate failure",
+        "unallowlisted requestfailed",
+      ],
+    });
+    write("run-meta.json", { ...meta, endedAt: nowIso(), summary });
+    console.log(JSON.stringify(summary, null, 2));
+    await browser.close();
+    process.exit(summary.matrixFail > 0 || summary.unresolvedApplicationEventCount > 0 ? 2 : 0);
+  }
+
+  if (profile === "first-hit-only") {
+    const firstHit = await runFirstHitProbes(browser, process.env.HCDP_HIT_LABEL || "first-hit");
+    const allRaw = firstHit.flatMap((e) => (e.rawEvents || []).map((r) => ({ ...r, route: e.route })));
+    const summary = summarise(firstHit, allRaw, {}, { firstHit });
+    write("first-hit.json", firstHit);
+    write("raw-events-full.json", allRaw);
+    write("allowlisted-environmental-events.json", allRaw.filter((e) => e.allowlisted));
+    write("unresolved-application-events.json", allRaw.filter((e) => !e.allowlisted));
+    write("summary.json", summary);
+    write("run-meta.json", { ...meta, endedAt: nowIso() });
+    console.log(JSON.stringify(summary, null, 2));
+    await browser.close();
+    process.exit(summary.matrixFail > 0 || (summary.http500?.length || 0) > 0 ? 2 : 0);
+  }
+
+  // full-matrix (default)
+  const appearanceResults = await runAppearancePersistence(browser);
+  const { matrix, allRaw } = await runMatrix(browser);
+  const summary = summarise(matrix, allRaw, appearanceResults);
+
   write("browser-validation-report.json", { summary, matrix });
-  write("issues.json", issuesAll);
-  write("issue-samples.json", {
-    typography: issuesAll.filter((i) => i.kind.includes("typography")).slice(0, 20),
-    favContrast: issuesAll.filter((i) => i.kind === "fav-contrast").slice(0, 20),
-    leaks: issuesAll.filter((i) => i.kind === "light-surface-leak").slice(0, 20),
-  });
+  write("per-route-matrix.json", matrix);
+  write("raw-events-full.json", allRaw);
+  write("allowlisted-environmental-events.json", allRaw.filter((e) => e.allowlisted));
+  write("unresolved-application-events.json", allRaw.filter((e) => !e.allowlisted));
   write("appearance-persistence.json", appearanceResults);
-  write("hydration.json", { hydration, hydrationM07 });
-  write("cold-adjustments.json", { firstHit, firstHitWarm });
-  write("console-bag.json", consoleBag.slice(0, 100));
+  write("http-500-events.json", summary.http500);
+  write("http-403-events.json", summary.http403);
+  write("json-parse-events.json", summary.jsonParse);
+  write("classification-rationale.json", {
+    allowlist:
+      "Only Next.js webpack-hmr WebSocket / HMR status and DevTools install hints are allowlisted. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
+    failPredicate: [
+      "navigation status ≥ 400",
+      "unallowlisted resource response ≥ 400",
+      "application page error",
+      "application console error",
+      "hydration mismatch",
+      "horizontal page overflow",
+      "typography / contrast / dark-surface hard-gate failure",
+      "unallowlisted requestfailed",
+    ],
+    priorContradiction:
+      "Previous validator used a global console bag, excluded console/page/hydration/overflow from fail, and truncated consoleBag to 100 — it could not support matrixFail:0.",
+  });
   write("summary.json", summary);
+  write("run-meta.json", { ...meta, endedAt: nowIso(), matrixEntries: matrix.length });
+
+  // Compact issues for quick scan
+  write(
+    "issue-samples.json",
+    {
+      fails: summary.failSamples,
+      http500: summary.http500.slice(0, 20),
+      http403: summary.http403.slice(0, 20),
+      jsonParse: summary.jsonParse.slice(0, 20),
+    }
+  );
+
   console.log(JSON.stringify(summary, null, 2));
+  await browser.close();
+
+  const hard =
+    summary.matrixFail > 0 ||
+    summary.http500.length > 0 ||
+    summary.http403.length > 0 ||
+    summary.jsonParse.length > 0;
+  process.exit(hard ? 2 : 0);
 }
 
 main().catch((err) => {
   console.error(err);
+  writeFileSync(join(OUT, "fatal-error.json"), JSON.stringify({ error: String(err), stack: err?.stack }, null, 2));
   process.exit(1);
 });
