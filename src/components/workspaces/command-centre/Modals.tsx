@@ -813,7 +813,7 @@ export function CustomiseDashboardModal({
             </div>
           ))}
         {extraSections.length ? (
-          <p className="m-0 text-[length:var(--type-meta)] text-[var(--cc-muted)]">Custom sections: {extraSections.map((s) => s.label).join(", ")}</p>
+          <p className="m-0 text-[length:var(--type-control)] text-[var(--cc-muted)]">Custom sections: {extraSections.map((s) => s.label).join(", ")}</p>
         ) : null}
       </div>
     </Modal>

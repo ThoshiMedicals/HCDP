@@ -33,7 +33,7 @@ export function EmergencyBanner({
     <div className="cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm">
       <div className="flex flex-wrap items-center gap-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide">Emergency announcement</div>
+          <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide">Emergency announcement</div>
           <strong className="mt-0.5 block text-base leading-snug">{a.title}</strong>
           <p className="m-0 mt-1 text-sm leading-snug">{a.message}</p>
           <div className="mt-2 grid gap-0.5 text-[length:var(--type-control)] opacity-90 sm:grid-cols-2">
@@ -101,7 +101,7 @@ export function AnnouncementCarousel({
     <CcCard accent="#1e40af" className="overflow-hidden">
       <div className="flex flex-wrap items-start justify-between gap-3 px-4 py-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide cc-text-info">Announcement</div>
+          <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide cc-text-info">Announcement</div>
           <strong className="mt-0.5 block text-[15px]">{current.title}</strong>
           <p className="m-0 mt-1 text-sm text-[var(--cc-muted)]">{current.message}</p>
           <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
@@ -221,7 +221,7 @@ export function PrioritySummary({
                   <div className="text-[26px] font-black leading-none tracking-tight tabular-nums">{count}</div>
                 )}
                 {delta !== 0 ? (
-                  <div className="mt-1 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
+                  <div className="mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                     {`${delta > 0 ? "+" : ""}${delta} vs yesterday`}
                   </div>
                 ) : null}

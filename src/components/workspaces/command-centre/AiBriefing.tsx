@@ -67,7 +67,7 @@ export function AiBriefing({
                   {f.label}
                 </Badge>
                 {f.feedback ? (
-                  <span className="text-[length:var(--type-meta)] font-bold text-[var(--cc-muted)]">Feedback: {f.feedback}</span>
+                  <span className="text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">Feedback: {f.feedback}</span>
                 ) : null}
               </div>
               <p className="m-0 text-[13px] font-semibold leading-snug text-[var(--cc-ink)]">{f.text}</p>

@@ -274,7 +274,7 @@ export function KpiScorecardView({
       <div className="overflow-auto p-4">
         <table className="w-full min-w-[1220px] border-collapse text-left text-[length:var(--type-control)]">
           <thead>
-            <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-meta)] uppercase text-[var(--cc-muted)]">
+            <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-table)] uppercase text-[var(--cc-muted)]">
               <th className="py-2 pr-2">KPI</th>
               <th className="pr-2">Result</th>
               <th className="pr-2">Definition</th>

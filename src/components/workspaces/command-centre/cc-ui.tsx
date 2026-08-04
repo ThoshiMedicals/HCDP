@@ -77,7 +77,7 @@ export function PriorityBadge({
   return (
     <span
       className={cn(
-        "inline-flex max-w-full items-center truncate rounded-md border px-1.5 py-0.5 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide",
+        "inline-flex max-w-full items-center truncate rounded-md border px-1.5 py-0.5 text-[length:var(--type-control)] font-extrabold uppercase tracking-wide",
         styles[tone],
         priority === "Emergency" && "cc-pulse"
       )}
@@ -103,7 +103,7 @@ export function HealthDot({ band, score }: { band: HealthBand; score?: number | 
         ? `${score}%`
         : band;
   return (
-    <span className="inline-flex items-center gap-1 text-[length:var(--type-meta)] font-bold text-[var(--cc-muted)]" title={band}>
+    <span className="inline-flex items-center gap-1 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]" title={band}>
       <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors[tone])} />
       {label}
     </span>
@@ -129,7 +129,7 @@ export function HealthBadge({
   } as const;
   if (compact) {
     return (
-      <span className={cn("inline-flex items-center rounded-md px-1.5 py-0.5 text-[length:var(--type-meta)] font-bold tabular-nums", styles[tone])}>
+      <span className={cn("inline-flex items-center rounded-md px-1.5 py-0.5 text-[length:var(--type-control)] font-bold tabular-nums", styles[tone])}>
         {score === null || band === "Data incomplete" ? "—" : `${score}%`}
       </span>
     );
@@ -171,7 +171,7 @@ export function StatBlock({
   return (
     <div className="flex min-h-[70px] flex-col justify-center rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-2.5 py-2">
       <div
-        className="line-clamp-2 text-[length:var(--type-meta)] font-bold uppercase leading-tight tracking-wide text-[var(--cc-muted)]"
+        className="line-clamp-2 text-[length:var(--type-control)] font-bold uppercase leading-tight tracking-wide text-[var(--cc-muted)]"
         title={label}
       >
         {label}
@@ -185,7 +185,7 @@ export function StatBlock({
       >
         {value}
       </div>
-      {hint ? <div className="mt-1 line-clamp-2 text-[length:var(--type-meta)] leading-snug text-[var(--cc-muted)]">{hint}</div> : null}
+      {hint ? <div className="mt-1 line-clamp-2 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">{hint}</div> : null}
     </div>
   );
 }
@@ -254,7 +254,7 @@ export function TrendChartBlock({
         <div className="mb-1.5">
           {title ? <strong className="block text-[13px]">{title}</strong> : null}
           {period ? (
-            <span className="text-[length:var(--type-meta)] font-bold text-[var(--cc-muted)]">
+            <span className="text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">
               {period}
               {comparison ? ` · vs ${comparison}` : ""}
             </span>
@@ -291,14 +291,14 @@ export function TrendChartBlock({
       {summary && !compact ? <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">{summary}</p> : null}
       <button
         type="button"
-        className="mt-1 text-[length:var(--type-meta)] font-bold text-[var(--cc-exec,#1e40af)] underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        className="mt-1 text-[length:var(--type-control)] font-bold text-[var(--cc-exec,#1e40af)] underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         onClick={() => setShowTable((v) => !v)}
         aria-expanded={showTable}
       >
         {showTable ? "Hide table" : "View as Table"}
       </button>
       {showTable ? (
-        <table className="mt-1 w-full text-left text-[length:var(--type-meta)]">
+        <table className="mt-1 w-full text-left text-[length:var(--type-control)]">
           <thead>
             <tr className="text-[var(--cc-muted)]">
               <th className="pr-2">Point</th>

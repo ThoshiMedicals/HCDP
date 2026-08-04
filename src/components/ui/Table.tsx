@@ -9,7 +9,7 @@ export function Table({ children }: { children: React.ReactNode }) {
 export function THead({ children }: { children: React.ReactNode }) {
   return (
     <thead>
-      <tr className="border-b border-[var(--v34-card-line)] bg-[var(--soft)] text-left text-[length:var(--type-meta)] font-bold uppercase tracking-[0.04em] text-[var(--muted)]">
+      <tr className="border-b border-[var(--v34-card-line)] bg-[var(--soft)] text-left text-[length:var(--type-table)] font-bold uppercase tracking-[0.04em] text-[var(--muted)]">
         {children}
       </tr>
     </thead>

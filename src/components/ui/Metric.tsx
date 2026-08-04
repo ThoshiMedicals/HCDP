@@ -30,7 +30,7 @@ export function Metric({
       )}
     >
       <div>
-        <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-[0.04em] text-[var(--muted)]">
+        <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-[0.04em] text-[var(--muted)]">
           {label}
         </div>
         <div className="mt-1 text-[28px] font-extrabold tracking-tight text-[var(--ink)]">

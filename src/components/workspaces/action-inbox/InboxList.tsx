@@ -89,7 +89,7 @@ export function InboxList({
     <div className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]">
       <div
         className={cn(
-          "hidden grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] gap-2 border-b border-[var(--v34-card-line)] bg-[var(--soft)] px-3 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--muted)] lg:grid",
+          "hidden grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] gap-2 border-b border-[var(--v34-card-line)] bg-[var(--soft)] px-3 text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--muted)] lg:grid",
           density === "compact" ? "py-1.5" : "py-2.5"
         )}
       >
@@ -162,12 +162,12 @@ export function InboxList({
                     {title}
                   </span>
                   {action.unread && !restricted ? (
-                    <span className="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[length:var(--type-meta)] font-extrabold text-[#1d4ed8]">
+                    <span className="rounded bg-[#dbeafe] px-1.5 py-0.5 text-[length:var(--type-control)] font-extrabold text-[#1d4ed8]">
                       New
                     </span>
                   ) : null}
                   {action.isDemo ? (
-                    <span className="rounded bg-[#e2e8f0] px-1.5 py-0.5 text-[length:var(--type-meta)] font-bold text-[#475569]">
+                    <span className="rounded bg-[#e2e8f0] px-1.5 py-0.5 text-[length:var(--type-control)] font-bold text-[#475569]">
                       Demonstration Data
                     </span>
                   ) : null}
@@ -180,7 +180,7 @@ export function InboxList({
                     You do not have permission to view details for this sensitivity level.
                   </div>
                 )}
-                <div className="mt-1 flex flex-wrap gap-2 text-[length:var(--type-meta)] text-[#94a3b8]">
+                <div className="mt-1 flex flex-wrap gap-2 text-[length:var(--type-control)] text-[#94a3b8]">
                   {!restricted && action.attachments.length ? (
                     <span>📎 {action.attachments.length}</span>
                   ) : null}
@@ -195,7 +195,7 @@ export function InboxList({
               <div>
                 {!restricted ? (
                   <span
-                    className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[length:var(--type-meta)] font-extrabold"
+                    className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[length:var(--type-control)] font-extrabold"
                     style={{
                       color: categoryColor(action.category),
                       background: `${categoryColor(action.category)}18`,

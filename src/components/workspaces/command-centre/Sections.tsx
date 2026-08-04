@@ -41,7 +41,7 @@ export function PositiveHealthSummary({ messages }: { messages: PositiveMessage[
                 : "border-[var(--cc-card-line)] bg-[var(--cc-soft)]"
             )}
           >
-            {m.period ? <span className="mr-2 text-[length:var(--type-meta)] font-extrabold uppercase">{m.period}</span> : null}
+            {m.period ? <span className="mr-2 text-[length:var(--type-control)] font-extrabold uppercase">{m.period}</span> : null}
             {m.message}
           </div>
         ))}
@@ -195,7 +195,7 @@ export function ClinicOperationsPanel({
       <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 xl:grid-cols-4">
         {(Object.keys(groups) as Array<keyof typeof groups>).map((g) => (
           <div key={g} className="min-w-0">
-            <div className="mb-1.5 truncate text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+            <div className="mb-1.5 truncate text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g} ({groups[g].length})
             </div>
             <div className="grid gap-2">
@@ -218,15 +218,15 @@ export function ClinicOperationsPanel({
                       </span>
                     </div>
                     {h.emergencyStatus ? (
-                      <div className="cc-text-danger mb-1 text-[length:var(--type-meta)] font-extrabold">
+                      <div className="cc-text-danger mb-1 text-[length:var(--type-control)] font-extrabold">
                         Emergency status active (separate from score)
                       </div>
                     ) : null}
                     {h.openingChecklist === "Late" ? (
-                      <div className="cc-text-warn mb-1 text-[length:var(--type-meta)] font-bold">Warning: opening checklist late</div>
+                      <div className="cc-text-warn mb-1 text-[length:var(--type-control)] font-bold">Warning: opening checklist late</div>
                     ) : null}
                     {h.missingInfo?.length ? (
-                      <div className="mb-1 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
+                      <div className="mb-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                         Data incomplete: {h.missingInfo.join(", ")} (score not reduced)
                       </div>
                     ) : null}
@@ -259,9 +259,9 @@ export function ClinicOperationsPanel({
                       className="mt-1.5"
                     >
                       {h.override ? (
-                        <div className="cc-text-warn mb-1 text-[length:var(--type-meta)] font-extrabold">Manager Override Active</div>
+                        <div className="cc-text-warn mb-1 text-[length:var(--type-control)] font-extrabold">Manager Override Active</div>
                       ) : null}
-                      <div className="grid gap-0.5 text-[length:var(--type-meta)] leading-snug text-[var(--cc-muted)]">
+                      <div className="grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
                         <span>Last refreshed {new Date(h.lastUpdate).toLocaleString("en-AU")}</span>
                       </div>
                     </ExpandableBlock>
@@ -275,9 +275,9 @@ export function ClinicOperationsPanel({
       <div className="border-t border-[var(--cc-card-line)] px-4 py-3">
         <h4 className="m-0 mb-2 text-[13px] font-extrabold">Ranked comparison (normalised)</h4>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[820px] text-left text-xs">
+          <table className="w-full min-w-[820px] text-left text-[length:var(--type-table)]">
             <thead>
-              <tr className="text-[length:var(--type-meta)] uppercase text-[var(--cc-muted)]">
+              <tr className="text-[length:var(--type-table)] uppercase text-[var(--cc-muted)]">
                 <th className="py-1 pr-2">Rank</th>
                 <th className="pr-2">Clinic</th>
                 <th className="pr-2">Score</th>
@@ -504,7 +504,7 @@ export function CompliancePanel({
       <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 lg:grid-cols-4">
         {groups.map((g) => (
           <div key={g} className="min-w-0">
-            <div className="mb-1.5 truncate text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+            <div className="mb-1.5 truncate text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g}
             </div>
             <div className="grid gap-2">
@@ -892,7 +892,7 @@ export function TrendsPanel({ trends, period }: { trends: TrendCard[]; period?: 
               t.size === "Medium" && "xl:col-span-1"
             )}
           >
-            <div className="mb-1 text-[length:var(--type-meta)] font-extrabold uppercase text-[var(--cc-muted)]">
+            <div className="mb-1 text-[length:var(--type-control)] font-extrabold uppercase text-[var(--cc-muted)]">
               {t.area} · {t.size}
             </div>
             {(t.size === "Medium" || t.size === "Large") && (
@@ -1070,7 +1070,7 @@ export function PrivateNotesCard({
                   <span className="font-bold">{n.cardId}: </span>
                   {n.note}
                   {n.reminderAt ? (
-                    <div className="mt-0.5 text-[length:var(--type-meta)] font-semibold cc-text-warn">
+                    <div className="mt-0.5 text-[length:var(--type-control)] font-semibold cc-text-warn">
                       Reminder: {new Date(n.reminderAt).toLocaleString("en-AU")}
                     </div>
                   ) : null}

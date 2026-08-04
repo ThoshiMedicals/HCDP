@@ -151,7 +151,7 @@ export function AnalyticsPanel({
             >
               <div className="text-[length:var(--type-control)] font-bold text-[var(--muted)]">{m.label}</div>
               <div className="text-2xl font-black">{m.value}</div>
-              <div className="mt-1 text-[length:var(--type-meta)] text-[#94a3b8]">{m.def}</div>
+              <div className="mt-1 text-[length:var(--type-control)] text-[#94a3b8]">{m.def}</div>
             </button>
           ))}
         </div>
@@ -351,7 +351,7 @@ function Heatmap({ actions }: { actions: InboxAction[] }) {
   );
   return (
     <div className="overflow-x-auto">
-      <table className="text-[length:var(--type-meta)]">
+      <table className="text-[length:var(--type-control)]">
         <thead>
           <tr>
             <th className="p-1" />

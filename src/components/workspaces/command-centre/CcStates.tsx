@@ -85,7 +85,7 @@ export function CardStateFrame({
             </Button>
           ) : null}
         </div>
-        <p className="m-0 mt-3 text-[length:var(--type-meta)] text-[var(--cc-muted)]">
+        <p className="m-0 mt-3 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Live source connectivity requires a future backend connection.
         </p>
       </div>
@@ -113,5 +113,5 @@ export function FilterSentenceBar({
 }
 
 export function BackendHint({ children }: { children: React.ReactNode }) {
-  return <p className="m-0 text-[length:var(--type-meta)] leading-snug text-[var(--cc-muted)]">{children}</p>;
+  return <p className="m-0 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">{children}</p>;
 }

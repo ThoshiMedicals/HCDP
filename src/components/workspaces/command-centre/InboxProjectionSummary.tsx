@@ -51,7 +51,7 @@ export function InboxProjectionSummary() {
               key={c.category}
               className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-3 py-2 text-sm"
             >
-              <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
+              <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
                 {c.category}
               </div>
               <div className="font-bold">

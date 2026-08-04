@@ -166,7 +166,7 @@ function HealthBreakdownBody({
           tone={change === null ? undefined : change >= 0 ? "success" : "danger"}
         />
         <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-          <div className="text-[length:var(--type-meta)] font-bold uppercase text-[var(--cc-muted)]">Automatic status</div>
+          <div className="text-[length:var(--type-control)] font-bold uppercase text-[var(--cc-muted)]">Automatic status</div>
           <div className="mt-1">
             <HealthBadge band={profile.band} score={profile.overallScore} />
           </div>
@@ -375,7 +375,7 @@ function Stat({
 }) {
   return (
     <div className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
-      <div className="text-[length:var(--type-meta)] font-bold uppercase text-[var(--cc-muted)]">{label}</div>
+      <div className="text-[length:var(--type-control)] font-bold uppercase text-[var(--cc-muted)]">{label}</div>
       <div
         className={cn(
           "mt-1 text-[18px] font-black tabular-nums",

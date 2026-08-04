@@ -48,7 +48,7 @@ export function QaDemoMenu({
       </button>
       {open ? (
         <div className="absolute right-0 top-[110%] z-50 w-[280px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-2 shadow-xl">
-          <div className="cc-demo-banner mb-2 text-[length:var(--type-meta)]">
+          <div className="cc-demo-banner mb-2 text-[length:var(--type-control)]">
             Demonstration / QA only — these controls simulate behaviour locally.
           </div>
           <button
@@ -62,7 +62,7 @@ export function QaDemoMenu({
             Simulate Next Day
           </button>
           <div className="my-2 border-t border-[var(--cc-card-line)]" />
-          <div className="mb-1 px-1 text-[length:var(--type-meta)] font-extrabold uppercase text-[var(--cc-muted)]">
+          <div className="mb-1 px-1 text-[length:var(--type-control)] font-extrabold uppercase text-[var(--cc-muted)]">
             Force card states
           </div>
           {CARD_STATES.map(({ value, label }) => (
