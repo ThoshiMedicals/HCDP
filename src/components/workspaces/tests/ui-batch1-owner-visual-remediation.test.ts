@@ -60,7 +60,8 @@ describe("Owner visual remediation — global sidebar", () => {
   it("applies Premium Clinical sidebar palette without family gradients", () => {
     const css = tokens();
     assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*#0b1f3a/i);
-    assert.match(css, /--sidebar-champagne:\s*var\(--accent-champagne/);
+    // High-contrast champagne on navy (≥4.5:1 on active row #163456) — IV contrast fix
+    assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*--sidebar-champagne:\s*#d6be97/i);
     assert.match(css, /body\.theme-dark\s+\.pulse-sidebar[\s\S]*#d6be97/i);
     assert.doesNotMatch(css, /\.v32-nav-group\s+\.nav-btn\.active\s*\{[^}]*linear-gradient/);
     assert.doesNotMatch(css, /\.sidebar-user\s+\.avatar\s*\{[^}]*linear-gradient/);

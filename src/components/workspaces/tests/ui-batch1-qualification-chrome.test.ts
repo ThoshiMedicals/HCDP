@@ -75,6 +75,9 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
     if (typeof document !== "undefined" && document.body?.classList) {
       document.body.classList.remove("theme-dark");
     }
+    if (typeof document !== "undefined" && document.documentElement?.classList) {
+      document.documentElement.classList.remove("theme-dark");
+    }
     if (originalMatchMedia) {
       globalThis.matchMedia = originalMatchMedia;
     } else {
@@ -108,9 +111,10 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
       value: globalThis,
       configurable: true,
     });
-    if (typeof document === "undefined") {
-      const classes = new Set<string>();
-      const classList = {
+    if (typeof document === "undefined" || !document.documentElement?.classList) {
+      const bodyClasses = new Set<string>();
+      const htmlClasses = new Set<string>();
+      const makeClassList = (classes: Set<string>) => ({
         toggle: (token: string, force?: boolean) => {
           const on = force === undefined ? !classes.has(token) : !!force;
           if (on) classes.add(token);
@@ -120,9 +124,16 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
         contains: (token: string) => classes.has(token),
         remove: (...tokens: string[]) => tokens.forEach((t) => classes.delete(t)),
         add: (...tokens: string[]) => tokens.forEach((t) => classes.add(t)),
-      };
+      });
       Object.defineProperty(globalThis, "document", {
-        value: { body: { classList } },
+        value: {
+          documentElement: {
+            classList: makeClassList(htmlClasses),
+            dataset: {} as Record<string, string>,
+            style: {} as { colorScheme?: string },
+          },
+          body: { classList: makeClassList(bodyClasses) },
+        },
         configurable: true,
       });
     }
@@ -149,22 +160,26 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
 
     setAppearanceStore("light");
     assert.equal(readAppearance(), "light");
+    assert.equal(document.documentElement.classList.contains("theme-dark"), false);
     assert.equal(document.body.classList.contains("theme-dark"), false);
     assert.equal(JSON.parse(store.get(CC_STORAGE.appearance) ?? "null"), "light");
 
     setAppearanceStore("dark");
     assert.equal(readAppearance(), "dark");
+    assert.equal(document.documentElement.classList.contains("theme-dark"), true);
     assert.equal(document.body.classList.contains("theme-dark"), true);
     assert.equal(JSON.parse(store.get(CC_STORAGE.appearance) ?? "null"), "dark");
 
     setAppearanceStore("system");
     assert.equal(readAppearance(), "system");
     assert.equal(resolveIsDark("system"), false);
+    assert.equal(document.documentElement.classList.contains("theme-dark"), false);
     assert.equal(document.body.classList.contains("theme-dark"), false);
 
     stubMatchMedia(true);
     applyAppearance("system");
     assert.equal(resolveIsDark("system"), true);
+    assert.equal(document.documentElement.classList.contains("theme-dark"), true);
     assert.equal(document.body.classList.contains("theme-dark"), true);
   });
 
