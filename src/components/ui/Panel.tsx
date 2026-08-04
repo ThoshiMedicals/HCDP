@@ -12,7 +12,7 @@ export function Panel({
   return (
     <div
       className={cn(
-        "rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]",
+        "min-w-0 max-w-full rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]",
         pad && "p-5",
         className
       )}

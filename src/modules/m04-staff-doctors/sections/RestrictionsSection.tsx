@@ -19,7 +19,7 @@ export function RestrictionsSection() {
   const restrictions = listRestrictionsForActor(actor);
 
   return (
-    <div className="grid gap-4">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Restrictions & adjustments</h2>
         <p className="m-0 mt-1 text-sm text-[var(--muted)]">

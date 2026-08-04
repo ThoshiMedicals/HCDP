@@ -18,7 +18,7 @@ export function LeaveAvailabilitySection() {
   const [endDate, setEndDate] = useState(new Date().toISOString().slice(0, 10));
 
   return (
-    <div className="grid gap-4">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">Leave & availability</h2>
         <p className="m-0 mt-1 text-sm text-[var(--muted)]">Self-approval of leave is rejected.</p>

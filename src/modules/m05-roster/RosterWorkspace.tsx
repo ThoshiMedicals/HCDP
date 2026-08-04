@@ -207,7 +207,7 @@ function RosterWorkspaceChrome({
   const forcedLoading = useEvidenceForcedLoading();
 
   return (
-    <div className="grid min-w-0 gap-4" data-workspace-nav="horizontal">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4" data-workspace-nav="horizontal">
       <div className="min-w-0 max-w-full rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 shadow-[var(--v34-card-shadow)]">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <p className="hcdp-type-meta m-0">Module 5 · sections</p>

@@ -36,11 +36,26 @@ Primary containment:
 
 No handler, store, permission, route, schema, or dependency changes.
 
+## Follow-up — Panel / section grid min-content (430px smoke)
+
+Smoke at 430px showed Preferred name still ~762px wide because:
+
+- `Panel` defaulted to `min-width: auto` as a grid item → would not shrink below table 800px min-content.
+- Section `grid min-w-0 gap-4` still computed `grid-template-columns: 804px`.
+
+Additional source fix:
+
+- `Panel.tsx`: `min-w-0 max-w-full` on root (covers `pad={false}` table hosts).
+- Section roots / SectionFrames / M04–M06 workspace outer grids: `grid-cols-[minmax(0,1fr)]`.
+- Extended to other M04 Table-hosting section roots (onboarding, offboarding, leave, restrictions).
+
 ## Commits (local; Coordinator pushes)
 
 1. `fix(ui): correct m04 m05 m06 responsive control clipping`
 2. `test(ui): restore complete meaningful-control clipping gate`
+3. `fix(ui): contain panel and section grid min-content blow-out`
 
 ## Verification deferred
 
 Full 338 matrix not run here. Unit test for the gate script assertions run via `tsx --test`.
+Coordinator owns rebuild / matrix; `:3501` may still serve old build until rebuild.

@@ -42,7 +42,7 @@ export function PeopleSection({ kindFilter }: { kindFilter?: PersonKind }) {
   };
 
   return (
-    <div className="grid min-w-0 gap-4">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
         <h2 className="m-0 text-xl font-extrabold">
           {kindFilter === "doctor" ? "Doctor profiles" : kindFilter === "staff" ? "Staff profiles" : "People directory"}
