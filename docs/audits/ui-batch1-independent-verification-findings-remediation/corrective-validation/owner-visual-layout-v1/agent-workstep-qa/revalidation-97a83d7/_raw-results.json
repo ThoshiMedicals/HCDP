@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "agent": "Work-Step / Functional QA",
+    "phase": "Phase 4 FINAL spot-check REVALIDATION",
+    "appSourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+    "worktree": "/tmp/hcdp-fix/ui-batch1-wqa-3491",
+    "base": "http://127.0.0.1:3491",
+    "startedAt": "2026-08-04T04:28:44.610Z",
+    "scope": "short spot-check: emergency 390+1024, topbar Dashboard/Inbox, Act-as, Settings H1",
+    "finishedAt": "2026-08-04T04:29:04.434Z"
+  },
+  "workflows": [
+    {
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "route": "/dashboard",
+      "sourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+      "startingState": "390x844",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency banner",
+          "expected": "Visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "View All fully inside emergency card (no H-scroll)",
+          "expected": "Button inside .cc-surface-danger + viewport; no page horizontal scroll",
+          "observed": "{\"insideParentFully\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"rect\":{\"top\":464.25,\"left\":29,\"right\":232.703125,\"bottom\":508.75,\"width\":203.703125,\"height\":44.5}}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Click View All Announcements",
+          "expected": "Opens All Announcements modal",
+          "observed": "opened=true, url=http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MOBILE390-banner.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MOBILE390-view-all.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MOBILE390-end.png"
+      ],
+      "keyboard": null,
+      "operability": {
+        "viewAllGeom": {
+          "text": "View All Announcements",
+          "rect": {
+            "top": 464.25,
+            "left": 29,
+            "right": 232.703125,
+            "bottom": 508.75,
+            "width": 203.703125,
+            "height": 44.5
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "pageHorizontalScroll": false,
+          "disabled": false,
+          "truncateClass": false,
+          "textOverflow": "clip",
+          "scrollOverflow": false
+        },
+        "pageHorizontalScroll": false
+      },
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-EMERGENCY-MID1024",
+      "route": "/dashboard",
+      "sourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+      "startingState": "1024x768",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency banner",
+          "expected": "Visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "View All fully inside emergency card (no H-scroll)",
+          "expected": "Button inside .cc-surface-danger + viewport; no page horizontal scroll",
+          "observed": "{\"insideParentFully\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"rect\":{\"top\":275.5,\"left\":490.078125,\"right\":693.78125,\"bottom\":320,\"width\":203.703125,\"height\":44.5}}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Click View All Announcements",
+          "expected": "Opens All Announcements modal",
+          "observed": "opened=true, url=http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MID1024-banner.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MID1024-view-all.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-EMERGENCY-MID1024-end.png"
+      ],
+      "keyboard": null,
+      "operability": {
+        "viewAllGeom": {
+          "text": "View All Announcements",
+          "rect": {
+            "top": 275.5,
+            "left": 490.078125,
+            "right": 693.78125,
+            "bottom": 320,
+            "width": 203.703125,
+            "height": 44.5
+          },
+          "visible": true,
+          "fullyInViewport": true,
+          "insideParentFully": true,
+          "pageHorizontalScroll": false,
+          "disabled": false,
+          "truncateClass": false,
+          "textOverflow": "clip",
+          "scrollOverflow": false
+        },
+        "pageHorizontalScroll": false
+      },
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/roster?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-TOPBAR",
+      "route": "/dashboard",
+      "sourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+      "startingState": "desktop spot-check Dashboard/Inbox",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Desktop Topbar Dashboard",
+          "expected": "/dashboard",
+          "observed": "http://127.0.0.1:3491/dashboard",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/dashboard"
+        },
+        {
+          "n": 2,
+          "action": "Desktop Topbar Action Inbox",
+          "expected": "/action-inbox",
+          "observed": "http://127.0.0.1:3491/action-inbox",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/action-inbox"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-TOPBAR-desktop-start.png",
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-TOPBAR-inbox.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/settings?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-SIDEBAR",
+      "route": "/dashboard",
+      "sourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+      "startingState": "1440x900 Act-as spot-check",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Act-as visible and usable at 1440x900",
+          "expected": "Fully in viewport + value changeable; no H-scroll",
+          "observed": "{\"geom\":{\"text\":\"David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks \",\"rect\":{\"top\":834.125,\"left\":12,\"right\":275,\"bottom\":862.125,\"width\":263,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"insideParentFully\":true,\"pageHorizontalScroll\":false,\"disabled\":false,\"truncateClass\":false,\"textOverflow\":\"clip\",\"scrollOverflow\":false},\"changed\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-SIDEBAR-actas-1440x900.png"
+      ],
+      "actAs": {
+        "1440x900": {
+          "geom": {
+            "text": "David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic ManagerElena Brooks ",
+            "rect": {
+              "top": 834.125,
+              "left": 12,
+              "right": 275,
+              "bottom": 862.125,
+              "width": 263,
+              "height": 28
+            },
+            "visible": true,
+            "fullyInViewport": true,
+            "insideParentFully": true,
+            "pageHorizontalScroll": false,
+            "disabled": false,
+            "truncateClass": false,
+            "textOverflow": "clip",
+            "scrollOverflow": false
+          },
+          "changed": true
+        }
+      },
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/roster?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/training?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j79Vj4yH5aoiafxS",
+          "GET http://127.0.0.1:3491/documents-policies?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/compliance-quality?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/training?_rsc=IOe_mmh6jQxP6_Ru",
+          "GET http://127.0.0.1:3491/settings?_rsc=IOe_mmh6jQxP6_Ru"
+        ]
+      }
+    },
+    {
+      "workflowId": "WF-ROUTES",
+      "route": "/settings",
+      "sourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+      "startingState": "390 Settings H1 wrap spot-check",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Settings H1 wraps (no ellipsis/truncate) at 390",
+          "expected": "h1 matches; no truncate/ellipsis; wraps",
+          "observed": "{\"url\":\"http://127.0.0.1:3491/settings\",\"h1Meta\":{\"text\":\"Organisation, Locations, Users & Permissions\",\"textOverflow\":\"clip\",\"whiteSpace\":\"normal\",\"truncateClass\":false,\"scrollOverflow\":false,\"clientHeight\":53,\"scrollHeight\":54}}",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3491/settings"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/screenshots/WF-ROUTES-Settings.png"
+      ],
+      "h1Checks": {
+        "/settings": {
+          "text": "Organisation, Locations, Users & Permissions",
+          "textOverflow": "clip",
+          "whiteSpace": "normal",
+          "truncateClass": false,
+          "scrollOverflow": false,
+          "clientHeight": 53,
+          "scrollHeight": 54
+        }
+      },
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": [
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/roster?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/training?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=DQxjArDrgutTG17x",
+          "GET http://127.0.0.1:3491/ticket-desk?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/tasks-actions?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/time-attendance?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/action-inbox?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/roster?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/training?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/staff-doctors?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/settings?_rsc=j-_vjoKOn8bxlRO7",
+          "GET http://127.0.0.1:3491/dashboard?_rsc=j-_vjoKOn8bxlRO7"
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "totals": {
+    "pass": 5,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 0,
+    "total": 5,
+    "openFindings": 0
+  }
+}

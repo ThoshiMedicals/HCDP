@@ -1,0 +1,67 @@
+TAP version 13
+# Subtest: M07 PPA-1 UI (isolated · pending integration)
+    # Subtest: labels lane as isolated UI pending integration
+    ok 1 - labels lane as isolated UI pending integration
+      ---
+      duration_ms: 6.469774
+      ...
+    # Subtest: register renders rows with status, source, adjustment period, LE, reason, created actor
+    ok 2 - register renders rows with status, source, adjustment period, LE, reason, created actor
+      ---
+      duration_ms: 2.194309
+      ...
+    # Subtest: register empty state offers create CTA
+    ok 3 - register empty state offers create CTA
+      ---
+      duration_ms: 0.41373
+      ...
+    # Subtest: validates mandatory reason code and text; allows optional evidence
+    ok 4 - validates mandatory reason code and text; allows optional evidence
+      ---
+      duration_ms: 0.674964
+      ...
+    # Subtest: create form shows unlock≠PPA warning, labelled fields, and disables while submitting
+    ok 5 - create form shows unlock≠PPA warning, labelled fields, and disables while submitting
+      ---
+      duration_ms: 1.798195
+      ...
+    # Subtest: surfaces create error and denied state via props
+    ok 6 - surfaces create error and denied state via props
+      ---
+      duration_ms: 0.997628
+      ...
+    # Subtest: detail shows pins and cancel only for draft
+    ok 7 - detail shows pins and cancel only for draft
+      ---
+      duration_ms: 3.798669
+      ...
+    # Subtest: exposes no calculation, approval, export, or payment controls
+    ok 8 - exposes no calculation, approval, export, or payment controls
+      ---
+      duration_ms: 2.677329
+      ...
+    # Subtest: keyboard/a11y: labelled controls, status/error roles, focus and reduced-motion shell
+    ok 9 - keyboard/a11y: labelled controls, status/error roles, focus and reduced-motion shell
+      ---
+      duration_ms: 2.106088
+      ...
+    # Subtest: integration lane wires section-meta available and shell ConnectedAdjustmentsSection
+    ok 10 - integration lane wires section-meta available and shell ConnectedAdjustmentsSection
+      ---
+      duration_ms: 0.337694
+      ...
+    1..10
+ok 1 - M07 PPA-1 UI (isolated · pending integration)
+  ---
+  duration_ms: 22.317813
+  type: 'suite'
+  ...
+1..1
+# tests 10
+# suites 1
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 479.32196

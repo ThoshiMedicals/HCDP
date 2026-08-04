@@ -1,0 +1,538 @@
+{
+  "mode": "production",
+  "base": "http://127.0.0.1:3493",
+  "appShaEnv": "d68040688cbf76fb1f8715c27aa06ad6ff72242c",
+  "matrixEntries": 338,
+  "matrixFail": 338,
+  "matrixPass": 0,
+  "issueTotals": {},
+  "rawEventCount": 5976,
+  "unresolvedApplicationEventCount": 0,
+  "allowlistedEnvironmentalEventCount": 5976,
+  "eventsByClass": {
+    "environmental-nav-abort": 5976
+  },
+  "hydrationTotal": 0,
+  "overflowFailCount": 0,
+  "elementClipFailCount": 3668,
+  "consoleAppErrorCount": 0,
+  "pageErrorCount": 0,
+  "http500": [],
+  "http403": [],
+  "jsonParse": [],
+  "appearanceResults": {
+    "cleanDefault": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "darkReload": {
+      "htmlDark": true,
+      "appearance": "dark",
+      "pass": true
+    },
+    "lightReload": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "systemOsLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsDark": {
+      "htmlDark": true,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsChangeToLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    }
+  },
+  "appearanceAllPass": true,
+  "failSamples": [
+    {
+      "route": "/dashboard",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-27"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-12"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-6"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-40"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-9"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-9"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=timesheets",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-7"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=people",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=approval",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=export",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=reconciliation",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/dashboard",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-27"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-12"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-6"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-40"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-9"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-9"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=timesheets",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-7"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=people",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=approval",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=export",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=reconciliation",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-8"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/dashboard",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-27"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/action-inbox",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-12"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/settings",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-6"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-11"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "agent": "Work-Step / Functional QA",
+  "phase": "Phase 4 FINAL spot-check REVALIDATION",
+  "frozenApplicationSourceSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-wqa-3491",
+  "portUsed": "http://127.0.0.1:3491",
+  "recordedAt": "2026-08-04T04:29:45.000Z",
+  "scope": "short spot-check: emergency View All @390+1024, topbar Dashboard/Inbox, Act-as visible, Settings H1 wrap",
+  "totals": {
+    "pass": 5,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 0,
+    "total": 5,
+    "openFindings": 0
+  },
+  "workflows": [
+    {
+      "docId": "WQA-001",
+      "workflowId": "WF-EMERGENCY-MOBILE390",
+      "outcome": "PASS",
+      "evidence": "revalidation-97a83d7/workflows/WQA-001.md"
+    },
+    {
+      "docId": "WQA-002",
+      "workflowId": "WF-EMERGENCY-MID1024",
+      "outcome": "PASS",
+      "evidence": "revalidation-97a83d7/workflows/WQA-002.md"
+    },
+    {
+      "docId": "WQA-003",
+      "workflowId": "WF-TOPBAR",
+      "outcome": "PASS",
+      "evidence": "revalidation-97a83d7/workflows/WQA-003.md"
+    },
+    {
+      "docId": "WQA-004",
+      "workflowId": "WF-SIDEBAR",
+      "outcome": "PASS",
+      "evidence": "revalidation-97a83d7/workflows/WQA-004.md"
+    },
+    {
+      "docId": "WQA-005",
+      "workflowId": "WF-ROUTES",
+      "outcome": "PASS",
+      "evidence": "revalidation-97a83d7/workflows/WQA-005.md"
+    }
+  ],
+  "openFindings": [],
+  "wqaFindingIdsOpen": [],
+  "viewAllInsideCard": {
+    "MID1024": {
+      "insideParentFully": true,
+      "fullyInViewport": true,
+      "pageHorizontalScroll": false
+    },
+    "MOBILE390": {
+      "insideParentFully": true,
+      "fullyInViewport": true,
+      "pageHorizontalScroll": false
+    }
+  },
+  "noFunctionalRegressions": true,
+  "applicationSourceOrTestsEdited": false,
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false
+  },
+  "workflowSummaryPath": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7/WORKFLOW_SUMMARY.json"
+}

@@ -1,0 +1,65 @@
+[2026-08-04T03:25:49Z] START 01 colour+iv-findings-unit
+[2026-08-04T03:25:50Z] END 01 exit=0 verdict=PASS pass=18 fail=0
+[2026-08-04T03:25:50Z] START 02 owner-visual-unit
+[2026-08-04T03:25:50Z] END 02 exit=0 verdict=PASS pass=14 fail=0
+[2026-08-04T03:25:50Z] START 03 qualification-chrome
+[2026-08-04T03:25:50Z] END 03 exit=0 verdict=PASS pass=7 fail=0
+[2026-08-04T03:25:50Z] START 04 m07-presentation
+[2026-08-04T03:25:51Z] END 04 exit=0 verdict=PASS pass=5 fail=0
+[2026-08-04T03:25:51Z] START 05 m07-shell
+[2026-08-04T03:25:51Z] END 05 exit=0 verdict=PASS pass=6 fail=0
+[2026-08-04T03:25:51Z] START 06 m06-od-a2
+[2026-08-04T03:25:52Z] END 06 exit=0 verdict=PASS pass=8 fail=0
+[2026-08-04T03:25:52Z] START 07 browser-crypto
+[2026-08-04T03:25:52Z] END 07 exit=0 verdict=PASS pass=8 fail=0
+[2026-08-04T03:25:52Z] START 08 m06-published
+[2026-08-04T03:25:53Z] END 08 exit=0 verdict=PASS pass=19 fail=0
+[2026-08-04T03:25:53Z] START 09 published-timesheet-registry
+[2026-08-04T03:25:53Z] END 09 exit=0 verdict=PASS pass=27 fail=0
+[2026-08-04T03:25:53Z] START 10 m07-ppa1-ui
+[2026-08-04T03:25:54Z] END 10 exit=0 verdict=PASS pass=10 fail=0
+[2026-08-04T03:25:54Z] START 11 m07-ppa1-integration
+[2026-08-04T03:25:55Z] END 11 exit=0 verdict=PASS pass=11 fail=0
+[2026-08-04T03:25:55Z] START 12 m07-ppa1-hook-security
+[2026-08-04T03:25:55Z] END 12 exit=0 verdict=PASS pass=6 fail=0
+[2026-08-04T03:25:55Z] START 13 m07-ppa1-core
+[2026-08-04T03:25:56Z] END 13 exit=0 verdict=PASS pass=10 fail=0
+[2026-08-04T03:25:56Z] START 14 m07-ppa1-atomicity
+[2026-08-04T03:25:57Z] END 14 exit=0 verdict=PASS pass=9 fail=0
+[2026-08-04T03:25:57Z] START 15 test-m04
+[2026-08-04T03:25:57Z] END 15 exit=0 verdict=PASS pass=16 fail=0
+[2026-08-04T03:25:57Z] START 16 test-m05
+[2026-08-04T03:25:59Z] END 16 exit=0 verdict=PASS pass=117 fail=0
+[2026-08-04T03:25:59Z] START 17 test-m06
+[2026-08-04T03:26:02Z] END 17 exit=0 verdict=PASS pass=91 fail=0
+[2026-08-04T03:26:02Z] START 18 test-m07
+[2026-08-04T03:26:05Z] END 18 exit=0 verdict=PASS pass=252 fail=0
+[2026-08-04T03:26:05Z] START 19a test-workforce
+[2026-08-04T03:26:06Z] END 19a exit=0 verdict=PASS pass=53 fail=0
+[2026-08-04T03:26:06Z] START 19b m07-architecture-boundary
+[2026-08-04T03:26:06Z] END 19b exit=0 verdict=PASS pass=17 fail=0
+[2026-08-04T03:26:06Z] START 20 m07-authz
+[2026-08-04T03:26:07Z] END 20 exit=0 verdict=PASS pass=13 fail=0
+[2026-08-04T03:26:07Z] START 21 m07-batch5
+[2026-08-04T03:26:07Z] END 21 exit=0 verdict=PASS pass=49 fail=0
+[2026-08-04T03:26:07Z] START 22 m07-batch6
+[2026-08-04T03:26:08Z] END 22 exit=0 verdict=PASS pass=43 fail=0
+[2026-08-04T03:26:08Z] START 24 tsc
+[2026-08-04T03:26:16Z] END 24 exit=2 verdict=PASS pass=null fail=null
+[2026-08-04T03:26:16Z] START 25 lint
+[2026-08-04T03:26:31Z] END 25 exit=1 verdict=FAIL pass=null fail=null
+[2026-08-04T03:26:31Z] START 26 next-build-webpack
+[2026-08-04T03:26:54Z] END 26 exit=0 verdict=PASS pass=null fail=null
+[2026-08-04T03:26:54Z] START 27 npm-build
+[2026-08-04T03:26:55Z] END 27 exit=1 verdict=FAIL pass=null fail=null
+[2026-08-04T03:26:55Z] START 28 hash-gate
+[2026-08-04T03:26:55Z] END 28 exit=1 verdict=FAIL pass=null fail=null
+WROTE REGRESSION_SUMMARY.json
+{
+  "pass": 25,
+  "fail": 3,
+  "blocked": 0,
+  "notRun": 0,
+  "outOfScope": 0
+}
+RUNNER_EXIT=0

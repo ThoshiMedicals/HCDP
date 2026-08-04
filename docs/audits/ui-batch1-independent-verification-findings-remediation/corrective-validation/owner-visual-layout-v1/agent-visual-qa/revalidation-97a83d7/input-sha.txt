@@ -1,0 +1,9 @@
+phase: Phase 4 FINAL spot-check REVALIDATION
+worktree_live: /tmp/hcdp-fix/ui-batch1-vqa-3490
+final_application_source_sha: 97a83d7beb219ce01a7b12c6f70a975a44614d59
+live_head_sha: 97a83d7beb219ce01a7b12c6f70a975a44614d59
+sha_match: YES
+prior_revalidation_sha: fe8bc37fa370b299a4fbe721209761272f27265f
+note: Runtime UI shell unchanged since fe8bc37; only scripts/ui-batch1-iv-findings-remediation-validate.mjs + unit test changed. Spot-check confirms chrome at exact SHA 97a83d7.
+base_url: http://127.0.0.1:3490
+recorded_at_utc: 2026-08-04T04:27:16Z

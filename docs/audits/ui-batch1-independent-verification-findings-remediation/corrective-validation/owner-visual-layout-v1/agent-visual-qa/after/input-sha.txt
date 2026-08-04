@@ -1,0 +1,9 @@
+phase: Phase 4 FINAL Visual QA
+worktree_live: /tmp/hcdp-fix/ui-batch1-vqa-3490
+evidence_worktree: /tmp/hcdp-fix/ui-batch1-vf-fixes
+input_sha_live_head: d822dfd4a80ed0c98635a0ff8631f9e39fe781f0
+final_application_source_sha: d822dfd4a80ed0c98635a0ff8631f9e39fe781f0
+sha_match: YES
+base_url: http://127.0.0.1:3490
+recorded_at_utc: 2026-08-04T03:25:14Z
+port_policy: use :3490 only; do not stop :3000 or :3491

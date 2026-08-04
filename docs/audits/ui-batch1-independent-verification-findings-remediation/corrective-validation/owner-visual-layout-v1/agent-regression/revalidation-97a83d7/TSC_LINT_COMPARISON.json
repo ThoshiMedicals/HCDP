@@ -1,0 +1,9 @@
+{
+  "frozenSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "tscErrorCount": 21,
+  "tscExactBaselineMatch": true,
+  "lintErrors": 2,
+  "lintWarnings": 24,
+  "lintExactBaselineMatch": true,
+  "lintSummaryLine": "\u2716 26 problems (2 errors, 24 warnings)"
+}

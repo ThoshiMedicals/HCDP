@@ -306,3 +306,20 @@ It does **not** claim:
 - Controlled integration authorisation
 - Production approval
 - UI Batch 2 start
+
+## Owner visual layout v1 (multi-agent remediation)
+
+**Final application source SHA tested:** `97a83d7beb219ce01a7b12c6f70a975a44614d59`  
+**Evidence root:** `docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/`
+
+| Gate | Result |
+| --- | --- |
+| Visual QA VQA-001..005 | CLOSED |
+| Work-Step QA | PASS (OPEN none) |
+| Regression matrix | 338 pass / 0 fail |
+| lint / tsc | 2 errors + 24 warnings / 21 errors |
+| hash | `7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83` exact |
+| Claim | Ready for renewed owner inspection after multi-agent internal visual and work-step QA |
+
+Not independent verification / merge / production approval.
+

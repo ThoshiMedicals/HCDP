@@ -1,0 +1,9 @@
+phase: Phase 4 FINAL REVALIDATION
+worktree_live: /tmp/hcdp-fix/ui-batch1-vqa-3490
+final_application_source_sha: fe8bc37fa370b299a4fbe721209761272f27265f
+live_head_sha: fe8bc37fa370b299a4fbe721209761272f27265f
+sha_match: YES
+prior_revalidation_sha: d68040688cbf76fb1f8715c27aa06ad6ff72242c
+note: shell chrome expected unchanged except m04/m05 lint microtasks
+base_url: http://127.0.0.1:3490
+recorded_at_utc: 2026-08-04T04:14:19Z

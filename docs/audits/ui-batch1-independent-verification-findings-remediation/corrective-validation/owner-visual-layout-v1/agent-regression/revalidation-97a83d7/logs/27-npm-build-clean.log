@@ -1,0 +1,1240 @@
+
+> healthcare-doctors-pulse@0.1.0 build
+> next build
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+▲ Next.js 16.2.10 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 44 errors:
+./src/app/globals.css
+Error evaluating Node.js code
+Error: Cannot find module '@vercel/turbopack/postcss'
+    [at /tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[root-of-the-server]__1grfj2f._.js:80:15]
+    [at module evaluation (/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[root-of-the-server]__1grfj2f._.js:83:3)]
+    at moduleFactory (turbopack:///[turbopack]/nodejs/runtime/build-base.ts:57:5) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:840:9]
+    at instantiateModule (turbopack:///[turbopack]/nodejs/runtime/build-base.ts:90:10) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:864:12]
+    at getOrInstantiateModuleFromParent (turbopack:///[turbopack]/shared/runtime/runtime-utils.ts:398:18) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:268:20]
+    [at /tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack-node]_transforms_postcss_ts_0b7xl6g._.js:8:16]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:105:5)]
+    at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:72:20) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[root-of-the-server]__1f933tp._.js:427:24]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+./node_modules/next/dist/client/app-index.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/app-router.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/builtin/app-error.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/builtin/error-styles.js:27:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import traces:
+  Server Component:
+    ./node_modules/next/dist/client/components/builtin/error-styles.js
+    ./node_modules/next/dist/client/components/builtin/app-error.js
+
+  Client Component SSR:
+    ./node_modules/next/dist/client/components/builtin/error-styles.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/builtin/global-error.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/builtin/global-error.js [Server Component]
+
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/builtin/error-styles.js
+    ./node_modules/next/dist/client/components/builtin/global-error.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/builtin/global-error.js:14:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import traces:
+  Client Component SSR:
+    ./node_modules/next/dist/client/components/builtin/global-error.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/builtin/global-error.js [Server Component]
+
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/builtin/global-error.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/errors/root-error-boundary.js:12:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/errors/root-error-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/layout-router.js:27:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/index.js:36:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/page-loader.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/page-loader.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+  Browser:
+    ./node_modules/next/dist/client/react-client-callbacks/on-recoverable-error.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/route-announcer.js:23:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/route-announcer.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/route-loader.js:31:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/route-loader.js
+    ./node_modules/next/dist/client/page-loader.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/router.js:40:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/script.js:28:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/script.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/tracing/tracer.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/tracing/tracer.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/with-router.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/with-router.js
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/pages/_app.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/pages/_app.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/pages/_error.js:13:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/pages/_error.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js:36:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import traces:
+  Browser:
+    ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/constants.js:291:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/constants.js
+    ./node_modules/next/dist/client/page-loader.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import traces:
+  Browser:
+    ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/head.js:24:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/head.js
+    ./node_modules/next/dist/pages/_error.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/image-config-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/image-config-context.shared-runtime.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/router-context.shared-runtime.js:11:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/router-context.shared-runtime.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/router/router.js:27:34
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_default'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_default' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/router/router.js
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/app-dir/link.js:33:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/next/dist/client/app-dir/link.js [Client Component Browser]
+    ./src/components/shell/Sidebar.tsx [Client Component Browser]
+    ./src/app/(portal)/layout.tsx [Client Component Browser]
+    ./src/app/(portal)/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/next/dist/client/app-dir/link.js [Client Component SSR]
+    ./src/components/shell/Sidebar.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/app-router.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/error-boundary.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/error-boundary.js
+    ./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/http-access-fallback/error-boundary.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/layout-router.js:28:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/layout-router.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/layout-router.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/navigation.js:85:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+  Client Component SSR:
+    ./node_modules/next/dist/client/components/navigation.js [Client Component SSR]
+    ./node_modules/next/navigation.js [Client Component SSR]
+    ./src/components/shell/Sidebar.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/redirect-boundary.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/render-from-template-context.js:12:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/render-from-template-context.js [Client Component Browser]
+    ./node_modules/next/dist/esm/client/components/render-from-template-context.js [Server Component]
+    ./node_modules/next/dist/esm/server/app-render/entry-base.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/components/use-action-queue.js:31:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/next/dist/client/components/use-action-queue.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+  Client Component SSR:
+    ./node_modules/next/dist/client/components/use-action-queue.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/segment-cache/navigation-testing-lock.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/segment-cache/navigation.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/segment-cache/cache.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/segment-cache/scheduler.js [Client Component SSR]
+    ./node_modules/next/dist/client/components/links.js [Client Component SSR]
+    ./node_modules/next/dist/client/app-dir/link.js [Client Component SSR]
+    ./src/app/prototype-reference/page.tsx [Client Component SSR]
+    ./src/app/prototype-reference/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/client/script.js:29:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/client/script.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/head.js:25:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/head.js
+    ./node_modules/next/dist/pages/_error.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/router/adapters.js:31:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/router/adapters.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/router/router.js:28:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Browser:
+    ./node_modules/next/dist/shared/lib/router/router.js
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/router/utils/format-url.js:48:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import traces:
+  Server Component:
+    ./node_modules/next/dist/shared/lib/router/utils/format-url.js
+    ./node_modules/next/dist/server/server-utils.js
+    ./node_modules/next/dist/lib/metadata/get-metadata-route.js
+
+  Browser:
+    ./node_modules/next/dist/shared/lib/router/utils/format-url.js
+    ./node_modules/next/dist/shared/lib/router/router.js
+    ./node_modules/next/dist/client/router.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/router/utils/format-url.js [Client Component Browser]
+    ./node_modules/next/dist/client/app-dir/link.js [Client Component Browser]
+    ./src/components/shell/Sidebar.tsx [Client Component Browser]
+    ./src/app/(portal)/layout.tsx [Client Component Browser]
+    ./src/app/(portal)/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/next/dist/shared/lib/router/utils/format-url.js [Client Component SSR]
+    ./node_modules/next/dist/client/app-dir/link.js [Client Component SSR]
+    ./src/components/shell/Sidebar.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Client Component SSR]
+    ./src/app/(portal)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js:24:35
+Module not found: Can't resolve '@swc/helpers/_/_interop_require_wildcard'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module '@swc/helpers' with subpath '/_/_interop_require_wildcard' inside of [project]/node_modules/next
+
+
+Import trace:
+  Client Component Browser:
+    ./node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js
+    ./node_modules/next/dist/client/components/navigation.js
+    ./node_modules/next/dist/client/components/redirect-boundary.js
+    ./node_modules/next/dist/client/components/app-router.js
+    ./node_modules/next/dist/client/app-index.js
+    ./node_modules/next/dist/client/app-next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[turbopack-node]/transforms/postcss.ts:10:1
+Module not found: Can't resolve '@vercel/turbopack/postcss'
+  [90m 8 |[0m
+  [90m 9 |[0m [90m// @ts-ignore[0m
+[31m[1m>[0m [90m10 |[0m [36mimport[0m postcss [36mfrom[0m [32m'@vercel/turbopack/postcss'[0m
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m11 |[0m [90m// @ts-ignore[0m
+  [90m12 |[0m [36mimport[0m importedConfig [36mfrom[0m [32m'CONFIG'[0m
+  [90m13 |[0m [36mimport[0m { getReadEnvVariables, toPath, [36mtype[0m [33mTransformIpc[0m } [36mfrom[0m [32m'./transforms'[0m
+
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of *ResolveResult::is_unresolvable failed
+- Execution of *ResolveResult::alternatives failed
+- Execution of *ResolveResult::with_replaced_request_key_pattern failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+Import map: aliased to module "'postcss'" inside of [project]/ | aliased to module "'postcss'" inside of [project]/node_modules/next
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./node_modules/react-dom/cjs/react-dom-client.production.js:15:17
+Module not found: Can't resolve 'scheduler'
+Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules/node_modules is invalid, it points out of the filesystem root
+
+
+Import trace:
+  Browser:
+    ./node_modules/react-dom/cjs/react-dom-client.production.js
+    ./node_modules/react-dom/client.js
+    ./node_modules/next/dist/client/index.js
+    ./node_modules/next/dist/client/next-turbopack.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at moduleFactory (turbopack:///[turbopack]/nodejs/runtime/build-base.ts:57:5) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:840:9])
+    at instantiateModule (turbopack:///[turbopack]/nodejs/runtime/build-base.ts:90:10) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:864:12])
+    at getOrInstantiateModuleFromParent (turbopack:///[turbopack]/shared/runtime/runtime-utils.ts:398:18) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[turbopack]_runtime.js:268:20])
+    at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:72:20) [/tmp/hcdp-fix/ui-batch1-reg-3493/.next/build/chunks/[root-of-the-server]__1f933tp._.js:427:24])
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> ([turbopack-node]/transforms/postcss.ts:10:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

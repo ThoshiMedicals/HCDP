@@ -1,0 +1,41 @@
+{
+  "appSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "base": "http://127.0.0.1:3490",
+  "capturedAt": "2026-08-04T04:28:24.871Z",
+  "captures": [
+    {
+      "route": "/dashboard",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1024,
+      "h": 768,
+      "ap": "light",
+      "name": "light-1024x768-_dashboard.png",
+      "footer": true,
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 900,
+      "ap": "light",
+      "name": "light-1440-_dashboard.png",
+      "footer": true,
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/settings",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_settings.png",
+      "finalUrl": "http://127.0.0.1:3490/settings"
+    }
+  ]
+}

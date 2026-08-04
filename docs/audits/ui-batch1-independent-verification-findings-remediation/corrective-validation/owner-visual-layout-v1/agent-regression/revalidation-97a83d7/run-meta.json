@@ -1,0 +1,8 @@
+{
+  "startedUtc": "2026-08-04T04:30:52Z",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-reg-3493",
+  "inputSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "frozenExpected": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "shaMatch": true,
+  "evidenceRoot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-regression/revalidation-97a83d7"
+}

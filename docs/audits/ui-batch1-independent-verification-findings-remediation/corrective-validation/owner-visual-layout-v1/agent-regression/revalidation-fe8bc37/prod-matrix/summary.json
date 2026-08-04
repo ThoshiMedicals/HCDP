@@ -1,0 +1,538 @@
+{
+  "mode": "production",
+  "base": "http://127.0.0.1:3493",
+  "appShaEnv": "fe8bc37fa370b299a4fbe721209761272f27265f",
+  "matrixEntries": 338,
+  "matrixFail": 77,
+  "matrixPass": 261,
+  "issueTotals": {},
+  "rawEventCount": 6020,
+  "unresolvedApplicationEventCount": 0,
+  "allowlistedEnvironmentalEventCount": 6020,
+  "eventsByClass": {
+    "environmental-nav-abort": 6020
+  },
+  "hydrationTotal": 0,
+  "overflowFailCount": 0,
+  "elementClipFailCount": 110,
+  "consoleAppErrorCount": 0,
+  "pageErrorCount": 0,
+  "http500": [],
+  "http403": [],
+  "jsonParse": [],
+  "appearanceResults": {
+    "cleanDefault": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "darkReload": {
+      "htmlDark": true,
+      "appearance": "dark",
+      "pass": true
+    },
+    "lightReload": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "systemOsLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsDark": {
+      "htmlDark": true,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsChangeToLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    }
+  },
+  "appearanceAllPass": true,
+  "failSamples": [
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "light",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "dark",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "system",
+      "viewport": 1440,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "light",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "dark",
+      "viewport": 1280,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-2"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "light",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-2"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=coverage",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/roster?section=open-shifts",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/time-attendance?section=approvals",
+      "appearance": "dark",
+      "viewport": 1024,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": 768,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-2"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": 768,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    },
+    {
+      "route": "/staff-doctors?section=credentials",
+      "appearance": "light",
+      "viewport": 768,
+      "navigationStatus": 200,
+      "failReasons": [
+        "element-clip-1"
+      ],
+      "unallowlistedHttpErrors": [],
+      "appPageErrors": [],
+      "appConsoleErrors": []
+    }
+  ]
+}

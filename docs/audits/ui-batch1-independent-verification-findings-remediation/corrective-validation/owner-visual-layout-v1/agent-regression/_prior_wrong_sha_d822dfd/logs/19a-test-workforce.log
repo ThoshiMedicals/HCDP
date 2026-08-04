@@ -1,0 +1,335 @@
+
+> healthcare-doctors-pulse@0.1.0 test:workforce
+> tsx --test "src/platform/workforce/tests/**/*.test.ts"
+
+TAP version 13
+# Subtest: browser-crypto remediation: known hash vector
+    # Subtest: preserves pre-captured canonical JSON and SHA-256 hex
+    ok 1 - preserves pre-captured canonical JSON and SHA-256 hex
+      ---
+      duration_ms: 1.654043
+      ...
+    # Subtest: matches node:crypto createHash sha256 utf8 digest for known vector
+    ok 2 - matches node:crypto createHash sha256 utf8 digest for known vector
+      ---
+      duration_ms: 0.361747
+      ...
+    # Subtest: matches node:crypto for empty, ascii, and multi-byte UTF-8 strings
+    ok 3 - matches node:crypto for empty, ascii, and multi-byte UTF-8 strings
+      ---
+      duration_ms: 0.714743
+      ...
+    1..3
+ok 1 - browser-crypto remediation: known hash vector
+  ---
+  duration_ms: 4.091515
+  type: 'suite'
+  ...
+# Subtest: browser-crypto remediation: source boundary
+    # Subtest: published-timesheet-hash.ts does not import node:crypto
+    ok 1 - published-timesheet-hash.ts does not import node:crypto
+      ---
+      duration_ms: 0.211654
+      ...
+    # Subtest: sha256-hex-utf8.ts is pure sync (no crypto module imports / Web Crypto)
+    ok 2 - sha256-hex-utf8.ts is pure sync (no crypto module imports / Web Crypto)
+      ---
+      duration_ms: 0.21158
+      ...
+    # Subtest: m06 client barrel does not re-export adapters
+    ok 3 - m06 client barrel does not re-export adapters
+      ---
+      duration_ms: 0.204755
+      ...
+    # Subtest: m07 client barrel does not re-export adapters or services
+    ok 4 - m07 client barrel does not re-export adapters or services
+      ---
+      duration_ms: 0.2417
+      ...
+    # Subtest: ModuleWorkspace imports UI modules from client barrels only
+    ok 5 - ModuleWorkspace imports UI modules from client barrels only
+      ---
+      duration_ms: 0.258352
+      ...
+    1..5
+ok 2 - browser-crypto remediation: source boundary
+  ---
+  duration_ms: 1.375751
+  type: 'suite'
+  ...
+# Subtest: CP2.1 published timesheet contract validation
+    # Subtest: requires record identity, org/LE separation fields, versions, and event identity
+    ok 1 - requires record identity, org/LE separation fields, versions, and event identity
+      ---
+      duration_ms: 0.94664
+      ...
+    # Subtest: accepts supported contract version and rejects unsupported/unknown
+    ok 2 - accepts supported contract version and rejects unsupported/unknown
+      ---
+      duration_ms: 0.143784
+      ...
+    # Subtest: rejects prohibited banking/TFN/super fields
+    ok 3 - rejects prohibited banking/TFN/super fields
+      ---
+      duration_ms: 0.144286
+      ...
+    # Subtest: validates clinic membership when checker provided
+    ok 4 - validates clinic membership when checker provided
+      ---
+      duration_ms: 0.218735
+      ...
+    # Subtest: requires reasonCode for revoke/withdraw/invalidate lifecycle events
+    ok 5 - requires reasonCode for revoke/withdraw/invalidate lifecycle events
+      ---
+      duration_ms: 0.19856
+      ...
+    1..5
+ok 3 - CP2.1 published timesheet contract validation
+  ---
+  duration_ms: 2.229113
+  type: 'suite'
+  ...
+# Subtest: CP2.1 canonical hashing
+    # Subtest: produces identical hashes for logically equivalent payloads
+    ok 1 - produces identical hashes for logically equivalent payloads
+      ---
+      duration_ms: 1.117198
+      ...
+    # Subtest: changes hash on material source change
+    ok 2 - changes hash on material source change
+      ---
+      duration_ms: 1.502064
+      ...
+    # Subtest: does not include approval lifecycle metadata in hash boundary
+    ok 3 - does not include approval lifecycle metadata in hash boundary
+      ---
+      duration_ms: 0.518993
+      ...
+    # Subtest: preserves business order for hour inputs but sorts set-like session ids
+    ok 4 - preserves business order for hour inputs but sorts set-like session ids
+      ---
+      duration_ms: 0.480746
+      ...
+    # Subtest: treats omitted optional clinicId as distinct from present clinicId
+    ok 5 - treats omitted optional clinicId as distinct from present clinicId
+      ---
+      duration_ms: 0.539181
+      ...
+    # Subtest: rejects NaN, Infinity, and invalid timestamps
+    ok 6 - rejects NaN, Infinity, and invalid timestamps
+      ---
+      duration_ms: 0.414832
+      ...
+    # Subtest: rejects mismatched supplied contentHash
+    ok 7 - rejects mismatched supplied contentHash
+      ---
+      duration_ms: 0.245127
+      ...
+    1..7
+ok 4 - CP2.1 canonical hashing
+  ---
+  duration_ms: 5.128734
+  type: 'suite'
+  ...
+# Subtest: CP2.1 published timesheet registry
+    # Subtest: migrates additively and is idempotent
+    ok 1 - migrates additively and is idempotent
+      ---
+      duration_ms: 0.891921
+      ...
+    # Subtest: resumes after partial migration (flag cleared, data present)
+    ok 2 - resumes after partial migration (flag cleared, data present)
+      ---
+      duration_ms: 0.157023
+      ...
+    # Subtest: appends versions without overwrite and resolves exact history
+    ok 3 - appends versions without overwrite and resolves exact history
+      ---
+      duration_ms: 1.871684
+      ...
+    # Subtest: enforces tenant/legal-entity isolation on lookups
+    ok 4 - enforces tenant/legal-entity isolation on lookups
+      ---
+      duration_ms: 0.522854
+      ...
+    # Subtest: returns idempotent success on identical retry
+    ok 5 - returns idempotent success on identical retry
+      ---
+      duration_ms: 0.78848
+      ...
+    # Subtest: rejects same version with different hash
+    ok 6 - rejects same version with different hash
+      ---
+      duration_ms: 0.733248
+      ...
+    # Subtest: rejects reused eventId with different payload
+    ok 7 - rejects reused eventId with different payload
+      ---
+      duration_ms: 0.736975
+      ...
+    # Subtest: rejects lower sourceVersion and stale approvalRevision
+    ok 8 - rejects lower sourceVersion and stale approvalRevision
+      ---
+      duration_ms: 2.77688
+      ...
+    # Subtest: supports lifecycle-only revoke without changing content hash or overwriting version
+    ok 9 - supports lifecycle-only revoke without changing content hash or overwriting version
+      ---
+      duration_ms: 1.842719
+      ...
+    # Subtest: rejects out-of-order eventSequence
+    ok 10 - rejects out-of-order eventSequence
+      ---
+      duration_ms: 0.792282
+      ...
+    # Subtest: recovers current index after interrupted publication
+    ok 11 - recovers current index after interrupted publication
+      ---
+      duration_ms: 1.247111
+      ...
+    # Subtest: rebuilds from history when current index is stale
+    ok 12 - rebuilds from history when current index is stale
+      ---
+      duration_ms: 0.245363
+      ...
+    # Subtest: exposes intake identity without using idempotencyKey as business uniqueness
+    ok 13 - exposes intake identity without using idempotencyKey as business uniqueness
+      ---
+      duration_ms: 0.207858
+      ...
+    # Subtest: replays events in sequence order
+    ok 14 - replays events in sequence order
+      ---
+      duration_ms: 0.303186
+      ...
+    # Subtest: boundary: registry module has no M07 mutation API surface beyond publication/read
+    ok 15 - boundary: registry module has no M07 mutation API surface beyond publication/read
+      ---
+      duration_ms: 17.09421
+      ...
+    1..15
+ok 5 - CP2.1 published timesheet registry
+  ---
+  duration_ms: 30.654569
+  type: 'suite'
+  ...
+# Subtest: workforce contracts
+    # Subtest: uses contract version 1 on created refs
+    ok 1 - uses contract version 1 on created refs
+      ---
+      duration_ms: 0.594945
+      ...
+    # Subtest: validates demo refs
+    ok 2 - validates demo refs
+      ---
+      duration_ms: 0.228921
+      ...
+    # Subtest: rejects missing reference
+    ok 3 - rejects missing reference
+      ---
+      duration_ms: 0.115384
+      ...
+    # Subtest: rejects invalid person ref
+    ok 4 - rejects invalid person ref
+      ---
+      duration_ms: 0.113723
+      ...
+    # Subtest: rejects wrong owning module for shift
+    ok 5 - rejects wrong owning module for shift
+      ---
+      duration_ms: 4.231912
+      ...
+    # Subtest: resolves workforce deep links
+    ok 6 - resolves workforce deep links
+      ---
+      duration_ms: 0.381582
+      ...
+    # Subtest: fails link resolve for missing ref
+    ok 7 - fails link resolve for missing ref
+      ---
+      duration_ms: 0.074
+      ...
+    # Subtest: projects blocked readiness from expired credential
+    ok 8 - projects blocked readiness from expired credential
+      ---
+      duration_ms: 0.102937
+      ...
+    # Subtest: projects ready when credentials and training clear
+    ok 9 - projects ready when credentials and training clear
+      ---
+      duration_ms: 0.274977
+      ...
+    # Subtest: keeps engagement linked to person id
+    ok 10 - keeps engagement linked to person id
+      ---
+      duration_ms: 0.244964
+      ...
+    # Subtest: candidate remains recruitment-owned until promotion
+    ok 11 - candidate remains recruitment-owned until promotion
+      ---
+      duration_ms: 0.079573
+      ...
+    1..11
+ok 6 - workforce contracts
+  ---
+  duration_ms: 7.275553
+  type: 'suite'
+  ...
+# Subtest: workforce event idempotency
+    # Subtest: accepts a valid event once
+    ok 1 - accepts a valid event once
+      ---
+      duration_ms: 0.74331
+      ...
+    # Subtest: ignores duplicate eventId
+    ok 2 - ignores duplicate eventId
+      ---
+      duration_ms: 0.204954
+      ...
+    # Subtest: rejects invalid event
+    ok 3 - rejects invalid event
+      ---
+      duration_ms: 0.138123
+      ...
+    # Subtest: rejects unknown event type
+    ok 4 - rejects unknown event type
+      ---
+      duration_ms: 0.150713
+      ...
+    1..4
+ok 7 - workforce event idempotency
+  ---
+  duration_ms: 2.873565
+  type: 'suite'
+  ...
+# Subtest: workforce storage migrations
+    # Subtest: runs M04 skeleton once and is idempotent on repeat
+    ok 1 - runs M04 skeleton once and is idempotent on repeat
+      ---
+      duration_ms: 1.338345
+      ...
+    # Subtest: runs all six module migrations once each
+    ok 2 - runs all six module migrations once each
+      ---
+      duration_ms: 0.508292
+      ...
+    # Subtest: does not wipe existing collection on re-seed path
+    ok 3 - does not wipe existing collection on re-seed path
+      ---
+      duration_ms: 0.271748
+      ...
+    1..3
+ok 8 - workforce storage migrations
+  ---
+  duration_ms: 2.883144
+  type: 'suite'
+  ...
+1..8
+# tests 53
+# suites 8
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 534.101587

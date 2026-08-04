@@ -1,0 +1,9 @@
+phase: Phase 4 REVALIDATION
+invalidates_prior_final_qa_sha: d822dfd4a80ed0c98635a0ff8631f9e39fe781f0
+worktree_live: /tmp/hcdp-fix/ui-batch1-vqa-3490
+final_application_source_sha: d68040688cbf76fb1f8715c27aa06ad6ff72242c
+live_head_sha: d68040688cbf76fb1f8715c27aa06ad6ff72242c
+sha_match: YES
+base_url: http://127.0.0.1:3490
+recorded_at_utc: 2026-08-04T03:42:10Z
+note: prior after/ evidence retained as historical

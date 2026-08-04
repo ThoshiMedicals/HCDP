@@ -1,0 +1,57 @@
+TAP version 13
+# Subtest: OD-A2 PublishFromOutboxResult narrowing
+    # Subtest: success: published path acknowledges and does not write lastError
+    ok 1 - success: published path acknowledges and does not write lastError
+      ---
+      duration_ms: 21.358175
+      ...
+    # Subtest: success: re-process of published item stays idempotent (not failed)
+    ok 2 - success: re-process of published item stays idempotent (not failed)
+      ---
+      duration_ms: 3.17279
+      ...
+    # Subtest: rejected: eligibility failure preserves exact code and message in lastError
+    ok 3 - rejected: eligibility failure preserves exact code and message in lastError
+      ---
+      duration_ms: 2.670284
+      ...
+    # Subtest: rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message
+    ok 4 - rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message
+      ---
+      duration_ms: 2.366386
+      ...
+    # Subtest: retryable failure: attemptCount increments; identity preserved on retry after fixable state
+    ok 5 - retryable failure: attemptCount increments; identity preserved on retry after fixable state
+      ---
+      duration_ms: 3.460521
+      ...
+    # Subtest: terminal: exhausted attempts skip without treating as success
+    ok 6 - terminal: exhausted attempts skip without treating as success
+      ---
+      duration_ms: 3.304791
+      ...
+    # Subtest: publisher union: rejected arm has code/message; success arms do not
+    ok 7 - publisher union: rejected arm has code/message; success arms do not
+      ---
+      duration_ms: 4.824116
+      ...
+    # Subtest: source still uses rejected discriminant for failure path (no published||idempotent else-access)
+    ok 8 - source still uses rejected discriminant for failure path (no published||idempotent else-access)
+      ---
+      duration_ms: 0.317083
+      ...
+    1..8
+ok 1 - OD-A2 PublishFromOutboxResult narrowing
+  ---
+  duration_ms: 42.323746
+  type: 'suite'
+  ...
+1..1
+# tests 8
+# suites 1
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 233.153814

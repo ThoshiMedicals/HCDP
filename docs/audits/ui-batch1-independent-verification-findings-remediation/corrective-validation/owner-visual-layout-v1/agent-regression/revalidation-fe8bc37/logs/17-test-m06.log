@@ -1,0 +1,603 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m06
+> tsx --test "src/modules/m06-time-attendance/tests/**/*.test.ts"
+
+TAP version 13
+# Subtest: m06 adapters
+    # Subtest: m04 person read source is platform demo
+    ok 1 - m04 person read source is platform demo
+      ---
+      duration_ms: 18.303258
+      ...
+    # Subtest: m05 shift read does not import m05 repository
+    ok 2 - m05 shift read does not import m05 repository
+      ---
+      duration_ms: 1.298427
+      ...
+    # Subtest: m01 aggregates only
+    ok 3 - m01 aggregates only
+      ---
+      duration_ms: 0.357238
+      ...
+    # Subtest: m02 lifecycle write
+    ok 4 - m02 lifecycle write
+      ---
+      duration_ms: 1.907065
+      ...
+    # Subtest: m07 bridge cleared
+    ok 5 - m07 bridge cleared
+      ---
+      duration_ms: 0.4024
+      ...
+    1..5
+ok 1 - m06 adapters
+  ---
+  duration_ms: 23.044846
+  type: 'suite'
+  ...
+# Subtest: m06 authz
+    # Subtest: positive: worker can clock self
+    ok 1 - positive: worker can clock self
+      ---
+      duration_ms: 17.532
+      ...
+    # Subtest: negative: worker denied approve permission
+    ok 2 - negative: worker denied approve permission
+      ---
+      duration_ms: 0.947856
+      ...
+    # Subtest: cross-clinic denial
+    ok 3 - cross-clinic denial
+      ---
+      duration_ms: 0.343372
+      ...
+    # Subtest: self vs team boundary
+    ok 4 - self vs team boundary
+      ---
+      duration_ms: 1.455227
+      ...
+    # Subtest: export bypass prevention requires clinic scope
+    ok 5 - export bypass prevention requires clinic scope
+      ---
+      duration_ms: 0.526812
+      ...
+    # Subtest: evidence masking without evidence.view
+    ok 6 - evidence masking without evidence.view
+      ---
+      duration_ms: 3.30247
+      ...
+    # Subtest: mapDemoIdentityPermissions worker vs full senior
+    ok 7 - mapDemoIdentityPermissions worker vs full senior
+      ---
+      duration_ms: 0.248876
+      ...
+    1..7
+ok 2 - m06 authz
+  ---
+  duration_ms: 25.696442
+  type: 'suite'
+  ...
+# Subtest: m06 bulk
+    # Subtest: bulk preview and partial success
+    ok 1 - bulk preview and partial success
+      ---
+      duration_ms: 16.656451
+      ...
+    1..1
+ok 3 - m06 bulk
+  ---
+  duration_ms: 17.154679
+  type: 'suite'
+  ...
+# Subtest: m06 domain / lifecycle
+    # Subtest: session open → on_break → open → closed
+    ok 1 - session open → on_break → open → closed
+      ---
+      duration_ms: 15.635648
+      ...
+    # Subtest: concurrent conflict on stale version
+    ok 2 - concurrent conflict on stale version
+      ---
+      duration_ms: 1.544444
+      ...
+    # Subtest: invalid transition cancelled is terminal
+    ok 3 - invalid transition cancelled is terminal
+      ---
+      duration_ms: 2.837502
+      ...
+    # Subtest: override requires reason
+    ok 4 - override requires reason
+      ---
+      duration_ms: 1.210147
+      ...
+    # Subtest: missed break records exception path
+    ok 5 - missed break records exception path
+      ---
+      duration_ms: 1.667143
+      ...
+    1..5
+ok 4 - m06 domain / lifecycle
+  ---
+  duration_ms: 23.641216
+  type: 'suite'
+  ...
+# Subtest: m06 migration
+    # Subtest: MIG-01 idempotent seed insert-if-missing
+    ok 1 - MIG-01 idempotent seed insert-if-missing
+      ---
+      duration_ms: 1.588823
+      ...
+    # Subtest: MIG-02 interrupted recovery via repeat migrations
+    ok 2 - MIG-02 interrupted recovery via repeat migrations
+      ---
+      duration_ms: 0.208591
+      ...
+    # Subtest: MIG-03 seed rollback only + no m07
+    ok 3 - MIG-03 seed rollback only + no m07
+      ---
+      duration_ms: 0.383778
+      ...
+    1..3
+ok 5 - m06 migration
+  ---
+  duration_ms: 2.777699
+  type: 'suite'
+  ...
+# Subtest: OD-A2 PublishFromOutboxResult narrowing
+    # Subtest: success: published path acknowledges and does not write lastError
+    ok 1 - success: published path acknowledges and does not write lastError
+      ---
+      duration_ms: 21.194882
+      ...
+    # Subtest: success: re-process of published item stays idempotent (not failed)
+    ok 2 - success: re-process of published item stays idempotent (not failed)
+      ---
+      duration_ms: 4.838762
+      ...
+    # Subtest: rejected: eligibility failure preserves exact code and message in lastError
+    ok 3 - rejected: eligibility failure preserves exact code and message in lastError
+      ---
+      duration_ms: 3.978087
+      ...
+    # Subtest: rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message
+    ok 4 - rejected: clinic membership failure preserves CLINIC_MEMBERSHIP code/message
+      ---
+      duration_ms: 2.088591
+      ...
+    # Subtest: retryable failure: attemptCount increments; identity preserved on retry after fixable state
+    ok 5 - retryable failure: attemptCount increments; identity preserved on retry after fixable state
+      ---
+      duration_ms: 3.008358
+      ...
+    # Subtest: terminal: exhausted attempts skip without treating as success
+    ok 6 - terminal: exhausted attempts skip without treating as success
+      ---
+      duration_ms: 1.975464
+      ...
+    # Subtest: publisher union: rejected arm has code/message; success arms do not
+    ok 7 - publisher union: rejected arm has code/message; success arms do not
+      ---
+      duration_ms: 5.488729
+      ...
+    # Subtest: source still uses rejected discriminant for failure path (no published||idempotent else-access)
+    ok 8 - source still uses rejected discriminant for failure path (no published||idempotent else-access)
+      ---
+      duration_ms: 0.317212
+      ...
+    1..8
+ok 6 - OD-A2 PublishFromOutboxResult narrowing
+  ---
+  duration_ms: 43.759555
+  type: 'suite'
+  ...
+# Subtest: m06 offline
+    # Subtest: idempotent enqueue by clientEventId
+    ok 1 - idempotent enqueue by clientEventId
+      ---
+      duration_ms: 1.345659
+      ...
+    # Subtest: ordered sync applies then conflicts resolve
+    ok 2 - ordered sync applies then conflicts resolve
+      ---
+      duration_ms: 13.721194
+      ...
+    1..2
+ok 7 - m06 offline
+  ---
+  duration_ms: 15.638752
+  type: 'suite'
+  ...
+# Subtest: m06 performance
+    # Subtest: records §16 prototype performance rows
+    ok 1 - records §16 prototype performance rows
+      ---
+      duration_ms: 1100.913566
+      ...
+    1..1
+ok 8 - m06 performance
+  ---
+  duration_ms: 1101.4286
+  type: 'suite'
+  ...
+# Subtest: m06 privacy
+    # Subtest: masks sensitive evidence without attendance.evidence.view
+    ok 1 - masks sensitive evidence without attendance.evidence.view
+      ---
+      duration_ms: 13.990192
+      ...
+    # Subtest: audit view restricted for manager without audit.view
+    ok 2 - audit view restricted for manager without audit.view
+      ---
+      duration_ms: 0.416906
+      ...
+    # Subtest: senior can export unmasked evidence
+    ok 3 - senior can export unmasked evidence
+      ---
+      duration_ms: 5.139516
+      ...
+    1..3
+ok 9 - m06 privacy
+  ---
+  duration_ms: 20.178354
+  type: 'suite'
+  ...
+# Subtest: CP2.2 M06 platform published-timesheet publication
+    # Subtest: A. Eligibility
+        # Subtest: approved eligible record publishes to platform registry
+        ok 1 - approved eligible record publishes to platform registry
+          ---
+          duration_ms: 19.076222
+          ...
+        # Subtest: draft is rejected for granted publication
+        ok 2 - draft is rejected for granted publication
+          ---
+          duration_ms: 1.766685
+          ...
+        # Subtest: submitted/unapproved is rejected for granted publication
+        ok 3 - submitted/unapproved is rejected for granted publication
+          ---
+          duration_ms: 2.082416
+          ...
+        # Subtest: rejected record is rejected for granted publication
+        ok 4 - rejected record is rejected for granted publication
+          ---
+          duration_ms: 2.401291
+          ...
+        # Subtest: incomplete contract (missing legalEntityId) fails publication but approval remains
+        ok 5 - incomplete contract (missing legalEntityId) fails publication but approval remains
+          ---
+          duration_ms: 4.026015
+          ...
+        # Subtest: unsupported contract version is rejected by platform (no silent coerce)
+        ok 6 - unsupported contract version is rejected by platform (no silent coerce)
+          ---
+          duration_ms: 2.905634
+          ...
+        1..6
+    ok 1 - A. Eligibility
+      ---
+      duration_ms: 32.976969
+      type: 'suite'
+      ...
+    # Subtest: B. Mapping
+        # Subtest: maps required fields with independent organisationId and legalEntityId
+        ok 1 - maps required fields with independent organisationId and legalEntityId
+          ---
+          duration_ms: 3.254362
+          ...
+        # Subtest: rejects prohibited fields via platform validation path
+        ok 2 - rejects prohibited fields via platform validation path
+          ---
+          duration_ms: 2.901937
+          ...
+        1..2
+    ok 2 - B. Mapping
+      ---
+      duration_ms: 6.353396
+      type: 'suite'
+      ...
+    # Subtest: C. Versioning
+        # Subtest: first publication creates sourceVersion history; exact retry is idempotent
+        ok 1 - first publication creates sourceVersion history; exact retry is idempotent
+          ---
+          duration_ms: 4.567771
+          ...
+        # Subtest: material revision creates new sourceVersion/hash; prior version remains
+        ok 2 - material revision creates new sourceVersion/hash; prior version remains
+          ---
+          duration_ms: 4.738864
+          ...
+        # Subtest: approval-only reopen/revoke retains sourceVersion/hash
+        ok 3 - approval-only reopen/revoke retains sourceVersion/hash
+          ---
+          duration_ms: 2.500282
+          ...
+        1..3
+    ok 3 - C. Versioning
+      ---
+      duration_ms: 11.950112
+      type: 'suite'
+      ...
+    # Subtest: D. Lifecycle
+        # Subtest: granted, revoke, and restore publish correctly
+        ok 1 - granted, revoke, and restore publish correctly
+          ---
+          duration_ms: 2.672786
+          ...
+        # Subtest: typed withdrawn/invalidated compatibility support (not operationally triggered)
+        ok 2 - typed withdrawn/invalidated compatibility support (not operationally triggered)
+          ---
+          duration_ms: 2.448207
+          ...
+        # Subtest: stale approval revision cannot regress platform projection
+        ok 3 - stale approval revision cannot regress platform projection
+          ---
+          duration_ms: 2.313528
+          ...
+        1..3
+    ok 4 - D. Lifecycle
+      ---
+      duration_ms: 7.566423
+      type: 'suite'
+      ...
+    # Subtest: E. Failure / retry
+        # Subtest: failed publication remains retryable and survives reload semantics
+        ok 1 - failed publication remains retryable and survives reload semantics
+          ---
+          duration_ms: 2.223245
+          ...
+        # Subtest: registry-success before local ack does not duplicate on retry
+        ok 2 - registry-success before local ack does not duplicate on retry
+          ---
+          duration_ms: 2.266893
+          ...
+        # Subtest: interrupted publication recovers via rebuild; obligation not silently lost
+        ok 3 - interrupted publication recovers via rebuild; obligation not silently lost
+          ---
+          duration_ms: 2.143683
+          ...
+        1..3
+    ok 5 - E. Failure / retry
+      ---
+      duration_ms: 6.772612
+      type: 'suite'
+      ...
+    # Subtest: F. Boundaries
+        # Subtest: enforces tenant isolation and clinic membership rejection
+        ok 1 - enforces tenant isolation and clinic membership rejection
+          ---
+          duration_ms: 3.851073
+          ...
+        # Subtest: no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher
+        ok 2 - no pulse.m07 write; BLOCKED-M07 cleared; no M07 import in publisher
+          ---
+          duration_ms: 2.490422
+          ...
+        1..2
+    ok 6 - F. Boundaries
+      ---
+      duration_ms: 6.44119
+      type: 'suite'
+      ...
+    1..6
+ok 10 - CP2.2 M06 platform published-timesheet publication
+  ---
+  duration_ms: 72.543784
+  type: 'suite'
+  ...
+# Subtest: m06 timezone / DST
+    # Subtest: TZ-01: Brisbane cross-midnight civil dates differ
+    ok 1 - TZ-01: Brisbane cross-midnight civil dates differ
+      ---
+      duration_ms: 11.757049
+      ...
+    # Subtest: TZ-02: clinic calendar date differs from UTC
+    ok 2 - TZ-02: clinic calendar date differs from UTC
+      ---
+      duration_ms: 0.679519
+      ...
+    # Subtest: TZ-03: DST spring-forward gap unresolved
+    ok 3 - TZ-03: DST spring-forward gap unresolved
+      ---
+      duration_ms: 0.644804
+      ...
+    # Subtest: TZ-04: fall-back fold=0 earlier
+    ok 4 - TZ-04: fall-back fold=0 earlier
+      ---
+      duration_ms: 0.660234
+      ...
+    # Subtest: TZ-05: fall-back fold=1 later
+    ok 5 - TZ-05: fall-back fold=1 later
+      ---
+      duration_ms: 1.115834
+      ...
+    # Subtest: TZ-06: device skew recorded
+    ok 6 - TZ-06: device skew recorded
+      ---
+      duration_ms: 0.619041
+      ...
+    # Subtest: TZ-07: stale timezone unresolved
+    ok 7 - TZ-07: stale timezone unresolved
+      ---
+      duration_ms: 0.244235
+      ...
+    # Subtest: TZ-08: invalid clinic timezone unresolved — no silent UTC
+    ok 8 - TZ-08: invalid clinic timezone unresolved — no silent UTC
+      ---
+      duration_ms: 0.188069
+      ...
+    1..8
+ok 11 - m06 timezone / DST
+  ---
+  duration_ms: 17.876411
+  type: 'suite'
+  ...
+# Subtest: m06 ux-state contracts
+    # Subtest: UX concurrent conflict carries version metadata
+    ok 1 - UX concurrent conflict carries version metadata
+      ---
+      duration_ms: 0.486973
+      ...
+    # Subtest: UX validation lifecycle encodes from/to
+    ok 2 - UX validation lifecycle encodes from/to
+      ---
+      duration_ms: 0.156883
+      ...
+    # Subtest: UX override reason required
+    ok 3 - UX override reason required
+      ---
+      duration_ms: 0.125001
+      ...
+    # Subtest: errors are instanceof Error for SystemErrorState
+    ok 4 - errors are instanceof Error for SystemErrorState
+      ---
+      duration_ms: 0.101885
+      ...
+    1..4
+ok 12 - m06 ux-state contracts
+  ---
+  duration_ms: 1.481272
+  type: 'suite'
+  ...
+# Subtest: m06 workflows independent evidence
+    # Subtest: WF-01 rostered employee clock-in
+    ok 1 - WF-01 rostered employee clock-in
+      ---
+      duration_ms: 14.15168
+      ...
+    # Subtest: WF-02 unrostered clock-in
+    ok 2 - WF-02 unrostered clock-in
+      ---
+      duration_ms: 2.478899
+      ...
+    # Subtest: WF-03 early clock-in
+    ok 3 - WF-03 early clock-in
+      ---
+      duration_ms: 3.043037
+      ...
+    # Subtest: WF-04 late arrival
+    ok 4 - WF-04 late arrival
+      ---
+      duration_ms: 1.669303
+      ...
+    # Subtest: WF-05 missed clock-in
+    ok 5 - WF-05 missed clock-in
+      ---
+      duration_ms: 0.947661
+      ...
+    # Subtest: WF-06 break start
+    ok 6 - WF-06 break start
+      ---
+      duration_ms: 1.916999
+      ...
+    # Subtest: WF-07 break end
+    ok 7 - WF-07 break end
+      ---
+      duration_ms: 2.115798
+      ...
+    # Subtest: WF-08 missed break
+    ok 8 - WF-08 missed break
+      ---
+      duration_ms: 1.335527
+      ...
+    # Subtest: WF-09 normal clock-out
+    ok 9 - WF-09 normal clock-out
+      ---
+      duration_ms: 2.151671
+      ...
+    # Subtest: WF-10 early departure
+    ok 10 - WF-10 early departure
+      ---
+      duration_ms: 2.569699
+      ...
+    # Subtest: WF-11 missed clock-out
+    ok 11 - WF-11 missed clock-out
+      ---
+      duration_ms: 1.400403
+      ...
+    # Subtest: WF-12 cross-midnight attendance
+    ok 12 - WF-12 cross-midnight attendance
+      ---
+      duration_ms: 1.308022
+      ...
+    # Subtest: WF-13 offline capture and synchronization
+    ok 13 - WF-13 offline capture and synchronization
+      ---
+      duration_ms: 1.334712
+      ...
+    # Subtest: WF-14 employee correction request
+    ok 14 - WF-14 employee correction request
+      ---
+      duration_ms: 1.964972
+      ...
+    # Subtest: WF-15 manager correction
+    ok 15 - WF-15 manager correction
+      ---
+      duration_ms: 1.691079
+      ...
+    # Subtest: WF-16 correction approval rejection and approved application
+        # Subtest: approve applies correction once
+        ok 1 - approve applies correction once
+          ---
+          duration_ms: 2.310936
+          ...
+        # Subtest: reject leaves correction rejected and not applied
+        ok 2 - reject leaves correction rejected and not applied
+          ---
+          duration_ms: 3.453129
+          ...
+        # Subtest: stale version is rejected
+        ok 3 - stale version is rejected
+          ---
+          duration_ms: 1.548001
+          ...
+        1..3
+    ok 16 - WF-16 correction approval rejection and approved application
+      ---
+      duration_ms: 7.74362
+      ...
+    # Subtest: WF-17 reopened timesheet
+    ok 17 - WF-17 reopened timesheet
+      ---
+      duration_ms: 2.715523
+      ...
+    # Subtest: WF-18 exception escalation
+    ok 18 - WF-18 exception escalation
+      ---
+      duration_ms: 0.848874
+      ...
+    # Subtest: WF-19A approved TimesheetRef publication
+    ok 19 - WF-19A approved TimesheetRef publication
+      ---
+      duration_ms: 1.986004
+      ...
+    # Subtest: WF-19B M07 acknowledgement boundary does not write pulse.m07
+    ok 20 - WF-19B M07 acknowledgement boundary does not write pulse.m07
+      ---
+      duration_ms: 0.219102
+      ...
+    # Subtest: WF-20 roster-versus-attendance reconciliation
+    ok 21 - WF-20 roster-versus-attendance reconciliation
+      ---
+      duration_ms: 1.361307
+      ...
+    # Subtest: WF-21 bulk approval with partial success
+    ok 22 - WF-21 bulk approval with partial success
+      ---
+      duration_ms: 4.041306
+      ...
+    1..22
+ok 13 - m06 workflows independent evidence
+  ---
+  duration_ms: 60.774274
+  type: 'suite'
+  ...
+1..13
+# tests 91
+# suites 19
+# pass 91
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1907.036663

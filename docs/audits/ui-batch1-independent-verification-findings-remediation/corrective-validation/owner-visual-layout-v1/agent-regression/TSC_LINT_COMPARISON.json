@@ -1,0 +1,78 @@
+{
+  "frozenSha": "d68040688cbf76fb1f8715c27aa06ad6ff72242c",
+  "recordedUtc": "2026-08-04T04:03:25Z",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-reg-3493",
+  "baselineDocument": "docs/audits/ui-batch1-independent-verification-findings-remediation/tsc-lint-comparison.json",
+  "baselineDocumentCopy": "tsc-lint-comparison.baseline.json",
+  "baselineDocumentContents": {
+    "candidateCount": 21,
+    "baselineCount": 21,
+    "exactPathMessageMatch": true,
+    "onlyCandidate": [],
+    "onlyBaseline": []
+  },
+  "acceptedDebt": {
+    "tscErrors": 21,
+    "lintErrors": 2,
+    "lintWarnings": 24
+  },
+  "candidate": {
+    "tscErrorCount": 21,
+    "lintErrors": 4,
+    "lintWarnings": 24,
+    "lintErrorFiles": [
+      "src/modules/m04-staff-doctors/context.tsx",
+      "src/modules/m05-roster/context.tsx",
+      "src/modules/m07-staff-pay/context.tsx",
+      "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx"
+    ]
+  },
+  "tsc": {
+    "candidateCount": 21,
+    "baselineCount": 21,
+    "exactPathMessageMatch": true,
+    "candidateMessages": [
+      "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts(225,13): error TS2578: Unused '@ts-expect-error' directive.",
+      "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts(276,86): error TS2353: Object literal may only specify known properties, and 'timesheetId' does not exist in type '{ timesheetRecordId?: string | undefined; periodOverlaps?: { start: string; end: string; } | undefined; approvalStates?: TimesheetApprovalState[] | undefined; }'.",
+      "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts(295,86): error TS2353: Object literal may only specify known properties, and 'timesheetId' does not exist in type '{ timesheetRecordId?: string | undefined; periodOverlaps?: { start: string; end: string; } | undefined; approvalStates?: TimesheetApprovalState[] | undefined; }'.",
+      "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts(430,86): error TS2353: Object literal may only specify known properties, and 'timesheetId' does not exist in type '{ timesheetRecordId?: string | undefined; periodOverlaps?: { start: string; end: string; } | undefined; approvalStates?: TimesheetApprovalState[] | undefined; }'.",
+      "src/modules/m07-staff-pay/tests/m07-batch2-final-gate-cp27.test.ts(267,35): error TS2339: Property 'latestApprovalRevision' does not exist on type 'PublishedTimesheetCurrentIndex'.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(109,44): error TS2704: The operand of a 'delete' operator cannot be a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(110,22): error TS2540: Cannot assign to 'NODE_ENV' because it is a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(121,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(130,17): error TS2540: Cannot assign to 'NODE_ENV' because it is a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(141,17): error TS2540: Cannot assign to 'NODE_ENV' because it is a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(172,17): error TS2540: Cannot assign to 'NODE_ENV' because it is a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(219,17): error TS2540: Cannot assign to 'NODE_ENV' because it is a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(222,12): error TS2704: The operand of a 'delete' operator cannot be a read-only property.",
+      "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts(73,10): error TS2352: Conversion of type '{ id: string; legalEntityId: string; clinicIds: never[]; kind: \"ordinary\"; state: \"open\"; cadence: \"fortnightly\"; periodStart: string; periodEnd: string; version: number; createdAt: string; createdBy: string; updatedAt: string; updatedBy: string; }' to type 'PayPeriodRecord' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(160,7): error TS2578: Unused '@ts-expect-error' directive.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(319,9): error TS2322: Type '{ ordinaryHourInputs: { code: string; hours: number; }[]; }' is not assignable to type 'PublishedTimesheetPayrollContent & Partial<PublishedTimesheetPayrollContent>'.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(381,13): error TS2322: Type '{ ordinaryHourInputs: { code: string; hours: number; }[]; }' is not assignable to type 'PublishedTimesheetPayrollContent & Partial<PublishedTimesheetPayrollContent>'.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(397,13): error TS2322: Type '{ ordinaryHourInputs: { code: string; hours: number; }[]; }' is not assignable to type 'PublishedTimesheetPayrollContent & Partial<PublishedTimesheetPayrollContent>'.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(426,9): error TS2322: Type '{ ordinaryHourInputs: { code: string; hours: number; }[]; }' is not assignable to type 'PublishedTimesheetPayrollContent & Partial<PublishedTimesheetPayrollContent>'.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(437,13): error TS2322: Type '{ ordinaryHourInputs: { code: string; hours: number; }[]; }' is not assignable to type 'PublishedTimesheetPayrollContent & Partial<PublishedTimesheetPayrollContent>'.",
+      "src/platform/workforce/tests/published-timesheet-registry.test.ts(526,69): error TS2339: Property 'registryPublicationId' does not exist on type 'never'."
+    ],
+    "baselineMessagesSource": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/logs/24-tsc.log",
+    "onlyCandidate": [],
+    "onlyBaseline": [],
+    "verdictVsAcceptedDebt": "PASS"
+  },
+  "lint": {
+    "candidateErrors": 4,
+    "candidateWarnings": 24,
+    "baselineErrors": 2,
+    "baselineWarnings": 24,
+    "exactMatch": false,
+    "verdictVsAcceptedDebt": "FAIL",
+    "note": "Observed 4 errors / 24 warnings on frozen SHA d680406 and on vf-fixes tip (identical src). Historical remediation evidence recorded 2/24; current eslint-config-next/react-hooks tooling surfaces two additional set-state-in-effect errors in m04/m05 context.tsx. Not a src drift vs freeze.",
+    "errorFiles": [
+      "src/modules/m04-staff-doctors/context.tsx",
+      "src/modules/m05-roster/context.tsx",
+      "src/modules/m07-staff-pay/context.tsx",
+      "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx"
+    ]
+  },
+  "overallDebtGate": "FAIL"
+}

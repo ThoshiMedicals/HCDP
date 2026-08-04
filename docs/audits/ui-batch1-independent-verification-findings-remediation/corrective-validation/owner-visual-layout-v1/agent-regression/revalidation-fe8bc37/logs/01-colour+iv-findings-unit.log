@@ -1,0 +1,175 @@
+TAP version 13
+# Subtest: IV findings remediation — hydration
+    # Subtest: M07 shell always renders deterministic bootstrap status markup
+    ok 1 - M07 shell always renders deterministic bootstrap status markup
+      ---
+      duration_ms: 1.829651
+      ...
+    # Subtest: root html allows theme-init attribute divergence via suppressHydrationWarning
+    ok 2 - root html allows theme-init attribute divergence via suppressHydrationWarning
+      ---
+      duration_ms: 0.237888
+      ...
+    # Subtest: M04 workforce counts stay zero through hydration
+    ok 3 - M04 workforce counts stay zero through hydration
+      ---
+      duration_ms: 0.148407
+      ...
+    # Subtest: M05 offline banner uses server snapshot false
+    ok 4 - M05 offline banner uses server snapshot false
+      ---
+      duration_ms: 0.167923
+      ...
+    1..4
+ok 1 - IV findings remediation — hydration
+  ---
+  duration_ms: 3.076687
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — typography tokens
+    # Subtest: nav toggles, favourites and section captions use ≥13px control token
+    ok 1 - nav toggles, favourites and section captions use ≥13px control token
+      ---
+      duration_ms: 0.407398
+      ...
+    1..1
+ok 2 - IV findings remediation — typography tokens
+  ---
+  duration_ms: 0.484483
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — favourite contrast
+    # Subtest: favourite active/hover colours use high-contrast champagne on navy
+    ok 1 - favourite active/hover colours use high-contrast champagne on navy
+      ---
+      duration_ms: 0.358318
+      ...
+    1..1
+ok 3 - IV findings remediation — favourite contrast
+  ---
+  duration_ms: 0.628496
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — dark surfaces
+    # Subtest: settings and action-inbox drop near-white hard-coded surfaces
+    ok 1 - settings and action-inbox drop near-white hard-coded surfaces
+      ---
+      duration_ms: 0.803653
+      ...
+    1..1
+ok 4 - IV findings remediation — dark surfaces
+  ---
+  duration_ms: 0.911472
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — appearance persistence host
+    # Subtest: theme tokens key off html.theme-dark and init script exists
+    ok 1 - theme tokens key off html.theme-dark and init script exists
+      ---
+      duration_ms: 0.257813
+      ...
+    # Subtest: applyAppearance toggles html theme-dark and syncs body
+    ok 2 - applyAppearance toggles html theme-dark and syncs body
+      ---
+      duration_ms: 0.18204
+      ...
+    1..2
+ok 5 - IV findings remediation — appearance persistence host
+  ---
+  duration_ms: 0.629452
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — Phase 3 abort allowlist precision (D6)
+    # Subtest: narrows ERR_ABORTED allowlist to same-origin _rsc= or verified prefetch headers
+    ok 1 - narrows ERR_ABORTED allowlist to same-origin _rsc= or verified prefetch headers
+      ---
+      duration_ms: 0.597943
+      ...
+    1..1
+ok 6 - IV findings remediation — Phase 3 abort allowlist precision (D6)
+  ---
+  duration_ms: 0.657073
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — Phase 3 element-clip probe (D5)
+    # Subtest: probes chrome controls with clip/occlusion fields and chrome-scoped adjudication
+    ok 1 - probes chrome controls with clip/occlusion fields and chrome-scoped adjudication
+      ---
+      duration_ms: 0.31207
+      ...
+    # Subtest: exempts legitimate scroll regions and sticky sidebar-footer occlusion from hard fails
+    ok 2 - exempts legitimate scroll regions and sticky sidebar-footer occlusion from hard fails
+      ---
+      duration_ms: 0.55837
+      ...
+    1..2
+ok 7 - IV findings remediation — Phase 3 element-clip probe (D5)
+  ---
+  duration_ms: 0.943553
+  type: 'suite'
+  ...
+# Subtest: IV findings remediation — Phase 3 hydration governance (D7)
+    # Subtest: suppressHydrationWarning appears only once in layout.tsx
+    ok 1 - suppressHydrationWarning appears only once in layout.tsx
+      ---
+      duration_ms: 0.193966
+      ...
+    # Subtest: theme-init mutates documentElement for class, data-appearance, and colorScheme
+    ok 2 - theme-init mutates documentElement for class, data-appearance, and colorScheme
+      ---
+      duration_ms: 0.143818
+      ...
+    # Subtest: M04–M07 workspaces never use suppressHydrationWarning
+    ok 3 - M04–M07 workspaces never use suppressHydrationWarning
+      ---
+      duration_ms: 0.175278
+      ...
+    1..3
+ok 8 - IV findings remediation — Phase 3 hydration governance (D7)
+  ---
+  duration_ms: 0.583443
+  type: 'suite'
+  ...
+# Subtest: Owner colour readability — semantic tokens
+    # Subtest: defines one semantic theme layer and maps legacy variables
+    ok 1 - defines one semantic theme layer and maps legacy variables
+      ---
+      duration_ms: 1.174673
+      ...
+    # Subtest: fixes active tabs, brand ribbon and badge teal surface tokens
+    ok 2 - fixes active tabs, brand ribbon and badge teal surface tokens
+      ---
+      duration_ms: 0.557921
+      ...
+    # Subtest: enforces readable typography minima in tokens and globals
+    ok 3 - enforces readable typography minima in tokens and globals
+      ---
+      duration_ms: 0.454642
+      ...
+    1..3
+ok 9 - Owner colour readability — semantic tokens
+  ---
+  duration_ms: 2.879677
+  type: 'suite'
+  ...
+# Subtest: Owner colour readability — hard-coded leak guards
+    # Subtest: removes light-surface and slate hard-codes from owner inspection modules
+    ok 1 - removes light-surface and slate hard-codes from owner inspection modules
+      ---
+      duration_ms: 0.572049
+      ...
+    1..1
+ok 10 - Owner colour readability — hard-coded leak guards
+  ---
+  duration_ms: 0.715255
+  type: 'suite'
+  ...
+1..10
+# tests 19
+# suites 10
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 235.891698

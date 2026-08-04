@@ -1,0 +1,47 @@
+TAP version 13
+# Subtest: M07 shell smoke (Batch 1)
+    # Subtest: marks unfinished sections as planned
+    ok 1 - marks unfinished sections as planned
+      ---
+      duration_ms: 0.661895
+      ...
+    # Subtest: resolves legacy section aliases
+    ok 2 - resolves legacy section aliases
+      ---
+      duration_ms: 0.120034
+      ...
+    # Subtest: planned section UI disables actions and does not claim parity
+    ok 3 - planned section UI disables actions and does not claim parity
+      ---
+      duration_ms: 0.159212
+      ...
+    # Subtest: workspace declares responsive shell attribute and a11y affordances
+    ok 4 - workspace declares responsive shell attribute and a11y affordances
+      ---
+      duration_ms: 0.371184
+      ...
+    # Subtest: overview and settings expose labelled controls and non-colour status
+    ok 5 - overview and settings expose labelled controls and non-colour status
+      ---
+      duration_ms: 0.180148
+      ...
+    # Subtest: overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)
+    ok 6 - overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)
+      ---
+      duration_ms: 0.291461
+      ...
+    1..6
+ok 1 - M07 shell smoke (Batch 1)
+  ---
+  duration_ms: 2.493391
+  type: 'suite'
+  ...
+1..1
+# tests 6
+# suites 1
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 158.285957

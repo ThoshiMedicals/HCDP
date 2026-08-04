@@ -1,0 +1,11 @@
+{
+  "mode": "production",
+  "profile": "full-matrix",
+  "base": "http://127.0.0.1:3493",
+  "out": "/tmp/hcdp-fix/ui-batch1-reg-3493/_agent_regression_out/prod-matrix",
+  "startedAt": "2026-08-04T03:30:23.980Z",
+  "appSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+  "node": "v22.14.0",
+  "endedAt": "2026-08-04T03:35:33.457Z",
+  "matrixEntries": 338
+}

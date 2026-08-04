@@ -1,0 +1,155 @@
+{
+  "appSha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+  "base": "http://127.0.0.1:3490",
+  "captures": [
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 900,
+      "ap": "light",
+      "name": "light-1440-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-1440-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 900,
+      "ap": "dark",
+      "name": "dark-1440-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-1440-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-390-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-390-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/action-inbox",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_action-inbox.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-390-_action-inbox.png",
+      "finalUrl": "http://127.0.0.1:3490/action-inbox"
+    },
+    {
+      "route": "/action-inbox",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_action-inbox.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-390-_action-inbox.png",
+      "finalUrl": "http://127.0.0.1:3490/action-inbox"
+    },
+    {
+      "route": "/settings",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_settings.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-390-_settings.png",
+      "finalUrl": "http://127.0.0.1:3490/settings"
+    },
+    {
+      "route": "/settings",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_settings.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-390-_settings.png",
+      "finalUrl": "http://127.0.0.1:3490/settings"
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_staffpay_section_overview.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-390-_staffpay_section_overview.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=overview"
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_staffpay_section_overview.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-390-_staffpay_section_overview.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=overview"
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_staffpay_section_adjustments.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-390-_staffpay_section_adjustments.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=adjustments"
+    },
+    {
+      "route": "/staffpay?section=adjustments",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_staffpay_section_adjustments.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-390-_staffpay_section_adjustments.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=adjustments"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1024,
+      "h": 768,
+      "ap": "light",
+      "name": "light-1024x768-_dashboard-sidebar-footer.png",
+      "sidebarFooter": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-1024x768-_dashboard-sidebar-footer.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 720,
+      "ap": "light",
+      "name": "light-1440x720-_dashboard-sidebar-footer.png",
+      "sidebarFooter": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-1440x720-_dashboard-sidebar-footer.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "w": 1440,
+      "h": 900,
+      "ap": "light",
+      "name": "light-1440-_staffpay_section_overview.png",
+      "sidebarFooter": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/light-1440-_staffpay_section_overview.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=overview"
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "w": 1440,
+      "h": 900,
+      "ap": "dark",
+      "name": "dark-1440-_staffpay_section_overview.png",
+      "sidebarFooter": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/screenshots/dark-1440-_staffpay_section_overview.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=overview"
+    }
+  ],
+  "cropDir": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/after/defect-crops"
+}

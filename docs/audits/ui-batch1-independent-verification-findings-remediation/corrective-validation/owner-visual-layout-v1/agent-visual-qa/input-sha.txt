@@ -1,0 +1,6 @@
+worktree: /tmp/hcdp-fix/ui-batch1-vf-fixes
+input_sha: f837bdd08e1db30e68c63cfb2542e3120bc40d00
+last_application_source_sha: e6e2f90ea42f39ddab1d5ce39c1e306f214a1742
+recorded_at_utc: 2026-08-04T03:10:23Z
+phase: Phase 2 baseline visual inspection
+port_policy: owner :3000 preserved; live-render :3490 only if needed

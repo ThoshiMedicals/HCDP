@@ -1,0 +1,690 @@
+
+> healthcare-doctors-pulse@0.1.0 test:m05
+> tsx --test "src/modules/m05-roster/tests/**/*.test.ts"
+
+TAP version 13
+# Subtest: m05 adapters
+    # Subtest: M02-LG-01 coverage-gap: create → dedupe → update → close → stale replay blocked
+    ok 1 - M02-LG-01 coverage-gap: create → dedupe → update → close → stale replay blocked
+      ---
+      duration_ms: 3.766361
+      ...
+    # Subtest: M02-LG-02 unacked-publication: create → dedupe → close on `full` ack → stale replay blocked
+    ok 2 - M02-LG-02 unacked-publication: create → dedupe → close on `full` ack → stale replay blocked
+      ---
+      duration_ms: 2.036483
+      ...
+    # Subtest: M02-LG-03 swap-action: create → dedupe → close on terminal state → stale replay blocked
+    ok 3 - M02-LG-03 swap-action: create → dedupe → close on terminal state → stale replay blocked
+      ---
+      duration_ms: 1.623289
+      ...
+    # Subtest: M02-LG-04 open-shift-escalation: create → dedupe → close on `closed` status → stale replay blocked
+    ok 4 - M02-LG-04 open-shift-escalation: create → dedupe → close on `closed` status → stale replay blocked
+      ---
+      duration_ms: 1.860725
+      ...
+    # Subtest: M02-LG-05 assignment-invalidated: create → dedupe; non-invalidated state does not create a row
+    ok 5 - M02-LG-05 assignment-invalidated: create → dedupe; non-invalidated state does not create a row
+      ---
+      duration_ms: 3.271545
+      ...
+    # Subtest: M01: getRosterCounts returns aggregate operational counts only (no person-sensitive dumps)
+    ok 6 - M01: getRosterCounts returns aggregate operational counts only (no person-sensitive dumps)
+      ---
+      duration_ms: 1.014902
+      ...
+    # Subtest: M01 clinic-scoped counts filter to a single clinic
+    ok 7 - M01 clinic-scoped counts filter to a single clinic
+      ---
+      duration_ms: 0.287328
+      ...
+    # Subtest: M10 (workflow \#12): transferOpeningClosingDuties is BLOCKED with reason and evidence code — not silent pass
+    ok 8 - M10 (workflow \#12): transferOpeningClosingDuties is BLOCKED with reason and evidence code — not silent pass
+      ---
+      duration_ms: 0.882677
+      ...
+    1..8
+ok 1 - m05 adapters
+  ---
+  duration_ms: 15.549496
+  type: 'suite'
+  ...
+# Subtest: m05 authz
+    # Subtest: PERM-POS-01: coordinator can create a shift in their own clinic
+    ok 1 - PERM-POS-01: coordinator can create a shift in their own clinic
+      ---
+      duration_ms: 13.575193
+      ...
+    # Subtest: PERM-NEG-01: worker cannot publish a period (missing roster.publish)
+    ok 2 - PERM-NEG-01: worker cannot publish a period (missing roster.publish)
+      ---
+      duration_ms: 0.727121
+      ...
+    # Subtest: PERM-NEG-02: cross-clinic assign is denied (clinic scope)
+    ok 3 - PERM-NEG-02: cross-clinic assign is denied (clinic scope)
+      ---
+      duration_ms: 1.452682
+      ...
+    # Subtest: PERM-POS-02: bulk partial success — in-scope succeed, out-of-scope skip
+    ok 4 - PERM-POS-02: bulk partial success — in-scope succeed, out-of-scope skip
+      ---
+      duration_ms: 1.483565
+      ...
+    # Subtest: PERM-NEG-03: finance viewer cannot mutate assignments
+    ok 5 - PERM-NEG-03: finance viewer cannot mutate assignments
+      ---
+      duration_ms: 1.448487
+      ...
+    # Subtest: PRIV-01: cost forecast rates masked without roster.cost.view
+    ok 6 - PRIV-01: cost forecast rates masked without roster.cost.view
+      ---
+      duration_ms: 3.880263
+      ...
+    # Subtest: PRIV-02: export cannot bypass clinic scope, and empty-scope actor is denied
+    ok 7 - PRIV-02: export cannot bypass clinic scope, and empty-scope actor is denied
+      ---
+      duration_ms: 4.397662
+      ...
+    # Subtest: PERM-OV-01: override without reason denied; with reason + roster.override allowed
+    ok 8 - PERM-OV-01: override without reason denied; with reason + roster.override allowed
+      ---
+      duration_ms: 1.676152
+      ...
+    # Subtest: assign without any permission throws M05PermissionError
+    ok 9 - assign without any permission throws M05PermissionError
+      ---
+      duration_ms: 1.251275
+      ...
+    # Subtest: mapDemoIdentityPermissions honours workforce roles
+    ok 10 - mapDemoIdentityPermissions honours workforce roles
+      ---
+      duration_ms: 0.744984
+      ...
+    1..10
+ok 2 - m05 authz
+  ---
+  duration_ms: 31.707511
+  type: 'suite'
+  ...
+# Subtest: m05 bulk
+    # Subtest: BULK-01: preview reports totals, in-scope, out-of-scope, duplicates, notification cap
+    ok 1 - BULK-01: preview reports totals, in-scope, out-of-scope, duplicates, notification cap
+      ---
+      duration_ms: 14.657648
+      ...
+    # Subtest: BULK-02 + BULK-04: partial success — in-scope succeed, out-of-scope skip
+    ok 2 - BULK-02 + BULK-04: partial success — in-scope succeed, out-of-scope skip
+      ---
+      duration_ms: 2.503176
+      ...
+    # Subtest: BULK-03: retry idempotency — same idempotencyKey submitted twice does not create duplicates
+    ok 3 - BULK-03: retry idempotency — same idempotencyKey submitted twice does not create duplicates
+      ---
+      duration_ms: 1.647676
+      ...
+    # Subtest: BULK-05: notification cap — succeeded > cap ⇒ notificationsSuppressed > 0
+    ok 4 - BULK-05: notification cap — succeeded > cap ⇒ notificationsSuppressed > 0
+      ---
+      duration_ms: 3.466761
+      ...
+    # Subtest: bulk requires roster.bulk permission
+    ok 5 - bulk requires roster.bulk permission
+      ---
+      duration_ms: 0.532869
+      ...
+    # Subtest: bulk failure inside try/catch is captured in `failed` (partial-success guarantee)
+    ok 6 - bulk failure inside try/catch is captured in `failed` (partial-success guarantee)
+      ---
+      duration_ms: 0.354814
+      ...
+    1..6
+ok 3 - m05 bulk
+  ---
+  duration_ms: 23.915631
+  type: 'suite'
+  ...
+# Subtest: m05 conflict policy
+    # Subtest: policy publish archives prior published version — only one active per org
+    ok 1 - policy publish archives prior published version — only one active per org
+      ---
+      duration_ms: 1.61135
+      ...
+    # Subtest: overlap is a BLOCK severity finding with explainable rule id + version
+    ok 2 - overlap is a BLOCK severity finding with explainable rule id + version
+      ---
+      duration_ms: 13.969462
+      ...
+    # Subtest: min_break is a WARN finding when gap between shifts < 8h
+    ok 3 - min_break is a WARN finding when gap between shifts < 8h
+      ---
+      duration_ms: 1.921988
+      ...
+    # Subtest: max_daily_hours warns above the daily cap (default 12h)
+    ok 4 - max_daily_hours warns above the daily cap (default 12h)
+      ---
+      duration_ms: 2.088568
+      ...
+    # Subtest: consecutive_days warns above the streak cap (default 6)
+    ok 5 - consecutive_days warns above the streak cap (default 6)
+      ---
+      duration_ms: 5.567941
+      ...
+    # Subtest: approved_leave_clash is a BLOCK finding using the M04 leave cache setter
+    ok 6 - approved_leave_clash is a BLOCK finding using the M04 leave cache setter
+      ---
+      duration_ms: 1.374932
+      ...
+    # Subtest: no conflicts when candidate is well-separated + no leave clash
+    ok 7 - no conflicts when candidate is well-separated + no leave clash
+      ---
+      duration_ms: 1.155051
+      ...
+    # Subtest: evaluateConflicts returns [] when no active policy exists
+    ok 8 - evaluateConflicts returns [] when no active policy exists
+      ---
+      duration_ms: 1.270572
+      ...
+    1..8
+ok 4 - m05 conflict policy
+  ---
+  duration_ms: 31.227491
+  type: 'suite'
+  ...
+# Subtest: m05 cost + privacy
+    # Subtest: PRIV-01: maskForecastForActor zeroes rate/cost totals without roster.cost.view
+    ok 1 - PRIV-01: maskForecastForActor zeroes rate/cost totals without roster.cost.view
+      ---
+      duration_ms: 15.342877
+      ...
+    # Subtest: PRIV-01: listCostForecastsForActor masks results at the service layer
+    ok 2 - PRIV-01: listCostForecastsForActor masks results at the service layer
+      ---
+      duration_ms: 2.643935
+      ...
+    # Subtest: PRIV-02: exportShiftAssignmentsCsv is clinic-scoped and does NOT include cost columns without roster.cost.view
+    ok 3 - PRIV-02: exportShiftAssignmentsCsv is clinic-scoped and does NOT include cost columns without roster.cost.view
+      ---
+      duration_ms: 2.816084
+      ...
+    # Subtest: PRIV-02: finance viewer WITH cost.view can request cost columns in export
+    ok 4 - PRIV-02: finance viewer WITH cost.view can request cost columns in export
+      ---
+      duration_ms: 2.671006
+      ...
+    # Subtest: PRIV-02: empty clinic-scope actor sees zero rows on export/report
+    ok 5 - PRIV-02: empty clinic-scope actor sees zero rows on export/report
+      ---
+      duration_ms: 2.558722
+      ...
+    # Subtest: buildScopedReport respects scope.clinicIds filter
+    ok 6 - buildScopedReport respects scope.clinicIds filter
+      ---
+      duration_ms: 2.576284
+      ...
+    # Subtest: cost forecast body always carries planningOnly: true (never payroll truth)
+    ok 7 - cost forecast body always carries planningOnly: true (never payroll truth)
+      ---
+      duration_ms: 1.659538
+      ...
+    1..7
+ok 5 - m05 cost + privacy
+  ---
+  duration_ms: 31.120925
+  type: 'suite'
+  ...
+# Subtest: m05 domain
+    # Subtest: period lifecycle: draft→under_review→ready_to_publish→published (no partially_acknowledged period state)
+    ok 1 - period lifecycle: draft→under_review→ready_to_publish→published (no partially_acknowledged period state)
+      ---
+      duration_ms: 11.521435
+      ...
+    # Subtest: period version mismatch throws ConcurrentConflictError
+    ok 2 - period version mismatch throws ConcurrentConflictError
+      ---
+      duration_ms: 1.366985
+      ...
+    # Subtest: period cancel requires reason
+    ok 3 - period cancel requires reason
+      ---
+      duration_ms: 0.476266
+      ...
+    # Subtest: shift lifecycle valid + invalid transitions
+    ok 4 - shift lifecycle valid + invalid transitions
+      ---
+      duration_ms: 2.369106
+      ...
+    # Subtest: assignment history is append-only; replacing a worker preserves prior state as replaced
+    ok 5 - assignment history is append-only; replacing a worker preserves prior state as replaced
+      ---
+      duration_ms: 2.528762
+      ...
+    # Subtest: assignment cancel + invalidate append audit and do not rewrite prior append-only rows
+    ok 6 - assignment cancel + invalidate append audit and do not rewrite prior append-only rows
+      ---
+      duration_ms: 1.324425
+      ...
+    # Subtest: publication body is immutable; supersede requires a new publication
+    ok 7 - publication body is immutable; supersede requires a new publication
+      ---
+      duration_ms: 2.293668
+      ...
+    # Subtest: acknowledgement is a DERIVED publication status (none|partial|full); period stays `published`
+    ok 8 - acknowledgement is a DERIVED publication status (none|partial|full); period stays `published`
+      ---
+      duration_ms: 4.104923
+      ...
+    # Subtest: ack on superseded publication is rejected
+    ok 9 - ack on superseded publication is rejected
+      ---
+      duration_ms: 1.775701
+      ...
+    # Subtest: publish denied when period lifecycle is `superseded`/`cancelled`/`archived`
+    ok 10 - publish denied when period lifecycle is `superseded`/`cancelled`/`archived`
+      ---
+      duration_ms: 0.574068
+      ...
+    # Subtest: recomputePublicationAckStatus is a no-op on missing publication
+    ok 11 - recomputePublicationAckStatus is a no-op on missing publication
+      ---
+      duration_ms: 0.119858
+      ...
+    # Subtest: permission code inventory covers §17 codes
+    ok 12 - permission code inventory covers §17 codes
+      ---
+      duration_ms: 0.148222
+      ...
+    1..12
+ok 6 - m05 domain
+  ---
+  duration_ms: 29.637895
+  type: 'suite'
+  ...
+# Subtest: m05 eligibility
+    # Subtest: authority is always `m04-platform`, and eligible when readiness=ready + no blockers
+    ok 1 - authority is always `m04-platform`, and eligible when readiness=ready + no blockers
+      ---
+      duration_ms: 11.184741
+      ...
+    # Subtest: hard-block when M04 returns a blocking readiness blocker
+    ok 2 - hard-block when M04 returns a blocking readiness blocker
+      ---
+      duration_ms: 0.389293
+      ...
+    # Subtest: warning when readiness=advisory (never blocking) — assignment permitted
+    ok 3 - warning when readiness=advisory (never blocking) — assignment permitted
+      ---
+      duration_ms: 0.435158
+      ...
+    # Subtest: stale readiness is NEVER overridable (§7 rule)
+    ok 4 - stale readiness is NEVER overridable (§7 rule)
+      ---
+      duration_ms: 0.356437
+      ...
+    # Subtest: unresolved clinic timezone is NEVER overridable — no silent UTC (§4/§7)
+    ok 5 - unresolved clinic timezone is NEVER overridable — no silent UTC (§4/§7)
+      ---
+      duration_ms: 0.367383
+      ...
+    # Subtest: unknown_person (no readiness lookup available) is never overridable
+    ok 6 - unknown_person (no readiness lookup available) is never overridable
+      ---
+      duration_ms: 0.210054
+      ...
+    # Subtest: approved-leave clash blocks assignment (populated via setApprovedLeaveForTests)
+    ok 7 - approved-leave clash blocks assignment (populated via setApprovedLeaveForTests)
+      ---
+      duration_ms: 0.397523
+      ...
+    # Subtest: authorised override with reason lets a hard-blocked assignment through (assignPerson requires roster.override)
+    ok 8 - authorised override with reason lets a hard-blocked assignment through (assignPerson requires roster.override)
+      ---
+      duration_ms: 3.087612
+      ...
+    # Subtest: actor missing roster.override cannot override a hard-block even with reason
+    ok 9 - actor missing roster.override cannot override a hard-block even with reason
+      ---
+      duration_ms: 1.283906
+      ...
+    # Subtest: stale readiness cannot be overridden by assignPerson
+    ok 10 - stale readiness cannot be overridden by assignPerson
+      ---
+      duration_ms: 1.307524
+      ...
+    1..10
+ok 7 - m05 eligibility
+  ---
+  duration_ms: 19.882782
+  type: 'suite'
+  ...
+# Subtest: m05 migration + seed
+    # Subtest: initial migration + seed initialises all M05 collections and marks flags
+    ok 1 - initial migration + seed initialises all M05 collections and marks flags
+      ---
+      duration_ms: 1.602153
+      ...
+    # Subtest: MIG-01: repeat-run is idempotent — no duplicate seed rows on re-run
+    ok 2 - MIG-01: repeat-run is idempotent — no duplicate seed rows on re-run
+      ---
+      duration_ms: 0.429873
+      ...
+    # Subtest: seed never overwrites existing non-seed rows
+    ok 3 - seed never overwrites existing non-seed rows
+      ---
+      duration_ms: 0.334169
+      ...
+    # Subtest: MIG-02: interrupted-run recovery — clearing the flag replays seed once
+    ok 4 - MIG-02: interrupted-run recovery — clearing the flag replays seed once
+      ---
+      duration_ms: 0.274847
+      ...
+    # Subtest: MIG-03: NO M06 / M07 / M22 record keys are ever created by M05 migrations/seed
+    ok 5 - MIG-03: NO M06 / M07 / M22 record keys are ever created by M05 migrations/seed
+      ---
+      duration_ms: 0.52724
+      ...
+    # Subtest: seed-only rollback removes only seed-tagged rows + clears seed flags
+    ok 6 - seed-only rollback removes only seed-tagged rows + clears seed flags
+      ---
+      duration_ms: 0.389082
+      ...
+    # Subtest: preserves Wave 2 (m04.*) and Wave 3 (m11.*) stores — no writes into those keys
+    ok 7 - preserves Wave 2 (m04.*) and Wave 3 (m11.*) stores — no writes into those keys
+      ---
+      duration_ms: 0.669357
+      ...
+    # Subtest: M05 storage key inventory matches the planned pulse.m05.roster.* register
+    ok 8 - M05 storage key inventory matches the planned pulse.m05.roster.* register
+      ---
+      duration_ms: 0.215444
+      ...
+    1..8
+ok 8 - m05 migration + seed
+  ---
+  duration_ms: 5.182932
+  type: 'suite'
+  ...
+# Subtest: m05 wave4 performance
+    # Subtest: initial roster-board load simulation ≤2500ms max
+    ok 1 - initial roster-board load simulation ≤2500ms max
+      ---
+      duration_ms: 258.246216
+      ...
+    # Subtest: board filtering 200+ rows ≤300ms p95
+    ok 2 - board filtering 200+ rows ≤300ms p95
+      ---
+      duration_ms: 0.840455
+      ...
+    # Subtest: eligibility lookup single ≤100ms typical
+    ok 3 - eligibility lookup single ≤100ms typical
+      ---
+      duration_ms: 1.465064
+      ...
+    # Subtest: conflict recalculation 150+ assignments ≤2000ms max
+    ok 4 - conflict recalculation 150+ assignments ≤2000ms max
+      ---
+      duration_ms: 0.682968
+      ...
+    # Subtest: coverage calculation ≤500ms p95
+    ok 5 - coverage calculation ≤500ms p95
+      ---
+      duration_ms: 6.227557
+      ...
+    # Subtest: publication preview ≤2000ms max and submission ≤3000ms max
+    ok 6 - publication preview ≤2000ms max and submission ≤3000ms max
+      ---
+      duration_ms: 183.978611
+      ...
+    # Subtest: open-shift acceptance ≤400ms max
+    ok 7 - open-shift acceptance ≤400ms max
+      ---
+      duration_ms: 6.363073
+      ...
+    # Subtest: swap approval ≤500ms max
+    ok 8 - swap approval ≤500ms max
+      ---
+      duration_ms: 13.117067
+      ...
+    # Subtest: bulk preview ≤500 ops ≤2000ms and submission ≤500 ops ≤5000ms
+    ok 9 - bulk preview ≤500 ops ≤2000ms and submission ≤500 ops ≤5000ms
+      ---
+      duration_ms: 724.339911
+      ...
+    # Subtest: M02 projection single ≤50ms typical
+    ok 10 - M02 projection single ≤50ms typical
+      ---
+      duration_ms: 13.899427
+      ...
+    # Subtest: reports build ≤3000ms max
+    ok 11 - reports build ≤3000ms max
+      ---
+      duration_ms: 1.042344
+      ...
+    # Subtest: scoped export ≤3000ms max
+    ok 12 - scoped export ≤3000ms max
+      ---
+      duration_ms: 4.251962
+      ...
+    # Subtest: writes wave4 M05 performance evidence json
+    ok 13 - writes wave4 M05 performance evidence json
+      ---
+      duration_ms: 0.426323
+      ...
+    1..13
+ok 9 - m05 wave4 performance
+  ---
+  duration_ms: 1216.682942
+  type: 'suite'
+  ...
+# Subtest: m05 publication + acknowledgement
+    # Subtest: preview lists required acknowledgers + eligibility warnings vs blockers
+    ok 1 - preview lists required acknowledgers + eligibility warnings vs blockers
+      ---
+      duration_ms: 15.462133
+      ...
+    # Subtest: publish denied without emergency override when preview has blockers
+    ok 2 - publish denied without emergency override when preview has blockers
+      ---
+      duration_ms: 2.5764
+      ...
+    # Subtest: immutable snapshot cannot be re-appended; supersede creates a new publication
+    ok 3 - immutable snapshot cannot be re-appended; supersede creates a new publication
+      ---
+      duration_ms: 6.659006
+      ...
+    # Subtest: stale expected period version rejected with ConcurrentConflictError
+    ok 4 - stale expected period version rejected with ConcurrentConflictError
+      ---
+      duration_ms: 1.293789
+      ...
+    # Subtest: acknowledge against a superseded publication is rejected (stale-replay guard)
+    ok 5 - acknowledge against a superseded publication is rejected (stale-replay guard)
+      ---
+      duration_ms: 2.082302
+      ...
+    # Subtest: acknowledge with wrong publicationVersion is rejected
+    ok 6 - acknowledge with wrong publicationVersion is rejected
+      ---
+      duration_ms: 1.712923
+      ...
+    # Subtest: acknowledge by person NOT in required set is rejected
+    ok 7 - acknowledge by person NOT in required set is rejected
+      ---
+      duration_ms: 7.807006
+      ...
+    # Subtest: period lifecycle stays `published` through all ack states; ack status is derived
+    ok 8 - period lifecycle stays `published` through all ack states; ack status is derived
+      ---
+      duration_ms: 3.163396
+      ...
+    # Subtest: preview eligibility recalculates each assigned shift with clinic timezone
+    ok 9 - preview eligibility recalculates each assigned shift with clinic timezone
+      ---
+      duration_ms: 1.66907
+      ...
+    1..9
+ok 10 - m05 publication + acknowledgement
+  ---
+  duration_ms: 43.434328
+  type: 'suite'
+  ...
+# Subtest: m05 swap + open-shift
+    # Subtest: swap: request → propose → recipient_accept → approve creates a new assignment
+    ok 1 - swap: request → propose → recipient_accept → approve creates a new assignment
+      ---
+      duration_ms: 14.419815
+      ...
+    # Subtest: swap approve: self-approval is denied
+    ok 2 - swap approve: self-approval is denied
+      ---
+      duration_ms: 1.49945
+      ...
+    # Subtest: swap approve: stale swap version throws ConcurrentConflictError
+    ok 3 - swap approve: stale swap version throws ConcurrentConflictError
+      ---
+      duration_ms: 1.341448
+      ...
+    # Subtest: swap approve: stale shift version throws ConcurrentConflictError
+    ok 4 - swap approve: stale shift version throws ConcurrentConflictError
+      ---
+      duration_ms: 1.370493
+      ...
+    # Subtest: swap reject and withdraw terminate the swap
+    ok 5 - swap reject and withdraw terminate the swap
+      ---
+      duration_ms: 1.527596
+      ...
+    # Subtest: open shift: offer → accept (audience person) → select (version-checked)
+    ok 6 - open shift: offer → accept (audience person) → select (version-checked)
+      ---
+      duration_ms: 2.08456
+      ...
+    # Subtest: open shift: withdraw closes the row and rejects double-fill via version check
+    ok 7 - open shift: withdraw closes the row and rejects double-fill via version check
+      ---
+      duration_ms: 1.128164
+      ...
+    1..7
+ok 11 - m05 swap + open-shift
+  ---
+  duration_ms: 24.249579
+  type: 'suite'
+  ...
+# Subtest: m05 timezone / DST
+    # Subtest: TZ-01: cross-midnight shift keeps localEnd date > localStart date and computes UTC correctly
+    ok 1 - TZ-01: cross-midnight shift keeps localEnd date > localStart date and computes UTC correctly
+      ---
+      duration_ms: 25.898723
+      ...
+    # Subtest: TZ-02: clinic-calendar date differs from UTC for the same instant (Pacific/Auckland)
+    ok 2 - TZ-02: clinic-calendar date differs from UTC for the same instant (Pacific/Auckland)
+      ---
+      duration_ms: 0.711653
+      ...
+    # Subtest: TZ-03: DST spring-forward gap → unresolved with reason `dst-gap`
+    ok 3 - TZ-03: DST spring-forward gap → unresolved with reason `dst-gap`
+      ---
+      duration_ms: 0.757545
+      ...
+    # Subtest: TZ-04: DST fall-back repeated hour stored with fold (default fold=0 → earlier)
+    ok 4 - TZ-04: DST fall-back repeated hour stored with fold (default fold=0 → earlier)
+      ---
+      duration_ms: 2.154041
+      ...
+    # Subtest: TZ-05: explicit fold=1 selects the LATER occurrence of the repeated local hour
+    ok 5 - TZ-05: explicit fold=1 selects the LATER occurrence of the repeated local hour
+      ---
+      duration_ms: 7.820409
+      ...
+    # Subtest: TZ-06: two clinics in different IANA TZs produce different UTC instants for the same wall time
+    ok 6 - TZ-06: two clinics in different IANA TZs produce different UTC instants for the same wall time
+      ---
+      duration_ms: 1.8049
+      ...
+    # Subtest: TZ-07: same asOf produces deterministic resolved window
+    ok 7 - TZ-07: same asOf produces deterministic resolved window
+      ---
+      duration_ms: 2.220256
+      ...
+    # Subtest: TZ-08: invalid / unavailable timezone → explainable unresolved; NO silent UTC
+    ok 8 - TZ-08: invalid / unavailable timezone → explainable unresolved; NO silent UTC
+      ---
+      duration_ms: 0.143435
+      ...
+    # Subtest: invalid local time format → `invalid-local-time` reason (defensive)
+    ok 9 - invalid local time format → `invalid-local-time` reason (defensive)
+      ---
+      duration_ms: 0.339949
+      ...
+    # Subtest: end must fall after start in same TZ (not end-before-start)
+    ok 10 - end must fall after start in same TZ (not end-before-start)
+      ---
+      duration_ms: 0.956697
+      ...
+    1..10
+ok 12 - m05 timezone / DST
+  ---
+  duration_ms: 45.700555
+  type: 'suite'
+  ...
+# Subtest: m05 ux-state contract
+    # Subtest: UX-08: ConcurrentConflictError carries version/target metadata for retry UI
+    ok 1 - UX-08: ConcurrentConflictError carries version/target metadata for retry UI
+      ---
+      duration_ms: 0.888953
+      ...
+    # Subtest: UX-05: OverrideReasonRequiredError has a stable name and default message
+    ok 2 - UX-05: OverrideReasonRequiredError has a stable name and default message
+      ---
+      duration_ms: 0.211631
+      ...
+    # Subtest: UX-05: InvalidLifecycleTransitionError encodes from/to for validation UI
+    ok 3 - UX-05: InvalidLifecycleTransitionError encodes from/to for validation UI
+      ---
+      duration_ms: 0.212625
+      ...
+    # Subtest: UX-06 / immutable publication guard raises a distinct error
+    ok 4 - UX-06 / immutable publication guard raises a distinct error
+      ---
+      duration_ms: 0.202156
+      ...
+    # Subtest: §25: eight UX state identifiers are covered by the plan vocabulary
+    ok 5 - §25: eight UX state identifiers are covered by the plan vocabulary
+      ---
+      duration_ms: 0.269106
+      ...
+    # Subtest: LoadingState prerequisite: ensureM05Bootstrapped returns null when window is unavailable
+    ok 6 - LoadingState prerequisite: ensureM05Bootstrapped returns null when window is unavailable
+      ---
+      duration_ms: 0.181122
+      ...
+    # Subtest: OfflineState retry: ensureM05Bootstrapped is idempotent once storage is available
+    ok 7 - OfflineState retry: ensureM05Bootstrapped is idempotent once storage is available
+      ---
+      duration_ms: 0.515349
+      ...
+    # Subtest: errors thrown by services are `instanceof Error` — enables `SystemErrorState` fallback
+    ok 8 - errors thrown by services are `instanceof Error` — enables `SystemErrorState` fallback
+      ---
+      duration_ms: 0.147892
+      ...
+    # Subtest: `ConcurrentConflictError.message` is human-readable (used verbatim in `ConcurrentConflictState`)
+    ok 9 - `ConcurrentConflictError.message` is human-readable (used verbatim in `ConcurrentConflictState`)
+      ---
+      duration_ms: 0.164291
+      ...
+    1..9
+ok 13 - m05 ux-state contract
+  ---
+  duration_ms: 3.559586
+  type: 'suite'
+  ...
+1..13
+# tests 117
+# suites 13
+# pass 117
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2163.573088

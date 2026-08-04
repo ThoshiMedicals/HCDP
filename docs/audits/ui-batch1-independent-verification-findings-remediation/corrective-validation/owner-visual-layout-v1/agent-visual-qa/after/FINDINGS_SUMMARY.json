@@ -1,0 +1,101 @@
+{
+  "phase": "Phase 4 FINAL Visual QA",
+  "role": "VISUAL_QA_AGENT",
+  "worktree_live": "/tmp/hcdp-fix/ui-batch1-vqa-3490",
+  "evidence_root": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa",
+  "final_application_source_sha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+  "live_head_sha": "d822dfd4a80ed0c98635a0ff8631f9e39fe781f0",
+  "sha_match": true,
+  "base_url": "http://127.0.0.1:3490",
+  "ports_preserved": [3000, 3491],
+  "application_source_edited": false,
+  "claims": {
+    "independent_verification": false,
+    "merge_readiness": false,
+    "production_approval": false
+  },
+  "matrix_totals": {
+    "screenshots_inspected": 16,
+    "pass": 15,
+    "fail": 1,
+    "blocked": 0
+  },
+  "findings": [
+    {
+      "id": "VQA-001",
+      "title": "MOBILE EMERGENCY ACTION CLIPPING",
+      "status": "CLOSED",
+      "severity": "Critical",
+      "baseline_observation": "FAIL",
+      "final_observation": "PASS",
+      "finding_file": "findings/VQA-001.md",
+      "after_evidence": [
+        "after/screenshots/light-390-_dashboard.png",
+        "after/screenshots/dark-390-_dashboard.png",
+        "after/defect-crops/side-by-side-VQA-001-cta.png"
+      ]
+    },
+    {
+      "id": "VQA-002",
+      "title": "MOBILE TOPBAR OVERLAP",
+      "status": "CLOSED",
+      "severity": "Major",
+      "baseline_observation": "FAIL",
+      "final_observation": "PASS",
+      "finding_file": "findings/VQA-002.md",
+      "after_evidence": [
+        "after/screenshots/light-390-_dashboard.png",
+        "after/screenshots/light-390-_settings.png",
+        "after/defect-crops/side-by-side-VQA-002-topbar.png"
+      ]
+    },
+    {
+      "id": "VQA-003",
+      "title": "MOBILE PAGE-HEADING TRUNCATION",
+      "status": "CLOSED",
+      "severity": "Major",
+      "baseline_observation": "FAIL",
+      "final_observation": "PASS",
+      "finding_file": "findings/VQA-003.md",
+      "after_evidence": [
+        "after/screenshots/light-390-_settings.png",
+        "after/screenshots/light-390-_staffpay_section_overview.png",
+        "after/defect-crops/side-by-side-VQA-003-settings-h1.png"
+      ]
+    },
+    {
+      "id": "VQA-004",
+      "title": "DESKTOP SIDEBAR FOOTER OVERLAP",
+      "status": "CLOSED",
+      "severity": "Critical",
+      "baseline_observation": "FAIL",
+      "final_observation": "PASS",
+      "finding_file": "findings/VQA-004.md",
+      "after_evidence": [
+        "after/screenshots/light-1440-_dashboard.png",
+        "after/screenshots/dark-1440-_dashboard.png",
+        "after/screenshots/light-1024x768-_dashboard-sidebar-footer.png",
+        "after/screenshots/light-1440x720-_dashboard-sidebar-footer.png",
+        "after/defect-crops/side-by-side-VQA-004-footer.png"
+      ]
+    },
+    {
+      "id": "VQA-005",
+      "title": "MID-WIDTH EMERGENCY ANNOUNCEMENT LAYOUT COLLAPSE",
+      "status": "OPEN",
+      "severity": "Critical",
+      "baseline_observation": "N/A (not in Phase 2 proven set; discovered Phase 4)",
+      "final_observation": "FAIL",
+      "finding_file": "findings/VQA-005.md",
+      "after_evidence": [
+        "after/screenshots/light-1024x768-_dashboard-sidebar-footer.png",
+        "after/defect-crops/inspect-1024-emergency-full.png"
+      ]
+    }
+  ],
+  "final_verdict_summary": {
+    "original_proven_defects_VQA_001_to_004": "CLOSED",
+    "residual_open_visual_findings": ["VQA-005"],
+    "note": "DOM geometry probe advisory only; Visual FAIL on VQA-005 stands. Not independent verification / merge readiness / production approval."
+  }
+}

@@ -1,0 +1,787 @@
+{
+  "appSha": "d68040688cbf76fb1f8715c27aa06ad6ff72242c",
+  "base": "http://127.0.0.1:3490",
+  "capturedAt": "2026-08-04T03:42:51.615Z",
+  "captures": [
+    {
+      "route": "/dashboard",
+      "w": 1024,
+      "h": 768,
+      "ap": "light",
+      "name": "light-1024x768-_dashboard.png",
+      "footer": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-1024x768-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1024,
+      "h": 768,
+      "ap": "dark",
+      "name": "dark-1024x768-_dashboard.png",
+      "footer": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/dark-1024x768-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-390-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 390,
+      "h": 844,
+      "ap": "dark",
+      "name": "dark-390-_dashboard.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/dark-390-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 900,
+      "ap": "light",
+      "name": "light-1440-_dashboard.png",
+      "footer": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-1440-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/dashboard",
+      "w": 1440,
+      "h": 900,
+      "ap": "dark",
+      "name": "dark-1440-_dashboard.png",
+      "footer": true,
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/dark-1440-_dashboard.png",
+      "finalUrl": "http://127.0.0.1:3490/dashboard"
+    },
+    {
+      "route": "/settings",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_settings.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-390-_settings.png",
+      "finalUrl": "http://127.0.0.1:3490/settings"
+    },
+    {
+      "route": "/staffpay?section=overview",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_staffpay_section_overview.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-390-_staffpay_section_overview.png",
+      "finalUrl": "http://127.0.0.1:3490/staffpay?section=overview"
+    },
+    {
+      "route": "/action-inbox",
+      "w": 390,
+      "h": 844,
+      "ap": "light",
+      "name": "light-390-_action-inbox.png",
+      "file": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-visual-qa/revalidation-d680406/screenshots/light-390-_action-inbox.png",
+      "finalUrl": "http://127.0.0.1:3490/action-inbox"
+    }
+  ],
+  "geometry": [
+    {
+      "shot": "light-1024x768-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 1024,
+        "h": 768
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 419,
+        "clientWidth": 419,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 490,
+          "y": 276,
+          "w": 204,
+          "h": 45,
+          "right": 694,
+          "bottom": 320,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 662,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 662,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 325,
+            "y": 276,
+            "w": 90,
+            "h": 45,
+            "right": 415,
+            "bottom": 320
+          },
+          {
+            "t": "Next",
+            "x": 421,
+            "y": 276,
+            "w": 63,
+            "h": 45,
+            "right": 484,
+            "bottom": 320
+          },
+          {
+            "t": "View All Announcements",
+            "x": 490,
+            "y": 276,
+            "w": 204,
+            "h": 45,
+            "right": 694,
+            "bottom": 320
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 700,
+            "y": 276,
+            "w": 147,
+            "h": 45,
+            "right": 846,
+            "bottom": 320
+          },
+          {
+            "t": "Acknowledge",
+            "x": 852,
+            "y": 276,
+            "w": 124,
+            "h": 45,
+            "right": 976,
+            "bottom": 320
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 325,
+            "y": 326,
+            "w": 145,
+            "h": 45,
+            "right": 470,
+            "bottom": 371
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "dark-1024x768-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 1024,
+        "h": 768
+      },
+      "appearance": "dark",
+      "themeDark": true,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 419,
+        "clientWidth": 419,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 490,
+          "y": 276,
+          "w": 204,
+          "h": 45,
+          "right": 694,
+          "bottom": 320,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 662,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 662,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 325,
+            "y": 276,
+            "w": 90,
+            "h": 45,
+            "right": 415,
+            "bottom": 320
+          },
+          {
+            "t": "Next",
+            "x": 421,
+            "y": 276,
+            "w": 63,
+            "h": 45,
+            "right": 484,
+            "bottom": 320
+          },
+          {
+            "t": "View All Announcements",
+            "x": 490,
+            "y": 276,
+            "w": 204,
+            "h": 45,
+            "right": 694,
+            "bottom": 320
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 700,
+            "y": 276,
+            "w": 147,
+            "h": 45,
+            "right": 846,
+            "bottom": 320
+          },
+          {
+            "t": "Acknowledge",
+            "x": 852,
+            "y": 276,
+            "w": 124,
+            "h": 45,
+            "right": 976,
+            "bottom": 320
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 325,
+            "y": 326,
+            "w": 145,
+            "h": 45,
+            "right": 470,
+            "bottom": 371
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "light-390-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 366,
+        "clientWidth": 366,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 29,
+          "y": 464,
+          "w": 204,
+          "h": 45,
+          "right": 233,
+          "bottom": 509,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 332,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 332,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 29,
+            "y": 414,
+            "w": 90,
+            "h": 45,
+            "right": 119,
+            "bottom": 458
+          },
+          {
+            "t": "Next",
+            "x": 125,
+            "y": 414,
+            "w": 63,
+            "h": 45,
+            "right": 188,
+            "bottom": 458
+          },
+          {
+            "t": "View All Announcements",
+            "x": 29,
+            "y": 464,
+            "w": 204,
+            "h": 45,
+            "right": 233,
+            "bottom": 509
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 29,
+            "y": 515,
+            "w": 147,
+            "h": 45,
+            "right": 176,
+            "bottom": 559
+          },
+          {
+            "t": "Acknowledge",
+            "x": 182,
+            "y": 515,
+            "w": 124,
+            "h": 45,
+            "right": 306,
+            "bottom": 559
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 29,
+            "y": 565,
+            "w": 145,
+            "h": 45,
+            "right": 174,
+            "bottom": 610
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "dark-390-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "appearance": "dark",
+      "themeDark": true,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 366,
+        "clientWidth": 366,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 29,
+          "y": 464,
+          "w": 204,
+          "h": 45,
+          "right": 233,
+          "bottom": 509,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 332,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 332,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 29,
+            "y": 414,
+            "w": 90,
+            "h": 45,
+            "right": 119,
+            "bottom": 458
+          },
+          {
+            "t": "Next",
+            "x": 125,
+            "y": 414,
+            "w": 63,
+            "h": 45,
+            "right": 188,
+            "bottom": 458
+          },
+          {
+            "t": "View All Announcements",
+            "x": 29,
+            "y": 464,
+            "w": 204,
+            "h": 45,
+            "right": 233,
+            "bottom": 509
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 29,
+            "y": 515,
+            "w": 147,
+            "h": 45,
+            "right": 176,
+            "bottom": 559
+          },
+          {
+            "t": "Acknowledge",
+            "x": 182,
+            "y": 515,
+            "w": 124,
+            "h": 45,
+            "right": 306,
+            "bottom": 559
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 29,
+            "y": 565,
+            "w": 145,
+            "h": 45,
+            "right": 174,
+            "bottom": 610
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "light-1440-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 419,
+        "clientWidth": 419,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 1115,
+          "y": 138,
+          "w": 204,
+          "h": 45,
+          "right": 1319,
+          "bottom": 183,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 778,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 1078,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 1115,
+            "y": 88,
+            "w": 90,
+            "h": 45,
+            "right": 1205,
+            "bottom": 132
+          },
+          {
+            "t": "Next",
+            "x": 1211,
+            "y": 88,
+            "w": 63,
+            "h": 45,
+            "right": 1274,
+            "bottom": 132
+          },
+          {
+            "t": "View All Announcements",
+            "x": 1115,
+            "y": 138,
+            "w": 204,
+            "h": 45,
+            "right": 1319,
+            "bottom": 183
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 1115,
+            "y": 189,
+            "w": 147,
+            "h": 45,
+            "right": 1262,
+            "bottom": 233
+          },
+          {
+            "t": "Acknowledge",
+            "x": 1268,
+            "y": 189,
+            "w": 124,
+            "h": 45,
+            "right": 1392,
+            "bottom": 233
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 1115,
+            "y": 239,
+            "w": 145,
+            "h": 45,
+            "right": 1260,
+            "bottom": 284
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "dark-1440-_dashboard.png",
+      "url": "http://127.0.0.1:3490/dashboard",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "appearance": "dark",
+      "themeDark": true,
+      "h1": {
+        "text": "Owner/Director Command Centre",
+        "scrollWidth": 419,
+        "clientWidth": 419,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": {
+          "x": 1115,
+          "y": 138,
+          "w": 204,
+          "h": 45,
+          "right": 1319,
+          "bottom": 183,
+          "overflowsViewport": false
+        },
+        "bodyWidth": 778,
+        "bodyText": "Emergency announcementBeachmere clinic temporary closure — utilities faultBeachmere is temporarily closed due to a criti",
+        "cardWidth": 1078,
+        "buttonOverlapsBody": [],
+        "buttons": [
+          {
+            "t": "Previous",
+            "x": 1115,
+            "y": 88,
+            "w": 90,
+            "h": 45,
+            "right": 1205,
+            "bottom": 132
+          },
+          {
+            "t": "Next",
+            "x": 1211,
+            "y": 88,
+            "w": 63,
+            "h": 45,
+            "right": 1274,
+            "bottom": 132
+          },
+          {
+            "t": "View All Announcements",
+            "x": 1115,
+            "y": 138,
+            "w": 204,
+            "h": 45,
+            "right": 1319,
+            "bottom": 183
+          },
+          {
+            "t": "Open Full Notice",
+            "x": 1115,
+            "y": 189,
+            "w": 147,
+            "h": 45,
+            "right": 1262,
+            "bottom": 233
+          },
+          {
+            "t": "Acknowledge",
+            "x": 1268,
+            "y": 189,
+            "w": 124,
+            "h": 45,
+            "right": 1392,
+            "bottom": 233
+          },
+          {
+            "t": "Withdraw notice",
+            "x": 1115,
+            "y": 239,
+            "w": 145,
+            "h": 45,
+            "right": 1260,
+            "bottom": 284
+          }
+        ]
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "light-390-_settings.png",
+      "url": "http://127.0.0.1:3490/settings",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Organisation, Locations, Users & Permissions",
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": null,
+        "bodyWidth": null,
+        "bodyText": null,
+        "cardWidth": null,
+        "buttonOverlapsBody": [],
+        "buttons": []
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "light-390-_staffpay_section_overview.png",
+      "url": "http://127.0.0.1:3490/staffpay?section=overview",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Staff Pay & Payroll Preparation",
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": null,
+        "bodyWidth": null,
+        "bodyText": null,
+        "cardWidth": null,
+        "buttonOverlapsBody": [],
+        "buttons": []
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    },
+    {
+      "shot": "light-390-_action-inbox.png",
+      "url": "http://127.0.0.1:3490/action-inbox",
+      "viewport": {
+        "w": 390,
+        "h": 844
+      },
+      "appearance": "light",
+      "themeDark": false,
+      "h1": {
+        "text": "Action Inbox & Notifications",
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "truncated": false
+      },
+      "emergency": {
+        "viewAll": null,
+        "bodyWidth": null,
+        "bodyText": null,
+        "cardWidth": null,
+        "buttonOverlapsBody": [],
+        "buttons": []
+      },
+      "topbarBrandOverlap": false,
+      "sidebarFooter": {
+        "present": true,
+        "userName": "Sarah Mitchell",
+        "userRole": "Senior Administrator",
+        "nameRoleOverlap": {
+          "overlap": false,
+          "gapPx": 0
+        },
+        "demoAct": "SMSarah MitchellSenior AdministratorDavid King · DirectorSar"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "mode": "production",
+  "profile": "full-matrix",
+  "base": "http://127.0.0.1:3493",
+  "out": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-regression/revalidation-fe8bc37/prod-matrix",
+  "startedAt": "2026-08-04T04:18:35.180Z",
+  "appSha": "fe8bc37fa370b299a4fbe721209761272f27265f",
+  "node": "v22.14.0",
+  "endedAt": "2026-08-04T04:23:52.194Z",
+  "matrixEntries": 338
+}

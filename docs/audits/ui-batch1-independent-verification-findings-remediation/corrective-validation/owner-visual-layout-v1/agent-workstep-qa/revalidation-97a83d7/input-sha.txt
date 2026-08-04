@@ -1,0 +1,11 @@
+phase=Phase 4 FINAL spot-check REVALIDATION
+worktree=/tmp/hcdp-fix/ui-batch1-wqa-3491
+frozen_application_source_sha=97a83d7beb219ce01a7b12c6f70a975a44614d59
+confirmed_head=97a83d7beb219ce01a7b12c6f70a975a44614d59
+head_matches_freeze=true
+live_server=http://127.0.0.1:3491
+server_mode=production next start
+evidence_root=/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-workstep-qa/revalidation-97a83d7
+agent=Work-Step / Functional QA
+recorded_at=2026-08-04T04:27:16Z
+note=READ-ONLY short spot-check. No src/test edits. Shell unchanged since fe8bc37; confirm at exact SHA 97a83d7.

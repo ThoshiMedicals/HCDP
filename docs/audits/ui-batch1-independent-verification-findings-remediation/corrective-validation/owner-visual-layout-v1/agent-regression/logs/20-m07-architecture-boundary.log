@@ -1,0 +1,144 @@
+TAP version 13
+# Subtest: CP2.7A architecture / static boundaries
+    # Subtest: M07 production has no pulse.m06 access or M06 internal imports
+    ok 1 - M07 production has no pulse.m06 access or M06 internal imports
+      ---
+      duration_ms: 9.630854
+      ...
+    # Subtest: M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+    ok 2 - M07 does not mutate platform registry storage; discovery health probe is the only KEYS import
+      ---
+      duration_ms: 6.931136
+      ...
+    # Subtest: single intake and hash implementations; replay uses platform query + CP2.4 intake
+    ok 3 - single intake and hash implementations; replay uses platform query + CP2.4 intake
+      ---
+      duration_ms: 9.474615
+      ...
+    # Subtest: M06 production does not write pulse.m07 or import M07 modules
+    ok 4 - M06 production does not write pulse.m07 or import M07 modules
+      ---
+      duration_ms: 5.4008
+      ...
+    # Subtest: prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+    ok 5 - prohibits payroll/banking/payment fields in M07 snapshot and lifecycle stores
+      ---
+      duration_ms: 1.285253
+      ...
+    # Subtest: does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+    ok 6 - does not implement Module 5 demand-rostering or Premium Clinical Enterprise redesign in M07
+      ---
+      duration_ms: 10.526391
+      ...
+    # Subtest: documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+    ok 7 - documents scan scope: production ts under m07 (excl tests), m06 (excl tests); strings/comments stripped
+      ---
+      duration_ms: 1.055563
+      ...
+    1..7
+ok 1 - CP2.7A architecture / static boundaries
+  ---
+  duration_ms: 45.068014
+  type: 'suite'
+  ...
+# Subtest: CP2.7A Batch 2 final-gate E2E
+    # Subtest: E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+    ok 1 - E2E: publish→replay→intake→hold→restore→material→supersession→recovery→isolation; BLOCKED-M07 cleared
+      ---
+      duration_ms: 34.658685
+      ...
+    # Subtest: global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+    ok 2 - global eventSequence tenant-filter: cross-tenant holes are not tenant gaps
+      ---
+      duration_ms: 3.828962
+      ...
+    1..2
+ok 2 - CP2.7A Batch 2 final-gate E2E
+  ---
+  duration_ms: 39.099821
+  type: 'suite'
+  ...
+# Subtest: CP2.3 M07 platform boundary — no legacy M06 scrape
+    # Subtest: A. Legacy removal / static enforcement
+        # Subtest: M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape
+        ok 1 - M07 production source has no pulse.m06 access, M06 imports, or key enumeration scrape
+          ---
+          duration_ms: 13.88981
+          ...
+        # Subtest: writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape)
+        ok 2 - writing legacy M06 timesheet keys does not feed M07 discovery (no fallback scrape)
+          ---
+          duration_ms: 0.672987
+          ...
+        1..2
+    ok 1 - A. Legacy removal / static enforcement
+      ---
+      duration_ms: 15.040984
+      type: 'suite'
+      ...
+    # Subtest: B. Controlled behaviour
+        # Subtest: returns empty when no platform publication exists
+        ok 1 - returns empty when no platform publication exists
+          ---
+          duration_ms: 0.480569
+          ...
+        # Subtest: returns unavailable for corrupt registry
+        ok 2 - returns unavailable for corrupt registry
+          ---
+          duration_ms: 0.376727
+          ...
+        # Subtest: returns unavailable for unsupported contract versions only
+        ok 3 - returns unavailable for unsupported contract versions only
+          ---
+          duration_ms: 0.680695
+          ...
+        # Subtest: discovers platform publications without implying intake
+        ok 4 - discovers platform publications without implying intake
+          ---
+          duration_ms: 1.860203
+          ...
+        1..4
+    ok 2 - B. Controlled behaviour
+      ---
+      duration_ms: 3.601334
+      type: 'suite'
+      ...
+    # Subtest: C. Tenant isolation
+        # Subtest: does not return cross-org or cross-legal-entity publications; guessed ids fail closed
+        ok 1 - does not return cross-org or cross-legal-entity publications; guessed ids fail closed
+          ---
+          duration_ms: 1.128068
+          ...
+        1..1
+    ok 3 - C. Tenant isolation
+      ---
+      duration_ms: 1.225998
+      type: 'suite'
+      ...
+    # Subtest: D. Preservation / blocker
+        # Subtest: does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared
+        ok 1 - does not wipe M07 batch1 keys and keeps BLOCKED-M07 cleared
+          ---
+          duration_ms: 0.309329
+          ...
+        1..1
+    ok 4 - D. Preservation / blocker
+      ---
+      duration_ms: 0.373419
+      type: 'suite'
+      ...
+    1..4
+ok 3 - CP2.3 M07 platform boundary — no legacy M06 scrape
+  ---
+  duration_ms: 20.711761
+  type: 'suite'
+  ...
+1..3
+# tests 17
+# suites 7
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 280.279485

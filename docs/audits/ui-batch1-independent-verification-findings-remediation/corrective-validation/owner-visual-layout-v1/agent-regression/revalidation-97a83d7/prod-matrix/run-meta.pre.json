@@ -1,0 +1,11 @@
+{
+  "startedUtc": "2026-08-04T04:43:53.934Z",
+  "base": "http://127.0.0.1:3493",
+  "outAbs": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-regression/revalidation-97a83d7/prod-matrix",
+  "outRel": "../ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-regression/revalidation-97a83d7/prod-matrix",
+  "mode": "production",
+  "appSha": "97a83d7beb219ce01a7b12c6f70a975a44614d59",
+  "script": "/tmp/hcdp-fix/ui-batch1-reg-3493/scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+  "cwd": "/tmp/hcdp-fix/ui-batch1-reg-3493",
+  "note": "Wrapper only; repo validate.mjs unmodified. Historical prod-matrix-v3 not touched."
+}

@@ -1,0 +1,116 @@
+{
+  "phase": "Phase 2 baseline visual inspection",
+  "role": "VISUAL_QA_AGENT",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+  "input_sha": "f837bdd08e1db30e68c63cfb2542e3120bc40d00",
+  "last_application_source_sha": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+  "owner_server_port": 3000,
+  "live_render_port_policy": 3490,
+  "live_render": {
+    "status": "BLOCKED",
+    "reason": "Screenshot-based Phase 2 inspection only; live :3490 not started to avoid competing with owner :3000 / other agents"
+  },
+  "application_source_edited": false,
+  "claims": {
+    "independent_verification": false,
+    "merge_readiness": false,
+    "production_approval": false
+  },
+  "matrix_totals": {
+    "screenshots_inspected": 14,
+    "pass": 0,
+    "fail": 14,
+    "blocked_screenshot_rows": 0,
+    "live_render": "BLOCKED"
+  },
+  "findings": [
+    {
+      "id": "VQA-001",
+      "title": "MOBILE EMERGENCY ACTION CLIPPING",
+      "status": "OPEN",
+      "severity": "Critical",
+      "observation": "FAIL",
+      "routes": ["/dashboard"],
+      "themes": ["light", "dark"],
+      "viewport": "390x844",
+      "affected_element": "Emergency card action 'View All Announcements'",
+      "finding_file": "findings/VQA-001.md",
+      "primary_screenshots": [
+        "baseline/light-390-_dashboard.png",
+        "baseline/dark-390-_dashboard.png"
+      ]
+    },
+    {
+      "id": "VQA-002",
+      "title": "MOBILE TOPBAR OVERLAP",
+      "status": "OPEN",
+      "severity": "Major",
+      "observation": "FAIL",
+      "routes": [
+        "/dashboard",
+        "/action-inbox",
+        "/settings",
+        "/staffpay/section/overview",
+        "/staffpay/section/adjustments"
+      ],
+      "themes": ["light", "dark"],
+      "viewport": "390x844",
+      "affected_element": "Doctors Pulse brand under Dashboard/Action Inbox topbar controls",
+      "finding_file": "findings/VQA-002.md",
+      "primary_screenshots": [
+        "baseline/light-390-_dashboard.png",
+        "baseline/dark-390-_dashboard.png",
+        "baseline/light-390-_action-inbox.png",
+        "baseline/dark-390-_action-inbox.png",
+        "baseline/light-390-_settings.png",
+        "baseline/dark-390-_settings.png",
+        "baseline/light-390-_staffpay_section_overview.png",
+        "baseline/dark-390-_staffpay_section_overview.png",
+        "baseline/light-390-_staffpay_section_adjustments.png",
+        "baseline/dark-390-_staffpay_section_adjustments.png"
+      ]
+    },
+    {
+      "id": "VQA-003",
+      "title": "MOBILE PAGE-HEADING TRUNCATION",
+      "status": "OPEN",
+      "severity": "Major",
+      "observation": "FAIL",
+      "routes": [
+        "/settings",
+        "/staffpay/section/overview",
+        "/staffpay/section/adjustments"
+      ],
+      "themes": ["light", "dark"],
+      "viewport": "390x844",
+      "affected_element": "Canonical H1 ellipsis (Organisation/Locations/Users; Staff Pay & Payroll Preparation)",
+      "finding_file": "findings/VQA-003.md",
+      "primary_screenshots": [
+        "baseline/light-390-_settings.png",
+        "baseline/dark-390-_settings.png",
+        "baseline/light-390-_staffpay_section_overview.png",
+        "baseline/dark-390-_staffpay_section_overview.png",
+        "baseline/light-390-_staffpay_section_adjustments.png",
+        "baseline/dark-390-_staffpay_section_adjustments.png"
+      ]
+    },
+    {
+      "id": "VQA-004",
+      "title": "DESKTOP SIDEBAR FOOTER OVERLAP",
+      "status": "OPEN",
+      "severity": "Critical",
+      "observation": "FAIL",
+      "routes": ["/dashboard", "/staffpay/section/overview"],
+      "themes": ["light", "dark"],
+      "viewport": "1440x900",
+      "affected_element": "Sidebar footer identity/role/Act-as/Demo Act-as overlap and crop",
+      "finding_file": "findings/VQA-004.md",
+      "primary_screenshots": [
+        "baseline/light-1440-_dashboard.png",
+        "baseline/dark-1440-_dashboard.png",
+        "baseline/light-1440-_staffpay_section_overview.png",
+        "baseline/dark-1440-_staffpay_section_overview.png"
+      ]
+    }
+  ]
+}
