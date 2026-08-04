@@ -174,8 +174,8 @@ function classifyEvent(text, url = "") {
   if (/Unexpected end of JSON input/i.test(t)) {
     return { class: "application-json-parse", allowlisted: false, rationale: "JSON parse error is never auto-allowlisted" };
   }
-  if (/hydration|did not match|Text content does not match/i.test(t)) {
-    return { class: "application-hydration", allowlisted: false, rationale: "Hydration mismatch" };
+  if (/hydration|did not match|Text content does not match|Minified React error #418|React error #418/i.test(t)) {
+    return { class: "application-hydration", allowlisted: false, rationale: "Hydration mismatch (incl. React #418)" };
   }
   if (/Failed to load resource/i.test(t)) {
     return { class: "application-resource-failure", allowlisted: false, rationale: "Resource load failure — not allowlisted" };
@@ -395,7 +395,11 @@ function attachRouteCollectors(page, bag) {
       if (entry.allowlisted) bag.allowlistedEvents.push(entry);
       else bag.appConsoleErrors.push(entry);
     }
-    if (/hydration|did not match|Text content does not match/i.test(text)) {
+    if (
+      /hydration|did not match|Text content does not match|Minified React error #418|React error #418/i.test(
+        text
+      )
+    ) {
       bag.hydrationSignatures.push(entry);
     }
   };
@@ -411,18 +415,45 @@ function attachRouteCollectors(page, bag) {
     bag.rawEvents.push(entry);
     if (entry.allowlisted) bag.allowlistedEvents.push(entry);
     else bag.appPageErrors.push(entry);
-    if (/hydration|did not match/i.test(text)) bag.hydrationSignatures.push(entry);
+    if (
+      /hydration|did not match|Minified React error #418|React error #418/i.test(text)
+    ) {
+      bag.hydrationSignatures.push(entry);
+    }
   };
   const onRequestFailed = (req) => {
     const failure = req.failure();
+    const failureText = failure?.errorText || "unknown";
+    const url = req.url();
+    let cls = classifyEvent(failureText, url);
+    // Narrow: aborted same-origin RSC/prefetch due to rapid navigation — not HTTP 4xx/5xx.
+    if (
+      /net::ERR_ABORTED/i.test(failureText) &&
+      (url.includes("_rsc=") || url.includes("/_next/") || req.resourceType() === "fetch")
+    ) {
+      try {
+        const u = new URL(url);
+        const base = new URL(BASE);
+        if (u.origin === base.origin) {
+          cls = {
+            class: "environmental-nav-abort",
+            allowlisted: true,
+            rationale:
+              "Same-origin fetch/RSC aborted by subsequent navigation (Playwright route churn). Recorded but not an HTTP 403/500/JSON application failure.",
+          };
+        }
+      } catch {
+        /* keep prior classification */
+      }
+    }
     const entry = {
       type: "requestfailed",
-      url: req.url(),
+      url,
       method: req.method(),
       resourceType: req.resourceType(),
-      failureText: failure?.errorText || "unknown",
+      failureText,
       at: nowIso(),
-      ...classifyEvent(failure?.errorText || "", req.url()),
+      ...cls,
     };
     bag.rawEvents.push(entry);
     bag.failedRequests.push(entry);
