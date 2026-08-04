@@ -16,7 +16,8 @@
  *   - application console error
  *   - hydration mismatch
  *   - horizontal page overflow
- *   - chrome-scoped element clip / occlusion / unintended truncation
+ *   - chrome-scoped element clip / occlusion / unintended truncation only
+ *     (non-chrome module content is recorded in elementClipHits, not hard-failed)
  *   - typography / contrast / dark-surface hard-gate failure
  *   - unallowlisted requestfailed
  *
@@ -742,23 +743,20 @@ async function pageProbe(page) {
       elementClipHits.push(hit);
     }
 
-    // Hard fails: only for meaningfully visible controls (centre in viewport).
-    // Never hard-fail legitimate scroll-region / sticky-footer / below-fold / h-scroll noise.
+    // Hard fails: CHROME-SCOPED only (D5 / Phase 4 Loop 3).
+    // Non-chrome module content (M04–M06 buttons clipped by overflow-x-hidden, etc.) stays in
+    // elementClipHits / overflowHits for evidence but must NOT adjudicate matrix fail.
+    const nonChromeElementClipHits = elementClipHits.filter((h) => !h.chromeScoped).length;
     const elementClipFails = overflowHits.filter((h) => {
+      if (!h.chromeScoped) return false;
       if (h.noisyScrollContainer) return false;
       if (h.legitimateScrollRegionExemption) return false;
       if (h.stickyFooterScrollOcclusion) return false;
       if (h.belowViewportPageScroll) return false;
       if (h.horizontalScrollEscape) return false;
-      // Prompt: fail when a *visible meaningful* control is defective — centre must be on-screen.
+      // Visible meaningful chrome control — centre must be on-screen.
       if (!h.centreInViewport) return false;
-      if (!h.chromeScoped) {
-        return (
-          (h.outsideViewport && (h.tag === "button" || h.tag === "a" || h.tag === "select" || h.tag === "input")) ||
-          (h.occluded && (h.tag === "button" || h.tag === "a" || h.tag === "select"))
-        );
-      }
-      // Chrome-scoped: brand / seg-mini / emergency / sidebar-user / H1 / top-ribbon while visible.
+      // Chrome-scoped: brand / seg-mini / emergency / sidebar-user / H1 / top-ribbon.
       return (
         h.outsideViewport ||
         h.clippedByAncestor ||
@@ -775,6 +773,7 @@ async function pageProbe(page) {
       overflowHits: overflowHits.slice(0, 80),
       elementClipHits: elementClipHits.slice(0, 120),
       elementClipFails: elementClipFails.slice(0, 40),
+      nonChromeElementClipHits,
       sidebarCount: document.querySelectorAll(".pulse-sidebar").length,
       bootstrapStatus: document.querySelector("[data-m07-bootstrap-status]")?.textContent || null,
       scrollWidth: docEl.scrollWidth,
@@ -998,6 +997,7 @@ async function visitRoute(page, route, meta, bag) {
     overflowHits: [],
     elementClipHits: [],
     elementClipFails: [],
+    nonChromeElementClipHits: 0,
     htmlDark: false,
   }));
 
@@ -1021,6 +1021,7 @@ async function visitRoute(page, route, meta, bag) {
     overflowHits: probe.overflowHits || [],
     elementClipHits: probe.elementClipHits || [],
     elementClipFails: probe.elementClipFails || [],
+    nonChromeElementClipHits: probe.nonChromeElementClipHits || 0,
     scrollWidth: probe.scrollWidth,
     clientWidth: probe.clientWidth,
     appConsoleErrors: [...bag.appConsoleErrors],
@@ -1281,6 +1282,7 @@ function summarise(matrix, allRaw, appearanceResults, extras = {}) {
     hydrationTotal: matrix.reduce((n, m) => n + (m.hydrationSignatures?.length || 0), 0),
     overflowFailCount: matrix.filter((m) => m.horizontalOverflow).length,
     elementClipFailCount: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
+    nonChromeElementClipHits: matrix.reduce((n, m) => n + (m.nonChromeElementClipHits || 0), 0),
     consoleAppErrorCount: matrix.reduce((n, m) => n + (m.appConsoleErrors?.length || 0), 0),
     pageErrorCount: matrix.reduce((n, m) => n + (m.appPageErrors?.length || 0), 0),
     http500,

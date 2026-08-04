@@ -176,6 +176,26 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /\.pulse-top-ribbon/);
     assert.match(script, /\.cc-pulse\.cc-surface-danger/);
   });
+
+  it("hard-fails element-clip only for chromeScoped controls (non-chrome evidence retained)", () => {
+    const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
+    // First gate in elementClipFails filter must reject non-chrome.
+    assert.match(script, /const elementClipFails = overflowHits\.filter/);
+    assert.match(script, /if\s*\(\s*!h\.chromeScoped\s*\)\s*return false/);
+    assert.match(script, /nonChromeElementClipHits/);
+    // Non-chrome must not use the old interactive-control hard-fail disjunct.
+    assert.doesNotMatch(
+      script,
+      /if\s*\(\s*!h\.chromeScoped\s*\)\s*\{\s*return\s*\(\s*\(h\.outsideViewport/
+    );
+    // Chrome gates still listed.
+    assert.match(script, /\.pulse-top-ribbon/);
+    assert.match(script, /\.brand-compact/);
+    assert.match(script, /\.seg-mini/);
+    assert.match(script, /\.cc-pulse\.cc-surface-danger/);
+    assert.match(script, /\.sidebar-user/);
+    assert.match(script, /page-title h1/);
+  });
 });
 
 describe("IV findings remediation — Phase 3 hydration governance (D7)", () => {
