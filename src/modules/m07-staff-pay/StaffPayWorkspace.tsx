@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ModuleSectionNav } from "@/components/shell/ModuleSectionNav";
 import {
@@ -25,7 +25,7 @@ import {
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
-/** SSR + first client paint share this label; detail fills after bootstrap mounts. */
+/** SSR + first client paint share this label; detail appears after bootstrap mounts. */
 const BOOTSTRAP_STATUS_PLACEHOLDER = "Storage bootstrap · schema v9";
 
 const NAV = (Object.keys(M07_SECTION_META) as M07SectionId[]).map((id) => ({
@@ -81,17 +81,10 @@ function WorkspaceInner() {
   const { section, setSection, bootstrap } = useStaffPay();
   const router = useRouter();
   const pathname = usePathname();
-  const [bootstrapStatus, setBootstrapStatus] = useState(BOOTSTRAP_STATUS_PLACEHOLDER);
-
-  useEffect(() => {
-    if (!bootstrap) {
-      setBootstrapStatus(BOOTSTRAP_STATUS_PLACEHOLDER);
-      return;
-    }
-    setBootstrapStatus(
-      `Storage bootstrap · schema v9 · v9Ran=${String(bootstrap.v9Ran ?? false)}`
-    );
-  }, [bootstrap]);
+  // Derive during render — keeps SSR/first-client markup identical (always the <p role="status">).
+  const bootstrapStatus = bootstrap
+    ? `Storage bootstrap · schema v9 · v9Ran=${String(bootstrap.v9Ran ?? false)}`
+    : BOOTSTRAP_STATUS_PLACEHOLDER;
 
   function go(id: M07SectionId) {
     setSection(id);
