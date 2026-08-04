@@ -4,7 +4,7 @@
 **Branch:** `cursor/ui-batch1-owner-colour-readability-verification-fixes`  
 **Worktree:** `/tmp/hcdp-fix/ui-batch1-vf-fixes`  
 **Invalidated prior app SHA (VQA pass, regression fail):** `d68040688cbf76fb1f8715c27aa06ad6ff72242c`  
-**New application source SHA:** `fe8bc37` → full: `fe8bc37` (see below)  
+**New application source SHA:** `fe8bc37fa370b299a4fbe721209761272f27265f`  
 **Findings claimed closed:** **none**
 
 ---
@@ -14,9 +14,9 @@
 | Commit | SHA |
 | ------ | --- |
 | `fix(ui): restore m04/m05 lint-safe effect updates` | `f984ef6951843bd2e7aad6154b172ffc3a8503d3` |
-| `test(ui): exempt legitimate scroll from element-clip fails` | `fe8bc370a0c8d8f0e6c5f1b2…` *(resolved at push)* |
+| `test(ui): exempt legitimate scroll from element-clip fails` | `fe8bc37fa370b299a4fbe721209761272f27265f` |
 
-**New final application source SHA:** last commit touching `src/` / `scripts/` / tests = **`fe8bc37…`** (validator + tests). Lint-only app SHA also includes `f984ef6`.
+**New final application source SHA:** `fe8bc37fa370b299a4fbe721209761272f27265f` (validator + tests). Lint fix: `f984ef6951843bd2e7aad6154b172ffc3a8503d3`.
 
 ---
 
