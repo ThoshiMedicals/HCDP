@@ -399,6 +399,40 @@ async function pageProbe(page) {
       return r.right <= 1;
     }
 
+    function describeClipNode(node) {
+      const cs = getComputedStyle(node);
+      const r = node.getBoundingClientRect();
+      const clientW = node.clientWidth;
+      const clientH = node.clientHeight;
+      // When the node is a true constrained scroller, expose the *client* box (visible area),
+      // not the full content-sized border box (tall .cc-root with overflow:auto but no clamp).
+      const constrainedY =
+        (cs.overflowY === "auto" || cs.overflowY === "scroll") &&
+        node.scrollHeight > clientH + 2;
+      const constrainedX =
+        (cs.overflowX === "auto" || cs.overflowX === "scroll") &&
+        node.scrollWidth > clientW + 2;
+      return {
+        tag: node.tagName.toLowerCase(),
+        className: String(node.className || "").slice(0, 80),
+        overflowX: cs.overflowX,
+        overflowY: cs.overflowY,
+        position: cs.position,
+        constrainedY,
+        constrainedX,
+        rect: {
+          x: Number(r.x.toFixed(2)),
+          y: Number(r.y.toFixed(2)),
+          width: Number((constrainedX || constrainedY ? clientW : r.width).toFixed(2)),
+          height: Number((constrainedY ? clientH : r.height).toFixed(2)),
+        },
+        scrollWidth: node.scrollWidth,
+        clientWidth: clientW,
+        scrollHeight: node.scrollHeight,
+        clientHeight: clientH,
+      };
+    }
+
     function nearestClippingAncestor(el) {
       let node = el.parentElement;
       while (node && node !== document.documentElement) {
@@ -407,30 +441,43 @@ async function pageProbe(page) {
         const oy = cs.overflowY;
         const clips =
           /(auto|scroll|hidden|clip)/.test(ox) || /(auto|scroll|hidden|clip)/.test(oy);
-        if (clips) {
-          return {
-            tag: node.tagName.toLowerCase(),
-            className: String(node.className || "").slice(0, 80),
-            overflowX: ox,
-            overflowY: oy,
-            rect: (() => {
-              const r = node.getBoundingClientRect();
-              return {
-                x: Number(r.x.toFixed(2)),
-                y: Number(r.y.toFixed(2)),
-                width: Number(r.width.toFixed(2)),
-                height: Number(r.height.toFixed(2)),
-              };
-            })(),
-            scrollWidth: node.scrollWidth,
-            clientWidth: node.clientWidth,
-            scrollHeight: node.scrollHeight,
-            clientHeight: node.clientHeight,
-          };
-        }
+        if (clips) return describeClipNode(node);
         node = node.parentElement;
       }
       return null;
+    }
+
+    /** Nearest ancestor that actually scrolls vertically (scrollHeight > clientHeight). */
+    function nearestVerticalScrollport(el) {
+      let node = el.parentElement;
+      while (node && node !== document.documentElement) {
+        const cs = getComputedStyle(node);
+        if (
+          (cs.overflowY === "auto" || cs.overflowY === "scroll") &&
+          node.scrollHeight > node.clientHeight + 2
+        ) {
+          return describeClipNode(node);
+        }
+        node = node.parentElement;
+      }
+      // Page-level scroll containers used by the shell (must be constrained scrollers).
+      for (const sel of ["main", ".content", ".app", ".cc-root", ".pulse-sidebar nav"]) {
+        const node = el.closest?.(sel);
+        if (
+          node instanceof HTMLElement &&
+          node.scrollHeight > node.clientHeight + 2
+        ) {
+          const cs = getComputedStyle(node);
+          if (cs.overflowY === "auto" || cs.overflowY === "scroll") {
+            return describeClipNode(node);
+          }
+        }
+      }
+      return null;
+    }
+
+    function isScrollPort(anc) {
+      return !!(anc && anc.constrainedY);
     }
 
     function clipExtents(elRect, clipRect) {
@@ -443,6 +490,61 @@ async function pageProbe(page) {
         clippedW: Number((left + right).toFixed(2)),
         clippedH: Number((top + bottom).toFixed(2)),
       };
+    }
+
+    function overlapRatio(elRect, box) {
+      if (!box || elRect.width <= 0 || elRect.height <= 0) return 0;
+      const ox = Math.max(
+        0,
+        Math.min(elRect.x + elRect.width, box.x + box.width) - Math.max(elRect.x, box.x)
+      );
+      const oy = Math.max(
+        0,
+        Math.min(elRect.y + elRect.height, box.y + box.height) - Math.max(elRect.y, box.y)
+      );
+      return (ox * oy) / (elRect.width * elRect.height);
+    }
+
+    /** Visible portion of a scrollport clamped to the viewport (client view). */
+    function visibleScrollportBox(scrollport) {
+      if (!scrollport?.rect) return null;
+      const b = scrollport.rect;
+      const x = Math.max(0, b.x);
+      const y = Math.max(0, b.y);
+      const right = Math.min(vw, b.x + b.width);
+      const bottom = Math.min(vh, b.y + b.height);
+      const width = right - x;
+      const height = bottom - y;
+      if (width <= 1 || height <= 1) return null;
+      return { x, y, width, height };
+    }
+
+    /**
+     * Legitimate scroll-region exemption: centre or majority of the box lies outside
+     * the nearest vertical scrollport's viewport-visible client area
+     * (nav.overflow-auto, main, .content, .app, overflow-x-auto rows).
+     */
+    function legitimateScrollRegionExemption(elRect, scrollport) {
+      if (!scrollport) return false;
+      const box = visibleScrollportBox(scrollport) || scrollport.rect;
+      if (!box) return false;
+      const cx = elRect.x + elRect.width / 2;
+      const cy = elRect.y + elRect.height / 2;
+      const centreOutside =
+        cy < box.y - 1 ||
+        cy > box.y + box.height + 1 ||
+        cx < box.x - 1 ||
+        cx > box.x + box.width + 1;
+      const majorityOutside = overlapRatio(elRect, box) < 0.5;
+      return centreOutside || majorityOutside;
+    }
+
+    /** Horizontal overflow-x auto/scroll containers (tables, ribbon-right) — not layout defects. */
+    function inHorizontalScrollContainer(el, clipAnc) {
+      if (clipAnc && (clipAnc.overflowX === "auto" || clipAnc.overflowX === "scroll")) return true;
+      return !!el.closest?.(
+        ".overflow-x-auto, .ribbon-right, [class*='overflow-x-auto'], [class*='overflow-x-scroll']"
+      );
     }
 
     function isChromeScoped(el) {
@@ -473,7 +575,28 @@ async function pageProbe(page) {
         skipped: null,
         topTag: top.tagName?.toLowerCase() || null,
         topClass: String(top.className || "").slice(0, 60),
+        topEl: top,
       };
+    }
+
+    /**
+     * Sticky/fixed sidebar footer covering a nav link scrolled underneath is not a
+     * true occlusion defect — the control is clipped by the scrollable nav above it.
+     */
+    function stickyFooterScrollOcclusion(el, occ, scrollport) {
+      if (!occ?.occluded || !occ.topEl) return false;
+      const footer = occ.topEl.closest?.(".sidebar-user");
+      if (!footer) return false;
+      // Footer sits below flex-1 overflow nav (sticky/fixed or stacked shrink-0); nav links
+      // scrolled underneath are legitimate scroll, not chrome occlusion defects.
+      const inSidebarNav =
+        !!el.closest?.(".pulse-sidebar nav, nav.flex-1, nav[aria-label='Platform modules']") ||
+        !!(
+          scrollport &&
+          /nav/i.test(String(scrollport.tag || "")) &&
+          el.closest?.(".pulse-sidebar")
+        );
+      return inSidebarNav && !!scrollport;
     }
 
     function hasUnintendedTruncation(el) {
@@ -502,54 +625,50 @@ async function pageProbe(page) {
       if (isInsideClosedDrawer(el)) continue;
 
       const r = el.getBoundingClientRect();
-      // Skip controls entirely below a legitimate vertical scroll region (not visible yet).
+      const elRect = { x: r.x, y: r.y, width: r.width, height: r.height };
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      // Meaningful visibility: hard-fails require the control centre in the viewport.
+      const centreInViewport = cx >= 0 && cy >= 0 && cx <= vw && cy <= vh;
       const clipAnc = nearestClippingAncestor(el);
-      const inScrollRegion =
-        clipAnc &&
-        (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
-        r.top >= clipAnc.rect.y + clipAnc.rect.height - 1;
-      if (inScrollRegion && r.bottom > clipAnc.rect.y + clipAnc.rect.height + 2) {
-        // Entirely below scrollport — not a hard fail; record only if horizontal chrome issue.
-      }
+      const scrollport = nearestVerticalScrollport(el) || (
+        inHorizontalScrollContainer(el, clipAnc) ? clipAnc : null
+      );
+      const scrollExempt = legitimateScrollRegionExemption(elRect, scrollport);
+      const hScroll = inHorizontalScrollContainer(el, clipAnc);
 
       const eps = 1.5;
-      const outsideViewport =
-        r.left < -eps ||
-        r.right > vw + eps ||
-        (r.top < -eps && r.bottom > eps) ||
-        (r.bottom > vh + eps && r.top < vh - eps && r.left < vw && r.right > 0 && isChromeScoped(el));
-
-      // Vertical overflow inside a scrollable main/content region is legitimate scrolling.
-      const legitimateVerticalScroll =
-        clipAnc &&
-        (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
-        r.left >= -eps &&
-        r.right <= vw + eps &&
-        !isChromeScoped(el);
+      // Horizontal escape always matters; vertical-only below/above fold is page scroll.
+      const outsideViewportX = r.left < -eps || r.right > vw + eps;
+      const outsideViewportY =
+        (r.top < -eps && r.bottom > eps) || (r.bottom > vh + eps && r.top < vh - eps);
+      const entirelyOutsideViewportY = r.bottom <= eps || r.top >= vh - eps;
+      const outsideViewport = outsideViewportX || (outsideViewportY && !entirelyOutsideViewportY);
 
       const clipBox = clipAnc?.rect || null;
-      const { clippedW, clippedH } = clipExtents(
-        { x: r.x, y: r.y, width: r.width, height: r.height },
-        clipBox
-      );
+      const { clippedW, clippedH } = clipExtents(elRect, clipBox);
+      // Vertical-only clip by a scrollport is legitimate scrolling, not a layout defect.
+      const verticalOnlyScrollClip =
+        isScrollPort(clipAnc) && clippedW <= 2 && clippedH > 2;
+      // Horizontal-only clip inside overflow-x auto/scroll is legitimate row/table scroll.
+      const horizontalOnlyScrollClip =
+        hScroll && clippedH <= 2 && clippedW > 2;
       const clippedByAncestor =
         !!clipAnc &&
         (clippedW > 2 || clippedH > 2) &&
-        !(
-          (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
-          clippedW <= 2 &&
-          clippedH > 2
-        );
+        !verticalOnlyScrollClip &&
+        !horizontalOnlyScrollClip &&
+        !scrollExempt;
 
       const occ = centreOccluded(el);
-      // Ignore occlusion when centre is outside viewport or element is in closed drawer.
+      const footerScrollOcc = stickyFooterScrollOcclusion(el, occ, scrollport);
+      // Ignore occlusion when centre outside viewport, scroll-exempt, or under sticky footer.
       const occluded =
         !!occ.occluded &&
         !occ.skipped &&
-        r.top < vh &&
-        r.bottom > 0 &&
-        r.left < vw &&
-        r.right > 0;
+        !scrollExempt &&
+        !footerScrollOcc &&
+        centreInViewport;
 
       const trunc = hasUnintendedTruncation(el);
       const scrollOverflow = el.scrollWidth > el.clientWidth + 2;
@@ -559,6 +678,15 @@ async function pageProbe(page) {
         el.matches?.("main, .content") ||
         el.classList?.contains("content") ||
         el.tagName === "MAIN";
+
+      // Vertical-only escape through the viewport edge = page/document scroll, not a defect.
+      // Covers fully below/above fold and partially past the fold (e.g. 15px of a toolbar button).
+      const belowViewportPageScroll =
+        !outsideViewportX &&
+        (entirelyOutsideViewportY || (outsideViewportY && !outsideViewportX));
+
+      // Non-chrome (or ribbon overflow) horizontal scroll escape — not a layout defect.
+      const horizontalScrollEscape = !!(outsideViewportX && hScroll);
 
       const hit = {
         kind: "element-clip-probe",
@@ -573,18 +701,33 @@ async function pageProbe(page) {
           height: Number(r.height.toFixed(2)),
         },
         viewport: { width: vw, height: vh },
-        outsideViewport: !!outsideViewport && !legitimateVerticalScroll,
+        centreInViewport,
+        outsideViewport:
+          !!outsideViewport &&
+          !scrollExempt &&
+          !belowViewportPageScroll &&
+          !(horizontalScrollEscape && !isChromeScoped(el)),
         nearestClippingAncestor: clipAnc,
+        nearestVerticalScrollport: scrollport,
+        legitimateScrollRegionExemption: !!scrollExempt,
+        stickyFooterScrollOcclusion: !!footerScrollOcc,
+        horizontalScrollEscape: !!horizontalScrollEscape,
         clippedW,
         clippedH,
-        clippedByAncestor: !!clippedByAncestor && !legitimateVerticalScroll,
+        clippedByAncestor: !!clippedByAncestor,
         scrollWidth: el.scrollWidth,
         clientWidth: el.clientWidth,
         scrollOverflow,
-        centreOcclusion: occ,
+        centreOcclusion: {
+          occluded: occ.occluded,
+          skipped: occ.skipped,
+          topTag: occ.topTag,
+          topClass: occ.topClass,
+        },
         occluded,
         unintendedTruncation: trunc,
         noisyScrollContainer: !!noisyScrollContainer,
+        belowViewportPageScroll: !!belowViewportPageScroll,
       };
 
       if (
@@ -592,23 +735,30 @@ async function pageProbe(page) {
         hit.clippedByAncestor ||
         hit.occluded ||
         hit.unintendedTruncation ||
-        (scrollOverflow && !noisyScrollContainer)
+        (scrollOverflow && !noisyScrollContainer && !scrollExempt && !hScroll)
       ) {
         overflowHits.push(hit);
       }
       elementClipHits.push(hit);
     }
 
-    // Chrome-scoped hard fails for adjudication (avoid noisy .content scrollWidth).
+    // Hard fails: only for meaningfully visible controls (centre in viewport).
+    // Never hard-fail legitimate scroll-region / sticky-footer / below-fold / h-scroll noise.
     const elementClipFails = overflowHits.filter((h) => {
       if (h.noisyScrollContainer) return false;
+      if (h.legitimateScrollRegionExemption) return false;
+      if (h.stickyFooterScrollOcclusion) return false;
+      if (h.belowViewportPageScroll) return false;
+      if (h.horizontalScrollEscape) return false;
+      // Prompt: fail when a *visible meaningful* control is defective — centre must be on-screen.
+      if (!h.centreInViewport) return false;
       if (!h.chromeScoped) {
-        // Non-chrome: only fail clear viewport escape or occlusion of interactive controls.
         return (
           (h.outsideViewport && (h.tag === "button" || h.tag === "a" || h.tag === "select" || h.tag === "input")) ||
           (h.occluded && (h.tag === "button" || h.tag === "a" || h.tag === "select"))
         );
       }
+      // Chrome-scoped: brand / seg-mini / emergency / sidebar-user / H1 / top-ribbon while visible.
       return (
         h.outsideViewport ||
         h.clippedByAncestor ||

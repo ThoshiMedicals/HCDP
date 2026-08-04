@@ -151,6 +151,31 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /noisyScrollContainer/);
     assert.match(script, /isInsideClosedDrawer/);
   });
+
+  it("exempts legitimate scroll regions and sticky sidebar-footer occlusion from hard fails", () => {
+    const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
+    assert.match(script, /legitimateScrollRegionExemption/);
+    assert.match(script, /nearestVerticalScrollport/);
+    assert.match(script, /stickyFooterScrollOcclusion/);
+    assert.match(script, /belowViewportPageScroll/);
+    assert.match(script, /verticalOnlyScrollClip/);
+    assert.match(script, /horizontalScrollEscape/);
+    assert.match(script, /centreInViewport/);
+    assert.match(script, /visibleScrollportBox/);
+    // Hard-fail filter must honour scroll exemptions (not weaken chrome gates).
+    assert.match(
+      script,
+      /if\s*\(\s*h\.legitimateScrollRegionExemption\s*\)\s*return false/
+    );
+    assert.match(script, /if\s*\(\s*h\.stickyFooterScrollOcclusion\s*\)\s*return false/);
+    assert.match(script, /if\s*\(\s*h\.belowViewportPageScroll\s*\)\s*return false/);
+    assert.match(script, /if\s*\(\s*h\.horizontalScrollEscape\s*\)\s*return false/);
+    assert.match(script, /if\s*\(\s*!h\.centreInViewport\s*\)\s*return false/);
+    // Chrome-scoped gate retained.
+    assert.match(script, /h\.chromeScoped/);
+    assert.match(script, /\.pulse-top-ribbon/);
+    assert.match(script, /\.cc-pulse\.cc-surface-danger/);
+  });
 });
 
 describe("IV findings remediation — Phase 3 hydration governance (D7)", () => {
