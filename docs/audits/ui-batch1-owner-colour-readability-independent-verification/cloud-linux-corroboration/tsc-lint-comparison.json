@@ -1,0 +1,19 @@
+{
+  "tsc": {
+    "candidateCount": 21,
+    "baselineCount": 21,
+    "exactLineMatch": true,
+    "messageSetMatch": true,
+    "onlyCandidate": [],
+    "onlyBaseline": []
+  },
+  "lint": {
+    "candidateCount": 26,
+    "baselineCount": 26,
+    "exactMatch": true,
+    "onlyCandidate": [],
+    "onlyBaseline": [],
+    "errors": 2,
+    "warnings": 24
+  }
+}

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "F-TYPO-NAV-12",
+    "severity": "Major",
+    "gate": "Typography readability",
+    "summary": ".v32-nav-toggle and other nav/control selectors use --type-meta (12px), below the required ≥13px for navigation/control text.",
+    "evidence": [
+      "typography-token-audit.json",
+      "browser-validation-report.json issues kind=typography-nav-control-min-13"
+    ],
+    "reproduction": "Open /dashboard @1440 Light; inspect sidebar group labels (EXECUTIVE COMMAND, PEOPLE, ROSTER); computed font-size is 12px.",
+    "adjudication": "FAIL — candidate-introduced token mapping; not dismissed."
+  },
+  {
+    "id": "F-ICON-FAV-CONTRAST",
+    "severity": "Minor",
+    "gate": "Controls/boundaries/focus contrast",
+    "summary": "Favourite star on active nav row measures ~2.99:1 vs required ≥3:1 for meaningful icons.",
+    "evidence": [
+      "browser-validation-report.json contrast samples"
+    ],
+    "reproduction": "/dashboard Light 1440; measure .v33-fav-star.is-fav on .nav-row.active",
+    "adjudication": "FAIL against 3:1 icon gate."
+  },
+  {
+    "id": "F-APPEAR-AUTOMATION",
+    "severity": "Major (qualified non-regression)",
+    "gate": "Appearance persistence",
+    "summary": "Setting pulse.cc.appearance to dark/system and reloading does not apply body.theme-dark in Playwright (Chrome) automation. Same-method failure on f3333b6 baseline.",
+    "evidence": [
+      "baseline/same-method-comparison.json",
+      "appearance-focused-probe.json"
+    ],
+    "reproduction": "localStorage dark + reload on :3465 and :3466; themeDark remains false on both.",
+    "adjudication": "QUALIFIED — independently proven unchanged vs visual-remediation base; not candidate-only."
+  },
+  {
+    "id": "F-SECTION-SELECTED-SYNC",
+    "severity": "Major (qualified non-regression)",
+    "gate": "Function preservation",
+    "summary": "Module section tab selected state / compact select often remain on default section despite ?section= URL (M04/M05/M06/M07). Same on baseline. Direct content for M07 adjustments still renders PPA wording.",
+    "evidence": [
+      "baseline/section-and-appearance-compare.json"
+    ],
+    "reproduction": "Goto /staffpay?section=adjustments; observe selected tab may still read Pay Run Overview while page content includes Adjustments/PPA text.",
+    "adjudication": "QUALIFIED — unchanged vs f3333b6; URL history navigation still works."
+  },
+  {
+    "id": "F-DARK-LEAK-BOUNDED",
+    "severity": "Minor",
+    "gate": "Dark-mode readability",
+    "summary": "Matrix recorded lightSurfaceLeaks on 4 cells.",
+    "evidence": [
+      "browser-validation-report.json"
+    ],
+    "samples": [
+      {
+        "route": "/settings",
+        "width": 1440,
+        "appearance": "dark",
+        "issues": [
+          "typographyFails=78",
+          "lightSurfaceLeaks=1"
+        ],
+        "leak": 1
+      },
+      {
+        "route": "/settings",
+        "width": 1024,
+        "appearance": "dark",
+        "issues": [
+          "typographyFails=78",
+          "lightSurfaceLeaks=1"
+        ],
+        "leak": 1
+      },
+      {
+        "route": "/settings",
+        "width": 768,
+        "appearance": "dark",
+        "issues": [
+          "typographyFails=78",
+          "lightSurfaceLeaks=1"
+        ],
+        "leak": 1
+      },
+      {
+        "route": "/settings",
+        "width": 390,
+        "appearance": "dark",
+        "issues": [
+          "typographyFails=80",
+          "lightSurfaceLeaks=1"
+        ],
+        "leak": 1
+      }
+    ],
+    "adjudication": "QUALIFIED — bounded; focused dark token surfaces pass; investigate residual white surfaces before merge planning."
+  },
+  {
+    "id": "N-PORT-3000",
+    "severity": "Informational",
+    "gate": "Environment",
+    "summary": "Owner-inspection server on port 3000 / PID 17288 was ABSENT at pre-flight and remained down; not restarted (preserve-only).",
+    "evidence": [
+      "environment.txt"
+    ]
+  }
+]

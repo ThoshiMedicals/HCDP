@@ -1,0 +1,84 @@
+{
+  "candidate": {
+    "darkReload": {
+      "stored": "dark",
+      "themeDark": false,
+      "bodyBg": "rgb(245, 247, 250)"
+    },
+    "darkViaDispatch": {
+      "ok": true,
+      "value": "dark",
+      "stored": "dark",
+      "themeDark": false,
+      "after": {
+        "stored": "dark",
+        "themeDark": false,
+        "bodyBg": "rgb(245, 247, 250)"
+      }
+    },
+    "systemOsDark": {
+      "prefersDark": true,
+      "stored": "system",
+      "themeDark": false,
+      "bodyBg": "rgb(245, 247, 250)"
+    },
+    "sectionTab": {
+      "url": "http://127.0.0.1:3465/staff-doctors",
+      "selected": "Overview"
+    },
+    "rosterTab": {
+      "url": "http://127.0.0.1:3465/roster",
+      "selected": "Roster Board"
+    },
+    "hydration": [],
+    "/staff-pay": {
+      "status": 404,
+      "url": "http://127.0.0.1:3465/staff-pay"
+    },
+    "/m07": {
+      "status": 404,
+      "url": "http://127.0.0.1:3465/m07"
+    }
+  },
+  "baseline": {
+    "darkReload": {
+      "stored": "dark",
+      "themeDark": false,
+      "bodyBg": "rgb(251, 251, 250)"
+    },
+    "darkViaDispatch": {
+      "ok": true,
+      "value": "dark",
+      "stored": "dark",
+      "themeDark": false,
+      "after": {
+        "stored": "dark",
+        "themeDark": false,
+        "bodyBg": "rgb(251, 251, 250)"
+      }
+    },
+    "systemOsDark": {
+      "prefersDark": true,
+      "stored": "system",
+      "themeDark": false,
+      "bodyBg": "rgb(251, 251, 250)"
+    },
+    "sectionTab": {
+      "url": "http://127.0.0.1:3466/staff-doctors",
+      "selected": "Overview"
+    },
+    "rosterTab": {
+      "url": "http://127.0.0.1:3466/roster",
+      "selected": "Roster Board"
+    },
+    "hydration": [],
+    "/staff-pay": {
+      "status": 404,
+      "url": "http://127.0.0.1:3466/staff-pay"
+    },
+    "/m07": {
+      "status": 404,
+      "url": "http://127.0.0.1:3466/m07"
+    }
+  }
+}
