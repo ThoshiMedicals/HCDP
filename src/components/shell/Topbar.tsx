@@ -117,7 +117,7 @@ export function Topbar() {
   }
 
   return (
-    <div className="pulse-top-ribbon sticky top-0 z-[3] flex min-h-[52px] flex-wrap items-center justify-between gap-2 border-b border-[var(--v34-card-line)] bg-[var(--card)] px-[10px] py-1.5 text-[var(--ink)] lg:flex-nowrap lg:px-[14px]">
+    <div className="pulse-top-ribbon sticky top-0 z-[3] flex min-h-[52px] w-full min-w-0 max-w-full flex-wrap items-center justify-between gap-2 overflow-x-auto border-b border-[var(--v34-card-line)] bg-[var(--card)] px-[10px] py-1.5 text-[var(--ink)] lg:flex-nowrap lg:px-[14px]">
       <div className="ribbon-left flex min-w-0 flex-1 items-center gap-2 lg:flex-none">
         <button
           type="button"
@@ -209,7 +209,7 @@ export function Topbar() {
         </button>
         <button
           type="button"
-          className="hidden shrink-0 items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] xl:inline-flex"
+          className="hidden shrink-0 items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] 2xl:inline-flex"
           onClick={() =>
             pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
           }
@@ -220,7 +220,7 @@ export function Topbar() {
         <button
           type="button"
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-control)] font-bold",
+            "inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-control)] font-bold",
             online
               ? "border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)]"
               : "border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)]"
