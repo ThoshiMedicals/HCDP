@@ -2,9 +2,10 @@
 
 **Lane:** Application remediation after independent verification FAIL  
 **Branch:** `cursor/ui-batch1-owner-colour-readability-verification-fixes`  
-**Application source SHA tested (final):** `e6e2f90ea42f39ddab1d5ce39c1e306f214a1742`  
-**Evidence/report commit:** (this docs commit; tip after push)  
-**Branch tip:** see git HEAD after evidence push  
+**Application source SHA tested (final):**   
+**Proof commits after app SHA are evidence/docs-only through tip:** `e6e2f90ea42f39ddab1d5ce39c1e306f214a1742`  
+**Evidence/report commit:**   
+**Branch tip:**   
 **Base (failed candidate tip):** `ee9731e38e7d20d6d825e6c243503f4aea9564c3`  
 **Independent-verification evidence tip (read-only):** `51fbfa980b9c834184a384ddcf956340397bf205`  
 **origin/main confirmed:** `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76`  
