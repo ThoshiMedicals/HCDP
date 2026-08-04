@@ -12,6 +12,7 @@ import {
 } from "react";
 import type { ToastTone } from "@/components/ui/Toast";
 import { usePortal } from "@/lib/portal-context";
+import { useHydrated } from "@/lib/use-hydrated";
 import { useIdentity } from "@/platform/context/identity-context";
 import { registerWorkforcePersonLookup } from "@/platform/workforce/services/identity-workforce-resolver";
 import {
@@ -28,7 +29,14 @@ import { toWorkforcePersonRef, listPeople, getPerson } from "./services/person-s
 import { calculateReadiness, getEffectiveReadiness } from "./services/readiness-service";
 import type { M04SectionId, MigrationReport } from "./types/domain";
 import { M04_SECTION_ALIASES } from "./types/domain";
-import { getWorkforceCounts } from "./adapters/m04-executive";
+import { getWorkforceCounts, type WorkforceCounts } from "./adapters/m04-executive";
+
+const EMPTY_WORKFORCE_COUNTS: WorkforceCounts = {
+  activeStaff: 0,
+  activeDoctors: 0,
+  blockedReadiness: 0,
+  onLeave: 0,
+};
 
 interface StaffDoctorsContextValue {
   section: M04SectionId;
@@ -76,6 +84,7 @@ export function StaffDoctorsProvider({ children }: { children: ReactNode }) {
     getM04BootstrapReport,
     () => null
   );
+  const hydrated = useHydrated();
 
   const bump = useCallback(() => setRefreshKey((k) => k + 1), []);
 
@@ -126,15 +135,17 @@ export function StaffDoctorsProvider({ children }: { children: ReactNode }) {
 
   const counts = useMemo(() => {
     void refreshKey;
+    if (!hydrated) return EMPTY_WORKFORCE_COUNTS;
     ensureM04Bootstrapped();
     return getWorkforceCounts();
-  }, [refreshKey]);
+  }, [refreshKey, hydrated]);
 
   const peopleCount = useMemo(() => {
     void refreshKey;
+    if (!hydrated) return 0;
     ensureM04Bootstrapped();
     return listPeople().length;
-  }, [refreshKey]);
+  }, [refreshKey, hydrated]);
 
   const value: StaffDoctorsContextValue = {
     section,

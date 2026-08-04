@@ -1,23 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Panel, PanelSub, PanelTitle } from "@/components/ui/Panel";
 
-export function OfflineState() {
-  const [offline, setOffline] = useState(
-    typeof navigator !== "undefined" ? !navigator.onLine : false
-  );
+function subscribeOnline(onStoreChange: () => void): () => void {
+  window.addEventListener("online", onStoreChange);
+  window.addEventListener("offline", onStoreChange);
+  return () => {
+    window.removeEventListener("online", onStoreChange);
+    window.removeEventListener("offline", onStoreChange);
+  };
+}
 
-  useEffect(() => {
-    const onOnline = () => setOffline(false);
-    const onOffline = () => setOffline(true);
-    window.addEventListener("online", onOnline);
-    window.addEventListener("offline", onOffline);
-    return () => {
-      window.removeEventListener("online", onOnline);
-      window.removeEventListener("offline", onOffline);
-    };
-  }, []);
+function getOfflineSnapshot(): boolean {
+  return typeof navigator !== "undefined" ? !navigator.onLine : false;
+}
+
+/** SSR + hydration always online; live offline status applies after hydrate. */
+function getOfflineServerSnapshot(): boolean {
+  return false;
+}
+
+export function OfflineState() {
+  const offline = useSyncExternalStore(
+    subscribeOnline,
+    getOfflineSnapshot,
+    getOfflineServerSnapshot
+  );
 
   if (!offline) return null;
 

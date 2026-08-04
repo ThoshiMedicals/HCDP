@@ -3,6 +3,7 @@
 import { Suspense, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ModuleSectionNav } from "@/components/shell/ModuleSectionNav";
+import { useHydrated } from "@/lib/use-hydrated";
 import {
   M07_SECTION_META,
   StaffPayProvider,
@@ -25,7 +26,7 @@ import {
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
 
-/** SSR + first client paint share this label; detail appears after bootstrap mounts. */
+/** SSR + hydration share this label; detail appears only after hydrate. */
 const BOOTSTRAP_STATUS_PLACEHOLDER = "Storage bootstrap · schema v9";
 
 const NAV = (Object.keys(M07_SECTION_META) as M07SectionId[]).map((id) => ({
@@ -81,10 +82,12 @@ function WorkspaceInner() {
   const { section, setSection, bootstrap } = useStaffPay();
   const router = useRouter();
   const pathname = usePathname();
-  // Derive during render — keeps SSR/first-client markup identical (always the <p role="status">).
-  const bootstrapStatus = bootstrap
-    ? `Storage bootstrap · schema v9 · v9Ran=${String(bootstrap.v9Ran ?? false)}`
-    : BOOTSTRAP_STATUS_PLACEHOLDER;
+  const hydrated = useHydrated();
+  // Placeholder through hydration; detail only after React commits (avoids selective-hydration races).
+  const bootstrapStatus =
+    hydrated && bootstrap
+      ? `Storage bootstrap · schema v9 · v9Ran=${String(bootstrap.v9Ran ?? false)}`
+      : BOOTSTRAP_STATUS_PLACEHOLDER;
 
   function go(id: M07SectionId) {
     setSection(id);

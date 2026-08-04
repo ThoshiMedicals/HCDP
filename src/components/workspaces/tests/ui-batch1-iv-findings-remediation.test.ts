@@ -16,8 +16,27 @@ describe("IV findings remediation — hydration", () => {
     assert.match(ws, /BOOTSTRAP_STATUS_PLACEHOLDER/);
     assert.match(ws, /data-m07-bootstrap-status="1"/);
     assert.match(ws, /role="status"/);
+    assert.match(ws, /useHydrated/);
     assert.doesNotMatch(ws, /\{bootstrap\s*\?\s*\n?\s*<p/);
     assert.doesNotMatch(ws, /suppressHydrationWarning/);
+  });
+
+  it("root html allows theme-init attribute divergence via suppressHydrationWarning", () => {
+    const layout = read("src/app/layout.tsx");
+    assert.match(layout, /suppressHydrationWarning/);
+    assert.match(layout, /THEME_INIT_SCRIPT/);
+  });
+
+  it("M04 workforce counts stay zero through hydration", () => {
+    const ctx = read("src/modules/m04-staff-doctors/context.tsx");
+    assert.match(ctx, /useHydrated/);
+    assert.match(ctx, /EMPTY_WORKFORCE_COUNTS/);
+  });
+
+  it("M05 offline banner uses server snapshot false", () => {
+    const offline = read("src/modules/m05-roster/components/ux/OfflineState.tsx");
+    assert.match(offline, /useSyncExternalStore/);
+    assert.match(offline, /getOfflineServerSnapshot/);
   });
 });
 
