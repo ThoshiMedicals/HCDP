@@ -31,7 +31,11 @@ export function EmergencyBanner({
   const a = items[((index % items.length) + items.length) % items.length];
   return (
     <div className="cc-pulse cc-surface-danger rounded-2xl border px-4 py-3 shadow-sm">
-      <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto]">
+      {/*
+        Stack content→actions below xl so mid widths (768–1279, incl. 1024) keep full-width copy.
+        At xl+, use a bounded action column — never unconstrained `auto` from md.
+      */}
+      <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(0,18rem)]">
         <div className="min-w-0">
           <div className="text-[length:var(--type-control)] font-extrabold uppercase tracking-wide">Emergency announcement</div>
           <strong className="mt-0.5 block text-base leading-snug">{a.title}</strong>
@@ -48,7 +52,7 @@ export function EmergencyBanner({
             <span>Channels: {a.channels.join(", ")} (dashboard live · email/SMS demo only)</span>
           </div>
         </div>
-        <div className="flex w-full min-w-0 flex-wrap gap-1.5 self-center md:w-auto">
+        <div className="flex w-full min-w-0 flex-wrap gap-1.5 self-start">
           <Button small variant="line" onClick={onPrev} disabled={items.length < 2}>
             Previous
           </Button>

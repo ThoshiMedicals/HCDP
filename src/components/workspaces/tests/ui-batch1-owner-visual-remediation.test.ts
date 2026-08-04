@@ -139,13 +139,17 @@ describe("Owner visual remediation — dashboard hierarchy", () => {
 });
 
 describe("Owner visual remediation — Phase 3 chrome layout (D1–D4)", () => {
-  it("EmergencyBanner uses responsive grid and wrap-safe action cluster without shrink-0", () => {
+  it("EmergencyBanner stacks until xl with bounded action column (no md:auto squeeze)", () => {
     const src = read("src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx");
     const bannerFn = src.slice(src.indexOf("export function EmergencyBanner"));
     const banner = bannerFn.slice(0, bannerFn.indexOf("export function AnnouncementCarousel"));
-    assert.match(banner, /grid gap-3 md:grid-cols-\[minmax\(0,1fr\)_auto\]/);
+    // Mid-width (768–1279 incl. 1024) must remain single-column; side-by-side only at xl+.
+    assert.match(banner, /grid gap-3 xl:grid-cols-\[minmax\(0,1fr\)_minmax\(0,18rem\)\]/);
     assert.match(banner, /flex w-full min-w-0 flex-wrap/);
     assert.doesNotMatch(banner, /shrink-0/);
+    // Forbidden: unconstrained auto action column from md (VQA-005 root cause).
+    assert.doesNotMatch(banner, /md:grid-cols-\[minmax\(0,1fr\)_auto\]/);
+    assert.doesNotMatch(banner, /md:w-auto/);
   });
 
   it("PageHeader H1 allows wrap (no truncate) and keeps min-w-0", () => {
