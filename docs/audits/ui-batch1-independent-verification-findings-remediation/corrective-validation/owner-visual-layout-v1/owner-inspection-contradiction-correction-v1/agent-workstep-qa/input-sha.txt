@@ -1,0 +1,5 @@
+frozenAppSha=b661b6c1e3debdd8ba4d1e71b55fe9f7052f90b1
+worktreeHead=15984ee1bb5c734e345d568f1ef485d66492e89d
+diffSrcScriptsLines=0
+baseUrl=http://127.0.0.1:3501
+recordedAt=2026-08-04T05:45:57.319Z
