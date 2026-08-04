@@ -182,7 +182,7 @@ export function Topbar() {
         </label>
       </div>
 
-      <div className="ribbon-right flex shrink-0 items-center gap-1.5 overflow-x-auto sm:gap-2">
+      <div className="ribbon-right flex min-w-0 max-w-full items-center gap-1.5 overflow-x-auto sm:gap-2">
         <div className="seg-mini">
           <Link href="/dashboard" className={cn(onDashboard && "active")}>
             Dashboard
@@ -193,14 +193,14 @@ export function Topbar() {
         </div>
         <button
           type="button"
-          className="hidden rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] md:inline-flex"
+          className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] xl:inline-flex"
           onClick={() => openCreate("locations")}
         >
           + New Entry
         </button>
         <button
           type="button"
-          className="hidden rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--card)] px-2.5 py-1.5 text-sm font-bold text-[var(--ink)] md:inline-flex"
+          className="hidden shrink-0 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--card)] px-2.5 py-1.5 text-sm font-bold text-[var(--ink)] xl:inline-flex"
           onClick={() =>
             pushToast("Portal export requires a reporting backend. Use Command Centre Export for local demo packs.", "default")
           }
@@ -209,7 +209,7 @@ export function Topbar() {
         </button>
         <button
           type="button"
-          className="hidden items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] lg:inline-flex"
+          className="hidden shrink-0 items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] xl:inline-flex"
           onClick={() =>
             pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
           }

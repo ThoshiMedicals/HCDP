@@ -79,3 +79,9 @@ Note: `:3501` may serve an old build until Coordinator rebuilds — source fix i
 - Nested table/toolbars outside listed sections may still clip if a similar min-content blow-out exists elsewhere.
 - Intentional table horizontal scroll remains; gate must continue to honour `horizontalScrollEscape` / scroll-region exemptions.
 - M04 Settings/Reports section roots not updated (no Table); covered by Panel `min-w-0` if they host panels later.
+
+## Loop 2 — VQA-C-001 (after b661b6c)
+
+| File | Change |
+| --- | --- |
+| `src/components/shell/Topbar.tsx` | `.ribbon-right` → `min-w-0 max-w-full`; `+ New Entry`, `Export`, `Enterprise Sign-In · MFA` deferred to `xl:inline-flex` (handlers unchanged) |
