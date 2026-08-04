@@ -171,24 +171,36 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /if\s*\(\s*h\.belowViewportPageScroll\s*\)\s*return false/);
     assert.match(script, /if\s*\(\s*h\.horizontalScrollEscape\s*\)\s*return false/);
     assert.match(script, /if\s*\(\s*!h\.centreInViewport\s*\)\s*return false/);
-    // Chrome-scoped gate retained.
+    // chromeScoped retained on hits for reporting (not a hard-fail bypass).
     assert.match(script, /h\.chromeScoped/);
+    assert.match(script, /chromeScoped:\s*isChromeScoped\(el\)/);
     assert.match(script, /\.pulse-top-ribbon/);
     assert.match(script, /\.cc-pulse\.cc-surface-danger/);
   });
 
-  it("hard-fails element-clip only for chromeScoped controls (non-chrome evidence retained)", () => {
+  it("hard-fails element-clip for every meaningful control (complete gate, no non-chrome bypass)", () => {
     const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
-    // First gate in elementClipFails filter must reject non-chrome.
     assert.match(script, /const elementClipFails = overflowHits\.filter/);
-    assert.match(script, /if\s*\(\s*!h\.chromeScoped\s*\)\s*return false/);
-    assert.match(script, /nonChromeElementClipHits/);
-    // Non-chrome must not use the old interactive-control hard-fail disjunct.
+    // Blanket non-chrome bypass must NOT be present.
+    assert.doesNotMatch(script, /if\s*\(\s*!h\.chromeScoped\s*\)\s*return false/);
     assert.doesNotMatch(
       script,
       /if\s*\(\s*!h\.chromeScoped\s*\)\s*\{\s*return\s*\(\s*\(h\.outsideViewport/
     );
-    // Chrome gates still listed.
+    // Hard-fail disjunct includes clippedByAncestor for all remaining candidates.
+    assert.match(
+      script,
+      /return\s*\(\s*h\.outsideViewport\s*\|\|\s*h\.clippedByAncestor\s*\|\|\s*h\.occluded\s*\|\|\s*h\.unintendedTruncation\s*\)/
+    );
+    // Summary reports chrome / non-chrome defect splits among fails.
+    assert.match(script, /chromeDefects/);
+    assert.match(script, /nonChromeDefects/);
+    assert.match(script, /controlsInspected/);
+    assert.match(script, /controlsWithDefectFlags/);
+    assert.match(script, /justifiedExemptions/);
+    assert.match(script, /unresolvedDefects/);
+    assert.match(script, /nonChromeElementClipHits/);
+    // Probe selectors still cover chrome + module controls.
     assert.match(script, /\.pulse-top-ribbon/);
     assert.match(script, /\.brand-compact/);
     assert.match(script, /\.seg-mini/);

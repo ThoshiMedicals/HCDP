@@ -16,8 +16,13 @@
  *   - application console error
  *   - hydration mismatch
  *   - horizontal page overflow
- *   - chrome-scoped element clip / occlusion / unintended truncation only
- *     (non-chrome module content is recorded in elementClipHits, not hard-failed)
+ *   - complete meaningful-control clipping gate: every visible probed control
+ *     (button, a, input, select, H1, chrome controls) whose centre is in the
+ *     viewport hard-fails on outsideViewport / clippedByAncestor / occluded /
+ *     unintendedTruncation unless a legitimate exemption applies
+ *     (noisyScrollContainer, legitimateScrollRegionExemption,
+ *     stickyFooterScrollOcclusion, belowViewportPageScroll,
+ *     horizontalScrollEscape). chromeScoped is retained on hits for reporting.
  *   - typography / contrast / dark-surface hard-gate failure
  *   - unallowlisted requestfailed
  *
@@ -743,20 +748,19 @@ async function pageProbe(page) {
       elementClipHits.push(hit);
     }
 
-    // Hard fails: CHROME-SCOPED only (D5 / Phase 4 Loop 3).
-    // Non-chrome module content (M04–M06 buttons clipped by overflow-x-hidden, etc.) stays in
-    // elementClipHits / overflowHits for evidence but must NOT adjudicate matrix fail.
+    // Hard fails: complete meaningful-control gate (chrome + non-chrome).
+    // Applies to every visible probed control with centre in viewport unless a
+    // legitimate scroll/occlusion exemption applies. chromeScoped stays on hits
+    // for chrome vs non-chrome reporting splits.
     const nonChromeElementClipHits = elementClipHits.filter((h) => !h.chromeScoped).length;
     const elementClipFails = overflowHits.filter((h) => {
-      if (!h.chromeScoped) return false;
       if (h.noisyScrollContainer) return false;
       if (h.legitimateScrollRegionExemption) return false;
       if (h.stickyFooterScrollOcclusion) return false;
       if (h.belowViewportPageScroll) return false;
       if (h.horizontalScrollEscape) return false;
-      // Visible meaningful chrome control — centre must be on-screen.
+      // Visible meaningful control — centre must be on-screen.
       if (!h.centreInViewport) return false;
-      // Chrome-scoped: brand / seg-mini / emergency / sidebar-user / H1 / top-ribbon.
       return (
         h.outsideViewport ||
         h.clippedByAncestor ||
@@ -947,7 +951,7 @@ function adjudicateFail(entry) {
   if ((entry.appConsoleErrors || []).length) reasons.push(`console-error-${entry.appConsoleErrors.length}`);
   if ((entry.hydrationSignatures || []).length) reasons.push(`hydration-${entry.hydrationSignatures.length}`);
   if (entry.horizontalOverflow) reasons.push("horizontal-overflow");
-  // Chrome-scoped element clip / occlusion only — never hard-fail on noisy .content scrollWidth.
+  // Complete meaningful-control clip / occlusion gate (exemptions already applied).
   if ((entry.elementClipFails || []).length)
     reasons.push(`element-clip-${entry.elementClipFails.length}`);
   const hard = (entry.visualIssues || []).filter((i) =>
@@ -1281,7 +1285,42 @@ function summarise(matrix, allRaw, appearanceResults, extras = {}) {
     eventsByClass: byClass,
     hydrationTotal: matrix.reduce((n, m) => n + (m.hydrationSignatures?.length || 0), 0),
     overflowFailCount: matrix.filter((m) => m.horizontalOverflow).length,
+    controlsInspected: matrix.reduce((n, m) => n + (m.elementClipHits?.length || 0), 0),
+    controlsWithDefectFlags: matrix.reduce(
+      (n, m) =>
+        n +
+        (m.elementClipHits || []).filter(
+          (h) =>
+            h.outsideViewport ||
+            h.clippedByAncestor ||
+            h.occluded ||
+            h.unintendedTruncation
+        ).length,
+      0
+    ),
+    justifiedExemptions: matrix.reduce(
+      (n, m) =>
+        n +
+        (m.overflowHits || []).filter(
+          (h) =>
+            h.noisyScrollContainer ||
+            h.legitimateScrollRegionExemption ||
+            h.stickyFooterScrollOcclusion ||
+            h.belowViewportPageScroll ||
+            h.horizontalScrollEscape
+        ).length,
+      0
+    ),
+    unresolvedDefects: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
     elementClipFailCount: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
+    chromeDefects: matrix.reduce(
+      (n, m) => n + (m.elementClipFails || []).filter((h) => h.chromeScoped).length,
+      0
+    ),
+    nonChromeDefects: matrix.reduce(
+      (n, m) => n + (m.elementClipFails || []).filter((h) => !h.chromeScoped).length,
+      0
+    ),
     nonChromeElementClipHits: matrix.reduce((n, m) => n + (m.nonChromeElementClipHits || 0), 0),
     consoleAppErrorCount: matrix.reduce((n, m) => n + (m.appConsoleErrors?.length || 0), 0),
     pageErrorCount: matrix.reduce((n, m) => n + (m.appPageErrors?.length || 0), 0),
