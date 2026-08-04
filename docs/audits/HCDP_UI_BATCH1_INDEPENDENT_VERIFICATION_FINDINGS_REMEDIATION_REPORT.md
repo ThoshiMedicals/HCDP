@@ -2,7 +2,7 @@
 
 **Lane:** Application remediation after independent verification FAIL  
 **Branch:** `cursor/ui-batch1-owner-colour-readability-verification-fixes`  
-**Remediation tip:** `6b03efdb2fc4d867e6cb03f702f8a2026a4d7485`  
+**Remediation tip:** `1ca3ba10fa73a3fdedf23dc55373e6f5e79d46f7`  
 **Base (failed candidate tip):** `ee9731e38e7d20d6d825e6c243503f4aea9564c3`  
 **Independent-verification evidence tip (read-only):** `51fbfa980b9c834184a384ddcf956340397bf205`  
 **origin/main confirmed:** `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76`  
