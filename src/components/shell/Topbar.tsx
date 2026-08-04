@@ -165,8 +165,8 @@ export function Topbar() {
         </div>
       </div>
 
-      <div className="ribbon-center order-3 flex w-full min-w-0 justify-center xl:order-none xl:min-w-[12rem] xl:max-w-[440px] xl:flex-1">
-        <label className="search-compact flex h-9 w-full min-w-0 max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
+      <div className="ribbon-center order-3 flex w-full min-w-0 justify-center xl:order-none xl:min-w-[16rem] xl:max-w-[440px] xl:flex-1">
+        <label className="search-compact flex h-9 w-full min-w-[12rem] max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
           <Icon name="search" className="h-3.5 w-3.5 shrink-0" />
           <input
             type="search"
@@ -193,14 +193,14 @@ export function Topbar() {
         </div>
         <button
           type="button"
-          className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] xl:inline-flex"
+          className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] 2xl:inline-flex"
           onClick={() => openCreate("locations")}
         >
           + New Entry
         </button>
         <button
           type="button"
-          className="hidden shrink-0 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--card)] px-2.5 py-1.5 text-sm font-bold text-[var(--ink)] xl:inline-flex"
+          className="hidden shrink-0 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--card)] px-2.5 py-1.5 text-sm font-bold text-[var(--ink)] 2xl:inline-flex"
           onClick={() =>
             pushToast("Portal export requires a reporting backend. Use Command Centre Export for local demo packs.", "default")
           }
