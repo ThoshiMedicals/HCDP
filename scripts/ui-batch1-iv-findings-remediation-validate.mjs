@@ -16,11 +16,15 @@
  *   - application console error
  *   - hydration mismatch
  *   - horizontal page overflow
+ *   - chrome-scoped element clip / occlusion / unintended truncation
  *   - typography / contrast / dark-surface hard-gate failure
+ *   - unallowlisted requestfailed
  *
- * Narrow HMR WebSocket allowlist is classified separately and never hides
- * application errors. 403 / 500 / JSON parse / unknown failures are never
- * auto-allowlisted.
+ * Narrow HMR WebSocket allowlist + same-origin RSC/prefetch ERR_ABORTED
+ * (requires `_rsc=` or verified Next prefetch headers) are classified
+ * separately and never hide application errors. 403 / 500 / JSON parse /
+ * unknown failures are never auto-allowlisted. Bare `resourceType()==="fetch"`
+ * or bare `/_next/` path matches are NOT sufficient for abort allowlisting.
  */
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
@@ -342,32 +346,285 @@ async function pageProbe(page) {
     }
 
     const docEl = document.documentElement;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
     const horizontalOverflow =
       docEl.scrollWidth > docEl.clientWidth + 1 ||
       document.body.scrollWidth > document.body.clientWidth + 1;
 
-    const overflowHits = [];
-    for (const el of document.querySelectorAll(
-      "button, a, .module-section-nav__tab, .v32-nav-toggle, main, .content"
-    )) {
-      if (!(el instanceof HTMLElement)) continue;
-      if (el.scrollWidth > el.clientWidth + 2) {
-        overflowHits.push({
-          kind: "overflow-clip",
-          text: (el.innerText || "").trim().slice(0, 40),
-          className: String(el.className).slice(0, 80),
-          scrollWidth: el.scrollWidth,
-          clientWidth: el.clientWidth,
-        });
-      }
+    const CLIP_PROBE_SELECTOR = [
+      "button",
+      "a[href]",
+      "input:not([type='hidden'])",
+      "select",
+      "header .page-title h1",
+      ".page-title h1",
+      ".pulse-top-ribbon button",
+      ".pulse-top-ribbon a",
+      ".pulse-top-ribbon select",
+      ".seg-mini a",
+      ".brand-compact",
+      ".clinic-select-compact",
+      ".cc-pulse.cc-surface-danger button",
+      ".sidebar-user",
+      ".sidebar-user select",
+      ".v27-sidebar-role",
+      ".v27-sidebar-role select",
+      ".module-section-nav__tab",
+      ".v32-nav-toggle",
+    ].join(", ");
+
+    function isVisible(el) {
+      const cs = getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) === 0) return false;
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
     }
+
+    function isInsideClosedDrawer(el) {
+      const sidebar = el.closest(".pulse-sidebar");
+      if (!sidebar) return false;
+      const cs = getComputedStyle(sidebar);
+      const t = cs.transform || "";
+      // Closed mobile drawer uses -translate-x-full (matrix with tx ≈ -width).
+      if (t && t !== "none") {
+        const m = t.match(/matrix\(([^)]+)\)/);
+        if (m) {
+          const parts = m[1].split(",").map((x) => Number(x.trim()));
+          const tx = parts[4];
+          if (Number.isFinite(tx) && tx < -8) return true;
+        }
+      }
+      const r = sidebar.getBoundingClientRect();
+      return r.right <= 1;
+    }
+
+    function nearestClippingAncestor(el) {
+      let node = el.parentElement;
+      while (node && node !== document.documentElement) {
+        const cs = getComputedStyle(node);
+        const ox = cs.overflowX;
+        const oy = cs.overflowY;
+        const clips =
+          /(auto|scroll|hidden|clip)/.test(ox) || /(auto|scroll|hidden|clip)/.test(oy);
+        if (clips) {
+          return {
+            tag: node.tagName.toLowerCase(),
+            className: String(node.className || "").slice(0, 80),
+            overflowX: ox,
+            overflowY: oy,
+            rect: (() => {
+              const r = node.getBoundingClientRect();
+              return {
+                x: Number(r.x.toFixed(2)),
+                y: Number(r.y.toFixed(2)),
+                width: Number(r.width.toFixed(2)),
+                height: Number(r.height.toFixed(2)),
+              };
+            })(),
+            scrollWidth: node.scrollWidth,
+            clientWidth: node.clientWidth,
+            scrollHeight: node.scrollHeight,
+            clientHeight: node.clientHeight,
+          };
+        }
+        node = node.parentElement;
+      }
+      return null;
+    }
+
+    function clipExtents(elRect, clipRect) {
+      if (!clipRect) return { clippedW: 0, clippedH: 0 };
+      const left = Math.max(0, clipRect.x - elRect.x);
+      const right = Math.max(0, elRect.x + elRect.width - (clipRect.x + clipRect.width));
+      const top = Math.max(0, clipRect.y - elRect.y);
+      const bottom = Math.max(0, elRect.y + elRect.height - (clipRect.y + clipRect.height));
+      return {
+        clippedW: Number((left + right).toFixed(2)),
+        clippedH: Number((top + bottom).toFixed(2)),
+      };
+    }
+
+    function isChromeScoped(el) {
+      return !!(
+        el.closest(".pulse-top-ribbon") ||
+        el.closest(".brand-compact") ||
+        el.closest(".seg-mini") ||
+        el.closest(".cc-pulse.cc-surface-danger") ||
+        el.closest(".sidebar-user") ||
+        el.closest(".v27-sidebar-role") ||
+        el.matches?.("header .page-title h1, .page-title h1") ||
+        (el.tagName === "H1" && el.closest(".page-title"))
+      );
+    }
+
+    function centreOccluded(el) {
+      const r = el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      if (cx < 0 || cy < 0 || cx > vw || cy > vh) {
+        return { occluded: false, skipped: "centre-outside-viewport", topTag: null };
+      }
+      const top = document.elementFromPoint(cx, cy);
+      if (!top) return { occluded: true, skipped: null, topTag: null };
+      const hit = el === top || el.contains(top) || top.contains(el);
+      return {
+        occluded: !hit,
+        skipped: null,
+        topTag: top.tagName?.toLowerCase() || null,
+        topClass: String(top.className || "").slice(0, 60),
+      };
+    }
+
+    function hasUnintendedTruncation(el) {
+      const cs = getComputedStyle(el);
+      const text = (el.innerText || el.textContent || "").trim();
+      if (!text || text.length < 2) return false;
+      const nowrap = cs.whiteSpace === "nowrap" || cs.whiteSpace === "pre";
+      const ellipsis = cs.textOverflow === "ellipsis";
+      const hiddenOverflow = cs.overflowX === "hidden" || cs.overflow === "hidden";
+      if ((ellipsis || (nowrap && hiddenOverflow)) && el.scrollWidth > el.clientWidth + 2) {
+        // Intentional brand-compact-text hide is display:none, not truncation.
+        if (el.closest?.(".brand-compact-text")) return false;
+        return true;
+      }
+      return false;
+    }
+
+    const overflowHits = [];
+    const elementClipHits = [];
+    const seen = new Set();
+    for (const el of document.querySelectorAll(CLIP_PROBE_SELECTOR)) {
+      if (!(el instanceof HTMLElement)) continue;
+      if (seen.has(el)) continue;
+      seen.add(el);
+      if (!isVisible(el)) continue;
+      if (isInsideClosedDrawer(el)) continue;
+
+      const r = el.getBoundingClientRect();
+      // Skip controls entirely below a legitimate vertical scroll region (not visible yet).
+      const clipAnc = nearestClippingAncestor(el);
+      const inScrollRegion =
+        clipAnc &&
+        (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
+        r.top >= clipAnc.rect.y + clipAnc.rect.height - 1;
+      if (inScrollRegion && r.bottom > clipAnc.rect.y + clipAnc.rect.height + 2) {
+        // Entirely below scrollport — not a hard fail; record only if horizontal chrome issue.
+      }
+
+      const eps = 1.5;
+      const outsideViewport =
+        r.left < -eps ||
+        r.right > vw + eps ||
+        (r.top < -eps && r.bottom > eps) ||
+        (r.bottom > vh + eps && r.top < vh - eps && r.left < vw && r.right > 0 && isChromeScoped(el));
+
+      // Vertical overflow inside a scrollable main/content region is legitimate scrolling.
+      const legitimateVerticalScroll =
+        clipAnc &&
+        (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
+        r.left >= -eps &&
+        r.right <= vw + eps &&
+        !isChromeScoped(el);
+
+      const clipBox = clipAnc?.rect || null;
+      const { clippedW, clippedH } = clipExtents(
+        { x: r.x, y: r.y, width: r.width, height: r.height },
+        clipBox
+      );
+      const clippedByAncestor =
+        !!clipAnc &&
+        (clippedW > 2 || clippedH > 2) &&
+        !(
+          (clipAnc.overflowY === "auto" || clipAnc.overflowY === "scroll") &&
+          clippedW <= 2 &&
+          clippedH > 2
+        );
+
+      const occ = centreOccluded(el);
+      // Ignore occlusion when centre is outside viewport or element is in closed drawer.
+      const occluded =
+        !!occ.occluded &&
+        !occ.skipped &&
+        r.top < vh &&
+        r.bottom > 0 &&
+        r.left < vw &&
+        r.right > 0;
+
+      const trunc = hasUnintendedTruncation(el);
+      const scrollOverflow = el.scrollWidth > el.clientWidth + 2;
+
+      // Broad .content / main scrollWidth noise — record but do not chrome-fail.
+      const noisyScrollContainer =
+        el.matches?.("main, .content") ||
+        el.classList?.contains("content") ||
+        el.tagName === "MAIN";
+
+      const hit = {
+        kind: "element-clip-probe",
+        tag: el.tagName.toLowerCase(),
+        text: (el.innerText || el.getAttribute("aria-label") || "").trim().slice(0, 40),
+        className: String(el.className || "").slice(0, 80),
+        chromeScoped: isChromeScoped(el),
+        rect: {
+          x: Number(r.x.toFixed(2)),
+          y: Number(r.y.toFixed(2)),
+          width: Number(r.width.toFixed(2)),
+          height: Number(r.height.toFixed(2)),
+        },
+        viewport: { width: vw, height: vh },
+        outsideViewport: !!outsideViewport && !legitimateVerticalScroll,
+        nearestClippingAncestor: clipAnc,
+        clippedW,
+        clippedH,
+        clippedByAncestor: !!clippedByAncestor && !legitimateVerticalScroll,
+        scrollWidth: el.scrollWidth,
+        clientWidth: el.clientWidth,
+        scrollOverflow,
+        centreOcclusion: occ,
+        occluded,
+        unintendedTruncation: trunc,
+        noisyScrollContainer: !!noisyScrollContainer,
+      };
+
+      if (
+        hit.outsideViewport ||
+        hit.clippedByAncestor ||
+        hit.occluded ||
+        hit.unintendedTruncation ||
+        (scrollOverflow && !noisyScrollContainer)
+      ) {
+        overflowHits.push(hit);
+      }
+      elementClipHits.push(hit);
+    }
+
+    // Chrome-scoped hard fails for adjudication (avoid noisy .content scrollWidth).
+    const elementClipFails = overflowHits.filter((h) => {
+      if (h.noisyScrollContainer) return false;
+      if (!h.chromeScoped) {
+        // Non-chrome: only fail clear viewport escape or occlusion of interactive controls.
+        return (
+          (h.outsideViewport && (h.tag === "button" || h.tag === "a" || h.tag === "select" || h.tag === "input")) ||
+          (h.occluded && (h.tag === "button" || h.tag === "a" || h.tag === "select"))
+        );
+      }
+      return (
+        h.outsideViewport ||
+        h.clippedByAncestor ||
+        h.occluded ||
+        h.unintendedTruncation
+      );
+    });
 
     return {
       htmlDark,
       appearance: document.documentElement.dataset.appearance || null,
       issues,
       horizontalOverflow,
-      overflowHits: overflowHits.slice(0, 30),
+      overflowHits: overflowHits.slice(0, 80),
+      elementClipHits: elementClipHits.slice(0, 120),
+      elementClipFails: elementClipFails.slice(0, 40),
       sidebarCount: document.querySelectorAll(".pulse-sidebar").length,
       bootstrapStatus: document.querySelector("[data-m07-bootstrap-status]")?.textContent || null,
       scrollWidth: docEl.scrollWidth,
@@ -426,21 +683,29 @@ function attachRouteCollectors(page, bag) {
     const failureText = failure?.errorText || "unknown";
     const url = req.url();
     let cls = classifyEvent(failureText, url);
-    // Narrow: aborted same-origin RSC/prefetch due to rapid navigation — not HTTP 4xx/5xx.
-    if (
-      /net::ERR_ABORTED/i.test(failureText) &&
-      (url.includes("_rsc=") || url.includes("/_next/") || req.resourceType() === "fetch")
-    ) {
+    // Narrow abort allowlist: same-origin + ERR_ABORTED + (_rsc= OR verified Next prefetch headers).
+    // Bare resourceType()==="fetch" or bare /_next/ path is NOT sufficient.
+    if (/net::ERR_ABORTED/i.test(failureText)) {
       try {
         const u = new URL(url);
         const base = new URL(BASE);
         if (u.origin === base.origin) {
-          cls = {
-            class: "environmental-nav-abort",
-            allowlisted: true,
-            rationale:
-              "Same-origin fetch/RSC aborted by subsequent navigation (Playwright route churn). Recorded but not an HTTP 403/500/JSON application failure.",
-          };
+          const headers = typeof req.headers === "function" ? req.headers() : {};
+          const purpose = String(headers["purpose"] || headers["sec-purpose"] || "");
+          const nextPrefetch = String(
+            headers["next-router-prefetch"] || headers["Next-Router-Prefetch"] || ""
+          );
+          const rscQuery = url.includes("_rsc=");
+          const prefetchSig =
+            nextPrefetch === "1" || /prefetch/i.test(purpose);
+          if (rscQuery || prefetchSig) {
+            cls = {
+              class: "environmental-nav-abort",
+              allowlisted: true,
+              rationale:
+                "Same-origin net::ERR_ABORTED with RSC (_rsc=) or verified Next prefetch headers (next-router-prefetch / Purpose: prefetch). Bare fetch resourceType or bare /_next/ path alone is not allowlisted. Recorded but not an HTTP 403/500/JSON application failure.",
+            };
+          }
         }
       } catch {
         /* keep prior classification */
@@ -533,6 +798,9 @@ function adjudicateFail(entry) {
   if ((entry.appConsoleErrors || []).length) reasons.push(`console-error-${entry.appConsoleErrors.length}`);
   if ((entry.hydrationSignatures || []).length) reasons.push(`hydration-${entry.hydrationSignatures.length}`);
   if (entry.horizontalOverflow) reasons.push("horizontal-overflow");
+  // Chrome-scoped element clip / occlusion only — never hard-fail on noisy .content scrollWidth.
+  if ((entry.elementClipFails || []).length)
+    reasons.push(`element-clip-${entry.elementClipFails.length}`);
   const hard = (entry.visualIssues || []).filter((i) =>
     [
       "typography-control-below-13",
@@ -578,6 +846,8 @@ async function visitRoute(page, route, meta, bag) {
     issues: [{ kind: "probe-error", text: String(err) }],
     horizontalOverflow: false,
     overflowHits: [],
+    elementClipHits: [],
+    elementClipFails: [],
     htmlDark: false,
   }));
 
@@ -599,6 +869,8 @@ async function visitRoute(page, route, meta, bag) {
     visualIssues: probe.issues || [],
     horizontalOverflow: !!probe.horizontalOverflow,
     overflowHits: probe.overflowHits || [],
+    elementClipHits: probe.elementClipHits || [],
+    elementClipFails: probe.elementClipFails || [],
     scrollWidth: probe.scrollWidth,
     clientWidth: probe.clientWidth,
     appConsoleErrors: [...bag.appConsoleErrors],
@@ -858,6 +1130,7 @@ function summarise(matrix, allRaw, appearanceResults, extras = {}) {
     eventsByClass: byClass,
     hydrationTotal: matrix.reduce((n, m) => n + (m.hydrationSignatures?.length || 0), 0),
     overflowFailCount: matrix.filter((m) => m.horizontalOverflow).length,
+    elementClipFailCount: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
     consoleAppErrorCount: matrix.reduce((n, m) => n + (m.appConsoleErrors?.length || 0), 0),
     pageErrorCount: matrix.reduce((n, m) => n + (m.appPageErrors?.length || 0), 0),
     http500,
@@ -913,7 +1186,7 @@ async function main() {
     write("summary.json", summary);
     write("classification-rationale.json", {
       allowlist:
-        "Only Next.js webpack-hmr WebSocket / HMR status and DevTools install hints are allowlisted. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
+        "HMR WebSocket / HMR status and DevTools install hints are allowlisted. Same-origin net::ERR_ABORTED is allowlisted only when the URL contains _rsc= OR verified Next prefetch headers (next-router-prefetch / Purpose|Sec-Purpose: prefetch). Bare resourceType()==='fetch' or bare /_next/ path alone is NOT sufficient. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
       failPredicate: [
         "navigation status ≥ 400",
         "unallowlisted resource response ≥ 400",
@@ -921,6 +1194,7 @@ async function main() {
         "application console error",
         "hydration mismatch",
         "horizontal page overflow",
+        "chrome-scoped element clip / occlusion / unintended truncation",
         "typography / contrast / dark-surface hard-gate failure",
         "unallowlisted requestfailed",
       ],
@@ -962,7 +1236,7 @@ async function main() {
   write("json-parse-events.json", summary.jsonParse);
   write("classification-rationale.json", {
     allowlist:
-      "Only Next.js webpack-hmr WebSocket / HMR status and DevTools install hints are allowlisted. 403, 500, JSON parse, and unknown resource failures are never allowlisted.",
+      "HMR WebSocket / HMR status and DevTools install hints are allowlisted. Same-origin net::ERR_ABORTED is allowlisted only when the URL contains _rsc= OR verified Next prefetch headers (next-router-prefetch / Purpose|Sec-Purpose: prefetch). Bare resourceType()==='fetch' or bare /_next/ path alone is NOT sufficient. 403, 500, JSON parse, and unknown resource failures are never allowlisted. Historical prod-matrix-v3 proof: 6446/6446 environmental-nav-abort events were same-origin _rsc= ERR_ABORTED (see agent-implementation/ABORT_ALLOWLIST_RSC_PROOF.md).",
     failPredicate: [
       "navigation status ≥ 400",
       "unallowlisted resource response ≥ 400",
@@ -970,6 +1244,7 @@ async function main() {
       "application console error",
       "hydration mismatch",
       "horizontal page overflow",
+      "chrome-scoped element clip / occlusion / unintended truncation",
       "typography / contrast / dark-surface hard-gate failure",
       "unallowlisted requestfailed",
     ],

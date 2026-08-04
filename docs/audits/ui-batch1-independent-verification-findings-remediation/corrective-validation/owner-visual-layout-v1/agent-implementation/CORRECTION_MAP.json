@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "agent": "implementation",
+    "phase": 2,
+    "phaseLabel": "read-only-correction-map",
+    "worktree": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+    "inputSha": "f837bdd08e1db30e68c63cfb2542e3120bc40d00",
+    "appSourceSha": "e6e2f90ea42f39ddab1d5ce39c1e306f214a1742",
+    "findingsClosed": [],
+    "applicationEditsMade": false,
+    "businessBehaviourChangesProposed": false,
+    "portUsed": null,
+    "reservedPort": 3492,
+    "markdownTwin": "CORRECTION_MAP.md",
+    "hydrationNotes": "HYDRATION_SUPPRESSION_NOTES.md",
+    "recordedAtUtc": "2026-08-04T03:15:00Z"
+  },
+  "defects": [
+    {
+      "id": "D1",
+      "title": "EmergencyBanner mobile action clipping + desktop grid",
+      "componentPaths": [
+        "src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx"
+      ],
+      "relatedComponentPaths": [
+        "src/components/ui/Button.tsx"
+      ],
+      "cssTokenLocations": [
+        "src/styles/tokens.css:.cc-surface-danger",
+        "src/styles/tokens.css:.cc-pulse",
+        "src/styles/tokens.css:@media (max-width:1023px) .cc-root overflow-x",
+        "src/app/globals.css:html,body overflow-x:hidden",
+        "PriorityAndAnnouncements.tsx:EmergencyBanner Tailwind flex/grid utilities"
+      ],
+      "rootCauseHypothesis": "Action cluster uses shrink-0 + Button whitespace-nowrap inside a flex-wrap row; on narrow viewports the cluster keeps large min-content width and can be clipped by overflow-x:hidden ancestors. Desktop side-by-side flex is not a stable content|actions grid, so meta text and 5–6 actions compete horizontally.",
+      "proposedMinimalCssLayoutChange": "Switch EmergencyBanner outer layout to responsive grid (minmax(0,1fr) + auto) or flex-col then row; make action cluster w-full min-w-0 flex-wrap and remove shrink-0. No handler/behaviour changes.",
+      "testValidatorFilesToUpdate": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "scripts/ui-batch1-owner-visual-remediation-validate.mjs",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs"
+      ]
+    },
+    {
+      "id": "D2",
+      "title": "Topbar mobile brand overlap",
+      "componentPaths": [
+        "src/components/shell/Topbar.tsx"
+      ],
+      "cssTokenLocations": [
+        "src/styles/tokens.css:.brand-compact",
+        "src/styles/tokens.css:.brand-dot",
+        "src/styles/tokens.css:.brand-compact strong",
+        "src/styles/tokens.css:.brand-compact small",
+        "src/styles/tokens.css:.clinic-select-compact",
+        "Topbar.tsx:.pulse-top-ribbon/.ribbon-left/.ribbon-right Tailwind"
+      ],
+      "rootCauseHypothesis": "Mobile ribbon packs hamburger + non-shrinking brand-compact (full title + subtitle) + clinic-select-compact (max-width 160px) against shrink-0 ribbon-right controls, causing overlap under ~390–430px.",
+      "proposedMinimalCssLayoutChange": "At mobile breakpoints hide brand subtitle and truncate/clamp brand strong, or show brand-dot only while hamburger is visible; optionally tighten clinic-select max-width. No clinic/search/online handler changes.",
+      "testValidatorFilesToUpdate": [
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+        "src/components/workspaces/tests/ui-batch1-owner-colour-readability.test.ts",
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "src/styles/tokens.css",
+        "src/components/shell/Topbar.tsx",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ]
+    },
+    {
+      "id": "D3",
+      "title": "Page H1 truncation",
+      "componentPaths": [
+        "src/components/shell/PageHeader.tsx"
+      ],
+      "cssTokenLocations": [
+        "PageHeader.tsx:h1.truncate",
+        "src/app/globals.css:.hcdp-type-display",
+        "src/app/globals.css:.page-title h1",
+        "src/styles/tokens.css:--type-display"
+      ],
+      "rootCauseHypothesis": "H1 carries Tailwind truncate (nowrap + ellipsis). Module titles ellipsize whenever the header row is width-constrained beside the inbox affordance.",
+      "proposedMinimalCssLayoutChange": "Remove truncate from H1; allow wrap/break-words; keep page-title min-w-0. No module title data changes.",
+      "testValidatorFilesToUpdate": [
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "src/components/shell/PageHeader.tsx",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ]
+    },
+    {
+      "id": "D4",
+      "title": "Sidebar footer overlap",
+      "componentPaths": [
+        "src/components/shell/Sidebar.tsx"
+      ],
+      "cssTokenLocations": [
+        "src/styles/tokens.css:.sidebar-user",
+        "src/styles/tokens.css:.sidebar-user .avatar",
+        "src/styles/tokens.css:.sidebar-user .user-name",
+        "src/styles/tokens.css:.sidebar-user .user-role",
+        "src/styles/tokens.css:.v27-sidebar-role",
+        "src/styles/tokens.css:.v27-sidebar-role select",
+        "src/styles/tokens.css:--sidebar (288px)"
+      ],
+      "rootCauseHypothesis": "sidebar-user is a single horizontal flex row of avatar + name/role + v27-sidebar-role (margin-left:auto, select max-width 112px) plus demo note; inside 288px the name and act-as controls visually overlap/cramp.",
+      "proposedMinimalCssLayoutChange": "Restyle sidebar-user to wrapping flex or CSS grid with role control on full-width second row; select max-width 100%; margin-left 0. Keep identity onChange behaviour unchanged.",
+      "testValidatorFilesToUpdate": [
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "src/styles/tokens.css",
+        "src/components/shell/Sidebar.tsx",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ]
+    },
+    {
+      "id": "D5",
+      "title": "Element-clipping QA gap",
+      "componentPaths": [],
+      "cssTokenLocations": [],
+      "scriptPaths": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "scripts/ui-batch1-owner-visual-remediation-validate.mjs"
+      ],
+      "rootCauseHypothesis": "pageProbe overflowHits only scan button/a/module-section-nav/v32-nav-toggle/main/content via scrollWidth>clientWidth; miss EmergencyBanner actions, brand-compact, PageHeader h1, sidebar-user; no ancestor overflow clipping check; overflowHits are not part of adjudicateFail (only horizontalOverflow fails).",
+      "proposedMinimalCssLayoutChange": "N/A (validator). Expand chrome selectors; add bounding-box vs overflow-parent clip detection; optionally fail matrix on chrome-scoped element-clip only to avoid .content scrollWidth noise.",
+      "testValidatorFilesToUpdate": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "scripts/ui-batch1-owner-visual-remediation-validate.mjs",
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ],
+      "protectedScopeRisk": "none-for-business-rules; flake risk if ungated .content scrollWidth becomes hard-fail — mitigate with chrome-scoped gating",
+      "phase3FilesExpected": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "scripts/ui-batch1-owner-visual-remediation-validate.mjs",
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts",
+        "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts"
+      ],
+      "evidenceNote": "prod-matrix-v3 recorded 232 overflowHits dominated by .content/.main scrollWidth — not owner chrome defects D1–D4."
+    },
+    {
+      "id": "D6",
+      "title": "Abort allowlist precision (ERR_ABORTED)",
+      "componentPaths": [],
+      "cssTokenLocations": [],
+      "scriptPaths": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs"
+      ],
+      "classificationRationalePaths": [
+        "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/prod-matrix-v3/classification-rationale.json",
+        "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/prod-matrix-v2/classification-rationale.json",
+        "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/dev-focused-v2/classification-rationale.json"
+      ],
+      "rootCauseHypothesis": "onRequestFailed allowlists same-origin net::ERR_ABORTED when url has _rsc= OR /_next/ OR resourceType()==='fetch'; the bare fetch disjunct is broader than documented RSC/prefetch intent.",
+      "proposedMinimalCssLayoutChange": "N/A (validator). Require same-origin + ERR_ABORTED + (_rsc= query OR documented Next prefetch header/signature). Remove unrestricted resourceType()==='fetch'. Update classification-rationale copy.",
+      "priorProof6446": {
+        "path": "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/prod-matrix-v3/summary.json",
+        "allowlistedEnvironmentalEventCount": 6446,
+        "classBreakdown": {
+          "environmental-nav-abort": 6446
+        },
+        "allowlistedEventsPath": "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/prod-matrix-v3/allowlisted-environmental-events.json",
+        "verification": "All 6446 entries are same-origin fetch net::ERR_ABORTED URLs containing _rsc=; zero fetch aborts lack _rsc=. Narrowing away from arbitrary fetch preserves this proof set."
+      },
+      "testValidatorFilesToUpdate": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts"
+      ]
+    },
+    {
+      "id": "D7",
+      "title": "Hydration suppression governance",
+      "componentPaths": [
+        "src/app/layout.tsx",
+        "src/components/shell/theme-init-script.ts"
+      ],
+      "relatedComponentPaths": [
+        "src/lib/command-centre/storage.ts"
+      ],
+      "cssTokenLocations": [
+        "src/styles/tokens.css:html.theme-dark selectors"
+      ],
+      "rootCauseHypothesis": "THEME_INIT_SCRIPT mutates html classList theme-dark, data-appearance, and style.colorScheme before hydrate; SSR html is className=h-full only. suppressHydrationWarning on root html is the correct React escape hatch and must not be added on content nodes.",
+      "proposedMinimalCssLayoutChange": "No runtime change. Keep suppressHydrationWarning on root html only. Document theme-init vs suppression complementarity; assess removal as requiring cookie/SSR theme (out of batch). Optional test: single-site assertion.",
+      "testValidatorFilesToUpdate": [
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts"
+      ],
+      "protectedScopeRisk": "none",
+      "phase3FilesExpected": [
+        "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts",
+        "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/agent-implementation/HYDRATION_SUPPRESSION_NOTES.md"
+      ],
+      "removability": "not-recommended-without-server-known-preference; removing suppression while keeping theme-init reintroduces html attribute hydration warnings"
+    }
+  ],
+  "phase3AggregatedTouchList": [
+    "src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx",
+    "src/components/shell/Topbar.tsx",
+    "src/components/shell/PageHeader.tsx",
+    "src/components/shell/Sidebar.tsx",
+    "src/styles/tokens.css",
+    "src/app/globals.css",
+    "scripts/ui-batch1-iv-findings-remediation-validate.mjs",
+    "scripts/ui-batch1-owner-visual-remediation-validate.mjs",
+    "src/components/workspaces/tests/ui-batch1-owner-visual-remediation.test.ts",
+    "src/components/workspaces/tests/ui-batch1-iv-findings-remediation.test.ts"
+  ],
+  "outOfScope": [
+    "M04-M07 business logic changes",
+    "payment/export/certification claims",
+    "PPA implementation",
+    "Module 8",
+    "handler behaviour changes",
+    "new suppressHydrationWarning sites outside root html"
+  ]
+}

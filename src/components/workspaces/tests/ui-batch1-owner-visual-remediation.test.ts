@@ -137,3 +137,57 @@ describe("Owner visual remediation — dashboard hierarchy", () => {
     assert.match(cc, /appearance/);
   });
 });
+
+describe("Owner visual remediation — Phase 3 chrome layout (D1–D4)", () => {
+  it("EmergencyBanner uses responsive grid and wrap-safe action cluster without shrink-0", () => {
+    const src = read("src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx");
+    const bannerFn = src.slice(src.indexOf("export function EmergencyBanner"));
+    const banner = bannerFn.slice(0, bannerFn.indexOf("export function AnnouncementCarousel"));
+    assert.match(banner, /grid gap-3 md:grid-cols-\[minmax\(0,1fr\)_auto\]/);
+    assert.match(banner, /flex w-full min-w-0 flex-wrap/);
+    assert.doesNotMatch(banner, /shrink-0/);
+  });
+
+  it("PageHeader H1 allows wrap (no truncate) and keeps min-w-0", () => {
+    const src = read("src/components/shell/PageHeader.tsx");
+    assert.match(src, /<h1\b[^>]*className="[^"]*min-w-0/);
+    assert.doesNotMatch(src, /<h1\b[^>]*truncate/);
+    assert.match(src, /page-title min-w-0/);
+  });
+
+  it("brand wordmark hides below lg via brand-compact-text; seg-mini media-hides below 640px", () => {
+    const css = read("src/styles/tokens.css");
+    const topbar = read("src/components/shell/Topbar.tsx");
+    assert.match(topbar, /brand-compact-text/);
+    assert.match(topbar, /aria-label="Doctors Pulse Operations Portal"/);
+    assert.match(css, /\.brand-compact-text\s*\{/);
+    assert.match(
+      css,
+      /@media\s*\(\s*max-width:\s*1023px\s*\)\s*\{[\s\S]*\.brand-compact-text\s*\{[\s\S]*display:\s*none/
+    );
+    // Default .seg-mini (before sm media) must be display:none so it cannot override mobile hide.
+    const segMiniDefault = css.match(/\/\*[\s\S]*?seg-mini[\s\S]*?\*\/\s*\.seg-mini\s*\{([^}]+)\}/);
+    const segMiniBlock =
+      segMiniDefault?.[1] ||
+      css.match(/(?:^|\n)\.seg-mini\s*\{([^}]+)\}/)?.[1] ||
+      "";
+    assert.match(segMiniBlock, /display:\s*none/);
+    assert.doesNotMatch(segMiniBlock, /display:\s*inline-flex/);
+    assert.match(
+      css,
+      /@media\s*\(\s*min-width:\s*640px\s*\)\s*\{[\s\S]*?\.seg-mini\s*\{[\s\S]*?display:\s*inline-flex/
+    );
+  });
+
+  it("sidebar-user is a non-overlapping grid stack with full-width act-as row", () => {
+    const css = read("src/styles/tokens.css");
+    assert.match(css, /\.sidebar-user\s*\{[\s\S]*display:\s*grid/);
+    assert.match(css, /\.sidebar-user\s*\{[\s\S]*grid-template-columns:\s*auto minmax\(0,\s*1fr\)/);
+    assert.match(css, /\.sidebar-user\s*\{[\s\S]*flex-shrink:\s*0/);
+    assert.match(
+      css,
+      /\.v27-sidebar-role\s*\{[\s\S]*grid-column:\s*1\s*\/\s*-1[\s\S]*width:\s*100%/
+    );
+    assert.match(css, /\.v27-sidebar-role select\s*\{[\s\S]*max-width:\s*100%/);
+  });
+});

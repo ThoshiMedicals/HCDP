@@ -115,3 +115,70 @@ describe("IV findings remediation — appearance persistence host", () => {
     assert.match(storage, /colorScheme/);
   });
 });
+
+describe("IV findings remediation — Phase 3 abort allowlist precision (D6)", () => {
+  it("narrows ERR_ABORTED allowlist to same-origin _rsc= or verified prefetch headers", () => {
+    const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
+    assert.match(script, /_rsc=/);
+    assert.match(script, /next-router-prefetch/i);
+    assert.match(script, /prefetchSig|Purpose\|Sec-Purpose|purpose/);
+    // Bare disjuncts must not remain as sufficient allowlist conditions.
+    assert.doesNotMatch(
+      script,
+      /url\.includes\("_rsc="\)\s*\|\|\s*url\.includes\("\/_next\/"\)\s*\|\|\s*req\.resourceType\(\)\s*===\s*"fetch"/
+    );
+    assert.doesNotMatch(script, /resourceType\(\)\s*===\s*"fetch"\s*\)/);
+    assert.match(
+      script,
+      /Bare resourceType\(\)===["']fetch["'] or bare \/_next\//i
+    );
+  });
+});
+
+describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
+  it("probes chrome controls with clip/occlusion fields and chrome-scoped adjudication", () => {
+    const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
+    assert.match(script, /CLIP_PROBE_SELECTOR/);
+    assert.match(script, /\.cc-pulse\.cc-surface-danger button/);
+    assert.match(script, /\.brand-compact/);
+    assert.match(script, /header \.page-title h1/);
+    assert.match(script, /\.sidebar-user/);
+    assert.match(script, /\.v27-sidebar-role/);
+    assert.match(script, /elementFromPoint/);
+    assert.match(script, /nearestClippingAncestor/);
+    assert.match(script, /elementClipFails/);
+    assert.match(script, /element-clip-/);
+    assert.match(script, /noisyScrollContainer/);
+    assert.match(script, /isInsideClosedDrawer/);
+  });
+});
+
+describe("IV findings remediation — Phase 3 hydration governance (D7)", () => {
+  it("suppressHydrationWarning appears only once in layout.tsx", () => {
+    const layout = read("src/app/layout.tsx");
+    const matches = layout.match(/suppressHydrationWarning/g) || [];
+    assert.equal(matches.length, 1);
+    assert.match(layout, /<html[^>]*suppressHydrationWarning/);
+  });
+
+  it("theme-init mutates documentElement for class, data-appearance, and colorScheme", () => {
+    const init = read("src/components/shell/theme-init-script.ts");
+    assert.match(init, /document\.documentElement/);
+    assert.match(init, /classList\.toggle\("theme-dark"/);
+    assert.match(init, /setAttribute\("data-appearance"/);
+    assert.match(init, /style\.colorScheme/);
+    assert.doesNotMatch(init, /document\.body\.classList/);
+  });
+
+  it("M04–M07 workspaces never use suppressHydrationWarning", () => {
+    for (const file of [
+      "src/modules/m04-staff-doctors/StaffDoctorsWorkspace.tsx",
+      "src/modules/m05-roster/RosterWorkspace.tsx",
+      "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+      "src/modules/m07-staff-pay/StaffPayWorkspace.tsx",
+    ]) {
+      const src = read(file);
+      assert.doesNotMatch(src, /suppressHydrationWarning/);
+    }
+  });
+});

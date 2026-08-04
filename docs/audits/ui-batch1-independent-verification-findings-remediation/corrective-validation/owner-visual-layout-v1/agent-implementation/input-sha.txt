@@ -1,0 +1,9 @@
+worktree: /tmp/hcdp-fix/ui-batch1-vf-fixes
+input_sha: f837bdd08e1db30e68c63cfb2542e3120bc40d00
+last_application_source_sha: e6e2f90ea42f39ddab1d5ce39c1e306f214a1742
+origin_main_ref_from_ledger: 0afe87806cdc1e3e8e90da5293183ef1b2fd9c76
+recorded_at_utc: 2026-08-04T03:15:00Z
+phase: Phase 2 read-only correction map (Implementation Agent)
+port_policy: no servers started; reserved port 3492 unused this phase
+application_edits: none
+findings_closed: none
