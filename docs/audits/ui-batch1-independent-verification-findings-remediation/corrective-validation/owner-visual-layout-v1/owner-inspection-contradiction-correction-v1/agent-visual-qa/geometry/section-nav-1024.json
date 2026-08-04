@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "className": "module-section-nav",
+    "overflow": "visible",
+    "overflowX": "visible",
+    "width": "646px",
+    "minWidth": "0px",
+    "maxWidth": "100%",
+    "scrollW": 646,
+    "clientW": 646,
+    "rect": {
+      "x": 333,
+      "w": 646,
+      "right": 979
+    }
+  },
+  "scroller": {
+    "className": "module-section-nav__scroller",
+    "overflow": "auto hidden",
+    "overflowX": "auto",
+    "width": "646px",
+    "minWidth": "0px",
+    "maxWidth": "100%",
+    "scrollW": 1169,
+    "clientW": 646,
+    "rect": {
+      "x": 333,
+      "w": 646,
+      "right": 979
+    }
+  },
+  "desktop": {
+    "className": "module-section-nav__desktop-only",
+    "overflow": "visible",
+    "overflowX": "visible",
+    "width": "646px",
+    "minWidth": "0px",
+    "maxWidth": "100%",
+    "scrollW": 646,
+    "clientW": 646,
+    "rect": {
+      "x": 333,
+      "w": 646,
+      "right": 979
+    }
+  },
+  "tabs": [
+    {
+      "t": "Live Attendance",
+      "x": 335,
+      "right": 470.3,
+      "w": 135.3
+    },
+    {
+      "t": "Clock In/Out",
+      "x": 476.3,
+      "right": 588.2,
+      "w": 111.9
+    },
+    {
+      "t": "Timesheets",
+      "x": 594.2,
+      "right": 698.6,
+      "w": 104.4
+    },
+    {
+      "t": "Exceptions",
+      "x": 704.6,
+      "right": 804.4,
+      "w": 99.8
+    },
+    {
+      "t": "Corrections",
+      "x": 810.4,
+      "right": 915.3,
+      "w": 104.9
+    },
+    {
+      "t": "Approvals",
+      "x": 921.3,
+      "right": 1015.8,
+      "w": 94.5
+    },
+    {
+      "t": "Breaks",
+      "x": 1021.8,
+      "right": 1096.3,
+      "w": 74.4
+    },
+    {
+      "t": "Attendance History",
+      "x": 1102.3,
+      "right": 1258.5,
+      "w": 156.2
+    },
+    {
+      "t": "Reports",
+      "x": 1264.5,
+      "right": 1345,
+      "w": 80.5
+    },
+    {
+      "t": "Settings & Policies",
+      "x": 1351,
+      "right": 1499.8,
+      "w": 148.8
+    }
+  ],
+  "scrolled": true,
+  "vp": 1024
+}

@@ -1,0 +1,103 @@
+{
+  "appShaExpected": "b661b6c1e3debdd8ba4d1e71b55fe9f7052f90b1",
+  "headSha": "15984ee1bb5c734e345d568f1ef485d66492e89d",
+  "frozenOk": true,
+  "srcScriptsDiffBytes": 0,
+  "routeCount": 46,
+  "jobCount": 840,
+  "base": "http://127.0.0.1:3501"
+}
+[w2] 18/280 system-1440x900-time-attendance.png hits=17 hot=1
+[w1] 22/280 dark-1440x900-time-attendance.png hits=17 hot=1
+[w2] 23/280 system-1440x900-time-attendance_section_approvals.png hits=17 hot=1
+[w2] 25/280 system-1440x900-time-attendance_section_history.png hits=17 hot=1
+[w1] 25/280 dark-1440x900-time-attendance_section_exceptions.png hits=17 hot=1
+[w0] 25/280 light-1440x900-roster_section_settings.png hits=18 hot=1
+[w0] 26/280 light-1440x900-time-attendance.png hits=17 hot=1
+[w1] 27/280 dark-1440x900-time-attendance_section_approvals.png hits=17 hot=1
+[w0] 31/280 light-1440x900-time-attendance_section_approvals.png hits=17 hot=1
+[w2] 50/280 system-1280x900-staff-doctors_section_onboarding.png hits=22 hot=1
+[w1] 50/280 dark-1280x900-staff-doctors_section_engagements.png hits=22 hot=1
+[w0] 50/280 light-1280x900-staff-doctors.png hits=22 hot=1
+[w2] 64/280 system-1280x900-time-attendance.png hits=19 hot=1
+[w1] 68/280 dark-1280x900-time-attendance.png hits=19 hot=1
+[w2] 69/280 system-1280x900-time-attendance_section_approvals.png hits=19 hot=1
+[w0] 72/280 light-1280x900-time-attendance.png hits=19 hot=1
+[w1] 73/280 dark-1280x900-time-attendance_section_approvals.png hits=19 hot=1
+[w2] 75/280 system-1280x900-staffpay_section_people.png hits=21 hot=1
+[w1] 75/280 dark-1280x900-time-attendance_section_history.png hits=19 hot=1
+[w0] 75/280 light-1280x900-time-attendance_section_exceptions.png hits=19 hot=1
+[w0] 77/280 light-1280x900-time-attendance_section_approvals.png hits=19 hot=1
+[w2] 100/280 system-1024x768-roster.png hits=28 hot=3
+[w1] 100/280 dark-1024x768-staff-doctors_section_onboarding.png hits=29 hot=1
+[w0] 100/280 light-1024x768-staff-doctors_section_engagements.png hits=30 hot=2
+[w2] 101/280 system-1024x768-roster_section_coverage.png hits=27 hot=2
+[w2] 103/280 system-1024x768-roster_section_availability-leave.png hits=27 hot=2
+[w1] 104/280 dark-1024x768-roster.png hits=28 hot=3
+[w2] 105/280 system-1024x768-roster_section_conflicts-warnings.png hits=27 hot=2
+[w1] 105/280 dark-1024x768-roster_section_coverage.png hits=27 hot=2
+[w1] 107/280 dark-1024x768-roster_section_availability-leave.png hits=27 hot=2
+[w0] 108/280 light-1024x768-roster.png hits=28 hot=3
+[w2] 109/280 system-1024x768-roster_section_settings.png hits=27 hot=2
+[w1] 109/280 dark-1024x768-roster_section_conflicts-warnings.png hits=27 hot=2
+[w0] 109/280 light-1024x768-roster_section_coverage.png hits=27 hot=2
+[w2] 110/280 system-1024x768-time-attendance.png hits=26 hot=1
+[w0] 111/280 light-1024x768-roster_section_availability-leave.png hits=27 hot=2
+[w1] 113/280 dark-1024x768-roster_section_settings.png hits=27 hot=2
+[w0] 113/280 light-1024x768-roster_section_conflicts-warnings.png hits=27 hot=2
+[w2] 114/280 system-1024x768-time-attendance_section_corrections.png hits=26 hot=1
+[w1] 114/280 dark-1024x768-time-attendance.png hits=26 hot=1
+[w2] 115/280 system-1024x768-time-attendance_section_approvals.png hits=26 hot=1
+[w2] 117/280 system-1024x768-time-attendance_section_history.png hits=26 hot=1
+[w0] 117/280 light-1024x768-roster_section_settings.png hits=27 hot=2
+[w1] 118/280 dark-1024x768-time-attendance_section_corrections.png hits=26 hot=1
+[w0] 118/280 light-1024x768-time-attendance.png hits=26 hot=1
+[w2] 119/280 system-1024x768-time-attendance_section_settings.png hits=26 hot=1
+[w1] 119/280 dark-1024x768-time-attendance_section_approvals.png hits=26 hot=1
+[w1] 121/280 dark-1024x768-time-attendance_section_history.png hits=26 hot=1
+[w0] 122/280 light-1024x768-time-attendance_section_corrections.png hits=26 hot=1
+[w1] 123/280 dark-1024x768-time-attendance_section_settings.png hits=26 hot=1
+[w0] 123/280 light-1024x768-time-attendance_section_approvals.png hits=26 hot=1
+[w2] 125/280 system-1024x768-staffpay_section_variances.png hits=29 hot=1
+[w1] 125/280 dark-1024x768-staffpay_section_people.png hits=29 hot=1
+[w0] 125/280 light-1024x768-time-attendance_section_history.png hits=26 hot=1
+[w0] 127/280 light-1024x768-time-attendance_section_settings.png hits=26 hot=1
+[w2] 150/280 system-768x1024-roster_section_requests.png hits=40 hot=2
+[w1] 150/280 dark-768x1024-roster.png hits=41 hot=3
+[w0] 150/280 light-768x1024-staff-doctors_section_onboarding.png hits=40 hot=2
+[w2] 175/280 system-768x1024-staffpay_section_history.png hits=40 hot=2
+[w1] 175/280 dark-768x1024-staffpay_section_variances.png hits=40 hot=2
+[w0] 175/280 light-768x1024-staffpay_section_people.png hits=40 hot=2
+[w2] 180/280 system-430x932-staff-doctors.png hits=47 hot=4
+[w2] 181/280 system-430x932-staff-doctors_section_people.png hits=277 hot=2
+[w1] 184/280 dark-430x932-staff-doctors.png hits=47 hot=4
+[w2] 185/280 system-430x932-staff-doctors_section_credentials.png hits=40 hot=2
+[w1] 185/280 dark-430x932-staff-doctors_section_people.png hits=277 hot=2
+[w0] 188/280 light-430x932-staff-doctors.png hits=47 hot=4
+[w1] 189/280 dark-430x932-staff-doctors_section_credentials.png hits=40 hot=2
+[w0] 189/280 light-430x932-staff-doctors_section_people.png hits=277 hot=2
+[w0] 193/280 light-430x932-staff-doctors_section_credentials.png hits=40 hot=2
+[w2] 194/280 system-430x932-roster_section_open-shifts.png hits=40 hot=2
+[w1] 198/280 dark-430x932-roster_section_open-shifts.png hits=40 hot=2
+[w2] 200/280 system-430x932-roster_section_reports.png hits=42 hot=3
+[w1] 200/280 dark-430x932-roster_section_requests.png hits=40 hot=2
+[w0] 200/280 light-430x932-roster.png hits=40 hot=2
+[w0] 202/280 light-430x932-roster_section_open-shifts.png hits=40 hot=2
+[w2] 225/280 system-390x844-settings.png hits=108 hot=5
+[w1] 225/280 dark-430x932-staffpay_section_history.png hits=41 hot=2
+[w0] 225/280 light-430x932-staffpay_section_variances.png hits=41 hot=2
+[w2] 240/280 system-390x844-roster_section_open-shifts.png hits=40 hot=2
+[w1] 244/280 dark-390x844-roster_section_open-shifts.png hits=40 hot=2
+[w0] 248/280 light-390x844-roster_section_open-shifts.png hits=40 hot=2
+[w2] 250/280 system-390x844-time-attendance_section_timesheets.png hits=40 hot=2
+[w1] 250/280 dark-390x844-roster_section_reports.png hits=42 hot=3
+[w0] 250/280 light-390x844-roster_section_requests.png hits=40 hot=2
+[w2] 269/280 light-1024x600-dashboard.png hits=498 hot=46
+[w2] 271/280 light-768x500-dashboard.png hits=518 hot=47
+[w0] 275/280 light-390x844-staffpay_section_history.png hits=41 hot=2
+[w2] 273/280 dark-1024x600-dashboard.png hits=498 hot=46
+[w1] 275/280 system-1440x900-settings.png hits=70 hot=4
+[w2] 275/280 dark-768x500-dashboard.png hits=518 hot=47
+[w2] 277/280 system-1024x600-dashboard.png hits=498 hot=46
+[w2] 279/280 system-768x500-dashboard.png hits=518 hot=47
+DONE {"captures":840,"errors":0,"signals":2634,"elapsedMs":319961,"out":"/tmp/hcdp-fix/ui-batch1-contradiction-v1/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v1/agent-visual-qa/screenshots"}
