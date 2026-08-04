@@ -214,7 +214,7 @@ export function Sidebar() {
               </div>
               <div className="v33-aux-list">
                 {searchHits.length === 0 ? (
-                  <div className="px-2 py-2 text-xs text-[var(--sidebar-muted)]">
+                  <div className="px-2 py-2 text-[length:var(--type-control)] text-[var(--sidebar-muted)]">
                     No modules or sections matched.
                   </div>
                 ) : (
@@ -379,7 +379,7 @@ export function Sidebar() {
                 </option>
               ))}
             </select>
-            <p className="mt-1 text-[length:var(--type-meta)] leading-snug text-[var(--sidebar-muted)]">
+            <p className="mt-1 text-[length:var(--type-control)] leading-snug text-[var(--sidebar-muted)]">
               Demo Act-as — not production auth
             </p>
           </div>

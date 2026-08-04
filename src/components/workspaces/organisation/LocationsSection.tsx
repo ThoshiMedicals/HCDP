@@ -282,7 +282,7 @@ export function LocationsSection() {
                 <div><strong>Active users:</strong> {loc.activeUsers}</div>
               </div>
               {loc.isDraft || loc.readiness.some((r) => !r.done) ? (
-                <div className="mt-3 rounded-lg bg-[#fbfcfd] p-3">
+                <div className="mt-3 rounded-lg bg-[var(--soft)] p-3">
                   <div className="text-xs font-bold text-[var(--muted)]">Readiness checklist</div>
                   <ul className="mt-2 grid gap-1 text-xs">
                     {loc.readiness.map((r) => (
@@ -417,7 +417,7 @@ export function LocationsSection() {
                 {detail.holidays.length === 0 ? <li>No holidays or closures on record.</li> : null}
               </ul>
 
-              <div className="mt-4 rounded-lg bg-[#fbfcfd] p-3">
+              <div className="mt-4 rounded-lg bg-[var(--soft)] p-3">
                 <div className="text-xs font-bold text-[var(--muted)]">Add temporary closure</div>
                 <div className="mt-2 grid gap-2 md:grid-cols-3">
                   <input type="date" className="rounded-lg border px-3 py-2 text-sm" value={closureForm.date} onChange={(e) => setClosureForm({ ...closureForm, date: e.target.value })} />

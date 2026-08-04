@@ -128,7 +128,7 @@ export function AnalyticsPanel({
           </Button>
         ))}
         <select
-          className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2 text-[12px] font-semibold"
+          className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2 text-[length:var(--type-control)] font-semibold"
           value={period}
           onChange={(e) => setPeriod(e.target.value)}
         >
@@ -180,7 +180,7 @@ export function AnalyticsPanel({
       {mode === "tables" ? (
         <div>
           <h4 className="m-0 mb-2 text-sm font-extrabold">Longest outstanding actions</h4>
-          <table className="w-full border-collapse text-left text-[12px]">
+          <table className="w-full border-collapse text-left text-[length:var(--type-control)]">
             <thead>
               <tr className="border-b border-[var(--line)] text-[var(--muted)]">
                 <th className="py-2">Number</th>
@@ -194,7 +194,7 @@ export function AnalyticsPanel({
               {longest.map((a) => (
                 <tr
                   key={a.id}
-                  className="cursor-pointer border-b border-[#f1f5f9] hover:bg-[var(--soft)]"
+                  className="cursor-pointer border-b border-[var(--line)] hover:bg-[var(--soft)]"
                   onClick={() => onDrillDown([a.id])}
                 >
                   <td className="py-2 font-bold">{a.number}</td>
@@ -224,7 +224,7 @@ function groupCount(actions: InboxAction[], keyFn: (a: InboxAction) => string) {
 function ChartBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-[var(--line)] bg-[var(--card)] p-3">
-      <h4 className="m-0 mb-2 text-[12px] font-extrabold text-[#475569]">{title}</h4>
+      <h4 className="m-0 mb-2 text-[length:var(--type-control)] font-extrabold text-[#475569]">{title}</h4>
       {children}
     </div>
   );
@@ -389,7 +389,7 @@ function Heatmap({ actions }: { actions: InboxAction[] }) {
         </tbody>
       </table>
       {!clinics.length ? (
-        <p className="text-[12px] text-[#94a3b8]">No overdue actions in current data.</p>
+        <p className="text-[length:var(--type-control)] text-[#94a3b8]">No overdue actions in current data.</p>
       ) : null}
     </div>
   );

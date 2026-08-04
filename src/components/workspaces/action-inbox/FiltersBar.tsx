@@ -6,7 +6,7 @@ import type { InboxFilters, SavedView } from "@/lib/action-inbox/types";
 import { cn } from "@/lib/cn";
 
 const inputCls =
-  "rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-[0.45rem] text-[12px] font-semibold text-[var(--ink)] min-h-[34px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#2563eb]";
+  "rounded-[10px] border border-[var(--line)] bg-[var(--card)] px-2.5 py-[0.45rem] text-[length:var(--type-control)] font-semibold text-[var(--ink)] min-h-[34px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#2563eb]";
 
 export function FiltersBar({
   filters,
@@ -113,7 +113,7 @@ export function FiltersBar({
             value={filters.requester}
             onChange={(e) => patch({ requester: e.target.value })}
           />
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             Due from
             <input
               type="date"
@@ -122,7 +122,7 @@ export function FiltersBar({
               onChange={(e) => patch({ dueFrom: e.target.value })}
             />
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             Due to
             <input
               type="date"
@@ -131,7 +131,7 @@ export function FiltersBar({
               onChange={(e) => patch({ dueTo: e.target.value })}
             />
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             <input
               type="checkbox"
               checked={filters.overdueOnly}
@@ -139,7 +139,7 @@ export function FiltersBar({
             />
             Overdue only
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             <input
               type="checkbox"
               checked={filters.delegatedOnly}
@@ -147,7 +147,7 @@ export function FiltersBar({
             />
             Delegated
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             <input
               type="checkbox"
               checked={filters.watchedOnly}
@@ -155,7 +155,7 @@ export function FiltersBar({
             />
             Watched
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             <input
               type="checkbox"
               checked={filters.hasAttachments}
@@ -163,7 +163,7 @@ export function FiltersBar({
             />
             Has attachments
           </label>
-          <label className="flex items-center gap-2 text-[12px] font-semibold">
+          <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
             <input
               type="checkbox"
               checked={filters.awaitingVerification}
@@ -205,7 +205,7 @@ export function FiltersBar({
                 className={cn(
                   "rounded-full border px-2.5 py-1 text-[length:var(--type-control)] font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]",
                   v.pinned
-                    ? "border-[#2563eb] bg-[#eff6ff] text-[#1d4ed8]"
+                    ? "border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] text-[var(--hcdp-status-info-text)]"
                     : "border-[var(--line)] bg-[var(--soft)]"
                 )}
                 title={`${v.scope} · ${v.createdBy}`}
@@ -217,7 +217,7 @@ export function FiltersBar({
               {onTogglePin ? (
                 <button
                   type="button"
-                  className="rounded-full border border-[var(--line)] bg-[var(--card)] px-1.5 py-1 text-[length:var(--type-meta)] font-bold text-[var(--muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-full border border-[var(--line)] bg-[var(--card)] px-1.5 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   onClick={() => onTogglePin(v.id)}
                   aria-label={v.pinned ? `Unpin ${v.name}` : `Pin ${v.name}`}
                 >

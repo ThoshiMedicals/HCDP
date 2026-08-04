@@ -222,7 +222,7 @@ function OrganisationWorkspaceInner() {
         ) : null}
 
         {visibleNotifications.length > 0 ? (
-          <div className="rounded-xl border border-[var(--line)] bg-[#fbfcfd] p-3">
+          <div className="rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
             <div className="mb-2 text-xs font-bold uppercase text-[var(--muted)]">Notifications</div>
             <div className="grid gap-2">
               {visibleNotifications.slice(0, 6).map((n) => (

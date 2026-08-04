@@ -115,7 +115,7 @@ export function ReasonModal({
 
         {kind === "reject" ? (
           <div className="grid gap-2">
-            <label className="text-[12px] font-bold">
+            <label className="text-[length:var(--type-control)] font-bold">
               <input
                 type="radio"
                 className="mr-2"
@@ -124,7 +124,7 @@ export function ReasonModal({
               />
               Close as Rejected
             </label>
-            <label className="text-[12px] font-bold">
+            <label className="text-[length:var(--type-control)] font-bold">
               <input
                 type="radio"
                 className="mr-2"
@@ -145,7 +145,7 @@ export function ReasonModal({
         ) : null}
 
         {(kind === "reassign" || kind === "delegate") && (
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             {kind === "delegate" ? "Delegate" : "New owner"}
             <select className={inputCls} value={person} onChange={(e) => setPerson(e.target.value)}>
               {staff.map((s) => (
@@ -160,7 +160,7 @@ export function ReasonModal({
         {kind === "delegate" ? (
           <>
             <div className="grid gap-2 sm:grid-cols-2">
-              <label className="grid gap-1 text-[12px] font-bold">
+              <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                 Start date
                 <input
                   type="date"
@@ -169,7 +169,7 @@ export function ReasonModal({
                   onChange={(e) => setStartDate(e.target.value)}
                 />
               </label>
-              <label className="grid gap-1 text-[12px] font-bold">
+              <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                 End date
                 <input
                   type="date"
@@ -179,7 +179,7 @@ export function ReasonModal({
                 />
               </label>
             </div>
-            <label className="flex items-center gap-2 text-[12px] font-semibold">
+            <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
               <input
                 type="checkbox"
                 checked={canComplete}
@@ -187,7 +187,7 @@ export function ReasonModal({
               />
               Can complete action
             </label>
-            <label className="flex items-center gap-2 text-[12px] font-semibold">
+            <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
               <input
                 type="checkbox"
                 checked={canFurtherDelegate}
@@ -195,7 +195,7 @@ export function ReasonModal({
               />
               Can further delegate
             </label>
-            <label className="flex items-center gap-2 text-[12px] font-semibold">
+            <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
               <input
                 type="checkbox"
                 checked={sendUpdatesToOwner}
@@ -216,7 +216,7 @@ export function ReasonModal({
         ) : null}
 
         {(kind === "due" || kind === "escalate" || kind === "follow-up" || kind === "snooze") && (
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             {kind === "snooze" ? "Approved date and time (if custom)" : "Date / time"}
             <input
               type="datetime-local"
@@ -230,7 +230,7 @@ export function ReasonModal({
         {kind === "snooze" ? (
           <div className="grid gap-1">
             {snoozeOptions().map((o) => (
-              <label key={o.id} className="flex items-center gap-2 text-[12px] font-semibold">
+              <label key={o.id} className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                 <input
                   type="radio"
                   name="snooze"
@@ -244,7 +244,7 @@ export function ReasonModal({
         ) : null}
 
         {kind === "complete" ? (
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             Outcome
             <select className={inputCls} value={outcome} onChange={(e) => setOutcome(e.target.value)}>
               <option>Completed</option>
@@ -255,7 +255,7 @@ export function ReasonModal({
         ) : null}
 
         {needsReason ? (
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             {kind === "comment" ? "Comment (use @Name to mention)" : "Reason (required)"}
             <textarea
               className={inputCls + " min-h-[100px]"}

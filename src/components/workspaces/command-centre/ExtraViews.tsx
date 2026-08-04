@@ -85,7 +85,7 @@ export function MyDayOwnerView({
     <CcCard>
       <div className="px-4 pt-4">
         <h2 className="m-0 text-[18px] font-extrabold">My Day — Owner/Director</h2>
-        <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Decisions, approvals, delegated work, urgent actions, notices, scheduled reports, private reminders and
           end-of-day responsibilities.
         </p>
@@ -266,7 +266,7 @@ export function KpiScorecardView({
     <CcCard>
       <div className="px-4 pt-4">
         <h2 className="m-0 text-[18px] font-extrabold">Controlled KPI Scorecard</h2>
-        <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Every KPI includes name, definition, owner, calculation, source, warning/serious thresholds, period (
           {period}) vs {comparePeriodLabel(period)}, refresh frequency and contributing records.
         </p>
@@ -390,7 +390,7 @@ export function ReportsView({
     <CcCard>
       <div className="px-4 pt-4">
         <h2 className="m-0 text-[18px] font-extrabold">Reports</h2>
-        <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+        <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Saved packs and exports for period <strong>{period}</strong>. Completed/closed history is retained for reports
           even when excluded from active queues.
         </p>
@@ -469,7 +469,7 @@ export function ReportSchedulesList({
 
   if (!schedules.length) {
     return (
-      <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-4 py-3 text-[12px] text-[var(--cc-muted)]">
+      <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-4 py-3 text-[length:var(--type-control)] text-[var(--cc-muted)]">
         No saved report schedules yet. Use Schedule… on any report below.
       </div>
     );
@@ -600,7 +600,7 @@ function ReportConfigCard({
     >
       <div className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide text-[var(--cc-exec,#1e40af)]">Saved report</div>
       <h3 className="m-0 mt-1 text-[15px] font-extrabold">{title}</h3>
-      <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">{blurb}</p>
+      <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">{blurb}</p>
 
       <div className="mt-3 grid gap-2 rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3">
         <Field label="Report title">

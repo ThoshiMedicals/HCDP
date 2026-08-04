@@ -159,7 +159,7 @@ export function Topbar() {
               <option value="multiple">Multiple Clinics · {selection.selectedClinicIds.length}</option>
             ) : null}
           </select>
-          <span className="hidden pl-1 text-[length:var(--type-meta)] font-semibold text-[var(--muted)] sm:block">
+          <span className="hidden pl-1 text-[length:var(--type-control)] font-semibold text-[var(--muted)] sm:block">
             Scope: {scopeLabel}
           </span>
         </div>
@@ -170,7 +170,7 @@ export function Topbar() {
           <Icon name="search" className="h-3.5 w-3.5 shrink-0" />
           <input
             type="search"
-            className="w-full border-0 bg-transparent text-[12px] font-semibold text-[var(--ink)] outline-none placeholder:text-[#8a96a8]"
+            className="w-full border-0 bg-transparent text-[length:var(--type-control)] font-semibold text-[var(--ink)] outline-none placeholder:text-[#8a96a8]"
             placeholder="Search modules and sections..."
             aria-label="Search modules and sections"
             value={ribbonSearch}
@@ -209,7 +209,7 @@ export function Topbar() {
         </button>
         <button
           type="button"
-          className="hidden items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-meta)] font-bold text-[var(--muted)] lg:inline-flex"
+          className="hidden items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] lg:inline-flex"
           onClick={() =>
             pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
           }
@@ -220,7 +220,7 @@ export function Topbar() {
         <button
           type="button"
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-meta)] font-bold",
+            "inline-flex items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-control)] font-bold",
             online
               ? "border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)]"
               : "border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)]"

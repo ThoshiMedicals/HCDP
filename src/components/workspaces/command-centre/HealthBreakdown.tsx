@@ -179,11 +179,11 @@ function HealthBreakdownBody({
       {profile.override ? (
         <div className="cc-surface-warn rounded-xl border p-3 text-sm">
           <strong>Approved override (separate from automatic)</strong>
-          <p className="m-0 mt-1 text-[12px]">
+          <p className="m-0 mt-1 text-[length:var(--type-control)]">
             Automatic remains <strong>{profile.override.automaticBand}</strong>. Override:{" "}
             <strong>{profile.override.band}</strong>
           </p>
-          <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+          <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             Reason: {profile.override.reason}. Start {new Date(profile.override.startAt).toLocaleString("en-AU")} ·
             Expires {new Date(profile.override.expiry).toLocaleString("en-AU")}. Manager{" "}
             {profile.override.approvingManager}. Review {profile.override.reviewDate || "—"}.
@@ -204,7 +204,7 @@ function HealthBreakdownBody({
               a.change == null ? "—" : `${a.change > 0 ? "+" : ""}${a.change}%`
             } · ${a.status}`}
           >
-            <div className="grid gap-2 text-[12px]">
+            <div className="grid gap-2 text-[length:var(--type-control)]">
               <div className="flex flex-wrap gap-2">
                 <HealthBadge band={a.status} score={a.todayScore} />
                 <span className="text-[var(--cc-muted)]">Completeness: {a.dataCompleteness}</span>

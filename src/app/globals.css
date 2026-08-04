@@ -71,6 +71,12 @@ body {
   color: var(--ink);
 }
 
+.hcdp-type-control {
+  font-size: var(--type-control, 0.8125rem);
+  font-weight: var(--font-weight-label, 700);
+  letter-spacing: var(--tracking-label, 0.04em);
+}
+
 .hcdp-type-meta {
   font-size: var(--type-meta, 0.75rem);
   font-weight: var(--font-weight-meta, 650);
@@ -122,4 +128,12 @@ a {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* Readability: text-xs maps to --type-control (≥13px) for helpers/forms/tables.
+   True metadata continues to use --type-meta / .hcdp-type-meta (12px). */
+.text-xs {
+  font-size: var(--type-control, 0.8125rem);
+  line-height: 1.45;
 }

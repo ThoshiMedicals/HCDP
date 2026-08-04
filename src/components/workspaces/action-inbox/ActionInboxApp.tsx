@@ -1153,7 +1153,7 @@ export function ActionInboxApp() {
   return (
     <div className="grid gap-3">
       {demoMode ? (
-        <div className="cc-demo-banner rounded-[12px] border border-[#bfdbfe] bg-[#eff6ff] px-3 py-2 text-[12px] font-semibold text-[#1e3a8a]">
+        <div className="cc-demo-banner rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--hcdp-status-info-text)]">
           Demonstration mode — actions, notifications and decisions are stored in this browser only.
           Email / SMS delivery is simulated.
         </div>
@@ -1172,7 +1172,7 @@ export function ActionInboxApp() {
               <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
                 Demo role
                 <select
-                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[12px] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   value={demoRole}
                   onChange={(e) => {
                     const next = e.target.value as DemoRole;
@@ -1194,7 +1194,7 @@ export function ActionInboxApp() {
               <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
                 Sensitivity
                 <select
-                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[12px] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
                   value={canSeeSensitive ? "full" : "restricted"}
                   onChange={(e) => {
                     const full = e.target.value === "full";
@@ -1357,7 +1357,7 @@ export function ActionInboxApp() {
               setActiveSavedViewId(null);
             }}
             className={cn(
-              "rounded-[10px] px-3 py-2 text-[12px] font-extrabold transition",
+              "rounded-[10px] px-3 py-2 text-[length:var(--type-control)] font-extrabold transition",
               mainView === v.id
                 ? "bg-[#0f172a] text-white"
                 : "bg-[var(--soft)] text-[#475569] hover:bg-[#eef2f7]"
@@ -1378,7 +1378,7 @@ export function ActionInboxApp() {
               setActiveSavedViewId(null);
             }}
             className={cn(
-              "rounded-full px-3 py-1.5 text-[12px] font-bold transition",
+              "rounded-full px-3 py-1.5 text-[length:var(--type-control)] font-bold transition",
               category === t.id
                 ? "bg-[#2563eb] text-white"
                 : "border border-[var(--line)] bg-[var(--card)] text-[#475569] hover:border-[#94a3b8]"
@@ -1412,8 +1412,8 @@ export function ActionInboxApp() {
       />
 
       {isManager && selectedIds.length > 0 ? (
-        <div className="flex flex-wrap items-center gap-2 rounded-[12px] border border-[#bfdbfe] bg-[#eff6ff] px-3 py-2">
-          <span className="text-[12px] font-extrabold text-[#1e3a8a]">
+        <div className="flex flex-wrap items-center gap-2 rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2">
+          <span className="text-[length:var(--type-control)] font-extrabold text-[#1e3a8a]">
             {selectedIds.length} selected
           </span>
           <Button small variant="line" onClick={bulkReassign}>
@@ -1656,7 +1656,7 @@ function MoreItem({
       type="button"
       onClick={onClick}
       className={cn(
-        "block w-full rounded-[9px] px-3 py-2 text-left text-[12px] font-bold hover:bg-[#f1f5f9]",
+        "block w-full rounded-[9px] px-3 py-2 text-left text-[length:var(--type-control)] font-bold hover:bg-[var(--soft)]",
         danger ? "text-[#b91c1c]" : "text-[#334155]"
       )}
     >
@@ -1704,7 +1704,7 @@ function DelegationsOverlay({
         <div className="grid gap-2 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
           <h4 className="m-0 text-[13px] font-extrabold">Create absence cover</h4>
           <div className="grid gap-2 sm:grid-cols-2">
-            <label className="grid gap-1 text-[12px] font-bold">
+            <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
               From owner
               <select
                 className={inputCls}
@@ -1718,7 +1718,7 @@ function DelegationsOverlay({
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-[12px] font-bold">
+            <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
               Delegate
               <select
                 className={inputCls}
@@ -1732,7 +1732,7 @@ function DelegationsOverlay({
                 ))}
               </select>
             </label>
-            <label className="grid gap-1 text-[12px] font-bold">
+            <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
               Start
               <input
                 type="date"
@@ -1741,7 +1741,7 @@ function DelegationsOverlay({
                 onChange={(e) => setStartDate(e.target.value)}
               />
             </label>
-            <label className="grid gap-1 text-[12px] font-bold">
+            <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
               End
               <input
                 type="date"
@@ -1751,7 +1751,7 @@ function DelegationsOverlay({
               />
             </label>
           </div>
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             Reason
             <textarea
               className={inputCls + " min-h-[72px]"}

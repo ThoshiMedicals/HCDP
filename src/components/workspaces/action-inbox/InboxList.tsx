@@ -207,10 +207,10 @@ export function InboxList({
                   <span className="text-[length:var(--type-control)] text-[#94a3b8]">—</span>
                 )}
               </div>
-              <div className="truncate text-[12px] text-[#475569]">
+              <div className="truncate text-[length:var(--type-control)] text-[var(--muted)]">
                 {restricted ? "—" : action.clinicName}
               </div>
-              <div className="truncate text-[12px] text-[#475569]">
+              <div className="truncate text-[length:var(--type-control)] text-[var(--muted)]">
                 {restricted ? "—" : action.owner}
               </div>
               <div>
@@ -255,8 +255,8 @@ export function InboxList({
             </div>
 
             {expanded && !restricted ? (
-              <div className="border-t border-[#eef2f6] bg-[#fbfdff] px-4 py-3">
-                <div className="grid gap-2 text-[12px] text-[#475569] md:grid-cols-3">
+              <div className="border-t border-[var(--line)] bg-[var(--soft)] px-4 py-3">
+                <div className="grid gap-2 text-[length:var(--type-control)] text-[var(--muted)] md:grid-cols-3">
                   <div>
                     <strong>Requested by:</strong> {action.requestedBy}
                   </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ModuleSectionNav } from "@/components/shell/ModuleSectionNav";
 import {
@@ -24,6 +24,9 @@ import {
   ConnectedAdjustmentsSection,
 } from "./sections";
 import { M07_NON_CERTIFIED_DISCLAIMER } from "./types/domain";
+
+/** SSR + first client paint share this label; detail fills after bootstrap mounts. */
+const BOOTSTRAP_STATUS_PLACEHOLDER = "Storage bootstrap · schema v9";
 
 const NAV = (Object.keys(M07_SECTION_META) as M07SectionId[]).map((id) => ({
   id,
@@ -78,6 +81,17 @@ function WorkspaceInner() {
   const { section, setSection, bootstrap } = useStaffPay();
   const router = useRouter();
   const pathname = usePathname();
+  const [bootstrapStatus, setBootstrapStatus] = useState(BOOTSTRAP_STATUS_PLACEHOLDER);
+
+  useEffect(() => {
+    if (!bootstrap) {
+      setBootstrapStatus(BOOTSTRAP_STATUS_PLACEHOLDER);
+      return;
+    }
+    setBootstrapStatus(
+      `Storage bootstrap · schema v9 · v9Ran=${String(bootstrap.v9Ran ?? false)}`
+    );
+  }, [bootstrap]);
 
   function go(id: M07SectionId) {
     setSection(id);
@@ -109,12 +123,16 @@ function WorkspaceInner() {
           approved Batch 5 package. Not payment, bank, STP, superannuation or Xero execution.
           Management approval remains non-certified and is not payment authority.
         </p>
-        <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
-        {bootstrap ? (
-          <p className="mt-2 text-xs text-[var(--muted)]" role="status">
-            Storage bootstrap · schema v9 · v9Ran={String(bootstrap.v9Ran ?? false)}
-          </p>
-        ) : null}
+        <p className="mt-2 text-[length:var(--type-control)] text-[var(--muted)]">
+          {M07_NON_CERTIFIED_DISCLAIMER}
+        </p>
+        <p
+          className="mt-2 text-[length:var(--type-control)] text-[var(--muted)]"
+          role="status"
+          data-m07-bootstrap-status="1"
+        >
+          {bootstrapStatus}
+        </p>
         <div className="mt-4">
           <ModuleSectionNav
             items={NAV}

@@ -63,7 +63,7 @@ export function CardStateFrame({
     <CcCard className={cn(className)}>
       <div className="px-4 py-5">
         <div className="text-[13px] font-extrabold">{c.title}</div>
-        <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">{c.body}</p>
+        <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">{c.body}</p>
         {lastUpdated ? (
           <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">Last successful update: {lastUpdated}</p>
         ) : null}
@@ -101,7 +101,7 @@ export function FilterSentenceBar({
   onClear?: () => void;
 }) {
   return (
-    <div className="cc-surface-info flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[12px] font-semibold">
+    <div className="cc-surface-info flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[length:var(--type-control)] font-semibold">
       <span className="min-w-0 leading-snug">{sentence}</span>
       {onClear ? (
         <Button small variant="line" onClick={onClear}>

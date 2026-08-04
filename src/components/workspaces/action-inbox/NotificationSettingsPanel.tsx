@@ -80,7 +80,7 @@ export function NotificationSettingsPanel({
         </p>
 
         <div className="grid gap-2 sm:grid-cols-2">
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             Quiet hours start
             <input
               type="time"
@@ -89,7 +89,7 @@ export function NotificationSettingsPanel({
               onChange={(e) => patch({ quietHoursStart: e.target.value })}
             />
           </label>
-          <label className="grid gap-1 text-[12px] font-bold">
+          <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
             Quiet hours end
             <input
               type="time"
@@ -100,7 +100,7 @@ export function NotificationSettingsPanel({
           </label>
         </div>
 
-        <label className="grid gap-1 text-[12px] font-bold">
+        <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
           Reminder frequency
           <select
             className={inputCls}
@@ -117,7 +117,7 @@ export function NotificationSettingsPanel({
           </select>
         </label>
 
-        <label className="grid gap-1 text-[12px] font-bold">
+        <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
           Leave-period behaviour
           <select
             className={inputCls}

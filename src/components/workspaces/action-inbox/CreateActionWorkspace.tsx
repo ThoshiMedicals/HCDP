@@ -273,11 +273,11 @@ export function CreateActionWorkspace({
                 ) : null}
               </div>
 
-              <label className="grid gap-1 text-[12px] font-bold">
+              <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                 Action Title *
                 <input className={inputCls} value={title} onChange={(e) => setTitle(e.target.value)} />
               </label>
-              <label className="grid gap-1 text-[12px] font-bold">
+              <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                 Description *
                 <textarea
                   className={inputCls + " min-h-[90px]"}
@@ -287,7 +287,7 @@ export function CreateActionWorkspace({
               </label>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Action Type
                   <select
                     className={inputCls}
@@ -301,7 +301,7 @@ export function CreateActionWorkspace({
                     <option>General</option>
                   </select>
                 </label>
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Category
                   <select
                     className={inputCls}
@@ -314,7 +314,7 @@ export function CreateActionWorkspace({
                     <option value="Reminder">Reminder</option>
                   </select>
                 </label>
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Clinic *
                   <select className={inputCls} value={clinicId} onChange={(e) => setClinicId(e.target.value)}>
                     {CLINIC_OPTIONS.map((c) => (
@@ -324,7 +324,7 @@ export function CreateActionWorkspace({
                     ))}
                   </select>
                 </label>
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Owner *
                   <select className={inputCls} value={owner} onChange={(e) => setOwner(e.target.value)}>
                     <option value="">Select owner</option>
@@ -335,7 +335,7 @@ export function CreateActionWorkspace({
                     ))}
                   </select>
                 </label>
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Priority
                   <select
                     className={inputCls}
@@ -348,7 +348,7 @@ export function CreateActionWorkspace({
                     <option>Low</option>
                   </select>
                 </label>
-                <label className="grid gap-1 text-[12px] font-bold">
+                <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                   Due Date *
                   <input
                     type="datetime-local"
@@ -361,14 +361,14 @@ export function CreateActionWorkspace({
 
               {/* Type-specific sections */}
               {category === "Approval" ? (
-                <fieldset className="grid gap-2 rounded-xl border border-[#bfdbfe] bg-[#eff6ff] p-3">
-                  <legend className="px-1 text-[12px] font-extrabold text-[#1d4ed8]">Approval fields</legend>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                <fieldset className="grid gap-2 rounded-xl border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] p-3">
+                  <legend className="px-1 text-[length:var(--type-control)] font-extrabold text-[#1d4ed8]">Approval fields</legend>
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Approval purpose
                     <input className={inputCls} value={approvalPurpose} onChange={(e) => setApprovalPurpose(e.target.value)} />
                   </label>
                   <div className="grid gap-2 sm:grid-cols-2">
-                    <label className="grid gap-1 text-[12px] font-bold">
+                    <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                       Approver step 1
                       <select className={inputCls} value={approver1} onChange={(e) => setApprover1(e.target.value)}>
                         {STAFF_DIRECTORY.map((s) => (
@@ -376,7 +376,7 @@ export function CreateActionWorkspace({
                         ))}
                       </select>
                     </label>
-                    <label className="grid gap-1 text-[12px] font-bold">
+                    <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                       Approver step 2
                       <select className={inputCls} value={approver2} onChange={(e) => setApprover2(e.target.value)}>
                         <option value="">None</option>
@@ -386,15 +386,15 @@ export function CreateActionWorkspace({
                       </select>
                     </label>
                   </div>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Required decision date
                     <input type="date" className={inputCls} value={decisionDate} onChange={(e) => setDecisionDate(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Decision effect
                     <input className={inputCls} value={decisionEffect} onChange={(e) => setDecisionEffect(e.target.value)} />
                   </label>
-                  <label className="flex items-center gap-2 text-[12px] font-semibold">
+                  <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                     <input type="checkbox" checked={evidenceRequired} onChange={(e) => setEvidenceRequired(e.target.checked)} />
                     Evidence required
                   </label>
@@ -403,32 +403,32 @@ export function CreateActionWorkspace({
 
               {category === "Exception" ? (
                 <fieldset className="grid gap-2 rounded-xl border border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] p-3">
-                  <legend className="px-1 text-[12px] font-extrabold text-[#b45309]">Exception fields</legend>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <legend className="px-1 text-[length:var(--type-control)] font-extrabold text-[#b45309]">Exception fields</legend>
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     What was expected?
                     <input className={inputCls} value={expected} onChange={(e) => setExpected(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     What actually happened?
                     <input className={inputCls} value={actual} onChange={(e) => setActual(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Possible cause
                     <input className={inputCls} value={cause} onChange={(e) => setCause(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Possible effect
                     <input className={inputCls} value={effect} onChange={(e) => setEffect(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Recommended action
                     <input className={inputCls} value={recommended} onChange={(e) => setRecommended(e.target.value)} />
                   </label>
-                  <label className="flex items-center gap-2 text-[12px] font-semibold">
+                  <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                     <input type="checkbox" checked={ackRequired} onChange={(e) => setAckRequired(e.target.checked)} />
                     Acknowledgement required
                   </label>
-                  <label className="flex items-center gap-2 text-[12px] font-semibold">
+                  <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                     <input type="checkbox" checked={verifyRequired} onChange={(e) => setVerifyRequired(e.target.checked)} />
                     Manager verification required
                   </label>
@@ -437,8 +437,8 @@ export function CreateActionWorkspace({
 
               {category === "Reminder" ? (
                 <fieldset className="grid gap-2 rounded-xl border border-[#ddd6fe] bg-[#f5f3ff] p-3">
-                  <legend className="px-1 text-[12px] font-extrabold text-[#7c3aed]">Reminder fields</legend>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <legend className="px-1 text-[length:var(--type-control)] font-extrabold text-[#7c3aed]">Reminder fields</legend>
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Reminder type
                     <select className={inputCls} value={reminderType} onChange={(e) => setReminderType(e.target.value)}>
                       <option>One-time</option>
@@ -446,11 +446,11 @@ export function CreateActionWorkspace({
                       <option>Event-triggered</option>
                     </select>
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Reminder date and time
                     <input type="datetime-local" className={inputCls} value={reminderAt} onChange={(e) => setReminderAt(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Repeat pattern
                     <select className={inputCls} value={repeatPattern} onChange={(e) => setRepeatPattern(e.target.value)}>
                       <option>None</option>
@@ -459,15 +459,15 @@ export function CreateActionWorkspace({
                       <option>Monthly</option>
                     </select>
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Event trigger
                     <input className={inputCls} value={eventTrigger} onChange={(e) => setEventTrigger(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     End date
                     <input type="date" className={inputCls} value={endDate} onChange={(e) => setEndDate(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Delivery method
                     <select className={inputCls} value={deliveryMethod} onChange={(e) => setDeliveryMethod(e.target.value)}>
                       <option>Platform</option>
@@ -475,7 +475,7 @@ export function CreateActionWorkspace({
                       <option>SMS</option>
                     </select>
                   </label>
-                  <label className="flex items-center gap-2 text-[12px] font-semibold">
+                  <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                     <input type="checkbox" checked={snoozeAllowed} onChange={(e) => setSnoozeAllowed(e.target.checked)} />
                     Snooze allowed
                   </label>
@@ -484,8 +484,8 @@ export function CreateActionWorkspace({
 
               {category === "Escalation" ? (
                 <fieldset className="grid gap-2 rounded-xl border border-[#fecaca] bg-[#fef2f2] p-3">
-                  <legend className="px-1 text-[12px] font-extrabold text-[#dc2626]">Escalation fields</legend>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <legend className="px-1 text-[length:var(--type-control)] font-extrabold text-[#dc2626]">Escalation fields</legend>
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Current escalation level
                     <select className={inputCls} value={escLevel} onChange={(e) => setEscLevel(Number(e.target.value))}>
                       <option value={1}>Level 1 — Reminder to owner</option>
@@ -494,11 +494,11 @@ export function CreateActionWorkspace({
                       <option value={4}>Level 4 — Senior management</option>
                     </select>
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Escalation reason
                     <input className={inputCls} value={escReason} onChange={(e) => setEscReason(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Escalation owner
                     <select className={inputCls} value={escOwner} onChange={(e) => setEscOwner(e.target.value)}>
                       {STAFF_DIRECTORY.map((s) => (
@@ -506,15 +506,15 @@ export function CreateActionWorkspace({
                       ))}
                     </select>
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Notification recipients
                     <input className={inputCls} value={escRecipients} onChange={(e) => setEscRecipients(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     New due date
                     <input type="datetime-local" className={inputCls} value={escDue} onChange={(e) => setEscDue(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Required response
                     <input className={inputCls} value={escResponse} onChange={(e) => setEscResponse(e.target.value)} />
                   </label>
@@ -527,11 +527,11 @@ export function CreateActionWorkspace({
 
               {showMore ? (
                 <div className="grid gap-3 rounded-xl border border-[var(--line)] bg-[var(--soft)] p-3">
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Team
                     <input className={inputCls} value={team} onChange={(e) => setTeam(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Requester
                     <select className={inputCls} value={requester} onChange={(e) => setRequester(e.target.value)}>
                       {STAFF_DIRECTORY.map((s) => (
@@ -539,11 +539,11 @@ export function CreateActionWorkspace({
                       ))}
                     </select>
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Watchers (comma-separated)
                     <input className={inputCls} value={watchers} onChange={(e) => setWatchers(e.target.value)} />
                   </label>
-                  <label className="grid gap-1 text-[12px] font-bold">
+                  <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Sensitivity
                     <select
                       className={inputCls}
@@ -556,7 +556,7 @@ export function CreateActionWorkspace({
                       <option>Highly Confidential</option>
                     </select>
                   </label>
-                  <label className="flex items-center gap-2 text-[12px] font-semibold">
+                  <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">
                     <input
                       type="checkbox"
                       checked={isPrivateDraft}
@@ -565,7 +565,7 @@ export function CreateActionWorkspace({
                     Private draft when saving
                   </label>
                   {!isPrivateDraft ? (
-                    <label className="grid gap-1 text-[12px] font-bold">
+                    <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                       Share draft with (comma-separated staff)
                       <input className={inputCls} value={sharedWith} onChange={(e) => setSharedWith(e.target.value)} />
                     </label>
@@ -603,12 +603,12 @@ export function CreateActionWorkspace({
                 ["Requester", requester],
                 ["Sensitivity", sensitivity],
               ].map(([k, v]) => (
-                <div key={k} className="grid grid-cols-[140px_1fr] gap-2 border-b border-[#f1f5f9] py-2">
+                <div key={k} className="grid grid-cols-[140px_1fr] gap-2 border-b border-[var(--line)] py-2">
                   <span className="font-bold text-[var(--muted)]">{k}</span>
                   <span>{v}</span>
                 </div>
               ))}
-              <p className="text-[12px] text-[var(--muted)]">{description}</p>
+              <p className="text-[length:var(--type-control)] text-[var(--muted)]">{description}</p>
             </div>
           )}
         </div>

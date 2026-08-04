@@ -133,7 +133,7 @@ export function FilterBar({
   onClear?: () => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-[#fbfcfd] px-3 py-2">
+    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--soft)] px-3 py-2">
       <span className="text-xs font-bold text-[var(--muted)]">Filters</span>
       {children}
       {onClear ? (

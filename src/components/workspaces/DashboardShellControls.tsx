@@ -43,7 +43,7 @@ function ControlStatusCard({
 }) {
   return (
     <CcCard className="flex flex-col gap-1.5 p-3">
-      <strong className="text-[12px] font-extrabold leading-tight text-[var(--cc-ink)]">{title}</strong>
+      <strong className="text-[length:var(--type-control)] font-extrabold leading-tight text-[var(--cc-ink)]">{title}</strong>
       <p className="m-0 flex-1 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">{detail}</p>
       {href && actionLabel ? (
         <Link
@@ -98,7 +98,7 @@ export function DashboardShellControlsPanel() {
         <CcCard className="p-3">
           <div className="mb-1.5 flex flex-wrap items-start justify-between gap-2">
             <div className="min-w-0">
-              <strong className="block text-[12px] font-extrabold text-[var(--cc-ink)]">
+              <strong className="block text-[length:var(--type-control)] font-extrabold text-[var(--cc-ink)]">
                 Cross-Location Emergency Intervention
               </strong>
               <p className="m-0 mt-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
@@ -136,7 +136,7 @@ export function DashboardShellControlsPanel() {
         </CcCard>
 
         <CcCard className="p-3">
-          <strong className="block text-[12px] font-extrabold text-[var(--cc-ink)]">
+          <strong className="block text-[length:var(--type-control)] font-extrabold text-[var(--cc-ink)]">
             Management Control Status
           </strong>
           <p className="m-0 mt-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">

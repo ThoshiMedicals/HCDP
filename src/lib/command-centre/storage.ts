@@ -97,7 +97,16 @@ export function resolveIsDark(value: CcAppearance): boolean {
 
 export function applyAppearance(value: CcAppearance) {
   if (typeof document === "undefined") return;
-  document.body.classList.toggle("theme-dark", resolveIsDark(value));
+  const dark = resolveIsDark(value);
+  // Prefer html — React layout reconciles <body className> and would wipe body.theme-dark.
+  const root = document.documentElement;
+  if (root?.classList) {
+    root.classList.toggle("theme-dark", dark);
+    root.dataset.appearance = value;
+    if (root.style) root.style.colorScheme = dark ? "dark" : "light";
+  }
+  // Keep body in sync for residual body.theme-dark selectors / unit tests.
+  document.body?.classList.toggle("theme-dark", dark);
 }
 
 /** Subscribe to OS preference changes when appearance is Device setting. */

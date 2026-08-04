@@ -262,7 +262,7 @@ export function CategoryFilters({
               onClick={() => onToggle(c)}
               aria-pressed={active}
               className={cn(
-                "flex min-h-[44px] items-center rounded-xl border px-3 py-2 text-left text-[12px] font-bold leading-snug transition",
+                "flex min-h-[44px] items-center rounded-xl border px-3 py-2 text-left text-[length:var(--type-control)] font-bold leading-snug transition",
                 active
                   ? "cc-surface-info border border-[var(--cc-exec,#1e40af)]"
                   : "border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--cc-ink)] hover:border-[color-mix(in_srgb,var(--cc-exec,#1e40af)_45%,var(--cc-card-line))]"

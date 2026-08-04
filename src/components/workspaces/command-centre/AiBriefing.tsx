@@ -165,7 +165,7 @@ export function AiBriefing({
           ))}
           <section>
             <h4 className="m-0 text-[13px] font-extrabold">Information sources</h4>
-            <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+            <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
               Demonstration seed: actions, staffing, compliance, finance, incidents, digital availability. Live module
               feeds require a future backend connection.
             </p>

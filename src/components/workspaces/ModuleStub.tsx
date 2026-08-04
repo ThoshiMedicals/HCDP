@@ -13,7 +13,7 @@ export function ModuleStub({ module }: { module: ModuleDef }) {
         </div>
         <PanelTitle>{module.title}</PanelTitle>
         <PanelSub>{module.subtitle}</PanelSub>
-        <div className="mt-4 rounded-2xl border border-[#bfdbfe] bg-[#eff6ff] px-3.5 py-3 text-sm text-[#1e40af]">
+        <div className="mt-4 rounded-2xl border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3.5 py-3 text-sm text-[var(--hcdp-status-info-text)]">
           Coming in the next phase — this route matches the HTML navigation. No
           payroll, connector, or sensitive business logic is wired yet.
         </div>

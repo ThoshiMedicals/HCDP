@@ -438,7 +438,7 @@ export function HtmlModuleFallback({
             No create schema in HTML FIELD_SCHEMAS for `{htmlId}`.
           </div>
         ) : (
-          <div className="mt-4 rounded-2xl border border-[#bfdbfe] bg-[#eff6ff] p-4 text-sm text-[#1e40af]">
+          <div className="mt-4 rounded-2xl border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] p-4 text-sm text-[var(--hcdp-status-info-text)]">
             Use + Create to open the exact HTML form fields for this module.
           </div>
         )}

@@ -127,7 +127,7 @@ export function NotificationCentre({
                     <Badge tone="default">Grouped ×{items.length}</Badge>
                     <span className="text-sm font-bold">{latest.title}</span>
                   </div>
-                  <p className="m-0 text-[12px] text-[var(--muted)]">{latest.reason}</p>
+                  <p className="m-0 text-[length:var(--type-control)] text-[var(--muted)]">{latest.reason}</p>
                   <div className="mt-2 flex gap-2">
                     <Button small variant="teal" onClick={() => onOpenAction(latest.actionId)}>
                       Open Action
@@ -193,7 +193,7 @@ function NotifRow({
               {n.priority}
             </Badge>
           </div>
-          <p className="m-0 mt-1 text-[12px] text-[var(--muted)]">{n.reason}</p>
+          <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--muted)]">{n.reason}</p>
           <p className="m-0 text-[length:var(--type-control)] text-[#94a3b8]">
             {n.actionNumber} · {n.clinicName} · {formatDateTime(n.at)}
           </p>

@@ -1155,11 +1155,11 @@ export function CommandCentre() {
             <p className="m-0 mt-1 text-[13px] font-semibold text-[var(--cc-ink)]">
               {greeting}, Neil. Here is today’s organisation overview.
             </p>
-            <p className="m-0 mt-1 text-[12px] text-[var(--cc-muted)]">
+            <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
               {todayLabel} · Layout: {layoutName} · Period: {periodLabel(period, customRange)}
             </p>
             {dataStale ? (
-              <p className="cc-text-warn m-0 mt-1 text-[12px] font-bold">Data may be outdated</p>
+              <p className="cc-text-warn m-0 mt-1 text-[length:var(--type-control)] font-bold">Data may be outdated</p>
             ) : null}
           </div>
         </div>
