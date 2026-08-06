@@ -1,6 +1,6 @@
 # Conflict and Owner Decision Register
 
-**Open items:** 26
+**Open items:** 25
 
 | ID | Type | Recommended disposition | Status |
 | --- | --- | --- | --- |
@@ -28,11 +28,11 @@
 | `conflict_3a095c436f1f` | scope-conflict | EXCLUDED-BY-PRODUCT-BOUNDARY | OPEN |
 | `conflict_95c4e61428a8` | scope-conflict | EXCLUDED-BY-PRODUCT-BOUNDARY | OPEN |
 | `conflict_52f7791e1641` | scope-conflict | EXCLUDED-BY-PRODUCT-BOUNDARY | OPEN |
-| `DEC-FINAL-PNGS-MISSING` | design-reference | DECISION-REQUIRED | OPEN |
+| `DEC-FINAL-PNGS-MISSING` | design-reference | ADOPTED-AS-IS | CLOSED |
 | `DEC-BRANDED-THEMES` | appearance | ADOPTED-AS-IS | OPEN |
 
 See `conflict-and-owner-decision-register.json` for excerpts and detail.
 
-### DEC-FINAL-PNGS-MISSING — owner decision B recorded
+### DEC-FINAL-PNGS-MISSING — CLOSED (owner revised decision A)
 
-Do not accept observed hashes. Mismatched uploads quarantined under `docs/design-references/mismatch-quarantine-b5feab7/`. Exact programme-prompt SHA-256 originals still required for canonical `final/` install.
+Accepted `b5feab7` observed SHA-256 as canonical baselines under normalised filenames. Mismatch evidence `a22f9a1` preserved.

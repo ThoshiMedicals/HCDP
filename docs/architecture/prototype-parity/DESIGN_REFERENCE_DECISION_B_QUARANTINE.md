@@ -20,3 +20,10 @@ Required SHA-256 values remain those in the master programme prompt (see manifes
 Re-upload/install the exact nine original PNGs whose SHA-256 match the prompt table, using normalised filenames `m01-command-centre-final.png` … `m15-inventory-assets-final.png`.
 
 Programme Wave P1 must not begin until 9/9 hash + dimension verification passes.
+
+
+## Superseded by revised decision A
+
+Owner later accepted the same `b5feab7` bytes as canonical. Quarantine folder retained for history; canonical SoT is `docs/design-references/final/m0*-…-final.png`.
+
+Superseded note added: 2026-08-06T22:48:20Z

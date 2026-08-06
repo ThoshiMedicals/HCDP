@@ -17,15 +17,15 @@ REG_TS = (ROOT / "src/platform/module-registry/module-register.ts").read_text()
 UTC = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 EXPECTED_IMAGES = [
-    ("M01", "/dashboard", "doctors_pulse_operations_dashboard.png", "m01-command-centre-final.png", "ed10fac6e817a582e4e177f1cecf1661929a54bc7130d96dc49386ef34774f74"),
-    ("M02", "/action-inbox", "doctors_pulse_action_inbox_dashboard.png", "m02-action-inbox-final.png", "c775526e0ec5509d8fdfdc917c2d6815fe19094720575a35233db12482f40cb7"),
-    ("M04", "/staff-doctors", "doctors_pulse_staff_operations_dashboard.png", "m04-staff-doctors-final.png", "5e813486de7893e4d4561b6e7239dd82d7cfa891882b20e30d794557baa50ac2"),
-    ("M05", "/roster", "doctors_pulse_weekly_roster_dashboard.png", "m05-weekly-roster-final.png", "3906d4c0e294d3fefc03194b4ff3b97602b69d34eb70a44b071fd59e15cfde13"),
-    ("M06", "/time-attendance", "doctors_pulse_attendance_dashboard(1).png", "m06-time-attendance-final.png", "d8b8805f08c5b2233ae0c69a1b47e10bf1a1fceaea946cb364161cec7a7d691e"),
-    ("M10", "/tasks-actions", "doctors_pulse_checklist_dashboard.png", "m10-checklists-final.png", "96be9b1424a8eb20dee634feb8ffb9b374e2791f64229699544a9a379daecebb"),
-    ("M11", "/training", "doctors_pulse_training_dashboard.png", "m11-training-final.png", "a1387fed6383426a1fcdeaa9034b6d80fee93b6cbea6af3b475cd255de751299"),
-    ("M12", "/compliance-quality", "doctors_pulse_compliance_dashboard(1).png", "m12-compliance-quality-final.png", "e87c012e627ea300424cb6d03760a9777f3e81ab91b8c73e51cf90a75cc1fadf"),
-    ("M15", "/inventory-assets", "doctors_pulse_inventory_dashboard(1).png", "m15-inventory-assets-final.png", "cc9261285d600e4d9f3fae0ca529783a662af40e5a2407a3bfacae573042dc28"),
+    ("M01", "/dashboard", "doctors_pulse_operations_dashboard.png", "m01-command-centre-final.png", "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"),
+    ("M02", "/action-inbox", "doctors_pulse_action_inbox_dashboard.png", "m02-action-inbox-final.png", "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"),
+    ("M04", "/staff-doctors", "doctors_pulse_staff_operations_dashboard.png", "m04-staff-doctors-final.png", "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"),
+    ("M05", "/roster", "doctors_pulse_weekly_roster_dashboard.png", "m05-weekly-roster-final.png", "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"),
+    ("M06", "/time-attendance", "doctors_pulse_attendance_dashboard.png", "m06-time-attendance-final.png", "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"),
+    ("M10", "/tasks-actions", "doctors_pulse_checklist_dashboard.png", "m10-checklists-final.png", "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"),
+    ("M11", "/training", "doctors_pulse_training_dashboard.png", "m11-training-final.png", "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"),
+    ("M12", "/compliance-quality", "doctors_pulse_compliance_dashboard.png", "m12-compliance-quality-final.png", "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"),
+    ("M15", "/inventory-assets", "doctors_pulse_inventory_dashboard.png", "m15-inventory-assets-final.png", "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"),
 ]
 
 # Revised multi-axis status from owner prompt + register evidence (not file-count alone)

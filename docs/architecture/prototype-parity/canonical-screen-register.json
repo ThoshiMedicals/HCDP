@@ -25,9 +25,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_45a423c53d11",
@@ -46,9 +47,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_5ead348d1bb5",
@@ -67,9 +69,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_eb5299b65a5f",
@@ -88,9 +91,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_19bd499af4c7",
@@ -109,9 +113,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_940301c0e2fb",
@@ -130,9 +135,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m01-command-centre-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"
     },
     {
       "screenId": "screen_a7b30547a0f1",
@@ -151,9 +157,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_cbfb580a40cf",
@@ -172,9 +179,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_b8e63ad39676",
@@ -193,9 +201,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_35c787d690b5",
@@ -214,9 +223,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_aedef95913f5",
@@ -235,9 +245,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_e96d33b6f456",
@@ -256,9 +267,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_1c005f5f8906",
@@ -277,9 +289,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m02-action-inbox-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"
     },
     {
       "screenId": "screen_7f7c34dece18",
@@ -508,9 +521,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_6a9b9ae6bfc9",
@@ -529,9 +543,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_af79addb7440",
@@ -550,9 +565,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_a9ede2b0662a",
@@ -571,9 +587,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_3d74fa5ccc2d",
@@ -592,9 +609,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_68ce1cb2c332",
@@ -613,9 +631,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_2225896a0ae1",
@@ -634,9 +653,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_ac5199ab3da2",
@@ -655,9 +675,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_6a140fa9a45e",
@@ -676,9 +697,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_4b2c3c1c5ed1",
@@ -697,9 +719,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m04-staff-doctors-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"
     },
     {
       "screenId": "screen_4205621f2f99",
@@ -718,9 +741,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_c369ce47068d",
@@ -739,9 +763,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_e0125925b453",
@@ -760,9 +785,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_e937f2b14a02",
@@ -781,9 +807,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_5b844c5fe559",
@@ -802,9 +829,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_29f2f76f5b78",
@@ -823,9 +851,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_4e8ce41290ff",
@@ -844,9 +873,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m05-weekly-roster-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"
     },
     {
       "screenId": "screen_856e42207a9c",
@@ -865,9 +895,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_4fd54226f964",
@@ -886,9 +917,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_3d8371aa9ce9",
@@ -907,9 +939,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_bee430f282cf",
@@ -928,9 +961,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_d5bbdbcc845d",
@@ -949,9 +983,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_c0db190e799a",
@@ -970,9 +1005,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m06-time-attendance-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"
     },
     {
       "screenId": "screen_e16b849eb084",
@@ -1537,9 +1573,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_5e9c625526dd",
@@ -1558,9 +1595,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_672bc6783d5e",
@@ -1579,9 +1617,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_51c2def7b175",
@@ -1600,9 +1639,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_29ddfd6f6622",
@@ -1621,9 +1661,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_cd15fda6afe3",
@@ -1642,9 +1683,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_e6f9cc1334f8",
@@ -1663,9 +1705,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_74fc6b8a263b",
@@ -1684,9 +1727,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_55f73bb40b92",
@@ -1705,9 +1749,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_2dc301050b1c",
@@ -1726,9 +1771,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m10-checklists-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P3",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"
     },
     {
       "screenId": "screen_7e234535d00d",
@@ -1747,9 +1793,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_1e945ed950a9",
@@ -1768,9 +1815,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_870b2b6a8546",
@@ -1789,9 +1837,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_f1347baeb139",
@@ -1810,9 +1859,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_5bdb3c167877",
@@ -1831,9 +1881,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_5b836fc94a02",
@@ -1852,9 +1903,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_c14ea201d1c9",
@@ -1873,9 +1925,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_be1e9e285f2a",
@@ -1894,9 +1947,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_dc08d669fb07",
@@ -1915,9 +1969,10 @@
       "uiStatus": "FUNCTIONALLY-COMPLETE",
       "domainStatus": "FUNCTIONALLY-COMPLETE",
       "designReference": "m11-training-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P2",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"
     },
     {
       "screenId": "screen_be6fe5359562",
@@ -1936,9 +1991,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_290b046cbde5",
@@ -1957,9 +2013,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_2bc5341b41c0",
@@ -1978,9 +2035,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_f3b0c10422b9",
@@ -1999,9 +2057,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_3af1c79fa7d1",
@@ -2020,9 +2079,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_5951559433be",
@@ -2041,9 +2101,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_223df647ead9",
@@ -2062,9 +2123,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_4a8215d5ae7d",
@@ -2083,9 +2145,10 @@
       "uiStatus": "IN-DEVELOPMENT",
       "domainStatus": "IN-DEVELOPMENT",
       "designReference": "m12-compliance-quality-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"
     },
     {
       "screenId": "screen_1eb483efe8f6",
@@ -2503,9 +2566,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_49c80182e63c",
@@ -2524,9 +2588,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_6a86c0d4667d",
@@ -2545,9 +2610,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_3aa5f6b7c1bb",
@@ -2566,9 +2632,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_abc986b40a16",
@@ -2587,9 +2654,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_1722b7b5933d",
@@ -2608,9 +2676,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_3b8d0a86e115",
@@ -2629,9 +2698,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_9a8cb447a086",
@@ -2650,9 +2720,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_b430a19d2bbc",
@@ -2671,9 +2742,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_7487d26d8fec",
@@ -2692,9 +2764,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_6eea40281705",
@@ -2713,9 +2786,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_65804ebfb92d",
@@ -2734,9 +2808,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_f3847526b8c7",
@@ -2755,9 +2830,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_4517c0b8e46b",
@@ -2776,9 +2852,10 @@
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
       "designReference": "m15-inventory-assets-final.png",
-      "designReferenceStatus": "MISSING",
+      "designReferenceStatus": "INSTALLED_HASH_OK",
       "targetWave": "P5",
-      "acceptanceEvidencePath": "pending-wave-evidence"
+      "acceptanceEvidencePath": "pending-wave-evidence",
+      "designReferenceSha256": "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"
     },
     {
       "screenId": "screen_5cb512ef4a5c",

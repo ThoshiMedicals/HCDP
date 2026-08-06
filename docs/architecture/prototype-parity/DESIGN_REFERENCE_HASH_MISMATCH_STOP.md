@@ -46,3 +46,12 @@ Actions taken after decision:
 - Exact hash-matching originals were **not** found on the VM after decision B; re-upload required.
 
 Updated: 2026-08-06T22:30:58Z
+
+
+## Resolution — owner revised decision A
+
+Accepted the nine `b5feab7` uploads as canonical baselines under normalised `m0*-…-final.png` names.  
+Complete observed SHA-256 values recorded in `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`.  
+This mismatch stop remains historical evidence (commit `a22f9a1` preserved).
+
+Resolved: 2026-08-06T22:48:20Z

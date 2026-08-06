@@ -11,3 +11,10 @@
 | Open owner decisions | 26 |
 
 Extractor raw control counts are recorded for reconciliation by source-location ID and are **not** used as final requirement cardinality.
+
+
+## Design references — owner revised decision A
+
+Nine canonical finals installed under normalised names; dimensions 1672×941 (9/9); complete observed SHA-256 recorded. Prior prompt hashes superseded. Mismatch evidence `a22f9a1` preserved.
+
+Updated: 2026-08-06T22:48:20Z

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T22:30:58Z",
-  "openCount": 26,
+  "generatedAt": "2026-08-06T22:48:20Z",
+  "openCount": 25,
   "items": [
     {
       "id": "conflict_7c51f3fa880f",
@@ -245,13 +245,15 @@
     {
       "id": "DEC-FINAL-PNGS-MISSING",
       "type": "design-reference",
-      "recommendedDisposition": "DECISION-REQUIRED",
+      "recommendedDisposition": "ADOPTED-AS-IS",
       "ownerDecisionRequired": true,
-      "status": "OPEN",
+      "status": "CLOSED",
       "detail": "Nine final design PNGs were not available in the environment; installation blocked pending exact originals.",
-      "ownerDecision": "B",
-      "ownerDecisionDetail": "Do not accept observed hashes. Require exact programme-prompt SHA-256 originals. Mismatched uploads quarantined under mismatch-quarantine-b5feab7/. Evidence a22f9a1 preserved.",
-      "updatedAt": "2026-08-06T22:30:58Z"
+      "ownerDecision": "A-REVISED",
+      "ownerDecisionDetail": "Accept b5feab7 observed SHA-256 as new canonical baselines; install normalised m0*-final.png names; preserve a22f9a1 mismatch history.",
+      "updatedAt": "2026-08-06T22:30:58Z",
+      "closedAt": "2026-08-06T22:48:20Z",
+      "canonicalManifest": "docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json"
     },
     {
       "id": "DEC-BRANDED-THEMES",

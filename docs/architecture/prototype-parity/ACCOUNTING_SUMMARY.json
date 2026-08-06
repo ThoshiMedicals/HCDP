@@ -87,5 +87,7 @@
     "scopeConflictHits": 24,
     "sensitivePatternClasses": 4
   },
-  "designReferencesInstalled": false
+  "designReferencesInstalled": true,
+  "designReferenceOwnerDecision": "A-REVISED",
+  "designReferenceCanonicalCommitSource": "b5feab7d71790aac75049b361817fa92eeb1a87d"
 }

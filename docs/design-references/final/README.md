@@ -1,23 +1,19 @@
 # Final design references (canonical)
 
-**Owner decision B:** do not accept mismatched hashes.
+**Owner revised decision A:** accept the nine PNGs from commit `b5feab7` as the new canonical visual baselines.
 
-Canonical files must be the normalised names below with **exact** SHA-256 from the master programme prompt.
+Mismatch history preserved at commit `a22f9a1`. Prior prompt SHA-256 values are superseded.
 
-| Module | Canonical file | Required SHA-256 | Status |
+| Module | Canonical file | Dimensions | Canonical SHA-256 |
 | --- | --- | --- | --- |
-| M01 | `m01-command-centre-final.png` | `ed10fac6e817a582e4e177f1cecf1661929a54bc7130d96dc49386ef34774f74` | **MISSING** |
-| M02 | `m02-action-inbox-final.png` | `c775526e0ec5509d8fdfdc917c2d6815fe19094720575a35233db12482f40cb7` | **MISSING** |
-| M04 | `m04-staff-doctors-final.png` | `5e813486de7893e4d4561b6e7239dd82d7cfa891882b20e30d794557baa50ac2` | **MISSING** |
-| M05 | `m05-weekly-roster-final.png` | `3906d4c0e294d3fefc03194b4ff3b97602b69d34eb70a44b071fd59e15cfde13` | **MISSING** |
-| M06 | `m06-time-attendance-final.png` | `d8b8805f08c5b2233ae0c69a1b47e10bf1a1fceaea946cb364161cec7a7d691e` | **MISSING** |
-| M10 | `m10-checklists-final.png` | `96be9b1424a8eb20dee634feb8ffb9b374e2791f64229699544a9a379daecebb` | **MISSING** |
-| M11 | `m11-training-final.png` | `a1387fed6383426a1fcdeaa9034b6d80fee93b6cbea6af3b475cd255de751299` | **MISSING** |
-| M12 | `m12-compliance-quality-final.png` | `e87c012e627ea300424cb6d03760a9777f3e81ab91b8c73e51cf90a75cc1fadf` | **MISSING** |
-| M15 | `m15-inventory-assets-final.png` | `cc9261285d600e4d9f3fae0ca529783a662af40e5a2407a3bfacae573042dc28` | **MISSING** |
+| M01 | `m01-command-centre-final.png` | 1672x941 | `f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236` |
+| M02 | `m02-action-inbox-final.png` | 1672x941 | `9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f` |
+| M04 | `m04-staff-doctors-final.png` | 1672x941 | `146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8` |
+| M05 | `m05-weekly-roster-final.png` | 1672x941 | `121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06` |
+| M06 | `m06-time-attendance-final.png` | 1672x941 | `86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16` |
+| M10 | `m10-checklists-final.png` | 1672x941 | `1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4` |
+| M11 | `m11-training-final.png` | 1672x941 | `cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e` |
+| M12 | `m12-compliance-quality-final.png` | 1672x941 | `4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8` |
+| M15 | `m15-inventory-assets-final.png` | 1672x941 | `0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6` |
 
-Mismatch uploads from `b5feab7` are quarantined at `docs/design-references/mismatch-quarantine-b5feab7/` and are **not** part of the canonical set.
-
-Evidence commit `a22f9a1` is preserved in history.
-
-Generated: 2026-08-06T22:30:58Z
+Generated: 2026-08-06T22:48:20Z
