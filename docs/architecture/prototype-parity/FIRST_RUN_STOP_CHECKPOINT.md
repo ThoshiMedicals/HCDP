@@ -10,7 +10,7 @@
 | --- | --- |
 | Branch | `cursor/prototype-parity-programme-reset` |
 | Base tip at creation | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
-| First-run tip (this checkpoint) | `582a52b91e2f60a85d53377309a20eba1e6e7182` |
+| First-run tip | branch HEAD `cursor/prototype-parity-programme-reset` (see git log below; tip advances with checkpoint pins) |
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
 | `origin/main` | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` (unchanged) |
 | `git diff b1152d3..e659dfc -- src scripts` | empty |
