@@ -3,7 +3,7 @@
 **Date:** 6 Aug 2026  
 **Branch:** `cursor/ui-batch1-owner-readiness-evidence-correction-2-f709`  
 **Frozen application SHA (Phase 0 candidate):** `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
-**Evidence tip:** (see latest docs commit on this branch)  
+**Evidence tip:** `9c04c7194cd2b92a6d43c3a0d72fde905056c9e4`  
 **Prior Correction-2 freeze (superseded as baseline candidate):** `31b31115fa1bab99e2cea47c8526a4c8011e2fe2`  
 **QA bases (2A):** Visual `:3511` · Work-Step `:3512` · Regression `:3513`  
 **Owner-visible:** `http://127.0.0.1:3000`  

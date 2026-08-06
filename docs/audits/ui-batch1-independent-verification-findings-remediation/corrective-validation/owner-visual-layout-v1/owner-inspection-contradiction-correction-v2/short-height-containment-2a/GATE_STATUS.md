@@ -3,6 +3,7 @@
 **Date:** 6 Aug 2026  
 **Branch:** `cursor/ui-batch1-owner-readiness-evidence-correction-2-f709`  
 **Frozen application SHA:** `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
+**Evidence tip:** `9c04c7194cd2b92a6d43c3a0d72fde905056c9e4`  
 **Application commits:**  
 - `bfb31f9bee714ee70b61952604961291c83256f1` — contain dashboard at short viewport heights  
 - `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` — contain dashboard More menus at short heights  
