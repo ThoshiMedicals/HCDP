@@ -1,29 +1,6 @@
-# Design Reference — Owner Decision B Quarantine
+# Design Reference — Decision B Quarantine (Superseded Path)
 
-**Decision:** B — reject observed hashes; require exact prompt SHA-256 originals.  
-**Preserved mismatch evidence:** `a22f9a1`  
-**Mismatch upload:** `b5feab7`  
-**Updated:** 2026-08-06T22:30:58Z
+Decision B quarantine path was **not** selected. Owner revised to Decision A.  
+Quarantine tree retained for audit: `docs/design-references/mismatch-quarantine-b5feab7/`.
 
-## Canonical set (`docs/design-references/final/`)
-
-Status of all nine normalised targets: **MISSING** (not installed).
-
-Required SHA-256 values remain those in the master programme prompt (see manifest).
-
-## Non-canonical quarantine
-
-`docs/design-references/mismatch-quarantine-b5feab7/` holds the nine rejected uploads for evidence only.
-
-## Next required owner action
-
-Re-upload/install the exact nine original PNGs whose SHA-256 match the prompt table, using normalised filenames `m01-command-centre-final.png` … `m15-inventory-assets-final.png`.
-
-Programme Wave P1 must not begin until 9/9 hash + dimension verification passes.
-
-
-## Superseded by revised decision A
-
-Owner later accepted the same `b5feab7` bytes as canonical. Quarantine folder retained for history; canonical SoT is `docs/design-references/final/m0*-…-final.png`.
-
-Superseded note added: 2026-08-06T22:48:20Z
+Generated: `deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6`

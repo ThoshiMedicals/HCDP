@@ -1,0 +1,143 @@
+{
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
+  "method": "PIL palette sample from Decision A canonical PNGs",
+  "sharedInference": {
+    "navBackground": "dark navy (~#0B1F33\u2013#102A43 family from sidebar samples)",
+    "canvasBackground": "light gray/white (~#F3F5F7\u2013#FFFFFF)",
+    "accentPrimary": "blue interactive (~#1D4ED8\u2013#2563EB)",
+    "statusSemantics": [
+      "red emergency/critical",
+      "orange urgent/due",
+      "green on-track",
+      "purple overdue"
+    ]
+  },
+  "perImage": {
+    "M01": {
+      "file": "m01-command-centre-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#011e41",
+        "#011f41",
+        "#011e40"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fdfdfe",
+        "#fcfdfd"
+      ]
+    },
+    "M02": {
+      "file": "m02-action-inbox-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#002044",
+        "#001f43",
+        "#001f44"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fafbfc",
+        "#fcfdfd"
+      ]
+    },
+    "M04": {
+      "file": "m04-staff-doctors-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#00224a",
+        "#002149",
+        "#00214a"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fcfcfd",
+        "#fdfdfd"
+      ]
+    },
+    "M05": {
+      "file": "m05-weekly-roster-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#001f45",
+        "#001f46",
+        "#001e44"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fbfbfc",
+        "#fcfcfd"
+      ]
+    },
+    "M06": {
+      "file": "m06-time-attendance-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#002249",
+        "#002148",
+        "#00234a"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fcfcfd",
+        "#fdfdfd"
+      ]
+    },
+    "M10": {
+      "file": "m10-checklists-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#032247",
+        "#022247",
+        "#022146"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fcfcfd",
+        "#fafbfc"
+      ]
+    },
+    "M11": {
+      "file": "m11-training-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#001f45",
+        "#001f44",
+        "#001e44"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fdfdfd",
+        "#fdfdfe"
+      ]
+    },
+    "M12": {
+      "file": "m12-compliance-quality-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#001f45",
+        "#001f44",
+        "#001e44"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fbfcfd",
+        "#fbfbfc"
+      ]
+    },
+    "M15": {
+      "file": "m15-inventory-assets-final.png",
+      "size": "1672x941",
+      "sidebarTopColors": [
+        "#001f45",
+        "#001f44",
+        "#001e44"
+      ],
+      "canvasTopColors": [
+        "#fefefe",
+        "#fdfdfd",
+        "#fcfcfd"
+      ]
+    }
+  }
+}

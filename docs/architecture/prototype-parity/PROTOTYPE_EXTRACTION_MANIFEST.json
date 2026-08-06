@@ -1,6 +1,6 @@
 {
   "extractor": "scripts/prototype-parity/extract-prototype.mjs",
-  "extractedAt": "2026-08-06T05:40:17.019Z",
+  "extractedAt": "deterministic:proto-8843dbb315a6e82b",
   "prototypePath": "public/pulse-html-prototype.html",
   "prototypeSha256": "8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760",
   "prototypeBytes": 1270466,
@@ -35,7 +35,7 @@
     "rawInputs": 213,
     "rawSelects": 105,
     "rawTextareas": 55,
-    "scopeConflictHits": 24,
+    "scopeConflictHits": 19,
     "sensitivePatternClasses": 4
   },
   "minimumBaseline": {

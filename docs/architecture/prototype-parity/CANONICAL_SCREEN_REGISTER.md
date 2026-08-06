@@ -2,14 +2,14 @@
 
 **Derived count:** 186  
 **Earlier 143 estimate:** minimum planning baseline, **not a cap**.  
-**Variance:** 43 (see JSON for per-screen rows).
+**Variance:** 43
 
 ## Rules applied
 
-- One canonical module screen or meaningful workflow/tab state per entry
-- No mixed-module content to reduce the count
-- No silent drop of BRD tabs
-- Filter/state variants remain distinct when they are distinct BRD tabs
+- Routes begin with `/`
+- Stable URL-safe `sectionId` values in deep links
+- Exact roles, data owner, actions, states, responsive behaviour
+- Mapped to requirement/action IDs
 
 ## Summary by module
 

@@ -336,38 +336,48 @@ const sensitivePatterns = [
   /tfn/i,
   /medicare/i,
   /password/i,
-  /mobile|phone|email/i,
-  /address/i,
-  /dob|date of birth/i,
+  /\bemail\b/i,
+  /\bmobile\b|\bphone\b/i,
+  /date of birth|\bdob\b/i,
 ];
 const sensitiveSeedHits = [];
 for (const re of sensitivePatterns) {
-  const m = html.match(re);
-  if (m) {
+  const matches = html.match(new RegExp(re.source, "gi")) || [];
+  if (matches.length) {
     sensitiveSeedHits.push({
       id: sid("sensitive", re.source),
       pattern: re.source,
-      matchCount: (html.match(new RegExp(re.source, "gi")) || []).length,
+      matchCount: matches.length,
       note: "Pattern presence only — values not copied into reports",
     });
   }
 }
 
-// ── Scope conflict heuristics ───────────────────────────────────
+function redactExcerpt(text) {
+  return text
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[REDACTED-EMAIL]")
+    .replace(/\b\d{2}\s?\d{3}\s?\d{3}\b/g, "[REDACTED-PHONE]")
+    .replace(/\b\d{6}\b/g, "[REDACTED-NUM]")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 160);
+}
+
+// ── Scope conflict heuristics (precise; semantic class applied in builder) ──
 const conflictPatterns = [
   {
     id: "patient-record",
-    re: /patient\s+(record|demograph|chart|history)|clinical\s+note|prescription|referral|appointment\s+booking|check-?in/i,
+    re: /patient\s+(record|demograph(?:ic|ics)?|chart|history)|clinical\s+notes?|prescription\s+(record|write|manage|pad)|best\s*practice\s+patient|appointment\s+(booking|record|workflow)/i,
     boundary: "patient-clinical",
   },
   {
     id: "patient-billing",
-    re: /medicare\s+claim|patient\s+invoice|MBS\s+item|clinical\s+billing/i,
+    re: /medicare\s+claim|patient\s+invoice|patient\s+billing|MBS\s+item|clinical\s+billing/i,
     boundary: "financial-patient",
   },
   {
     id: "payment-execution",
-    re: /generate\s+bank\s+file|ABA\s+file|STP\s+submit|mark\s+as\s+paid|disburse|execute\s+payment/i,
+    re: /generate\s+bank\s+file|ABA\s+file|STP\s+submit|mark\s+as\s+paid|disburse(?:ment)?|execute\s+payment/i,
     boundary: "financial-execution",
   },
 ];
@@ -376,16 +386,19 @@ for (const c of conflictPatterns) {
   let m;
   const gre = new RegExp(c.re.source, "gi");
   while ((m = gre.exec(html))) {
+    const raw = html.slice(
+      Math.max(0, m.index - 40),
+      Math.min(html.length, m.index + 80)
+    );
     scopeConflicts.push({
       id: sid("conflict", c.id, String(m.index)),
       conflictClass: c.id,
       boundary: c.boundary,
-      excerpt: html
-        .slice(Math.max(0, m.index - 40), Math.min(html.length, m.index + 80))
-        .replace(/\s+/g, " ")
-        .trim(),
+      matchedTerm: m[0],
+      excerptRedacted: redactExcerpt(raw),
+      excerptSha256: createHash("sha256").update(raw).digest("hex"),
       source: loc(m.index, m.index + m[0].length),
-      dispositionDefault: "ADOPTED-WITH-CONTROL-HARDENING",
+      dispositionDefault: "NEEDS-SEMANTIC-CLASSIFICATION",
     });
     if (scopeConflicts.length > 400) break;
   }
@@ -677,7 +690,7 @@ const fieldsModals = {
 
 const manifest = {
   extractor: "scripts/prototype-parity/extract-prototype.mjs",
-  extractedAt: new Date().toISOString(),
+  extractedAt: `deterministic:proto-${sha256.slice(0, 16)}`,
   prototypePath: "public/pulse-html-prototype.html",
   prototypeSha256: sha256,
   prototypeBytes: Buffer.byteLength(html),

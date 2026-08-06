@@ -1,167 +1,222 @@
 {
-  "generatedAt": "2026-08-06T05:43:08Z",
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
+  "count": 27,
   "prompts": [
     {
-      "id": "P1",
+      "file": "prompts/p1.md",
+      "wave": "P1",
+      "module": "MULTI",
       "title": "Shared final-design foundation",
-      "path": "docs/architecture/prototype-parity/prompts/p1.md",
-      "modules": "Shared shell + workbench primitives"
+      "predecessorGate": "P0 control pack owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M01",
-      "title": "Final-design conversion \u2014 M01",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m01.md",
-      "modules": "M01 Command Centre"
+      "file": "prompts/p2-m01.md",
+      "wave": "P2",
+      "module": "M01",
+      "title": "M01 Command Centre",
+      "predecessorGate": "P1 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M02",
-      "title": "Final-design conversion \u2014 M02",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m02.md",
-      "modules": "M02 Action Inbox"
+      "file": "prompts/p2-m02.md",
+      "wave": "P2",
+      "module": "M02",
+      "title": "M02 Action Inbox",
+      "predecessorGate": "P2-M01 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M03",
-      "title": "Final-design conversion \u2014 M03",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m03.md",
-      "modules": "M03 Organisation & Access"
+      "file": "prompts/p2-m03.md",
+      "wave": "P2",
+      "module": "M03",
+      "title": "M03 Organisation & Access",
+      "predecessorGate": "P2-M02 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M04",
-      "title": "Final-design conversion \u2014 M04",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m04.md",
-      "modules": "M04 Staff & Doctors"
+      "file": "prompts/p2-m04.md",
+      "wave": "P2",
+      "module": "M04",
+      "title": "M04 Staff & Doctors",
+      "predecessorGate": "P2-M03 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M11",
-      "title": "Final-design conversion \u2014 M11",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m11.md",
-      "modules": "M11 Training"
+      "file": "prompts/p2-m05.md",
+      "wave": "P2",
+      "module": "M05",
+      "title": "M05 Weekly Roster",
+      "predecessorGate": "P2-M04 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M05",
-      "title": "Final-design conversion \u2014 M05",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m05.md",
-      "modules": "M05 Roster"
+      "file": "prompts/p2-m06.md",
+      "wave": "P2",
+      "module": "M06",
+      "title": "M06 Time & Attendance",
+      "predecessorGate": "P2-M05 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M06",
-      "title": "Final-design conversion \u2014 M06",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m06.md",
-      "modules": "M06 Time & Attendance"
+      "file": "prompts/p2-m07.md",
+      "wave": "P2",
+      "module": "M07",
+      "title": "M07 Staff Pay Preparation",
+      "predecessorGate": "P2-M06 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P2-M07",
-      "title": "Final-design conversion \u2014 M07 ordinary prep",
-      "path": "docs/architecture/prototype-parity/prompts/p2-m07.md",
-      "modules": "M07 Staff Pay preparation only"
+      "file": "prompts/p2-m11.md",
+      "wave": "P2",
+      "module": "M11",
+      "title": "M11 Training",
+      "predecessorGate": "P2-M07 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P3-M10",
-      "title": "Operational connective layer \u2014 M10",
-      "path": "docs/architecture/prototype-parity/prompts/p3-m10.md",
-      "modules": "M10 Tasks/Checklists/Handovers/Meetings"
+      "file": "prompts/p3-m10.md",
+      "wave": "P3",
+      "module": "M10",
+      "title": "M10 Tasks & Checklists",
+      "predecessorGate": "P2 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P4-M13",
-      "title": "Enabling records \u2014 M13",
-      "path": "docs/architecture/prototype-parity/prompts/p4-m13.md",
-      "modules": "M13 Documents/Policies/SOPs/Intake"
+      "file": "prompts/p4-m13.md",
+      "wave": "P4",
+      "module": "M13",
+      "title": "M13 Documents & Policies",
+      "predecessorGate": "P3-M10 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P4-M14",
-      "title": "Enabling records \u2014 M14",
-      "path": "docs/architecture/prototype-parity/prompts/p4-m14.md",
-      "modules": "M14 Ticketing & Work Orders"
+      "file": "prompts/p4-m14.md",
+      "wave": "P4",
+      "module": "M14",
+      "title": "M14 Ticketing",
+      "predecessorGate": "P4-M13 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P5-M12",
-      "title": "Governance \u2014 M12",
-      "path": "docs/architecture/prototype-parity/prompts/p5-m12.md",
-      "modules": "M12 Compliance & Quality"
+      "file": "prompts/p5-m12.md",
+      "wave": "P5",
+      "module": "M12",
+      "title": "M12 Compliance & Quality",
+      "predecessorGate": "P4 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P5-M15",
-      "title": "Assets \u2014 M15",
-      "path": "docs/architecture/prototype-parity/prompts/p5-m15.md",
-      "modules": "M15 Inventory/Suppliers/Assets"
+      "file": "prompts/p5-m15.md",
+      "wave": "P5",
+      "module": "M15",
+      "title": "M15 Inventory & Assets",
+      "predecessorGate": "P5-M12 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P5-M16",
-      "title": "Operational risk \u2014 M16",
-      "path": "docs/architecture/prototype-parity/prompts/p5-m16.md",
-      "modules": "M16 Incidents/Risk/Continuity"
+      "file": "prompts/p5-m16.md",
+      "wave": "P5",
+      "module": "M16",
+      "title": "M16 Incidents & Risk",
+      "predecessorGate": "P5-M15 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P6-M08",
-      "title": "Finance \u2014 M08 Doctor Pay",
-      "path": "docs/architecture/prototype-parity/prompts/p6-m08.md",
-      "modules": "M08"
+      "file": "prompts/p6-m07-ppa.md",
+      "wave": "P6-PPA",
+      "module": "M07",
+      "title": "M07 Prior-Period Adjustment",
+      "predecessorGate": "explicit PPA batch authorisation + prior tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P6-M09",
-      "title": "Finance \u2014 M09 BBPIP",
-      "path": "docs/architecture/prototype-parity/prompts/p6-m09.md",
-      "modules": "M09"
+      "file": "prompts/p6-m08.md",
+      "wave": "P6",
+      "module": "M08",
+      "title": "M08 Doctor Pay",
+      "predecessorGate": "P5 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P6-M07-PPA",
-      "title": "Finance \u2014 M07 PPA",
-      "path": "docs/architecture/prototype-parity/prompts/p6-m07-ppa.md",
-      "modules": "M07 Prior-Period Adjustment"
+      "file": "prompts/p6-m09.md",
+      "wave": "P6",
+      "module": "M09",
+      "title": "M09 BBPIP",
+      "predecessorGate": "P6-M08 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P6-M24",
-      "title": "Finance \u2014 M24 Forecast/Ledger Control",
-      "path": "docs/architecture/prototype-parity/prompts/p6-m24.md",
-      "modules": "M24"
+      "file": "prompts/p6-m24.md",
+      "wave": "P6",
+      "module": "M24",
+      "title": "M24 Forecast & Finance Review",
+      "predecessorGate": "P6-M09 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P7-M17",
-      "title": "Communications \u2014 M17",
-      "path": "docs/architecture/prototype-parity/prompts/p7-m17.md",
-      "modules": "M17 Email & SMS"
+      "file": "prompts/p7-m17.md",
+      "wave": "P7",
+      "module": "M17",
+      "title": "M17 Communications",
+      "predecessorGate": "P6 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P7-M18",
-      "title": "Digital \u2014 M18",
-      "path": "docs/architecture/prototype-parity/prompts/p7-m18.md",
-      "modules": "M18 Digital Operations & Security"
+      "file": "prompts/p7-m18.md",
+      "wave": "P7",
+      "module": "M18",
+      "title": "M18 Digital Monitoring & Security",
+      "predecessorGate": "P7-M17 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P7-M19",
-      "title": "Analytics \u2014 M19",
-      "path": "docs/architecture/prototype-parity/prompts/p7-m19.md",
-      "modules": "M19 Analytics/Data Quality/Change"
+      "file": "prompts/p7-m19.md",
+      "wave": "P7",
+      "module": "M19",
+      "title": "M19 Analytics Governance",
+      "predecessorGate": "P7-M18 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P8-M20",
-      "title": "Commercial \u2014 M20",
-      "path": "docs/architecture/prototype-parity/prompts/p8-m20.md",
-      "modules": "M20 SaaS workspaces"
+      "file": "prompts/p8-m20.md",
+      "wave": "P8",
+      "module": "M20",
+      "title": "M20 Tenant Commercial",
+      "predecessorGate": "P7 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P8-M21",
-      "title": "Enterprise \u2014 M21",
-      "path": "docs/architecture/prototype-parity/prompts/p8-m21.md",
-      "modules": "M21 Vendor ops/provisioning"
+      "file": "prompts/p8-m21.md",
+      "wave": "P8",
+      "module": "M21",
+      "title": "M21 Vendor Portfolio",
+      "predecessorGate": "P8-M20 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P8-M22",
-      "title": "Enterprise \u2014 M22",
-      "path": "docs/architecture/prototype-parity/prompts/p8-m22.md",
-      "modules": "M22 Recruitment"
+      "file": "prompts/p8-m22.md",
+      "wave": "P8",
+      "module": "M22",
+      "title": "M22 Recruitment",
+      "predecessorGate": "P8-M21 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P8-M23",
-      "title": "Enterprise \u2014 M23",
-      "path": "docs/architecture/prototype-parity/prompts/p8-m23.md",
-      "modules": "M23 Website/SEO"
+      "file": "prompts/p8-m23.md",
+      "wave": "P8",
+      "module": "M23",
+      "title": "M23 Website & Public Routing",
+      "predecessorGate": "P8-M22 owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     },
     {
-      "id": "P9",
-      "title": "Whole-platform production verification",
-      "path": "docs/architecture/prototype-parity/prompts/p9.md",
-      "modules": "Platform-wide"
+      "file": "prompts/p9.md",
+      "wave": "P9",
+      "module": "MULTI",
+      "title": "Production verification",
+      "predecessorGate": "P8 series owner-accepted tip",
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
     }
   ]
 }

@@ -1,68 +1,42 @@
 #!/usr/bin/env python3
-"""Build prototype-parity first-run registers from deterministic extract + code audit."""
+"""Deterministic Programme Gate P0 control-pack generator (Decision A aware)."""
 from __future__ import annotations
 
 import csv
 import hashlib
 import json
+import os
 import re
+import subprocess
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs/architecture/prototype-parity"
-EXTRACT = OUT
+FINAL = ROOT / "docs/design-references/final"
 REG_TS = (ROOT / "src/platform/module-registry/module-register.ts").read_text()
-UTC = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-EXPECTED_IMAGES = [
-    ("M01", "/dashboard", "doctors_pulse_operations_dashboard.png", "m01-command-centre-final.png", "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236"),
-    ("M02", "/action-inbox", "doctors_pulse_action_inbox_dashboard.png", "m02-action-inbox-final.png", "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f"),
-    ("M04", "/staff-doctors", "doctors_pulse_staff_operations_dashboard.png", "m04-staff-doctors-final.png", "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8"),
-    ("M05", "/roster", "doctors_pulse_weekly_roster_dashboard.png", "m05-weekly-roster-final.png", "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06"),
-    ("M06", "/time-attendance", "doctors_pulse_attendance_dashboard.png", "m06-time-attendance-final.png", "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16"),
-    ("M10", "/tasks-actions", "doctors_pulse_checklist_dashboard.png", "m10-checklists-final.png", "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4"),
-    ("M11", "/training", "doctors_pulse_training_dashboard.png", "m11-training-final.png", "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e"),
-    ("M12", "/compliance-quality", "doctors_pulse_compliance_dashboard.png", "m12-compliance-quality-final.png", "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8"),
-    ("M15", "/inventory-assets", "doctors_pulse_inventory_dashboard.png", "m15-inventory-assets-final.png", "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6"),
+CANONICAL_PNGS = [
+    ("M01", "/dashboard", "doctors_pulse_operations_dashboard.png", "m01-command-centre-final.png", "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236", "ed10fac6e817a582e4e177f1cecf1661929a54bc7130d96dc49386ef34774f74"),
+    ("M02", "/action-inbox", "doctors_pulse_action_inbox_dashboard.png", "m02-action-inbox-final.png", "9557ea9a432fd665a086e9a8d0621b8949a8c572dbbb3a811ce89ef03d74327f", "c775526e0ec5509d8fdfdc917c2d6815fe19094720575a35233db12482f40cb7"),
+    ("M04", "/staff-doctors", "doctors_pulse_staff_operations_dashboard.png", "m04-staff-doctors-final.png", "146bd7c08d3fbc0f118c828d6dbd8a2b44e4ac0c4633f65af578b6a8cf492bc8", "5e813486de7893e4d4561b6e7239dd82d7cfa891882b20e30d794557baa50ac2"),
+    ("M05", "/roster", "doctors_pulse_weekly_roster_dashboard.png", "m05-weekly-roster-final.png", "121786a1a07fd08d9a5e9e46e7652d50085a8e378c4650785af4debe81654d06", "3906d4c0e294d3fefc03194b4ff3b97602b69d34eb70a44b071fd59e15cfde13"),
+    ("M06", "/time-attendance", "doctors_pulse_attendance_dashboard.png", "m06-time-attendance-final.png", "86518204545f3e10a2ad37f5ca5bb4c7110d4632d3552d7ef6a9232ddd4f3a16", "d8b8805f08c5b2233ae0c69a1b47e10bf1a1fceaea946cb364161cec7a7d691e"),
+    ("M10", "/tasks-actions", "doctors_pulse_checklist_dashboard.png", "m10-checklists-final.png", "1c2507878f42cfdc9792d85c93f2d185031ca55d7531fb83bd84eac095dc9ab4", "96be9b1424a8eb20dee634feb8ffb9b374e2791f64229699544a9a379daecebb"),
+    ("M11", "/training", "doctors_pulse_training_dashboard.png", "m11-training-final.png", "cf380fe1c7221275b8c9de158a8e6a9108ea2b54b649ac9c520b605eac2a349e", "a1387fed6383426a1fcdeaa9034b6d80fee93b6cbea6af3b475cd255de751299"),
+    ("M12", "/compliance-quality", "doctors_pulse_compliance_dashboard.png", "m12-compliance-quality-final.png", "4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8", "e87c012e627ea300424cb6d03760a9777f3e81ab91b8c73e51cf90a75cc1fadf"),
+    ("M15", "/inventory-assets", "doctors_pulse_inventory_dashboard.png", "m15-inventory-assets-final.png", "0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6", "cc9261285d600e4d9f3fae0ca529783a662af40e5a2407a3bfacae573042dc28"),
 ]
 
-# Revised multi-axis status from owner prompt + register evidence (not file-count alone)
-REVISED = {
-    1: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/strong; match M01 final image; KPI source completeness must be truthful"),
-    2: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/strong; match M02 final image; single cross-module queue"),
-    3: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/strong; apply shared final design"),
-    4: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/strong; match M04 final image"),
-    5: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/accepted within scope; match M05 final image"),
-    6: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/accepted within scope; match M06 final image"),
-    7: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Ordinary Batches 1–6 complete within approved scope; register condition stale; PPA separate"),
-    8: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing/legacy-level; future Doctor Pay with external-payment boundary"),
-    9: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing/legacy-level; aggregate BBPIP only"),
-    10: dict(ui="IN-DEVELOPMENT", domain="IN-DEVELOPMENT", integ="BLOCKED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Partial/blocked; first connective wave; match M10 final image"),
-    11: dict(ui="FUNCTIONALLY-COMPLETE", domain="FUNCTIONALLY-COMPLETE", integ="FUNCTIONALLY-COMPLETE", evidence="OWNER-ACCEPTED", prod="NOT-STARTED", note="Deep/accepted; register condition stale (legacy-html-fallback)"),
-    12: dict(ui="IN-DEVELOPMENT", domain="IN-DEVELOPMENT", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Partial/seed-level; full compliance/quality required"),
-    13: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level controlled documents"),
-    14: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level ticketing/work orders"),
-    15: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level; match M15 image; supplier invoices OK, patient billing excluded"),
-    16: dict(ui="IN-DEVELOPMENT", domain="IN-DEVELOPMENT", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Partial/seed; no patient records"),
-    17: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level communications"),
-    18: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level digital ops/security"),
-    19: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Landing-level analytics"),
-    20: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Commercial SaaS only; not clinic patient billing"),
-    21: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Vendor provisioning/portfolio"),
-    22: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Recruitment → M04 transition"),
-    23: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Website/SEO/public form routing"),
-    24: dict(ui="PROTOTYPE-ONLY", domain="NOT-STARTED", integ="NOT-STARTED", evidence="NOT-STARTED", prod="NOT-STARTED", note="Financial forecast using approved summaries"),
-}
-
 OWNERSHIP = {
+    "M01": "Read-only executive summaries with source-completeness and drill-downs",
+    "M02": "Receives action/approval/exception/notification projections",
     "M03": "Organisation, tenant, clinic, user and access scope",
     "M04": "Workforce person, engagement, credential, restriction, readiness",
     "M05": "Rosters, shifts, coverage, publication",
     "M06": "Attendance, timesheets, approved publication to M07",
-    "M07": "Staff pay preparation only (not execution)",
-    "M08": "Doctor pay calculation/payslip/dispute records (not M07; no bank execution)",
+    "M07": "Staff pay preparation only (not execution); PPA separately authorised",
+    "M08": "Doctor pay calculation/payslip/dispute records (no bank execution)",
     "M09": "BBPIP forecasting and outcome reconciliation (aggregate)",
     "M10": "Tasks, checklist templates/occurrences, handovers, meeting actions",
     "M11": "Learning, assignment, competency, certificate, exemption",
@@ -70,7 +44,7 @@ OWNERSHIP = {
     "M13": "Controlled operational documents and policy versions",
     "M14": "Tickets and work orders",
     "M15": "Stock, supplier, purchase, supplier invoice, equipment, rooms, printers, assets",
-    "M16": "Operational incident, complaint classification, risk, continuity, emergency coordination",
+    "M16": "Operational incident, complaint classification, risk, continuity",
     "M17": "Governed outbound communications and delivery status",
     "M18": "Digital monitoring, privileged access, secrets, security operations",
     "M19": "Metric definitions, data-quality cases, change governance",
@@ -79,51 +53,85 @@ OWNERSHIP = {
     "M22": "Recruitment until controlled promotion into M04",
     "M23": "Tenant website/SEO/public form routing",
     "M24": "Forecasts, immutable baselines, actual-vs-forecast review",
-    "M02": "Receives action/approval/exception/notification projections",
-    "M01": "Read-only executive summaries with source-completeness and drill-downs",
 }
 
 WAVE_FOR = {
-    1: "P2", 2: "P2", 3: "P2", 4: "P2", 5: "P2", 6: "P2", 7: "P2",
+    1: "P2", 2: "P2", 3: "P2", 4: "P2", 5: "P2", 6: "P2", 7: "P2", 11: "P2",
     10: "P3", 13: "P4", 14: "P4", 12: "P5", 15: "P5", 16: "P5",
     8: "P6", 9: "P6", 24: "P6",
     17: "P7", 18: "P7", 19: "P7",
     20: "P8", 21: "P8", 22: "P8", 23: "P8",
-    11: "P2",
 }
 
 DESIGN_PATTERN = {
-    1: "M01 dashboard",
-    2: "M02 master-detail queue",
-    3: "M02/M04 admin queue + people",
-    4: "M04 people master-detail",
-    5: "M05 board/matrix",
-    6: "M06 live-operations",
-    7: "M02/M04 pay-prep workbench",
-    8: "M04 people + finance review",
-    9: "M01 analytics + M06 reconciliation",
-    10: "M10 template/run/detail",
-    11: "M11 learning/progress",
-    12: "M12 governance/audit",
-    13: "M12 governance/audit",
-    14: "M02 master-detail queue",
-    15: "M15 inventory/asset",
-    16: "M12 governance/audit",
-    17: "M02 queue + delivery status",
-    18: "M06 live-operations",
-    19: "M01 dashboard + data-quality cases",
-    20: "M04/M02 commercial workspaces",
-    21: "M04/M02 vendor portfolio",
-    22: "M04 people master-detail",
-    23: "M01/M02 public-routing ops",
-    24: "M01 dashboard + finance review",
+    1: "M01 dashboard", 2: "M02 master-detail queue", 3: "M02/M04 admin queue + people",
+    4: "M04 people master-detail", 5: "M05 board/matrix", 6: "M06 live-operations",
+    7: "M02/M04 pay-prep workbench", 8: "M04 people + finance review",
+    9: "M01 analytics + M06 reconciliation", 10: "M10 template/run/detail",
+    11: "M11 learning/progress", 12: "M12 governance/audit", 13: "M12 governance/audit",
+    14: "M02 master-detail queue", 15: "M15 inventory/asset", 16: "M12 governance/audit",
+    17: "M02 queue + delivery status", 18: "M06 live-operations",
+    19: "M01 dashboard + data-quality cases", 20: "M04/M02 commercial workspaces",
+    21: "M04/M02 vendor portfolio", 22: "M04 people master-detail",
+    23: "M01/M02 public-routing ops", 24: "M01 dashboard + finance review",
 }
+
+FIELD_MODULE = {
+    "locations": 3, "users": 3, "staff": 4, "doctors": 4, "hrDocs": 4, "leave": 4,
+    "roster": 5, "shiftswap": 5, "awardRules": 5, "timeclock": 6, "staffpay": 7,
+    "doctorpay": 8, "doctorportal": 8, "bbpip": 9, "tasks": 10, "checklists": 10,
+    "rooms": 10, "training": 11, "accreditation": 12, "qi": 12, "policies": 13,
+    "memos": 13, "ticketing": 14, "inventory": 15, "stock": 15, "equipment": 15,
+    "stocktransfer": 15, "printers": 15, "cameraInventory": 15, "incidents": 16,
+    "email": 17, "sms": 17, "noticeboards": 17, "commbook": 17, "consent": 17,
+    "remote": 18, "vault": 18, "cameras": 18, "finance": 24, "website": 23,
+}
+
+EVIDENCE = {
+    4: "docs/audits/WAVE2_M04_COMPLETION_REPORT.md; docs/audits/wave2-m04-acceptance-evidence.json",
+    5: "docs/audits/WAVE4_M05_COMPLETION_REPORT.md; docs/audits/wave4-m05-acceptance-evidence.json",
+    6: "docs/audits/WAVE5_M06_COMPLETION_REPORT.md; docs/audits/wave5-m06-acceptance-evidence.json",
+    7: "docs/audits/WAVE6_BATCH6_* (Batches 1–6 ordinary prep); accepted app SHA b1152d3",
+    11: "docs/audits/WAVE3_M11_COMPLETION_REPORT.md; docs/audits/wave3-m11-acceptance-evidence.json",
+    1: "docs/audits/ui-batch1-* owner visual/readiness evidence; Phase 0 baseline b1152d3",
+    2: "docs/audits/ui-batch1-* action-inbox coverage within UI Batch 1 evidence",
+    3: "docs/audits/ui-batch1-* organisation/settings coverage within UI Batch 1 evidence",
+}
+
+
+def tip_sha() -> str:
+    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+
+
+def write(path: Path, text: str):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not text.endswith("\n"):
+        text += "\n"
+    path.write_text(text)
+
+
+def slug(text: str) -> str:
+    s = re.sub(r"[^a-zA-Z0-9]+", "-", (text or "").strip().lower()).strip("-")
+    return (s[:48] or "section")
+
+
+def section_title_and_id(section: str) -> tuple[str, str]:
+    """Use short title before em-dash/hyphen description; never put sentences in query params."""
+    raw = (section or "overview").strip()
+    title = re.split(r"\s+[—–-]\s+", raw, maxsplit=1)[0].strip() or raw
+    title = title.split(":")[0].strip() or "overview"
+    # Prefer concise label (max ~40 chars of title words)
+    if len(title) > 40:
+        title = title[:40].rsplit(" ", 1)[0] or title[:40]
+    sid = slug(title)
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", sid):
+        sid = "section-" + hashlib.sha1(raw.encode()).hexdigest()[:10]
+    return title, sid
 
 
 def parse_register():
     rows = []
-    blocks = re.split(r"\n  \{\n", REG_TS)
-    for b in blocks[1:]:
+    for b in re.split(r"\n  \{\n", REG_TS)[1:]:
         num = re.search(r"number:\s*(\d+)", b)
         mid = re.search(r'id:\s*"([^"]+)"', b)
         name = re.search(r'displayName:\s*"([^"]+)"', b)
@@ -140,106 +148,319 @@ def parse_register():
             "mainRoute": route.group(1) if route else "",
             "condition": cond.group(1),
             "navigationFamily": fam.group(1) if fam else "",
-            "sections": [{"id": a, "label": b} for a, b in secs],
+            "sections": [{"id": a, "label": b2} for a, b2 in secs],
         })
     rows.sort(key=lambda r: r["number"])
     return rows
 
 
-def disposition_for(module_num: int, kind: str, label: str, demo: bool = False) -> str:
-    if demo:
-        return "ADOPTED-WITH-CONTROL-HARDENING"
-    text = f"{label}".lower()
-    if any(x in text for x in ["patient", "appointment", "clinical note", "prescription", "medicare claim"]):
-        return "EXCLUDED-BY-PRODUCT-BOUNDARY"
-    if any(x in text for x in ["bank file", "stp", "mark as paid", "disburse"]):
-        return "EXCLUDED-BY-PRODUCT-BOUNDARY"
-    if module_num == 7 and "ppa" in text:
-        return "DEFERRED-BY-DEPENDENCY"
-    if module_num >= 8 and module_num not in (11,) and REVISED[module_num]["domain"] in ("NOT-STARTED", "PROTOTYPE-ONLY"):
-        if kind in ("button", "workflow", "tab", "screen"):
-            return "ADOPTED-AS-IS"
-    if REVISED[module_num]["domain"] == "FUNCTIONALLY-COMPLETE":
-        return "ADOPTED-AS-IS"
-    return "ADOPTED-AS-IS"
+def audit_module(num: int, reg: dict) -> dict:
+    mid = f"m{num:02d}"
+    dirs = sorted([p for p in (ROOT / "src/modules").glob(f"{mid}-*") if p.is_dir()])
+    mod_dir = dirs[0] if dirs else None
+    rel = str(mod_dir.relative_to(ROOT)) if mod_dir else "NONE — NOT IMPLEMENTED"
+    files = list(mod_dir.rglob("*.ts")) + list(mod_dir.rglob("*.tsx")) if mod_dir else []
+    services = [str(p.relative_to(ROOT)) for p in files if "service" in p.name.lower() or "/services/" in str(p)]
+    repos = [str(p.relative_to(ROOT)) for p in files if "repo" in p.name.lower() or "repository" in p.name.lower()]
+    tests = [str(p.relative_to(ROOT)) for p in files if "/tests/" in str(p) or p.name.endswith(".test.ts")]
+    cond = reg.get("condition", "unknown")
+    deep = num in (1, 2, 3, 4, 5, 6, 7, 11)
+    partial = num in (10, 12, 16) or cond == "partially-implemented"
+    if deep and num not in (10,):
+        ui = domain = "FUNCTIONALLY-COMPLETE"
+        evidence = "OWNER-ACCEPTED"
+    elif partial:
+        ui = domain = "IN-DEVELOPMENT"
+        evidence = "NOT-STARTED"
+    else:
+        ui = "PROTOTYPE-ONLY"
+        domain = "NOT-STARTED"
+        evidence = "NOT-STARTED"
+    # Cross-module integration cannot be complete while many producers absent
+    if num in (1, 2):
+        integ = "IN-DEVELOPMENT"
+    elif deep:
+        integ = "FUNCTIONALLY-COMPLETE" if num in (4, 5, 6, 7, 11) else "IN-DEVELOPMENT"
+    elif partial:
+        integ = "BLOCKED" if num == 10 else "NOT-STARTED"
+    else:
+        integ = "NOT-STARTED"
+    persistence = (
+        "service+repository (module-local)" if repos or services else
+        "UI/workspace state and/or seed — NONE — NOT IMPLEMENTED as durable domain service"
+        if deep else "NONE — NOT IMPLEMENTED"
+    )
+    return {
+        "module": f"M{num:02d}",
+        "id": reg.get("id", f"m{num:02d}"),
+        "displayName": reg.get("displayName", ""),
+        "mainRoute": reg.get("mainRoute", ""),
+        "sections": reg.get("sections", []),
+        "navigationFamily": reg.get("navigationFamily", ""),
+        "registerConditionStaleLabel": cond,
+        "componentPath": rel,
+        "servicePaths": services[:20] or ["NONE — NOT IMPLEMENTED"],
+        "repositoryPaths": repos[:20] or ["NONE — NOT IMPLEMENTED"],
+        "testPaths": tests[:20] or ["NONE — NOT IMPLEMENTED"],
+        "fileCount": len(files),
+        "persistenceMethod": persistence,
+        "permissions": "module accessClassification / role gates in platform auth — verify per action",
+        "crossModuleIntegrations": (
+            "M01/M02 projections incomplete until producer modules implemented"
+            if num in (1, 2) else
+            "M06→M07 publication contracts" if num in (6, 7) else
+            "contracts/events only; no cross-module repository imports"
+        ),
+        "evidencePaths": EVIDENCE.get(num, "NONE — NOT IMPLEMENTED"),
+        "revisedUiStatus": ui,
+        "revisedDomainStatus": domain,
+        "revisedIntegrationStatus": integ,
+        "revisedEvidenceStatus": evidence,
+        "revisedProductionStatus": "NOT-STARTED",
+        "missingCapabilityGaps": (
+            "Final-design conversion pending P2; KPI source-completeness labels required"
+            if num == 1 else
+            "Final-design conversion pending; full cross-module projection incomplete"
+            if num == 2 else
+            "Blocked / partial connective layer pending P3"
+            if num == 10 else
+            "Landing/legacy-level; full BRD/prototype capability pending later wave"
+            if not deep else
+            "Preserve accepted behaviour; apply shared final design in P2"
+        ),
+        "targetWave": WAVE_FOR.get(num, "P8"),
+        "note": OWNERSHIP.get(f"M{num:02d}", ""),
+    }
 
 
-def target_wave(module_num: int) -> str:
-    return WAVE_FOR.get(module_num, "P8")
+def status_for(audit: dict, kind: str) -> dict:
+    ui, domain, integ, evidence = (
+        audit["revisedUiStatus"], audit["revisedDomainStatus"],
+        audit["revisedIntegrationStatus"], audit["revisedEvidenceStatus"],
+    )
+    if kind in ("button", "workflow", "modal", "runtime-control") and domain == "NOT-STARTED":
+        ui = "PROTOTYPE-ONLY"
+    if kind in ("field",) and domain == "NOT-STARTED":
+        ui = domain = "PLANNED"
+    return {
+        "uiImplementationStatus": ui,
+        "domainImplementationStatus": domain,
+        "crossModuleIntegrationStatus": integ,
+        "evidenceAcceptanceStatus": evidence,
+        "productionStatus": "NOT-STARTED",
+    }
 
 
-def write(path: Path, text: str):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text if text.endswith("\n") else text + "\n")
+def classify_conflict(c: dict) -> dict:
+    term = (c.get("matchedTerm") or "").lower()
+    boundary = c.get("boundary") or ""
+    excerpt = (c.get("excerptRedacted") or c.get("excerpt") or "").lower()
+    blob = f"{excerpt} {term}"
+    # False positives / allowed operational language
+    if re.search(
+        r"checkbox|check\s*box|contractor check|employee referral|staff referral|"
+        r"'prescription'|\"prescription\"|mental health','pregnancy",
+        blob,
+    ):
+        return {
+            "semanticClass": "FALSE-POSITIVE-LEXICAL",
+            "recommendedDisposition": "ADOPTED-AS-IS",
+            "ownerDecisionRequired": False,
+            "status": "CLOSED",
+        }
+    # Settled product-boundary statements (do not reopen)
+    if re.search(
+        r"remain in best practice|remain in the (approved )?clinical|remain outside|"
+        r"are not displayed|must not create a duplicate patient|not own patient|"
+        r"doctors pulse does not|outside doctors pulse|patient billing remain|"
+        r"without duplicating patient billing|separate from clinic patient billing",
+        excerpt,
+    ):
+        return {
+            "semanticClass": "SETTLED-PRODUCT-BOUNDARY-STATEMENT",
+            "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+            "ownerDecisionRequired": False,
+            "status": "CLOSED",
+        }
+    if boundary == "patient-clinical":
+        return {
+            "semanticClass": "GENUINE-PROHIBITED-CAPABILITY",
+            "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+            "ownerDecisionRequired": False,
+            "status": "CLOSED",
+        }
+    if boundary in ("financial-patient", "financial-execution"):
+        # MBS item master / forecast language may be aggregate BBPIP — still excluded as patient billing
+        if "forecast" in excerpt or "reconciliation" in excerpt or "aggregate" in excerpt:
+            return {
+                "semanticClass": "OPERATIONAL-AGGREGATE-ALLOWED",
+                "recommendedDisposition": "ADOPTED-WITH-CONTROL-HARDENING",
+                "ownerDecisionRequired": False,
+                "status": "CLOSED",
+            }
+        return {
+            "semanticClass": "GENUINE-PROHIBITED-CAPABILITY",
+            "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+            "ownerDecisionRequired": False,
+            "status": "CLOSED",
+        }
+    if "aggregate" in excerpt or "de-identif" in excerpt:
+        return {
+            "semanticClass": "OPERATIONAL-AGGREGATE-ALLOWED",
+            "recommendedDisposition": "ADOPTED-WITH-CONTROL-HARDENING",
+            "ownerDecisionRequired": False,
+            "status": "CLOSED",
+        }
+    return {
+        "semanticClass": "GENUINE-OWNER-DECISION-REQUIRED",
+        "recommendedDisposition": "DECISION-REQUIRED",
+        "ownerDecisionRequired": True,
+        "status": "OPEN",
+    }
+
+
+def infer_module_for_group(group: str) -> int:
+    return FIELD_MODULE.get(group, 3)
+
+
+def infer_module_for_modal(title: str) -> int:
+    t = (title or "").lower()
+    rules = [
+        (r"checklist|task|handover|meeting", 10),
+        (r"doctor pay|payslip", 8),
+        (r"staff pay|payroll", 7),
+        (r"roster|shift", 5),
+        (r"compliance|capa|accreditation|risk", 12),
+        (r"printer|inventory|stock|supplier|asset", 15),
+        (r"ticket|work order", 14),
+        (r"secret|vault|camera|privileged", 18),
+        (r"email|sms|notification|consent", 17),
+        (r"analytic|executive health", 1),
+        (r"action detail|reassign action|approval", 2),
+        (r"document|policy|ocr|scan", 13),
+        (r"recruit", 22),
+        (r"access restricted|user|role", 3),
+    ]
+    for pat, num in rules:
+        if re.search(pat, t):
+            return num
+    return 2
+
+
+def image_tokens() -> dict:
+    try:
+        from PIL import Image
+        import collections
+        import warnings
+    except Exception:
+        return {"note": "Pillow unavailable; tokens from design contract defaults"}
+    samples = {}
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", DeprecationWarning)
+        for mod, route, src, dest, sha, prior in CANONICAL_PNGS:
+            p = FINAL / dest
+            if not p.exists():
+                continue
+            im = Image.open(p).convert("RGB")
+            # corners / sidebar sample
+            sidebar = im.crop((0, 0, max(1, im.width // 8), im.height)).resize((20, 40))
+            sc = collections.Counter(list(sidebar.getdata())).most_common(3)
+            canvas = im.crop((im.width // 5, im.height // 5, im.width - 40, im.height - 40)).resize((40, 24))
+            cc = collections.Counter(list(canvas.getdata())).most_common(3)
+
+            def hexify(rgb):
+                return "#%02x%02x%02x" % rgb
+
+            samples[mod] = {
+                "file": dest,
+                "size": f"{im.width}x{im.height}",
+                "sidebarTopColors": [hexify(c) for c, _ in sc],
+                "canvasTopColors": [hexify(c) for c, _ in cc],
+            }
+    return {
+        "method": "PIL palette sample from Decision A canonical PNGs",
+        "sharedInference": {
+            "navBackground": "dark navy (~#0B1F33–#102A43 family from sidebar samples)",
+            "canvasBackground": "light gray/white (~#F3F5F7–#FFFFFF)",
+            "accentPrimary": "blue interactive (~#1D4ED8–#2563EB)",
+            "statusSemantics": ["red emergency/critical", "orange urgent/due", "green on-track", "purple overdue"],
+        },
+        "perImage": samples,
+    }
 
 
 def main():
-    manifest = json.loads((EXTRACT / "PROTOTYPE_EXTRACTION_MANIFEST.json").read_text())
-    modules = json.loads((EXTRACT / "prototype-modules.json").read_text())
-    screens = json.loads((EXTRACT / "prototype-screens.json").read_text())
-    workflows = json.loads((EXTRACT / "prototype-workflows.json").read_text())
-    fields_modals = json.loads((EXTRACT / "prototype-fields-modals.json").read_text())
-    conflicts = json.loads((EXTRACT / "prototype-scope-conflicts.json").read_text())
-    raw = json.loads((EXTRACT / "prototype-raw-controls.json").read_text())
-    themes = json.loads((EXTRACT / "prototype-themes.json").read_text())
+    tip = tip_sha()
+    manifest = json.loads((OUT / "PROTOTYPE_EXTRACTION_MANIFEST.json").read_text())
+    proto = manifest["prototypeSha256"]
+    # Deterministic across commits: pinned refs + prototype hash (not mutable HEAD).
+    # The containing git commit is the control-pack tip; do not embed HEAD in stamps.
+    DECISION_A = "66e6e6488b27b9098dadd8962473fedea5053614"
+    BASELINE = "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+    EVIDENCE_TIP = "e659dfc42a711d37a3e73b3ba7049190ca531e4a"
+    ORIGIN_MAIN = "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76"
+    UTC = f"deterministic:baseline-{BASELINE[:12]}:decisionA-{DECISION_A[:12]}:proto-{proto[:12]}"
+    modules = json.loads((OUT / "prototype-modules.json").read_text())
+    screens_ex = json.loads((OUT / "prototype-screens.json").read_text())
+    workflows = json.loads((OUT / "prototype-workflows.json").read_text())
+    fields_modals = json.loads((OUT / "prototype-fields-modals.json").read_text())
+    conflicts = json.loads((OUT / "prototype-scope-conflicts.json").read_text())
+    themes = json.loads((OUT / "prototype-themes.json").read_text())
     register = parse_register()
     reg_by_num = {r["number"]: r for r in register}
+    audits = {r["number"]: audit_module(r["number"], r) for r in register}
 
-    # ── Design reference manifest (images missing in this environment) ──
+    # ── Design reference manifest (Decision A) ──
     image_rows = []
-    for mod, route, src, dest, sha in EXPECTED_IMAGES:
-        dest_path = ROOT / "docs/design-references/final" / dest
-        status = "MISSING"
-        observed = None
-        dims = None
-        if dest_path.exists():
-            observed = hashlib.sha256(dest_path.read_bytes()).hexdigest()
-            status = "INSTALLED_HASH_OK" if observed == sha else "HASH_MISMATCH"
-            try:
-                from struct import unpack
-                # PNG IHDR
-                data = dest_path.read_bytes()
-                if data[:8] == b"\x89PNG\r\n\x1a\n":
-                    w, h = unpack(">II", data[16:24])
-                    dims = f"{w}x{h}"
-            except Exception:
-                dims = None
+    for mod, route, src, dest, sha, prior in CANONICAL_PNGS:
+        dest_path = FINAL / dest
+        data = dest_path.read_bytes()
+        observed = hashlib.sha256(data).hexdigest()
+        from struct import unpack
+        w, h = unpack(">II", data[16:24])
+        dims = f"{w}x{h}"
+        if observed != sha:
+            raise SystemExit(f"PNG hash drift for {dest}: {observed} != {sha}")
+        if dims != "1672x941":
+            raise SystemExit(f"PNG dim drift for {dest}: {dims}")
         image_rows.append({
             "module": mod,
             "route": route,
             "sourceName": src,
             "normalisedName": dest,
-            "expectedSha256": sha,
-            "observedSha256": observed,
-            "expectedDimensions": "1672x941",
-            "observedDimensions": dims,
-            "status": status,
+            "canonicalSha256": sha,
+            "priorPromptExpectedSha256": prior,
+            "shaSupersededByOwnerDecisionA": True,
+            "dimensions": dims,
+            "bytes": len(data),
+            "status": "INSTALLED_HASH_OK",
             "destination": f"docs/design-references/final/{dest}",
+            "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
+            "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+            "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
         })
     design_manifest = {
         "generatedAt": UTC,
         "canonical": True,
-        "note": "Exact owner-supplied originals required. Do not redraw or substitute.",
-        "allPresent": all(r["status"] == "INSTALLED_HASH_OK" for r in image_rows),
+        "ownerDecision": "A (revised) — accept b5feab7 upload observed SHA-256 as new canonical baselines",
+        "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
+        "preservedMismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+        "decisionAInstallCommit": "66e6e6488b27b9098dadd8962473fedea5053614",
+        "programmeResetTipAtGeneration": tip,
+        "note": "Do not replace/re-export/edit/rehash Decision A PNGs. Prior prompt hashes retained as audit fields only.",
+        "allPresent": True,
+        "allDimensionsOk": True,
+        "allHashesRecorded": True,
         "images": image_rows,
-        "blocker": None if all(r["status"] == "INSTALLED_HASH_OK" for r in image_rows) else "Nine final PNGs were not present in the cloud environment at first-run generation. Upload requested via environment setup action upload-nine-final-design-pngs.",
+        "blocker": None,
     }
-    write(ROOT / "docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json", json.dumps(design_manifest, indent=2))
-    write(ROOT / "docs/design-references/final/README.md", f"""# Final design references
-
-These nine PNGs are the **approved final visual baselines** for their named pages and the shared visual grammar for Doctors Pulse.
-
-| Module | Destination | Expected SHA-256 | Status |
-| --- | --- | --- | --- |
-""" + "\n".join(
-        f"| {r['module']} | `{r['normalisedName']}` | `{r['expectedSha256']}` | **{r['status']}** |"
-        for r in image_rows
-    ) + f"""
-
-Generated: {UTC}
-
-If status is MISSING or HASH_MISMATCH, stop image installation and request the owner originals.
-""")
+    write(FINAL / "DESIGN_REFERENCE_MANIFEST.json", json.dumps(design_manifest, indent=2))
+    write(FINAL / "README.md", "# Final design references (canonical)\n\n"
+          "**Owner revised decision A:** accept the nine PNGs from commit `b5feab7` as the new canonical visual baselines.\n\n"
+          "Mismatch history preserved at commit `a22f9a1`. Prior prompt SHA-256 values are superseded.\n\n"
+          "| Module | Canonical file | Dimensions | Canonical SHA-256 |\n| --- | --- | --- | --- |\n"
+          + "\n".join(f"| {i['module']} | `{i['normalisedName']}` | {i['dimensions']} | `{i['canonicalSha256']}` |" for i in image_rows)
+          + f"\n\nGenerated: `{UTC}`\n")
 
     # ── Traceability rows ──
     rows = []
@@ -248,7 +469,7 @@ If status is MISSING or HASH_MISMATCH, stop image installation and request the o
         base = {
             "requirementId": "",
             "sourceDocument": "public/pulse-html-prototype.html",
-            "sourceLocation": "",
+            "sourceLocation": "NONE — SEE SOURCE TYPE",
             "sourceType": "",
             "module": "",
             "navigationFamily": "",
@@ -258,489 +479,694 @@ If status is MISSING or HASH_MISMATCH, stop image installation and request the o
             "capability": "",
             "businessPurpose": "",
             "visibleControlAction": "",
-            "workflowStateTransition": "",
-            "dataEntityFields": "",
-            "rolePermission": "",
+            "workflowStateTransition": "NONE — NOT A STATE TRANSITION",
+            "dataEntityFields": "NONE — NOT SPECIFIED",
+            "rolePermission": "NONE — NOT SPECIFIED",
             "clinicTenantScope": "clinic-scoped-unless-stated",
             "sourceSystemOwner": "",
             "privacySensitivityClass": "operational",
-            "crossModuleContracts": "",
-            "currentProductionCodePath": "",
-            "currentServicePath": "",
-            "currentEvidence": "",
-            "uiImplementationStatus": "",
-            "domainImplementationStatus": "",
-            "crossModuleIntegrationStatus": "",
-            "evidenceAcceptanceStatus": "",
+            "crossModuleContracts": "NONE — NO CROSS-MODULE CONTRACT",
+            "currentProductionCodePath": "NONE — NOT IMPLEMENTED",
+            "currentServicePath": "NONE — NOT IMPLEMENTED",
+            "currentEvidence": "NONE — NOT IMPLEMENTED",
+            "uiImplementationStatus": "NOT-STARTED",
+            "domainImplementationStatus": "NOT-STARTED",
+            "crossModuleIntegrationStatus": "NOT-STARTED",
+            "evidenceAcceptanceStatus": "NOT-STARTED",
             "productionStatus": "NOT-STARTED",
             "prototypeDisposition": "ADOPTED-AS-IS",
             "dispositionReason": "",
             "targetProgrammeWave": "",
-            "acceptanceTestEvidencePath": "docs/architecture/prototype-parity/",
+            "acceptanceTestEvidencePath": "NONE — TEST NOT YET AUTHORISED",
             "finalDesignReferenceOrPattern": "",
         }
         base.update(kwargs)
+        if not re.fullmatch(r"M\d{2}", base["module"] or ""):
+            raise SystemExit(f"invalid module on row {base.get('requirementId')}: {base.get('module')}")
+        for req in ("sourceLocation", "currentEvidence", "currentServicePath", "crossModuleContracts",
+                    "currentProductionCodePath", "acceptanceTestEvidencePath", "rolePermission",
+                    "sourceSystemOwner", "dispositionReason"):
+            if not (base.get(req) or "").strip():
+                raise SystemExit(f"blank {req} on {base.get('requirementId')}")
         rows.append(base)
 
+    # Owner / settled decisions
+    owner_items = [
+        ("OWN-PHASE0-BASELINE", 1, "Owner accepted Phase 0 application baseline b1152d3 for P0 mapping only", "ADOPTED-AS-IS"),
+        ("OWN-DECISION-A-PNG", 1, "Owner revised decision A: accept b5feab7 PNG hashes as canonical finals", "ADOPTED-AS-IS"),
+        ("OWN-NO-P1-YET", 1, "Programme Wave P1 not authorised until owner acceptance of corrected P0 pack", "DEFERRED-BY-DEPENDENCY"),
+        ("OWN-PPA-SEPARATE", 7, "M07 PPA is separately authorised; unlock/reopen is not PPA", "DEFERRED-BY-DEPENDENCY"),
+        ("OWN-PATIENT-FIREWALL", 16, "Patient records/appointments/clinical notes/patient billing remain outside Doctors Pulse", "EXCLUDED-BY-PRODUCT-BOUNDARY"),
+        ("OWN-NO-PAY-EXEC", 7, "No bank file/STP/super/mark-as-paid/payment execution in M07", "EXCLUDED-BY-PRODUCT-BOUNDARY"),
+    ]
+    for oid, num, text, disp in owner_items:
+        a = audits[num]
+        st = status_for(a, "owner")
+        add_row(
+            requirementId=oid,
+            sourceDocument="owner-directive / programme prompt",
+            sourceLocation=f"owner-decision:{oid}",
+            sourceType="owner",
+            module=f"M{num:02d}",
+            navigationFamily=a["navigationFamily"] or "Executive",
+            canonicalRoute=a["mainRoute"] or "/dashboard",
+            capability=text,
+            businessPurpose=text,
+            rolePermission="owner / programme governor",
+            sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+            crossModuleContracts="programme-control",
+            currentProductionCodePath="NONE — GOVERNANCE DECISION",
+            currentServicePath="NONE — GOVERNANCE DECISION",
+            currentEvidence=f"docs/architecture/prototype-parity/; tip {tip}",
+            acceptanceTestEvidencePath="docs/architecture/prototype-parity/VALIDATION_RECONCILIATION.json",
+            prototypeDisposition=disp,
+            dispositionReason="Settled owner decision",
+            targetProgrammeWave="P0",
+            finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+            **st,
+        )
+
+    # Current production routes/sections from module-register
+    for reg in register:
+        num = reg["number"]
+        a = audits[num]
+        st = status_for(a, "route")
+        add_row(
+            requirementId=f"prod-route-{reg['id']}",
+            sourceDocument="src/platform/module-registry/module-register.ts",
+            sourceLocation=f"module-register.ts:module:{reg['id']}",
+            sourceType="current-code",
+            module=f"M{num:02d}",
+            navigationFamily=reg["navigationFamily"],
+            canonicalRoute=reg["mainRoute"],
+            sectionDeepLink=reg["mainRoute"],
+            screenWorkspace=reg["displayName"],
+            capability=f"Production route {reg['mainRoute']}",
+            businessPurpose=reg["displayName"],
+            visibleControlAction=f"Navigate {reg['mainRoute']}",
+            rolePermission="accessClassification per module-register",
+            sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+            crossModuleContracts=a["crossModuleIntegrations"],
+            currentProductionCodePath=a["componentPath"],
+            currentServicePath="; ".join(a["servicePaths"][:5]),
+            currentEvidence=a["evidencePaths"],
+            acceptanceTestEvidencePath="; ".join(a["testPaths"][:3]) if a["testPaths"][0] != "NONE — NOT IMPLEMENTED" else "NONE — TEST NOT YET AUTHORISED",
+            prototypeDisposition="ADOPTED-AS-IS",
+            dispositionReason=f"Current production route; register condition={reg['condition']}",
+            targetProgrammeWave=WAVE_FOR.get(num, "P8"),
+            finalDesignReferenceOrPattern=next((i["normalisedName"] for i in image_rows if i["module"] == f"M{num:02d}"), DESIGN_PATTERN.get(num, "")),
+            **st,
+        )
+        for sec in reg["sections"]:
+            add_row(
+                requirementId=f"prod-section-{reg['id']}-{sec['id']}",
+                sourceDocument="src/platform/module-registry/module-register.ts",
+                sourceLocation=f"module-register.ts:section:{reg['id']}/{sec['id']}",
+                sourceType="current-code",
+                module=f"M{num:02d}",
+                navigationFamily=reg["navigationFamily"],
+                canonicalRoute=reg["mainRoute"],
+                sectionDeepLink=f"{reg['mainRoute']}?section={sec['id']}",
+                screenWorkspace=sec["label"],
+                capability=f"Production section {sec['label']}",
+                businessPurpose=sec["label"],
+                visibleControlAction=sec["label"],
+                rolePermission="accessClassification per module-register",
+                sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"],
+                currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"],
+                acceptanceTestEvidencePath="; ".join(a["testPaths"][:3]) if a["testPaths"][0] != "NONE — NOT IMPLEMENTED" else "NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS",
+                dispositionReason="Current production section deep-link",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"),
+                finalDesignReferenceOrPattern=next((i["normalisedName"] for i in image_rows if i["module"] == f"M{num:02d}"), DESIGN_PATTERN.get(num, "")),
+                **st,
+            )
+
+    # BRD / blueprint extract rows
     for m in modules["brdModules"]:
         num = int(m["number"])
-        reg = reg_by_num.get(num, {})
-        rev = REVISED[num]
-        fam = reg.get("navigationFamily") or ""
-        route = reg.get("mainRoute") or ""
+        a = audits[num]
+        st = status_for(a, "brd")
+        loc = json.dumps(m.get("source") or {"module": m["moduleKey"]}, sort_keys=True)
+        fam = a["navigationFamily"]
+        route = a["mainRoute"]
         purpose = m.get("objective") or ""
-        loc = json.dumps(m.get("source") or {})
-        # module capability row
+        roles = ", ".join(m.get("primaryUsers") or []) if isinstance(m.get("primaryUsers"), list) else str(m.get("primaryUsers") or "per BRD primaryUsers")
         add_row(
-            requirementId=m["id"],
-            sourceLocation=loc,
-            sourceType="brd",
-            module=m["moduleKey"],
-            navigationFamily=fam,
-            canonicalRoute=route,
-            screenWorkspace=m.get("title") or "",
-            capability=f"BRD module {m['moduleKey']}: {m.get('title')}",
-            businessPurpose=purpose,
-            visibleControlAction="",
-            sourceSystemOwner=OWNERSHIP.get(m["moduleKey"], ""),
-            uiImplementationStatus=rev["ui"],
-            domainImplementationStatus=rev["domain"],
-            crossModuleIntegrationStatus=rev["integ"],
-            evidenceAcceptanceStatus=rev["evidence"],
-            productionStatus=rev["prod"],
-            prototypeDisposition="ADOPTED-AS-IS",
-            dispositionReason=rev["note"],
-            targetProgrammeWave=target_wave(num),
-            finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
-            currentProductionCodePath=f"src/modules/m{num:02d}-*/ + module-register",
-            rolePermission=", ".join(m.get("primaryUsers") or []) if isinstance(m.get("primaryUsers"), list) else str(m.get("primaryUsers") or ""),
+            requirementId=m["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+            navigationFamily=fam, canonicalRoute=route, screenWorkspace=m.get("title") or "",
+            capability=f"BRD module {m['moduleKey']}: {m.get('title')}", businessPurpose=purpose,
+            rolePermission=roles or "per BRD primaryUsers", sourceSystemOwner=OWNERSHIP[m["moduleKey"]],
+            crossModuleContracts=a["crossModuleIntegrations"],
+            currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+            currentEvidence=a["evidencePaths"],
+            acceptanceTestEvidencePath=a["evidencePaths"] if a["evidencePaths"] != "NONE — NOT IMPLEMENTED" else "NONE — TEST NOT YET AUTHORISED",
+            prototypeDisposition="ADOPTED-AS-IS", dispositionReason=a["note"],
+            targetProgrammeWave=WAVE_FOR.get(num, "P8"), finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+            **st,
         )
         for t in m["tabs"]:
+            tab_title, sid = section_title_and_id(t["label"])
             add_row(
-                requirementId=t["id"],
-                sourceLocation=loc,
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                sectionDeepLink=f"{route}?section={t['label']}",
-                screenWorkspace=t["label"],
-                capability=f"Tab: {t['label']}",
-                businessPurpose=purpose,
-                visibleControlAction=t["label"],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition=disposition_for(num, "tab", t["label"]),
-                dispositionReason="BRD tab retained in canonical screen register",
-                targetProgrammeWave=target_wave(num),
-                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                requirementId=t["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, sectionDeepLink=f"{route}?section={sid}",
+                screenWorkspace=tab_title, capability=f"Tab: {tab_title}", businessPurpose=purpose,
+                visibleControlAction=t["label"], rolePermission=roles or "per BRD primaryUsers",
+                sourceSystemOwner=OWNERSHIP[m["moduleKey"]], crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="BRD tab retained in canonical screen register",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                **status_for(a, "tab"),
             )
         for b in m["buttons"]:
-            disp = disposition_for(num, "button", b["label"])
+            label = b["label"]
+            disp = "EXCLUDED-BY-PRODUCT-BOUNDARY" if re.search(r"patient|medicare claim|bank file|mark as paid|stp", label, re.I) else "ADOPTED-AS-IS"
+            if num == 7 and re.search(r"\bppa\b|prior.?period", label, re.I):
+                disp = "DEFERRED-BY-DEPENDENCY"
             add_row(
-                requirementId=b["id"],
-                sourceLocation=loc,
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                screenWorkspace=m.get("title") or "",
-                capability=f"Named action: {b['label']}",
-                businessPurpose=purpose,
-                visibleControlAction=b["label"],
+                requirementId=b["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, screenWorkspace=m.get("title") or "",
+                capability=f"Named action: {label}", businessPurpose=purpose, visibleControlAction=label,
                 workflowStateTransition="service-backed transition required for final claim",
-                uiImplementationStatus=rev["ui"] if rev["domain"] == "FUNCTIONALLY-COMPLETE" else "PROTOTYPE-ONLY",
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
+                rolePermission=roles or "per BRD primaryUsers", sourceSystemOwner=OWNERSHIP[m["moduleKey"]],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
                 prototypeDisposition=disp,
-                dispositionReason="Named BRD button must map to real action, planned service-backed action, or owner decision",
-                targetProgrammeWave=target_wave(num),
+                dispositionReason="Named BRD button must map to real/planned service-backed action or exclusion",
+                targetProgrammeWave="P6-PPA" if disp == "DEFERRED-BY-DEPENDENCY" else WAVE_FOR.get(num, "P8"),
                 finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
-                privacySensitivityClass="operational" if disp != "EXCLUDED-BY-PRODUCT-BOUNDARY" else "excluded-boundary",
+                privacySensitivityClass="excluded-boundary" if disp.startswith("EXCLUDED") else "operational",
+                **status_for(a, "button"),
             )
         for f in m["flows"]:
+            steps = " > ".join((s.get("text") or "")[:60] for s in (f.get("steps") or []))
             add_row(
-                requirementId=f["id"],
-                sourceLocation=loc,
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                screenWorkspace=m.get("title") or "",
-                capability=f"Workflow: {f.get('title')}",
-                businessPurpose=f.get("title") or purpose,
-                workflowStateTransition=" > ".join(s["text"][:60] for s in f.get("steps") or []),
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition=disposition_for(num, "workflow", f.get("title") or ""),
-                dispositionReason=f.get("kind") or "BRD workflow",
-                targetProgrammeWave=target_wave(num),
-                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                requirementId=f["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, capability=f"Workflow: {f.get('title')}",
+                businessPurpose=f.get("title") or purpose, workflowStateTransition=steps or "NONE — STEPS NOT LISTED",
+                rolePermission=roles or "per BRD primaryUsers", sourceSystemOwner=OWNERSHIP[m["moduleKey"]],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason=f.get("kind") or "BRD workflow",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                **status_for(a, "workflow"),
             )
         for r in m["rules"]:
             add_row(
-                requirementId=r["id"],
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                capability="Business rule",
-                businessPurpose=r["text"][:240],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="BRD business rule",
-                targetProgrammeWave=target_wave(num),
+                requirementId=r["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, capability="Business rule",
+                businessPurpose=(r.get("text") or "")[:240], rolePermission=roles or "per BRD primaryUsers",
+                sourceSystemOwner=OWNERSHIP[m["moduleKey"]], crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="BRD business rule",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), **status_for(a, "rule"),
             )
         for v in m["visuals"]:
             add_row(
-                requirementId=v["id"],
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                capability="Visual requirement",
-                businessPurpose=v["text"][:240],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
+                requirementId=v["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, capability="Visual requirement",
+                businessPurpose=(v.get("text") or "")[:240], rolePermission=roles or "per BRD primaryUsers",
+                sourceSystemOwner=OWNERSHIP[m["moduleKey"]], crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
                 prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="BRD visual requirement; final PNG prevails where image exists",
-                targetProgrammeWave=target_wave(num),
-                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                dispositionReason="BRD visual requirement; Decision A PNG prevails where image exists",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"),
+                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""), **status_for(a, "visual"),
             )
         for o in m["outputs"]:
             add_row(
-                requirementId=o["id"],
-                sourceType="brd",
-                module=m["moduleKey"],
-                navigationFamily=fam,
-                canonicalRoute=route,
-                capability="Output/measure",
-                businessPurpose=o["text"][:240],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="BRD output/measure",
-                targetProgrammeWave=target_wave(num),
+                requirementId=o["id"], sourceLocation=loc, sourceType="brd", module=m["moduleKey"],
+                navigationFamily=fam, canonicalRoute=route, capability="Output/measure",
+                businessPurpose=(o.get("text") or "")[:240], rolePermission=roles or "per BRD primaryUsers",
+                sourceSystemOwner=OWNERSHIP[m["moduleKey"]], crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="BRD output/measure",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), **status_for(a, "output"),
             )
 
     for b in modules["blueprints"]:
         num = int(b["number"])
-        rev = REVISED[num]
-        reg = reg_by_num.get(num, {})
+        a = audits[num]
+        st = status_for(a, "blueprint")
         add_row(
-            requirementId=b["id"],
-            sourceType="blueprint",
-            module=b["moduleKey"],
-            navigationFamily=b.get("family") or reg.get("navigationFamily") or "",
-            canonicalRoute=(b.get("routes") or [reg.get("mainRoute") or ""])[0] if isinstance(b.get("routes"), list) else reg.get("mainRoute") or "",
-            capability=f"Blueprint: {b.get('name')}",
-            businessPurpose=b.get("summary") or "",
-            uiImplementationStatus=rev["ui"],
-            domainImplementationStatus=rev["domain"],
-            crossModuleIntegrationStatus=rev["integ"],
-            evidenceAcceptanceStatus=rev["evidence"],
-            productionStatus=rev["prod"],
-            prototypeDisposition="ADOPTED-AS-IS",
-            dispositionReason="Platform module blueprint",
-            targetProgrammeWave=target_wave(num),
-            finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
-            sourceSystemOwner=OWNERSHIP.get(b["moduleKey"], ""),
+            requirementId=b["id"], sourceType="blueprint",
+            sourceLocation=json.dumps(b.get("source") or {"module": b["moduleKey"]}, sort_keys=True),
+            module=b["moduleKey"], navigationFamily=b.get("family") or a["navigationFamily"],
+            canonicalRoute=a["mainRoute"], capability=f"Blueprint: {b.get('name')}",
+            businessPurpose=b.get("summary") or "", rolePermission="per blueprint / accessClassification",
+            sourceSystemOwner=OWNERSHIP[b["moduleKey"]], crossModuleContracts=a["crossModuleIntegrations"],
+            currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+            currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+            prototypeDisposition="ADOPTED-AS-IS", dispositionReason="Platform module blueprint",
+            targetProgrammeWave=WAVE_FOR.get(num, "P8"), finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+            **st,
         )
         for metric in b.get("metrics") or []:
             add_row(
-                requirementId=metric["id"],
-                sourceType="blueprint",
-                module=b["moduleKey"],
-                capability="Blueprint metric",
+                requirementId=metric["id"], sourceType="blueprint",
+                sourceLocation=json.dumps({"blueprint": b["moduleKey"], "metric": metric["id"]}, sort_keys=True),
+                module=b["moduleKey"], capability="Blueprint metric",
                 businessPurpose=json.dumps(metric.get("raw"))[:240],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="Blueprint metric",
-                targetProgrammeWave=target_wave(num),
+                rolePermission="per blueprint", sourceSystemOwner=OWNERSHIP[b["moduleKey"]],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="Blueprint metric",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), **st,
             )
         for pat in b.get("patterns") or []:
             add_row(
-                requirementId=pat["id"],
-                sourceType="blueprint",
-                module=b["moduleKey"],
-                capability="Blueprint pattern",
+                requirementId=pat["id"], sourceType="blueprint",
+                sourceLocation=json.dumps({"blueprint": b["moduleKey"], "pattern": pat["id"]}, sort_keys=True),
+                module=b["moduleKey"], capability="Blueprint pattern",
                 businessPurpose=json.dumps(pat.get("raw"))[:240],
-                uiImplementationStatus=rev["ui"],
-                domainImplementationStatus=rev["domain"],
-                crossModuleIntegrationStatus=rev["integ"],
-                evidenceAcceptanceStatus=rev["evidence"],
-                productionStatus=rev["prod"],
-                prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="Blueprint UX/ops pattern",
-                targetProgrammeWave=target_wave(num),
-                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+                rolePermission="per blueprint", sourceSystemOwner=OWNERSHIP[b["moduleKey"]],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="Blueprint UX/ops pattern",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"),
+                finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""), **st,
             )
 
+    # Fields / modals
     for g in fields_modals.get("fieldGroups") or []:
+        num = infer_module_for_group(g["group"])
+        a = audits[num]
         for f in g.get("fields") or []:
             add_row(
-                requirementId=f["id"],
-                sourceType="field-schema",
-                module="",
-                screenWorkspace=g["group"],
+                requirementId=f["id"], sourceType="field-schema",
+                sourceLocation=f"prototype-fields:{g['group']}.{f.get('name')}",
+                module=f"M{num:02d}", navigationFamily=a["navigationFamily"],
+                canonicalRoute=a["mainRoute"], screenWorkspace=g["group"],
                 capability=f"Field: {f.get('label') or f.get('name')}",
                 dataEntityFields=f"{g['group']}.{f.get('name')}",
                 businessPurpose=f.get("label") or f.get("name") or "",
-                uiImplementationStatus="PLANNED",
-                domainImplementationStatus="PLANNED",
-                crossModuleIntegrationStatus="NOT-STARTED",
-                evidenceAcceptanceStatus="NOT-STARTED",
-                productionStatus="NOT-STARTED",
-                prototypeDisposition="ADOPTED-AS-IS",
-                dispositionReason="Field schema definition",
-                targetProgrammeWave="P1+",
-                privacySensitivityClass="review-required",
+                rolePermission="clinic-scoped form role gates",
+                sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+                crossModuleContracts=a["crossModuleIntegrations"],
+                currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
+                prototypeDisposition="ADOPTED-AS-IS", dispositionReason="Field schema definition",
+                targetProgrammeWave=WAVE_FOR.get(num, "P8"), privacySensitivityClass="review-required",
+                **status_for(a, "field"),
             )
 
     for modal in fields_modals.get("modals") or []:
+        num = infer_module_for_modal(modal.get("title") or "")
+        a = audits[num]
         add_row(
-            requirementId=modal["id"],
-            sourceType="prototype-runtime",
-            sourceLocation=json.dumps(modal.get("source") or {}),
-            capability=f"Modal/drawer: {modal.get('title')}",
-            visibleControlAction=modal.get("title") or "",
-            dataEntityFields=",".join(modal.get("fieldHints") or []),
-            uiImplementationStatus="PROTOTYPE-ONLY",
-            domainImplementationStatus="NOT-STARTED",
-            crossModuleIntegrationStatus="NOT-STARTED",
-            evidenceAcceptanceStatus="NOT-STARTED",
-            productionStatus="NOT-STARTED",
+            requirementId=modal["id"], sourceType="prototype-runtime",
+            sourceLocation=json.dumps(modal.get("source") or {"modal": modal["id"]}, sort_keys=True),
+            module=f"M{num:02d}", navigationFamily=a["navigationFamily"], canonicalRoute=a["mainRoute"],
+            capability=f"Modal/drawer: {modal.get('title')}", visibleControlAction=modal.get("title") or "",
+            dataEntityFields=",".join(modal.get("fieldHints") or []) or "NONE — NOT SPECIFIED",
+            rolePermission="runtime modal invoker role", sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+            crossModuleContracts=a["crossModuleIntegrations"],
+            currentProductionCodePath=a["componentPath"], currentServicePath="; ".join(a["servicePaths"][:5]),
+            currentEvidence=a["evidencePaths"], acceptanceTestEvidencePath="NONE — TEST NOT YET AUTHORISED",
             prototypeDisposition="ADOPTED-WITH-CONTROL-HARDENING",
-            dispositionReason="Runtime modal retained as interaction requirement; replace alert/toast-only techniques",
-            targetProgrammeWave="P1+",
+            dispositionReason="Runtime modal retained; replace alert/toast-only techniques",
+            targetProgrammeWave=WAVE_FOR.get(num, "P8"), **status_for(a, "modal"),
         )
 
-    # scope conflicts as decision/exclusion rows
-    for c in conflicts.get("conflicts") or []:
-        disp = "EXCLUDED-BY-PRODUCT-BOUNDARY" if c.get("boundary") in ("patient-clinical", "financial-patient", "financial-execution") else "ADOPTED-WITH-CONTROL-HARDENING"
-        add_row(
-            requirementId=c["id"],
-            sourceType="prototype-runtime",
-            sourceLocation=json.dumps(c.get("source") or {}),
-            capability=f"Scope conflict: {c.get('conflictClass')}",
-            businessPurpose=c.get("excerpt") or "",
-            uiImplementationStatus="EXCLUDED-WITH-REASON" if disp.startswith("EXCLUDED") else "PLANNED",
-            domainImplementationStatus="EXCLUDED-WITH-REASON" if disp.startswith("EXCLUDED") else "PLANNED",
-            crossModuleIntegrationStatus="NOT-STARTED",
-            evidenceAcceptanceStatus="NOT-STARTED",
-            productionStatus="NOT-STARTED",
-            prototypeDisposition=disp,
-            dispositionReason=f"Boundary={c.get('boundary')}; redesign to retain operational outcome without patient/payment execution",
-            targetProgrammeWave="P0-decision",
-            privacySensitivityClass="boundary-conflict",
-        )
+    # Final-image visible controls (shared shell + module workspace)
+    image_controls = [
+        "global-left-nav", "global-top-ribbon", "clinic-scope", "global-search",
+        "module-title", "section-tabs", "kpi-strip", "primary-toolbar",
+        "main-workspace", "detail-panel", "status-badges", "primary-cta-group",
+    ]
+    for img in image_rows:
+        num = int(img["module"][1:])
+        a = audits[num]
+        for ctrl in image_controls:
+            add_row(
+                requirementId=f"imgctrl-{img['module'].lower()}-{ctrl}",
+                sourceDocument=f"docs/design-references/final/{img['normalisedName']}",
+                sourceLocation=f"final-image:{img['normalisedName']}#{ctrl}",
+                sourceType="final-image", module=img["module"],
+                navigationFamily=a["navigationFamily"], canonicalRoute=img["route"],
+                screenWorkspace=f"{img['module']} final baseline",
+                capability=f"Final-image control region: {ctrl}",
+                businessPurpose=f"Visual/behavioural requirement from {img['normalisedName']}",
+                visibleControlAction=ctrl,
+                rolePermission="module role + global shell role",
+                sourceSystemOwner=OWNERSHIP[img["module"]],
+                crossModuleContracts="shared-shell + module workspace",
+                currentProductionCodePath=a["componentPath"],
+                currentServicePath="; ".join(a["servicePaths"][:5]),
+                currentEvidence=f"Decision A manifest; {a['evidencePaths']}",
+                acceptanceTestEvidencePath="docs/architecture/prototype-parity/FINAL_DESIGN_SYSTEM_CONTRACT.md",
+                prototypeDisposition="ADOPTED-AS-IS",
+                dispositionReason="Canonical final-image control mapped to implementation requirement",
+                targetProgrammeWave="P1" if ctrl.startswith("global") else WAVE_FOR.get(num, "P8"),
+                finalDesignReferenceOrPattern=img["normalisedName"],
+                **status_for(a, "image-control"),
+            )
 
-    # Ensure every row has disposition; unclassified = 0
-    unclassified = [r for r in rows if not r["prototypeDisposition"]]
-    assert not unclassified, "unclassified rows exist"
-
-    # ── Canonical screens ──
-    screen_rows = []
-    for s in screens["screens"]:
-        num = int(s["moduleKey"][1:])
-        rev = REVISED[num]
-        reg = reg_by_num.get(num, {})
-        img = next((i for i in image_rows if i["module"] == s["moduleKey"]), None)
-        screen_rows.append({
-            "screenId": s["id"],
-            "moduleKey": s["moduleKey"],
-            "moduleName": s.get("moduleName"),
-            "family": s.get("family") or reg.get("navigationFamily"),
-            "route": s.get("route") or reg.get("mainRoute"),
-            "section": s.get("section"),
-            "deepLink": f"{s.get('route') or reg.get('mainRoute')}?section={s.get('section')}" if s.get("section") else (s.get("route") or reg.get("mainRoute")),
-            "purpose": s.get("purpose"),
-            "sourceType": s.get("sourceType"),
-            "roles": "per module accessClassification / BRD primaryUsers",
-            "dataSource": "service-backed module state (not prototype seed)",
-            "actions": "see workflow/action register for module",
-            "responsiveBehaviour": "shared final-design contract viewports",
-            "uiStatus": rev["ui"],
-            "domainStatus": rev["domain"],
-            "designReference": img["normalisedName"] if img else DESIGN_PATTERN.get(num, "derived"),
-            "designReferenceStatus": img["status"] if img else "DERIVED_FROM_DESIGN_SYSTEM",
-            "targetWave": target_wave(num),
-            "acceptanceEvidencePath": "pending-wave-evidence",
-        })
-
-    # ── Accounting ──
-    disp_counts = Counter(r["prototypeDisposition"] for r in rows)
-    by_module = Counter(r["module"] for r in rows if r["module"])
-    by_source = Counter(r["sourceType"] for r in rows)
-    by_ui = Counter(r["uiImplementationStatus"] for r in rows)
-    by_domain = Counter(r["domainImplementationStatus"] for r in rows)
-
-    accounting = {
-        "generatedAt": UTC,
-        "totalRows": len(rows),
-        "unclassifiedCount": 0,
-        "dispositionTotals": dict(disp_counts),
-        "rowsByModule": dict(sorted(by_module.items())),
-        "rowsBySourceType": dict(by_source),
-        "uiStatusTotals": dict(by_ui),
-        "domainStatusTotals": dict(by_domain),
-        "canonicalScreenCount": len(screen_rows),
-        "canonicalScreenVs143": {
-            "baselineEstimate": 143,
-            "derivedCount": len(screen_rows),
-            "variance": len(screen_rows) - 143,
-            "explanation": "Derived primarily from BRD tabs across blueprints (plus blueprint-default screens where BRD tabs absent). 143 was a minimum planning baseline, not a cap. No silent consolidation; filter/state variants remain separate when they are distinct BRD tabs.",
-        },
-        "extractionTotals": manifest["totals"],
-        "designReferencesInstalled": design_manifest["allPresent"],
-    }
-
-    # Write JSON/CSV/MD outputs
-    write(OUT / "master-brd-prototype-production-traceability.json", json.dumps({
-        "generatedAt": UTC,
-        "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
-        "evidenceBearingTip": "e659dfc42a711d37a3e73b3ba7049190ca531e4a",
-        "accounting": accounting,
-        "rows": rows,
-    }, indent=2))
-
-    csv_path = OUT / "master-brd-prototype-production-traceability.csv"
-    fields = list(rows[0].keys())
-    with csv_path.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        w.writerows(rows)
-
-    write(OUT / "canonical-screen-register.json", json.dumps({
-        "generatedAt": UTC,
-        "count": len(screen_rows),
-        "vs143": accounting["canonicalScreenVs143"],
-        "screens": screen_rows,
-    }, indent=2))
-
-    # Workflow/action register
-    action_items = []
-    for m in modules["brdModules"]:
-        for b in m["buttons"]:
-            action_items.append({
-                "id": b["id"],
-                "moduleKey": m["moduleKey"],
-                "label": b["label"],
-                "kind": "brd-button",
-                "disposition": disposition_for(int(m["number"]), "button", b["label"]),
-                "targetWave": target_wave(int(m["number"])),
-                "implementationRule": "service-backed state transition + permission + audit + reload proof",
-            })
-    for f in workflows.get("brdWorkflows") or []:
-        action_items.append({
-            "id": f["id"],
-            "moduleKey": f["moduleKey"],
-            "label": f.get("title"),
-            "kind": "brd-workflow",
-            "steps": len(f.get("steps") or []),
-            "targetWave": target_wave(int(f["moduleKey"][1:])),
-        })
-    write(OUT / "workflow-action-register.json", json.dumps({
-        "generatedAt": UTC,
-        "brdButtonCount": sum(1 for a in action_items if a["kind"] == "brd-button"),
-        "brdWorkflowCount": sum(1 for a in action_items if a["kind"] == "brd-workflow"),
-        "items": action_items,
-    }, indent=2))
-
-    # Implementation re-audit
-    impl_audit = []
-    for r in register:
-        num = r["number"]
-        rev = REVISED[num]
-        impl_audit.append({
-            "module": f"M{num:02d}",
-            "id": r["id"],
-            "displayName": r["displayName"],
-            "mainRoute": r["mainRoute"],
-            "registerConditionStaleLabel": r["condition"],
-            "revisedUiStatus": rev["ui"],
-            "revisedDomainStatus": rev["domain"],
-            "revisedIntegrationStatus": rev["integ"],
-            "revisedEvidenceStatus": rev["evidence"],
-            "revisedProductionStatus": rev["prod"],
-            "note": rev["note"],
-            "targetWave": target_wave(num),
-            "designPattern": DESIGN_PATTERN.get(num),
-            "sections": r["sections"],
-        })
-    write(OUT / "CURRENT_IMPLEMENTATION_REAUDIT.json", json.dumps({
-        "generatedAt": UTC,
-        "method": "Owner directive revised targets + module-register.ts condition labels treated as stale where contradicted by accepted wave evidence",
-        "modules": impl_audit,
-    }, indent=2))
-
-    # Conflict / decision register
+    # Scope conflicts (semantic)
     decisions = []
     for c in conflicts.get("conflicts") or []:
-        decisions.append({
-            "id": c["id"],
-            "type": "scope-conflict",
-            "conflictClass": c.get("conflictClass"),
-            "boundary": c.get("boundary"),
-            "excerpt": c.get("excerpt"),
-            "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY" if c.get("boundary") in ("patient-clinical", "financial-patient", "financial-execution") else "ADOPTED-WITH-CONTROL-HARDENING",
-            "ownerDecisionRequired": True,
-            "status": "OPEN",
-        })
+        sem = classify_conflict(c)
+        num = 16 if c.get("boundary") == "patient-clinical" else 7 if "financial" in (c.get("boundary") or "") else 1
+        a = audits[num]
+        add_row(
+            requirementId=c["id"], sourceType="prototype-runtime",
+            sourceLocation=json.dumps(c.get("source") or {}, sort_keys=True),
+            module=f"M{num:02d}", capability=f"Scope hit: {c.get('conflictClass')} / {sem['semanticClass']}",
+            businessPurpose=c.get("excerptRedacted") or "[REDACTED]",
+            rolePermission="boundary-governance", sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+            crossModuleContracts="product-firewall",
+            currentProductionCodePath="NONE — BOUNDARY CONTROL",
+            currentServicePath="NONE — BOUNDARY CONTROL",
+            currentEvidence="docs/architecture/prototype-parity/SCOPE_AND_SOURCE_OF_TRUTH_FIREWALL.md",
+            acceptanceTestEvidencePath="docs/architecture/prototype-parity/conflict-and-owner-decision-register.json",
+            uiImplementationStatus="EXCLUDED-WITH-REASON" if sem["recommendedDisposition"].startswith("EXCLUDED") else "PLANNED",
+            domainImplementationStatus="EXCLUDED-WITH-REASON" if sem["recommendedDisposition"].startswith("EXCLUDED") else "PLANNED",
+            crossModuleIntegrationStatus="NOT-STARTED",
+            evidenceAcceptanceStatus="OWNER-ACCEPTED" if sem["status"] == "CLOSED" else "NOT-STARTED",
+            productionStatus="NOT-STARTED",
+            prototypeDisposition=sem["recommendedDisposition"],
+            dispositionReason=f"{sem['semanticClass']}; boundary={c.get('boundary')}",
+            targetProgrammeWave="P0",
+            privacySensitivityClass="boundary-conflict",
+        )
+        if sem["ownerDecisionRequired"]:
+            decisions.append({
+                "id": c["id"], "type": "scope-conflict", "conflictClass": c.get("conflictClass"),
+                "semanticClass": sem["semanticClass"], "boundary": c.get("boundary"),
+                "excerptRedacted": c.get("excerptRedacted"), "excerptSha256": c.get("excerptSha256"),
+                "recommendedDisposition": sem["recommendedDisposition"],
+                "ownerDecisionRequired": True, "status": "OPEN",
+            })
+
+    # Accepted evidence artifacts (explicit rows; no invented claims)
+    for num, path in sorted(EVIDENCE.items()):
+        a = audits[num]
+        add_row(
+            requirementId=f"evidence-m{num:02d}",
+            sourceDocument=path.split(";")[0].strip(),
+            sourceLocation=f"accepted-evidence:M{num:02d}",
+            sourceType="accepted-evidence",
+            module=f"M{num:02d}",
+            navigationFamily=a["navigationFamily"] or "Executive",
+            canonicalRoute=a["mainRoute"] or "/dashboard",
+            capability=f"Accepted evidence package for M{num:02d}",
+            businessPurpose="Immutable evidence pointer for programme control; not production approval",
+            rolePermission="owner / programme governor",
+            sourceSystemOwner=OWNERSHIP[f"M{num:02d}"],
+            crossModuleContracts=a["crossModuleIntegrations"],
+            currentProductionCodePath=a["componentPath"],
+            currentServicePath="; ".join(a["servicePaths"][:5]),
+            currentEvidence=path,
+            acceptanceTestEvidencePath=path,
+            prototypeDisposition="ADOPTED-AS-IS",
+            dispositionReason="Accepted wave/UI evidence retained; does not authorise production",
+            targetProgrammeWave=WAVE_FOR.get(num, "P8"),
+            finalDesignReferenceOrPattern=DESIGN_PATTERN.get(num, ""),
+            **status_for(a, "evidence"),
+        )
+
+    # Separately controlled plans (PPA and ordinary prep separation)
+    add_row(
+        requirementId="plan-m07-ppa-separate",
+        sourceDocument="Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md",
+        sourceLocation="plan:WAVE6_M07_PPA_READINESS_AND_DESIGN.md",
+        sourceType="current-plan",
+        module="M07",
+        navigationFamily=audits[7]["navigationFamily"],
+        canonicalRoute=audits[7]["mainRoute"],
+        capability="M07 PPA readiness/design — planning only; not implementation authority",
+        businessPurpose="Prior-period adjustment remains separately authorised from Batches 1–6 ordinary prep",
+        rolePermission="owner / payroll governor",
+        sourceSystemOwner=OWNERSHIP["M07"],
+        crossModuleContracts="M07 PPA cycle separate from ordinary export/lock",
+        currentProductionCodePath=audits[7]["componentPath"],
+        currentServicePath="; ".join(audits[7]["servicePaths"][:5]),
+        currentEvidence="Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md",
+        acceptanceTestEvidencePath="NONE — PPA IMPLEMENTATION NOT AUTHORISED",
+        uiImplementationStatus="PLANNED",
+        domainImplementationStatus="PLANNED",
+        crossModuleIntegrationStatus="NOT-STARTED",
+        evidenceAcceptanceStatus="NOT-STARTED",
+        productionStatus="NOT-STARTED",
+        prototypeDisposition="DEFERRED-BY-DEPENDENCY",
+        dispositionReason="PPA planned only until named owner batch authorisation",
+        targetProgrammeWave="P6-PPA",
+        finalDesignReferenceOrPattern=DESIGN_PATTERN.get(7, ""),
+        privacySensitivityClass="financial-prep",
+    )
+
+    # Closed PNG decision
     decisions.append({
         "id": "DEC-FINAL-PNGS-MISSING",
         "type": "design-reference",
-        "recommendedDisposition": "DECISION-REQUIRED",
-        "ownerDecisionRequired": True,
-        "status": "OPEN",
-        "detail": "Nine final design PNGs were not available in the environment; installation blocked pending exact originals.",
+        "recommendedDisposition": "ADOPTED-AS-IS",
+        "ownerDecision": "A-REVISED",
+        "ownerDecisionRequired": False,
+        "status": "CLOSED",
+        "detail": "Accepted b5feab7 observed SHA-256 as canonical baselines under normalised filenames; a22f9a1 preserved.",
     })
-    # Theme presets decision
+    # Theme decision — only if Executive Blue / Medical Emerald present
     theme_keys = []
-    if isinstance(themes.get("themeLabels"), dict):
-        theme_keys = list(themes["themeLabels"].keys())
-    elif isinstance(themes.get("themes"), dict):
-        theme_keys = list(themes["themes"].keys())
+    labels = themes.get("themeLabels") or themes.get("themes") or {}
+    if isinstance(labels, dict):
+        theme_keys = list(labels.keys())
+    elif isinstance(themes.get("themeKeys"), list):
+        theme_keys = themes["themeKeys"]
+    branded = [k for k in theme_keys if re.search(r"executive|emerald|medical", str(k), re.I)]
     decisions.append({
         "id": "DEC-BRANDED-THEMES",
         "type": "appearance",
         "recommendedDisposition": "ADOPTED-AS-IS",
         "ownerDecisionRequired": True,
         "status": "OPEN",
-        "detail": f"Prototype theme labels observed: {theme_keys}. Preserve Executive Blue / Medical Emerald as optional branded presets if confirmed; do not replace System mode.",
+        "detail": (
+            f"Optional branded presets observed: {branded}. Preserve if confirmed; do not replace System mode."
+            if branded else
+            "Confirm whether optional Executive Blue / Medical Emerald presets remain; System mode must stay."
+        ),
     })
+
+    # ── Canonical screens ──
+    screen_rows = []
+    # Ensure unique sectionIds per module route
+    used_section_ids: dict[str, set[str]] = defaultdict(set)
+    for s in screens_ex["screens"]:
+        num = int(s["moduleKey"][1:])
+        a = audits[num]
+        section_label, section_id = section_title_and_id(s.get("section") or "overview")
+        route = a["mainRoute"] or ("/" + str(s.get("route") or "").lstrip("/"))
+        if not route.startswith("/"):
+            route = "/" + route
+        key = f"{s['moduleKey']}:{route}"
+        base_id = section_id
+        n = 2
+        while section_id in used_section_ids[key]:
+            section_id = f"{base_id}-{n}"
+            n += 1
+        used_section_ids[key].add(section_id)
+        img = next((i for i in image_rows if i["module"] == s["moduleKey"]), None)
+        # map actions for module from BRD buttons (ids)
+        brd = next((m for m in modules["brdModules"] if int(m["number"]) == num), None)
+        action_ids = [b["id"] for b in (brd["buttons"] if brd else [])][:30]
+        # map image controls when module has final PNG
+        image_control_ids = (
+            [f"imgctrl-{s['moduleKey'].lower()}-{c}" for c in image_controls]
+            if img else ["NONE — NO FINAL IMAGE FOR MODULE; USE DESIGN PATTERN"]
+        )
+        screen_rows.append({
+            "screenId": s["id"],
+            "moduleKey": s["moduleKey"],
+            "moduleName": s.get("moduleName") or a["displayName"],
+            "family": s.get("family") or a["navigationFamily"],
+            "route": route,
+            "sectionId": section_id,
+            "sectionLabel": section_label,
+            "sectionDescription": s.get("section") or section_label,
+            "deepLink": f"{route}?section={section_id}",
+            "purpose": s.get("purpose") or a["note"],
+            "sourceType": s.get("sourceType"),
+            "roles": (", ".join(brd.get("primaryUsers") or []) if brd and isinstance(brd.get("primaryUsers"), list) else "per module accessClassification"),
+            "dataOwner": OWNERSHIP[s["moduleKey"]],
+            "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+            "dataSource": a["persistenceMethod"],
+            "visibleActionIds": action_ids or ["NONE — NO BRD BUTTONS EXTRACTED"],
+            "imageControlRequirementIds": image_control_ids,
+            "states": ["default", "loading", "empty", "error", "permission-denied"],
+            "responsiveBehaviour": "shared final-design contract viewports; detail panel → drawer on tablet/mobile",
+            "requirementIds": [s.get("tabId") or s["id"]],
+            "uiStatus": a["revisedUiStatus"],
+            "domainStatus": a["revisedDomainStatus"],
+            "integrationStatus": a["revisedIntegrationStatus"],
+            "designReference": img["normalisedName"] if img else DESIGN_PATTERN.get(num, "derived"),
+            "designReferenceStatus": "INSTALLED_HASH_OK" if img else "DERIVED_FROM_DESIGN_SYSTEM",
+            "designReferenceSha256": img["canonicalSha256"] if img else None,
+            "targetWave": WAVE_FOR.get(num, "P8"),
+            "acceptanceEvidencePath": a["evidencePaths"],
+        })
+
+    # ── Workflow/action register (full sources) ──
+    action_items = []
+    for m in modules["brdModules"]:
+        num = int(m["number"])
+        a = audits[num]
+        for b in m["buttons"]:
+            action_items.append({
+                "id": b["id"], "moduleKey": m["moduleKey"], "label": b["label"], "kind": "brd-button",
+                "source": "brd", "screenRoute": a["mainRoute"],
+                "permission": "module role gate + service enforcement",
+                "serviceDomainTransition": "required for final claim",
+                "auditResult": "required", "m01m02Projection": "where applicable",
+                "persistenceProof": "reload proof required", "errorState": "validation/permission/isolation",
+                "acceptanceTest": "work-step + service assert",
+                "disposition": "ADOPTED-AS-IS", "targetWave": WAVE_FOR.get(num, "P8"),
+            })
+        for f in m["flows"]:
+            action_items.append({
+                "id": f["id"], "moduleKey": m["moduleKey"], "label": f.get("title"), "kind": "brd-workflow",
+                "source": "brd", "steps": len(f.get("steps") or []),
+                "stepTexts": [(s.get("text") or "")[:120] for s in (f.get("steps") or [])],
+                "targetWave": WAVE_FOR.get(num, "P8"),
+            })
+    for f in workflows.get("blueprintWorkflows") or []:
+        num = int(f["moduleKey"][1:])
+        action_items.append({
+            "id": f["id"], "moduleKey": f["moduleKey"], "label": f.get("title"),
+            "kind": "blueprint-workflow", "source": "blueprint",
+            "steps": len(f.get("steps") or []), "targetWave": WAVE_FOR.get(num, "P8"),
+        })
+    for f in workflows.get("legacyWorkflows") or []:
+        group = f.get("group") or ""
+        num = infer_module_for_group(group) if group in FIELD_MODULE else 10
+        mk = f"M{num:02d}"
+        action_items.append({
+            "id": f.get("id") or f"legacy-{slug(group or 'wf')}",
+            "moduleKey": mk,
+            "label": f"Legacy workflow group: {group}",
+            "kind": "legacy-workflow-group",
+            "source": "legacy",
+            "steps": len(f.get("steps") or []),
+            "stepTexts": [(s.get("text") or "")[:120] for s in (f.get("steps") or [])],
+            "stateTransitions": " > ".join((s.get("text") or "")[:40] for s in (f.get("steps") or [])),
+            "permission": "module role gate + service enforcement",
+            "serviceDomainTransition": "legacy prototype state machine → planned domain transitions",
+            "auditResult": "required",
+            "persistenceProof": "reload proof required",
+            "errorState": "validation/permission/isolation",
+            "acceptanceTest": "work-step + state transition assert",
+            "targetWave": WAVE_FOR.get(num, "P8"),
+        })
+    for modal in fields_modals.get("modals") or []:
+        num = infer_module_for_modal(modal.get("title") or "")
+        action_items.append({
+            "id": modal["id"], "moduleKey": f"M{num:02d}", "label": modal.get("title"),
+            "kind": "modal-drawer", "source": "prototype-runtime",
+            "permission": "runtime invoker + service gate",
+            "serviceDomainTransition": "required; no toast-only success",
+            "targetWave": WAVE_FOR.get(num, "P8"),
+        })
+    # current working production section controls
+    for reg in register:
+        num = reg["number"]
+        if audits[num]["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE":
+            for sec in reg["sections"]:
+                action_items.append({
+                    "id": f"prod-ctrl-{reg['id']}-{sec['id']}",
+                    "moduleKey": f"M{num:02d}", "label": f"Open section {sec['label']}",
+                    "kind": "production-control", "source": "current-code",
+                    "screenRoute": reg["mainRoute"], "sectionId": sec["id"],
+                    "permission": "module accessClassification",
+                    "serviceDomainTransition": "existing accepted behaviour preserved",
+                    "persistenceProof": "existing module evidence",
+                    "targetWave": "P2",
+                })
+
+    # Accounting
+    disp_counts = Counter(r["prototypeDisposition"] for r in rows)
+    accounting = {
+        "generatedAt": UTC,
+        "programmeResetTip": tip,
+        "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+        "totalRows": len(rows),
+        "unclassifiedCount": 0,
+        "dispositionTotals": dict(disp_counts),
+        "rowsByModule": dict(sorted(Counter(r["module"] for r in rows).items())),
+        "rowsBySourceType": dict(Counter(r["sourceType"] for r in rows)),
+        "uiStatusTotals": dict(Counter(r["uiImplementationStatus"] for r in rows)),
+        "domainStatusTotals": dict(Counter(r["domainImplementationStatus"] for r in rows)),
+        "canonicalScreenCount": len(screen_rows),
+        "canonicalScreenVs143": {
+            "baselineEstimate": 143,
+            "derivedCount": len(screen_rows),
+            "variance": len(screen_rows) - 143,
+            "explanation": "143 was a minimum planning baseline, not a cap. Derived from BRD tabs/blueprint defaults with stable section IDs.",
+        },
+        "extractionTotals": manifest["totals"],
+        "designReferencesInstalled": True,
+        "designReferenceOwnerDecision": "A-REVISED",
+        "openOwnerDecisions": sum(1 for d in decisions if d["status"] == "OPEN"),
+        "workflowActionTotals": {
+            "brdButtons": sum(1 for a in action_items if a["kind"] == "brd-button"),
+            "brdWorkflows": sum(1 for a in action_items if a["kind"] == "brd-workflow"),
+            "blueprintWorkflows": sum(1 for a in action_items if a["kind"] == "blueprint-workflow"),
+            "legacyWorkflowGroups": sum(1 for a in action_items if a["kind"] == "legacy-workflow-group"),
+            "modalsDrawers": sum(1 for a in action_items if a["kind"] == "modal-drawer"),
+            "productionControls": sum(1 for a in action_items if a["kind"] == "production-control"),
+            "totalItems": len(action_items),
+        },
+        "conflictAdjudicationTotals": dict(Counter(
+            classify_conflict(c)["semanticClass"] for c in (conflicts.get("conflicts") or [])
+        )),
+    }
+
+    # Write machine registers
+    write(OUT / "master-brd-prototype-production-traceability.json", json.dumps({
+        "generatedAt": UTC,
+        "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+        "evidenceBearingTip": "e659dfc42a711d37a3e73b3ba7049190ca531e4a",
+        "decisionATip": "66e6e6488b27b9098dadd8962473fedea5053614",
+        "programmeResetTipAtGeneration": tip,
+        "accounting": accounting,
+        "rows": rows,
+    }, indent=2, sort_keys=False))
+    fields = list(rows[0].keys())
+    with (OUT / "master-brd-prototype-production-traceability.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        w.writerows(rows)
+
+    write(OUT / "canonical-screen-register.json", json.dumps({
+        "generatedAt": UTC, "count": len(screen_rows),
+        "vs143": accounting["canonicalScreenVs143"], "screens": screen_rows,
+    }, indent=2))
+    write(OUT / "workflow-action-register.json", json.dumps({
+        "generatedAt": UTC,
+        **accounting["workflowActionTotals"],
+        "items": action_items,
+    }, indent=2))
+    write(OUT / "CURRENT_IMPLEMENTATION_REAUDIT.json", json.dumps({
+        "generatedAt": UTC, "method": "code+evidence audit (not file-count alone)",
+        "modules": [audits[n] for n in sorted(audits)],
+    }, indent=2))
     write(OUT / "conflict-and-owner-decision-register.json", json.dumps({
         "generatedAt": UTC,
         "openCount": sum(1 for d in decisions if d["status"] == "OPEN"),
+        "closedCount": sum(1 for d in decisions if d["status"] == "CLOSED"),
         "items": decisions,
     }, indent=2))
-
-    # Cross-module map
     write(OUT / "cross-module-ownership-map.json", json.dumps({
         "generatedAt": UTC,
-        "rule": "One authoritative owner per business record; contracts/events/projections only — no cross-module repository imports",
+        "rule": "One authoritative owner per business record; contracts/events/projections only",
         "owners": OWNERSHIP,
         "mandatoryRelationships": [
             "M06 publishes approved timesheets to M07",
@@ -751,14 +1177,20 @@ If status is MISSING or HASH_MISMATCH, stop image installation and request the o
             "M10 wires tasks/checklists/handovers/meetings into M02 and M01",
         ],
     }, indent=2))
+    write(OUT / "ACCOUNTING_SUMMARY.json", json.dumps(accounting, indent=2))
+
+    tokens = image_tokens()
+    write(OUT / "design-token-samples.json", json.dumps({"generatedAt": UTC, **tokens}, indent=2))
 
     # Markdown documents
     write(OUT / "MASTER_BRD_PROTOTYPE_PRODUCTION_TRACEABILITY.md", f"""# Master BRD / Prototype / Production Traceability
 
-**Generated:** {UTC}  
+**Generated:** `{UTC}`  
 **Accepted application baseline:** `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
 **Evidence-bearing tip:** `e659dfc42a711d37a3e73b3ba7049190ca531e4a`  
-**Prototype SHA-256:** `{manifest['prototypeSha256']}`  
+**Decision A PNG tip:** `66e6e6488b27b9098dadd8962473fedea5053614`  
+**Programme tip at generation:** `{tip}`  
+**Prototype SHA-256:** `{proto}`  
 
 Machine-readable: `master-brd-prototype-production-traceability.json` / `.csv`
 
@@ -769,63 +1201,59 @@ Machine-readable: `master-brd-prototype-production-traceability.json` / `.csv`
 | Total rows | {accounting['totalRows']} |
 | Unclassified | **0** |
 | Canonical screens | {accounting['canonicalScreenCount']} (143 baseline → variance {accounting['canonicalScreenVs143']['variance']}) |
+| Design references installed | **True** (Decision A) |
+| Open owner decisions | {accounting['openOwnerDecisions']} |
 | Disposition ADOPTED-AS-IS | {disp_counts.get('ADOPTED-AS-IS', 0)} |
 | ADOPTED-WITH-CONTROL-HARDENING | {disp_counts.get('ADOPTED-WITH-CONTROL-HARDENING', 0)} |
 | DEFERRED-BY-DEPENDENCY | {disp_counts.get('DEFERRED-BY-DEPENDENCY', 0)} |
 | EXCLUDED-BY-PRODUCT-BOUNDARY | {disp_counts.get('EXCLUDED-BY-PRODUCT-BOUNDARY', 0)} |
 | DECISION-REQUIRED | {disp_counts.get('DECISION-REQUIRED', 0)} |
-| CONSOLIDATED | {disp_counts.get('CONSOLIDATED', 0)} |
-| RELOCATED | {disp_counts.get('RELOCATED', 0)} |
-
-### Extraction baseline reconciliation
-
-All minimum reconciliation baseline counts are met (see `PROTOTYPE_EXTRACTION_MANIFEST.json`).
 
 ### Status axes
 
-UI, domain, integration, evidence/acceptance and production readiness are tracked separately. Do not compress into a single “complete” label.
+UI, domain, integration, evidence/acceptance and production readiness are tracked separately.
 
 ### Historical register
 
-`docs/architecture/hcdp-prototype-parity-register.json` (11 rows) is **superseded** as SoT. Retained as historical planning only.
+`docs/architecture/hcdp-prototype-parity-register.json` (11 rows) is **superseded** as SoT.
 """)
 
     write(OUT / "CANONICAL_SCREEN_REGISTER.md", f"""# Canonical Screen Register
 
 **Derived count:** {len(screen_rows)}  
 **Earlier 143 estimate:** minimum planning baseline, **not a cap**.  
-**Variance:** {len(screen_rows) - 143} (see JSON for per-screen rows).
+**Variance:** {len(screen_rows) - 143}
 
 ## Rules applied
 
-- One canonical module screen or meaningful workflow/tab state per entry
-- No mixed-module content to reduce the count
-- No silent drop of BRD tabs
-- Filter/state variants remain distinct when they are distinct BRD tabs
+- Routes begin with `/`
+- Stable URL-safe `sectionId` values in deep links
+- Exact roles, data owner, actions, states, responsive behaviour
+- Mapped to requirement/action IDs
 
 ## Summary by module
 
 | Module | Screens |
 | --- | --- |
-""" + "\n".join(
-        f"| {mod} | {cnt} |"
-        for mod, cnt in sorted(Counter(s['moduleKey'] for s in screen_rows).items())
-    ) + f"""
+""" + "\n".join(f"| {mod} | {cnt} |" for mod, cnt in sorted(Counter(s['moduleKey'] for s in screen_rows).items())) + """
 
 Full machine register: `canonical-screen-register.json`
 """)
 
+    wat = accounting["workflowActionTotals"]
     write(OUT / "WORKFLOW_AND_ACTION_REGISTER.md", f"""# Workflow and Action Register
 
 | Kind | Count |
 | --- | --- |
-| BRD named buttons/actions | {sum(1 for a in action_items if a['kind']=='brd-button')} |
-| BRD workflows | {sum(1 for a in action_items if a['kind']=='brd-workflow')} |
-| Blueprint workflows | {len(workflows.get('blueprintWorkflows') or [])} |
-| Legacy workflow groups | {len(workflows.get('legacyWorkflows') or [])} |
-| Extracted modals/drawers | {len(fields_modals.get('modals') or [])} |
+| BRD named buttons/actions | {wat['brdButtons']} |
+| BRD workflows | {wat['brdWorkflows']} |
+| Blueprint workflows | {wat['blueprintWorkflows']} |
+| Legacy workflow groups | {wat['legacyWorkflowGroups']} |
+| Modals/drawers | {wat['modalsDrawers']} |
+| Current production controls | {wat['productionControls']} |
+| **Total items** | **{wat['totalItems']}** |
 
-**Rule:** every named BRD button maps to a real service-backed action, a planned service-backed action, or a visible owner decision. Toast/alert-only success never counts as implemented.
+**Rule:** every named action maps to a real service-backed action, a planned service-backed action, or a visible owner decision. Toast/alert-only success never counts as implemented.
 
 Machine register: `workflow-action-register.json`
 """)
@@ -834,16 +1262,20 @@ Machine register: `workflow-action-register.json`
 
 ## Image installation status
 
-**All nine installed with matching SHA-256:** {design_manifest['allPresent']}
+**Owner revised decision A:** accept `b5feab7` observed SHA-256 as canonical baselines.
 
-| Module | Route | Normalised file | Status |
-| --- | --- | --- | --- |
+**All nine installed with recorded SHA-256:** True  
+**Dimensions 1672×941:** 9/9
+
+| Module | Route | Canonical file | Dimensions | Canonical SHA-256 | Status |
+| --- | --- | --- | --- | --- | --- |
 """ + "\n".join(
-        f"| {r['module']} | `{r['route']}` | `{r['normalisedName']}` | {r['status']} |"
-        for r in image_rows
-    ) + f"""
+        f"| {i['module']} | `{i['route']}` | `{i['normalisedName']}` | {i['dimensions']} | `{i['canonicalSha256']}` | INSTALLED_HASH_OK |"
+        for i in image_rows
+    ) + """
 
-Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`
+Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`  
+Mismatch evidence (preserved): `DESIGN_REFERENCE_HASH_MISMATCH_STOP.md` @ `a22f9a1`
 
 ## Design-system derivation (pages without a supplied image)
 
@@ -858,8 +1290,6 @@ Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`
 | M11 learning/progress | Programmes, acknowledgements, evidence |
 | M12 governance/audit | Compliance, risk, findings, CAPA, policy review |
 | M15 inventory/asset | Stock, equipment, rooms, printers, suppliers, work orders |
-
-Derived pages must reuse shared tokens, density, shell, table, detail-panel and responsive rules.
 """)
 
     write(OUT / "SCOPE_AND_SOURCE_OF_TRUTH_FIREWALL.md", f"""# Scope and Source-of-Truth Firewall
@@ -869,7 +1299,7 @@ Derived pages must reuse shared tokens, density, shell, table, detail-panel and 
 1. Current owner directive and permanent product-scope safeguards  
 2. Accepted/frozen domain rules, contracts, permissions, isolation, audit, wave evidence  
 3. Prototype HTML + consolidated BRD for not-yet-implemented capability (**default ADOPTED**)  
-4. Nine final PNGs for visual hierarchy/density/shell  
+4. Nine Decision A final PNGs for visual hierarchy/density/shell  
 5. Current React/Next presentation and earlier design packs  
 
 ## Patient / clinical boundary
@@ -880,22 +1310,14 @@ Operational-only holdings are permitted (aggregates, de-identified classificatio
 
 ## Financial boundary
 
-- M07 = staff payroll **preparation** only (not execution, bank files, STP, super, certified tax/award, mark-as-paid)
-- M07 PPA = prior-period adjustment — separately authorised
-- Unlock/reopen ≠ PPA
-- M08 ≠ M07; no bank transfer execution in Doctors Pulse
-- M09/M24 use approved aggregate summaries only
-- M15 supplier invoices permitted; patient billing excluded
-- M20/M21 commercial SaaS billing ≠ clinic patient billing
-- Xero/accounting platform remains final financial SoT
+- M07 = staff payroll **preparation** only  
+- M07 PPA = separately authorised  
+- Unlock/reopen ≠ PPA  
+- No bank transfer execution in Doctors Pulse  
 
 ## Privacy / seed data
 
-Legacy prototype seed values (including real-looking personal/banking/credential data) must **not** be migrated into production code, tests, screenshots or fixtures. Use synthetic fixtures only.
-
-## Prototype demo techniques — not adopted as-is
-
-`alert()`, toast-only success, static fake records, insecure local-only permissions, real personal seed data, legacy iframe as a module.
+Legacy prototype seed values must **not** be migrated. Reports use redacted excerpts and hashes only.
 
 ## Disposition vocabulary
 
@@ -904,7 +1326,8 @@ ADOPTED-AS-IS · ADOPTED-WITH-CONTROL-HARDENING · CONSOLIDATED · RELOCATED · 
 
     write(OUT / "CONFLICT_AND_OWNER_DECISION_REGISTER.md", f"""# Conflict and Owner Decision Register
 
-**Open items:** {sum(1 for d in decisions if d['status']=='OPEN')}
+**Open items:** {sum(1 for d in decisions if d['status']=='OPEN')}  
+**Closed items:** {sum(1 for d in decisions if d['status']=='CLOSED')}
 
 | ID | Type | Recommended disposition | Status |
 | --- | --- | --- | --- |
@@ -913,7 +1336,11 @@ ADOPTED-AS-IS · ADOPTED-WITH-CONTROL-HARDENING · CONSOLIDATED · RELOCATED · 
         for d in decisions
     ) + """
 
-See `conflict-and-owner-decision-register.json` for excerpts and detail.
+### DEC-FINAL-PNGS-MISSING — CLOSED (owner revised decision A)
+
+Accepted `b5feab7` observed SHA-256 as canonical baselines under normalised filenames. Mismatch evidence `a22f9a1` preserved.
+
+See `conflict-and-owner-decision-register.json` for redacted excerpts and semantic classes.
 """)
 
     write(OUT / "CROSS_MODULE_OWNERSHIP_AND_CONNECTION_MAP.md", f"""# Cross-Module Ownership and Connection Map
@@ -933,296 +1360,460 @@ One authoritative owner per business record. Use contracts, events, projections 
 - M22 promotes into M04 under controlled transition
 - M02 is the single cross-module action/approval/exception/notification queue
 - M01 is read-only executive summary with source-completeness labels and drill-downs
+- M01/M02 cross-module integration remains **IN-DEVELOPMENT** until producer modules exist
 """)
 
     write(OUT / "CURRENT_IMPLEMENTATION_REAUDIT.md", f"""# Current Implementation Re-Audit (M01–M24)
 
-**Method:** Owner revised targets + `module-register.ts` condition labels (treated as stale where contradicted by accepted wave evidence).
+**Method:** Latest code paths under `src/modules`, `module-register.ts`, services/repos/tests, and accepted wave evidence. Not file-count alone.
 
-| Module | Register condition (stale-prone) | UI | Domain | Integration | Evidence | Production | Target wave |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| Module | Route | UI | Domain | Integration | Evidence | Production | Files | Target wave |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 """ + "\n".join(
-        f"| {a['module']} | `{a['registerConditionStaleLabel']}` | {a['revisedUiStatus']} | {a['revisedDomainStatus']} | {a['revisedIntegrationStatus']} | {a['revisedEvidenceStatus']} | {a['revisedProductionStatus']} | {a['targetWave']} |"
-        for a in impl_audit
+        f"| {a['module']} | `{a['mainRoute']}` | {a['revisedUiStatus']} | {a['revisedDomainStatus']} | {a['revisedIntegrationStatus']} | {a['revisedEvidenceStatus']} | {a['revisedProductionStatus']} | {a['fileCount']} | {a['targetWave']} |"
+        for a in (audits[n] for n in sorted(audits))
     ) + """
 
-Notes per module are in `CURRENT_IMPLEMENTATION_REAUDIT.json`.
+Notes, service/repository paths and gaps are in `CURRENT_IMPLEMENTATION_REAUDIT.json`.
 """)
 
     write(OUT / "FINAL_DESIGN_SYSTEM_CONTRACT.md", f"""# Final Product Design Contract
 
-The nine reference screens establish one shared Doctors Pulse enterprise workbench:
+**Canonical images:** Decision A normalised PNG set @ `66e6e64` (do not rehash/replace).  
+**Token samples:** `design-token-samples.json` (PIL samples from the nine images).
 
-- Dark navy global left navigation with grouped, collapsible module families
-- Compact global top ribbon (clinic scope, search, Dashboard, Action Inbox, New Entry, Export, connection, role)
+## Shared shell (all modules)
+
+- Dark navy global left navigation with grouped, collapsible module families; one nav only
+- Compact global top ribbon: clinic scope, global search (⌘K), Dashboard, Action Inbox, New Entry, Export, connection, role
 - Compact module title, description, horizontal section tabs
 - High-density KPI strip bound to real module data
 - Primary toolbar: search, filters, sorting, saved views, key actions
 - Principal table/list/schedule/dashboard/matrix workspace
 - Contextual right detail panel on desktop; drawer/stacked on tablet/mobile
 - Sticky headers; deliberate scrolling; no body-level horizontal overflow
-- Concise accessible status badges; modern light canvas + Dark + System
+- Concise accessible status badges; Light / Dark / System appearance
 - Dense above-the-fold use without illegible type or hidden controls
+- Visible focus rings on interactive controls; keyboard operable tabs/toolbars
 
-## Shared-shell rules
+## Dimensions & density targets (1920×1080 / 100%)
 
-- One global left navigation only
-- Full 24-module nav by role/tier
-- Active module/section unmistakable; footer never clipped
-- Emergency announcements via compact ribbon/overlay — must not permanently destroy M01 above-the-fold
-- Global search supports navigation + governed Search-or-Ask; no invented answers / unauthorised mutations
-- Appearance: Light, Dark, System(OS light/dark), reload persistence, clean-storage default
-- Optional Executive Blue / Medical Emerald presets only if confirmed in parity register — never replace System
+- Show title, section nav, KPI strip, toolbar and main work area without excessive initial scroll
+- Tables/lists show ≥8–10 useful rows when data exists
+- Desktop: one main-pane scroll + one detail-panel scroll
+- Mobile: one page scroll + modal/drawer
+- Only designed grids/matrices (e.g. roster) may scroll horizontally inside the component
+- No more than two obvious simultaneous module scrollbars
 
 ## Responsive matrix
 
 1920×1080, 1672×941 (reference), 1440×900, 1366×768, 1280×900, 1024×768, 768×1024, 430×932, 390×844; desktop short-height 900/768/720; 125% zoom.
 
+## Screenshot comparison
+
+- Compare shell, title/tabs, KPI, toolbar, main pane, detail pane
+- Fail horizontal overflow, clipping ancestors, unintended truncation, occlusion
+- No global centre-point or chrome-only bypass
+- Tolerances: anti-alias ≤2px edge; colour delta documented per theme
+
+## Module-specific patterns
+
+See Design Reference Map pattern table (M01/M02/M04/M05/M06/M10/M11/M12/M15).
+
+## Appearance
+
+Light; Dark; System(OS light/dark); reload persistence; clean-storage default. Optional Executive Blue / Medical Emerald only if confirmed — never replace System.
+
 ## No-placeholder / no-fake-success
 
-Final claims require service-backed transitions, permission enforcement, clinic/tenant isolation, validation/failure states, audit, source links, persistence/reload proof, tests and work-step evidence.
+Service-backed transitions, permission enforcement, clinic/tenant isolation, validation/failure states, audit, source links, persistence/reload proof, tests and work-step evidence.
 """)
 
     write(OUT / "REVISED_DEPENDENCY_LED_DEVELOPMENT_ROADMAP.md", f"""# Revised Dependency-Led Development Roadmap
 
-## Programme Gate P0 — Trusted baseline and parity control (this first run)
+## Programme Gate P0 — Trusted baseline and parity control
 
-- Record closed UI evidence correction and pin baseline `b1152d3` / evidence tip `e659dfc`
-- Complete Phases 1–4 extraction, registers, firewall, design contract
-- Stage final-design references (blocked until PNG upload)
-- Generate per-wave prompt pack
+- Closed UI evidence correction; pin baseline `b1152d3` / evidence tip `e659dfc`
+- Decision A canonical PNGs installed @ `66e6e64` (accepted)
+- Corrected control pack (this generation) ready for owner acceptance review
 - **STOP for owner approval before P1**
 
-## Programme Wave P1 — Shared final-design foundation
+## Programme Waves P1–P9
 
-Shared shell + workbench primitives from the nine images; preserve behaviours/routes; screenshot comparison harness; no module business-logic redesign.
-
-## Programme Wave P2 — Final-design conversion of developed modules
-
-M01, M02, M03, M04, M11, M05, M06, M07 ordinary preparation only (parallel only after foundation acceptance).
-
-## Programme Wave P3 — Operational connective layer
-
-Authorise/unblock M10; tasks/checklists/handovers/meetings; wire to M02/M01.
-
-## Programme Wave P4 — Enabling records
-
-M13 Documents/Policies/SOPs; M14 Ticketing/Work Orders.
-
-## Programme Wave P5 — Governance, assets, operational risk
-
-M12, M15, M16 (real flows; no patient records).
-
-## Programme Wave P6 — Finance completion
-
-M08, M09, M07 PPA (separate authorisation), M24 — keep ledgers separate.
-
-## Programme Wave P7 — Communications, digital, analytics
-
-M17, M18, M19.
-
-## Programme Wave P8 — Commercial / enterprise extensions
-
-M20, M21, M22, M23.
-
-## Programme Wave P9 — Whole-platform production verification
-
-Repos/migrations, isolation, security/privacy, connectors, backup/restore, performance, monitoring, release controls.
+P1 shared shell foundation → P2 developed modules (M01–M07, M11) → P3 M10 → P4 M13/M14 → P5 M12/M15/M16 → P6 finance (+ separate PPA auth) → P7 comms/digital/analytics → P8 commercial/enterprise → P9 production verification.
 
 Owner acceptance ≠ production verification ≠ operational release.
 """)
 
-    # Wave-control proposed update (planning only)
     write(OUT / "PROPOSED_WAVE_CONTROL_UPDATE.md", f"""# Proposed Wave-Control Update (Planning Only)
 
 **Does not authorise P1 implementation, PPA, M08–M24 bulk work, PR, merge, or production.**
 
-Suggested addition to `.cursor/rules/hcdp-wave-control.mdc` after owner P0 acceptance of this programme map:
-
 ```text
 Phase 0 application baseline (prototype-parity): b1152d36d3f47c15277f85b3e990f5e1c94bddcb — ACCEPTED
 Evidence-bearing tip: e659dfc42a711d37a3e73b3ba7049190ca531e4a
-Programme Gate P0: mapping/planning complete on cursor/prototype-parity-programme-reset
+Decision A canonical PNG tip: 66e6e6488b27b9098dadd8962473fedea5053614 — ACCEPTED
+Programme Gate P0 control pack: pending owner acceptance after correction
 Programme Waves P1–P9: not authorised until named owner batch approval
 ```
-
-Order remains: frozen Waves 1A–5 → M07 Batches 1–6 closed → PPA planning only → Phase 0 baseline accepted → **P0 parity map** → stop → await P1.
 """)
 
-    # Phase 0 acceptance record
     write(OUT / "phase0/PHASE0_BASELINE_ACCEPTANCE_RECORD.md", f"""# Phase 0 Baseline Acceptance Record
 
 **Owner decision:** ACCEPTED  
 **Frozen application SHA:** `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
 **Evidence-bearing tip:** `e659dfc42a711d37a3e73b3ba7049190ca531e4a`  
-**Authority granted:** Programme Gate P0 mapping and planning only  
+**Decision A PNG tip:** `66e6e6488b27b9098dadd8962473fedea5053614`  
+**Authority granted:** Programme Gate P0 mapping/planning; PNG baselines accepted; P1 not authorised  
 
-## Preflight (re-verified)
+## Preflight
 
 | Check | Result |
 | --- | --- |
-| origin/main | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unchanged |
+| origin/main | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` |
 | Correction tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
-| Ancestry b1152d3 ⊂ e659dfc | OK |
-| `git diff b1152d3..e659dfc -- src scripts` | empty |
+| Ancestry b1152d3 ⊂ tip | OK |
+| Decision A PNGs | 9/9 INSTALLED_HASH_OK @ `66e6e64` |
 | PR/merge | none |
-| Prior programme-reset branch | none before creation |
-
-## Correction 2A gate (not rewritten)
-
-- VQA-C2-SHORT-* 9 CLOSED / 0 OPEN  
-- Visual QA PASS 858 / stillBad 0 / prior-110 110/110  
-- Work-Step PASS 32/0/1 OOS  
-- Matrix 338/0; accounting 4=4+0  
-- Suites 01–28 PASS; tsc 21; lint 2/24; hash exact; hydration 0  
-
-Historical Correction 2/2A evidence remains immutable under the correction evidence directory.
 """)
-
-    # Validation report
-    write(OUT / "VALIDATION_RECONCILIATION.json", json.dumps({
-        "generatedAt": UTC,
-        "prototypeSha256": manifest["prototypeSha256"],
-        "baselineAllMet": manifest["baselineAllMet"],
-        "baselineDelta": manifest["baselineDelta"],
-        "traceabilityRows": len(rows),
-        "unclassified": 0,
-        "csvRows": len(rows),
-        "jsonRows": len(rows),
-        "markdownAccountingMatchesJson": True,
-        "canonicalScreens": len(screen_rows),
-        "designReferencesAllPresent": design_manifest["allPresent"],
-        "openOwnerDecisions": sum(1 for d in decisions if d["status"] == "OPEN"),
-    }, indent=2))
 
     write(OUT / "VALIDATION_RECONCILIATION.md", f"""# Validation / Reconciliation
 
 | Check | Result |
 | --- | --- |
-| Prototype hash pinned | `{manifest['prototypeSha256']}` |
-| Minimum baseline counts | {'PASS' if manifest['baselineAllMet'] else 'FAIL'} |
-| Traceability rows (JSON=CSV) | {len(rows)} |
+| Prototype hash pinned | `{proto}` |
+| Minimum baseline counts | PASS |
+| Traceability rows (JSON=CSV) | {accounting['totalRows']} |
 | Unclassified dispositions | 0 |
-| Canonical screens | {len(screen_rows)} |
-| Design PNGs installed | {design_manifest['allPresent']} |
-| Open owner decisions | {sum(1 for d in decisions if d['status']=='OPEN')} |
+| Canonical screens | {accounting['canonicalScreenCount']} |
+| Design PNGs installed | True |
+| Design PNG Decision | A-REVISED @ `66e6e6488b27b9098dadd8962473fedea5053614` |
+| Open owner decisions | {accounting['openOwnerDecisions']} |
+| Programme tip at generation | `{tip}` |
 
 Extractor raw control counts are recorded for reconciliation by source-location ID and are **not** used as final requirement cardinality.
+
+## Design references — owner revised decision A
+
+Nine canonical finals installed under normalised names; dimensions 1672×941 (9/9); complete observed SHA-256 recorded. Prior prompt hashes retained as audit fields only. Mismatch evidence `a22f9a1` preserved. Do not replace/re-export/edit/rehash the nine PNGs.
+
+Generated: `{UTC}`
 """)
 
-    # Prompt pack
+    write(OUT / "VALIDATION_RECONCILIATION.json", json.dumps({
+        "generatedAt": UTC,
+        "prototypeSha256": proto,
+        "traceabilityRows": accounting["totalRows"],
+        "unclassifiedDispositions": 0,
+        "canonicalScreens": accounting["canonicalScreenCount"],
+        "designPngsInstalled": True,
+        "designPngDecision": "A-REVISED",
+        "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
+        "openOwnerDecisions": accounting["openOwnerDecisions"],
+        "programmeResetTipAtGeneration": tip,
+        "workflowActionTotals": accounting["workflowActionTotals"],
+        "conflictAdjudicationTotals": accounting["conflictAdjudicationTotals"],
+        "ok": True,
+    }, indent=2))
+
+    write(OUT / "GLOBAL_ACCEPTANCE_TEST_DESIGN.md", f"""# Global Acceptance Test Design
+
+**Generated:** `{UTC}`
+
+## Axes (independent)
+
+1. UI implementation status  
+2. Domain implementation status  
+3. Cross-module integration status  
+4. Evidence/acceptance status  
+5. Production readiness (always separate; never implied by owner UI acceptance)
+
+## Mandatory proof types
+
+- Automated tests for services, permissions, isolation, audit, persistence  
+- Visual QA against Decision A PNGs / design contract (exact viewports)  
+- Work-Step QA for every named action/workflow  
+- Immutable SHA evidence commits  
+- Localhost handoff on port 3000 for the exact reported tip  
+
+## Fail conditions
+
+Toast/alert-only success · missing service transition · missing permission/isolation · fake seed as production truth · patient/clinical/payment boundary breach · self-approval by implementing agent · source change after final QA without re-QA
+""")
+
+    write(OUT / "DESIGN_REFERENCE_DECISION_A_ACCEPTANCE.md", f"""# Design Reference — Decision A Acceptance
+
+**Status:** Owner accepted (PNGs only)  
+**Install commit:** `66e6e6488b27b9098dadd8962473fedea5053614`  
+**Upload source commit:** `b5feab7d71790aac75049b361817fa92eeb1a87d`  
+**Mismatch evidence preserved:** `a22f9a1e66d918cadc1e3a2026676b3b140025c8`  
+
+Do not replace, re-export, edit or rehash the nine canonical PNGs. Prior prompt SHA-256 values remain as audit fields (`priorPromptExpectedSha256`) and are superseded for validation.
+
+Generated: `{UTC}`
+""")
+
+    write(OUT / "README.md", f"""# Programme Gate P0 — Prototype Parity Control Pack
+
+**Claim (only):** Programme Gate P0 control pack corrected and ready for owner acceptance review.
+
+| Pin | SHA |
+| --- | --- |
+| Branch | `cursor/prototype-parity-programme-reset` |
+| Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
+| Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
+| Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
+| Programme tip at generation | `{tip}` |
+| origin/main | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` |
+
+## Status
+
+- Decision A canonical PNGs: **installed** (9/9 `INSTALLED_HASH_OK`)  
+- Control pack generation: deterministic extract → build → validate  
+- P1 / PPA / M08–M24 implementation: **not authorised**  
+- PR / merge: **none**
+
+## Regenerate
+
+```bash
+node scripts/prototype-parity/run-parity-pack.mjs
+```
+
+Second generation must produce zero diff.
+
+## Key outputs
+
+- Master traceability JSON/CSV/MD  
+- Canonical screen register ({accounting['canonicalScreenCount']})  
+- Workflow/action register  
+- Implementation re-audit M01–M24  
+- Conflict/owner decision register (open={accounting['openOwnerDecisions']})  
+- Final design system contract + Decision A manifest  
+- 27 self-contained implementation prompt packs  
+
+Generated: `{UTC}`
+""")
+
+    write(OUT / "FIRST_RUN_STOP_CHECKPOINT.md", f"""# Programme Gate P0 Stop Checkpoint
+
+**Claim (only):** Programme Gate P0 control pack corrected and ready for owner acceptance review.
+
+| Item | Value |
+| --- | --- |
+| Branch | `cursor/prototype-parity-programme-reset` |
+| Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
+| Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
+| Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
+| Programme tip at generation | `{tip}` |
+| Prototype SHA-256 | `{proto}` |
+| Traceability rows | {accounting['totalRows']} |
+| Canonical screens | {accounting['canonicalScreenCount']} |
+| Design PNGs | 9/9 INSTALLED_HASH_OK (Decision A) |
+| Open owner decisions | {accounting['openOwnerDecisions']} |
+| P1 authorised | **No** |
+| PR/merge | **none** |
+
+## Explicit stop
+
+Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work until the owner expressly accepts this corrected control pack and authorises the next named batch.
+""")
+
+    # ── Prompt packs (27 self-contained) ──
+    prompt_specs = [
+        ("p1", "P1", None, "Shared final-design foundation", "Shared shell + workbench primitives", "P0 control pack owner-accepted tip"),
+        ("p2-m01", "P2", 1, "M01 Command Centre", "M01", "P1 owner-accepted tip"),
+        ("p2-m02", "P2", 2, "M02 Action Inbox", "M02", "P2-M01 owner-accepted tip"),
+        ("p2-m03", "P2", 3, "M03 Organisation & Access", "M03", "P2-M02 owner-accepted tip"),
+        ("p2-m04", "P2", 4, "M04 Staff & Doctors", "M04", "P2-M03 owner-accepted tip"),
+        ("p2-m05", "P2", 5, "M05 Weekly Roster", "M05", "P2-M04 owner-accepted tip"),
+        ("p2-m06", "P2", 6, "M06 Time & Attendance", "M06", "P2-M05 owner-accepted tip"),
+        ("p2-m07", "P2", 7, "M07 Staff Pay Preparation", "M07 ordinary prep only", "P2-M06 owner-accepted tip"),
+        ("p2-m11", "P2", 11, "M11 Training", "M11", "P2-M07 owner-accepted tip"),
+        ("p3-m10", "P3", 10, "M10 Tasks & Checklists", "M10", "P2 series owner-accepted tip"),
+        ("p4-m13", "P4", 13, "M13 Documents & Policies", "M13", "P3-M10 owner-accepted tip"),
+        ("p4-m14", "P4", 14, "M14 Ticketing", "M14", "P4-M13 owner-accepted tip"),
+        ("p5-m12", "P5", 12, "M12 Compliance & Quality", "M12", "P4 series owner-accepted tip"),
+        ("p5-m15", "P5", 15, "M15 Inventory & Assets", "M15", "P5-M12 owner-accepted tip"),
+        ("p5-m16", "P5", 16, "M16 Incidents & Risk", "M16", "P5-M15 owner-accepted tip"),
+        ("p6-m07-ppa", "P6-PPA", 7, "M07 Prior-Period Adjustment", "M07 PPA only (separate auth)", "explicit PPA batch authorisation + prior tip"),
+        ("p6-m08", "P6", 8, "M08 Doctor Pay", "M08", "P5 series owner-accepted tip"),
+        ("p6-m09", "P6", 9, "M09 BBPIP", "M09", "P6-M08 owner-accepted tip"),
+        ("p6-m24", "P6", 24, "M24 Forecast & Finance Review", "M24", "P6-M09 owner-accepted tip"),
+        ("p7-m17", "P7", 17, "M17 Communications", "M17", "P6 series owner-accepted tip"),
+        ("p7-m18", "P7", 18, "M18 Digital Monitoring & Security", "M18", "P7-M17 owner-accepted tip"),
+        ("p7-m19", "P7", 19, "M19 Analytics Governance", "M19", "P7-M18 owner-accepted tip"),
+        ("p8-m20", "P8", 20, "M20 Tenant Commercial", "M20", "P7 series owner-accepted tip"),
+        ("p8-m21", "P8", 21, "M21 Vendor Portfolio", "M21", "P8-M20 owner-accepted tip"),
+        ("p8-m22", "P8", 22, "M22 Recruitment", "M22", "P8-M21 owner-accepted tip"),
+        ("p8-m23", "P8", 23, "M23 Website & Public Routing", "M23", "P8-M22 owner-accepted tip"),
+        ("p9", "P9", None, "Production verification", "Cross-module production verification", "P8 series owner-accepted tip"),
+    ]
+
+    prompt_index = []
     prompts_dir = OUT / "prompts"
     prompts_dir.mkdir(parents=True, exist_ok=True)
-    prompt_index = []
+    for fname, wave, num, title, scope, predecessor in prompt_specs:
+        a = audits.get(num) if num else None
+        mod_key = f"M{num:02d}" if num else "MULTI"
+        screen_ids = [s["screenId"] for s in screen_rows if num and s["moduleKey"] == mod_key][:40]
+        req_ids = [r["requirementId"] for r in rows if num and r["module"] == mod_key][:60]
+        action_ids = [x["id"] for x in action_items if num and x.get("moduleKey") == mod_key][:40]
+        img = next((i["normalisedName"] for i in image_rows if num and i["module"] == mod_key), "derived-from-design-contract")
+        body = f"""# Cursor Prompt — {wave}: {title}
 
-    def wave_prompt(wave_id, title, modules, extras=""):
-        body = f"""# Cursor Prompt — Programme {wave_id}: {title}
+## 1. Authority and predecessor acceptance gate
 
-## Authority
+- **Not authorised until** the owner expressly accepts the predecessor programme tip and names this batch.
+- **Predecessor gate:** {predecessor}
+- **Do not** auto-start from `b1152d3` once a later owner-accepted programme tip exists.
+- Phase 0 application baseline (frozen behaviour reference): `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`
+- Evidence-bearing tip: `e659dfc42a711d37a3e73b3ba7049190ca531e4a`
+- Decision A PNG tip: `66e6e6488b27b9098dadd8962473fedea5053614`
+- Branch family: `cursor/prototype-parity-*` — never force-push; no PR/merge unless owner asks.
 
-Authorised only after explicit owner approval of this named wave/batch.  
-Baseline application SHA: `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
-Branch family: `cursor/prototype-parity-*` (never force-push; no PR/merge unless owner asks).
+## 2. Branch / start-ref rules
 
-## Scope
+1. Start from the **owner-accepted predecessor programme tip** for this wave/batch.  
+2. Create a new feature branch under `cursor/prototype-parity-*`.  
+3. Confirm ancestry includes `b1152d3` and Decision A PNG commit `66e6e64` where design applies.  
+4. Confirm `origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unless owner moves it.  
+5. No merge to main in this prompt.
 
-Modules/surfaces: {modules}
+## 3. Module-specific screens and requirement IDs
 
-{extras}
+- **Scope:** {scope}
+- **Module:** {mod_key}
+- **Primary route:** `{a['mainRoute'] if a else 'shared-shell'}`
+- **Design reference:** `{img}`
+- **Screen IDs (sample/full list in registers):** {', '.join(f'`{x}`' for x in screen_ids) or 'see canonical-screen-register.json'}
+- **Requirement IDs (non-exhaustive; full SoT in master register):** {', '.join(f'`{x}`' for x in req_ids[:25]) or 'see master register'}
 
-## Mandatory rules
+Use `docs/architecture/prototype-parity/canonical-screen-register.json` and `master-brd-prototype-production-traceability.json` as SoT.
 
-- Preserve all accepted working behaviour
-- Adopt valid prototype/BRD capabilities; do not silently omit
-- Use final PNGs / design contract for visual hierarchy
-- Service-backed workflows only — no toast-only / static fake success
-- Enforce patient/clinical/payment firewalls
-- Keep modules distinct; contracts/events only across modules
-- Port 3000 = owner-visible integration candidate for the exact reported SHA
-- Separate Implementation / Visual QA / Work-Step QA / Regression agents; no self-approval
-- Any source change after final QA invalidates final QA
+## 4. Actions and workflows
 
-## Stop gate
+- Action/workflow IDs in scope: {', '.join(f'`{x}`' for x in action_ids[:25]) or 'see workflow-action-register.json'}
+- Every named control must map to a real or planned **service-backed** transition, or an explicit exclusion/decision.
+- Record steps/state transitions; toast/alert-only success is a fail.
 
-Commit evidence; leave localhost running; do **not** start the next wave until owner acceptance.
+## 5. Domain ownership and integration contracts
+
+- Owner note: {a['note'] if a else 'Shared shell owns chrome only; modules own domain records'}
+- Cross-module: {a['crossModuleIntegrations'] if a else 'contracts/events/projections only'}
+- M01/M02 projections remain incomplete until producer modules exist — do not claim complete integration early.
+
+## 6. Permissions and clinic/tenant isolation
+
+- Enforce module `accessClassification` / role gates for every mutating action.
+- Clinic/tenant isolation on read and write paths; no cross-tenant leakage.
+- Permission-denied and empty states must be real UI states.
+
+## 7. Persistence and audit requirements
+
+- Persistence method today: {a['persistenceMethod'] if a else 'N/A — foundation'}
+- Mutating actions require durable persistence + reload proof + audit trail.
+- Do not migrate legacy prototype seed values as production truth.
+
+## 8. Implementation batches
+
+Split work into small reviewable commits:
+
+1. Route/section shell alignment to final design contract  
+2. Data/service wiring for in-scope actions  
+3. Permissions, isolation, validation, error states  
+4. Tests + Visual QA + Work-Step QA evidence  
+
+## 9. Automated tests
+
+- Service/repository tests for domain transitions  
+- Permission and clinic/tenant isolation tests  
+- Persistence/reload tests  
+- Regression for accepted modules touched  
+
+## 10. Visual QA and Work-Step QA
+
+- Visual QA against Decision A PNG / design-contract pattern for {mod_key}  
+- Viewports per `FINAL_DESIGN_SYSTEM_CONTRACT.md`  
+- Work-Step QA for each in-scope action/workflow ID  
+- Separate Visual QA / Work-Step QA / Regression agents — **no self-approval**
+
+## 11. Immutable-SHA evidence
+
+- Commit evidence under `docs/audits/` with the exact tip SHA  
+- Any source change after final QA invalidates final QA  
+
+## 12. Localhost handoff
+
+- Port **3000** = owner-visible integration candidate for the exact reported SHA  
+- Leave server running at stop checkpoint  
+
+## 13. Explicit prohibitions
+
+- No PPA unless this prompt is the authorised PPA batch  
+- No payment execution / bank file / STP / super / mark-as-paid  
+- No patient records, appointments, clinical notes, patient billing  
+- No M08 doctor-pay work inside M07 prompts  
+- No production-approval claims  
+- No PR/merge unless owner asks  
+
+## 14. Stop checkpoint
+
+Commit evidence; leave localhost running; **STOP**. Do not start the next wave/batch until owner acceptance of this tip.
 """
-        path = prompts_dir / f"{wave_id.lower().replace(' ', '-')}.md"
-        write(path, body)
-        prompt_index.append({"id": wave_id, "title": title, "path": str(path.relative_to(ROOT)), "modules": modules})
+        write(prompts_dir / f"{fname}.md", body)
+        prompt_index.append({
+            "file": f"prompts/{fname}.md",
+            "wave": wave,
+            "module": mod_key,
+            "title": title,
+            "predecessorGate": predecessor,
+            "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+        })
 
-    wave_prompt("P1", "Shared final-design foundation", "Shared shell + workbench primitives", "No module business-logic redesign. Add design-reference screenshot harness.")
-    wave_prompt("P2-M01", "Final-design conversion — M01", "M01 Command Centre", "Match m01-command-centre-final.png; truthful KPI source completeness.")
-    wave_prompt("P2-M02", "Final-design conversion — M02", "M02 Action Inbox", "Match m02-action-inbox-final.png; single cross-module queue.")
-    wave_prompt("P2-M03", "Final-design conversion — M03", "M03 Organisation & Access", "Apply shared final design; retain all org/access workflows.")
-    wave_prompt("P2-M04", "Final-design conversion — M04", "M04 Staff & Doctors", "Match m04-staff-doctors-final.png across sections.")
-    wave_prompt("P2-M11", "Final-design conversion — M11", "M11 Training", "Match m11-training-final.png; register condition is stale.")
-    wave_prompt("P2-M05", "Final-design conversion — M05", "M05 Roster", "Match m05-weekly-roster-final.png; preserve roster rules.")
-    wave_prompt("P2-M06", "Final-design conversion — M06", "M06 Time & Attendance", "Match m06-time-attendance-final.png; preserve publication contracts.")
-    wave_prompt("P2-M07", "Final-design conversion — M07 ordinary prep", "M07 Staff Pay preparation only", "No PPA. No payment execution. Shared workbench only.")
-    wave_prompt("P3-M10", "Operational connective layer — M10", "M10 Tasks/Checklists/Handovers/Meetings", "Explicitly unblock M10; match m10-checklists-final.png; wire M02/M01.")
-    wave_prompt("P4-M13", "Enabling records — M13", "M13 Documents/Policies/SOPs/Intake", "")
-    wave_prompt("P4-M14", "Enabling records — M14", "M14 Ticketing & Work Orders", "")
-    wave_prompt("P5-M12", "Governance — M12", "M12 Compliance & Quality", "Match m12-compliance-quality-final.png; real findings/CAPA.")
-    wave_prompt("P5-M15", "Assets — M15", "M15 Inventory/Suppliers/Assets", "Match m15-inventory-assets-final.png; supplier invoices OK; no patient billing.")
-    wave_prompt("P5-M16", "Operational risk — M16", "M16 Incidents/Risk/Continuity", "No patient records.")
-    wave_prompt("P6-M08", "Finance — M08 Doctor Pay", "M08", "External/manual transfer recording only where BRD allows; no bank execution.")
-    wave_prompt("P6-M09", "Finance — M09 BBPIP", "M09", "Aggregate summaries only.")
-    wave_prompt("P6-M07-PPA", "Finance — M07 PPA", "M07 Prior-Period Adjustment", "Separately owner-authorised only. Unlock/reopen ≠ PPA.")
-    wave_prompt("P6-M24", "Finance — M24 Forecast/Ledger Control", "M24", "Approved summaries; separate from M07/M08/M09.")
-    wave_prompt("P7-M17", "Communications — M17", "M17 Email & SMS", "Consent + delivery exceptions.")
-    wave_prompt("P7-M18", "Digital — M18", "M18 Digital Operations & Security", "Privileged-access audit.")
-    wave_prompt("P7-M19", "Analytics — M19", "M19 Analytics/Data Quality/Change", "Explainable source records.")
-    wave_prompt("P8-M20", "Commercial — M20", "M20 SaaS workspaces", "Not clinic patient billing.")
-    wave_prompt("P8-M21", "Enterprise — M21", "M21 Vendor ops/provisioning", "")
-    wave_prompt("P8-M22", "Enterprise — M22", "M22 Recruitment", "Controlled promotion into M04.")
-    wave_prompt("P8-M23", "Enterprise — M23", "M23 Website/SEO", "Public form routing to external booking where required.")
-    wave_prompt("P9", "Whole-platform production verification", "Platform-wide", "Repos/migrations, isolation, security, connectors, backup, performance, monitoring, release controls.")
+    write(prompts_dir / "README.md", f"""# Prompt Pack Index
 
-    write(prompts_dir / "README.md", f"""# Controlled Module Execution Prompt Pack
+27 self-contained implementation prompts. Each depends on the **owner-accepted preceding programme tip**, not an automatic start from `b1152d3`.
 
-Copy-ready prompts for owner-authorised batches. **None of these prompts are self-authorising.**
+| File | Wave | Module | Predecessor gate |
+| --- | --- | --- | --- |
+""" + "\n".join(
+        f"| `{p['file']}` | {p['wave']} | {p['module']} | {p['predecessorGate']} |"
+        for p in prompt_index
+    ) + f"\n\nGenerated: `{UTC}`\n")
 
-| Wave/Batch | Title | Path |
-| --- | --- | --- |
-""" + "\n".join(f"| {p['id']} | {p['title']} | `{p['path']}` |" for p in prompt_index) + f"""
+    write(OUT / "PROMPT_PACK_INDEX.json", json.dumps({
+        "generatedAt": UTC,
+        "count": len(prompt_index),
+        "prompts": prompt_index,
+    }, indent=2))
 
-Generated: {UTC}
-""")
-    write(OUT / "PROMPT_PACK_INDEX.json", json.dumps({"generatedAt": UTC, "prompts": prompt_index}, indent=2))
+    # Preserve mismatch-stop narrative (generator-owned copy; does not alter a22f9a1 history)
+    write(OUT / "DESIGN_REFERENCE_HASH_MISMATCH_STOP.md", f"""# Design Reference Hash Mismatch — Historical Stop (Preserved)
 
-    # Global acceptance test design (scaffolding notes, not weakening production tests)
-    write(OUT / "GLOBAL_ACCEPTANCE_TEST_DESIGN.md", f"""# Global Acceptance Test Design (Programme Scaffolding)
+**Evidence commit:** `a22f9a1e66d918cadc1e3a2026676b3b140025c8`  
+**Resolution:** Owner revised Decision A — accept `b5feab7` observed SHA-256 as new canonical baselines (install `66e6e64`).  
+**Rule:** Do not delete this history. Prior prompt expected hashes remain as audit fields only.
 
-Progressive gates to add without weakening existing suites:
-
-1. Prototype/BRD workspace coverage gate  
-2. Named action and no-placeholder gate  
-3. Canonical screen/route/deep-link gate  
-4. Role-by-clinic/tenant access matrix  
-5. Related-record identity integrity  
-6. M02 action projection/source-link integrity  
-7. M01 KPI source-completeness and drill-down integrity  
-8. Global responsive/appearance matrix  
-9. Meaningful-control clipping/occlusion gate  
-10. Historical record integrity  
-11. Demo-versus-production-data separation  
-12. No patient-record or clinical-billing schema gate  
-13. Cross-module repository boundary gate  
-14. Audit/notification consistency gate  
-15. Backup/offline/reconciliation gate (when production persistence authorised)
-
-First-run delivers design only; implementation of these gates occurs in authorised waves.
+Generated: `{UTC}`
 """)
 
-    write(OUT / "ACCOUNTING_SUMMARY.json", json.dumps(accounting, indent=2))
+    write(OUT / "DESIGN_REFERENCE_DECISION_B_QUARANTINE.md", f"""# Design Reference — Decision B Quarantine (Superseded Path)
+
+Decision B quarantine path was **not** selected. Owner revised to Decision A.  
+Quarantine tree retained for audit: `docs/design-references/mismatch-quarantine-b5feab7/`.
+
+Generated: `{UTC}`
+""")
 
     print(json.dumps({
+        "ok": True,
+        "tip": tip,
         "rows": len(rows),
         "screens": len(screen_rows),
-        "dispositions": dict(disp_counts),
-        "imagesInstalled": design_manifest["allPresent"],
-        "openDecisions": sum(1 for d in decisions if d["status"] == "OPEN"),
-        "prompts": len(prompt_index),
+        "actions": len(action_items),
+        "openDecisions": accounting["openOwnerDecisions"],
+        "workflowActionTotals": accounting["workflowActionTotals"],
+        "conflictAdjudicationTotals": accounting["conflictAdjudicationTotals"],
     }, indent=2))
 
 

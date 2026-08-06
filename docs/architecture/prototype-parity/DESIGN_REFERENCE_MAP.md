@@ -20,8 +20,7 @@
 | M15 | `/inventory-assets` | `m15-inventory-assets-final.png` | 1672x941 | `0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6` | INSTALLED_HASH_OK |
 
 Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`  
-Mismatch evidence (preserved): `DESIGN_REFERENCE_HASH_MISMATCH_STOP.md` @ `a22f9a1`  
-Historical quarantine copies: `docs/design-references/mismatch-quarantine-b5feab7/`
+Mismatch evidence (preserved): `DESIGN_REFERENCE_HASH_MISMATCH_STOP.md` @ `a22f9a1`
 
 ## Design-system derivation (pages without a supplied image)
 
@@ -36,5 +35,3 @@ Historical quarantine copies: `docs/design-references/mismatch-quarantine-b5feab
 | M11 learning/progress | Programmes, acknowledgements, evidence |
 | M12 governance/audit | Compliance, risk, findings, CAPA, policy review |
 | M15 inventory/asset | Stock, equipment, rooms, printers, suppliers, work orders |
-
-Derived pages must reuse shared tokens, density, shell, table, detail-panel and responsive rules.

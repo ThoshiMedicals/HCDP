@@ -1,57 +1,22 @@
-# First-Run Stop Checkpoint — Prototype-Parity Programme Reset
+# Programme Gate P0 Stop Checkpoint
 
-**Claim (only):** Prototype-parity adoption and final-design programme is fully mapped and ready for owner approval of Programme Wave P1.
-
-**Does not claim:** prototype parity, module completion, production readiness, or release readiness.
-
-## Repository refs
+**Claim (only):** Programme Gate P0 control pack corrected and ready for owner acceptance review.
 
 | Item | Value |
 | --- | --- |
 | Branch | `cursor/prototype-parity-programme-reset` |
-| Base tip at creation | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
-| First-run tip | branch HEAD `cursor/prototype-parity-programme-reset` (see git log below; tip advances with checkpoint pins) |
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
-| `origin/main` | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` (unchanged) |
-| `git diff b1152d3..e659dfc -- src scripts` | empty |
-| PR / merge | none (not created) |
-| P1 / PPA / M08–M24 implementation | none begun |
+| Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
+| Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
+| Programme tip at generation | `0e832a94f05469c48fe18661e32e3fb2e4b76b24` |
+| Prototype SHA-256 | `8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760` |
+| Traceability rows | 1982 |
+| Canonical screens | 186 |
+| Design PNGs | 9/9 INSTALLED_HASH_OK (Decision A) |
+| Open owner decisions | 1 |
+| P1 authorised | **No** |
+| PR/merge | **none** |
 
-### First-run commits
+## Explicit stop
 
-| SHA | Message |
-| --- | --- |
-| `cb6a926` | docs(parity): install final design references and source manifest |
-| `9bf7f58` | tools(parity): add deterministic prototype extraction |
-| `2c771e5` | docs(parity): add master traceability and canonical screen register |
-| `66f49f8` | docs(roadmap): reset dependency-led prototype adoption pathway |
-| `1c666be` | docs(prompts): add controlled module execution prompt pack |
-
-## UI evidence gate (Correction 2A — closed, not reopened)
-
-Accepted at `b1152d3`: VQA short findings 9 CLOSED / 0 OPEN; Visual QA 858 PASS / stillBad 0; Work-Step 32/0/1 OOS; matrix 338/0; accounting 4=4+0; suites 01–28 PASS; debt unchanged; hash exact; hydration 0.
-
-## Prototype / design hashes
-
-| Artefact | SHA-256 / status |
-| --- | --- |
-| `public/pulse-html-prototype.html` | `8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760` |
-| Nine final PNGs | **MISSING** in environment — upload requested; manifest records expected hashes |
-
-## Extraction / parity totals
-
-- Extraction minimum baseline: **PASS** (`baselineAllMet: true`)
-- Master traceability rows: **1697** (JSON = CSV = Markdown accounting)
-- Unclassified dispositions: **0**
-- Disposition totals: ADOPTED-AS-IS **1610** · ADOPTED-WITH-CONTROL-HARDENING **63** · EXCLUDED-BY-PRODUCT-BOUNDARY **24** · CONSOLIDATED/RELOCATED/DEFERRED/DECISION-REQUIRED in register via owner-decision items where needed
-- Canonical screens: **186** (143 baseline → variance **+43**)
-- Open owner decisions: **26** (24 scope conflicts + PNG missing + branded themes)
-
-## Confirmations
-
-- No production module implementation began  
-- No PPA implementation began  
-- No PR or merge occurred  
-- Patient-record, booking and clinical-billing capabilities were not added  
-
-**STOP for owner review before Programme Wave P1.**
+Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work until the owner expressly accepts this corrected control pack and authorises the next named batch.

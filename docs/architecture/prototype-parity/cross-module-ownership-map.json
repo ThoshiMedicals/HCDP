@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-08-06T05:43:08Z",
-  "rule": "One authoritative owner per business record; contracts/events/projections only \u2014 no cross-module repository imports",
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
+  "rule": "One authoritative owner per business record; contracts/events/projections only",
   "owners": {
+    "M01": "Read-only executive summaries with source-completeness and drill-downs",
+    "M02": "Receives action/approval/exception/notification projections",
     "M03": "Organisation, tenant, clinic, user and access scope",
     "M04": "Workforce person, engagement, credential, restriction, readiness",
     "M05": "Rosters, shifts, coverage, publication",
     "M06": "Attendance, timesheets, approved publication to M07",
-    "M07": "Staff pay preparation only (not execution)",
-    "M08": "Doctor pay calculation/payslip/dispute records (not M07; no bank execution)",
+    "M07": "Staff pay preparation only (not execution); PPA separately authorised",
+    "M08": "Doctor pay calculation/payslip/dispute records (no bank execution)",
     "M09": "BBPIP forecasting and outcome reconciliation (aggregate)",
     "M10": "Tasks, checklist templates/occurrences, handovers, meeting actions",
     "M11": "Learning, assignment, competency, certificate, exemption",
@@ -15,7 +17,7 @@
     "M13": "Controlled operational documents and policy versions",
     "M14": "Tickets and work orders",
     "M15": "Stock, supplier, purchase, supplier invoice, equipment, rooms, printers, assets",
-    "M16": "Operational incident, complaint classification, risk, continuity, emergency coordination",
+    "M16": "Operational incident, complaint classification, risk, continuity",
     "M17": "Governed outbound communications and delivery status",
     "M18": "Digital monitoring, privileged access, secrets, security operations",
     "M19": "Metric definitions, data-quality cases, change governance",
@@ -23,9 +25,7 @@
     "M21": "Vendor-level provisioning and portfolio operations",
     "M22": "Recruitment until controlled promotion into M04",
     "M23": "Tenant website/SEO/public form routing",
-    "M24": "Forecasts, immutable baselines, actual-vs-forecast review",
-    "M02": "Receives action/approval/exception/notification projections",
-    "M01": "Read-only executive summaries with source-completeness and drill-downs"
+    "M24": "Forecasts, immutable baselines, actual-vs-forecast review"
   },
   "mandatoryRelationships": [
     "M06 publishes approved timesheets to M07",

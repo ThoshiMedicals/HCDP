@@ -1,111 +1,27 @@
 {
-  "generatedAt": "2026-08-06T05:43:08Z",
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
   "prototypeSha256": "8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760",
-  "baselineAllMet": true,
-  "baselineDelta": {
-    "platformModuleBlueprints": {
-      "minimum": 24,
-      "observed": 24,
-      "meetsOrExceeds": true
-    },
-    "detailedBrdModules": {
-      "minimum": 20,
-      "observed": 20,
-      "meetsOrExceeds": true
-    },
-    "brdTabs": {
-      "minimum": 182,
-      "observed": 182,
-      "meetsOrExceeds": true
-    },
-    "brdButtons": {
-      "minimum": 323,
-      "observed": 323,
-      "meetsOrExceeds": true
-    },
-    "brdVisualRequirements": {
-      "minimum": 100,
-      "observed": 100,
-      "meetsOrExceeds": true
-    },
-    "brdBusinessRules": {
-      "minimum": 109,
-      "observed": 109,
-      "meetsOrExceeds": true
-    },
-    "brdWorkflows": {
-      "minimum": 107,
-      "observed": 107,
-      "meetsOrExceeds": true
-    },
-    "brdWorkflowSteps": {
-      "minimum": 629,
-      "observed": 629,
-      "meetsOrExceeds": true
-    },
-    "brdOutputs": {
-      "minimum": 155,
-      "observed": 155,
-      "meetsOrExceeds": true
-    },
-    "blueprintMetrics": {
-      "minimum": 96,
-      "observed": 96,
-      "meetsOrExceeds": true
-    },
-    "blueprintPatterns": {
-      "minimum": 96,
-      "observed": 96,
-      "meetsOrExceeds": true
-    },
-    "blueprintWorkflows": {
-      "minimum": 72,
-      "observed": 72,
-      "meetsOrExceeds": true
-    },
-    "blueprintWorkflowSteps": {
-      "minimum": 434,
-      "observed": 434,
-      "meetsOrExceeds": true
-    },
-    "formSchemaGroups": {
-      "minimum": 41,
-      "observed": 41,
-      "meetsOrExceeds": true
-    },
-    "fieldDefinitions": {
-      "minimum": 398,
-      "observed": 398,
-      "meetsOrExceeds": true
-    },
-    "extractedModals": {
-      "minimum": 56,
-      "observed": 63,
-      "meetsOrExceeds": true
-    },
-    "legacyWorkflowGroups": {
-      "minimum": 28,
-      "observed": 28,
-      "meetsOrExceeds": true
-    },
-    "legacyWorkflowSteps": {
-      "minimum": 137,
-      "observed": 137,
-      "meetsOrExceeds": true
-    },
-    "legacyModuleKeys": {
-      "minimum": 35,
-      "observed": 35,
-      "meetsOrExceeds": true
-    }
-  },
-  "traceabilityRows": 1697,
-  "unclassified": 0,
-  "csvRows": 1697,
-  "jsonRows": 1697,
-  "markdownAccountingMatchesJson": true,
+  "traceabilityRows": 1982,
+  "unclassifiedDispositions": 0,
   "canonicalScreens": 186,
-  "designReferencesAllPresent": true,
-  "openOwnerDecisions": 26,
-  "designReferenceOwnerDecision": "A-REVISED"
+  "designPngsInstalled": true,
+  "designPngDecision": "A-REVISED",
+  "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
+  "openOwnerDecisions": 1,
+  "programmeResetTipAtGeneration": "0e832a94f05469c48fe18661e32e3fb2e4b76b24",
+  "workflowActionTotals": {
+    "brdButtons": 323,
+    "brdWorkflows": 107,
+    "blueprintWorkflows": 72,
+    "legacyWorkflowGroups": 28,
+    "modalsDrawers": 63,
+    "productionControls": 66,
+    "totalItems": 659
+  },
+  "conflictAdjudicationTotals": {
+    "SETTLED-PRODUCT-BOUNDARY-STATEMENT": 10,
+    "GENUINE-PROHIBITED-CAPABILITY": 8,
+    "OPERATIONAL-AGGREGATE-ALLOWED": 1
+  },
+  "ok": true
 }

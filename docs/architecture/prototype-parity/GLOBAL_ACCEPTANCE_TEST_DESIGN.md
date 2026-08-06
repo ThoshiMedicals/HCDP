@@ -1,21 +1,23 @@
-# Global Acceptance Test Design (Programme Scaffolding)
+# Global Acceptance Test Design
 
-Progressive gates to add without weakening existing suites:
+**Generated:** `deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6`
 
-1. Prototype/BRD workspace coverage gate  
-2. Named action and no-placeholder gate  
-3. Canonical screen/route/deep-link gate  
-4. Role-by-clinic/tenant access matrix  
-5. Related-record identity integrity  
-6. M02 action projection/source-link integrity  
-7. M01 KPI source-completeness and drill-down integrity  
-8. Global responsive/appearance matrix  
-9. Meaningful-control clipping/occlusion gate  
-10. Historical record integrity  
-11. Demo-versus-production-data separation  
-12. No patient-record or clinical-billing schema gate  
-13. Cross-module repository boundary gate  
-14. Audit/notification consistency gate  
-15. Backup/offline/reconciliation gate (when production persistence authorised)
+## Axes (independent)
 
-First-run delivers design only; implementation of these gates occurs in authorised waves.
+1. UI implementation status  
+2. Domain implementation status  
+3. Cross-module integration status  
+4. Evidence/acceptance status  
+5. Production readiness (always separate; never implied by owner UI acceptance)
+
+## Mandatory proof types
+
+- Automated tests for services, permissions, isolation, audit, persistence  
+- Visual QA against Decision A PNGs / design contract (exact viewports)  
+- Work-Step QA for every named action/workflow  
+- Immutable SHA evidence commits  
+- Localhost handoff on port 3000 for the exact reported tip  
+
+## Fail conditions
+
+Toast/alert-only success · missing service transition · missing permission/isolation · fake seed as production truth · patient/clinical/payment boundary breach · self-approval by implementing agent · source change after final QA without re-QA

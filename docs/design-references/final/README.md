@@ -16,4 +16,4 @@ Mismatch history preserved at commit `a22f9a1`. Prior prompt SHA-256 values are 
 | M12 | `m12-compliance-quality-final.png` | 1672x941 | `4ecb8eef079d30c796e5cb1b53b8b01595788e6f48fa81bb708a451b38e7c2a8` |
 | M15 | `m15-inventory-assets-final.png` | 1672x941 | `0ec5fbceac81554ef3edc38a92b4d29f7356b5c5ce4e91948e2faf863c3a61c6` |
 
-Generated: 2026-08-06T22:48:20Z
+Generated: `deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6`

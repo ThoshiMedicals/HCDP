@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-08-06T22:48:20Z",
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
   "canonical": true,
   "ownerDecision": "A (revised) \u2014 accept b5feab7 upload observed SHA-256 as new canonical baselines",
   "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
   "preservedMismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
-  "quarantineDecisionBCommit": "0a9e684231e9027d5b16d54e98abc9745fbfaa75",
-  "note": "Prior programme-prompt SHA-256 values are superseded by owner revised decision A. Canonical files use normalised m0*-\u2026-final.png names. Dimensions 1672\u00d7941 required and verified.",
+  "decisionAInstallCommit": "66e6e6488b27b9098dadd8962473fedea5053614",
+  "programmeResetTipAtGeneration": "0e832a94f05469c48fe18661e32e3fb2e4b76b24",
+  "note": "Do not replace/re-export/edit/rehash Decision A PNGs. Prior prompt hashes retained as audit fields only.",
   "allPresent": true,
   "allDimensionsOk": true,
   "allHashesRecorded": true,
@@ -23,7 +24,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m01-command-centre-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M02",
@@ -38,7 +40,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m02-action-inbox-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M04",
@@ -53,7 +56,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m04-staff-doctors-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M05",
@@ -68,7 +72,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m05-weekly-roster-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M06",
@@ -83,7 +88,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m06-time-attendance-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M10",
@@ -98,7 +104,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m10-checklists-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M11",
@@ -113,7 +120,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m11-training-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M12",
@@ -128,7 +136,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m12-compliance-quality-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     },
     {
       "module": "M15",
@@ -143,7 +152,8 @@
       "status": "INSTALLED_HASH_OK",
       "destination": "docs/design-references/final/m15-inventory-assets-final.png",
       "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
-      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8"
+      "mismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
+      "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614"
     }
   ],
   "blocker": null

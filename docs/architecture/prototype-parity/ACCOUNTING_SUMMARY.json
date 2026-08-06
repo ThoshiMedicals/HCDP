@@ -1,64 +1,72 @@
 {
-  "generatedAt": "2026-08-06T05:43:08Z",
-  "totalRows": 1697,
+  "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
+  "programmeResetTip": "0e832a94f05469c48fe18661e32e3fb2e4b76b24",
+  "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "totalRows": 1982,
   "unclassifiedCount": 0,
   "dispositionTotals": {
-    "ADOPTED-AS-IS": 1610,
-    "ADOPTED-WITH-CONTROL-HARDENING": 63,
-    "EXCLUDED-BY-PRODUCT-BOUNDARY": 24
+    "ADOPTED-AS-IS": 1895,
+    "DEFERRED-BY-DEPENDENCY": 3,
+    "EXCLUDED-BY-PRODUCT-BOUNDARY": 20,
+    "ADOPTED-WITH-CONTROL-HARDENING": 64
   },
   "rowsByModule": {
-    "M01": 45,
-    "M02": 51,
-    "M03": 60,
-    "M04": 67,
-    "M05": 53,
-    "M06": 48,
-    "M07": 52,
-    "M08": 67,
-    "M09": 49,
-    "M10": 63,
-    "M11": 56,
-    "M12": 54,
-    "M13": 60,
-    "M14": 65,
-    "M15": 80,
-    "M16": 67,
-    "M17": 61,
-    "M18": 56,
-    "M19": 59,
-    "M20": 63,
-    "M21": 9,
-    "M22": 9,
-    "M23": 9,
-    "M24": 9
+    "M01": 68,
+    "M02": 108,
+    "M03": 103,
+    "M04": 144,
+    "M05": 114,
+    "M06": 85,
+    "M07": 89,
+    "M08": 99,
+    "M09": 70,
+    "M10": 115,
+    "M11": 83,
+    "M12": 88,
+    "M13": 84,
+    "M14": 82,
+    "M15": 171,
+    "M16": 96,
+    "M17": 98,
+    "M18": 82,
+    "M19": 63,
+    "M20": 70,
+    "M21": 13,
+    "M22": 14,
+    "M23": 19,
+    "M24": 24
   },
   "rowsBySourceType": {
+    "owner": 6,
+    "current-code": 167,
     "brd": 996,
     "blueprint": 216,
     "field-schema": 398,
-    "prototype-runtime": 87
+    "prototype-runtime": 82,
+    "final-image": 108,
+    "accepted-evidence": 8,
+    "current-plan": 1
   },
   "uiStatusTotals": {
-    "FUNCTIONALLY-COMPLETE": 432,
-    "PROTOTYPE-ONLY": 709,
-    "IN-DEVELOPMENT": 134,
-    "PLANNED": 398,
-    "EXCLUDED-WITH-REASON": 24
+    "FUNCTIONALLY-COMPLETE": 782,
+    "IN-DEVELOPMENT": 291,
+    "PROTOTYPE-ONLY": 689,
+    "PLANNED": 202,
+    "EXCLUDED-WITH-REASON": 18
   },
   "domainStatusTotals": {
-    "FUNCTIONALLY-COMPLETE": 432,
-    "NOT-STARTED": 659,
-    "IN-DEVELOPMENT": 184,
-    "PLANNED": 398,
-    "EXCLUDED-WITH-REASON": 24
+    "FUNCTIONALLY-COMPLETE": 782,
+    "IN-DEVELOPMENT": 291,
+    "NOT-STARTED": 689,
+    "PLANNED": 202,
+    "EXCLUDED-WITH-REASON": 18
   },
   "canonicalScreenCount": 186,
   "canonicalScreenVs143": {
     "baselineEstimate": 143,
     "derivedCount": 186,
     "variance": 43,
-    "explanation": "Derived primarily from BRD tabs across blueprints (plus blueprint-default screens where BRD tabs absent). 143 was a minimum planning baseline, not a cap. No silent consolidation; filter/state variants remain separate when they are distinct BRD tabs."
+    "explanation": "143 was a minimum planning baseline, not a cap. Derived from BRD tabs/blueprint defaults with stable section IDs."
   },
   "extractionTotals": {
     "platformModuleBlueprints": 24,
@@ -84,10 +92,24 @@
     "rawInputs": 213,
     "rawSelects": 105,
     "rawTextareas": 55,
-    "scopeConflictHits": 24,
+    "scopeConflictHits": 19,
     "sensitivePatternClasses": 4
   },
   "designReferencesInstalled": true,
   "designReferenceOwnerDecision": "A-REVISED",
-  "designReferenceCanonicalCommitSource": "b5feab7d71790aac75049b361817fa92eeb1a87d"
+  "openOwnerDecisions": 1,
+  "workflowActionTotals": {
+    "brdButtons": 323,
+    "brdWorkflows": 107,
+    "blueprintWorkflows": 72,
+    "legacyWorkflowGroups": 28,
+    "modalsDrawers": 63,
+    "productionControls": 66,
+    "totalItems": 659
+  },
+  "conflictAdjudicationTotals": {
+    "SETTLED-PRODUCT-BOUNDARY-STATEMENT": 10,
+    "GENUINE-PROHIBITED-CAPABILITY": 8,
+    "OPERATIONAL-AGGREGATE-ALLOWED": 1
+  }
 }
