@@ -10,7 +10,7 @@
 | Design PNGs installed | True |
 | Design PNG Decision | A-REVISED @ `66e6e6488b27b9098dadd8962473fedea5053614` |
 | Open owner decisions | 1 |
-| Programme tip at generation | `f84d585f58c580e18225d58c2156d89ece7a9b9c` |
+| Programme tip at generation | `638b51904ab1de2785d1009aa8243ebd8ba530f2` |
 
 Extractor raw control counts are recorded for reconciliation by source-location ID and are **not** used as final requirement cardinality.
 

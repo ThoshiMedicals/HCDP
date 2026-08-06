@@ -1096,7 +1096,11 @@ def main():
     accounting = {
         "generatedAt": UTC,
         "programmeResetTip": tip,
-        "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+        "programmeResetTipNote": "Working-tree HEAD at generation; control-pack tip is the commit that contains these files",
+        "acceptedApplicationBaseline": BASELINE,
+        "evidenceBearingTip": EVIDENCE_TIP,
+        "decisionATip": DECISION_A,
+        "originMain": ORIGIN_MAIN,
         "totalRows": len(rows),
         "unclassifiedCount": 0,
         "dispositionTotals": dict(disp_counts),

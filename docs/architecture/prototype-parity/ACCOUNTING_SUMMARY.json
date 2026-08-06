@@ -1,7 +1,11 @@
 {
   "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
-  "programmeResetTip": "f84d585f58c580e18225d58c2156d89ece7a9b9c",
+  "programmeResetTip": "638b51904ab1de2785d1009aa8243ebd8ba530f2",
+  "programmeResetTipNote": "Working-tree HEAD at generation; control-pack tip is the commit that contains these files",
   "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "evidenceBearingTip": "e659dfc42a711d37a3e73b3ba7049190ca531e4a",
+  "decisionATip": "66e6e6488b27b9098dadd8962473fedea5053614",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
   "totalRows": 1982,
   "unclassifiedCount": 0,
   "dispositionTotals": {
