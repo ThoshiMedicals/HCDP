@@ -5,10 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const htmlPath = path.join(
-  "c:/Users/ETB Sri Lanka/Desktop/HCDP",
-  "Healthcare_Doctors_Pulse_Executive_Healthcare_Operations_Platform_v34_Stronger_Navigation_Palette.html"
-);
+const htmlPath = path.join(process.cwd(), "public", "pulse-html-prototype.html");
 const outDir = path.join(process.cwd(), "src", "lib", "extracted");
 const publicDir = path.join(process.cwd(), "public");
 fs.mkdirSync(outDir, { recursive: true });

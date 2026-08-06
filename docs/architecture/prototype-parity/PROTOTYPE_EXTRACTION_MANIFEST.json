@@ -1,0 +1,188 @@
+{
+  "extractor": "scripts/prototype-parity/extract-prototype.mjs",
+  "extractedAt": "2026-08-06T05:40:17.019Z",
+  "prototypePath": "public/pulse-html-prototype.html",
+  "prototypeSha256": "8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760",
+  "prototypeBytes": 1270466,
+  "prototypeLines": 6445,
+  "supersedes": {
+    "historicalRegister": "docs/architecture/hcdp-prototype-parity-register.json (11 rows; stale M07 wording; not SoT)",
+    "historicalMarkdown": "docs/architecture/HCDP_PROTOTYPE_PARITY_REGISTER.md",
+    "legacyExtractors": "scripts/extract-everything.js / extract-forms.js / extract-html-data.js (repaired to committed prototype path; outputs under src/lib/extracted remain historical runtime seeds)",
+    "reason": "New canonical extract uses hash-pinned committed prototype, stable IDs, source locations, raw-control reconciliation, and scope/privacy conflict detection."
+  },
+  "totals": {
+    "platformModuleBlueprints": 24,
+    "detailedBrdModules": 20,
+    "brdTabs": 182,
+    "brdButtons": 323,
+    "brdVisualRequirements": 100,
+    "brdBusinessRules": 109,
+    "brdWorkflows": 107,
+    "brdWorkflowSteps": 629,
+    "brdOutputs": 155,
+    "blueprintMetrics": 96,
+    "blueprintPatterns": 96,
+    "blueprintWorkflows": 72,
+    "blueprintWorkflowSteps": 434,
+    "formSchemaGroups": 41,
+    "fieldDefinitions": 398,
+    "extractedModals": 63,
+    "legacyWorkflowGroups": 28,
+    "legacyWorkflowSteps": 137,
+    "legacyModuleKeys": 35,
+    "rawButtons": 588,
+    "rawInputs": 213,
+    "rawSelects": 105,
+    "rawTextareas": 55,
+    "scopeConflictHits": 24,
+    "sensitivePatternClasses": 4
+  },
+  "minimumBaseline": {
+    "platformModuleBlueprints": 24,
+    "detailedBrdModules": 20,
+    "brdTabs": 182,
+    "brdButtons": 323,
+    "brdVisualRequirements": 100,
+    "brdBusinessRules": 109,
+    "brdWorkflows": 107,
+    "brdWorkflowSteps": 629,
+    "brdOutputs": 155,
+    "blueprintMetrics": 96,
+    "blueprintPatterns": 96,
+    "blueprintWorkflows": 72,
+    "blueprintWorkflowSteps": 434,
+    "formSchemaGroups": 41,
+    "fieldDefinitions": 398,
+    "extractedModals": 56,
+    "legacyWorkflowGroups": 28,
+    "legacyWorkflowSteps": 137,
+    "legacyModuleKeys": 35
+  },
+  "baselineDelta": {
+    "platformModuleBlueprints": {
+      "minimum": 24,
+      "observed": 24,
+      "meetsOrExceeds": true
+    },
+    "detailedBrdModules": {
+      "minimum": 20,
+      "observed": 20,
+      "meetsOrExceeds": true
+    },
+    "brdTabs": {
+      "minimum": 182,
+      "observed": 182,
+      "meetsOrExceeds": true
+    },
+    "brdButtons": {
+      "minimum": 323,
+      "observed": 323,
+      "meetsOrExceeds": true
+    },
+    "brdVisualRequirements": {
+      "minimum": 100,
+      "observed": 100,
+      "meetsOrExceeds": true
+    },
+    "brdBusinessRules": {
+      "minimum": 109,
+      "observed": 109,
+      "meetsOrExceeds": true
+    },
+    "brdWorkflows": {
+      "minimum": 107,
+      "observed": 107,
+      "meetsOrExceeds": true
+    },
+    "brdWorkflowSteps": {
+      "minimum": 629,
+      "observed": 629,
+      "meetsOrExceeds": true
+    },
+    "brdOutputs": {
+      "minimum": 155,
+      "observed": 155,
+      "meetsOrExceeds": true
+    },
+    "blueprintMetrics": {
+      "minimum": 96,
+      "observed": 96,
+      "meetsOrExceeds": true
+    },
+    "blueprintPatterns": {
+      "minimum": 96,
+      "observed": 96,
+      "meetsOrExceeds": true
+    },
+    "blueprintWorkflows": {
+      "minimum": 72,
+      "observed": 72,
+      "meetsOrExceeds": true
+    },
+    "blueprintWorkflowSteps": {
+      "minimum": 434,
+      "observed": 434,
+      "meetsOrExceeds": true
+    },
+    "formSchemaGroups": {
+      "minimum": 41,
+      "observed": 41,
+      "meetsOrExceeds": true
+    },
+    "fieldDefinitions": {
+      "minimum": 398,
+      "observed": 398,
+      "meetsOrExceeds": true
+    },
+    "extractedModals": {
+      "minimum": 56,
+      "observed": 63,
+      "meetsOrExceeds": true
+    },
+    "legacyWorkflowGroups": {
+      "minimum": 28,
+      "observed": 28,
+      "meetsOrExceeds": true
+    },
+    "legacyWorkflowSteps": {
+      "minimum": 137,
+      "observed": 137,
+      "meetsOrExceeds": true
+    },
+    "legacyModuleKeys": {
+      "minimum": 35,
+      "observed": 35,
+      "meetsOrExceeds": true
+    }
+  },
+  "baselineAllMet": true,
+  "namedExtractsPresent": [
+    "BRD_V2_MODULES",
+    "MODULE_BLUEPRINTS",
+    "WORKFLOWS",
+    "FIELD_SCHEMAS",
+    "GROUPS",
+    "NAV",
+    "NAV_GROUPS",
+    "MODULES",
+    "THEMES",
+    "THEME_LABELS",
+    "V29_THEMES",
+    "V29_THEME_LABELS",
+    "FAMILY_STYLES",
+    "EXEC_ROLES"
+  ],
+  "outputFiles": [
+    "PROTOTYPE_EXTRACTION_MANIFEST.json",
+    "prototype-modules.json",
+    "prototype-screens.json",
+    "prototype-tabs-actions.json",
+    "prototype-workflows.json",
+    "prototype-fields-modals.json",
+    "prototype-cross-links.json",
+    "prototype-scope-conflicts.json",
+    "prototype-raw-controls.json",
+    "prototype-themes.json"
+  ]
+}

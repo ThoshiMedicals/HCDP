@@ -1,0 +1,3035 @@
+{
+  "count": 505,
+  "items": [
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_173d9f87430b",
+      "label": "Overview — Today’s priorities, all-location KPIs, urgent alerts and quick links."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_d00e4d2e02e0",
+      "label": "My Day — Role-sensitive daily workspace for shifts, clocking, duties, tasks, training, handovers and alerts."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_bcb09b7e9cb2",
+      "label": "Clinic Health — Location cards with score, reasons, trend and drill-down."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_9a495e615f35",
+      "label": "KPI Scorecard — Comparable workforce, pay, quality, inventory, digital and risk measures."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_52e4039f00d2",
+      "label": "Risk & Exceptions — Cross-module red/amber items ranked by severity and due date."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M01",
+      "id": "brdtab_c2bffaddbbe3",
+      "label": "Reports — Saved management packs, period comparisons and exported summaries."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_d09dff93d10a",
+      "label": "Switch Clinic / All Clinics"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_e1f800769de0",
+      "label": "Change Date Range"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_9fa22879c20c",
+      "label": "Open Action Inbox"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_022556c72a45",
+      "label": "View Source Record"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_3454f80230cf",
+      "label": "Create Management Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_690744bd6d0e",
+      "label": "Export Executive Summary"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_f2c1db142fcf",
+      "label": "Save View"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_fbc1ae7d4efc",
+      "label": "Open My Day"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M01",
+      "id": "brdbtn_5611ac3286f1",
+      "label": "Report a Problem"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_120b38f77c59",
+      "label": "My Actions — Items assigned directly to the logged-in user."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_eb8c3edff837",
+      "label": "Team Queue — Items owned by the user’s team or clinic."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_6c804a446976",
+      "label": "Approvals — Submitted records awaiting a decision."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_fe0b0722480f",
+      "label": "Exceptions — Blocked, failed, skipped, overdue or mismatched records."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_acbcc29d08c6",
+      "label": "Escalations — High-risk or overdue items requiring elevated attention."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_030a6cb5d590",
+      "label": "Completed — Recently completed decisions and actions with filters."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M02",
+      "id": "brdtab_50e4561fee9f",
+      "label": "Delegations — Temporary approval cover, acting authority, effective dates and post-delegation review."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_bfe4510aebf6",
+      "label": "Open Source"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_c27324d6429c",
+      "label": "Approve"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_d8c6c4f14f5e",
+      "label": "Reject"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_56f7f40548e2",
+      "label": "Request Changes"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_7750c099ab65",
+      "label": "Reassign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_2fa19ee5cd2c",
+      "label": "Add Note"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_03617fd2e664",
+      "label": "Snooze"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_68a607f764fc",
+      "label": "Escalate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_f2e3c9c2492d",
+      "label": "Complete"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_b855885a0e7b",
+      "label": "Bulk Assign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_ccd46b2321e6",
+      "label": "Mark Notification Read"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_27988f81f05c",
+      "label": "Create Delegation"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_3c3bc8b9b816",
+      "label": "End Delegation"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M02",
+      "id": "brdbtn_12831435269f",
+      "label": "Review Delegated Decisions"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_4b81461e5fe7",
+      "label": "Organisation — Group identity, business units and central contacts."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_6e606cdbb90c",
+      "label": "Clinics — Location profiles, hours, public holiday region and responsible managers."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_8e2927ceeb95",
+      "label": "Rooms & Areas — Operational areas used by rosters, assets, checklists and tickets."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_cbdbbd781928",
+      "label": "Users — User accounts, status, assigned roles and clinic access."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_49bd2c25ac5f",
+      "label": "Roles & Permissions — Role templates and permitted view/create/approve/export actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_7441061844ec",
+      "label": "Business Settings — Pay periods, alert thresholds, review cycles and notification rules."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_4ab6bc5f14dc",
+      "label": "Access Reviews — Scheduled review of active permissions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_5c29794b7b36",
+      "label": "Audit History — Sensitive activity and access decision history."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_e86177b5be9c",
+      "label": "Account Activation & Recovery — Invitation status, first-time access, lockout, reset and administrator-assisted recovery."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M03",
+      "id": "brdtab_ae3995be5286",
+      "label": "Clinic Lifecycle — New clinic opening, relocation, temporary closure, merger, service transfer, permanent closure and reopening."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_ffc07ac1a3e7",
+      "label": "Add Clinic"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_7c92b9702b6f",
+      "label": "Edit Clinic"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_e64562d6291f",
+      "label": "Add Room / Area"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_d600ef6c3f25",
+      "label": "Invite User"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_2f439acd8d70",
+      "label": "Assign Role"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_72bf752d8d26",
+      "label": "Add Clinic Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_e5c208afe3c4",
+      "label": "Suspend User"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_78b50b0db5bc",
+      "label": "Deactivate / Archive"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_f22ea169fa1e",
+      "label": "Review Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_454fd082c0f6",
+      "label": "Save Settings"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_445930dc0e92",
+      "label": "Export Access Report"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_c7a953a37e03",
+      "label": "Activate Account"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_8c15494da812",
+      "label": "Unlock Account"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_d52720099ecc",
+      "label": "Start Clinic Transition"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M03",
+      "id": "brdbtn_ce64c1d2d110",
+      "label": "Confirm Clinic Readiness"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_a65955a944c4",
+      "label": "Staff Directory — Reception, nursing, management, administration, contractors and other staff."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_ba22bc15b508",
+      "label": "Doctor Directory — Doctor business profile, locations, contract and payment settings."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_017e653b0997",
+      "label": "HR Documents — Contracts, identity, certificates, performance and employment records."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_4d325d933dab",
+      "label": "Leave / Away Days — Requests, approvals, balances or reference status, coverage notes and calendar."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_ba915caf5cea",
+      "label": "Award Rules — Classification, employment type, pay category mapping and effective dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_11d9c36fb996",
+      "label": "Provider Credentials — AHPRA and role-specific credential evidence, expiry and review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_6cfddce041a2",
+      "label": "Onboarding — Readiness checklist, induction and access setup."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_3c2eb9d7e848",
+      "label": "Offboarding — Work reassignment, document closure and access removal."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_acd1a0a437dc",
+      "label": "Employment Changes — Transfer, promotion, role, manager, employment type and clinic reassignment with effective dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M04",
+      "id": "brdtab_366d6025d566",
+      "label": "Return to Work & Restrictions — Leave amendments, cancellations, return confirmation and controlled duty restrictions."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_32f98714e4b4",
+      "label": "Add Staff"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_149b018aef43",
+      "label": "Add Doctor"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_f527f56f1b2a",
+      "label": "Edit Profile"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_2afe8a9b9991",
+      "label": "Upload Document"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_5cd653be5c04",
+      "label": "Request Leave"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_c161d779d119",
+      "label": "Approve / Reject Leave"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_85db70e4faa5",
+      "label": "Change Classification"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_92cbfa3766e3",
+      "label": "Change Contract / Rate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_aa9e6b75fed8",
+      "label": "Verify Credential"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_4335937e0666",
+      "label": "Send Renewal Reminder"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_fc7a30c96e52",
+      "label": "Suspend Profile"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_aac0dbd378ab",
+      "label": "Start Offboarding"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_72f35e1272bb",
+      "label": "Start Employment Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_7037959c9a74",
+      "label": "Amend / Cancel Leave"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_7181b61eb1b1",
+      "label": "Confirm Return to Work"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_13b38dbe3279",
+      "label": "Suspend Eligibility"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_bf6ddd6a6521",
+      "label": "Reactivate Profile"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M04",
+      "id": "brdbtn_518a0ee887f0",
+      "label": "Request Bank Detail Change"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_b6887bc698a1",
+      "label": "Week View — Primary drag-and-drop roster by clinic, role or staff member."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_222480819a34",
+      "label": "Coverage — Heat map of staffing and role gaps by time of day."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_09faa4719051",
+      "label": "Availability — Normal patterns, exceptions, leave and away days."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_b31d9fab5a48",
+      "label": "Shift Requests — Swap, release and change requests awaiting review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_6178836a3bb7",
+      "label": "Open Shifts — Unfilled and urgent shifts offered to eligible staff across one or more clinics."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_ef5839c79fba",
+      "label": "Published History — Versions, change reasons and notification status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M05",
+      "id": "brdtab_0931102c70b4",
+      "label": "Roster Reports — Hours forecast, duties, conflicts and publication history."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_874808c77339",
+      "label": "Add Shift"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_3075176451f0",
+      "label": "Copy Previous Week"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_9ba9c0566ed1",
+      "label": "Apply Template"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_2530c2a6ca0f",
+      "label": "Assign Staff"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_0badd026e935",
+      "label": "Mark Opening / Closing"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_b86ec02ae1e8",
+      "label": "Save Draft"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_543c66362428",
+      "label": "Validate Roster"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_db26b1218ca7",
+      "label": "Publish"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_b5ea43626945",
+      "label": "Request Swap"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_86bf5d9826fb",
+      "label": "Approve Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_ff520d83d7d7",
+      "label": "Emergency Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_b3afe16e9fef",
+      "label": "Create Open Shift"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_eacda48bd5f3",
+      "label": "Send Coverage Offer"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_5551bb148f26",
+      "label": "Assign Accepted Offer"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M05",
+      "id": "brdbtn_e2a431afedde",
+      "label": "Print / Export"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_6674af9b5e09",
+      "label": "Live Attendance — Who is expected, clocked in, late, on break or missing."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_d1f4947987f2",
+      "label": "My Clock — Staff clock-in/out and break actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_b22e69f58b1c",
+      "label": "Exceptions — Missing, late, early, location, break and overtime exceptions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_4da6fb332cd8",
+      "label": "Timesheets — Pay-period view of actual hours and approvals."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_a87f612939f0",
+      "label": "Approval History — Corrections, reasons, approvers and lock history."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M06",
+      "id": "brdtab_1d479f6a9225",
+      "label": "Reports — Attendance variance and exception trends."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_6deadc12ce0d",
+      "label": "Clock In"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_f3cba6f29d9e",
+      "label": "Start Break"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_f3f5c598cbc3",
+      "label": "End Break"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_51e27983e9a4",
+      "label": "Clock Out"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_985e0207c7e8",
+      "label": "Report Missed Punch"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_d7ca78d2d1b8",
+      "label": "Add Note"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_60c2515dda66",
+      "label": "Correct Time"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_8abcaf099e5e",
+      "label": "Approve"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_c76323e43295",
+      "label": "Reject Correction"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_d2003bd18fd5",
+      "label": "Bulk Approve Clean Timesheets"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_d390fe5ef70f",
+      "label": "Lock Period"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M06",
+      "id": "brdbtn_aa197b1d1fd0",
+      "label": "Reopen with Reason"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_0c9fbad9896c",
+      "label": "Pay Run — Staff and clinic readiness for the selected pay period."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_905f3b4a0980",
+      "label": "Exceptions — Attendance, leave, classification and category blockers."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_e2d6d227d4c6",
+      "label": "Variances — Roster-to-actual and prior-period differences."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_ac32ce11e204",
+      "label": "Leave & Allowances — Approved leave, public holiday and authorised allowance review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_3df2e0a0f44f",
+      "label": "Export & Reconciliation — Approved output, export record and confirmation."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_64600b42b0c0",
+      "label": "History — Locked periods, corrections and re-open decisions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M07",
+      "id": "brdtab_ee769429e8dd",
+      "label": "Corrections & Final Pay — Export rejection, final pay, overpayment, underpayment and replacement export control."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_9e3b108745c4",
+      "label": "Create Pay Run"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_04b7bbb8bef0",
+      "label": "Refresh Approved Time"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_4705a1ee8fa8",
+      "label": "Recalculate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_248c855d3f09",
+      "label": "Open Exception"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_6d994a97c51a",
+      "label": "Resolve / Assign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_85f157308b41",
+      "label": "Approve Location"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_94a912530c2e",
+      "label": "Submit Final Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_3a4b9cbc9014",
+      "label": "Export to Xero"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_702e1120f7ec",
+      "label": "Mark Reconciled"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_e41774daca77",
+      "label": "Lock Pay Period"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_9df60df47098",
+      "label": "Reopen with Approval"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_1a0dd0f12942",
+      "label": "Process Final Pay"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_be2b023faa1a",
+      "label": "Record Overpayment / Underpayment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M07",
+      "id": "brdbtn_4ae713d3931a",
+      "label": "Generate Replacement Export"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_172ba79f73de",
+      "label": "Pay Run — Current cycle, doctors, locations, totals and status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_5e78dbfb2925",
+      "label": "Transactions — Imported activity matched to doctor and location."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_f17ff1decaf1",
+      "label": "Contract Rules — Effective percentage, fixed rules, GST and approved exceptions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_8b2fb3443f4f",
+      "label": "Adjustments — Authorised additions, deductions and corrections."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_2d1d99dbee54",
+      "label": "Reconciliation — Source totals, excluded items, prior adjustments and variance."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_d6261823624e",
+      "label": "Approvals — Finance and owner decision queue."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_9c0429a7e5c6",
+      "label": "Payslips — Generated, approved, reissued and archived statements."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_af00b8005bec",
+      "label": "Email Log — Delivery, failure, resend and recipient history."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_9d11d1ef8139",
+      "label": "Manual Payments — Bank transfer date, reference, amount and confirmer."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_0f5323ff73ed",
+      "label": "Doctor Portal — Doctor-visible payslips, statements and payment status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_c37f737450b5",
+      "label": "Queries & Disputes — Doctor-submitted pay queries, evidence, finance response and resolution history."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M08",
+      "id": "brdtab_9c52800db8e3",
+      "label": "Payment Exceptions — Failed, returned, partial and replacement manual payment records."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_576ccd35b5e8",
+      "label": "Import / Refresh Transactions"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_d2a67908cc53",
+      "label": "Match Unassigned"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_de7083e40af3",
+      "label": "Calculate Pay Run"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_f09b2b18bc3d",
+      "label": "Add Adjustment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_709035adb424",
+      "label": "Exclude with Reason"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_82310894e637",
+      "label": "Reconcile"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_cfb615ea7310",
+      "label": "Submit for Approval"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_ecd4dd44a868",
+      "label": "Approve / Reject"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_0c87b3ac46af",
+      "label": "Generate Payslips"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_a309d197c971",
+      "label": "Preview"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_8cdc3e8b67c0",
+      "label": "Email Payslips"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_7ce6c5e312f1",
+      "label": "Publish to Portal"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_51f92f3a334b",
+      "label": "Mark Bank Transfer Completed"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_e17699e7c8be",
+      "label": "Reissue"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_eca201721021",
+      "label": "Lock Run"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_ac77743426ea",
+      "label": "Record Failed / Returned Payment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_cca4d0880891",
+      "label": "Record Partial Payment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M08",
+      "id": "brdbtn_7ca6b890d766",
+      "label": "Resolve Pay Dispute"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_f94ce43a1e9b",
+      "label": "Forecast — Current quarter/period estimate and trend."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_0797373aab3b",
+      "label": "Doctor / Clinic Contribution — Contribution summaries with filters."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_a61759550a70",
+      "label": "Eligibility & Rules — Business interpretation, required evidence and effective dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_4326a660e694",
+      "label": "Compliance Gaps — Missing or inconsistent evidence and exceptions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_4ef54b541e9f",
+      "label": "Reconciliation — Forecast versus actual result and variance reasons."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_c5846d6f665b",
+      "label": "Evidence — Linked reports, approvals and supporting files."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M09",
+      "id": "brdtab_3fdc3b1fa8da",
+      "label": "History — Prior forecasts, versions and final outcomes."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_522a3fc49e66",
+      "label": "Refresh Approved Data"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_7c1ee44a7fea",
+      "label": "Run Forecast"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_a999f64b92b1",
+      "label": "View Contribution"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_2685b8eb566a",
+      "label": "Open Gap"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_d2e20edb8f31",
+      "label": "Assign Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_0c822b243e84",
+      "label": "Add Evidence"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_9ad9a74a2f4b",
+      "label": "Submit Estimate Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_2f0eca304466",
+      "label": "Approve Forecast"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_3ee521497465",
+      "label": "Enter Actual Result"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_d5bed8355408",
+      "label": "Reconcile Variance"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_82f55153ce4e",
+      "label": "Finalise Period"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M09",
+      "id": "brdbtn_2e130b79eaf0",
+      "label": "Export Summary"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_7d275abf5b2e",
+      "label": "My Tasks — Personal assigned work and due dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_3f507c11ef5f",
+      "label": "Team Tasks — Clinic/team tasks with ownership and status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_1e85d2e0fa63",
+      "label": "Active Checklists — Today’s recurring checklists by role and location."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_9ec988c8a481",
+      "label": "Opening / Closing — Shift-linked duty checklists."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_dccdbbbba4fe",
+      "label": "Manager Reviews — Daily, weekly, monthly and periodic review packs."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_24f109141bbd",
+      "label": "Template Builder — Create and version checklist templates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_fc75e0fb788b",
+      "label": "Meetings — Meeting agenda, minutes and attendance."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_1f80703a7d2a",
+      "label": "Action Register — Actions created from meetings, incidents, audits and reviews."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_c2f76c826f7d",
+      "label": "Handover — End-of-shift and end-of-day transfer of unresolved operational matters with acknowledgement."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M10",
+      "id": "brdtab_63fea7761510",
+      "label": "Reports — Completion, exceptions and overdue trends."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_f1cf77b98b9d",
+      "label": "Create Task"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_f4c97b4e5846",
+      "label": "Create Checklist Template"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_b7746d2b251d",
+      "label": "Add Section / Item"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_aae85753fe48",
+      "label": "Assign Role / Location"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_a266d7ba8f3f",
+      "label": "Publish Template"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_2fb2e5f58d45",
+      "label": "Start Checklist"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_bc635516d614",
+      "label": "Complete Item"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_3b47b63bce47",
+      "label": "Skip / Fail with Reason"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_91aa955494f1",
+      "label": "Attach Evidence"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_30cfecdfb9cf",
+      "label": "Raise Ticket"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_348b01fee78f",
+      "label": "Raise Incident"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_cf05a6d6e7be",
+      "label": "Create Meeting"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_e0dcb5184a09",
+      "label": "Add Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_dd3c52907fbb",
+      "label": "Carry Forward"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_b8304a1a8f1d",
+      "label": "Close Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_d08bf31552cc",
+      "label": "Create Handover"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_dccda2b70497",
+      "label": "Acknowledge Handover"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M10",
+      "id": "brdbtn_76ef9a32fb2d",
+      "label": "Escalate Unacknowledged Handover"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_12d1ce7fc6a0",
+      "label": "Catalogue — Courses, policy acknowledgements and learning resources."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_7328eb6fa2b8",
+      "label": "My Learning — Assigned, due, overdue and completed learning."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_389dd269c558",
+      "label": "Assignments — Role, clinic and individual assignment rules."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_f4a4be2ec54c",
+      "label": "Sessions — Scheduled face-to-face or live training."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_0cbd4ba51dfb",
+      "label": "Assessments — Questions, pass rules and reassessment."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_6ab710dd0ea7",
+      "label": "Competencies — Observed competency and evidence."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_4a66cf3bb49e",
+      "label": "Certificates & Expiry — Uploaded or generated certificates and renewal dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_c9ae0ec10075",
+      "label": "Exemptions & Prior Learning — Evidence-based exemption, recognition and expiry management."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M11",
+      "id": "brdtab_32a44cb2cee2",
+      "label": "Reports — Completion, overdue and readiness reporting."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_753f7cb47f8b",
+      "label": "Create Course"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_c3113391f5c1",
+      "label": "Upload Resource"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_0e56e7631c73",
+      "label": "Assign to Role / Clinic"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_8675936c34fd",
+      "label": "Enrol Individual"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_bb7a9ec2b5db",
+      "label": "Schedule Session"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_3627e505467a",
+      "label": "Start Learning"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_bdc11e8de8ad",
+      "label": "Submit Assessment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_e913a1f0a742",
+      "label": "Record Competency"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_9b26932a71e9",
+      "label": "Upload Certificate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_37b68ddce76b",
+      "label": "Acknowledge Policy"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_b1f4b631ce69",
+      "label": "Send Reminder"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_727623cbc719",
+      "label": "Extend Due Date with Reason"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_49caa8584907",
+      "label": "Archive Course"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_a6ccf6e7ad3d",
+      "label": "Request Exemption / Prior Learning"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_3e1cfada470a",
+      "label": "Approve / Reject Exemption"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M11",
+      "id": "brdbtn_bc506a0c2872",
+      "label": "Compare Role Requirements"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_b3364290224a",
+      "label": "Accreditation Standards — Requirements, ownership, status and due dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_177163141dab",
+      "label": "Evidence Library — Evidence linked to standards, audits and reviews."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_ccac5d7bb761",
+      "label": "Gap Register — Unmet, partial or expiring requirements."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_36329d2498ae",
+      "label": "QI / PDSA — Improvement ideas, measures, cycles and outcomes."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_56e376138f68",
+      "label": "Nursing & Cold Chain — Recurring clinical-operational duties and temperature exceptions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_bb79568e02b5",
+      "label": "Service Quality — Non-clinical feedback themes, waiting-time issues and recovery actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_8b0973887395",
+      "label": "Regulatory Calendar — Known review dates, regulatory changes and implementation actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M12",
+      "id": "brdtab_68f020b91492",
+      "label": "Audits — Internal audit plans, findings and follow-up."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_f7f75f252b19",
+      "label": "Add Requirement"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_f631286d0656",
+      "label": "Assign Owner"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_26bef98ea5c0",
+      "label": "Link Evidence"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_9bcc76293b13",
+      "label": "Create Gap Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_566208e06b10",
+      "label": "Start PDSA"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_cf5875893fb2",
+      "label": "Record Measure"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_d61b0b383602",
+      "label": "Record Temperature"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_3641bee78e66",
+      "label": "Log Exception"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_ee18c0563f17",
+      "label": "Add Feedback Theme"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_72b2ed3f6a2e",
+      "label": "Create Service Recovery Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_11116ba19712",
+      "label": "Add Regulatory Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_63804da2d826",
+      "label": "Schedule Audit"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M12",
+      "id": "brdbtn_5a978e104215",
+      "label": "Sign Off"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_57a644567858",
+      "label": "Intake Queue — New emails, scans, invoices, certificates, forms and attachments awaiting classification."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_62b0362433b8",
+      "label": "Templates — Approved reusable forms, letters, checklists and document templates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_44a66be389f4",
+      "label": "Location Folders — Clinic-specific controlled records and evidence."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_cc95aa90298a",
+      "label": "Policies & SOPs — Approved business policies, procedures and work instructions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_317061506908",
+      "label": "Controlled Documents — Draft, review, approved, published, superseded and archived records."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_e93c78ad7008",
+      "label": "Review Due — Upcoming and overdue reviews."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_f4cca0952f80",
+      "label": "Acknowledgements — Required reading and acknowledgement status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_2f60b9f68ec4",
+      "label": "Search & Archive — Cross-folder search, filters and historical versions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M13",
+      "id": "brdtab_e90d2185dea3",
+      "label": "Retention & Legal Hold — Retention review, extension, controlled disposal and legal-hold protection."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_c8f9e81cfae2",
+      "label": "Upload / Scan"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_db65139d271d",
+      "label": "Classify"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_67a1fa534246",
+      "label": "Assign Owner"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_07f0beb73438",
+      "label": "Link to Module"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_bb9d81f13f66",
+      "label": "Create Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_daa41b1f11cf",
+      "label": "Create from Template"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_671853740a77",
+      "label": "Generate PDF"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_0408dda765ea",
+      "label": "Submit for Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_b8c742402ecf",
+      "label": "Approve / Reject"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_bbbd66d0d9a0",
+      "label": "Publish"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_36d2cedee523",
+      "label": "Request Acknowledgement"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_34aa6a04f816",
+      "label": "Replace Version"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_c11bb635ac62",
+      "label": "Archive"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_c630c285a045",
+      "label": "Restore"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_c6bc5c0e2f65",
+      "label": "Place on Legal Hold"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_b5eb445aa601",
+      "label": "Release Legal Hold"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M13",
+      "id": "brdbtn_bd05cf8b1103",
+      "label": "Approve Disposal"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_94666382051e",
+      "label": "New Ticket — Guided issue reporting."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_7b786691005d",
+      "label": "My Tickets — Tickets raised by or assigned to the user."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_0b0fbdeb1d75",
+      "label": "Team Queue — Clinic/team triage and assignment."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_8a1e631205f7",
+      "label": "Work Orders — Approved work scope, contractor and completion details."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_20e3612648de",
+      "label": "Planned Maintenance — Scheduled recurring maintenance and inspections."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_e576899fd907",
+      "label": "SLA & Escalations — Priority targets, breaches and high-risk items."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_a214d81354ca",
+      "label": "Closed — Searchable closure history and evidence."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_f4df1dde6df7",
+      "label": "Duplicate & Linked Tickets — Detection, master-ticket selection, duplicate linking and shared updates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_85cefb1c0eed",
+      "label": "Contractor Visits — Scheduled arrival, controlled site access, safety/privacy acknowledgement, check-out and work sign-off."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M14",
+      "id": "brdtab_a82d70efd6f8",
+      "label": "Reports — Volume, recurring issues, downtime and vendor performance."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_4e77f78e4def",
+      "label": "Report Issue"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_d79394da308a",
+      "label": "Scan Asset / QR"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_af66f3114e11",
+      "label": "Set Priority"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_357399c62840",
+      "label": "Assign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_0f66fe4757e7",
+      "label": "Accept Work"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_d8692c004526",
+      "label": "Change Status"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_8fa8905606c2",
+      "label": "Add Update"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_70f0683f4a20",
+      "label": "Attach Photo / Evidence"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_0bb5ed137bd7",
+      "label": "Escalate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_ea97800ecbe9",
+      "label": "Create Work Order"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_09bb644a9c7f",
+      "label": "Request Quote"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_e03d6f032990",
+      "label": "Approve Quote"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_e908096fc3c1",
+      "label": "Mark Work Completed"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_3bc71834244f",
+      "label": "Manager Sign-off"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_3a2be8d510c1",
+      "label": "Close"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_f54873a62863",
+      "label": "Reopen"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_2ae1062b0569",
+      "label": "Merge as Duplicate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_19c755247392",
+      "label": "Check In Contractor"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M14",
+      "id": "brdbtn_a14c7415b9c2",
+      "label": "Check Out Contractor"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_a462ed59132b",
+      "label": "Inventory — Item register, PAR levels, quantities and clinic ownership."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_96b1e26a381e",
+      "label": "Low Stock & Orders — Reorder queue, purchase requests and order status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_7dae91affac2",
+      "label": "Transfers & Adjustments — Inter-clinic stock movement, wastage and corrections."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_607f1c65d866",
+      "label": "Invoice OCR — Supplier invoice upload, extracted fields, review and approval."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_7d0a0d2671a6",
+      "label": "Suppliers & Contracts — Supplier ownership, contacts, terms, reviews and performance."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_87678bf0e99c",
+      "label": "Finance Approvals — Operational invoice thresholds, duplicates and anomalies."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_96cd48248b9f",
+      "label": "Assets & Equipment — Asset register, ownership, warranty and status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_892fb5557267",
+      "label": "Printers — Fleet details, toner, counters, network/queue and fallback."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_299587aa92c4",
+      "label": "Service Calendar — Service, calibration, warranty and planned maintenance."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_ad43611da940",
+      "label": "Replacement Plan — Risk, age, cost and approval for replacement/retirement."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_8ec209beddf9",
+      "label": "Stocktake — Full and cycle counts by clinic, room or item category with controlled variance approval."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_baae32bb175c",
+      "label": "Expiry & Recall — Batch/location tracking, quarantine, return, write-off and recall completion evidence."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_78a82cf2d3fa",
+      "label": "Asset Assignment & Loans — Issue, transfer, temporary loan, return, loss and decommissioning."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M15",
+      "id": "brdtab_c406ff763a1d",
+      "label": "Supplier Onboarding — Supplier due diligence, approved categories, quote comparison, activation and suspension."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_a0a28d64ef4d",
+      "label": "Add Item"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_e5fb5d64ad62",
+      "label": "Set PAR Level"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_d68f198920d8",
+      "label": "Create Purchase Request"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_34520be8e544",
+      "label": "Approve Order"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_776df91e6aad",
+      "label": "Receive Stock"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_cdc15b7da1e9",
+      "label": "Transfer Stock"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_35a47c071ba1",
+      "label": "Adjust / Write Off"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_53babaa7f791",
+      "label": "Upload Invoice"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_891a9c2d76bc",
+      "label": "Review OCR"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_e4c825784b18",
+      "label": "Approve / Reject Invoice"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_cd2761769695",
+      "label": "Add Supplier"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_bd469ba501bd",
+      "label": "Schedule Contract Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_cdd9474d00fc",
+      "label": "Add Asset"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_59862a0505c4",
+      "label": "Generate QR"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_1456272e9ec0",
+      "label": "Schedule Service"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_4594ee4e1a4b",
+      "label": "Raise Fault"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_77a5a5085820",
+      "label": "Add Printer"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_a2a622baa319",
+      "label": "Update Toner / Counter"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_d93e2cdfe507",
+      "label": "Set Fallback"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_59dd40e26c16",
+      "label": "Retire / Replace"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_f6fe29f129d7",
+      "label": "Create Stocktake"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_24021e3daf41",
+      "label": "Quarantine Batch"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_210a85e2d553",
+      "label": "Start Recall"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_18e90dea8bb2",
+      "label": "Assign / Loan Asset"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_4cc29567f028",
+      "label": "Return Asset"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_71a2805adb46",
+      "label": "Onboard Supplier"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M15",
+      "id": "brdbtn_9ae8057b6ba8",
+      "label": "Suspend Supplier"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_d78ed6e57ca5",
+      "label": "Report — Guided incident, complaint or risk submission."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_c5164eedc922",
+      "label": "Active Incidents — Triage, severity, ownership and current status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_19df4bfc46e4",
+      "label": "Complaints — Service complaint handling and response actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_cc9829831552",
+      "label": "Risk Register — Identified risks, controls, ratings and reviews."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_41c76800d402",
+      "label": "Investigations — Evidence, interviews, chronology and findings."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_92c86ddfec62",
+      "label": "RCA / CAPA — Root cause, corrective and preventive actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_9cf5ddcd4237",
+      "label": "Business Continuity — Plans, contacts, critical services and exercises."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_15a54d2624de",
+      "label": "Downtime Events — Activation, impact, recovery and review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_b65a7a828cbc",
+      "label": "Privacy / Cyber — Suspected breach, containment, assessment and actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_9c97588925cf",
+      "label": "Lessons & Trends — Themes, recurrence and linked improvement work."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_521f41efd5a8",
+      "label": "Near Miss & Confidential Reporting — Near-miss capture and approved confidential/anonymous reporting pathways."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M16",
+      "id": "brdtab_30d77243b8b0",
+      "label": "Continuity Exercises — Scenario-based tests for power, internet, phone, practice-system, building, weather, staffing and cyber disruption."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_6dbd33bfb962",
+      "label": "Report Incident"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_890216e4375d",
+      "label": "Log Complaint"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_5a358220ae40",
+      "label": "Add Risk"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_eddf76e952a6",
+      "label": "Triage"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_38b38537d80a",
+      "label": "Set Severity"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_b49f59298cb0",
+      "label": "Assign Investigator"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_63255aec3203",
+      "label": "Add Evidence"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_92d8764569b0",
+      "label": "Start RCA"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_606912d887ac",
+      "label": "Create CAPA"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_79921fc46d90",
+      "label": "Escalate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_7b7a5d660c94",
+      "label": "Activate Downtime Plan"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_0782f06b2719",
+      "label": "Log Privacy/Cyber Event"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_78451503e30c",
+      "label": "Notify Responsible Owner"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_17aab415c2c6",
+      "label": "Submit Closure"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_922a9a09860c",
+      "label": "Approve Closure"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_6c55fb7a9724",
+      "label": "Reopen"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_3d95a9777d3f",
+      "label": "Report Near Miss"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_bc35aa18d681",
+      "label": "Start Continuity Exercise"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M16",
+      "id": "brdbtn_3c9f6e446c25",
+      "label": "Record Complaint Review / Escalation"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_631017e7f0eb",
+      "label": "Email Campaigns — Draft, approval, scheduled, sent and completed email campaigns."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_33384d24ce8c",
+      "label": "SMS Campaigns — Operational and approved marketing SMS."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_345562123bac",
+      "label": "Templates — Approved content, branding and mandatory wording."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_5f09bfeed640",
+      "label": "Audience — Approved lists, filters, exclusions and source reference."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_572f60aa8bf1",
+      "label": "Approvals — Campaign decision queue and version review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_a5fa057a9008",
+      "label": "Delivery — Sent, delivered, failed, bounced and retry status."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_449e05bf2319",
+      "label": "Conversations — Permitted two-way messages where enabled."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_5de835c28b09",
+      "label": "Consent & Suppression — Opt-out, do-not-contact and excluded recipients."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_26b51e3b3c82",
+      "label": "Reports — Campaign performance, delivery and compliance."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M17",
+      "id": "brdtab_eda3a46749a4",
+      "label": "Emergency Communications — Approved urgent templates, rapid approval, linked updates, all-clear and failure escalation."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_524f4e3b25e8",
+      "label": "Create Email Campaign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_80792c62cfbc",
+      "label": "Create SMS Campaign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_24830181eef9",
+      "label": "Choose Template"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_3561b788e58d",
+      "label": "Select Audience"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_0f4d19ac8ec4",
+      "label": "Add Exclusions"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_660ab6f58f46",
+      "label": "Preview"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_d2c93ac7ac90",
+      "label": "Send Test"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_48fbf353bbf6",
+      "label": "Submit for Approval"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_32858b23b414",
+      "label": "Schedule"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_19f05f80010b",
+      "label": "Send Now"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_b9c77d9f3c5f",
+      "label": "Pause / Cancel"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_60216d734b12",
+      "label": "Retry Failed"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_12b503fbd968",
+      "label": "Record Response"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_e6cdfd13b0c6",
+      "label": "Export Results"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_b65bd77d598e",
+      "label": "Cancel Scheduled Campaign"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_dee4f489d2cc",
+      "label": "Pause Send"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_b0e7d74759c6",
+      "label": "Send Emergency Update"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M17",
+      "id": "brdbtn_b6c31946475e",
+      "label": "Send All Clear"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_f80e0d304756",
+      "label": "Website Monitoring — Availability, response time, outages and recovery."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_d1ebfbf005fe",
+      "label": "SSL / Domain — Expiry, ownership and renewal actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_87f9750482f1",
+      "label": "Remote Access — Approved endpoints, requests, sessions and emergency access."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_e81efb7f99e8",
+      "label": "Password / Secrets — Credential ownership, access requests, rotation and review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_fa12cf845012",
+      "label": "Security Cameras — Camera inventory, health, viewing and footage requests."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_a4403d841845",
+      "label": "Device / Connector Health — Operational status and assigned owner."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_4cd5a41d55ab",
+      "label": "Access Reviews — Periodic review of sensitive digital access."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M18",
+      "id": "brdtab_7ad1cdf1d259",
+      "label": "Reports — Outage, access, rotation and health history."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_4a1ba18b4435",
+      "label": "Add Website"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_ad10bc5c1055",
+      "label": "Run Check"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_efef1d1f94e3",
+      "label": "Acknowledge Outage"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_6a0d65872fc6",
+      "label": "Create Incident / Ticket"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_da62a26c5f73",
+      "label": "Request Remote Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_bb67b7d58c1c",
+      "label": "Approve / Reject Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_157778a6f6b8",
+      "label": "Launch Approved Session"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_3bee57875cd1",
+      "label": "End Session"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_6f84c66300f8",
+      "label": "Request Secret Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_ed242a44cbe5",
+      "label": "Reveal / Copy with Reason"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_a0073e1098ba",
+      "label": "Rotate Credential"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_46adb81d4570",
+      "label": "Request Footage"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_36416e8ffd7b",
+      "label": "Approve Export"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_36907da098e9",
+      "label": "Mark Camera Offline / Restored"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M18",
+      "id": "brdbtn_62a844073ef4",
+      "label": "Complete Access Review"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_640fdd8cb329",
+      "label": "Capacity & Flow — Aggregate provider availability, demand, waiting and utilisation trends."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_7ddf58e86d6d",
+      "label": "Operational Trends — Roster, attendance, tasks, tickets, stock and quality trends."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_79af6ef33401",
+      "label": "Benchmark Detail — Comparable clinic metrics and contributing factors."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_8d867f05e4c2",
+      "label": "Data Quality — Missing, duplicate, expired, inconsistent and stale records."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_7b84368406c1",
+      "label": "Change Register — Proposed, assessed, approved, implemented and reviewed changes."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_3bc9473fd7d0",
+      "label": "Impact Assessment — People, process, compliance, communication, finance and training impacts."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_9ec2c19702a0",
+      "label": "Readiness — Actions required before an effective date or business release."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_94930bd56feb",
+      "label": "Improvement Backlog — Prioritised improvement ideas and benefits."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M19",
+      "id": "brdtab_2206c3b4bc23",
+      "label": "Rollback & Benefits Review — Pause, rollback, correct-forward and expected-versus-actual benefit assessment."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_b2eb9ef8d1c9",
+      "label": "Refresh Analytics"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_0de4f54a3388",
+      "label": "Filter / Compare"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_a69591e58915",
+      "label": "Open Contributing Record"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_1aa7717454cf",
+      "label": "Create Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_f63b6362e31f",
+      "label": "Run Data Quality Check"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_f51811b39426",
+      "label": "Assign Correction"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_f9298b06218c",
+      "label": "Merge / Resolve Duplicate"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_a29d04b52dc8",
+      "label": "Raise Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_f22264a7cc59",
+      "label": "Assess Impact"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_279c6b8dea79",
+      "label": "Submit Change Approval"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_3ba80f815bf1",
+      "label": "Publish Effective Date"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_47b96cef1175",
+      "label": "Confirm Readiness"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_6ccd59705693",
+      "label": "Start Post-Change Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_c07b6603ef31",
+      "label": "Add Improvement"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_50ca3d07941a",
+      "label": "Pause Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_58a509ffd7d1",
+      "label": "Rollback Change"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_716059719a80",
+      "label": "Correct Forward"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M19",
+      "id": "brdbtn_143a1e56ce2a",
+      "label": "Complete Benefits Review"
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_f7efa2f81d9e",
+      "label": "Tenants — Customer clinic groups, status, contacts and contract dates."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_6c08718037ad",
+      "label": "Plans & Modules — Subscribed capability packages and limits."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_e5b2a4292a58",
+      "label": "Onboarding — Customer configuration, training and acceptance checklist."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_62ff4a90c0bc",
+      "label": "Branding & Settings — Approved tenant-level business preferences."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_cc3237948d4a",
+      "label": "Support Access — Time-limited support requests, reasons and review."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_ebf4210e3fe1",
+      "label": "Usage & Adoption — Module use, active users and configuration gaps."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_aa7c1710f474",
+      "label": "Renewals — Renewal dates, risks, decisions and actions."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_2373a78bc1aa",
+      "label": "Offboarding — Export, retention, access removal and closure checklist."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_4bb0414a6c55",
+      "label": "Future Departments — Optional controlled workspaces with tasks and documents."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_96fa918eba56",
+      "label": "Subscription & Billing — Trial conversion, plan changes, billing contacts, failed payment, suspension and reinstatement."
+    },
+    {
+      "kind": "tab",
+      "moduleKey": "M20",
+      "id": "brdtab_0ba2e39308a6",
+      "label": "Customer Support Escalations — Severity, temporary access, progress updates, service-impact communications and post-incident summary."
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_3639dcaa2958",
+      "label": "Add Tenant"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_4b6033997d61",
+      "label": "Select Plan / Modules"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_3483096b25a6",
+      "label": "Invite Tenant Admin"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_90b93e34190f",
+      "label": "Start Onboarding"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_c971128b5cda",
+      "label": "Complete Configuration Review"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_ebf2be9046ba",
+      "label": "Grant Temporary Support Access"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_f1b00cc4fecb",
+      "label": "Review Adoption"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_01d44298a8a0",
+      "label": "Create Renewal Action"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_a0eed96dcf77",
+      "label": "Suspend Tenant"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_59ce10ace8a5",
+      "label": "Start Offboarding"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_f803b8256ce5",
+      "label": "Confirm Closure"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_c05a84ca9b64",
+      "label": "Create Department Workspace"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_4c8f837ecc86",
+      "label": "Upgrade / Downgrade Plan"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_8ad0fa1ae28d",
+      "label": "Record Failed Subscription Payment"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_d79939ba1f57",
+      "label": "Reinstate Tenant"
+    },
+    {
+      "kind": "button",
+      "moduleKey": "M20",
+      "id": "brdbtn_898e3af81de2",
+      "label": "Escalate Customer Support"
+    }
+  ]
+}

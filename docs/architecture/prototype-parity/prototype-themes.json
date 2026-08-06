@@ -1,0 +1,88 @@
+{
+  "themes": [
+    "theme-light",
+    "theme-dark",
+    "theme-executive",
+    "theme-emerald"
+  ],
+  "themeLabels": {
+    "theme-light": "Light",
+    "theme-dark": "Dark",
+    "theme-executive": "Executive Blue",
+    "theme-emerald": "Medical Emerald"
+  },
+  "familyStyles": {
+    "Executive Command Centre": {
+      "accent": "#2563eb",
+      "soft": "#eff6ff",
+      "short": "EX",
+      "icon": "home"
+    },
+    "Operations": {
+      "accent": "#0f766e",
+      "soft": "#ecfdf5",
+      "short": "OP",
+      "icon": "task"
+    },
+    "People & Talent": {
+      "accent": "#7c3aed",
+      "soft": "#f5f3ff",
+      "short": "PT",
+      "icon": "users"
+    },
+    "Rostering & Attendance": {
+      "accent": "#0891b2",
+      "soft": "#ecfeff",
+      "short": "RA",
+      "icon": "calendar"
+    },
+    "Assets & Facilities": {
+      "accent": "#d97706",
+      "soft": "#fff7ed",
+      "short": "AF",
+      "icon": "box"
+    },
+    "Website & Digital Experience": {
+      "accent": "#059669",
+      "soft": "#ecfdf5",
+      "short": "WD",
+      "icon": "globe"
+    },
+    "Governance": {
+      "accent": "#16a34a",
+      "soft": "#f0fdf4",
+      "short": "GV",
+      "icon": "shield"
+    },
+    "Finance & Forecasting": {
+      "accent": "#b45309",
+      "soft": "#fffbeb",
+      "short": "FN",
+      "icon": "pay"
+    },
+    "Communications": {
+      "accent": "#db2777",
+      "soft": "#fdf2f8",
+      "short": "CM",
+      "icon": "chat"
+    },
+    "Security & Access": {
+      "accent": "#dc2626",
+      "soft": "#fef2f2",
+      "short": "SC",
+      "icon": "lock"
+    },
+    "Organisation & Tenant": {
+      "accent": "#475569",
+      "soft": "#f8fafc",
+      "short": "OR",
+      "icon": "building"
+    },
+    "SaaS Vendor Administration": {
+      "accent": "#4338ca",
+      "soft": "#eef2ff",
+      "short": "SV",
+      "icon": "globe"
+    }
+  }
+}

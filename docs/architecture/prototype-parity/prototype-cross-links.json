@@ -1,0 +1,295 @@
+{
+  "count": 24,
+  "crossLinks": [
+    {
+      "id": "xlink_f090252704a2",
+      "moduleKey": "M01",
+      "blueprintId": "bp_81f8e949c6b0",
+      "brdId": "brdmod_d344b51f534a",
+      "routes": [
+        "dashboard"
+      ],
+      "name": "Executive Command Centre",
+      "family": "Executive Command Centre"
+    },
+    {
+      "id": "xlink_2da5ab0234f3",
+      "moduleKey": "M02",
+      "blueprintId": "bp_dc99a70dac3a",
+      "brdId": "brdmod_b96000f10881",
+      "routes": [
+        "actionInbox",
+        "approvals"
+      ],
+      "name": "Action Inbox & Notifications",
+      "family": "Executive Command Centre"
+    },
+    {
+      "id": "xlink_9840ef98a2b5",
+      "moduleKey": "M03",
+      "blueprintId": "bp_002f699f8a91",
+      "brdId": "brdmod_641bc521b5db",
+      "routes": [
+        "settings",
+        "productAssurance"
+      ],
+      "name": "Organisation, Locations, Users & Permissions",
+      "family": "Organisation & Tenant"
+    },
+    {
+      "id": "xlink_10675df62fe5",
+      "moduleKey": "M04",
+      "blueprintId": "bp_5bad3568d0a4",
+      "brdId": "brdmod_85117305c912",
+      "routes": [
+        "staff",
+        "doctors",
+        "hrDocs"
+      ],
+      "name": "Staff & Doctor Management",
+      "family": "People & Talent"
+    },
+    {
+      "id": "xlink_d853fd97e719",
+      "moduleKey": "M05",
+      "blueprintId": "bp_b723337e98c8",
+      "brdId": "brdmod_f5b4f4ce14f4",
+      "routes": [
+        "roster"
+      ],
+      "name": "Roster & Shift Management",
+      "family": "Rostering & Attendance"
+    },
+    {
+      "id": "xlink_c2a41080511c",
+      "moduleKey": "M06",
+      "blueprintId": "bp_1497c37e7168",
+      "brdId": "brdmod_cf213b0ab9d6",
+      "routes": [
+        "timeclock",
+        "syncCentre"
+      ],
+      "name": "Time & Attendance",
+      "family": "Rostering & Attendance"
+    },
+    {
+      "id": "xlink_03ac47088ef2",
+      "moduleKey": "M07",
+      "blueprintId": "bp_aebc5d27f4f9",
+      "brdId": "brdmod_bd0da3c4a601",
+      "routes": [
+        "staffpay"
+      ],
+      "name": "Staff Pay & Payroll Preparation",
+      "family": "Finance & Forecasting"
+    },
+    {
+      "id": "xlink_b7fdc9f1136e",
+      "moduleKey": "M08",
+      "blueprintId": "bp_e265e1895a6e",
+      "brdId": "brdmod_3f8a3d91f74a",
+      "routes": [
+        "doctorpay"
+      ],
+      "name": "Doctor Pay Command Centre",
+      "family": "Finance & Forecasting"
+    },
+    {
+      "id": "xlink_609fc134bafe",
+      "moduleKey": "M09",
+      "blueprintId": "bp_5aa0aa11d2b9",
+      "brdId": "brdmod_49b6a5786b8d",
+      "routes": [
+        "bbpip"
+      ],
+      "name": "BBPIP Forecast & Reconciliation",
+      "family": "Finance & Forecasting"
+    },
+    {
+      "id": "xlink_03d6e918e1bf",
+      "moduleKey": "M10",
+      "blueprintId": "bp_8b416edd08ea",
+      "brdId": "brdmod_f88500a2100f",
+      "routes": [
+        "tasks",
+        "checklists",
+        "frontdesk",
+        "commbook",
+        "meetings"
+      ],
+      "name": "Tasks, Checklists, Meetings & Actions",
+      "family": "Operations"
+    },
+    {
+      "id": "xlink_e1f7731b8f06",
+      "moduleKey": "M11",
+      "blueprintId": "bp_67d622607ac0",
+      "brdId": "brdmod_87f805037df9",
+      "routes": [
+        "training"
+      ],
+      "name": "Training & Learning Management",
+      "family": "People & Talent"
+    },
+    {
+      "id": "xlink_93af92fd906b",
+      "moduleKey": "M12",
+      "blueprintId": "bp_e9944df33c60",
+      "brdId": "brdmod_a31078f041bc",
+      "routes": [
+        "complianceCentre",
+        "accreditation",
+        "qi",
+        "audit",
+        "expiry"
+      ],
+      "name": "Accreditation, Quality & Regulatory Compliance",
+      "family": "Governance"
+    },
+    {
+      "id": "xlink_17683c2e2b94",
+      "moduleKey": "M13",
+      "blueprintId": "bp_a071391e78c6",
+      "brdId": "brdmod_f6342429add6",
+      "routes": [
+        "documents",
+        "policies"
+      ],
+      "name": "Documents, Policies, SOPs & Intake",
+      "family": "Governance"
+    },
+    {
+      "id": "xlink_2102e0f195c8",
+      "moduleKey": "M14",
+      "blueprintId": "bp_84aaa4d8f334",
+      "brdId": "brdmod_04c730050641",
+      "routes": [
+        "ticketDesk"
+      ],
+      "name": "Ticketing Desk & Work Orders",
+      "family": "Operations"
+    },
+    {
+      "id": "xlink_bf4655af0499",
+      "moduleKey": "M15",
+      "blueprintId": "bp_351b364edeac",
+      "brdId": "brdmod_180137674738",
+      "routes": [
+        "inventory",
+        "stock",
+        "equipment",
+        "rooms",
+        "printers"
+      ],
+      "name": "Inventory, Suppliers, Finance & Assets",
+      "family": "Assets & Facilities"
+    },
+    {
+      "id": "xlink_463aa7d2bd3e",
+      "moduleKey": "M16",
+      "blueprintId": "bp_0611150e32b4",
+      "brdId": "brdmod_080d97fd2b30",
+      "routes": [
+        "incidents",
+        "riskCentre",
+        "emergencyCentre"
+      ],
+      "name": "Incidents, Complaints, Risk & Continuity",
+      "family": "Operations"
+    },
+    {
+      "id": "xlink_1ea6b8c13290",
+      "moduleKey": "M17",
+      "blueprintId": "bp_85788348c9b3",
+      "brdId": "brdmod_ec1c00f011f0",
+      "routes": [
+        "email",
+        "sms",
+        "memos",
+        "noticeboards"
+      ],
+      "name": "Email & SMS Communications",
+      "family": "Communications"
+    },
+    {
+      "id": "xlink_201472574b27",
+      "moduleKey": "M18",
+      "blueprintId": "bp_e75bcd932c20",
+      "brdId": "brdmod_65c6245d4efa",
+      "routes": [
+        "website",
+        "remote",
+        "vault",
+        "cameras"
+      ],
+      "name": "Digital Operations & Security",
+      "family": "Security & Access"
+    },
+    {
+      "id": "xlink_50f89160e871",
+      "moduleKey": "M19",
+      "blueprintId": "bp_8985cb56a763",
+      "brdId": "brdmod_fd91df02dc51",
+      "routes": [
+        "analytics"
+      ],
+      "name": "Clinic Analytics, Data Quality & Change",
+      "family": "Executive Command Centre"
+    },
+    {
+      "id": "xlink_d85891c08747",
+      "moduleKey": "M20",
+      "blueprintId": "bp_b36864ad2548",
+      "brdId": "brdmod_306b9d7f717c",
+      "routes": [
+        "saas"
+      ],
+      "name": "Commercial SaaS & Organisation Workspaces",
+      "family": "Organisation & Tenant"
+    },
+    {
+      "id": "xlink_520be543c6f3",
+      "moduleKey": "M21",
+      "blueprintId": "bp_6e5189a4a0cc",
+      "brdId": null,
+      "routes": [
+        "vendorConsole"
+      ],
+      "name": "SaaS Vendor Operations & Tenant Provisioning",
+      "family": "SaaS Vendor Administration"
+    },
+    {
+      "id": "xlink_8510eac761c7",
+      "moduleKey": "M22",
+      "blueprintId": "bp_f98ee0cdec0c",
+      "brdId": null,
+      "routes": [
+        "recruitment"
+      ],
+      "name": "Recruitment & Talent Acquisition",
+      "family": "People & Talent"
+    },
+    {
+      "id": "xlink_72ed5c6b1ac4",
+      "moduleKey": "M23",
+      "blueprintId": "bp_c4a001e45fb1",
+      "brdId": null,
+      "routes": [
+        "websiteStudio"
+      ],
+      "name": "Tenant Website Infrastructure & SEO Engine",
+      "family": "Website & Digital Experience"
+    },
+    {
+      "id": "xlink_6957aa00c75c",
+      "moduleKey": "M24",
+      "blueprintId": "bp_e436b0cfbdbb",
+      "brdId": null,
+      "routes": [
+        "financialForecast"
+      ],
+      "name": "Practice Financial Forecast & Ledger Control",
+      "family": "Finance & Forecasting"
+    }
+  ]
+}

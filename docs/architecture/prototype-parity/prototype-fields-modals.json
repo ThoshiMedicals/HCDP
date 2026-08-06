@@ -1,0 +1,4904 @@
+{
+  "fieldGroups": [
+    {
+      "id": "fgrp_9ec2d4f413ea",
+      "group": "locations",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_e37e05242b0c",
+          "name": "name",
+          "label": "Clinic name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_75901bb57d06",
+          "name": "shortName",
+          "label": "Short name",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_3fb0effdce36",
+          "name": "phone",
+          "label": "Phone",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_5c06fbb1496c",
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": false
+        },
+        {
+          "id": "field_4f66b47d2c36",
+          "name": "address",
+          "label": "Address",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_049f09cdb0dc",
+          "name": "manager",
+          "label": "Manager",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_61e230950d47",
+          "name": "publicHolidayRegion",
+          "label": "Public holiday region",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Queensland",
+            "New South Wales",
+            "Victoria",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_0551230fa0be",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Inactive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_bc34e4c0da28",
+      "group": "tasks",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_b990fa7b347b",
+          "name": "title",
+          "label": "Task title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_0120e5c5441c",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_26eb47d2b842",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "IT",
+            "Facility",
+            "Accreditation",
+            "HR",
+            "Finance",
+            "Cleaning",
+            "Supplier",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_93d71ea914a9",
+          "name": "priority",
+          "label": "Priority",
+          "type": "select",
+          "required": true,
+          "options": [
+            "P1 Emergency",
+            "P2 Urgent",
+            "P3 Routine",
+            "P4 Scheduled"
+          ]
+        },
+        {
+          "id": "field_715a1d38b3fc",
+          "name": "assignedTo",
+          "label": "Assigned to",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_e160f837ef14",
+          "name": "dueDate",
+          "label": "Due date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_d15c12757652",
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_1f7f2006e7bc",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Pending",
+            "In progress",
+            "Waiting",
+            "Done"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_08b04e249b7e",
+      "group": "checklists",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_768e71dfa061",
+          "name": "name",
+          "label": "Checklist name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_598db15b1ed9",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_aa8af3ba7a75",
+          "name": "workflowScope",
+          "label": "Workflow group",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Front Desk",
+            "Nurse Accreditation Checklist",
+            "Manager Accreditation Review",
+            "General Operations"
+          ]
+        },
+        {
+          "id": "field_8f89bf08800c",
+          "name": "frequency",
+          "label": "Frequency",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Daily",
+            "Weekly",
+            "Monthly",
+            "Quarterly",
+            "Yearly",
+            "Custom"
+          ]
+        },
+        {
+          "id": "field_e2cc2d85e41e",
+          "name": "type",
+          "label": "Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "General",
+            "Opening",
+            "Closing",
+            "Room Setup",
+            "Nursing",
+            "Accreditation",
+            "Cold Chain",
+            "Manager"
+          ]
+        },
+        {
+          "id": "field_458c0c3905aa",
+          "name": "assignment",
+          "label": "Assignment",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Group",
+            "Individual"
+          ]
+        },
+        {
+          "id": "field_6dcb4ce2c309",
+          "name": "responsibleRole",
+          "label": "Responsible role",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Reception",
+            "Nurse",
+            "Practice Manager",
+            "Cleaner",
+            "Doctor",
+            "Mixed team",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_272395fad865",
+          "name": "assignedTo",
+          "label": "Assigned to",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_271aff1af577",
+          "name": "managerReviewRequired",
+          "label": "Manager review required",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_b157ab473906",
+          "name": "managerReviewStatus",
+          "label": "Manager review status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not submitted",
+            "Pending review",
+            "Reviewed",
+            "Rework required",
+            "Manager-owned"
+          ]
+        },
+        {
+          "id": "field_f7655dcc59af",
+          "name": "sourceDocument",
+          "label": "Source document / SOP",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_8d0c101132f9",
+          "name": "clockoutRule",
+          "label": "Roster / clock-out rule",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_334250d87ac4",
+          "name": "dueDate",
+          "label": "Next due date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_da9b50b8d1b1",
+          "name": "items",
+          "label": "Checklist items - one per line",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_9d0466af2ec8",
+          "name": "evidenceNote",
+          "label": "Evidence / completion note",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_1a4b661dd3cd",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Active",
+            "Paused",
+            "Submitted",
+            "Reviewed",
+            "Rework Required"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_979b8140298b",
+      "group": "incidents",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_1b74efbc6a47",
+          "name": "title",
+          "label": "Incident title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_472442995086",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_77f646a1e83b",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Clinical governance",
+            "WHS",
+            "IT",
+            "Facility",
+            "Privacy",
+            "Cold Chain",
+            "Complaint",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_8dbfdbcd3755",
+          "name": "severity",
+          "label": "Severity",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Low",
+            "Medium",
+            "High",
+            "Critical"
+          ]
+        },
+        {
+          "id": "field_3aa3c70744e6",
+          "name": "immediateAction",
+          "label": "Immediate action taken",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_e3b655e11f33",
+          "name": "rca",
+          "label": "RCA summary",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_c48d617aea48",
+          "name": "capa",
+          "label": "CAPA actions",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_98cfb3e8a591",
+          "name": "openDisclosure",
+          "label": "Open disclosure required",
+          "type": "select",
+          "required": false,
+          "options": [
+            "No",
+            "Yes",
+            "To be assessed"
+          ]
+        },
+        {
+          "id": "field_574d9c978ffe",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Reported",
+            "Triage",
+            "RCA Required",
+            "CAPA Open",
+            "Closed"
+          ]
+        },
+        {
+          "id": "field_976c5626643d",
+          "name": "openDisclosureBy",
+          "label": "Open disclosure completed by",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_bd84c90e4d6d",
+          "name": "openDisclosureDate",
+          "label": "Open disclosure date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_7d534eb098d7",
+          "name": "riskRegisterLink",
+          "label": "Risk register link / review note",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_11484e0bd0f2",
+          "name": "effectivenessReview",
+          "label": "CAPA effectiveness review",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_526b8a6e8e78",
+      "group": "staff",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_4f382f1564b0",
+          "name": "name",
+          "label": "Full name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_41bc8556df2e",
+          "name": "role",
+          "label": "Role",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Reception",
+            "Nurse",
+            "Practice Manager",
+            "Operations Manager",
+            "Payroll",
+            "IT",
+            "Cleaner",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_a6c0d1b1ac71",
+          "name": "sourceDesignation",
+          "label": "Original designation",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_9c495c76405c",
+          "name": "employmentType",
+          "label": "Employment type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Casual",
+            "Permanent",
+            "Part-time",
+            "Full-time",
+            "Contractor"
+          ]
+        },
+        {
+          "id": "field_3b249441b2b1",
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "id": "field_efeda9955476",
+          "name": "contactNo",
+          "label": "Contact number",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_0e93e55478c2",
+          "name": "locations",
+          "label": "Medical centre assignment",
+          "type": "locationMulti",
+          "required": false
+        },
+        {
+          "id": "field_3076db0ad935",
+          "name": "maxWeeklyHours",
+          "label": "Max weekly hours",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_93b7f5630cdc",
+          "name": "payRate",
+          "label": "Base hourly rate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_13c677fcbed5",
+          "name": "cprExpiry",
+          "label": "CPR expiry",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_ddab5085b4a4",
+          "name": "immunisationStatus",
+          "label": "Immunisation status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not set",
+            "Recorded",
+            "Refused",
+            "Needs update"
+          ]
+        },
+        {
+          "id": "field_8621d85c7c6d",
+          "name": "bankReady",
+          "label": "Bank details verified",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_78bd6f4114ce",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Pending",
+            "Active",
+            "Suspended",
+            "Archived"
+          ]
+        },
+        {
+          "id": "field_7eb259ee4368",
+          "name": "awardClassification",
+          "label": "Award classification / pay point",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_844a216a9e0e",
+          "name": "payRuleSet",
+          "label": "Pay rule set",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_c65bc0e24660",
+          "name": "accessLifecycle",
+          "label": "Access lifecycle",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Onboarding",
+            "Active",
+            "Suspended",
+            "Terminated",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_9c3bdec779bf",
+      "group": "doctors",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_5bfd1804516c",
+          "name": "name",
+          "label": "Doctor / provider name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_6a9fa3f21c47",
+          "name": "abn",
+          "label": "ABN",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_3903287d55a2",
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": false
+        },
+        {
+          "id": "field_40bc1abfac40",
+          "name": "contractNumber",
+          "label": "Contract number",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_d71fb8a77c73",
+          "name": "contractStart",
+          "label": "Contract start date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_60aaa90d7200",
+          "name": "contractEnd",
+          "label": "Contract end date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_b1a134260a83",
+          "name": "company",
+          "label": "Company / trust",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_c2cb8fa5c981",
+          "name": "mobile",
+          "label": "Mobile",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_d85e79ef25f7",
+          "name": "homePhone",
+          "label": "Home phone",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_62854d7fe79f",
+          "name": "locations",
+          "label": "Assigned medical centres",
+          "type": "locationMulti",
+          "required": false
+        },
+        {
+          "id": "field_2031510bc755",
+          "name": "publicLocation",
+          "label": "Public website match",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_a3961ebc630a",
+          "name": "publicSource",
+          "label": "Public source / notes",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_a85badb85970",
+          "name": "gstRegistered",
+          "label": "GST registered",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_6dfd6ca26e82",
+          "name": "contractRate",
+          "label": "Facility fee rate %",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_eca568677bbf",
+          "name": "bankReady",
+          "label": "Bank details verified",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_39e1bd10e6aa",
+          "name": "ahpraExpiry",
+          "label": "AHPRA expiry",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_fbbea3cf6662",
+          "name": "coveringDoctor",
+          "label": "Covering doctor during leave",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_bdfdcc42f751",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Pending",
+            "Active",
+            "Suspended",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_009ce4dc0b52",
+      "group": "hrDocs",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_39c57335d8c6",
+          "name": "personName",
+          "label": "Person name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_219333be41c0",
+          "name": "personType",
+          "label": "Person type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Staff",
+            "Doctor",
+            "Contractor"
+          ]
+        },
+        {
+          "id": "field_542697a98ec8",
+          "name": "docType",
+          "label": "Document type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "AHPRA",
+            "CPR",
+            "Contract",
+            "Induction",
+            "Immunisation",
+            "Performance appraisal",
+            "Police check",
+            "Insurance",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_0353a07e7cd7",
+          "name": "expiryDate",
+          "label": "Expiry / review date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_249fc0b022bc",
+          "name": "owner",
+          "label": "Responsible manager",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_a771190b9d4c",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Pending review",
+            "Expired",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_854de9af94b0",
+      "group": "training",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_6e3cddf40e72",
+          "name": "title",
+          "label": "Training title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_3515e1e5e317",
+          "name": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "options": [
+            "All staff",
+            "Reception",
+            "Nurses",
+            "Managers",
+            "Payroll",
+            "Doctors",
+            "IT",
+            "Contractors"
+          ]
+        },
+        {
+          "id": "field_c918411b916a",
+          "name": "permissionGate",
+          "label": "Permission gate",
+          "type": "select",
+          "required": false,
+          "options": [
+            "None",
+            "Doctor Pay",
+            "Staff Pay",
+            "Cameras",
+            "Password Vault",
+            "Remote Access",
+            "SMS/Email",
+            "Best Practice reports"
+          ]
+        },
+        {
+          "id": "field_0ec51835e38a",
+          "name": "expiryDate",
+          "label": "Expiry date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_b3d40e608245",
+          "name": "owner",
+          "label": "Owner",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_8136a0f75f63",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Assigned",
+            "Completed",
+            "Verified",
+            "Expired"
+          ]
+        },
+        {
+          "id": "field_930305d40959",
+          "name": "permissionControlled",
+          "label": "Controls sensitive permission",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_0d3c88d41e65",
+          "name": "controlledModule",
+          "label": "Controlled module",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Best Practice workflow",
+            "SMS/Email",
+            "Vaccine/Cold Chain",
+            "Incident Investigation",
+            "Camera Access",
+            "Doctor Pay",
+            "Password Vault",
+            "Remote Access",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_6d6c513c35d7",
+          "name": "completionStatus",
+          "label": "Completion status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Assigned",
+            "In progress",
+            "Completed",
+            "Failed",
+            "Expired"
+          ]
+        },
+        {
+          "id": "field_1c01b33ccc60",
+          "name": "overrideExpiry",
+          "label": "Temporary override expiry",
+          "type": "date",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_ee74284466f4",
+      "group": "roster",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_8a92875a047a",
+          "name": "staffName",
+          "label": "Staff member",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_dbb19a0579e2",
+          "name": "role",
+          "label": "Role required",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Reception",
+            "Nurse",
+            "Manager",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_22ec66ff085a",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_34eeb4a8cc68",
+          "name": "date",
+          "label": "Shift date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_a8fde2c9b045",
+          "name": "start",
+          "label": "Start time",
+          "type": "time",
+          "required": true
+        },
+        {
+          "id": "field_aa30ddabcbc9",
+          "name": "end",
+          "label": "End time",
+          "type": "time",
+          "required": true
+        },
+        {
+          "id": "field_40dbd0ab787c",
+          "name": "openClose",
+          "label": "Responsibility",
+          "type": "select",
+          "required": false,
+          "options": [
+            "None",
+            "Opening",
+            "Closing",
+            "Opening & Closing"
+          ]
+        },
+        {
+          "id": "field_35751ca78c01",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Published",
+            "Changed",
+            "Locked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_222b78d4aa3f",
+      "group": "timeclock",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_fcb1c122e29b",
+          "name": "staffName",
+          "label": "Staff member",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_9ce26c6aab2d",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_7eb68526e52b",
+          "name": "date",
+          "label": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_275f5dce787b",
+          "name": "clockIn",
+          "label": "Clock in",
+          "type": "time",
+          "required": true
+        },
+        {
+          "id": "field_c9c1f590f5a8",
+          "name": "clockOut",
+          "label": "Clock out",
+          "type": "time",
+          "required": false
+        },
+        {
+          "id": "field_728411d38e59",
+          "name": "breakRemoved",
+          "label": "Break not taken",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_efb7f6312cbc",
+          "name": "checklistStatus",
+          "label": "Checklist status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Completed",
+            "Incomplete with reason",
+            "Not required"
+          ]
+        },
+        {
+          "id": "field_d2223a0f52c9",
+          "name": "reason",
+          "label": "Exception reason",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_ce3dca75bc4a",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Submitted",
+            "Exception",
+            "Approved",
+            "Rejected",
+            "Locked"
+          ]
+        },
+        {
+          "id": "field_d1ec05c6be70",
+          "name": "deviceIp",
+          "label": "Device / IP",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_78bc8a2b3865",
+          "name": "approvedIpStatus",
+          "label": "Approved IP/device status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Approved",
+            "Unknown",
+            "Blocked"
+          ]
+        },
+        {
+          "id": "field_c7d7a5081920",
+          "name": "missedClockType",
+          "label": "Missed clock correction",
+          "type": "select",
+          "required": false,
+          "options": [
+            "None",
+            "Missed clock-in",
+            "Missed clock-out",
+            "Both"
+          ]
+        },
+        {
+          "id": "field_63ab6696cfef",
+          "name": "acceptedAdjustedTime",
+          "label": "Accepted adjusted time",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_d56f1fbea474",
+      "group": "staffpay",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_7e376776c3b9",
+          "name": "periodStart",
+          "label": "Period start",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_af4e201eaf31",
+          "name": "periodEnd",
+          "label": "Period end",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_06c8eb036186",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_4a9e810e9430",
+          "name": "payrollContact",
+          "label": "Payroll contact",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_538edd7363e7",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Review",
+            "Approved",
+            "Exported",
+            "Locked"
+          ]
+        },
+        {
+          "id": "field_eb3c62759c2b",
+          "name": "notes",
+          "label": "Notes",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_fcbf78e1f584",
+          "name": "xeroEarningsMapping",
+          "label": "Xero earnings mapping / categories",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_eb7fb8af8a50",
+          "name": "payrollAdvisorValidated",
+          "label": "Payroll advisor validation recorded",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_5f08ffc7e045",
+          "name": "correctionWorkflow",
+          "label": "Correction workflow note",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_49574f222ef3",
+      "group": "doctorpay",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_0894f8c32912",
+          "name": "doctorName",
+          "label": "Doctor name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_6ad2f1a8b042",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_fddc9dc466d6",
+          "name": "from",
+          "label": "Period from",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_bbe5205450f4",
+          "name": "to",
+          "label": "Period to",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_c68f83b8948f",
+          "name": "totalBilling",
+          "label": "Total billing from Best Practice",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_080171ecaebf",
+          "name": "rate",
+          "label": "Facility fee rate %",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_304fa7f5fd29",
+          "name": "gstMode",
+          "label": "GST treatment",
+          "type": "select",
+          "required": true,
+          "options": [
+            "GST on facility fee",
+            "No GST",
+            "Contract-specific review"
+          ]
+        },
+        {
+          "id": "field_085e8df0a105",
+          "name": "adjustment",
+          "label": "Adjustment amount",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_28cb00f8999a",
+          "name": "adjustmentReason",
+          "label": "Adjustment reason",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_852a9d4ca727",
+          "name": "bpReportUploaded",
+          "label": "BP support report attached",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_1816ef72a92a",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "BP Sync",
+            "Reconciled",
+            "Approved",
+            "Paid"
+          ]
+        },
+        {
+          "id": "field_f4d564924bb8",
+          "name": "bpVariance",
+          "label": "BP reconciliation variance",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_243dfbd5d2e2",
+          "name": "bpTransactionRows",
+          "label": "BP transaction support rows - one row per line",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_d6d6daa3b991",
+          "name": "paymentStatus",
+          "label": "Payment status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not paid",
+            "Payment allocated",
+            "Paid outside portal",
+            "Reversal / correction required"
+          ]
+        },
+        {
+          "id": "field_53262b2c6fdc",
+          "name": "bpSyncStatus",
+          "label": "BP sync status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not synced",
+            "Manual sync",
+            "Scheduled sync",
+            "Failed sync",
+            "Reconciled"
+          ]
+        },
+        {
+          "id": "field_1ed2c25475f7",
+          "name": "rateVersion",
+          "label": "Contract/rate version",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_8594e570c21a",
+          "name": "approvedBy",
+          "label": "Pay run approved by",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_ce6b7389677a",
+          "name": "payslipEmailStatus",
+          "label": "Payslip email status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not sent",
+            "Queued",
+            "Sent",
+            "Failed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_5695f675f091",
+      "group": "bbpip",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_e0f8831a6198",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_d22953257ee7",
+          "name": "quarter",
+          "label": "Quarter",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_8433e324415b",
+          "name": "eligibleValue",
+          "label": "Eligible bulk-billed value",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_8b03e3307462",
+          "name": "excludedValue",
+          "label": "Excluded / mixed-billing value",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_4e7a0a2f6567",
+          "name": "itemVersion",
+          "label": "MBS item master version",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_e2eec5938a14",
+          "name": "finalAdvice",
+          "label": "Final Services Australia advice received",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_4344001adf6a",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Estimate",
+            "Reviewed",
+            "Reconciled",
+            "Closed"
+          ]
+        },
+        {
+          "id": "field_8cac20b4a9df",
+          "name": "clinicParticipation",
+          "label": "Clinic participation status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Registered / opted in",
+            "Not registered",
+            "Under review"
+          ]
+        },
+        {
+          "id": "field_b7413b22408e",
+          "name": "mymedicareStatus",
+          "label": "MyMedicare / Organisation Register",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Verified",
+            "Pending",
+            "Not recorded"
+          ]
+        },
+        {
+          "id": "field_6f260483036b",
+          "name": "healthdirectSignage",
+          "label": "Healthdirect / signage evidence stored",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_c23aa1d4ab5c",
+          "name": "mixedBillingFlag",
+          "label": "Mixed billing / non-bulk-billed exception detected",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_575cb0ecf516",
+          "name": "correctionStatus",
+          "label": "Correction status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not required",
+            "Correction pending",
+            "Correction completed",
+            "Manual review"
+          ]
+        },
+        {
+          "id": "field_94e68459d69b",
+          "name": "actualPaymentAdvice",
+          "label": "Actual final payment advice amount",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_ecf290ee545f",
+          "name": "reconciledBy",
+          "label": "Reconciled by",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_61c2b7cc3597",
+          "name": "eligibleItemRows",
+          "label": "Eligible MBS item rows / item master notes",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_f784cd9ddd9b",
+          "name": "excludedRows",
+          "label": "Excluded/private/WorkCover/non-Medicare rows",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_7bcd9c1b7db4",
+          "name": "finalReconciliationNote",
+          "label": "Final reconciliation note",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_e4bb73a4833d",
+      "group": "rooms",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_9c309df6b394",
+          "name": "name",
+          "label": "Room name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_3c1cef8ebb29",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_af5897a6cdad",
+          "name": "type",
+          "label": "Room type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Consult room",
+            "Treatment room",
+            "Pathology",
+            "Reception",
+            "Storage",
+            "Admin",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_5348f268d8f5",
+          "name": "responsiblePerson",
+          "label": "Responsible person",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_4c9d606f2864",
+          "name": "reviewDate",
+          "label": "Review date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_42e14c8f368c",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Needs setup",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_245e8672a3d4",
+      "group": "inventory",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_96f595cd36b2",
+          "name": "name",
+          "label": "Item name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_95e3529e87e8",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_390f74fa36c3",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "IT asset",
+            "Medical equipment",
+            "Furniture",
+            "Camera/NVR",
+            "Fridge",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_4c8a578353e7",
+          "name": "serial",
+          "label": "Serial / asset ID",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_a77da019ed7a",
+          "name": "expiryDate",
+          "label": "Expiry date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_b85a30b5f7e2",
+          "name": "calibrationDue",
+          "label": "Calibration due",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_0c958a858cab",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Needs review",
+            "Archived"
+          ]
+        },
+        {
+          "id": "field_fd4fbee3f831",
+          "name": "qty",
+          "label": "Quantity",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_6e2cf6e6b822",
+          "name": "batch",
+          "label": "Batch / invoice",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_b9e837850ece",
+          "name": "invoiceNumber",
+          "label": "Invoice number",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_913f77ae8741",
+          "name": "supplier",
+          "label": "Supplier",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_9a0166426c05",
+          "name": "ocrStatus",
+          "label": "OCR status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Manual entry",
+            "OCR Review",
+            "Confirmed",
+            "Corrected"
+          ]
+        },
+        {
+          "id": "field_b3fa29cdffc1",
+          "name": "electricalTestDue",
+          "label": "Electrical tag due",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_357c9c477fb6",
+          "name": "parMin",
+          "label": "PAR min",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_dad4d7c03679",
+          "name": "parMax",
+          "label": "PAR max",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_da8da016e1fa",
+          "name": "reviewNote",
+          "label": "Review / anomaly note",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_3712d91dc437",
+      "group": "stock",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_e95c492beb21",
+          "name": "name",
+          "label": "Stock item",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_3f41466523c3",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_c344fcf9238b",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Drs Bag",
+            "Drugs",
+            "Consumables",
+            "Vaccines",
+            "Reusable",
+            "Samples",
+            "PPE",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_5a362fc7a061",
+          "name": "qty",
+          "label": "Quantity",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_3f11536f72be",
+          "name": "parMin",
+          "label": "PAR min",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_fbdff9a74d20",
+          "name": "parMax",
+          "label": "PAR max",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_36432e354d9d",
+          "name": "batch",
+          "label": "Batch / invoice",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_e0add4508ceb",
+          "name": "expiryDate",
+          "label": "Expiry date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_0a930bcb56f3",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Reorder",
+            "Expired",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_0da8b6a7ee02",
+      "group": "equipment",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_c0ef706bdec9",
+          "name": "name",
+          "label": "Equipment name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_b8d4000fd025",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_1731f43acaa4",
+          "name": "room",
+          "label": "Room",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_fa105fb8a47d",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Calibration",
+            "Electrical Test",
+            "Medical equipment",
+            "IT",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_c3dd6168baba",
+          "name": "calibrationDue",
+          "label": "Calibration due",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_45136d55b483",
+          "name": "electricalTestDue",
+          "label": "Electrical test due",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_730135e3df57",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Due soon",
+            "Expired",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_3cc2de2fa9af",
+      "group": "website",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_9cd2572b0d6b",
+          "name": "name",
+          "label": "Website name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_ebf9ffc488f5",
+          "name": "url",
+          "label": "URL",
+          "type": "url",
+          "required": true
+        },
+        {
+          "id": "field_8b7552862a9f",
+          "name": "expectedText",
+          "label": "Expected page text",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_2e142288c8d5",
+          "name": "sslExpiry",
+          "label": "SSL expiry date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_72701e6f8765",
+          "name": "owner",
+          "label": "Owner",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_4c91e1bec502",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not checked",
+            "Healthy",
+            "Down",
+            "SSL expiring",
+            "Recovered"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_811967bae4a3",
+      "group": "accreditation",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_d7058ab5731f",
+          "name": "title",
+          "label": "Evidence title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_64e5056d671c",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_68865de47bda",
+          "name": "standard",
+          "label": "Standard / criterion",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_7dc13719ab83",
+          "name": "owner",
+          "label": "Owner",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_ff703379c0f3",
+          "name": "dueDate",
+          "label": "Due date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_8b59cb730b93",
+          "name": "reviewDate",
+          "label": "Review date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_383d32cf950b",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Assigned",
+            "Evidence Required",
+            "Under Review",
+            "Ready",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_49306c450ae5",
+      "group": "qi",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_6cf785ec803f",
+          "name": "title",
+          "label": "QI activity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_3446dd45a38d",
+          "name": "area",
+          "label": "QI area",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Clinical",
+            "Admin",
+            "Operational",
+            "Compliance",
+            "Finance"
+          ]
+        },
+        {
+          "id": "field_8ebe271d5d4b",
+          "name": "goal",
+          "label": "SMART goal",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_4b61882b480f",
+          "name": "measure",
+          "label": "Measure",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_6a161a56f7f4",
+          "name": "owner",
+          "label": "Lead",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_2c367ce1d843",
+          "name": "status",
+          "label": "PDSA stage",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Plan",
+            "Do",
+            "Study",
+            "Act",
+            "Closed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_5192489aa0fd",
+      "group": "policies",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_0f17b5255e48",
+          "name": "title",
+          "label": "Policy title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_c1e9a4bb2849",
+          "name": "version",
+          "label": "Version",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_b70f02ed4e59",
+          "name": "owner",
+          "label": "Owner",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_7d03a8827e03",
+          "name": "reviewDate",
+          "label": "Next review date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_ae71a512e978",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Published",
+            "Superseded",
+            "Archived"
+          ]
+        },
+        {
+          "id": "field_e4c235130632",
+          "name": "documentKind",
+          "label": "Document kind",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Policy",
+            "Procedure",
+            "Template",
+            "Form",
+            "Checklist template",
+            "PDF output template"
+          ]
+        },
+        {
+          "id": "field_9594e5a26cae",
+          "name": "effectiveDate",
+          "label": "Effective date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_66cf2476629f",
+          "name": "publishScope",
+          "label": "Publish scope",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Master only",
+            "Selected locations",
+            "All locations"
+          ]
+        },
+        {
+          "id": "field_6e71badf3669",
+          "name": "publishedLocations",
+          "label": "Published locations",
+          "type": "locationMulti",
+          "required": false
+        },
+        {
+          "id": "field_55346f2f6128",
+          "name": "replicationChoice",
+          "label": "Replication choice",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Do not replicate",
+            "Replicate to selected clinics",
+            "Replicate to all linked clinics"
+          ]
+        },
+        {
+          "id": "field_94bd6577fcae",
+          "name": "rollbackReason",
+          "label": "Rollback / reissue reason",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fgrp_4fe07208b7b1",
+      "group": "memos",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_458c1edab338",
+          "name": "title",
+          "label": "Memo title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_b23cf0172211",
+          "name": "audience",
+          "label": "Audience",
+          "type": "select",
+          "required": true,
+          "options": [
+            "All staff",
+            "Reception",
+            "Nurses",
+            "Doctors",
+            "Managers",
+            "Payroll",
+            "IT"
+          ]
+        },
+        {
+          "id": "field_73383650c609",
+          "name": "mandatory",
+          "label": "Mandatory acknowledgement",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_08585aec0e50",
+          "name": "body",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_70956e7ebc62",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Published",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_7b1d7a474bc0",
+      "group": "commbook",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_3d360353624a",
+          "name": "note",
+          "label": "Note",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_6fd69e3c543b",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_a067d2f1db0d",
+          "name": "visibility",
+          "label": "Visibility",
+          "type": "select",
+          "required": true,
+          "options": [
+            "All staff",
+            "Managers only",
+            "Location only"
+          ]
+        },
+        {
+          "id": "field_5143be5ccbbe",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Visible",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_472f17219d7d",
+      "group": "email",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_5f953897069d",
+          "name": "name",
+          "label": "Campaign name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_ea45c0ec52d9",
+          "name": "audience",
+          "label": "Audience / segment",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_d1af195b2d95",
+          "name": "subject",
+          "label": "Subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_f9b5c6977263",
+          "name": "body",
+          "label": "Email body",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_c83f5c3eca23",
+          "name": "scheduledAt",
+          "label": "Scheduled date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_b7501bad6e1e",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Review",
+            "Approved",
+            "Scheduled",
+            "Sent",
+            "Blocked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_0a30db2aaa74",
+      "group": "sms",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_6cf51589fc19",
+          "name": "name",
+          "label": "SMS campaign name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_279787ff68cc",
+          "name": "audience",
+          "label": "Audience / segment",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_d716fad66039",
+          "name": "message",
+          "label": "SMS message",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_f4ad11084c78",
+          "name": "scheduledAt",
+          "label": "Scheduled date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_0bc6e4c76a3e",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Review",
+            "Approved",
+            "Scheduled",
+            "Sent",
+            "Blocked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_a9c2949f5099",
+      "group": "noticeboards",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_6a85f0596316",
+          "name": "title",
+          "label": "Notice title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_467447166bee",
+          "name": "screen",
+          "label": "Screen / location",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_39c9d857166c",
+          "name": "content",
+          "label": "Content",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_7b2340b16364",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Approved",
+            "Published",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_fb6238ced575",
+      "group": "remote",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_57a7a5240b74",
+          "name": "system",
+          "label": "System / device",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_4a5a5051949b",
+          "name": "user",
+          "label": "Requesting user",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_9ae84c0eb14a",
+          "name": "reason",
+          "label": "Reason",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_b0c04a4ab7b1",
+          "name": "expiresAt",
+          "label": "Access expiry",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_b483d9d4c01c",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Requested",
+            "Approved",
+            "Active",
+            "Closed",
+            "Reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_934769e97c80",
+      "group": "vault",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_b93a01a00a99",
+          "name": "system",
+          "label": "System",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_c89420e19167",
+          "name": "username",
+          "label": "Username",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_9135e9b1d081",
+          "name": "secret",
+          "label": "Secret",
+          "type": "password",
+          "required": true
+        },
+        {
+          "id": "field_5e219ebfbe5e",
+          "name": "owner",
+          "label": "Owner",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_b4065a46c9af",
+          "name": "reviewDate",
+          "label": "Review date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_f10a3f82c162",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Needs review",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_4329c33fe5ff",
+      "group": "cameras",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_4eac35785c34",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_1418af18fb05",
+          "name": "zone",
+          "label": "Camera zone",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_48e7e86d31f0",
+          "name": "requester",
+          "label": "Requester",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_cbdec83b6af9",
+          "name": "accessType",
+          "label": "Access type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Live view",
+            "Recording review",
+            "Footage export"
+          ]
+        },
+        {
+          "id": "field_e64a9117aada",
+          "name": "reason",
+          "label": "Reason",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_498818234de9",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Requested",
+            "Approved",
+            "Viewed",
+            "Exported",
+            "Reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_b3b3986103ca",
+      "group": "printers",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_eaff3d2728bb",
+          "name": "name",
+          "label": "Printer name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_2613be94884b",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_c4401ad5c470",
+          "name": "brand",
+          "label": "Brand",
+          "type": "select",
+          "required": true,
+          "options": [
+            "OKI",
+            "Brother",
+            "Kyocera",
+            "HP",
+            "Canon",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_86b1d1adb730",
+          "name": "model",
+          "label": "Model",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_a42ed67c0d17",
+          "name": "ipAddress",
+          "label": "IP address",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_62af04301933",
+          "name": "room",
+          "label": "Room / area",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_2fb9777a4023",
+          "name": "serial",
+          "label": "Serial number",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_4c6679ba58cc",
+          "name": "counterMono",
+          "label": "Mono counter",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_951f6420541c",
+          "name": "counterColour",
+          "label": "Colour counter",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_4f1d05499e3e",
+          "name": "tonerBlack",
+          "label": "Black toner %",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_0fe1144be805",
+          "name": "tonerColour",
+          "label": "Colour toner %",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_ac14d19af563",
+          "name": "serviceDue",
+          "label": "Service / lease review date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_dfa85366a658",
+          "name": "supplier",
+          "label": "Supplier / service contact",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_2f9f6a182b31",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Online",
+            "Low toner",
+            "Offline",
+            "Fault open",
+            "Service due",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_cc1f72a20928",
+      "group": "ticketing",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_d70b557ca8a8",
+          "name": "title",
+          "label": "Issue / work order title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_a796531383e9",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_16772482d1b7",
+          "name": "requester",
+          "label": "Requester name / role",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_473664ddd26d",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "IT",
+            "Facility",
+            "Equipment",
+            "Clinical software",
+            "Cleaning",
+            "Supplier",
+            "Accreditation",
+            "HR",
+            "Finance",
+            "Printer",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_c0975347de67",
+          "name": "priority",
+          "label": "Priority",
+          "type": "select",
+          "required": true,
+          "options": [
+            "P1 Emergency",
+            "P2 Urgent",
+            "P3 Routine",
+            "P4 Scheduled"
+          ]
+        },
+        {
+          "id": "field_b204d5db3c5b",
+          "name": "assetId",
+          "label": "Asset ID / QR code",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_56ea73700eee",
+          "name": "publicAreaAffected",
+          "label": "Public/clinical area affected",
+          "type": "select",
+          "required": false,
+          "options": [
+            "No",
+            "Yes",
+            "After-hours work required"
+          ]
+        },
+        {
+          "id": "field_a00ed5b9e0db",
+          "name": "infectionControl",
+          "label": "Infection control hazard",
+          "type": "select",
+          "required": false,
+          "options": [
+            "No",
+            "Yes - permit/isolation required"
+          ]
+        },
+        {
+          "id": "field_d1d80bdc9739",
+          "name": "assignedTo",
+          "label": "Assigned internal person / contractor",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_0eaa92789f61",
+          "name": "dueDate",
+          "label": "Due date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_c42d736d52cf",
+          "name": "description",
+          "label": "Description",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_ebe6ef4d4460",
+          "name": "completionEvidence",
+          "label": "Completion evidence / attachment reference",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_bd8de44ad006",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "New",
+            "Triaged",
+            "Assigned",
+            "Waiting",
+            "Scheduled",
+            "In progress",
+            "Completed",
+            "Signed off",
+            "Closed",
+            "Cancelled"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_8d3221441ada",
+      "group": "finance",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_345b7d0d1994",
+          "name": "supplier",
+          "label": "Supplier",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_53c379ef07fc",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_783219b3d0ec",
+          "name": "invoiceNumber",
+          "label": "Invoice number",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_db7686cf0c28",
+          "name": "invoiceDate",
+          "label": "Invoice date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_bc199137fc51",
+          "name": "total",
+          "label": "Total inc GST",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_ad48ca3a641a",
+          "name": "gst",
+          "label": "GST amount",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_83d04bacadf6",
+          "name": "category",
+          "label": "Category",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Supplier invoice",
+            "Inventory purchase",
+            "Equipment",
+            "Rent/admin",
+            "Intercompany",
+            "Service provider",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_0cd106ce12e9",
+          "name": "ocrStatus",
+          "label": "OCR / review status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Manual entry",
+            "OCR Review",
+            "Corrected",
+            "Approved"
+          ]
+        },
+        {
+          "id": "field_7da6f8e4063d",
+          "name": "lineItems",
+          "label": "Invoice line items / OCR text",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_fc3166fc809a",
+          "name": "approvalThreshold",
+          "label": "Approval threshold flag",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Normal",
+            "Manager approval",
+            "Owner approval"
+          ]
+        },
+        {
+          "id": "field_e831ea32d367",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Uploaded",
+            "OCR Review",
+            "Pending approval",
+            "Approved",
+            "Posted",
+            "Locked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_389b2357ce19",
+      "group": "leave",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_dacde751ccf8",
+          "name": "staffName",
+          "label": "Staff member",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_85a85def9671",
+          "name": "role",
+          "label": "Role",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Reception",
+            "Nurse",
+            "Manager",
+            "Payroll",
+            "IT",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_eeaab4c74096",
+          "name": "location",
+          "label": "Usual location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_bf4035ecfc70",
+          "name": "leaveType",
+          "label": "Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Casual away day",
+            "Annual leave",
+            "Personal leave",
+            "Unpaid leave",
+            "Doctor leave",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_434254a9ba3a",
+          "name": "from",
+          "label": "From",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_9846bd82fb1a",
+          "name": "to",
+          "label": "To",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_c92819e285ed",
+          "name": "balanceHours",
+          "label": "Available leave balance hours",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_fba3ec3796b6",
+          "name": "requestedHours",
+          "label": "Requested hours",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_1fa91fb59d8e",
+          "name": "coveringPerson",
+          "label": "Covering person / doctor",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_1d35e6e6a9ea",
+          "name": "reason",
+          "label": "Reason / note",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_5a14c72a5d95",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Requested",
+            "Balance checked",
+            "Approved",
+            "Rejected",
+            "Applied",
+            "Closed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_b2cd93af3f3a",
+      "group": "shiftswap",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_bf15638fa193",
+          "name": "originalStaff",
+          "label": "Original staff member",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_2ae947127963",
+          "name": "replacementStaff",
+          "label": "Proposed replacement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_b99d4386253a",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_42c544fb0f24",
+          "name": "shiftDate",
+          "label": "Shift date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_e7cb7851e731",
+          "name": "start",
+          "label": "Start time",
+          "type": "time",
+          "required": true
+        },
+        {
+          "id": "field_3aadf5e7752b",
+          "name": "end",
+          "label": "End time",
+          "type": "time",
+          "required": true
+        },
+        {
+          "id": "field_a5c44a2f5d5b",
+          "name": "role",
+          "label": "Role",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Reception",
+            "Nurse",
+            "Manager",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_4b0680b8681f",
+          "name": "openClose",
+          "label": "Opening / closing duty",
+          "type": "select",
+          "required": false,
+          "options": [
+            "None",
+            "Opening",
+            "Closing",
+            "Opening & Closing"
+          ]
+        },
+        {
+          "id": "field_a6a988651941",
+          "name": "reason",
+          "label": "Reason",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "field_c8c72df2263e",
+          "name": "emergencyChange",
+          "label": "Emergency / short notice change",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_551a6b694d4e",
+          "name": "notificationStatus",
+          "label": "Notification status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not sent",
+            "Pending",
+            "Sent"
+          ]
+        },
+        {
+          "id": "field_dc9e3fae42be",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Requested",
+            "Validated",
+            "Approved",
+            "Rejected",
+            "Roster updated",
+            "Notified"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_11b56d06110d",
+      "group": "awardRules",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_8160d199bcc2",
+          "name": "name",
+          "label": "Rule-set name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_f59336ecae0d",
+          "name": "roleMapping",
+          "label": "Role mapping",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Receptionist",
+            "Nurse",
+            "Practice Manager",
+            "Support staff",
+            "Other non-doctor"
+          ]
+        },
+        {
+          "id": "field_e792c89cdfc0",
+          "name": "classification",
+          "label": "Classification / level / pay point",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_706cd0a82b15",
+          "name": "employmentType",
+          "label": "Employment type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Full-time",
+            "Part-time",
+            "Casual"
+          ]
+        },
+        {
+          "id": "field_e15a17d78f76",
+          "name": "ordinaryRate",
+          "label": "Ordinary hourly rate",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_38a21e07e5dc",
+          "name": "casualLoading",
+          "label": "Casual loading %",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_5aed73bf9803",
+          "name": "eveningRate",
+          "label": "Evening / after-hours rate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_87b11d5b2cb2",
+          "name": "saturdayRate",
+          "label": "Saturday rate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_2607ad19cd1f",
+          "name": "sundayRate",
+          "label": "Sunday rate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_1e40bd17a24d",
+          "name": "publicHolidayRate",
+          "label": "Public holiday rate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_606f770d0227",
+          "name": "xeroMapping",
+          "label": "Xero earnings mapping",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_263007180740",
+          "name": "effectiveDate",
+          "label": "Effective date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "id": "field_5d922cb168bb",
+          "name": "advisorSignoff",
+          "label": "Payroll advisor sign-off recorded",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_d4f7b2c1d96f",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Draft",
+            "Advisor review",
+            "Approved",
+            "Effective",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_f55f7fa9a942",
+      "group": "doctorportal",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_dcf5c28a5eb0",
+          "name": "doctorName",
+          "label": "Doctor name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_c3664f839b82",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_faeb0e58708a",
+          "name": "period",
+          "label": "Current period / quarter",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_f4e52f761373",
+          "name": "currentEarnings",
+          "label": "Current earnings estimate",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_3058eafa20df",
+          "name": "bbpipEstimate",
+          "label": "Estimated BBPIP GP share",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_fc636a3aec9e",
+          "name": "quarterlyStatementStatus",
+          "label": "Quarterly statement",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not generated",
+            "Draft",
+            "Published",
+            "Viewed"
+          ]
+        },
+        {
+          "id": "field_b9d8f4c1b744",
+          "name": "lastPayslipDate",
+          "label": "Last payslip date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_95fd2725481b",
+          "name": "accessNotes",
+          "label": "Doctor visible notes",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_d960978721e8",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Current period",
+            "Statement published",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_6511a65353dc",
+      "group": "stocktransfer",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_88be74a67a19",
+          "name": "itemName",
+          "label": "Item name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_aaffc578c4fc",
+          "name": "fromLocation",
+          "label": "From location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_7236384c53eb",
+          "name": "toLocation",
+          "label": "To location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_b15e38e4a3f1",
+          "name": "quantity",
+          "label": "Quantity",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "field_5c6225c65f60",
+          "name": "batch",
+          "label": "Batch / expiry",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_81201a3a5a38",
+          "name": "senderApproved",
+          "label": "Sender approved",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_0945d56d2c23",
+          "name": "receiverApproved",
+          "label": "Receiver approved",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_b79ec3ade778",
+          "name": "reason",
+          "label": "Reason",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_8b53e2527c9e",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Requested",
+            "Sender approved",
+            "Receiver approved",
+            "Completed",
+            "Cancelled"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_238c128fbf1f",
+      "group": "consent",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_9000cf3905ca",
+          "name": "personName",
+          "label": "Person name / audience label",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_b60ea1d644d6",
+          "name": "channel",
+          "label": "Channel",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Email",
+            "SMS",
+            "Email + SMS"
+          ]
+        },
+        {
+          "id": "field_656cd7453a25",
+          "name": "consentStatus",
+          "label": "Consent status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Opted in",
+            "Opted out",
+            "Suppressed",
+            "Bounced",
+            "Complaint",
+            "Unknown"
+          ]
+        },
+        {
+          "id": "field_1c285e482037",
+          "name": "consentSource",
+          "label": "Consent source",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_2138a4e58f69",
+          "name": "consentDate",
+          "label": "Consent / opt-out date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "id": "field_9123e5d53acf",
+          "name": "optOutKeyword",
+          "label": "STOP / unsubscribe keyword",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_c329cdf84414",
+          "name": "evidenceReference",
+          "label": "Evidence reference",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_1e18d9a81ec5",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Active",
+            "Suppressed",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_503ce25edbdd",
+      "group": "cameraInventory",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_0fb0652add37",
+          "name": "cameraName",
+          "label": "Camera name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_7daeccb10552",
+          "name": "location",
+          "label": "Location",
+          "type": "location",
+          "required": false
+        },
+        {
+          "id": "field_501db85abd0a",
+          "name": "zone",
+          "label": "Zone / area",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_a478e96d57eb",
+          "name": "purpose",
+          "label": "Purpose",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Entry/exit",
+            "Reception public area",
+            "External perimeter",
+            "Staff area",
+            "Restricted area",
+            "Other"
+          ]
+        },
+        {
+          "id": "field_eabdfb029908",
+          "name": "privacyClass",
+          "label": "Privacy classification",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Allowed public/business area",
+            "Caution - staff area",
+            "Prohibited/private area review"
+          ]
+        },
+        {
+          "id": "field_98e9acb4ee55",
+          "name": "nvrSource",
+          "label": "NVR/VMS source",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_3d228772968c",
+          "name": "retentionDays",
+          "label": "Retention days",
+          "type": "number",
+          "required": false
+        },
+        {
+          "id": "field_d6e200d7feb1",
+          "name": "audioStatus",
+          "label": "Audio status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Disabled",
+            "Enabled - legal approval required",
+            "Unknown"
+          ]
+        },
+        {
+          "id": "field_801e1b9a9761",
+          "name": "signageEvidence",
+          "label": "Signage / staff notice evidence",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_d4fc619f5642",
+          "name": "legalApproval",
+          "label": "Privacy/legal approval recorded",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_7f6c93028b5f",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Registered",
+            "Governance pending",
+            "Approved",
+            "Active",
+            "Offline",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_d40c4996ffcf",
+      "group": "users",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_417aef3007a3",
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_81fd5af24993",
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "id": "field_aed084cfcb6c",
+          "name": "role",
+          "label": "Primary role",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Owner",
+            "Practice Manager",
+            "Operations Manager",
+            "Reception",
+            "Nurse",
+            "Doctor",
+            "Payroll/Admin",
+            "IT Support",
+            "Contractor"
+          ]
+        },
+        {
+          "id": "field_b3e6f48c7ac9",
+          "name": "department",
+          "label": "Department",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Operations",
+            "Reception",
+            "Nursing",
+            "Doctors",
+            "Payroll",
+            "HR",
+            "IT",
+            "Accreditation",
+            "Finance",
+            "Marketing"
+          ]
+        },
+        {
+          "id": "field_589d8929c3f0",
+          "name": "locations",
+          "label": "Location access",
+          "type": "locationMulti",
+          "required": false
+        },
+        {
+          "id": "field_87eb3b858dbe",
+          "name": "sensitiveAccess",
+          "label": "Sensitive access modules",
+          "type": "select",
+          "required": false,
+          "options": [
+            "None",
+            "Pay/HR",
+            "Doctor Pay",
+            "Incidents",
+            "Camera",
+            "Vault",
+            "Remote Access",
+            "SMS/Email"
+          ]
+        },
+        {
+          "id": "field_9c124db8f9e0",
+          "name": "mfaEnabled",
+          "label": "MFA enabled",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_8c828853e2b6",
+          "name": "trainingGateStatus",
+          "label": "Training gate",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Not required",
+            "Required - pending",
+            "Completed",
+            "Temporary override"
+          ]
+        },
+        {
+          "id": "field_0ed8d6c0cc9d",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Invited",
+            "Active",
+            "Suspended",
+            "Terminated",
+            "Archived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fgrp_2e34ee9624e7",
+      "group": "departments",
+      "sourceType": "field-schema",
+      "fields": [
+        {
+          "id": "field_6bb470a35655",
+          "name": "name",
+          "label": "Department name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_d197ed108ae1",
+          "name": "manager",
+          "label": "Manager / owner",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "field_1ada0dfb4687",
+          "name": "users",
+          "label": "Users / teams",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_4b257b1f72c6",
+          "name": "purpose",
+          "label": "Purpose",
+          "type": "textarea",
+          "required": false
+        },
+        {
+          "id": "field_691bfb31202a",
+          "name": "defaultDashboard",
+          "label": "Default dashboard",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "field_1cdce6dfea98",
+          "name": "workflowBuilder",
+          "label": "Future workflow builder enabled",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_d7141f69ff83",
+          "name": "documentsEnabled",
+          "label": "Department document library enabled",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "id": "field_01126e5e5e4c",
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Created",
+            "Configured",
+            "Active",
+            "Archived"
+          ]
+        }
+      ]
+    }
+  ],
+  "modals": [
+    {
+      "id": "modal_adf092f4cbd0",
+      "title": "Complete checklist",
+      "kind": "modal",
+      "fieldHints": [
+        "checkSkipNote",
+        "checkEvidenceNote"
+      ],
+      "htmlLength": 595,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 176624,
+        "endOffset": 177252,
+        "startLine": 878,
+        "endLine": 878
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_b71658e49bfd",
+      "title": "Doctor payslip preview",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 597,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 223715,
+        "endOffset": 224349,
+        "startLine": 1000,
+        "endLine": 1000
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_ad976ff33643",
+      "title": "Secret reveal request",
+      "kind": "modal",
+      "fieldHints": [
+        "revealReason"
+      ],
+      "htmlLength": 229,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 225302,
+        "endOffset": 225567,
+        "startLine": 1003,
+        "endLine": 1003
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_d1b370826ca1",
+      "title": "Secret",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 56,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 225967,
+        "endOffset": 226044,
+        "startLine": 1004,
+        "endLine": 1004
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_f33b77595a56",
+      "title": "Supplier invoice approval PDF preview",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 430,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 279474,
+        "endOffset": 279956,
+        "startLine": 1403,
+        "endLine": 1403
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_d8c726678af4",
+      "title": "Scan Document / OCR",
+      "kind": "modal",
+      "fieldHints": [
+        "ocrFile",
+        "ocrText"
+      ],
+      "htmlLength": 873,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 308496,
+        "endOffset": 309403,
+        "startLine": 1751,
+        "endLine": 1765
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_1a444ab36d9c",
+      "title": "Create Checklist",
+      "kind": "modal",
+      "fieldHints": [
+        "frequency",
+        "timeOfDay",
+        "workflowScope",
+        "assignment",
+        "department",
+        "responsibleRole",
+        "name",
+        "description",
+        "items",
+        "instructions",
+        "managerReviewRequired",
+        "publishNow"
+      ],
+      "htmlLength": 2660,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 374580,
+        "endOffset": 377271,
+        "startLine": 2095,
+        "endLine": 2095
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_e2319c39e863",
+      "title": "Create Printer Work Order",
+      "kind": "modal",
+      "fieldHints": [
+        "printerId"
+      ],
+      "htmlLength": 146,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 442087,
+        "endOffset": 442273,
+        "startLine": 2236,
+        "endLine": 2236
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_d54e0e28a9ba",
+      "title": "Notification Preferences",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 992,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 669783,
+        "endOffset": 670814,
+        "startLine": 3092,
+        "endLine": 3092
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_31c1c180516a",
+      "title": "Related Records",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 938,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 671039,
+        "endOffset": 672007,
+        "startLine": 3093,
+        "endLine": 3093
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_0d21ddc49818",
+      "title": "Help & Support",
+      "kind": "modal",
+      "fieldHints": [
+        "type",
+        "page",
+        "description",
+        "impact"
+      ],
+      "htmlLength": 1036,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 672114,
+        "endOffset": 673179,
+        "startLine": 3094,
+        "endLine": 3094
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_4a4b1d2bf49f",
+      "title": "Add Enterprise Risk",
+      "kind": "modal",
+      "fieldHints": [
+        "title"
+      ],
+      "htmlLength": 987,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 745749,
+        "endOffset": 746770,
+        "startLine": 3783,
+        "endLine": 3783
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_fc4dc39b3ee7",
+      "title": "Create Compliance Gap Action",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 720,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 747016,
+        "endOffset": 747779,
+        "startLine": 3784,
+        "endLine": 3784
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_15663c38ce1a",
+      "title": "Action Detail",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 173,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 748106,
+        "endOffset": 748307,
+        "startLine": 3785,
+        "endLine": 3785
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_8813d62c4445",
+      "title": "Analytics Filters",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 807,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 749646,
+        "endOffset": 750485,
+        "startLine": 3790,
+        "endLine": 3790
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_952eb9df633f",
+      "title": "Access Restricted",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 198,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 816176,
+        "endOffset": 816406,
+        "startLine": 4138,
+        "endLine": 4138
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_ccb2f78c40b1",
+      "title": "Executive Health Calculation",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 444,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 817450,
+        "endOffset": 817937,
+        "startLine": 4146,
+        "endLine": 4146
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_fd72bda85110",
+      "title": "Reassign Action",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 500,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 821101,
+        "endOffset": 821631,
+        "startLine": 4151,
+        "endLine": 4151
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_88050573c6e6",
+      "title": "Request Changes",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 145,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 821872,
+        "endOffset": 822047,
+        "startLine": 4152,
+        "endLine": 4152
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_d1a6b565f9f5",
+      "title": "Approval Delegations",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 749,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 822286,
+        "endOffset": 823070,
+        "startLine": 4153,
+        "endLine": 4153
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_213180684855",
+      "title": "Role Access Matrix",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 850,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 825827,
+        "endOffset": 826710,
+        "startLine": 4159,
+        "endLine": 4159
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_edb7eb76818b",
+      "title": "Access Restricted",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 231,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 873807,
+        "endOffset": 874070,
+        "startLine": 4505,
+        "endLine": 4505
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_8e9929409109",
+      "title": "Enterprise Sign-In Journey",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 1119,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 905711,
+        "endOffset": 906871,
+        "startLine": 4551,
+        "endLine": 4551
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_6ed6822feb9c",
+      "title": "Access Review",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 861,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 907079,
+        "endOffset": 907968,
+        "startLine": 4552,
+        "endLine": 4552
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_c058940b3deb",
+      "title": "Start Cross-Location Emergency Intervention",
+      "kind": "modal",
+      "fieldHints": [
+        "title",
+        "priority",
+        "owner"
+      ],
+      "htmlLength": 659,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 908229,
+        "endOffset": 908946,
+        "startLine": 4553,
+        "endLine": 4553
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_91e46d571e4a",
+      "title": "Link & Deduplicate Alerts",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 242,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 911825,
+        "endOffset": 912107,
+        "startLine": 4558,
+        "endLine": 4558
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_ac050c48aafc",
+      "title": "Grant Temporary Cross-Clinic Access",
+      "kind": "modal",
+      "fieldHints": [
+        "person"
+      ],
+      "htmlLength": 148,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 912729,
+        "endOffset": 912927,
+        "startLine": 4560,
+        "endLine": 4560
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_0d75b173b9d2",
+      "title": "Immediate Administrative Credential Suspension",
+      "kind": "modal",
+      "fieldHints": [
+        "person"
+      ],
+      "htmlLength": 143,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 915356,
+        "endOffset": 915560,
+        "startLine": 4563,
+        "endLine": 4563
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_c993b8df2e3f",
+      "title": "Retrospective Contract Amendment",
+      "kind": "modal",
+      "fieldHints": [
+        "doctor"
+      ],
+      "htmlLength": 141,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 917303,
+        "endOffset": 917491,
+        "startLine": 4565,
+        "endLine": 4565
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_2c1033579657",
+      "title": "Request Authorised Roster Override",
+      "kind": "modal",
+      "fieldHints": [
+        "reason"
+      ],
+      "htmlLength": 891,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 919296,
+        "endOffset": 920236,
+        "startLine": 4567,
+        "endLine": 4567
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_5ff54d694c78",
+      "title": "Mobile Location Exception Triage",
+      "kind": "modal",
+      "fieldHints": [
+        "reason"
+      ],
+      "htmlLength": 1236,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 920906,
+        "endOffset": 922189,
+        "startLine": 4569,
+        "endLine": 4569
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_44ec6b5be33b",
+      "title": "Offline Operational Capture",
+      "kind": "modal",
+      "fieldHints": [
+        "type",
+        "clinic"
+      ],
+      "htmlLength": 382,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 922706,
+        "endOffset": 923130,
+        "startLine": 4571,
+        "endLine": 4571
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_e0b840186f63",
+      "title": "Reconciliation Review",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 951,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 924394,
+        "endOffset": 925381,
+        "startLine": 4573,
+        "endLine": 4573
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_4ee0ec7df165",
+      "title": "Third-Party Payroll Export Rejection Triage",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 930,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 926335,
+        "endOffset": 927323,
+        "startLine": 4576,
+        "endLine": 4576
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_1cbc665a9129",
+      "title": "Cross-Clinic Consolidated Doctor Reconciliation",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 404,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 928123,
+        "endOffset": 928589,
+        "startLine": 4578,
+        "endLine": 4578
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_cf8a535f0daf",
+      "title": "Provision New Medical Group Tenant",
+      "kind": "modal",
+      "fieldHints": [
+        "name",
+        "abn",
+        "country",
+        "admin",
+        "plan"
+      ],
+      "htmlLength": 1490,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 929977,
+        "endOffset": 931516,
+        "startLine": 4581,
+        "endLine": 4581
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_cb355011063e",
+      "title": "Change Tenant Status",
+      "kind": "modal",
+      "fieldHints": [
+        "v31TenantStatus"
+      ],
+      "htmlLength": 709,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 933382,
+        "endOffset": 934126,
+        "startLine": 4584,
+        "endLine": 4584
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_0be2f7c37ad3",
+      "title": "Modify Subscription Tier",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 698,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 934782,
+        "endOffset": 935519,
+        "startLine": 4586,
+        "endLine": 4586
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_f717d77e32d6",
+      "title": "Schedule Product Release",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 1118,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 935812,
+        "endOffset": 936969,
+        "startLine": 4587,
+        "endLine": 4587
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_9ae9a53e2e65",
+      "title": "Request Client-Approved Support Pass",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 113,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 937463,
+        "endOffset": 937627,
+        "startLine": 4589,
+        "endLine": 4589
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_2d7ac8118c0f",
+      "title": "Access Restricted",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 217,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 970418,
+        "endOffset": 970667,
+        "startLine": 4735,
+        "endLine": 4735
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_196f3f6f24f0",
+      "title": "Create Recruitment Vacancy",
+      "kind": "modal",
+      "fieldHints": [
+        "title",
+        "clinic",
+        "type",
+        "owner",
+        "closing"
+      ],
+      "htmlLength": 1224,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1015840,
+        "endOffset": 1017105,
+        "startLine": 4787,
+        "endLine": 4787
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_23157e547e26",
+      "title": "Add Candidate",
+      "kind": "modal",
+      "fieldHints": [
+        "name",
+        "email",
+        "vacancy"
+      ],
+      "htmlLength": 375,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1018850,
+        "endOffset": 1019253,
+        "startLine": 4792,
+        "endLine": 4792
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_0029984f36ba",
+      "title": "Promote Candidate to Staff Profile",
+      "kind": "modal",
+      "fieldHints": [
+        "v32PromoteRole",
+        "v32PromoteStart"
+      ],
+      "htmlLength": 769,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1021919,
+        "endOffset": 1022737,
+        "startLine": 4797,
+        "endLine": 4797
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_98b3c5b0a60f",
+      "title": "Schedule Interview",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 119,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1023645,
+        "endOffset": 1023797,
+        "startLine": 4799,
+        "endLine": 4799
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_c97705acc5ad",
+      "title": "Publish Emergency Website Notice",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 724,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1027891,
+        "endOffset": 1028662,
+        "startLine": 4805,
+        "endLine": 4805
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_eca05e6a2c8a",
+      "title": "Initialize Fiscal Forecast Model",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 806,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1028931,
+        "endOffset": 1029784,
+        "startLine": 4806,
+        "endLine": 4806
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_1c8546059f38",
+      "title": "Import Actual Ledger Data",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 586,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1030324,
+        "endOffset": 1030950,
+        "startLine": 4808,
+        "endLine": 4808
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_d15d23bbd83b",
+      "title": "Request Over-Budget Roster Override",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 853,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1031221,
+        "endOffset": 1032124,
+        "startLine": 4809,
+        "endLine": 4809
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_88a3ad96bdcf",
+      "title": "Financial Variance Triage",
+      "kind": "modal",
+      "fieldHints": [
+        "v32VariancePlan"
+      ],
+      "htmlLength": 979,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1032441,
+        "endOffset": 1033460,
+        "startLine": 4810,
+        "endLine": 4810
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_65f052a98601",
+      "title": "Add Forecast Assumption",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 783,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1033869,
+        "endOffset": 1034690,
+        "startLine": 4812,
+        "endLine": 4812
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_70043ad78ba7",
+      "title": "Publish & Disseminate Roster",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 784,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1035137,
+        "endOffset": 1035964,
+        "startLine": 4814,
+        "endLine": 4814
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_8a942d7cd94e",
+      "title": "Rooms & Areas Checklist Configurator",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 751,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1036315,
+        "endOffset": 1037117,
+        "startLine": 4815,
+        "endLine": 4815
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_2a26fa8d101b",
+      "title": "Practice Scale-Up / Scale-Down Directive",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 377,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1037399,
+        "endOffset": 1037831,
+        "startLine": 4816,
+        "endLine": 4816
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_832a41ac93e9",
+      "title": "Quality Assurance Training Escalation",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 806,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1039032,
+        "endOffset": 1039890,
+        "startLine": 4817,
+        "endLine": 4817
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_050c53ea9997",
+      "title": "Grant Temporary Mobile Clocking",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 1005,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1040479,
+        "endOffset": 1041530,
+        "startLine": 4819,
+        "endLine": 4819
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_879d9a016025",
+      "title": "Monthly Management Pack — June 2026",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 1088,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1238231,
+        "endOffset": 1239370,
+        "startLine": 5998,
+        "endLine": 6009
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_34ee92f4d87b",
+      "title": "Publish Announcement",
+      "kind": "modal",
+      "fieldHints": [
+        "m1AnnTitle",
+        "m1AnnType",
+        "m1AnnMsg",
+        "m1AnnAck",
+        "Optional PDF or ACT reference"
+      ],
+      "htmlLength": 1419,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1239918,
+        "endOffset": 1241373,
+        "startLine": 6020,
+        "endLine": 6037
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_95c4bf33cbc3",
+      "title": "Create Action",
+      "kind": "modal",
+      "fieldHints": [
+        "m1NewTitle",
+        "m1NewPri",
+        "m1NewCat"
+      ],
+      "htmlLength": 474,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1242427,
+        "endOffset": 1242930,
+        "startLine": 6051,
+        "endLine": 6055
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_9e9b138e58b0",
+      "title": "Customise Dashboard",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 460,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1245864,
+        "endOffset": 1246359,
+        "startLine": 6081,
+        "endLine": 6083
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_bf1a9ffb1c89",
+      "title": "Export & Scheduled Reports",
+      "kind": "modal",
+      "fieldHints": [
+        "m1ExpFmt"
+      ],
+      "htmlLength": 346,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1246956,
+        "endOffset": 1247344,
+        "startLine": 6093,
+        "endLine": 6095
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_dbce1f7da4be",
+      "title": "Notifications",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 128,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1248312,
+        "endOffset": 1248469,
+        "startLine": 6109,
+        "endLine": 6109
+      },
+      "sourceType": "prototype-runtime"
+    },
+    {
+      "id": "modal_37c50916ba43",
+      "title": "End-of-Day Summary",
+      "kind": "modal",
+      "fieldHints": [],
+      "htmlLength": 484,
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1248612,
+        "endOffset": 1249130,
+        "startLine": 6114,
+        "endLine": 6122
+      },
+      "sourceType": "prototype-runtime"
+    }
+  ],
+  "formGroups": {
+    "core": {
+      "title": "Core details",
+      "desc": "Identify the record and capture its main business information."
+    },
+    "assignment": {
+      "title": "Assignment & location",
+      "desc": "Set the clinic, room, owner, role or person responsible."
+    },
+    "schedule": {
+      "title": "Schedule & due dates",
+      "desc": "Define when the activity starts, occurs, expires or needs review."
+    },
+    "financial": {
+      "title": "Operational & financial settings",
+      "desc": "Capture quantities, rates, contract, stock or payment controls."
+    },
+    "details": {
+      "title": "Details, notes & evidence",
+      "desc": "Add the information reviewers need to understand and action the record."
+    },
+    "review": {
+      "title": "Status & review",
+      "desc": "Set the workflow status and any review or approval position."
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "conflicts": [
+    {
+      "id": "conflict_7c51f3fa880f",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "check-item\"><input type=\"checkbox\" data-check-index=\"${i}\" ${checked.has(i)?'checked':''}><span>${escapeHtml(item)}</spa",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 176522,
+        "endOffset": 176530,
+        "startLine": 878,
+        "endLine": 878
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_fbb7ed5c5518",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ed=[...document.querySelectorAll('[data-check-index]')].filter(x=>x.checked).map(x=>Number(x.dataset.checkIndex));r.comp",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 177577,
+        "endOffset": 177585,
+        "startLine": 879,
+        "endLine": 879
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_086403425059",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "r(x=>x.checked).map(x=>Number(x.dataset.checkIndex));r.completedItems=checked;r.skippedItems=document.getElementById('ch",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 177638,
+        "endOffset": 177645,
+        "startLine": 879,
+        "endLine": 879
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_49fd0baf18d1",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "','mental health','pregnancy','script','prescription','cancer','diabetes','hiv','std'];const low=String(text).toLowerCas",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 211730,
+        "endOffset": 211742,
+        "startLine": 974,
+        "endLine": 974
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_3bacdac1064a",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "itical actions remain above the fold.\",\"Patient records and appointment workflows are not displayed.\"],\"kind\":\"Expanded\"",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 508905,
+        "endOffset": 508919,
+        "startLine": 2870,
+        "endLine": 2870
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_5e51df9e7d7b",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "rnal regulator, insurer, legal or other referral decisions are recorded where applicable.\",\"Final outcome and lessons fe",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 605578,
+        "endOffset": 605586,
+        "startLine": 2870,
+        "endLine": 2870
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_6e0818a7e250",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": ".\",\"Workarounds do not create duplicate patient records in this platform.\",\"Recovery is not complete until critical back",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 606956,
+        "endOffset": 606970,
+        "startLine": 2870,
+        "endLine": 2870
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_9663f7d9ebc7",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ier and opens contributing summary, not patient records.\",\"Manager clicks Create Action to address roster, opening hours",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 619759,
+        "endOffset": 619773,
+        "startLine": 2870,
+        "endLine": 2870
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_2dca4279045e",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "gistration, demographics, appointments, clinical notes, Medicare/private patient billing and patient invoices remain in",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 637975,
+        "endOffset": 637988,
+        "startLine": 2939,
+        "endLine": 2939
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_6b9139f99b6b",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "is platform must not create a duplicate patient record.</div><div class=\"v31-kpis\"><div class=\"v31-kpi\"><span>Staged Ite",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 884518,
+        "endOffset": 884532,
+        "startLine": 4521,
+        "endLine": 4521
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_e9c574f000cc",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "stage:'Offer Accepted',source:'Employee referral',score:94,clinic:'Woolloongabba',email:'leah.chen@example.com',status:'",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 957229,
+        "endOffset": 957237,
+        "startLine": 4677,
+        "endLine": 4677
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_782635531f2f",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ontent and operational enquiry routing. Patient records, clinical advice, appointment records and patient billing remain",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 989733,
+        "endOffset": 989747,
+        "startLine": 4757,
+        "endLine": 4757
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_f261f59c50bd",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "<option>Indeed</option><option>Employee referral</option></select></div></form>`,`<button class=\"btn line\" onclick=\"clos",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1019516,
+        "endOffset": 1019524,
+        "startLine": 4792,
+        "endLine": 4792
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_aa074824aca7",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "\"><button class=\"v33-mini-btn\" onclick=\"checkInContractorV33('${w.id}')\">Check In</button><button class=\"v33-mini-btn pr",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1138072,
+        "endOffset": 1138079,
+        "startLine": 5115,
+        "endLine": 5115
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_3aad3632f186",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "tions\"><button class=\"primary\" onclick=\"checkInContractorV33('WO-811')\">Check In</button></div></div><div class=\"v33-pag",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1139226,
+        "endOffset": 1139233,
+        "startLine": 5115,
+        "endLine": 5115
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_052d07f6d4a0",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "p><div class=\"actions\"><button onclick=\"checkInContractorV33('WO-807')\">View Visit</button></div></div></div>`}else{body",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1139450,
+        "endOffset": 1139457,
+        "startLine": 5115,
+        "endLine": 5115
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_74e9b3ab0d84",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "d} created from ${ticketId}`)} window.checkInContractorV33=function(id){const w=v33.workOrders.find(x=>x.id===id);open",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1156539,
+        "endOffset": 1156546,
+        "startLine": 5126,
+        "endLine": 5126
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_c570cd5dc8e6",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "x=>x.id===id);openV33Dialog('Contractor Check-In',`${w.id} · ${w.supplier}`,`<div class=\"form-grid\"><div class=\"field\"><",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1156641,
+        "endOffset": 1156649,
+        "startLine": 5126,
+        "endLine": 5126
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_5f96c71f42b3",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ction-card\"> <label class=\"m1-check-inline\"><input class=\"m1-act-check\" type=\"checkbox\" value=\"${a.id}\"/></lab",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1209529,
+        "endOffset": 1209537,
+        "startLine": 5697,
+        "endLine": 5697
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_91724a69bc1d",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "40px rgba(15,23,42,.16)} .m1-check,.m1-check-inline{display:flex;gap:8px;align-items:center;font-size:12px;font-weight:",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 1254369,
+        "endOffset": 1254377,
+        "startLine": 6189,
+        "endLine": 6189
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_94a630d43fbe",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "',default:0},{name:'itemVersion',label:'MBS item master version',type:'text',default:'Current'},{name:'finalAdvice',labe",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 67385,
+        "endOffset": 67393,
+        "startLine": 712,
+        "endLine": 712
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_3a095c436f1f",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "name:'eligibleItemRows',label:'Eligible MBS item rows / item master notes',type:'textarea',full:true}, {name:'exclud",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 299779,
+        "endOffset": 299787,
+        "startLine": 1658,
+        "endLine": 1658
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_95c4e61428a8",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "d Best Practice extraction for eligible MBS item forecast and reconciliation'}); SECTIONS.length=0; SECTIONS.push(",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 368146,
+        "endOffset": 368154,
+        "startLine": 2062,
+        "endLine": 2062
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    },
+    {
+      "id": "conflict_52f7791e1641",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "s, Medicare/private patient billing and patient invoices remain in Best Practice or the relevant clinical system.</span>",
+      "source": {
+        "file": "public/pulse-html-prototype.html",
+        "startOffset": 638028,
+        "endOffset": 638043,
+        "startLine": 2939,
+        "endLine": 2939
+      },
+      "dispositionDefault": "ADOPTED-WITH-CONTROL-HARDENING"
+    }
+  ],
+  "sensitiveSeedPatternHits": [
+    {
+      "id": "sensitive_e90609dfb25b",
+      "pattern": "medicare",
+      "matchCount": 7,
+      "note": "Pattern presence only — values not copied into reports"
+    },
+    {
+      "id": "sensitive_aec269da9724",
+      "pattern": "password",
+      "matchCount": 43,
+      "note": "Pattern presence only — values not copied into reports"
+    },
+    {
+      "id": "sensitive_17be7f85c18f",
+      "pattern": "mobile|phone|email",
+      "matchCount": 490,
+      "note": "Pattern presence only — values not copied into reports"
+    },
+    {
+      "id": "sensitive_ac4ed320d90e",
+      "pattern": "address",
+      "matchCount": 53,
+      "note": "Pattern presence only — values not copied into reports"
+    }
+  ],
+  "note": "Sensitive seed values are not copied; only pattern presence is recorded."
+}
