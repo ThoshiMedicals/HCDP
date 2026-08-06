@@ -1,20 +1,25 @@
 {
   "frozenApplicationSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
-  "evidenceTip": "9c04c7194cd2b92a6d43c3a0d72fde905056c9e4",
+  "branchTipAtHandoff": "fad5e5740cb7a4d4cca0045348f494a61624433d",
   "url": "http://127.0.0.1:3000",
-  "pid": 256155,
-  "ppid": 256154,
+  "pid": 278659,
+  "ppid": 278658,
   "command": "next-server (v16.2.10)",
   "parentCommand": "sh -c next start -H 127.0.0.1 -p 3000",
+  "grandparentPid": 278645,
+  "grandparentCommand": "npm exec next start -H 127.0.0.1 -p 3000",
   "worktree": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
   "routes": {
     "/dashboard": 200,
     "/action-inbox": 200,
     "/settings": 200
   },
+  "css": 200,
+  "js": 200,
   "tempQaServersStopped": [
     3511,
     3512,
     3513
-  ]
+  ],
+  "shortHeightSmokePass": true
 }
