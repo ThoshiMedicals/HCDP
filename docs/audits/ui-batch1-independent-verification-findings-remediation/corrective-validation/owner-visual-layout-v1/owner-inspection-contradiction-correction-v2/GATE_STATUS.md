@@ -3,6 +3,7 @@
 **Date:** 6 Aug 2026  
 **Branch:** `cursor/ui-batch1-owner-readiness-evidence-correction-2-f709`  
 **Frozen application SHA:** `31b31115fa1bab99e2cea47c8526a4c8011e2fe2`  
+**Evidence tip:** `a735a45708035bc9d2e95b28097cfd35729c8859`  
 **QA base:** http://127.0.0.1:3502  
 **Owner-visible:** http://127.0.0.1:3000 (same freeze)  
 **PR / merge:** none  
