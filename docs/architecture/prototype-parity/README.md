@@ -8,7 +8,7 @@
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
 | Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
 | Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
-| Programme tip at generation | `0e832a94f05469c48fe18661e32e3fb2e4b76b24` |
+| Programme tip at generation | `f84d585f58c580e18225d58c2156d89ece7a9b9c` |
 | origin/main | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` |
 
 ## Status

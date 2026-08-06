@@ -5,7 +5,7 @@
   "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
   "preservedMismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
   "decisionAInstallCommit": "66e6e6488b27b9098dadd8962473fedea5053614",
-  "programmeResetTipAtGeneration": "0e832a94f05469c48fe18661e32e3fb2e4b76b24",
+  "programmeResetTipAtGeneration": "f84d585f58c580e18225d58c2156d89ece7a9b9c",
   "note": "Do not replace/re-export/edit/rehash Decision A PNGs. Prior prompt hashes retained as audit fields only.",
   "allPresent": true,
   "allDimensionsOk": true,
