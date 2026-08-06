@@ -1121,8 +1121,8 @@ export function CommandCentre() {
   };
 
   return (
-    <div className="cc-root">
-      <div className="mx-auto w-full max-w-[1480px] px-3 pt-2.5 lg:px-5">
+    <div className="cc-root min-w-0 max-w-full">
+      <div className="mx-auto w-full min-w-0 max-w-[1480px] px-3 pt-2.5 lg:px-5">
         <EmergencyBanner
           items={emergencyAnnouncements}
           index={emergencyIndex}
