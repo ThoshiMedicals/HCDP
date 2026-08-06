@@ -17,12 +17,15 @@
  *   - hydration mismatch
  *   - horizontal page overflow
  *   - complete meaningful-control clipping gate: every visible probed control
- *     (button, a, input, select, H1, chrome controls) whose centre is in the
- *     viewport hard-fails on outsideViewport / clippedByAncestor / occluded /
- *     unintendedTruncation unless a legitimate exemption applies
+ *     (button, a, input, select, H1, chrome controls) hard-fails on
+ *     outsideViewport / clippedByAncestor / occluded / unintendedTruncation
+ *     unless a narrow legitimate exemption applies
  *     (noisyScrollContainer, legitimateScrollRegionExemption,
  *     stickyFooterScrollOcclusion, belowViewportPageScroll,
- *     horizontalScrollEscape). chromeScoped is retained on hits for reporting.
+ *     horizontalScrollEscape). There is NO global centre-outside-viewport
+ *     bypass and NO chrome-only bypass. chromeScoped remains on hits for
+ *     reporting only. Summary accounting identity:
+ *     controlsWithDefectFlags = justifiedExemptions + unresolvedDefects.
  *   - typography / contrast / dark-surface hard-gate failure
  *   - unallowlisted requestfailed
  *
@@ -634,7 +637,7 @@ async function pageProbe(page) {
       const elRect = { x: r.x, y: r.y, width: r.width, height: r.height };
       const cx = r.left + r.width / 2;
       const cy = r.top + r.height / 2;
-      // Meaningful visibility: hard-fails require the control centre in the viewport.
+      // Recorded for evidence; MUST NOT suppress hard-fails (Correction 2).
       const centreInViewport = cx >= 0 && cy >= 0 && cx <= vw && cy <= vh;
       const clipAnc = nearestClippingAncestor(el);
       const scrollport = nearestVerticalScrollport(el) || (
@@ -749,34 +752,74 @@ async function pageProbe(page) {
     }
 
     // Hard fails: complete meaningful-control gate (chrome + non-chrome).
-    // Applies to every visible probed control with centre in viewport unless a
-    // legitimate scroll/occlusion exemption applies. chromeScoped stays on hits
-    // for chrome vs non-chrome reporting splits.
-    const nonChromeElementClipHits = elementClipHits.filter((h) => !h.chromeScoped).length;
-    const elementClipFails = overflowHits.filter((h) => {
-      if (h.noisyScrollContainer) return false;
-      if (h.legitimateScrollRegionExemption) return false;
-      if (h.stickyFooterScrollOcclusion) return false;
-      if (h.belowViewportPageScroll) return false;
-      if (h.horizontalScrollEscape) return false;
-      // Visible meaningful control — centre must be on-screen.
-      if (!h.centreInViewport) return false;
-      return (
+    // No global centre-outside-viewport bypass and no chrome-only bypass.
+    // Narrow scroll/occlusion exemptions only. chromeScoped stays on hits for
+    // reporting splits. Accounting identity is computed on the FULL hit set
+    // before evidence slicing.
+    function hasDefectFlags(h) {
+      return !!(
         h.outsideViewport ||
         h.clippedByAncestor ||
         h.occluded ||
         h.unintendedTruncation
       );
-    });
+    }
+    function isJustifiedExemption(h) {
+      return !!(
+        h.noisyScrollContainer ||
+        h.legitimateScrollRegionExemption ||
+        h.stickyFooterScrollOcclusion ||
+        h.belowViewportPageScroll ||
+        h.horizontalScrollEscape
+      );
+    }
+
+    const nonChromeElementClipHits = elementClipHits.filter((h) => !h.chromeScoped).length;
+    const defectFlagged = elementClipHits.filter(hasDefectFlags);
+    const justifiedExemptionHits = defectFlagged.filter(isJustifiedExemption);
+    const elementClipFails = defectFlagged.filter((h) => !isJustifiedExemption(h));
+    const accounting = {
+      controlsInspected: elementClipHits.length,
+      controlsWithDefectFlags: defectFlagged.length,
+      justifiedExemptions: justifiedExemptionHits.length,
+      unresolvedDefects: elementClipFails.length,
+      identityHolds:
+        defectFlagged.length ===
+        justifiedExemptionHits.length + elementClipFails.length,
+    };
+
+    const ledger = defectFlagged.map((h) => ({
+      tag: h.tag,
+      text: h.text,
+      className: h.className,
+      chromeScoped: h.chromeScoped,
+      centreInViewport: h.centreInViewport,
+      rect: h.rect,
+      viewport: h.viewport,
+      outsideViewport: h.outsideViewport,
+      clippedByAncestor: h.clippedByAncestor,
+      occluded: h.occluded,
+      unintendedTruncation: h.unintendedTruncation,
+      nearestClippingAncestor: h.nearestClippingAncestor,
+      legitimateScrollRegionExemption: h.legitimateScrollRegionExemption,
+      stickyFooterScrollOcclusion: h.stickyFooterScrollOcclusion,
+      belowViewportPageScroll: h.belowViewportPageScroll,
+      horizontalScrollEscape: h.horizontalScrollEscape,
+      noisyScrollContainer: h.noisyScrollContainer,
+      adjudication: isJustifiedExemption(h) ? "JUSTIFIED_EXEMPTION" : "UNRESOLVED_DEFECT",
+    }));
 
     return {
       htmlDark,
       appearance: document.documentElement.dataset.appearance || null,
       issues,
       horizontalOverflow,
+      // Compact samples for the large matrix blobs; accounting + ledger are complete.
       overflowHits: overflowHits.slice(0, 80),
       elementClipHits: elementClipHits.slice(0, 120),
-      elementClipFails: elementClipFails.slice(0, 40),
+      elementClipFails,
+      elementClipLedger: ledger,
+      clipAccounting: accounting,
       nonChromeElementClipHits,
       sidebarCount: document.querySelectorAll(".pulse-sidebar").length,
       bootstrapStatus: document.querySelector("[data-m07-bootstrap-status]")?.textContent || null,
@@ -1001,6 +1044,14 @@ async function visitRoute(page, route, meta, bag) {
     overflowHits: [],
     elementClipHits: [],
     elementClipFails: [],
+    elementClipLedger: [],
+    clipAccounting: {
+      controlsInspected: 0,
+      controlsWithDefectFlags: 0,
+      justifiedExemptions: 0,
+      unresolvedDefects: 0,
+      identityHolds: true,
+    },
     nonChromeElementClipHits: 0,
     htmlDark: false,
   }));
@@ -1025,6 +1076,14 @@ async function visitRoute(page, route, meta, bag) {
     overflowHits: probe.overflowHits || [],
     elementClipHits: probe.elementClipHits || [],
     elementClipFails: probe.elementClipFails || [],
+    elementClipLedger: probe.elementClipLedger || [],
+    clipAccounting: probe.clipAccounting || {
+      controlsInspected: (probe.elementClipHits || []).length,
+      controlsWithDefectFlags: 0,
+      justifiedExemptions: 0,
+      unresolvedDefects: (probe.elementClipFails || []).length,
+      identityHolds: false,
+    },
     nonChromeElementClipHits: probe.nonChromeElementClipHits || 0,
     scrollWidth: probe.scrollWidth,
     clientWidth: probe.clientWidth,
@@ -1285,33 +1344,47 @@ function summarise(matrix, allRaw, appearanceResults, extras = {}) {
     eventsByClass: byClass,
     hydrationTotal: matrix.reduce((n, m) => n + (m.hydrationSignatures?.length || 0), 0),
     overflowFailCount: matrix.filter((m) => m.horizontalOverflow).length,
-    controlsInspected: matrix.reduce((n, m) => n + (m.elementClipHits?.length || 0), 0),
-    controlsWithDefectFlags: matrix.reduce(
+    controlsInspected: matrix.reduce(
       (n, m) =>
         n +
-        (m.elementClipHits || []).filter(
-          (h) =>
-            h.outsideViewport ||
-            h.clippedByAncestor ||
-            h.occluded ||
-            h.unintendedTruncation
-        ).length,
+        (m.clipAccounting?.controlsInspected ??
+          (m.elementClipHits?.length || 0)),
+      0
+    ),
+    controlsWithDefectFlags: matrix.reduce(
+      (n, m) => n + (m.clipAccounting?.controlsWithDefectFlags || 0),
       0
     ),
     justifiedExemptions: matrix.reduce(
-      (n, m) =>
-        n +
-        (m.overflowHits || []).filter(
-          (h) =>
-            h.noisyScrollContainer ||
-            h.legitimateScrollRegionExemption ||
-            h.stickyFooterScrollOcclusion ||
-            h.belowViewportPageScroll ||
-            h.horizontalScrollEscape
-        ).length,
+      (n, m) => n + (m.clipAccounting?.justifiedExemptions || 0),
       0
     ),
-    unresolvedDefects: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
+    unresolvedDefects: matrix.reduce(
+      (n, m) =>
+        n +
+        (m.clipAccounting?.unresolvedDefects ??
+          (m.elementClipFails?.length || 0)),
+      0
+    ),
+    accountingIdentityHolds: matrix.every((m) => m.clipAccounting?.identityHolds !== false),
+    accountingEquationHolds: (() => {
+      const flagged = matrix.reduce(
+        (n, m) => n + (m.clipAccounting?.controlsWithDefectFlags || 0),
+        0
+      );
+      const justified = matrix.reduce(
+        (n, m) => n + (m.clipAccounting?.justifiedExemptions || 0),
+        0
+      );
+      const unresolved = matrix.reduce(
+        (n, m) =>
+          n +
+          (m.clipAccounting?.unresolvedDefects ??
+            (m.elementClipFails?.length || 0)),
+        0
+      );
+      return flagged === justified + unresolved;
+    })(),
     elementClipFailCount: matrix.reduce((n, m) => n + (m.elementClipFails?.length || 0), 0),
     chromeDefects: matrix.reduce(
       (n, m) => n + (m.elementClipFails || []).filter((h) => h.chromeScoped).length,
@@ -1416,8 +1489,48 @@ async function main() {
   const { matrix, allRaw } = await runMatrix(browser);
   const summary = summarise(matrix, allRaw, appearanceResults);
 
-  write("browser-validation-report.json", { summary, matrix });
-  write("per-route-matrix.json", matrix);
+  // Compact matrix for Git: row-level defect adjudication lives in
+  // element-clip-ledger.json (Correction 2 — no omittedFromGit placeholders).
+  const compactMatrix = matrix.map((m) => ({
+    route: m.route,
+    appearance: m.appearance,
+    viewport: m.viewport,
+    navigationStatus: m.navigationStatus,
+    fail: m.fail,
+    failReasons: m.failReasons,
+    horizontalOverflow: m.horizontalOverflow,
+    hydrationSignatures: m.hydrationSignatures,
+    clipAccounting: m.clipAccounting,
+    nonChromeElementClipHits: m.nonChromeElementClipHits,
+    sidebarCount: m.sidebarCount,
+    bootstrapStatus: m.bootstrapStatus,
+    scrollWidth: m.scrollWidth,
+    clientWidth: m.clientWidth,
+    unresolvedDefectCount: m.clipAccounting?.unresolvedDefects ?? (m.elementClipFails || []).length,
+    unresolvedDefectSample: (m.elementClipFails || []).slice(0, 15).map((h) => ({
+      tag: h.tag,
+      text: h.text,
+      chromeScoped: h.chromeScoped,
+      centreInViewport: h.centreInViewport,
+      outsideViewport: h.outsideViewport,
+      clippedByAncestor: h.clippedByAncestor,
+      occluded: h.occluded,
+      unintendedTruncation: h.unintendedTruncation,
+      nearestClippingAncestor: h.nearestClippingAncestor,
+    })),
+    justifiedExemptionCount: m.clipAccounting?.justifiedExemptions ?? 0,
+    visualIssues: m.visualIssues,
+    unallowlistedHttpErrors: m.unallowlistedHttpErrors,
+    appPageErrors: m.appPageErrors,
+    appConsoleErrors: m.appConsoleErrors,
+  }));
+
+  write("browser-validation-report.json", { summary, matrix: compactMatrix });
+  write("per-route-matrix.json", {
+    note: "Compact per-route matrix. Authoritative row-level clip adjudication is element-clip-ledger.json.",
+    matrixEntries: compactMatrix.length,
+    matrix: compactMatrix,
+  });
   write("raw-events-full.json", allRaw);
   write("allowlisted-environmental-events.json", allRaw.filter((e) => e.allowlisted));
   write("unresolved-application-events.json", allRaw.filter((e) => !e.allowlisted));
@@ -1435,15 +1548,61 @@ async function main() {
       "application console error",
       "hydration mismatch",
       "horizontal page overflow",
-      "chrome-scoped element clip / occlusion / unintended truncation",
+      "meaningful-control element clip / occlusion / unintended truncation (no centre-outside-viewport bypass; no chrome-only bypass)",
+      "clip accounting identity failure: controlsWithDefectFlags !== justifiedExemptions + unresolvedDefects",
       "typography / contrast / dark-surface hard-gate failure",
       "unallowlisted requestfailed",
     ],
     priorContradiction:
-      "Previous validator used a global console bag, excluded console/page/hydration/overflow from fail, and truncated consoleBag to 100 — it could not support matrixFail:0.",
+      "Previous validator used a global console bag, excluded console/page/hydration/overflow from fail, and truncated consoleBag to 100 — it could not support matrixFail:0. Correction-2 additionally removed the global centreInViewport hard-fail bypass that suppressed 444 defect-flagged controls without counting them as justified exemptions, and requires row-level element-clip-ledger.json (not omitted placeholders).",
   });
   write("summary.json", summary);
   write("run-meta.json", { ...meta, endedAt: nowIso(), matrixEntries: matrix.length });
+
+  // Row-level clip ledger — required Correction-2 evidence (must not be a placeholder).
+  const elementClipLedger = matrix.flatMap((m) =>
+    (m.elementClipLedger || []).map((row) => ({
+      route: m.route,
+      appearance: m.appearance,
+      viewport: m.viewport,
+      ...row,
+    }))
+  );
+  write("element-clip-ledger.json", {
+    generatedAt: nowIso(),
+    appSha: process.env.HCDP_APP_SHA || null,
+    accounting: {
+      controlsInspected: summary.controlsInspected,
+      controlsWithDefectFlags: summary.controlsWithDefectFlags,
+      justifiedExemptions: summary.justifiedExemptions,
+      unresolvedDefects: summary.unresolvedDefects,
+      accountingEquationHolds: summary.accountingEquationHolds,
+      identity:
+        "controlsWithDefectFlags = justifiedExemptions + unresolvedDefects",
+    },
+    rowCount: elementClipLedger.length,
+    rows: elementClipLedger,
+  });
+  write(
+    "clip-accounting-by-route.json",
+    matrix.map((m) => ({
+      route: m.route,
+      appearance: m.appearance,
+      viewport: m.viewport,
+      fail: m.fail,
+      clipAccounting: m.clipAccounting || null,
+      unresolvedSample: (m.elementClipFails || []).slice(0, 20).map((h) => ({
+        tag: h.tag,
+        text: h.text,
+        chromeScoped: h.chromeScoped,
+        centreInViewport: h.centreInViewport,
+        outsideViewport: h.outsideViewport,
+        clippedByAncestor: h.clippedByAncestor,
+        occluded: h.occluded,
+        unintendedTruncation: h.unintendedTruncation,
+      })),
+    }))
+  );
 
   // Compact issues for quick scan
   write(
@@ -1463,7 +1622,10 @@ async function main() {
     summary.matrixFail > 0 ||
     summary.http500.length > 0 ||
     summary.http403.length > 0 ||
-    summary.jsonParse.length > 0;
+    summary.jsonParse.length > 0 ||
+    summary.unresolvedDefects > 0 ||
+    summary.accountingEquationHolds === false ||
+    summary.accountingIdentityHolds === false;
   process.exit(hard ? 2 : 0);
 }
 

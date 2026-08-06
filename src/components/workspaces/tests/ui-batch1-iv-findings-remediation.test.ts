@@ -152,7 +152,7 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /isInsideClosedDrawer/);
   });
 
-  it("exempts legitimate scroll regions and sticky sidebar-footer occlusion from hard fails", () => {
+  it("exempts only narrow scroll/occlusion cases — never centre-outside-viewport", () => {
     const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
     assert.match(script, /legitimateScrollRegionExemption/);
     assert.match(script, /nearestVerticalScrollport/);
@@ -162,15 +162,17 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /horizontalScrollEscape/);
     assert.match(script, /centreInViewport/);
     assert.match(script, /visibleScrollportBox/);
-    // Hard-fail filter must honour scroll exemptions (not weaken chrome gates).
+    assert.match(script, /function isJustifiedExemption/);
+    assert.match(script, /h\.legitimateScrollRegionExemption/);
+    assert.match(script, /h\.stickyFooterScrollOcclusion/);
+    assert.match(script, /h\.belowViewportPageScroll/);
+    assert.match(script, /h\.horizontalScrollEscape/);
+    // Correction 2: global centre-outside-viewport hard-fail bypass MUST be absent.
+    assert.doesNotMatch(script, /if\s*\(\s*!h\.centreInViewport\s*\)\s*return false/);
     assert.match(
       script,
-      /if\s*\(\s*h\.legitimateScrollRegionExemption\s*\)\s*return false/
+      /MUST NOT suppress hard-fails \(Correction 2\)/
     );
-    assert.match(script, /if\s*\(\s*h\.stickyFooterScrollOcclusion\s*\)\s*return false/);
-    assert.match(script, /if\s*\(\s*h\.belowViewportPageScroll\s*\)\s*return false/);
-    assert.match(script, /if\s*\(\s*h\.horizontalScrollEscape\s*\)\s*return false/);
-    assert.match(script, /if\s*\(\s*!h\.centreInViewport\s*\)\s*return false/);
     // chromeScoped retained on hits for reporting (not a hard-fail bypass).
     assert.match(script, /h\.chromeScoped/);
     assert.match(script, /chromeScoped:\s*isChromeScoped\(el\)/);
@@ -178,20 +180,37 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /\.cc-pulse\.cc-surface-danger/);
   });
 
-  it("hard-fails element-clip for every meaningful control (complete gate, no non-chrome bypass)", () => {
+  it("hard-fails element-clip for every meaningful control with row-level accounting identity", () => {
     const script = read("scripts/ui-batch1-iv-findings-remediation-validate.mjs");
-    assert.match(script, /const elementClipFails = overflowHits\.filter/);
+    assert.match(script, /const elementClipFails = defectFlagged\.filter/);
+    assert.match(script, /function hasDefectFlags/);
+    assert.match(script, /clipAccounting/);
+    assert.match(script, /elementClipLedger/);
+    assert.match(script, /element-clip-ledger\.json/);
+    assert.match(script, /accountingEquationHolds/);
+    assert.match(
+      script,
+      /controlsWithDefectFlags = justifiedExemptions \+ unresolvedDefects/
+    );
     // Blanket non-chrome bypass must NOT be present.
     assert.doesNotMatch(script, /if\s*\(\s*!h\.chromeScoped\s*\)\s*return false/);
     assert.doesNotMatch(
       script,
       /if\s*\(\s*!h\.chromeScoped\s*\)\s*\{\s*return\s*\(\s*\(h\.outsideViewport/
     );
-    // Hard-fail disjunct includes clippedByAncestor for all remaining candidates.
+    // Centre bypass must NOT be present.
+    assert.doesNotMatch(script, /if\s*\(\s*!h\.centreInViewport\s*\)\s*return false/);
+    // Defect-flag disjunct includes clippedByAncestor for all remaining candidates.
     assert.match(
       script,
-      /return\s*\(\s*h\.outsideViewport\s*\|\|\s*h\.clippedByAncestor\s*\|\|\s*h\.occluded\s*\|\|\s*h\.unintendedTruncation\s*\)/
+      /h\.outsideViewport\s*\|\|\s*\n?\s*h\.clippedByAncestor\s*\|\|\s*\n?\s*h\.occluded\s*\|\|\s*\n?\s*h\.unintendedTruncation/
     );
+    // Exit hard when unresolved defects or accounting identity fails.
+    assert.match(
+      script,
+      /summary\.unresolvedDefects\s*>\s*0/
+    );
+    assert.match(script, /summary\.accountingEquationHolds\s*===\s*false/);
     // Summary reports chrome / non-chrome defect splits among fails.
     assert.match(script, /chromeDefects/);
     assert.match(script, /nonChromeDefects/);
