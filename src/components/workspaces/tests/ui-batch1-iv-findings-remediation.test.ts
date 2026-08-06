@@ -150,6 +150,10 @@ describe("IV findings remediation — Phase 3 element-clip probe (D5)", () => {
     assert.match(script, /element-clip-/);
     assert.match(script, /noisyScrollContainer/);
     assert.match(script, /isInsideClosedDrawer/);
+    // Closed right-side Drawer (role=dialog + aria-hidden / translate-x-full).
+    assert.match(script, /role=\"dialog\"/);
+    assert.match(script, /aria-hidden/);
+    assert.match(script, /Math\.abs\(tx\)\s*>\s*8/);
   });
 
   it("exempts only narrow scroll/occlusion cases — never centre-outside-viewport", () => {

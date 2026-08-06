@@ -51,9 +51,10 @@ export function Drawer({
         aria-modal="true"
         aria-labelledby={titleId}
         className={`fixed bottom-0 right-0 top-0 z-50 flex w-[min(760px,96vw)] flex-col bg-[var(--card)] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] transition-transform duration-200 ${
-          open ? "translate-x-0" : "translate-x-full"
+          open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
         aria-hidden={!open}
+        inert={!open ? true : undefined}
       >
         <div className="flex h-[70px] items-center justify-between border-b border-[var(--line)] px-5">
           <div>

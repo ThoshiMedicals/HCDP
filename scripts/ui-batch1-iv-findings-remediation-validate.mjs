@@ -37,13 +37,15 @@
  */
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
+import { isAbsolute, join } from "node:path";
 import { createHash } from "node:crypto";
 
 const BASE = process.env.HCDP_BASE_URL || "http://127.0.0.1:3480";
 const MODE = process.env.HCDP_MODE || "unknown";
 const OUT = process.env.HCDP_OUT_DIR
-  ? join(process.cwd(), process.env.HCDP_OUT_DIR)
+  ? isAbsolute(process.env.HCDP_OUT_DIR)
+    ? process.env.HCDP_OUT_DIR
+    : join(process.cwd(), process.env.HCDP_OUT_DIR)
   : join(
       process.cwd(),
       "docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation"
@@ -391,21 +393,29 @@ async function pageProbe(page) {
     }
 
     function isInsideClosedDrawer(el) {
-      const sidebar = el.closest(".pulse-sidebar");
-      if (!sidebar) return false;
-      const cs = getComputedStyle(sidebar);
+      // Narrow Correction-2 exemption: genuine closed drawers/dialogs only.
+      // Right-side Drawer uses role=dialog + aria-hidden=!open + translate-x-full.
+      // Left mobile sidebar uses .pulse-sidebar + -translate-x-full.
+      const surface = el.closest(
+        '[role="dialog"], aside[aria-modal], .pulse-sidebar'
+      );
+      if (!surface) return false;
+      if (surface.getAttribute("aria-hidden") === "true") return true;
+      if (surface.hasAttribute("inert")) return true;
+      const cs = getComputedStyle(surface);
       const t = cs.transform || "";
-      // Closed mobile drawer uses -translate-x-full (matrix with tx ≈ -width).
       if (t && t !== "none") {
         const m = t.match(/matrix\(([^)]+)\)/);
         if (m) {
           const parts = m[1].split(",").map((x) => Number(x.trim()));
           const tx = parts[4];
-          if (Number.isFinite(tx) && tx < -8) return true;
+          // Closed left drawer: tx ≈ -width; closed right drawer: tx ≈ +width.
+          if (Number.isFinite(tx) && Math.abs(tx) > 8) return true;
         }
       }
-      const r = sidebar.getBoundingClientRect();
-      return r.right <= 1;
+      const r = surface.getBoundingClientRect();
+      // Fully off-canvas to either side.
+      return r.right <= 1 || r.left >= vw - 1;
     }
 
     function describeClipNode(node) {
