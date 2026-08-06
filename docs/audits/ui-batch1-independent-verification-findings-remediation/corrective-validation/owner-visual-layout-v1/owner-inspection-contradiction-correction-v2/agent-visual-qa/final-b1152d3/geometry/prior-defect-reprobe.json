@@ -1,0 +1,3169 @@
+{
+  "count": 81,
+  "stillBad": [],
+  "stillBadCount": 0,
+  "rows": [
+    {
+      "mode": "light",
+      "viewport": "1440x900",
+      "route": "/time-attendance",
+      "screenshot": "light-1440x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1440x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "light-1440x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1280x900",
+      "route": "/time-attendance",
+      "screenshot": "light-1280x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1280x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "light-1280x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/roster",
+      "screenshot": "light-1024x768-roster.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 845
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 737
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "input",
+          "label": "Clinic id",
+          "rect": {
+            "x": 724.59,
+            "y": 539.19,
+            "w": 121.2,
+            "h": 42.5,
+            "right": 845.8,
+            "bottom": 581.69
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": false,
+            "truncated": true
+          },
+          "ancestorInfo": null,
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/roster?section=coverage",
+      "screenshot": "light-1024x768-roster_section_coverage.png",
+      "hitCount": 15,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 825
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 717
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/roster?section=availability-leave",
+      "screenshot": "light-1024x768-roster_section_availability-leave.png",
+      "hitCount": 1,
+      "hotHits": [
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 1346
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/roster?section=conflicts-warnings",
+      "screenshot": "light-1024x768-roster_section_conflicts-warnings.png",
+      "hitCount": 17,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 520
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/roster?section=settings",
+      "screenshot": "light-1024x768-roster_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 934
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 826
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/time-attendance",
+      "screenshot": "light-1024x768-time-attendance.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=corrections",
+      "screenshot": "light-1024x768-time-attendance_section_corrections.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "light-1024x768-time-attendance_section_approvals.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=history",
+      "screenshot": "light-1024x768-time-attendance_section_history.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "light-1024x768-time-attendance_section_settings.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "430x932",
+      "route": "/staff-doctors",
+      "screenshot": "light-430x932-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=people",
+      "screenshot": "light-430x932-staff-doctors_section_people.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=credentials",
+      "screenshot": "light-430x932-staff-doctors_section_credentials.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "430x932",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "light-430x932-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "390x844",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "light-390x844-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1440x900",
+      "route": "/time-attendance",
+      "screenshot": "dark-1440x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1440x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "dark-1440x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1280x900",
+      "route": "/time-attendance",
+      "screenshot": "dark-1280x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1280x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "dark-1280x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/roster",
+      "screenshot": "dark-1024x768-roster.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 845
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 737
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "input",
+          "label": "Clinic id",
+          "rect": {
+            "x": 724.59,
+            "y": 539.19,
+            "w": 121.2,
+            "h": 42.5,
+            "right": 845.8,
+            "bottom": 581.69
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": false,
+            "truncated": true
+          },
+          "ancestorInfo": null,
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/roster?section=coverage",
+      "screenshot": "dark-1024x768-roster_section_coverage.png",
+      "hitCount": 15,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 825
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 717
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/roster?section=availability-leave",
+      "screenshot": "dark-1024x768-roster_section_availability-leave.png",
+      "hitCount": 1,
+      "hotHits": [
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 1346
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/roster?section=conflicts-warnings",
+      "screenshot": "dark-1024x768-roster_section_conflicts-warnings.png",
+      "hitCount": 17,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 520
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/roster?section=settings",
+      "screenshot": "dark-1024x768-roster_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 934
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 826
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/time-attendance",
+      "screenshot": "dark-1024x768-time-attendance.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=corrections",
+      "screenshot": "dark-1024x768-time-attendance_section_corrections.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "dark-1024x768-time-attendance_section_approvals.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=history",
+      "screenshot": "dark-1024x768-time-attendance_section_history.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "dark-1024x768-time-attendance_section_settings.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "430x932",
+      "route": "/staff-doctors",
+      "screenshot": "dark-430x932-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=people",
+      "screenshot": "dark-430x932-staff-doctors_section_people.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=credentials",
+      "screenshot": "dark-430x932-staff-doctors_section_credentials.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "430x932",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "dark-430x932-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "390x844",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "dark-390x844-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1440x900",
+      "route": "/time-attendance",
+      "screenshot": "system-1440x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1440x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "system-1440x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1280x900",
+      "route": "/time-attendance",
+      "screenshot": "system-1280x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1280x900",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "system-1280x900-time-attendance_section_approvals.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1280,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/roster",
+      "screenshot": "system-1024x768-roster.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 845
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 737
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "input",
+          "label": "Clinic id",
+          "rect": {
+            "x": 724.59,
+            "y": 539.19,
+            "w": 121.2,
+            "h": 42.5,
+            "right": 845.8,
+            "bottom": 581.69
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": false,
+            "truncated": true
+          },
+          "ancestorInfo": null,
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/roster?section=coverage",
+      "screenshot": "system-1024x768-roster_section_coverage.png",
+      "hitCount": 15,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 825
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 717
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/roster?section=availability-leave",
+      "screenshot": "system-1024x768-roster_section_availability-leave.png",
+      "hitCount": 1,
+      "hotHits": [
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 1346
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/roster?section=conflicts-warnings",
+      "screenshot": "system-1024x768-roster_section_conflicts-warnings.png",
+      "hitCount": 17,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 520
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/roster?section=settings",
+      "screenshot": "system-1024x768-roster_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 934
+            }
+          },
+          "hot": true
+        },
+        {
+          "tag": "button",
+          "label": "Published & History",
+          "rect": {
+            "x": 1092.61,
+            "y": 279.89,
+            "w": 157.66,
+            "h": 40,
+            "right": 1250.27,
+            "bottom": 319.89
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": true,
+            "overflowsViewportY": false,
+            "belowViewportPageScroll": false,
+            "horizontalScrollEscape": true,
+            "clippedByAncestor": false,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "min-w-0 w-full max-w-full overflow-x-hidden",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 288,
+              "y": 109,
+              "w": 736,
+              "h": 826
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/time-attendance",
+      "screenshot": "system-1024x768-time-attendance.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=corrections",
+      "screenshot": "system-1024x768-time-attendance_section_corrections.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=approvals",
+      "screenshot": "system-1024x768-time-attendance_section_approvals.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=history",
+      "screenshot": "system-1024x768-time-attendance_section_history.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x768",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "system-1024x768-time-attendance_section_settings.png",
+      "hitCount": 16,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1024,
+              "h": 768
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "430x932",
+      "route": "/staff-doctors",
+      "screenshot": "system-430x932-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=people",
+      "screenshot": "system-430x932-staff-doctors_section_people.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "430x932",
+      "route": "/staff-doctors?section=credentials",
+      "screenshot": "system-430x932-staff-doctors_section_credentials.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "430x932",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "system-430x932-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "390x844",
+      "route": "/roster?section=open-shifts",
+      "screenshot": "system-390x844-roster_section_open-shifts.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1024x600",
+      "route": "/dashboard",
+      "screenshot": "light-1024x600-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "768x500",
+      "route": "/dashboard",
+      "screenshot": "light-768x500-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1024x600",
+      "route": "/dashboard",
+      "screenshot": "dark-1024x600-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "768x500",
+      "route": "/dashboard",
+      "screenshot": "dark-768x500-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1024x600",
+      "route": "/dashboard",
+      "screenshot": "system-1024x600-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "768x500",
+      "route": "/dashboard",
+      "screenshot": "system-768x500-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/dashboard",
+      "screenshot": "light-1536x900-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/roster",
+      "screenshot": "light-1536x900-roster.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/roster?section=coverage",
+      "screenshot": "light-1536x900-roster_section_coverage.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/time-attendance",
+      "screenshot": "light-1536x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "light-1536x900-time-attendance_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "light",
+      "viewport": "1536x900",
+      "route": "/staff-doctors",
+      "screenshot": "light-1536x900-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/dashboard",
+      "screenshot": "dark-1536x900-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/roster",
+      "screenshot": "dark-1536x900-roster.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/roster?section=coverage",
+      "screenshot": "dark-1536x900-roster_section_coverage.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/time-attendance",
+      "screenshot": "dark-1536x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "dark-1536x900-time-attendance_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "dark",
+      "viewport": "1536x900",
+      "route": "/staff-doctors",
+      "screenshot": "dark-1536x900-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/dashboard",
+      "screenshot": "system-1536x900-dashboard.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/roster",
+      "screenshot": "system-1536x900-roster.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/roster?section=coverage",
+      "screenshot": "system-1536x900-roster_section_coverage.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/time-attendance",
+      "screenshot": "system-1536x900-time-attendance.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/time-attendance?section=settings",
+      "screenshot": "system-1536x900-time-attendance_section_settings.png",
+      "hitCount": 13,
+      "hotHits": [
+        {
+          "tag": "a",
+          "label": "Clinic Analytics",
+          "rect": {
+            "x": 11,
+            "y": 1143,
+            "w": 232,
+            "h": 38,
+            "right": 243,
+            "bottom": 1181
+          },
+          "flags": {
+            "outsideViewport": false,
+            "overflowsViewportX": false,
+            "overflowsViewportY": true,
+            "belowViewportPageScroll": true,
+            "horizontalScrollEscape": false,
+            "clippedByAncestor": true,
+            "truncated": false
+          },
+          "ancestorInfo": {
+            "tag": "DIV",
+            "className": "app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]",
+            "overflow": "hidden auto",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1536,
+              "h": 900
+            }
+          },
+          "hot": true
+        }
+      ],
+      "badHot": []
+    },
+    {
+      "mode": "system",
+      "viewport": "1536x900",
+      "route": "/staff-doctors",
+      "screenshot": "system-1536x900-staff-doctors.png",
+      "hitCount": 0,
+      "hotHits": [],
+      "badHot": []
+    }
+  ]
+}

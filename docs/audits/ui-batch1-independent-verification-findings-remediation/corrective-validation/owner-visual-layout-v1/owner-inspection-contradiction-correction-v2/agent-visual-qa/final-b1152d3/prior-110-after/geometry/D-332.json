@@ -1,0 +1,28 @@
+{
+  "id": "D-332",
+  "route": "/staff-doctors?section=credentials",
+  "viewport": 430,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 43,
+      "y": 60.75,
+      "width": 366,
+      "height": 22.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-332-430.png"
+}

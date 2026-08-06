@@ -1,0 +1,28 @@
+{
+  "id": "D-146",
+  "route": "/roster",
+  "viewport": 1280,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "Clinic id",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 878.19,
+      "y": 475.19,
+      "width": 172.41,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-146-1280.png"
+}

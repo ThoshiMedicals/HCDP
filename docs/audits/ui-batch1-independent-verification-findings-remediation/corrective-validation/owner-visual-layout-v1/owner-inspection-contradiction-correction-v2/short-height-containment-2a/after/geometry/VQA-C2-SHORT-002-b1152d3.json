@@ -1,0 +1,16 @@
+{
+  "id": "VQA-C2-SHORT-002",
+  "mode": "light",
+  "w": 768,
+  "h": 500,
+  "doc": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "bodyScrollH": 10755,
+    "clientHeight": 500
+  },
+  "offenders": [],
+  "canScrollY": true,
+  "openDetails": 1,
+  "screenshot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/short-height-containment-2a/after/screenshots/VQA-C2-SHORT-002-light-768x500-b1152d3.png"
+}

@@ -1,0 +1,456 @@
+TAP version 13
+# Subtest: M07 Batch 6 — export / recon / lock
+    # Subtest: A. Domain and lifecycle
+        # Subtest: allows legal transitions and rejects illegal ones
+        ok 1 - allows legal transitions and rejects illegal ones
+          ---
+          duration_ms: 2.013648
+          ...
+        # Subtest: deterministic identity + idempotent create
+        ok 2 - deterministic identity + idempotent create
+          ---
+          duration_ms: 17.470189
+          ...
+        # Subtest: does not overwrite finalized history — successor revision
+        ok 3 - does not overwrite finalized history — successor revision
+          ---
+          duration_ms: 7.79894
+          ...
+        # Subtest: cancel supersedes mutable batch
+        ok 4 - cancel supersedes mutable batch
+          ---
+          duration_ms: 4.084672
+          ...
+        1..4
+    ok 1 - A. Domain and lifecycle
+      ---
+      duration_ms: 32.004328
+      type: 'suite'
+      ...
+    # Subtest: B. Manifest consumption
+        # Subtest: accepts valid approved package
+        ok 1 - accepts valid approved package
+          ---
+          duration_ms: 3.855426
+          ...
+        # Subtest: rejects missing / non-approved package
+        ok 2 - rejects missing / non-approved package
+          ---
+          duration_ms: 4.470338
+          ...
+        1..2
+    ok 2 - B. Manifest consumption
+      ---
+      duration_ms: 8.497959
+      type: 'suite'
+      ...
+    # Subtest: C. Validation
+        # Subtest: missing external payroll employee ID blocks
+        ok 1 - missing external payroll employee ID blocks
+          ---
+          duration_ms: 4.254715
+          ...
+        # Subtest: rejects cross-tenant / cross-legal-entity actor scope
+        ok 2 - rejects cross-tenant / cross-legal-entity actor scope
+          ---
+          duration_ms: 3.180497
+          ...
+        1..2
+    ok 3 - C. Validation
+      ---
+      duration_ms: 7.598559
+      type: 'suite'
+      ...
+    # Subtest: D. Export preparation
+        # Subtest: preview and final share validation; final re-verifies; checksum reproducible
+        ok 1 - preview and final share validation; final re-verifies; checksum reproducible
+          ---
+          duration_ms: 5.387895
+          ...
+        1..1
+    ok 4 - D. Export preparation
+      ---
+      duration_ms: 5.468301
+      type: 'suite'
+      ...
+    # Subtest: E. Reconciliation
+        # Subtest: matching package passes with structured totals
+        ok 1 - matching package passes with structured totals
+          ---
+          duration_ms: 3.515629
+          ...
+        1..1
+    ok 5 - E. Reconciliation
+      ---
+      duration_ms: 3.578776
+      type: 'suite'
+      ...
+    # Subtest: F. Permissions and SoD
+        # Subtest: enforces export.create permission
+        ok 1 - enforces export.create permission
+          ---
+          duration_ms: 7.084223
+          ...
+        # Subtest: management approver cannot be sole final export generator when SoD on
+        ok 2 - management approver cannot be sole final export generator when SoD on
+          ---
+          duration_ms: 3.501021
+          ...
+        1..2
+    ok 6 - F. Permissions and SoD
+      ---
+      duration_ms: 10.685844
+      type: 'suite'
+      ...
+    # Subtest: G. Locking and unlocking
+        # Subtest: locks only after matched recon; unlock requires reason + separate approver
+        ok 1 - locks only after matched recon; unlock requires reason + separate approver
+          ---
+          duration_ms: 5.375361
+          ...
+        # Subtest: unlock reject is separate and idempotent request replay
+        ok 2 - unlock reject is separate and idempotent request replay
+          ---
+          duration_ms: 4.986696
+          ...
+        1..2
+    ok 7 - G. Locking and unlocking
+      ---
+      duration_ms: 10.463517
+      type: 'suite'
+      ...
+    # Subtest: H. Download
+        # Subtest: downloads only downloadable matched artifact and audits each download
+        ok 1 - downloads only downloadable matched artifact and audits each download
+          ---
+          duration_ms: 3.199347
+          ...
+        1..1
+    ok 8 - H. Download
+      ---
+      duration_ms: 3.261661
+      type: 'suite'
+      ...
+    # Subtest: I. M02 and audit
+        # Subtest: writes export lifecycle audits without sensitive payloads
+        ok 1 - writes export lifecycle audits without sensitive payloads
+          ---
+          duration_ms: 2.522372
+          ...
+        1..1
+    ok 9 - I. M02 and audit
+      ---
+      duration_ms: 2.590612
+      type: 'suite'
+      ...
+    # Subtest: J. Storage and schema
+        # Subtest: schema v9 and failure-closed legacy export defaults
+        ok 1 - schema v9 and failure-closed legacy export defaults
+          ---
+          duration_ms: 1.962685
+          ...
+        1..1
+    ok 10 - J. Storage and schema
+      ---
+      duration_ms: 2.037098
+      type: 'suite'
+      ...
+    # Subtest: K. Architecture
+        # Subtest: no createExportPackage / lockPeriod( / cross-module repos / excluded payment features
+        ok 1 - no createExportPackage / lockPeriod( / cross-module repos / excluded payment features
+          ---
+          duration_ms: 6.989338
+          ...
+        1..1
+    ok 11 - K. Architecture
+      ---
+      duration_ms: 7.056812
+      type: 'suite'
+      ...
+    1..11
+ok 1 - M07 Batch 6 — export / recon / lock
+  ---
+  duration_ms: 94.117779
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 fourth remediation — strict calendar dates
+    # Subtest: rejects impossible ISO-shaped dates on financial update before write
+    ok 1 - rejects impossible ISO-shaped dates on financial update before write
+      ---
+      duration_ms: 25.215624
+      ...
+    # Subtest: rejects impossible dates on create and archive; leap validation; future isolation
+    ok 2 - rejects impossible dates on create and archive; leap validation; future isolation
+      ---
+      duration_ms: 6.745849
+      ...
+    1..2
+ok 2 - M07 Batch 6 fourth remediation — strict calendar dates
+  ---
+  duration_ms: 32.564682
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 remediation — high-risk controls
+    # Subtest: A. Lock enforcement
+        # Subtest: rejects direct service mutations on a locked period; unrelated LE unaffected
+        ok 1 - rejects direct service mutations on a locked period; unrelated LE unaffected
+          ---
+          duration_ms: 25.268778
+          ...
+        1..1
+    ok 1 - A. Lock enforcement
+      ---
+      duration_ms: 25.697627
+      type: 'suite'
+      ...
+    # Subtest: B. Locked-source-change controls
+        # Subtest: fails closed, projects deterministic M02, audits, preserves history; no silent mutate
+        ok 1 - fails closed, projects deterministic M02, audits, preserves history; no silent mutate
+          ---
+          duration_ms: 6.461659
+          ...
+        # Subtest: does not report success when audit control fails
+        ok 2 - does not report success when audit control fails
+          ---
+          duration_ms: 5.023214
+          ...
+        1..2
+    ok 2 - B. Locked-source-change controls
+      ---
+      duration_ms: 11.762235
+      type: 'suite'
+      ...
+    # Subtest: C. Reconciliation independence
+        # Subtest: fails when totals match but population differs
+        ok 1 - fails when totals match but population differs
+          ---
+          duration_ms: 6.240439
+          ...
+        # Subtest: fails when totals match but source-line references differ
+        ok 2 - fails when totals match but source-line references differ
+          ---
+          duration_ms: 4.065977
+          ...
+        1..2
+    ok 3 - C. Reconciliation independence
+      ---
+      duration_ms: 10.452
+      type: 'suite'
+      ...
+    # Subtest: D. Download audit failure
+        # Subtest: refuses download, records no success history, leaves artifact unchanged
+        ok 1 - refuses download, records no success history, leaves artifact unchanged
+          ---
+          duration_ms: 3.550731
+          ...
+        1..1
+    ok 4 - D. Download audit failure
+      ---
+      duration_ms: 3.648152
+      type: 'suite'
+      ...
+    # Subtest: E. Unlock partial failure
+        # Subtest: does not report complete success when audit fails during unlock approval
+        ok 1 - does not report complete success when audit fails during unlock approval
+          ---
+          duration_ms: 9.999085
+          ...
+        1..1
+    ok 5 - E. Unlock partial failure
+      ---
+      duration_ms: 10.104728
+      type: 'suite'
+      ...
+    # Subtest: F. Lifecycle matrix
+        # Subtest: covers legal and illegal Batch 6 transitions including failed
+        ok 1 - covers legal and illegal Batch 6 transitions including failed
+          ---
+          duration_ms: 0.568975
+          ...
+        1..1
+    ok 6 - F. Lifecycle matrix
+      ---
+      duration_ms: 0.647756
+      type: 'suite'
+      ...
+    # Subtest: J. Decimal arithmetic
+        # Subtest: uses scaled multiply for overtime amount edge cases
+        ok 1 - uses scaled multiply for overtime amount edge cases
+          ---
+          duration_ms: 0.509509
+          ...
+        1..1
+    ok 7 - J. Decimal arithmetic
+      ---
+      duration_ms: 0.56417
+      type: 'suite'
+      ...
+    1..7
+ok 3 - M07 Batch 6 remediation — high-risk controls
+  ---
+  duration_ms: 63.470618
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 second remediation
+    # Subtest: omit-metadata and exceptions
+        # Subtest: rejects period-scoped exception without periodId
+        ok 1 - rejects period-scoped exception without periodId
+          ---
+          duration_ms: 2.38445
+          ...
+        # Subtest: allows non-period boundary exception without periodId
+        ok 2 - allows non-period boundary exception without periodId
+          ---
+          duration_ms: 1.827986
+          ...
+        1..2
+    ok 1 - omit-metadata and exceptions
+      ---
+      duration_ms: 4.632506
+      type: 'suite'
+      ...
+    # Subtest: rate / effective-date lock
+        # Subtest: blocks rate overlapping locked period; allows future non-overlapping rate
+        ok 1 - blocks rate overlapping locked period; allows future non-overlapping rate
+          ---
+          duration_ms: 19.571859
+          ...
+        1..1
+    ok 2 - rate / effective-date lock
+      ---
+      duration_ms: 19.710557
+      type: 'suite'
+      ...
+    # Subtest: external payroll employee id
+        # Subtest: rejects link/relink affecting locked period
+        ok 1 - rejects link/relink affecting locked period
+          ---
+          duration_ms: 5.640214
+          ...
+        1..1
+    ok 3 - external payroll employee id
+      ---
+      duration_ms: 5.731458
+      type: 'suite'
+      ...
+    # Subtest: preparation rules
+        # Subtest: rejects rule create for LE with locked overlapping period; allows other LE
+        ok 1 - rejects rule create for LE with locked overlapping period; allows other LE
+          ---
+          duration_ms: 5.121226
+          ...
+        1..1
+    ok 4 - preparation rules
+      ---
+      duration_ms: 5.268615
+      type: 'suite'
+      ...
+    # Subtest: unlock atomicity and recovery
+        # Subtest: keeps period locked on control failure; retry completes after recovery
+        ok 1 - keeps period locked on control failure; retry completes after recovery
+          ---
+          duration_ms: 6.853828
+          ...
+        # Subtest: retries after M02-only failure without opening period early
+        ok 2 - retries after M02-only failure without opening period early
+          ---
+          duration_ms: 4.419498
+          ...
+        1..2
+    ok 5 - unlock atomicity and recovery
+      ---
+      duration_ms: 11.394029
+      type: 'suite'
+      ...
+    # Subtest: locked-source control pair
+        # Subtest: reports incomplete on M02-only and audit-only failures; preserves lock
+        ok 1 - reports incomplete on M02-only and audit-only failures; preserves lock
+          ---
+          duration_ms: 3.856295
+          ...
+        1..1
+    ok 6 - locked-source control pair
+      ---
+      duration_ms: 3.928996
+      type: 'suite'
+      ...
+    # Subtest: reconciliation category independence
+        # Subtest: fails when category composition differs but gross totals match
+        ok 1 - fails when category composition differs but gross totals match
+          ---
+          duration_ms: 4.548175
+          ...
+        1..1
+    ok 7 - reconciliation category independence
+      ---
+      duration_ms: 4.616335
+      type: 'suite'
+      ...
+    1..7
+ok 4 - M07 Batch 6 second remediation
+  ---
+  duration_ms: 55.864721
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 6 third remediation
+    # Subtest: platform-wide export profile lock
+        # Subtest: blocks version and retire of * profile used by a locked period before write
+        ok 1 - blocks version and retire of * profile used by a locked period before write
+          ---
+          duration_ms: 23.925065
+          ...
+        # Subtest: allows unrelated unused * profile mutation; falsified LE cannot bypass
+        ok 2 - allows unrelated unused * profile mutation; falsified LE cannot bypass
+          ---
+          duration_ms: 5.744363
+          ...
+        1..2
+    ok 1 - platform-wide export profile lock
+      ---
+      duration_ms: 30.142716
+      type: 'suite'
+      ...
+    # Subtest: financial effective-date edge cases
+        # Subtest: fails closed on open-ended, missing and malformed dates; allows proven future
+        ok 1 - fails closed on open-ended, missing and malformed dates; allows proven future
+          ---
+          duration_ms: 7.431223
+          ...
+        1..1
+    ok 2 - financial effective-date edge cases
+      ---
+      duration_ms: 7.537827
+      type: 'suite'
+      ...
+    # Subtest: unlock idempotency and both-control failure
+        # Subtest: rejects inconsistent approved unlock without open period / history
+        ok 1 - rejects inconsistent approved unlock without open period / history
+          ---
+          duration_ms: 6.491198
+          ...
+        # Subtest: handles simultaneous audit+M02 failure, reject while incomplete, and recovery
+        ok 2 - handles simultaneous audit+M02 failure, reject while incomplete, and recovery
+          ---
+          duration_ms: 5.981923
+          ...
+        1..2
+    ok 3 - unlock idempotency and both-control failure
+      ---
+      duration_ms: 12.622065
+      type: 'suite'
+      ...
+    1..3
+ok 5 - M07 Batch 6 third remediation
+  ---
+  duration_ms: 50.794021
+  type: 'suite'
+  ...
+1..5
+# tests 43
+# suites 33
+# pass 43
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 618.370236

@@ -1,0 +1,59 @@
+{
+  "id": "VQA-C2-SHORT-006",
+  "mode": "system",
+  "w": 768,
+  "h": 500,
+  "doc": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "scrollHeight": 500,
+    "clientHeight": 500
+  },
+  "horizontalDocOverflow": false,
+  "offendersViewport": [
+    {
+      "label": "Add Comment",
+      "rect": {
+        "x": 614.671875,
+        "y": 10050.875,
+        "w": 210,
+        "h": 30.84375,
+        "right": 824.671875
+      },
+      "overflowsViewportX": true
+    },
+    {
+      "label": "Add Comment",
+      "rect": {
+        "x": 614.671875,
+        "y": 10366.125,
+        "w": 210,
+        "h": 30.84375,
+        "right": 824.671875
+      },
+      "overflowsViewportX": true
+    }
+  ],
+  "absOffenders": [
+    {
+      "label": "Add Comment",
+      "left": 614.671875,
+      "right": 824.671875,
+      "w": 210
+    },
+    {
+      "label": "Add Comment",
+      "left": 614.671875,
+      "right": 824.671875,
+      "w": 210
+    }
+  ],
+  "widestGrid": {
+    "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+    "w": 768,
+    "scrollW": 768,
+    "clientW": 768
+  },
+  "canScrollY": false,
+  "screenshot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/short-height-containment-2a/after/screenshots/VQA-C2-SHORT-006-system-768x500.png"
+}

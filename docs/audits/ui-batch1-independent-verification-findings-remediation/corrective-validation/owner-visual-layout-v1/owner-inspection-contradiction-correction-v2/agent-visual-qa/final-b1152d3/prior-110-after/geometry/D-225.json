@@ -1,0 +1,28 @@
+{
+  "id": "D-225",
+  "route": "/roster",
+  "viewport": 1024,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "Ends on",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 595.39,
+      "y": 539.19,
+      "width": 121.2,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-225-1024.png"
+}

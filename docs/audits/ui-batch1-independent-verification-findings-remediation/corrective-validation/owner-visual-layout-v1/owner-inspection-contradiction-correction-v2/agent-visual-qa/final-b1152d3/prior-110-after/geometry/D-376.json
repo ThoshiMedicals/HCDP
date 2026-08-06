@@ -1,0 +1,28 @@
+{
+  "id": "D-376",
+  "route": "/roster?section=coverage",
+  "viewport": 390,
+  "appearance": "system",
+  "tag": "button",
+  "label": "Evaluate coverage",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 658.69,
+      "width": 316,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-376-390.png"
+}

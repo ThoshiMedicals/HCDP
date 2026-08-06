@@ -1,0 +1,15 @@
+{
+  "frozenSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "tscErrorCount": 21,
+  "tscExactBaselineMatch": true,
+  "lintErrors": 2,
+  "lintWarnings": 24,
+  "lintExactBaselineMatch": true,
+  "lintSummaryLine": "\u2716 26 problems (2 errors, 24 warnings)",
+  "acceptedUnchangedDebt": {
+    "typescriptErrors": 21,
+    "lintErrors": 2,
+    "lintWarnings": 24,
+    "protectedHash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83"
+  }
+}

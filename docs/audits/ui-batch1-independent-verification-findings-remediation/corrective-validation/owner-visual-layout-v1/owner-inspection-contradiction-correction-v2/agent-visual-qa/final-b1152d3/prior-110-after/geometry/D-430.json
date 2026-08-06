@@ -1,0 +1,28 @@
+{
+  "id": "D-430",
+  "route": "/roster?section=conflicts-warnings",
+  "viewport": 1440,
+  "appearance": "light",
+  "tag": "button",
+  "label": "Evaluate conflicts",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 1045,
+      "y": 475.19,
+      "width": 346,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-430-1440.png"
+}

@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: M07 authz / scope / SoD / prohibited fields (Batch 1)
+    # Subtest: denies period create without permission
+    ok 1 - denies period create without permission
+      ---
+      duration_ms: 2.356395
+      ...
+    # Subtest: enforces legal-entity isolation
+    ok 2 - enforces legal-entity isolation
+      ---
+      duration_ms: 0.438166
+      ...
+    # Subtest: rejects second open ordinary period
+    ok 3 - rejects second open ordinary period
+      ---
+      duration_ms: 0.685124
+      ...
+    # Subtest: rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path
+    ok 4 - rejects overlapping period dates when prior period is locked-like archived only allows non-overlap path
+      ---
+      duration_ms: 0.544519
+      ...
+    # Subtest: enforces external id uniqueness within legal entity
+    ok 5 - enforces external id uniqueness within legal entity
+      ---
+      duration_ms: 1.281719
+      ...
+    # Subtest: redacts external id from clinic manager views
+    ok 6 - redacts external id from clinic manager views
+      ---
+      duration_ms: 0.575649
+      ...
+    # Subtest: rejects prohibited banking/tax/super fields
+    ok 7 - rejects prohibited banking/tax/super fields
+      ---
+      duration_ms: 0.378922
+      ...
+    # Subtest: denies export operator from creating export profiles
+    ok 8 - denies export operator from creating export profiles
+      ---
+      duration_ms: 0.340867
+      ...
+    # Subtest: allows export operator to select but not mutate profile
+    ok 9 - allows export operator to select but not mutate profile
+      ---
+      duration_ms: 0.66429
+      ...
+    # Subtest: denies clerk rule/code edits
+    ok 10 - denies clerk rule/code edits
+      ---
+      duration_ms: 0.50681
+      ...
+    # Subtest: SoD: export operator cannot lock; clerk cannot final-approve self
+    ok 11 - SoD: export operator cannot lock; clerk cannot final-approve self
+      ---
+      duration_ms: 0.430884
+      ...
+    # Subtest: writes audit for authorised mutations
+    ok 12 - writes audit for authorised mutations
+      ---
+      duration_ms: 0.402392
+      ...
+    # Subtest: admin can mutate configuration
+    ok 13 - admin can mutate configuration
+      ---
+      duration_ms: 0.461531
+      ...
+    1..13
+ok 1 - M07 authz / scope / SoD / prohibited fields (Batch 1)
+  ---
+  duration_ms: 10.04197
+  type: 'suite'
+  ...
+1..1
+# tests 13
+# suites 1
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 195.954455

@@ -1,0 +1,136 @@
+{
+  "doc": {
+    "scrollWidth": 1024,
+    "clientWidth": 1024
+  },
+  "horizontalDocOverflow": false,
+  "canScrollY": false,
+  "targetCount": 11,
+  "viewportOverflowCount": 0,
+  "clippedCount": 0,
+  "targets": [],
+  "allClearFilters": [
+    {
+      "label": "Clear filters",
+      "rect": {
+        "x": 885.28,
+        "y": 2357.47,
+        "w": 105.72,
+        "h": 41.5,
+        "right": 991
+      },
+      "pageRight": 991,
+      "overflowsViewportX": false,
+      "clippedByAncestor": false,
+      "overflowHiddenAncestor": false,
+      "clipAncestor": null,
+      "textOverflow": false,
+      "clientW": 104,
+      "scrollW": 104
+    }
+  ],
+  "auditDetailed": [
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 337,
+        "right": 638,
+        "w": 301,
+        "y": 270.34
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 337,
+        "right": 638,
+        "w": 301,
+        "y": 270.34
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 337,
+        "right": 638,
+        "w": 301,
+        "y": 270.34
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 674,
+        "right": 975,
+        "w": 301,
+        "y": 270.72
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 674,
+        "right": 975,
+        "w": 301,
+        "y": 270.84
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 674,
+        "right": 975,
+        "w": 301,
+        "y": 270.84
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 1024,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    }
+  ]
+}

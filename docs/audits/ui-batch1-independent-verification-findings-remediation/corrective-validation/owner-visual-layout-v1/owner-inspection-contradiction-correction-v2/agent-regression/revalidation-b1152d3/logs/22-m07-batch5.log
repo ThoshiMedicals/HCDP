@@ -1,0 +1,332 @@
+TAP version 13
+# Subtest: M07 Batch 5 CP5.1–5.6
+    # Subtest: CP5.1 eligible population + readiness
+        # Subtest: excludes doctors and inactive/terminated/future-start workforce
+        ok 1 - excludes doctors and inactive/terminated/future-start workforce
+          ---
+          duration_ms: 26.827845
+          ...
+        # Subtest: fails closed on missing effective clinic assignment
+        ok 2 - fails closed on missing effective clinic assignment
+          ---
+          duration_ms: 0.849018
+          ...
+        # Subtest: blocks readiness when calculation missing / open exception
+        ok 3 - blocks readiness when calculation missing / open exception
+          ---
+          duration_ms: 12.658176
+          ...
+        1..3
+    ok 1 - CP5.1 eligible population + readiness
+      ---
+      duration_ms: 40.878302
+      type: 'suite'
+      ...
+    # Subtest: CP5.2–5.3 submit / approve / reject / withdraw + SoD
+        # Subtest: submits, approves with SoD, and sets export-ready wording state
+        ok 1 - submits, approves with SoD, and sets export-ready wording state
+          ---
+          duration_ms: 17.131794
+          ...
+        # Subtest: blocks submitter self-approval and material preparer approval
+        ok 2 - blocks submitter self-approval and material preparer approval
+          ---
+          duration_ms: 2.25726
+          ...
+        # Subtest: rejects and withdraws with mandatory reason; supports resubmission
+        ok 3 - rejects and withdraws with mandatory reason; supports resubmission
+          ---
+          duration_ms: 8.51525
+          ...
+        # Subtest: unauthorised submit / wrong-scope approver fail closed
+        ok 4 - unauthorised submit / wrong-scope approver fail closed
+          ---
+          duration_ms: 9.291783
+          ...
+        # Subtest: submit and approve replay are idempotent
+        ok 5 - submit and approve replay are idempotent
+          ---
+          duration_ms: 2.90911
+          ...
+        1..5
+    ok 2 - CP5.2–5.3 submit / approve / reject / withdraw + SoD
+      ---
+      duration_ms: 40.478043
+      type: 'suite'
+      ...
+    # Subtest: CP5.4 invalidation
+        # Subtest: recalculation after approval marks stale and leaves export-ready
+        ok 1 - recalculation after approval marks stale and leaves export-ready
+          ---
+          duration_ms: 12.394618
+          ...
+        # Subtest: deduction change and new exception after approval invalidate
+        ok 2 - deduction change and new exception after approval invalidate
+          ---
+          duration_ms: 6.775604
+          ...
+        # Subtest: approval fails when source manifest changed before approve
+        ok 3 - approval fails when source manifest changed before approve
+          ---
+          duration_ms: 15.127338
+          ...
+        1..3
+    ok 3 - CP5.4 invalidation
+      ---
+      duration_ms: 34.469009
+      type: 'suite'
+      ...
+    # Subtest: CP5.5 M02 + UI meta
+        # Subtest: projects approval-required and closes on approve without duplicate fork
+        ok 1 - projects approval-required and closes on approve without duplicate fork
+          ---
+          duration_ms: 6.630541
+          ...
+        # Subtest: Approval section is available in section meta
+        ok 2 - Approval section is available in section meta
+          ---
+          duration_ms: 0.242115
+          ...
+        # Subtest: getPeriodApprovalView surfaces readiness and history
+        ok 3 - getPeriodApprovalView surfaces readiness and history
+          ---
+          duration_ms: 0.854161
+          ...
+        1..3
+    ok 4 - CP5.5 M02 + UI meta
+      ---
+      duration_ms: 7.84273
+      type: 'suite'
+      ...
+    # Subtest: CP5.6 migration, architecture, exclusions
+        # Subtest: migration v8 idempotent and preserves v7 data
+        ok 1 - migration v8 idempotent and preserves v7 data
+          ---
+          duration_ms: 1.984373
+          ...
+        # Subtest: malformed stored approval is skipped safely
+        ok 2 - malformed stored approval is skipped safely
+          ---
+          duration_ms: 0.370788
+          ...
+        # Subtest: no M04/M05/M06 writes and no direct M02 repository import
+        ok 3 - no M04/M05/M06 writes and no direct M02 repository import
+          ---
+          duration_ms: 20.648357
+          ...
+        # Subtest: blocked period cannot submit as approved/export-ready
+        ok 4 - blocked period cannot submit as approved/export-ready
+          ---
+          duration_ms: 0.598814
+          ...
+        # Subtest: tenant/LE mismatch on population for org B actor
+        ok 5 - tenant/LE mismatch on population for org B actor
+          ---
+          duration_ms: 0.909277
+          ...
+        1..5
+    ok 5 - CP5.6 migration, architecture, exclusions
+      ---
+      duration_ms: 24.685229
+      type: 'suite'
+      ...
+    1..5
+ok 1 - M07 Batch 5 CP5.1–5.6
+  ---
+  duration_ms: 148.771009
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 5 final — materialProfileRevision pin consistency
+    # Subtest: approved manifest verifies before mutation
+    ok 1 - approved manifest verifies before mutation
+      ---
+      duration_ms: 24.042487
+      ...
+    # Subtest: rate-only update cannot leave approved/export-ready with checksum mismatch
+    ok 2 - rate-only update cannot leave approved/export-ready with checksum mismatch
+      ---
+      duration_ms: 12.403565
+      ...
+    # Subtest: external-ID update cannot leave approved/export-ready with checksum mismatch
+    ok 3 - external-ID update cannot leave approved/export-ready with checksum mismatch
+      ---
+      duration_ms: 12.762203
+      ...
+    # Subtest: non-material update preserves approval only when manifest reconstruction still succeeds
+    ok 4 - non-material update preserves approval only when manifest reconstruction still succeeds
+      ---
+      duration_ms: 7.051682
+      ...
+    # Subtest: every material profile update immediately stales approval
+    ok 5 - every material profile update immediately stales approval
+      ---
+      duration_ms: 8.530813
+      ...
+    # Subtest: material classification change bumps materialProfileRevision and stales
+    ok 6 - material classification change bumps materialProfileRevision and stales
+      ---
+      duration_ms: 8.267417
+      ...
+    # Subtest: stale invalidation remains idempotent
+    ok 7 - stale invalidation remains idempotent
+      ---
+      duration_ms: 7.206692
+      ...
+    # Subtest: unrelated historical or audit-only record changes do not incorrectly invalidate
+    ok 8 - unrelated historical or audit-only record changes do not incorrectly invalidate
+      ---
+      duration_ms: 7.025047
+      ...
+    # Subtest: direct approval verification never suppresses a genuine authoritative-source mismatch
+    ok 9 - direct approval verification never suppresses a genuine authoritative-source mismatch
+      ---
+      duration_ms: 10.091928
+      ...
+    1..9
+ok 2 - M07 Batch 5 final — materialProfileRevision pin consistency
+  ---
+  duration_ms: 98.417702
+  type: 'suite'
+  ...
+# Subtest: M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+    # Subtest: employment / clinic fail-closed
+        # Subtest: missing employment status blocks and keeps person visible
+        ok 1 - missing employment status blocks and keeps person visible
+          ---
+          duration_ms: 8.230074
+          ...
+        # Subtest: missing employment-effective start date blocks
+        ok 2 - missing employment-effective start date blocks
+          ---
+          duration_ms: 0.664222
+          ...
+        # Subtest: ambiguous employment dates block
+        ok 3 - ambiguous employment dates block
+          ---
+          duration_ms: 0.638779
+          ...
+        # Subtest: missing period-effective clinic assignment blocks
+        ok 4 - missing period-effective clinic assignment blocks
+          ---
+          duration_ms: 0.738567
+          ...
+        # Subtest: ambiguous clinic assignment blocks
+        ok 5 - ambiguous clinic assignment blocks
+          ---
+          duration_ms: 0.755206
+          ...
+        # Subtest: ordinary persisted record cannot use demo defaults
+        ok 6 - ordinary persisted record cannot use demo defaults
+          ---
+          duration_ms: 5.553158
+          ...
+        # Subtest: explicitly marked demo seed follows only approved isolated demo behaviour
+        ok 7 - explicitly marked demo seed follows only approved isolated demo behaviour
+          ---
+          duration_ms: 0.662648
+          ...
+        1..7
+    ok 1 - employment / clinic fail-closed
+      ---
+      duration_ms: 17.964248
+      type: 'suite'
+      ...
+    # Subtest: profile / classification invalidation
+        # Subtest: profile change after approval immediately produces stale
+        ok 1 - profile change after approval immediately produces stale
+          ---
+          duration_ms: 10.098771
+          ...
+        # Subtest: employment-date change after approval immediately produces stale
+        ok 2 - employment-date change after approval immediately produces stale
+          ---
+          duration_ms: 3.325029
+          ...
+        # Subtest: clinic-assignment change after approval immediately produces stale where supported
+        ok 3 - clinic-assignment change after approval immediately produces stale where supported
+          ---
+          duration_ms: 6.526398
+          ...
+        # Subtest: classification mapping replacement after approval immediately produces stale
+        ok 4 - classification mapping replacement after approval immediately produces stale
+          ---
+          duration_ms: 5.278016
+          ...
+        # Subtest: classification mapping deactivation after approval immediately produces stale
+        ok 5 - classification mapping deactivation after approval immediately produces stale
+          ---
+          duration_ms: 3.179152
+          ...
+        # Subtest: irrelevant profile change does not incorrectly stale approval
+        ok 6 - irrelevant profile change does not incorrectly stale approval
+          ---
+          duration_ms: 6.948133
+          ...
+        # Subtest: identical invalidation replay does not duplicate lifecycle, audit or M02 records
+        ok 7 - identical invalidation replay does not duplicate lifecycle, audit or M02 records
+          ---
+          duration_ms: 5.629788
+          ...
+        # Subtest: alternate mutation paths cannot bypass invalidation
+        ok 8 - alternate mutation paths cannot bypass invalidation
+          ---
+          duration_ms: 7.090233
+          ...
+        1..8
+    ok 2 - profile / classification invalidation
+      ---
+      duration_ms: 48.518262
+      type: 'suite'
+      ...
+    # Subtest: dedicated SoD proofs
+        # Subtest: rejects approval when approver is material deduction creator
+        ok 1 - rejects approval when approver is material deduction creator
+          ---
+          duration_ms: 8.186039
+          ...
+        # Subtest: rejects approval when approver is material exception resolver
+        ok 2 - rejects approval when approver is material exception resolver
+          ---
+          duration_ms: 3.506681
+          ...
+        # Subtest: rejects approval when approver is material exception waiver actor
+        ok 3 - rejects approval when approver is material exception waiver actor
+          ---
+          duration_ms: 3.003496
+          ...
+        # Subtest: incomplete or missing material-actor provenance fails closed
+        ok 4 - incomplete or missing material-actor provenance fails closed
+          ---
+          duration_ms: 1.282234
+          ...
+        # Subtest: unrelated historical actors do not incorrectly block approval
+        ok 5 - unrelated historical actors do not incorrectly block approval
+          ---
+          duration_ms: 2.013922
+          ...
+        # Subtest: material actors are derived from the pinned manifest; no dual approval
+        ok 6 - material actors are derived from the pinned manifest; no dual approval
+          ---
+          duration_ms: 2.033324
+          ...
+        1..6
+    ok 3 - dedicated SoD proofs
+      ---
+      duration_ms: 20.253972
+      type: 'suite'
+      ...
+    1..3
+ok 3 - M07 Batch 5 remediation — fail-closed employment + invalidation + SoD
+  ---
+  duration_ms: 87.118795
+  type: 'suite'
+  ...
+1..3
+# tests 49
+# suites 11
+# pass 49
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 465.183362

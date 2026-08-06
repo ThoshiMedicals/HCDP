@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-08-06T02:59:06.248Z",
+  "appSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "accounting": {
+    "controlsInspected": 25865,
+    "controlsWithDefectFlags": 4,
+    "justifiedExemptions": 4,
+    "unresolvedDefects": 0,
+    "accountingEquationHolds": true,
+    "identity": "controlsWithDefectFlags = justifiedExemptions + unresolvedDefects"
+  },
+  "rowCount": 4,
+  "rows": [
+    {
+      "route": "/staff-doctors",
+      "appearance": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "tag": "button",
+      "text": "Restrictions",
+      "className": "module-section-nav__tab",
+      "chromeScoped": false,
+      "centreInViewport": true,
+      "rect": {
+        "x": 1225.84,
+        "y": 235.89,
+        "width": 107.58,
+        "height": 40
+      },
+      "outsideViewport": false,
+      "clippedByAncestor": false,
+      "occluded": true,
+      "unintendedTruncation": false,
+      "nearestClippingAncestor": {
+        "tag": "div",
+        "className": "module-section-nav__scroller",
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "position": "static",
+        "constrainedY": false,
+        "constrainedX": true,
+        "rect": {
+          "x": 333,
+          "y": 233.89,
+          "width": 902,
+          "height": 48
+        },
+        "scrollWidth": 1407,
+        "clientWidth": 902,
+        "scrollHeight": 48,
+        "clientHeight": 48
+      },
+      "legitimateScrollRegionExemption": false,
+      "stickyFooterScrollOcclusion": false,
+      "belowViewportPageScroll": false,
+      "horizontalScrollEscape": true,
+      "noisyScrollContainer": false,
+      "adjudication": "JUSTIFIED_EXEMPTION"
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "light",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "tag": "button",
+      "text": "Restrictions",
+      "className": "module-section-nav__tab",
+      "chromeScoped": false,
+      "centreInViewport": true,
+      "rect": {
+        "x": 1225.84,
+        "y": 235.89,
+        "width": 107.58,
+        "height": 40
+      },
+      "outsideViewport": false,
+      "clippedByAncestor": false,
+      "occluded": true,
+      "unintendedTruncation": false,
+      "nearestClippingAncestor": {
+        "tag": "div",
+        "className": "module-section-nav__scroller",
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "position": "static",
+        "constrainedY": false,
+        "constrainedX": true,
+        "rect": {
+          "x": 333,
+          "y": 233.89,
+          "width": 902,
+          "height": 48
+        },
+        "scrollWidth": 1407,
+        "clientWidth": 902,
+        "scrollHeight": 48,
+        "clientHeight": 48
+      },
+      "legitimateScrollRegionExemption": false,
+      "stickyFooterScrollOcclusion": false,
+      "belowViewportPageScroll": false,
+      "horizontalScrollEscape": true,
+      "noisyScrollContainer": false,
+      "adjudication": "JUSTIFIED_EXEMPTION"
+    },
+    {
+      "route": "/staff-doctors",
+      "appearance": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "tag": "button",
+      "text": "Restrictions",
+      "className": "module-section-nav__tab",
+      "chromeScoped": false,
+      "centreInViewport": true,
+      "rect": {
+        "x": 1225.84,
+        "y": 235.89,
+        "width": 107.58,
+        "height": 40
+      },
+      "outsideViewport": false,
+      "clippedByAncestor": false,
+      "occluded": true,
+      "unintendedTruncation": false,
+      "nearestClippingAncestor": {
+        "tag": "div",
+        "className": "module-section-nav__scroller",
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "position": "static",
+        "constrainedY": false,
+        "constrainedX": true,
+        "rect": {
+          "x": 333,
+          "y": 233.89,
+          "width": 902,
+          "height": 48
+        },
+        "scrollWidth": 1407,
+        "clientWidth": 902,
+        "scrollHeight": 48,
+        "clientHeight": 48
+      },
+      "legitimateScrollRegionExemption": false,
+      "stickyFooterScrollOcclusion": false,
+      "belowViewportPageScroll": false,
+      "horizontalScrollEscape": true,
+      "noisyScrollContainer": false,
+      "adjudication": "JUSTIFIED_EXEMPTION"
+    },
+    {
+      "route": "/staff-doctors?section=people",
+      "appearance": "dark",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "tag": "button",
+      "text": "Restrictions",
+      "className": "module-section-nav__tab",
+      "chromeScoped": false,
+      "centreInViewport": true,
+      "rect": {
+        "x": 1225.84,
+        "y": 235.89,
+        "width": 107.58,
+        "height": 40
+      },
+      "outsideViewport": false,
+      "clippedByAncestor": false,
+      "occluded": true,
+      "unintendedTruncation": false,
+      "nearestClippingAncestor": {
+        "tag": "div",
+        "className": "module-section-nav__scroller",
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "position": "static",
+        "constrainedY": false,
+        "constrainedX": true,
+        "rect": {
+          "x": 333,
+          "y": 233.89,
+          "width": 902,
+          "height": 48
+        },
+        "scrollWidth": 1407,
+        "clientWidth": 902,
+        "scrollHeight": 48,
+        "clientHeight": 48
+      },
+      "legitimateScrollRegionExemption": false,
+      "stickyFooterScrollOcclusion": false,
+      "belowViewportPageScroll": false,
+      "horizontalScrollEscape": true,
+      "noisyScrollContainer": false,
+      "adjudication": "JUSTIFIED_EXEMPTION"
+    }
+  ]
+}

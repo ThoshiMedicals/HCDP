@@ -1,0 +1,585 @@
+{
+  "agent": "Visual QA Agent",
+  "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "reproductionSourceSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "closed": 9,
+  "open": 0,
+  "cases": [
+    {
+      "findingId": "VQA-C2-SHORT-001",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": "1024x600",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 1149,
+            "x": 1043.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 10181,
+          "clientHeight": 600,
+          "bodyScrollH": 10181
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-001-light-1024x600.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-001-light-1024x600-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-001-light-1024x600-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-002",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": "768x500",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 853,
+            "x": 747.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 500,
+          "clientHeight": 500
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 10798,
+          "clientHeight": 500,
+          "bodyScrollH": 10798
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-002-light-768x500.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-002-light-768x500-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-002-light-768x500-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-003",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": "1024x600",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 1149,
+            "x": 1043.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 10181,
+          "clientHeight": 600,
+          "bodyScrollH": 10181
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-003-dark-1024x600.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-003-dark-1024x600-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-003-dark-1024x600-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-004",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": "768x500",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 853,
+            "x": 747.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 500,
+          "clientHeight": 500
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 10798,
+          "clientHeight": 500,
+          "bodyScrollH": 10798
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-004-dark-768x500.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-004-dark-768x500-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-004-dark-768x500-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-005",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": "1024x600",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 1149,
+            "x": 1043.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1133,
+            "x": 753,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 600,
+          "clientHeight": 600
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1024,
+          "clientWidth": 1024,
+          "scrollHeight": 10181,
+          "clientHeight": 600,
+          "bodyScrollH": 10181
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-005-system-1024x600.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-005-system-1024x600-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-005-system-1024x600-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-006",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": "768x500",
+      "before": {
+        "overflowOffenderCount": 7,
+        "sample": [
+          {
+            "label": "Clear filters",
+            "right": 853,
+            "x": 747.28,
+            "w": 105.72
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          },
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 837,
+            "x": 457,
+            "w": 380
+          }
+        ],
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 500,
+          "clientHeight": 500
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "scrollHeight": 10798,
+          "clientHeight": 500,
+          "bodyScrollH": 10798
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-006-system-768x500.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-006-system-768x500-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-006-system-768x500-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-007",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": "1536x900",
+      "before": {
+        "overflowOffenderCount": 1,
+        "sample": [
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1539.89,
+            "x": 1226.5,
+            "w": 313.39
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 8947,
+          "clientHeight": 900,
+          "bodyScrollH": 8947
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-007-light-1536x900.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-007-light-1536x900-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-007-light-1536x900-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-008",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": "1536x900",
+      "before": {
+        "overflowOffenderCount": 1,
+        "sample": [
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1539.89,
+            "x": 1226.5,
+            "w": 313.39
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 8947,
+          "clientHeight": 900,
+          "bodyScrollH": 8947
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-008-dark-1536x900.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-008-dark-1536x900-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-008-dark-1536x900-vqa-indep.png"
+      }
+    },
+    {
+      "findingId": "VQA-C2-SHORT-009",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": "1536x900",
+      "before": {
+        "overflowOffenderCount": 1,
+        "sample": [
+          {
+            "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+            "right": 1539.89,
+            "x": 1226.5,
+            "w": 313.39
+          }
+        ],
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "after": {
+        "overflowOffenderCount": 0,
+        "doc": {
+          "scrollWidth": 1536,
+          "clientWidth": 1536,
+          "scrollHeight": 8947,
+          "clientHeight": 900,
+          "bodyScrollH": 8947
+        },
+        "canScrollY": true,
+        "horizontalDocOverflow": false,
+        "criteria": {
+          "documentHorizontalOverflow": "PASS",
+          "unintendedElementClipping": "PASS",
+          "accessibleVerticalScrolling": "PASS",
+          "controlOverflowX": "PASS"
+        }
+      },
+      "correctionReference": [
+        {
+          "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+          "message": "fix(ui): contain dashboard at short viewport heights"
+        },
+        {
+          "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+          "message": "fix(ui): contain dashboard More menus at short heights"
+        }
+      ],
+      "screenshots": {
+        "before": "short-height-containment-2a/reproduction/screenshots/VQA-C2-SHORT-009-system-1536x900.png",
+        "afterPrepared": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-009-system-1536x900-b1152d3.png",
+        "afterIndependent": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-009-system-1536x900-vqa-indep.png"
+      }
+    }
+  ]
+}

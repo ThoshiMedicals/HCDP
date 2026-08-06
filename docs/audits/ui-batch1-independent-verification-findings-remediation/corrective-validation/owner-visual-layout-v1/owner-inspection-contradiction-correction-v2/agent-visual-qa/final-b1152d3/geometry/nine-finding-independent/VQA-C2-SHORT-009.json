@@ -1,0 +1,382 @@
+{
+  "findingId": "VQA-C2-SHORT-009",
+  "route": "/dashboard",
+  "mode": "system",
+  "viewport": {
+    "width": 1536,
+    "height": 900
+  },
+  "before": {
+    "overflowOffenderCount": 1,
+    "sample": [
+      {
+        "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00",
+        "right": 1539.89,
+        "x": 1226.5
+      }
+    ],
+    "horizontalDocOverflow": false,
+    "doc": {
+      "scrollWidth": 1536,
+      "clientWidth": 1536,
+      "scrollHeight": 900,
+      "clientHeight": 900
+    }
+  },
+  "after": {
+    "vw": 1536,
+    "vh": 900,
+    "doc": {
+      "scrollWidth": 1536,
+      "clientWidth": 1536,
+      "scrollHeight": 8947,
+      "clientHeight": 900,
+      "bodyScrollH": 8947
+    },
+    "canScrollY": true,
+    "horizontalDocOverflow": false,
+    "offenders": [
+      {
+        "tag": "button",
+        "label": "Clear filters",
+        "rect": {
+          "x": 1397.28125,
+          "y": -3201.125,
+          "w": 105.71875,
+          "h": 41.5,
+          "right": 1503,
+          "left": 1397.28125
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -2730,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -2433.875,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -2137.75,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -1841.625,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -1545.5,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -1249.375,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -953.25,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -657.125,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -361,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 361,
+          "y": -64.875,
+          "w": 998.640625,
+          "h": 44.5,
+          "right": 1359.640625,
+          "left": 361
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nHide",
+        "rect": {
+          "x": 337,
+          "y": 420.375,
+          "w": 260.5,
+          "h": 59,
+          "right": 597.5,
+          "left": 337
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 337,
+          "y": 790.25,
+          "w": 260.5,
+          "h": 59,
+          "right": 597.5,
+          "left": 337
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 337,
+          "y": 1135.125,
+          "w": 260.5,
+          "h": 59,
+          "right": 597.5,
+          "left": 337
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 633.5,
+          "y": 443.875,
+          "w": 260.5,
+          "h": 59,
+          "right": 894,
+          "left": 633.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 633.5,
+          "y": 788.75,
+          "w": 260.5,
+          "h": 59,
+          "right": 894,
+          "left": 633.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 633.5,
+          "y": 1133.625,
+          "w": 260.5,
+          "h": 59,
+          "right": 894,
+          "left": 633.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 633.5,
+          "y": 1478.5,
+          "w": 260.5,
+          "h": 59,
+          "right": 894,
+          "left": 633.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 633.5,
+          "y": 1866.375,
+          "w": 260.5,
+          "h": 59,
+          "right": 894,
+          "left": 633.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "button",
+        "label": "Audit and override detail\nLast refreshed 06/08/2026, 8:30:00 am\nExpand",
+        "rect": {
+          "x": 1226.5,
+          "y": 427.625,
+          "w": 260.5,
+          "h": 59,
+          "right": 1487,
+          "left": 1226.5
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 374,
+          "y": 5777.125,
+          "w": 972.640625,
+          "h": 44.5,
+          "right": 1346.640625,
+          "left": 374
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      },
+      {
+        "tag": "input",
+        "label": "Add comment…",
+        "rect": {
+          "x": 374,
+          "y": 6073.25,
+          "w": 972.640625,
+          "h": 44.5,
+          "right": 1346.640625,
+          "left": 374
+        },
+        "overflowsX": false,
+        "clippedByAncestor": false,
+        "opacity": "1"
+      }
+    ],
+    "overflowOffenderCount": 0,
+    "clippedOverflowCount": 0,
+    "overflowOffenders": []
+  },
+  "screenshot": "VQA-C2-SHORT-009-system-1536x900-vqa-indep.png",
+  "status": "CLOSED",
+  "criteria": {
+    "documentHorizontalOverflow": "PASS",
+    "unintendedElementClipping": "PASS",
+    "accessibleVerticalScrolling": "PASS",
+    "controlOverflowX": "PASS"
+  }
+}

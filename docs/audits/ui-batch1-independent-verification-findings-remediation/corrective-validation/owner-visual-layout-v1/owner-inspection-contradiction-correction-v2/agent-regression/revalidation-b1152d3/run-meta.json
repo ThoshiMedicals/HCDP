@@ -1,0 +1,8 @@
+{
+  "startedUtc": "2026-08-06T02:59:10Z",
+  "worktree": "/tmp/hcdp-fix/c2a-reg-3513",
+  "inputSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "frozenExpected": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "shaMatch": true,
+  "evidenceRoot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-regression/revalidation-b1152d3"
+}

@@ -1,0 +1,3098 @@
+{
+  "summary": {
+    "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+    "headSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+    "shaMatch": true,
+    "appTreeCleanVsFreeze": true,
+    "diffBytes": 0,
+    "base": "http://127.0.0.1:3511",
+    "total": 110,
+    "cleared": 110,
+    "stillBad": 0,
+    "missing": 0,
+    "identityNote": "Individual after-geometry + screenshot per prior defect id",
+    "generatedAt": "2026-08-06T03:11:19.442Z"
+  },
+  "results": [
+    {
+      "id": "D-012",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-012-1440.png"
+    },
+    {
+      "id": "D-016",
+      "route": "/time-attendance",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-016-1440.png"
+    },
+    {
+      "id": "D-023",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-023-1440.png"
+    },
+    {
+      "id": "D-044",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-044-1440.png"
+    },
+    {
+      "id": "D-048",
+      "route": "/time-attendance",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-048-1440.png"
+    },
+    {
+      "id": "D-055",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-055-1440.png"
+    },
+    {
+      "id": "D-076",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1440,
+      "appearance": "system",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-076-1440.png"
+    },
+    {
+      "id": "D-080",
+      "route": "/time-attendance",
+      "viewport": 1440,
+      "appearance": "system",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-080-1440.png"
+    },
+    {
+      "id": "D-087",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1440,
+      "appearance": "system",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-087-1440.png"
+    },
+    {
+      "id": "D-098",
+      "route": "/staff-doctors",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 791,
+          "y": 378.89,
+          "width": 223.5,
+          "height": 123
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-098-1280.png"
+    },
+    {
+      "id": "D-100",
+      "route": "/staff-doctors?section=people",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Email",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 788,
+          "y": 459.19,
+          "width": 217.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-100-1280.png"
+    },
+    {
+      "id": "D-102",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 662.38,
+          "y": 20.5,
+          "width": 300.48,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-102-1280.png"
+    },
+    {
+      "id": "D-107",
+      "route": "/roster",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Clinic id",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 878.19,
+          "y": 475.19,
+          "width": 172.41,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-107-1280.png"
+    },
+    {
+      "id": "D-119",
+      "route": "/time-attendance",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-119-1280.png"
+    },
+    {
+      "id": "D-126",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1280,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-126-1280.png"
+    },
+    {
+      "id": "D-137",
+      "route": "/staff-doctors",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 791,
+          "y": 378.89,
+          "width": 223.5,
+          "height": 123
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-137-1280.png"
+    },
+    {
+      "id": "D-139",
+      "route": "/staff-doctors?section=people",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Email",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 788,
+          "y": 459.19,
+          "width": 217.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-139-1280.png"
+    },
+    {
+      "id": "D-141",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 662.38,
+          "y": 20.5,
+          "width": 300.48,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-141-1280.png"
+    },
+    {
+      "id": "D-146",
+      "route": "/roster",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Clinic id",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 878.19,
+          "y": 475.19,
+          "width": 172.41,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-146-1280.png"
+    },
+    {
+      "id": "D-158",
+      "route": "/time-attendance",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-158-1280.png"
+    },
+    {
+      "id": "D-165",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1280,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-165-1280.png"
+    },
+    {
+      "id": "D-175",
+      "route": "/staff-doctors",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "button",
+      "label": "ACTIVE STAFF\n41",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 445.39,
+          "width": 333,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-175-1024.png"
+    },
+    {
+      "id": "D-176",
+      "route": "/staff-doctors",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 562.89,
+          "width": 333,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-176-1024.png"
+    },
+    {
+      "id": "D-177",
+      "route": "/staff-doctors?section=people",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Preferred name",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 498.5,
+          "y": 525.69,
+          "width": 153.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-177-1024.png"
+    },
+    {
+      "id": "D-178",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 429,
+          "y": 72.25,
+          "width": 476,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-178-1024.png"
+    },
+    {
+      "id": "D-184",
+      "route": "/roster",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Ends on",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 595.39,
+          "y": 539.19,
+          "width": 121.2,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-184-1024.png"
+    },
+    {
+      "id": "D-190",
+      "route": "/roster?section=coverage",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Evaluate coverage",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 552.33,
+          "y": 519.19,
+          "width": 207.33,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-190-1024.png"
+    },
+    {
+      "id": "D-194",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 552.33,
+          "y": 519.19,
+          "width": 207.33,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-194-1024.png"
+    },
+    {
+      "id": "D-199",
+      "route": "/time-attendance",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 641.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-199-1024.png"
+    },
+    {
+      "id": "D-206",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1024,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 398.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-206-1024.png"
+    },
+    {
+      "id": "D-216",
+      "route": "/staff-doctors",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "ACTIVE STAFF\n41",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 445.39,
+          "width": 333,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-216-1024.png"
+    },
+    {
+      "id": "D-217",
+      "route": "/staff-doctors",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 562.89,
+          "width": 333,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-217-1024.png"
+    },
+    {
+      "id": "D-218",
+      "route": "/staff-doctors?section=people",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Preferred name",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 498.5,
+          "y": 525.69,
+          "width": 153.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-218-1024.png"
+    },
+    {
+      "id": "D-219",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 429,
+          "y": 72.25,
+          "width": 476,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-219-1024.png"
+    },
+    {
+      "id": "D-225",
+      "route": "/roster",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Ends on",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 595.39,
+          "y": 539.19,
+          "width": 121.2,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-225-1024.png"
+    },
+    {
+      "id": "D-231",
+      "route": "/roster?section=coverage",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Evaluate coverage",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 552.33,
+          "y": 519.19,
+          "width": 207.33,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-231-1024.png"
+    },
+    {
+      "id": "D-235",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 552.33,
+          "y": 519.19,
+          "width": 207.33,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-235-1024.png"
+    },
+    {
+      "id": "D-240",
+      "route": "/time-attendance",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 641.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-240-1024.png"
+    },
+    {
+      "id": "D-247",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1024,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 398.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-247-1024.png"
+    },
+    {
+      "id": "D-257",
+      "route": "/staff-doctors",
+      "viewport": 768,
+      "appearance": "light",
+      "tag": "button",
+      "label": "ACTIVE DOCTORS\n48",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 391,
+          "y": 460.89,
+          "width": 361,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-257-768.png"
+    },
+    {
+      "id": "D-258",
+      "route": "/staff-doctors",
+      "viewport": 768,
+      "appearance": "light",
+      "tag": "button",
+      "label": "ON LEAVE TODAY\n0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 391,
+          "y": 578.39,
+          "width": 361,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-258-768.png"
+    },
+    {
+      "id": "D-259",
+      "route": "/staff-doctors?section=people",
+      "viewport": 768,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Create",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 563.5,
+          "y": 541.19,
+          "width": 167.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-259-768.png"
+    },
+    {
+      "id": "D-260",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 768,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Add",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 563.5,
+          "y": 541.19,
+          "width": 167.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-260-768.png"
+    },
+    {
+      "id": "D-279",
+      "route": "/staff-doctors",
+      "viewport": 768,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "ACTIVE DOCTORS\n48",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 391,
+          "y": 460.89,
+          "width": 361,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-279-768.png"
+    },
+    {
+      "id": "D-280",
+      "route": "/staff-doctors",
+      "viewport": 768,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "ON LEAVE TODAY\n0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 391,
+          "y": 578.39,
+          "width": 361,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-280-768.png"
+    },
+    {
+      "id": "D-281",
+      "route": "/staff-doctors?section=people",
+      "viewport": 768,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Create",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 563.5,
+          "y": 541.19,
+          "width": 167.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-281-768.png"
+    },
+    {
+      "id": "D-282",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 768,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Add",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 563.5,
+          "y": 541.19,
+          "width": 167.5,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-282-768.png"
+    },
+    {
+      "id": "D-301",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "ACTIVE STAFF\n41",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 491.89,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-301-430.png"
+    },
+    {
+      "id": "D-302",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "ACTIVE DOCTORS\n48",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 609.39,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-302-430.png"
+    },
+    {
+      "id": "D-303",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 726.89,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-303-430.png"
+    },
+    {
+      "id": "D-304",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "select",
+      "label": "Staff\nDoctor",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 594.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-304-430.png"
+    },
+    {
+      "id": "D-305",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Preferred name",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 642.69,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-305-430.png"
+    },
+    {
+      "id": "D-306",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Email",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 691.19,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-306-430.png"
+    },
+    {
+      "id": "D-307",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Create",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 739.69,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-307-430.png"
+    },
+    {
+      "id": "D-308",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "select",
+      "label": "Akith Hettiarachchi\nAlana Cheney\nAlvina ",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 594.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-308-430.png"
+    },
+    {
+      "id": "D-309",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 43,
+          "y": 60.75,
+          "width": 366,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-309-430.png"
+    },
+    {
+      "id": "D-310",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 43,
+          "y": 60.75,
+          "width": 366,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-310-430.png"
+    },
+    {
+      "id": "D-311",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Add",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 739.69,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-311-430.png"
+    },
+    {
+      "id": "D-312",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "select",
+      "label": "Select shift…\nClinical Nurse · 2026-08-0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 565.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-312-430.png"
+    },
+    {
+      "id": "D-313",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 613.69,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-313-430.png"
+    },
+    {
+      "id": "D-314",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 662.19,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-314-430.png"
+    },
+    {
+      "id": "D-324",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "ACTIVE STAFF\n41",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 491.89,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-324-430.png"
+    },
+    {
+      "id": "D-325",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "ACTIVE DOCTORS\n48",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 609.39,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-325-430.png"
+    },
+    {
+      "id": "D-326",
+      "route": "/staff-doctors",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "BLOCKED READINESS\n89",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 16,
+          "y": 726.89,
+          "width": 398,
+          "height": 103.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-326-430.png"
+    },
+    {
+      "id": "D-327",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "select",
+      "label": "Staff\nDoctor",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 594.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-327-430.png"
+    },
+    {
+      "id": "D-328",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Preferred name",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 642.69,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-328-430.png"
+    },
+    {
+      "id": "D-329",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Email",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 691.19,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-329-430.png"
+    },
+    {
+      "id": "D-330",
+      "route": "/staff-doctors?section=people",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Create",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 739.69,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-330-430.png"
+    },
+    {
+      "id": "D-331",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "select",
+      "label": "Akith Hettiarachchi\nAlana Cheney\nAlvina ",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 594.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-331-430.png"
+    },
+    {
+      "id": "D-332",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 43,
+          "y": 60.75,
+          "width": 366,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-332-430.png"
+    },
+    {
+      "id": "D-333",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 43,
+          "y": 60.75,
+          "width": 366,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-333-430.png"
+    },
+    {
+      "id": "D-334",
+      "route": "/staff-doctors?section=credentials",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Add",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 739.69,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-334-430.png"
+    },
+    {
+      "id": "D-335",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "select",
+      "label": "Select shift…\nClinical Nurse · 2026-08-0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 565.69,
+          "width": 356,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-335-430.png"
+    },
+    {
+      "id": "D-336",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 613.69,
+          "width": 356,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-336-430.png"
+    },
+    {
+      "id": "D-337",
+      "route": "/roster?section=open-shifts",
+      "viewport": 430,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 662.19,
+          "width": 356,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-337-430.png"
+    },
+    {
+      "id": "D-347",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "light",
+      "tag": "select",
+      "label": "Select period…\nDemo Roster — Week A (202",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 610.69,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-347-390.png"
+    },
+    {
+      "id": "D-348",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Evaluate coverage",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 658.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-348-390.png"
+    },
+    {
+      "id": "D-349",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "light",
+      "tag": "select",
+      "label": "Select shift…\nClinical Nurse · 2026-08-0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 588.19,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-349-390.png"
+    },
+    {
+      "id": "D-350",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 636.19,
+          "width": 316,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-350-390.png"
+    },
+    {
+      "id": "D-351",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 684.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-351-390.png"
+    },
+    {
+      "id": "D-361",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "dark",
+      "tag": "select",
+      "label": "Select period…\nDemo Roster — Week A (202",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 610.69,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-361-390.png"
+    },
+    {
+      "id": "D-362",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Evaluate coverage",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 658.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-362-390.png"
+    },
+    {
+      "id": "D-363",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "dark",
+      "tag": "select",
+      "label": "Select shift…\nClinical Nurse · 2026-08-0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 588.19,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-363-390.png"
+    },
+    {
+      "id": "D-364",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 636.19,
+          "width": 316,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-364-390.png"
+    },
+    {
+      "id": "D-365",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 684.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-365-390.png"
+    },
+    {
+      "id": "D-375",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "system",
+      "tag": "select",
+      "label": "Select period…\nDemo Roster — Week A (202",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 610.69,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-375-390.png"
+    },
+    {
+      "id": "D-376",
+      "route": "/roster?section=coverage",
+      "viewport": 390,
+      "appearance": "system",
+      "tag": "button",
+      "label": "Evaluate coverage",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 658.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-376-390.png"
+    },
+    {
+      "id": "D-377",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "system",
+      "tag": "select",
+      "label": "Select shift…\nClinical Nurse · 2026-08-0",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 588.19,
+          "width": 316,
+          "height": 40
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-377-390.png"
+    },
+    {
+      "id": "D-378",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "system",
+      "tag": "input",
+      "label": "Audience",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 636.19,
+          "width": 316,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-378-390.png"
+    },
+    {
+      "id": "D-379",
+      "route": "/roster?section=open-shifts",
+      "viewport": 390,
+      "appearance": "system",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 37,
+          "y": 684.69,
+          "width": 316,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-379-390.png"
+    },
+    {
+      "id": "D-389",
+      "route": "/staff-doctors?section=engagements",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 694.63,
+          "y": 20.5,
+          "width": 396,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-389-1440.png"
+    },
+    {
+      "id": "D-421",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-421-1440.png"
+    },
+    {
+      "id": "D-425",
+      "route": "/roster?section=availability-leave",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "input",
+      "label": "Clinic id filter",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 868,
+          "y": 448.69,
+          "width": 523,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-425-1440.png"
+    },
+    {
+      "id": "D-430",
+      "route": "/roster?section=conflicts-warnings",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Evaluate conflicts",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-430-1440.png"
+    },
+    {
+      "id": "D-443",
+      "route": "/roster?section=settings",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Create draft",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-443-1440.png"
+    },
+    {
+      "id": "D-447",
+      "route": "/time-attendance?section=live",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-447-1440.png"
+    },
+    {
+      "id": "D-460",
+      "route": "/time-attendance?section=corrections",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Request correction",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 160.91,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-460-1440.png"
+    },
+    {
+      "id": "D-464",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-464-1440.png"
+    },
+    {
+      "id": "D-471",
+      "route": "/time-attendance?section=history",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Clear filter",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 506.89,
+          "width": 103.3,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-471-1440.png"
+    },
+    {
+      "id": "D-478",
+      "route": "/time-attendance?section=settings",
+      "viewport": 1440,
+      "appearance": "light",
+      "tag": "button",
+      "label": "Publish policy",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 402.89,
+          "width": 124.56,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-478-1440.png"
+    },
+    {
+      "id": "D-497",
+      "route": "/staff-doctors?section=engagements",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 694.63,
+          "y": 20.5,
+          "width": 396,
+          "height": 22.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-497-1440.png"
+    },
+    {
+      "id": "D-529",
+      "route": "/roster?section=open-shifts",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Offer",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-529-1440.png"
+    },
+    {
+      "id": "D-533",
+      "route": "/roster?section=availability-leave",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "input",
+      "label": "Clinic id filter",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 868,
+          "y": 448.69,
+          "width": 523,
+          "height": 40.5
+        },
+        "visibility": "visible",
+        "display": "block"
+      },
+      "screenshot": "screenshots/D-533-1440.png"
+    },
+    {
+      "id": "D-538",
+      "route": "/roster?section=conflicts-warnings",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Evaluate conflicts",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-538-1440.png"
+    },
+    {
+      "id": "D-551",
+      "route": "/roster?section=settings",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Create draft",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 1045,
+          "y": 475.19,
+          "width": 346,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-551-1440.png"
+    },
+    {
+      "id": "D-555",
+      "route": "/time-attendance?section=live",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Refresh live board",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 597.89,
+          "width": 157.22,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-555-1440.png"
+    },
+    {
+      "id": "D-568",
+      "route": "/time-attendance?section=corrections",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Request correction",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 160.91,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-568-1440.png"
+    },
+    {
+      "id": "D-572",
+      "route": "/time-attendance?section=approvals",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Bulk approve pending",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 354.89,
+          "width": 182.88,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-572-1440.png"
+    },
+    {
+      "id": "D-579",
+      "route": "/time-attendance?section=history",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Clear filter",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 506.89,
+          "width": 103.3,
+          "height": 44.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-579-1440.png"
+    },
+    {
+      "id": "D-586",
+      "route": "/time-attendance?section=settings",
+      "viewport": 1440,
+      "appearance": "dark",
+      "tag": "button",
+      "label": "Publish policy",
+      "status": "CLEARED",
+      "afterGeometry": {
+        "found": true,
+        "closed": false,
+        "centreInViewport": true,
+        "overflowsX": false,
+        "overflowsY": false,
+        "belowViewportPageScroll": false,
+        "clippedByAncestor": false,
+        "defect": false,
+        "rect": {
+          "x": 316,
+          "y": 402.89,
+          "width": 124.56,
+          "height": 42.5
+        },
+        "visibility": "visible",
+        "display": "flex"
+      },
+      "screenshot": "screenshots/D-586-1440.png"
+    }
+  ]
+}

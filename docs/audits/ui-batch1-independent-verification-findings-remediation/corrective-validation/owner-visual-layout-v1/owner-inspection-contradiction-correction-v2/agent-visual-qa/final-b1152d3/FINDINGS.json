@@ -1,0 +1,287 @@
+{
+  "agent": "Visual QA Agent",
+  "phase": "owner-inspection-contradiction-correction-v2/short-height-containment-2a/final-b1152d3",
+  "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "headSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "shaMatch": true,
+  "liveBase": "http://127.0.0.1:3511",
+  "worktree": "/tmp/hcdp-fix/c2a-vqa-3511",
+  "capturedAt": "2026-08-06T02:59:18.024Z",
+  "adjudicatedAt": "2026-08-06T03:13:20.389Z",
+  "srcScriptsDiffBytes": 0,
+  "modesCovered": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "totals": {
+    "screensInspected": 858,
+    "captureErrors": 0,
+    "topbarProbes": 84,
+    "topbarProbeFails": 0,
+    "searchProbes": 84,
+    "searchProbeFails": 0,
+    "stillBadCount": 0,
+    "vqaFindingsOpen": 0,
+    "vqaFindingsClosed": 9,
+    "shortFindingsClosed": 9,
+    "shortFindingsOpen": 0,
+    "prior110VisuallyCleared": 110,
+    "prior110VisuallyStillBad": 0,
+    "prior110VisuallyMissing": 0,
+    "documentHorizontalOverflowFails": 0,
+    "unintendedElementClippingFails": 0,
+    "accessibleVerticalScrolling": "PASS"
+  },
+  "consistency": {
+    "stillBadCountEqualsOpenFindings": true,
+    "stillBadCount": 0,
+    "openFindings": 0
+  },
+  "verdict": "PASS",
+  "verdictReason": "Independent Visual QA closes all 9 VQA-C2-SHORT-* findings with geometry+screenshots at freeze SHA. Capture 858/0 errors; topbar/search 0 fails; prior-110 after-geometry 110 cleared / 0 stillBad / 0 missing; stillBadCount==openFindings==0.",
+  "openFindings": [],
+  "closedFindings": [
+    {
+      "id": "VQA-C2-SHORT-001",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (1024×600 light)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "light",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-001-light-1024x600-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-001-light-1024x600-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-002",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (768×500 light)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "light",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-002-light-768x500-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-002-light-768x500-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-003",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (1024×600 dark)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "dark",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-003-dark-1024x600-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-003-dark-1024x600-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-004",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (768×500 dark)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "dark",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-004-dark-768x500-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-004-dark-768x500-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-005",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (1024×600 system)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "system",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-005-system-1024x600-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-005-system-1024x600-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-006",
+      "status": "CLOSED",
+      "title": "Short-height dashboard control X-overflow (768×500 system)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "system",
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-006-system-768x500-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-006-system-768x500-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-007",
+      "status": "CLOSED",
+      "title": "Dashboard Audit control X-overflow (1536×900 light)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "light",
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-007-light-1536x900-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-007-light-1536x900-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-008",
+      "status": "CLOSED",
+      "title": "Dashboard Audit control X-overflow (1536×900 dark)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "dark",
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-008-dark-1536x900-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-008-dark-1536x900-vqa-indep.png"
+      ]
+    },
+    {
+      "id": "VQA-C2-SHORT-009",
+      "status": "CLOSED",
+      "title": "Dashboard Audit control X-overflow (1536×900 system)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "system",
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "correctionCommits": [
+        "bfb31f9bee714ee70b61952604961291c83256f1",
+        "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+      ],
+      "screenshots": [
+        "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-009-system-1536x900-b1152d3.png",
+        "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-009-system-1536x900-vqa-indep.png"
+      ]
+    }
+  ],
+  "prior110": {
+    "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+    "headSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+    "shaMatch": true,
+    "appTreeCleanVsFreeze": true,
+    "diffBytes": 0,
+    "base": "http://127.0.0.1:3511",
+    "total": 110,
+    "cleared": 110,
+    "stillBad": 0,
+    "missing": 0,
+    "identityNote": "Individual after-geometry + screenshot per prior defect id",
+    "generatedAt": "2026-08-06T03:11:19.442Z"
+  },
+  "capture": {
+    "captureCount": 858,
+    "errorCount": 0,
+    "modes": [
+      "light",
+      "dark",
+      "system"
+    ],
+    "viewportCount": 8,
+    "base": "http://127.0.0.1:3511"
+  }
+}

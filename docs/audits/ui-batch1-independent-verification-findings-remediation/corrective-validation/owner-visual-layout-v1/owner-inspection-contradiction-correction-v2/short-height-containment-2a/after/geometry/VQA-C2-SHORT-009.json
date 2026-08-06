@@ -1,0 +1,23 @@
+{
+  "id": "VQA-C2-SHORT-009",
+  "mode": "system",
+  "w": 1536,
+  "h": 900,
+  "doc": {
+    "scrollWidth": 1536,
+    "clientWidth": 1536,
+    "scrollHeight": 900,
+    "clientHeight": 900
+  },
+  "horizontalDocOverflow": false,
+  "offendersViewport": [],
+  "absOffenders": [],
+  "widestGrid": {
+    "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+    "w": 1248,
+    "scrollW": 1248,
+    "clientW": 1248
+  },
+  "canScrollY": false,
+  "screenshot": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/short-height-containment-2a/after/screenshots/VQA-C2-SHORT-009-system-1536x900.png"
+}

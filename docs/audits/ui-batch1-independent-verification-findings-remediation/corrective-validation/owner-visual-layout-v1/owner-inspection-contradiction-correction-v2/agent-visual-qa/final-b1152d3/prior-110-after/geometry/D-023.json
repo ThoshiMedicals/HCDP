@@ -1,0 +1,28 @@
+{
+  "id": "D-023",
+  "route": "/time-attendance?section=approvals",
+  "viewport": 1440,
+  "appearance": "light",
+  "tag": "button",
+  "label": "Bulk approve pending",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 316,
+      "y": 354.89,
+      "width": 182.88,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-023-1440.png"
+}

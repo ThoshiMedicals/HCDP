@@ -1,0 +1,1332 @@
+{
+  "frozenAppSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "base": "http://127.0.0.1:3510",
+  "reproducedCount": 9,
+  "total": 9,
+  "sharedRootCauseHypothesis": "Command Centre clinic-ops multi-column cards and FilterSentenceBar lack full width containment; ExpandableBlock audit toggles and Clear filters extend past the main pane (especially with sidebar open at 768/1024). 1536 cases show residual audit-button overflow in a right column.",
+  "cases": [
+    {
+      "findingId": "VQA-C2-SHORT-001",
+      "route": "/dashboard",
+      "appearance": "light",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-001-light-1024x600.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "scrollHeight": 600,
+        "clientHeight": 600
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 1043.28,
+            "y": 2309.97,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 1149
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6563.59,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6854.84,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7146.09,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7419.47,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7753.72,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 8097.97,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-002",
+      "route": "/dashboard",
+      "appearance": "light",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-002-light-768x500.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "scrollHeight": 500,
+        "clientHeight": 500
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 747.28,
+            "y": 2304.94,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 853
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6558.56,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6849.81,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7141.06,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7414.44,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7748.69,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 8092.94,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        }
+      ],
+      "wideNodes": [
+        {
+          "tag": "div",
+          "className": "grid gap-3",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3.5",
+          "w": 852,
+          "x": 13,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "grid gap-2 p-3",
+          "w": 852,
+          "x": 13,
+          "text": "EMERGENCY 1 URGENT 4 +1 vs yesterday OVE"
+        },
+        {
+          "tag": "div",
+          "className": "mt-3 space-y-3",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        }
+      ],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-003",
+      "route": "/dashboard",
+      "appearance": "dark",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-003-dark-1024x600.png",
+      "themeDark": true,
+      "doc": {
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "scrollHeight": 600,
+        "clientHeight": 600
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 1043.28,
+            "y": 2309.97,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 1149
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6563.59,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6854.84,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7146.09,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7419.47,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7753.72,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 8097.97,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-004",
+      "route": "/dashboard",
+      "appearance": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-004-dark-768x500.png",
+      "themeDark": true,
+      "doc": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "scrollHeight": 500,
+        "clientHeight": 500
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 747.28,
+            "y": 2304.94,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 853
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6558.56,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6849.81,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7141.06,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7414.44,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7748.69,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 8092.94,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        }
+      ],
+      "wideNodes": [
+        {
+          "tag": "div",
+          "className": "grid gap-3",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3.5",
+          "w": 852,
+          "x": 13,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "grid gap-2 p-3",
+          "w": 852,
+          "x": 13,
+          "text": "EMERGENCY 1 URGENT 4 +1 vs yesterday OVE"
+        },
+        {
+          "tag": "div",
+          "className": "mt-3 space-y-3",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        }
+      ],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-005",
+      "route": "/dashboard",
+      "appearance": "system",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-005-system-1024x600.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "scrollHeight": 600,
+        "clientHeight": 600
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 1043.28,
+            "y": 2309.97,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 1149
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6563.59,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 6854.84,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7146.09,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7419.47,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 7753.72,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 753,
+            "y": 8097.97,
+            "w": 380,
+            "h": 59,
+            "right": 1133
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 874,
+            "clientWidth": 736,
+            "rectW": 736,
+            "rectX": 288
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-006",
+      "route": "/dashboard",
+      "appearance": "system",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-006-system-768x500.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "scrollHeight": 500,
+        "clientHeight": 500
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Clear filters",
+          "rect": {
+            "x": 747.28,
+            "y": 2304.94,
+            "w": 105.72,
+            "h": 41.5,
+            "right": 853
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6558.56,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 6849.81,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7141.06,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7414.44,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 7748.69,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        },
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 457,
+            "y": 8092.94,
+            "w": 380,
+            "h": 59,
+            "right": 837
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+            "overflowX": "visible",
+            "scrollWidth": 866,
+            "clientWidth": 768,
+            "rectW": 768,
+            "rectX": 0
+          }
+        }
+      ],
+      "wideNodes": [
+        {
+          "tag": "div",
+          "className": "grid gap-3",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3.5",
+          "w": 852,
+          "x": 13,
+          "text": "Priority Summary All clinics · Updated 0"
+        },
+        {
+          "tag": "div",
+          "className": "grid gap-2 p-3",
+          "w": 852,
+          "x": 13,
+          "text": "EMERGENCY 1 URGENT 4 +1 vs yesterday OVE"
+        },
+        {
+          "tag": "div",
+          "className": "mt-3 space-y-3",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        },
+        {
+          "tag": "section",
+          "className": "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--",
+          "w": 854,
+          "x": 12,
+          "text": "Operational Action Inbox (Module 2) Live"
+        }
+      ],
+      "suspectedRootCause": "FilterSentenceBar / clinic-ops card grid wider than content pane (min-content width from long unwrapped controls or 2-col health cards)"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-007",
+      "route": "/dashboard",
+      "appearance": "light",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-007-light-1536x900.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 1536,
+        "clientWidth": 1536,
+        "scrollHeight": 900,
+        "clientHeight": 900
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 1226.5,
+            "y": 5637.13,
+            "w": 313.39,
+            "h": 59,
+            "right": 1539.89
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "grid gap-2",
+            "overflowX": "visible",
+            "scrollWidth": 337,
+            "clientWidth": 285,
+            "rectW": 285,
+            "rectX": 1215
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "ExpandableBlock audit buttons in multi-column clinic health cards exceed content pane width"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-008",
+      "route": "/dashboard",
+      "appearance": "dark",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-008-dark-1536x900.png",
+      "themeDark": true,
+      "doc": {
+        "scrollWidth": 1536,
+        "clientWidth": 1536,
+        "scrollHeight": 900,
+        "clientHeight": 900
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 1226.5,
+            "y": 5637.13,
+            "w": 313.39,
+            "h": 59,
+            "right": 1539.89
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "grid gap-2",
+            "overflowX": "visible",
+            "scrollWidth": 337,
+            "clientWidth": 285,
+            "rectW": 285,
+            "rectX": 1215
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "ExpandableBlock audit buttons in multi-column clinic health cards exceed content pane width"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-009",
+      "route": "/dashboard",
+      "appearance": "system",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "reproduced": true,
+      "screenshot": "screenshots/VQA-C2-SHORT-009-system-1536x900.png",
+      "themeDark": false,
+      "doc": {
+        "scrollWidth": 1536,
+        "clientWidth": 1536,
+        "scrollHeight": 900,
+        "clientHeight": 900
+      },
+      "horizontalDocOverflow": false,
+      "offenders": [
+        {
+          "tag": "button",
+          "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+          "rect": {
+            "x": 1226.5,
+            "y": 5637.13,
+            "w": 313.39,
+            "h": 59,
+            "right": 1539.89
+          },
+          "overflowsX": true,
+          "nearestSizingAncestor": {
+            "tag": "DIV",
+            "className": "grid gap-2",
+            "overflowX": "visible",
+            "scrollWidth": 337,
+            "clientWidth": 285,
+            "rectW": 285,
+            "rectX": 1215
+          }
+        }
+      ],
+      "wideNodes": [],
+      "suspectedRootCause": "ExpandableBlock audit buttons in multi-column clinic health cards exceed content pane width"
+    }
+  ]
+}

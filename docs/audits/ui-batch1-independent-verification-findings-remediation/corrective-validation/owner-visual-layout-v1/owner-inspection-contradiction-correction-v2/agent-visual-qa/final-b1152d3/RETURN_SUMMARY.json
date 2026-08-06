@@ -1,0 +1,28 @@
+{
+  "frozenSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "shaMatch": true,
+  "screensInspected": 858,
+  "stillBadCount": 0,
+  "openFindings": 0,
+  "closedShort9": 9,
+  "prior110": {
+    "cleared": 110,
+    "stillBad": 0,
+    "missing": 0
+  },
+  "topbarFails": 0,
+  "searchFails": 0,
+  "verdict": "PASS",
+  "evidencePaths": {
+    "primary": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3",
+    "mirror": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/short-height-containment-2a/agent-visual-qa/final-b1152d3",
+    "findings": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/FINDINGS.json",
+    "summary": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/VISUAL_QA_SUMMARY.md",
+    "confirmation": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/CONFIRMATION.md",
+    "shaVerification": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/SHA_VERIFICATION.md",
+    "nineLedger": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/NINE_FINDING_BEFORE_AFTER_LEDGER.json",
+    "adjudications": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/adjudications",
+    "captureLog": "/tmp/c2a-vqa-final.log",
+    "prior110Summary": "/tmp/hcdp-fix/ui-batch1-vf-fixes/docs/audits/ui-batch1-independent-verification-findings-remediation/corrective-validation/owner-visual-layout-v1/owner-inspection-contradiction-correction-v2/agent-visual-qa/final-b1152d3/prior-110-after/SUMMARY.json"
+  }
+}

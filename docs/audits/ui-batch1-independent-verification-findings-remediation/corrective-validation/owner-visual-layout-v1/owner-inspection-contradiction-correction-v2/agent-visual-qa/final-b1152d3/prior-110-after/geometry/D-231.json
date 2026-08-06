@@ -1,0 +1,28 @@
+{
+  "id": "D-231",
+  "route": "/roster?section=coverage",
+  "viewport": 1024,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "Evaluate coverage",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 552.33,
+      "y": 519.19,
+      "width": 207.33,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-231-1024.png"
+}

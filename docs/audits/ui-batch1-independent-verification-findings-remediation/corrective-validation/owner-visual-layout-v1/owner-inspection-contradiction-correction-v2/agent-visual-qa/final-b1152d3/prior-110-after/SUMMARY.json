@@ -1,0 +1,14 @@
+{
+  "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "headSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "shaMatch": true,
+  "appTreeCleanVsFreeze": true,
+  "diffBytes": 0,
+  "base": "http://127.0.0.1:3511",
+  "total": 110,
+  "cleared": 110,
+  "stillBad": 0,
+  "missing": 0,
+  "identityNote": "Individual after-geometry + screenshot per prior defect id",
+  "generatedAt": "2026-08-06T03:11:19.442Z"
+}

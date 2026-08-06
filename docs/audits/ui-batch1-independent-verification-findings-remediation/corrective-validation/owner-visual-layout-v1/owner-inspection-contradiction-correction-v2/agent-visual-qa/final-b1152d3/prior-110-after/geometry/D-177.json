@@ -1,0 +1,28 @@
+{
+  "id": "D-177",
+  "route": "/staff-doctors?section=people",
+  "viewport": 1024,
+  "appearance": "light",
+  "tag": "input",
+  "label": "Preferred name",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 498.5,
+      "y": 525.69,
+      "width": 153.5,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-177-1024.png"
+}

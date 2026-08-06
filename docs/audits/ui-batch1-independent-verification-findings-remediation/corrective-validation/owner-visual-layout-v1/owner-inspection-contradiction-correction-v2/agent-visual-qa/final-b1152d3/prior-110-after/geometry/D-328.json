@@ -1,0 +1,28 @@
+{
+  "id": "D-328",
+  "route": "/staff-doctors?section=people",
+  "viewport": 430,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "Preferred name",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 642.69,
+      "width": 356,
+      "height": 40.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-328-430.png"
+}

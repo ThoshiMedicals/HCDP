@@ -1,0 +1,172 @@
+{
+  "agent": "Visual QA Agent",
+  "frozenAppSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "base": "http://127.0.0.1:3511",
+  "probedAt": "2026-08-06T03:09:43.702Z",
+  "closed": 9,
+  "open": 0,
+  "results": [
+    {
+      "findingId": "VQA-C2-SHORT-001",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-001-light-1024x600-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-002",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-002-light-768x500-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-003",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-003-dark-1024x600-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-004",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-004-dark-768x500-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-005",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": {
+        "width": 1024,
+        "height": 600
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-005-system-1024x600-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-006",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": {
+        "width": 768,
+        "height": 500
+      },
+      "beforeOverflowCount": 7,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-006-system-768x500-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-007",
+      "status": "CLOSED",
+      "mode": "light",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-007-light-1536x900-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-008",
+      "status": "CLOSED",
+      "mode": "dark",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-008-dark-1536x900-vqa-indep.png"
+    },
+    {
+      "findingId": "VQA-C2-SHORT-009",
+      "status": "CLOSED",
+      "mode": "system",
+      "viewport": {
+        "width": 1536,
+        "height": 900
+      },
+      "beforeOverflowCount": 1,
+      "afterOverflowCount": 0,
+      "criteria": {
+        "documentHorizontalOverflow": "PASS",
+        "unintendedElementClipping": "PASS",
+        "accessibleVerticalScrolling": "PASS",
+        "controlOverflowX": "PASS"
+      },
+      "screenshot": "VQA-C2-SHORT-009-system-1536x900-vqa-indep.png"
+    }
+  ]
+}

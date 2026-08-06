@@ -1,0 +1,136 @@
+{
+  "doc": {
+    "scrollWidth": 768,
+    "clientWidth": 768
+  },
+  "horizontalDocOverflow": false,
+  "canScrollY": false,
+  "targetCount": 11,
+  "viewportOverflowCount": 0,
+  "clippedCount": 0,
+  "targets": [],
+  "allClearFilters": [
+    {
+      "label": "Clear filters",
+      "rect": {
+        "x": 637.28,
+        "y": 2332.44,
+        "w": 105.72,
+        "h": 41.5,
+        "right": 743
+      },
+      "pageRight": 743,
+      "overflowsViewportX": false,
+      "clippedByAncestor": false,
+      "overflowHiddenAncestor": false,
+      "clipAncestor": null,
+      "textOverflow": false,
+      "clientW": 104,
+      "scrollW": 104
+    }
+  ],
+  "auditDetailed": [
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.56
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.94
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.31
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.69
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.06
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    },
+    {
+      "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+      "rect": {
+        "x": 41,
+        "right": 727,
+        "w": 686,
+        "y": 220.44
+      },
+      "overflowsViewportX": false,
+      "withinMain": {
+        "mainRight": 768,
+        "within": true
+      },
+      "whiteSpace": "normal",
+      "overflow": "visible",
+      "textOverflow": "clip"
+    }
+  ]
+}

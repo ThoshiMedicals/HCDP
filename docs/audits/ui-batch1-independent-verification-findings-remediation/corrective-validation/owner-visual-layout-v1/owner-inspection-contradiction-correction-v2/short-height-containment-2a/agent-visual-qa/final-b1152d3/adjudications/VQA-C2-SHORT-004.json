@@ -1,0 +1,111 @@
+{
+  "id": "VQA-C2-SHORT-004",
+  "title": "Short-height dashboard control X-overflow (768×500 dark)",
+  "status": "CLOSED",
+  "severity": "medium",
+  "route": "/dashboard",
+  "mode": "dark",
+  "viewport": "768x500",
+  "reproductionLedger": {
+    "frozenAppSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+    "reproduced": true,
+    "beforeOverflowOffenderCount": 7,
+    "beforeHorizontalDocOverflow": false,
+    "beforeSample": [
+      {
+        "label": "Clear filters",
+        "right": 853,
+        "x": 747.28,
+        "w": 105.72
+      },
+      {
+        "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+        "right": 837,
+        "x": 457,
+        "w": 380
+      },
+      {
+        "label": "Audit and override detail Last refreshed 06/08/2026, 8:30:00 am Expand",
+        "right": 837,
+        "x": 457,
+        "w": 380
+      }
+    ],
+    "beforeDoc": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "scrollHeight": 500,
+      "clientHeight": 500
+    }
+  },
+  "afterGeometryPrepared": {
+    "path": "short-height-containment-2a/after/geometry/VQA-C2-SHORT-004-b1152d3.json",
+    "doc": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "bodyScrollH": 10755,
+      "clientHeight": 500
+    },
+    "canScrollY": true,
+    "overflowOffenderCount": 0,
+    "offendersTotal": 0,
+    "screenshot": "short-height-containment-2a/after/screenshots/VQA-C2-SHORT-004-dark-768x500-b1152d3.png"
+  },
+  "independentVqaProbe": {
+    "path": "agent-visual-qa/final-b1152d3/geometry/nine-finding-independent/VQA-C2-SHORT-004.json",
+    "afterOverflowCount": 0,
+    "criteria": {
+      "documentHorizontalOverflow": "PASS",
+      "unintendedElementClipping": "PASS",
+      "accessibleVerticalScrolling": "PASS",
+      "controlOverflowX": "PASS"
+    },
+    "screenshot": "agent-visual-qa/final-b1152d3/screenshots/VQA-C2-SHORT-004-dark-768x500-vqa-indep.png",
+    "doc": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "scrollHeight": 10798,
+      "clientHeight": 500,
+      "bodyScrollH": 10798
+    },
+    "canScrollY": true,
+    "horizontalDocOverflow": false
+  },
+  "correctionReference": {
+    "commits": [
+      {
+        "sha": "bfb31f9bee714ee70b61952604961291c83256f1",
+        "message": "fix(ui): contain dashboard at short viewport heights"
+      },
+      {
+        "sha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+        "message": "fix(ui): contain dashboard More menus at short heights"
+      }
+    ],
+    "files": [
+      "src/components/workspaces/command-centre/Sections.tsx",
+      "src/components/workspaces/command-centre/cc-ui.tsx",
+      "src/components/workspaces/command-centre/CommandCentre.tsx",
+      "src/components/workspaces/command-centre/PriorityAndAnnouncements.tsx",
+      "src/components/workspaces/command-centre/CcStates.tsx",
+      "src/components/workspaces/command-centre/InboxProjectionSummary.tsx",
+      "src/components/workspaces/command-centre/ActiveActionList.tsx",
+      "src/components/workspaces/DashboardWorkspace.tsx"
+    ],
+    "summaryDoc": "short-height-containment-2a/IMPLEMENTATION_SUMMARY.md",
+    "findingGroup": "768×500 containment + clinic-ops grid collapse"
+  },
+  "adjudication": {
+    "documentHorizontalOverflow": "PASS",
+    "unintendedElementClipping": "PASS",
+    "accessibleVerticalScrolling": "PASS",
+    "controlOverflowXCleared": true,
+    "beforeAfterDelta": {
+      "overflowOffenders": "7 → 0",
+      "exampleClearFiltersRight": "853 → within viewport (768)",
+      "exampleAuditRight": "837 → within viewport (768)"
+    },
+    "verdict": "CLOSED",
+    "note": "Independent Visual QA Agent measured geometry against live :3511 at freeze SHA and inspected screenshots. Closed only after overflowX offenders cleared, document scrollWidth<=clientWidth, canScrollY true, and no unintended control clipping. Coordinator smoke not used as approval."
+  }
+}

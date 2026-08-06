@@ -1,0 +1,28 @@
+{
+  "id": "D-303",
+  "route": "/staff-doctors",
+  "viewport": 430,
+  "appearance": "light",
+  "tag": "button",
+  "label": "BLOCKED READINESS\n89",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 16,
+      "y": 726.89,
+      "width": 398,
+      "height": 103.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-303-430.png"
+}

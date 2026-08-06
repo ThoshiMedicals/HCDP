@@ -1,0 +1,1942 @@
+{
+  "meta": {
+    "agent": "Work-Step / Functional QA",
+    "phase": "owner-inspection-contradiction-correction-v2",
+    "appSourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+    "worktree": "/tmp/hcdp-fix/c2a-wqa-3512",
+    "base": "http://127.0.0.1:3512",
+    "startedAt": "2026-08-06T02:53:31.673Z",
+    "preflight": {
+      "head": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "diffSrcScriptsLines": 0,
+      "emptyDiff": true
+    },
+    "finishedAt": "2026-08-06T02:57:23.420Z"
+  },
+  "workflows": [
+    {
+      "workflowId": "PREFLIGHT",
+      "route": "/",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "sha+server+css",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Empty git diff b1152d3 -- src scripts",
+          "expected": "0 lines",
+          "observed": "0",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "GET /dashboard on :3502",
+          "expected": "HTTP 2xx",
+          "observed": "status=200 url=http://127.0.0.1:3512/dashboard",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "GET app CSS on :3502",
+          "expected": "HTTP 200",
+          "observed": "href=/_next/static/chunks/03er6s-lh96ua.css status=200",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/PREFLIGHT-dashboard.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M04-PEOPLE-CREATE",
+      "route": "/staff-doctors?section=people",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load people section",
+          "expected": "h2 People directory",
+          "observed": "People directory",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Preferred name",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Preferred name\",\"rect\":{\"top\":459.1875,\"left\":602.5,\"right\":860,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Email",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Email\",\"rect\":{\"top\":459.1875,\"left\":868,\"right\":1125.5,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: Create",
+          "expected": "Visible, in viewport, not covered, no page H-scroll (disabled-until-valid OK)",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":459.1875,\"left\":1133.5,\"right\":1391,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":true,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Create after fill",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":459.1875,\"left\":1133.5,\"right\":1391,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Create person (demo)",
+          "expected": "Person appears in table / toast",
+          "observed": "visible=true toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M04-PEOPLE-CREATE.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M04-CREDENTIALS-ADD",
+      "route": "/staff-doctors?section=credentials",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load credentials",
+          "expected": "h2 Credentials",
+          "observed": "Credentials",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Person select",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Akith HettiarachchiAlana CheneyAlvina RathodAnita ThayaniBen WallegamaarachchiBr\",\"rect\":{\"top\":459.1875,\"left\":337,\"right\":594.5,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Add",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Add\",\"rect\":{\"top\":459.1875,\"left\":1133.5,\"right\":1391,\"bottom\":501.6875,\"width\":257.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Add credential (demo)",
+          "expected": "Credential added / table updates",
+          "observed": "before=0 after=1 toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M04-CREDENTIALS-ADD.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M04-ENGAGEMENTS",
+      "route": "/staff-doctors?section=engagements",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load engagements",
+          "expected": "h2 Engagements",
+          "observed": "Engagements",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Clinic id",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Clinic id\",\"rect\":{\"top\":459.1875,\"left\":549.390625,\"right\":753.796875,\"bottom\":501.6875,\"width\":204.40625,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Create engagement",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":459.1875,\"left\":1186.59375,\"right\":1390.984375,\"bottom\":501.6875,\"width\":204.390625,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Create engagement attempt",
+          "expected": "Button operable; create when enabled",
+          "observed": "disabled=false toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M04-ENGAGEMENTS.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M04-KPI-NAV",
+      "route": "/staff-doctors",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Operability: /ACTIVE STAFF/i",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Active staff41\",\"rect\":{\"top\":378.890625,\"left\":316,\"right\":579.5,\"bottom\":482.390625,\"width\":263.5,\"height\":103.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "KPI navigate /ACTIVE STAFF/i",
+          "expected": "/Staff profiles/i",
+          "observed": "Staff profiles",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3512/staff-doctors"
+        },
+        {
+          "n": 3,
+          "action": "Operability: /ACTIVE DOCTORS/i",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Active doctors48\",\"rect\":{\"top\":378.890625,\"left\":593.5,\"right\":857,\"bottom\":482.390625,\"width\":263.5,\"height\":103.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "KPI navigate /ACTIVE DOCTORS/i",
+          "expected": "/Doctor profiles/i",
+          "observed": "Doctor profiles",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3512/staff-doctors"
+        },
+        {
+          "n": 5,
+          "action": "Operability: /BLOCKED READINESS/i",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Blocked readiness89\",\"rect\":{\"top\":378.890625,\"left\":871,\"right\":1134.5,\"bottom\":482.390625,\"width\":263.5,\"height\":103.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "KPI navigate /BLOCKED READINESS/i",
+          "expected": "/Credentials/i",
+          "observed": "Credentials",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3512/staff-doctors"
+        },
+        {
+          "n": 7,
+          "action": "Operability: /ON LEAVE TODAY/i",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"On leave today0\",\"rect\":{\"top\":378.890625,\"left\":1148.5,\"right\":1412,\"bottom\":482.390625,\"width\":263.5,\"height\":103.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "KPI navigate /ON LEAVE TODAY/i",
+          "expected": "/Leave & availability/i",
+          "observed": "Leave & availability",
+          "result": "PASS",
+          "url": "http://127.0.0.1:3512/staff-doctors"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M04-KPI-NAV.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M04-CLIP-OPS",
+      "route": "people+credentials",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "390 + 1024",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Operability: Preferred name@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Preferred name\",\"rect\":{\"top\":642.6875,\"left\":37,\"right\":353,\"bottom\":683.1875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Email@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Email\",\"rect\":{\"top\":691.1875,\"left\":37,\"right\":353,\"bottom\":731.6875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Create@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll (disabled-until-valid OK)",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":739.6875,\"left\":37,\"right\":353,\"bottom\":782.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":true,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: Kind select@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"StaffDoctor\",\"rect\":{\"top\":594.6875,\"left\":37,\"right\":353,\"bottom\":634.6875,\"width\":316,\"height\":40},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Create enabled@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":739.6875,\"left\":37,\"right\":353,\"bottom\":782.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Create click @390",
+          "expected": "Click succeeds without overlay block",
+          "observed": "clicked",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Operability: Cred person select@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Akith HettiarachchiAlana CheneyAlvina RathodAnita ThayaniBen WallegamaarachchiBr\",\"rect\":{\"top\":594.6875,\"left\":37,\"right\":353,\"bottom\":634.6875,\"width\":316,\"height\":40},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Operability: Add@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Add\",\"rect\":{\"top\":739.6875,\"left\":37,\"right\":353,\"bottom\":782.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Operability: Preferred name@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Preferred name\",\"rect\":{\"top\":525.6875,\"left\":498.5,\"right\":652,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Operability: Email@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Email\",\"rect\":{\"top\":525.6875,\"left\":660,\"right\":813.5,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 11,
+          "action": "Operability: Create@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll (disabled-until-valid OK)",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":525.6875,\"left\":821.5,\"right\":975,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":true,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 12,
+          "action": "Operability: Kind select@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"StaffDoctor\",\"rect\":{\"top\":525.6875,\"left\":337,\"right\":490.5,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 13,
+          "action": "Operability: Create enabled@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":525.6875,\"left\":821.5,\"right\":975,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 14,
+          "action": "Create click @1024",
+          "expected": "Click succeeds without overlay block",
+          "observed": "clicked",
+          "result": "PASS"
+        },
+        {
+          "n": 15,
+          "action": "Operability: Cred person select@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Akith HettiarachchiAlana CheneyAlvina RathodAnita ThayaniBen WallegamaarachchiBr\",\"rect\":{\"top\":525.6875,\"left\":337,\"right\":490.5,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 16,
+          "action": "Operability: Add@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Add\",\"rect\":{\"top\":525.6875,\"left\":821.5,\"right\":975,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M04-CLIP-OPS-390.png",
+        "screenshots/WF-M04-CLIP-OPS-1024.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-OFFER",
+      "route": "/roster?section=open-shifts",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load open-shifts",
+          "expected": "Open Shifts",
+          "observed": "Open Shifts",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Shift",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select shift…Clinical Nurse · 2026-08-03T08:00 → 2026-08-03T16:00Reception · 202\",\"rect\":{\"top\":475.1875,\"left\":337,\"right\":683,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Audience",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Audience\",\"rect\":{\"top\":475.1875,\"left\":691,\"right\":1037,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: Offer",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Offer\",\"rect\":{\"top\":475.1875,\"left\":1045,\"right\":1391,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Offer open shift (demo)",
+          "expected": "Click completes (toast or validation)",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-OFFER.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-COVERAGE",
+      "route": "/roster?section=coverage",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load coverage",
+          "expected": "Coverage",
+          "observed": "Coverage",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Period",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select period…Demo Roster — Week A (2026-08-03..2026-08-09)\",\"rect\":{\"top\":475.1875,\"left\":337,\"right\":683,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Evaluate coverage",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Evaluate coverage\",\"rect\":{\"top\":475.1875,\"left\":691,\"right\":1037,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Evaluate coverage (demo)",
+          "expected": "Action runs",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-COVERAGE.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-CLINIC-FILTER",
+      "route": "/roster?section=availability-leave",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load availability-leave",
+          "expected": "Availability & Leave",
+          "observed": "Availability & Leave",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Clinic id filter",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Clinic id filter\",\"rect\":{\"top\":448.6875,\"left\":868,\"right\":1391,\"bottom\":489.1875,\"width\":523,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Type clinic id filter",
+          "expected": "Value retained",
+          "observed": "clinic_filter_wqa",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-CLINIC-FILTER.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-CONFLICTS",
+      "route": "/roster?section=conflicts-warnings",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load conflicts",
+          "expected": "Conflicts & Warnings",
+          "observed": "Conflicts & Warnings",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Evaluate conflicts",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Evaluate conflicts\",\"rect\":{\"top\":475.1875,\"left\":1045,\"right\":1391,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Evaluate conflicts (demo)",
+          "expected": "Action runs",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-CONFLICTS.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-CREATE-DRAFT",
+      "route": "/roster?section=settings",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load settings",
+          "expected": "Settings",
+          "observed": "Settings",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Policy label",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Policy label\",\"rect\":{\"top\":475.1875,\"left\":337,\"right\":1037,\"bottom\":517.6875,\"width\":700,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Create draft",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create draft\",\"rect\":{\"top\":475.1875,\"left\":1045,\"right\":1391,\"bottom\":517.6875,\"width\":346,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Create draft policy (demo)",
+          "expected": "Action runs",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-CREATE-DRAFT.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-ROSTER-BOARD",
+      "route": "/roster?section=roster-board",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1024x768",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Operability: Clinic id",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Clinic id\",\"rect\":{\"top\":539.1875,\"left\":724.59375,\"right\":845.796875,\"bottom\":581.6875,\"width\":121.203125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Ends on",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Ends on\",\"rect\":{\"top\":539.1875,\"left\":595.390625,\"right\":716.59375,\"bottom\":581.6875,\"width\":121.203125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-ROSTER-BOARD.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M05-CLIP-OPS",
+      "route": "open-shifts+coverage",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "390 + 1024",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Operability: Shift@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select shift…Clinical Nurse · 2026-08-03T08:00 → 2026-08-03T16:00Reception · 202\",\"rect\":{\"top\":588.1875,\"left\":37,\"right\":353,\"bottom\":628.1875,\"width\":316,\"height\":40},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Audience@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Audience\",\"rect\":{\"top\":636.1875,\"left\":37,\"right\":353,\"bottom\":676.6875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Offer@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Offer\",\"rect\":{\"top\":684.6875,\"left\":37,\"right\":353,\"bottom\":727.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Offer click @390",
+          "expected": "Clickable",
+          "observed": "clicked",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Period@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select period…Demo Roster — Week A (2026-08-03..2026-08-09)\",\"rect\":{\"top\":610.6875,\"left\":37,\"right\":353,\"bottom\":650.6875,\"width\":316,\"height\":40},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Operability: Evaluate coverage@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Evaluate coverage\",\"rect\":{\"top\":658.6875,\"left\":37,\"right\":353,\"bottom\":701.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Operability: Shift@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select shift…Clinical Nurse · 2026-08-03T08:00 → 2026-08-03T16:00Reception · 202\",\"rect\":{\"top\":519.1875,\"left\":337,\"right\":544.328125,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Operability: Audience@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Audience\",\"rect\":{\"top\":519.1875,\"left\":552.328125,\"right\":759.65625,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Operability: Offer@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Offer\",\"rect\":{\"top\":519.1875,\"left\":767.65625,\"right\":974.984375,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Offer click @1024",
+          "expected": "Clickable",
+          "observed": "clicked",
+          "result": "PASS"
+        },
+        {
+          "n": 11,
+          "action": "Operability: Period@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Select period…Demo Roster — Week A (2026-08-03..2026-08-09)\",\"rect\":{\"top\":519.1875,\"left\":337,\"right\":544.328125,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 12,
+          "action": "Operability: Evaluate coverage@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Evaluate coverage\",\"rect\":{\"top\":519.1875,\"left\":552.328125,\"right\":759.65625,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M05-CLIP-OPS-390.png",
+        "screenshots/WF-M05-CLIP-OPS-1024.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-REFRESH",
+      "route": "/time-attendance?section=live",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load /time-attendance?section=live",
+          "expected": "Live Attendance",
+          "observed": "Live Attendance",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Refresh live board",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Refresh live board\",\"rect\":{\"top\":597.890625,\"left\":316,\"right\":473.21875,\"bottom\":642.390625,\"width\":157.21875,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Refresh live board (demo)",
+          "expected": "Click completes; no crash",
+          "observed": "toast=Acting as Sarah Mitchell url=http://127.0.0.1:3512/time-attendance?section=live",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-REFRESH.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-BULK-APPROVE",
+      "route": "/time-attendance?section=approvals",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load /time-attendance?section=approvals",
+          "expected": "Approvals",
+          "observed": "Approvals",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Bulk approve pending",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Bulk approve pending\",\"rect\":{\"top\":354.890625,\"left\":316,\"right\":498.875,\"bottom\":397.390625,\"width\":182.875,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Bulk approve pending (demo)",
+          "expected": "Click completes; no crash",
+          "observed": "toast=Acting as Sarah Mitchell url=http://127.0.0.1:3512/time-attendance?section=approvals",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-BULK-APPROVE.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-CORRECTION",
+      "route": "/time-attendance?section=corrections",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load /time-attendance?section=corrections",
+          "expected": "Corrections",
+          "observed": "Corrections",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Request correction",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Request correction\",\"rect\":{\"top\":354.890625,\"left\":316,\"right\":476.90625,\"bottom\":397.390625,\"width\":160.90625,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Request correction (demo)",
+          "expected": "Click completes; no crash",
+          "observed": "toast=Acting as Sarah Mitchell url=http://127.0.0.1:3512/time-attendance?section=corrections",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-CORRECTION.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-PUBLISH-POLICY",
+      "route": "/time-attendance?section=settings",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load /time-attendance?section=settings",
+          "expected": "Settings & Policies",
+          "observed": "Settings & Policies",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Publish policy",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Publish policy\",\"rect\":{\"top\":402.890625,\"left\":316,\"right\":440.5625,\"bottom\":445.390625,\"width\":124.5625,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Publish policy (demo)",
+          "expected": "Click completes; no crash",
+          "observed": "toast=Acting as Sarah Mitchell url=http://127.0.0.1:3512/time-attendance?section=settings",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-PUBLISH-POLICY.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-CLEAR-FILTER",
+      "route": "/time-attendance?section=history",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Load history",
+          "expected": "Attendance History",
+          "observed": "Attendance History",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "History filter initial",
+          "expected": "empty or existing value recorded",
+          "observed": "value=",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: History filter",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"\",\"rect\":{\"top\":378.890625,\"left\":316,\"right\":700,\"bottom\":408.890625,\"width\":384,\"height\":30},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "History filter set",
+          "expected": "value=demo-filter",
+          "observed": "value=demo-filter",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Clear filter",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Clear filter\",\"rect\":{\"top\":512.890625,\"left\":316,\"right\":419.296875,\"bottom\":557.390625,\"width\":103.296875,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Clear filter (domain)",
+          "expected": "History filter value empty after clear",
+          "observed": "value=",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-CLEAR-FILTER.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-M06-CLIP-OPS",
+      "route": "live+approvals",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1024 + 1440",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Operability: Refresh@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Refresh live board\",\"rect\":{\"top\":641.890625,\"left\":316,\"right\":473.21875,\"bottom\":686.390625,\"width\":157.21875,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: BulkApprove@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Bulk approve pending\",\"rect\":{\"top\":398.890625,\"left\":316,\"right\":498.875,\"bottom\":441.390625,\"width\":182.875,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Refresh@1440",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Refresh live board\",\"rect\":{\"top\":597.890625,\"left\":316,\"right\":473.21875,\"bottom\":642.390625,\"width\":157.21875,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: BulkApprove@1440",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Bulk approve pending\",\"rect\":{\"top\":354.890625,\"left\":316,\"right\":498.875,\"bottom\":397.390625,\"width\":182.875,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-M06-CLIP-OPS-1024.png",
+        "screenshots/WF-M06-CLIP-OPS-1440.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-EMERGENCY-1440",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency banner",
+          "expected": "Visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "View All inside emergency card",
+          "expected": "Inside banner + viewport; no H-scroll",
+          "observed": "{\"present\":true,\"text\":\"View All Announcements\",\"rect\":{\"top\":138,\"left\":1115,\"right\":1318.703125,\"bottom\":182.5,\"width\":203.703125,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true,\"insideParentFully\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Click View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Keyboard Enter on View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-EMERGENCY-1440-end.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-EMERGENCY-1024",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1024x768",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency banner",
+          "expected": "Visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "View All inside emergency card",
+          "expected": "Inside banner + viewport; no H-scroll",
+          "observed": "{\"present\":true,\"text\":\"View All Announcements\",\"rect\":{\"top\":319.5,\"left\":490.078125,\"right\":693.78125,\"bottom\":364,\"width\":203.703125,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true,\"insideParentFully\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Click View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Keyboard Enter on View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-EMERGENCY-1024-end.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-EMERGENCY-390",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "390x844",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Locate Emergency banner",
+          "expected": "Visible",
+          "observed": "visible",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "View All inside emergency card",
+          "expected": "Inside banner + viewport; no H-scroll",
+          "observed": "{\"present\":true,\"text\":\"View All Announcements\",\"rect\":{\"top\":464.25,\"left\":29,\"right\":232.703125,\"bottom\":508.75,\"width\":203.703125,\"height\":44.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true,\"insideParentFully\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Click View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Keyboard Enter on View All",
+          "expected": "Modal opens",
+          "observed": "opened=true",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-EMERGENCY-390-end.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-TOPBAR",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "desktop+2xl+xl+mobile",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Topbar Dashboard",
+          "expected": "/dashboard",
+          "observed": "http://127.0.0.1:3512/dashboard",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Topbar Action Inbox",
+          "expected": "/action-inbox",
+          "observed": "http://127.0.0.1:3512/action-inbox",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Online/Offline",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Online\",\"rect\":{\"top\":15.5,\"left\":1361.53125,\"right\":1426,\"bottom\":48,\"width\":64.46875,\"height\":32.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Toggle Online",
+          "expected": "Label flips Online↔Offline",
+          "observed": "Online→Offline",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Topbar Export hidden below 2xl (1440)",
+          "expected": "display=none (topbar only; deferred to 2xl)",
+          "observed": "visible=false display=none",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Export visible at 2xl+ (1536)",
+          "expected": "Topbar Export visible + operable (display≠none)",
+          "observed": "{\"exportVis\":true,\"exportDisplay\":\"flex\",\"exportProbe\":{\"present\":true,\"text\":\"Export\",\"rect\":{\"top\":13.5,\"left\":1228.140625,\"right\":1296.328125,\"bottom\":50,\"width\":68.1875,\"height\":36.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}}",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Enterprise MFA short label at 2xl",
+          "expected": "Visible button text is 'Enterprise MFA'",
+          "observed": "visible=true text=\"Enterprise MFA\"",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Topbar Export hidden below 2xl (1024)",
+          "expected": "display=none (topbar only)",
+          "observed": "visible=false display=none",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Search → Staff Pay",
+          "expected": "/staffpay",
+          "observed": "http://127.0.0.1:3512/staffpay",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Mobile Open menu",
+          "expected": "visible",
+          "observed": "visible=true",
+          "result": "PASS"
+        },
+        {
+          "n": 11,
+          "action": "Mobile search → Action Inbox",
+          "expected": "/action-inbox",
+          "observed": "http://127.0.0.1:3512/action-inbox",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-TOPBAR-390.png",
+        "screenshots/WF-TOPBAR-1440.png",
+        "screenshots/WF-TOPBAR-1536.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-SIDEBAR",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900/720",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Act-as usable at 1440x900",
+          "expected": "In viewport + changeable",
+          "observed": "{\"probe\":{\"present\":true,\"text\":\"David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic \",\"rect\":{\"top\":834.125,\"left\":12,\"right\":275,\"bottom\":862.125,\"width\":263,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true},\"changed\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Act-as usable at 1440x720",
+          "expected": "In viewport + changeable",
+          "observed": "{\"probe\":{\"present\":true,\"text\":\"David King · DirectorSarah Mitchell · Senior AdministratorJames Okafor · Clinic \",\"rect\":{\"top\":654.125,\"left\":12,\"right\":275,\"bottom\":682.125,\"width\":263,\"height\":28},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true},\"changed\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Family toggle",
+          "expected": "aria-expanded flips",
+          "observed": "true→false",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-SIDEBAR.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-APPEARANCE",
+      "route": "/dashboard",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "Light/Dark/System",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Select light",
+          "expected": "light",
+          "observed": "light",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Select dark",
+          "expected": "dark",
+          "observed": "dark",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Select system",
+          "expected": "system",
+          "observed": "system",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Light + reload persist",
+          "expected": "select=light, not theme-dark",
+          "observed": "{\"select\":\"light\",\"themeDark\":false}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Dark + reload persist",
+          "expected": "select=dark, theme-dark",
+          "observed": "{\"select\":\"dark\",\"themeDark\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "System selectable",
+          "expected": "system",
+          "observed": "system",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-APPEARANCE.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M04",
+      "route": "/staff-doctors",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Deep link overview",
+          "expected": "/Workforce overview/i",
+          "observed": "heading=\"Workforce overview\" url=http://127.0.0.1:3512/staff-doctors?section=overview",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Deep link people",
+          "expected": "/People directory/i",
+          "observed": "heading=\"People directory\" url=http://127.0.0.1:3512/staff-doctors?section=people",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Deep link staff-profiles",
+          "expected": "/Staff profiles/i",
+          "observed": "heading=\"Staff profiles\" url=http://127.0.0.1:3512/staff-doctors?section=staff-profiles",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Deep link doctor-profiles",
+          "expected": "/Doctor profiles/i",
+          "observed": "heading=\"Doctor profiles\" url=http://127.0.0.1:3512/staff-doctors?section=doctor-profiles",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Deep link engagements",
+          "expected": "/Engagements/i",
+          "observed": "heading=\"Engagements\" url=http://127.0.0.1:3512/staff-doctors?section=engagements",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Deep link credentials",
+          "expected": "/Credentials/i",
+          "observed": "heading=\"Credentials\" url=http://127.0.0.1:3512/staff-doctors?section=credentials",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Deep link leave-availability",
+          "expected": "/Leave & availability/i",
+          "observed": "heading=\"Leave & availability\" url=http://127.0.0.1:3512/staff-doctors?section=leave-availability",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Deep link restrictions",
+          "expected": "/Restrictions/i",
+          "observed": "heading=\"Restrictions & adjustments\" url=http://127.0.0.1:3512/staff-doctors?section=restrictions",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Deep link onboarding",
+          "expected": "/Onboarding/i",
+          "observed": "heading=\"Onboarding\" url=http://127.0.0.1:3512/staff-doctors?section=onboarding",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Deep link offboarding",
+          "expected": "/Offboarding/i",
+          "observed": "heading=\"Offboarding\" url=http://127.0.0.1:3512/staff-doctors?section=offboarding",
+          "result": "PASS"
+        },
+        {
+          "n": 11,
+          "action": "Deep link reports",
+          "expected": "/Reports/i",
+          "observed": "heading=\"Reports\" url=http://127.0.0.1:3512/staff-doctors?section=reports",
+          "result": "PASS"
+        },
+        {
+          "n": 12,
+          "action": "Deep link settings",
+          "expected": "/Settings/i",
+          "observed": "heading=\"Settings\" url=http://127.0.0.1:3512/staff-doctors?section=settings",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-DEEPLINK-M04.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M05",
+      "route": "/roster",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Deep link roster-board",
+          "expected": "/Roster Board/i",
+          "observed": "heading=\"Roster Board\" url=http://127.0.0.1:3512/roster?section=roster-board",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Deep link coverage",
+          "expected": "/Coverage/i",
+          "observed": "heading=\"Coverage\" url=http://127.0.0.1:3512/roster?section=coverage",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Deep link open-shifts",
+          "expected": "/Open Shifts/i",
+          "observed": "heading=\"Open Shifts\" url=http://127.0.0.1:3512/roster?section=open-shifts",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Deep link availability-leave",
+          "expected": "/Availability & Leave/i",
+          "observed": "heading=\"Availability & Leave\" url=http://127.0.0.1:3512/roster?section=availability-leave",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Deep link requests",
+          "expected": "/Requests/i",
+          "observed": "heading=\"Requests\" url=http://127.0.0.1:3512/roster?section=requests",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Deep link conflicts-warnings",
+          "expected": "/Conflicts & Warnings/i",
+          "observed": "heading=\"Conflicts & Warnings\" url=http://127.0.0.1:3512/roster?section=conflicts-warnings",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Deep link published-history",
+          "expected": "/Published History/i",
+          "observed": "heading=\"Published History\" url=http://127.0.0.1:3512/roster?section=published-history",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Deep link cost-forecast",
+          "expected": "/Cost Forecast/i",
+          "observed": "heading=\"Cost Forecast\" url=http://127.0.0.1:3512/roster?section=cost-forecast",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Deep link reports",
+          "expected": "/Reports/i",
+          "observed": "heading=\"Reports\" url=http://127.0.0.1:3512/roster?section=reports",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Deep link settings",
+          "expected": "/Settings/i",
+          "observed": "heading=\"Settings\" url=http://127.0.0.1:3512/roster?section=settings",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-DEEPLINK-M05.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M06",
+      "route": "/time-attendance",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Deep link live",
+          "expected": "/Live Attendance/i",
+          "observed": "heading=\"Live Attendance\" url=http://127.0.0.1:3512/time-attendance?section=live",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Deep link clock",
+          "expected": "/Clock In\\/Out/i",
+          "observed": "heading=\"Clock In/Out\" url=http://127.0.0.1:3512/time-attendance?section=clock",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Deep link timesheets",
+          "expected": "/Timesheets/i",
+          "observed": "heading=\"Timesheets\" url=http://127.0.0.1:3512/time-attendance?section=timesheets",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Deep link exceptions",
+          "expected": "/Exceptions/i",
+          "observed": "heading=\"Exceptions\" url=http://127.0.0.1:3512/time-attendance?section=exceptions",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Deep link corrections",
+          "expected": "/Corrections/i",
+          "observed": "heading=\"Corrections\" url=http://127.0.0.1:3512/time-attendance?section=corrections",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Deep link approvals",
+          "expected": "/Approvals/i",
+          "observed": "heading=\"Approvals\" url=http://127.0.0.1:3512/time-attendance?section=approvals",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Deep link breaks",
+          "expected": "/Breaks/i",
+          "observed": "heading=\"Breaks\" url=http://127.0.0.1:3512/time-attendance?section=breaks",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Deep link history",
+          "expected": "/Attendance History/i",
+          "observed": "heading=\"Attendance History\" url=http://127.0.0.1:3512/time-attendance?section=history",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Deep link reports",
+          "expected": "/Reports/i",
+          "observed": "heading=\"Reports\" url=http://127.0.0.1:3512/time-attendance?section=reports",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Deep link settings",
+          "expected": "/Settings & Policies/i",
+          "observed": "heading=\"Settings & Policies\" url=http://127.0.0.1:3512/time-attendance?section=settings",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-DEEPLINK-M06.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M07",
+      "route": "/staffpay",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1440x900",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Deep link overview",
+          "expected": "/Pay Run Overview/i",
+          "observed": "heading=\"Pay Run Overview\" url=http://127.0.0.1:3512/staffpay?section=overview",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Deep link people",
+          "expected": "/People Review/i",
+          "observed": "heading=\"People Review\" url=http://127.0.0.1:3512/staffpay?section=people",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Deep link leave",
+          "expected": "/Leave/i",
+          "observed": "heading=\"Leave & Allowances\" url=http://127.0.0.1:3512/staffpay?section=leave",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Deep link adjustments",
+          "expected": "/Adjustments/i",
+          "observed": "heading=\"Prior-period adjustments\" url=http://127.0.0.1:3512/staffpay?section=adjustments",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Deep link exceptions",
+          "expected": "/Exceptions/i",
+          "observed": "heading=\"Exceptions\" url=http://127.0.0.1:3512/staffpay?section=exceptions",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Deep link variances",
+          "expected": "/Variances/i",
+          "observed": "heading=\"Variances\" url=http://127.0.0.1:3512/staffpay?section=variances",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Deep link approval",
+          "expected": "/Approval/i",
+          "observed": "heading=\"Approval\" url=http://127.0.0.1:3512/staffpay?section=approval",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Deep link export",
+          "expected": "/Export/i",
+          "observed": "heading=\"Payroll export preparation\" url=http://127.0.0.1:3512/staffpay?section=export",
+          "result": "PASS"
+        },
+        {
+          "n": 9,
+          "action": "Deep link reconciliation",
+          "expected": "/Reconciliation/i",
+          "observed": "heading=\"Package reconciliation\" url=http://127.0.0.1:3512/staffpay?section=reconciliation",
+          "result": "PASS"
+        },
+        {
+          "n": 10,
+          "action": "Deep link history",
+          "expected": "/History/i",
+          "observed": "heading=\"History / Reports\" url=http://127.0.0.1:3512/staffpay?section=history",
+          "result": "PASS"
+        },
+        {
+          "n": 11,
+          "action": "Deep link settings",
+          "expected": "/Settings/i",
+          "observed": "heading=\"Settings\" url=http://127.0.0.1:3512/staffpay?section=settings",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-DEEPLINK-M07.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-NAV-STATE",
+      "route": "multi",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "reload+history",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Reload retains M04 credentials",
+          "expected": "section=credentials",
+          "observed": "http://127.0.0.1:3512/staff-doctors?section=credentials",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Back approvals → open-shifts",
+          "expected": "roster open-shifts",
+          "observed": "http://127.0.0.1:3512/roster?section=open-shifts",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Forward → approvals",
+          "expected": "time-attendance approvals",
+          "observed": "http://127.0.0.1:3512/time-attendance?section=approvals",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Reload M07 overview",
+          "expected": "section retained",
+          "observed": "http://127.0.0.1:3512/staffpay?section=overview",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-NAV-STATE.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-A11Y-FORMS-390",
+      "route": "/staff-doctors?section=people",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "390x844",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Tab Preferred name → next",
+          "expected": "Focus moves",
+          "observed": "f1=Preferred name f2=Email",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Preferred name@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Preferred name\",\"rect\":{\"top\":642.6875,\"left\":37,\"right\":353,\"bottom\":683.1875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Email@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Email\",\"rect\":{\"top\":691.1875,\"left\":37,\"right\":353,\"bottom\":731.6875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: Create@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll (disabled-until-valid OK)",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":739.6875,\"left\":37,\"right\":353,\"bottom\":782.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":true,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Create enabled@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":739.6875,\"left\":37,\"right\":353,\"bottom\":782.1875,\"width\":316,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Keyboard activate Create",
+          "expected": "Enter activates",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Operability: Audience@390",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Audience\",\"rect\":{\"top\":636.1875,\"left\":37,\"right\":353,\"bottom\":676.6875,\"width\":316,\"height\":40.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Keyboard Offer focus+Enter",
+          "expected": "Activates",
+          "observed": "activated",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-A11Y-FORMS-390.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-A11Y-FORMS-1024",
+      "route": "/staff-doctors?section=people",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "1024x768",
+      "steps": [
+        {
+          "n": 1,
+          "action": "Tab Preferred name → next",
+          "expected": "Focus moves",
+          "observed": "f1=Preferred name f2=Email",
+          "result": "PASS"
+        },
+        {
+          "n": 2,
+          "action": "Operability: Preferred name@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Preferred name\",\"rect\":{\"top\":525.6875,\"left\":498.5,\"right\":652,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 3,
+          "action": "Operability: Email@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Email\",\"rect\":{\"top\":525.6875,\"left\":660,\"right\":813.5,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 4,
+          "action": "Operability: Create@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll (disabled-until-valid OK)",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":525.6875,\"left\":821.5,\"right\":975,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":true,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 5,
+          "action": "Operability: Create enabled@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Create\",\"rect\":{\"top\":525.6875,\"left\":821.5,\"right\":975,\"bottom\":568.1875,\"width\":153.5,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 6,
+          "action": "Keyboard activate Create",
+          "expected": "Enter activates",
+          "observed": "toast=Acting as Sarah Mitchell",
+          "result": "PASS"
+        },
+        {
+          "n": 7,
+          "action": "Operability: Audience@1024",
+          "expected": "Visible, in viewport, not covered, no page H-scroll, enabled",
+          "observed": "{\"present\":true,\"text\":\"Audience\",\"rect\":{\"top\":519.1875,\"left\":552.328125,\"right\":759.65625,\"bottom\":561.6875,\"width\":207.328125,\"height\":42.5},\"visible\":true,\"fullyInViewport\":true,\"pageHorizontalScroll\":false,\"covered\":false,\"disabled\":false,\"pointerEvents\":\"auto\",\"operable\":true}",
+          "result": "PASS"
+        },
+        {
+          "n": 8,
+          "action": "Keyboard Offer focus+Enter",
+          "expected": "Activates",
+          "observed": "activated",
+          "result": "PASS"
+        }
+      ],
+      "outcome": "PASS",
+      "screenshots": [
+        "screenshots/WF-A11Y-FORMS-1024.png"
+      ],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "workflowId": "WF-PAYMENTS-OOS",
+      "route": "n/a",
+      "sourceSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "startingState": "protected",
+      "steps": [
+        {
+          "n": 1,
+          "action": "External payment/provider/communication actions",
+          "expected": "OUT OF SCOPE",
+          "observed": "Not executed — bank-file, STP, super, mark-as-paid, Xero production, payment-provider returns, external communications",
+          "result": "OUT OF SCOPE"
+        }
+      ],
+      "outcome": "OUT OF SCOPE",
+      "screenshots": [],
+      "errors": {
+        "consoleErrors": [],
+        "pageErrors": [],
+        "requestFailures": []
+      }
+    }
+  ],
+  "findings": [],
+  "totals": {
+    "pass": 32,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "total": 33,
+    "openFindings": 0,
+    "stepPass": 191,
+    "stepFail": 0,
+    "stepOos": 1
+  }
+}

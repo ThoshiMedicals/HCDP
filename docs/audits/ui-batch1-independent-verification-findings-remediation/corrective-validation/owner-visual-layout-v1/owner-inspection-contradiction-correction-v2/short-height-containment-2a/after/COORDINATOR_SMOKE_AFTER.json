@@ -1,0 +1,132 @@
+{
+  "frozen": "bfb31f9",
+  "base": "http://127.0.0.1:3511",
+  "results": [
+    {
+      "id": "VQA-C2-SHORT-001",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 736,
+        "scrollW": 736,
+        "clientW": 736
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-002",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 768,
+        "scrollW": 768,
+        "clientW": 768
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-003",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 736,
+        "scrollW": 736,
+        "clientW": 736
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-004",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 768,
+        "scrollW": 768,
+        "clientW": 768
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-005",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 736,
+        "scrollW": 736,
+        "clientW": 736
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-006",
+      "stillBad": true,
+      "absOffenders": 2,
+      "viewportOffenders": 2,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 768,
+        "scrollW": 768,
+        "clientW": 768
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-007",
+      "stillBad": false,
+      "absOffenders": 0,
+      "viewportOffenders": 0,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 1248,
+        "scrollW": 1248,
+        "clientW": 1248
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-008",
+      "stillBad": false,
+      "absOffenders": 0,
+      "viewportOffenders": 0,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 1248,
+        "scrollW": 1248,
+        "clientW": 1248
+      }
+    },
+    {
+      "id": "VQA-C2-SHORT-009",
+      "stillBad": false,
+      "absOffenders": 0,
+      "viewportOffenders": 0,
+      "docOverflow": false,
+      "canScrollY": false,
+      "widest": {
+        "className": "mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5",
+        "w": 1248,
+        "scrollW": 1248,
+        "clientW": 1248
+      }
+    }
+  ]
+}

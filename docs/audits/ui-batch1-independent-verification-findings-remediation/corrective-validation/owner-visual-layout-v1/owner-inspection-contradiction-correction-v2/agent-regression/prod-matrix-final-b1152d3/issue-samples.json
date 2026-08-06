@@ -1,0 +1,6 @@
+{
+  "fails": [],
+  "http500": [],
+  "http403": [],
+  "jsonParse": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "D-178",
+  "route": "/staff-doctors?section=credentials",
+  "viewport": 1024,
+  "appearance": "light",
+  "tag": "input",
+  "label": "",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 429,
+      "y": 72.25,
+      "width": 476,
+      "height": 22.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-178-1024.png"
+}

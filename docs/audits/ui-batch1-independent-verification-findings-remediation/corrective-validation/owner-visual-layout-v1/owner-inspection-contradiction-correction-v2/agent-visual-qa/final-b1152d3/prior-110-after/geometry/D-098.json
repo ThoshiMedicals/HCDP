@@ -1,0 +1,28 @@
+{
+  "id": "D-098",
+  "route": "/staff-doctors",
+  "viewport": 1280,
+  "appearance": "light",
+  "tag": "button",
+  "label": "BLOCKED READINESS\n89",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 791,
+      "y": 378.89,
+      "width": 223.5,
+      "height": 123
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-098-1280.png"
+}

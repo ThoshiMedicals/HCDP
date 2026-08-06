@@ -1,0 +1,28 @@
+{
+  "id": "D-175",
+  "route": "/staff-doctors",
+  "viewport": 1024,
+  "appearance": "light",
+  "tag": "button",
+  "label": "ACTIVE STAFF\n41",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 316,
+      "y": 445.39,
+      "width": 333,
+      "height": 103.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-175-1024.png"
+}

@@ -1,0 +1,64 @@
+{
+  "phase": "short-height-containment-2a",
+  "branch": "cursor/ui-batch1-owner-readiness-evidence-correction-2-f709",
+  "originMain": "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76",
+  "startingTip": "f64fcc5c98cfe1e6dfe53376209fcdc1b13f6e49",
+  "previousRejectedFreeze": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "frozenApplicationSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "applicationCommits": [
+    "bfb31f9bee714ee70b61952604961291c83256f1",
+    "b1152d36d3f47c15277f85b3e990f5e1c94bddcb"
+  ],
+  "qaPorts": {
+    "visual": 3511,
+    "workstep": 3512,
+    "regression": 3513,
+    "owner": 3000
+  },
+  "worktrees": {
+    "coordinator": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+    "implementationScratch": "/tmp/hcdp-fix/c2a-impl",
+    "visualQa": "/tmp/hcdp-fix/c2a-vqa-3511",
+    "workstepQa": "/tmp/hcdp-fix/c2a-wqa-3512",
+    "regression": "/tmp/hcdp-fix/c2a-reg-3513"
+  },
+  "protectedHashExpected": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "protectedHashObserved": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "acceptedDebt": {
+    "typescriptErrors": 21,
+    "lintErrors": 2,
+    "lintWarnings": 24
+  },
+  "finalQa": {
+    "visualQa": {
+      "shaMatch": true,
+      "screensInspected": 858,
+      "stillBadCount": 0,
+      "openFindings": 0,
+      "shortClosed": 9,
+      "verdict": "PASS"
+    },
+    "workstepQa": {
+      "shaMatch": true,
+      "pass": 32,
+      "fail": 0,
+      "outOfScope": 1,
+      "openFindings": 0,
+      "verdict": "PASS"
+    },
+    "regression": {
+      "shaMatch": true,
+      "matrixPass": 338,
+      "matrixFail": 0,
+      "accountingEquationHolds": true,
+      "controlsWithDefectFlags": 4,
+      "justifiedExemptions": 4,
+      "unresolvedDefects": 0,
+      "suites01to28": "PASS",
+      "hydrationTotal": 0,
+      "verdict": "PASS"
+    }
+  },
+  "status": "CORRECTION_2A_COMPLETE_AWAITING_OWNER_PHASE0_ACCEPTANCE",
+  "claim": "Correction 2 complete — new Phase 0 baseline candidate ready for owner acceptance"
+}

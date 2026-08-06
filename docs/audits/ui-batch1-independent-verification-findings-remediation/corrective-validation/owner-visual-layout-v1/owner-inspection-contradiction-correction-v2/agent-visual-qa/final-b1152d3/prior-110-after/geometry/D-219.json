@@ -1,0 +1,28 @@
+{
+  "id": "D-219",
+  "route": "/staff-doctors?section=credentials",
+  "viewport": 1024,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 429,
+      "y": 72.25,
+      "width": 476,
+      "height": 22.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-219-1024.png"
+}

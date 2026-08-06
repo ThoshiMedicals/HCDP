@@ -1,0 +1,41 @@
+
+> healthcare-doctors-pulse@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.2.10 (webpack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 13.7s
+  Running TypeScript ...
+  Finished TypeScript in 8.8s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/70) ...
+  Generating static pages using 3 workers (17/70) 
+  Generating static pages using 3 workers (34/70) 
+  Generating static pages using 3 workers (52/70) 
+✓ Generating static pages using 3 workers (70/70) in 383ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /[module]
+├ ● /[module]
+│ └ /organisation
+├ ƒ /api/auth/authorize
+├ ƒ /api/auth/invitations
+├ ƒ /api/auth/invitations/[id]/cancel
+├ ƒ /api/auth/invitations/[id]/resend
+├ ƒ /api/auth/invitations/accept
+├ ƒ /api/auth/password-reset/confirm
+├ ƒ /api/auth/password-reset/request
+├ ○ /organisation
+├ ○ /prototype
+└ ○ /prototype-reference
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

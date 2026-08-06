@@ -1,0 +1,28 @@
+{
+  "id": "D-497",
+  "route": "/staff-doctors?section=engagements",
+  "viewport": 1440,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 694.63,
+      "y": 20.5,
+      "width": 396,
+      "height": 22.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-497-1440.png"
+}

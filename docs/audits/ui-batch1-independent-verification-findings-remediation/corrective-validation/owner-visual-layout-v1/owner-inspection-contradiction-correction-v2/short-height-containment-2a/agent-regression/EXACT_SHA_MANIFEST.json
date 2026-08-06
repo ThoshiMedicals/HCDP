@@ -1,0 +1,33 @@
+{
+  "title": "EXACT_SHA_MANIFEST",
+  "correction": "Correction 2A / short-height-containment-2a",
+  "frozenSha": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+  "shaMatch": true,
+  "recordedUtc": "2026-08-06T03:02:41Z",
+  "worktrees": {
+    "c2a-reg-3513": {
+      "path": "/tmp/hcdp-fix/c2a-reg-3513",
+      "head": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "shaMatch": true,
+      "srcScriptsDiffBytes": 0,
+      "detachedAtFreeze": true,
+      "node_modules": "symlink -> /tmp/hcdp-fix/ui-batch1-vf-fixes/node_modules",
+      "next": "symlink -> /tmp/hcdp-fix/ui-batch1-vf-fixes/.next"
+    },
+    "ui-batch1-vf-fixes": {
+      "path": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+      "head": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
+      "shaMatch": true,
+      "srcScriptsDiffBytes": 0,
+      "node_modules": "real"
+    }
+  },
+  "server": {
+    "base": "http://127.0.0.1:3513",
+    "dashboardHttp": 200,
+    "cssHttpAtPreMatrix": 200,
+    "note": "Matrix run before suite builds; post-build CSS path may 404 until server restart (matrix evidence already sealed)."
+  },
+  "protectedHash": "7c14854a626ff6fa8c042174ef933e59ccb90bff104631011e2f003d29f6ee83",
+  "hashExact": true
+}
