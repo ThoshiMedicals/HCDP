@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "canonical": true,
+  "note": "Exact owner-supplied originals required. Do not redraw or substitute.",
+  "allPresent": false,
+  "images": [
+    {
+      "module": "M01",
+      "route": "/dashboard",
+      "sourceName": "doctors_pulse_operations_dashboard.png",
+      "normalisedName": "m01-command-centre-final.png",
+      "expectedSha256": "ed10fac6e817a582e4e177f1cecf1661929a54bc7130d96dc49386ef34774f74",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m01-command-centre-final.png"
+    },
+    {
+      "module": "M02",
+      "route": "/action-inbox",
+      "sourceName": "doctors_pulse_action_inbox_dashboard.png",
+      "normalisedName": "m02-action-inbox-final.png",
+      "expectedSha256": "c775526e0ec5509d8fdfdc917c2d6815fe19094720575a35233db12482f40cb7",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m02-action-inbox-final.png"
+    },
+    {
+      "module": "M04",
+      "route": "/staff-doctors",
+      "sourceName": "doctors_pulse_staff_operations_dashboard.png",
+      "normalisedName": "m04-staff-doctors-final.png",
+      "expectedSha256": "5e813486de7893e4d4561b6e7239dd82d7cfa891882b20e30d794557baa50ac2",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m04-staff-doctors-final.png"
+    },
+    {
+      "module": "M05",
+      "route": "/roster",
+      "sourceName": "doctors_pulse_weekly_roster_dashboard.png",
+      "normalisedName": "m05-weekly-roster-final.png",
+      "expectedSha256": "3906d4c0e294d3fefc03194b4ff3b97602b69d34eb70a44b071fd59e15cfde13",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m05-weekly-roster-final.png"
+    },
+    {
+      "module": "M06",
+      "route": "/time-attendance",
+      "sourceName": "doctors_pulse_attendance_dashboard(1).png",
+      "normalisedName": "m06-time-attendance-final.png",
+      "expectedSha256": "d8b8805f08c5b2233ae0c69a1b47e10bf1a1fceaea946cb364161cec7a7d691e",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m06-time-attendance-final.png"
+    },
+    {
+      "module": "M10",
+      "route": "/tasks-actions",
+      "sourceName": "doctors_pulse_checklist_dashboard.png",
+      "normalisedName": "m10-checklists-final.png",
+      "expectedSha256": "96be9b1424a8eb20dee634feb8ffb9b374e2791f64229699544a9a379daecebb",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m10-checklists-final.png"
+    },
+    {
+      "module": "M11",
+      "route": "/training",
+      "sourceName": "doctors_pulse_training_dashboard.png",
+      "normalisedName": "m11-training-final.png",
+      "expectedSha256": "a1387fed6383426a1fcdeaa9034b6d80fee93b6cbea6af3b475cd255de751299",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m11-training-final.png"
+    },
+    {
+      "module": "M12",
+      "route": "/compliance-quality",
+      "sourceName": "doctors_pulse_compliance_dashboard(1).png",
+      "normalisedName": "m12-compliance-quality-final.png",
+      "expectedSha256": "e87c012e627ea300424cb6d03760a9777f3e81ab91b8c73e51cf90a75cc1fadf",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m12-compliance-quality-final.png"
+    },
+    {
+      "module": "M15",
+      "route": "/inventory-assets",
+      "sourceName": "doctors_pulse_inventory_dashboard(1).png",
+      "normalisedName": "m15-inventory-assets-final.png",
+      "expectedSha256": "cc9261285d600e4d9f3fae0ca529783a662af40e5a2407a3bfacae573042dc28",
+      "observedSha256": null,
+      "expectedDimensions": "1672x941",
+      "observedDimensions": null,
+      "status": "MISSING",
+      "destination": "docs/design-references/final/m15-inventory-assets-final.png"
+    }
+  ],
+  "blocker": "Nine final PNGs were not present in the cloud environment at first-run generation. Upload requested via environment setup action upload-nine-final-design-pngs."
+}
