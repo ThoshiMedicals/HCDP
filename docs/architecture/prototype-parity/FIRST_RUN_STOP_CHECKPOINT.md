@@ -10,11 +10,22 @@
 | --- | --- |
 | Branch | `cursor/prototype-parity-programme-reset` |
 | Base tip at creation | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
+| First-run tip (this checkpoint) | `1c666befb473cea5f2aef8943c4e632575444452` |
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
 | `origin/main` | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` (unchanged) |
 | `git diff b1152d3..e659dfc -- src scripts` | empty |
-| PR / merge | none |
+| PR / merge | none (not created) |
 | P1 / PPA / M08–M24 implementation | none begun |
+
+### First-run commits
+
+| SHA | Message |
+| --- | --- |
+| `cb6a926` | docs(parity): install final design references and source manifest |
+| `9bf7f58` | tools(parity): add deterministic prototype extraction |
+| `2c771e5` | docs(parity): add master traceability and canonical screen register |
+| `66f49f8` | docs(roadmap): reset dependency-led prototype adoption pathway |
+| `1c666be` | docs(prompts): add controlled module execution prompt pack |
 
 ## UI evidence gate (Correction 2A — closed, not reopened)
 
