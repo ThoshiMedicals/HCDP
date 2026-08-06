@@ -1249,7 +1249,7 @@ export function CommandCentre() {
         }
       />
 
-      <div className="mx-auto grid w-full max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5">
+      <div className="mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5">
         <SearchResultsPanel
           query={searchQuery}
           results={searchResults}

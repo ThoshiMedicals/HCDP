@@ -101,10 +101,10 @@ export function FilterSentenceBar({
   onClear?: () => void;
 }) {
   return (
-    <div className="cc-surface-info flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[length:var(--type-control)] font-semibold">
-      <span className="min-w-0 leading-snug">{sentence}</span>
+    <div className="cc-surface-info flex w-full min-w-0 max-w-full flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-[length:var(--type-control)] font-semibold">
+      <span className="min-w-0 flex-1 basis-[12rem] leading-snug break-words">{sentence}</span>
       {onClear ? (
-        <Button small variant="line" onClick={onClear}>
+        <Button small variant="line" className="shrink-0" onClick={onClear}>
           Clear filters
         </Button>
       ) : null}

@@ -338,16 +338,18 @@ export function ExpandableBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className={cn("rounded-xl border border-[var(--cc-card-line)]", className)}>
+    <div className={cn("min-w-0 max-w-full rounded-xl border border-[var(--cc-card-line)]", className)}>
       <button
         type="button"
-        className="flex w-full items-start justify-between gap-2 px-3 py-2.5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--theme-accent,#2563eb)]"
+        className="flex w-full min-w-0 max-w-full items-start justify-between gap-2 px-3 py-2.5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--theme-accent,#2563eb)]"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
-        <div className="min-w-0">
-          <strong className="block text-[13px]">{title}</strong>
-          {summary ? <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">{summary}</span> : null}
+        <div className="min-w-0 flex-1 overflow-hidden">
+          <strong className="block truncate text-[13px]">{title}</strong>
+          {summary ? (
+            <span className="block truncate text-[length:var(--type-control)] text-[var(--cc-muted)]">{summary}</span>
+          ) : null}
         </div>
         <span className="shrink-0 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">{open ? "Hide" : "Expand"}</span>
       </button>
