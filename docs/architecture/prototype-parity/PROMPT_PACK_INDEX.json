@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "prompts": [
+    {
+      "id": "P1",
+      "title": "Shared final-design foundation",
+      "path": "docs/architecture/prototype-parity/prompts/p1.md",
+      "modules": "Shared shell + workbench primitives"
+    },
+    {
+      "id": "P2-M01",
+      "title": "Final-design conversion \u2014 M01",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m01.md",
+      "modules": "M01 Command Centre"
+    },
+    {
+      "id": "P2-M02",
+      "title": "Final-design conversion \u2014 M02",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m02.md",
+      "modules": "M02 Action Inbox"
+    },
+    {
+      "id": "P2-M03",
+      "title": "Final-design conversion \u2014 M03",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m03.md",
+      "modules": "M03 Organisation & Access"
+    },
+    {
+      "id": "P2-M04",
+      "title": "Final-design conversion \u2014 M04",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m04.md",
+      "modules": "M04 Staff & Doctors"
+    },
+    {
+      "id": "P2-M11",
+      "title": "Final-design conversion \u2014 M11",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m11.md",
+      "modules": "M11 Training"
+    },
+    {
+      "id": "P2-M05",
+      "title": "Final-design conversion \u2014 M05",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m05.md",
+      "modules": "M05 Roster"
+    },
+    {
+      "id": "P2-M06",
+      "title": "Final-design conversion \u2014 M06",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m06.md",
+      "modules": "M06 Time & Attendance"
+    },
+    {
+      "id": "P2-M07",
+      "title": "Final-design conversion \u2014 M07 ordinary prep",
+      "path": "docs/architecture/prototype-parity/prompts/p2-m07.md",
+      "modules": "M07 Staff Pay preparation only"
+    },
+    {
+      "id": "P3-M10",
+      "title": "Operational connective layer \u2014 M10",
+      "path": "docs/architecture/prototype-parity/prompts/p3-m10.md",
+      "modules": "M10 Tasks/Checklists/Handovers/Meetings"
+    },
+    {
+      "id": "P4-M13",
+      "title": "Enabling records \u2014 M13",
+      "path": "docs/architecture/prototype-parity/prompts/p4-m13.md",
+      "modules": "M13 Documents/Policies/SOPs/Intake"
+    },
+    {
+      "id": "P4-M14",
+      "title": "Enabling records \u2014 M14",
+      "path": "docs/architecture/prototype-parity/prompts/p4-m14.md",
+      "modules": "M14 Ticketing & Work Orders"
+    },
+    {
+      "id": "P5-M12",
+      "title": "Governance \u2014 M12",
+      "path": "docs/architecture/prototype-parity/prompts/p5-m12.md",
+      "modules": "M12 Compliance & Quality"
+    },
+    {
+      "id": "P5-M15",
+      "title": "Assets \u2014 M15",
+      "path": "docs/architecture/prototype-parity/prompts/p5-m15.md",
+      "modules": "M15 Inventory/Suppliers/Assets"
+    },
+    {
+      "id": "P5-M16",
+      "title": "Operational risk \u2014 M16",
+      "path": "docs/architecture/prototype-parity/prompts/p5-m16.md",
+      "modules": "M16 Incidents/Risk/Continuity"
+    },
+    {
+      "id": "P6-M08",
+      "title": "Finance \u2014 M08 Doctor Pay",
+      "path": "docs/architecture/prototype-parity/prompts/p6-m08.md",
+      "modules": "M08"
+    },
+    {
+      "id": "P6-M09",
+      "title": "Finance \u2014 M09 BBPIP",
+      "path": "docs/architecture/prototype-parity/prompts/p6-m09.md",
+      "modules": "M09"
+    },
+    {
+      "id": "P6-M07-PPA",
+      "title": "Finance \u2014 M07 PPA",
+      "path": "docs/architecture/prototype-parity/prompts/p6-m07-ppa.md",
+      "modules": "M07 Prior-Period Adjustment"
+    },
+    {
+      "id": "P6-M24",
+      "title": "Finance \u2014 M24 Forecast/Ledger Control",
+      "path": "docs/architecture/prototype-parity/prompts/p6-m24.md",
+      "modules": "M24"
+    },
+    {
+      "id": "P7-M17",
+      "title": "Communications \u2014 M17",
+      "path": "docs/architecture/prototype-parity/prompts/p7-m17.md",
+      "modules": "M17 Email & SMS"
+    },
+    {
+      "id": "P7-M18",
+      "title": "Digital \u2014 M18",
+      "path": "docs/architecture/prototype-parity/prompts/p7-m18.md",
+      "modules": "M18 Digital Operations & Security"
+    },
+    {
+      "id": "P7-M19",
+      "title": "Analytics \u2014 M19",
+      "path": "docs/architecture/prototype-parity/prompts/p7-m19.md",
+      "modules": "M19 Analytics/Data Quality/Change"
+    },
+    {
+      "id": "P8-M20",
+      "title": "Commercial \u2014 M20",
+      "path": "docs/architecture/prototype-parity/prompts/p8-m20.md",
+      "modules": "M20 SaaS workspaces"
+    },
+    {
+      "id": "P8-M21",
+      "title": "Enterprise \u2014 M21",
+      "path": "docs/architecture/prototype-parity/prompts/p8-m21.md",
+      "modules": "M21 Vendor ops/provisioning"
+    },
+    {
+      "id": "P8-M22",
+      "title": "Enterprise \u2014 M22",
+      "path": "docs/architecture/prototype-parity/prompts/p8-m22.md",
+      "modules": "M22 Recruitment"
+    },
+    {
+      "id": "P8-M23",
+      "title": "Enterprise \u2014 M23",
+      "path": "docs/architecture/prototype-parity/prompts/p8-m23.md",
+      "modules": "M23 Website/SEO"
+    },
+    {
+      "id": "P9",
+      "title": "Whole-platform production verification",
+      "path": "docs/architecture/prototype-parity/prompts/p9.md",
+      "modules": "Platform-wide"
+    }
+  ]
+}
