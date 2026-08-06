@@ -1,0 +1,18 @@
+{
+  "phase": "owner-inspection-contradiction-correction-v2",
+  "frozenExpected": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "inputSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "shaMatch": true,
+  "appTreeCleanVsFreeze": true,
+  "diffBytes": 0,
+  "base": "http://127.0.0.1:3502",
+  "matrixPath": "agent-regression/prod-matrix-final-31b3111",
+  "matrixFail": 0,
+  "accountingEquationHolds": true,
+  "controlsWithDefectFlags": 4,
+  "justifiedExemptions": 4,
+  "unresolvedDefects": 0,
+  "ledgerRows": 4,
+  "perRouteMatrixOmitted": false,
+  "recordedAt": "2026-08-06T02:07:15Z"
+}

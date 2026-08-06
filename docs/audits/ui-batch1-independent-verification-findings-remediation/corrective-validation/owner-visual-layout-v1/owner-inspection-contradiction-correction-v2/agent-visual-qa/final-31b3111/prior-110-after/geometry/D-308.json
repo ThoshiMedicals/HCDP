@@ -1,0 +1,28 @@
+{
+  "id": "D-308",
+  "route": "/staff-doctors?section=credentials",
+  "viewport": 430,
+  "appearance": "light",
+  "tag": "select",
+  "label": "Akith Hettiarachchi\nAlana Cheney\nAlvina ",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 594.69,
+      "width": 356,
+      "height": 40
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-308-430.png"
+}

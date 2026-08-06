@@ -1,0 +1,28 @@
+{
+  "id": "D-478",
+  "route": "/time-attendance?section=settings",
+  "viewport": 1440,
+  "appearance": "light",
+  "tag": "button",
+  "label": "Publish policy",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 316,
+      "y": 402.89,
+      "width": 124.56,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-478-1440.png"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "D-377",
+  "route": "/roster?section=open-shifts",
+  "viewport": 390,
+  "appearance": "system",
+  "tag": "select",
+  "label": "Select shift…\nClinical Nurse · 2026-08-0",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 588.19,
+      "width": 316,
+      "height": 40
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-377-390.png"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "D-324",
+  "route": "/staff-doctors",
+  "viewport": 430,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "ACTIVE STAFF\n41",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 16,
+      "y": 491.89,
+      "width": 398,
+      "height": 103.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-324-430.png"
+}

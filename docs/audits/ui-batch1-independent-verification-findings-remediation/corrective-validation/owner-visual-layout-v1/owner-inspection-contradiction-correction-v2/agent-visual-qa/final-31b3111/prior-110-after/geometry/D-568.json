@@ -1,0 +1,28 @@
+{
+  "id": "D-568",
+  "route": "/time-attendance?section=corrections",
+  "viewport": 1440,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "Request correction",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 316,
+      "y": 354.89,
+      "width": 160.91,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-568-1440.png"
+}

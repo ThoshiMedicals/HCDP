@@ -1,0 +1,16 @@
+{
+  "allowlist": "HMR WebSocket / HMR status and DevTools install hints are allowlisted. Same-origin net::ERR_ABORTED is allowlisted only when the URL contains _rsc= OR verified Next prefetch headers (next-router-prefetch / Purpose|Sec-Purpose: prefetch). Bare resourceType()==='fetch' or bare /_next/ path alone is NOT sufficient. 403, 500, JSON parse, and unknown resource failures are never allowlisted. Historical prod-matrix-v3 proof: 6446/6446 environmental-nav-abort events were same-origin _rsc= ERR_ABORTED (see agent-implementation/ABORT_ALLOWLIST_RSC_PROOF.md).",
+  "failPredicate": [
+    "navigation status ≥ 400",
+    "unallowlisted resource response ≥ 400",
+    "application page error",
+    "application console error",
+    "hydration mismatch",
+    "horizontal page overflow",
+    "meaningful-control element clip / occlusion / unintended truncation (no centre-outside-viewport bypass; no chrome-only bypass)",
+    "clip accounting identity failure: controlsWithDefectFlags !== justifiedExemptions + unresolvedDefects",
+    "typography / contrast / dark-surface hard-gate failure",
+    "unallowlisted requestfailed"
+  ],
+  "priorContradiction": "Previous validator used a global console bag, excluded console/page/hydration/overflow from fail, and truncated consoleBag to 100 — it could not support matrixFail:0. Correction-2 additionally removed the global centreInViewport hard-fail bypass that suppressed 444 defect-flagged controls without counting them as justified exemptions, and requires row-level element-clip-ledger.json (not omitted placeholders)."
+}

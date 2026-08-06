@@ -1,0 +1,28 @@
+{
+  "id": "D-361",
+  "route": "/roster?section=coverage",
+  "viewport": 390,
+  "appearance": "dark",
+  "tag": "select",
+  "label": "Select period…\nDemo Roster — Week A (202",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 610.69,
+      "width": 316,
+      "height": 40
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-361-390.png"
+}

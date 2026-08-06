@@ -1,0 +1,28 @@
+{
+  "id": "D-139",
+  "route": "/staff-doctors?section=people",
+  "viewport": 1280,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "Email",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 788,
+      "y": 459.19,
+      "width": 217.5,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-139-1280.png"
+}

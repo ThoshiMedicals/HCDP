@@ -1,0 +1,28 @@
+{
+  "id": "D-313",
+  "route": "/roster?section=open-shifts",
+  "viewport": 430,
+  "appearance": "light",
+  "tag": "input",
+  "label": "Audience",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 613.69,
+      "width": 356,
+      "height": 40.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-313-430.png"
+}

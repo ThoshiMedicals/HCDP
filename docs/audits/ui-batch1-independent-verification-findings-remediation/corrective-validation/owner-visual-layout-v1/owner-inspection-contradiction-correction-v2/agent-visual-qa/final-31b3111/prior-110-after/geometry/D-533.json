@@ -1,0 +1,28 @@
+{
+  "id": "D-533",
+  "route": "/roster?section=availability-leave",
+  "viewport": 1440,
+  "appearance": "dark",
+  "tag": "input",
+  "label": "Clinic id filter",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 868,
+      "y": 448.69,
+      "width": 523,
+      "height": 40.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-533-1440.png"
+}

@@ -1,0 +1,240 @@
+{
+  "agent": "Work-Step / Functional QA",
+  "phase": "owner-inspection-contradiction-correction-v2",
+  "frozenApplicationSourceSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "worktree": "/tmp/hcdp-fix/ui-batch1-vf-fixes",
+  "portUsed": "http://127.0.0.1:3502",
+  "recordedAt": "2026-08-06T02:00:37.488Z",
+  "preflight": {
+    "head": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+    "diffSrcScriptsLines": 0,
+    "emptyDiff": true
+  },
+  "totals": {
+    "workflows": 33,
+    "pass": 32,
+    "fail": 0,
+    "blocked": 0,
+    "outOfScope": 1,
+    "stepsPass": 191,
+    "stepsFail": 0,
+    "stepsOutOfScope": 1,
+    "openFindings": 0
+  },
+  "overallVerdict": "PASS",
+  "workflows": [
+    {
+      "workflowId": "PREFLIGHT",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M04-PEOPLE-CREATE",
+      "outcome": "PASS",
+      "stepCount": 6,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M04-CREDENTIALS-ADD",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M04-ENGAGEMENTS",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M04-KPI-NAV",
+      "outcome": "PASS",
+      "stepCount": 8,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M04-CLIP-OPS",
+      "outcome": "PASS",
+      "stepCount": 16,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-OFFER",
+      "outcome": "PASS",
+      "stepCount": 5,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-COVERAGE",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-CLINIC-FILTER",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-CONFLICTS",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-CREATE-DRAFT",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-ROSTER-BOARD",
+      "outcome": "PASS",
+      "stepCount": 2,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M05-CLIP-OPS",
+      "outcome": "PASS",
+      "stepCount": 12,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-REFRESH",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-BULK-APPROVE",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-CORRECTION",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-PUBLISH-POLICY",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-CLEAR-FILTER",
+      "outcome": "PASS",
+      "stepCount": 6,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-M06-CLIP-OPS",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-EMERGENCY-1440",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-EMERGENCY-1024",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-EMERGENCY-390",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-TOPBAR",
+      "outcome": "PASS",
+      "stepCount": 11,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-SIDEBAR",
+      "outcome": "PASS",
+      "stepCount": 3,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-APPEARANCE",
+      "outcome": "PASS",
+      "stepCount": 6,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M04",
+      "outcome": "PASS",
+      "stepCount": 12,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M05",
+      "outcome": "PASS",
+      "stepCount": 10,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M06",
+      "outcome": "PASS",
+      "stepCount": 10,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-DEEPLINK-M07",
+      "outcome": "PASS",
+      "stepCount": 11,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-NAV-STATE",
+      "outcome": "PASS",
+      "stepCount": 4,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-A11Y-FORMS-390",
+      "outcome": "PASS",
+      "stepCount": 8,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-A11Y-FORMS-1024",
+      "outcome": "PASS",
+      "stepCount": 8,
+      "failSteps": []
+    },
+    {
+      "workflowId": "WF-PAYMENTS-OOS",
+      "outcome": "OUT OF SCOPE",
+      "stepCount": 1,
+      "failSteps": []
+    }
+  ],
+  "openFindings": [],
+  "wqaFindingIdsOpen": [],
+  "applicationSourceOrTestsEdited": false,
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false,
+    "productionApproval": false
+  },
+  "evidence": {
+    "inventory": "WORKFLOW_INVENTORY.md",
+    "results": "WORKSTEP_RESULTS.md",
+    "summary": "WORKSTEP_SUMMARY.json",
+    "raw": "_raw-results.json",
+    "openFindings": "findings/OPEN_FINDINGS.md"
+  }
+}

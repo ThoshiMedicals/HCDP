@@ -1,0 +1,190 @@
+{
+  "agent": "Visual QA Agent",
+  "phase": "owner-inspection-contradiction-correction-v2/final-31b3111",
+  "frozenAppSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "headSha": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "shaMatch": true,
+  "liveBase": "http://127.0.0.1:3502",
+  "capturedAt": "2026-08-06T02:07:15Z",
+  "srcScriptsDiffBytes": 0,
+  "totals": {
+    "screensInspected": 858,
+    "captureErrors": 0,
+    "topbarProbes": 84,
+    "topbarProbeFails": 0,
+    "searchProbes": 84,
+    "searchProbeFails": 0,
+    "stillBadCount": 9,
+    "vqaFindingsOpen": 9,
+    "vqaFindingsClosed": 2,
+    "prior110VisuallyOpen": 0,
+    "prior110VisuallyClosed": 110
+  },
+  "verdict": "FAIL",
+  "verdictReason": "Correction-2 Visual QA records stillBadCount=9 with 9 OPEN findings (short-height dashboard X-overflow). Topbar/search probes pass. Prior-110 after-geometry cleared 110/110. This is not a zero-open PASS and does not bury geometry failures.",
+  "openFindings": [
+    {
+      "id": "VQA-C2-SHORT-001",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1024x600 light)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "light",
+      "screenshot": "light-1024x600-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-002",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (768x500 light)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "light",
+      "screenshot": "light-768x500-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-003",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1024x600 dark)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "dark",
+      "screenshot": "dark-1024x600-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-004",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (768x500 dark)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "dark",
+      "screenshot": "dark-768x500-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-005",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1024x600 system)",
+      "route": "/dashboard",
+      "viewport": "1024x600",
+      "mode": "system",
+      "screenshot": "system-1024x600-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-006",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (768x500 system)",
+      "route": "/dashboard",
+      "viewport": "768x500",
+      "mode": "system",
+      "screenshot": "system-768x500-dashboard.png",
+      "badHotCount": 12,
+      "controls": [
+        "Add Comment",
+        "Audit and override detailLast refreshed ",
+        "Clear filters",
+        "Create follow-up"
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-007",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1536x900 light)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "light",
+      "screenshot": "light-1536x900-dashboard.png",
+      "badHotCount": 1,
+      "controls": [
+        "Audit and override detailLast refreshed "
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-008",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1536x900 dark)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "dark",
+      "screenshot": "dark-1536x900-dashboard.png",
+      "badHotCount": 1,
+      "controls": [
+        "Audit and override detailLast refreshed "
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    },
+    {
+      "id": "VQA-C2-SHORT-009",
+      "status": "OPEN",
+      "severity": "medium",
+      "title": "Short-height dashboard control X-overflow (1536x900 system)",
+      "route": "/dashboard",
+      "viewport": "1536x900",
+      "mode": "system",
+      "screenshot": "system-1536x900-dashboard.png",
+      "badHotCount": 1,
+      "controls": [
+        "Audit and override detailLast refreshed "
+      ],
+      "detail": "Below-fold Command Centre controls (Clear filters / Audit expandable) report overflowsViewportX at short-height viewports. Matrix at standard heights accounts cleanly; these remain open for owner adjudication / follow-on layout containment."
+    }
+  ],
+  "closedFindings": [
+    "VQA-C-001",
+    "VQA-C-017"
+  ],
+  "claims": {
+    "independentVerification": false,
+    "mergeReadiness": false,
+    "productionApproval": false,
+    "ownerInspectionReady": false
+  }
+}

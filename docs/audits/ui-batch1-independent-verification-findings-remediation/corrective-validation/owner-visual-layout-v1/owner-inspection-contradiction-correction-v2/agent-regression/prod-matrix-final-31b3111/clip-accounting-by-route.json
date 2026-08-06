@@ -1,0 +1,4734 @@
+[
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "system",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 1,
+      "justifiedExemptions": 1,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 1,
+      "justifiedExemptions": 1,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 1,
+      "justifiedExemptions": 1,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 1,
+      "justifiedExemptions": 1,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 1280,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 523,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 101,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 126,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 1024,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 485,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 88,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 20,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 251,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 15,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 485,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 88,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 20,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 251,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 15,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 768,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 483,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 86,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 249,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 483,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 86,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 249,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 430,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 483,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 86,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 249,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 483,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 86,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 249,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/dashboard",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 483,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/action-inbox",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/settings",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 86,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 18,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 249,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 13,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 11,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 12,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 9,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 14,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 16,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "system",
+    "viewport": 390,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 10,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=overview",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=staff-profiles",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 203,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=doctor-profiles",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 158,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=engagements",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=leave-availability",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=restrictions",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=onboarding",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=offboarding",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=reports",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=settings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=roster-board",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=availability-leave",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=requests",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=conflicts-warnings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=published-history",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 57,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=cost-forecast",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=reports",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=settings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=live",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=clock",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=exceptions",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 57,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=corrections",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=breaks",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=history",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=reports",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=settings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=leave",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=exceptions",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=variances",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=history",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=settings",
+    "appearance": "light",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=overview",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 69,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=people",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 300,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=staff-profiles",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 203,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=doctor-profiles",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 158,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=engagements",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=credentials",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 63,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=leave-availability",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=restrictions",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=onboarding",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=offboarding",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=reports",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staff-doctors?section=settings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=roster-board",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=coverage",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=open-shifts",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=availability-leave",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=requests",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 61,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=conflicts-warnings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=published-history",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 57,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=cost-forecast",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=reports",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/roster?section=settings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=live",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=clock",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=timesheets",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=exceptions",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 57,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=corrections",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=approvals",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=breaks",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=history",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=reports",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/time-attendance?section=settings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 58,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=overview",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=people",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=leave",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=adjustments",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=exceptions",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 62,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=variances",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=approval",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=export",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 66,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=reconciliation",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 60,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=history",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 59,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  },
+  {
+    "route": "/staffpay?section=settings",
+    "appearance": "dark",
+    "viewport": 1440,
+    "fail": false,
+    "clipAccounting": {
+      "controlsInspected": 64,
+      "controlsWithDefectFlags": 0,
+      "justifiedExemptions": 0,
+      "unresolvedDefects": 0,
+      "identityHolds": true
+    },
+    "unresolvedSample": []
+  }
+]

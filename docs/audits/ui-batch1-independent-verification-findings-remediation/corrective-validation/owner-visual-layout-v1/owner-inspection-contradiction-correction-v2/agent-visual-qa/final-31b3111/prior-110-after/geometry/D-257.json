@@ -1,0 +1,28 @@
+{
+  "id": "D-257",
+  "route": "/staff-doctors",
+  "viewport": 768,
+  "appearance": "light",
+  "tag": "button",
+  "label": "ACTIVE DOCTORS\n48",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 391,
+      "y": 460.89,
+      "width": 361,
+      "height": 103.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-257-768.png"
+}

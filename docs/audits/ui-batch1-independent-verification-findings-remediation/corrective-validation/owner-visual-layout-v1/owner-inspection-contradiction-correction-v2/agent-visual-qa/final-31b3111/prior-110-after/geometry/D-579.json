@@ -1,0 +1,28 @@
+{
+  "id": "D-579",
+  "route": "/time-attendance?section=history",
+  "viewport": 1440,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "Clear filter",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 316,
+      "y": 506.89,
+      "width": 103.3,
+      "height": 44.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-579-1440.png"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "D-281",
+  "route": "/staff-doctors?section=people",
+  "viewport": 768,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "Create",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 563.5,
+      "y": 541.19,
+      "width": 167.5,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-281-768.png"
+}

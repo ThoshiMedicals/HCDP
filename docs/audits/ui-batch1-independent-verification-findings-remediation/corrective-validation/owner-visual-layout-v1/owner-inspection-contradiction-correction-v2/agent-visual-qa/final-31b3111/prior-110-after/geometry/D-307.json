@@ -1,0 +1,28 @@
+{
+  "id": "D-307",
+  "route": "/staff-doctors?section=people",
+  "viewport": 430,
+  "appearance": "light",
+  "tag": "button",
+  "label": "Create",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 739.69,
+      "width": 356,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-307-430.png"
+}

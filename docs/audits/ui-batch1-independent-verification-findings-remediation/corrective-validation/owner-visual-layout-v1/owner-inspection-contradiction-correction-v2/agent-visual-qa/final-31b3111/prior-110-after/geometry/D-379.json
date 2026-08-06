@@ -1,0 +1,28 @@
+{
+  "id": "D-379",
+  "route": "/roster?section=open-shifts",
+  "viewport": 390,
+  "appearance": "system",
+  "tag": "button",
+  "label": "Offer",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 684.69,
+      "width": 316,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-379-390.png"
+}

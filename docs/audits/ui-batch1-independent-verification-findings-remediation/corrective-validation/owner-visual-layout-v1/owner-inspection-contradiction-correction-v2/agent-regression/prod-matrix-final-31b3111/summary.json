@@ -1,0 +1,66 @@
+{
+  "mode": "production",
+  "base": "http://127.0.0.1:3502",
+  "appShaEnv": "31b31115fa1bab99e2cea47c8526a4c8011e2fe2",
+  "matrixEntries": 338,
+  "matrixFail": 0,
+  "matrixPass": 338,
+  "issueTotals": {},
+  "rawEventCount": 6079,
+  "unresolvedApplicationEventCount": 0,
+  "allowlistedEnvironmentalEventCount": 6079,
+  "eventsByClass": {
+    "environmental-nav-abort": 6079
+  },
+  "hydrationTotal": 0,
+  "overflowFailCount": 0,
+  "controlsInspected": 26915,
+  "controlsWithDefectFlags": 4,
+  "justifiedExemptions": 4,
+  "unresolvedDefects": 0,
+  "accountingIdentityHolds": true,
+  "accountingEquationHolds": true,
+  "elementClipFailCount": 0,
+  "chromeDefects": 0,
+  "nonChromeDefects": 0,
+  "nonChromeElementClipHits": 23869,
+  "consoleAppErrorCount": 0,
+  "pageErrorCount": 0,
+  "http500": [],
+  "http403": [],
+  "jsonParse": [],
+  "appearanceResults": {
+    "cleanDefault": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "darkReload": {
+      "htmlDark": true,
+      "appearance": "dark",
+      "pass": true
+    },
+    "lightReload": {
+      "htmlDark": false,
+      "appearance": "light",
+      "pass": true
+    },
+    "systemOsLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsDark": {
+      "htmlDark": true,
+      "appearance": "system",
+      "pass": true
+    },
+    "systemOsChangeToLight": {
+      "htmlDark": false,
+      "appearance": "system",
+      "pass": true
+    }
+  },
+  "appearanceAllPass": true,
+  "failSamples": []
+}

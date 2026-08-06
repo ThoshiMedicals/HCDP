@@ -1,0 +1,28 @@
+{
+  "id": "D-350",
+  "route": "/roster?section=open-shifts",
+  "viewport": 390,
+  "appearance": "light",
+  "tag": "input",
+  "label": "Audience",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 37,
+      "y": 636.19,
+      "width": 316,
+      "height": 40.5
+    },
+    "visibility": "visible",
+    "display": "block"
+  },
+  "screenshot": "screenshots/D-350-390.png"
+}

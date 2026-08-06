@@ -1,0 +1,28 @@
+{
+  "id": "D-529",
+  "route": "/roster?section=open-shifts",
+  "viewport": 1440,
+  "appearance": "dark",
+  "tag": "button",
+  "label": "Offer",
+  "status": "CLEARED",
+  "afterGeometry": {
+    "found": true,
+    "closed": false,
+    "centreInViewport": true,
+    "overflowsX": false,
+    "overflowsY": false,
+    "belowViewportPageScroll": false,
+    "clippedByAncestor": false,
+    "defect": false,
+    "rect": {
+      "x": 1045,
+      "y": 475.19,
+      "width": 346,
+      "height": 42.5
+    },
+    "visibility": "visible",
+    "display": "flex"
+  },
+  "screenshot": "screenshots/D-529-1440.png"
+}
