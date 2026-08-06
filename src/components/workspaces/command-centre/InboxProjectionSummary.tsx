@@ -61,7 +61,7 @@ export function InboxProjectionSummary() {
           ))}
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="min-w-0 max-w-full overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-control)] uppercase tracking-wide text-[var(--cc-muted)]">

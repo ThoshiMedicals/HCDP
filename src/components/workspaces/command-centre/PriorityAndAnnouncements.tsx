@@ -176,22 +176,22 @@ export function PrioritySummary({
   ];
 
   return (
-    <CcCard data-priority-summary="true">
-      <div className="flex flex-wrap items-center justify-between gap-2 px-4 pt-3.5">
-        <div>
+    <CcCard data-priority-summary="true" className="min-w-0 max-w-full">
+      <div className="flex min-w-0 max-w-full flex-wrap items-center justify-between gap-2 px-4 pt-3.5">
+        <div className="min-w-0">
           <h3 className="m-0 text-[14px] font-extrabold">Priority Summary</h3>
           <p className="m-0 mt-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             {clinicScopeLabel} · Updated {formatClock(lastUpdated)}
           </p>
         </div>
         {selected ? (
-          <Button small variant="line" onClick={onClear}>
+          <Button small variant="line" className="shrink-0" onClick={onClear}>
             Clear Filter
           </Button>
         ) : null}
       </div>
       <div
-        className="grid gap-2 p-3"
+        className="grid min-w-0 max-w-full gap-2 p-3"
         style={{
           gridTemplateColumns: `repeat(${Math.min(keys.length, 4)}, minmax(0, 1fr))`,
         }}
@@ -210,7 +210,7 @@ export function PrioritySummary({
               aria-label={`${key}: ${count}`}
               aria-pressed={active}
               className={cn(
-                "flex min-h-[84px] flex-col justify-between rounded-xl border px-3 py-2.5 text-left transition",
+                "flex min-h-[84px] min-w-0 max-w-full flex-col justify-between rounded-xl border px-3 py-2.5 text-left transition",
                 active
                   ? "border-[var(--cc-exec,#1e40af)] cc-surface-info ring-2 ring-[color-mix(in_srgb,var(--cc-exec,#1e40af)_35%,transparent)]"
                   : "border-[var(--cc-card-line)] bg-[var(--cc-soft)] hover:border-[color-mix(in_srgb,var(--cc-exec,#1e40af)_50%,var(--cc-card-line))]",

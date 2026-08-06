@@ -250,7 +250,7 @@ export function ActiveActionList({
           ) : null}
         </div>
       ) : (
-        <div className="overflow-auto px-4 pb-4">
+        <div className="min-w-0 max-w-full overflow-auto px-4 pb-4">
           <table className="w-full min-w-[900px] border-collapse text-left text-xs">
             <thead>
               <tr className="border-b border-[var(--cc-card-line)] text-[length:var(--type-control)] uppercase text-[var(--cc-muted)]">

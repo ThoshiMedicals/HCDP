@@ -461,7 +461,9 @@ export function CommandCentre() {
         onRetry={() => refresh(true)}
         onCreateFollowUp={() => setCreateOpen(true)}
       >
-        <div id={`cc-panel-${id}`}>{node}</div>
+        <div id={`cc-panel-${id}`} className="min-w-0 max-w-full">
+          {node}
+        </div>
       </CardStateFrame>
     );
   }
@@ -1143,9 +1145,9 @@ export function CommandCentre() {
         />
       </div>
 
-      <header className="mx-auto w-full max-w-[1480px] px-3 pb-2 pt-1.5 lg:px-5">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="min-w-0">
+      <header className="mx-auto w-full min-w-0 max-w-[1480px] px-3 pb-2 pt-1.5 lg:px-5">
+        <div className="flex min-w-0 max-w-full flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 max-w-full">
             <div className="cc-text-info text-[length:var(--type-control)] font-extrabold uppercase tracking-[0.08em]">
               Module 1 · Owner / Director
             </div>
@@ -1321,7 +1323,7 @@ export function CommandCentre() {
         {viewTab === "command" ? (
           <>
             {mobileUrgent ? (
-              <div className="grid gap-3" data-dashboard-primary="urgent">
+              <div className="grid w-full min-w-0 max-w-full gap-3" data-dashboard-primary="urgent">
                 <p className="cc-layer-label">Urgent review</p>
                 {renderSection("priority")}
                 {renderSection("executive")}
@@ -1337,12 +1339,12 @@ export function CommandCentre() {
                 {renderSection("actions")}
               </div>
             ) : (
-              <div className="grid gap-3" data-dashboard-primary="executive">
-                <section aria-label="Executive indicators" data-dashboard-area="indicators">
+              <div className="grid w-full min-w-0 max-w-full gap-3" data-dashboard-primary="executive">
+                <section className="min-w-0 max-w-full" aria-label="Executive indicators" data-dashboard-area="indicators">
                   {renderSection("priority")}
                 </section>
 
-                <section aria-label="Priority actions" data-dashboard-area="priority-actions">
+                <section className="min-w-0 max-w-full" aria-label="Priority actions" data-dashboard-area="priority-actions">
                   <FilterSentenceBar
                     sentence={filterSentence}
                     onClear={() => {
@@ -1352,9 +1354,9 @@ export function CommandCentre() {
                       setAssigneeFilter(null);
                     }}
                   />
-                  <div className="mt-2 flex flex-wrap gap-2">
+                  <div className="mt-2 flex min-w-0 max-w-full flex-wrap gap-2">
                     <select
-                      className="cc-ctrl"
+                      className="cc-ctrl min-w-0 max-w-full"
                       value={statusFilter ?? ""}
                       onChange={(e) => setStatusFilter(e.target.value || null)}
                       aria-label="Status filter"
@@ -1367,22 +1369,22 @@ export function CommandCentre() {
                       ))}
                     </select>
                     <input
-                      className="cc-ctrl"
+                      className="cc-ctrl min-w-0 max-w-full"
                       placeholder="Assigned person…"
                       value={assigneeFilter ?? ""}
                       onChange={(e) => setAssigneeFilter(e.target.value || null)}
                       aria-label="Assigned person filter"
                     />
                   </div>
-                  <div className="mt-3">{renderSection("actions")}</div>
+                  <div className="mt-3 min-w-0 max-w-full">{renderSection("actions")}</div>
                 </section>
 
-                <section aria-label="Operational health" data-dashboard-area="operational-health">
+                <section className="min-w-0 max-w-full" aria-label="Operational health" data-dashboard-area="operational-health">
                   {renderSection("clinics")}
                   {renderSection("executive")}
                 </section>
 
-                <details className="rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-3" data-dashboard-area="secondary-detail">
+                <details className="min-w-0 max-w-full rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-3" data-dashboard-area="secondary-detail">
                   <summary className="cursor-pointer text-[13px] font-extrabold text-[var(--cc-ink)]">
                     More dashboard detail
                   </summary>
@@ -1390,7 +1392,7 @@ export function CommandCentre() {
                     Announcements, categories, AI findings, completed items, trends, private notes,
                     side panels and shell/management controls remain available here.
                   </p>
-                  <div className="mt-3 grid gap-3">
+                  <div className="mt-3 grid min-w-0 max-w-full gap-3">
                     {!mobileUrgent ? (
                       <AnnouncementCarousel
                         items={normalAnnouncements}

@@ -192,13 +192,17 @@ export function ClinicOperationsPanel({
         title="Clinic Operations & Comparison"
         subtitle="Overall 0–100% score across eight equal areas. Emergency status shown separately. Actual totals shown alongside fair / FTE and / room rates."
       />
-      <div className="grid gap-3 px-4 pb-4 sm:grid-cols-2 xl:grid-cols-4">
+      {/*
+        Collapse earlier than sm: 2-col from 640px forces clinic cards past the main pane at
+        768 short-height (VQA-C2-SHORT). Stack until lg; 2-col at lg; 4-col at xl+.
+      */}
+      <div className="grid grid-cols-1 gap-3 px-4 pb-4 lg:grid-cols-2 xl:grid-cols-4">
         {(Object.keys(groups) as Array<keyof typeof groups>).map((g) => (
-          <div key={g} className="min-w-0">
+          <div key={g} className="min-w-0 max-w-full">
             <div className="mb-1.5 truncate text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--cc-muted)]">
               {g} ({groups[g].length})
             </div>
-            <div className="grid gap-2">
+            <div className="grid min-w-0 gap-2">
               {groups[g].length === 0 ? (
                 <div className="rounded-xl border border-dashed border-[var(--cc-card-line)] px-3 py-4 text-center text-[length:var(--type-control)] text-[var(--cc-muted)]">
                   None
@@ -210,9 +214,12 @@ export function ClinicOperationsPanel({
                 const rooms = CLINIC_ROOMS_GUESS[h.locationId] || 4;
                 const income = CLINIC_INCOME_GUESS[h.locationId] || 0;
                 return (
-                  <div key={h.locationId} className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-2.5">
-                    <div className="mb-1 flex items-start justify-between gap-2">
-                      <strong className="truncate text-[13px]">{loc?.shortName}</strong>
+                  <div
+                    key={h.locationId}
+                    className="min-w-0 max-w-full overflow-hidden rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-2.5"
+                  >
+                    <div className="mb-1 flex min-w-0 items-start justify-between gap-2">
+                      <strong className="min-w-0 truncate text-[13px]">{loc?.shortName}</strong>
                       <span className="shrink-0">
                         <HealthBadge band={h.override?.band ?? h.band} score={h.overallScore} compact />
                       </span>
@@ -226,11 +233,11 @@ export function ClinicOperationsPanel({
                       <div className="cc-text-warn mb-1 text-[length:var(--type-control)] font-bold">Warning: opening checklist late</div>
                     ) : null}
                     {h.missingInfo?.length ? (
-                      <div className="mb-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
+                      <div className="mb-1 break-words text-[length:var(--type-control)] text-[var(--cc-muted)]">
                         Data incomplete: {h.missingInfo.join(", ")} (score not reduced)
                       </div>
                     ) : null}
-                    <div className="grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
+                    <div className="grid min-w-0 gap-0.5 break-words text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)]">
                       <span>
                         {h.openingStatus} · Checklist {h.openingChecklist}
                       </span>
@@ -249,7 +256,7 @@ export function ClinicOperationsPanel({
                       </span>
                     </div>
                     {onOpenHealth ? (
-                      <Button small variant="line" className="mt-1.5" onClick={() => onOpenHealth(h.locationId)}>
+                      <Button small variant="line" className="mt-1.5 max-w-full" onClick={() => onOpenHealth(h.locationId)}>
                         View Health Breakdown
                       </Button>
                     ) : null}
@@ -272,9 +279,10 @@ export function ClinicOperationsPanel({
           </div>
         ))}
       </div>
-      <div className="border-t border-[var(--cc-card-line)] px-4 py-3">
+      <div className="min-w-0 max-w-full border-t border-[var(--cc-card-line)] px-4 py-3">
         <h4 className="m-0 mb-2 text-[13px] font-extrabold">Ranked comparison (normalised)</h4>
-        <div className="overflow-x-auto">
+        {/* min-w-0 required: bare overflow-x-auto expands to table min-w-[820px] and widens the executive grid */}
+        <div className="min-w-0 max-w-full overflow-x-auto">
           <table className="w-full min-w-[820px] text-left text-[length:var(--type-table)]">
             <thead>
               <tr className="text-[length:var(--type-table)] uppercase text-[var(--cc-muted)]">

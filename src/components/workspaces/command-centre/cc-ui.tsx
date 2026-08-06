@@ -19,7 +19,7 @@ export function CcCard({
   return (
     <section
       className={cn(
-        "rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--cc-ink)] shadow-[var(--cc-shadow)]",
+        "min-w-0 max-w-full rounded-2xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] text-[var(--cc-ink)] shadow-[var(--cc-shadow)]",
         collapsed && "opacity-80",
         className
       )}
@@ -169,7 +169,7 @@ export function StatBlock({
   const asText = typeof value === "string" || typeof value === "number" ? String(value) : "";
   const long = asText.length > 9;
   return (
-    <div className="flex min-h-[70px] flex-col justify-center rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-2.5 py-2">
+    <div className="flex min-h-[70px] min-w-0 max-w-full flex-col justify-center rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] px-2.5 py-2">
       <div
         className="line-clamp-2 text-[length:var(--type-control)] font-bold uppercase leading-tight tracking-wide text-[var(--cc-muted)]"
         title={label}
@@ -178,7 +178,7 @@ export function StatBlock({
       </div>
       <div
         className={cn(
-          "mt-1 break-words font-black tracking-tight tabular-nums leading-none",
+          "mt-1 min-w-0 break-words font-black tracking-tight tabular-nums leading-none",
           long ? "text-[14px] sm:text-[16px]" : "text-[20px] sm:text-[22px]",
           valueColor
         )}
@@ -338,7 +338,7 @@ export function ExpandableBlock({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className={cn("min-w-0 max-w-full rounded-xl border border-[var(--cc-card-line)]", className)}>
+    <div className={cn("min-w-0 max-w-full overflow-hidden rounded-xl border border-[var(--cc-card-line)]", className)}>
       <button
         type="button"
         className="flex w-full min-w-0 max-w-full items-start justify-between gap-2 px-3 py-2.5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--theme-accent,#2563eb)]"
@@ -353,7 +353,9 @@ export function ExpandableBlock({
         </div>
         <span className="shrink-0 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">{open ? "Hide" : "Expand"}</span>
       </button>
-      {open ? <div className="border-t border-[var(--cc-card-line)] px-3 py-3">{children}</div> : null}
+      {open ? (
+        <div className="min-w-0 max-w-full break-words border-t border-[var(--cc-card-line)] px-3 py-3">{children}</div>
+      ) : null}
     </div>
   );
 }
