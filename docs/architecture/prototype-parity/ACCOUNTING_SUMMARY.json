@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "totalRows": 1697,
+  "unclassifiedCount": 0,
+  "dispositionTotals": {
+    "ADOPTED-AS-IS": 1610,
+    "ADOPTED-WITH-CONTROL-HARDENING": 63,
+    "EXCLUDED-BY-PRODUCT-BOUNDARY": 24
+  },
+  "rowsByModule": {
+    "M01": 45,
+    "M02": 51,
+    "M03": 60,
+    "M04": 67,
+    "M05": 53,
+    "M06": 48,
+    "M07": 52,
+    "M08": 67,
+    "M09": 49,
+    "M10": 63,
+    "M11": 56,
+    "M12": 54,
+    "M13": 60,
+    "M14": 65,
+    "M15": 80,
+    "M16": 67,
+    "M17": 61,
+    "M18": 56,
+    "M19": 59,
+    "M20": 63,
+    "M21": 9,
+    "M22": 9,
+    "M23": 9,
+    "M24": 9
+  },
+  "rowsBySourceType": {
+    "brd": 996,
+    "blueprint": 216,
+    "field-schema": 398,
+    "prototype-runtime": 87
+  },
+  "uiStatusTotals": {
+    "FUNCTIONALLY-COMPLETE": 432,
+    "PROTOTYPE-ONLY": 709,
+    "IN-DEVELOPMENT": 134,
+    "PLANNED": 398,
+    "EXCLUDED-WITH-REASON": 24
+  },
+  "domainStatusTotals": {
+    "FUNCTIONALLY-COMPLETE": 432,
+    "NOT-STARTED": 659,
+    "IN-DEVELOPMENT": 184,
+    "PLANNED": 398,
+    "EXCLUDED-WITH-REASON": 24
+  },
+  "canonicalScreenCount": 186,
+  "canonicalScreenVs143": {
+    "baselineEstimate": 143,
+    "derivedCount": 186,
+    "variance": 43,
+    "explanation": "Derived primarily from BRD tabs across blueprints (plus blueprint-default screens where BRD tabs absent). 143 was a minimum planning baseline, not a cap. No silent consolidation; filter/state variants remain separate when they are distinct BRD tabs."
+  },
+  "extractionTotals": {
+    "platformModuleBlueprints": 24,
+    "detailedBrdModules": 20,
+    "brdTabs": 182,
+    "brdButtons": 323,
+    "brdVisualRequirements": 100,
+    "brdBusinessRules": 109,
+    "brdWorkflows": 107,
+    "brdWorkflowSteps": 629,
+    "brdOutputs": 155,
+    "blueprintMetrics": 96,
+    "blueprintPatterns": 96,
+    "blueprintWorkflows": 72,
+    "blueprintWorkflowSteps": 434,
+    "formSchemaGroups": 41,
+    "fieldDefinitions": 398,
+    "extractedModals": 63,
+    "legacyWorkflowGroups": 28,
+    "legacyWorkflowSteps": 137,
+    "legacyModuleKeys": 35,
+    "rawButtons": 588,
+    "rawInputs": 213,
+    "rawSelects": 105,
+    "rawTextareas": 55,
+    "scopeConflictHits": 24,
+    "sensitivePatternClasses": 4
+  },
+  "designReferencesInstalled": false
+}

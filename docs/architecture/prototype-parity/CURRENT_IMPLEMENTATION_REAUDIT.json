@@ -1,0 +1,986 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "method": "Owner directive revised targets + module-register.ts condition labels treated as stale where contradicted by accepted wave evidence",
+  "modules": [
+    {
+      "module": "M01",
+      "id": "executive-command-centre",
+      "displayName": "Executive Command Centre",
+      "mainRoute": "/dashboard",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/strong; match M01 final image; KPI source completeness must be truthful",
+      "targetWave": "P2",
+      "designPattern": "M01 dashboard",
+      "sections": [
+        {
+          "id": "command-centre",
+          "label": "Command Centre"
+        },
+        {
+          "id": "my-day",
+          "label": "My Day"
+        },
+        {
+          "id": "kpi-scorecard",
+          "label": "KPI Scorecard"
+        },
+        {
+          "id": "reports",
+          "label": "Reports"
+        }
+      ]
+    },
+    {
+      "module": "M02",
+      "id": "action-inbox",
+      "displayName": "Action Inbox & Notifications",
+      "mainRoute": "/action-inbox",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/strong; match M02 final image; single cross-module queue",
+      "targetWave": "P2",
+      "designPattern": "M02 master-detail queue",
+      "sections": [
+        {
+          "id": "my-actions",
+          "label": "My Actions"
+        },
+        {
+          "id": "approvals",
+          "label": "Approvals"
+        },
+        {
+          "id": "notifications",
+          "label": "Notifications"
+        },
+        {
+          "id": "archive",
+          "label": "Archive"
+        }
+      ]
+    },
+    {
+      "module": "M03",
+      "id": "organisation-access",
+      "displayName": "Organisation, Locations, Users & Permissions",
+      "mainRoute": "/settings",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/strong; apply shared final design",
+      "targetWave": "P2",
+      "designPattern": "M02/M04 admin queue + people",
+      "sections": [
+        {
+          "id": "overview",
+          "label": "Overview"
+        },
+        {
+          "id": "structure",
+          "label": "Organisation Structure"
+        },
+        {
+          "id": "locations",
+          "label": "Locations"
+        },
+        {
+          "id": "departments",
+          "label": "Departments & Rooms"
+        },
+        {
+          "id": "users",
+          "label": "Users"
+        },
+        {
+          "id": "roles",
+          "label": "Roles & Permissions"
+        },
+        {
+          "id": "access-requests",
+          "label": "Access Requests"
+        },
+        {
+          "id": "access-reviews",
+          "label": "Access Reviews"
+        },
+        {
+          "id": "security",
+          "label": "Security Monitoring"
+        },
+        {
+          "id": "audit",
+          "label": "Audit History"
+        },
+        {
+          "id": "reports",
+          "label": "Reports"
+        },
+        {
+          "id": "settings",
+          "label": "Settings"
+        }
+      ]
+    },
+    {
+      "module": "M04",
+      "id": "staff-doctors",
+      "displayName": "Staff & Doctor Management",
+      "mainRoute": "/staff-doctors",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/strong; match M04 final image",
+      "targetWave": "P2",
+      "designPattern": "M04 people master-detail",
+      "sections": [
+        {
+          "id": "overview",
+          "label": "Overview"
+        },
+        {
+          "id": "people",
+          "label": "People Directory"
+        },
+        {
+          "id": "staff-profiles",
+          "label": "Staff Profiles"
+        },
+        {
+          "id": "doctor-profiles",
+          "label": "Doctor Profiles"
+        },
+        {
+          "id": "engagements",
+          "label": "Engagements"
+        },
+        {
+          "id": "credentials",
+          "label": "Credentials"
+        },
+        {
+          "id": "leave-availability",
+          "label": "Leave & Availability"
+        },
+        {
+          "id": "restrictions",
+          "label": "Restrictions"
+        },
+        {
+          "id": "onboarding",
+          "label": "Onboarding"
+        },
+        {
+          "id": "offboarding",
+          "label": "Offboarding"
+        },
+        {
+          "id": "reports",
+          "label": "Reports"
+        },
+        {
+          "id": "settings",
+          "label": "Settings"
+        }
+      ]
+    },
+    {
+      "module": "M05",
+      "id": "roster",
+      "displayName": "Roster & Shift Management",
+      "mainRoute": "/roster",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/accepted within scope; match M05 final image",
+      "targetWave": "P2",
+      "designPattern": "M05 board/matrix",
+      "sections": [
+        {
+          "id": "roster-board",
+          "label": "Roster Board"
+        },
+        {
+          "id": "coverage",
+          "label": "Coverage"
+        },
+        {
+          "id": "open-shifts",
+          "label": "Open Shifts"
+        },
+        {
+          "id": "availability-leave",
+          "label": "Availability & Leave"
+        },
+        {
+          "id": "requests",
+          "label": "Requests"
+        },
+        {
+          "id": "conflicts-warnings",
+          "label": "Conflicts & Warnings"
+        },
+        {
+          "id": "published-history",
+          "label": "Published & History"
+        },
+        {
+          "id": "cost-forecast",
+          "label": "Cost Forecast"
+        },
+        {
+          "id": "reports",
+          "label": "Reports"
+        },
+        {
+          "id": "settings",
+          "label": "Policy & Settings"
+        }
+      ]
+    },
+    {
+      "module": "M06",
+      "id": "time-attendance",
+      "displayName": "Time & Attendance",
+      "mainRoute": "/time-attendance",
+      "registerConditionStaleLabel": "complete-interactive-rebuild",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/accepted within scope; match M06 final image",
+      "targetWave": "P2",
+      "designPattern": "M06 live-operations",
+      "sections": [
+        {
+          "id": "live",
+          "label": "Live Attendance"
+        },
+        {
+          "id": "clock",
+          "label": "Clock In/Out"
+        },
+        {
+          "id": "timesheets",
+          "label": "Timesheets"
+        },
+        {
+          "id": "exceptions",
+          "label": "Exceptions"
+        },
+        {
+          "id": "corrections",
+          "label": "Corrections"
+        },
+        {
+          "id": "approvals",
+          "label": "Approvals"
+        },
+        {
+          "id": "breaks",
+          "label": "Breaks"
+        },
+        {
+          "id": "history",
+          "label": "Attendance History"
+        },
+        {
+          "id": "reports",
+          "label": "Reports"
+        },
+        {
+          "id": "settings",
+          "label": "Settings & Policies"
+        }
+      ]
+    },
+    {
+      "module": "M07",
+      "id": "staff-pay",
+      "displayName": "Staff Pay & Payroll Preparation",
+      "mainRoute": "/staffpay",
+      "registerConditionStaleLabel": "partially-implemented",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Ordinary Batches 1\u20136 complete within approved scope; register condition stale; PPA separate",
+      "targetWave": "P2",
+      "designPattern": "M02/M04 pay-prep workbench",
+      "sections": [
+        {
+          "id": "overview",
+          "label": "Pay Run Overview"
+        },
+        {
+          "id": "people",
+          "label": "People Review"
+        },
+        {
+          "id": "leave",
+          "label": "Leave & Allowances"
+        },
+        {
+          "id": "adjustments",
+          "label": "Adjustments"
+        },
+        {
+          "id": "exceptions",
+          "label": "Exceptions"
+        },
+        {
+          "id": "variances",
+          "label": "Variances"
+        },
+        {
+          "id": "approval",
+          "label": "Approval"
+        },
+        {
+          "id": "export",
+          "label": "Export"
+        },
+        {
+          "id": "reconciliation",
+          "label": "Reconciliation"
+        },
+        {
+          "id": "history",
+          "label": "History / Reports"
+        },
+        {
+          "id": "settings",
+          "label": "Settings"
+        }
+      ]
+    },
+    {
+      "module": "M08",
+      "id": "doctor-pay",
+      "displayName": "Doctor Pay Command Centre",
+      "mainRoute": "/doctorpay",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing/legacy-level; future Doctor Pay with external-payment boundary",
+      "targetWave": "P6",
+      "designPattern": "M04 people + finance review",
+      "sections": [
+        {
+          "id": "pay-runs",
+          "label": "Pay Runs"
+        },
+        {
+          "id": "splits",
+          "label": "Splits"
+        },
+        {
+          "id": "payslips",
+          "label": "Payslips"
+        }
+      ]
+    },
+    {
+      "module": "M09",
+      "id": "bbpip",
+      "displayName": "BBPIP Forecast & Reconciliation",
+      "mainRoute": "/bbpip",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing/legacy-level; aggregate BBPIP only",
+      "targetWave": "P6",
+      "designPattern": "M01 analytics + M06 reconciliation",
+      "sections": [
+        {
+          "id": "forecast",
+          "label": "Forecast"
+        },
+        {
+          "id": "reconciliation",
+          "label": "Reconciliation"
+        },
+        {
+          "id": "splits",
+          "label": "Splits"
+        }
+      ]
+    },
+    {
+      "module": "M10",
+      "id": "tasks-actions",
+      "displayName": "Tasks, Checklists, Meetings & Actions",
+      "mainRoute": "/tasks-actions",
+      "registerConditionStaleLabel": "partially-implemented",
+      "revisedUiStatus": "IN-DEVELOPMENT",
+      "revisedDomainStatus": "IN-DEVELOPMENT",
+      "revisedIntegrationStatus": "BLOCKED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Partial/blocked; first connective wave; match M10 final image",
+      "targetWave": "P3",
+      "designPattern": "M10 template/run/detail",
+      "sections": [
+        {
+          "id": "tasks",
+          "label": "Tasks"
+        },
+        {
+          "id": "checklists",
+          "label": "Checklists"
+        },
+        {
+          "id": "opening-closing",
+          "label": "Opening & Closing"
+        },
+        {
+          "id": "handovers",
+          "label": "Handovers"
+        },
+        {
+          "id": "meetings",
+          "label": "Meetings"
+        },
+        {
+          "id": "meeting-actions",
+          "label": "Meeting Actions"
+        }
+      ]
+    },
+    {
+      "module": "M11",
+      "id": "training",
+      "displayName": "Training & Learning Management",
+      "mainRoute": "/training",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedEvidenceStatus": "OWNER-ACCEPTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Deep/accepted; register condition stale (legacy-html-fallback)",
+      "targetWave": "P2",
+      "designPattern": "M11 learning/progress",
+      "sections": [
+        {
+          "id": "records",
+          "label": "Training Records"
+        },
+        {
+          "id": "expiry",
+          "label": "Expiry & Gates"
+        },
+        {
+          "id": "catalogue",
+          "label": "Learning Catalogue"
+        }
+      ]
+    },
+    {
+      "module": "M12",
+      "id": "compliance-quality",
+      "displayName": "Accreditation, Quality & Regulatory Compliance",
+      "mainRoute": "/compliance-quality",
+      "registerConditionStaleLabel": "partially-implemented",
+      "revisedUiStatus": "IN-DEVELOPMENT",
+      "revisedDomainStatus": "IN-DEVELOPMENT",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Partial/seed-level; full compliance/quality required",
+      "targetWave": "P5",
+      "designPattern": "M12 governance/audit",
+      "sections": [
+        {
+          "id": "compliance-centre",
+          "label": "Compliance Centre"
+        },
+        {
+          "id": "accreditation",
+          "label": "Accreditation"
+        },
+        {
+          "id": "quality-improvement",
+          "label": "Quality Improvement"
+        },
+        {
+          "id": "pdsa",
+          "label": "PDSA"
+        },
+        {
+          "id": "audit-log",
+          "label": "Audit Log"
+        },
+        {
+          "id": "expiry-centre",
+          "label": "Expiry Centre"
+        }
+      ]
+    },
+    {
+      "module": "M13",
+      "id": "documents-policies",
+      "displayName": "Documents, Policies, SOPs & Intake",
+      "mainRoute": "/documents-policies",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level controlled documents",
+      "targetWave": "P4",
+      "designPattern": "M12 governance/audit",
+      "sections": [
+        {
+          "id": "documents",
+          "label": "Documents"
+        },
+        {
+          "id": "policies",
+          "label": "Policies"
+        },
+        {
+          "id": "sops",
+          "label": "SOPs"
+        },
+        {
+          "id": "intake-queue",
+          "label": "Intake Queue"
+        },
+        {
+          "id": "reviews",
+          "label": "Reviews"
+        },
+        {
+          "id": "version-history",
+          "label": "Version History"
+        }
+      ]
+    },
+    {
+      "module": "M14",
+      "id": "ticketing",
+      "displayName": "Ticketing Desk & Work Orders",
+      "mainRoute": "/ticket-desk",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level ticketing/work orders",
+      "targetWave": "P4",
+      "designPattern": "M02 master-detail queue",
+      "sections": [
+        {
+          "id": "open-tickets",
+          "label": "Open Tickets"
+        },
+        {
+          "id": "work-orders",
+          "label": "Work Orders"
+        },
+        {
+          "id": "my-queue",
+          "label": "My Queue"
+        }
+      ]
+    },
+    {
+      "module": "M15",
+      "id": "inventory-assets",
+      "displayName": "Inventory, Suppliers, Finance & Assets",
+      "mainRoute": "/inventory-assets",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level; match M15 image; supplier invoices OK, patient billing excluded",
+      "targetWave": "P5",
+      "designPattern": "M15 inventory/asset",
+      "sections": [
+        {
+          "id": "inventory",
+          "label": "Inventory"
+        },
+        {
+          "id": "stock",
+          "label": "Stock"
+        },
+        {
+          "id": "stock-transfers",
+          "label": "Stock Transfers"
+        },
+        {
+          "id": "suppliers",
+          "label": "Suppliers"
+        },
+        {
+          "id": "purchases",
+          "label": "Purchases"
+        },
+        {
+          "id": "invoices",
+          "label": "Invoices"
+        },
+        {
+          "id": "equipment",
+          "label": "Equipment"
+        },
+        {
+          "id": "rooms",
+          "label": "Rooms"
+        },
+        {
+          "id": "printers",
+          "label": "Printers"
+        },
+        {
+          "id": "asset-register",
+          "label": "Asset Register"
+        }
+      ]
+    },
+    {
+      "module": "M16",
+      "id": "incidents-risk",
+      "displayName": "Incidents, Complaints, Risk & Continuity",
+      "mainRoute": "/incidents-risk",
+      "registerConditionStaleLabel": "partially-implemented",
+      "revisedUiStatus": "IN-DEVELOPMENT",
+      "revisedDomainStatus": "IN-DEVELOPMENT",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Partial/seed; no patient records",
+      "targetWave": "P5",
+      "designPattern": "M12 governance/audit",
+      "sections": [
+        {
+          "id": "incidents",
+          "label": "Incidents"
+        },
+        {
+          "id": "complaints",
+          "label": "Complaints"
+        },
+        {
+          "id": "risk-centre",
+          "label": "Risk Centre"
+        },
+        {
+          "id": "corrective-actions",
+          "label": "Corrective Actions"
+        },
+        {
+          "id": "continuity",
+          "label": "Continuity"
+        },
+        {
+          "id": "emergency-control",
+          "label": "Emergency Control"
+        }
+      ]
+    },
+    {
+      "module": "M17",
+      "id": "communications",
+      "displayName": "Email & SMS Communications",
+      "mainRoute": "/communications",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level communications",
+      "targetWave": "P7",
+      "designPattern": "M02 queue + delivery status",
+      "sections": [
+        {
+          "id": "email",
+          "label": "Email Campaigns"
+        },
+        {
+          "id": "sms",
+          "label": "SMS Campaigns"
+        },
+        {
+          "id": "memos-news",
+          "label": "Memos & News"
+        },
+        {
+          "id": "communication-book",
+          "label": "Communication Book"
+        },
+        {
+          "id": "noticeboards",
+          "label": "Noticeboards"
+        },
+        {
+          "id": "templates",
+          "label": "Templates"
+        },
+        {
+          "id": "consent-preferences",
+          "label": "Consent and Preferences"
+        }
+      ]
+    },
+    {
+      "module": "M18",
+      "id": "digital-ops",
+      "displayName": "Digital Operations & Security",
+      "mainRoute": "/digital-ops",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level digital ops/security",
+      "targetWave": "P7",
+      "designPattern": "M06 live-operations",
+      "sections": [
+        {
+          "id": "systems-monitoring",
+          "label": "Systems Monitoring"
+        },
+        {
+          "id": "website-monitoring",
+          "label": "Website Monitoring"
+        },
+        {
+          "id": "remote-access",
+          "label": "Remote Access"
+        },
+        {
+          "id": "password-vault",
+          "label": "Password Vault"
+        },
+        {
+          "id": "security-cameras",
+          "label": "Security Cameras"
+        },
+        {
+          "id": "security-alerts",
+          "label": "Security Alerts"
+        }
+      ]
+    },
+    {
+      "module": "M19",
+      "id": "analytics",
+      "displayName": "Clinic Analytics, Data Quality & Change",
+      "mainRoute": "/analytics",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Landing-level analytics",
+      "targetWave": "P7",
+      "designPattern": "M01 dashboard + data-quality cases",
+      "sections": [
+        {
+          "id": "overview",
+          "label": "Analytics Overview"
+        },
+        {
+          "id": "data-quality",
+          "label": "Data Quality"
+        },
+        {
+          "id": "change",
+          "label": "Change Tracking"
+        }
+      ]
+    },
+    {
+      "module": "M20",
+      "id": "saas",
+      "displayName": "Commercial SaaS & Organisation Workspaces",
+      "mainRoute": "/saas",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Commercial SaaS only; not clinic patient billing",
+      "targetWave": "P8",
+      "designPattern": "M04/M02 commercial workspaces",
+      "sections": [
+        {
+          "id": "tenant-administration",
+          "label": "Tenant Administration"
+        },
+        {
+          "id": "workspace-configuration",
+          "label": "Workspace Configuration"
+        },
+        {
+          "id": "departments",
+          "label": "Departments"
+        },
+        {
+          "id": "commercial-plans",
+          "label": "Commercial Plans"
+        },
+        {
+          "id": "billing-settings",
+          "label": "Billing Settings"
+        },
+        {
+          "id": "feature-entitlements",
+          "label": "Feature Entitlements"
+        }
+      ]
+    },
+    {
+      "module": "M21",
+      "id": "vendor-console",
+      "displayName": "SaaS Vendor Operations & Tenant Provisioning",
+      "mainRoute": "/vendor-console",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Vendor provisioning/portfolio",
+      "targetWave": "P8",
+      "designPattern": "M04/M02 vendor portfolio",
+      "sections": [
+        {
+          "id": "tenants",
+          "label": "Tenants"
+        },
+        {
+          "id": "provisioning",
+          "label": "Provisioning"
+        },
+        {
+          "id": "platform-health",
+          "label": "Platform Health"
+        }
+      ]
+    },
+    {
+      "module": "M22",
+      "id": "recruitment",
+      "displayName": "Recruitment & Talent Acquisition",
+      "mainRoute": "/recruitment",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Recruitment \u2192 M04 transition",
+      "targetWave": "P8",
+      "designPattern": "M04 people master-detail",
+      "sections": [
+        {
+          "id": "vacancies",
+          "label": "Vacancies"
+        },
+        {
+          "id": "candidates",
+          "label": "Candidates"
+        },
+        {
+          "id": "onboarding",
+          "label": "Onboarding Pipeline"
+        }
+      ]
+    },
+    {
+      "module": "M23",
+      "id": "website-studio",
+      "displayName": "Tenant Website Infrastructure & SEO Engine",
+      "mainRoute": "/website-studio",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Website/SEO/public form routing",
+      "targetWave": "P8",
+      "designPattern": "M01/M02 public-routing ops",
+      "sections": [
+        {
+          "id": "sites",
+          "label": "Sites"
+        },
+        {
+          "id": "seo",
+          "label": "SEO Engine"
+        },
+        {
+          "id": "publishing",
+          "label": "Publishing"
+        }
+      ]
+    },
+    {
+      "module": "M24",
+      "id": "financial-forecast",
+      "displayName": "Practice Financial Forecast & Ledger Control",
+      "mainRoute": "/financial-forecast",
+      "registerConditionStaleLabel": "legacy-html-fallback",
+      "revisedUiStatus": "PROTOTYPE-ONLY",
+      "revisedDomainStatus": "NOT-STARTED",
+      "revisedIntegrationStatus": "NOT-STARTED",
+      "revisedEvidenceStatus": "NOT-STARTED",
+      "revisedProductionStatus": "NOT-STARTED",
+      "note": "Financial forecast using approved summaries",
+      "targetWave": "P6",
+      "designPattern": "M01 dashboard + finance review",
+      "sections": [
+        {
+          "id": "forecast",
+          "label": "Forecast"
+        },
+        {
+          "id": "ledger",
+          "label": "Ledger Control"
+        },
+        {
+          "id": "variance",
+          "label": "Variance"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Current Implementation Re-Audit (M01–M24)
+
+**Method:** Owner revised targets + `module-register.ts` condition labels (treated as stale where contradicted by accepted wave evidence).
+
+| Module | Register condition (stale-prone) | UI | Domain | Integration | Evidence | Production | Target wave |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| M01 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M02 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M03 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M04 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M05 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M06 | `complete-interactive-rebuild` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M07 | `partially-implemented` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M08 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P6 |
+| M09 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P6 |
+| M10 | `partially-implemented` | IN-DEVELOPMENT | IN-DEVELOPMENT | BLOCKED | NOT-STARTED | NOT-STARTED | P3 |
+| M11 | `legacy-html-fallback` | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | FUNCTIONALLY-COMPLETE | OWNER-ACCEPTED | NOT-STARTED | P2 |
+| M12 | `partially-implemented` | IN-DEVELOPMENT | IN-DEVELOPMENT | NOT-STARTED | NOT-STARTED | NOT-STARTED | P5 |
+| M13 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P4 |
+| M14 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P4 |
+| M15 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P5 |
+| M16 | `partially-implemented` | IN-DEVELOPMENT | IN-DEVELOPMENT | NOT-STARTED | NOT-STARTED | NOT-STARTED | P5 |
+| M17 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P7 |
+| M18 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P7 |
+| M19 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P7 |
+| M20 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P8 |
+| M21 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P8 |
+| M22 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P8 |
+| M23 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P8 |
+| M24 | `legacy-html-fallback` | PROTOTYPE-ONLY | NOT-STARTED | NOT-STARTED | NOT-STARTED | NOT-STARTED | P6 |
+
+Notes per module are in `CURRENT_IMPLEMENTATION_REAUDIT.json`.

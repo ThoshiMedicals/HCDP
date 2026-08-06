@@ -1,0 +1,262 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "openCount": 26,
+  "items": [
+    {
+      "id": "conflict_7c51f3fa880f",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "check-item\"><input type=\"checkbox\" data-check-index=\"${i}\" ${checked.has(i)?'checked':''}><span>${escapeHtml(item)}</spa",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_fbb7ed5c5518",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ed=[...document.querySelectorAll('[data-check-index]')].filter(x=>x.checked).map(x=>Number(x.dataset.checkIndex));r.comp",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_086403425059",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "r(x=>x.checked).map(x=>Number(x.dataset.checkIndex));r.completedItems=checked;r.skippedItems=document.getElementById('ch",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_49fd0baf18d1",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "','mental health','pregnancy','script','prescription','cancer','diabetes','hiv','std'];const low=String(text).toLowerCas",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_3bacdac1064a",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "itical actions remain above the fold.\",\"Patient records and appointment workflows are not displayed.\"],\"kind\":\"Expanded\"",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_5e51df9e7d7b",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "rnal regulator, insurer, legal or other referral decisions are recorded where applicable.\",\"Final outcome and lessons fe",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_6e0818a7e250",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": ".\",\"Workarounds do not create duplicate patient records in this platform.\",\"Recovery is not complete until critical back",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_9663f7d9ebc7",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ier and opens contributing summary, not patient records.\",\"Manager clicks Create Action to address roster, opening hours",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_2dca4279045e",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "gistration, demographics, appointments, clinical notes, Medicare/private patient billing and patient invoices remain in",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_6b9139f99b6b",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "is platform must not create a duplicate patient record.</div><div class=\"v31-kpis\"><div class=\"v31-kpi\"><span>Staged Ite",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_e9c574f000cc",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "stage:'Offer Accepted',source:'Employee referral',score:94,clinic:'Woolloongabba',email:'leah.chen@example.com',status:'",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_782635531f2f",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ontent and operational enquiry routing. Patient records, clinical advice, appointment records and patient billing remain",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_f261f59c50bd",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "<option>Indeed</option><option>Employee referral</option></select></div></form>`,`<button class=\"btn line\" onclick=\"clos",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_aa074824aca7",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "\"><button class=\"v33-mini-btn\" onclick=\"checkInContractorV33('${w.id}')\">Check In</button><button class=\"v33-mini-btn pr",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_3aad3632f186",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "tions\"><button class=\"primary\" onclick=\"checkInContractorV33('WO-811')\">Check In</button></div></div><div class=\"v33-pag",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_052d07f6d4a0",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "p><div class=\"actions\"><button onclick=\"checkInContractorV33('WO-807')\">View Visit</button></div></div></div>`}else{body",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_74e9b3ab0d84",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "d} created from ${ticketId}`)} window.checkInContractorV33=function(id){const w=v33.workOrders.find(x=>x.id===id);open",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_c570cd5dc8e6",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "x=>x.id===id);openV33Dialog('Contractor Check-In',`${w.id} \u00b7 ${w.supplier}`,`<div class=\"form-grid\"><div class=\"field\"><",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_5f96c71f42b3",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "ction-card\"> <label class=\"m1-check-inline\"><input class=\"m1-act-check\" type=\"checkbox\" value=\"${a.id}\"/></lab",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_91724a69bc1d",
+      "type": "scope-conflict",
+      "conflictClass": "patient-record",
+      "boundary": "patient-clinical",
+      "excerpt": "40px rgba(15,23,42,.16)} .m1-check,.m1-check-inline{display:flex;gap:8px;align-items:center;font-size:12px;font-weight:",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_94a630d43fbe",
+      "type": "scope-conflict",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "',default:0},{name:'itemVersion',label:'MBS item master version',type:'text',default:'Current'},{name:'finalAdvice',labe",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_3a095c436f1f",
+      "type": "scope-conflict",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "name:'eligibleItemRows',label:'Eligible MBS item rows / item master notes',type:'textarea',full:true}, {name:'exclud",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_95c4e61428a8",
+      "type": "scope-conflict",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "d Best Practice extraction for eligible MBS item forecast and reconciliation'}); SECTIONS.length=0; SECTIONS.push(",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "conflict_52f7791e1641",
+      "type": "scope-conflict",
+      "conflictClass": "patient-billing",
+      "boundary": "financial-patient",
+      "excerpt": "s, Medicare/private patient billing and patient invoices remain in Best Practice or the relevant clinical system.</span>",
+      "recommendedDisposition": "EXCLUDED-BY-PRODUCT-BOUNDARY",
+      "ownerDecisionRequired": true,
+      "status": "OPEN"
+    },
+    {
+      "id": "DEC-FINAL-PNGS-MISSING",
+      "type": "design-reference",
+      "recommendedDisposition": "DECISION-REQUIRED",
+      "ownerDecisionRequired": true,
+      "status": "OPEN",
+      "detail": "Nine final design PNGs were not available in the environment; installation blocked pending exact originals."
+    },
+    {
+      "id": "DEC-BRANDED-THEMES",
+      "type": "appearance",
+      "recommendedDisposition": "ADOPTED-AS-IS",
+      "ownerDecisionRequired": true,
+      "status": "OPEN",
+      "detail": "Prototype theme labels observed: ['theme-light', 'theme-dark', 'theme-executive', 'theme-emerald']. Preserve Executive Blue / Medical Emerald as optional branded presets if confirmed; do not replace System mode."
+    }
+  ]
+}

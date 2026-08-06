@@ -1,0 +1,3770 @@
+{
+  "generatedAt": "2026-08-06T05:43:08Z",
+  "brdButtonCount": 323,
+  "brdWorkflowCount": 107,
+  "items": [
+    {
+      "id": "brdbtn_d09dff93d10a",
+      "moduleKey": "M01",
+      "label": "Switch Clinic / All Clinics",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e1f800769de0",
+      "moduleKey": "M01",
+      "label": "Change Date Range",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9fa22879c20c",
+      "moduleKey": "M01",
+      "label": "Open Action Inbox",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_022556c72a45",
+      "moduleKey": "M01",
+      "label": "View Source Record",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3454f80230cf",
+      "moduleKey": "M01",
+      "label": "Create Management Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_690744bd6d0e",
+      "moduleKey": "M01",
+      "label": "Export Executive Summary",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f2c1db142fcf",
+      "moduleKey": "M01",
+      "label": "Save View",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_fbc1ae7d4efc",
+      "moduleKey": "M01",
+      "label": "Open My Day",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_5611ac3286f1",
+      "moduleKey": "M01",
+      "label": "Report a Problem",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bfe4510aebf6",
+      "moduleKey": "M02",
+      "label": "Open Source",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c27324d6429c",
+      "moduleKey": "M02",
+      "label": "Approve",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d8c6c4f14f5e",
+      "moduleKey": "M02",
+      "label": "Reject",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_56f7f40548e2",
+      "moduleKey": "M02",
+      "label": "Request Changes",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7750c099ab65",
+      "moduleKey": "M02",
+      "label": "Reassign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2fa19ee5cd2c",
+      "moduleKey": "M02",
+      "label": "Add Note",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_03617fd2e664",
+      "moduleKey": "M02",
+      "label": "Snooze",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_68a607f764fc",
+      "moduleKey": "M02",
+      "label": "Escalate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f2e3c9c2492d",
+      "moduleKey": "M02",
+      "label": "Complete",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b855885a0e7b",
+      "moduleKey": "M02",
+      "label": "Bulk Assign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ccd46b2321e6",
+      "moduleKey": "M02",
+      "label": "Mark Notification Read",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_27988f81f05c",
+      "moduleKey": "M02",
+      "label": "Create Delegation",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3c3bc8b9b816",
+      "moduleKey": "M02",
+      "label": "End Delegation",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_12831435269f",
+      "moduleKey": "M02",
+      "label": "Review Delegated Decisions",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ffc07ac1a3e7",
+      "moduleKey": "M03",
+      "label": "Add Clinic",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7c92b9702b6f",
+      "moduleKey": "M03",
+      "label": "Edit Clinic",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e64562d6291f",
+      "moduleKey": "M03",
+      "label": "Add Room / Area",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d600ef6c3f25",
+      "moduleKey": "M03",
+      "label": "Invite User",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2f439acd8d70",
+      "moduleKey": "M03",
+      "label": "Assign Role",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_72bf752d8d26",
+      "moduleKey": "M03",
+      "label": "Add Clinic Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e5c208afe3c4",
+      "moduleKey": "M03",
+      "label": "Suspend User",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_78b50b0db5bc",
+      "moduleKey": "M03",
+      "label": "Deactivate / Archive",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f22ea169fa1e",
+      "moduleKey": "M03",
+      "label": "Review Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_454fd082c0f6",
+      "moduleKey": "M03",
+      "label": "Save Settings",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_445930dc0e92",
+      "moduleKey": "M03",
+      "label": "Export Access Report",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c7a953a37e03",
+      "moduleKey": "M03",
+      "label": "Activate Account",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8c15494da812",
+      "moduleKey": "M03",
+      "label": "Unlock Account",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d52720099ecc",
+      "moduleKey": "M03",
+      "label": "Start Clinic Transition",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ce64c1d2d110",
+      "moduleKey": "M03",
+      "label": "Confirm Clinic Readiness",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_32f98714e4b4",
+      "moduleKey": "M04",
+      "label": "Add Staff",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_149b018aef43",
+      "moduleKey": "M04",
+      "label": "Add Doctor",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f527f56f1b2a",
+      "moduleKey": "M04",
+      "label": "Edit Profile",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2afe8a9b9991",
+      "moduleKey": "M04",
+      "label": "Upload Document",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_5cd653be5c04",
+      "moduleKey": "M04",
+      "label": "Request Leave",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c161d779d119",
+      "moduleKey": "M04",
+      "label": "Approve / Reject Leave",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_85db70e4faa5",
+      "moduleKey": "M04",
+      "label": "Change Classification",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_92cbfa3766e3",
+      "moduleKey": "M04",
+      "label": "Change Contract / Rate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_aa9e6b75fed8",
+      "moduleKey": "M04",
+      "label": "Verify Credential",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4335937e0666",
+      "moduleKey": "M04",
+      "label": "Send Renewal Reminder",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_fc7a30c96e52",
+      "moduleKey": "M04",
+      "label": "Suspend Profile",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_aac0dbd378ab",
+      "moduleKey": "M04",
+      "label": "Start Offboarding",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_72f35e1272bb",
+      "moduleKey": "M04",
+      "label": "Start Employment Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7037959c9a74",
+      "moduleKey": "M04",
+      "label": "Amend / Cancel Leave",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7181b61eb1b1",
+      "moduleKey": "M04",
+      "label": "Confirm Return to Work",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_13b38dbe3279",
+      "moduleKey": "M04",
+      "label": "Suspend Eligibility",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bf6ddd6a6521",
+      "moduleKey": "M04",
+      "label": "Reactivate Profile",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_518a0ee887f0",
+      "moduleKey": "M04",
+      "label": "Request Bank Detail Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_874808c77339",
+      "moduleKey": "M05",
+      "label": "Add Shift",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3075176451f0",
+      "moduleKey": "M05",
+      "label": "Copy Previous Week",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9ba9c0566ed1",
+      "moduleKey": "M05",
+      "label": "Apply Template",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2530c2a6ca0f",
+      "moduleKey": "M05",
+      "label": "Assign Staff",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0badd026e935",
+      "moduleKey": "M05",
+      "label": "Mark Opening / Closing",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b86ec02ae1e8",
+      "moduleKey": "M05",
+      "label": "Save Draft",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_543c66362428",
+      "moduleKey": "M05",
+      "label": "Validate Roster",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_db26b1218ca7",
+      "moduleKey": "M05",
+      "label": "Publish",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b5ea43626945",
+      "moduleKey": "M05",
+      "label": "Request Swap",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_86bf5d9826fb",
+      "moduleKey": "M05",
+      "label": "Approve Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ff520d83d7d7",
+      "moduleKey": "M05",
+      "label": "Emergency Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b3afe16e9fef",
+      "moduleKey": "M05",
+      "label": "Create Open Shift",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_eacda48bd5f3",
+      "moduleKey": "M05",
+      "label": "Send Coverage Offer",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_5551bb148f26",
+      "moduleKey": "M05",
+      "label": "Assign Accepted Offer",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e2a431afedde",
+      "moduleKey": "M05",
+      "label": "Print / Export",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6deadc12ce0d",
+      "moduleKey": "M06",
+      "label": "Clock In",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f3cba6f29d9e",
+      "moduleKey": "M06",
+      "label": "Start Break",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f3f5c598cbc3",
+      "moduleKey": "M06",
+      "label": "End Break",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_51e27983e9a4",
+      "moduleKey": "M06",
+      "label": "Clock Out",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_985e0207c7e8",
+      "moduleKey": "M06",
+      "label": "Report Missed Punch",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d7ca78d2d1b8",
+      "moduleKey": "M06",
+      "label": "Add Note",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_60c2515dda66",
+      "moduleKey": "M06",
+      "label": "Correct Time",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8abcaf099e5e",
+      "moduleKey": "M06",
+      "label": "Approve",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c76323e43295",
+      "moduleKey": "M06",
+      "label": "Reject Correction",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d2003bd18fd5",
+      "moduleKey": "M06",
+      "label": "Bulk Approve Clean Timesheets",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d390fe5ef70f",
+      "moduleKey": "M06",
+      "label": "Lock Period",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_aa197b1d1fd0",
+      "moduleKey": "M06",
+      "label": "Reopen with Reason",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9e3b108745c4",
+      "moduleKey": "M07",
+      "label": "Create Pay Run",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_04b7bbb8bef0",
+      "moduleKey": "M07",
+      "label": "Refresh Approved Time",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4705a1ee8fa8",
+      "moduleKey": "M07",
+      "label": "Recalculate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_248c855d3f09",
+      "moduleKey": "M07",
+      "label": "Open Exception",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6d994a97c51a",
+      "moduleKey": "M07",
+      "label": "Resolve / Assign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_85f157308b41",
+      "moduleKey": "M07",
+      "label": "Approve Location",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_94a912530c2e",
+      "moduleKey": "M07",
+      "label": "Submit Final Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3a4b9cbc9014",
+      "moduleKey": "M07",
+      "label": "Export to Xero",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_702e1120f7ec",
+      "moduleKey": "M07",
+      "label": "Mark Reconciled",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e41774daca77",
+      "moduleKey": "M07",
+      "label": "Lock Pay Period",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9df60df47098",
+      "moduleKey": "M07",
+      "label": "Reopen with Approval",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_1a0dd0f12942",
+      "moduleKey": "M07",
+      "label": "Process Final Pay",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_be2b023faa1a",
+      "moduleKey": "M07",
+      "label": "Record Overpayment / Underpayment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4ae713d3931a",
+      "moduleKey": "M07",
+      "label": "Generate Replacement Export",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_576ccd35b5e8",
+      "moduleKey": "M08",
+      "label": "Import / Refresh Transactions",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d2a67908cc53",
+      "moduleKey": "M08",
+      "label": "Match Unassigned",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_de7083e40af3",
+      "moduleKey": "M08",
+      "label": "Calculate Pay Run",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f09b2b18bc3d",
+      "moduleKey": "M08",
+      "label": "Add Adjustment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_709035adb424",
+      "moduleKey": "M08",
+      "label": "Exclude with Reason",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_82310894e637",
+      "moduleKey": "M08",
+      "label": "Reconcile",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cfb615ea7310",
+      "moduleKey": "M08",
+      "label": "Submit for Approval",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ecd4dd44a868",
+      "moduleKey": "M08",
+      "label": "Approve / Reject",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0c87b3ac46af",
+      "moduleKey": "M08",
+      "label": "Generate Payslips",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a309d197c971",
+      "moduleKey": "M08",
+      "label": "Preview",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8cdc3e8b67c0",
+      "moduleKey": "M08",
+      "label": "Email Payslips",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7ce6c5e312f1",
+      "moduleKey": "M08",
+      "label": "Publish to Portal",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_51f92f3a334b",
+      "moduleKey": "M08",
+      "label": "Mark Bank Transfer Completed",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e17699e7c8be",
+      "moduleKey": "M08",
+      "label": "Reissue",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_eca201721021",
+      "moduleKey": "M08",
+      "label": "Lock Run",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ac77743426ea",
+      "moduleKey": "M08",
+      "label": "Record Failed / Returned Payment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cca4d0880891",
+      "moduleKey": "M08",
+      "label": "Record Partial Payment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7ca6b890d766",
+      "moduleKey": "M08",
+      "label": "Resolve Pay Dispute",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_522a3fc49e66",
+      "moduleKey": "M09",
+      "label": "Refresh Approved Data",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7c1ee44a7fea",
+      "moduleKey": "M09",
+      "label": "Run Forecast",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a999f64b92b1",
+      "moduleKey": "M09",
+      "label": "View Contribution",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2685b8eb566a",
+      "moduleKey": "M09",
+      "label": "Open Gap",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d2e20edb8f31",
+      "moduleKey": "M09",
+      "label": "Assign Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0c822b243e84",
+      "moduleKey": "M09",
+      "label": "Add Evidence",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9ad9a74a2f4b",
+      "moduleKey": "M09",
+      "label": "Submit Estimate Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2f0eca304466",
+      "moduleKey": "M09",
+      "label": "Approve Forecast",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3ee521497465",
+      "moduleKey": "M09",
+      "label": "Enter Actual Result",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d5bed8355408",
+      "moduleKey": "M09",
+      "label": "Reconcile Variance",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_82f55153ce4e",
+      "moduleKey": "M09",
+      "label": "Finalise Period",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2e130b79eaf0",
+      "moduleKey": "M09",
+      "label": "Export Summary",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P6",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f1cf77b98b9d",
+      "moduleKey": "M10",
+      "label": "Create Task",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f4c97b4e5846",
+      "moduleKey": "M10",
+      "label": "Create Checklist Template",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b7746d2b251d",
+      "moduleKey": "M10",
+      "label": "Add Section / Item",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_aae85753fe48",
+      "moduleKey": "M10",
+      "label": "Assign Role / Location",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a266d7ba8f3f",
+      "moduleKey": "M10",
+      "label": "Publish Template",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2fb2e5f58d45",
+      "moduleKey": "M10",
+      "label": "Start Checklist",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bc635516d614",
+      "moduleKey": "M10",
+      "label": "Complete Item",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3b47b63bce47",
+      "moduleKey": "M10",
+      "label": "Skip / Fail with Reason",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_91aa955494f1",
+      "moduleKey": "M10",
+      "label": "Attach Evidence",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_30cfecdfb9cf",
+      "moduleKey": "M10",
+      "label": "Raise Ticket",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_348b01fee78f",
+      "moduleKey": "M10",
+      "label": "Raise Incident",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cf05a6d6e7be",
+      "moduleKey": "M10",
+      "label": "Create Meeting",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e0dcb5184a09",
+      "moduleKey": "M10",
+      "label": "Add Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_dd3c52907fbb",
+      "moduleKey": "M10",
+      "label": "Carry Forward",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b8304a1a8f1d",
+      "moduleKey": "M10",
+      "label": "Close Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d08bf31552cc",
+      "moduleKey": "M10",
+      "label": "Create Handover",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_dccda2b70497",
+      "moduleKey": "M10",
+      "label": "Acknowledge Handover",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_76ef9a32fb2d",
+      "moduleKey": "M10",
+      "label": "Escalate Unacknowledged Handover",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P3",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_753f7cb47f8b",
+      "moduleKey": "M11",
+      "label": "Create Course",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c3113391f5c1",
+      "moduleKey": "M11",
+      "label": "Upload Resource",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0e56e7631c73",
+      "moduleKey": "M11",
+      "label": "Assign to Role / Clinic",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8675936c34fd",
+      "moduleKey": "M11",
+      "label": "Enrol Individual",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bb7a9ec2b5db",
+      "moduleKey": "M11",
+      "label": "Schedule Session",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3627e505467a",
+      "moduleKey": "M11",
+      "label": "Start Learning",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bdc11e8de8ad",
+      "moduleKey": "M11",
+      "label": "Submit Assessment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e913a1f0a742",
+      "moduleKey": "M11",
+      "label": "Record Competency",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9b26932a71e9",
+      "moduleKey": "M11",
+      "label": "Upload Certificate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_37b68ddce76b",
+      "moduleKey": "M11",
+      "label": "Acknowledge Policy",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b1f4b631ce69",
+      "moduleKey": "M11",
+      "label": "Send Reminder",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_727623cbc719",
+      "moduleKey": "M11",
+      "label": "Extend Due Date with Reason",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_49caa8584907",
+      "moduleKey": "M11",
+      "label": "Archive Course",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a6ccf6e7ad3d",
+      "moduleKey": "M11",
+      "label": "Request Exemption / Prior Learning",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3e1cfada470a",
+      "moduleKey": "M11",
+      "label": "Approve / Reject Exemption",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bc506a0c2872",
+      "moduleKey": "M11",
+      "label": "Compare Role Requirements",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P2",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f7f75f252b19",
+      "moduleKey": "M12",
+      "label": "Add Requirement",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f631286d0656",
+      "moduleKey": "M12",
+      "label": "Assign Owner",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_26bef98ea5c0",
+      "moduleKey": "M12",
+      "label": "Link Evidence",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9bcc76293b13",
+      "moduleKey": "M12",
+      "label": "Create Gap Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_566208e06b10",
+      "moduleKey": "M12",
+      "label": "Start PDSA",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cf5875893fb2",
+      "moduleKey": "M12",
+      "label": "Record Measure",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d61b0b383602",
+      "moduleKey": "M12",
+      "label": "Record Temperature",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3641bee78e66",
+      "moduleKey": "M12",
+      "label": "Log Exception",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ee18c0563f17",
+      "moduleKey": "M12",
+      "label": "Add Feedback Theme",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_72b2ed3f6a2e",
+      "moduleKey": "M12",
+      "label": "Create Service Recovery Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_11116ba19712",
+      "moduleKey": "M12",
+      "label": "Add Regulatory Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_63804da2d826",
+      "moduleKey": "M12",
+      "label": "Schedule Audit",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_5a978e104215",
+      "moduleKey": "M12",
+      "label": "Sign Off",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c8f9e81cfae2",
+      "moduleKey": "M13",
+      "label": "Upload / Scan",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_db65139d271d",
+      "moduleKey": "M13",
+      "label": "Classify",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_67a1fa534246",
+      "moduleKey": "M13",
+      "label": "Assign Owner",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_07f0beb73438",
+      "moduleKey": "M13",
+      "label": "Link to Module",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bb9d81f13f66",
+      "moduleKey": "M13",
+      "label": "Create Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_daa41b1f11cf",
+      "moduleKey": "M13",
+      "label": "Create from Template",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_671853740a77",
+      "moduleKey": "M13",
+      "label": "Generate PDF",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0408dda765ea",
+      "moduleKey": "M13",
+      "label": "Submit for Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b8c742402ecf",
+      "moduleKey": "M13",
+      "label": "Approve / Reject",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bbbd66d0d9a0",
+      "moduleKey": "M13",
+      "label": "Publish",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_36d2cedee523",
+      "moduleKey": "M13",
+      "label": "Request Acknowledgement",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_34aa6a04f816",
+      "moduleKey": "M13",
+      "label": "Replace Version",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c11bb635ac62",
+      "moduleKey": "M13",
+      "label": "Archive",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c630c285a045",
+      "moduleKey": "M13",
+      "label": "Restore",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c6bc5c0e2f65",
+      "moduleKey": "M13",
+      "label": "Place on Legal Hold",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b5eb445aa601",
+      "moduleKey": "M13",
+      "label": "Release Legal Hold",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bd05cf8b1103",
+      "moduleKey": "M13",
+      "label": "Approve Disposal",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4e77f78e4def",
+      "moduleKey": "M14",
+      "label": "Report Issue",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d79394da308a",
+      "moduleKey": "M14",
+      "label": "Scan Asset / QR",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_af66f3114e11",
+      "moduleKey": "M14",
+      "label": "Set Priority",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_357399c62840",
+      "moduleKey": "M14",
+      "label": "Assign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0f66fe4757e7",
+      "moduleKey": "M14",
+      "label": "Accept Work",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d8692c004526",
+      "moduleKey": "M14",
+      "label": "Change Status",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8fa8905606c2",
+      "moduleKey": "M14",
+      "label": "Add Update",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_70f0683f4a20",
+      "moduleKey": "M14",
+      "label": "Attach Photo / Evidence",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0bb5ed137bd7",
+      "moduleKey": "M14",
+      "label": "Escalate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ea97800ecbe9",
+      "moduleKey": "M14",
+      "label": "Create Work Order",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_09bb644a9c7f",
+      "moduleKey": "M14",
+      "label": "Request Quote",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e03d6f032990",
+      "moduleKey": "M14",
+      "label": "Approve Quote",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e908096fc3c1",
+      "moduleKey": "M14",
+      "label": "Mark Work Completed",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3bc71834244f",
+      "moduleKey": "M14",
+      "label": "Manager Sign-off",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3a2be8d510c1",
+      "moduleKey": "M14",
+      "label": "Close",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f54873a62863",
+      "moduleKey": "M14",
+      "label": "Reopen",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_2ae1062b0569",
+      "moduleKey": "M14",
+      "label": "Merge as Duplicate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_19c755247392",
+      "moduleKey": "M14",
+      "label": "Check In Contractor",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a14c7415b9c2",
+      "moduleKey": "M14",
+      "label": "Check Out Contractor",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P4",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a0a28d64ef4d",
+      "moduleKey": "M15",
+      "label": "Add Item",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e5fb5d64ad62",
+      "moduleKey": "M15",
+      "label": "Set PAR Level",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d68f198920d8",
+      "moduleKey": "M15",
+      "label": "Create Purchase Request",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_34520be8e544",
+      "moduleKey": "M15",
+      "label": "Approve Order",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_776df91e6aad",
+      "moduleKey": "M15",
+      "label": "Receive Stock",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cdc15b7da1e9",
+      "moduleKey": "M15",
+      "label": "Transfer Stock",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_35a47c071ba1",
+      "moduleKey": "M15",
+      "label": "Adjust / Write Off",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_53babaa7f791",
+      "moduleKey": "M15",
+      "label": "Upload Invoice",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_891a9c2d76bc",
+      "moduleKey": "M15",
+      "label": "Review OCR",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e4c825784b18",
+      "moduleKey": "M15",
+      "label": "Approve / Reject Invoice",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cd2761769695",
+      "moduleKey": "M15",
+      "label": "Add Supplier",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bd469ba501bd",
+      "moduleKey": "M15",
+      "label": "Schedule Contract Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_cdd9474d00fc",
+      "moduleKey": "M15",
+      "label": "Add Asset",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_59862a0505c4",
+      "moduleKey": "M15",
+      "label": "Generate QR",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_1456272e9ec0",
+      "moduleKey": "M15",
+      "label": "Schedule Service",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4594ee4e1a4b",
+      "moduleKey": "M15",
+      "label": "Raise Fault",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_77a5a5085820",
+      "moduleKey": "M15",
+      "label": "Add Printer",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a2a622baa319",
+      "moduleKey": "M15",
+      "label": "Update Toner / Counter",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d93e2cdfe507",
+      "moduleKey": "M15",
+      "label": "Set Fallback",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_59dd40e26c16",
+      "moduleKey": "M15",
+      "label": "Retire / Replace",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f6fe29f129d7",
+      "moduleKey": "M15",
+      "label": "Create Stocktake",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_24021e3daf41",
+      "moduleKey": "M15",
+      "label": "Quarantine Batch",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_210a85e2d553",
+      "moduleKey": "M15",
+      "label": "Start Recall",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_18e90dea8bb2",
+      "moduleKey": "M15",
+      "label": "Assign / Loan Asset",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4cc29567f028",
+      "moduleKey": "M15",
+      "label": "Return Asset",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_71a2805adb46",
+      "moduleKey": "M15",
+      "label": "Onboard Supplier",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_9ae8057b6ba8",
+      "moduleKey": "M15",
+      "label": "Suspend Supplier",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6dbd33bfb962",
+      "moduleKey": "M16",
+      "label": "Report Incident",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_890216e4375d",
+      "moduleKey": "M16",
+      "label": "Log Complaint",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_5a358220ae40",
+      "moduleKey": "M16",
+      "label": "Add Risk",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_eddf76e952a6",
+      "moduleKey": "M16",
+      "label": "Triage",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_38b38537d80a",
+      "moduleKey": "M16",
+      "label": "Set Severity",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b49f59298cb0",
+      "moduleKey": "M16",
+      "label": "Assign Investigator",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_63255aec3203",
+      "moduleKey": "M16",
+      "label": "Add Evidence",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_92d8764569b0",
+      "moduleKey": "M16",
+      "label": "Start RCA",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_606912d887ac",
+      "moduleKey": "M16",
+      "label": "Create CAPA",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_79921fc46d90",
+      "moduleKey": "M16",
+      "label": "Escalate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_7b7a5d660c94",
+      "moduleKey": "M16",
+      "label": "Activate Downtime Plan",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0782f06b2719",
+      "moduleKey": "M16",
+      "label": "Log Privacy/Cyber Event",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_78451503e30c",
+      "moduleKey": "M16",
+      "label": "Notify Responsible Owner",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_17aab415c2c6",
+      "moduleKey": "M16",
+      "label": "Submit Closure",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_922a9a09860c",
+      "moduleKey": "M16",
+      "label": "Approve Closure",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6c55fb7a9724",
+      "moduleKey": "M16",
+      "label": "Reopen",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3d95a9777d3f",
+      "moduleKey": "M16",
+      "label": "Report Near Miss",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bc35aa18d681",
+      "moduleKey": "M16",
+      "label": "Start Continuity Exercise",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3c9f6e446c25",
+      "moduleKey": "M16",
+      "label": "Record Complaint Review / Escalation",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P5",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_524f4e3b25e8",
+      "moduleKey": "M17",
+      "label": "Create Email Campaign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_80792c62cfbc",
+      "moduleKey": "M17",
+      "label": "Create SMS Campaign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_24830181eef9",
+      "moduleKey": "M17",
+      "label": "Choose Template",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3561b788e58d",
+      "moduleKey": "M17",
+      "label": "Select Audience",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0f4d19ac8ec4",
+      "moduleKey": "M17",
+      "label": "Add Exclusions",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_660ab6f58f46",
+      "moduleKey": "M17",
+      "label": "Preview",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d2c93ac7ac90",
+      "moduleKey": "M17",
+      "label": "Send Test",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_48fbf353bbf6",
+      "moduleKey": "M17",
+      "label": "Submit for Approval",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_32858b23b414",
+      "moduleKey": "M17",
+      "label": "Schedule",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_19f05f80010b",
+      "moduleKey": "M17",
+      "label": "Send Now",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b9c77d9f3c5f",
+      "moduleKey": "M17",
+      "label": "Pause / Cancel",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_60216d734b12",
+      "moduleKey": "M17",
+      "label": "Retry Failed",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_12b503fbd968",
+      "moduleKey": "M17",
+      "label": "Record Response",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_e6cdfd13b0c6",
+      "moduleKey": "M17",
+      "label": "Export Results",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b65bd77d598e",
+      "moduleKey": "M17",
+      "label": "Cancel Scheduled Campaign",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_dee4f489d2cc",
+      "moduleKey": "M17",
+      "label": "Pause Send",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b0e7d74759c6",
+      "moduleKey": "M17",
+      "label": "Send Emergency Update",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b6c31946475e",
+      "moduleKey": "M17",
+      "label": "Send All Clear",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4a1ba18b4435",
+      "moduleKey": "M18",
+      "label": "Add Website",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ad10bc5c1055",
+      "moduleKey": "M18",
+      "label": "Run Check",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_efef1d1f94e3",
+      "moduleKey": "M18",
+      "label": "Acknowledge Outage",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6a0d65872fc6",
+      "moduleKey": "M18",
+      "label": "Create Incident / Ticket",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_da62a26c5f73",
+      "moduleKey": "M18",
+      "label": "Request Remote Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_bb67b7d58c1c",
+      "moduleKey": "M18",
+      "label": "Approve / Reject Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_157778a6f6b8",
+      "moduleKey": "M18",
+      "label": "Launch Approved Session",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3bee57875cd1",
+      "moduleKey": "M18",
+      "label": "End Session",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6f84c66300f8",
+      "moduleKey": "M18",
+      "label": "Request Secret Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ed242a44cbe5",
+      "moduleKey": "M18",
+      "label": "Reveal / Copy with Reason",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a0073e1098ba",
+      "moduleKey": "M18",
+      "label": "Rotate Credential",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_46adb81d4570",
+      "moduleKey": "M18",
+      "label": "Request Footage",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_36416e8ffd7b",
+      "moduleKey": "M18",
+      "label": "Approve Export",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_36907da098e9",
+      "moduleKey": "M18",
+      "label": "Mark Camera Offline / Restored",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_62a844073ef4",
+      "moduleKey": "M18",
+      "label": "Complete Access Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_b2eb9ef8d1c9",
+      "moduleKey": "M19",
+      "label": "Refresh Analytics",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_0de4f54a3388",
+      "moduleKey": "M19",
+      "label": "Filter / Compare",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a69591e58915",
+      "moduleKey": "M19",
+      "label": "Open Contributing Record",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_1aa7717454cf",
+      "moduleKey": "M19",
+      "label": "Create Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f63b6362e31f",
+      "moduleKey": "M19",
+      "label": "Run Data Quality Check",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f51811b39426",
+      "moduleKey": "M19",
+      "label": "Assign Correction",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f9298b06218c",
+      "moduleKey": "M19",
+      "label": "Merge / Resolve Duplicate",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a29d04b52dc8",
+      "moduleKey": "M19",
+      "label": "Raise Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f22264a7cc59",
+      "moduleKey": "M19",
+      "label": "Assess Impact",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_279c6b8dea79",
+      "moduleKey": "M19",
+      "label": "Submit Change Approval",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3ba80f815bf1",
+      "moduleKey": "M19",
+      "label": "Publish Effective Date",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_47b96cef1175",
+      "moduleKey": "M19",
+      "label": "Confirm Readiness",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_6ccd59705693",
+      "moduleKey": "M19",
+      "label": "Start Post-Change Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c07b6603ef31",
+      "moduleKey": "M19",
+      "label": "Add Improvement",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_50ca3d07941a",
+      "moduleKey": "M19",
+      "label": "Pause Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_58a509ffd7d1",
+      "moduleKey": "M19",
+      "label": "Rollback Change",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_716059719a80",
+      "moduleKey": "M19",
+      "label": "Correct Forward",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_143a1e56ce2a",
+      "moduleKey": "M19",
+      "label": "Complete Benefits Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P7",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3639dcaa2958",
+      "moduleKey": "M20",
+      "label": "Add Tenant",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4b6033997d61",
+      "moduleKey": "M20",
+      "label": "Select Plan / Modules",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_3483096b25a6",
+      "moduleKey": "M20",
+      "label": "Invite Tenant Admin",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_90b93e34190f",
+      "moduleKey": "M20",
+      "label": "Start Onboarding",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c971128b5cda",
+      "moduleKey": "M20",
+      "label": "Complete Configuration Review",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_ebf2be9046ba",
+      "moduleKey": "M20",
+      "label": "Grant Temporary Support Access",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f1b00cc4fecb",
+      "moduleKey": "M20",
+      "label": "Review Adoption",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_01d44298a8a0",
+      "moduleKey": "M20",
+      "label": "Create Renewal Action",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_a0eed96dcf77",
+      "moduleKey": "M20",
+      "label": "Suspend Tenant",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_59ce10ace8a5",
+      "moduleKey": "M20",
+      "label": "Start Offboarding",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_f803b8256ce5",
+      "moduleKey": "M20",
+      "label": "Confirm Closure",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_c05a84ca9b64",
+      "moduleKey": "M20",
+      "label": "Create Department Workspace",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_4c8f837ecc86",
+      "moduleKey": "M20",
+      "label": "Upgrade / Downgrade Plan",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_8ad0fa1ae28d",
+      "moduleKey": "M20",
+      "label": "Record Failed Subscription Payment",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_d79939ba1f57",
+      "moduleKey": "M20",
+      "label": "Reinstate Tenant",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdbtn_898e3af81de2",
+      "moduleKey": "M20",
+      "label": "Escalate Customer Support",
+      "kind": "brd-button",
+      "disposition": "ADOPTED-AS-IS",
+      "targetWave": "P8",
+      "implementationRule": "service-backed state transition + permission + audit + reload proof"
+    },
+    {
+      "id": "brdflow_ffd9f77521ee",
+      "moduleKey": "M01",
+      "label": "Morning executive review",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_721185805e0c",
+      "moduleKey": "M01",
+      "label": "Compare clinic performance",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_72d027049451",
+      "moduleKey": "M01",
+      "label": "Produce management pack",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_b74f8442c52c",
+      "moduleKey": "M01",
+      "label": "Role-Based My Day User Journey",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_199f547ac514",
+      "moduleKey": "M02",
+      "label": "Review and approve an item",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_ba1b1d24dd17",
+      "moduleKey": "M02",
+      "label": "Resolve an exception",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_7f2ab1fb5753",
+      "moduleKey": "M02",
+      "label": "Escalate overdue work",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_be3b453e061e",
+      "moduleKey": "M02",
+      "label": "Approval Delegation and Absence Cover",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_ac963e3eab06",
+      "moduleKey": "M03",
+      "label": "Add a clinic",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_4ada87d2a84b",
+      "moduleKey": "M03",
+      "label": "Onboard a user",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_f6063de95274",
+      "moduleKey": "M03",
+      "label": "Suspend and offboard access",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_8ef36e01a7ff",
+      "moduleKey": "M03",
+      "label": "Conduct access review",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_49c58e5dd650",
+      "moduleKey": "M03",
+      "label": "First-Time Access, Sign-In Recovery and Account Lockout",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_31d30578cb3c",
+      "moduleKey": "M03",
+      "label": "Approval Delegation and Absence Cover",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_74c87db67a1f",
+      "moduleKey": "M03",
+      "label": "Clinic Opening, Relocation, Temporary Closure and Permanent Closure",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_997982917a76",
+      "moduleKey": "M03",
+      "label": "Workforce Data Access and Correction Request",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_00869e70c7e9",
+      "moduleKey": "M04",
+      "label": "Add a staff member",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_3f19773921eb",
+      "moduleKey": "M04",
+      "label": "Add a doctor",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_a7c2503f5264",
+      "moduleKey": "M04",
+      "label": "Request and approve leave",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_6f092fd389f0",
+      "moduleKey": "M04",
+      "label": "Renew an expiring document",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_5a823e6712bb",
+      "moduleKey": "M04",
+      "label": "Offboard a worker",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_922f4e565ab9",
+      "moduleKey": "M04",
+      "label": "Leave Amendment, Cancellation and Return to Work",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_c8ed422bc56c",
+      "moduleKey": "M04",
+      "label": "Worker Transfer, Promotion and Employment Change",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_a5ff8bbd9f9c",
+      "moduleKey": "M04",
+      "label": "Credential Expiry, Suspension and Reactivation",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_7b6fb90b193f",
+      "moduleKey": "M04",
+      "label": "Doctor Bank Detail Change and Verification",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_e2ae7e11e509",
+      "moduleKey": "M04",
+      "label": "Workforce Data Access and Correction Request",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_8e69ef801842",
+      "moduleKey": "M05",
+      "label": "Build and publish roster",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_5be5b53918b3",
+      "moduleKey": "M05",
+      "label": "Staff shift-swap request",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_af7d584227da",
+      "moduleKey": "M05",
+      "label": "Emergency roster change",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_86837779bf72",
+      "moduleKey": "M05",
+      "label": "Open Shift and Urgent Coverage Broadcast",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_7c70ec0ef7bb",
+      "moduleKey": "M06",
+      "label": "Normal clock-in/out",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_b3221372a14b",
+      "moduleKey": "M06",
+      "label": "Missed punch correction",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_e59ef8239904",
+      "moduleKey": "M06",
+      "label": "Pay-period attendance approval",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_026b12101648",
+      "moduleKey": "M07",
+      "label": "Prepare a pay run",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_143d0160434b",
+      "moduleKey": "M07",
+      "label": "Export and reconcile",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_163a8bbea9da",
+      "moduleKey": "M07",
+      "label": "Correct a prior period",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_5735e352bf4c",
+      "moduleKey": "M07",
+      "label": "Payroll Export Rejection, Final Pay and Overpayment Correction",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_2dc24087f1e9",
+      "moduleKey": "M08",
+      "label": "Full doctor pay run",
+      "kind": "brd-workflow",
+      "steps": 10,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_58e2621748c4",
+      "moduleKey": "M08",
+      "label": "Add an adjustment",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_d40f9dc93d49",
+      "moduleKey": "M08",
+      "label": "Reissue a payslip",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_f55e9ef92fe7",
+      "moduleKey": "M08",
+      "label": "Doctor self-service review",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_421955dc7714",
+      "moduleKey": "M08",
+      "label": "Doctor Bank Detail Change and Verification",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_651bba855539",
+      "moduleKey": "M08",
+      "label": "Doctor Pay Dispute, Failed Transfer and Partial Payment",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_39bd22e6f58c",
+      "moduleKey": "M09",
+      "label": "Create a forecast",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_67a4bb22bb5a",
+      "moduleKey": "M09",
+      "label": "Resolve a compliance gap",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_1a447a929194",
+      "moduleKey": "M09",
+      "label": "Reconcile actual outcome",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P6"
+    },
+    {
+      "id": "brdflow_fb93ea39d4de",
+      "moduleKey": "M10",
+      "label": "Build and publish a checklist",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_026f2323931c",
+      "moduleKey": "M10",
+      "label": "Complete opening checklist",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_1de2757a259f",
+      "moduleKey": "M10",
+      "label": "Conduct a management meeting",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_a75ef5d44d8f",
+      "moduleKey": "M10",
+      "label": "Close a task/action",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_b95db6f832d7",
+      "moduleKey": "M10",
+      "label": "Daily and Shift Handover",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_698579155b1b",
+      "moduleKey": "M10",
+      "label": "Missed Checklist, Retrospective Completion and Waiver",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P3"
+    },
+    {
+      "id": "brdflow_b3e049d8bab3",
+      "moduleKey": "M11",
+      "label": "Create and assign learning",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_6d66818359d3",
+      "moduleKey": "M11",
+      "label": "Complete training",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_7d94797ba1a1",
+      "moduleKey": "M11",
+      "label": "Record observed competency",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_7d9141f2aaf8",
+      "moduleKey": "M11",
+      "label": "Training Exemption, Prior Learning and Role-Change Reassignment",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P2"
+    },
+    {
+      "id": "brdflow_4b171f7877a3",
+      "moduleKey": "M12",
+      "label": "Close an accreditation gap",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_14c3f5945481",
+      "moduleKey": "M12",
+      "label": "Run a PDSA cycle",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_1529adc9d425",
+      "moduleKey": "M12",
+      "label": "Handle a cold-chain exception",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_8652a04d2672",
+      "moduleKey": "M12",
+      "label": "Process regulatory change",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_de9301d16039",
+      "moduleKey": "M13",
+      "label": "Process document intake",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_8fc791221178",
+      "moduleKey": "M13",
+      "label": "Publish a controlled policy",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_701894b9bc76",
+      "moduleKey": "M13",
+      "label": "Generate a controlled PDF",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_f6846d4aae52",
+      "moduleKey": "M13",
+      "label": "Complete scheduled review",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_a16715f85056",
+      "moduleKey": "M13",
+      "label": "Document Retention, Legal Hold and Controlled Disposal",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_9eeb1e3835b4",
+      "moduleKey": "M13",
+      "label": "Workforce Data Access and Correction Request",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_d7de2a9d04e2",
+      "moduleKey": "M14",
+      "label": "Report and resolve a standard issue",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_92588b71bc79",
+      "moduleKey": "M14",
+      "label": "Handle a P1 issue",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_fa31f5858408",
+      "moduleKey": "M14",
+      "label": "Create a vendor work order",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_f678c6fbc486",
+      "moduleKey": "M14",
+      "label": "Printer fault workflow",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_044c8edf7c0c",
+      "moduleKey": "M14",
+      "label": "Duplicate Ticket Detection and Ticket Merging",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_e00740832f69",
+      "moduleKey": "M14",
+      "label": "Contractor Arrival, Site Access and Work Completion",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_e50eb3992745",
+      "moduleKey": "M14",
+      "label": "In-Product Help, Support and Feedback",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_1de8c446d0b5",
+      "moduleKey": "M14",
+      "label": "Customer Support Escalation and Service-Impact Communication",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P4"
+    },
+    {
+      "id": "brdflow_ad67200fed06",
+      "moduleKey": "M15",
+      "label": "Low-stock reorder",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_449093b431f4",
+      "moduleKey": "M15",
+      "label": "Supplier invoice OCR",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_9bfee90eb580",
+      "moduleKey": "M15",
+      "label": "Inter-clinic stock transfer",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_6d76513698ad",
+      "moduleKey": "M15",
+      "label": "Add and service an asset",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_1f526da48af5",
+      "moduleKey": "M15",
+      "label": "Add and manage a printer",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_b0ed022daa12",
+      "moduleKey": "M15",
+      "label": "Supplier contract review",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_37450de7ac3d",
+      "moduleKey": "M15",
+      "label": "Stocktake, Expiry, Batch Recall and Product Return",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_1e33e8be4cf8",
+      "moduleKey": "M15",
+      "label": "Supplier Onboarding, Quote Comparison and Supplier Suspension",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_45f8331c01d1",
+      "moduleKey": "M15",
+      "label": "Asset Assignment, Loan, Loss, Return and Decommissioning",
+      "kind": "brd-workflow",
+      "steps": 7,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_ebcece5cd6bd",
+      "moduleKey": "M16",
+      "label": "Report and investigate an incident",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_e73710ab35d8",
+      "moduleKey": "M16",
+      "label": "Manage a complaint",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_dc39f2c11a67",
+      "moduleKey": "M16",
+      "label": "Activate downtime plan",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_bedd8ff23f93",
+      "moduleKey": "M16",
+      "label": "Privacy/cyber response",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_1ad5243efdcc",
+      "moduleKey": "M16",
+      "label": "Anonymous or Near-Miss Reporting and Complaint Review",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_c4dd569596fd",
+      "moduleKey": "M16",
+      "label": "Scenario-Based Business Continuity and Exercise",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P5"
+    },
+    {
+      "id": "brdflow_02df55c9824b",
+      "moduleKey": "M17",
+      "label": "Create and send a campaign",
+      "kind": "brd-workflow",
+      "steps": 6,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_4432571b97c9",
+      "moduleKey": "M17",
+      "label": "Handle failed deliveries",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_bd49c0a871e2",
+      "moduleKey": "M17",
+      "label": "Update suppression",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_99d32e41de04",
+      "moduleKey": "M17",
+      "label": "Emergency Communication and Campaign Cancellation",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_d963badfbf87",
+      "moduleKey": "M18",
+      "label": "Website outage response",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_00cbe64dfb21",
+      "moduleKey": "M18",
+      "label": "Remote access request",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_48c739466871",
+      "moduleKey": "M18",
+      "label": "High-risk secret access",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_b8746f9daf4b",
+      "moduleKey": "M18",
+      "label": "Camera footage request",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_c0ee29056b17",
+      "moduleKey": "M19",
+      "label": "Review clinic capacity",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_1a670ddfc404",
+      "moduleKey": "M19",
+      "label": "Correct data-quality issue",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_2d60acaef68d",
+      "moduleKey": "M19",
+      "label": "Manage a business change",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_4353732957b4",
+      "moduleKey": "M19",
+      "label": "Failed Change, Rollback and Benefit-Realisation Review",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P7"
+    },
+    {
+      "id": "brdflow_e8df6c78393e",
+      "moduleKey": "M20",
+      "label": "Onboard a tenant",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P8"
+    },
+    {
+      "id": "brdflow_37d6a2cd4e14",
+      "moduleKey": "M20",
+      "label": "Grant support access",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P8"
+    },
+    {
+      "id": "brdflow_ff8311635bf5",
+      "moduleKey": "M20",
+      "label": "Manage renewal",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P8"
+    },
+    {
+      "id": "brdflow_4a741668fa8f",
+      "moduleKey": "M20",
+      "label": "Offboard tenant",
+      "kind": "brd-workflow",
+      "steps": 5,
+      "targetWave": "P8"
+    },
+    {
+      "id": "brdflow_11ca793e7abc",
+      "moduleKey": "M20",
+      "label": "Commercial Plan Upgrade, Downgrade and Subscription Billing",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P8"
+    },
+    {
+      "id": "brdflow_751156ba93f7",
+      "moduleKey": "M20",
+      "label": "Customer Support Escalation and Service-Impact Communication",
+      "kind": "brd-workflow",
+      "steps": 8,
+      "targetWave": "P8"
+    }
+  ]
+}
