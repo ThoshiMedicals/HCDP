@@ -2,9 +2,11 @@
 
 ## Image installation status
 
+**Owner decision B:** reject mismatched upload hashes; require exact programme-prompt SHA-256 originals.
+
 **All nine installed with matching SHA-256:** False
 
-| Module | Route | Normalised file | Status |
+| Module | Route | Canonical file | Status |
 | --- | --- | --- | --- |
 | M01 | `/dashboard` | `m01-command-centre-final.png` | MISSING |
 | M02 | `/action-inbox` | `m02-action-inbox-final.png` | MISSING |
@@ -16,7 +18,9 @@
 | M12 | `/compliance-quality` | `m12-compliance-quality-final.png` | MISSING |
 | M15 | `/inventory-assets` | `m15-inventory-assets-final.png` | MISSING |
 
-Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`
+Manifest: `docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json`  
+Quarantine (non-canonical): `docs/design-references/mismatch-quarantine-b5feab7/`  
+Mismatch evidence: `docs/architecture/prototype-parity/DESIGN_REFERENCE_HASH_MISMATCH_STOP.md` (commit `a22f9a1`)
 
 ## Design-system derivation (pages without a supplied image)
 

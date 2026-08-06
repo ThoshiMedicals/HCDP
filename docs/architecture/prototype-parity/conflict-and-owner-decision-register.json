@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T05:43:08Z",
+  "generatedAt": "2026-08-06T22:30:58Z",
   "openCount": 26,
   "items": [
     {
@@ -248,7 +248,10 @@
       "recommendedDisposition": "DECISION-REQUIRED",
       "ownerDecisionRequired": true,
       "status": "OPEN",
-      "detail": "Nine final design PNGs were not available in the environment; installation blocked pending exact originals."
+      "detail": "Nine final design PNGs were not available in the environment; installation blocked pending exact originals.",
+      "ownerDecision": "B",
+      "ownerDecisionDetail": "Do not accept observed hashes. Require exact programme-prompt SHA-256 originals. Mismatched uploads quarantined under mismatch-quarantine-b5feab7/. Evidence a22f9a1 preserved.",
+      "updatedAt": "2026-08-06T22:30:58Z"
     },
     {
       "id": "DEC-BRANDED-THEMES",

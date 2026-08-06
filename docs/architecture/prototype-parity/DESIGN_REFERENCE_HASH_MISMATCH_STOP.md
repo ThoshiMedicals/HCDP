@@ -33,3 +33,16 @@
 **B.** Re-upload the exact originals whose SHA-256 match the programme prompt table.
 
 Do not regenerate or redraw. Do not begin Programme Wave P1 on mismatched unverified baselines.
+
+
+## Owner decision recorded
+
+**Decision B** — do not accept observed hashes as canonical.
+
+Actions taken after decision:
+- Mismatched files moved out of `docs/design-references/final/` into `docs/design-references/mismatch-quarantine-b5feab7/`.
+- Canonical `final/` awaits exact originals with programme-prompt SHA-256 and normalised `m0*-…-final.png` names.
+- Evidence commit `a22f9a1` remains in branch history.
+- Exact hash-matching originals were **not** found on the VM after decision B; re-upload required.
+
+Updated: 2026-08-06T22:30:58Z

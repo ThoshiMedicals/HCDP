@@ -32,3 +32,7 @@
 | `DEC-BRANDED-THEMES` | appearance | ADOPTED-AS-IS | OPEN |
 
 See `conflict-and-owner-decision-register.json` for excerpts and detail.
+
+### DEC-FINAL-PNGS-MISSING — owner decision B recorded
+
+Do not accept observed hashes. Mismatched uploads quarantined under `docs/design-references/mismatch-quarantine-b5feab7/`. Exact programme-prompt SHA-256 originals still required for canonical `final/` install.
