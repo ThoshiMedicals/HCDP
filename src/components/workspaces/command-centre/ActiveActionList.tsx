@@ -152,9 +152,9 @@ export function ActiveActionList({
                         {verb}
                       </Button>
                     ))}
-                    <details className="relative">
+                    <details className="group relative">
                       <summary className="cc-ctrl cursor-pointer list-none text-[length:var(--type-control)]">More</summary>
-                      <div className="absolute left-0 top-[110%] z-20 w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1 shadow-lg">
+                      <div className="absolute right-0 top-[110%] z-20 hidden w-[220px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-1 shadow-lg group-open:block">
                         {["Reassign", "Reject", "Request More Information"].map((label) => (
                           <button
                             key={label}

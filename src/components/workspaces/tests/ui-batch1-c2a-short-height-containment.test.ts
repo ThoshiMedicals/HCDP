@@ -170,3 +170,42 @@ describe("C2A short-height containment — viewport / appearance matrix contract
     assert.doesNotMatch(dash, /overflow-y-hidden/);
   });
 });
+
+describe("C2A short-height containment — dashboard More menus", () => {
+  /**
+   * Chromium lays out absolute children inside CLOSED <details>, so left-0
+   * w-[220px] panels report overflowsViewportX at 1024×600 / 768×500 even when
+   * closed. right-0 + hidden/group-open:block keeps Add Comment (and siblings)
+   * out of closed-state layout and inside the viewport when open.
+   */
+  function assertMoreMenuClosedNonLayout(src: string, label: string) {
+    assert.match(src, /<details className="group relative">/, `${label}: details uses group`);
+    assert.match(
+      src,
+      /absolute right-0 top-\[110%\] z-20 hidden w-\[220px\].*group-open:block/,
+      `${label}: panel uses right-0 + hidden + group-open:block`
+    );
+    assert.doesNotMatch(
+      src,
+      /<details className="group relative">[\s\S]*?absolute left-0 top-\[110%\] z-20 w-\[220px\]/,
+      `${label}: must not use bare left-0 for dashboard More menus`
+    );
+  }
+
+  it("Sections More menu anchors right and hides panel until open", () => {
+    const sections = read("src/components/workspaces/command-centre/Sections.tsx");
+    // Scope to the More menu that contains Add Comment (priority-action row).
+    const addCommentIdx = sections.indexOf('"Add Comment"');
+    assert.ok(addCommentIdx >= 0, "Sections includes Add Comment in More menu");
+    const window = sections.slice(Math.max(0, addCommentIdx - 800), addCommentIdx + 200);
+    assertMoreMenuClosedNonLayout(window, "Sections");
+  });
+
+  it("ActiveActionList More menu anchors right and hides panel until open", () => {
+    const actions = read("src/components/workspaces/command-centre/ActiveActionList.tsx");
+    const moreIdx = actions.indexOf(">More</summary>");
+    assert.ok(moreIdx >= 0, "ActiveActionList includes More menu");
+    const window = actions.slice(Math.max(0, moreIdx - 200), moreIdx + 400);
+    assertMoreMenuClosedNonLayout(window, "ActiveActionList");
+  });
+});
