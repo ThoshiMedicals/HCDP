@@ -26,8 +26,12 @@
         }
       ],
       "navigationFamily": "Executive",
+      "accessClassification": "executive",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m01-command-centre",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -38,16 +42,16 @@
         "NONE \u2014 NOT IMPLEMENTED"
       ],
       "fileCount": 4,
-      "persistenceMethod": "UI/workspace state and/or seed \u2014 NONE \u2014 NOT IMPLEMENTED as durable domain service",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "permissions": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
       "crossModuleIntegrations": "M01/M02 projections incomplete until producer modules implemented",
-      "evidencePaths": "docs/audits/ui-batch1-* owner visual/readiness evidence; Phase 0 baseline b1152d3",
+      "evidencePaths": "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
-      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Final-design conversion pending P2; KPI source-completeness labels required",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; final-design conversion + source-completeness labels pending P2",
       "targetWave": "P2",
       "note": "Read-only executive summaries with source-completeness and drill-downs"
     },
@@ -75,8 +79,12 @@
         }
       ],
       "navigationFamily": "Executive",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m02-action-inbox",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -87,16 +95,16 @@
         "NONE \u2014 NOT IMPLEMENTED"
       ],
       "fileCount": 4,
-      "persistenceMethod": "UI/workspace state and/or seed \u2014 NONE \u2014 NOT IMPLEMENTED as durable domain service",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "M01/M02 projections incomplete until producer modules implemented",
-      "evidencePaths": "docs/audits/ui-batch1-* action-inbox coverage within UI Batch 1 evidence",
+      "evidencePaths": "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
-      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Final-design conversion pending; full cross-module projection incomplete",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; cross-module projection incomplete until producers exist",
       "targetWave": "P2",
       "note": "Receives action/approval/exception/notification projections"
     },
@@ -156,8 +164,12 @@
         }
       ],
       "navigationFamily": "Organisation",
+      "accessClassification": "manager",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m03-organisation-access",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -168,16 +180,16 @@
         "NONE \u2014 NOT IMPLEMENTED"
       ],
       "fileCount": 5,
-      "persistenceMethod": "UI/workspace state and/or seed \u2014 NONE \u2014 NOT IMPLEMENTED as durable domain service",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
-      "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "docs/audits/ui-batch1-* organisation/settings coverage within UI Batch 1 evidence",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "permissions": "Owner / Director, Group Administrator, Operations Manager, Authorised Practice Manager, Auditor (accessClassification=manager)",
+      "crossModuleIntegrations": "M03 owns org/clinic/user/access; contracts to all modules",
+      "evidencePaths": "docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_INDEPENDENT_VERIFICATION_FINDINGS_REMEDIATION_REPORT.md",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
-      "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
+      "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; organisation/access domain hardening pending P2",
       "targetWave": "P2",
       "note": "Organisation, tenant, clinic, user and access scope"
     },
@@ -237,8 +249,13 @@
         }
       ],
       "navigationFamily": "People",
+      "accessClassification": "hr",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m04-staff-doctors",
+      "pagePaths": [
+        "src/modules/m04-staff-doctors/StaffDoctorsWorkspace.tsx",
+        "src/modules/m04-staff-doctors/sections/OverviewSection.tsx"
+      ],
       "servicePaths": [
         "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
         "src/modules/m04-staff-doctors/services/events.ts",
@@ -257,7 +274,7 @@
       ],
       "fileCount": 40,
       "persistenceMethod": "service+repository (module-local)",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
       "evidencePaths": "docs/audits/WAVE2_M04_COMPLETION_REPORT.md; docs/audits/wave2-m04-acceptance-evidence.json",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
@@ -265,7 +282,7 @@
       "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P2",
       "note": "Workforce person, engagement, credential, restriction, readiness"
     },
@@ -317,8 +334,12 @@
         }
       ],
       "navigationFamily": "Roster",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m05-roster",
+      "pagePaths": [
+        "src/modules/m05-roster/RosterWorkspace.tsx"
+      ],
       "servicePaths": [
         "src/modules/m05-roster/services/availability-read-service.ts",
         "src/modules/m05-roster/services/events.ts",
@@ -362,7 +383,7 @@
       ],
       "fileCount": 82,
       "persistenceMethod": "service+repository (module-local)",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
       "evidencePaths": "docs/audits/WAVE4_M05_COMPLETION_REPORT.md; docs/audits/wave4-m05-acceptance-evidence.json",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
@@ -370,7 +391,7 @@
       "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P2",
       "note": "Rosters, shifts, coverage, publication"
     },
@@ -422,8 +443,12 @@
         }
       ],
       "navigationFamily": "Roster",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m06-time-attendance",
+      "pagePaths": [
+        "src/modules/m06-time-attendance/AttendanceWorkspace.tsx"
+      ],
       "servicePaths": [
         "src/modules/m06-time-attendance/services/break-service.ts",
         "src/modules/m06-time-attendance/services/events.ts",
@@ -467,7 +492,7 @@
       ],
       "fileCount": 84,
       "persistenceMethod": "service+repository (module-local)",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "M06\u2192M07 publication contracts",
       "evidencePaths": "docs/audits/WAVE5_M06_COMPLETION_REPORT.md; docs/audits/wave5-m06-acceptance-evidence.json",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
@@ -475,7 +500,7 @@
       "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P2",
       "note": "Attendance, timesheets, approved publication to M07"
     },
@@ -531,8 +556,15 @@
         }
       ],
       "navigationFamily": "Commercial",
+      "accessClassification": "finance",
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m07-staff-pay",
+      "pagePaths": [
+        "src/modules/m07-staff-pay/services/people-review-read-model.ts",
+        "src/modules/m07-staff-pay/StaffPayWorkspace.tsx",
+        "src/modules/m07-staff-pay/sections/OverviewSection.tsx",
+        "src/modules/m07-staff-pay/sections/PeopleReviewSection.tsx"
+      ],
       "servicePaths": [
         "src/modules/m07-staff-pay/services/export-validation-service.ts",
         "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
@@ -582,15 +614,15 @@
       ],
       "fileCount": 122,
       "persistenceMethod": "service+repository (module-local)",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
       "crossModuleIntegrations": "M06\u2192M07 publication contracts",
-      "evidencePaths": "docs/audits/WAVE6_BATCH6_* (Batches 1\u20136 ordinary prep); accepted app SHA b1152d3",
+      "evidencePaths": "docs/audits/WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md; docs/audits/WAVE6_BATCH6_REQUIREMENT_TRACEABILITY.md",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
       "revisedDomainStatus": "FUNCTIONALLY-COMPLETE",
       "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P2",
       "note": "Staff pay preparation only (not execution); PPA separately authorised"
     },
@@ -614,8 +646,12 @@
         }
       ],
       "navigationFamily": "Commercial",
+      "accessClassification": "finance",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m08-doctor-pay",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -627,9 +663,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -659,8 +695,12 @@
         }
       ],
       "navigationFamily": "Commercial",
+      "accessClassification": "finance",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m09-bbpip",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -672,9 +712,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -716,8 +756,12 @@
         }
       ],
       "navigationFamily": "Operations",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m10-tasks-actions",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -729,9 +773,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "IN-DEVELOPMENT",
       "revisedDomainStatus": "IN-DEVELOPMENT",
       "revisedIntegrationStatus": "BLOCKED",
@@ -761,8 +805,13 @@
         }
       ],
       "navigationFamily": "People",
+      "accessClassification": "hr",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m11-training",
+      "pagePaths": [
+        "src/modules/m11-training/TrainingWorkspace.tsx",
+        "src/modules/m11-training/sections/OverviewSection.tsx"
+      ],
       "servicePaths": [
         "src/modules/m11-training/services/evidence-service.ts",
         "src/modules/m11-training/services/readiness-bridge.ts",
@@ -790,7 +839,7 @@
       ],
       "fileCount": 51,
       "persistenceMethod": "service+repository (module-local)",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
       "evidencePaths": "docs/audits/WAVE3_M11_COMPLETION_REPORT.md; docs/audits/wave3-m11-acceptance-evidence.json",
       "revisedUiStatus": "FUNCTIONALLY-COMPLETE",
@@ -798,7 +847,7 @@
       "revisedIntegrationStatus": "FUNCTIONALLY-COMPLETE",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Preserve accepted behaviour; apply shared final design in P2",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P2",
       "note": "Learning, assignment, competency, certificate, exemption"
     },
@@ -834,8 +883,12 @@
         }
       ],
       "navigationFamily": "Governance",
+      "accessClassification": "compliance",
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m12-compliance-quality",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -847,15 +900,15 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Compliance/Quality leads, Practice Managers, Owners, Auditors (accessClassification=compliance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "IN-DEVELOPMENT",
       "revisedDomainStatus": "IN-DEVELOPMENT",
       "revisedIntegrationStatus": "NOT-STARTED",
       "revisedEvidenceStatus": "NOT-STARTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Landing/legacy-level; full BRD/prototype capability pending later wave",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P5",
       "note": "Compliance, accreditation, audit finding, CAPA verification"
     },
@@ -891,8 +944,12 @@
         }
       ],
       "navigationFamily": "Governance",
+      "accessClassification": "compliance",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m13-documents",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -904,9 +961,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Compliance/Quality leads, Practice Managers, Owners, Auditors (accessClassification=compliance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -936,8 +993,12 @@
         }
       ],
       "navigationFamily": "Operations",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m14-ticketing",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -949,9 +1010,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1009,8 +1070,12 @@
         }
       ],
       "navigationFamily": "Assets",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m15-inventory-assets",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1022,9 +1087,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1066,8 +1131,12 @@
         }
       ],
       "navigationFamily": "Governance",
+      "accessClassification": "compliance",
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m16-incidents-risk",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1079,15 +1148,15 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Compliance/Quality leads, Practice Managers, Owners, Auditors (accessClassification=compliance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "IN-DEVELOPMENT",
       "revisedDomainStatus": "IN-DEVELOPMENT",
       "revisedIntegrationStatus": "NOT-STARTED",
       "revisedEvidenceStatus": "NOT-STARTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Landing/legacy-level; full BRD/prototype capability pending later wave",
+      "missingCapabilityGaps": "Preserve accepted domain behaviour; apply shared final design in authorised wave",
       "targetWave": "P5",
       "note": "Operational incident, complaint classification, risk, continuity"
     },
@@ -1127,8 +1196,12 @@
         }
       ],
       "navigationFamily": "Communications",
+      "accessClassification": "operational",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m17-communications",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1140,9 +1213,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1184,8 +1257,12 @@
         }
       ],
       "navigationFamily": "Digital",
+      "accessClassification": "manager",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m18-digital-operations",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1197,9 +1274,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Owner / Director, Group Administrator, Operations Manager, Authorised Practice Manager, Auditor (accessClassification=manager)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1229,8 +1306,12 @@
         }
       ],
       "navigationFamily": "Analytics",
+      "accessClassification": "executive",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m19-analytics-change",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1242,9 +1323,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1286,8 +1367,12 @@
         }
       ],
       "navigationFamily": "Commercial",
+      "accessClassification": "executive",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m20-commercial-workspaces",
+      "pagePaths": [
+        "src/modules/m20-commercial-workspaces/CommercialWorkspacesModule.tsx"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1299,9 +1384,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1331,8 +1416,12 @@
         }
       ],
       "navigationFamily": "Enterprise",
+      "accessClassification": "enterprise-vendor",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m21-vendor-operations",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1344,9 +1433,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1376,8 +1465,12 @@
         }
       ],
       "navigationFamily": "Enterprise",
+      "accessClassification": "hr",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m22-recruitment",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1389,9 +1482,9 @@
       ],
       "fileCount": 10,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1421,8 +1514,12 @@
         }
       ],
       "navigationFamily": "Enterprise",
+      "accessClassification": "enterprise-vendor",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m23-website-seo",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1434,9 +1531,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",
@@ -1466,8 +1563,12 @@
         }
       ],
       "navigationFamily": "Enterprise",
+      "accessClassification": "finance",
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m24-financial-forecast",
+      "pagePaths": [
+        "NONE \u2014 NOT IMPLEMENTED"
+      ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
@@ -1479,9 +1580,9 @@
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
-      "permissions": "module accessClassification / role gates in platform auth \u2014 verify per action",
+      "permissions": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
       "crossModuleIntegrations": "contracts/events only; no cross-module repository imports",
-      "evidencePaths": "NONE \u2014 NOT IMPLEMENTED",
+      "evidencePaths": "NONE \u2014 NOT YET AUTHORISED",
       "revisedUiStatus": "PROTOTYPE-ONLY",
       "revisedDomainStatus": "NOT-STARTED",
       "revisedIntegrationStatus": "NOT-STARTED",

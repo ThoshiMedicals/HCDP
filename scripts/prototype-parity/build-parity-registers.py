@@ -88,15 +88,74 @@ FIELD_MODULE = {
 }
 
 EVIDENCE = {
+    1: "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
+    2: "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
+    3: "docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_INDEPENDENT_VERIFICATION_FINDINGS_REMEDIATION_REPORT.md",
     4: "docs/audits/WAVE2_M04_COMPLETION_REPORT.md; docs/audits/wave2-m04-acceptance-evidence.json",
     5: "docs/audits/WAVE4_M05_COMPLETION_REPORT.md; docs/audits/wave4-m05-acceptance-evidence.json",
     6: "docs/audits/WAVE5_M06_COMPLETION_REPORT.md; docs/audits/wave5-m06-acceptance-evidence.json",
-    7: "docs/audits/WAVE6_BATCH6_* (Batches 1–6 ordinary prep); accepted app SHA b1152d3",
+    7: "docs/audits/WAVE6_BATCH6_CHECKPOINT_6_5_6_6_EVIDENCE.md; docs/audits/WAVE6_BATCH6_REQUIREMENT_TRACEABILITY.md",
     11: "docs/audits/WAVE3_M11_COMPLETION_REPORT.md; docs/audits/wave3-m11-acceptance-evidence.json",
-    1: "docs/audits/ui-batch1-* owner visual/readiness evidence; Phase 0 baseline b1152d3",
-    2: "docs/audits/ui-batch1-* action-inbox coverage within UI Batch 1 evidence",
-    3: "docs/audits/ui-batch1-* organisation/settings coverage within UI Batch 1 evidence",
 }
+
+ACCESS_ROLE_LABELS = {
+    "executive": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
+    "operational": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
+    "manager": "Owner / Director, Group Administrator, Operations Manager, Authorised Practice Manager, Auditor (accessClassification=manager)",
+    "hr": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
+    "finance": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
+    "compliance": "Compliance/Quality leads, Practice Managers, Owners, Auditors (accessClassification=compliance)",
+    "admin": "Vendor/tenant administrators and authorised platform operators (accessClassification=admin)",
+    "clinical-ops": "Clinical-operational leads within Doctors Pulse operational scope (accessClassification=clinical-ops)",
+    "enterprise-vendor": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
+    "enterprise": "Enterprise administrators and authorised portfolio operators (accessClassification=enterprise)",
+}
+
+RESPONSIVE_BY_PATTERN = {
+    "M01 dashboard": "Desktop≥1280: left nav 240px + KPI strip 4–6 cards + main dashboard scroll + optional right detail 360px. Tablet 768–1279: nav collapses to icons 72px, KPI 2-col, detail becomes bottom sheet. Mobile≤767: nav hamburger, KPI horizontal snap, single-column cards, detail full-screen sheet.",
+    "M02 master-detail queue": "Desktop≥1280: queue list 40% + detail pane 60% side-by-side; sticky queue filters. Tablet: list full-width, detail pushes as drawer. Mobile: list only; detail route/sheet with back control; filters in collapsible sheet.",
+    "M02/M04 admin queue + people": "Desktop: admin table + right inspector 360px. Tablet: table full-width, inspector drawer. Mobile: card-list replaces table; inspector full-screen; sticky primary CTA.",
+    "M04 people master-detail": "Desktop: people list/table + detail panel with tabs. Tablet: list + drawer detail. Mobile: searchable card list; detail full-screen with section accordion.",
+    "M05 board/matrix": "Desktop: matrix/board with horizontal scroll only inside board component; sticky row/column headers. Tablet: condensed cells, board scroll. Mobile: day/agenda alternative view; board optional behind view toggle.",
+    "M06 live-operations": "Desktop: live status strip + exception table + detail. Tablet: status chips wrap; table cardizes key columns. Mobile: status stack + exception cards; actions in bottom bar.",
+    "M02/M04 pay-prep workbench": "Desktop: readiness table + side review panel. Tablet: table + drawer. Mobile: employee cards + full-screen review; export actions in overflow menu.",
+    "M04 people + finance review": "Desktop: people/finance split view. Tablet/Mobile: stacked sections with sticky summary header.",
+    "M01 analytics + M06 reconciliation": "Desktop: chart/KPI + reconciliation table. Tablet: charts stack above table. Mobile: KPI first, charts collapsed, table as cards.",
+    "M10 template/run/detail": "Desktop: template list + run detail. Tablet/Mobile: list → detail drill-in; checklist steps as vertical stepper.",
+    "M11 learning/progress": "Desktop: catalogue/assignments table + progress panel. Tablet/Mobile: card progress; course detail full-screen.",
+    "M12 governance/audit": "Desktop: register table + evidence/detail panel. Tablet/Mobile: register cards; evidence gallery stacked.",
+    "M15 inventory/asset": "Desktop: inventory table/grid + asset detail. Tablet: 2-col cards. Mobile: 1-col cards; scan/action bar sticky bottom.",
+    "M02 queue + delivery status": "Desktop: campaign queue + delivery status panel. Tablet/Mobile: queue cards; status as stacked timeline.",
+    "M06 live-operations": "Desktop: monitoring tiles + incident/detail. Tablet/Mobile: tile stack; detail sheet.",
+    "M01 dashboard + data-quality cases": "Desktop: KPI + case queue. Tablet/Mobile: KPI wrap; cases as cards.",
+    "M04/M02 commercial workspaces": "Desktop: tenant table + workspace detail. Tablet/Mobile: card list + full-screen detail.",
+    "M04/M02 vendor portfolio": "Desktop: vendor portfolio table + detail. Tablet/Mobile: cards + full-screen detail.",
+    "M01/M02 public-routing ops": "Desktop: site ops dashboard + routing table. Tablet/Mobile: stacked metrics + cards.",
+    "M01 dashboard + finance review": "Desktop: forecast KPI + review table. Tablet/Mobile: KPI stack + card rows.",
+}
+
+def roles_for(num: int, brd, access: str) -> str:
+    pu = (brd or {}).get("primaryUsers")
+    if isinstance(pu, list) and pu:
+        return ", ".join(pu) + f" (BRD primaryUsers; accessClassification={access or 'unspecified'})"
+    if isinstance(pu, str) and pu.strip():
+        return f"{pu} (BRD primaryUsers; accessClassification={access or 'unspecified'})"
+    return ACCESS_ROLE_LABELS.get(access or "", f"Authorised roles for accessClassification={access or 'unspecified'}")
+
+
+def responsive_for(num: int) -> str:
+    return RESPONSIVE_BY_PATTERN.get(DESIGN_PATTERN.get(num, ""), RESPONSIVE_BY_PATTERN["M02 master-detail queue"])
+
+
+def exact_evidence(num: int) -> str:
+    path = EVIDENCE.get(num)
+    if not path:
+        return "NONE — NOT YET AUTHORISED"
+    # verify at least one path exists
+    parts = [x.strip() for x in path.split(";") if x.strip()]
+    existing = [x for x in parts if (ROOT / x).exists()]
+    return "; ".join(existing) if existing else "NONE — NOT YET AUTHORISED"
+
 
 
 def tip_sha() -> str:
@@ -138,6 +197,7 @@ def parse_register():
         route = re.search(r'mainRoute:\s*"([^"]+)"', b)
         cond = re.search(r'condition:\s*"([^"]+)"', b)
         fam = re.search(r'navigationFamily:\s*"([^"]+)"', b)
+        access = re.search(r'accessClassification:\s*"([^"]+)"', b)
         if not (num and mid and cond):
             continue
         secs = re.findall(r'\{\s*id:\s*"([^"]+)"\s*,\s*label:\s*"([^"]+)"', b)
@@ -148,6 +208,7 @@ def parse_register():
             "mainRoute": route.group(1) if route else "",
             "condition": cond.group(1),
             "navigationFamily": fam.group(1) if fam else "",
+            "accessClassification": access.group(1) if access else "",
             "sections": [{"id": a, "label": b2} for a, b2 in secs],
         })
     rows.sort(key=lambda r: r["number"])
@@ -162,34 +223,67 @@ def audit_module(num: int, reg: dict) -> dict:
     files = list(mod_dir.rglob("*.ts")) + list(mod_dir.rglob("*.tsx")) if mod_dir else []
     services = [str(p.relative_to(ROOT)) for p in files if "service" in p.name.lower() or "/services/" in str(p)]
     repos = [str(p.relative_to(ROOT)) for p in files if "repo" in p.name.lower() or "repository" in p.name.lower()]
-    tests = [str(p.relative_to(ROOT)) for p in files if "/tests/" in str(p) or p.name.endswith(".test.ts")]
+    tests = [str(p.relative_to(ROOT)) for p in files if "/tests/" in str(p) or p.name.endswith(".test.ts") or p.name.endswith(".test.tsx")]
+    pages = [str(p.relative_to(ROOT)) for p in files if p.name.endswith("page.tsx") or p.name.endswith("Page.tsx") or "workspace" in p.name.lower() or "view" in p.name.lower()]
     cond = reg.get("condition", "unknown")
-    deep = num in (1, 2, 3, 4, 5, 6, 7, 11)
-    partial = num in (10, 12, 16) or cond == "partially-implemented"
-    if deep and num not in (10,):
-        ui = domain = "FUNCTIONALLY-COMPLETE"
-        evidence = "OWNER-ACCEPTED"
-    elif partial:
-        ui = domain = "IN-DEVELOPMENT"
-        evidence = "NOT-STARTED"
-    else:
+    access = reg.get("accessClassification", "")
+    has_domain = bool(services or repos)
+    has_ui = bool(files)
+    deep_domain = num in (4, 5, 6, 7, 11) and has_domain
+    ui_shell = num in (1, 2, 3)  # interactive rebuild UI present; durable domain services absent
+
+    # UI axis
+    if deep_domain or (ui_shell and has_ui):
+        ui = "FUNCTIONALLY-COMPLETE" if (deep_domain or ui_shell) else "IN-DEVELOPMENT"
+    elif has_ui and cond in ("partially-implemented", "complete-interactive-rebuild"):
+        ui = "IN-DEVELOPMENT"
+    elif has_ui:
         ui = "PROTOTYPE-ONLY"
+    else:
+        ui = "NOT-STARTED"
+
+    # Domain axis — cannot be FUNCTIONALLY-COMPLETE without services/repos/persistence
+    if deep_domain:
+        domain = "FUNCTIONALLY-COMPLETE"
+    elif has_domain:
+        domain = "IN-DEVELOPMENT"
+    elif ui_shell:
+        domain = "NOT-STARTED"  # UI exists; durable domain service NONE
+    elif cond == "partially-implemented":
+        domain = "IN-DEVELOPMENT"
+    else:
         domain = "NOT-STARTED"
-        evidence = "NOT-STARTED"
-    # Cross-module integration cannot be complete while many producers absent
+
+    # Integration axis
     if num in (1, 2):
         integ = "IN-DEVELOPMENT"
-    elif deep:
-        integ = "FUNCTIONALLY-COMPLETE" if num in (4, 5, 6, 7, 11) else "IN-DEVELOPMENT"
-    elif partial:
-        integ = "BLOCKED" if num == 10 else "NOT-STARTED"
+    elif deep_domain:
+        integ = "FUNCTIONALLY-COMPLETE"
+    elif num == 3:
+        integ = "IN-DEVELOPMENT"
+    elif num == 10:
+        integ = "BLOCKED"
+    elif has_domain:
+        integ = "IN-DEVELOPMENT"
     else:
         integ = "NOT-STARTED"
-    persistence = (
-        "service+repository (module-local)" if repos or services else
-        "UI/workspace state and/or seed — NONE — NOT IMPLEMENTED as durable domain service"
-        if deep else "NONE — NOT IMPLEMENTED"
-    )
+
+    # Evidence axis
+    ev_path = exact_evidence(num)
+    if deep_domain and ev_path != "NONE — NOT YET AUTHORISED":
+        evidence = "OWNER-ACCEPTED"
+    elif ui_shell and ev_path != "NONE — NOT YET AUTHORISED":
+        evidence = "OWNER-ACCEPTED"  # UI/visual acceptance only — not domain/production
+    else:
+        evidence = "NOT-STARTED"
+
+    if has_domain:
+        persistence = "service+repository (module-local)"
+    elif ui_shell:
+        persistence = "NONE — NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)"
+    else:
+        persistence = "NONE — NOT IMPLEMENTED"
+
     return {
         "module": f"M{num:02d}",
         "id": reg.get("id", f"m{num:02d}"),
@@ -197,36 +291,42 @@ def audit_module(num: int, reg: dict) -> dict:
         "mainRoute": reg.get("mainRoute", ""),
         "sections": reg.get("sections", []),
         "navigationFamily": reg.get("navigationFamily", ""),
+        "accessClassification": access,
         "registerConditionStaleLabel": cond,
         "componentPath": rel,
+        "pagePaths": pages[:20] or ["NONE — NOT IMPLEMENTED"],
         "servicePaths": services[:20] or ["NONE — NOT IMPLEMENTED"],
         "repositoryPaths": repos[:20] or ["NONE — NOT IMPLEMENTED"],
         "testPaths": tests[:20] or ["NONE — NOT IMPLEMENTED"],
         "fileCount": len(files),
         "persistenceMethod": persistence,
-        "permissions": "module accessClassification / role gates in platform auth — verify per action",
+        "permissions": roles_for(num, None, access),
         "crossModuleIntegrations": (
             "M01/M02 projections incomplete until producer modules implemented"
             if num in (1, 2) else
+            "M03 owns org/clinic/user/access; contracts to all modules"
+            if num == 3 else
             "M06→M07 publication contracts" if num in (6, 7) else
             "contracts/events only; no cross-module repository imports"
         ),
-        "evidencePaths": EVIDENCE.get(num, "NONE — NOT IMPLEMENTED"),
+        "evidencePaths": ev_path,
         "revisedUiStatus": ui,
         "revisedDomainStatus": domain,
         "revisedIntegrationStatus": integ,
         "revisedEvidenceStatus": evidence,
         "revisedProductionStatus": "NOT-STARTED",
         "missingCapabilityGaps": (
-            "Final-design conversion pending P2; KPI source-completeness labels required"
+            "Durable domain services/repositories absent; final-design conversion + source-completeness labels pending P2"
             if num == 1 else
-            "Final-design conversion pending; full cross-module projection incomplete"
+            "Durable domain services/repositories absent; cross-module projection incomplete until producers exist"
             if num == 2 else
+            "Durable domain services/repositories absent; organisation/access domain hardening pending P2"
+            if num == 3 else
             "Blocked / partial connective layer pending P3"
             if num == 10 else
             "Landing/legacy-level; full BRD/prototype capability pending later wave"
-            if not deep else
-            "Preserve accepted behaviour; apply shared final design in P2"
+            if domain == "NOT-STARTED" else
+            "Preserve accepted domain behaviour; apply shared final design in authorised wave"
         ),
         "targetWave": WAVE_FOR.get(num, "P8"),
         "note": OWNERSHIP.get(f"M{num:02d}", ""),
@@ -947,20 +1047,253 @@ def main():
     decisions.append({
         "id": "DEC-BRANDED-THEMES",
         "type": "appearance",
-        "recommendedDisposition": "ADOPTED-AS-IS",
-        "ownerDecisionRequired": True,
-        "status": "OPEN",
+        "recommendedDisposition": "ADOPTED-WITH-CONTROL-HARDENING",
+        "ownerDecision": "CLOSED-2026-08-07",
+        "ownerDecisionRequired": False,
+        "status": "CLOSED",
         "detail": (
-            f"Optional branded presets observed: {branded}. Preserve if confirmed; do not replace System mode."
-            if branded else
-            "Confirm whether optional Executive Blue / Medical Emerald presets remain; System mode must stay."
+            "Owner decision: retain Light, Dark and System appearance modes only. "
+            "Do not implement Executive Blue or Medical Emerald as additional global themes. "
+            "Module-family accent colours may remain as sidebar/navigation identification cues only and must not replace or interfere with Light/Dark/System. "
+            f"Prototype branded keys observed (not to be implemented as global themes): {branded}."
         ),
     })
 
     # ── Canonical screens ──
     screen_rows = []
-    # Ensure unique sectionIds per module route
     used_section_ids: dict[str, set[str]] = defaultdict(set)
+    brd_by_num = {int(m["number"]): m for m in modules["brdModules"]}
+
+    def build_action_record(
+        *,
+        id: str,
+        module_key: str,
+        label: str,
+        kind: str,
+        source_type: str,
+        source_location: str,
+        screen_route: str,
+        permission: str,
+        steps=None,
+        step_texts=None,
+        state_transitions: str = "NONE — NOT A MULTI-STEP WORKFLOW",
+        section_id: str = "",
+    ):
+        num = int(module_key[1:])
+        a = audits[num]
+        wave = WAVE_FOR.get(num, "P8")
+        domain_ok = a["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE"
+        svc0 = a["servicePaths"][0]
+        has_svc = svc0 != "NONE — NOT IMPLEMENTED"
+        # Projection rules
+        if num == 1:
+            proj = "M01 read-only summary may reflect resulting operational status; no M01 mutation"
+        elif num == 2:
+            proj = "M02 queue item create/update/complete projection applies when this Action Inbox control mutates queue work"
+        elif kind in ("brd-button", "brd-workflow", "modal-drawer") and num not in (1, 2):
+            proj = (
+                f"On success project exception/approval/notification to M02 when the action creates assignable work; "
+                f"M01 source-completeness KPI refresh if module publishes summary metrics — "
+                f"{'WIRED via accepted contracts' if has_svc and num in (4,5,6,7,11) else 'NONE — NOT IMPLEMENTED (target P2+/module wave)'}"
+            )
+        else:
+            proj = "NONE — NO M01/M02 PROJECTION FOR THIS NAVIGATION/CONTROL"
+
+        if domain_ok and has_svc and kind == "production-control":
+            service = f"Navigate/render existing accepted section via {a['componentPath']} (no new domain mutation)"
+            audit_r = "Navigation-only control; domain audit event not applicable"
+            persist = f"N/A — navigation/control; underlying data persistence per {a['persistenceMethod']}"
+            err = "permission-denied route/section hidden or 403; empty section state if no rows"
+            accept = (
+                f"Work-Step QA: open {screen_route}?section={section_id or 'n/a'} as authorised role; "
+                f"assert section renders; evidence {a['evidencePaths']}"
+            )
+        elif domain_ok and has_svc:
+            service = (
+                f"Service-backed domain transition for '{label}' via {svc0} "
+                f"(module-local repository; contracts/events only across modules)"
+            )
+            audit_r = f"Write audit event {{module:{module_key}, action:{id}, actor, clinicId, before/after}} on success"
+            persist = (
+                f"Durable persist via {a['persistenceMethod']}; "
+                f"reload verification: re-fetch shows new state after mutation"
+            )
+            err = (
+                "On failure return validation 400 with field errors, permission 403, "
+                "or clinic isolation 404/403; never toast-only success"
+            )
+            accept = (
+                f"Automated service test + Work-Step QA for '{label}': mutate → reload → assert state; "
+                f"permission/isolation negative tests; evidence path {a['evidencePaths']}"
+            )
+        else:
+            service = (
+                f"NONE — NOT IMPLEMENTED; target service/domain transition for '{label}' "
+                f"owned by {module_key} in wave {wave} (no toast-only success permitted)"
+            )
+            audit_r = f"NONE — NOT IMPLEMENTED; target audit event for '{label}' in wave {wave}"
+            persist = f"NONE — NOT IMPLEMENTED; target durable persistence + reload proof in wave {wave}"
+            err = (
+                f"Target error behaviour in wave {wave}: validation failures, permission-denied, "
+                f"clinic/tenant isolation violations; never silent success"
+            )
+            accept = (
+                f"NONE — NOT IMPLEMENTED; acceptance test in wave {wave}: service assert + Work-Step QA "
+                f"for '{label}' with resulting-state evidence commit"
+            )
+
+        return {
+            "id": id,
+            "moduleKey": module_key,
+            "label": label,
+            "kind": kind,
+            "source": source_type,
+            "sourceLocation": source_location,
+            "screenRoute": screen_route,
+            "sectionId": section_id or "NOT APPLICABLE — action not section-scoped",
+            "permission": permission,
+            "serviceDomainTransition": service,
+            "auditResult": audit_r,
+            "m01m02Projection": proj,
+            "persistenceProof": persist,
+            "errorState": err,
+            "acceptanceTest": accept,
+            "steps": steps if steps is not None else (len(step_texts or []) if step_texts else 0),
+            "stepTexts": step_texts or [],
+            "stateTransitions": state_transitions,
+            "disposition": "ADOPTED-AS-IS" if domain_ok else "ADOPTED-AS-IS",
+            "targetWave": wave if kind != "production-control" else ("P2" if num in (1, 2, 3, 4, 5, 6, 7, 11) else wave),
+            "implementationStatus": a["revisedDomainStatus"],
+        }
+
+    # Build workflow/action register first so screens can reference IDs
+    action_items = []
+    for m in modules["brdModules"]:
+        num = int(m["number"])
+        a = audits[num]
+        loc = json.dumps(m.get("source") or {"module": m["moduleKey"]}, sort_keys=True)
+        roles = roles_for(num, m, a.get("accessClassification", ""))
+        for b in m["buttons"]:
+            action_items.append(build_action_record(
+                id=b["id"], module_key=m["moduleKey"], label=b["label"], kind="brd-button",
+                source_type="brd", source_location=f"{loc}#button:{b['id']}",
+                screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
+                permission=f"{roles}; mutate only with module role + service enforcement",
+            ))
+        for f in m["flows"]:
+            step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
+            transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
+            action_items.append(build_action_record(
+                id=f["id"], module_key=m["moduleKey"], label=f.get("title") or f["id"], kind="brd-workflow",
+                source_type="brd", source_location=f"{loc}#flow:{f['id']}",
+                screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
+                permission=f"{roles}; workflow steps enforce per-step authorisation",
+                steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
+            ))
+
+    for f in workflows.get("blueprintWorkflows") or []:
+        num = int(f["moduleKey"][1:])
+        a = audits[num]
+        loc = json.dumps(f.get("source") or {"blueprintWorkflow": f["id"], "module": f["moduleKey"]}, sort_keys=True)
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        step_texts = [(s.get("text") or s.get("title") or "") for s in (f.get("steps") or [])]
+        transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
+        action_items.append(build_action_record(
+            id=f["id"], module_key=f["moduleKey"], label=f.get("title") or f["id"], kind="blueprint-workflow",
+            source_type="blueprint", source_location=loc,
+            screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
+            permission=f"{roles}; blueprint workflow authorisation",
+            steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
+        ))
+
+    for f in workflows.get("legacyWorkflows") or []:
+        group = f.get("group") or ""
+        num = infer_module_for_group(group) if group in FIELD_MODULE else 10
+        mk = f"M{num:02d}"
+        a = audits[num]
+        loc = json.dumps(f.get("source") or {"legacyGroup": group, "id": f.get("id")}, sort_keys=True)
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
+        transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
+        action_items.append(build_action_record(
+            id=f.get("id") or f"legacy-{slug(group or 'wf')}",
+            module_key=mk, label=f"Legacy workflow group: {group}", kind="legacy-workflow-group",
+            source_type="legacy", source_location=loc,
+            screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
+            permission=f"{roles}; legacy state machine must map to domain transitions before claim",
+            steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
+        ))
+
+    for modal in fields_modals.get("modals") or []:
+        num = infer_module_for_modal(modal.get("title") or "")
+        a = audits[num]
+        loc = json.dumps(modal.get("source") or {"modal": modal["id"]}, sort_keys=True)
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        action_items.append(build_action_record(
+            id=modal["id"], module_key=f"M{num:02d}", label=modal.get("title") or modal["id"],
+            kind="modal-drawer", source_type="prototype-runtime", source_location=loc,
+            screen_route=a["mainRoute"] or "NOT APPLICABLE — modal not bound to a single route",
+            permission=f"{roles}; modal invoker must hold mutate permission for underlying entity",
+        ))
+
+    # Production section controls for modules with UI sections (exact code mapping)
+    for reg in register:
+        num = reg["number"]
+        a = audits[num]
+        if a["revisedUiStatus"] not in ("FUNCTIONALLY-COMPLETE", "IN-DEVELOPMENT"):
+            continue
+        if not reg["sections"]:
+            continue
+        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
+        for sec in reg["sections"]:
+            action_items.append(build_action_record(
+                id=f"prod-ctrl-{reg['id']}-{sec['id']}",
+                module_key=f"M{num:02d}",
+                label=f"Open section {sec['label']}",
+                kind="production-control",
+                source_type="current-code",
+                source_location=f"src/platform/module-registry/module-register.ts:section:{reg['id']}/{sec['id']}",
+                screen_route=reg["mainRoute"],
+                section_id=sec["id"],
+                permission=f"{roles}; section visible only when accessClassification={reg.get('accessClassification')} grants module access",
+            ))
+
+    # Planned module controls for modules without BRD buttons (M21–M24 and any gap)
+    brd_button_modules = {int(m["number"]) for m in modules["brdModules"] if m.get("buttons")}
+    for reg in register:
+        num = reg["number"]
+        if num in brd_button_modules:
+            continue
+        a = audits[num]
+        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
+        action_items.append(build_action_record(
+            id=f"planned-nav-{reg['id']}-overview",
+            module_key=f"M{num:02d}",
+            label=f"Open {reg['displayName']} overview",
+            kind="planned-module-control",
+            source_type="current-plan",
+            source_location=f"src/platform/module-registry/module-register.ts:module:{reg['id']}; blueprint/plan coverage",
+            screen_route=reg["mainRoute"],
+            section_id="overview",
+            permission=f"{roles}; planned overview navigation for modules without BRD named buttons",
+        ))
+        action_items.append(build_action_record(
+            id=f"planned-primary-{reg['id']}-workspace",
+            module_key=f"M{num:02d}",
+            label=f"Primary workspace actions for {reg['displayName']}",
+            kind="planned-module-control",
+            source_type="current-plan",
+            source_location=f"docs/architecture/prototype-parity/CURRENT_IMPLEMENTATION_REAUDIT.json:module:M{num:02d}",
+            screen_route=reg["mainRoute"],
+            section_id="overview",
+            permission=f"{roles}; planned primary actions pending module wave implementation",
+        ))
+
+    action_by_id = {x["id"]: x for x in action_items}
+    actions_by_module = defaultdict(list)
+    for x in action_items:
+        actions_by_module[x["moduleKey"]].append(x["id"])
+
     for s in screens_ex["screens"]:
         num = int(s["moduleKey"][1:])
         a = audits[num]
@@ -976,14 +1309,24 @@ def main():
             n += 1
         used_section_ids[key].add(section_id)
         img = next((i for i in image_rows if i["module"] == s["moduleKey"]), None)
-        # map actions for module from BRD buttons (ids)
-        brd = next((m for m in modules["brdModules"] if int(m["number"]) == num), None)
-        action_ids = [b["id"] for b in (brd["buttons"] if brd else [])][:30]
-        # map image controls when module has final PNG
+        brd = brd_by_num.get(num)
+        # Visible actions: BRD buttons for module, else planned controls, plus matching production controls on same route
+        action_ids = [b["id"] for b in (brd["buttons"] if brd else []) if b["id"] in action_by_id]
+        if not action_ids:
+            action_ids = [aid for aid in actions_by_module[s["moduleKey"]] if aid.startswith("planned-")]
+        # Always include production controls for this module route that exist
+        action_ids += [aid for aid in actions_by_module[s["moduleKey"]] if aid.startswith("prod-ctrl-") and aid not in action_ids]
+        # Ensure every ID resolves
+        action_ids = [aid for aid in action_ids if aid in action_by_id]
+        if not action_ids:
+            raise SystemExit(f"screen {s['id']} has no resolvable visibleActionIds")
         image_control_ids = (
             [f"imgctrl-{s['moduleKey'].lower()}-{c}" for c in image_controls]
-            if img else ["NONE — NO FINAL IMAGE FOR MODULE; USE DESIGN PATTERN"]
+            if img else []
         )
+        req_ids = [x for x in [s.get("tabId"), s["id"]] if x]
+        # attach workflow ids for module
+        wf_ids = [aid for aid in actions_by_module[s["moduleKey"]] if action_by_id[aid]["kind"] in ("brd-workflow", "blueprint-workflow", "legacy-workflow-group")]
         screen_rows.append({
             "screenId": s["id"],
             "moduleKey": s["moduleKey"],
@@ -996,100 +1339,28 @@ def main():
             "deepLink": f"{route}?section={section_id}",
             "purpose": s.get("purpose") or a["note"],
             "sourceType": s.get("sourceType"),
-            "roles": (", ".join(brd.get("primaryUsers") or []) if brd and isinstance(brd.get("primaryUsers"), list) else "per module accessClassification"),
+            "sourceLocation": json.dumps(s.get("source") or {"screen": s["id"]}, sort_keys=True),
+            "roles": roles_for(num, brd, a.get("accessClassification", "")),
+            "accessClassification": a.get("accessClassification", ""),
             "dataOwner": OWNERSHIP[s["moduleKey"]],
             "sourceSystem": "Doctors Pulse module services (not prototype seed)",
             "dataSource": a["persistenceMethod"],
-            "visibleActionIds": action_ids or ["NONE — NO BRD BUTTONS EXTRACTED"],
+            "visibleActionIds": action_ids,
+            "workflowIds": wf_ids[:40],
             "imageControlRequirementIds": image_control_ids,
             "states": ["default", "loading", "empty", "error", "permission-denied"],
-            "responsiveBehaviour": "shared final-design contract viewports; detail panel → drawer on tablet/mobile",
-            "requirementIds": [s.get("tabId") or s["id"]],
+            "responsiveBehaviour": responsive_for(num),
+            "requirementIds": req_ids,
             "uiStatus": a["revisedUiStatus"],
             "domainStatus": a["revisedDomainStatus"],
             "integrationStatus": a["revisedIntegrationStatus"],
+            "evidenceStatus": a["revisedEvidenceStatus"],
             "designReference": img["normalisedName"] if img else DESIGN_PATTERN.get(num, "derived"),
             "designReferenceStatus": "INSTALLED_HASH_OK" if img else "DERIVED_FROM_DESIGN_SYSTEM",
             "designReferenceSha256": img["canonicalSha256"] if img else None,
             "targetWave": WAVE_FOR.get(num, "P8"),
-            "acceptanceEvidencePath": a["evidencePaths"],
+            "acceptanceEvidencePath": a["evidencePaths"] if a["evidencePaths"] != "NONE — NOT IMPLEMENTED" else "NONE — NOT YET AUTHORISED",
         })
-
-    # ── Workflow/action register (full sources) ──
-    action_items = []
-    for m in modules["brdModules"]:
-        num = int(m["number"])
-        a = audits[num]
-        for b in m["buttons"]:
-            action_items.append({
-                "id": b["id"], "moduleKey": m["moduleKey"], "label": b["label"], "kind": "brd-button",
-                "source": "brd", "screenRoute": a["mainRoute"],
-                "permission": "module role gate + service enforcement",
-                "serviceDomainTransition": "required for final claim",
-                "auditResult": "required", "m01m02Projection": "where applicable",
-                "persistenceProof": "reload proof required", "errorState": "validation/permission/isolation",
-                "acceptanceTest": "work-step + service assert",
-                "disposition": "ADOPTED-AS-IS", "targetWave": WAVE_FOR.get(num, "P8"),
-            })
-        for f in m["flows"]:
-            action_items.append({
-                "id": f["id"], "moduleKey": m["moduleKey"], "label": f.get("title"), "kind": "brd-workflow",
-                "source": "brd", "steps": len(f.get("steps") or []),
-                "stepTexts": [(s.get("text") or "")[:120] for s in (f.get("steps") or [])],
-                "targetWave": WAVE_FOR.get(num, "P8"),
-            })
-    for f in workflows.get("blueprintWorkflows") or []:
-        num = int(f["moduleKey"][1:])
-        action_items.append({
-            "id": f["id"], "moduleKey": f["moduleKey"], "label": f.get("title"),
-            "kind": "blueprint-workflow", "source": "blueprint",
-            "steps": len(f.get("steps") or []), "targetWave": WAVE_FOR.get(num, "P8"),
-        })
-    for f in workflows.get("legacyWorkflows") or []:
-        group = f.get("group") or ""
-        num = infer_module_for_group(group) if group in FIELD_MODULE else 10
-        mk = f"M{num:02d}"
-        action_items.append({
-            "id": f.get("id") or f"legacy-{slug(group or 'wf')}",
-            "moduleKey": mk,
-            "label": f"Legacy workflow group: {group}",
-            "kind": "legacy-workflow-group",
-            "source": "legacy",
-            "steps": len(f.get("steps") or []),
-            "stepTexts": [(s.get("text") or "")[:120] for s in (f.get("steps") or [])],
-            "stateTransitions": " > ".join((s.get("text") or "")[:40] for s in (f.get("steps") or [])),
-            "permission": "module role gate + service enforcement",
-            "serviceDomainTransition": "legacy prototype state machine → planned domain transitions",
-            "auditResult": "required",
-            "persistenceProof": "reload proof required",
-            "errorState": "validation/permission/isolation",
-            "acceptanceTest": "work-step + state transition assert",
-            "targetWave": WAVE_FOR.get(num, "P8"),
-        })
-    for modal in fields_modals.get("modals") or []:
-        num = infer_module_for_modal(modal.get("title") or "")
-        action_items.append({
-            "id": modal["id"], "moduleKey": f"M{num:02d}", "label": modal.get("title"),
-            "kind": "modal-drawer", "source": "prototype-runtime",
-            "permission": "runtime invoker + service gate",
-            "serviceDomainTransition": "required; no toast-only success",
-            "targetWave": WAVE_FOR.get(num, "P8"),
-        })
-    # current working production section controls
-    for reg in register:
-        num = reg["number"]
-        if audits[num]["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE":
-            for sec in reg["sections"]:
-                action_items.append({
-                    "id": f"prod-ctrl-{reg['id']}-{sec['id']}",
-                    "moduleKey": f"M{num:02d}", "label": f"Open section {sec['label']}",
-                    "kind": "production-control", "source": "current-code",
-                    "screenRoute": reg["mainRoute"], "sectionId": sec["id"],
-                    "permission": "module accessClassification",
-                    "serviceDomainTransition": "existing accepted behaviour preserved",
-                    "persistenceProof": "existing module evidence",
-                    "targetWave": "P2",
-                })
 
     # Accounting
     disp_counts = Counter(r["prototypeDisposition"] for r in rows)
@@ -1126,7 +1397,33 @@ def main():
             "legacyWorkflowGroups": sum(1 for a in action_items if a["kind"] == "legacy-workflow-group"),
             "modalsDrawers": sum(1 for a in action_items if a["kind"] == "modal-drawer"),
             "productionControls": sum(1 for a in action_items if a["kind"] == "production-control"),
+            "plannedModuleControls": sum(1 for a in action_items if a["kind"] == "planned-module-control"),
             "totalItems": len(action_items),
+            "fieldCompleteness": {
+                "withSourceLocation": sum(1 for a in action_items if (a.get("sourceLocation") or "").strip()),
+                "withScreenRoute": sum(1 for a in action_items if (a.get("screenRoute") or "").strip()),
+                "withoutGenericPhrases": sum(
+                    1 for a in action_items
+                    if not any(
+                        (a.get(k) or "").strip().lower() in {
+                            "required for final claim",
+                            "required",
+                            "where applicable",
+                            "reload proof required",
+                            "validation/permission/isolation",
+                            "work-step + service assert",
+                            "work-step + state transition assert",
+                            "module role gate + service enforcement",
+                            "runtime invoker + service gate",
+                            "module accessClassification",
+                        }
+                        for k in (
+                            "permission", "serviceDomainTransition", "auditResult",
+                            "m01m02Projection", "persistenceProof", "errorState", "acceptanceTest",
+                        )
+                    )
+                ),
+            },
         },
         "conflictAdjudicationTotals": dict(Counter(
             classify_conflict(c)["semanticClass"] for c in (conflicts.get("conflicts") or [])
@@ -1255,9 +1552,18 @@ Full machine register: `canonical-screen-register.json`
 | Legacy workflow groups | {wat['legacyWorkflowGroups']} |
 | Modals/drawers | {wat['modalsDrawers']} |
 | Current production controls | {wat['productionControls']} |
+| Planned module controls | {wat['plannedModuleControls']} |
 | **Total items** | **{wat['totalItems']}** |
 
-**Rule:** every named action maps to a real service-backed action, a planned service-backed action, or a visible owner decision. Toast/alert-only success never counts as implemented.
+## Field completeness
+
+| Field | Count |
+| --- | --- |
+| Exact sourceLocation | {wat['fieldCompleteness']['withSourceLocation']} / {wat['totalItems']} |
+| Exact screenRoute (or NOT APPLICABLE) | {wat['fieldCompleteness']['withScreenRoute']} / {wat['totalItems']} |
+| Without banned generic phrases | {wat['fieldCompleteness']['withoutGenericPhrases']} / {wat['totalItems']} |
+
+**Rule:** every named action maps to a real service-backed action, a planned service-backed action (`NONE — NOT IMPLEMENTED` + target wave), or an explicit exclusion. Toast/alert-only success never counts as implemented.
 
 Machine register: `workflow-action-register.json`
 """)
@@ -1381,52 +1687,268 @@ One authoritative owner per business record. Use contracts, events, projections 
 Notes, service/repository paths and gaps are in `CURRENT_IMPLEMENTATION_REAUDIT.json`.
 """)
 
+    design_contract = {
+        "generatedAt": UTC,
+        "appearanceModes": ["light", "dark", "system"],
+        "brandedGlobalThemesAllowed": False,
+        "decBrandedThemes": "CLOSED — Light/Dark/System only; module-family sidebar accents OK; no Executive Blue/Medical Emerald global themes",
+        "semanticColors": {
+            "light": {
+                "--dp-bg-canvas": "#F3F5F7",
+                "--dp-bg-surface": "#FFFFFF",
+                "--dp-bg-nav": "#0B1F33",
+                "--dp-bg-topbar": "#FFFFFF",
+                "--dp-text-primary": "#0F172A",
+                "--dp-text-secondary": "#475569",
+                "--dp-text-on-nav": "#E2E8F0",
+                "--dp-border-subtle": "#E2E8F0",
+                "--dp-border-strong": "#CBD5E1",
+                "--dp-accent-primary": "#2563EB",
+                "--dp-accent-primary-hover": "#1D4ED8",
+                "--dp-status-critical": "#DC2626",
+                "--dp-status-urgent": "#EA580C",
+                "--dp-status-ontrack": "#16A34A",
+                "--dp-status-overdue": "#7C3AED",
+                "--dp-focus-ring": "#2563EB",
+            },
+            "dark": {
+                "--dp-bg-canvas": "#0B1220",
+                "--dp-bg-surface": "#111827",
+                "--dp-bg-nav": "#020617",
+                "--dp-bg-topbar": "#111827",
+                "--dp-text-primary": "#F8FAFC",
+                "--dp-text-secondary": "#94A3B8",
+                "--dp-text-on-nav": "#E2E8F0",
+                "--dp-border-subtle": "#1F2937",
+                "--dp-border-strong": "#334155",
+                "--dp-accent-primary": "#3B82F6",
+                "--dp-accent-primary-hover": "#60A5FA",
+                "--dp-status-critical": "#F87171",
+                "--dp-status-urgent": "#FB923C",
+                "--dp-status-ontrack": "#4ADE80",
+                "--dp-status-overdue": "#A78BFA",
+                "--dp-focus-ring": "#60A5FA",
+            },
+            "system": "Resolve to light or dark from OS prefers-color-scheme; persist user override in local settings; clean-storage default = system",
+        },
+        "familyAccentCues": {
+            "note": "Sidebar/nav identification only; must not replace Light/Dark/System surfaces",
+            "Executive Command Centre": "#2563EB",
+            "Operations": "#0F766E",
+            "People & Talent": "#7C3AED",
+            "Rostering & Attendance": "#0891B2",
+            "Assets & Facilities": "#D97706",
+            "Governance": "#16A34A",
+            "Finance & Forecasting": "#B45309",
+            "Communications": "#DB2777",
+            "Security & Access": "#DC2626",
+            "Organisation & Tenant": "#475569",
+        },
+        "typography": {
+            "fontFamilySans": "\"IBM Plex Sans\", \"Source Sans 3\", \"Segoe UI\", sans-serif",
+            "fontFamilyMono": "\"IBM Plex Mono\", \"ui-monospace\", monospace",
+            "scale": {
+                "display": {"sizePx": 28, "weight": 600, "lineHeight": 1.25},
+                "title": {"sizePx": 20, "weight": 600, "lineHeight": 1.3},
+                "subtitle": {"sizePx": 16, "weight": 600, "lineHeight": 1.35},
+                "body": {"sizePx": 14, "weight": 400, "lineHeight": 1.45},
+                "bodyStrong": {"sizePx": 14, "weight": 600, "lineHeight": 1.45},
+                "label": {"sizePx": 12, "weight": 600, "lineHeight": 1.3},
+                "caption": {"sizePx": 11, "weight": 500, "lineHeight": 1.3},
+                "kpiValue": {"sizePx": 24, "weight": 650, "lineHeight": 1.2},
+            },
+        },
+        "spacingDensity": {
+            "space": {"0": 0, "1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24, "7": 32, "8": 40},
+            "density": "high — compact operational workbench",
+            "rowHeightTablePx": 36,
+            "rowHeightTableCompactPx": 32,
+            "controlHeightPx": 32,
+            "controlHeightLargePx": 36,
+            "cardPaddingPx": 12,
+            "sectionGapPx": 16,
+        },
+        "shellDimensionsPx": {
+            "sidebarExpanded": 240,
+            "sidebarCollapsed": 72,
+            "topbarHeight": 48,
+            "moduleHeaderHeight": 56,
+            "sectionNavHeight": 40,
+            "kpiStripMinHeight": 88,
+            "toolbarHeight": 44,
+            "detailPanelWidth": 360,
+            "detailPanelMinWidth": 320,
+            "detailPanelMaxWidth": 420,
+            "contentMaxWidth": 1440,
+        },
+        "componentDimensionsPx": {
+            "kpiCardMinWidth": 160,
+            "kpiCardHeight": 84,
+            "filterChipHeight": 28,
+            "tableHeaderHeight": 36,
+            "modalWidthSm": 480,
+            "modalWidthMd": 640,
+            "modalWidthLg": 800,
+            "drawerWidth": 420,
+        },
+        "collapseBehaviour": {
+            "desktopMin": 1280,
+            "tabletRange": [768, 1279],
+            "mobileMax": 767,
+            "desktop": "sidebar expanded; detail panel docked right; table+detail dual scroll",
+            "tablet": "sidebar icon rail 72px; detail becomes drawer; filters collapse into sheet",
+            "mobile": "hamburger nav; detail full-screen sheet; tables become cards; one page scroll + modal/drawer",
+        },
+        "a11y": {
+            "focusRing": "2px solid var(--dp-focus-ring); offset 2px; never remove outline without replacement",
+            "keyboard": "All tabs, toolbars, tables (row activation), dialogs, drawers operable by keyboard; Esc closes overlays",
+            "contrast": "Text/icon vs background ≥ 4.5:1 normal text; ≥ 3:1 large text/UI components (WCAG 2.2 AA)",
+            "motion": "Respect prefers-reduced-motion; no essential info only in animation",
+            "targets": "Interactive targets ≥ 24×24px; preferred 32×32px for primary actions",
+        },
+        "screenshotComparison": {
+            "viewports": [
+                {"name": "ref-final-png", "w": 1672, "h": 941, "zoom": 1.0},
+                {"name": "desktop-1920", "w": 1920, "h": 1080, "zoom": 1.0},
+                {"name": "desktop-1440", "w": 1440, "h": 900, "zoom": 1.0},
+                {"name": "desktop-1366", "w": 1366, "h": 768, "zoom": 1.0},
+                {"name": "desktop-1280", "w": 1280, "h": 900, "zoom": 1.0},
+                {"name": "tablet-1024", "w": 1024, "h": 768, "zoom": 1.0},
+                {"name": "tablet-768", "w": 768, "h": 1024, "zoom": 1.0},
+                {"name": "mobile-430", "w": 430, "h": 932, "zoom": 1.0},
+                {"name": "mobile-390", "w": 390, "h": 844, "zoom": 1.0},
+                {"name": "desktop-short-720", "w": 1440, "h": 720, "zoom": 1.0},
+                {"name": "desktop-125pct", "w": 1536, "h": 864, "zoom": 1.25},
+            ],
+            "regions": ["shell-nav", "topbar", "module-title-tabs", "kpi-strip", "toolbar", "main-pane", "detail-pane"],
+            "tolerances": {
+                "edgeAntialiasPx": 2,
+                "colourDeltaRgbMax": 8,
+                "layoutShiftPxMax": 4,
+                "failOnHorizontalOverflow": True,
+                "failOnClippingAncestor": True,
+                "failOnOcclusionOfPrimaryControls": True,
+                "noCentrePointBypass": True,
+                "noChromeOnlyPass": True,
+            },
+        },
+        "pilSamples": tokens,
+    }
+    write(OUT / "design-system-contract.json", json.dumps(design_contract, indent=2))
+
     write(OUT / "FINAL_DESIGN_SYSTEM_CONTRACT.md", f"""# Final Product Design Contract
 
-**Canonical images:** Decision A normalised PNG set @ `66e6e64` (do not rehash/replace).  
-**Token samples:** `design-token-samples.json` (PIL samples from the nine images).
+**Canonical images:** Decision A normalised PNG set @ `{DECISION_A}` (do not rehash/replace).  
+**Machine contract:** `design-system-contract.json`  
+**PIL palette samples:** `design-token-samples.json` (supporting evidence only — not a complete contract).
 
-## Shared shell (all modules)
+## Appearance (owner-closed DEC-BRANDED-THEMES)
 
-- Dark navy global left navigation with grouped, collapsible module families; one nav only
-- Compact global top ribbon: clinic scope, global search (⌘K), Dashboard, Action Inbox, New Entry, Export, connection, role
-- Compact module title, description, horizontal section tabs
-- High-density KPI strip bound to real module data
-- Primary toolbar: search, filters, sorting, saved views, key actions
-- Principal table/list/schedule/dashboard/matrix workspace
-- Contextual right detail panel on desktop; drawer/stacked on tablet/mobile
-- Sticky headers; deliberate scrolling; no body-level horizontal overflow
-- Concise accessible status badges; Light / Dark / System appearance
-- Dense above-the-fold use without illegible type or hidden controls
-- Visible focus rings on interactive controls; keyboard operable tabs/toolbars
+- **Allowed global modes:** Light, Dark, System (OS `prefers-color-scheme`)
+- **Persistence:** reload-safe user preference; clean-storage default = System
+- **Forbidden as global themes:** Executive Blue, Medical Emerald
+- **Allowed:** module-family accent colours as sidebar/navigation identification cues only; accents must not replace or interfere with Light/Dark/System surfaces
 
-## Dimensions & density targets (1920×1080 / 100%)
+## Semantic colour tokens
 
-- Show title, section nav, KPI strip, toolbar and main work area without excessive initial scroll
-- Tables/lists show ≥8–10 useful rows when data exists
-- Desktop: one main-pane scroll + one detail-panel scroll
-- Mobile: one page scroll + modal/drawer
-- Only designed grids/matrices (e.g. roster) may scroll horizontally inside the component
-- No more than two obvious simultaneous module scrollbars
+### Light
+| Token | Value |
+| --- | --- |
+| `--dp-bg-canvas` | `#F3F5F7` |
+| `--dp-bg-surface` | `#FFFFFF` |
+| `--dp-bg-nav` | `#0B1F33` |
+| `--dp-bg-topbar` | `#FFFFFF` |
+| `--dp-text-primary` | `#0F172A` |
+| `--dp-text-secondary` | `#475569` |
+| `--dp-text-on-nav` | `#E2E8F0` |
+| `--dp-border-subtle` | `#E2E8F0` |
+| `--dp-border-strong` | `#CBD5E1` |
+| `--dp-accent-primary` | `#2563EB` |
+| `--dp-accent-primary-hover` | `#1D4ED8` |
+| `--dp-status-critical` | `#DC2626` |
+| `--dp-status-urgent` | `#EA580C` |
+| `--dp-status-ontrack` | `#16A34A` |
+| `--dp-status-overdue` | `#7C3AED` |
+| `--dp-focus-ring` | `#2563EB` |
 
-## Responsive matrix
+### Dark
+| Token | Value |
+| --- | --- |
+| `--dp-bg-canvas` | `#0B1220` |
+| `--dp-bg-surface` | `#111827` |
+| `--dp-bg-nav` | `#020617` |
+| `--dp-bg-topbar` | `#111827` |
+| `--dp-text-primary` | `#F8FAFC` |
+| `--dp-text-secondary` | `#94A3B8` |
+| `--dp-text-on-nav` | `#E2E8F0` |
+| `--dp-border-subtle` | `#1F2937` |
+| `--dp-border-strong` | `#334155` |
+| `--dp-accent-primary` | `#3B82F6` |
+| `--dp-accent-primary-hover` | `#60A5FA` |
+| `--dp-status-critical` | `#F87171` |
+| `--dp-status-urgent` | `#FB923C` |
+| `--dp-status-ontrack` | `#4ADE80` |
+| `--dp-status-overdue` | `#A78BFA` |
+| `--dp-focus-ring` | `#60A5FA` |
 
-1920×1080, 1672×941 (reference), 1440×900, 1366×768, 1280×900, 1024×768, 768×1024, 430×932, 390×844; desktop short-height 900/768/720; 125% zoom.
+## Typography
 
-## Screenshot comparison
+Font stack: `IBM Plex Sans`, `Source Sans 3`, `Segoe UI`, sans-serif (mono: `IBM Plex Mono`).
 
-- Compare shell, title/tabs, KPI, toolbar, main pane, detail pane
-- Fail horizontal overflow, clipping ancestors, unintended truncation, occlusion
-- No global centre-point or chrome-only bypass
-- Tolerances: anti-alias ≤2px edge; colour delta documented per theme
+| Role | Size | Weight | Line height |
+| --- | ---: | ---: | ---: |
+| Display | 28px | 600 | 1.25 |
+| Title | 20px | 600 | 1.30 |
+| Subtitle | 16px | 600 | 1.35 |
+| Body | 14px | 400 | 1.45 |
+| Body strong | 14px | 600 | 1.45 |
+| Label | 12px | 600 | 1.30 |
+| Caption | 11px | 500 | 1.30 |
+| KPI value | 24px | 650 | 1.20 |
+
+## Spacing & density
+
+Scale: 0/4/8/12/16/20/24/32/40 px. Density: high operational workbench.  
+Table row 36px (compact 32px); control height 32px (large 36px); card padding 12px; section gap 16px.
+
+## Shell dimensions (px)
+
+| Element | Value |
+| --- | ---: |
+| Sidebar expanded | 240 |
+| Sidebar collapsed | 72 |
+| Topbar height | 48 |
+| Module header | 56 |
+| Section nav | 40 |
+| KPI strip min height | 88 |
+| Toolbar | 44 |
+| Detail panel | 360 (min 320 / max 420) |
+
+KPI card min width 160 / height 84; filter chip 28; table header 36; drawer 420; modal 480/640/800.
+
+## Collapse behaviour
+
+- Desktop ≥1280: expanded sidebar; docked detail; dual scroll (main + detail)
+- Tablet 768–1279: icon rail; detail drawer; filter sheet
+- Mobile ≤767: hamburger; full-screen detail sheet; tables→cards; one page scroll + modal/drawer
+
+## Focus, keyboard, contrast
+
+- Focus ring: 2px solid `--dp-focus-ring`, 2px offset
+- Keyboard: tabs, toolbars, row activation, dialogs, drawers; Esc closes overlays
+- Contrast: WCAG 2.2 AA (≥4.5:1 text; ≥3:1 large/UI)
+- Targets ≥24×24 (preferred 32×32 primary)
+- Respect `prefers-reduced-motion`
+
+## Screenshot viewports & tolerances
+
+Viewports: 1672×941 (ref), 1920×1080, 1440×900, 1366×768, 1280×900, 1024×768, 768×1024, 430×932, 390×844, 1440×720, 1536×864@125%.  
+Regions: shell-nav, topbar, module-title-tabs, kpi-strip, toolbar, main-pane, detail-pane.  
+Tolerances: edge antialias ≤2px; colour ΔRGB ≤8; layout shift ≤4px; fail overflow/clipping/occlusion; no centre-point or chrome-only bypass.
 
 ## Module-specific patterns
 
-See Design Reference Map pattern table (M01/M02/M04/M05/M06/M10/M11/M12/M15).
-
-## Appearance
-
-Light; Dark; System(OS light/dark); reload persistence; clean-storage default. Optional Executive Blue / Medical Emerald only if confirmed — never replace System.
+Shared rules above; pattern mapping in `DESIGN_REFERENCE_MAP.md` (M01/M02/M04/M05/M06/M10/M11/M12/M15).
 
 ## No-placeholder / no-fake-success
 
@@ -1559,7 +2081,7 @@ Generated: `{UTC}`
 
     write(OUT / "README.md", f"""# Programme Gate P0 — Prototype Parity Control Pack
 
-**Claim (only):** Programme Gate P0 control pack corrected and ready for owner acceptance review.
+**Claim (only):** Programme Gate P0 semantic control pack corrected and ready for owner acceptance review.
 
 | Pin | SHA |
 | --- | --- |
@@ -1600,7 +2122,7 @@ Generated: `{UTC}`
 
     write(OUT / "FIRST_RUN_STOP_CHECKPOINT.md", f"""# Programme Gate P0 Stop Checkpoint
 
-**Claim (only):** Programme Gate P0 control pack corrected and ready for owner acceptance review.
+**Claim (only):** Programme Gate P0 semantic control pack corrected and ready for owner acceptance review.
 
 | Item | Value |
 | --- | --- |
@@ -1624,45 +2146,188 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 
     # ── Prompt packs (27 self-contained) ──
     prompt_specs = [
-        ("p1", "P1", None, "Shared final-design foundation", "Shared shell + workbench primitives", "P0 control pack owner-accepted tip"),
-        ("p2-m01", "P2", 1, "M01 Command Centre", "M01", "P1 owner-accepted tip"),
-        ("p2-m02", "P2", 2, "M02 Action Inbox", "M02", "P2-M01 owner-accepted tip"),
-        ("p2-m03", "P2", 3, "M03 Organisation & Access", "M03", "P2-M02 owner-accepted tip"),
-        ("p2-m04", "P2", 4, "M04 Staff & Doctors", "M04", "P2-M03 owner-accepted tip"),
-        ("p2-m05", "P2", 5, "M05 Weekly Roster", "M05", "P2-M04 owner-accepted tip"),
-        ("p2-m06", "P2", 6, "M06 Time & Attendance", "M06", "P2-M05 owner-accepted tip"),
-        ("p2-m07", "P2", 7, "M07 Staff Pay Preparation", "M07 ordinary prep only", "P2-M06 owner-accepted tip"),
-        ("p2-m11", "P2", 11, "M11 Training", "M11", "P2-M07 owner-accepted tip"),
-        ("p3-m10", "P3", 10, "M10 Tasks & Checklists", "M10", "P2 series owner-accepted tip"),
-        ("p4-m13", "P4", 13, "M13 Documents & Policies", "M13", "P3-M10 owner-accepted tip"),
-        ("p4-m14", "P4", 14, "M14 Ticketing", "M14", "P4-M13 owner-accepted tip"),
-        ("p5-m12", "P5", 12, "M12 Compliance & Quality", "M12", "P4 series owner-accepted tip"),
-        ("p5-m15", "P5", 15, "M15 Inventory & Assets", "M15", "P5-M12 owner-accepted tip"),
-        ("p5-m16", "P5", 16, "M16 Incidents & Risk", "M16", "P5-M15 owner-accepted tip"),
-        ("p6-m07-ppa", "P6-PPA", 7, "M07 Prior-Period Adjustment", "M07 PPA only (separate auth)", "explicit PPA batch authorisation + prior tip"),
-        ("p6-m08", "P6", 8, "M08 Doctor Pay", "M08", "P5 series owner-accepted tip"),
-        ("p6-m09", "P6", 9, "M09 BBPIP", "M09", "P6-M08 owner-accepted tip"),
-        ("p6-m24", "P6", 24, "M24 Forecast & Finance Review", "M24", "P6-M09 owner-accepted tip"),
-        ("p7-m17", "P7", 17, "M17 Communications", "M17", "P6 series owner-accepted tip"),
-        ("p7-m18", "P7", 18, "M18 Digital Monitoring & Security", "M18", "P7-M17 owner-accepted tip"),
-        ("p7-m19", "P7", 19, "M19 Analytics Governance", "M19", "P7-M18 owner-accepted tip"),
-        ("p8-m20", "P8", 20, "M20 Tenant Commercial", "M20", "P7 series owner-accepted tip"),
-        ("p8-m21", "P8", 21, "M21 Vendor Portfolio", "M21", "P8-M20 owner-accepted tip"),
-        ("p8-m22", "P8", 22, "M22 Recruitment", "M22", "P8-M21 owner-accepted tip"),
-        ("p8-m23", "P8", 23, "M23 Website & Public Routing", "M23", "P8-M22 owner-accepted tip"),
-        ("p9", "P9", None, "Production verification", "Cross-module production verification", "P8 series owner-accepted tip"),
+        ("p1", "P1", None, "Shared final-design foundation", "shared-shell", "P0 control pack owner-accepted tip"),
+        ("p2-m01", "P2", 1, "M01 Command Centre", "module", "P1 owner-accepted tip"),
+        ("p2-m02", "P2", 2, "M02 Action Inbox", "module", "P2-M01 owner-accepted tip"),
+        ("p2-m03", "P2", 3, "M03 Organisation & Access", "module", "P2-M02 owner-accepted tip"),
+        ("p2-m04", "P2", 4, "M04 Staff & Doctors", "module", "P2-M03 owner-accepted tip"),
+        ("p2-m05", "P2", 5, "M05 Weekly Roster", "module", "P2-M04 owner-accepted tip"),
+        ("p2-m06", "P2", 6, "M06 Time & Attendance", "module", "P2-M05 owner-accepted tip"),
+        ("p2-m07", "P2", 7, "M07 Staff Pay Preparation", "module-pay-prep", "P2-M06 owner-accepted tip"),
+        ("p2-m11", "P2", 11, "M11 Training", "module", "P2-M07 owner-accepted tip"),
+        ("p3-m10", "P3", 10, "M10 Tasks & Checklists", "module-connective", "P2 series owner-accepted tip"),
+        ("p4-m13", "P4", 13, "M13 Documents & Policies", "module", "P3-M10 owner-accepted tip"),
+        ("p4-m14", "P4", 14, "M14 Ticketing", "module", "P4-M13 owner-accepted tip"),
+        ("p5-m12", "P5", 12, "M12 Compliance & Quality", "module", "P4 series owner-accepted tip"),
+        ("p5-m15", "P5", 15, "M15 Inventory & Assets", "module", "P5-M12 owner-accepted tip"),
+        ("p5-m16", "P5", 16, "M16 Incidents & Risk", "module", "P5-M15 owner-accepted tip"),
+        ("p6-m07-ppa", "P6-PPA", 7, "M07 Prior-Period Adjustment", "ppa", "explicit PPA batch authorisation + prior tip"),
+        ("p6-m08", "P6", 8, "M08 Doctor Pay", "module-finance", "P5 series owner-accepted tip"),
+        ("p6-m09", "P6", 9, "M09 BBPIP", "module-finance", "P6-M08 owner-accepted tip"),
+        ("p6-m24", "P6", 24, "M24 Forecast & Finance Review", "module-finance", "P6-M09 owner-accepted tip"),
+        ("p7-m17", "P7", 17, "M17 Communications", "module", "P6 series owner-accepted tip"),
+        ("p7-m18", "P7", 18, "M18 Digital Monitoring & Security", "module", "P7-M17 owner-accepted tip"),
+        ("p7-m19", "P7", 19, "M19 Analytics Governance", "module", "P7-M18 owner-accepted tip"),
+        ("p8-m20", "P8", 20, "M20 Tenant Commercial", "module", "P7 series owner-accepted tip"),
+        ("p8-m21", "P8", 21, "M21 Vendor Portfolio", "module", "P8-M20 owner-accepted tip"),
+        ("p8-m22", "P8", 22, "M22 Recruitment", "module", "P8-M21 owner-accepted tip"),
+        ("p8-m23", "P8", 23, "M23 Website & Public Routing", "module", "P8-M22 owner-accepted tip"),
+        ("p9", "P9", None, "Production verification", "production-verification", "P8 series owner-accepted tip"),
     ]
+
+    def batches_for(kind: str, mod_key: str, wave: str) -> str:
+        if kind == "shared-shell":
+            return """1. Tokenised Light/Dark/System theme plumbing + CSS variables from design-system-contract.json  
+2. Sidebar (240/72), topbar (48), section nav, KPI strip, toolbar, detail panel primitives  
+3. Appearance preference persistence (System default); family accents as nav cues only  
+4. Screenshot harness for contract viewports/regions/tolerances; a11y focus/keyboard baselines"""
+        if kind == "ppa":
+            return """1. PPA period selection + eligibility gates (post-lock/post-export only)  
+2. Adjustment drafting services with audit + immutable prior snapshot links  
+3. Approval/recompute/re-export package prep (no payment execution)  
+4. PPA-specific Work-Step QA + regression against ordinary Batch 1–6 prep"""
+        if kind == "module-pay-prep":
+            return """1. Preserve accepted M07 ordinary prep; align shell to final design  
+2. Wire in-scope readiness/exception/export actions to module services only  
+3. Enforce no bank/STP/super/mark-as-paid; unlock≠PPA  
+4. Pay-prep Work-Step QA + M06 publication contract regression"""
+        if kind == "module-connective":
+            return """1. Task/checklist/handover/meeting domain model + permissions  
+2. M02 projection adapters for assignable work; M01 summary hooks  
+3. Template/run/detail UI per design pattern  
+4. Connective-layer integration tests + Work-Step QA"""
+        if kind == "module-finance":
+            return f"""1. {mod_key} domain ledger/services distinct from M07 staff-pay prep  
+2. Import/match/review UI for in-scope screens/actions  
+3. Projection to M02 for approvals/exceptions; M01 completeness labels  
+4. Finance Work-Step QA + isolation/audit tests (no payment execution)"""
+        if kind == "production-verification":
+            return """1. Cross-module contract verification matrix (M01←producers, M02←producers, M06→M07)  
+2. Permission/isolation/audit penetration suite across accepted modules  
+3. Visual QA regression vs Decision A PNGs + design contract viewports  
+4. Production-readiness evidence pack (still not an operational release claim)"""
+        # default module
+        return f"""1. {mod_key} route/section alignment to final-design pattern + Decision A image if any  
+2. Implement in-scope domain services for listed actions/workflows (no toast-only success)  
+3. Permissions (`accessClassification`), clinic/tenant isolation, validation/error states, audit  
+4. Module-specific automated tests + Visual QA + Work-Step QA for every listed action ID"""
+
+    def tests_for(kind: str, mod_key: str) -> str:
+        if kind == "shared-shell":
+            return """- Theme token resolution tests (light/dark/system)  
+- Shell dimension/collapse tests at 1280/768/390  
+- Focus-ring and keyboard navigation tests for nav/tabs/toolbar  
+- Screenshot diff harness smoke test against tolerances"""
+        if kind == "ppa":
+            return """- PPA eligibility rejects unlocked ordinary periods incorrectly flagged  
+- Adjustment persistence + prior snapshot immutability tests  
+- Permission matrix for PPA approver roles  
+- Re-export package checksum/reconciliation tests"""
+        if kind == "production-verification":
+            return """- Contract suite: every producer→M02 projection present or explicitly waived  
+- M01 source-completeness label tests for published metrics  
+- Isolation fuzz across clinics/tenants  
+- Visual + Work-Step regression gate for all P2–P8 accepted tips"""
+        return f"""- {mod_key} service/repository transition tests for each mutating action ID  
+- Permission denied + clinic isolation negative tests  
+- Persistence reload proof tests  
+- Regression for frozen accepted modules touched by this batch"""
 
     prompt_index = []
     prompts_dir = OUT / "prompts"
     prompts_dir.mkdir(parents=True, exist_ok=True)
-    for fname, wave, num, title, scope, predecessor in prompt_specs:
+
+    # Shared shell IDs for P1
+    shared_screen_ids = sorted({s["screenId"] for s in screen_rows if s["moduleKey"] in ("M01", "M02")})
+    shared_req_ids = sorted({r["requirementId"] for r in rows if r["sourceType"] == "final-image" or r["requirementId"].startswith("OWN-") or r["requirementId"].startswith("imgctrl-")})
+    shared_action_ids = sorted({x["id"] for x in action_items if x["kind"] == "production-control" and x["moduleKey"] in ("M01", "M02", "M03")})
+    shared_wf_ids = sorted({x["id"] for x in action_items if x["kind"] in ("brd-workflow", "blueprint-workflow") and x["moduleKey"] in ("M01", "M02")})
+
+    # P9 cross-module table sources
+    p9_modules = [audits[n] for n in sorted(audits)]
+
+    for fname, wave, num, title, kind, predecessor in prompt_specs:
         a = audits.get(num) if num else None
-        mod_key = f"M{num:02d}" if num else "MULTI"
-        screen_ids = [s["screenId"] for s in screen_rows if num and s["moduleKey"] == mod_key][:40]
-        req_ids = [r["requirementId"] for r in rows if num and r["module"] == mod_key][:60]
-        action_ids = [x["id"] for x in action_items if num and x.get("moduleKey") == mod_key][:40]
-        img = next((i["normalisedName"] for i in image_rows if num and i["module"] == mod_key), "derived-from-design-contract")
+        mod_key = f"M{num:02d}" if num else ("SHARED" if kind == "shared-shell" else "MULTI")
+        if num:
+            screen_ids = [s["screenId"] for s in screen_rows if s["moduleKey"] == mod_key]
+            req_ids = [r["requirementId"] for r in rows if r["module"] == mod_key]
+            action_ids = [x["id"] for x in action_items if x.get("moduleKey") == mod_key]
+            wf_ids = [x["id"] for x in action_items if x.get("moduleKey") == mod_key and x["kind"] in ("brd-workflow", "blueprint-workflow", "legacy-workflow-group")]
+            img = next((i["normalisedName"] for i in image_rows if i["module"] == mod_key), DESIGN_PATTERN.get(num, "derived-from-design-contract"))
+            route = a["mainRoute"]
+            roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+            persist = a["persistenceMethod"]
+            cross = a["crossModuleIntegrations"]
+            owner_note = a["note"]
+        elif kind == "shared-shell":
+            screen_ids = shared_screen_ids
+            req_ids = shared_req_ids
+            action_ids = shared_action_ids
+            wf_ids = shared_wf_ids
+            img = "shared-shell + Decision A PNG chrome regions"
+            route = "/dashboard + /action-inbox + global shell"
+            roles = "All authenticated roles see shell chrome; module content still gated by accessClassification"
+            persist = "Appearance preference persistence only; no domain writes in P1"
+            cross = "Shell projects navigation only; M01/M02 domain projections remain IN-DEVELOPMENT"
+            owner_note = "Shared shell owns chrome/tokens/primitives only"
+        else:  # production verification
+            screen_ids = [s["screenId"] for s in screen_rows]
+            req_ids = [r["requirementId"] for r in rows if r["sourceType"] in ("owner", "accepted-evidence", "current-plan")]
+            action_ids = [x["id"] for x in action_items if x["kind"] in ("production-control", "brd-workflow")]
+            wf_ids = [x["id"] for x in action_items if x["kind"] in ("brd-workflow", "blueprint-workflow")]
+            img = "all Decision A PNGs + design-system-contract.json"
+            route = "all canonical routes"
+            roles = "Verification agents + owner reviewers; no new privilege escalation"
+            persist = "Verify existing persistence proofs; no new domain model in P9"
+            cross = "Full producer→M01/M02 and M06→M07 contract verification"
+            owner_note = "Production verification ≠ operational release"
+
+        # Module-specific resulting-state evidence expectations
+        if kind == "ppa":
+            resulting = "PPA package IDs, prior snapshot hashes, approval audit chain, re-export reconciliation checksums"
+        elif kind == "shared-shell":
+            resulting = "Theme preference persistence; shell screenshot evidence per viewport; focus/keyboard evidence"
+        elif kind == "production-verification":
+            resulting = "Contract matrix results; isolation report; visual/Work-Step regression SHAs for each accepted module tip"
+        else:
+            resulting = (
+                f"For each mutating action ID: before/after entity state, audit row, reload proof, "
+                f"M01/M02 projection effect (or explicit NONE), evidence commit under docs/audits/"
+            )
+
+        scope_table = ""
+        if kind == "shared-shell":
+            scope_table = """
+## Shared scope table (P1)
+
+| Surface | IDs |
+| --- | --- |
+| Shell requirement IDs | """ + ", ".join(f"`{x}`" for x in req_ids) + """ |
+| Reference screens (M01/M02 chrome) | """ + ", ".join(f"`{x}`" for x in screen_ids) + """ |
+| Production nav controls in scope | """ + ", ".join(f"`{x}`" for x in action_ids) + """ |
+| Reference workflows (do not implement domain) | """ + ", ".join(f"`{x}`" for x in wf_ids) + """ |
+"""
+        elif kind == "production-verification":
+            rows_tbl = "\n".join(
+                f"| {m['module']} | `{m['mainRoute']}` | {m['revisedUiStatus']} | {m['revisedDomainStatus']} | {m['revisedIntegrationStatus']} | {m['evidencePaths']} |"
+                for m in p9_modules
+            )
+            scope_table = f"""
+## Cross-module verification table (P9)
+
+| Module | Route | UI | Domain | Integration | Evidence path |
+| --- | --- | --- | --- | --- | --- |
+{rows_tbl}
+
+### In-scope verification IDs
+
+- Screen IDs: {", ".join(f"`{x}`" for x in screen_ids)}
+- Owner/evidence/plan requirement IDs: {", ".join(f"`{x}`" for x in req_ids)}
+- Production controls + BRD workflows under test: {", ".join(f"`{x}`" for x in action_ids)}
+- Workflow IDs: {", ".join(f"`{x}`" for x in wf_ids)}
+"""
+
         body = f"""# Cursor Prompt — {wave}: {title}
 
 ## 1. Authority and predecessor acceptance gate
@@ -1670,100 +2335,98 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 - **Not authorised until** the owner expressly accepts the predecessor programme tip and names this batch.
 - **Predecessor gate:** {predecessor}
 - **Do not** auto-start from `b1152d3` once a later owner-accepted programme tip exists.
-- Phase 0 application baseline (frozen behaviour reference): `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`
+- Phase 0 application baseline: `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`
 - Evidence-bearing tip: `e659dfc42a711d37a3e73b3ba7049190ca531e4a`
 - Decision A PNG tip: `66e6e6488b27b9098dadd8962473fedea5053614`
 - Branch family: `cursor/prototype-parity-*` — never force-push; no PR/merge unless owner asks.
 
 ## 2. Branch / start-ref rules
 
-1. Start from the **owner-accepted predecessor programme tip** for this wave/batch.  
-2. Create a new feature branch under `cursor/prototype-parity-*`.  
-3. Confirm ancestry includes `b1152d3` and Decision A PNG commit `66e6e64` where design applies.  
-4. Confirm `origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unless owner moves it.  
+1. Start from the **owner-accepted predecessor programme tip** for this wave/batch.
+2. Create a new feature branch under `cursor/prototype-parity-*`.
+3. Confirm ancestry includes `b1152d3` and Decision A PNG commit `66e6e64` where design applies.
+4. Confirm `origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unless owner moves it.
 5. No merge to main in this prompt.
 
-## 3. Module-specific screens and requirement IDs
+## 3. Exact in-scope screens and requirement IDs
 
-- **Scope:** {scope}
 - **Module:** {mod_key}
-- **Primary route:** `{a['mainRoute'] if a else 'shared-shell'}`
+- **Primary route(s):** `{route}`
 - **Design reference:** `{img}`
-- **Screen IDs (sample/full list in registers):** {', '.join(f'`{x}`' for x in screen_ids) or 'see canonical-screen-register.json'}
-- **Requirement IDs (non-exhaustive; full SoT in master register):** {', '.join(f'`{x}`' for x in req_ids[:25]) or 'see master register'}
+- **Screen IDs (complete):** {", ".join(f"`{x}`" for x in screen_ids) if screen_ids else "`NONE — NO SCREENS IN SCOPE`"}
+- **Requirement IDs (complete):** {", ".join(f"`{x}`" for x in req_ids) if req_ids else "`NONE — NO REQUIREMENTS IN SCOPE`"}
+{scope_table}
+## 4. Exact actions and workflows
 
-Use `docs/architecture/prototype-parity/canonical-screen-register.json` and `master-brd-prototype-production-traceability.json` as SoT.
-
-## 4. Actions and workflows
-
-- Action/workflow IDs in scope: {', '.join(f'`{x}`' for x in action_ids[:25]) or 'see workflow-action-register.json'}
-- Every named control must map to a real or planned **service-backed** transition, or an explicit exclusion/decision.
-- Record steps/state transitions; toast/alert-only success is a fail.
+- **Action IDs (complete):** {", ".join(f"`{x}`" for x in action_ids) if action_ids else "`NONE — NO ACTIONS IN SCOPE`"}
+- **Workflow IDs (complete):** {", ".join(f"`{x}`" for x in wf_ids) if wf_ids else "`NONE — NO WORKFLOWS IN SCOPE`"}
+- Every listed mutating ID requires service/domain transition, audit, persistence/reload proof, error states — or explicit `NONE — NOT IMPLEMENTED` with target wave (already recorded in workflow-action-register.json).
+- Toast/alert-only success is a fail.
 
 ## 5. Domain ownership and integration contracts
 
-- Owner note: {a['note'] if a else 'Shared shell owns chrome only; modules own domain records'}
-- Cross-module: {a['crossModuleIntegrations'] if a else 'contracts/events/projections only'}
-- M01/M02 projections remain incomplete until producer modules exist — do not claim complete integration early.
+- Owner: {owner_note}
+- Cross-module contract: {cross}
+- M01/M02 integration remains **IN-DEVELOPMENT** until producers exist — do not claim complete integration early.
+- No cross-module repository imports.
 
 ## 6. Permissions and clinic/tenant isolation
 
-- Enforce module `accessClassification` / role gates for every mutating action.
-- Clinic/tenant isolation on read and write paths; no cross-tenant leakage.
-- Permission-denied and empty states must be real UI states.
+- Authorised roles/permissions for this scope: {roles}
+- Enforce accessClassification + service-side authorisation on every mutate.
+- Clinic/tenant isolation on read and write; permission-denied and empty states are real UI states.
 
 ## 7. Persistence and audit requirements
 
-- Persistence method today: {a['persistenceMethod'] if a else 'N/A — foundation'}
-- Mutating actions require durable persistence + reload proof + audit trail.
+- Persistence method: {persist}
+- Mutating actions: durable persistence + reload proof + audit trail with actor/clinic/before-after.
 - Do not migrate legacy prototype seed values as production truth.
 
-## 8. Implementation batches
+## 8. Implementation batches (module-specific)
 
-Split work into small reviewable commits:
+{batches_for(kind, mod_key, wave)}
 
-1. Route/section shell alignment to final design contract  
-2. Data/service wiring for in-scope actions  
-3. Permissions, isolation, validation, error states  
-4. Tests + Visual QA + Work-Step QA evidence  
+## 9. Automated tests (module-specific)
 
-## 9. Automated tests
-
-- Service/repository tests for domain transitions  
-- Permission and clinic/tenant isolation tests  
-- Persistence/reload tests  
-- Regression for accepted modules touched  
+{tests_for(kind, mod_key)}
 
 ## 10. Visual QA and Work-Step QA
 
-- Visual QA against Decision A PNG / design-contract pattern for {mod_key}  
-- Viewports per `FINAL_DESIGN_SYSTEM_CONTRACT.md`  
-- Work-Step QA for each in-scope action/workflow ID  
+- Visual QA against Decision A PNG / design-system-contract.json for {mod_key}
+- Viewports/regions/tolerances exactly as in `FINAL_DESIGN_SYSTEM_CONTRACT.md` / `design-system-contract.json`
+- Work-Step QA for **every** in-scope action/workflow ID listed above
 - Separate Visual QA / Work-Step QA / Regression agents — **no self-approval**
 
-## 11. Immutable-SHA evidence
+## 11. Immutable-SHA evidence and resulting state
 
-- Commit evidence under `docs/audits/` with the exact tip SHA  
-- Any source change after final QA invalidates final QA  
+- Commit evidence under `docs/audits/` with the exact tip SHA
+- Resulting-state acceptance evidence required: {resulting}
+- Any source change after final QA invalidates final QA
 
 ## 12. Localhost handoff
 
-- Port **3000** = owner-visible integration candidate for the exact reported SHA  
-- Leave server running at stop checkpoint  
+- Port **3000** = owner-visible integration candidate for the exact reported SHA
+- Leave server running at stop checkpoint
 
 ## 13. Explicit prohibitions
 
-- No PPA unless this prompt is the authorised PPA batch  
-- No payment execution / bank file / STP / super / mark-as-paid  
-- No patient records, appointments, clinical notes, patient billing  
-- No M08 doctor-pay work inside M07 prompts  
-- No production-approval claims  
-- No PR/merge unless owner asks  
+- No PPA unless this prompt is the authorised PPA batch
+- No payment execution / bank file / STP / super / mark-as-paid
+- No patient records, appointments, clinical notes, patient billing
+- No M08 doctor-pay work inside M07 ordinary-prep prompts
+- No Executive Blue / Medical Emerald global themes
+- No production-approval claims
+- No PR/merge unless owner asks
 
 ## 14. Stop checkpoint
 
 Commit evidence; leave localhost running; **STOP**. Do not start the next wave/batch until owner acceptance of this tip.
 """
+        # Guard: no delegation phrases
+        banned = ["sample/full list", "non-exhaustive", "see master register", "see workflow-action-register", "see canonical-screen-register"]
+        for b in banned:
+            if b in body.lower():
+                raise SystemExit(f"banned phrase {b} in prompt {fname}")
         write(prompts_dir / f"{fname}.md", body)
         prompt_index.append({
             "file": f"prompts/{fname}.md",
@@ -1772,16 +2435,21 @@ Commit evidence; leave localhost running; **STOP**. Do not start the next wave/b
             "title": title,
             "predecessorGate": predecessor,
             "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+            "screenIdCount": len(screen_ids),
+            "requirementIdCount": len(req_ids),
+            "actionIdCount": len(action_ids),
+            "workflowIdCount": len(wf_ids),
         })
 
     write(prompts_dir / "README.md", f"""# Prompt Pack Index
 
-27 self-contained implementation prompts. Each depends on the **owner-accepted preceding programme tip**, not an automatic start from `b1152d3`.
+27 self-contained implementation prompts. Each depends on the **owner-accepted preceding programme tip**, not an automatic start from `b1152d3`.  
+Each prompt embeds complete exact screen/requirement/action/workflow IDs (no external delegation).
 
-| File | Wave | Module | Predecessor gate |
-| --- | --- | --- | --- |
+| File | Wave | Module | Screens | Requirements | Actions | Workflows | Predecessor gate |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
 """ + "\n".join(
-        f"| `{p['file']}` | {p['wave']} | {p['module']} | {p['predecessorGate']} |"
+        f"| `{p['file']}` | {p['wave']} | {p['module']} | {p['screenIdCount']} | {p['requirementIdCount']} | {p['actionIdCount']} | {p['workflowIdCount']} | {p['predecessorGate']} |"
         for p in prompt_index
     ) + f"\n\nGenerated: `{UTC}`\n")
 
@@ -1789,6 +2457,7 @@ Commit evidence; leave localhost running; **STOP**. Do not start the next wave/b
         "generatedAt": UTC,
         "count": len(prompt_index),
         "prompts": prompt_index,
+        "openOwnerDecisionsRequired": 0,
     }, indent=2))
 
     # Preserve mismatch-stop narrative (generator-owned copy; does not alter a22f9a1 history)

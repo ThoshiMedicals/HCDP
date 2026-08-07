@@ -7,16 +7,22 @@
   "designPngsInstalled": true,
   "designPngDecision": "A-REVISED",
   "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
-  "openOwnerDecisions": 1,
-  "programmeResetTipAtGeneration": "638b51904ab1de2785d1009aa8243ebd8ba530f2",
+  "openOwnerDecisions": 0,
+  "programmeResetTipAtGeneration": "3a5505921bf645f0be90c2663c7d581fdeb18daf",
   "workflowActionTotals": {
     "brdButtons": 323,
     "brdWorkflows": 107,
     "blueprintWorkflows": 72,
     "legacyWorkflowGroups": 28,
     "modalsDrawers": 63,
-    "productionControls": 66,
-    "totalItems": 659
+    "productionControls": 84,
+    "plannedModuleControls": 8,
+    "totalItems": 685,
+    "fieldCompleteness": {
+      "withSourceLocation": 685,
+      "withScreenRoute": 685,
+      "withoutGenericPhrases": 685
+    }
   },
   "conflictAdjudicationTotals": {
     "SETTLED-PRODUCT-BOUNDARY-STATEMENT": 10,

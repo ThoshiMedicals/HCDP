@@ -5,95 +5,94 @@
 - **Not authorised until** the owner expressly accepts the predecessor programme tip and names this batch.
 - **Predecessor gate:** explicit PPA batch authorisation + prior tip
 - **Do not** auto-start from `b1152d3` once a later owner-accepted programme tip exists.
-- Phase 0 application baseline (frozen behaviour reference): `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`
+- Phase 0 application baseline: `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`
 - Evidence-bearing tip: `e659dfc42a711d37a3e73b3ba7049190ca531e4a`
 - Decision A PNG tip: `66e6e6488b27b9098dadd8962473fedea5053614`
 - Branch family: `cursor/prototype-parity-*` — never force-push; no PR/merge unless owner asks.
 
 ## 2. Branch / start-ref rules
 
-1. Start from the **owner-accepted predecessor programme tip** for this wave/batch.  
-2. Create a new feature branch under `cursor/prototype-parity-*`.  
-3. Confirm ancestry includes `b1152d3` and Decision A PNG commit `66e6e64` where design applies.  
-4. Confirm `origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unless owner moves it.  
+1. Start from the **owner-accepted predecessor programme tip** for this wave/batch.
+2. Create a new feature branch under `cursor/prototype-parity-*`.
+3. Confirm ancestry includes `b1152d3` and Decision A PNG commit `66e6e64` where design applies.
+4. Confirm `origin/main` remains `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` unless owner moves it.
 5. No merge to main in this prompt.
 
-## 3. Module-specific screens and requirement IDs
+## 3. Exact in-scope screens and requirement IDs
 
-- **Scope:** M07 PPA only (separate auth)
 - **Module:** M07
-- **Primary route:** `/staffpay`
-- **Design reference:** `derived-from-design-contract`
-- **Screen IDs (sample/full list in registers):** `screen_e16b849eb084`, `screen_1cdd32c78332`, `screen_f074ae0c335a`, `screen_44adfacff87c`, `screen_c9c6a3ed3f31`, `screen_87e931ff2183`, `screen_a6ada2601e9f`
-- **Requirement IDs (non-exhaustive; full SoT in master register):** `OWN-PPA-SEPARATE`, `OWN-NO-PAY-EXEC`, `prod-route-staff-pay`, `prod-section-staff-pay-overview`, `prod-section-staff-pay-people`, `prod-section-staff-pay-leave`, `prod-section-staff-pay-adjustments`, `prod-section-staff-pay-exceptions`, `prod-section-staff-pay-variances`, `prod-section-staff-pay-approval`, `prod-section-staff-pay-export`, `prod-section-staff-pay-reconciliation`, `prod-section-staff-pay-history`, `prod-section-staff-pay-settings`, `brdmod_bd0da3c4a601`, `brdtab_0c9fbad9896c`, `brdtab_905f3b4a0980`, `brdtab_e2d6d227d4c6`, `brdtab_ac32ce11e204`, `brdtab_3df2e0a0f44f`, `brdtab_64600b42b0c0`, `brdtab_ee769429e8dd`, `brdbtn_9e3b108745c4`, `brdbtn_04b7bbb8bef0`, `brdbtn_4705a1ee8fa8`
+- **Primary route(s):** `/staffpay`
+- **Design reference:** `M02/M04 pay-prep workbench`
+- **Screen IDs (complete):** `screen_e16b849eb084`, `screen_1cdd32c78332`, `screen_f074ae0c335a`, `screen_44adfacff87c`, `screen_c9c6a3ed3f31`, `screen_87e931ff2183`, `screen_a6ada2601e9f`
+- **Requirement IDs (complete):** `OWN-PPA-SEPARATE`, `OWN-NO-PAY-EXEC`, `prod-route-staff-pay`, `prod-section-staff-pay-overview`, `prod-section-staff-pay-people`, `prod-section-staff-pay-leave`, `prod-section-staff-pay-adjustments`, `prod-section-staff-pay-exceptions`, `prod-section-staff-pay-variances`, `prod-section-staff-pay-approval`, `prod-section-staff-pay-export`, `prod-section-staff-pay-reconciliation`, `prod-section-staff-pay-history`, `prod-section-staff-pay-settings`, `brdmod_bd0da3c4a601`, `brdtab_0c9fbad9896c`, `brdtab_905f3b4a0980`, `brdtab_e2d6d227d4c6`, `brdtab_ac32ce11e204`, `brdtab_3df2e0a0f44f`, `brdtab_64600b42b0c0`, `brdtab_ee769429e8dd`, `brdbtn_9e3b108745c4`, `brdbtn_04b7bbb8bef0`, `brdbtn_4705a1ee8fa8`, `brdbtn_248c855d3f09`, `brdbtn_6d994a97c51a`, `brdbtn_85f157308b41`, `brdbtn_94a912530c2e`, `brdbtn_3a4b9cbc9014`, `brdbtn_702e1120f7ec`, `brdbtn_e41774daca77`, `brdbtn_9df60df47098`, `brdbtn_1a0dd0f12942`, `brdbtn_be2b023faa1a`, `brdbtn_4ae713d3931a`, `brdflow_026b12101648`, `brdflow_143d0160434b`, `brdflow_163a8bbea9da`, `brdflow_5735e352bf4c`, `brdrule_4864489afc84`, `brdrule_e0c9f4e2ad32`, `brdrule_563adc1d01d8`, `brdrule_420c6418a2d2`, `brdrule_8b97b0cb7152`, `brdvis_fe0a73d3a7dd`, `brdvis_a63f6eca3d6e`, `brdvis_66ac58cefd38`, `brdvis_d1ab55e276a0`, `brdvis_cf28e053a4c5`, `brdout_64e80b7036ff`, `brdout_252d8bc6d2f1`, `brdout_214fd6776715`, `brdout_ac09ee72b698`, `brdout_e8cdc9cc4a22`, `brdout_1a84b036fc55`, `brdout_06fe2157fe4a`, `bp_aebc5d27f4f9`, `bpmetric_25245705a026`, `bpmetric_f12f197d7d23`, `bpmetric_0f7bd17ba24f`, `bpmetric_795c50749aca`, `bppattern_2aa96335b48a`, `bppattern_ae8ff28b3fb6`, `bppattern_4b3d8b1f5a51`, `bppattern_189c6397bb23`, `field_7e376776c3b9`, `field_af4e201eaf31`, `field_06c8eb036186`, `field_4a9e810e9430`, `field_538edd7363e7`, `field_eb3c62759c2b`, `field_fcbf78e1f584`, `field_eb7fb8af8a50`, `field_5f08ffc7e045`, `modal_4ee0ec7df165`, `conflict_94a630d43fbe`, `conflict_3a095c436f1f`, `conflict_95c4e61428a8`, `conflict_be997bb9bff3`, `conflict_4a5a80c04463`, `conflict_fed4473e0c90`, `conflict_52f7791e1641`, `conflict_cbba4e19e1c2`, `conflict_6799f9d05cd0`, `conflict_daab93d6e76a`, `conflict_921e5f9a2051`, `evidence-m07`, `plan-m07-ppa-separate`
 
-Use `docs/architecture/prototype-parity/canonical-screen-register.json` and `master-brd-prototype-production-traceability.json` as SoT.
+## 4. Exact actions and workflows
 
-## 4. Actions and workflows
-
-- Action/workflow IDs in scope: `brdbtn_9e3b108745c4`, `brdbtn_04b7bbb8bef0`, `brdbtn_4705a1ee8fa8`, `brdbtn_248c855d3f09`, `brdbtn_6d994a97c51a`, `brdbtn_85f157308b41`, `brdbtn_94a912530c2e`, `brdbtn_3a4b9cbc9014`, `brdbtn_702e1120f7ec`, `brdbtn_e41774daca77`, `brdbtn_9df60df47098`, `brdbtn_1a0dd0f12942`, `brdbtn_be2b023faa1a`, `brdbtn_4ae713d3931a`, `brdflow_026b12101648`, `brdflow_143d0160434b`, `brdflow_163a8bbea9da`, `brdflow_5735e352bf4c`, `bpflow_cf74bfb519d3`, `bpflow_4d5863eb453f`, `bpflow_adde808fb46d`, `legwf_8291ee1522e4`, `modal_4ee0ec7df165`, `prod-ctrl-staff-pay-overview`, `prod-ctrl-staff-pay-people`
-- Every named control must map to a real or planned **service-backed** transition, or an explicit exclusion/decision.
-- Record steps/state transitions; toast/alert-only success is a fail.
+- **Action IDs (complete):** `brdbtn_9e3b108745c4`, `brdbtn_04b7bbb8bef0`, `brdbtn_4705a1ee8fa8`, `brdbtn_248c855d3f09`, `brdbtn_6d994a97c51a`, `brdbtn_85f157308b41`, `brdbtn_94a912530c2e`, `brdbtn_3a4b9cbc9014`, `brdbtn_702e1120f7ec`, `brdbtn_e41774daca77`, `brdbtn_9df60df47098`, `brdbtn_1a0dd0f12942`, `brdbtn_be2b023faa1a`, `brdbtn_4ae713d3931a`, `brdflow_026b12101648`, `brdflow_143d0160434b`, `brdflow_163a8bbea9da`, `brdflow_5735e352bf4c`, `bpflow_cf74bfb519d3`, `bpflow_4d5863eb453f`, `bpflow_adde808fb46d`, `legwf_8291ee1522e4`, `modal_4ee0ec7df165`, `prod-ctrl-staff-pay-overview`, `prod-ctrl-staff-pay-people`, `prod-ctrl-staff-pay-leave`, `prod-ctrl-staff-pay-adjustments`, `prod-ctrl-staff-pay-exceptions`, `prod-ctrl-staff-pay-variances`, `prod-ctrl-staff-pay-approval`, `prod-ctrl-staff-pay-export`, `prod-ctrl-staff-pay-reconciliation`, `prod-ctrl-staff-pay-history`, `prod-ctrl-staff-pay-settings`
+- **Workflow IDs (complete):** `brdflow_026b12101648`, `brdflow_143d0160434b`, `brdflow_163a8bbea9da`, `brdflow_5735e352bf4c`, `bpflow_cf74bfb519d3`, `bpflow_4d5863eb453f`, `bpflow_adde808fb46d`, `legwf_8291ee1522e4`
+- Every listed mutating ID requires service/domain transition, audit, persistence/reload proof, error states — or explicit `NONE — NOT IMPLEMENTED` with target wave (already recorded in workflow-action-register.json).
+- Toast/alert-only success is a fail.
 
 ## 5. Domain ownership and integration contracts
 
-- Owner note: Staff pay preparation only (not execution); PPA separately authorised
-- Cross-module: M06→M07 publication contracts
-- M01/M02 projections remain incomplete until producer modules exist — do not claim complete integration early.
+- Owner: Staff pay preparation only (not execution); PPA separately authorised
+- Cross-module contract: M06→M07 publication contracts
+- M01/M02 integration remains **IN-DEVELOPMENT** until producers exist — do not claim complete integration early.
+- No cross-module repository imports.
 
 ## 6. Permissions and clinic/tenant isolation
 
-- Enforce module `accessClassification` / role gates for every mutating action.
-- Clinic/tenant isolation on read and write paths; no cross-tenant leakage.
-- Permission-denied and empty states must be real UI states.
+- Authorised roles/permissions for this scope: Payroll / Finance, Practice Managers, Operations Managers, Owners (BRD primaryUsers; accessClassification=finance)
+- Enforce accessClassification + service-side authorisation on every mutate.
+- Clinic/tenant isolation on read and write; permission-denied and empty states are real UI states.
 
 ## 7. Persistence and audit requirements
 
-- Persistence method today: service+repository (module-local)
-- Mutating actions require durable persistence + reload proof + audit trail.
+- Persistence method: service+repository (module-local)
+- Mutating actions: durable persistence + reload proof + audit trail with actor/clinic/before-after.
 - Do not migrate legacy prototype seed values as production truth.
 
-## 8. Implementation batches
+## 8. Implementation batches (module-specific)
 
-Split work into small reviewable commits:
+1. PPA period selection + eligibility gates (post-lock/post-export only)  
+2. Adjustment drafting services with audit + immutable prior snapshot links  
+3. Approval/recompute/re-export package prep (no payment execution)  
+4. PPA-specific Work-Step QA + regression against ordinary Batch 1–6 prep
 
-1. Route/section shell alignment to final design contract  
-2. Data/service wiring for in-scope actions  
-3. Permissions, isolation, validation, error states  
-4. Tests + Visual QA + Work-Step QA evidence  
+## 9. Automated tests (module-specific)
 
-## 9. Automated tests
-
-- Service/repository tests for domain transitions  
-- Permission and clinic/tenant isolation tests  
-- Persistence/reload tests  
-- Regression for accepted modules touched  
+- PPA eligibility rejects unlocked ordinary periods incorrectly flagged  
+- Adjustment persistence + prior snapshot immutability tests  
+- Permission matrix for PPA approver roles  
+- Re-export package checksum/reconciliation tests
 
 ## 10. Visual QA and Work-Step QA
 
-- Visual QA against Decision A PNG / design-contract pattern for M07  
-- Viewports per `FINAL_DESIGN_SYSTEM_CONTRACT.md`  
-- Work-Step QA for each in-scope action/workflow ID  
+- Visual QA against Decision A PNG / design-system-contract.json for M07
+- Viewports/regions/tolerances exactly as in `FINAL_DESIGN_SYSTEM_CONTRACT.md` / `design-system-contract.json`
+- Work-Step QA for **every** in-scope action/workflow ID listed above
 - Separate Visual QA / Work-Step QA / Regression agents — **no self-approval**
 
-## 11. Immutable-SHA evidence
+## 11. Immutable-SHA evidence and resulting state
 
-- Commit evidence under `docs/audits/` with the exact tip SHA  
-- Any source change after final QA invalidates final QA  
+- Commit evidence under `docs/audits/` with the exact tip SHA
+- Resulting-state acceptance evidence required: PPA package IDs, prior snapshot hashes, approval audit chain, re-export reconciliation checksums
+- Any source change after final QA invalidates final QA
 
 ## 12. Localhost handoff
 
-- Port **3000** = owner-visible integration candidate for the exact reported SHA  
-- Leave server running at stop checkpoint  
+- Port **3000** = owner-visible integration candidate for the exact reported SHA
+- Leave server running at stop checkpoint
 
 ## 13. Explicit prohibitions
 
-- No PPA unless this prompt is the authorised PPA batch  
-- No payment execution / bank file / STP / super / mark-as-paid  
-- No patient records, appointments, clinical notes, patient billing  
-- No M08 doctor-pay work inside M07 prompts  
-- No production-approval claims  
-- No PR/merge unless owner asks  
+- No PPA unless this prompt is the authorised PPA batch
+- No payment execution / bank file / STP / super / mark-as-paid
+- No patient records, appointments, clinical notes, patient billing
+- No M08 doctor-pay work inside M07 ordinary-prep prompts
+- No Executive Blue / Medical Emerald global themes
+- No production-approval claims
+- No PR/merge unless owner asks
 
 ## 14. Stop checkpoint
 

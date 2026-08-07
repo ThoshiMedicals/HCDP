@@ -1,7 +1,7 @@
 {
   "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
-  "openCount": 1,
-  "closedCount": 1,
+  "openCount": 0,
+  "closedCount": 2,
   "items": [
     {
       "id": "DEC-FINAL-PNGS-MISSING",
@@ -15,10 +15,11 @@
     {
       "id": "DEC-BRANDED-THEMES",
       "type": "appearance",
-      "recommendedDisposition": "ADOPTED-AS-IS",
-      "ownerDecisionRequired": true,
-      "status": "OPEN",
-      "detail": "Optional branded presets observed: ['theme-executive', 'theme-emerald']. Preserve if confirmed; do not replace System mode."
+      "recommendedDisposition": "ADOPTED-WITH-CONTROL-HARDENING",
+      "ownerDecision": "CLOSED-2026-08-07",
+      "ownerDecisionRequired": false,
+      "status": "CLOSED",
+      "detail": "Owner decision: retain Light, Dark and System appearance modes only. Do not implement Executive Blue or Medical Emerald as additional global themes. Module-family accent colours may remain as sidebar/navigation identification cues only and must not replace or interfere with Light/Dark/System. Prototype branded keys observed (not to be implemented as global themes): ['theme-executive', 'theme-emerald']."
     }
   ]
 }

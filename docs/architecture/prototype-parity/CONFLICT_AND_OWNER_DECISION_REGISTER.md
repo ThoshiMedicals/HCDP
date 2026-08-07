@@ -1,12 +1,12 @@
 # Conflict and Owner Decision Register
 
-**Open items:** 1  
-**Closed items:** 1
+**Open items:** 0  
+**Closed items:** 2
 
 | ID | Type | Recommended disposition | Status |
 | --- | --- | --- | --- |
 | `DEC-FINAL-PNGS-MISSING` | design-reference | ADOPTED-AS-IS | CLOSED |
-| `DEC-BRANDED-THEMES` | appearance | ADOPTED-AS-IS | OPEN |
+| `DEC-BRANDED-THEMES` | appearance | ADOPTED-WITH-CONTROL-HARDENING | CLOSED |
 
 ### DEC-FINAL-PNGS-MISSING — CLOSED (owner revised decision A)
 

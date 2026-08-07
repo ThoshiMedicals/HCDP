@@ -1,6 +1,6 @@
 {
   "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
-  "programmeResetTip": "638b51904ab1de2785d1009aa8243ebd8ba530f2",
+  "programmeResetTip": "3a5505921bf645f0be90c2663c7d581fdeb18daf",
   "programmeResetTipNote": "Working-tree HEAD at generation; control-pack tip is the commit that contains these files",
   "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
   "evidenceBearingTip": "e659dfc42a711d37a3e73b3ba7049190ca531e4a",
@@ -52,17 +52,17 @@
     "current-plan": 1
   },
   "uiStatusTotals": {
-    "FUNCTIONALLY-COMPLETE": 782,
+    "FUNCTIONALLY-COMPLETE": 658,
     "IN-DEVELOPMENT": 291,
-    "PROTOTYPE-ONLY": 689,
-    "PLANNED": 202,
+    "PROTOTYPE-ONLY": 788,
+    "PLANNED": 227,
     "EXCLUDED-WITH-REASON": 18
   },
   "domainStatusTotals": {
-    "FUNCTIONALLY-COMPLETE": 782,
+    "NOT-STARTED": 943,
+    "FUNCTIONALLY-COMPLETE": 503,
     "IN-DEVELOPMENT": 291,
-    "NOT-STARTED": 689,
-    "PLANNED": 202,
+    "PLANNED": 227,
     "EXCLUDED-WITH-REASON": 18
   },
   "canonicalScreenCount": 186,
@@ -101,15 +101,21 @@
   },
   "designReferencesInstalled": true,
   "designReferenceOwnerDecision": "A-REVISED",
-  "openOwnerDecisions": 1,
+  "openOwnerDecisions": 0,
   "workflowActionTotals": {
     "brdButtons": 323,
     "brdWorkflows": 107,
     "blueprintWorkflows": 72,
     "legacyWorkflowGroups": 28,
     "modalsDrawers": 63,
-    "productionControls": 66,
-    "totalItems": 659
+    "productionControls": 84,
+    "plannedModuleControls": 8,
+    "totalItems": 685,
+    "fieldCompleteness": {
+      "withSourceLocation": 685,
+      "withScreenRoute": 685,
+      "withoutGenericPhrases": 685
+    }
   },
   "conflictAdjudicationTotals": {
     "SETTLED-PRODUCT-BOUNDARY-STATEMENT": 10,

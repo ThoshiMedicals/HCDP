@@ -5,10 +5,14 @@
     {
       "file": "prompts/p1.md",
       "wave": "P1",
-      "module": "MULTI",
+      "module": "SHARED",
       "title": "Shared final-design foundation",
       "predecessorGate": "P0 control pack owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 13,
+      "requirementIdCount": 114,
+      "actionIdCount": 20,
+      "workflowIdCount": 14
     },
     {
       "file": "prompts/p2-m01.md",
@@ -16,7 +20,11 @@
       "module": "M01",
       "title": "M01 Command Centre",
       "predecessorGate": "P1 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 6,
+      "requirementIdCount": 68,
+      "actionIdCount": 22,
+      "workflowIdCount": 7
     },
     {
       "file": "prompts/p2-m02.md",
@@ -24,7 +32,11 @@
       "module": "M02",
       "title": "M02 Action Inbox",
       "predecessorGate": "P2-M01 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 7,
+      "requirementIdCount": 108,
+      "actionIdCount": 64,
+      "workflowIdCount": 7
     },
     {
       "file": "prompts/p2-m03.md",
@@ -32,7 +44,11 @@
       "module": "M03",
       "title": "M03 Organisation & Access",
       "predecessorGate": "P2-M02 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 10,
+      "requirementIdCount": 103,
+      "actionIdCount": 42,
+      "workflowIdCount": 11
     },
     {
       "file": "prompts/p2-m04.md",
@@ -40,7 +56,11 @@
       "module": "M04",
       "title": "M04 Staff & Doctors",
       "predecessorGate": "P2-M03 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 10,
+      "requirementIdCount": 144,
+      "actionIdCount": 46,
+      "workflowIdCount": 16
     },
     {
       "file": "prompts/p2-m05.md",
@@ -48,7 +68,11 @@
       "module": "M05",
       "title": "M05 Weekly Roster",
       "predecessorGate": "P2-M04 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 7,
+      "requirementIdCount": 114,
+      "actionIdCount": 36,
+      "workflowIdCount": 8
     },
     {
       "file": "prompts/p2-m06.md",
@@ -56,7 +80,11 @@
       "module": "M06",
       "title": "M06 Time & Attendance",
       "predecessorGate": "P2-M05 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 6,
+      "requirementIdCount": 85,
+      "actionIdCount": 29,
+      "workflowIdCount": 7
     },
     {
       "file": "prompts/p2-m07.md",
@@ -64,7 +92,11 @@
       "module": "M07",
       "title": "M07 Staff Pay Preparation",
       "predecessorGate": "P2-M06 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 7,
+      "requirementIdCount": 89,
+      "actionIdCount": 34,
+      "workflowIdCount": 8
     },
     {
       "file": "prompts/p2-m11.md",
@@ -72,7 +104,11 @@
       "module": "M11",
       "title": "M11 Training",
       "predecessorGate": "P2-M07 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 9,
+      "requirementIdCount": 83,
+      "actionIdCount": 27,
+      "workflowIdCount": 8
     },
     {
       "file": "prompts/p3-m10.md",
@@ -80,7 +116,11 @@
       "module": "M10",
       "title": "M10 Tasks & Checklists",
       "predecessorGate": "P2 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 10,
+      "requirementIdCount": 115,
+      "actionIdCount": 39,
+      "workflowIdCount": 12
     },
     {
       "file": "prompts/p4-m13.md",
@@ -88,7 +128,11 @@
       "module": "M13",
       "title": "M13 Documents & Policies",
       "predecessorGate": "P3-M10 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 9,
+      "requirementIdCount": 84,
+      "actionIdCount": 29,
+      "workflowIdCount": 11
     },
     {
       "file": "prompts/p4-m14.md",
@@ -96,7 +140,11 @@
       "module": "M14",
       "title": "M14 Ticketing",
       "predecessorGate": "P4-M13 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 10,
+      "requirementIdCount": 82,
+      "actionIdCount": 30,
+      "workflowIdCount": 11
     },
     {
       "file": "prompts/p5-m12.md",
@@ -104,7 +152,11 @@
       "module": "M12",
       "title": "M12 Compliance & Quality",
       "predecessorGate": "P4 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 8,
+      "requirementIdCount": 88,
+      "actionIdCount": 30,
+      "workflowIdCount": 9
     },
     {
       "file": "prompts/p5-m15.md",
@@ -112,7 +164,11 @@
       "module": "M15",
       "title": "M15 Inventory & Assets",
       "predecessorGate": "P5-M12 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 14,
+      "requirementIdCount": 171,
+      "actionIdCount": 44,
+      "workflowIdCount": 15
     },
     {
       "file": "prompts/p5-m16.md",
@@ -120,7 +176,11 @@
       "module": "M16",
       "title": "M16 Incidents & Risk",
       "predecessorGate": "P5-M15 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 12,
+      "requirementIdCount": 96,
+      "actionIdCount": 35,
+      "workflowIdCount": 10
     },
     {
       "file": "prompts/p6-m07-ppa.md",
@@ -128,7 +188,11 @@
       "module": "M07",
       "title": "M07 Prior-Period Adjustment",
       "predecessorGate": "explicit PPA batch authorisation + prior tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 7,
+      "requirementIdCount": 89,
+      "actionIdCount": 34,
+      "workflowIdCount": 8
     },
     {
       "file": "prompts/p6-m08.md",
@@ -136,7 +200,11 @@
       "module": "M08",
       "title": "M08 Doctor Pay",
       "predecessorGate": "P5 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 12,
+      "requirementIdCount": 99,
+      "actionIdCount": 29,
+      "workflowIdCount": 10
     },
     {
       "file": "prompts/p6-m09.md",
@@ -144,7 +212,11 @@
       "module": "M09",
       "title": "M09 BBPIP",
       "predecessorGate": "P6-M08 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 7,
+      "requirementIdCount": 70,
+      "actionIdCount": 19,
+      "workflowIdCount": 7
     },
     {
       "file": "prompts/p6-m24.md",
@@ -152,7 +224,11 @@
       "module": "M24",
       "title": "M24 Forecast & Finance Review",
       "predecessorGate": "P6-M09 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 1,
+      "requirementIdCount": 24,
+      "actionIdCount": 5,
+      "workflowIdCount": 3
     },
     {
       "file": "prompts/p7-m17.md",
@@ -160,7 +236,11 @@
       "module": "M17",
       "title": "M17 Communications",
       "predecessorGate": "P6 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 10,
+      "requirementIdCount": 98,
+      "actionIdCount": 31,
+      "workflowIdCount": 11
     },
     {
       "file": "prompts/p7-m18.md",
@@ -168,7 +248,11 @@
       "module": "M18",
       "title": "M18 Digital Monitoring & Security",
       "predecessorGate": "P7-M17 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 8,
+      "requirementIdCount": 82,
+      "actionIdCount": 27,
+      "workflowIdCount": 10
     },
     {
       "file": "prompts/p7-m19.md",
@@ -176,7 +260,11 @@
       "module": "M19",
       "title": "M19 Analytics Governance",
       "predecessorGate": "P7-M18 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 9,
+      "requirementIdCount": 63,
+      "actionIdCount": 25,
+      "workflowIdCount": 7
     },
     {
       "file": "prompts/p8-m20.md",
@@ -184,7 +272,11 @@
       "module": "M20",
       "title": "M20 Tenant Commercial",
       "predecessorGate": "P7 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 11,
+      "requirementIdCount": 70,
+      "actionIdCount": 25,
+      "workflowIdCount": 9
     },
     {
       "file": "prompts/p8-m21.md",
@@ -192,7 +284,11 @@
       "module": "M21",
       "title": "M21 Vendor Portfolio",
       "predecessorGate": "P8-M20 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 1,
+      "requirementIdCount": 13,
+      "actionIdCount": 5,
+      "workflowIdCount": 3
     },
     {
       "file": "prompts/p8-m22.md",
@@ -200,7 +296,11 @@
       "module": "M22",
       "title": "M22 Recruitment",
       "predecessorGate": "P8-M21 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 1,
+      "requirementIdCount": 14,
+      "actionIdCount": 6,
+      "workflowIdCount": 3
     },
     {
       "file": "prompts/p8-m23.md",
@@ -208,7 +308,11 @@
       "module": "M23",
       "title": "M23 Website & Public Routing",
       "predecessorGate": "P8-M22 owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 1,
+      "requirementIdCount": 19,
+      "actionIdCount": 6,
+      "workflowIdCount": 4
     },
     {
       "file": "prompts/p9.md",
@@ -216,7 +320,12 @@
       "module": "MULTI",
       "title": "Production verification",
       "predecessorGate": "P8 series owner-accepted tip",
-      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)"
+      "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
+      "screenIdCount": 186,
+      "requirementIdCount": 15,
+      "actionIdCount": 191,
+      "workflowIdCount": 179
     }
-  ]
+  ],
+  "openOwnerDecisionsRequired": 0
 }
