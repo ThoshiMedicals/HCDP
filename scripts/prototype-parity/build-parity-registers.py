@@ -633,7 +633,7 @@ def main():
             crossModuleContracts="programme-control",
             currentProductionCodePath="NONE — GOVERNANCE DECISION",
             currentServicePath="NONE — GOVERNANCE DECISION",
-            currentEvidence=f"docs/architecture/prototype-parity/; tip {tip}",
+            currentEvidence="docs/architecture/prototype-parity/; Decision A tip 66e6e6488b27b9098dadd8962473fedea5053614",
             acceptanceTestEvidencePath="docs/architecture/prototype-parity/VALIDATION_RECONCILIATION.json",
             prototypeDisposition=disp,
             dispositionReason="Settled owner decision",
@@ -1673,7 +1673,6 @@ def main():
 **Accepted application baseline:** `b1152d36d3f47c15277f85b3e990f5e1c94bddcb`  
 **Evidence-bearing tip:** `e659dfc42a711d37a3e73b3ba7049190ca531e4a`  
 **Decision A PNG tip:** `66e6e6488b27b9098dadd8962473fedea5053614`  
-**Programme tip at generation:** `{tip}`  
 **Prototype SHA-256:** `{proto}`  
 
 Machine-readable: `master-brd-prototype-production-traceability.json` / `.csv`
@@ -2200,7 +2199,6 @@ Programme Waves P1–P9: not authorised until named owner batch approval
 | Design PNGs installed | True |
 | Design PNG Decision | A-REVISED @ `66e6e6488b27b9098dadd8962473fedea5053614` |
 | Open owner decisions | {accounting['openOwnerDecisions']} |
-| Programme tip at generation | `{tip}` |
 
 Extractor raw control counts are recorded for reconciliation by source-location ID and are **not** used as final requirement cardinality.
 
@@ -2275,7 +2273,6 @@ Generated: `{UTC}`
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
 | Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
 | Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
-| Programme tip at generation | `{tip}` |
 | origin/main | `0afe87806cdc1e3e8e90da5293183ef1b2fd9c76` |
 
 ## Status
@@ -2316,7 +2313,6 @@ Generated: `{UTC}`
 | Accepted application baseline | `b1152d36d3f47c15277f85b3e990f5e1c94bddcb` |
 | Evidence-bearing tip | `e659dfc42a711d37a3e73b3ba7049190ca531e4a` |
 | Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
-| Programme tip at generation | `{tip}` |
 | Prototype SHA-256 | `{proto}` |
 | Traceability rows | {accounting['totalRows']} |
 | Canonical screens | {accounting['canonicalScreenCount']} |
