@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 /**
  * Deterministic Programme Gate P0 pack runner.
- * Runs extract → build → validate twice; second run must produce zero diff
- * on generated control-pack outputs (and Decision A manifest).
+ *
+ * Requires a clean committed working tree for P0 paths.
+ * Runs extract → build → validate twice.
+ * Never runs git add.
+ * After both generations, requires:
+ *   git diff --exit-code
+ *   git diff --cached --exit-code
+ * (working tree and index unchanged vs committed HEAD)
  */
 import { execSync } from "node:child_process";
 import { join, dirname } from "node:path";
@@ -10,32 +16,52 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const SCRIPT = join(ROOT, "scripts/prototype-parity");
+const PATHS = [
+  "docs/architecture/prototype-parity",
+  "docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json",
+  "docs/design-references/final/README.md",
+];
 
 function run(cmd) {
   console.log("\n>>", cmd);
   execSync(cmd, { cwd: ROOT, stdio: "inherit" });
 }
 
-function gitDiffGenerated() {
-  const paths = [
-    "docs/architecture/prototype-parity",
-    "docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json",
-    "docs/design-references/final/README.md",
-  ];
-  // Exclude Python cache if any
-  const out = execSync(`git status --porcelain -- ${paths.join(" ")}`, {
-    cwd: ROOT,
-    encoding: "utf8",
-  });
-  const diff = execSync(`git diff -- ${paths.join(" ")}`, {
-    cwd: ROOT,
-    encoding: "utf8",
-  });
+function checkDiff(label) {
+  try {
+    execSync(`git diff --exit-code -- ${PATHS.join(" ")}`, { cwd: ROOT });
+  } catch {
+    console.error(`FATAL: ${label}: git diff --exit-code failed (working tree dirty vs HEAD)`);
+    try {
+      console.error(
+        execSync(`git diff --stat -- ${PATHS.join(" ")}`, {
+          cwd: ROOT,
+          encoding: "utf8",
+        })
+      );
+    } catch {
+      /* ignore */
+    }
+    process.exit(4);
+  }
+  try {
+    execSync(`git diff --cached --exit-code -- ${PATHS.join(" ")}`, {
+      cwd: ROOT,
+    });
+  } catch {
+    console.error(
+      `FATAL: ${label}: git diff --cached --exit-code failed (index dirty)`
+    );
+    process.exit(5);
+  }
   const untracked = execSync(
-    `git ls-files --others --exclude-standard -- ${paths.join(" ")}`,
+    `git ls-files --others --exclude-standard -- ${PATHS.join(" ")}`,
     { cwd: ROOT, encoding: "utf8" }
-  );
-  return { porcelain: out, diff, untracked };
+  ).trim();
+  if (untracked) {
+    console.error(`FATAL: ${label}: untracked files:\n${untracked}`);
+    process.exit(6);
+  }
 }
 
 function once(label) {
@@ -45,40 +71,26 @@ function once(label) {
   run(`node ${join(SCRIPT, "validate-registers.mjs")}`);
 }
 
+const tip = execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim();
+console.log("Committed tip before Generation 1:", tip);
+checkDiff("preflight (clean committed state)");
+
 once("1");
-// Stage generated outputs so second run can detect mutation via git diff
-run(
-  "git add docs/architecture/prototype-parity docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json docs/design-references/final/README.md"
-);
-const afterFirst = gitDiffGenerated();
-if (afterFirst.porcelain || afterFirst.diff || afterFirst.untracked) {
-  // After add, porcelain may show staged changes from first run vs HEAD — that's expected.
-  // For zero-diff proof we compare working tree after second run against the index.
-}
+checkDiff("after Generation 1");
 
 once("2");
-const afterSecond = execSync(
-  "git diff -- docs/architecture/prototype-parity docs/design-references/final/DESIGN_REFERENCE_MANIFEST.json docs/design-references/final/README.md",
-  { cwd: ROOT, encoding: "utf8" }
-);
-const untrackedSecond = execSync(
-  "git ls-files --others --exclude-standard -- docs/architecture/prototype-parity docs/design-references/final",
-  { cwd: ROOT, encoding: "utf8" }
-).trim();
-
-if (afterSecond.trim() || untrackedSecond) {
-  console.error("FATAL: second generation produced a diff (non-deterministic)");
-  if (afterSecond.trim()) console.error(afterSecond.slice(0, 4000));
-  if (untrackedSecond) console.error("untracked:\n" + untrackedSecond);
-  process.exit(4);
-}
+checkDiff("after Generation 2");
 
 console.log(
   JSON.stringify(
     {
       ok: true,
+      tip,
       secondRunZeroDiff: true,
-      note: "extract → build → validate twice; working tree matches index after second run",
+      gitDiffExitCode: 0,
+      gitDiffCachedExitCode: 0,
+      noGitAdd: true,
+      note: "Both generations left working tree and index identical to committed HEAD",
     },
     null,
     2

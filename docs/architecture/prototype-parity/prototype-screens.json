@@ -12,7 +12,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_173d9f87430b"
+      "tabId": "brdtab_adc69e3ad68f"
     },
     {
       "id": "screen_45a423c53d11",
@@ -25,7 +25,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_d00e4d2e02e0"
+      "tabId": "brdtab_a4e10e23e7f5"
     },
     {
       "id": "screen_5ead348d1bb5",
@@ -38,7 +38,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_bcb09b7e9cb2"
+      "tabId": "brdtab_c52dbfa94b97"
     },
     {
       "id": "screen_eb5299b65a5f",
@@ -51,7 +51,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_9a495e615f35"
+      "tabId": "brdtab_edb70ce7a33d"
     },
     {
       "id": "screen_19bd499af4c7",
@@ -64,7 +64,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_52e4039f00d2"
+      "tabId": "brdtab_ab3d093cfba0"
     },
     {
       "id": "screen_940301c0e2fb",
@@ -77,7 +77,7 @@
       "purpose": "Provide a single cross-clinic overview of operational health, risk, workforce readiness, compliance, finance readiness and unresolved actions. The page should explain why a clinic is green, amber or red and allow the user to open the underlying record in one click.",
       "blueprintId": "bp_81f8e949c6b0",
       "brdModuleId": "brdmod_d344b51f534a",
-      "tabId": "brdtab_c2bffaddbbe3"
+      "tabId": "brdtab_38962310afa5"
     },
     {
       "id": "screen_a7b30547a0f1",
@@ -90,7 +90,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_120b38f77c59"
+      "tabId": "brdtab_71d7cd69403d"
     },
     {
       "id": "screen_cbfb580a40cf",
@@ -103,7 +103,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_eb8c3edff837"
+      "tabId": "brdtab_622e08ca6bbb"
     },
     {
       "id": "screen_b8e63ad39676",
@@ -116,7 +116,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_6c804a446976"
+      "tabId": "brdtab_16908bb6e95c"
     },
     {
       "id": "screen_35c787d690b5",
@@ -129,7 +129,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_fe0b0722480f"
+      "tabId": "brdtab_2921bbb6ebce"
     },
     {
       "id": "screen_aedef95913f5",
@@ -142,7 +142,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_acbcc29d08c6"
+      "tabId": "brdtab_caab0f32b00b"
     },
     {
       "id": "screen_e96d33b6f456",
@@ -155,7 +155,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_030a6cb5d590"
+      "tabId": "brdtab_98ae1bf49573"
     },
     {
       "id": "screen_1c005f5f8906",
@@ -168,7 +168,7 @@
       "purpose": "Prevent important work from being lost in separate module screens or email. Every approval, failed check, overdue action, pay blocker, document review and high-risk alert should enter an owned queue with clear context and next steps.",
       "blueprintId": "bp_dc99a70dac3a",
       "brdModuleId": "brdmod_b96000f10881",
-      "tabId": "brdtab_50e4561fee9f"
+      "tabId": "brdtab_74d0695d3de0"
     },
     {
       "id": "screen_7f7c34dece18",
@@ -181,7 +181,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_4b81461e5fe7"
+      "tabId": "brdtab_f7fa842899e2"
     },
     {
       "id": "screen_739c7c6d631a",
@@ -194,7 +194,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_6e606cdbb90c"
+      "tabId": "brdtab_9cf8df7702f3"
     },
     {
       "id": "screen_194368d05449",
@@ -207,7 +207,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_8e2927ceeb95"
+      "tabId": "brdtab_ac492e1ddb1f"
     },
     {
       "id": "screen_497dc5ec9b20",
@@ -220,7 +220,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_cbdbbd781928"
+      "tabId": "brdtab_99ecb5db717f"
     },
     {
       "id": "screen_e5880b5e1a4d",
@@ -233,7 +233,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_49bd2c25ac5f"
+      "tabId": "brdtab_13d3acb3c04d"
     },
     {
       "id": "screen_5c2bfab5713a",
@@ -246,7 +246,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_7441061844ec"
+      "tabId": "brdtab_a9924417f806"
     },
     {
       "id": "screen_590734dd74ee",
@@ -259,7 +259,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_4ab6bc5f14dc"
+      "tabId": "brdtab_e8fd4a8dba3e"
     },
     {
       "id": "screen_3c07a208f647",
@@ -272,7 +272,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_5c29794b7b36"
+      "tabId": "brdtab_a16933a28b12"
     },
     {
       "id": "screen_2a733fe944a1",
@@ -285,7 +285,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_e86177b5be9c"
+      "tabId": "brdtab_28e026eefc1b"
     },
     {
       "id": "screen_4a7a14ebed27",
@@ -298,7 +298,7 @@
       "purpose": "Maintain the organisation structure and enforce location-aware, role-aware access across the platform. Clinic profiles, users, responsibilities, operating settings and historical access decisions are managed here.",
       "blueprintId": "bp_002f699f8a91",
       "brdModuleId": "brdmod_641bc521b5db",
-      "tabId": "brdtab_ae3995be5286"
+      "tabId": "brdtab_c415bcae6a12"
     },
     {
       "id": "screen_f5f7784928fe",
@@ -311,7 +311,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_a65955a944c4"
+      "tabId": "brdtab_0ab9130a9514"
     },
     {
       "id": "screen_6a9b9ae6bfc9",
@@ -324,7 +324,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_ba22bc15b508"
+      "tabId": "brdtab_e6f5f645741e"
     },
     {
       "id": "screen_af79addb7440",
@@ -337,7 +337,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_017e653b0997"
+      "tabId": "brdtab_bf833a44d51d"
     },
     {
       "id": "screen_a9ede2b0662a",
@@ -350,7 +350,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_4d325d933dab"
+      "tabId": "brdtab_ac7b8483b48f"
     },
     {
       "id": "screen_3d74fa5ccc2d",
@@ -363,7 +363,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_ba915caf5cea"
+      "tabId": "brdtab_b68bc91e9243"
     },
     {
       "id": "screen_68ce1cb2c332",
@@ -376,7 +376,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_11d9c36fb996"
+      "tabId": "brdtab_fd1d44beaafc"
     },
     {
       "id": "screen_2225896a0ae1",
@@ -389,7 +389,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_6cfddce041a2"
+      "tabId": "brdtab_f1577bc7d9ee"
     },
     {
       "id": "screen_ac5199ab3da2",
@@ -402,7 +402,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_3c2eb9d7e848"
+      "tabId": "brdtab_33f17f90c74c"
     },
     {
       "id": "screen_6a140fa9a45e",
@@ -415,7 +415,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_acd1a0a437dc"
+      "tabId": "brdtab_56547782613a"
     },
     {
       "id": "screen_4b2c3c1c5ed1",
@@ -428,7 +428,7 @@
       "purpose": "Maintain complete and effective-dated business profiles for non-doctor staff and doctors. The module supplies approved workforce information to roster, attendance, staff pay, doctor pay, training, credentials and access lifecycle workflows.",
       "blueprintId": "bp_5bad3568d0a4",
       "brdModuleId": "brdmod_85117305c912",
-      "tabId": "brdtab_366d6025d566"
+      "tabId": "brdtab_efffb35041f5"
     },
     {
       "id": "screen_4205621f2f99",
@@ -441,7 +441,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_b6887bc698a1"
+      "tabId": "brdtab_d42eaf3ce6eb"
     },
     {
       "id": "screen_c369ce47068d",
@@ -454,7 +454,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_222480819a34"
+      "tabId": "brdtab_7ea119e2d59b"
     },
     {
       "id": "screen_e0125925b453",
@@ -467,7 +467,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_09faa4719051"
+      "tabId": "brdtab_de43591f85b8"
     },
     {
       "id": "screen_e937f2b14a02",
@@ -480,7 +480,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_b31d9fab5a48"
+      "tabId": "brdtab_f8fa4be3b634"
     },
     {
       "id": "screen_5b844c5fe559",
@@ -493,7 +493,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_6178836a3bb7"
+      "tabId": "brdtab_277cffe7b081"
     },
     {
       "id": "screen_29f2f76f5b78",
@@ -506,7 +506,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_ef5839c79fba"
+      "tabId": "brdtab_2427e5f1ac72"
     },
     {
       "id": "screen_4e8ce41290ff",
@@ -519,7 +519,7 @@
       "purpose": "Plan and publish staffing coverage across clinics while preventing cross-location conflicts, leave clashes, missing role coverage, avoidable overtime and unclear opening/closing responsibilities.",
       "blueprintId": "bp_b723337e98c8",
       "brdModuleId": "brdmod_f5b4f4ce14f4",
-      "tabId": "brdtab_0931102c70b4"
+      "tabId": "brdtab_5d10b32f034c"
     },
     {
       "id": "screen_856e42207a9c",
@@ -532,7 +532,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_6674af9b5e09"
+      "tabId": "brdtab_6d0d4957fd1c"
     },
     {
       "id": "screen_4fd54226f964",
@@ -545,7 +545,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_d1f4947987f2"
+      "tabId": "brdtab_d01846a51a79"
     },
     {
       "id": "screen_3d8371aa9ce9",
@@ -558,7 +558,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_b22e69f58b1c"
+      "tabId": "brdtab_5d64b2981732"
     },
     {
       "id": "screen_bee430f282cf",
@@ -571,7 +571,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_4da6fb332cd8"
+      "tabId": "brdtab_a0411e8edad2"
     },
     {
       "id": "screen_d5bbdbcc845d",
@@ -584,7 +584,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_a87f612939f0"
+      "tabId": "brdtab_f68d021874d2"
     },
     {
       "id": "screen_c0db190e799a",
@@ -597,7 +597,7 @@
       "purpose": "Record actual work time against rostered shifts, manage breaks and missed punches, and create approved timesheets without confusing attendance records with checklist completion.",
       "blueprintId": "bp_1497c37e7168",
       "brdModuleId": "brdmod_cf213b0ab9d6",
-      "tabId": "brdtab_1d479f6a9225"
+      "tabId": "brdtab_25cf385ac417"
     },
     {
       "id": "screen_e16b849eb084",
@@ -610,7 +610,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_0c9fbad9896c"
+      "tabId": "brdtab_f54d7cb491f1"
     },
     {
       "id": "screen_1cdd32c78332",
@@ -623,7 +623,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_905f3b4a0980"
+      "tabId": "brdtab_e2e77b927d25"
     },
     {
       "id": "screen_f074ae0c335a",
@@ -636,7 +636,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_e2d6d227d4c6"
+      "tabId": "brdtab_50c86238f026"
     },
     {
       "id": "screen_44adfacff87c",
@@ -649,7 +649,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_ac32ce11e204"
+      "tabId": "brdtab_7c22b44744f0"
     },
     {
       "id": "screen_c9c6a3ed3f31",
@@ -662,7 +662,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_3df2e0a0f44f"
+      "tabId": "brdtab_873b63993447"
     },
     {
       "id": "screen_87e931ff2183",
@@ -675,7 +675,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_64600b42b0c0"
+      "tabId": "brdtab_3d0a158fa0a3"
     },
     {
       "id": "screen_a6ada2601e9f",
@@ -688,7 +688,7 @@
       "purpose": "Convert approved attendance, leave and authorised pay categories into payroll-ready information, support review and export to Xero or the selected payroll process, and retain reconciliation history without replacing the payroll/accounting system.",
       "blueprintId": "bp_aebc5d27f4f9",
       "brdModuleId": "brdmod_bd0da3c4a601",
-      "tabId": "brdtab_ee769429e8dd"
+      "tabId": "brdtab_64b668199b53"
     },
     {
       "id": "screen_6a6dd224496c",
@@ -701,7 +701,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_172ba79f73de"
+      "tabId": "brdtab_a0a81a2bc868"
     },
     {
       "id": "screen_d3d625f4998a",
@@ -714,7 +714,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_5e78dbfb2925"
+      "tabId": "brdtab_8d0aa8049040"
     },
     {
       "id": "screen_590d89c76188",
@@ -727,7 +727,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_f17ff1decaf1"
+      "tabId": "brdtab_bb3624144ed0"
     },
     {
       "id": "screen_9d88ea8c68b0",
@@ -740,7 +740,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_8b2fb3443f4f"
+      "tabId": "brdtab_7a0c191c7c50"
     },
     {
       "id": "screen_7df82aaf6fa1",
@@ -753,7 +753,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_2d1d99dbee54"
+      "tabId": "brdtab_70f359fa291a"
     },
     {
       "id": "screen_73861d6678f0",
@@ -766,7 +766,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_d6261823624e"
+      "tabId": "brdtab_b3015c8584fe"
     },
     {
       "id": "screen_c88d53497da6",
@@ -779,7 +779,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_9c0429a7e5c6"
+      "tabId": "brdtab_9f8a387bd320"
     },
     {
       "id": "screen_833019dfa6c9",
@@ -792,7 +792,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_af00b8005bec"
+      "tabId": "brdtab_09e392f78320"
     },
     {
       "id": "screen_0f448baf445f",
@@ -805,7 +805,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_9d11d1ef8139"
+      "tabId": "brdtab_68fa7c4b31a8"
     },
     {
       "id": "screen_7055d014b8db",
@@ -818,7 +818,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_0f5323ff73ed"
+      "tabId": "brdtab_938f900d1968"
     },
     {
       "id": "screen_9af5fc12c558",
@@ -831,7 +831,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_c37f737450b5"
+      "tabId": "brdtab_9a98ea6792d8"
     },
     {
       "id": "screen_1c65af8da1e7",
@@ -844,7 +844,7 @@
       "purpose": "Manage doctor payment calculations from approved Best Practice/practice-system activity through contract rules, adjustments, reconciliation, approval, payslip generation, email delivery, storage, doctor portal publication and confirmation of the manual bank transfer.",
       "blueprintId": "bp_e265e1895a6e",
       "brdModuleId": "brdmod_3f8a3d91f74a",
-      "tabId": "brdtab_9c52800db8e3"
+      "tabId": "brdtab_38106da5bcf3"
     },
     {
       "id": "screen_a965bc719277",
@@ -857,7 +857,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_f94ce43a1e9b"
+      "tabId": "brdtab_ab38373280ac"
     },
     {
       "id": "screen_f1c12d18b700",
@@ -870,7 +870,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_0797373aab3b"
+      "tabId": "brdtab_f2d8fabdf4ee"
     },
     {
       "id": "screen_98ed6fa4b53a",
@@ -883,7 +883,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_a61759550a70"
+      "tabId": "brdtab_ebc737e801f0"
     },
     {
       "id": "screen_5fc60bb13a87",
@@ -896,7 +896,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_4326a660e694"
+      "tabId": "brdtab_cb7692fec7ae"
     },
     {
       "id": "screen_9937b6dde11f",
@@ -909,7 +909,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_4ef54b541e9f"
+      "tabId": "brdtab_a53fcf0e5181"
     },
     {
       "id": "screen_94fc1effde35",
@@ -922,7 +922,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_c5846d6f665b"
+      "tabId": "brdtab_ea234b21efe1"
     },
     {
       "id": "screen_2d8ddf39ead3",
@@ -935,7 +935,7 @@
       "purpose": "Provide an operational workspace for Bulk Billing Practice Incentive Program forecasting, doctor/location contribution review, evidence readiness, variance analysis and final reconciliation using approved practice-system summaries.",
       "blueprintId": "bp_5aa0aa11d2b9",
       "brdModuleId": "brdmod_49b6a5786b8d",
-      "tabId": "brdtab_3fdc3b1fa8da"
+      "tabId": "brdtab_3249f7b6d2a0"
     },
     {
       "id": "screen_f0f5dab65266",
@@ -948,7 +948,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_7d275abf5b2e"
+      "tabId": "brdtab_a1317ca51f1b"
     },
     {
       "id": "screen_5e9c625526dd",
@@ -961,7 +961,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_3f507c11ef5f"
+      "tabId": "brdtab_6b0e6b97d5b6"
     },
     {
       "id": "screen_672bc6783d5e",
@@ -974,7 +974,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_1e85d2e0fa63"
+      "tabId": "brdtab_6f49515876a3"
     },
     {
       "id": "screen_51c2def7b175",
@@ -987,7 +987,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_9ec988c8a481"
+      "tabId": "brdtab_4e54484cc688"
     },
     {
       "id": "screen_29ddfd6f6622",
@@ -1000,7 +1000,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_dccdbbbba4fe"
+      "tabId": "brdtab_ac5cb451cf86"
     },
     {
       "id": "screen_cd15fda6afe3",
@@ -1013,7 +1013,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_24f109141bbd"
+      "tabId": "brdtab_4b5acf336b99"
     },
     {
       "id": "screen_e6f9cc1334f8",
@@ -1026,7 +1026,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_fc75e0fb788b"
+      "tabId": "brdtab_c753ba37067a"
     },
     {
       "id": "screen_74fc6b8a263b",
@@ -1039,7 +1039,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_1f80703a7d2a"
+      "tabId": "brdtab_a1e04b06e16e"
     },
     {
       "id": "screen_55f73bb40b92",
@@ -1052,7 +1052,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_c2f76c826f7d"
+      "tabId": "brdtab_d9b267fbc2bd"
     },
     {
       "id": "screen_2dc301050b1c",
@@ -1065,7 +1065,7 @@
       "purpose": "Combine personal tasks, operational checklists, opening/closing duties, manager reviews, meeting minutes and follow-up actions so no duty or decision remains unowned.",
       "blueprintId": "bp_8b416edd08ea",
       "brdModuleId": "brdmod_f88500a2100f",
-      "tabId": "brdtab_63fea7761510"
+      "tabId": "brdtab_7a583c39295c"
     },
     {
       "id": "screen_7e234535d00d",
@@ -1078,7 +1078,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_12d1ce7fc6a0"
+      "tabId": "brdtab_0185793cb0ab"
     },
     {
       "id": "screen_1e945ed950a9",
@@ -1091,7 +1091,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_7328eb6fa2b8"
+      "tabId": "brdtab_cc6e2c2cb144"
     },
     {
       "id": "screen_870b2b6a8546",
@@ -1104,7 +1104,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_389dd269c558"
+      "tabId": "brdtab_ce7809f85488"
     },
     {
       "id": "screen_f1347baeb139",
@@ -1117,7 +1117,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_f4a4be2ec54c"
+      "tabId": "brdtab_0e631fc80b0f"
     },
     {
       "id": "screen_5bdb3c167877",
@@ -1130,7 +1130,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_0cbd4ba51dfb"
+      "tabId": "brdtab_2285be1dcb2b"
     },
     {
       "id": "screen_5b836fc94a02",
@@ -1143,7 +1143,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_6ab710dd0ea7"
+      "tabId": "brdtab_2f93583e31d4"
     },
     {
       "id": "screen_c14ea201d1c9",
@@ -1156,7 +1156,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_4a66cf3bb49e"
+      "tabId": "brdtab_db49a5235f19"
     },
     {
       "id": "screen_be1e9e285f2a",
@@ -1169,7 +1169,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_c9ae0ec10075"
+      "tabId": "brdtab_70f7509447cf"
     },
     {
       "id": "screen_dc08d669fb07",
@@ -1182,7 +1182,7 @@
       "purpose": "Assign, deliver and monitor mandatory and optional learning, policy acknowledgements, induction, assessments and competency evidence across staff, doctors, roles and clinics.",
       "blueprintId": "bp_67d622607ac0",
       "brdModuleId": "brdmod_87f805037df9",
-      "tabId": "brdtab_32a44cb2cee2"
+      "tabId": "brdtab_3334482a2ffa"
     },
     {
       "id": "screen_be6fe5359562",
@@ -1195,7 +1195,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_b3364290224a"
+      "tabId": "brdtab_81219a1620b7"
     },
     {
       "id": "screen_290b046cbde5",
@@ -1208,7 +1208,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_177163141dab"
+      "tabId": "brdtab_97c54988a409"
     },
     {
       "id": "screen_2bc5341b41c0",
@@ -1221,7 +1221,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_ccac5d7bb761"
+      "tabId": "brdtab_eb52d08215dc"
     },
     {
       "id": "screen_f3b0c10422b9",
@@ -1234,7 +1234,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_36329d2498ae"
+      "tabId": "brdtab_eaea49eaf010"
     },
     {
       "id": "screen_3af1c79fa7d1",
@@ -1247,7 +1247,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_56e376138f68"
+      "tabId": "brdtab_86a662f05cd3"
     },
     {
       "id": "screen_5951559433be",
@@ -1260,7 +1260,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_bb79568e02b5"
+      "tabId": "brdtab_a4acbcf8df1f"
     },
     {
       "id": "screen_223df647ead9",
@@ -1273,7 +1273,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_8b0973887395"
+      "tabId": "brdtab_b5de82b6a8f9"
     },
     {
       "id": "screen_4a8215d5ae7d",
@@ -1286,7 +1286,7 @@
       "purpose": "Coordinate accreditation readiness, quality improvement, PDSA cycles, nursing and cold-chain duties, service feedback, audits and regulatory changes in one evidence-based workspace.",
       "blueprintId": "bp_e9944df33c60",
       "brdModuleId": "brdmod_a31078f041bc",
-      "tabId": "brdtab_68f020b91492"
+      "tabId": "brdtab_5e63cca500f6"
     },
     {
       "id": "screen_1eb483efe8f6",
@@ -1299,7 +1299,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_57a644567858"
+      "tabId": "brdtab_85d26ff88b8e"
     },
     {
       "id": "screen_ee21f1ccb4ac",
@@ -1312,7 +1312,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_62b0362433b8"
+      "tabId": "brdtab_9ab3da461905"
     },
     {
       "id": "screen_2317b311b805",
@@ -1325,7 +1325,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_44a66be389f4"
+      "tabId": "brdtab_3477017682f8"
     },
     {
       "id": "screen_30325e7ac8e9",
@@ -1338,7 +1338,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_cc95aa90298a"
+      "tabId": "brdtab_a9ecb1066b12"
     },
     {
       "id": "screen_5010cce15b01",
@@ -1351,7 +1351,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_317061506908"
+      "tabId": "brdtab_3d3ba82e8189"
     },
     {
       "id": "screen_ec2f93e8fa7d",
@@ -1364,7 +1364,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_e93c78ad7008"
+      "tabId": "brdtab_b463e0f68448"
     },
     {
       "id": "screen_4bac09d0805e",
@@ -1377,7 +1377,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_f4cca0952f80"
+      "tabId": "brdtab_282e8f76775b"
     },
     {
       "id": "screen_ce19107d3090",
@@ -1390,7 +1390,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_2f60b9f68ec4"
+      "tabId": "brdtab_1feaaf3fc3bb"
     },
     {
       "id": "screen_8f46c2ccd5d4",
@@ -1403,7 +1403,7 @@
       "purpose": "Capture incoming documents and emails, maintain templates and location folders, control policies/SOPs and generated PDFs, and ensure every important document has an owner, status, version, review date and linked business purpose.",
       "blueprintId": "bp_a071391e78c6",
       "brdModuleId": "brdmod_f6342429add6",
-      "tabId": "brdtab_e90d2185dea3"
+      "tabId": "brdtab_136e6ad9d031"
     },
     {
       "id": "screen_9efcfd19eab2",
@@ -1416,7 +1416,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_94666382051e"
+      "tabId": "brdtab_95caa4a55178"
     },
     {
       "id": "screen_1f22f9af4f2f",
@@ -1429,7 +1429,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_7b786691005d"
+      "tabId": "brdtab_5b50508c8947"
     },
     {
       "id": "screen_52470507c4af",
@@ -1442,7 +1442,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_0b0fbdeb1d75"
+      "tabId": "brdtab_6ff8069a5540"
     },
     {
       "id": "screen_a61024be97e7",
@@ -1455,7 +1455,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_8a1e631205f7"
+      "tabId": "brdtab_5f3e2c800348"
     },
     {
       "id": "screen_8e23972b2888",
@@ -1468,7 +1468,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_20e3612648de"
+      "tabId": "brdtab_50c1fe32e965"
     },
     {
       "id": "screen_15af6082c796",
@@ -1481,7 +1481,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_e576899fd907"
+      "tabId": "brdtab_8981b8c92385"
     },
     {
       "id": "screen_36785a46ba7d",
@@ -1494,7 +1494,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_a214d81354ca"
+      "tabId": "brdtab_3644f37a5102"
     },
     {
       "id": "screen_d1716107daf2",
@@ -1507,7 +1507,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_f4df1dde6df7"
+      "tabId": "brdtab_613813253bfa"
     },
     {
       "id": "screen_00f0254b75e8",
@@ -1520,7 +1520,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_85cefb1c0eed"
+      "tabId": "brdtab_6b2ea8ce649f"
     },
     {
       "id": "screen_97b88d900d07",
@@ -1533,7 +1533,7 @@
       "purpose": "Centralise IT, facility, equipment, printer, operational and planned maintenance requests with priority, SLA, assignment, vendor involvement, evidence and manager sign-off.",
       "blueprintId": "bp_84aaa4d8f334",
       "brdModuleId": "brdmod_04c730050641",
-      "tabId": "brdtab_a82d70efd6f8"
+      "tabId": "brdtab_8cf4e2852774"
     },
     {
       "id": "screen_52b977416676",
@@ -1546,7 +1546,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_a462ed59132b"
+      "tabId": "brdtab_955a7d78f91c"
     },
     {
       "id": "screen_49c80182e63c",
@@ -1559,7 +1559,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_96b1e26a381e"
+      "tabId": "brdtab_ff8b6b9634bf"
     },
     {
       "id": "screen_6a86c0d4667d",
@@ -1572,7 +1572,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_7dae91affac2"
+      "tabId": "brdtab_e22fcca26f72"
     },
     {
       "id": "screen_3aa5f6b7c1bb",
@@ -1585,7 +1585,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_607f1c65d866"
+      "tabId": "brdtab_dbd0e6b0b229"
     },
     {
       "id": "screen_abc986b40a16",
@@ -1598,7 +1598,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_7d0a0d2671a6"
+      "tabId": "brdtab_62b40b1a50bb"
     },
     {
       "id": "screen_1722b7b5933d",
@@ -1611,7 +1611,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_87678bf0e99c"
+      "tabId": "brdtab_a3824e826fed"
     },
     {
       "id": "screen_3b8d0a86e115",
@@ -1624,7 +1624,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_96cd48248b9f"
+      "tabId": "brdtab_6df84ec3deea"
     },
     {
       "id": "screen_9a8cb447a086",
@@ -1637,7 +1637,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_892fb5557267"
+      "tabId": "brdtab_37aaf10a6eba"
     },
     {
       "id": "screen_b430a19d2bbc",
@@ -1650,7 +1650,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_299587aa92c4"
+      "tabId": "brdtab_1642f4481f7e"
     },
     {
       "id": "screen_7487d26d8fec",
@@ -1663,7 +1663,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_ad43611da940"
+      "tabId": "brdtab_c99a6f3c9bf8"
     },
     {
       "id": "screen_6eea40281705",
@@ -1676,7 +1676,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_8ec209beddf9"
+      "tabId": "brdtab_e357c8935ba1"
     },
     {
       "id": "screen_65804ebfb92d",
@@ -1689,7 +1689,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_baae32bb175c"
+      "tabId": "brdtab_265f31ae2b99"
     },
     {
       "id": "screen_f3847526b8c7",
@@ -1702,7 +1702,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_78a82cf2d3fa"
+      "tabId": "brdtab_a7af8212d343"
     },
     {
       "id": "screen_4517c0b8e46b",
@@ -1715,7 +1715,7 @@
       "purpose": "Manage stock levels, transfers, supplier invoice review, supplier/contract governance, non-patient finance approvals, clinic assets, biomedical equipment and printer fleet lifecycle without duplicating patient billing.",
       "blueprintId": "bp_351b364edeac",
       "brdModuleId": "brdmod_180137674738",
-      "tabId": "brdtab_c406ff763a1d"
+      "tabId": "brdtab_422de7df17fe"
     },
     {
       "id": "screen_5cb512ef4a5c",
@@ -1728,7 +1728,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_d78ed6e57ca5"
+      "tabId": "brdtab_ddad5b45d8d8"
     },
     {
       "id": "screen_f64f155f630a",
@@ -1741,7 +1741,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_c5164eedc922"
+      "tabId": "brdtab_262ac9784c82"
     },
     {
       "id": "screen_2414aa64eea5",
@@ -1754,7 +1754,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_19df4bfc46e4"
+      "tabId": "brdtab_865a19412af7"
     },
     {
       "id": "screen_db23601a9a80",
@@ -1767,7 +1767,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_cc9829831552"
+      "tabId": "brdtab_a9ed6fb6e555"
     },
     {
       "id": "screen_0de212f8a89b",
@@ -1780,7 +1780,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_41c76800d402"
+      "tabId": "brdtab_9b14be611af4"
     },
     {
       "id": "screen_3fbdf7f83ef7",
@@ -1793,7 +1793,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_92c86ddfec62"
+      "tabId": "brdtab_c3fdbaa25898"
     },
     {
       "id": "screen_25e353a709b9",
@@ -1806,7 +1806,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_9cf5ddcd4237"
+      "tabId": "brdtab_f9f3de11002f"
     },
     {
       "id": "screen_d25b3b8e6b46",
@@ -1819,7 +1819,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_15a54d2624de"
+      "tabId": "brdtab_a0dc4bfd3949"
     },
     {
       "id": "screen_e11682dbc663",
@@ -1832,7 +1832,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_b65a7a828cbc"
+      "tabId": "brdtab_11275dd4f1b9"
     },
     {
       "id": "screen_1d0b2b0a1168",
@@ -1845,7 +1845,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_9c97588925cf"
+      "tabId": "brdtab_e52fb06e3064"
     },
     {
       "id": "screen_016136bce10e",
@@ -1858,7 +1858,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_521f41efd5a8"
+      "tabId": "brdtab_3ae687f9533e"
     },
     {
       "id": "screen_5d09105e85b0",
@@ -1871,7 +1871,7 @@
       "purpose": "Capture operational and non-clinical incidents, complaints, risks, privacy/cyber events and downtime; support triage, investigation, RCA/CAPA, business continuity and evidence-based closure.",
       "blueprintId": "bp_0611150e32b4",
       "brdModuleId": "brdmod_080d97fd2b30",
-      "tabId": "brdtab_30d77243b8b0"
+      "tabId": "brdtab_830aa5f413b0"
     },
     {
       "id": "screen_36fe832b994e",
@@ -1884,7 +1884,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_631017e7f0eb"
+      "tabId": "brdtab_b0b94aed14a4"
     },
     {
       "id": "screen_cd077b10ca69",
@@ -1897,7 +1897,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_33384d24ce8c"
+      "tabId": "brdtab_5205c45393e7"
     },
     {
       "id": "screen_0afc24e2bafb",
@@ -1910,7 +1910,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_345562123bac"
+      "tabId": "brdtab_eaca17da0e06"
     },
     {
       "id": "screen_4a27561bb434",
@@ -1923,7 +1923,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_5f09bfeed640"
+      "tabId": "brdtab_3c1004e4b3e0"
     },
     {
       "id": "screen_78cbf070040e",
@@ -1936,7 +1936,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_572f60aa8bf1"
+      "tabId": "brdtab_6efb1791bf52"
     },
     {
       "id": "screen_a924102c84ff",
@@ -1949,7 +1949,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_a5fa057a9008"
+      "tabId": "brdtab_c72074f006c8"
     },
     {
       "id": "screen_2812f48b9bb6",
@@ -1962,7 +1962,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_449e05bf2319"
+      "tabId": "brdtab_1f30612c2723"
     },
     {
       "id": "screen_b4ff213ae7c6",
@@ -1975,7 +1975,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_5de835c28b09"
+      "tabId": "brdtab_c58c2b9d16ab"
     },
     {
       "id": "screen_9d369522a0be",
@@ -1988,7 +1988,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_26b51e3b3c82"
+      "tabId": "brdtab_ece8de23417e"
     },
     {
       "id": "screen_1b1d06cc4c34",
@@ -2001,7 +2001,7 @@
       "purpose": "Plan, approve, send and monitor operational and marketing email/SMS communications using approved templates, audience controls, consent/suppression rules and delivery reporting.",
       "blueprintId": "bp_85788348c9b3",
       "brdModuleId": "brdmod_ec1c00f011f0",
-      "tabId": "brdtab_eda3a46749a4"
+      "tabId": "brdtab_aedf3f2d0999"
     },
     {
       "id": "screen_f60ab3cf5683",
@@ -2014,7 +2014,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_f80e0d304756"
+      "tabId": "brdtab_1d224599d9de"
     },
     {
       "id": "screen_a91560ae81af",
@@ -2027,7 +2027,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_d1ebfbf005fe"
+      "tabId": "brdtab_2582621f5183"
     },
     {
       "id": "screen_626dd3173ac9",
@@ -2040,7 +2040,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_87f9750482f1"
+      "tabId": "brdtab_8c3b6e53b916"
     },
     {
       "id": "screen_49d16216fd87",
@@ -2053,7 +2053,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_e81efb7f99e8"
+      "tabId": "brdtab_075c95d69e20"
     },
     {
       "id": "screen_07825e26d9c9",
@@ -2066,7 +2066,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_fa12cf845012"
+      "tabId": "brdtab_e441f521fe41"
     },
     {
       "id": "screen_a746078830f8",
@@ -2079,7 +2079,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_a4403d841845"
+      "tabId": "brdtab_12ad287e47b6"
     },
     {
       "id": "screen_9e52be83a976",
@@ -2092,7 +2092,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_4cd5a41d55ab"
+      "tabId": "brdtab_20176fd72864"
     },
     {
       "id": "screen_a7dbb2544c05",
@@ -2105,7 +2105,7 @@
       "purpose": "Monitor clinic websites and digital services, control remote-support access, govern password/secret ownership and rotation, manage security-camera access requests and review device/connector health.",
       "blueprintId": "bp_e75bcd932c20",
       "brdModuleId": "brdmod_65c6245d4efa",
-      "tabId": "brdtab_7ad1cdf1d259"
+      "tabId": "brdtab_592ea4e6729d"
     },
     {
       "id": "screen_0cfc9471c6b3",
@@ -2118,7 +2118,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_640fdd8cb329"
+      "tabId": "brdtab_ae306a1ccc3b"
     },
     {
       "id": "screen_49864aa854ff",
@@ -2131,7 +2131,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_7ddf58e86d6d"
+      "tabId": "brdtab_4f8a273c2657"
     },
     {
       "id": "screen_634aa4172ec6",
@@ -2144,7 +2144,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_79af6ef33401"
+      "tabId": "brdtab_a2172cad5a4f"
     },
     {
       "id": "screen_9cb338ff7002",
@@ -2157,7 +2157,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_8d867f05e4c2"
+      "tabId": "brdtab_e0d7ea988b67"
     },
     {
       "id": "screen_21751f00f611",
@@ -2170,7 +2170,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_7b84368406c1"
+      "tabId": "brdtab_cbc6ebd11cd6"
     },
     {
       "id": "screen_2119269c1d14",
@@ -2183,7 +2183,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_3bc9473fd7d0"
+      "tabId": "brdtab_eb26f5ed7a06"
     },
     {
       "id": "screen_107f2fd70020",
@@ -2196,7 +2196,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_9ec2c19702a0"
+      "tabId": "brdtab_621865270937"
     },
     {
       "id": "screen_06110b11c7d8",
@@ -2209,7 +2209,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_94930bd56feb"
+      "tabId": "brdtab_ad4f79ab82f7"
     },
     {
       "id": "screen_fff525af2007",
@@ -2222,7 +2222,7 @@
       "purpose": "Provide aggregate clinic flow and capacity insight, deeper benchmarking, master-data hygiene, change impact management and release/readiness control without creating patient-level operational workflows.",
       "blueprintId": "bp_8985cb56a763",
       "brdModuleId": "brdmod_fd91df02dc51",
-      "tabId": "brdtab_2206c3b4bc23"
+      "tabId": "brdtab_9e08aab57c98"
     },
     {
       "id": "screen_84fff8559517",
@@ -2235,7 +2235,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_f7efa2f81d9e"
+      "tabId": "brdtab_faa37406e862"
     },
     {
       "id": "screen_23b573aed674",
@@ -2248,7 +2248,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_6c08718037ad"
+      "tabId": "brdtab_b45d4d2b2180"
     },
     {
       "id": "screen_e165d70053a7",
@@ -2261,7 +2261,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_e5b2a4292a58"
+      "tabId": "brdtab_74371c4d810c"
     },
     {
       "id": "screen_37dfda567342",
@@ -2274,7 +2274,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_62ff4a90c0bc"
+      "tabId": "brdtab_53dc248f3e5f"
     },
     {
       "id": "screen_d557bcd90fac",
@@ -2287,7 +2287,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_cc3237948d4a"
+      "tabId": "brdtab_008bdea5956c"
     },
     {
       "id": "screen_25f7b2498375",
@@ -2300,7 +2300,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_ebf4210e3fe1"
+      "tabId": "brdtab_7fb17143d460"
     },
     {
       "id": "screen_3272629a6419",
@@ -2313,7 +2313,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_aa7c1710f474"
+      "tabId": "brdtab_d99b4790aea2"
     },
     {
       "id": "screen_b81676d557a2",
@@ -2326,7 +2326,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_2373a78bc1aa"
+      "tabId": "brdtab_fa9817490b5a"
     },
     {
       "id": "screen_9febbf9a806f",
@@ -2339,7 +2339,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_4bb0414a6c55"
+      "tabId": "brdtab_9b26f4685765"
     },
     {
       "id": "screen_4cff0a9c87e9",
@@ -2352,7 +2352,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_96fa918eba56"
+      "tabId": "brdtab_3b75e14c2242"
     },
     {
       "id": "screen_7119fef522d6",
@@ -2365,7 +2365,7 @@
       "purpose": "Prepare a future commercial version for onboarding external clinic groups, controlling subscribed modules, support access, branding, usage, renewals, offboarding and optional department workspaces.",
       "blueprintId": "bp_b36864ad2548",
       "brdModuleId": "brdmod_306b9d7f717c",
-      "tabId": "brdtab_0ba2e39308a6"
+      "tabId": "brdtab_e1deccda7140"
     },
     {
       "id": "screen_ccc228ef4693",

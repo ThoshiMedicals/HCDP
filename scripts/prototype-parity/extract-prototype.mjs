@@ -116,6 +116,30 @@ function lineAt(offset) {
   return html.slice(0, offset).split(/\n/).length;
 }
 
+
+function findQuoteOffset(label, from, to) {
+  if (!label || typeof label !== "string") return null;
+  const window = html.slice(from, to);
+  const candidates = [
+    JSON.stringify(label),
+    "'" + label.replace(/'/g, "\\'") + "'",
+    "`" + label + "`",
+  ];
+  let best = -1;
+  for (const c of candidates) {
+    const i = window.indexOf(c);
+    if (i >= 0 && (best < 0 || i < best)) best = i;
+  }
+  // fallback: raw label text
+  if (best < 0) {
+    const i = window.indexOf(label);
+    if (i >= 0) best = i;
+  }
+  if (best < 0) return null;
+  const abs = from + best;
+  return loc(abs, abs + String(label).length);
+}
+
 function loc(offset, end) {
   return {
     file: "public/pulse-html-prototype.html",
@@ -421,16 +445,36 @@ const brdModules = (named.BRD_V2_MODULES?.data || []).map((m, mi) => {
     icon: m.icon,
     sourceType: "brd",
     source: baseLoc,
-    tabs: (m.tabs || []).map((t, ti) => ({
-      id: sid("brdtab", moduleKey, t.name || t.title || t.id || String(ti)),
-      label: t.name || t.title || t.label || t,
-      raw: typeof t === "string" ? { label: t } : t,
-    })),
-    buttons: (m.buttons || []).map((b, bi) => ({
-      id: sid("brdbtn", moduleKey, b.name || b.label || b.title || String(bi)),
-      label: b.name || b.label || b.title || b,
-      raw: typeof b === "string" ? { label: b } : b,
-    })),
+    tabs: (m.tabs || []).map((t, ti) => {
+      const label = t.name || t.title || t.label || t;
+      const labelStr = typeof label === "string" ? label : String(label);
+      return {
+        id: sid("brdtab", moduleKey, labelStr || String(ti)),
+        label: labelStr,
+        raw: typeof t === "string" ? { label: t } : t,
+        source:
+          findQuoteOffset(
+            labelStr,
+            baseLoc ? baseLoc.startOffset : 0,
+            baseLoc ? baseLoc.endOffset : html.length
+          ) || baseLoc,
+      };
+    }),
+    buttons: (m.buttons || []).map((b, bi) => {
+      const label = b.name || b.label || b.title || b;
+      const labelStr = typeof label === "string" ? label : String(label);
+      return {
+        id: sid("brdbtn", moduleKey, labelStr || String(bi)),
+        label: labelStr,
+        raw: typeof b === "string" ? { label: b } : b,
+        source:
+          findQuoteOffset(
+            labelStr,
+            baseLoc ? baseLoc.startOffset : 0,
+            baseLoc ? baseLoc.endOffset : html.length
+          ) || baseLoc,
+      };
+    }),
     visuals: (m.visuals || []).map((v, vi) => ({
       id: sid("brdvis", moduleKey, String(vi)),
       text: typeof v === "string" ? v : v.text || v.title || JSON.stringify(v),
@@ -441,15 +485,33 @@ const brdModules = (named.BRD_V2_MODULES?.data || []).map((m, mi) => {
       text: typeof r === "string" ? r : r.text || r.title || JSON.stringify(r),
       raw: r,
     })),
-    flows: (m.flows || []).map((f, fi) => ({
-      id: sid("brdflow", moduleKey, f.title || String(fi)),
-      title: f.title,
-      kind: f.kind,
-      steps: (f.steps || []).map((s, si) => ({
-        id: sid("brdstep", moduleKey, f.title || String(fi), String(si)),
-        text: typeof s === "string" ? s : s.text || JSON.stringify(s),
-      })),
-    })),
+    flows: (m.flows || []).map((f, fi) => {
+      const title = f.title || String(fi);
+      return {
+        id: sid("brdflow", moduleKey, title),
+        title: f.title,
+        kind: f.kind,
+        source:
+          findQuoteOffset(
+            f.title || "",
+            baseLoc ? baseLoc.startOffset : 0,
+            baseLoc ? baseLoc.endOffset : html.length
+          ) || baseLoc,
+        steps: (f.steps || []).map((s, si) => {
+          const text = typeof s === "string" ? s : s.text || JSON.stringify(s);
+          return {
+            id: sid("brdstep", moduleKey, title, String(si)),
+            text,
+            source:
+              findQuoteOffset(
+                typeof text === "string" ? text.slice(0, 64) : "",
+                baseLoc ? baseLoc.startOffset : 0,
+                baseLoc ? baseLoc.endOffset : html.length
+              ) || baseLoc,
+          };
+        }),
+      };
+    }),
     outputs: (m.outputs || []).map((o, oi) => ({
       id: sid("brdout", moduleKey, String(oi)),
       text: typeof o === "string" ? o : o.text || o.title || JSON.stringify(o),
@@ -486,16 +548,40 @@ const blueprints = Object.entries(named.MODULE_BLUEPRINTS?.data || {}).map(
         id: sid("bppattern", moduleKey, String(i)),
         raw: x,
       })),
-      flows: (m.flows || []).map((f, fi) => ({
-        id: sid("bpflow", moduleKey, f.id || f.title || String(fi)),
-        flowId: f.id,
-        title: f.title,
-        purpose: f.purpose,
-        steps: (f.steps || []).map((s, si) => ({
-          id: sid("bpstep", moduleKey, f.id || String(fi), String(si)),
-          text: typeof s === "string" ? s : JSON.stringify(s),
-        })),
-      })),
+      flows: (m.flows || []).map((f, fi) => {
+        const bpLoc = named.MODULE_BLUEPRINTS
+          ? loc(
+              named.MODULE_BLUEPRINTS.startOffset,
+              named.MODULE_BLUEPRINTS.endOffset
+            )
+          : null;
+        const title = f.title || f.id || String(fi);
+        return {
+          id: sid("bpflow", moduleKey, f.id || f.title || String(fi)),
+          flowId: f.id,
+          title: f.title,
+          purpose: f.purpose,
+          source:
+            findQuoteOffset(
+              title,
+              bpLoc ? bpLoc.startOffset : 0,
+              bpLoc ? bpLoc.endOffset : html.length
+            ) || bpLoc,
+          steps: (f.steps || []).map((s, si) => {
+            const text = typeof s === "string" ? s : JSON.stringify(s);
+            return {
+              id: sid("bpstep", moduleKey, f.id || String(fi), String(si)),
+              text,
+              source:
+                findQuoteOffset(
+                  typeof text === "string" ? text.slice(0, 64) : "",
+                  bpLoc ? bpLoc.startOffset : 0,
+                  bpLoc ? bpLoc.endOffset : html.length
+                ) || bpLoc,
+            };
+          }),
+        };
+      }),
     };
   }
 );

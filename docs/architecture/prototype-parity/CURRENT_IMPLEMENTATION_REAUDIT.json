@@ -30,7 +30,9 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m01-command-centre",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/components/workspaces/DashboardWorkspace.tsx",
+        "src/modules/m01-command-centre/CommandCentreModule.tsx",
+        "src/modules/m01-command-centre/adapters/platform.ts"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -41,8 +43,10 @@
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [],
       "fileCount": 4,
-      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "permissions": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
       "crossModuleIntegrations": "M01/M02 projections incomplete until producer modules implemented",
       "evidencePaths": "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
@@ -51,7 +55,7 @@
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Durable domain services/repositories absent; final-design conversion + source-completeness labels pending P2",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; final-design conversion pending",
       "targetWave": "P2",
       "note": "Read-only executive summaries with source-completeness and drill-downs"
     },
@@ -83,7 +87,9 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m02-action-inbox",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/components/workspaces/ActionInboxWorkspace.tsx",
+        "src/modules/m02-action-inbox/ActionInboxModule.tsx",
+        "src/modules/m02-action-inbox/adapters/platform.ts"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -94,8 +100,10 @@
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [],
       "fileCount": 4,
-      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "permissions": "Practice Managers, Operations Managers, Reception/Nursing Leads, authorised operational roles (accessClassification=operational)",
       "crossModuleIntegrations": "M01/M02 projections incomplete until producer modules implemented",
       "evidencePaths": "docs/audits/HCDP_UI_BATCH1_OWNER_VISUAL_REMEDIATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md",
@@ -104,7 +112,7 @@
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Durable domain services/repositories absent; cross-module projection incomplete until producers exist",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; final-design conversion pending",
       "targetWave": "P2",
       "note": "Receives action/approval/exception/notification projections"
     },
@@ -168,7 +176,10 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m03-organisation-access",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/components/workspaces/OrganisationWorkspace.tsx",
+        "src/modules/m03-organisation-access/OrganisationAccessModule.tsx",
+        "src/modules/m03-organisation-access/adapters/index.ts",
+        "src/modules/m03-organisation-access/adapters/org-inbox-sync.ts"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -179,8 +190,205 @@
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Module 3",
+          "line": 153,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Organisation & Access",
+          "line": 154,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => setSection(item.id)",
+          "line": 162,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Acting as",
+          "line": 175,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => switchActor(a.id)",
+          "line": 181,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Demo controls",
+          "line": 189,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Advance demo clock one day",
+          "line": 190,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => advanceClock(1)",
+          "line": 190,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Advance demo clock three days",
+          "line": 193,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => advanceClock(3)",
+          "line": 193,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Run expiry check",
+          "line": 196,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "runExpiryCheck",
+          "line": 196,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Reset demo data",
+          "line": 199,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "resetDemo",
+          "line": 199,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Organisation & Access",
+          "line": 207,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Healthcare Doctors Pulse \u2014 structure, users, permissions and audit.",
+          "line": 208,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Open security",
+          "line": 218,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => navigate(\"security\")",
+          "line": 218,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Notifications",
+          "line": 226,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Resolve",
+          "line": 257,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => resolveNotification(n)",
+          "line": 257,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Resolve critical alert",
+          "line": 269,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClose",
+          "handler": "() => setCriticalResolve(null)",
+          "line": 270,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Cancel",
+          "line": 273,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => setCriticalResolve(null)",
+          "line": 273,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "Formally resolve",
+          "line": 274,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "confirmCriticalResolve",
+          "line": 274,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "(e) => setCriticalNote(e.target.value)",
+          "line": 288,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "(v) => { setQuery(v); setSearchOpen(!!v.trim());",
+          "line": 293,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/components/workspaces/OrganisationWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => {\n                    navigate(r.section, { card: r.id, query: undefined",
+          "line": 301,
+          "kind": "handler"
+        }
+      ],
       "fileCount": 5,
-      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)",
+      "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "permissions": "Owner / Director, Group Administrator, Operations Manager, Authorised Practice Manager, Auditor (accessClassification=manager)",
       "crossModuleIntegrations": "M03 owns org/clinic/user/access; contracts to all modules",
       "evidencePaths": "docs/audits/HCDP_UI_BATCH1_CONTROLLED_INTEGRATION_REPORT.md; docs/audits/HCDP_UI_BATCH1_INDEPENDENT_VERIFICATION_FINDINGS_REMEDIATION_REPORT.md",
@@ -189,7 +397,7 @@
       "revisedIntegrationStatus": "IN-DEVELOPMENT",
       "revisedEvidenceStatus": "OWNER-ACCEPTED",
       "revisedProductionStatus": "NOT-STARTED",
-      "missingCapabilityGaps": "Durable domain services/repositories absent; organisation/access domain hardening pending P2",
+      "missingCapabilityGaps": "Durable domain services/repositories absent; final-design conversion pending",
       "targetWave": "P2",
       "note": "Organisation, tenant, clinic, user and access scope"
     },
@@ -253,24 +461,295 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m04-staff-doctors",
       "pagePaths": [
+        "src/modules/m04-staff-doctors/StaffDoctorsModule.tsx",
         "src/modules/m04-staff-doctors/StaffDoctorsWorkspace.tsx",
-        "src/modules/m04-staff-doctors/sections/OverviewSection.tsx"
+        "src/modules/m04-staff-doctors/context.tsx"
       ],
       "servicePaths": [
-        "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
-        "src/modules/m04-staff-doctors/services/events.ts",
-        "src/modules/m04-staff-doctors/services/engagement-service.ts",
-        "src/modules/m04-staff-doctors/services/index.ts",
         "src/modules/m04-staff-doctors/services/credential-service.ts",
-        "src/modules/m04-staff-doctors/services/readiness-service.ts",
+        "src/modules/m04-staff-doctors/services/engagement-service.ts",
+        "src/modules/m04-staff-doctors/services/events.ts",
+        "src/modules/m04-staff-doctors/services/index.ts",
         "src/modules/m04-staff-doctors/services/leave-service.ts",
-        "src/modules/m04-staff-doctors/services/person-service.ts"
+        "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+        "src/modules/m04-staff-doctors/services/person-service.ts",
+        "src/modules/m04-staff-doctors/services/readiness-service.ts"
       ],
       "repositoryPaths": [
         "src/modules/m04-staff-doctors/sections/ReportsSection.tsx"
       ],
       "testPaths": [
         "src/modules/m04-staff-doctors/tests/m04-domain.test.ts"
+      ],
+      "serviceIndex": [
+        {
+          "path": "src/modules/m04-staff-doctors/services/credential-service.ts",
+          "symbol": "createCredential",
+          "line": 34,
+          "key": "src/modules/m04-staff-doctors/services/credential-service.ts::createCredential"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/credential-service.ts",
+          "symbol": "listCredentials",
+          "line": 111,
+          "key": "src/modules/m04-staff-doctors/services/credential-service.ts::listCredentials"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/credential-service.ts",
+          "symbol": "refreshCredentialExpiry",
+          "line": 95,
+          "key": "src/modules/m04-staff-doctors/services/credential-service.ts::refreshCredentialExpiry"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/credential-service.ts",
+          "symbol": "toCredentialRef",
+          "line": 21,
+          "key": "src/modules/m04-staff-doctors/services/credential-service.ts::toCredentialRef"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/credential-service.ts",
+          "symbol": "verifyCredential",
+          "line": 72,
+          "key": "src/modules/m04-staff-doctors/services/credential-service.ts::verifyCredential"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/engagement-service.ts",
+          "symbol": "createEngagement",
+          "line": 43,
+          "key": "src/modules/m04-staff-doctors/services/engagement-service.ts::createEngagement"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/engagement-service.ts",
+          "symbol": "findEngagementOverlap",
+          "line": 26,
+          "key": "src/modules/m04-staff-doctors/services/engagement-service.ts::findEngagementOverlap"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/engagement-service.ts",
+          "symbol": "listEngagements",
+          "line": 159,
+          "key": "src/modules/m04-staff-doctors/services/engagement-service.ts::listEngagements"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/engagement-service.ts",
+          "symbol": "updateEngagement",
+          "line": 115,
+          "key": "src/modules/m04-staff-doctors/services/engagement-service.ts::updateEngagement"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/events.ts",
+          "symbol": "publishM04WorkforceEvent",
+          "line": 37,
+          "key": "src/modules/m04-staff-doctors/services/events.ts::publishM04WorkforceEvent"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/leave-service.ts",
+          "symbol": "addAvailability",
+          "line": 92,
+          "key": "src/modules/m04-staff-doctors/services/leave-service.ts::addAvailability"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/leave-service.ts",
+          "symbol": "approveLeave",
+          "line": 46,
+          "key": "src/modules/m04-staff-doctors/services/leave-service.ts::approveLeave"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/leave-service.ts",
+          "symbol": "listAvailability",
+          "line": 148,
+          "key": "src/modules/m04-staff-doctors/services/leave-service.ts::listAvailability"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/leave-service.ts",
+          "symbol": "listLeave",
+          "line": 144,
+          "key": "src/modules/m04-staff-doctors/services/leave-service.ts::listLeave"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/leave-service.ts",
+          "symbol": "requestLeave",
+          "line": 9,
+          "key": "src/modules/m04-staff-doctors/services/leave-service.ts::requestLeave"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "completeOffboarding",
+          "line": 255,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::completeOffboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "completeOnboarding",
+          "line": 161,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::completeOnboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "createRestriction",
+          "line": 77,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::createRestriction"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "listOffboarding",
+          "line": 321,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::listOffboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "listOnboarding",
+          "line": 317,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::listOnboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "listRestrictionsForActor",
+          "line": 72,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::listRestrictionsForActor"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "markOffboardingIncomplete",
+          "line": 301,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::markOffboardingIncomplete"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "maskRestriction",
+          "line": 55,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::maskRestriction"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "startOffboarding",
+          "line": 180,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::startOffboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "startOnboarding",
+          "line": 131,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::startOnboarding"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/lifecycle-service.ts",
+          "symbol": "transferOffboardingResponsibilities",
+          "line": 231,
+          "key": "src/modules/m04-staff-doctors/services/lifecycle-service.ts::transferOffboardingResponsibilities"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "createPerson",
+          "line": 48,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::createPerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "duplicatePersonCheck",
+          "line": 20,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::duplicatePersonCheck"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "getPerson",
+          "line": 241,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::getPerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "listPeople",
+          "line": 245,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::listPeople"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "listPeopleForActor",
+          "line": 255,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::listPeopleForActor"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "reinstatePerson",
+          "line": 210,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::reinstatePerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "softArchivePerson",
+          "line": 156,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::softArchivePerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "suspendPerson",
+          "line": 180,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::suspendPerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "toWorkforcePersonRef",
+          "line": 36,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::toWorkforcePersonRef"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/person-service.ts",
+          "symbol": "updatePerson",
+          "line": 106,
+          "key": "src/modules/m04-staff-doctors/services/person-service.ts::updatePerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "assertNotManualReady",
+          "line": 236,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::assertNotManualReady"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "buildSourceVersions",
+          "line": 18,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::buildSourceVersions"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "calculateReadiness",
+          "line": 109,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::calculateReadiness"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "getEffectiveReadiness",
+          "line": 63,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::getEffectiveReadiness"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "invalidateReadinessForPerson",
+          "line": 231,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::invalidateReadinessForPerson"
+        },
+        {
+          "path": "src/modules/m04-staff-doctors/services/readiness-service.ts",
+          "symbol": "isReadinessCacheFresh",
+          "line": 52,
+          "key": "src/modules/m04-staff-doctors/services/readiness-service.ts::isReadinessCacheFresh"
+        }
+      ],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m04-staff-doctors/StaffDoctorsWorkspace.tsx",
+          "symbol": "onNavigate",
+          "handler": "navigateSection",
+          "line": 88,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m04-staff-doctors/StaffDoctorsWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "onNavigate",
+          "line": 113,
+          "kind": "handler"
+        }
       ],
       "fileCount": 40,
       "persistenceMethod": "service+repository (module-local)",
@@ -338,48 +817,448 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m05-roster",
       "pagePaths": [
-        "src/modules/m05-roster/RosterWorkspace.tsx"
+        "src/modules/m05-roster/RosterModule.tsx",
+        "src/modules/m05-roster/RosterWorkspace.tsx",
+        "src/modules/m05-roster/context.tsx"
       ],
       "servicePaths": [
-        "src/modules/m05-roster/services/availability-read-service.ts",
-        "src/modules/m05-roster/services/events.ts",
-        "src/modules/m05-roster/services/swap-service.ts",
-        "src/modules/m05-roster/services/errors.ts",
-        "src/modules/m05-roster/services/index.ts",
+        "src/modules/m05-roster/services/acknowledgement-service.ts",
         "src/modules/m05-roster/services/assignment-service.ts",
+        "src/modules/m05-roster/services/audit-helpers.ts",
+        "src/modules/m05-roster/services/availability-read-service.ts",
+        "src/modules/m05-roster/services/bulk-operation-service.ts",
+        "src/modules/m05-roster/services/clinic-time-service.ts",
+        "src/modules/m05-roster/services/conflict-service.ts",
+        "src/modules/m05-roster/services/cost-forecast-service.ts",
+        "src/modules/m05-roster/services/coverage-service.ts",
+        "src/modules/m05-roster/services/eligibility-service.ts",
+        "src/modules/m05-roster/services/errors.ts",
+        "src/modules/m05-roster/services/events.ts",
+        "src/modules/m05-roster/services/index.ts",
+        "src/modules/m05-roster/services/open-shift-service.ts",
+        "src/modules/m05-roster/services/period-service.ts",
+        "src/modules/m05-roster/services/policy-service.ts",
         "src/modules/m05-roster/services/publication-service.ts",
         "src/modules/m05-roster/services/reporting-service.ts",
         "src/modules/m05-roster/services/shift-service.ts",
-        "src/modules/m05-roster/services/conflict-service.ts",
-        "src/modules/m05-roster/services/period-service.ts",
-        "src/modules/m05-roster/services/eligibility-service.ts",
-        "src/modules/m05-roster/services/clinic-time-service.ts",
-        "src/modules/m05-roster/services/open-shift-service.ts",
-        "src/modules/m05-roster/services/acknowledgement-service.ts",
-        "src/modules/m05-roster/services/cost-forecast-service.ts",
-        "src/modules/m05-roster/services/audit-helpers.ts",
-        "src/modules/m05-roster/services/bulk-operation-service.ts",
-        "src/modules/m05-roster/services/policy-service.ts",
-        "src/modules/m05-roster/services/coverage-service.ts"
+        "src/modules/m05-roster/services/swap-service.ts"
       ],
       "repositoryPaths": [
         "src/modules/m05-roster/services/reporting-service.ts",
         "src/modules/m05-roster/sections/ReportsSection.tsx"
       ],
       "testPaths": [
-        "src/modules/m05-roster/tests/m05-ux-states.test.ts",
-        "src/modules/m05-roster/tests/m05-cost-privacy.test.ts",
         "src/modules/m05-roster/tests/m05-adapters.test.ts",
-        "src/modules/m05-roster/tests/m05-timezone-dst.test.ts",
-        "src/modules/m05-roster/tests/m05-eligibility.test.ts",
         "src/modules/m05-roster/tests/m05-authz.test.ts",
-        "src/modules/m05-roster/tests/m05-performance.test.ts",
-        "src/modules/m05-roster/tests/m05-migration.test.ts",
-        "src/modules/m05-roster/tests/m05-domain.test.ts",
-        "src/modules/m05-roster/tests/m05-conflict-policy.test.ts",
         "src/modules/m05-roster/tests/m05-bulk.test.ts",
+        "src/modules/m05-roster/tests/m05-conflict-policy.test.ts",
+        "src/modules/m05-roster/tests/m05-cost-privacy.test.ts",
+        "src/modules/m05-roster/tests/m05-domain.test.ts",
+        "src/modules/m05-roster/tests/m05-eligibility.test.ts",
+        "src/modules/m05-roster/tests/m05-migration.test.ts",
+        "src/modules/m05-roster/tests/m05-performance.test.ts",
         "src/modules/m05-roster/tests/m05-publication.test.ts",
-        "src/modules/m05-roster/tests/m05-swap-open.test.ts"
+        "src/modules/m05-roster/tests/m05-swap-open.test.ts",
+        "src/modules/m05-roster/tests/m05-timezone-dst.test.ts",
+        "src/modules/m05-roster/tests/m05-ux-states.test.ts"
+      ],
+      "serviceIndex": [
+        {
+          "path": "src/modules/m05-roster/services/acknowledgement-service.ts",
+          "symbol": "acknowledgePublication",
+          "line": 25,
+          "key": "src/modules/m05-roster/services/acknowledgement-service.ts::acknowledgePublication"
+        },
+        {
+          "path": "src/modules/m05-roster/services/acknowledgement-service.ts",
+          "symbol": "listAcknowledgementsForPublication",
+          "line": 78,
+          "key": "src/modules/m05-roster/services/acknowledgement-service.ts::listAcknowledgementsForPublication"
+        },
+        {
+          "path": "src/modules/m05-roster/services/assignment-service.ts",
+          "symbol": "assignPerson",
+          "line": 47,
+          "key": "src/modules/m05-roster/services/assignment-service.ts::assignPerson"
+        },
+        {
+          "path": "src/modules/m05-roster/services/assignment-service.ts",
+          "symbol": "cancelAssignment",
+          "line": 144,
+          "key": "src/modules/m05-roster/services/assignment-service.ts::cancelAssignment"
+        },
+        {
+          "path": "src/modules/m05-roster/services/assignment-service.ts",
+          "symbol": "invalidateAssignment",
+          "line": 199,
+          "key": "src/modules/m05-roster/services/assignment-service.ts::invalidateAssignment"
+        },
+        {
+          "path": "src/modules/m05-roster/services/assignment-service.ts",
+          "symbol": "listAssignmentHistoryForShift",
+          "line": 227,
+          "key": "src/modules/m05-roster/services/assignment-service.ts::listAssignmentHistoryForShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/audit-helpers.ts",
+          "symbol": "appendRosterAudit",
+          "line": 16,
+          "key": "src/modules/m05-roster/services/audit-helpers.ts::appendRosterAudit"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "listApprovedLeaveForClinic",
+          "line": 43,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::listApprovedLeaveForClinic"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "listApprovedLeaveForPerson",
+          "line": 48,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::listApprovedLeaveForPerson"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "listAvailabilityDeclarationsForPerson",
+          "line": 57,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::listAvailabilityDeclarationsForPerson"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "precedenceForCandidate",
+          "line": 112,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::precedenceForCandidate"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "setApprovedLeaveForTests",
+          "line": 35,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::setApprovedLeaveForTests"
+        },
+        {
+          "path": "src/modules/m05-roster/services/availability-read-service.ts",
+          "symbol": "upsertApprovedLeaveContractRow",
+          "line": 39,
+          "key": "src/modules/m05-roster/services/availability-read-service.ts::upsertApprovedLeaveContractRow"
+        },
+        {
+          "path": "src/modules/m05-roster/services/bulk-operation-service.ts",
+          "symbol": "previewBulk",
+          "line": 57,
+          "key": "src/modules/m05-roster/services/bulk-operation-service.ts::previewBulk"
+        },
+        {
+          "path": "src/modules/m05-roster/services/bulk-operation-service.ts",
+          "symbol": "submitBulk",
+          "line": 115,
+          "key": "src/modules/m05-roster/services/bulk-operation-service.ts::submitBulk"
+        },
+        {
+          "path": "src/modules/m05-roster/services/clinic-time-service.ts",
+          "symbol": "resolveLocalShiftWindow",
+          "line": 139,
+          "key": "src/modules/m05-roster/services/clinic-time-service.ts::resolveLocalShiftWindow"
+        },
+        {
+          "path": "src/modules/m05-roster/services/clinic-time-service.ts",
+          "symbol": "testOnlyResolveOffsetForWallTime",
+          "line": 212,
+          "key": "src/modules/m05-roster/services/clinic-time-service.ts::testOnlyResolveOffsetForWallTime"
+        },
+        {
+          "path": "src/modules/m05-roster/services/conflict-service.ts",
+          "symbol": "evaluateConflicts",
+          "line": 102,
+          "key": "src/modules/m05-roster/services/conflict-service.ts::evaluateConflicts"
+        },
+        {
+          "path": "src/modules/m05-roster/services/cost-forecast-service.ts",
+          "symbol": "buildCostForecast",
+          "line": 34,
+          "key": "src/modules/m05-roster/services/cost-forecast-service.ts::buildCostForecast"
+        },
+        {
+          "path": "src/modules/m05-roster/services/cost-forecast-service.ts",
+          "symbol": "listCostForecastsForActor",
+          "line": 151,
+          "key": "src/modules/m05-roster/services/cost-forecast-service.ts::listCostForecastsForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/cost-forecast-service.ts",
+          "symbol": "maskForecastForActor",
+          "line": 131,
+          "key": "src/modules/m05-roster/services/cost-forecast-service.ts::maskForecastForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/coverage-service.ts",
+          "symbol": "escalateCoverageGap",
+          "line": 116,
+          "key": "src/modules/m05-roster/services/coverage-service.ts::escalateCoverageGap"
+        },
+        {
+          "path": "src/modules/m05-roster/services/coverage-service.ts",
+          "symbol": "evaluateCoverage",
+          "line": 53,
+          "key": "src/modules/m05-roster/services/coverage-service.ts::evaluateCoverage"
+        },
+        {
+          "path": "src/modules/m05-roster/services/coverage-service.ts",
+          "symbol": "upsertCoverageRequirement",
+          "line": 146,
+          "key": "src/modules/m05-roster/services/coverage-service.ts::upsertCoverageRequirement"
+        },
+        {
+          "path": "src/modules/m05-roster/services/eligibility-service.ts",
+          "symbol": "evaluateEligibility",
+          "line": 54,
+          "key": "src/modules/m05-roster/services/eligibility-service.ts::evaluateEligibility"
+        },
+        {
+          "path": "src/modules/m05-roster/services/eligibility-service.ts",
+          "symbol": "isEligibilityAllowedWithOverride",
+          "line": 173,
+          "key": "src/modules/m05-roster/services/eligibility-service.ts::isEligibilityAllowedWithOverride"
+        },
+        {
+          "path": "src/modules/m05-roster/services/events.ts",
+          "symbol": "publishM05RosterEvent",
+          "line": 41,
+          "key": "src/modules/m05-roster/services/events.ts::publishM05RosterEvent"
+        },
+        {
+          "path": "src/modules/m05-roster/services/open-shift-service.ts",
+          "symbol": "acceptOpenShift",
+          "line": 82,
+          "key": "src/modules/m05-roster/services/open-shift-service.ts::acceptOpenShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/open-shift-service.ts",
+          "symbol": "offerOpenShift",
+          "line": 38,
+          "key": "src/modules/m05-roster/services/open-shift-service.ts::offerOpenShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/open-shift-service.ts",
+          "symbol": "selectOpenShiftApplicant",
+          "line": 161,
+          "key": "src/modules/m05-roster/services/open-shift-service.ts::selectOpenShiftApplicant"
+        },
+        {
+          "path": "src/modules/m05-roster/services/open-shift-service.ts",
+          "symbol": "withdrawOpenShift",
+          "line": 222,
+          "key": "src/modules/m05-roster/services/open-shift-service.ts::withdrawOpenShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/period-service.ts",
+          "symbol": "createPeriod",
+          "line": 41,
+          "key": "src/modules/m05-roster/services/period-service.ts::createPeriod"
+        },
+        {
+          "path": "src/modules/m05-roster/services/period-service.ts",
+          "symbol": "getPeriodForActor",
+          "line": 183,
+          "key": "src/modules/m05-roster/services/period-service.ts::getPeriodForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/period-service.ts",
+          "symbol": "isValidPeriodTransition",
+          "line": 35,
+          "key": "src/modules/m05-roster/services/period-service.ts::isValidPeriodTransition"
+        },
+        {
+          "path": "src/modules/m05-roster/services/period-service.ts",
+          "symbol": "listPeriodsForActor",
+          "line": 171,
+          "key": "src/modules/m05-roster/services/period-service.ts::listPeriodsForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/period-service.ts",
+          "symbol": "transitionPeriod",
+          "line": 95,
+          "key": "src/modules/m05-roster/services/period-service.ts::transitionPeriod"
+        },
+        {
+          "path": "src/modules/m05-roster/services/policy-service.ts",
+          "symbol": "createPolicyVersion",
+          "line": 20,
+          "key": "src/modules/m05-roster/services/policy-service.ts::createPolicyVersion"
+        },
+        {
+          "path": "src/modules/m05-roster/services/policy-service.ts",
+          "symbol": "getActivePolicyForOrg",
+          "line": 86,
+          "key": "src/modules/m05-roster/services/policy-service.ts::getActivePolicyForOrg"
+        },
+        {
+          "path": "src/modules/m05-roster/services/policy-service.ts",
+          "symbol": "listPolicies",
+          "line": 90,
+          "key": "src/modules/m05-roster/services/policy-service.ts::listPolicies"
+        },
+        {
+          "path": "src/modules/m05-roster/services/policy-service.ts",
+          "symbol": "publishPolicy",
+          "line": 56,
+          "key": "src/modules/m05-roster/services/policy-service.ts::publishPolicy"
+        },
+        {
+          "path": "src/modules/m05-roster/services/publication-service.ts",
+          "symbol": "listPublicationsForActor",
+          "line": 356,
+          "key": "src/modules/m05-roster/services/publication-service.ts::listPublicationsForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/publication-service.ts",
+          "symbol": "previewPublication",
+          "line": 59,
+          "key": "src/modules/m05-roster/services/publication-service.ts::previewPublication"
+        },
+        {
+          "path": "src/modules/m05-roster/services/publication-service.ts",
+          "symbol": "publishPeriod",
+          "line": 178,
+          "key": "src/modules/m05-roster/services/publication-service.ts::publishPeriod"
+        },
+        {
+          "path": "src/modules/m05-roster/services/publication-service.ts",
+          "symbol": "recomputePublicationAckStatus",
+          "line": 343,
+          "key": "src/modules/m05-roster/services/publication-service.ts::recomputePublicationAckStatus"
+        },
+        {
+          "path": "src/modules/m05-roster/services/publication-service.ts",
+          "symbol": "supersedePublication",
+          "line": 311,
+          "key": "src/modules/m05-roster/services/publication-service.ts::supersedePublication"
+        },
+        {
+          "path": "src/modules/m05-roster/services/reporting-service.ts",
+          "symbol": "buildScopedReport",
+          "line": 52,
+          "key": "src/modules/m05-roster/services/reporting-service.ts::buildScopedReport"
+        },
+        {
+          "path": "src/modules/m05-roster/services/reporting-service.ts",
+          "symbol": "exportShiftAssignmentsCsv",
+          "line": 127,
+          "key": "src/modules/m05-roster/services/reporting-service.ts::exportShiftAssignmentsCsv"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "cancelShift",
+          "line": 261,
+          "key": "src/modules/m05-roster/services/shift-service.ts::cancelShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "createShift",
+          "line": 59,
+          "key": "src/modules/m05-roster/services/shift-service.ts::createShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "internalTransitionShiftStatus",
+          "line": 326,
+          "key": "src/modules/m05-roster/services/shift-service.ts::internalTransitionShiftStatus"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "isValidShiftTransition",
+          "line": 34,
+          "key": "src/modules/m05-roster/services/shift-service.ts::isValidShiftTransition"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "listShiftsForActor",
+          "line": 371,
+          "key": "src/modules/m05-roster/services/shift-service.ts::listShiftsForActor"
+        },
+        {
+          "path": "src/modules/m05-roster/services/shift-service.ts",
+          "symbol": "updateShift",
+          "line": 170,
+          "key": "src/modules/m05-roster/services/shift-service.ts::updateShift"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "approveSwap",
+          "line": 169,
+          "key": "src/modules/m05-roster/services/swap-service.ts::approveSwap"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "proposeReplacement",
+          "line": 90,
+          "key": "src/modules/m05-roster/services/swap-service.ts::proposeReplacement"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "recipientAcceptSwap",
+          "line": 128,
+          "key": "src/modules/m05-roster/services/swap-service.ts::recipientAcceptSwap"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "rejectSwap",
+          "line": 254,
+          "key": "src/modules/m05-roster/services/swap-service.ts::rejectSwap"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "requestSwap",
+          "line": 38,
+          "key": "src/modules/m05-roster/services/swap-service.ts::requestSwap"
+        },
+        {
+          "path": "src/modules/m05-roster/services/swap-service.ts",
+          "symbol": "withdrawSwap",
+          "line": 292,
+          "key": "src/modules/m05-roster/services/swap-service.ts::withdrawSwap"
+        }
+      ],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "No roster data yet",
+          "line": 79,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "onRefresh",
+          "handler": "onRefresh",
+          "line": 109,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "You are offline",
+          "line": 125,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "onRefresh",
+          "handler": "bump",
+          "line": 162,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "onNavigate",
+          "handler": "navigateSection",
+          "line": 167,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m05-roster/RosterWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "onNavigate",
+          "line": 222,
+          "kind": "handler"
+        }
       ],
       "fileCount": 82,
       "persistenceMethod": "service+repository (module-local)",
@@ -447,48 +1326,484 @@
       "registerConditionStaleLabel": "complete-interactive-rebuild",
       "componentPath": "src/modules/m06-time-attendance",
       "pagePaths": [
-        "src/modules/m06-time-attendance/AttendanceWorkspace.tsx"
+        "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+        "src/modules/m06-time-attendance/TimeAttendanceModule.tsx",
+        "src/modules/m06-time-attendance/context.tsx"
       ],
       "servicePaths": [
+        "src/modules/m06-time-attendance/services/approval-service.ts",
+        "src/modules/m06-time-attendance/services/audit-helpers.ts",
         "src/modules/m06-time-attendance/services/break-service.ts",
-        "src/modules/m06-time-attendance/services/events.ts",
+        "src/modules/m06-time-attendance/services/bulk-operation-service.ts",
+        "src/modules/m06-time-attendance/services/clinic-time-service.ts",
+        "src/modules/m06-time-attendance/services/clock-service.ts",
         "src/modules/m06-time-attendance/services/correction-service.ts",
         "src/modules/m06-time-attendance/services/errors.ts",
+        "src/modules/m06-time-attendance/services/events.ts",
+        "src/modules/m06-time-attendance/services/exception-service.ts",
         "src/modules/m06-time-attendance/services/index.ts",
         "src/modules/m06-time-attendance/services/manager-entry-service.ts",
-        "src/modules/m06-time-attendance/services/session-service.ts",
-        "src/modules/m06-time-attendance/services/exception-service.ts",
-        "src/modules/m06-time-attendance/services/reporting-service.ts",
-        "src/modules/m06-time-attendance/services/approval-service.ts",
-        "src/modules/m06-time-attendance/services/reconcile-service.ts",
-        "src/modules/m06-time-attendance/services/clinic-time-service.ts",
-        "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
-        "src/modules/m06-time-attendance/services/audit-helpers.ts",
         "src/modules/m06-time-attendance/services/offline-sync-service.ts",
-        "src/modules/m06-time-attendance/services/bulk-operation-service.ts",
         "src/modules/m06-time-attendance/services/policy-service.ts",
-        "src/modules/m06-time-attendance/services/timesheet-service.ts",
-        "src/modules/m06-time-attendance/services/clock-service.ts"
+        "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+        "src/modules/m06-time-attendance/services/reconcile-service.ts",
+        "src/modules/m06-time-attendance/services/reporting-service.ts",
+        "src/modules/m06-time-attendance/services/session-service.ts",
+        "src/modules/m06-time-attendance/services/timesheet-service.ts"
       ],
       "repositoryPaths": [
         "src/modules/m06-time-attendance/services/reporting-service.ts",
         "src/modules/m06-time-attendance/sections/ReportsSection.tsx"
       ],
       "testPaths": [
-        "src/modules/m06-time-attendance/tests/m06-offline.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-privacy.test.ts",
+        "src/modules/m06-time-attendance/tests/_helpers.ts",
         "src/modules/m06-time-attendance/tests/m06-adapters.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-domain.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-timezone-dst.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-workflows.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-ux-states.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-migration.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-performance.test.ts",
-        "src/modules/m06-time-attendance/tests/m06-bulk.test.ts",
         "src/modules/m06-time-attendance/tests/m06-authz.test.ts",
-        "src/modules/m06-time-attendance/tests/_helpers.ts"
+        "src/modules/m06-time-attendance/tests/m06-bulk.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-domain.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-migration.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-od-a2-outbox-narrowing.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-offline.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-performance.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-privacy.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-published-timesheet.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-timezone-dst.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-ux-states.test.ts",
+        "src/modules/m06-time-attendance/tests/m06-workflows.test.ts"
+      ],
+      "serviceIndex": [
+        {
+          "path": "src/modules/m06-time-attendance/services/approval-service.ts",
+          "symbol": "approveQueueItem",
+          "line": 21,
+          "key": "src/modules/m06-time-attendance/services/approval-service.ts::approveQueueItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/approval-service.ts",
+          "symbol": "listPendingApprovals",
+          "line": 14,
+          "key": "src/modules/m06-time-attendance/services/approval-service.ts::listPendingApprovals"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/approval-service.ts",
+          "symbol": "rejectQueueItem",
+          "line": 54,
+          "key": "src/modules/m06-time-attendance/services/approval-service.ts::rejectQueueItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/approval-service.ts",
+          "symbol": "reopenApprovalItem",
+          "line": 88,
+          "key": "src/modules/m06-time-attendance/services/approval-service.ts::reopenApprovalItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/audit-helpers.ts",
+          "symbol": "writeAudit",
+          "line": 4,
+          "key": "src/modules/m06-time-attendance/services/audit-helpers.ts::writeAudit"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/break-service.ts",
+          "symbol": "endBreak",
+          "line": 102,
+          "key": "src/modules/m06-time-attendance/services/break-service.ts::endBreak"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/break-service.ts",
+          "symbol": "listBreaksForSession",
+          "line": 202,
+          "key": "src/modules/m06-time-attendance/services/break-service.ts::listBreaksForSession"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/break-service.ts",
+          "symbol": "recordMissedBreak",
+          "line": 162,
+          "key": "src/modules/m06-time-attendance/services/break-service.ts::recordMissedBreak"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/break-service.ts",
+          "symbol": "startBreak",
+          "line": 26,
+          "key": "src/modules/m06-time-attendance/services/break-service.ts::startBreak"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/bulk-operation-service.ts",
+          "symbol": "previewBulkApprove",
+          "line": 24,
+          "key": "src/modules/m06-time-attendance/services/bulk-operation-service.ts::previewBulkApprove"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/bulk-operation-service.ts",
+          "symbol": "submitBulkApprove",
+          "line": 48,
+          "key": "src/modules/m06-time-attendance/services/bulk-operation-service.ts::submitBulkApprove"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clinic-time-service.ts",
+          "symbol": "crossesLocalMidnight",
+          "line": 187,
+          "key": "src/modules/m06-time-attendance/services/clinic-time-service.ts::crossesLocalMidnight"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clinic-time-service.ts",
+          "symbol": "resolveLocalInstant",
+          "line": 92,
+          "key": "src/modules/m06-time-attendance/services/clinic-time-service.ts::resolveLocalInstant"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clinic-time-service.ts",
+          "symbol": "testOnlyResolveOffsetForWallTime",
+          "line": 176,
+          "key": "src/modules/m06-time-attendance/services/clinic-time-service.ts::testOnlyResolveOffsetForWallTime"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clinic-time-service.ts",
+          "symbol": "toAttendanceTimeStamp",
+          "line": 166,
+          "key": "src/modules/m06-time-attendance/services/clinic-time-service.ts::toAttendanceTimeStamp"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clock-service.ts",
+          "symbol": "clockIn",
+          "line": 48,
+          "key": "src/modules/m06-time-attendance/services/clock-service.ts::clockIn"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clock-service.ts",
+          "symbol": "clockOut",
+          "line": 231,
+          "key": "src/modules/m06-time-attendance/services/clock-service.ts::clockOut"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clock-service.ts",
+          "symbol": "listClockEventsForSession",
+          "line": 342,
+          "key": "src/modules/m06-time-attendance/services/clock-service.ts::listClockEventsForSession"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/clock-service.ts",
+          "symbol": "requireOverrideReason",
+          "line": 338,
+          "key": "src/modules/m06-time-attendance/services/clock-service.ts::requireOverrideReason"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "applyManagerCorrection",
+          "line": 214,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::applyManagerCorrection"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "approveCorrection",
+          "line": 105,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::approveCorrection"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "listCorrectionsForActor",
+          "line": 253,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::listCorrectionsForActor"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "rejectCorrection",
+          "line": 130,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::rejectCorrection"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "requestCorrection",
+          "line": 27,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::requestCorrection"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/correction-service.ts",
+          "symbol": "withdrawCorrection",
+          "line": 80,
+          "key": "src/modules/m06-time-attendance/services/correction-service.ts::withdrawCorrection"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/events.ts",
+          "symbol": "publishM06AttendanceEvent",
+          "line": 35,
+          "key": "src/modules/m06-time-attendance/services/events.ts::publishM06AttendanceEvent"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "declareException",
+          "line": 102,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::declareException"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "escalateException",
+          "line": 199,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::escalateException"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "listExceptionsForActor",
+          "line": 267,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::listExceptionsForActor"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "overrideException",
+          "line": 225,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::overrideException"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "raiseException",
+          "line": 21,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::raiseException"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "raiseMissedClockIn",
+          "line": 64,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::raiseMissedClockIn"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "raiseMissedClockOut",
+          "line": 83,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::raiseMissedClockOut"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/exception-service.ts",
+          "symbol": "resolveException",
+          "line": 147,
+          "key": "src/modules/m06-time-attendance/services/exception-service.ts::resolveException"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/manager-entry-service.ts",
+          "symbol": "managerEnterAttendance",
+          "line": 17,
+          "key": "src/modules/m06-time-attendance/services/manager-entry-service.ts::managerEnterAttendance"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/offline-sync-service.ts",
+          "symbol": "discardOfflineItem",
+          "line": 176,
+          "key": "src/modules/m06-time-attendance/services/offline-sync-service.ts::discardOfflineItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/offline-sync-service.ts",
+          "symbol": "enqueueOfflineEvent",
+          "line": 22,
+          "key": "src/modules/m06-time-attendance/services/offline-sync-service.ts::enqueueOfflineEvent"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/offline-sync-service.ts",
+          "symbol": "resolveOfflineConflict",
+          "line": 147,
+          "key": "src/modules/m06-time-attendance/services/offline-sync-service.ts::resolveOfflineConflict"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/offline-sync-service.ts",
+          "symbol": "syncOfflineQueue",
+          "line": 52,
+          "key": "src/modules/m06-time-attendance/services/offline-sync-service.ts::syncOfflineQueue"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/policy-service.ts",
+          "symbol": "archivePolicy",
+          "line": 72,
+          "key": "src/modules/m06-time-attendance/services/policy-service.ts::archivePolicy"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/policy-service.ts",
+          "symbol": "listPoliciesForActor",
+          "line": 12,
+          "key": "src/modules/m06-time-attendance/services/policy-service.ts::listPoliciesForActor"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/policy-service.ts",
+          "symbol": "publishPolicy",
+          "line": 19,
+          "key": "src/modules/m06-time-attendance/services/policy-service.ts::publishPolicy"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "DEFAULT_PUBLICATION_MAX_ATTEMPTS",
+          "line": 29,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::DEFAULT_PUBLICATION_MAX_ATTEMPTS"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "enqueueAndAttemptPlatformPublication",
+          "line": 351,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::enqueueAndAttemptPlatformPublication"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "enqueuePlatformPublication",
+          "line": 93,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::enqueuePlatformPublication"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "getPublicationOutboxItem",
+          "line": 76,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::getPublicationOutboxItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "listPublicationOutbox",
+          "line": 60,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::listPublicationOutbox"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "planPublicationVersions",
+          "line": 292,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::planPublicationVersions"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "processPublicationOutbox",
+          "line": 247,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::processPublicationOutbox"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "processPublicationOutboxItem",
+          "line": 183,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::processPublicationOutboxItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "publishTypedLifecycleCompatibility",
+          "line": 411,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::publishTypedLifecycleCompatibility"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts",
+          "symbol": "retryPublicationOutboxItem",
+          "line": 263,
+          "key": "src/modules/m06-time-attendance/services/published-timesheet-outbox.ts::retryPublicationOutboxItem"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/reconcile-service.ts",
+          "symbol": "reconcileRosterAttendance",
+          "line": 18,
+          "key": "src/modules/m06-time-attendance/services/reconcile-service.ts::reconcileRosterAttendance"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/reporting-service.ts",
+          "symbol": "buildAttendanceReport",
+          "line": 6,
+          "key": "src/modules/m06-time-attendance/services/reporting-service.ts::buildAttendanceReport"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/reporting-service.ts",
+          "symbol": "exportAttendance",
+          "line": 17,
+          "key": "src/modules/m06-time-attendance/services/reporting-service.ts::exportAttendance"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/session-service.ts",
+          "symbol": "cancelSession",
+          "line": 30,
+          "key": "src/modules/m06-time-attendance/services/session-service.ts::cancelSession"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/session-service.ts",
+          "symbol": "listSessionsForActor",
+          "line": 16,
+          "key": "src/modules/m06-time-attendance/services/session-service.ts::listSessionsForActor"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/session-service.ts",
+          "symbol": "markSessionCorrected",
+          "line": 71,
+          "key": "src/modules/m06-time-attendance/services/session-service.ts::markSessionCorrected"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "approveTimesheet",
+          "line": 210,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::approveTimesheet"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "attemptM07Intake",
+          "line": 320,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::attemptM07Intake"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "generateTimesheet",
+          "line": 32,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::generateTimesheet"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "listTimesheetsForActor",
+          "line": 324,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::listTimesheetsForActor"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "publishTimesheetApproved",
+          "line": 132,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::publishTimesheetApproved"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "rejectTimesheet",
+          "line": 243,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::rejectTimesheet"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "reopenTimesheet",
+          "line": 269,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::reopenTimesheet"
+        },
+        {
+          "path": "src/modules/m06-time-attendance/services/timesheet-service.ts",
+          "symbol": "submitTimesheet",
+          "line": 94,
+          "key": "src/modules/m06-time-attendance/services/timesheet-service.ts::submitTimesheet"
+        }
+      ],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+          "symbol": "No attendance data yet",
+          "line": 77,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+          "symbol": "onRefresh",
+          "handler": "onRefresh",
+          "line": 92,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+          "symbol": "onRefresh",
+          "handler": "bump",
+          "line": 125,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+          "symbol": "onNavigate",
+          "handler": "navigateSection",
+          "line": 130,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m06-time-attendance/AttendanceWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "onNavigate",
+          "line": 184,
+          "kind": "handler"
+        }
       ],
       "fileCount": 84,
       "persistenceMethod": "service+repository (module-local)",
@@ -560,57 +1875,1081 @@
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m07-staff-pay",
       "pagePaths": [
-        "src/modules/m07-staff-pay/services/people-review-read-model.ts",
+        "src/modules/m07-staff-pay/StaffPayModule.tsx",
         "src/modules/m07-staff-pay/StaffPayWorkspace.tsx",
-        "src/modules/m07-staff-pay/sections/OverviewSection.tsx",
-        "src/modules/m07-staff-pay/sections/PeopleReviewSection.tsx"
+        "src/modules/m07-staff-pay/context.tsx"
       ],
       "servicePaths": [
-        "src/modules/m07-staff-pay/services/export-validation-service.ts",
-        "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
-        "src/modules/m07-staff-pay/services/export-service.ts",
-        "src/modules/m07-staff-pay/services/ppa-service.ts",
+        "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+        "src/modules/m07-staff-pay/services/approval-service.ts",
+        "src/modules/m07-staff-pay/services/audit-service.ts",
+        "src/modules/m07-staff-pay/services/calculate-service.ts",
         "src/modules/m07-staff-pay/services/canonical-checksum.ts",
-        "src/modules/m07-staff-pay/services/rule-service.ts",
-        "src/modules/m07-staff-pay/services/published-timesheet-intake.ts",
+        "src/modules/m07-staff-pay/services/classification-resolve.ts",
+        "src/modules/m07-staff-pay/services/code-service.ts",
+        "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+        "src/modules/m07-staff-pay/services/eligible-population-service.ts",
+        "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+        "src/modules/m07-staff-pay/services/exception-service.ts",
+        "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+        "src/modules/m07-staff-pay/services/export-decimal.ts",
+        "src/modules/m07-staff-pay/services/export-download-service.ts",
+        "src/modules/m07-staff-pay/services/export-lifecycle.ts",
+        "src/modules/m07-staff-pay/services/export-manifest-gate.ts",
+        "src/modules/m07-staff-pay/services/export-profile-service.ts",
+        "src/modules/m07-staff-pay/services/export-service.ts",
+        "src/modules/m07-staff-pay/services/export-validation-service.ts",
         "src/modules/m07-staff-pay/services/index.ts",
         "src/modules/m07-staff-pay/services/leave-prep-service.ts",
+        "src/modules/m07-staff-pay/services/people-review-read-model.ts",
+        "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+        "src/modules/m07-staff-pay/services/period-lock-service.ts",
+        "src/modules/m07-staff-pay/services/period-service.ts",
         "src/modules/m07-staff-pay/services/period-unlock-service.ts",
-        "src/modules/m07-staff-pay/services/export-profile-service.ts",
-        "src/modules/m07-staff-pay/services/source-manifest-service.ts",
-        "src/modules/m07-staff-pay/services/export-decimal.ts",
-        "src/modules/m07-staff-pay/services/exception-service.ts",
-        "src/modules/m07-staff-pay/services/calculate-service.ts",
-        "src/modules/m07-staff-pay/services/entity-settings-service.ts",
-        "src/modules/m07-staff-pay/services/export-download-service.ts",
+        "src/modules/m07-staff-pay/services/ppa-service.ts",
         "src/modules/m07-staff-pay/services/profile-service.ts",
-        "src/modules/m07-staff-pay/services/approval-invalidation.ts",
-        "src/modules/m07-staff-pay/services/period-lock-service.ts"
+        "src/modules/m07-staff-pay/services/published-timesheet-intake.ts",
+        "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+        "src/modules/m07-staff-pay/services/published-timesheet-replay.ts",
+        "src/modules/m07-staff-pay/services/readiness-service.ts",
+        "src/modules/m07-staff-pay/services/reconciliation-service.ts",
+        "src/modules/m07-staff-pay/services/rule-service.ts",
+        "src/modules/m07-staff-pay/services/sensitive-fields.ts",
+        "src/modules/m07-staff-pay/services/sod-policy.ts",
+        "src/modules/m07-staff-pay/services/source-manifest-service.ts",
+        "src/modules/m07-staff-pay/services/variance-service.ts"
       ],
       "repositoryPaths": [
         "src/modules/m07-staff-pay/storage/ppa-repository.ts"
       ],
       "testPaths": [
-        "src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-shell.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-domain.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-authz.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+        "src/modules/m07-staff-pay/tests/_helpers.ts",
         "src/modules/m07-staff-pay/tests/m07-adapters.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-architecture-cp27.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-authz.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch2-final-gate-cp27.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch3-cp31-36.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch4-cp41-46.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch5-cp51-56.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch5-material-revision.test.ts",
         "src/modules/m07-staff-pay/tests/m07-batch5-remediation.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-replay-cp25.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-migration-cp27.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-blocker-clearance-cp27b.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-boundary-cp23.test.ts",
         "src/modules/m07-staff-pay/tests/m07-batch6-cp61-66.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-intake-cp24.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch6-fourth-remediation.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch6-remediation.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-batch6-second-remediation.test.ts",
         "src/modules/m07-staff-pay/tests/m07-batch6-third-remediation.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-blocker-clearance-cp27b.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-boundary-cp23.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-domain.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-entity-settings.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-intake-cp24.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-lifecycle-cp26.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-migration-cp27.test.ts",
         "src/modules/m07-staff-pay/tests/m07-migration.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-mutation-matrix.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-ppa1-atomicity.test.ts",
         "src/modules/m07-staff-pay/tests/m07-ppa1-core.test.ts",
-        "src/modules/m07-staff-pay/tests/m07-lifecycle-cp26.test.ts"
+        "src/modules/m07-staff-pay/tests/m07-ppa1-hook-security.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-replay-cp25.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-shell.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-ui-batch1-presentation.test.ts",
+        "src/modules/m07-staff-pay/tests/m07-ppa1-integration.test.tsx",
+        "src/modules/m07-staff-pay/tests/m07-ppa1-ui.test.tsx"
+      ],
+      "serviceIndex": [
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "M07_MATERIAL_PROFILE_KEYS",
+          "line": 146,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::M07_MATERIAL_PROFILE_KEYS"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "invalidateApprovalIfSourcesChanged",
+          "line": 115,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::invalidateApprovalIfSourcesChanged"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "invalidateApprovalsForLegalEntity",
+          "line": 178,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::invalidateApprovalsForLegalEntity"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "invalidateApprovalsForProfileMutation",
+          "line": 211,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::invalidateApprovalsForProfileMutation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "isMaterialPayProfileChange",
+          "line": 153,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::isMaterialPayProfileChange"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "markPeriodApprovalStale",
+          "line": 54,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::markPeriodApprovalStale"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-invalidation.ts",
+          "symbol": "notifyM04EmploymentContextChanged",
+          "line": 259,
+          "key": "src/modules/m07-staff-pay/services/approval-invalidation.ts::notifyM04EmploymentContextChanged"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-service.ts",
+          "symbol": "approvePeriodManagement",
+          "line": 206,
+          "key": "src/modules/m07-staff-pay/services/approval-service.ts::approvePeriodManagement"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-service.ts",
+          "symbol": "getPeriodApprovalView",
+          "line": 419,
+          "key": "src/modules/m07-staff-pay/services/approval-service.ts::getPeriodApprovalView"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-service.ts",
+          "symbol": "rejectPeriodManagement",
+          "line": 306,
+          "key": "src/modules/m07-staff-pay/services/approval-service.ts::rejectPeriodManagement"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-service.ts",
+          "symbol": "submitPeriodForReview",
+          "line": 77,
+          "key": "src/modules/m07-staff-pay/services/approval-service.ts::submitPeriodForReview"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/approval-service.ts",
+          "symbol": "withdrawPeriodSubmission",
+          "line": 359,
+          "key": "src/modules/m07-staff-pay/services/approval-service.ts::withdrawPeriodSubmission"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/audit-service.ts",
+          "symbol": "__setM07AuditFailActionsForTests",
+          "line": 28,
+          "key": "src/modules/m07-staff-pay/services/audit-service.ts::__setM07AuditFailActionsForTests"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/audit-service.ts",
+          "symbol": "__setM07AuditFailForTests",
+          "line": 18,
+          "key": "src/modules/m07-staff-pay/services/audit-service.ts::__setM07AuditFailForTests"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/audit-service.ts",
+          "symbol": "recordM07Audit",
+          "line": 39,
+          "key": "src/modules/m07-staff-pay/services/audit-service.ts::recordM07Audit"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/audit-service.ts",
+          "symbol": "setM07AuditFailForTests",
+          "line": 35,
+          "key": "src/modules/m07-staff-pay/services/audit-service.ts::setM07AuditFailForTests"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/calculate-service.ts",
+          "symbol": "calculatePersonOrdinaryAndOvertime",
+          "line": 107,
+          "key": "src/modules/m07-staff-pay/services/calculate-service.ts::calculatePersonOrdinaryAndOvertime"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/calculate-service.ts",
+          "symbol": "listPersonCalculationBatches",
+          "line": 504,
+          "key": "src/modules/m07-staff-pay/services/calculate-service.ts::listPersonCalculationBatches"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/canonical-checksum.ts",
+          "symbol": "canonicalStringify",
+          "line": 5,
+          "key": "src/modules/m07-staff-pay/services/canonical-checksum.ts::canonicalStringify"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/canonical-checksum.ts",
+          "symbol": "checksumCanonical",
+          "line": 20,
+          "key": "src/modules/m07-staff-pay/services/canonical-checksum.ts::checksumCanonical"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/classification-resolve.ts",
+          "symbol": "isDoctorPayExcluded",
+          "line": 28,
+          "key": "src/modules/m07-staff-pay/services/classification-resolve.ts::isDoctorPayExcluded"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/classification-resolve.ts",
+          "symbol": "resolvePersonPreparationInputs",
+          "line": 46,
+          "key": "src/modules/m07-staff-pay/services/classification-resolve.ts::resolvePersonPreparationInputs"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/code-service.ts",
+          "symbol": "createGenericCode",
+          "line": 23,
+          "key": "src/modules/m07-staff-pay/services/code-service.ts::createGenericCode"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/code-service.ts",
+          "symbol": "listGenericCodes",
+          "line": 17,
+          "key": "src/modules/m07-staff-pay/services/code-service.ts::listGenericCodes"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/code-service.ts",
+          "symbol": "retireGenericCode",
+          "line": 115,
+          "key": "src/modules/m07-staff-pay/services/code-service.ts::retireGenericCode"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/code-service.ts",
+          "symbol": "versionGenericCode",
+          "line": 77,
+          "key": "src/modules/m07-staff-pay/services/code-service.ts::versionGenericCode"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+          "symbol": "cancelDeductionPrepInput",
+          "line": 257,
+          "key": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts::cancelDeductionPrepInput"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+          "symbol": "createDeductionPrepInput",
+          "line": 87,
+          "key": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts::createDeductionPrepInput"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+          "symbol": "listActiveDeductionPrepInputs",
+          "line": 46,
+          "key": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts::listActiveDeductionPrepInputs"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+          "symbol": "listDeductionPrepInputHistory",
+          "line": 67,
+          "key": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts::listDeductionPrepInputHistory"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts",
+          "symbol": "supersedeDeductionPrepInput",
+          "line": 171,
+          "key": "src/modules/m07-staff-pay/services/deduction-prep-input-service.ts::supersedeDeductionPrepInput"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/eligible-population-service.ts",
+          "symbol": "resolveEligiblePopulation",
+          "line": 255,
+          "key": "src/modules/m07-staff-pay/services/eligible-population-service.ts::resolveEligiblePopulation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "M07_EPHEMERAL_ENTITY_SETTINGS_DEFAULTS",
+          "line": 21,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::M07_EPHEMERAL_ENTITY_SETTINGS_DEFAULTS"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "bootstrapDefaultEntityPaySettings",
+          "line": 132,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::bootstrapDefaultEntityPaySettings"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "countStoredEntitySettings",
+          "line": 146,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::countStoredEntitySettings"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "deriveEntityPaySettingsDefaults",
+          "line": 27,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::deriveEntityPaySettingsDefaults"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "isEphemeralEntitySettings",
+          "line": 41,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::isEphemeralEntitySettings"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "readEntityPaySettings",
+          "line": 48,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::readEntityPaySettings"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "seedEntityPaySettingsIfAbsent",
+          "line": 108,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::seedEntityPaySettingsIfAbsent"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/entity-settings-service.ts",
+          "symbol": "upsertEntityPaySettings",
+          "line": 61,
+          "key": "src/modules/m07-staff-pay/services/entity-settings-service.ts::upsertEntityPaySettings"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "buildExceptionProjectionKey",
+          "line": 69,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::buildExceptionProjectionKey"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "isNonWaivableExceptionKind",
+          "line": 65,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::isNonWaivableExceptionKind"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "isWaivableExceptionKind",
+          "line": 61,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::isWaivableExceptionKind"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "listOpenExceptions",
+          "line": 82,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::listOpenExceptions"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "listPayPrepExceptions",
+          "line": 93,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::listPayPrepExceptions"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "openPayPrepException",
+          "line": 124,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::openPayPrepException"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "resolvePayPrepException",
+          "line": 224,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::resolvePayPrepException"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/exception-service.ts",
+          "symbol": "waivePayPrepException",
+          "line": 277,
+          "key": "src/modules/m07-staff-pay/services/exception-service.ts::waivePayPrepException"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+          "symbol": "buildCanonicalExportPackage",
+          "line": 85,
+          "key": "src/modules/m07-staff-pay/services/export-canonical-service.ts::buildCanonicalExportPackage"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+          "symbol": "checksumCanonicalExport",
+          "line": 232,
+          "key": "src/modules/m07-staff-pay/services/export-canonical-service.ts::checksumCanonicalExport"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+          "symbol": "computeTotalsFromLines",
+          "line": 37,
+          "key": "src/modules/m07-staff-pay/services/export-canonical-service.ts::computeTotalsFromLines"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+          "symbol": "emptyTotals",
+          "line": 25,
+          "key": "src/modules/m07-staff-pay/services/export-canonical-service.ts::emptyTotals"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-canonical-service.ts",
+          "symbol": "serializeCanonicalExportCsv",
+          "line": 238,
+          "key": "src/modules/m07-staff-pay/services/export-canonical-service.ts::serializeCanonicalExportCsv"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "addUnits",
+          "line": 22,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::addUnits"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "diffUnits",
+          "line": 26,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::diffUnits"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "fromScaled",
+          "line": 14,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::fromScaled"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "multiplyUnitsRate",
+          "line": 40,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::multiplyUnitsRate"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "roundUnits",
+          "line": 18,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::roundUnits"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "toScaled",
+          "line": 9,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::toScaled"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-decimal.ts",
+          "symbol": "unitsEqual",
+          "line": 30,
+          "key": "src/modules/m07-staff-pay/services/export-decimal.ts::unitsEqual"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-download-service.ts",
+          "symbol": "downloadPayrollExportArtifact",
+          "line": 38,
+          "key": "src/modules/m07-staff-pay/services/export-download-service.ts::downloadPayrollExportArtifact"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-lifecycle.ts",
+          "symbol": "assertExportBatchTransition",
+          "line": 20,
+          "key": "src/modules/m07-staff-pay/services/export-lifecycle.ts::assertExportBatchTransition"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-lifecycle.ts",
+          "symbol": "isFinalizedExportStatus",
+          "line": 34,
+          "key": "src/modules/m07-staff-pay/services/export-lifecycle.ts::isFinalizedExportStatus"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-lifecycle.ts",
+          "symbol": "isMutableExportStatus",
+          "line": 38,
+          "key": "src/modules/m07-staff-pay/services/export-lifecycle.ts::isMutableExportStatus"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-lifecycle.ts",
+          "symbol": "isTerminalExportStatus",
+          "line": 42,
+          "key": "src/modules/m07-staff-pay/services/export-lifecycle.ts::isTerminalExportStatus"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-manifest-gate.ts",
+          "symbol": "assertApprovedManifestForExport",
+          "line": 111,
+          "key": "src/modules/m07-staff-pay/services/export-manifest-gate.ts::assertApprovedManifestForExport"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-manifest-gate.ts",
+          "symbol": "requireApprovedManifestForExport",
+          "line": 34,
+          "key": "src/modules/m07-staff-pay/services/export-manifest-gate.ts::requireApprovedManifestForExport"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "activateExportProfile",
+          "line": 173,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::activateExportProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "createExportProfile",
+          "line": 33,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::createExportProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "listExportProfilesForEntity",
+          "line": 24,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::listExportProfilesForEntity"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "retireExportProfile",
+          "line": 177,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::retireExportProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "selectActiveExportProfile",
+          "line": 191,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::selectActiveExportProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-profile-service.ts",
+          "symbol": "versionExportProfile",
+          "line": 116,
+          "key": "src/modules/m07-staff-pay/services/export-profile-service.ts::versionExportProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-service.ts",
+          "symbol": "cancelPayrollExportBatch",
+          "line": 538,
+          "key": "src/modules/m07-staff-pay/services/export-service.ts::cancelPayrollExportBatch"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-service.ts",
+          "symbol": "createOrRefreshPayrollExportBatch",
+          "line": 71,
+          "key": "src/modules/m07-staff-pay/services/export-service.ts::createOrRefreshPayrollExportBatch"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-service.ts",
+          "symbol": "finalizePayrollExportBatch",
+          "line": 352,
+          "key": "src/modules/m07-staff-pay/services/export-service.ts::finalizePayrollExportBatch"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-service.ts",
+          "symbol": "getPayrollExportBatchView",
+          "line": 578,
+          "key": "src/modules/m07-staff-pay/services/export-service.ts::getPayrollExportBatchView"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-service.ts",
+          "symbol": "refreshPayrollExportPreview",
+          "line": 238,
+          "key": "src/modules/m07-staff-pay/services/export-service.ts::refreshPayrollExportPreview"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/export-validation-service.ts",
+          "symbol": "validateExportReadiness",
+          "line": 37,
+          "key": "src/modules/m07-staff-pay/services/export-validation-service.ts::validateExportReadiness"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/leave-prep-service.ts",
+          "symbol": "generateLeavePreparationForPerson",
+          "line": 63,
+          "key": "src/modules/m07-staff-pay/services/leave-prep-service.ts::generateLeavePreparationForPerson"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/leave-prep-service.ts",
+          "symbol": "listLeavePreparation",
+          "line": 35,
+          "key": "src/modules/m07-staff-pay/services/leave-prep-service.ts::listLeavePreparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/people-review-read-model.ts",
+          "symbol": "buildPeopleReviewRows",
+          "line": 72,
+          "key": "src/modules/m07-staff-pay/services/people-review-read-model.ts::buildPeopleReviewRows"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertNoLockedPeriodAffectedByExportProfileMutation",
+          "line": 416,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertNoLockedPeriodAffectedByExportProfileMutation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertNoLockedPeriodAffectedByPersonMutation",
+          "line": 309,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertNoLockedPeriodAffectedByPersonMutation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertNoLockedPeriodAffectedBySnapshot",
+          "line": 191,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertNoLockedPeriodAffectedBySnapshot"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertNoLockedPeriodsForLegalEntity",
+          "line": 375,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertNoLockedPeriodsForLegalEntity"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertPeriodLegalEntityConsistency",
+          "line": 67,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertPeriodLegalEntityConsistency"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "assertPeriodNotLockedForOrdinaryMutation",
+          "line": 45,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::assertPeriodNotLockedForOrdinaryMutation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "effectiveRangeOverlapsPeriod",
+          "line": 151,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::effectiveRangeOverlapsPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "getIncompleteUnlockRequest",
+          "line": 498,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::getIncompleteUnlockRequest"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "getUnlockRequestById",
+          "line": 508,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::getUnlockRequestById"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "hasIncompleteUnlockControls",
+          "line": 490,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::hasIncompleteUnlockControls"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "isCanonicalCalendarDate",
+          "line": 104,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::isCanonicalCalendarDate"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "isPayrollPeriodLocked",
+          "line": 27,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::isPayrollPeriodLocked"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "listLockedPeriodsForLegalEntity",
+          "line": 90,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::listLockedPeriodsForLegalEntity"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "profileAffectsLockedPeriod",
+          "line": 172,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::profileAffectsLockedPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-guard.ts",
+          "symbol": "rejectLockedPeriodSourceChange",
+          "line": 234,
+          "key": "src/modules/m07-staff-pay/services/period-lock-guard.ts::rejectLockedPeriodSourceChange"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-service.ts",
+          "symbol": "explicitLockPayPeriod",
+          "line": 49,
+          "key": "src/modules/m07-staff-pay/services/period-lock-service.ts::explicitLockPayPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-lock-service.ts",
+          "symbol": "getPeriodLockView",
+          "line": 150,
+          "key": "src/modules/m07-staff-pay/services/period-lock-service.ts::getPeriodLockView"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-service.ts",
+          "symbol": "createAdjustmentPayPeriod",
+          "line": 134,
+          "key": "src/modules/m07-staff-pay/services/period-service.ts::createAdjustmentPayPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-service.ts",
+          "symbol": "createOrdinaryPayPeriod",
+          "line": 48,
+          "key": "src/modules/m07-staff-pay/services/period-service.ts::createOrdinaryPayPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-service.ts",
+          "symbol": "getPayPeriod",
+          "line": 39,
+          "key": "src/modules/m07-staff-pay/services/period-service.ts::getPayPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-service.ts",
+          "symbol": "listPayPeriods",
+          "line": 33,
+          "key": "src/modules/m07-staff-pay/services/period-service.ts::listPayPeriods"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-service.ts",
+          "symbol": "toPublishedPayPeriodRef",
+          "line": 241,
+          "key": "src/modules/m07-staff-pay/services/period-service.ts::toPublishedPayPeriodRef"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-unlock-service.ts",
+          "symbol": "approvePeriodUnlock",
+          "line": 286,
+          "key": "src/modules/m07-staff-pay/services/period-unlock-service.ts::approvePeriodUnlock"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-unlock-service.ts",
+          "symbol": "listUnlockRequestsForPeriod",
+          "line": 413,
+          "key": "src/modules/m07-staff-pay/services/period-unlock-service.ts::listUnlockRequestsForPeriod"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-unlock-service.ts",
+          "symbol": "rejectPeriodUnlock",
+          "line": 367,
+          "key": "src/modules/m07-staff-pay/services/period-unlock-service.ts::rejectPeriodUnlock"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/period-unlock-service.ts",
+          "symbol": "requestPeriodUnlock",
+          "line": 219,
+          "key": "src/modules/m07-staff-pay/services/period-unlock-service.ts::requestPeriodUnlock"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "cancelPriorPeriodAdjustmentDraft",
+          "line": 442,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::cancelPriorPeriodAdjustmentDraft"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "countPriorPeriodAdjustmentsForSource",
+          "line": 515,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::countPriorPeriodAdjustmentsForSource"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "createPriorPeriodAdjustment",
+          "line": 192,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::createPriorPeriodAdjustment"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "getPriorPeriodAdjustmentForActor",
+          "line": 172,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::getPriorPeriodAdjustmentForActor"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "listAdjustmentPeriodsForSource",
+          "line": 520,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::listAdjustmentPeriodsForSource"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/ppa-service.ts",
+          "symbol": "listPriorPeriodAdjustmentsForEntity",
+          "line": 163,
+          "key": "src/modules/m07-staff-pay/services/ppa-service.ts::listPriorPeriodAdjustmentsForEntity"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "archivePayProfile",
+          "line": 229,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::archivePayProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "createPayProfile",
+          "line": 59,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::createPayProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "getPayProfile",
+          "line": 50,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::getPayProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "linkExternalPayrollEmployeeId",
+          "line": 293,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::linkExternalPayrollEmployeeId"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "listPayProfiles",
+          "line": 41,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::listPayProfiles"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "relinkExternalPayrollEmployeeId",
+          "line": 353,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::relinkExternalPayrollEmployeeId"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/profile-service.ts",
+          "symbol": "updatePayProfile",
+          "line": 144,
+          "key": "src/modules/m07-staff-pay/services/profile-service.ts::updatePayProfile"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-intake.ts",
+          "symbol": "intakePublishedTimesheet",
+          "line": 247,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-intake.ts::intakePublishedTimesheet"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-intake.ts",
+          "symbol": "intakePublishedTimesheetByRecordVersion",
+          "line": 424,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-intake.ts::intakePublishedTimesheetByRecordVersion"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "acknowledgeRestoreClearHold",
+          "line": 821,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::acknowledgeRestoreClearHold"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "applyLifecycleHoldEvent",
+          "line": 557,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::applyLifecycleHoldEvent"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "applyMaterialRevisionAfterIntake",
+          "line": 341,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::applyMaterialRevisionAfterIntake"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "assertSnapshotUsableForPreparation",
+          "line": 693,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::assertSnapshotUsableForPreparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "findPriorSnapshotWithSameContentHash",
+          "line": 1377,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::findPriorSnapshotWithSameContentHash"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "observePreparationProgress",
+          "line": 782,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::observePreparationProgress"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "recordSameContentLineage",
+          "line": 482,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::recordSameContentLineage"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "requalifyInvalidatedSnapshot",
+          "line": 1117,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::requalifyInvalidatedSnapshot"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "resolveLifecycleException",
+          "line": 1201,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::resolveLifecycleException"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "seedEligibilityForImportedSnapshot",
+          "line": 249,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::seedEligibilityForImportedSnapshot"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts",
+          "symbol": "selectSupersedingSnapshot",
+          "line": 925,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-lifecycle.ts::selectSupersedingSnapshot"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-replay.ts",
+          "symbol": "DEFAULT_REPLAY_BATCH_LIMIT",
+          "line": 62,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-replay.ts::DEFAULT_REPLAY_BATCH_LIMIT"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/published-timesheet-replay.ts",
+          "symbol": "runPublishedTimesheetReplayBatch",
+          "line": 414,
+          "key": "src/modules/m07-staff-pay/services/published-timesheet-replay.ts::runPublishedTimesheetReplayBatch"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/readiness-service.ts",
+          "symbol": "assessPeriodReadiness",
+          "line": 165,
+          "key": "src/modules/m07-staff-pay/services/readiness-service.ts::assessPeriodReadiness"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/reconciliation-service.ts",
+          "symbol": "getReconciliationById",
+          "line": 329,
+          "key": "src/modules/m07-staff-pay/services/reconciliation-service.ts::getReconciliationById"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/reconciliation-service.ts",
+          "symbol": "getReconciliationView",
+          "line": 312,
+          "key": "src/modules/m07-staff-pay/services/reconciliation-service.ts::getReconciliationView"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/reconciliation-service.ts",
+          "symbol": "reconcileExportBatchAgainstApproval",
+          "line": 46,
+          "key": "src/modules/m07-staff-pay/services/reconciliation-service.ts::reconcileExportBatchAgainstApproval"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "createClassificationMapping",
+          "line": 133,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::createClassificationMapping"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "createPreparationRule",
+          "line": 37,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::createPreparationRule"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "listPreparationRules",
+          "line": 31,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::listPreparationRules"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "replaceClassificationMapping",
+          "line": 281,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::replaceClassificationMapping"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "resolveClassificationMapping",
+          "line": 209,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::resolveClassificationMapping"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "retireClassificationMapping",
+          "line": 234,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::retireClassificationMapping"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "retirePreparationRule",
+          "line": 129,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::retirePreparationRule"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/rule-service.ts",
+          "symbol": "versionPreparationRule",
+          "line": 90,
+          "key": "src/modules/m07-staff-pay/services/rule-service.ts::versionPreparationRule"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sensitive-fields.ts",
+          "symbol": "assertNoProhibitedFields",
+          "line": 37,
+          "key": "src/modules/m07-staff-pay/services/sensitive-fields.ts::assertNoProhibitedFields"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sensitive-fields.ts",
+          "symbol": "findProhibitedFields",
+          "line": 31,
+          "key": "src/modules/m07-staff-pay/services/sensitive-fields.ts::findProhibitedFields"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sensitive-fields.ts",
+          "symbol": "isProhibitedFieldKey",
+          "line": 47,
+          "key": "src/modules/m07-staff-pay/services/sensitive-fields.ts::isProhibitedFieldKey"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertExceptionWaiverSeparation",
+          "line": 196,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertExceptionWaiverSeparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertExportFinalizeSeparation",
+          "line": 147,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertExportFinalizeSeparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertExportOperatorCannotApprove",
+          "line": 185,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertExportOperatorCannotApprove"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertFinalApproveSeparation",
+          "line": 98,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertFinalApproveSeparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertLockActorAllowed",
+          "line": 130,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertLockActorAllowed"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertManagementApproveSeparation",
+          "line": 113,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertManagementApproveSeparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertMaterialActorProvenance",
+          "line": 30,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertMaterialActorProvenance"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "assertUnlockApprovalSeparation",
+          "line": 168,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::assertUnlockApprovalSeparation"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "collectMaterialPreparerUserIds",
+          "line": 73,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::collectMaterialPreparerUserIds"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/sod-policy.ts",
+          "symbol": "isSeparationOfDutiesEnabled",
+          "line": 20,
+          "key": "src/modules/m07-staff-pay/services/sod-policy.ts::isSeparationOfDutiesEnabled"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/source-manifest-service.ts",
+          "symbol": "buildSourceManifest",
+          "line": 24,
+          "key": "src/modules/m07-staff-pay/services/source-manifest-service.ts::buildSourceManifest"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/source-manifest-service.ts",
+          "symbol": "verifyManifestAgainstCurrent",
+          "line": 200,
+          "key": "src/modules/m07-staff-pay/services/source-manifest-service.ts::verifyManifestAgainstCurrent"
+        },
+        {
+          "path": "src/modules/m07-staff-pay/services/variance-service.ts",
+          "symbol": "buildVarianceViews",
+          "line": 75,
+          "key": "src/modules/m07-staff-pay/services/variance-service.ts::buildVarianceViews"
+        }
+      ],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m07-staff-pay/StaffPayWorkspace.tsx",
+          "symbol": "onChange",
+          "handler": "go",
+          "line": 136,
+          "kind": "handler"
+        }
       ],
       "fileCount": 122,
       "persistenceMethod": "service+repository (module-local)",
@@ -650,7 +2989,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m08-doctor-pay",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m08-doctor-pay/DoctorPayModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -660,6 +2999,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m08-doctor-pay/DoctorPayModule.tsx",
+          "symbol": "Module 8",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -699,7 +3047,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m09-bbpip",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m09-bbpip/BbpipModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -709,6 +3057,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m09-bbpip/BbpipModule.tsx",
+          "symbol": "Module 9",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -760,7 +3117,7 @@
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m10-tasks-actions",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m10-tasks-actions/TasksActionsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -770,6 +3127,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m10-tasks-actions/TasksActionsModule.tsx",
+          "symbol": "Module 10",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -809,33 +3175,382 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m11-training",
       "pagePaths": [
+        "src/modules/m11-training/TrainingModule.tsx",
         "src/modules/m11-training/TrainingWorkspace.tsx",
-        "src/modules/m11-training/sections/OverviewSection.tsx"
+        "src/modules/m11-training/context.tsx"
       ],
       "servicePaths": [
-        "src/modules/m11-training/services/evidence-service.ts",
-        "src/modules/m11-training/services/readiness-bridge.ts",
-        "src/modules/m11-training/services/exemption-service.ts",
-        "src/modules/m11-training/services/events.ts",
-        "src/modules/m11-training/services/certificate-service.ts",
-        "src/modules/m11-training/services/index.ts",
-        "src/modules/m11-training/services/assignment-service.ts",
-        "src/modules/m11-training/services/session-service.ts",
-        "src/modules/m11-training/services/reports-service.ts",
         "src/modules/m11-training/services/assessment-service.ts",
-        "src/modules/m11-training/services/catalogue-service.ts",
+        "src/modules/m11-training/services/assignment-service.ts",
         "src/modules/m11-training/services/bulk-assignment-service.ts",
+        "src/modules/m11-training/services/catalogue-service.ts",
+        "src/modules/m11-training/services/certificate-service.ts",
+        "src/modules/m11-training/services/competency-service.ts",
+        "src/modules/m11-training/services/events.ts",
+        "src/modules/m11-training/services/evidence-service.ts",
+        "src/modules/m11-training/services/exemption-service.ts",
+        "src/modules/m11-training/services/index.ts",
         "src/modules/m11-training/services/policy-service.ts",
-        "src/modules/m11-training/services/competency-service.ts"
+        "src/modules/m11-training/services/readiness-bridge.ts",
+        "src/modules/m11-training/services/reports-service.ts",
+        "src/modules/m11-training/services/session-service.ts"
       ],
       "repositoryPaths": [
         "src/modules/m11-training/services/reports-service.ts",
         "src/modules/m11-training/sections/ReportsSection.tsx"
       ],
       "testPaths": [
-        "src/modules/m11-training/tests/m11-performance.test.ts",
         "src/modules/m11-training/tests/m11-closure-gate.test.ts",
-        "src/modules/m11-training/tests/m11-domain.test.ts"
+        "src/modules/m11-training/tests/m11-domain.test.ts",
+        "src/modules/m11-training/tests/m11-performance.test.ts"
+      ],
+      "serviceIndex": [
+        {
+          "path": "src/modules/m11-training/services/assessment-service.ts",
+          "symbol": "getActiveAssessment",
+          "line": 84,
+          "key": "src/modules/m11-training/services/assessment-service.ts::getActiveAssessment"
+        },
+        {
+          "path": "src/modules/m11-training/services/assessment-service.ts",
+          "symbol": "listAssessments",
+          "line": 79,
+          "key": "src/modules/m11-training/services/assessment-service.ts::listAssessments"
+        },
+        {
+          "path": "src/modules/m11-training/services/assessment-service.ts",
+          "symbol": "recordAssessment",
+          "line": 10,
+          "key": "src/modules/m11-training/services/assessment-service.ts::recordAssessment"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "assignFromRules",
+          "line": 106,
+          "key": "src/modules/m11-training/services/assignment-service.ts::assignFromRules"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "assignManual",
+          "line": 65,
+          "key": "src/modules/m11-training/services/assignment-service.ts::assignManual"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "completeAssignment",
+          "line": 162,
+          "key": "src/modules/m11-training/services/assignment-service.ts::completeAssignment"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "createRule",
+          "line": 34,
+          "key": "src/modules/m11-training/services/assignment-service.ts::createRule"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "listAssignments",
+          "line": 311,
+          "key": "src/modules/m11-training/services/assignment-service.ts::listAssignments"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "listAssignmentsForActor",
+          "line": 315,
+          "key": "src/modules/m11-training/services/assignment-service.ts::listAssignmentsForActor"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "refreshAssignmentStatus",
+          "line": 228,
+          "key": "src/modules/m11-training/services/assignment-service.ts::refreshAssignmentStatus"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "refreshAssignmentStatuses",
+          "line": 275,
+          "key": "src/modules/m11-training/services/assignment-service.ts::refreshAssignmentStatuses"
+        },
+        {
+          "path": "src/modules/m11-training/services/assignment-service.ts",
+          "symbol": "revokeAssignment",
+          "line": 290,
+          "key": "src/modules/m11-training/services/assignment-service.ts::revokeAssignment"
+        },
+        {
+          "path": "src/modules/m11-training/services/bulk-assignment-service.ts",
+          "symbol": "previewBulkAssign",
+          "line": 43,
+          "key": "src/modules/m11-training/services/bulk-assignment-service.ts::previewBulkAssign"
+        },
+        {
+          "path": "src/modules/m11-training/services/bulk-assignment-service.ts",
+          "symbol": "submitBulkAssign",
+          "line": 72,
+          "key": "src/modules/m11-training/services/bulk-assignment-service.ts::submitBulkAssign"
+        },
+        {
+          "path": "src/modules/m11-training/services/catalogue-service.ts",
+          "symbol": "createCourse",
+          "line": 10,
+          "key": "src/modules/m11-training/services/catalogue-service.ts::createCourse"
+        },
+        {
+          "path": "src/modules/m11-training/services/catalogue-service.ts",
+          "symbol": "getCourse",
+          "line": 113,
+          "key": "src/modules/m11-training/services/catalogue-service.ts::getCourse"
+        },
+        {
+          "path": "src/modules/m11-training/services/catalogue-service.ts",
+          "symbol": "listCourses",
+          "line": 109,
+          "key": "src/modules/m11-training/services/catalogue-service.ts::listCourses"
+        },
+        {
+          "path": "src/modules/m11-training/services/catalogue-service.ts",
+          "symbol": "publishVersion",
+          "line": 49,
+          "key": "src/modules/m11-training/services/catalogue-service.ts::publishVersion"
+        },
+        {
+          "path": "src/modules/m11-training/services/certificate-service.ts",
+          "symbol": "issueCertificate",
+          "line": 18,
+          "key": "src/modules/m11-training/services/certificate-service.ts::issueCertificate"
+        },
+        {
+          "path": "src/modules/m11-training/services/certificate-service.ts",
+          "symbol": "listCertificates",
+          "line": 119,
+          "key": "src/modules/m11-training/services/certificate-service.ts::listCertificates"
+        },
+        {
+          "path": "src/modules/m11-training/services/certificate-service.ts",
+          "symbol": "refreshCertificateExpiry",
+          "line": 94,
+          "key": "src/modules/m11-training/services/certificate-service.ts::refreshCertificateExpiry"
+        },
+        {
+          "path": "src/modules/m11-training/services/certificate-service.ts",
+          "symbol": "revokeCertificate",
+          "line": 72,
+          "key": "src/modules/m11-training/services/certificate-service.ts::revokeCertificate"
+        },
+        {
+          "path": "src/modules/m11-training/services/certificate-service.ts",
+          "symbol": "verifyCertificate",
+          "line": 51,
+          "key": "src/modules/m11-training/services/certificate-service.ts::verifyCertificate"
+        },
+        {
+          "path": "src/modules/m11-training/services/competency-service.ts",
+          "symbol": "getActiveCompetency",
+          "line": 80,
+          "key": "src/modules/m11-training/services/competency-service.ts::getActiveCompetency"
+        },
+        {
+          "path": "src/modules/m11-training/services/competency-service.ts",
+          "symbol": "listCompetencies",
+          "line": 75,
+          "key": "src/modules/m11-training/services/competency-service.ts::listCompetencies"
+        },
+        {
+          "path": "src/modules/m11-training/services/competency-service.ts",
+          "symbol": "recordCompetency",
+          "line": 10,
+          "key": "src/modules/m11-training/services/competency-service.ts::recordCompetency"
+        },
+        {
+          "path": "src/modules/m11-training/services/events.ts",
+          "symbol": "publishM11TrainingEvent",
+          "line": 36,
+          "key": "src/modules/m11-training/services/events.ts::publishM11TrainingEvent"
+        },
+        {
+          "path": "src/modules/m11-training/services/evidence-service.ts",
+          "symbol": "addEvidence",
+          "line": 9,
+          "key": "src/modules/m11-training/services/evidence-service.ts::addEvidence"
+        },
+        {
+          "path": "src/modules/m11-training/services/evidence-service.ts",
+          "symbol": "listEvidence",
+          "line": 98,
+          "key": "src/modules/m11-training/services/evidence-service.ts::listEvidence"
+        },
+        {
+          "path": "src/modules/m11-training/services/evidence-service.ts",
+          "symbol": "listEvidenceForActor",
+          "line": 108,
+          "key": "src/modules/m11-training/services/evidence-service.ts::listEvidenceForActor"
+        },
+        {
+          "path": "src/modules/m11-training/services/evidence-service.ts",
+          "symbol": "rejectEvidence",
+          "line": 78,
+          "key": "src/modules/m11-training/services/evidence-service.ts::rejectEvidence"
+        },
+        {
+          "path": "src/modules/m11-training/services/evidence-service.ts",
+          "symbol": "verifyEvidence",
+          "line": 55,
+          "key": "src/modules/m11-training/services/evidence-service.ts::verifyEvidence"
+        },
+        {
+          "path": "src/modules/m11-training/services/exemption-service.ts",
+          "symbol": "approveExemption",
+          "line": 50,
+          "key": "src/modules/m11-training/services/exemption-service.ts::approveExemption"
+        },
+        {
+          "path": "src/modules/m11-training/services/exemption-service.ts",
+          "symbol": "listExemptions",
+          "line": 144,
+          "key": "src/modules/m11-training/services/exemption-service.ts::listExemptions"
+        },
+        {
+          "path": "src/modules/m11-training/services/exemption-service.ts",
+          "symbol": "rejectExemption",
+          "line": 93,
+          "key": "src/modules/m11-training/services/exemption-service.ts::rejectExemption"
+        },
+        {
+          "path": "src/modules/m11-training/services/exemption-service.ts",
+          "symbol": "requestExemption",
+          "line": 10,
+          "key": "src/modules/m11-training/services/exemption-service.ts::requestExemption"
+        },
+        {
+          "path": "src/modules/m11-training/services/exemption-service.ts",
+          "symbol": "revokeExemption",
+          "line": 119,
+          "key": "src/modules/m11-training/services/exemption-service.ts::revokeExemption"
+        },
+        {
+          "path": "src/modules/m11-training/services/policy-service.ts",
+          "symbol": "createPolicyVersion",
+          "line": 21,
+          "key": "src/modules/m11-training/services/policy-service.ts::createPolicyVersion"
+        },
+        {
+          "path": "src/modules/m11-training/services/policy-service.ts",
+          "symbol": "evaluatePersonRequirements",
+          "line": 101,
+          "key": "src/modules/m11-training/services/policy-service.ts::evaluatePersonRequirements"
+        },
+        {
+          "path": "src/modules/m11-training/services/policy-service.ts",
+          "symbol": "getActivePolicy",
+          "line": 260,
+          "key": "src/modules/m11-training/services/policy-service.ts::getActivePolicy"
+        },
+        {
+          "path": "src/modules/m11-training/services/policy-service.ts",
+          "symbol": "listPolicies",
+          "line": 264,
+          "key": "src/modules/m11-training/services/policy-service.ts::listPolicies"
+        },
+        {
+          "path": "src/modules/m11-training/services/policy-service.ts",
+          "symbol": "publishPolicyVersion",
+          "line": 56,
+          "key": "src/modules/m11-training/services/policy-service.ts::publishPolicyVersion"
+        },
+        {
+          "path": "src/modules/m11-training/services/readiness-bridge.ts",
+          "symbol": "buildContributions",
+          "line": 39,
+          "key": "src/modules/m11-training/services/readiness-bridge.ts::buildContributions"
+        },
+        {
+          "path": "src/modules/m11-training/services/reports-service.ts",
+          "symbol": "exportTrainingSummary",
+          "line": 31,
+          "key": "src/modules/m11-training/services/reports-service.ts::exportTrainingSummary"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "cancelSession",
+          "line": 74,
+          "key": "src/modules/m11-training/services/session-service.ts::cancelSession"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "createSession",
+          "line": 10,
+          "key": "src/modules/m11-training/services/session-service.ts::createSession"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "enrolInSession",
+          "line": 47,
+          "key": "src/modules/m11-training/services/session-service.ts::enrolInSession"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "getSession",
+          "line": 135,
+          "key": "src/modules/m11-training/services/session-service.ts::getSession"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "listSessions",
+          "line": 131,
+          "key": "src/modules/m11-training/services/session-service.ts::listSessions"
+        },
+        {
+          "path": "src/modules/m11-training/services/session-service.ts",
+          "symbol": "markAttendance",
+          "line": 108,
+          "key": "src/modules/m11-training/services/session-service.ts::markAttendance"
+        }
+      ],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "No training records yet",
+          "line": 81,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "You are offline",
+          "line": 113,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "onNavigate",
+          "handler": "navigateSection",
+          "line": 153,
+          "kind": "handler"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "Module 11",
+          "line": 169,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "Training Management",
+          "line": 170,
+          "kind": "jsx-text-control"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "Training Management sections",
+          "line": 173,
+          "kind": "labelled-control"
+        },
+        {
+          "componentPath": "src/modules/m11-training/TrainingWorkspace.tsx",
+          "symbol": "onClick",
+          "handler": "() => onNavigate(item.id)",
+          "line": 178,
+          "kind": "handler"
+        }
       ],
       "fileCount": 51,
       "persistenceMethod": "service+repository (module-local)",
@@ -887,7 +3602,7 @@
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m12-compliance-quality",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m12-compliance-quality/ComplianceQualityModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -897,6 +3612,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m12-compliance-quality/ComplianceQualityModule.tsx",
+          "symbol": "Module 12",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -948,7 +3672,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m13-documents",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m13-documents/DocumentsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -958,6 +3682,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m13-documents/DocumentsModule.tsx",
+          "symbol": "Module 13",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -997,7 +3730,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m14-ticketing",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m14-ticketing/TicketingModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1007,6 +3740,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m14-ticketing/TicketingModule.tsx",
+          "symbol": "Module 14",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1074,7 +3816,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m15-inventory-assets",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m15-inventory-assets/InventoryAssetsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1084,6 +3826,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m15-inventory-assets/InventoryAssetsModule.tsx",
+          "symbol": "Module 15",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1135,7 +3886,7 @@
       "registerConditionStaleLabel": "partially-implemented",
       "componentPath": "src/modules/m16-incidents-risk",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m16-incidents-risk/IncidentsRiskModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1145,6 +3896,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m16-incidents-risk/IncidentsRiskModule.tsx",
+          "symbol": "Module 16",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1200,7 +3960,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m17-communications",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m17-communications/CommunicationsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1210,6 +3970,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m17-communications/CommunicationsModule.tsx",
+          "symbol": "Module 17",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1261,7 +4030,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m18-digital-operations",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m18-digital-operations/DigitalOperationsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1271,6 +4040,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m18-digital-operations/DigitalOperationsModule.tsx",
+          "symbol": "Module 18",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1310,7 +4088,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m19-analytics-change",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m19-analytics-change/AnalyticsChangeModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1320,6 +4098,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m19-analytics-change/AnalyticsChangeModule.tsx",
+          "symbol": "Module 19",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1382,6 +4169,15 @@
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
       ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m20-commercial-workspaces/CommercialWorkspacesModule.tsx",
+          "symbol": "Module 20",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
+      ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
       "permissions": "Owner / Director, Group Operations Manager, Senior Practice Manager, Finance and Quality Leads (accessClassification=executive)",
@@ -1420,7 +4216,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m21-vendor-operations",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m21-vendor-operations/VendorOperationsModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1430,6 +4226,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m21-vendor-operations/VendorOperationsModule.tsx",
+          "symbol": "Module 21",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1469,7 +4274,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m22-recruitment",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m22-recruitment/RecruitmentModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1479,6 +4284,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m22-recruitment/RecruitmentModule.tsx",
+          "symbol": "Module 22",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 10,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1518,7 +4332,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m23-website-seo",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m23-website-seo/WebsiteSeoModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1528,6 +4342,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m23-website-seo/WebsiteSeoModule.tsx",
+          "symbol": "Module 23",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",
@@ -1567,7 +4390,7 @@
       "registerConditionStaleLabel": "legacy-html-fallback",
       "componentPath": "src/modules/m24-financial-forecast",
       "pagePaths": [
-        "NONE \u2014 NOT IMPLEMENTED"
+        "src/modules/m24-financial-forecast/FinancialForecastModule.tsx"
       ],
       "servicePaths": [
         "NONE \u2014 NOT IMPLEMENTED"
@@ -1577,6 +4400,15 @@
       ],
       "testPaths": [
         "NONE \u2014 NOT IMPLEMENTED"
+      ],
+      "serviceIndex": [],
+      "workingControlsFromCode": [
+        {
+          "componentPath": "src/modules/m24-financial-forecast/FinancialForecastModule.tsx",
+          "symbol": "Module 24",
+          "line": 17,
+          "kind": "jsx-text-control"
+        }
       ],
       "fileCount": 3,
       "persistenceMethod": "NONE \u2014 NOT IMPLEMENTED",

@@ -10,6 +10,9 @@ import re
 import subprocess
 from collections import Counter, defaultdict
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import code_inventory as codeinv
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs/architecture/prototype-parity"
@@ -217,24 +220,24 @@ def parse_register():
 
 def audit_module(num: int, reg: dict) -> dict:
     mid = f"m{num:02d}"
-    dirs = sorted([p for p in (ROOT / "src/modules").glob(f"{mid}-*") if p.is_dir()])
+    dirs = sorted([p for p in (ROOT / "src/modules").glob(f"{mid}-*") if p.is_dir()], key=lambda p: str(p))
     mod_dir = dirs[0] if dirs else None
-    rel = str(mod_dir.relative_to(ROOT)) if mod_dir else "NONE — NOT IMPLEMENTED"
-    files = list(mod_dir.rglob("*.ts")) + list(mod_dir.rglob("*.tsx")) if mod_dir else []
-    services = [str(p.relative_to(ROOT)) for p in files if "service" in p.name.lower() or "/services/" in str(p)]
-    repos = [str(p.relative_to(ROOT)) for p in files if "repo" in p.name.lower() or "repository" in p.name.lower()]
-    tests = [str(p.relative_to(ROOT)) for p in files if "/tests/" in str(p) or p.name.endswith(".test.ts") or p.name.endswith(".test.tsx")]
-    pages = [str(p.relative_to(ROOT)) for p in files if p.name.endswith("page.tsx") or p.name.endswith("Page.tsx") or "workspace" in p.name.lower() or "view" in p.name.lower()]
+    rel = str(mod_dir.relative_to(ROOT)).replace(chr(92), "/") if mod_dir else "NONE — NOT IMPLEMENTED"
+    inv = codeinv.inventory_module(num, mod_dir)
+    services = inv["services"]
+    repos = inv["repos"]
+    tests = inv["tests"]
+    pages = inv["pagePaths"]
+    files = inv["files"]
     cond = reg.get("condition", "unknown")
     access = reg.get("accessClassification", "")
     has_domain = bool(services or repos)
-    has_ui = bool(files)
+    has_ui = bool(files) or (pages and pages != ["NONE — NOT IMPLEMENTED"])
     deep_domain = num in (4, 5, 6, 7, 11) and has_domain
-    ui_shell = num in (1, 2, 3)  # interactive rebuild UI present; durable domain services absent
+    ui_shell = num in (1, 2, 3)
 
-    # UI axis
     if deep_domain or (ui_shell and has_ui):
-        ui = "FUNCTIONALLY-COMPLETE" if (deep_domain or ui_shell) else "IN-DEVELOPMENT"
+        ui = "FUNCTIONALLY-COMPLETE"
     elif has_ui and cond in ("partially-implemented", "complete-interactive-rebuild"):
         ui = "IN-DEVELOPMENT"
     elif has_ui:
@@ -242,19 +245,17 @@ def audit_module(num: int, reg: dict) -> dict:
     else:
         ui = "NOT-STARTED"
 
-    # Domain axis — cannot be FUNCTIONALLY-COMPLETE without services/repos/persistence
     if deep_domain:
         domain = "FUNCTIONALLY-COMPLETE"
     elif has_domain:
         domain = "IN-DEVELOPMENT"
     elif ui_shell:
-        domain = "NOT-STARTED"  # UI exists; durable domain service NONE
+        domain = "NOT-STARTED"
     elif cond == "partially-implemented":
         domain = "IN-DEVELOPMENT"
     else:
         domain = "NOT-STARTED"
 
-    # Integration axis
     if num in (1, 2):
         integ = "IN-DEVELOPMENT"
     elif deep_domain:
@@ -268,19 +269,16 @@ def audit_module(num: int, reg: dict) -> dict:
     else:
         integ = "NOT-STARTED"
 
-    # Evidence axis
     ev_path = exact_evidence(num)
-    if deep_domain and ev_path != "NONE — NOT YET AUTHORISED":
+    if (deep_domain or ui_shell) and ev_path != "NONE — NOT YET AUTHORISED":
         evidence = "OWNER-ACCEPTED"
-    elif ui_shell and ev_path != "NONE — NOT YET AUTHORISED":
-        evidence = "OWNER-ACCEPTED"  # UI/visual acceptance only — not domain/production
     else:
         evidence = "NOT-STARTED"
 
     if has_domain:
         persistence = "service+repository (module-local)"
     elif ui_shell:
-        persistence = "NONE — NOT IMPLEMENTED (UI/workspace only; no durable domain service/repository)"
+        persistence = "NONE — NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)"
     else:
         persistence = "NONE — NOT IMPLEMENTED"
 
@@ -294,10 +292,12 @@ def audit_module(num: int, reg: dict) -> dict:
         "accessClassification": access,
         "registerConditionStaleLabel": cond,
         "componentPath": rel,
-        "pagePaths": pages[:20] or ["NONE — NOT IMPLEMENTED"],
-        "servicePaths": services[:20] or ["NONE — NOT IMPLEMENTED"],
-        "repositoryPaths": repos[:20] or ["NONE — NOT IMPLEMENTED"],
-        "testPaths": tests[:20] or ["NONE — NOT IMPLEMENTED"],
+        "pagePaths": pages,
+        "servicePaths": services[:40] or ["NONE — NOT IMPLEMENTED"],
+        "repositoryPaths": repos[:40] or ["NONE — NOT IMPLEMENTED"],
+        "testPaths": tests[:40] or ["NONE — NOT IMPLEMENTED"],
+        "serviceIndex": inv["serviceIndex"],
+        "workingControlsFromCode": inv["workingControls"],
         "fileCount": len(files),
         "persistenceMethod": persistence,
         "permissions": roles_for(num, None, access),
@@ -316,14 +316,9 @@ def audit_module(num: int, reg: dict) -> dict:
         "revisedEvidenceStatus": evidence,
         "revisedProductionStatus": "NOT-STARTED",
         "missingCapabilityGaps": (
-            "Durable domain services/repositories absent; final-design conversion + source-completeness labels pending P2"
-            if num == 1 else
-            "Durable domain services/repositories absent; cross-module projection incomplete until producers exist"
-            if num == 2 else
-            "Durable domain services/repositories absent; organisation/access domain hardening pending P2"
-            if num == 3 else
-            "Blocked / partial connective layer pending P3"
-            if num == 10 else
+            "Durable domain services/repositories absent; final-design conversion pending"
+            if num in (1, 2, 3) else
+            "Blocked / partial connective layer pending P3" if num == 10 else
             "Landing/legacy-level; full BRD/prototype capability pending later wave"
             if domain == "NOT-STARTED" else
             "Preserve accepted domain behaviour; apply shared final design in authorised wave"
@@ -546,7 +541,8 @@ def main():
         "acceptedFromCommit": "b5feab7d71790aac75049b361817fa92eeb1a87d",
         "preservedMismatchEvidenceCommit": "a22f9a1e66d918cadc1e3a2026676b3b140025c8",
         "decisionAInstallCommit": "66e6e6488b27b9098dadd8962473fedea5053614",
-        "programmeResetTipAtGeneration": tip,
+        "decisionAInstallCommit": DECISION_A,
+        "notePinnedTipsOnly": True,
         "note": "Do not replace/re-export/edit/rehash Decision A PNGs. Prior prompt hashes retained as audit fields only.",
         "allPresent": True,
         "allDimensionsOk": True,
@@ -1059,241 +1055,39 @@ def main():
         ),
     })
 
-    # ── Canonical screens ──
+    # ── Canonical screens + workflow/action register (atomic, screen-scoped) ──
     screen_rows = []
     used_section_ids: dict[str, set[str]] = defaultdict(set)
     brd_by_num = {int(m["number"]): m for m in modules["brdModules"]}
 
-    def build_action_record(
-        *,
-        id: str,
-        module_key: str,
-        label: str,
-        kind: str,
-        source_type: str,
-        source_location: str,
-        screen_route: str,
-        permission: str,
-        steps=None,
-        step_texts=None,
-        state_transitions: str = "NONE — NOT A MULTI-STEP WORKFLOW",
-        section_id: str = "",
-    ):
-        num = int(module_key[1:])
-        a = audits[num]
-        wave = WAVE_FOR.get(num, "P8")
-        domain_ok = a["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE"
-        svc0 = a["servicePaths"][0]
-        has_svc = svc0 != "NONE — NOT IMPLEMENTED"
-        # Projection rules
-        if num == 1:
-            proj = "M01 read-only summary may reflect resulting operational status; no M01 mutation"
-        elif num == 2:
-            proj = "M02 queue item create/update/complete projection applies when this Action Inbox control mutates queue work"
-        elif kind in ("brd-button", "brd-workflow", "modal-drawer") and num not in (1, 2):
-            proj = (
-                f"On success project exception/approval/notification to M02 when the action creates assignable work; "
-                f"M01 source-completeness KPI refresh if module publishes summary metrics — "
-                f"{'WIRED via accepted contracts' if has_svc and num in (4,5,6,7,11) else 'NONE — NOT IMPLEMENTED (target P2+/module wave)'}"
-            )
-        else:
-            proj = "NONE — NO M01/M02 PROJECTION FOR THIS NAVIGATION/CONTROL"
+    def loc_str(source_obj, fallback_doc="public/pulse-html-prototype.html"):
+        if isinstance(source_obj, dict) and source_obj.get("file"):
+            f = source_obj.get("file")
+            sl = source_obj.get("startLine")
+            so = source_obj.get("startOffset")
+            eo = source_obj.get("endOffset")
+            return f"{f}:line:{sl}:offset:{so}-{eo}"
+        if isinstance(source_obj, str) and source_obj.strip():
+            return source_obj
+        return f"{fallback_doc}:UNKNOWN-OFFSET"
 
-        if domain_ok and has_svc and kind == "production-control":
-            service = f"Navigate/render existing accepted section via {a['componentPath']} (no new domain mutation)"
-            audit_r = "Navigation-only control; domain audit event not applicable"
-            persist = f"N/A — navigation/control; underlying data persistence per {a['persistenceMethod']}"
-            err = "permission-denied route/section hidden or 403; empty section state if no rows"
-            accept = (
-                f"Work-Step QA: open {screen_route}?section={section_id or 'n/a'} as authorised role; "
-                f"assert section renders; evidence {a['evidencePaths']}"
-            )
-        elif domain_ok and has_svc:
-            service = (
-                f"Service-backed domain transition for '{label}' via {svc0} "
-                f"(module-local repository; contracts/events only across modules)"
-            )
-            audit_r = f"Write audit event {{module:{module_key}, action:{id}, actor, clinicId, before/after}} on success"
-            persist = (
-                f"Durable persist via {a['persistenceMethod']}; "
-                f"reload verification: re-fetch shows new state after mutation"
-            )
-            err = (
-                "On failure return validation 400 with field errors, permission 403, "
-                "or clinic isolation 404/403; never toast-only success"
-            )
-            accept = (
-                f"Automated service test + Work-Step QA for '{label}': mutate → reload → assert state; "
-                f"permission/isolation negative tests; evidence path {a['evidencePaths']}"
-            )
-        else:
-            service = (
-                f"NONE — NOT IMPLEMENTED; target service/domain transition for '{label}' "
-                f"owned by {module_key} in wave {wave} (no toast-only success permitted)"
-            )
-            audit_r = f"NONE — NOT IMPLEMENTED; target audit event for '{label}' in wave {wave}"
-            persist = f"NONE — NOT IMPLEMENTED; target durable persistence + reload proof in wave {wave}"
-            err = (
-                f"Target error behaviour in wave {wave}: validation failures, permission-denied, "
-                f"clinic/tenant isolation violations; never silent success"
-            )
-            accept = (
-                f"NONE — NOT IMPLEMENTED; acceptance test in wave {wave}: service assert + Work-Step QA "
-                f"for '{label}' with resulting-state evidence commit"
-            )
+    def pick_screen_for_label(label, module_screens):
+        if not module_screens:
+            return None, "NOT APPLICABLE — no screens extracted for module"
+        scored = []
+        for s in module_screens:
+            sc = codeinv.score_section(label, s.get("sectionLabel") or s.get("section") or "")
+            scored.append((sc, s))
+        scored.sort(key=lambda x: (-x[0], x[1]["screenId"]))
+        best_score, best = scored[0]
+        if best_score <= 0:
+            # Prefer overview/first section rather than attaching to all screens
+            overview = next((s for s in module_screens if "overview" in (s.get("sectionId") or "")), module_screens[0])
+            return overview, "section inferred: overview/default (no token overlap with other sections)"
+        return best, f"section matched by label tokens (score={best_score})"
 
-        return {
-            "id": id,
-            "moduleKey": module_key,
-            "label": label,
-            "kind": kind,
-            "source": source_type,
-            "sourceLocation": source_location,
-            "screenRoute": screen_route,
-            "sectionId": section_id or "NOT APPLICABLE — action not section-scoped",
-            "permission": permission,
-            "serviceDomainTransition": service,
-            "auditResult": audit_r,
-            "m01m02Projection": proj,
-            "persistenceProof": persist,
-            "errorState": err,
-            "acceptanceTest": accept,
-            "steps": steps if steps is not None else (len(step_texts or []) if step_texts else 0),
-            "stepTexts": step_texts or [],
-            "stateTransitions": state_transitions,
-            "disposition": "ADOPTED-AS-IS" if domain_ok else "ADOPTED-AS-IS",
-            "targetWave": wave if kind != "production-control" else ("P2" if num in (1, 2, 3, 4, 5, 6, 7, 11) else wave),
-            "implementationStatus": a["revisedDomainStatus"],
-        }
-
-    # Build workflow/action register first so screens can reference IDs
-    action_items = []
-    for m in modules["brdModules"]:
-        num = int(m["number"])
-        a = audits[num]
-        loc = json.dumps(m.get("source") or {"module": m["moduleKey"]}, sort_keys=True)
-        roles = roles_for(num, m, a.get("accessClassification", ""))
-        for b in m["buttons"]:
-            action_items.append(build_action_record(
-                id=b["id"], module_key=m["moduleKey"], label=b["label"], kind="brd-button",
-                source_type="brd", source_location=f"{loc}#button:{b['id']}",
-                screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
-                permission=f"{roles}; mutate only with module role + service enforcement",
-            ))
-        for f in m["flows"]:
-            step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
-            transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
-            action_items.append(build_action_record(
-                id=f["id"], module_key=m["moduleKey"], label=f.get("title") or f["id"], kind="brd-workflow",
-                source_type="brd", source_location=f"{loc}#flow:{f['id']}",
-                screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
-                permission=f"{roles}; workflow steps enforce per-step authorisation",
-                steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
-            ))
-
-    for f in workflows.get("blueprintWorkflows") or []:
-        num = int(f["moduleKey"][1:])
-        a = audits[num]
-        loc = json.dumps(f.get("source") or {"blueprintWorkflow": f["id"], "module": f["moduleKey"]}, sort_keys=True)
-        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
-        step_texts = [(s.get("text") or s.get("title") or "") for s in (f.get("steps") or [])]
-        transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
-        action_items.append(build_action_record(
-            id=f["id"], module_key=f["moduleKey"], label=f.get("title") or f["id"], kind="blueprint-workflow",
-            source_type="blueprint", source_location=loc,
-            screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
-            permission=f"{roles}; blueprint workflow authorisation",
-            steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
-        ))
-
-    for f in workflows.get("legacyWorkflows") or []:
-        group = f.get("group") or ""
-        num = infer_module_for_group(group) if group in FIELD_MODULE else 10
-        mk = f"M{num:02d}"
-        a = audits[num]
-        loc = json.dumps(f.get("source") or {"legacyGroup": group, "id": f.get("id")}, sort_keys=True)
-        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
-        step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
-        transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
-        action_items.append(build_action_record(
-            id=f.get("id") or f"legacy-{slug(group or 'wf')}",
-            module_key=mk, label=f"Legacy workflow group: {group}", kind="legacy-workflow-group",
-            source_type="legacy", source_location=loc,
-            screen_route=a["mainRoute"] or "NOT APPLICABLE — module route missing from register",
-            permission=f"{roles}; legacy state machine must map to domain transitions before claim",
-            steps=len(step_texts), step_texts=step_texts, state_transitions=transitions,
-        ))
-
-    for modal in fields_modals.get("modals") or []:
-        num = infer_module_for_modal(modal.get("title") or "")
-        a = audits[num]
-        loc = json.dumps(modal.get("source") or {"modal": modal["id"]}, sort_keys=True)
-        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
-        action_items.append(build_action_record(
-            id=modal["id"], module_key=f"M{num:02d}", label=modal.get("title") or modal["id"],
-            kind="modal-drawer", source_type="prototype-runtime", source_location=loc,
-            screen_route=a["mainRoute"] or "NOT APPLICABLE — modal not bound to a single route",
-            permission=f"{roles}; modal invoker must hold mutate permission for underlying entity",
-        ))
-
-    # Production section controls for modules with UI sections (exact code mapping)
-    for reg in register:
-        num = reg["number"]
-        a = audits[num]
-        if a["revisedUiStatus"] not in ("FUNCTIONALLY-COMPLETE", "IN-DEVELOPMENT"):
-            continue
-        if not reg["sections"]:
-            continue
-        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
-        for sec in reg["sections"]:
-            action_items.append(build_action_record(
-                id=f"prod-ctrl-{reg['id']}-{sec['id']}",
-                module_key=f"M{num:02d}",
-                label=f"Open section {sec['label']}",
-                kind="production-control",
-                source_type="current-code",
-                source_location=f"src/platform/module-registry/module-register.ts:section:{reg['id']}/{sec['id']}",
-                screen_route=reg["mainRoute"],
-                section_id=sec["id"],
-                permission=f"{roles}; section visible only when accessClassification={reg.get('accessClassification')} grants module access",
-            ))
-
-    # Planned module controls for modules without BRD buttons (M21–M24 and any gap)
-    brd_button_modules = {int(m["number"]) for m in modules["brdModules"] if m.get("buttons")}
-    for reg in register:
-        num = reg["number"]
-        if num in brd_button_modules:
-            continue
-        a = audits[num]
-        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
-        action_items.append(build_action_record(
-            id=f"planned-nav-{reg['id']}-overview",
-            module_key=f"M{num:02d}",
-            label=f"Open {reg['displayName']} overview",
-            kind="planned-module-control",
-            source_type="current-plan",
-            source_location=f"src/platform/module-registry/module-register.ts:module:{reg['id']}; blueprint/plan coverage",
-            screen_route=reg["mainRoute"],
-            section_id="overview",
-            permission=f"{roles}; planned overview navigation for modules without BRD named buttons",
-        ))
-        action_items.append(build_action_record(
-            id=f"planned-primary-{reg['id']}-workspace",
-            module_key=f"M{num:02d}",
-            label=f"Primary workspace actions for {reg['displayName']}",
-            kind="planned-module-control",
-            source_type="current-plan",
-            source_location=f"docs/architecture/prototype-parity/CURRENT_IMPLEMENTATION_REAUDIT.json:module:M{num:02d}",
-            screen_route=reg["mainRoute"],
-            section_id="overview",
-            permission=f"{roles}; planned primary actions pending module wave implementation",
-        ))
-
-    action_by_id = {x["id"]: x for x in action_items}
-    actions_by_module = defaultdict(list)
-    for x in action_items:
-        actions_by_module[x["moduleKey"]].append(x["id"])
-
+    # Pre-build screen skeletons from extraction (exact source = tab source or BRD module tab)
+    screen_skeletons = []
     for s in screens_ex["screens"]:
         num = int(s["moduleKey"][1:])
         a = audits[num]
@@ -1308,26 +1102,23 @@ def main():
             section_id = f"{base_id}-{n}"
             n += 1
         used_section_ids[key].add(section_id)
-        img = next((i for i in image_rows if i["module"] == s["moduleKey"]), None)
         brd = brd_by_num.get(num)
-        # Visible actions: BRD buttons for module, else planned controls, plus matching production controls on same route
-        action_ids = [b["id"] for b in (brd["buttons"] if brd else []) if b["id"] in action_by_id]
-        if not action_ids:
-            action_ids = [aid for aid in actions_by_module[s["moduleKey"]] if aid.startswith("planned-")]
-        # Always include production controls for this module route that exist
-        action_ids += [aid for aid in actions_by_module[s["moduleKey"]] if aid.startswith("prod-ctrl-") and aid not in action_ids]
-        # Ensure every ID resolves
-        action_ids = [aid for aid in action_ids if aid in action_by_id]
-        if not action_ids:
-            raise SystemExit(f"screen {s['id']} has no resolvable visibleActionIds")
-        image_control_ids = (
-            [f"imgctrl-{s['moduleKey'].lower()}-{c}" for c in image_controls]
-            if img else []
-        )
-        req_ids = [x for x in [s.get("tabId"), s["id"]] if x]
-        # attach workflow ids for module
-        wf_ids = [aid for aid in actions_by_module[s["moduleKey"]] if action_by_id[aid]["kind"] in ("brd-workflow", "blueprint-workflow", "legacy-workflow-group")]
-        screen_rows.append({
+        tab = None
+        if brd and s.get("tabId"):
+            tab = next((x for x in brd.get("tabs") or [] if x["id"] == s["tabId"]), None)
+        src = None
+        if tab and tab.get("source"):
+            src = loc_str(tab["source"])
+        elif brd and brd.get("source"):
+            src = loc_str(brd["source"]) + f"#tab:{s.get('tabId') or section_id}"
+        else:
+            # Blueprint-only / non-BRD screen: use blueprint source span when available
+            bp = next((b for b in modules["blueprints"] if b.get("id") == s.get("blueprintId")), None)
+            if bp and bp.get("source"):
+                src = loc_str(bp["source"]) + f"#blueprint-screen:{section_id}"
+            else:
+                src = f"public/pulse-html-prototype.html#module:{s['moduleKey']}:section:{section_id}"
+        screen_skeletons.append({
             "screenId": s["id"],
             "moduleKey": s["moduleKey"],
             "moduleName": s.get("moduleName") or a["displayName"],
@@ -1339,18 +1130,399 @@ def main():
             "deepLink": f"{route}?section={section_id}",
             "purpose": s.get("purpose") or a["note"],
             "sourceType": s.get("sourceType"),
-            "sourceLocation": json.dumps(s.get("source") or {"screen": s["id"]}, sort_keys=True),
+            "sourceLocation": src,
+            "tabId": s.get("tabId"),
+            "brdModuleId": s.get("brdModuleId"),
+            "blueprintId": s.get("blueprintId"),
+            "number": num,
+        })
+    screens_by_module = defaultdict(list)
+    for sk in screen_skeletons:
+        screens_by_module[sk["moduleKey"]].append(sk)
+
+    action_items = []
+
+    def build_action(**kwargs):
+        required = [
+            "id", "moduleKey", "label", "kind", "classification", "source", "sourceLocation",
+            "screenId", "screenRoute", "sectionId", "permission",
+            "servicePath", "serviceMethod", "componentHandler",
+            "repositoryPath", "auditResult", "m01m02Projection", "persistenceProof",
+            "errorState", "acceptanceTest", "automatedTest", "evidencePath",
+            "targetWave", "requirementId",
+        ]
+        for r in required:
+            if r not in kwargs or kwargs[r] is None or str(kwargs[r]).strip() == "":
+                raise SystemExit(f"action missing {r}: {kwargs.get('id')}")
+        kwargs.setdefault("steps", 0)
+        kwargs.setdefault("stepTexts", [])
+        kwargs.setdefault("stateTransitions", "NOT APPLICABLE — not a multi-step workflow")
+        kwargs.setdefault("disposition", "ADOPTED-AS-IS")
+        kwargs.setdefault("implementationStatus", audits[int(kwargs["moduleKey"][1:])]["revisedDomainStatus"])
+        return kwargs
+
+    # BRD buttons — screen-specific
+    for m in modules["brdModules"]:
+        num = int(m["number"])
+        a = audits[num]
+        roles = roles_for(num, m, a.get("accessClassification", ""))
+        mod_screens = screens_by_module[m["moduleKey"]]
+        for b in m["buttons"]:
+            screen, reason = pick_screen_for_label(b["label"], mod_screens)
+            classification = codeinv.classify_control(b["label"], "brd-button")
+            matched = codeinv.match_service(b["label"], a.get("serviceIndex") or [], classification)
+            domain_ok = a["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE" and matched["servicePath"].startswith("src/")
+            wave = WAVE_FOR.get(num, "P8")
+            if classification == "navigation" or classification == "read-filter":
+                audit_r = "NOT APPLICABLE — navigation/read control (no domain audit event)"
+                persist = "NOT APPLICABLE — no domain persistence for navigation/read control"
+                err = "permission-denied hides control or returns 403; empty-state when no rows"
+                auto = f"UI test: render {screen['deepLink'] if screen else a['mainRoute']} and assert control '{b['label']}' visible to authorised role only"
+                accept = auto + f"; evidence {a['evidencePaths']}"
+                proj = "NOT APPLICABLE — navigation/read does not project to M01/M02"
+            elif domain_ok:
+                audit_r = f"Write audit via module audit helper on success for {matched['serviceMethod']}"
+                persist = f"Durable persist through {matched['servicePath']}; reload verification required"
+                err = "validation 400 / permission 403 / clinic isolation 404|403; never toast-only success"
+                auto = f"Service test: {matched['serviceMethod']} success + permission/isolation negatives"
+                accept = f"Work-Step QA '{b['label']}' on screen {screen['screenId'] if screen else 'n/a'}: mutate→reload→assert; {a['evidencePaths']}"
+                proj = (
+                    "M02 projection when action creates assignable work; M01 completeness refresh if metrics published — "
+                    + ("WIRED via accepted contracts" if num in (4, 5, 6, 7, 11) else f"NONE — NOT IMPLEMENTED (target {wave})")
+                )
+            else:
+                audit_r = f"NONE — NOT IMPLEMENTED; target audit for '{b['label']}' in wave {wave}"
+                persist = f"NONE — NOT IMPLEMENTED; target persistence for '{b['label']}' in wave {wave}"
+                err = f"Target errors in wave {wave}: validation/permission/isolation failures surfaced in UI"
+                auto = f"NONE — NOT IMPLEMENTED; target service test for '{b['label']}' in wave {wave}"
+                accept = f"NONE — NOT IMPLEMENTED; Work-Step QA for '{b['label']}' in wave {wave}"
+                proj = f"NONE — NOT IMPLEMENTED; target M01/M02 projection rules in wave {wave}"
+                if matched["servicePath"] == "NONE — NOT IMPLEMENTED":
+                    matched = {
+                        **matched,
+                        "componentHandler": "NONE — NOT IMPLEMENTED",
+                    }
+            action_items.append(build_action(
+                id=b["id"], moduleKey=m["moduleKey"], label=b["label"], kind="brd-button",
+                classification=classification, source="brd",
+                sourceLocation=loc_str(b.get("source") or m.get("source")),
+                screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
+                screenRoute=screen["route"] if screen else a["mainRoute"],
+                sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
+                sectionMappingReason=reason,
+                permission=f"{roles}; mutate only when classification={classification} requires it",
+                servicePath=matched["servicePath"], serviceMethod=matched["serviceMethod"],
+                componentHandler=matched.get("componentHandler") or matched["serviceMethod"],
+                repositoryPath=matched["repositoryPath"],
+                auditResult=audit_r, m01m02Projection=proj, persistenceProof=persist,
+                errorState=err, acceptanceTest=accept, automatedTest=auto,
+                evidencePath=a["evidencePaths"], targetWave=wave, requirementId=b["id"],
+                matchConfidence=matched.get("matchConfidence", ""),
+            ))
+
+    def add_workflow(item_id, module_key, label, kind, source_type, source_obj, steps, step_texts):
+        num = int(module_key[1:])
+        a = audits[num]
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        mod_screens = screens_by_module[module_key]
+        screen, reason = pick_screen_for_label(label, mod_screens)
+        classification = "multi-step-workflow"
+        matched = codeinv.match_service(label, a.get("serviceIndex") or [], "command-mutation")
+        wave = WAVE_FOR.get(num, "P8")
+        domain_ok = a["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE" and matched["servicePath"].startswith("src/")
+        transitions = " > ".join(t[:80] for t in step_texts) if step_texts else "NONE — STEPS NOT LISTED IN SOURCE"
+        if domain_ok:
+            service = matched["servicePath"]
+            method = matched["serviceMethod"]
+            handler = matched.get("componentHandler") or method
+            repo = matched["repositoryPath"]
+            audit_r = f"Audit each mutating step; final state audited for workflow '{label}'"
+            persist = f"Each mutating step persists via {service}; end-state reload verification"
+            err = "Step validation/permission/isolation failures stop workflow; no silent completion"
+            auto = f"Workflow test harness for '{label}' covering {len(step_texts)} steps"
+            accept = f"Work-Step QA for workflow '{label}' on {screen['screenId'] if screen else 'n/a'}"
+            proj = "M02 projection for assignable outcomes; M01 refresh if KPIs change — WIRED or target wave"
+        else:
+            service = method = handler = repo = "NONE — NOT IMPLEMENTED"
+            audit_r = persist = err = auto = accept = f"NONE — NOT IMPLEMENTED; target workflow '{label}' in wave {wave}"
+            proj = f"NONE — NOT IMPLEMENTED; target projections in wave {wave}"
+        action_items.append(build_action(
+            id=item_id, moduleKey=module_key, label=label, kind=kind, classification=classification,
+            source=source_type, sourceLocation=loc_str(source_obj),
+            screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
+            screenRoute=screen["route"] if screen else a["mainRoute"],
+            sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
+            sectionMappingReason=reason,
+            permission=f"{roles}; per-step authorisation for workflow",
+            servicePath=service, serviceMethod=method, componentHandler=handler, repositoryPath=repo,
+            auditResult=audit_r, m01m02Projection=proj, persistenceProof=persist,
+            errorState=err, acceptanceTest=accept, automatedTest=auto,
+            evidencePath=a["evidencePaths"], targetWave=wave, requirementId=item_id,
+            steps=steps, stepTexts=step_texts, stateTransitions=transitions,
+        ))
+
+    for m in modules["brdModules"]:
+        for f in m["flows"]:
+            step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
+            add_workflow(f["id"], m["moduleKey"], f.get("title") or f["id"], "brd-workflow", "brd",
+                         f.get("source") or m.get("source"), len(step_texts), step_texts)
+
+    for f in workflows.get("blueprintWorkflows") or []:
+        step_texts = [(s.get("text") or s.get("title") or "") for s in (f.get("steps") or [])]
+        # prefer flow-level source from modules blueprints
+        bp = next((b for b in modules["blueprints"] if b["moduleKey"] == f["moduleKey"]), None)
+        flow_src = f.get("source")
+        if not flow_src and bp:
+            bf = next((x for x in (bp.get("flows") or []) if x.get("id") == f.get("id")), None)
+            flow_src = (bf or {}).get("source") or bp.get("source")
+        add_workflow(f["id"], f["moduleKey"], f.get("title") or f["id"], "blueprint-workflow", "blueprint",
+                     flow_src or {"file": "public/pulse-html-prototype.html", "startLine": 0, "startOffset": 0, "endOffset": 0},
+                     len(step_texts), step_texts)
+
+    for f in workflows.get("legacyWorkflows") or []:
+        group = f.get("group") or ""
+        num = FIELD_MODULE.get(group, 10)
+        mk = f"M{num:02d}"
+        step_texts = [(s.get("text") or "") for s in (f.get("steps") or [])]
+        add_workflow(f.get("id") or f"legacy-{slug(group)}", mk, f"Legacy workflow group: {group}",
+                     "legacy-workflow-group", "legacy", f.get("source"), len(step_texts), step_texts)
+
+    for modal in fields_modals.get("modals") or []:
+        num = infer_module_for_modal(modal.get("title") or "")
+        a = audits[num]
+        mk = f"M{num:02d}"
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        mod_screens = screens_by_module[mk]
+        screen, reason = pick_screen_for_label(modal.get("title") or "", mod_screens)
+        classification = "modal"
+        matched = codeinv.match_service(modal.get("title") or "", a.get("serviceIndex") or [], "command-mutation")
+        wave = WAVE_FOR.get(num, "P8")
+        domain_ok = a["revisedDomainStatus"] == "FUNCTIONALLY-COMPLETE" and matched["servicePath"].startswith("src/")
+        if domain_ok:
+            svc, method, handler, repo = matched["servicePath"], matched["serviceMethod"], matched.get("componentHandler"), matched["repositoryPath"]
+            audit_r = f"Audit modal confirm for '{modal.get('title')}'"
+            persist = f"Persist via {svc}; reload verification"
+            err = "Modal validation errors inline; permission 403; no toast-only success"
+            auto = f"Component test: open modal '{modal.get('title')}' and confirm service {method}"
+            accept = f"Work-Step QA modal '{modal.get('title')}' on {screen['screenId'] if screen else 'n/a'}"
+            proj = "M02 when modal creates assignable work; else NOT APPLICABLE"
+        else:
+            svc = method = handler = repo = "NONE — NOT IMPLEMENTED"
+            audit_r = persist = err = auto = accept = f"NONE — NOT IMPLEMENTED; target modal '{modal.get('title')}' in wave {wave}"
+            proj = f"NONE — NOT IMPLEMENTED (wave {wave})"
+        action_items.append(build_action(
+            id=modal["id"], moduleKey=mk, label=modal.get("title") or modal["id"], kind="modal-drawer",
+            classification=classification, source="prototype-runtime",
+            sourceLocation=loc_str(modal.get("source")),
+            screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
+            screenRoute=screen["route"] if screen else a["mainRoute"],
+            sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
+            sectionMappingReason=reason,
+            permission=f"{roles}; modal invoker must hold mutate permission",
+            servicePath=svc, serviceMethod=method, componentHandler=handler or method, repositoryPath=repo,
+            auditResult=audit_r, m01m02Projection=proj, persistenceProof=persist,
+            errorState=err, acceptanceTest=accept, automatedTest=auto,
+            evidencePath=a["evidencePaths"], targetWave=wave, requirementId=modal["id"],
+        ))
+
+    # Registry section links = navigation controls (not domain actions)
+    for reg in register:
+        num = reg["number"]
+        a = audits[num]
+        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
+        mod_screens = screens_by_module[f"M{num:02d}"]
+        for sec in reg["sections"]:
+            # map to extracted screen with same section id/label if any
+            screen = next((s for s in mod_screens if s["sectionId"] == sec["id"] or s["sectionLabel"].lower() == sec["label"].lower()), None)
+            if not screen and mod_screens:
+                screen, reason = pick_screen_for_label(sec["label"], mod_screens)
+            else:
+                reason = "registry section id/label matched extracted screen" if screen else "registry-only section"
+            page = (a.get("pagePaths") or ["NONE — NOT IMPLEMENTED"])[0]
+            action_items.append(build_action(
+                id=f"nav-ctrl-{reg['id']}-{sec['id']}",
+                moduleKey=f"M{num:02d}",
+                label=f"Navigate section {sec['label']}",
+                kind="navigation-control",
+                classification="navigation",
+                source="current-code-registry",
+                sourceLocation=f"src/platform/module-registry/module-register.ts:section:{reg['id']}/{sec['id']}",
+                screenId=screen["screenId"] if screen else f"NOT APPLICABLE — registry section without extracted screen ({reason})",
+                screenRoute=reg["mainRoute"],
+                sectionId=sec["id"],
+                sectionMappingReason=reason,
+                permission=f"{roles}; visible when accessClassification={reg.get('accessClassification')} grants module access",
+                servicePath="NOT APPLICABLE — navigation control (module-register section link)",
+                serviceMethod="NOT APPLICABLE — router/section navigation",
+                componentHandler=f"{page} ← module entry; section param `{sec['id']}`",
+                repositoryPath="NOT APPLICABLE — navigation control",
+                auditResult="NOT APPLICABLE — navigation-only (no domain audit event)",
+                m01m02Projection="NOT APPLICABLE — navigation-only",
+                persistenceProof="NOT APPLICABLE — navigation-only",
+                errorState="permission-denied hides section; unknown section shows empty/default",
+                acceptanceTest=f"UI test: open {reg['mainRoute']}?section={sec['id']} as authorised role; assert section active",
+                automatedTest=f"Route/section test for {reg['mainRoute']}?section={sec['id']}",
+                evidencePath=a["evidencePaths"],
+                targetWave="P2" if num in (1, 2, 3, 4, 5, 6, 7, 11) else WAVE_FOR.get(num, "P8"),
+                requirementId=f"nav-ctrl-{reg['id']}-{sec['id']}",
+            ))
+
+    # Working production controls discovered from active adapters/workspaces
+    for num, a in audits.items():
+        roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
+        mod_screens = screens_by_module[f"M{num:02d}"]
+        for idx, ctrl in enumerate(a.get("workingControlsFromCode") or []):
+            label = ctrl.get("symbol") or f"control-{idx}"
+            screen, reason = pick_screen_for_label(label, mod_screens)
+            cid = f"prod-ctrl-m{num:02d}-{slug(label)}-{ctrl.get('line', idx)}"
+            classification = "read-filter" if ctrl.get("kind") != "handler" else "command-mutation"
+            if ctrl.get("kind") == "handler" and re.search(r"click|submit|save|approve", str(ctrl.get("handler", "")), re.I):
+                classification = "command-mutation"
+            matched = codeinv.match_service(label, a.get("serviceIndex") or [], classification)
+            wave = WAVE_FOR.get(num, "P8")
+            is_navish = classification in ("navigation", "read-filter")
+            action_items.append(build_action(
+                id=cid, moduleKey=f"M{num:02d}", label=label, kind="production-control",
+                classification=classification, source="current-code-workspace",
+                sourceLocation=f"{ctrl['componentPath']}:line:{ctrl.get('line')}",
+                screenId=screen["screenId"] if screen else "NOT APPLICABLE — workspace control without extracted screen",
+                screenRoute=a["mainRoute"],
+                sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
+                sectionMappingReason=reason,
+                permission=f"{roles}; enforced in workspace {ctrl['componentPath']}",
+                servicePath=matched["servicePath"] if not is_navish else "NOT APPLICABLE — read/UI control unless handler mutates",
+                serviceMethod=matched["serviceMethod"] if not is_navish else (ctrl.get("handler") or "NOT APPLICABLE — no mutation handler"),
+                componentHandler=f"{ctrl['componentPath']}::{ctrl.get('handler') or label}",
+                repositoryPath=matched["repositoryPath"] if not is_navish else "NOT APPLICABLE — no persistence for read/UI control",
+                auditResult="NOT APPLICABLE — read/UI control" if is_navish else (
+                    f"Audit via service on mutation ({matched['serviceMethod']})" if matched["servicePath"].startswith("src/") else f"NONE — NOT IMPLEMENTED (wave {wave})"
+                ),
+                m01m02Projection="NOT APPLICABLE — read/UI control" if is_navish else (
+                    "M02/M01 projection rules apply if mutation creates work/metrics" if matched["servicePath"].startswith("src/") else f"NONE — NOT IMPLEMENTED (wave {wave})"
+                ),
+                persistenceProof="NOT APPLICABLE — read/UI control" if is_navish else (
+                    f"Reload verification via {matched['servicePath']}" if matched["servicePath"].startswith("src/") else f"NONE — NOT IMPLEMENTED (wave {wave})"
+                ),
+                errorState="permission-denied / empty / error UI states in workspace",
+                acceptanceTest=f"UI/Work-Step for control '{label}' at {ctrl['componentPath']}:{ctrl.get('line')}",
+                automatedTest=f"Component test targeting {ctrl['componentPath']} line {ctrl.get('line')}",
+                evidencePath=a["evidencePaths"],
+                targetWave=wave,
+                requirementId=cid,
+            ))
+
+    # Planned controls for modules without BRD buttons (still screen-scoped to overview)
+    brd_button_modules = {int(m["number"]) for m in modules["brdModules"] if m.get("buttons")}
+    for reg in register:
+        num = reg["number"]
+        if num in brd_button_modules:
+            continue
+        a = audits[num]
+        mk = f"M{num:02d}"
+        roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
+        mod_screens = screens_by_module[mk]
+        screen = mod_screens[0] if mod_screens else None
+        for suffix, label in (("overview", f"Open {reg['displayName']} overview"), ("workspace", f"Primary workspace actions for {reg['displayName']}")):
+            cid = f"planned-{suffix}-{reg['id']}"
+            action_items.append(build_action(
+                id=cid, moduleKey=mk, label=label, kind="planned-module-control",
+                classification="navigation" if suffix == "overview" else "command-mutation",
+                source="current-plan",
+                sourceLocation=f"src/platform/module-registry/module-register.ts:module:{reg['id']}",
+                screenId=screen["screenId"] if screen else "NOT APPLICABLE — no extracted screen",
+                screenRoute=reg["mainRoute"],
+                sectionId=screen["sectionId"] if screen else "overview",
+                sectionMappingReason="planned control anchored to first/overview screen",
+                permission=f"{roles}; planned until module wave implements BRD actions",
+                servicePath="NONE — NOT IMPLEMENTED",
+                serviceMethod="NONE — NOT IMPLEMENTED",
+                componentHandler=(a.get("pagePaths") or ["NONE — NOT IMPLEMENTED"])[0],
+                repositoryPath="NONE — NOT IMPLEMENTED",
+                auditResult=f"NONE — NOT IMPLEMENTED (wave {WAVE_FOR.get(num, 'P8')})",
+                m01m02Projection=f"NONE — NOT IMPLEMENTED (wave {WAVE_FOR.get(num, 'P8')})",
+                persistenceProof=f"NONE — NOT IMPLEMENTED (wave {WAVE_FOR.get(num, 'P8')})",
+                errorState=f"Target errors in wave {WAVE_FOR.get(num, 'P8')}",
+                acceptanceTest=f"NONE — NOT IMPLEMENTED; Work-Step QA in wave {WAVE_FOR.get(num, 'P8')}",
+                automatedTest=f"NONE — NOT IMPLEMENTED; automated tests in wave {WAVE_FOR.get(num, 'P8')}",
+                evidencePath=a["evidencePaths"],
+                targetWave=WAVE_FOR.get(num, "P8"),
+                requirementId=cid,
+            ))
+
+    action_by_id = {x["id"]: x for x in action_items}
+    actions_by_screen = defaultdict(list)
+    workflows_by_screen = defaultdict(list)
+    for x in action_items:
+        sid = x.get("screenId") or ""
+        if sid.startswith("NOT APPLICABLE"):
+            continue
+        if x["kind"] in ("brd-workflow", "blueprint-workflow", "legacy-workflow-group"):
+            workflows_by_screen[sid].append(x["id"])
+        else:
+            actions_by_screen[sid].append(x["id"])
+
+    # Finalize screens with screen-specific actions/workflows only
+    for sk in screen_skeletons:
+        num = sk["number"]
+        a = audits[num]
+        brd = brd_by_num.get(num)
+        img = next((i for i in image_rows if i["module"] == sk["moduleKey"]), None)
+        action_ids = sorted(set(actions_by_screen.get(sk["screenId"], [])))
+        wf_ids = sorted(set(workflows_by_screen.get(sk["screenId"], [])))
+        if not action_ids:
+            # Bind best-matching module navigation control to this screen (registry section labels ≠ BRD tab labels)
+            navs = [
+                x for x in action_items
+                if x["moduleKey"] == sk["moduleKey"] and x["kind"] == "navigation-control"
+            ]
+            navs_scored = sorted(
+                navs,
+                key=lambda x: (-codeinv.score_section(sk["sectionLabel"], x["label"]), x["id"]),
+            )
+            if navs_scored:
+                donor = navs_scored[0]
+                cid = f"nav-screen-{sk['screenId']}"
+                cloned = dict(donor)
+                cloned.update({
+                    "id": cid,
+                    "label": f"Open screen section {sk['sectionLabel']}",
+                    "screenId": sk["screenId"],
+                    "screenRoute": sk["route"],
+                    "sectionId": sk["sectionId"],
+                    "sectionMappingReason": "screen-local navigation binding from nearest registry section control",
+                    "sourceLocation": f"{donor['sourceLocation']}#bound-to-screen:{sk['screenId']}",
+                    "requirementId": cid,
+                    "componentHandler": f"{(a.get('pagePaths') or ['NONE'])[0]} section `{sk['sectionId']}`",
+                    "acceptanceTest": f"UI test: open {sk['deepLink']} as authorised role; assert section '{sk['sectionLabel']}' active",
+                    "automatedTest": f"Route/section test for {sk['deepLink']}",
+                })
+                action_items.append(cloned)
+                action_by_id[cid] = cloned
+                actions_by_screen[sk["screenId"]].append(cid)
+                action_ids = [cid]
+        if not action_ids:
+            raise SystemExit(f"screen {sk['screenId']} has zero screen-scoped actions")
+        for aid in action_ids + wf_ids:
+            if aid not in action_by_id:
+                raise SystemExit(f"unresolved id {aid}")
+        screen_rows.append({
+            **{k: sk[k] for k in (
+                "screenId", "moduleKey", "moduleName", "family", "route", "sectionId",
+                "sectionLabel", "sectionDescription", "deepLink", "purpose", "sourceType", "sourceLocation",
+            )},
             "roles": roles_for(num, brd, a.get("accessClassification", "")),
             "accessClassification": a.get("accessClassification", ""),
-            "dataOwner": OWNERSHIP[s["moduleKey"]],
+            "dataOwner": OWNERSHIP[sk["moduleKey"]],
             "sourceSystem": "Doctors Pulse module services (not prototype seed)",
             "dataSource": a["persistenceMethod"],
             "visibleActionIds": action_ids,
-            "workflowIds": wf_ids[:40],
-            "imageControlRequirementIds": image_control_ids,
+            "workflowIds": wf_ids,
+            "imageControlRequirementIds": (
+                [f"imgctrl-{sk['moduleKey'].lower()}-{c}" for c in image_controls] if img else []
+            ),
             "states": ["default", "loading", "empty", "error", "permission-denied"],
             "responsiveBehaviour": responsive_for(num),
-            "requirementIds": req_ids,
+            "requirementIds": [x for x in [sk.get("tabId"), sk["screenId"]] if x],
             "uiStatus": a["revisedUiStatus"],
             "domainStatus": a["revisedDomainStatus"],
             "integrationStatus": a["revisedIntegrationStatus"],
@@ -1360,18 +1532,18 @@ def main():
             "designReferenceSha256": img["canonicalSha256"] if img else None,
             "targetWave": WAVE_FOR.get(num, "P8"),
             "acceptanceEvidencePath": a["evidencePaths"] if a["evidencePaths"] != "NONE — NOT IMPLEMENTED" else "NONE — NOT YET AUTHORISED",
+            "pagePaths": a.get("pagePaths") or ["NONE — NOT IMPLEMENTED"],
         })
 
     # Accounting
     disp_counts = Counter(r["prototypeDisposition"] for r in rows)
     accounting = {
         "generatedAt": UTC,
-        "programmeResetTip": tip,
-        "programmeResetTipNote": "Working-tree HEAD at generation; control-pack tip is the commit that contains these files",
         "acceptedApplicationBaseline": BASELINE,
         "evidenceBearingTip": EVIDENCE_TIP,
         "decisionATip": DECISION_A,
         "originMain": ORIGIN_MAIN,
+        "generatorInputTipField": "omitted-by-design — final pack tip is the containing commit SHA (handoff)",
         "totalRows": len(rows),
         "unclassifiedCount": 0,
         "dispositionTotals": dict(disp_counts),
@@ -1396,8 +1568,18 @@ def main():
             "blueprintWorkflows": sum(1 for a in action_items if a["kind"] == "blueprint-workflow"),
             "legacyWorkflowGroups": sum(1 for a in action_items if a["kind"] == "legacy-workflow-group"),
             "modalsDrawers": sum(1 for a in action_items if a["kind"] == "modal-drawer"),
+            "navigationControls": sum(1 for a in action_items if a["kind"] == "navigation-control"),
             "productionControls": sum(1 for a in action_items if a["kind"] == "production-control"),
             "plannedModuleControls": sum(1 for a in action_items if a["kind"] == "planned-module-control"),
+            "productionControlsBySourceFile": dict(sorted(Counter(
+                (a.get("sourceLocation") or "").split(":line:")[0]
+                for a in action_items if a["kind"] == "production-control"
+            ).items())),
+            "screenSpecificActionSets": len({tuple(s.get("visibleActionIds") or []) for s in screen_rows}),
+            "actionsWithExactSectionId": sum(1 for a in action_items if a.get("sectionId") and not str(a.get("sectionId")).startswith("NOT APPLICABLE")),
+            "actionsWithExactSourceLocation": sum(1 for a in action_items if a.get("sourceLocation") and "UNKNOWN" not in a.get("sourceLocation", "")),
+            "atomicServiceMapped": sum(1 for a in action_items if str(a.get("servicePath","")).startswith("src/")),
+            "atomicNoneNotImplemented": sum(1 for a in action_items if a.get("servicePath") == "NONE — NOT IMPLEMENTED"),
             "totalItems": len(action_items),
             "fieldCompleteness": {
                 "withSourceLocation": sum(1 for a in action_items if (a.get("sourceLocation") or "").strip()),
@@ -1418,7 +1600,7 @@ def main():
                             "module accessClassification",
                         }
                         for k in (
-                            "permission", "serviceDomainTransition", "auditResult",
+                            "permission", "servicePath", "serviceMethod", "auditResult",
                             "m01m02Projection", "persistenceProof", "errorState", "acceptanceTest",
                         )
                     )
@@ -1436,7 +1618,8 @@ def main():
         "acceptedApplicationBaseline": "b1152d36d3f47c15277f85b3e990f5e1c94bddcb",
         "evidenceBearingTip": "e659dfc42a711d37a3e73b3ba7049190ca531e4a",
         "decisionATip": "66e6e6488b27b9098dadd8962473fedea5053614",
-        "programmeResetTipAtGeneration": tip,
+        "decisionAInstallCommit": DECISION_A,
+        "notePinnedTipsOnly": True,
         "accounting": accounting,
         "rows": rows,
     }, indent=2, sort_keys=False))
@@ -1551,8 +1734,10 @@ Full machine register: `canonical-screen-register.json`
 | Blueprint workflows | {wat['blueprintWorkflows']} |
 | Legacy workflow groups | {wat['legacyWorkflowGroups']} |
 | Modals/drawers | {wat['modalsDrawers']} |
-| Current production controls | {wat['productionControls']} |
+| Navigation controls (module-register sections) | {wat.get('navigationControls', 0)} |
+| Current production controls (workspace/code) | {wat['productionControls']} |
 | Planned module controls | {wat['plannedModuleControls']} |
+| Screen-specific action sets | {wat.get('screenSpecificActionSets', 0)} |
 | **Total items** | **{wat['totalItems']}** |
 
 ## Field completeness
@@ -2036,7 +2221,8 @@ Generated: `{UTC}`
         "designPngDecision": "A-REVISED",
         "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
         "openOwnerDecisions": accounting["openOwnerDecisions"],
-        "programmeResetTipAtGeneration": tip,
+        "decisionAInstallCommit": DECISION_A,
+        "notePinnedTipsOnly": True,
         "workflowActionTotals": accounting["workflowActionTotals"],
         "conflictAdjudicationTotals": accounting["conflictAdjudicationTotals"],
         "ok": True,
@@ -2081,7 +2267,7 @@ Generated: `{UTC}`
 
     write(OUT / "README.md", f"""# Programme Gate P0 — Prototype Parity Control Pack
 
-**Claim (only):** Programme Gate P0 semantic control pack corrected and ready for owner acceptance review.
+**Claim (only):** Programme Gate P0 provenance and semantic control pack corrected and ready for owner acceptance review.
 
 | Pin | SHA |
 | --- | --- |
@@ -2122,7 +2308,7 @@ Generated: `{UTC}`
 
     write(OUT / "FIRST_RUN_STOP_CHECKPOINT.md", f"""# Programme Gate P0 Stop Checkpoint
 
-**Claim (only):** Programme Gate P0 semantic control pack corrected and ready for owner acceptance review.
+**Claim (only):** Programme Gate P0 provenance and semantic control pack corrected and ready for owner acceptance review.
 
 | Item | Value |
 | --- | --- |
@@ -2207,10 +2393,10 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 3. Visual QA regression vs Decision A PNGs + design contract viewports  
 4. Production-readiness evidence pack (still not an operational release claim)"""
         # default module
-        return f"""1. {mod_key} route/section alignment to final-design pattern + Decision A image if any  
-2. Implement in-scope domain services for listed actions/workflows (no toast-only success)  
-3. Permissions (`accessClassification`), clinic/tenant isolation, validation/error states, audit  
-4. Module-specific automated tests + Visual QA + Work-Step QA for every listed action ID"""
+        return f"""1. {mod_key}: implement/align each screen ID in §3 to its section deep-link and design reference  
+2. For each mutating dossier in §4: wire the named `handler`/`service`/`serviceMethod` (or create the `NONE — NOT IMPLEMENTED` target at the stated wave)  
+3. Enforce each dossier permission + errorState; write audit/persistence only where dossiers require it  
+4. Land every named automatedTest + Work-Step QA acceptance from §4 dossiers with immutable evidence"""
 
     def tests_for(kind: str, mod_key: str) -> str:
         if kind == "shared-shell":
@@ -2228,10 +2414,11 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 - M01 source-completeness label tests for published metrics  
 - Isolation fuzz across clinics/tenants  
 - Visual + Work-Step regression gate for all P2–P8 accepted tips"""
-        return f"""- {mod_key} service/repository transition tests for each mutating action ID  
-- Permission denied + clinic isolation negative tests  
-- Persistence reload proof tests  
-- Regression for frozen accepted modules touched by this batch"""
+        return f"""- Implement every named `automatedTest` from the action/workflow dossiers in §4 for {mod_key}  
+- Permission denied + clinic isolation negative tests for each mutating dossier  
+- Persistence reload proof tests for each dossier with durable persistence  
+- Regression for frozen accepted modules touched by this batch  
+- Resulting-state asserts exactly as listed in each dossier `acceptance` field"""
 
     prompt_index = []
     prompts_dir = OUT / "prompts"
@@ -2328,6 +2515,28 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 - Workflow IDs: {", ".join(f"`{x}`" for x in wf_ids)}
 """
 
+        # Build inline action/workflow dossiers (no external delegation of semantics)
+        def dossier(ids):
+            lines = []
+            for aid in ids:
+                x = action_by_id.get(aid)
+                if not x:
+                    lines.append(f"- `{aid}`: MISSING FROM REGISTER")
+                    continue
+                lines.append(
+                    f"- `{x['id']}` | {x.get('label')} | kind={x.get('kind')} | class={x.get('classification')} | "
+                    f"screen=`{x.get('screenId')}` section=`{x.get('sectionId')}` route=`{x.get('screenRoute')}` | "
+                    f"permission={x.get('permission')} | handler={x.get('componentHandler')} | "
+                    f"service={x.get('servicePath')}::{x.get('serviceMethod')} | "
+                    f"persistence={x.get('persistenceProof')} | audit={x.get('auditResult')} | "
+                    f"errors={x.get('errorState')} | test={x.get('automatedTest')} | "
+                    f"acceptance={x.get('acceptanceTest')} | evidence={x.get('evidencePath')} | wave={x.get('targetWave')}"
+                )
+            return "\n".join(lines) if lines else "- NONE"
+
+        action_dossier = dossier(action_ids)
+        workflow_dossier = dossier(wf_ids)
+
         body = f"""# Cursor Prompt — {wave}: {title}
 
 ## 1. Authority and predecessor acceptance gate
@@ -2356,12 +2565,21 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 - **Screen IDs (complete):** {", ".join(f"`{x}`" for x in screen_ids) if screen_ids else "`NONE — NO SCREENS IN SCOPE`"}
 - **Requirement IDs (complete):** {", ".join(f"`{x}`" for x in req_ids) if req_ids else "`NONE — NO REQUIREMENTS IN SCOPE`"}
 {scope_table}
-## 4. Exact actions and workflows
+## 4. Exact actions and workflows (inline execution dossiers)
 
-- **Action IDs (complete):** {", ".join(f"`{x}`" for x in action_ids) if action_ids else "`NONE — NO ACTIONS IN SCOPE`"}
-- **Workflow IDs (complete):** {", ".join(f"`{x}`" for x in wf_ids) if wf_ids else "`NONE — NO WORKFLOWS IN SCOPE`"}
-- Every listed mutating ID requires service/domain transition, audit, persistence/reload proof, error states — or explicit `NONE — NOT IMPLEMENTED` with target wave (already recorded in workflow-action-register.json).
-- Toast/alert-only success is a fail.
+### Action IDs (complete)
+{", ".join(f"`{x}`" for x in action_ids) if action_ids else "`NONE — NO ACTIONS IN SCOPE`"}
+
+### Action execution dossiers
+{action_dossier}
+
+### Workflow IDs (complete)
+{", ".join(f"`{x}`" for x in wf_ids) if wf_ids else "`NONE — NO WORKFLOWS IN SCOPE`"}
+
+### Workflow execution dossiers
+{workflow_dossier}
+
+Toast/alert-only success is a fail. Registers remain traceability evidence only; dossiers above are authoritative for execution.
 
 ## 5. Domain ownership and integration contracts
 
@@ -2380,21 +2598,24 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 
 - Persistence method: {persist}
 - Mutating actions: durable persistence + reload proof + audit trail with actor/clinic/before-after.
+- Navigation/read controls: domain persistence/audit NOT APPLICABLE.
 - Do not migrate legacy prototype seed values as production truth.
 
 ## 8. Implementation batches (module-specific)
 
 {batches_for(kind, mod_key, wave)}
 
-## 9. Automated tests (module-specific)
+## 9. Automated tests (named, module-specific)
 
 {tests_for(kind, mod_key)}
+
+Named tests from dossiers above must be implemented or explicitly marked `NONE — NOT IMPLEMENTED` with wave.
 
 ## 10. Visual QA and Work-Step QA
 
 - Visual QA against Decision A PNG / design-system-contract.json for {mod_key}
-- Viewports/regions/tolerances exactly as in `FINAL_DESIGN_SYSTEM_CONTRACT.md` / `design-system-contract.json`
-- Work-Step QA for **every** in-scope action/workflow ID listed above
+- Viewports/regions/tolerances exactly as in `FINAL_DESIGN_SYSTEM_CONTRACT.md`
+- Work-Step QA for **every** action/workflow dossier above
 - Separate Visual QA / Work-Step QA / Regression agents — **no self-approval**
 
 ## 11. Immutable-SHA evidence and resulting state
@@ -2423,7 +2644,11 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 Commit evidence; leave localhost running; **STOP**. Do not start the next wave/batch until owner acceptance of this tip.
 """
         # Guard: no delegation phrases
-        banned = ["sample/full list", "non-exhaustive", "see master register", "see workflow-action-register", "see canonical-screen-register"]
+        banned = [
+            "sample/full list", "non-exhaustive", "see master register",
+            "see workflow-action-register", "see canonical-screen-register",
+            "already recorded in workflow-action-register",
+        ]
         for b in banned:
             if b in body.lower():
                 raise SystemExit(f"banned phrase {b} in prompt {fname}")
@@ -2480,7 +2705,8 @@ Generated: `{UTC}`
 
     print(json.dumps({
         "ok": True,
-        "tip": tip,
+        "generatorRanAtHead": tip,  # diagnostic only; not written into registers
+        "tipOmittedFromRegisters": True,
         "rows": len(rows),
         "screens": len(screen_rows),
         "actions": len(action_items),

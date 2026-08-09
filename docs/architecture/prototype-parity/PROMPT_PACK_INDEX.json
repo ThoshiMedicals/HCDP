@@ -11,7 +11,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 13,
       "requirementIdCount": 114,
-      "actionIdCount": 20,
+      "actionIdCount": 30,
       "workflowIdCount": 14
     },
     {
@@ -23,7 +23,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 6,
       "requirementIdCount": 68,
-      "actionIdCount": 22,
+      "actionIdCount": 23,
       "workflowIdCount": 7
     },
     {
@@ -35,7 +35,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 7,
       "requirementIdCount": 108,
-      "actionIdCount": 64,
+      "actionIdCount": 65,
       "workflowIdCount": 7
     },
     {
@@ -47,7 +47,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 10,
       "requirementIdCount": 103,
-      "actionIdCount": 42,
+      "actionIdCount": 73,
       "workflowIdCount": 11
     },
     {
@@ -59,7 +59,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 10,
       "requirementIdCount": 144,
-      "actionIdCount": 46,
+      "actionIdCount": 49,
       "workflowIdCount": 16
     },
     {
@@ -71,7 +71,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 7,
       "requirementIdCount": 114,
-      "actionIdCount": 36,
+      "actionIdCount": 42,
       "workflowIdCount": 8
     },
     {
@@ -83,7 +83,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 6,
       "requirementIdCount": 85,
-      "actionIdCount": 29,
+      "actionIdCount": 35,
       "workflowIdCount": 7
     },
     {
@@ -95,7 +95,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 7,
       "requirementIdCount": 89,
-      "actionIdCount": 34,
+      "actionIdCount": 35,
       "workflowIdCount": 8
     },
     {
@@ -107,7 +107,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 9,
       "requirementIdCount": 83,
-      "actionIdCount": 27,
+      "actionIdCount": 36,
       "workflowIdCount": 8
     },
     {
@@ -119,7 +119,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 10,
       "requirementIdCount": 115,
-      "actionIdCount": 39,
+      "actionIdCount": 42,
       "workflowIdCount": 12
     },
     {
@@ -131,7 +131,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 9,
       "requirementIdCount": 84,
-      "actionIdCount": 29,
+      "actionIdCount": 37,
       "workflowIdCount": 11
     },
     {
@@ -143,7 +143,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 10,
       "requirementIdCount": 82,
-      "actionIdCount": 30,
+      "actionIdCount": 36,
       "workflowIdCount": 11
     },
     {
@@ -155,7 +155,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 8,
       "requirementIdCount": 88,
-      "actionIdCount": 30,
+      "actionIdCount": 32,
       "workflowIdCount": 9
     },
     {
@@ -167,7 +167,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 14,
       "requirementIdCount": 171,
-      "actionIdCount": 44,
+      "actionIdCount": 56,
       "workflowIdCount": 15
     },
     {
@@ -179,7 +179,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 12,
       "requirementIdCount": 96,
-      "actionIdCount": 35,
+      "actionIdCount": 39,
       "workflowIdCount": 10
     },
     {
@@ -191,7 +191,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 7,
       "requirementIdCount": 89,
-      "actionIdCount": 34,
+      "actionIdCount": 35,
       "workflowIdCount": 8
     },
     {
@@ -203,7 +203,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 12,
       "requirementIdCount": 99,
-      "actionIdCount": 29,
+      "actionIdCount": 37,
       "workflowIdCount": 10
     },
     {
@@ -215,7 +215,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 7,
       "requirementIdCount": 70,
-      "actionIdCount": 19,
+      "actionIdCount": 25,
       "workflowIdCount": 7
     },
     {
@@ -227,7 +227,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 1,
       "requirementIdCount": 24,
-      "actionIdCount": 5,
+      "actionIdCount": 9,
       "workflowIdCount": 3
     },
     {
@@ -239,7 +239,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 10,
       "requirementIdCount": 98,
-      "actionIdCount": 31,
+      "actionIdCount": 42,
       "workflowIdCount": 11
     },
     {
@@ -251,7 +251,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 8,
       "requirementIdCount": 82,
-      "actionIdCount": 27,
+      "actionIdCount": 38,
       "workflowIdCount": 10
     },
     {
@@ -263,7 +263,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 9,
       "requirementIdCount": 63,
-      "actionIdCount": 25,
+      "actionIdCount": 31,
       "workflowIdCount": 7
     },
     {
@@ -275,7 +275,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 11,
       "requirementIdCount": 70,
-      "actionIdCount": 25,
+      "actionIdCount": 32,
       "workflowIdCount": 9
     },
     {
@@ -287,7 +287,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 1,
       "requirementIdCount": 13,
-      "actionIdCount": 5,
+      "actionIdCount": 9,
       "workflowIdCount": 3
     },
     {
@@ -299,7 +299,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 1,
       "requirementIdCount": 14,
-      "actionIdCount": 6,
+      "actionIdCount": 10,
       "workflowIdCount": 3
     },
     {
@@ -311,7 +311,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 1,
       "requirementIdCount": 19,
-      "actionIdCount": 6,
+      "actionIdCount": 10,
       "workflowIdCount": 4
     },
     {
@@ -323,7 +323,7 @@
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
       "screenIdCount": 186,
       "requirementIdCount": 15,
-      "actionIdCount": 191,
+      "actionIdCount": 174,
       "workflowIdCount": 179
     }
   ],

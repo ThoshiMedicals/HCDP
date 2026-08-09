@@ -45,13 +45,17 @@ const BANNED_EXACT = new Set([
 const WF_FIELDS = [
   "sourceLocation",
   "screenRoute",
+  "sectionId",
   "permission",
-  "serviceDomainTransition",
+  "servicePath",
+  "serviceMethod",
+  "componentHandler",
   "auditResult",
   "m01m02Projection",
   "persistenceProof",
   "errorState",
   "acceptanceTest",
+  "automatedTest",
 ];
 
 const PROMPT_SECTIONS = [
@@ -313,6 +317,83 @@ for (const f of [
 
 if (accounting && !String(accounting.generatedAt || "").startsWith("deterministic:"))
   fail("non-deterministic generatedAt");
+
+
+// Provenance / atomic mapping checks
+if (screens && actions) {
+  const sets = new Set(
+    (screens.screens || []).map((s) => JSON.stringify(s.visibleActionIds || []))
+  );
+  if (sets.size < (screens.screens || []).length) {
+    fail(
+      `module-wide duplicated action sets: unique ${sets.size} < screens ${screens.screens.length}`
+    );
+  }
+  for (const s of screens.screens || []) {
+    if ((s.sourceLocation || "").includes(`screen-derived:${s.screenId}`))
+      fail(`self-referential sourceLocation on ${s.screenId}`);
+    if (!(s.sourceLocation || "").includes("public/") && !(s.sourceLocation || "").includes("src/"))
+      fail(`weak sourceLocation on ${s.screenId}: ${s.sourceLocation}`);
+  }
+  let naSection = 0;
+  let registryOnlyProd = 0;
+  const svcCounts = {};
+  for (const a of actions.items || []) {
+    if (String(a.sectionId || "").startsWith("NOT APPLICABLE")) naSection++;
+    if (
+      a.kind === "production-control" &&
+      (a.sourceLocation || "").includes("module-register.ts")
+    )
+      registryOnlyProd++;
+    if (a.kind === "brd-button" && (a.servicePath || "").startsWith("src/")) {
+      const k = a.moduleKey + "::" + a.servicePath;
+      svcCounts[k] = (svcCounts[k] || 0) + 1;
+    }
+    if (!(a.sourceLocation || "").trim()) fail(`blank sourceLocation ${a.id}`);
+    // referenced file exists when path-like
+    let file = (a.sourceLocation || "").split("#")[0];
+    file = file.split(":line:")[0];
+    file = file.split(":section:")[0];
+    file = file.split(":module:")[0];
+    file = file.split(":offset:")[0];
+    if (file.startsWith("src/") || file.startsWith("public/") || file.startsWith("docs/")) {
+      if (!existsSync(join(ROOT, file))) fail(`missing source file for ${a.id}: ${file}`);
+    }
+  }
+  if (naSection > 0)
+    fail(`actions with NOT APPLICABLE sectionId: ${naSection}`);
+  if (registryOnlyProd > 0)
+    fail(`production-controls still sourced only from module-register: ${registryOnlyProd}`);
+  for (const [k, n] of Object.entries(svcCounts)) {
+    if (n >= 15)
+      fail(`possible first-service blanket mapping ${k} used ${n} times`);
+  }
+}
+
+const audit2 = load("CURRENT_IMPLEMENTATION_REAUDIT.json");
+if (audit2) {
+  for (const m of audit2.modules || []) {
+    if (["M01", "M02", "M03"].includes(m.module)) {
+      const pages = m.pagePaths || [];
+      if (!pages.length || pages[0] === "NONE — NOT IMPLEMENTED")
+        fail(`${m.module} pagePaths still NONE`);
+      if (!pages.some((p) => /Workspace|Module/.test(p)))
+        fail(`${m.module} pagePaths missing workspace/module entry`);
+    }
+  }
+}
+
+// Prompt anti-delegation
+if (existsSync(promptsDir)) {
+  for (const f of readdirSync(promptsDir).filter((x) => x.endsWith(".md") && x !== "README.md")) {
+    const txt = readFileSync(join(promptsDir, f), "utf8");
+    if (/already recorded in workflow-action-register/i.test(txt))
+      fail(`prompt ${f} delegates semantics to workflow-action-register`);
+    if (!/Action execution dossiers/i.test(txt))
+      fail(`prompt ${f} missing inline action execution dossiers`);
+  }
+}
+
 
 const tip = execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim();
 const result = {
