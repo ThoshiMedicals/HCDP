@@ -30,6 +30,30 @@ import {
   subscribeSystemAppearance,
 } from "@/lib/command-centre/storage";
 import { syncFromPortalActiveLocation, hydrateClinicContext, portalActiveLocationId } from "@/platform/context/clinic-context";
+import {
+  SHELL_BREAKPOINTS_PX,
+  effectiveSidebarCollapsed,
+  sidebarWidthPx,
+} from "@/lib/shell/design-contract";
+
+function syncShellSidebarWidth(userCollapsed: boolean) {
+  if (typeof document === "undefined" || typeof window === "undefined") return;
+  const width = window.innerWidth;
+  const collapsed = effectiveSidebarCollapsed(width, userCollapsed);
+  const px = sidebarWidthPx(width, userCollapsed);
+  const root = document.documentElement;
+  root.style.setProperty("--sidebar-current", `${px}px`);
+  root.setAttribute("data-sidebar-collapsed", collapsed ? "true" : "false");
+  root.setAttribute(
+    "data-shell-viewport",
+    width < SHELL_BREAKPOINTS_PX.tabletMin
+      ? "mobile"
+      : width < SHELL_BREAKPOINTS_PX.desktopMin
+        ? "tablet"
+        : "desktop"
+  );
+  root.setAttribute("data-sidebar-width-px", String(px));
+}
 
 const STORAGE_KEYS = {
   location: "pulse.activeLocation",
@@ -172,7 +196,7 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
     sidebarCollapsedValue = readSidebarCollapsed();
     sidebarCollapsedListeners.forEach((l) => l());
     hydrateAppearanceFromStorage();
-    document.documentElement.style.setProperty("--sidebar-current", "288px");
+    syncShellSidebarWidth(sidebarCollapsedValue);
     hydrateClinicContext();
     const shared = portalActiveLocationId();
     if (shared && shared !== memoryLocationId) {
@@ -191,15 +215,16 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth < 1024) setSidebarOpen(false);
+      if (window.innerWidth < SHELL_BREAKPOINTS_PX.tabletMin) setSidebarOpen(false);
+      syncShellSidebarWidth(sidebarCollapsed);
     }
     onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [sidebarCollapsed]);
 
   useLayoutEffect(() => {
-    document.documentElement.style.setProperty("--sidebar-current", "288px");
+    syncShellSidebarWidth(sidebarCollapsed);
   }, [sidebarCollapsed]);
 
   const setSidebarCollapsed = useCallback((collapsed: boolean) => {

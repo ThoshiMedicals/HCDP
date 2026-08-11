@@ -1,21 +1,57 @@
-/* Theme tokens — Premium Clinical semantic layer (owner colour readability) */
+/* Theme tokens — Decision A (--dp-*) + mapped semantic layer (P1-B1) */
 :root {
-  /* ===== Semantic theme layer (single source of truth) ===== */
-  --hcdp-canvas: #f5f7fa;
-  --hcdp-surface: #ffffff;
-  --hcdp-surface-raised: #ffffff;
-  --hcdp-text: #17233a;
-  --hcdp-text-secondary: #42536a;
-  --hcdp-text-muted: #5f7085;
-  --hcdp-divider: #d4dce6;
-  --hcdp-control-border: #768397;
-  --hcdp-action: #123e68;
-  --hcdp-action-hover: #0f3558;
+  /* ===== Decision A semantic tokens (design-system-contract.json) ===== */
+  --dp-bg-canvas: #f3f5f7;
+  --dp-bg-surface: #ffffff;
+  --dp-bg-nav: #0b1f33;
+  --dp-bg-topbar: #ffffff;
+  --dp-text-primary: #0f172a;
+  --dp-text-secondary: #475569;
+  --dp-text-on-nav: #e2e8f0;
+  --dp-border-subtle: #e2e8f0;
+  --dp-border-strong: #cbd5e1;
+  --dp-accent-primary: #2563eb;
+  --dp-accent-primary-hover: #1d4ed8;
+  --dp-status-critical: #dc2626;
+  --dp-status-urgent: #ea580c;
+  --dp-status-ontrack: #16a34a;
+  --dp-status-overdue: #7c3aed;
+  --dp-focus-ring: #2563eb;
+
+  /* Shell dimensions (Decision A contract) */
+  --sidebar-expanded: 240px;
+  --sidebar-collapsed: 72px;
+  --sidebar: 240px;
+  --sidebar-current: 240px;
+  --topbar-height: 48px;
+  --module-header-height: 56px;
+  --section-nav-height: 40px;
+  --kpi-strip-min-height: 88px;
+  --toolbar-height: 44px;
+  --detail-panel-width: 360px;
+  --detail-panel-min-width: 320px;
+  --detail-panel-max-width: 420px;
+  --drawer-width: 420px;
+  --content-max-width: 1440px;
+
+  /* ===== Semantic theme layer (mapped to Decision A) ===== */
+  --hcdp-canvas: var(--dp-bg-canvas);
+  --hcdp-surface: var(--dp-bg-surface);
+  --hcdp-surface-raised: var(--dp-bg-surface);
+  --hcdp-text: var(--dp-text-primary);
+  --hcdp-text-secondary: var(--dp-text-secondary);
+  --hcdp-text-muted: var(--dp-text-secondary);
+  --hcdp-divider: var(--dp-border-subtle);
+  --hcdp-control-border: var(--dp-border-strong);
+  --hcdp-action: var(--dp-accent-primary);
+  --hcdp-action-hover: var(--dp-accent-primary-hover);
   --hcdp-on-action: #ffffff;
-  --hcdp-focus: #9b7440;
-  --hcdp-selection: color-mix(in srgb, #9b7440 22%, #ffffff);
-  --hcdp-sidebar: #0b1f3a;
-  --hcdp-accent: #9b7440;
+  --hcdp-focus: var(--dp-focus-ring);
+  --hcdp-selection: color-mix(in srgb, var(--dp-accent-primary) 22%, #ffffff);
+  --hcdp-sidebar: var(--dp-bg-nav);
+  /* Primary action = Decision A accent; champagne retained as nav/family cue only (P1-GAP-049). */
+  --hcdp-accent: var(--dp-accent-primary);
+  --hcdp-nav-cue: #9b7440;
 
   /* Semantic status (text / surface / border) */
   --hcdp-status-success-text: #047857;
@@ -52,13 +88,11 @@
   --shadow: 0 18px 48px rgba(23, 35, 58, 0.08);
   --radius: 18px;
   --radius-sm: 12px;
-  --sidebar: 288px;
-  --sidebar-current: 288px;
 
   --pce-canvas: var(--hcdp-canvas);
-  --accent-champagne: var(--hcdp-accent);
-  --accent-champagne-soft: color-mix(in srgb, var(--hcdp-accent) 16%, var(--hcdp-surface));
-  --accent-champagne-line: color-mix(in srgb, var(--hcdp-accent) 50%, var(--hcdp-divider));
+  --accent-champagne: var(--hcdp-nav-cue);
+  --accent-champagne-soft: color-mix(in srgb, var(--hcdp-nav-cue) 16%, var(--hcdp-surface));
+  --accent-champagne-line: color-mix(in srgb, var(--hcdp-nav-cue) 50%, var(--hcdp-divider));
   --accent-positive: var(--hcdp-status-success-text);
   --status-success: var(--hcdp-status-success-text);
   --status-warning: var(--hcdp-status-warning-text);
@@ -117,48 +151,78 @@
   --tracking-label: 0.04em;
 }
 
-body.theme-emerald {
-  --hcdp-action: #0f766e;
-  --hcdp-action-hover: #0d9488;
-  --theme-primary: var(--hcdp-action);
-  --theme-primary-2: #0d9488;
-  --theme-text: #12352c;
-  --theme-muted: #617a73;
-  --theme-line: #d9e9e3;
+/* Decision A collapseBehaviour — CSS mirror (inline --sidebar-current from portal sync wins when set). */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  :root {
+    --sidebar-current: 72px;
+  }
+}
+@media (min-width: 1280px) {
+  :root[data-sidebar-collapsed="true"] {
+    --sidebar-current: 72px;
+  }
+  :root:not([data-sidebar-collapsed="true"]) {
+    --sidebar-current: 240px;
+  }
+}
+@media (max-width: 767.98px) {
+  :root {
+    --sidebar-current: 240px;
+  }
 }
 
-html.theme-dark, body.theme-dark {
-  --hcdp-canvas: #0f1724;
-  --hcdp-surface: #172335;
-  --hcdp-surface-raised: #1d2b3f;
-  --hcdp-text: #e3eaf2;
-  --hcdp-text-secondary: #c0cad6;
-  --hcdp-text-muted: #a7b3c2;
-  --hcdp-divider: #34465d;
-  --hcdp-control-border: #5b7088;
-  --hcdp-action: #245f98;
-  --hcdp-action-hover: #2d72b5;
-  --hcdp-on-action: #ffffff;
-  --hcdp-focus: #d6be97;
-  --hcdp-selection: color-mix(in srgb, #d6be97 20%, #172335);
-  --hcdp-sidebar: #0b1f3a;
-  --hcdp-accent: #d6be97;
+/* Medical Emerald / Executive Blue global themes intentionally unused (DEC-BRANDED-THEMES / P1-GAP-049). */
 
-  --hcdp-status-success-text: #6ee7b7;
-  --hcdp-status-success-surface: color-mix(in srgb, #047857 22%, #172335);
-  --hcdp-status-success-border: color-mix(in srgb, #6ee7b7 35%, #34465d);
-  --hcdp-status-warning-text: #fbbf24;
-  --hcdp-status-warning-surface: color-mix(in srgb, #b45309 22%, #172335);
-  --hcdp-status-warning-border: color-mix(in srgb, #fbbf24 35%, #34465d);
-  --hcdp-status-critical-text: #fca5a5;
-  --hcdp-status-critical-surface: color-mix(in srgb, #b91c1c 22%, #172335);
-  --hcdp-status-critical-border: color-mix(in srgb, #fca5a5 35%, #34465d);
-  --hcdp-status-info-text: #93c5fd;
-  --hcdp-status-info-surface: color-mix(in srgb, #1d4ed8 22%, #172335);
-  --hcdp-status-info-border: color-mix(in srgb, #93c5fd 35%, #34465d);
-  --hcdp-status-neutral-text: #a7b3c2;
+html.theme-dark, body.theme-dark {
+  --dp-bg-canvas: #0b1220;
+  --dp-bg-surface: #111827;
+  --dp-bg-nav: #020617;
+  --dp-bg-topbar: #111827;
+  --dp-text-primary: #f8fafc;
+  --dp-text-secondary: #94a3b8;
+  --dp-text-on-nav: #e2e8f0;
+  --dp-border-subtle: #1f2937;
+  --dp-border-strong: #334155;
+  --dp-accent-primary: #3b82f6;
+  --dp-accent-primary-hover: #60a5fa;
+  --dp-status-critical: #f87171;
+  --dp-status-urgent: #fb923c;
+  --dp-status-ontrack: #4ade80;
+  --dp-status-overdue: #a78bfa;
+  --dp-focus-ring: #60a5fa;
+
+  --hcdp-canvas: var(--dp-bg-canvas);
+  --hcdp-surface: var(--dp-bg-surface);
+  --hcdp-surface-raised: #1d2b3f;
+  --hcdp-text: var(--dp-text-primary);
+  --hcdp-text-secondary: var(--dp-text-secondary);
+  --hcdp-text-muted: var(--dp-text-secondary);
+  --hcdp-divider: var(--dp-border-subtle);
+  --hcdp-control-border: var(--dp-border-strong);
+  --hcdp-action: var(--dp-accent-primary);
+  --hcdp-action-hover: var(--dp-accent-primary-hover);
+  --hcdp-on-action: #ffffff;
+  --hcdp-focus: var(--dp-focus-ring);
+  --hcdp-selection: color-mix(in srgb, var(--dp-accent-primary) 20%, var(--dp-bg-surface));
+  --hcdp-sidebar: var(--dp-bg-nav);
+  --hcdp-accent: var(--dp-accent-primary);
+  --hcdp-nav-cue: #d6be97;
+
+  --hcdp-status-success-text: var(--dp-status-ontrack);
+  --hcdp-status-success-surface: color-mix(in srgb, var(--dp-status-ontrack) 22%, var(--dp-bg-surface));
+  --hcdp-status-success-border: color-mix(in srgb, var(--dp-status-ontrack) 35%, var(--dp-border-subtle));
+  --hcdp-status-warning-text: var(--dp-status-urgent);
+  --hcdp-status-warning-surface: color-mix(in srgb, var(--dp-status-urgent) 22%, var(--dp-bg-surface));
+  --hcdp-status-warning-border: color-mix(in srgb, var(--dp-status-urgent) 35%, var(--dp-border-subtle));
+  --hcdp-status-critical-text: var(--dp-status-critical);
+  --hcdp-status-critical-surface: color-mix(in srgb, var(--dp-status-critical) 22%, var(--dp-bg-surface));
+  --hcdp-status-critical-border: color-mix(in srgb, var(--dp-status-critical) 35%, var(--dp-border-subtle));
+  --hcdp-status-info-text: var(--dp-accent-primary);
+  --hcdp-status-info-surface: color-mix(in srgb, var(--dp-accent-primary) 22%, var(--dp-bg-surface));
+  --hcdp-status-info-border: color-mix(in srgb, var(--dp-accent-primary) 35%, var(--dp-border-subtle));
+  --hcdp-status-neutral-text: var(--dp-text-secondary);
   --hcdp-status-neutral-surface: #1d2b3f;
-  --hcdp-status-neutral-border: #34465d;
+  --hcdp-status-neutral-border: var(--dp-border-subtle);
 
   /* Re-assert legacy aliases so computed inheritance updates under theme-dark */
   --teal: var(--hcdp-action);
@@ -177,9 +241,9 @@ html.theme-dark, body.theme-dark {
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
 
   --pce-canvas: var(--hcdp-canvas);
-  --accent-champagne: var(--hcdp-accent);
-  --accent-champagne-soft: color-mix(in srgb, var(--hcdp-accent) 16%, var(--hcdp-surface));
-  --accent-champagne-line: color-mix(in srgb, var(--hcdp-accent) 50%, var(--hcdp-divider));
+  --accent-champagne: var(--hcdp-nav-cue);
+  --accent-champagne-soft: color-mix(in srgb, var(--hcdp-nav-cue) 16%, var(--hcdp-surface));
+  --accent-champagne-line: color-mix(in srgb, var(--hcdp-nav-cue) 50%, var(--hcdp-divider));
   --accent-positive: var(--hcdp-status-success-text);
   --status-success: var(--hcdp-status-success-text);
   --status-warning: var(--hcdp-status-warning-text);
@@ -517,22 +581,27 @@ html.theme-dark .brand-compact strong, body.theme-dark .brand-compact strong {
   color: var(--hcdp-on-action);
 }
 
-/* ??? Left sidebar — Premium Clinical (owner visual remediation) ??? */
+/* ??? Left sidebar — Decision A nav + family accent cues (P1-B1 / P1-GAP-049) ??? */
 .pulse-sidebar {
-  --sidebar-navy: #0b1f3a;
-  --sidebar-navy-2: #122a4a;
-  --sidebar-hover: #163456;
-  --sidebar-text: #f7f4ef;
-  --sidebar-muted: #b7c4d6;
-  --sidebar-line: #3a516e;
-  /* High-contrast champagne for fav/active chrome on navy (≥4.5:1 on #163456) */
+  --sidebar-navy: var(--dp-bg-nav);
+  --sidebar-navy-2: color-mix(in srgb, var(--dp-bg-nav) 88%, #ffffff);
+  --sidebar-hover: color-mix(in srgb, var(--dp-bg-nav) 82%, #ffffff);
+  --sidebar-text: var(--dp-text-on-nav);
+  --sidebar-muted: color-mix(in srgb, var(--dp-text-on-nav) 72%, transparent);
+  --sidebar-line: color-mix(in srgb, var(--dp-text-on-nav) 22%, transparent);
+  /* Family/nav cue accent (not a global branded theme) */
   --sidebar-champagne: #d6be97;
+  width: var(--sidebar-current, var(--sidebar));
   background: var(--sidebar-navy);
   border-right: 1px solid var(--sidebar-line);
   color: var(--sidebar-text);
 }
 html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
   --sidebar-champagne: #d6be97;
+}
+.pulse-top-ribbon {
+  min-height: var(--topbar-height);
+  background: var(--dp-bg-topbar);
 }
 .v33-nav-tools {
   padding: 10px 12px;
@@ -916,6 +985,106 @@ html.theme-dark .v33-context-btn, body.theme-dark .v33-context-btn {
   padding: 2px;
   background: transparent;
 }
+.pulse-sidebar[data-collapsed="true"] .nav-label,
+.pulse-sidebar[data-collapsed="true"] .v32-count,
+.pulse-sidebar[data-collapsed="true"] .v33-fav-star,
+.pulse-sidebar[data-collapsed="true"] .v32-nav-toggle .truncate,
+.pulse-sidebar[data-collapsed="true"] .v32-nav-toggle .chev,
+.pulse-sidebar[data-collapsed="true"] .sidebar-user .user-name,
+.pulse-sidebar[data-collapsed="true"] .sidebar-user .user-role,
+.pulse-sidebar[data-collapsed="true"] .v27-sidebar-role,
+.pulse-sidebar[data-collapsed="true"] .v33-nav-search input {
+  display: none;
+}
+.pulse-sidebar[data-collapsed="true"] .v33-nav-search {
+  justify-content: center;
+  padding: 0;
+}
+.pulse-sidebar[data-collapsed="true"] .nav-btn {
+  justify-content: center;
+  padding: 6px 0;
+}
+.pulse-sidebar[data-collapsed="true"] .sidebar-user {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.pulse-sidebar__collapse-btn {
+  display: none;
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid var(--sidebar-line);
+  border-radius: 9px;
+  background: var(--sidebar-hover);
+  color: var(--sidebar-text);
+  font-size: var(--type-control);
+  font-weight: 700;
+  cursor: pointer;
+}
+.pulse-sidebar__collapse-btn:focus-visible {
+  outline: 2px solid var(--sidebar-champagne);
+  outline-offset: 2px;
+}
+@media (min-width: 1280px) {
+  .pulse-sidebar__collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
+/* Shared Decision A primitives */
+.shell-kpi-strip {
+  min-height: var(--kpi-strip-min-height);
+}
+.shell-kpi-card {
+  display: flex;
+  min-height: 84px;
+  min-width: 160px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--dp-border-subtle);
+  background: var(--dp-bg-surface);
+  color: var(--dp-text-primary);
+  padding: 8px 12px;
+}
+.shell-kpi-card[data-kpi-tone="critical"] {
+  border-color: color-mix(in srgb, var(--dp-status-critical) 35%, var(--dp-border-subtle));
+  color: var(--dp-status-critical);
+}
+.shell-kpi-card[data-kpi-tone="urgent"] {
+  border-color: color-mix(in srgb, var(--dp-status-urgent) 35%, var(--dp-border-subtle));
+  color: var(--dp-status-urgent);
+}
+.shell-kpi-card[data-kpi-tone="ontrack"] {
+  border-color: color-mix(in srgb, var(--dp-status-ontrack) 35%, var(--dp-border-subtle));
+  color: var(--dp-status-ontrack);
+}
+.shell-kpi-card[data-kpi-tone="overdue"] {
+  border-color: color-mix(in srgb, var(--dp-status-overdue) 35%, var(--dp-border-subtle));
+  color: var(--dp-status-overdue);
+}
+.shell-kpi-label {
+  font-size: var(--type-meta);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dp-text-secondary);
+}
+.shell-kpi-value {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: 650;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.shell-kpi-hint {
+  margin-top: 2px;
+  font-size: var(--type-meta);
+  font-weight: 500;
+  color: var(--dp-text-secondary);
+}
 
 @media (max-width: 700px) {
   .v32-nav-group .nav-row,
@@ -930,6 +1099,7 @@ html.theme-dark .v33-context-btn, body.theme-dark .v33-context-btn {
   width: 100%;
   min-width: 0;
   max-width: 100%;
+  min-height: var(--section-nav-height);
 }
 .module-section-nav__desktop-only {
   display: block;
@@ -965,7 +1135,7 @@ html.theme-dark .v33-context-btn, body.theme-dark .v33-context-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 40px;
+  min-height: var(--section-nav-height);
   padding: 8px 14px;
   border-radius: 10px;
   border: 1px solid var(--hcdp-control-border);

@@ -15,13 +15,14 @@ function read(rel: string): string {
 }
 
 describe("UI Batch 1 — Premium Clinical tokens and shared presentation", () => {
-  it("defines Premium Clinical canvas and Champagne accent tokens (UI-TOK-01)", () => {
+  it("defines Decision A canvas with champagne retained as nav cue (UI-TOK-01 / P1-B1)", () => {
     const tokens = read("src/styles/tokens.css");
-    assert.match(tokens, /--hcdp-canvas:\s*#f5f7fa/i);
+    assert.match(tokens, /--dp-bg-canvas:\s*#f3f5f7/i);
+    assert.match(tokens, /--hcdp-canvas:\s*var\(--dp-bg-canvas\)/i);
     assert.match(tokens, /--pce-canvas:\s*var\(--hcdp-canvas\)/i);
     assert.match(tokens, /--v34-canvas:\s*var\(--hcdp-canvas\)/i);
-    assert.match(tokens, /--hcdp-accent:\s*#9b7440/i);
-    assert.match(tokens, /--accent-champagne:\s*var\(--hcdp-accent\)/i);
+    assert.match(tokens, /--hcdp-nav-cue:\s*#9b7440/i);
+    assert.match(tokens, /--accent-champagne:\s*var\(--hcdp-nav-cue\)/i);
     assert.match(tokens, /--status-success:/);
     assert.match(tokens, /--status-warning:/);
     assert.match(tokens, /--status-critical:/);

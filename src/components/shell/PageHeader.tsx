@@ -10,10 +10,15 @@ export function PageHeader({ module }: { module: ModuleDef }) {
   const { activeLocation, activeLocationId, locations } = usePortal();
 
   return (
-    <header className="flex min-h-[74px] items-center justify-between gap-3 border-b border-[var(--v34-card-line)] bg-[var(--card)] px-4 py-3 lg:px-7">
+    <header
+      className="flex items-center justify-between gap-3 border-b border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--dp-bg-surface,var(--card))] px-4 py-2 lg:px-7"
+      data-shell-region="module-title-tabs"
+      data-testid="shell-page-header"
+      style={{ minHeight: "var(--module-header-height)" }}
+    >
       <div className="page-title min-w-0">
-        <div className="hcdp-type-control mb-1">{module.group}</div>
-        <h1 className="hcdp-type-display mb-1.5 min-w-0">{module.title}</h1>
+        <div className="hcdp-type-control mb-0.5">{module.group}</div>
+        <h1 className="hcdp-type-display mb-0.5 min-w-0">{module.title}</h1>
         <p className="hcdp-type-body m-0 text-[var(--muted)]">
           {module.subtitle}
           {" · "}

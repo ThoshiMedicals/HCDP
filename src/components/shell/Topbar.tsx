@@ -117,11 +117,16 @@ export function Topbar() {
   }
 
   return (
-    <div className="pulse-top-ribbon sticky top-0 z-[3] flex min-h-[52px] w-full min-w-0 max-w-full flex-wrap items-center justify-between gap-2 overflow-x-auto border-b border-[var(--v34-card-line)] bg-[var(--card)] px-[10px] py-1.5 text-[var(--ink)] xl:flex-nowrap xl:px-[14px]">
-      <div className="ribbon-left flex min-w-0 flex-1 items-center gap-2 lg:flex-none">
+    <div
+      className="pulse-top-ribbon sticky top-0 z-[3] flex h-[var(--topbar-height)] max-h-[var(--topbar-height)] w-full min-w-0 max-w-full flex-nowrap items-center justify-between gap-2 overflow-x-auto overflow-y-hidden border-b border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--dp-bg-topbar,var(--card))] px-[10px] text-[var(--ink)] xl:px-[14px]"
+      data-shell-region="topbar"
+      data-testid="shell-topbar"
+      style={{ height: "var(--topbar-height)", minHeight: "var(--topbar-height)" }}
+    >
+      <div className="ribbon-left flex min-w-0 shrink-0 items-center gap-2">
         <button
           type="button"
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[var(--v34-card-line)] bg-[var(--card)] text-[var(--muted)] lg:hidden"
+          className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
           onClick={() => setSidebarOpen(true)}
           aria-label="Open menu"
         >
@@ -136,37 +141,32 @@ export function Topbar() {
             <small>Operations Portal</small>
           </div>
         </div>
-        <div className="flex min-w-0 flex-col">
-          <select
-            className="clinic-select-compact"
-            value={clinicSelectValue()}
-            onChange={(e) => onClinicChange(e.target.value)}
-            aria-label="Clinic scope"
-            title={scopeLabel}
-          >
-            <option value="all">All Clinics</option>
-            {groups.map((g) => (
-              <option key={g.id} value={`group:${g.id}`}>
-                Clinic Group · {g.name}
-              </option>
-            ))}
-            {locations.map((loc) => (
-              <option key={loc.id} value={loc.id}>
-                Single · {loc.shortName}
-              </option>
-            ))}
-            {selection.mode === "multiple" ? (
-              <option value="multiple">Multiple Clinics · {selection.selectedClinicIds.length}</option>
-            ) : null}
-          </select>
-          <span className="hidden pl-1 text-[length:var(--type-control)] font-semibold text-[var(--muted)] sm:block">
-            Scope: {scopeLabel}
-          </span>
-        </div>
+        <select
+          className="clinic-select-compact"
+          value={clinicSelectValue()}
+          onChange={(e) => onClinicChange(e.target.value)}
+          aria-label="Clinic scope"
+          title={`Scope: ${scopeLabel}`}
+        >
+          <option value="all">All Clinics</option>
+          {groups.map((g) => (
+            <option key={g.id} value={`group:${g.id}`}>
+              Clinic Group · {g.name}
+            </option>
+          ))}
+          {locations.map((loc) => (
+            <option key={loc.id} value={loc.id}>
+              Single · {loc.shortName}
+            </option>
+          ))}
+          {selection.mode === "multiple" ? (
+            <option value="multiple">Multiple Clinics · {selection.selectedClinicIds.length}</option>
+          ) : null}
+        </select>
       </div>
 
-      <div className="ribbon-center order-3 flex w-full min-w-0 justify-center xl:order-none xl:min-w-[16rem] xl:max-w-[440px] xl:flex-1">
-        <label className="search-compact flex h-9 w-full min-w-[12rem] max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
+      <div className="ribbon-center flex min-w-[10rem] max-w-[440px] flex-1 justify-center">
+        <label className="search-compact flex h-8 w-full min-w-[10rem] max-w-[520px] items-center gap-2 rounded-[10px] border border-[#d7e1ec] bg-[var(--soft)] px-2.5 text-[#718096]">
           <Icon name="search" className="h-3.5 w-3.5 shrink-0" />
           <input
             type="search"

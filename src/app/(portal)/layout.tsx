@@ -12,9 +12,15 @@ function PortalChrome({ children }: { children: React.ReactNode }) {
   const { toasts } = usePortal();
   return (
     <CreateFormProvider>
-      <div className="app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--v34-canvas)]">
+      <div
+        className="app flex min-h-screen max-w-[100vw] overflow-x-hidden bg-[var(--dp-bg-canvas,var(--v34-canvas))]"
+        data-shell-foundation="p1-b1"
+      >
         <Sidebar />
-        <main className="main flex min-h-screen w-full min-w-0 max-w-full flex-col lg:ml-[var(--sidebar-current,var(--sidebar))] lg:w-[calc(100%-var(--sidebar-current,var(--sidebar)))]">
+        <main
+          className="main flex min-h-screen w-full min-w-0 max-w-full flex-col md:ml-[var(--sidebar-current,var(--sidebar))] md:w-[calc(100%-var(--sidebar-current,var(--sidebar)))]"
+          data-shell-region="main-pane"
+        >
           <Topbar />
           <div className="min-w-0 w-full max-w-full overflow-x-hidden">{children}</div>
         </main>

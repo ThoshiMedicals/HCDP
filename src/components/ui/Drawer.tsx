@@ -50,13 +50,19 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[min(760px,96vw)] flex-col bg-[var(--card)] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] transition-transform duration-200 ${
+        data-shell-region="detail-pane"
+        data-testid="shell-drawer"
+        className={`fixed bottom-0 right-0 top-0 z-50 flex flex-col bg-[var(--dp-bg-surface,var(--card))] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] transition-transform duration-200 ${
           open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
+        style={{ width: "min(var(--drawer-width, 420px), 96vw)" }}
         aria-hidden={!open}
         inert={!open ? true : undefined}
       >
-        <div className="flex h-[70px] items-center justify-between border-b border-[var(--line)] px-5">
+        <div
+          className="flex items-center justify-between border-b border-[var(--line)] px-5"
+          style={{ minHeight: "var(--module-header-height, 56px)" }}
+        >
           <div>
             <h2 id={titleId} className="m-0 text-[19px] font-extrabold">
               {title}

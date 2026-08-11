@@ -116,8 +116,26 @@ function isModuleActive(pathname: string, modId: string): boolean {
 export function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { sidebarOpen, setSidebarOpen, pushToast } = usePortal();
+  const {
+    sidebarOpen,
+    setSidebarOpen,
+    sidebarCollapsed,
+    setSidebarCollapsed,
+    pushToast,
+  } = usePortal();
   const { identity, identities, setActiveIdentity } = useIdentity();
+  const [railCollapsed, setRailCollapsed] = useState(false);
+
+  useEffect(() => {
+    function syncRail() {
+      const w = window.innerWidth;
+      // Tablet forces icon rail; desktop honors user preference (Decision A collapseBehaviour).
+      setRailCollapsed(w >= 768 && w < 1280 ? true : w >= 1280 ? sidebarCollapsed : false);
+    }
+    syncRail();
+    window.addEventListener("resize", syncRail);
+    return () => window.removeEventListener("resize", syncRail);
+  }, [sidebarCollapsed]);
   const navRef = useRef<HTMLElement | null>(null);
 
   const [navQuery, setNavQuery] = useState("");
@@ -171,15 +189,20 @@ export function Sidebar() {
   return (
     <>
       <div
-        className={cn("fixed inset-0 z-[5] bg-black/30 lg:hidden", sidebarOpen ? "block" : "hidden")}
+        className={cn("fixed inset-0 z-[5] bg-black/30 md:hidden", sidebarOpen ? "block" : "hidden")}
         onClick={() => setSidebarOpen(false)}
       />
       <aside
         className={cn(
-          "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex w-[var(--sidebar)] flex-col transition-transform duration-200",
-          sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex flex-col transition-transform duration-200",
+          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         )}
+        style={{ width: "var(--sidebar-current, var(--sidebar))" }}
         data-premium-clinical-nav="true"
+        data-shell-region="shell-nav"
+        data-testid="shell-sidebar"
+        data-collapsed={railCollapsed ? "true" : "false"}
+        aria-label="Platform navigation"
       >
         <div className="v33-nav-tools">
           <label className="v33-nav-search">
@@ -203,6 +226,17 @@ export function Sidebar() {
               }}
             />
           </label>
+          <button
+            type="button"
+            className="pulse-sidebar__collapse-btn"
+            aria-pressed={sidebarCollapsed}
+            aria-label={sidebarCollapsed ? "Expand navigation" : "Collapse navigation"}
+            title={sidebarCollapsed ? "Expand navigation" : "Collapse navigation"}
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+          >
+            <span aria-hidden>{sidebarCollapsed ? "»" : "«"}</span>
+            <span>{sidebarCollapsed ? "Expand" : "Collapse"}</span>
+          </button>
         </div>
 
         <nav ref={navRef} className="mt-1 flex-1 overflow-auto px-0 pb-4" aria-label="Platform modules">

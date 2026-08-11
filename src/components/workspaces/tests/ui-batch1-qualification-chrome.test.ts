@@ -192,7 +192,9 @@ describe("QC-1 — in-app appearance preference application (F-MIN-04 / UI-APPEA
 
     const tokens = read("src/styles/tokens.css");
     assert.match(tokens, /body\.theme-dark/);
-    assert.match(tokens, /--hcdp-canvas:\s*#f5f7fa/i);
+    // P1-B1: canvas is Decision A --dp-bg-canvas, mapped through --hcdp-canvas.
+    assert.match(tokens, /--dp-bg-canvas:\s*#f3f5f7/i);
+    assert.match(tokens, /--hcdp-canvas:\s*var\(--dp-bg-canvas\)/i);
     assert.match(tokens, /--pce-canvas:\s*var\(--hcdp-canvas\)/i);
 
     const controlBar = read("src/components/workspaces/command-centre/ControlBar.tsx");

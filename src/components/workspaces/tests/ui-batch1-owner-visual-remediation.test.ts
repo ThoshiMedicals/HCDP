@@ -57,12 +57,13 @@ describe("Owner visual remediation — global sidebar", () => {
     assert.match(src, /data-canonical-href=\{`\/\$\{mod\.id\}`\}/);
   });
 
-  it("applies Premium Clinical sidebar palette without family gradients", () => {
+  it("applies Decision A nav palette with champagne cue and without family gradients", () => {
     const css = tokens();
-    assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*#0b1f3a/i);
-    // High-contrast champagne on navy (≥4.5:1 on active row #163456) — IV contrast fix
+    // P1-B1: nav surfaces use Decision A --dp-bg-nav (#0B1F33); champagne remains a nav cue only.
+    assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*--sidebar-navy:\s*var\(--dp-bg-nav\)/i);
+    assert.match(css, /--dp-bg-nav:\s*#0b1f33/i);
     assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*--sidebar-champagne:\s*#d6be97/i);
-    assert.match(css, /body\.theme-dark\s+\.pulse-sidebar[\s\S]*#d6be97/i);
+    assert.match(css, /(?:html|body)\.theme-dark\s+\.pulse-sidebar[\s\S]*#d6be97/i);
     assert.doesNotMatch(css, /\.v32-nav-group\s+\.nav-btn\.active\s*\{[^}]*linear-gradient/);
     assert.doesNotMatch(css, /\.sidebar-user\s+\.avatar\s*\{[^}]*linear-gradient/);
     assert.match(css, /\.v33-family-palette,\s*\.v33-family-jump\s*\{[\s\S]*display:\s*none/);

@@ -44,11 +44,11 @@ export function writeJson(key: string, value: unknown) {
 }
 
 export function readAppearance(): CcAppearance {
-  return readJson<CcAppearance>(CC_STORAGE.appearance, "light");
+  return readJson<CcAppearance>(CC_STORAGE.appearance, "system");
 }
 
 let appearanceListeners = new Set<() => void>();
-let appearanceMemory: CcAppearance = "light";
+let appearanceMemory: CcAppearance = "system";
 let appearanceHydrated = false;
 
 export function writeAppearance(value: CcAppearance) {
@@ -71,7 +71,7 @@ export function getAppearanceSnapshot(): CcAppearance {
 }
 
 export function getAppearanceServerSnapshot(): CcAppearance {
-  return "light";
+  return "system";
 }
 
 export function hydrateAppearanceFromStorage() {
