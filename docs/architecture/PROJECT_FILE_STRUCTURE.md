@@ -148,6 +148,7 @@ Example: Organisation (M3) adapter → `dispatchActionInboxEvent` (platform serv
 | `pulse.m2.inbox.*` | Module 2 |
 | `pulse.org.m3.*` | Module 3 |
 | `pulse.m04.*` … `pulse.m24.*` | Modules 4–24 |
+| `pulse.m25.*` (planned) | M25 Print Fleet — `FUTURE — NOT IMPLEMENTED`; namespace reserved in planning only |
 
 - All reads/writes go through module `repository/` or `storage/` services (or platform storage helpers for shared keys).
 - Components call hooks/services — never `localStorage` directly.

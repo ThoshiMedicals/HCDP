@@ -63,7 +63,7 @@ Engagements, classifications, roles, clinic assignments, roster versions, pay ru
 Do not break:
 
 - `src/platform/**`
-- 24-module register and route aliases
+- 24-module runtime register and route aliases (Baseline V1); future planning module count **25** including planned M25 (`docs/architecture/future-modules/`) — not runtime-wired until an owner-named implementation batch
 - shared clinic context
 - shared identity context
 - M03 -> M02 projections
@@ -752,7 +752,7 @@ Implement only the wave explicitly approved by the owner. Do not combine waves, 
 
 Wave order gate: Wave 0 → Wave 1A (Authentication) → Wave 1 (workforce foundation) → Wave 2+. Do not introduce Supabase or another competing auth platform. Use the current stack. Base profiles.role is enum user|manager|admin only; keep detailed multi-role/clinic access separate. Link identity via auth_identity_id when no local auth user table exists.
 
-Preserve Platform Baseline V1, Modules 1-3, the 24-module register, shared clinic and identity contexts, Action Inbox contracts, executive summary projection, notifications, audit and legacy route compatibility.
+Preserve Platform Baseline V1, Modules 1-3, the signed 24-module runtime register, shared clinic and identity contexts, Action Inbox contracts, executive summary projection, notifications, audit and legacy route compatibility. Planned M25 (Print Fleet) exists only as future-planning documentation under `docs/architecture/future-modules/` until expressly authorised — do not treat M25 planning as implementation authority.
 
 Use one authoritative source of truth for every data type. Do not create duplicate staff, doctor, candidate-after-promotion, roster, attendance, training or pay records. Do not directly edit another module's internal repository.
 

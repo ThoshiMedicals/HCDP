@@ -74,3 +74,16 @@ Modules **4–24** remain Rebuild Pending (landing / partial only). Enterprise E
 ## Sign-off statement
 
 Critical and major interactive QA items for the Platform Integration Spine and 24-Module Navigation Consolidation have passed (152/152). Baseline V1 is signed. Detailed development of Modules 4–24 must not begin until a later stage is explicitly authorised.
+
+## Addendum — Planned module count expansion (M25)
+
+**Added:** 11 Aug 2026 (post Programme Gate P0 acceptance at `b0c4c4d`)  
+**Does not rewrite** the signed Baseline V1 24-module navigation consolidation evidence above.
+
+| Scope | Count | Location |
+| --- | ---: | --- |
+| Baseline V1 signed runtime register | 24 | `src/platform/module-registry/module-register.ts` (unchanged) |
+| Authoritative **future planning** module count | **25** | M01–M24 + planned M25 |
+| M25 planning pack | — | `docs/architecture/future-modules/` |
+
+**M25** — Print Fleet, Cost, Security & Sustainability Management — status `FUTURE — NOT IMPLEMENTED`. Runtime register, routes, schema, and connectors are **not** authorised by this addendum.

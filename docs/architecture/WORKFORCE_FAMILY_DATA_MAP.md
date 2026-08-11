@@ -236,7 +236,7 @@ Possibly package.json test script if contract tests need a runner
 - Full M04–M07/M11/M22 section UIs
 - Replacing portal `records.staff/doctors` in the live M04 partial (may start migration scaffolding only)
 - Changing M01 staffing seed behaviour beyond adapter interfaces
-- Breaking legacy routes or 24-module register IDs
+- Breaking legacy routes or signed Baseline V1 24-module register IDs (planned M25 is documentation-only under `docs/architecture/future-modules/` until an implementation batch applies runtime register expansion to 25)
 - Direct edits to another module’s repository
 
 ---
