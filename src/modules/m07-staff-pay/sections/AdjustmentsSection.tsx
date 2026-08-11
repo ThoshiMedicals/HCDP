@@ -10,7 +10,7 @@
  * Unlock/reopen is NOT a prior-period adjustment.
  */
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useStaffPay } from "../context";
 import {
   hasM07Permission,
@@ -336,10 +336,6 @@ export function ConnectedAdjustmentsSection() {
   const { actor, legalEntityId, refresh, tick } = useStaffPay();
   const canAdjust = hasM07Permission(actor, "payroll.adjust");
 
-  const [cases, setCases] = useState<PpaUiCase[]>([]);
-  const [lockedSources, setLockedSources] = useState<PpaUiLockedSourceOption[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [createError, setCreateError] = useState<string | null>(null);
   const [detailError, setDetailError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -348,15 +344,17 @@ export function ConnectedAdjustmentsSection() {
   // Preserve idempotency key across retries of the same intentional submission.
   const pendingIdempotencyKeyRef = useRef<string | null>(null);
 
-  const load = useCallback(() => {
-    setLoading(true);
-    setError(null);
+  // Derive register rows from store + tick (refresh bumps tick) — no setState-in-effect.
+  const { cases, lockedSources, loading, error } = useMemo(() => {
+    void tick;
     try {
       if (!canAdjust) {
-        setCases([]);
-        setLockedSources([]);
-        setError(null);
-        return;
+        return {
+          cases: [] as PpaUiCase[],
+          lockedSources: [] as PpaUiLockedSourceOption[],
+          loading: false,
+          error: null as string | null,
+        };
       }
       const rows = listPriorPeriodAdjustmentsForEntity(actor, legalEntityId);
       const uiCases = rows.map((row) => {
@@ -366,25 +364,24 @@ export function ConnectedAdjustmentsSection() {
           : undefined;
         return mapPriorPeriodAdjustmentToUiCase(row, label);
       });
-      setCases(uiCases);
-      setLockedSources(
-        listLockedOrdinarySourceOptionsForActor({
+      return {
+        cases: uiCases,
+        lockedSources: listLockedOrdinarySourceOptionsForActor({
           legalEntityId,
           clinicIds: actor.clinicIds,
-        })
-      );
+        }),
+        loading: false,
+        error: null as string | null,
+      };
     } catch (err) {
-      setCases([]);
-      setLockedSources([]);
-      setError(errorMessage(err));
-    } finally {
-      setLoading(false);
+      return {
+        cases: [] as PpaUiCase[],
+        lockedSources: [] as PpaUiLockedSourceOption[],
+        loading: false,
+        error: errorMessage(err),
+      };
     }
-  }, [actor, legalEntityId, canAdjust]);
-
-  useEffect(() => {
-    load();
-  }, [load, tick]);
+  }, [actor, legalEntityId, canAdjust, tick]);
 
   const deniedReason = "Requires payroll.adjust";
 
@@ -407,7 +404,6 @@ export function ConnectedAdjustmentsSection() {
       pendingIdempotencyKeyRef.current = null;
       setCreateError(null);
       refresh();
-      load();
     } catch (err) {
       setCreateError(errorMessage(err));
     } finally {
@@ -421,7 +417,6 @@ export function ConnectedAdjustmentsSection() {
     try {
       cancelPriorPeriodAdjustmentDraft(actor, { ppaId: caseId, reason: "cancelled from adjustments UI" });
       refresh();
-      load();
     } catch (err) {
       setDetailError(errorMessage(err));
     } finally {

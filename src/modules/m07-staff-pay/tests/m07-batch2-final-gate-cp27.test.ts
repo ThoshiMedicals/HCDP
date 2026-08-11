@@ -264,7 +264,7 @@ describe("CP2.7A Batch 2 final-gate E2E", () => {
     publishTimesheetVersion({
       content: contentV1,
       sourceVersion: 1,
-      approvalRevision: (current?.latestApprovalRevision ?? 1) + 2,
+      approvalRevision: (current?.currentApprovalRevision ?? 1) + 2,
       approvalState: "restored",
       publishedAt: "2026-07-29T02:00:00.000Z",
       publisherId: "m06-pub",

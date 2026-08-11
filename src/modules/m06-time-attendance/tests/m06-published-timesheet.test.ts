@@ -222,7 +222,6 @@ describe("CP2.2 M06 platform published-timesheet publication", () => {
             penaltyHourInputs: [],
             leaveInputs: [],
             allowanceInputs: [],
-            // @ts-expect-error intentional
             tfn: "123",
           } as never,
           sourceVersion: 99,
@@ -273,7 +272,7 @@ describe("CP2.2 M06 platform published-timesheet publication", () => {
       assert.ok(getPublishedTimesheetVersion({ organisationId: ORG, legalEntityId: LE }, ts.id, 1));
       assert.ok(getPublishedTimesheetVersion({ organisationId: ORG, legalEntityId: LE }, ts.id, 2));
       assert.equal(
-        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetId: ts.id }).length,
+        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetRecordId: ts.id }).length,
         2
       );
     });
@@ -292,7 +291,7 @@ describe("CP2.2 M06 platform published-timesheet publication", () => {
       assert.equal(reopened.platformPublicationAck!.approvalState, "revoked");
       assert.equal(reopened.platformPublicationAck!.approvalRevision, 2);
       assert.equal(
-        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetId: ts.id }).length,
+        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetRecordId: ts.id }).length,
         1
       );
     });
@@ -427,7 +426,7 @@ describe("CP2.2 M06 platform published-timesheet publication", () => {
       assert.ok(retried.outcome === "idempotent" || retried.outcome === "published");
       assert.equal(getTimesheet(ts.id)!.platformPublicationAck!.registryPublicationId, ack.registryPublicationId);
       assert.equal(
-        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetId: ts.id }).length,
+        listPublishedTimesheetVersions({ organisationId: ORG, legalEntityId: LE }, { timesheetRecordId: ts.id }).length,
         1
       );
     });

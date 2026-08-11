@@ -79,21 +79,24 @@ function samplePeriod(): PayPeriodRecord {
     cadence: "fortnightly",
     periodStart: "2026-07-01",
     periodEnd: "2026-07-14",
+    separationOfDutiesSnapshot: false,
+    exportCreated: false,
     version: 1,
     createdAt: now,
     createdBy: "u",
     updatedAt: now,
     updatedBy: "u",
-  } as PayPeriodRecord;
+  };
 }
 
 describe("M07 test-hook security gate (QA-PPA1-001)", () => {
+  const env = process.env as Record<string, string | undefined>;
   let savedNodeEnv: string | undefined;
   let savedAllow: string | undefined;
 
   beforeEach(() => {
-    savedNodeEnv = process.env.NODE_ENV;
-    savedAllow = process.env[M07_TEST_HOOKS_ENV];
+    savedNodeEnv = env.NODE_ENV;
+    savedAllow = env[M07_TEST_HOOKS_ENV];
     installMemoryLocalStorage();
     clearM07LocalStoreCacheForTests();
     __resetPpaRepositoryTestHooks();
@@ -106,10 +109,10 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
   });
 
   afterEach(() => {
-    if (savedNodeEnv === undefined) delete process.env.NODE_ENV;
-    else process.env.NODE_ENV = savedNodeEnv;
-    if (savedAllow === undefined) delete process.env[M07_TEST_HOOKS_ENV];
-    else process.env[M07_TEST_HOOKS_ENV] = savedAllow;
+    if (savedNodeEnv === undefined) delete env.NODE_ENV;
+    else env.NODE_ENV = savedNodeEnv;
+    if (savedAllow === undefined) delete env[M07_TEST_HOOKS_ENV];
+    else env[M07_TEST_HOOKS_ENV] = savedAllow;
     __resetPpaRepositoryTestHooks();
     __setM07AuditFailForTests(false);
     __setM07AuditFailActionsForTests(null);
@@ -118,7 +121,7 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
   });
 
   it("allows hooks when M07_ALLOW_TEST_HOOKS=1 under non-production Node", () => {
-    delete process.env.NODE_ENV;
+    delete env.NODE_ENV;
     enableM07TestHooksForTests();
     assert.equal(areM07TestHooksAllowed(), true);
     __setPpaCaseWriteFailForTests(1);
@@ -127,7 +130,7 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
 
   it("allows hooks when NODE_ENV=test even without allow flag", () => {
     disableM07TestHooksForTests();
-    process.env.NODE_ENV = "test";
+    env.NODE_ENV = "test";
     assert.equal(areM07TestHooksAllowed(), true);
     __setPeriodWriteFailForTests(1);
     assert.throws(() => upsertPeriod(samplePeriod()), /m07-period-write-fail-for-tests/);
@@ -138,7 +141,7 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
     __setPpaCaseWriteFailForTests(1);
     __setPeriodWriteFailForTests(1);
     __setM07AuditFailForTests(true);
-    process.env.NODE_ENV = "production";
+    env.NODE_ENV = "production";
     assert.equal(areM07TestHooksAllowed(), false);
 
     // Setters must no-op in production — cannot arm new failures.
@@ -169,7 +172,7 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
 
   it("disables hooks in unknown/development runtime without explicit allow", () => {
     disableM07TestHooksForTests();
-    process.env.NODE_ENV = "development";
+    env.NODE_ENV = "development";
     assert.equal(areM07TestHooksAllowed(), false);
     __setPpaCaseWriteFailForTests(1);
     __setPeriodWriteFailForTests(1);
@@ -216,10 +219,10 @@ describe("M07 test-hook security gate (QA-PPA1-001)", () => {
   });
 
   it("production gate prevents arming then re-enabling from leaking prior arms after reset", () => {
-    process.env.NODE_ENV = "production";
+    env.NODE_ENV = "production";
     __setPpaCaseWriteFailForTests(3);
     assert.equal(areM07TestHooksAllowed(), false);
-    delete process.env.NODE_ENV;
+    delete env.NODE_ENV;
     enableM07TestHooksForTests();
     __resetPpaRepositoryTestHooks();
     // After reset under allow, no leftover fail counter from production no-op sets.

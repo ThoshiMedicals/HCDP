@@ -8,6 +8,7 @@ import { describe, it, beforeEach } from "node:test";
 import {
   PUBLISHED_TIMESHEET_CONTRACT_VERSION,
   type PublishedTimesheetPayrollContent,
+  type PublishedTimesheetVersion,
   type PublishTimesheetInput,
 } from "../contracts/published-timesheet-contract";
 import {
@@ -88,7 +89,7 @@ function sampleContent(
 }
 
 function samplePublish(
-  overrides: Partial<PublishTimesheetInput> & {
+  overrides: Partial<Omit<PublishTimesheetInput, "content">> & {
     content?: Partial<PublishedTimesheetPayrollContent>;
   } = {}
 ): PublishTimesheetInput {
@@ -157,7 +158,6 @@ describe("CP2.1 published timesheet contract validation", () => {
   it("rejects prohibited banking/TFN/super fields", () => {
     const withTfn = validatePublishedTimesheetPayrollContent({
       ...sampleContent(),
-      // @ts-expect-error intentional prohibited field
       tfn: "123456789",
     } as PublishedTimesheetPayrollContent);
     assert.equal(withTfn.ok, false);
@@ -508,7 +508,10 @@ describe("CP2.1 published timesheet registry", () => {
       (err: unknown) =>
         err instanceof PublishedTimesheetRegistryError && err.code === "INTERRUPTED_PUBLICATION"
     );
-    const versions = readJsonSafe(PUBLISHED_TIMESHEET_REGISTRY_KEYS.versions, []);
+    const versions = readJsonSafe<PublishedTimesheetVersion[]>(
+      PUBLISHED_TIMESHEET_REGISTRY_KEYS.versions,
+      []
+    );
     assert.equal(versions.length, 1);
     assert.equal(
       getCurrentPublishedTimesheet(

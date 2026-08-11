@@ -50,13 +50,13 @@ export function StaffPayProvider({
   const [section, setSection] = useState<M07SectionId>(initialSection);
   const [legalEntityId, setLegalEntityId] = useState("org_demo_a");
   const [tick, setTick] = useState(0);
-  const [bootstrap, setBootstrap] = useState<MigrationReport | null>(null);
-
-  useEffect(() => {
+  const [bootstrap, setBootstrap] = useState<MigrationReport | null>(() => {
     ensureM07Bootstrapped();
-    setBootstrap(getM07BootstrapReport());
-    return subscribeM07Bootstrap(() => setBootstrap(getM07BootstrapReport()));
-  }, []);
+    return getM07BootstrapReport();
+  });
+
+  // Subscribe only — initial snapshot is derived in useState lazy init (no sync setState in effect).
+  useEffect(() => subscribeM07Bootstrap(() => setBootstrap(getM07BootstrapReport())), []);
 
   const actor: M07Actor = useMemo(() => {
     const clinicIds =
