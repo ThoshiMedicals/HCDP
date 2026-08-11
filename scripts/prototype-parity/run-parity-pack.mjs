@@ -18,9 +18,14 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 const SCRIPT = join(ROOT, "scripts/prototype-parity");
 
+const RUN_ENV = {
+  ...process.env,
+  PYTHONDONTWRITEBYTECODE: "1",
+};
+
 function run(cmd) {
   console.log("\n>>", cmd);
-  execSync(cmd, { cwd: ROOT, stdio: "inherit", env: process.env });
+  execSync(cmd, { cwd: ROOT, stdio: "inherit", env: RUN_ENV });
 }
 
 function checkDiff(label) {
@@ -69,9 +74,10 @@ function checkDiff(label) {
 
 function once(label) {
   console.log(`\n=== Generation ${label} ===`);
-  run(`node ${join(SCRIPT, "extract-prototype.mjs")}`);
-  run(`python3 ${join(SCRIPT, "build-parity-registers.py")}`);
-  run(`node ${join(SCRIPT, "validate-registers.mjs")}`);
+  const node = process.execPath;
+  run(`"${node}" "${join(SCRIPT, "extract-prototype.mjs")}"`);
+  run(`python3 "${join(SCRIPT, "build-parity-registers.py")}"`);
+  run(`"${node}" "${join(SCRIPT, "validate-registers.mjs")}"`);
 }
 
 const tip = execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim();
