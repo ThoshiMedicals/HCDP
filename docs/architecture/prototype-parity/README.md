@@ -17,6 +17,16 @@
 - P1 / PPA / M08–M24 implementation: **not authorised**  
 - PR / merge: **none**
 
+## P1 readiness pack (planning only)
+
+Owner-review planning artefacts for the next prototype-parity phase live under [`phase1/`](./phase1/README.md):
+
+- **P1B** prototype-parity plan (83 gaps, 8 batches) — stamp `P1 — PLANNED, NOT AUTHORISED`
+- **P1A** master product-definition / delivery-readiness pack — stamp `P1A — PLANNED, NOT AUTHORISED` — [`phase1/p1a/`](./phase1/p1a/README.md)
+- **P1C** development-repository / architecture / production-readiness audit — stamp `P1C — PLANNED, NOT AUTHORISED` — [`phase1/p1c/`](./phase1/p1c/README.md)
+
+No implementation authorised or performed by these packs.
+
 ## Regenerate
 
 ```bash
