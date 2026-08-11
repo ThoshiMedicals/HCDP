@@ -51,6 +51,33 @@ LABEL_SERVICE_HINTS = [
     (r"\btraining\b|\bcourse\b|\blearning\b|\bcompetenc", ("training|assignment|evidence|competency", "assign|complete|list")),
 ]
 
+# Static / display-only labels that must never be counted as production controls
+STATIC_LABEL_RE = re.compile(
+    r"^(?:Module\s+\d+|You are offline|No .+ yet|Acting as|Demo controls|"
+    r"Notifications|Training Management(?: sections)?|"
+    r"Organisation\s*&\s*Access|Healthcare Doctors Pulse\b.*|"
+    r"Internal sections|Legacy features identified|Rebuild pending|"
+    r"Interactive rebuild|Inbox events not wired yet|Can create Action Inbox items)$",
+    re.I,
+)
+
+HEADING_ONLY_RE = re.compile(r"^Module\s+\d+$", re.I)
+
+INTERACTIVE_OPEN_RE = re.compile(
+    r"<(?P<tag>button|a|input|select|textarea|option|summary|"
+    r"Button|Link|NavLink|Menu\.Item|MenuItem|DropdownMenuItem|"
+    r"SelectTrigger|TabsTrigger|Checkbox|Switch|RadioGroup\.Item)\b",
+    re.I,
+)
+
+HANDLER_RE = re.compile(
+    r"\b(?P<handler>on(?:Click|Change|Submit|Navigate|Refresh|Close|Select|Toggle|KeyDown|Input))\s*=\s*\{(?P<body>[^}]{1,160})\}"
+)
+
+ARIA_OR_TITLE_RE = re.compile(r"""(?:aria-label|title)=["']([^"']{2,80})["']""")
+
+CHILDREN_TEXT_RE = re.compile(r">\s*([^<{][^<]{0,60}?)\s*<")
+
 
 def sorted_paths(paths):
     return sorted({str(p) for p in paths})
@@ -80,9 +107,177 @@ def parse_exports(file_path: Path):
     return out
 
 
+def _line_at(text: str, idx: int) -> int:
+    return text.count("\n", 0, idx) + 1
+
+
+def _window_before(text: str, idx: int, chars: int = 240) -> str:
+    return text[max(0, idx - chars) : idx]
+
+
+def _window_after(text: str, idx: int, chars: int = 220) -> str:
+    return text[idx : idx + chars]
+
+
+def _is_static_label(label: str) -> bool:
+    lab = (label or "").strip()
+    if not lab:
+        return True
+    if STATIC_LABEL_RE.match(lab):
+        return True
+    if HEADING_ONLY_RE.match(lab):
+        return True
+    # Prop names alone are not visible controls
+    if lab in {"onClick", "onChange", "onSubmit", "onNavigate", "onRefresh", "onClose", "onSelect"}:
+        return True
+    return False
+
+
+def _detect_placeholder_shell(text: str, page_path: str) -> dict:
+    """Distinguish ModuleLanding / heading-only shells from interactive workspaces."""
+    uses_landing = "ModuleLanding" in text
+    has_h1_module = bool(re.search(r"<h1[^>]*>\s*Module\s+\d+\s*</h1>", text, re.I))
+    interactive_hits = len(list(HANDLER_RE.finditer(text))) + len(list(INTERACTIVE_OPEN_RE.finditer(text)))
+    # Entry files that only mount ModuleLanding (or missing-register heading) are placeholder shells
+    is_entry_module = bool(re.search(r"m\d{2}-.*/.*Module\.tsx$", page_path.replace("\\", "/")))
+    placeholder = False
+    if uses_landing and interactive_hits <= 1 and is_entry_module:
+        placeholder = True
+    elif has_h1_module and interactive_hits == 0:
+        placeholder = True
+    elif uses_landing and is_entry_module and not re.search(r"\bonClick\b|\bonChange\b|<Button\b|<button\b", text):
+        placeholder = True
+    return {
+        "placeholderShell": placeholder,
+        "usesModuleLanding": uses_landing,
+        "headingOnlyFallback": has_h1_module,
+        "interactiveSignalCount": interactive_hits,
+    }
+
+
+def extract_working_controls(text: str, page_path: str) -> list[dict]:
+    """
+    Production controls require interaction evidence:
+    button/link/input/select/menu, event handler, routed navigation, form submit,
+    or callable command/workflow trigger.
+    Static headings, card titles, module names, paragraphs, badges, display-only labels
+    are excluded.
+    """
+    controls: list[dict] = []
+    shell = _detect_placeholder_shell(text, page_path)
+    if shell["placeholderShell"]:
+        # Placeholder shells contribute zero production controls (nav lives in registry).
+        return []
+
+    for m in HANDLER_RE.finditer(text):
+        handler_name = m.group("handler")
+        handler_body = m.group("body").strip()
+        start = m.start()
+        before = _window_before(text, start)
+        after = _window_after(text, m.end())
+        open_m = None
+        for om in INTERACTIVE_OPEN_RE.finditer(before):
+            open_m = om
+        # JSX prop forwarding onto child components (onNavigate={...}) still counts
+        element_type = open_m.group("tag") if open_m else f"handler-prop:{handler_name}"
+        label = None
+        aria = ARIA_OR_TITLE_RE.search(before[open_m.start() :] if open_m else before[-120:])
+        if not aria:
+            aria = ARIA_OR_TITLE_RE.search(after[:160])
+        if aria:
+            label = aria.group(1).strip()
+        if not label:
+            child = CHILDREN_TEXT_RE.search(after[:180])
+            if child:
+                label = child.group(1).strip()
+        if not label:
+            # Derive a readable label from the handler body when children are expressions
+            compact = re.sub(r"\s+", " ", handler_body)[:60]
+            label = f"{handler_name} -> {compact}"
+        if _is_static_label(label) and handler_name not in {"onClick", "onChange", "onSubmit", "onNavigate", "onRefresh"}:
+            continue
+        if HEADING_ONLY_RE.match(label or ""):
+            continue
+        # Navigation target / behaviour
+        nav_target = None
+        nav_m = re.search(
+            r"""(?:navigate|setSection|onNavigate|href|router\.push)\s*\(\s*['"`]([^'"`]+)['"`]""",
+            handler_body,
+        )
+        if not nav_m:
+            nav_m = re.search(r"""href=\{?['"`]([^'"`]+)['"`]\}?""", before + after)
+        if nav_m:
+            nav_target = nav_m.group(1)
+        behaviour = f"invoke {handler_name} -> {re.sub(r'\\s+', ' ', handler_body)[:100]}"
+        if nav_target:
+            behaviour = f"navigate/set section -> {nav_target}"
+        controls.append({
+            "componentPath": page_path,
+            "symbol": label,
+            "visibleLabel": label,
+            "elementType": element_type,
+            "handler": f"{handler_name}={{{handler_body[:80]}}}",
+            "handlerName": handler_name,
+            "navigationTarget": nav_target or "",
+            "behaviour": behaviour,
+            "line": _line_at(text, start),
+            "kind": "interactive-control",
+            "implementationStatus": "implemented-interactive",
+            "placeholderShell": False,
+        })
+
+    # Standalone Link/anchor with href and visible label (no onClick required)
+    for m in re.finditer(
+        r"""<(?:Link|a)\b([^>]*?)>([^<]{1,60})</(?:Link|a)>""",
+        text,
+        re.I | re.S,
+    ):
+        attrs, child = m.group(1), m.group(2).strip()
+        href_m = re.search(r"""href=\{?['"`]([^'"`]+)['"`]\}?""", attrs)
+        if not href_m:
+            href_m = re.search(r"""href=\{`([^`]+)`\}""", attrs)
+        if not href_m:
+            continue
+        label = child.strip()
+        if _is_static_label(label) or HEADING_ONLY_RE.match(label):
+            continue
+        # Skip if already captured via nearby handler at same line
+        line = _line_at(text, m.start())
+        if any(c["line"] == line and c["componentPath"] == page_path for c in controls):
+            continue
+        controls.append({
+            "componentPath": page_path,
+            "symbol": label,
+            "visibleLabel": label,
+            "elementType": "Link" if m.group(0).lstrip().startswith("<Link") else "a",
+            "handler": f"href={href_m.group(1)}",
+            "handlerName": "href",
+            "navigationTarget": href_m.group(1),
+            "behaviour": f"routed navigation -> {href_m.group(1)}",
+            "line": line,
+            "kind": "interactive-control",
+            "implementationStatus": "implemented-interactive",
+            "placeholderShell": False,
+        })
+
+    # Deduplicate by path/line/handler
+    seen = set()
+    uniq = []
+    for c in sorted(controls, key=lambda x: (x["componentPath"], x["line"], x["symbol"])):
+        key = (c["componentPath"], c["line"], c.get("handlerName", ""), c.get("handler", ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(c)
+    return uniq[:200]
+
+
 def inventory_module(num: int, mod_dir: Path | None):
+    mod_dir = mod_dir.resolve() if mod_dir else None
     files, services, repos, tests = list_module_files(mod_dir) if mod_dir else ([], [], [], [])
-    rel = lambda p: str(p.relative_to(ROOT)).replace("\\", "/")
+    def rel(p: Path) -> str:
+        p = p if p.is_absolute() else (ROOT / p)
+        return str(p.resolve().relative_to(ROOT.resolve())).replace("\\", "/")
     service_index = []
     for sp in services:
         for ex in parse_exports(sp):
@@ -97,52 +292,54 @@ def inventory_module(num: int, mod_dir: Path | None):
     for p in WORKSPACE_CHAIN.get(num, []):
         if (ROOT / p).exists():
             page_paths.append(p)
-    # Also include module entry tsx
     if mod_dir:
         for p in sorted(mod_dir.glob("*.tsx"), key=lambda x: str(x)):
             rp = rel(p)
             if rp not in page_paths:
                 page_paths.append(rp)
+        # Prefer *Workspace.tsx when present
+        for p in sorted(mod_dir.rglob("*Workspace.tsx"), key=lambda x: str(x)):
+            rp = rel(p)
+            if rp not in page_paths:
+                page_paths.append(rp)
     page_paths = sorted(set(page_paths))
-    # Scan workspaces for interactive controls (deterministic)
+
     working_controls = []
+    shell_meta = {
+        "placeholderShell": False,
+        "usesModuleLanding": False,
+        "headingOnlyFallback": False,
+        "interactiveSignalCount": 0,
+        "shellStatus": "interactive-or-partial",
+    }
     for pp in page_paths:
         text = (ROOT / pp).read_text(encoding="utf-8", errors="replace")
-        # button-like labels in JSX text nodes / aria-label / title
-        for m in re.finditer(r"(?:aria-label|title)=[\"']([^\"']{2,80})[\"']", text):
-            working_controls.append({
-                "componentPath": pp,
-                "symbol": m.group(1),
-                "line": text.count("\n", 0, m.start()) + 1,
-                "kind": "labelled-control",
-            })
-        for m in re.finditer(r">\s*([A-Z][A-Za-z0-9 /&-]{2,40})\s*<", text):
-            label = m.group(1).strip()
-            if label.lower() in {"div", "span", "button", "section"}:
-                continue
-            working_controls.append({
-                "componentPath": pp,
-                "symbol": label,
-                "line": text.count("\n", 0, m.start()) + 1,
-                "kind": "jsx-text-control",
-            })
-        for m in re.finditer(r"\b(on[A-Z][A-Za-z0-9]*)\s*=\s*\{([^}]{1,80})\}", text):
-            working_controls.append({
-                "componentPath": pp,
-                "symbol": m.group(1),
-                "handler": m.group(2).strip()[:80],
-                "line": text.count("\n", 0, m.start()) + 1,
-                "kind": "handler",
-            })
-    # dedupe deterministically
+        meta = _detect_placeholder_shell(text, pp)
+        if meta["placeholderShell"]:
+            shell_meta["placeholderShell"] = True
+            shell_meta["shellStatus"] = "placeholder-shell"
+        if meta["usesModuleLanding"]:
+            shell_meta["usesModuleLanding"] = True
+        if meta["headingOnlyFallback"]:
+            shell_meta["headingOnlyFallback"] = True
+        shell_meta["interactiveSignalCount"] += meta["interactiveSignalCount"]
+        working_controls.extend(extract_working_controls(text, pp))
+
+    # If every scanned page is a ModuleLanding entry with no workspace, force zero controls
+    if shell_meta["placeholderShell"] and not any("Workspace" in p for p in page_paths):
+        working_controls = []
+        shell_meta["shellStatus"] = "placeholder-shell"
+
+    # Deduplicate across files
     seen = set()
     uniq = []
     for c in sorted(working_controls, key=lambda x: (x["componentPath"], x["line"], x["symbol"])):
-        key = (c["componentPath"], c["line"], c["symbol"], c.get("handler", ""))
+        key = (c["componentPath"], c["line"], c.get("handler", ""), c["symbol"])
         if key in seen:
             continue
         seen.add(key)
         uniq.append(c)
+
     return {
         "files": [rel(p) for p in files],
         "services": [rel(p) for p in services],
@@ -151,6 +348,7 @@ def inventory_module(num: int, mod_dir: Path | None):
         "pagePaths": page_paths or ["NONE — NOT IMPLEMENTED"],
         "serviceIndex": service_index,
         "workingControls": uniq[:200],
+        "shellMeta": shell_meta,
     }
 
 
@@ -218,7 +416,6 @@ def match_service(label: str, service_index: list[dict], classification: str):
             "repositoryPath": "NONE — NOT IMPLEMENTED",
             "matchConfidence": f"unmatched:{best_score}",
         }
-    # repository: prefer module repo files mentioning similar tokens
     return {
         "servicePath": best["path"],
         "serviceMethod": f"{best['symbol']} (line {best['line']})",

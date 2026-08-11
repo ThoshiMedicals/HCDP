@@ -17,7 +17,7 @@ import code_inventory as codeinv
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs/architecture/prototype-parity"
 FINAL = ROOT / "docs/design-references/final"
-REG_TS = (ROOT / "src/platform/module-registry/module-register.ts").read_text()
+REG_TS = (ROOT / "src/platform/module-registry/module-register.ts").read_text(encoding="utf-8")
 
 CANONICAL_PNGS = [
     ("M01", "/dashboard", "doctors_pulse_operations_dashboard.png", "m01-command-centre-final.png", "f600b734705bcc203a25cfbd1002f117b3949b3f78ddc84915e5d1497d6cd236", "ed10fac6e817a582e4e177f1cecf1661929a54bc7130d96dc49386ef34774f74"),
@@ -169,7 +169,7 @@ def write(path: Path, text: str):
     path.parent.mkdir(parents=True, exist_ok=True)
     if not text.endswith("\n"):
         text += "\n"
-    path.write_text(text)
+    path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def slug(text: str) -> str:
@@ -298,6 +298,10 @@ def audit_module(num: int, reg: dict) -> dict:
         "testPaths": tests[:40] or ["NONE — NOT IMPLEMENTED"],
         "serviceIndex": inv["serviceIndex"],
         "workingControlsFromCode": inv["workingControls"],
+        "shellMeta": inv.get("shellMeta") or {
+            "placeholderShell": False,
+            "shellStatus": "interactive-or-partial",
+        },
         "fileCount": len(files),
         "persistenceMethod": persistence,
         "permissions": roles_for(num, None, access),
@@ -486,7 +490,7 @@ def image_tokens() -> dict:
 
 def main():
     tip = tip_sha()
-    manifest = json.loads((OUT / "PROTOTYPE_EXTRACTION_MANIFEST.json").read_text())
+    manifest = json.loads((OUT / "PROTOTYPE_EXTRACTION_MANIFEST.json").read_text(encoding="utf-8"))
     proto = manifest["prototypeSha256"]
     # Deterministic across commits: pinned refs + prototype hash (not mutable HEAD).
     # The containing git commit is the control-pack tip; do not embed HEAD in stamps.
@@ -495,12 +499,12 @@ def main():
     EVIDENCE_TIP = "e659dfc42a711d37a3e73b3ba7049190ca531e4a"
     ORIGIN_MAIN = "0afe87806cdc1e3e8e90da5293183ef1b2fd9c76"
     UTC = f"deterministic:baseline-{BASELINE[:12]}:decisionA-{DECISION_A[:12]}:proto-{proto[:12]}"
-    modules = json.loads((OUT / "prototype-modules.json").read_text())
-    screens_ex = json.loads((OUT / "prototype-screens.json").read_text())
-    workflows = json.loads((OUT / "prototype-workflows.json").read_text())
-    fields_modals = json.loads((OUT / "prototype-fields-modals.json").read_text())
-    conflicts = json.loads((OUT / "prototype-scope-conflicts.json").read_text())
-    themes = json.loads((OUT / "prototype-themes.json").read_text())
+    modules = json.loads((OUT / "prototype-modules.json").read_text(encoding="utf-8"))
+    screens_ex = json.loads((OUT / "prototype-screens.json").read_text(encoding="utf-8"))
+    workflows = json.loads((OUT / "prototype-workflows.json").read_text(encoding="utf-8"))
+    fields_modals = json.loads((OUT / "prototype-fields-modals.json").read_text(encoding="utf-8"))
+    conflicts = json.loads((OUT / "prototype-scope-conflicts.json").read_text(encoding="utf-8"))
+    themes = json.loads((OUT / "prototype-themes.json").read_text(encoding="utf-8"))
     register = parse_register()
     reg_by_num = {r["number"]: r for r in register}
     audits = {r["number"]: audit_module(r["number"], r) for r in register}
@@ -1081,10 +1085,9 @@ def main():
         scored.sort(key=lambda x: (-x[0], x[1]["screenId"]))
         best_score, best = scored[0]
         if best_score <= 0:
-            # Prefer overview/first section rather than attaching to all screens
-            overview = next((s for s in module_screens if "overview" in (s.get("sectionId") or "")), module_screens[0])
-            return overview, "section inferred: overview/default (no token overlap with other sections)"
-        return best, f"section matched by label tokens (score={best_score})"
+            # Do not invent overview/fallback as exact; source did not identify a section
+            return None, "UNRESOLVED — SOURCE DOES NOT IDENTIFY SECTION"
+        return best, f"PROVEN — section matched by label tokens (score={best_score})"
 
     # Pre-build screen skeletons from extraction (exact source = tab source or BRD module tab)
     screen_skeletons = []
@@ -1140,6 +1143,40 @@ def main():
     for sk in screen_skeletons:
         screens_by_module[sk["moduleKey"]].append(sk)
 
+    UNRESOLVED_SECTION = "UNRESOLVED — SOURCE DOES NOT IDENTIFY SECTION"
+
+    def section_fields(screen, reason, fallback_route=""):
+        """Map pick_screen_for_label results to exact section provenance fields."""
+        if screen:
+            conf = "proven" if str(reason).startswith("PROVEN") else "inferred"
+            return {
+                "screenId": screen["screenId"],
+                "screenRoute": screen["route"],
+                "sectionId": screen["sectionId"],
+                "sectionMappingReason": reason,
+                "sectionMappingConfidence": conf,
+                "screenSection": screen.get("sectionLabel") or screen.get("sectionId"),
+            }
+        if str(reason).startswith("UNRESOLVED"):
+            return {
+                "screenId": UNRESOLVED_SECTION,
+                "screenRoute": fallback_route,
+                "sectionId": UNRESOLVED_SECTION,
+                "sectionMappingReason": reason,
+                "sectionMappingConfidence": "unresolved",
+                "screenSection": UNRESOLVED_SECTION,
+            }
+        na_screen = f"NOT APPLICABLE — {reason}" if reason else "NOT APPLICABLE — no screen"
+        na_section = f"NOT APPLICABLE — {reason}" if reason else "NOT APPLICABLE"
+        return {
+            "screenId": na_screen,
+            "screenRoute": fallback_route,
+            "sectionId": na_section,
+            "sectionMappingReason": reason or "NOT APPLICABLE",
+            "sectionMappingConfidence": "unresolved",
+            "screenSection": "NOT APPLICABLE",
+        }
+
     action_items = []
 
     def build_action(**kwargs):
@@ -1159,6 +1196,13 @@ def main():
         kwargs.setdefault("stateTransitions", "NOT APPLICABLE — not a multi-step workflow")
         kwargs.setdefault("disposition", "ADOPTED-AS-IS")
         kwargs.setdefault("implementationStatus", audits[int(kwargs["moduleKey"][1:])]["revisedDomainStatus"])
+        kwargs.setdefault("sectionMappingConfidence", "unresolved")
+        kwargs.setdefault("renderedElementType", "NOT APPLICABLE — not a rendered production control")
+        kwargs.setdefault("visibleLabel", kwargs.get("label") or "")
+        kwargs.setdefault("handlerOrNavigationTarget", kwargs.get("componentHandler") or "")
+        kwargs.setdefault("resultingBehaviour", "NOT APPLICABLE — see acceptanceTest/stateTransitions")
+        kwargs.setdefault("screenSection", kwargs.get("sectionId") or "")
+        kwargs.setdefault("placeholderShell", False)
         return kwargs
 
     # BRD buttons — screen-specific
@@ -1202,14 +1246,17 @@ def main():
                         **matched,
                         "componentHandler": "NONE — NOT IMPLEMENTED",
                     }
+            sf = section_fields(screen, reason, a["mainRoute"])
             action_items.append(build_action(
                 id=b["id"], moduleKey=m["moduleKey"], label=b["label"], kind="brd-button",
                 classification=classification, source="brd",
                 sourceLocation=loc_str(b.get("source") or m.get("source")),
-                screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
-                screenRoute=screen["route"] if screen else a["mainRoute"],
-                sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
-                sectionMappingReason=reason,
+                screenId=sf["screenId"],
+                screenRoute=sf["screenRoute"] or a["mainRoute"],
+                sectionId=sf["sectionId"],
+                sectionMappingReason=sf["sectionMappingReason"],
+                sectionMappingConfidence=sf["sectionMappingConfidence"],
+                screenSection=sf["screenSection"],
                 permission=f"{roles}; mutate only when classification={classification} requires it",
                 servicePath=matched["servicePath"], serviceMethod=matched["serviceMethod"],
                 componentHandler=matched.get("componentHandler") or matched["serviceMethod"],
@@ -1218,6 +1265,9 @@ def main():
                 errorState=err, acceptanceTest=accept, automatedTest=auto,
                 evidencePath=a["evidencePaths"], targetWave=wave, requirementId=b["id"],
                 matchConfidence=matched.get("matchConfidence", ""),
+                visibleLabel=b["label"],
+                handlerOrNavigationTarget=matched.get("componentHandler") or matched["serviceMethod"],
+                resultingBehaviour=accept,
             ))
 
     def add_workflow(item_id, module_key, label, kind, source_type, source_obj, steps, step_texts):
@@ -1246,19 +1296,25 @@ def main():
             service = method = handler = repo = "NONE — NOT IMPLEMENTED"
             audit_r = persist = err = auto = accept = f"NONE — NOT IMPLEMENTED; target workflow '{label}' in wave {wave}"
             proj = f"NONE — NOT IMPLEMENTED; target projections in wave {wave}"
+        sf = section_fields(screen, reason, a["mainRoute"])
         action_items.append(build_action(
             id=item_id, moduleKey=module_key, label=label, kind=kind, classification=classification,
             source=source_type, sourceLocation=loc_str(source_obj),
-            screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
-            screenRoute=screen["route"] if screen else a["mainRoute"],
-            sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
-            sectionMappingReason=reason,
+            screenId=sf["screenId"],
+            screenRoute=sf["screenRoute"] or a["mainRoute"],
+            sectionId=sf["sectionId"],
+            sectionMappingReason=sf["sectionMappingReason"],
+            sectionMappingConfidence=sf["sectionMappingConfidence"],
+            screenSection=sf["screenSection"],
             permission=f"{roles}; per-step authorisation for workflow",
             servicePath=service, serviceMethod=method, componentHandler=handler, repositoryPath=repo,
             auditResult=audit_r, m01m02Projection=proj, persistenceProof=persist,
             errorState=err, acceptanceTest=accept, automatedTest=auto,
             evidencePath=a["evidencePaths"], targetWave=wave, requirementId=item_id,
             steps=steps, stepTexts=step_texts, stateTransitions=transitions,
+            visibleLabel=label,
+            handlerOrNavigationTarget=handler,
+            resultingBehaviour=transitions,
         ))
 
     for m in modules["brdModules"]:
@@ -1310,19 +1366,26 @@ def main():
             svc = method = handler = repo = "NONE — NOT IMPLEMENTED"
             audit_r = persist = err = auto = accept = f"NONE — NOT IMPLEMENTED; target modal '{modal.get('title')}' in wave {wave}"
             proj = f"NONE — NOT IMPLEMENTED (wave {wave})"
+        sf = section_fields(screen, reason, a["mainRoute"])
         action_items.append(build_action(
             id=modal["id"], moduleKey=mk, label=modal.get("title") or modal["id"], kind="modal-drawer",
             classification=classification, source="prototype-runtime",
             sourceLocation=loc_str(modal.get("source")),
-            screenId=screen["screenId"] if screen else "NOT APPLICABLE — no screen",
-            screenRoute=screen["route"] if screen else a["mainRoute"],
-            sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
-            sectionMappingReason=reason,
+            screenId=sf["screenId"],
+            screenRoute=sf["screenRoute"] or a["mainRoute"],
+            sectionId=sf["sectionId"],
+            sectionMappingReason=sf["sectionMappingReason"],
+            sectionMappingConfidence=sf["sectionMappingConfidence"],
+            screenSection=sf["screenSection"],
             permission=f"{roles}; modal invoker must hold mutate permission",
             servicePath=svc, serviceMethod=method, componentHandler=handler or method, repositoryPath=repo,
             auditResult=audit_r, m01m02Projection=proj, persistenceProof=persist,
             errorState=err, acceptanceTest=accept, automatedTest=auto,
             evidencePath=a["evidencePaths"], targetWave=wave, requirementId=modal["id"],
+            renderedElementType="modal",
+            visibleLabel=modal.get("title") or modal["id"],
+            handlerOrNavigationTarget=handler or method,
+            resultingBehaviour=accept,
         ))
 
     # Registry section links = navigation controls (not domain actions)
@@ -1337,8 +1400,12 @@ def main():
             if not screen and mod_screens:
                 screen, reason = pick_screen_for_label(sec["label"], mod_screens)
             else:
-                reason = "registry section id/label matched extracted screen" if screen else "registry-only section"
+                reason = (
+                    "INFERRED — registry section id/label matched extracted screen"
+                    if screen else "NOT APPLICABLE — registry-only section without extracted screen"
+                )
             page = (a.get("pagePaths") or ["NONE — NOT IMPLEMENTED"])[0]
+            sf = section_fields(screen, reason, reg["mainRoute"])
             action_items.append(build_action(
                 id=f"nav-ctrl-{reg['id']}-{sec['id']}",
                 moduleKey=f"M{num:02d}",
@@ -1347,10 +1414,12 @@ def main():
                 classification="navigation",
                 source="current-code-registry",
                 sourceLocation=f"src/platform/module-registry/module-register.ts:section:{reg['id']}/{sec['id']}",
-                screenId=screen["screenId"] if screen else f"NOT APPLICABLE — registry section without extracted screen ({reason})",
+                screenId=sf["screenId"],
                 screenRoute=reg["mainRoute"],
                 sectionId=sec["id"],
-                sectionMappingReason=reason,
+                sectionMappingReason=sf["sectionMappingReason"],
+                sectionMappingConfidence=sf["sectionMappingConfidence"],
+                screenSection=sec["label"],
                 permission=f"{roles}; visible when accessClassification={reg.get('accessClassification')} grants module access",
                 servicePath="NOT APPLICABLE — navigation control (module-register section link)",
                 serviceMethod="NOT APPLICABLE — router/section navigation",
@@ -1365,30 +1434,52 @@ def main():
                 evidencePath=a["evidencePaths"],
                 targetWave="P2" if num in (1, 2, 3, 4, 5, 6, 7, 11) else WAVE_FOR.get(num, "P8"),
                 requirementId=f"nav-ctrl-{reg['id']}-{sec['id']}",
+                renderedElementType="navigation-link",
+                visibleLabel=sec["label"],
+                handlerOrNavigationTarget=f"{reg['mainRoute']}?section={sec['id']}",
+                resultingBehaviour=f"activate registry section `{sec['id']}`",
             ))
 
     # Working production controls discovered from active adapters/workspaces
     for num, a in audits.items():
+        shell_meta = a.get("shellMeta") or {}
+        if shell_meta.get("placeholderShell"):
+            # Placeholder ModuleLanding / heading-only shells contribute zero production controls
+            continue
         roles = roles_for(num, brd_by_num.get(num), a.get("accessClassification", ""))
         mod_screens = screens_by_module[f"M{num:02d}"]
         for idx, ctrl in enumerate(a.get("workingControlsFromCode") or []):
-            label = ctrl.get("symbol") or f"control-{idx}"
+            if ctrl.get("kind") != "interactive-control":
+                continue
+            label = ctrl.get("visibleLabel") or ctrl.get("symbol") or f"control-{idx}"
+            if re.match(r"^Module\s+\d+$", str(label), re.I):
+                continue
             screen, reason = pick_screen_for_label(label, mod_screens)
             cid = f"prod-ctrl-m{num:02d}-{slug(label)}-{ctrl.get('line', idx)}"
-            classification = "read-filter" if ctrl.get("kind") != "handler" else "command-mutation"
-            if ctrl.get("kind") == "handler" and re.search(r"click|submit|save|approve", str(ctrl.get("handler", "")), re.I):
+            # Classify from label semantics (not kind=production-control, which forces navigation)
+            classification = codeinv.classify_control(label, "brd-button")
+            if ctrl.get("navigationTarget") and ctrl.get("handlerName") in ("href", "onNavigate"):
+                classification = "navigation"
+            elif ctrl.get("handlerName") in ("onClick", "onSubmit") and re.search(
+                r"submit|save|approve|create|update|delete|publish", str(ctrl.get("handler", "")), re.I
+            ):
                 classification = "command-mutation"
             matched = codeinv.match_service(label, a.get("serviceIndex") or [], classification)
             wave = WAVE_FOR.get(num, "P8")
             is_navish = classification in ("navigation", "read-filter")
+            sf = section_fields(screen, reason, a["mainRoute"])
+            handler_or_nav = ctrl.get("navigationTarget") or ctrl.get("handler") or label
+            behaviour = ctrl.get("behaviour") or f"invoke interactive control '{label}'"
             action_items.append(build_action(
                 id=cid, moduleKey=f"M{num:02d}", label=label, kind="production-control",
                 classification=classification, source="current-code-workspace",
                 sourceLocation=f"{ctrl['componentPath']}:line:{ctrl.get('line')}",
-                screenId=screen["screenId"] if screen else "NOT APPLICABLE — workspace control without extracted screen",
-                screenRoute=a["mainRoute"],
-                sectionId=screen["sectionId"] if screen else f"NOT APPLICABLE — {reason}",
-                sectionMappingReason=reason,
+                screenId=sf["screenId"],
+                screenRoute=sf["screenRoute"] or a["mainRoute"],
+                sectionId=sf["sectionId"],
+                sectionMappingReason=sf["sectionMappingReason"],
+                sectionMappingConfidence=sf["sectionMappingConfidence"],
+                screenSection=sf["screenSection"],
                 permission=f"{roles}; enforced in workspace {ctrl['componentPath']}",
                 servicePath=matched["servicePath"] if not is_navish else "NOT APPLICABLE — read/UI control unless handler mutates",
                 serviceMethod=matched["serviceMethod"] if not is_navish else (ctrl.get("handler") or "NOT APPLICABLE — no mutation handler"),
@@ -1409,9 +1500,15 @@ def main():
                 evidencePath=a["evidencePaths"],
                 targetWave=wave,
                 requirementId=cid,
+                renderedElementType=ctrl.get("elementType") or "interactive-control",
+                visibleLabel=ctrl.get("visibleLabel") or label,
+                handlerOrNavigationTarget=handler_or_nav,
+                resultingBehaviour=behaviour,
+                implementationStatus=ctrl.get("implementationStatus") or a["revisedDomainStatus"],
+                placeholderShell=False,
             ))
 
-    # Planned controls for modules without BRD buttons (still screen-scoped to overview)
+    # Planned controls for modules without BRD buttons — section unresolved (never invent overview)
     brd_button_modules = {int(m["number"]) for m in modules["brdModules"] if m.get("buttons")}
     for reg in register:
         num = reg["number"]
@@ -1420,19 +1517,19 @@ def main():
         a = audits[num]
         mk = f"M{num:02d}"
         roles = roles_for(num, brd_by_num.get(num), reg.get("accessClassification", ""))
-        mod_screens = screens_by_module[mk]
-        screen = mod_screens[0] if mod_screens else None
-        for suffix, label in (("overview", f"Open {reg['displayName']} overview"), ("workspace", f"Primary workspace actions for {reg['displayName']}")):
+        for suffix, label in (("entry", f"Open {reg['displayName']} entry"), ("workspace", f"Primary workspace actions for {reg['displayName']}")):
             cid = f"planned-{suffix}-{reg['id']}"
             action_items.append(build_action(
                 id=cid, moduleKey=mk, label=label, kind="planned-module-control",
-                classification="navigation" if suffix == "overview" else "command-mutation",
+                classification="navigation" if suffix == "entry" else "command-mutation",
                 source="current-plan",
                 sourceLocation=f"src/platform/module-registry/module-register.ts:module:{reg['id']}",
-                screenId=screen["screenId"] if screen else "NOT APPLICABLE — no extracted screen",
+                screenId=UNRESOLVED_SECTION,
                 screenRoute=reg["mainRoute"],
-                sectionId=screen["sectionId"] if screen else "overview",
-                sectionMappingReason="planned control anchored to first/overview screen",
+                sectionId=UNRESOLVED_SECTION,
+                sectionMappingReason=UNRESOLVED_SECTION,
+                sectionMappingConfidence="unresolved",
+                screenSection=UNRESOLVED_SECTION,
                 permission=f"{roles}; planned until module wave implements BRD actions",
                 servicePath="NONE — NOT IMPLEMENTED",
                 serviceMethod="NONE — NOT IMPLEMENTED",
@@ -1447,6 +1544,10 @@ def main():
                 evidencePath=a["evidencePaths"],
                 targetWave=WAVE_FOR.get(num, "P8"),
                 requirementId=cid,
+                visibleLabel=label,
+                handlerOrNavigationTarget=reg["mainRoute"],
+                resultingBehaviour=f"planned control until BRD actions land in wave {WAVE_FOR.get(num, 'P8')}",
+                placeholderShell=bool((a.get("shellMeta") or {}).get("placeholderShell")),
             ))
 
     action_by_id = {x["id"]: x for x in action_items}
@@ -1454,7 +1555,7 @@ def main():
     workflows_by_screen = defaultdict(list)
     for x in action_items:
         sid = x.get("screenId") or ""
-        if sid.startswith("NOT APPLICABLE"):
+        if sid.startswith("NOT APPLICABLE") or sid.startswith("UNRESOLVED"):
             continue
         if x["kind"] in ("brd-workflow", "blueprint-workflow", "legacy-workflow-group"):
             workflows_by_screen[sid].append(x["id"])
@@ -1489,10 +1590,15 @@ def main():
                     "screenId": sk["screenId"],
                     "screenRoute": sk["route"],
                     "sectionId": sk["sectionId"],
-                    "sectionMappingReason": "screen-local navigation binding from nearest registry section control",
+                    "sectionMappingReason": "INFERRED — screen-local navigation binding from nearest registry section control",
+                    "sectionMappingConfidence": "inferred",
+                    "screenSection": sk["sectionLabel"],
                     "sourceLocation": f"{donor['sourceLocation']}#bound-to-screen:{sk['screenId']}",
                     "requirementId": cid,
                     "componentHandler": f"{(a.get('pagePaths') or ['NONE'])[0]} section `{sk['sectionId']}`",
+                    "handlerOrNavigationTarget": sk["deepLink"],
+                    "visibleLabel": sk["sectionLabel"],
+                    "resultingBehaviour": f"activate screen-local section `{sk['sectionId']}`",
                     "acceptanceTest": f"UI test: open {sk['deepLink']} as authorised role; assert section '{sk['sectionLabel']}' active",
                     "automatedTest": f"Route/section test for {sk['deepLink']}",
                 })
@@ -1562,21 +1668,40 @@ def main():
         "designReferencesInstalled": True,
         "designReferenceOwnerDecision": "A-REVISED",
         "openOwnerDecisions": sum(1 for d in decisions if d["status"] == "OPEN"),
-        "workflowActionTotals": {
+        "workflowActionTotals": (lambda prod_ctrls, placeholder_mods: {
             "brdButtons": sum(1 for a in action_items if a["kind"] == "brd-button"),
             "brdWorkflows": sum(1 for a in action_items if a["kind"] == "brd-workflow"),
             "blueprintWorkflows": sum(1 for a in action_items if a["kind"] == "blueprint-workflow"),
             "legacyWorkflowGroups": sum(1 for a in action_items if a["kind"] == "legacy-workflow-group"),
             "modalsDrawers": sum(1 for a in action_items if a["kind"] == "modal-drawer"),
             "navigationControls": sum(1 for a in action_items if a["kind"] == "navigation-control"),
-            "productionControls": sum(1 for a in action_items if a["kind"] == "production-control"),
+            "productionControls": len(prod_ctrls),
             "plannedModuleControls": sum(1 for a in action_items if a["kind"] == "planned-module-control"),
+            "productionControlsBeforeFalsePositiveRemoval": 67,
+            "productionControlsAfterFalsePositiveRemoval": len(prod_ctrls),
             "productionControlsBySourceFile": dict(sorted(Counter(
                 (a.get("sourceLocation") or "").split(":line:")[0]
-                for a in action_items if a["kind"] == "production-control"
+                for a in prod_ctrls
             ).items())),
+            "sectionMappingTotals": {
+                "proven": sum(1 for a in action_items if a.get("sectionMappingConfidence") == "proven"),
+                "inferred": sum(1 for a in action_items if a.get("sectionMappingConfidence") == "inferred"),
+                "unresolved": sum(1 for a in action_items if a.get("sectionMappingConfidence") == "unresolved"),
+            },
+            "m08toM24GenuineProductionControls": sum(
+                1 for a in prod_ctrls if int(a["moduleKey"][1:]) >= 8
+            ),
+            "m08toM24PlaceholderShellCount": sum(
+                1 for m in placeholder_mods if int(m[1:]) >= 8
+            ),
+            "placeholderShellModules": placeholder_mods,
             "screenSpecificActionSets": len({tuple(s.get("visibleActionIds") or []) for s in screen_rows}),
-            "actionsWithExactSectionId": sum(1 for a in action_items if a.get("sectionId") and not str(a.get("sectionId")).startswith("NOT APPLICABLE")),
+            "actionsWithExactSectionId": sum(
+                1 for a in action_items
+                if a.get("sectionId")
+                and not str(a.get("sectionId")).startswith("NOT APPLICABLE")
+                and not str(a.get("sectionId")).startswith("UNRESOLVED")
+            ),
             "actionsWithExactSourceLocation": sum(1 for a in action_items if a.get("sourceLocation") and "UNKNOWN" not in a.get("sourceLocation", "")),
             "atomicServiceMapped": sum(1 for a in action_items if str(a.get("servicePath","")).startswith("src/")),
             "atomicNoneNotImplemented": sum(1 for a in action_items if a.get("servicePath") == "NONE — NOT IMPLEMENTED"),
@@ -1606,7 +1731,14 @@ def main():
                     )
                 ),
             },
-        },
+        })(
+            [a for a in action_items if a["kind"] == "production-control"],
+            sorted(
+                f"M{num:02d}"
+                for num, au in audits.items()
+                if (au.get("shellMeta") or {}).get("placeholderShell")
+            ),
+        ),
         "conflictAdjudicationTotals": dict(Counter(
             classify_conflict(c)["semanticClass"] for c in (conflicts.get("conflicts") or [])
         )),
@@ -2357,64 +2489,287 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
         ("p9", "P9", None, "Production verification", "production-verification", "P8 series owner-accepted tip"),
     ]
 
-    def batches_for(kind: str, mod_key: str, wave: str) -> str:
+    MODULE_BATCHES = {
+        1: """1. Executive KPI strip + source-completeness labels — wire M01 read models to producer completeness flags; no mutate  
+2. Drill-down navigation to producer modules — deep-link cards/routes with accessClassification=executive gates  
+3. Operations dashboard sections (coverage, attendance, exceptions) — bind §3 screen IDs; empty/error/loading states  
+4. M01↔producer contract stubs — document missing producers as IN-DEVELOPMENT; Work-Step QA for every visible control""",
+        2: """1. Action Inbox queue entity + filters — ActionItem list/detail; status transitions open→in-progress→done/dismissed  
+2. Assignment and escalation commands — assign/reassign/escalate services; audit actor+clinic; M02 owns inbox projection intake  
+3. Notification/exception intake adapters — accept producer projections only via contracts (no cross-module repo imports)  
+4. Master-detail UI per Decision A PNG — permission-denied hides mutate; Work-Step QA for each dossier action""",
+        3: """1. Organisation/tenant/clinic hierarchy — OrgUnit/Clinic entities; create/update with tenant isolation  
+2. User and access-scope administration — role bindings, accessClassification grants; deny cross-clinic reads  
+3. Inbox sync adapters for org events — publish assignable org work to M02; completeness hooks for M01  
+4. Admin queue + inspector UI — Work-Step QA for user/clinic mutate paths; audit every access change""",
+        4: """1. Person/engagement lifecycle — Person, Engagement entities; onboard/offboard transitions with HR permissions  
+2. Credential and restriction commands — create/verify credential; createRestriction; readiness recalculation  
+3. Leave/availability services — request/approve leave; clinic isolation; project exceptions to M02 when blocked  
+4. People master-detail UI + Work-Step QA — preserve accepted Wave 2 behaviour; regression vs M04 evidence tip""",
+        5: """1. Roster period and shift assignment — RosterPeriod/Shift/Assignment; assignPerson/cancelAssignment  
+2. Coverage evaluation and gap escalation — evaluateCoverage→escalateCoverageGap; M02 projection for gaps  
+3. Publication workflow — previewPublication→publishPeriod→acknowledgePublication; conflict evaluation gates  
+4. Board/matrix UI + bulk ops — Work-Step QA for publish/swap; regression vs Wave 4 acceptance evidence""",
+        6: """1. Clock/attendance events — clockIn/clockOut/break; AttendanceEvent persistence + clinic isolation  
+2. Timesheet preparation and approval — submit→approve transitions; publish TimesheetRef / timesheet.approved to M07 only  
+3. Live-operations UI (attendance board) — filters/refresh; permission gates for approve  
+4. M06→M07 publication contract tests + Work-Step QA — no pulse.m07.* writes outside authorised intake""",
+        7: """1. Preserve accepted M07 Batches 1–6 ordinary prep — intake/replay, calc, leave/allowance/deduction, readiness, export prep, lock/unlock  
+2. Wire readiness/exception/export package actions to module-local services only — no bank/STP/super/mark-as-paid  
+3. Enforce unlock≠PPA and period-lock invariants — controlled unlock remains ordinary prep  
+4. Pay-prep Work-Step QA + M06 publication contract regression — evidence under docs/audits/ only""",
+        8: """1. Doctor pay run entities distinct from M07 staff-pay — DoctorPayRun/PayslipDraft; no bank execution  
+2. Calculation/review/dispute transitions — calculate→review→dispute/resolve; finance role gates  
+3. Payslip draft UI + M02 exception projections — isolate doctor-pay from staff-pay packages  
+4. Finance Work-Step QA + audit/isolation tests — prohibit payment-provider / mark-as-paid paths""",
+        9: """1. BBPIP forecast period entities — ForecastSet/OutcomeRecord; aggregate-only scope  
+2. Import/match/reconcile workflow — import→match→reconcile transitions; finance permissions  
+3. Analytics + reconciliation UI — M01 completeness labels for published BBPIP metrics  
+4. Work-Step QA for reconcile; no payment execution; clinic/tenant isolation negatives""",
+        10: """1. Task/checklist template and occurrence model — Template→Occurrence→ItemCompletion transitions  
+2. Handover and meeting-action commands — create/assign/complete; project assignable work to M02  
+3. Template/run/detail UI per M10 design pattern — clear BLOCKED-M10 informational boundaries outside totals  
+4. Connective-layer integration tests + Work-Step QA — no cross-module repository imports""",
+        11: """1. Learning assignment and competency entities — Assignment/Competency/Certificate/Exemption  
+2. Assign→complete→verify transitions — evidence upload; exemption approve/reject with compliance roles  
+3. Training progress UI per Decision A PNG — preserve Wave 3 accepted behaviour  
+4. Work-Step QA + regression vs wave3-m11-acceptance-evidence; M02 projections for overdue learning""",
+        12: """1. Compliance framework and audit-finding entities — Finding/CAPA with open→verify→close transitions  
+2. Accreditation evidence commands — attach/verify evidence; compliance role gates  
+3. Governance/audit UI — CAPA verification checklist; project overdue CAPA to M02  
+4. Work-Step QA for CAPA close; isolation + audit trail asserts""",
+        13: """1. Controlled document/policy version entities — Document/PolicyVersion publish→supersede transitions  
+2. Acknowledgement workflow — assign acknowledgement; complete with audit; version immutability  
+3. Documents workspace UI — read vs publish permissions; empty/error states  
+4. Work-Step QA for publish/acknowledge; M02 projection for outstanding acknowledgements""",
+        14: """1. Ticket/work-order entities — Ticket open→triage→resolve→close; priority/SLA fields  
+2. Assignment and escalation services — assign/escalate; project to M02 Action Inbox  
+3. Master-detail queue UI — filters; permission-denied on foreign clinic tickets  
+4. Work-Step QA for resolve/close; audit before/after; isolation negatives""",
+        15: """1. Stock/supplier/purchase entities — StockItem/PurchaseOrder/SupplierInvoice receive→match transitions  
+2. Equipment/room/printer/asset commands — create/update/retire asset; transfer stock with audit  
+3. Inventory/asset UI per Decision A PNG — export/read-filter vs mutating receive  
+4. Work-Step QA for receive/transfer; clinic isolation; no finance payment execution""",
+        16: """1. Incident/complaint/risk entities — Incident classify→investigate→close; Risk register updates  
+2. Continuity/action commands — raise CAPA-link where in-scope; project critical incidents to M02  
+3. Governance UI for incident detail — compliance/ops role gates  
+4. Work-Step QA for classify/close; audit + isolation; resulting-state evidence""",
+        17: """1. Outbound communication entities — Message/Campaign with draft→approve→send→delivery-status  
+2. Channel adapters (email/SMS/noticeboard) — delivery status updates only; no patient clinical content  
+3. Communications queue UI — approval gates; failure/retry states  
+4. Work-Step QA for approve/send; audit actor; tenant isolation on templates""",
+        18: """1. Digital monitoring and privileged-access entities — PrivilegedSession/SecretRef metadata (no secret material in UI)  
+2. Security operations commands — grant/revoke privileged access; rotate-metadata audit  
+3. Live-operations security UI — camera/vault inventory read models; admin gates  
+4. Work-Step QA for grant/revoke; penetration negatives for unauthorised privileged actions""",
+        19: """1. Metric definition and data-quality case entities — MetricDef/DQCase open→triage→resolve  
+2. Change-governance workflow — propose→approve metric definition changes; freeze published defs  
+3. Analytics governance UI — M01 completeness labels for governed metrics  
+4. Work-Step QA for DQCase resolve; permission matrix; audit of definition changes""",
+        20: """1. Tenant commercial plan/workspace entities — CommercialPlan/WorkspaceSubscription  
+2. Plan change workflow — draft→activate→suspend commercial workspace; tenant-facing admin roles  
+3. Commercial workspace UI — isolate tenant A from tenant B plan data  
+4. Work-Step QA for activate/suspend; audit commercial transitions; no payment-provider execution""",
+        21: """1. Tenant portfolio and tenant list — Tenant portfolio list/filter/sort; Tenant status read model; enterprise-vendor gates; assert tenant rows never leak across portfolio scopes  
+2. Tenant provisioning — ProvisioningRequest draft→provision→activate; createTenant/provisionWorkspace services; audit provisioning actor; resulting-state: new tenant isolated workspace  
+3. Commercial suspension and reinstatement — Tenant suspend↔reinstate transitions; commercial impact flags; deny suspended-tenant writes; audit + M02 vendor-action projection  
+4. Platform-health monitoring — PlatformHealthSignal read/refresh controls; service-degradation banners; no cross-tenant metric leakage  
+5. Portfolio service-impact coordination — ServiceImpactWindow schedule→broadcast→close; coordinate portfolio notices; bound integration contracts only  
+6. Vendor permissions, tenant isolation and audit — enterprise-vendor RBAC matrix; every mutate audited; negative tests for cross-tenant read/write  
+7. Resulting-state and integration evidence — Work-Step QA per batch above; immutable evidence under docs/audits/; M03 org/access boundary contract tests""",
+        22: """1. Recruitment requisition/candidate entities — Requisition open→fill/cancel; Candidate apply→screen→offer  
+2. Controlled promotion into M04 — promoteCandidate→Person/Engagement handoff via contract only (no M04 repo import)  
+3. Recruitment pipeline UI — HR permissions; isolation by clinic/tenant  
+4. Work-Step QA for offer/promote; audit promotion; reject unauthorised promote""",
+        23: """1. Public site/SEO route entities — PublicRoute/FormEndpoint configuration  
+2. Public form routing workflow — publish→route→intake handoff to operational queues (M02/M14 as contracted)  
+3. Website ops UI — admin gates; preview vs publish  
+4. Work-Step QA for publish/route; no patient clinical records; tenant isolation on public forms""",
+        24: """1. Forecast and immutable baseline entities — Forecast/Baseline freeze; ActualVsForecast review records  
+2. Review workflow — draft forecast→freeze baseline→review variance; finance permissions  
+3. Finance review UI — M01 completeness for published forecast metrics; no payment execution  
+4. Work-Step QA for freeze/review; baseline immutability tests; isolation negatives""",
+    }
+
+    MODULE_TESTS = {
+        1: """- KPI card render + source-completeness label tests for each producer hook  
+- Executive permission gate: non-executive roles denied mutate (none expected) and restricted modules hidden  
+- Drill-down route tests for each §3 screen deep-link  
+- Empty/error/loading state tests for dashboard sections  
+- Regression: Decision A M01 PNG regions within contract tolerances""",
+        2: """- ActionItem status transition tests (open→in-progress→done/dismissed)  
+- Assign/escalate permission + clinic isolation negatives  
+- Producer projection intake contract tests (accept/reject malformed events)  
+- Master-detail selection persistence across refresh  
+- Work-Step acceptance asserts for each §4 mutating dossier""",
+        3: """- Clinic/tenant hierarchy create/update isolation tests  
+- Role-binding permission matrix (grant/revoke)  
+- Org event→M02 projection adapter tests  
+- Admin inspector reload proof after user update  
+- Audit row asserts for every access-scope mutate""",
+        4: """- Person/engagement onboard/offboard transition tests  
+- Credential verify + restriction create service tests  
+- Leave approve isolation negatives across clinics  
+- Readiness recalculation after restriction  
+- Regression vs wave2-m04-acceptance-evidence.json""",
+        5: """- assignPerson/cancelAssignment persistence + reload  
+- publishPeriod happy path + conflict-blocked path  
+- Coverage gap→M02 projection test  
+- Swap request approve/reject permission matrix  
+- Regression vs wave4-m05-acceptance-evidence.json""",
+        6: """- clockIn/clockOut/break sequence tests with resulting-state attendance status asserts  
+- Timesheet submit→approve transition + TimesheetRef publication to M07  
+- Forbid pulse.m07.* writes outside authorised intake; permission/isolation negatives  
+- Attendance board filter/refresh UI tests  
+- Regression vs wave5-m06-acceptance-evidence.json; audit row on approve""",
+        7: """- Period lock/unlock invariants (unlock≠PPA)  
+- Export package reconciliation checksum tests  
+- Readiness/exception mutate permission matrix  
+- M06 timesheet.approved intake contract regression  
+- Evidence path checks against WAVE6_BATCH6_* audits""",
+        8: """- DoctorPayRun calculate→review→dispute transitions  
+- Isolation from M07 staff-pay packages  
+- Finance role permission negatives  
+- Payslip draft reload proof (no bank-file generation)  
+- Audit before/after for dispute resolve""",
+        9: """- BBPIP import→match→reconcile workflow tests  
+- Aggregate-only scope guards (no employee-level leak)  
+- Finance permission matrix  
+- M01 completeness label tests for BBPIP metrics  
+- Reconciliation checksum/reload proof""",
+        10: """- Template→Occurrence→ItemCompletion transition tests  
+- Handover/meeting-action M02 projection tests  
+- Checklist run permission + clinic isolation negatives  
+- UI template/run/detail route tests  
+- Persistence reload for item completion""",
+        11: """- Learning assign→complete→verify tests  
+- Exemption approve/reject permission matrix  
+- Overdue learning→M02 projection test  
+- Certificate immutability after issue  
+- Regression vs wave3-m11-acceptance-evidence.json""",
+        12: """- Finding/CAPA open→verify→close tests  
+- Accreditation evidence attach/verify  
+- Compliance role permission negatives  
+- Overdue CAPA→M02 projection  
+- Audit trail completeness for CAPA close""",
+        13: """- PolicyVersion publish→supersede immutability tests  
+- Acknowledgement assign/complete tests  
+- Publish permission negatives  
+- Outstanding acknowledgement→M02 projection  
+- Reload proof for published version""",
+        14: """- Ticket open→triage→resolve→close tests  
+- Assign/escalate permission + isolation  
+- M02 projection on escalate  
+- Queue filter UI tests  
+- Audit before/after for resolve""",
+        15: """- Purchase receive→match tests  
+- Stock transfer persistence + reload  
+- Asset retire permission negatives  
+- Clinic isolation on stock quantities  
+- Export/read-filter vs mutate classification tests""",
+        16: """- Incident classify→investigate→close tests  
+- Critical incident→M02 projection  
+- Risk register update audit  
+- Compliance/ops permission matrix  
+- Resulting-state evidence asserts for close""",
+        17: """- Message draft→approve→send→delivery-status tests  
+- Approval gate blocks send without approve  
+- Channel adapter delivery-status update tests  
+- Tenant isolation on templates  
+- Audit actor on send""",
+        18: """- Privileged access grant/revoke tests  
+- Unauthorised privileged action penetration negatives  
+- Secret metadata never returns raw secret material  
+- Camera/vault inventory read isolation  
+- Audit of privileged session lifecycle""",
+        19: """- DQCase open→triage→resolve tests  
+- Metric definition propose→approve governance tests  
+- Published MetricDef freeze immutability  
+- M01 completeness label tests for governed metrics  
+- Permission matrix for analytics admins""",
+        20: """- CommercialPlan activate/suspend transition tests  
+- Cross-tenant plan data isolation negatives  
+- Tenant-facing admin permission matrix  
+- Audit commercial workspace transitions  
+- No payment-provider/mark-as-paid path exists""",
+        21: """- Tenant portfolio list isolation + filter tests  
+- ProvisioningRequest draft→provision→activate resulting-state tests  
+- Suspend/reinstate commercial access cutover tests  
+- PlatformHealthSignal refresh + no cross-tenant leak  
+- ServiceImpactWindow schedule→broadcast→close contract tests  
+- enterprise-vendor RBAC + cross-tenant read/write negatives  
+- Integration evidence: M03 boundary + M02 vendor-action projection asserts""",
+        22: """- Requisition/candidate pipeline transition tests  
+- promoteCandidate→M04 handoff contract (no repo import)  
+- Unauthorised promote rejected  
+- HR permission matrix  
+- Audit promotion resulting-state (Person/Engagement ids)""",
+        23: """- PublicRoute publish/unpublish tests  
+- FormEndpoint routing→intake handoff contract tests  
+- Admin-only publish permission negatives  
+- Tenant isolation on public form configs  
+- Preview vs published content asserts""",
+        24: """- Forecast draft→freeze baseline immutability tests  
+- ActualVsForecast review persistence + reload  
+- Finance permission matrix  
+- M01 completeness labels for forecast metrics  
+- Prohibit payment execution paths""",
+    }
+
+    def batches_for(kind: str, mod_key: str, wave: str, num: int | None = None) -> str:
         if kind == "shared-shell":
             return """1. Tokenised Light/Dark/System theme plumbing + CSS variables from design-system-contract.json  
 2. Sidebar (240/72), topbar (48), section nav, KPI strip, toolbar, detail panel primitives  
 3. Appearance preference persistence (System default); family accents as nav cues only  
 4. Screenshot harness for contract viewports/regions/tolerances; a11y focus/keyboard baselines"""
         if kind == "ppa":
-            return """1. PPA period selection + eligibility gates (post-lock/post-export only)  
-2. Adjustment drafting services with audit + immutable prior snapshot links  
-3. Approval/recompute/re-export package prep (no payment execution)  
-4. PPA-specific Work-Step QA + regression against ordinary Batch 1–6 prep"""
-        if kind == "module-pay-prep":
-            return """1. Preserve accepted M07 ordinary prep; align shell to final design  
-2. Wire in-scope readiness/exception/export actions to module services only  
-3. Enforce no bank/STP/super/mark-as-paid; unlock≠PPA  
-4. Pay-prep Work-Step QA + M06 publication contract regression"""
-        if kind == "module-connective":
-            return """1. Task/checklist/handover/meeting domain model + permissions  
-2. M02 projection adapters for assignable work; M01 summary hooks  
-3. Template/run/detail UI per design pattern  
-4. Connective-layer integration tests + Work-Step QA"""
-        if kind == "module-finance":
-            return f"""1. {mod_key} domain ledger/services distinct from M07 staff-pay prep  
-2. Import/match/review UI for in-scope screens/actions  
-3. Projection to M02 for approvals/exceptions; M01 completeness labels  
-4. Finance Work-Step QA + isolation/audit tests (no payment execution)"""
+            return """1. PPA period selection + eligibility gates (post-lock/post-export only) — PeriodEligibility service  
+2. Adjustment drafting — PriorPeriodAdjustment draft with audit + immutable prior snapshot links  
+3. Approval→recompute→re-export package prep — no payment execution; unlock/reopen ≠ PPA  
+4. PPA Work-Step QA + regression against ordinary M07 Batch 1–6 prep evidence"""
         if kind == "production-verification":
-            return """1. Cross-module contract verification matrix (M01←producers, M02←producers, M06→M07)  
+            return """1. Cross-module contract verification matrix (M01←producers, M02←producers, M06→M07, M03 access boundaries)  
 2. Permission/isolation/audit penetration suite across accepted modules  
 3. Visual QA regression vs Decision A PNGs + design contract viewports  
 4. Production-readiness evidence pack (still not an operational release claim)"""
-        # default module
-        return f"""1. {mod_key}: implement/align each screen ID in §3 to its section deep-link and design reference  
-2. For each mutating dossier in §4: wire the named `handler`/`service`/`serviceMethod` (or create the `NONE — NOT IMPLEMENTED` target at the stated wave)  
-3. Enforce each dossier permission + errorState; write audit/persistence only where dossiers require it  
-4. Land every named automatedTest + Work-Step QA acceptance from §4 dossiers with immutable evidence"""
+        if num in MODULE_BATCHES:
+            return MODULE_BATCHES[num]
+        if kind == "module-pay-prep":
+            return MODULE_BATCHES[7]
+        if kind == "module-connective":
+            return MODULE_BATCHES[10]
+        if kind == "module-finance" and num in MODULE_BATCHES:
+            return MODULE_BATCHES[num]
+        return f"""1. {mod_key} domain services for in-scope entities from ownership note — persist + audit on mutate  
+2. Screen deep-links for each §3 screen ID — section provenance must be proven/inferred (never invent overview)  
+3. Wire §4 dossiers to named handlers/services; enforce permission + errorState  
+4. Work-Step QA + named automated tests with immutable evidence under docs/audits/"""
 
-    def tests_for(kind: str, mod_key: str) -> str:
+    def tests_for(kind: str, mod_key: str, num: int | None = None) -> str:
         if kind == "shared-shell":
-            return """- Theme token resolution tests (light/dark/system)  
-- Shell dimension/collapse tests at 1280/768/390  
-- Focus-ring and keyboard navigation tests for nav/tabs/toolbar  
-- Screenshot diff harness smoke test against tolerances"""
+            return """- Theme token resolution tests (light/dark/system) — assert CSS variable values per appearance mode  
+- Shell dimension/collapse tests at 1280/768/390 — expect sidebar 240/72 and topbar 48  
+- Focus-ring and keyboard navigation tests for nav/tabs/toolbar — a11y permission to operate chrome only  
+- Screenshot diff harness smoke test against tolerances — resulting-state visual assert per viewport"""
         if kind == "ppa":
             return """- PPA eligibility rejects unlocked ordinary periods incorrectly flagged  
 - Adjustment persistence + prior snapshot immutability tests  
 - Permission matrix for PPA approver roles  
-- Re-export package checksum/reconciliation tests"""
+- Re-export package checksum/reconciliation tests  
+- Regression: ordinary M07 Batch 1–6 prep unchanged"""
         if kind == "production-verification":
             return """- Contract suite: every producer→M02 projection present or explicitly waived  
 - M01 source-completeness label tests for published metrics  
 - Isolation fuzz across clinics/tenants  
-- Visual + Work-Step regression gate for all P2–P8 accepted tips"""
-        return f"""- Implement every named `automatedTest` from the action/workflow dossiers in §4 for {mod_key}  
-- Permission denied + clinic isolation negative tests for each mutating dossier  
-- Persistence reload proof tests for each dossier with durable persistence  
-- Regression for frozen accepted modules touched by this batch  
-- Resulting-state asserts exactly as listed in each dossier `acceptance` field"""
+- Visual + Work-Step regression gate for all P2–P8 accepted tips  
+- Audit penetration: mutating paths write actor/clinic/before-after"""
+        if num in MODULE_TESTS:
+            return MODULE_TESTS[num]
+        return f"""- Service transition tests for {mod_key} in-scope entities  
+- Permission denied + clinic/tenant isolation negatives for each mutating dossier  
+- Persistence reload proof for durable dossiers  
+- Section-mapping asserts: no invented overview fallbacks  
+- Resulting-state asserts per dossier acceptance field"""
 
     prompt_index = []
     prompts_dir = OUT / "prompts"
@@ -2599,11 +2954,11 @@ Toast/alert-only success is a fail. Registers remain traceability evidence only;
 
 ## 8. Implementation batches (module-specific)
 
-{batches_for(kind, mod_key, wave)}
+{batches_for(kind, mod_key, wave, num)}
 
 ## 9. Automated tests (named, module-specific)
 
-{tests_for(kind, mod_key)}
+{tests_for(kind, mod_key, num)}
 
 Named tests from dossiers above must be implemented or explicitly marked `NONE — NOT IMPLEMENTED` with wave.
 

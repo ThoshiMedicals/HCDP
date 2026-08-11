@@ -336,10 +336,12 @@ if (screens && actions) {
       fail(`weak sourceLocation on ${s.screenId}: ${s.sourceLocation}`);
   }
   let naSection = 0;
+  let unresolvedSection = 0;
   let registryOnlyProd = 0;
   const svcCounts = {};
   for (const a of actions.items || []) {
     if (String(a.sectionId || "").startsWith("NOT APPLICABLE")) naSection++;
+    if (String(a.sectionId || "").startsWith("UNRESOLVED")) unresolvedSection++;
     if (
       a.kind === "production-control" &&
       (a.sourceLocation || "").includes("module-register.ts")
@@ -360,10 +362,21 @@ if (screens && actions) {
       if (!existsSync(join(ROOT, file))) fail(`missing source file for ${a.id}: ${file}`);
     }
   }
+  // NOT APPLICABLE sectionIds remain a hard fail; UNRESOLVED is an allowed explicit non-claim
   if (naSection > 0)
     fail(`actions with NOT APPLICABLE sectionId: ${naSection}`);
   if (registryOnlyProd > 0)
     fail(`production-controls still sourced only from module-register: ${registryOnlyProd}`);
+  // surface unresolved count in validator output path via accounting cross-check when present
+  if (
+    accounting?.workflowActionTotals?.sectionMappingTotals &&
+    accounting.workflowActionTotals.sectionMappingTotals.unresolved !== unresolvedSection
+  ) {
+    // planned + unresolved actions may differ if confidence field set without UNRESOLVED sectionId
+    // only fail when accounting unresolved is zero but we observed UNRESOLVED sectionIds
+    if (unresolvedSection > 0 && accounting.workflowActionTotals.sectionMappingTotals.unresolved === 0)
+      fail("sectionMappingTotals.unresolved is 0 but UNRESOLVED sectionIds exist");
+  }
   for (const [k, n] of Object.entries(svcCounts)) {
     if (n >= 15)
       fail(`possible first-service blanket mapping ${k} used ${n} times`);
@@ -396,6 +409,139 @@ if (existsSync(promptsDir)) {
 
 
 const tip = execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim();
+
+// ── Correction 4 integrity gates ───────────────────────────────────────────
+const runnerSrc = readFileSync(join(ROOT, "scripts/prototype-parity/run-parity-pack.mjs"), "utf8");
+if (/git diff --exit-code -- /.test(runnerSrc) || /git diff --cached --exit-code -- /.test(runnerSrc))
+  fail("path-scoped determinism checks presented as whole-repository proof in run-parity-pack.mjs");
+if (!/git diff --exit-code/.test(runnerSrc) || !/git diff --cached --exit-code/.test(runnerSrc))
+  fail("run-parity-pack.mjs missing full-repository git diff checks");
+if (!/git ls-files --others --exclude-standard/.test(runnerSrc))
+  fail("run-parity-pack.mjs missing full-repository untracked check");
+if (/PATHS\s*=\s*\[/.test(runnerSrc) && /git diff --exit-code -- \$\{PATHS/.test(runnerSrc))
+  fail("run-parity-pack.mjs still path-scopes determinism via PATHS");
+
+if (actions) {
+  const prod = (actions.items || []).filter((a) => a.kind === "production-control");
+  for (const a of prod) {
+    if (/^Module\s+\d+$/i.test(a.label || a.visibleLabel || ""))
+      fail(`module heading counted as production control: ${a.id}`);
+    if (
+      a.placeholderShell === true ||
+      /placeholder-shell/i.test(a.implementationStatus || "")
+    )
+      fail(`placeholder shell reported as implemented production control: ${a.id}`);
+    const el = String(a.renderedElementType || "");
+    if (!el || el === "jsx-text-control" || /static|heading|paragraph|badge|display-only/i.test(el))
+      fail(`static/non-interactive element typed as production control: ${a.id} element=${el}`);
+    if (
+      !a.handlerOrNavigationTarget &&
+      !/on[A-Z]|href=|navigate|setSection|Button|button|Link|input|select|handler/i.test(
+        `${a.componentHandler || ""} ${a.renderedElementType || ""}`
+      )
+    )
+      fail(`production control lacks interaction evidence: ${a.id}`);
+    for (const f of [
+      "sourceLocation",
+      "renderedElementType",
+      "visibleLabel",
+      "handlerOrNavigationTarget",
+      "resultingBehaviour",
+      "implementationStatus",
+    ]) {
+      if (!(a[f] || "").toString().trim())
+        fail(`production control ${a.id} missing ${f}`);
+    }
+  }
+  const wat = accounting?.workflowActionTotals || {};
+  if ((wat.productionControlsBeforeFalsePositiveRemoval || 0) !== 67)
+    fail("accounting must record prior false-positive baseline of 67 production controls");
+  if ((wat.productionControlsAfterFalsePositiveRemoval ?? wat.productionControls) !== prod.length)
+    fail("productionControlsAfterFalsePositiveRemoval mismatch");
+  if ((wat.productionControls || 0) >= 67)
+    fail("false-positive production controls not removed (count still >= 67)");
+  for (const a of actions.items || []) {
+    const reason = String(a.sectionMappingReason || "");
+    const conf = String(a.sectionMappingConfidence || "");
+    if (/section inferred:\s*overview/i.test(reason))
+      fail(`fallback overview section mapping still present: ${a.id}`);
+    if (
+      conf === "proven" &&
+      (/INFERRED/i.test(reason) || /UNRESOLVED/i.test(reason) || /overview\/default/i.test(reason))
+    )
+      fail(`unresolved/inferred mapping described as exact/proven: ${a.id}`);
+    if (
+      a.sectionId === "overview" &&
+      /no token overlap|fallback|default \(no/i.test(reason)
+    )
+      fail(`overview used as unproven fallback for ${a.id}`);
+  }
+  const smt = wat.sectionMappingTotals || {};
+  for (const k of ["proven", "inferred", "unresolved"]) {
+    if (typeof smt[k] !== "number") fail(`missing sectionMappingTotals.${k}`);
+  }
+  if (typeof wat.m08toM24GenuineProductionControls !== "number")
+    fail("missing m08toM24GenuineProductionControls");
+  if (typeof wat.m08toM24PlaceholderShellCount !== "number")
+    fail("missing m08toM24PlaceholderShellCount");
+}
+
+// Prompt specificity: reject identical/token-substituted batches and generic test language
+if (existsSync(promptsDir)) {
+  const batchBodies = [];
+  const genericBatch =
+    /implement\/align each screen ID in §3|implement each screen from §3|wire each dossier|wire the named `handler`|Enforce each dossier permission|Land every named automatedTest|implement every named `automatedTest`|Regression for frozen accepted modules touched/i;
+  for (const f of readdirSync(promptsDir).filter((x) => x.endsWith(".md") && x !== "README.md")) {
+    const txt = readFileSync(join(promptsDir, f), "utf8");
+    const batchSec = txt.match(/## 8\. Implementation batches[\s\S]*?(?=## 9\.|$)/i);
+    const testSec = txt.match(/## 9\. Automated tests[\s\S]*?(?=## 10\.|$)/i);
+    if (!batchSec) fail(`prompt ${f} missing implementation batches section`);
+    else {
+      if (genericBatch.test(batchSec[0]))
+        fail(`prompt ${f} still has generic batch/test language`);
+      batchBodies.push({ f, body: batchSec[0].replace(/M\d{2}/g, "MXX").replace(/P\d/g, "PX") });
+    }
+    if (testSec) {
+      if (
+        /Implement every named `automatedTest` from the action\/workflow dossiers in §4 for MXX/i.test(
+          testSec[0].replace(/M\d{2}/g, "MXX")
+        ) ||
+        (/Implement every named `automatedTest`/i.test(testSec[0]) &&
+          /Regression for frozen accepted modules/i.test(testSec[0]))
+      )
+        fail(`prompt ${f} has generic test instructions without named module behaviour`);
+      if (
+        !/(assert|expect|resulting-state|status|transition|permission|isolation|audit)/i.test(
+          testSec[0]
+        )
+      )
+        fail(`prompt ${f} tests lack named behaviour/expected state language`);
+    }
+    if (f === "p8-m21.md") {
+      for (const needle of [
+        "tenant portfolio",
+        "tenant provisioning",
+        "Commercial suspension",
+        "Platform-health",
+        "service-impact",
+        "Vendor permissions",
+        "Resulting-state",
+      ]) {
+        if (!new RegExp(needle, "i").test(txt))
+          fail(`p8-m21.md missing required batch topic: ${needle}`);
+      }
+    }
+  }
+  for (let i = 0; i < batchBodies.length; i++) {
+    for (let j = i + 1; j < batchBodies.length; j++) {
+      if (batchBodies[i].body === batchBodies[j].body)
+        fail(
+          `identical/token-substituted implementation batches: ${batchBodies[i].f} == ${batchBodies[j].f}`
+        );
+    }
+  }
+}
+
 const result = {
   ok: failures.length === 0,
   tip,

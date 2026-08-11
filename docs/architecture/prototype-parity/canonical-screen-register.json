@@ -27,21 +27,10 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "visibleActionIds": [
-        "brdbtn_166094bd595e",
         "brdbtn_43cc8dd78f32",
-        "brdbtn_54c0cc03593a",
-        "brdbtn_8681baf4c837",
-        "brdbtn_bbad6fd56107",
-        "brdbtn_dd54d46552b2",
-        "modal_8813d62c4445",
-        "nav-ctrl-executive-command-centre-command-centre"
+        "brdbtn_dd54d46552b2"
       ],
-      "workflowIds": [
-        "bpflow_3315a4ff97bc",
-        "bpflow_b629e6d48f8c",
-        "brdflow_72d027049451",
-        "brdflow_ffd9f77521ee"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [
         "imgctrl-m01-global-left-nav",
         "imgctrl-m01-global-top-ribbon",
@@ -425,62 +414,13 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "visibleActionIds": [
-        "brdbtn_3cbac86dd9b0",
-        "brdbtn_494240f23ae4",
-        "brdbtn_4e56e3e8d514",
-        "brdbtn_5dcb7b2301a2",
-        "brdbtn_7055ce610a72",
-        "brdbtn_70dc1da8c32e",
-        "brdbtn_781a2f5a5054",
-        "brdbtn_b0378aa41777",
-        "brdbtn_bdf6bb6dc142",
-        "brdbtn_c02263f3c11c",
-        "brdbtn_cacc472a5bbc",
-        "modal_0029984f36ba",
-        "modal_050c53ea9997",
-        "modal_0be2f7c37ad3",
-        "modal_0d21ddc49818",
-        "modal_0d75b173b9d2",
         "modal_15663c38ce1a",
-        "modal_1c8546059f38",
-        "modal_1cbc665a9129",
-        "modal_23157e547e26",
-        "modal_2a26fa8d101b",
-        "modal_31c1c180516a",
-        "modal_34ee92f4d87b",
-        "modal_37c50916ba43",
-        "modal_44ec6b5be33b",
-        "modal_65f052a98601",
-        "modal_6ed6822feb9c",
-        "modal_879d9a016025",
-        "modal_88050573c6e6",
-        "modal_88a3ad96bdcf",
-        "modal_8e9929409109",
-        "modal_91e46d571e4a",
         "modal_95c4bf33cbc3",
-        "modal_98b3c5b0a60f",
-        "modal_9ae9a53e2e65",
-        "modal_9e9b138e58b0",
-        "modal_ac050c48aafc",
-        "modal_bf1a9ffb1c89",
-        "modal_c058940b3deb",
-        "modal_c97705acc5ad",
-        "modal_c993b8df2e3f",
-        "modal_cb355011063e",
-        "modal_cf8a535f0daf",
-        "modal_e0b840186f63",
-        "modal_eca05e6a2c8a",
-        "modal_f717d77e32d6",
         "modal_fd72bda85110",
-        "nav-ctrl-action-inbox-archive",
-        "nav-ctrl-action-inbox-my-actions",
-        "nav-ctrl-action-inbox-notifications"
+        "nav-ctrl-action-inbox-my-actions"
       ],
       "workflowIds": [
-        "bpflow_368d4e899a05",
-        "bpflow_73c37a034bde",
-        "brdflow_199f547ac514",
-        "brdflow_7f2ab1fb5753"
+        "bpflow_368d4e899a05"
       ],
       "imageControlRequirementIds": [
         "imgctrl-m02-global-left-nav",
@@ -928,39 +868,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "visibleActionIds": [
-        "brdbtn_5bfb65746f8e",
-        "nav-ctrl-organisation-access-locations",
-        "nav-ctrl-organisation-access-overview",
-        "nav-ctrl-organisation-access-reports",
-        "nav-ctrl-organisation-access-security",
-        "nav-ctrl-organisation-access-structure",
-        "prod-ctrl-m03-acting-as-175",
-        "prod-ctrl-m03-advance-demo-clock-one-day-190",
-        "prod-ctrl-m03-advance-demo-clock-three-days-193",
-        "prod-ctrl-m03-cancel-273",
-        "prod-ctrl-m03-demo-controls-189",
-        "prod-ctrl-m03-formally-resolve-274",
-        "prod-ctrl-m03-module-3-153",
-        "prod-ctrl-m03-notifications-226",
-        "prod-ctrl-m03-onchange-288",
-        "prod-ctrl-m03-onchange-293",
-        "prod-ctrl-m03-onclick-162",
-        "prod-ctrl-m03-onclick-181",
-        "prod-ctrl-m03-onclick-190",
-        "prod-ctrl-m03-onclick-193",
-        "prod-ctrl-m03-onclick-196",
-        "prod-ctrl-m03-onclick-199",
-        "prod-ctrl-m03-onclick-218",
-        "prod-ctrl-m03-onclick-257",
-        "prod-ctrl-m03-onclick-273",
-        "prod-ctrl-m03-onclick-274",
-        "prod-ctrl-m03-onclick-301",
-        "prod-ctrl-m03-onclose-270",
-        "prod-ctrl-m03-open-security-218",
-        "prod-ctrl-m03-reset-demo-data-199",
-        "prod-ctrl-m03-resolve-257",
-        "prod-ctrl-m03-resolve-critical-alert-269",
-        "prod-ctrl-m03-run-expiry-check-196"
+        "nav-ctrl-organisation-access-structure"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -1280,9 +1188,7 @@
         "modal_952eb9df633f",
         "modal_edb7eb76818b",
         "nav-ctrl-organisation-access-access-requests",
-        "nav-ctrl-organisation-access-access-reviews",
-        "prod-ctrl-m03-organisation-access-154",
-        "prod-ctrl-m03-organisation-access-207"
+        "nav-ctrl-organisation-access-access-reviews"
       ],
       "workflowIds": [
         "bpflow_61dc524f76c0",
@@ -1338,8 +1244,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "visibleActionIds": [
-        "nav-ctrl-organisation-access-audit",
-        "prod-ctrl-m03-healthcare-doctors-pulse-structure-users-permiss-208"
+        "nav-ctrl-organisation-access-audit"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -1391,7 +1296,8 @@
       "dataSource": "NONE \u2014 NOT IMPLEMENTED (UI/workspace adapter only; no durable domain service/repository)",
       "visibleActionIds": [
         "brdbtn_df3907cd2890",
-        "brdbtn_ebf9030ae248"
+        "brdbtn_ebf9030ae248",
+        "prod-ctrl-m03-act-as-a-name-split-0-181"
       ],
       "workflowIds": [
         "brdflow_31d30578cb3c",
@@ -1505,26 +1411,12 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "service+repository (module-local)",
       "visibleActionIds": [
-        "brdbtn_149817472383",
         "brdbtn_1c2ca625712e",
-        "brdbtn_5b0276461a53",
-        "brdbtn_71b91ba0fda8",
-        "brdbtn_af2d76cabb28",
-        "brdbtn_c8e02f3d780a",
-        "nav-ctrl-staff-doctors-engagements",
-        "nav-ctrl-staff-doctors-overview",
-        "nav-ctrl-staff-doctors-reports",
-        "nav-ctrl-staff-doctors-settings",
-        "nav-ctrl-staff-doctors-staff-profiles",
-        "prod-ctrl-m04-onchange-113",
-        "prod-ctrl-m04-onnavigate-88"
+        "nav-ctrl-staff-doctors-staff-profiles"
       ],
       "workflowIds": [
         "brdflow_00869e70c7e9",
-        "brdflow_e2ae7e11e509",
-        "legwf_143b028b5c56",
-        "legwf_aa4f022de636",
-        "legwf_e692fac31984"
+        "legwf_143b028b5c56"
       ],
       "imageControlRequirementIds": [
         "imgctrl-m04-global-left-nav",
@@ -2183,23 +2075,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "service+repository (module-local)",
       "visibleActionIds": [
-        "brdbtn_144ef1c4f0fb",
-        "brdbtn_3dd83810798b",
-        "brdbtn_47fec5b3f48e",
-        "brdbtn_520253231cda",
-        "brdbtn_5db8303fedcf",
-        "brdbtn_642aa497cfa1",
-        "brdbtn_c5669a5fcfa7",
-        "brdbtn_cf711de1f78d",
-        "brdbtn_fd89b6fe177a",
-        "nav-ctrl-roster-conflicts-warnings",
-        "nav-ctrl-roster-cost-forecast",
-        "nav-ctrl-roster-settings",
-        "prod-ctrl-m05-onchange-222",
-        "prod-ctrl-m05-onnavigate-167",
-        "prod-ctrl-m05-onrefresh-109",
-        "prod-ctrl-m05-onrefresh-162",
-        "prod-ctrl-m05-you-are-offline-125"
+        "brdbtn_3dd83810798b"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [
@@ -2592,8 +2468,7 @@
         "modal_70043ad78ba7",
         "modal_d15d23bbd83b",
         "nav-ctrl-roster-reports",
-        "nav-ctrl-roster-roster-board",
-        "prod-ctrl-m05-no-roster-data-yet-79"
+        "nav-ctrl-roster-roster-board"
       ],
       "workflowIds": [
         "bpflow_05821a9feea9",
@@ -2662,31 +2537,13 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "service+repository (module-local)",
       "visibleActionIds": [
-        "brdbtn_4e1780084669",
-        "brdbtn_6de89f232213",
-        "brdbtn_7dc858f5e4a0",
-        "brdbtn_b3647573b0e2",
         "brdbtn_bb4c5306c375",
-        "brdbtn_c33a3c751650",
-        "nav-ctrl-time-attendance-approvals",
-        "nav-ctrl-time-attendance-breaks",
-        "nav-ctrl-time-attendance-corrections",
         "nav-ctrl-time-attendance-history",
-        "nav-ctrl-time-attendance-live",
-        "nav-ctrl-time-attendance-settings",
-        "prod-ctrl-m06-no-attendance-data-yet-77",
-        "prod-ctrl-m06-onchange-184",
-        "prod-ctrl-m06-onnavigate-130",
-        "prod-ctrl-m06-onrefresh-125",
-        "prod-ctrl-m06-onrefresh-92"
+        "nav-ctrl-time-attendance-live"
       ],
       "workflowIds": [
         "bpflow_00f1424cb9bd",
-        "bpflow_e243b97939e6",
-        "bpflow_f13931a188b6",
-        "brdflow_b3221372a14b",
-        "brdflow_e59ef8239904",
-        "legwf_1fde4d0523ad"
+        "brdflow_e59ef8239904"
       ],
       "imageControlRequirementIds": [
         "imgctrl-m06-global-left-nav",
@@ -3071,25 +2928,12 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "service+repository (module-local)",
       "visibleActionIds": [
-        "brdbtn_0e6b7f847907",
-        "brdbtn_1cb69ac42d36",
         "brdbtn_6853f8c07fa9",
-        "brdbtn_842d5af0c340",
-        "brdbtn_a96f5668fccd",
-        "brdbtn_c16c2b5effaa",
-        "brdbtn_d04e1360fed7",
-        "brdbtn_dd034d53b397",
-        "nav-ctrl-staff-pay-adjustments",
-        "nav-ctrl-staff-pay-approval",
-        "nav-ctrl-staff-pay-overview",
-        "nav-ctrl-staff-pay-people",
-        "nav-ctrl-staff-pay-settings",
-        "prod-ctrl-m07-onchange-136"
+        "nav-ctrl-staff-pay-overview"
       ],
       "workflowIds": [
         "bpflow_cf74bfb519d3",
-        "brdflow_026b12101648",
-        "legwf_8291ee1522e4"
+        "brdflow_026b12101648"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -3452,25 +3296,15 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_1b6ee343f81f",
         "brdbtn_6bbec6b01816",
         "brdbtn_8ccd43b372a7",
-        "brdbtn_8e80d6b745c1",
-        "brdbtn_a79ff76ecd22",
-        "brdbtn_aec7796f7808",
         "brdbtn_b49f59ee75ec",
-        "brdbtn_c62c9c10216f",
-        "brdbtn_d333368e2d25",
-        "brdbtn_f2456296b4e7",
-        "nav-ctrl-doctor-pay-pay-runs",
-        "nav-ctrl-doctor-pay-splits",
-        "prod-ctrl-m08-module-8-17"
+        "nav-ctrl-doctor-pay-pay-runs"
       ],
       "workflowIds": [
         "bpflow_36f8065c2e2e",
         "bpflow_5a61131e888e",
-        "brdflow_2dc24087f1e9",
-        "legwf_a16c7ec21efb"
+        "brdflow_2dc24087f1e9"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -4058,25 +3892,13 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_3c8753d66763",
-        "brdbtn_47760713b35e",
-        "brdbtn_6e3cdb689a4f",
-        "brdbtn_740e859c5da6",
         "brdbtn_89feba8c4cbc",
-        "brdbtn_8c1310e69c06",
         "brdbtn_c2b569243588",
-        "brdbtn_f1605c04df20",
-        "brdbtn_f4e52ff97f9e",
-        "nav-ctrl-bbpip-forecast",
-        "nav-ctrl-bbpip-splits",
-        "prod-ctrl-m09-module-9-17"
+        "nav-ctrl-bbpip-forecast"
       ],
       "workflowIds": [
-        "bpflow_b64a62710b14",
         "bpflow_ff170b0d7529",
-        "brdflow_1a447a929194",
-        "brdflow_39bd22e6f58c",
-        "legwf_3977fe687cc8"
+        "brdflow_39bd22e6f58c"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -4415,20 +4237,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_59b8c0fe41f9",
-        "brdbtn_6c275d8db927",
-        "brdbtn_8569f79fff28",
-        "brdbtn_b6e9cbc2e67e",
-        "brdbtn_b84f3716d821",
-        "brdbtn_c9a068b88fc3",
-        "brdbtn_ca1ea523d45c",
-        "brdbtn_d72e039f2eca",
-        "nav-ctrl-tasks-actions-handovers",
-        "prod-ctrl-m10-module-10-17"
+        "nav-screen-screen_f0f5dab65266"
       ],
-      "workflowIds": [
-        "legwf_85400ae90a09"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [
         "imgctrl-m10-global-left-nav",
         "imgctrl-m10-global-top-ribbon",
@@ -5064,31 +4875,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "service+repository (module-local)",
       "visibleActionIds": [
-        "brdbtn_012ba3fabd42",
-        "brdbtn_1f6365e34379",
-        "brdbtn_5f55d1c7d5ac",
-        "brdbtn_7e24658c8b94",
-        "brdbtn_913bcdeb5153",
-        "brdbtn_bd9cf03614ec",
-        "brdbtn_e04b209c9559",
-        "brdbtn_f80b786a1d02",
-        "brdbtn_fe11a21c7d4b",
-        "nav-ctrl-training-catalogue",
-        "nav-ctrl-training-records",
-        "prod-ctrl-m11-module-11-169",
-        "prod-ctrl-m11-no-training-records-yet-81",
-        "prod-ctrl-m11-onclick-178",
-        "prod-ctrl-m11-onnavigate-153",
-        "prod-ctrl-m11-training-management-170",
-        "prod-ctrl-m11-training-management-sections-173",
-        "prod-ctrl-m11-you-are-offline-113"
+        "nav-ctrl-training-catalogue"
       ],
-      "workflowIds": [
-        "bpflow_25460a7f90e9",
-        "brdflow_6d66818359d3",
-        "brdflow_7d94797ba1a1",
-        "legwf_6c20e804b9bb"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [
         "imgctrl-m11-global-left-nav",
         "imgctrl-m11-global-top-ribbon",
@@ -5661,23 +5450,11 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_1c9982e93f17",
-        "brdbtn_299ebdb57e6d",
-        "brdbtn_2e881965db03",
-        "brdbtn_48f4a655bf7f",
-        "brdbtn_7c9dd41db7fe",
-        "brdbtn_de762942fa95",
-        "brdbtn_f3cabf7443a7",
-        "modal_4a4b1d2bf49f",
-        "nav-ctrl-compliance-quality-accreditation",
-        "nav-ctrl-compliance-quality-compliance-centre",
-        "nav-ctrl-compliance-quality-expiry-centre",
-        "prod-ctrl-m12-module-12-17"
+        "nav-ctrl-compliance-quality-accreditation"
       ],
       "workflowIds": [
         "bpflow_d421d6360640",
-        "legwf_7c35ee5ec7b9",
-        "legwf_c34638b2c6f7"
+        "legwf_7c35ee5ec7b9"
       ],
       "imageControlRequirementIds": [
         "imgctrl-m12-global-left-nav",
@@ -6179,27 +5956,11 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_059bd3f18b9a",
-        "brdbtn_2f8bd00b6414",
-        "brdbtn_2fcbc7038b84",
-        "brdbtn_38509d7f4368",
-        "brdbtn_630006dd8d46",
-        "brdbtn_733402ce41d9",
-        "brdbtn_b5a8516cd072",
-        "brdbtn_c21ca951b678",
-        "brdbtn_c9cc7522ab4e",
-        "brdbtn_e38f26b729c8",
-        "brdbtn_ed788891dfda",
-        "nav-ctrl-documents-policies-intake-queue",
-        "nav-ctrl-documents-policies-reviews",
-        "nav-ctrl-documents-policies-version-history",
-        "prod-ctrl-m13-module-13-17"
+        "nav-ctrl-documents-policies-intake-queue"
       ],
       "workflowIds": [
         "bpflow_9493caff767b",
-        "brdflow_9eeb1e3835b4",
-        "brdflow_de9301d16039",
-        "legwf_aff5756f7f5f"
+        "brdflow_de9301d16039"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -6644,25 +6405,11 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_13e698d45131",
-        "brdbtn_1a5ce0d43531",
-        "brdbtn_1f3b30c692d3",
-        "brdbtn_3ba87af131c5",
-        "brdbtn_42d1d823c0f9",
-        "brdbtn_4ca50343965b",
-        "brdbtn_52a5869cc205",
-        "brdbtn_5bd748dbe3d8",
-        "brdbtn_723307bc3f3d",
-        "brdbtn_d97d169cb1af",
-        "brdbtn_dff991f77a7a",
-        "prod-ctrl-m14-module-14-17"
+        "nav-screen-screen_9efcfd19eab2"
       ],
       "workflowIds": [
         "bpflow_91f55322b261",
-        "brdflow_044c8edf7c0c",
-        "brdflow_92588b71bc79",
-        "brdflow_e50eb3992745",
-        "brdflow_f678c6fbc486"
+        "brdflow_044c8edf7c0c"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -7155,17 +6902,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_4c21e6820d11",
-        "brdbtn_792b3339da97",
-        "brdbtn_a427f094198a",
-        "brdbtn_a567f18a9172",
-        "brdbtn_fa8de10bf581",
-        "brdbtn_fab211e784d8",
-        "nav-ctrl-inventory-assets-inventory",
-        "nav-ctrl-inventory-assets-invoices",
-        "nav-ctrl-inventory-assets-purchases",
-        "nav-ctrl-inventory-assets-rooms",
-        "prod-ctrl-m15-module-15-17"
+        "nav-ctrl-inventory-assets-inventory"
       ],
       "workflowIds": [
         "legwf_be15b6ee335c"
@@ -8060,19 +7797,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_10e34508924c",
-        "brdbtn_173bc333ce09",
-        "brdbtn_3a785db15e3a",
-        "brdbtn_66b714630161",
-        "brdbtn_6ee6a078ed54",
-        "brdbtn_7a48ad02d9ec",
-        "brdbtn_873b240e0778",
-        "brdbtn_e112ef85ab32",
-        "brdbtn_ed06a7fac07d",
-        "brdbtn_fd5370a75ec4",
-        "nav-ctrl-incidents-risk-corrective-actions",
-        "nav-ctrl-incidents-risk-emergency-control",
-        "prod-ctrl-m16-module-16-17"
+        "brdbtn_6ee6a078ed54"
       ],
       "workflowIds": [
         "bpflow_1985658af2ae",
@@ -8670,32 +8395,13 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_28efcb96b760",
-        "brdbtn_2be795c4dd3f",
-        "brdbtn_348ed0d3863c",
-        "brdbtn_34bb966981f3",
-        "brdbtn_522335197df4",
         "brdbtn_64f7108038c7",
-        "brdbtn_6f6fc09e545a",
-        "brdbtn_7910c0673d69",
-        "brdbtn_9cca8874a410",
         "brdbtn_b355bff194ac",
-        "brdbtn_b36f57d6fa29",
-        "brdbtn_c9d388a7870e",
-        "brdbtn_f9a19884d73c",
-        "modal_d54e0e28a9ba",
-        "modal_dbce1f7da4be",
-        "nav-ctrl-communications-email",
-        "nav-ctrl-communications-memos-news",
-        "nav-ctrl-communications-noticeboards",
-        "prod-ctrl-m17-module-17-17"
+        "nav-ctrl-communications-email"
       ],
       "workflowIds": [
         "bpflow_e118b9ab9894",
         "brdflow_02df55c9824b",
-        "brdflow_4432571b97c9",
-        "legwf_124b1a4a5b08",
-        "legwf_e1b03dde99f1",
         "legwf_ff2fe9c3049b"
       ],
       "imageControlRequirementIds": [],
@@ -9187,24 +8893,13 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_069d91ec2290",
-        "brdbtn_3cafaf15bbe8",
-        "brdbtn_656637b4474d",
-        "brdbtn_6a226af8f881",
-        "brdbtn_b83ae925b491",
-        "brdbtn_bd6f18b05042",
-        "brdbtn_db12e65254b7",
-        "brdbtn_dda700d66990",
-        "brdbtn_deeaa047257f",
         "brdbtn_fa409ea8770c",
         "nav-ctrl-digital-ops-systems-monitoring",
-        "nav-ctrl-digital-ops-website-monitoring",
-        "prod-ctrl-m18-module-18-17"
+        "nav-ctrl-digital-ops-website-monitoring"
       ],
       "workflowIds": [
         "bpflow_85548f93bf5e",
-        "brdflow_d963badfbf87",
-        "legwf_87c607352d5c"
+        "brdflow_d963badfbf87"
       ],
       "imageControlRequirementIds": [],
       "states": [
@@ -9604,16 +9299,7 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "brdbtn_0e5c8b3a7a85",
-        "brdbtn_28d0c98c4a01",
-        "brdbtn_31756852aba4",
-        "brdbtn_33bbb0f82b91",
-        "brdbtn_3d835bab3032",
-        "brdbtn_54e567d967a5",
-        "brdbtn_57050e72e01f",
-        "brdbtn_b23347d8651f",
-        "nav-ctrl-analytics-overview",
-        "prod-ctrl-m19-module-19-17"
+        "nav-screen-screen_0cfc9471c6b3"
       ],
       "workflowIds": [
         "brdflow_c0ee29056b17"
@@ -10063,14 +9749,10 @@
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
         "brdbtn_0099828eda62",
-        "brdbtn_2d979dffa10a",
         "brdbtn_5364ad9916cf",
         "brdbtn_8af38ec925c9",
         "brdbtn_9fa06c17a2db",
-        "brdbtn_da2797b0ea90",
-        "nav-ctrl-saas-feature-entitlements",
-        "nav-ctrl-saas-tenant-administration",
-        "nav-ctrl-saas-workspace-configuration"
+        "nav-ctrl-saas-tenant-administration"
       ],
       "workflowIds": [
         "brdflow_4a741668fa8f",
@@ -10123,8 +9805,7 @@
       "visibleActionIds": [
         "brdbtn_d4b931fb80d7",
         "brdbtn_e2fa644ddc17",
-        "nav-ctrl-saas-commercial-plans",
-        "prod-ctrl-m20-module-20-17"
+        "nav-ctrl-saas-commercial-plans"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -10617,18 +10298,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-ctrl-vendor-console-platform-health",
-        "nav-ctrl-vendor-console-provisioning",
-        "nav-ctrl-vendor-console-tenants",
-        "planned-overview-vendor-console",
-        "planned-workspace-vendor-console",
-        "prod-ctrl-m21-module-21-17"
+        "nav-screen-screen_ccc228ef4693"
       ],
-      "workflowIds": [
-        "bpflow_2b899d5d0b3a",
-        "bpflow_4dd5968965bd",
-        "bpflow_fd87ebac39c8"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [],
       "states": [
         "default",
@@ -10673,19 +10345,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "modal_196f3f6f24f0",
-        "nav-ctrl-recruitment-candidates",
-        "nav-ctrl-recruitment-onboarding",
-        "nav-ctrl-recruitment-vacancies",
-        "planned-overview-recruitment",
-        "planned-workspace-recruitment",
-        "prod-ctrl-m22-module-22-17"
+        "nav-screen-screen_df83e1b95471"
       ],
-      "workflowIds": [
-        "bpflow_1fbd01631035",
-        "bpflow_bec0e5084e0f",
-        "bpflow_c400845cd160"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [],
       "states": [
         "default",
@@ -10730,19 +10392,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-ctrl-website-studio-publishing",
-        "nav-ctrl-website-studio-seo",
-        "nav-ctrl-website-studio-sites",
-        "planned-overview-website-studio",
-        "planned-workspace-website-studio",
-        "prod-ctrl-m23-module-23-17"
+        "nav-screen-screen_db496c13b69b"
       ],
-      "workflowIds": [
-        "bpflow_20ca10b958a2",
-        "bpflow_2e870999a453",
-        "bpflow_d727df6d01ed",
-        "legwf_c8d6292861be"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [],
       "states": [
         "default",
@@ -10787,18 +10439,9 @@
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-ctrl-financial-forecast-forecast",
-        "nav-ctrl-financial-forecast-ledger",
-        "nav-ctrl-financial-forecast-variance",
-        "planned-overview-financial-forecast",
-        "planned-workspace-financial-forecast",
-        "prod-ctrl-m24-module-24-17"
+        "nav-screen-screen_e06e97012fa4"
       ],
-      "workflowIds": [
-        "bpflow_42341e97db62",
-        "bpflow_65a104f64b5c",
-        "bpflow_b8ce79afcf31"
-      ],
+      "workflowIds": [],
       "imageControlRequirementIds": [],
       "states": [
         "default",
