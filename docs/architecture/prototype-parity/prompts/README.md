@@ -23,14 +23,14 @@ Each prompt embeds complete exact screen/requirement/action/workflow IDs (no ext
 | `prompts/p6-m07-ppa.md` | P6-PPA | M07 | 7 | 89 | 35 | 8 | explicit PPA batch authorisation + prior tip |
 | `prompts/p6-m08.md` | P6 | M08 | 12 | 99 | 36 | 10 | P5 series owner-accepted tip |
 | `prompts/p6-m09.md` | P6 | M09 | 7 | 70 | 24 | 7 | P6-M08 owner-accepted tip |
-| `prompts/p6-m24.md` | P6 | M24 | 1 | 24 | 9 | 3 | P6-M09 owner-accepted tip |
+| `prompts/p6-m24.md` | P6 | M24 | 3 | 24 | 8 | 3 | P6-M09 owner-accepted tip |
 | `prompts/p7-m17.md` | P7 | M17 | 10 | 98 | 41 | 11 | P6 series owner-accepted tip |
 | `prompts/p7-m18.md` | P7 | M18 | 8 | 82 | 37 | 10 | P7-M17 owner-accepted tip |
 | `prompts/p7-m19.md` | P7 | M19 | 9 | 63 | 31 | 7 | P7-M18 owner-accepted tip |
 | `prompts/p8-m20.md` | P8 | M20 | 11 | 70 | 31 | 9 | P7 series owner-accepted tip |
-| `prompts/p8-m21.md` | P8 | M21 | 1 | 13 | 9 | 3 | P8-M20 owner-accepted tip |
-| `prompts/p8-m22.md` | P8 | M22 | 1 | 14 | 10 | 3 | P8-M21 owner-accepted tip |
-| `prompts/p8-m23.md` | P8 | M23 | 1 | 19 | 10 | 4 | P8-M22 owner-accepted tip |
-| `prompts/p9.md` | P9 | MULTI | 186 | 15 | 135 | 179 | P8 series owner-accepted tip |
+| `prompts/p8-m21.md` | P8 | M21 | 3 | 13 | 8 | 3 | P8-M20 owner-accepted tip |
+| `prompts/p8-m22.md` | P8 | M22 | 3 | 14 | 9 | 3 | P8-M21 owner-accepted tip |
+| `prompts/p8-m23.md` | P8 | M23 | 3 | 19 | 9 | 4 | P8-M22 owner-accepted tip |
+| `prompts/p9.md` | P9 | MULTI | 194 | 15 | 135 | 179 | P8 series owner-accepted tip |
 
 Generated: `deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6`

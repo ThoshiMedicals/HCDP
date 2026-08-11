@@ -14,7 +14,7 @@ Machine-readable: `master-brd-prototype-production-traceability.json` / `.csv`
 | --- | --- |
 | Total rows | 1982 |
 | Unclassified | **0** |
-| Canonical screens | 186 (143 baseline → variance 43) |
+| Canonical screens | 194 (143 baseline → variance 51) |
 | Design references installed | **True** (Decision A) |
 | Open owner decisions | 0 |
 | Disposition ADOPTED-AS-IS | 1895 |

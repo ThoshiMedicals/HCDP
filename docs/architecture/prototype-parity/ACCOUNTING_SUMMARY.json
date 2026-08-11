@@ -64,11 +64,11 @@
     "PLANNED": 227,
     "EXCLUDED-WITH-REASON": 18
   },
-  "canonicalScreenCount": 186,
+  "canonicalScreenCount": 194,
   "canonicalScreenVs143": {
     "baselineEstimate": 143,
-    "derivedCount": 186,
-    "variance": 43,
+    "derivedCount": 194,
+    "variance": 51,
     "explanation": "143 was a minimum planning baseline, not a cap. Derived from BRD tabs/blueprint defaults with stable section IDs."
   },
   "extractionTotals": {
@@ -107,7 +107,7 @@
     "blueprintWorkflows": 72,
     "legacyWorkflowGroups": 28,
     "modalsDrawers": 63,
-    "navigationControls": 182,
+    "navigationControls": 178,
     "productionControls": 28,
     "plannedModuleControls": 8,
     "productionControlsBeforeFalsePositiveRemoval": 67,
@@ -121,9 +121,9 @@
       "src/modules/m11-training/TrainingWorkspace.tsx": 2
     },
     "sectionMappingTotals": {
-      "proven": 414,
-      "inferred": 79,
-      "unresolved": 318
+      "proven": 468,
+      "inferred": 41,
+      "unresolved": 298
     },
     "m08toM24GenuineProductionControls": 2,
     "m08toM24PlaceholderShellCount": 16,
@@ -145,16 +145,16 @@
       "M23",
       "M24"
     ],
-    "screenSpecificActionSets": 186,
-    "actionsWithExactSectionId": 545,
-    "actionsWithExactSourceLocation": 811,
+    "screenSpecificActionSets": 194,
+    "actionsWithExactSectionId": 549,
+    "actionsWithExactSourceLocation": 807,
     "atomicServiceMapped": 103,
     "atomicNoneNotImplemented": 510,
-    "totalItems": 811,
+    "totalItems": 807,
     "fieldCompleteness": {
-      "withSourceLocation": 811,
-      "withScreenRoute": 811,
-      "withoutGenericPhrases": 811
+      "withSourceLocation": 807,
+      "withScreenRoute": 807,
+      "withoutGenericPhrases": 807
     }
   },
   "conflictAdjudicationTotals": {

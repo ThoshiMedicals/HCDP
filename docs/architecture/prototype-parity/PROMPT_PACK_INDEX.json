@@ -225,9 +225,9 @@
       "title": "M24 Forecast & Finance Review",
       "predecessorGate": "P6-M09 owner-accepted tip",
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
-      "screenIdCount": 1,
+      "screenIdCount": 3,
       "requirementIdCount": 24,
-      "actionIdCount": 9,
+      "actionIdCount": 8,
       "workflowIdCount": 3
     },
     {
@@ -285,9 +285,9 @@
       "title": "M21 Vendor Portfolio",
       "predecessorGate": "P8-M20 owner-accepted tip",
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
-      "screenIdCount": 1,
+      "screenIdCount": 3,
       "requirementIdCount": 13,
-      "actionIdCount": 9,
+      "actionIdCount": 8,
       "workflowIdCount": 3
     },
     {
@@ -297,9 +297,9 @@
       "title": "M22 Recruitment",
       "predecessorGate": "P8-M21 owner-accepted tip",
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
-      "screenIdCount": 1,
+      "screenIdCount": 3,
       "requirementIdCount": 14,
-      "actionIdCount": 10,
+      "actionIdCount": 9,
       "workflowIdCount": 3
     },
     {
@@ -309,9 +309,9 @@
       "title": "M23 Website & Public Routing",
       "predecessorGate": "P8-M22 owner-accepted tip",
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
-      "screenIdCount": 1,
+      "screenIdCount": 3,
       "requirementIdCount": 19,
-      "actionIdCount": 10,
+      "actionIdCount": 9,
       "workflowIdCount": 4
     },
     {
@@ -321,7 +321,7 @@
       "title": "Production verification",
       "predecessorGate": "P8 series owner-accepted tip",
       "startRefRule": "owner-accepted preceding programme tip (not automatic b1152d3)",
-      "screenIdCount": 186,
+      "screenIdCount": 194,
       "requirementIdCount": 15,
       "actionIdCount": 135,
       "workflowIdCount": 179

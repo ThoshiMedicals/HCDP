@@ -177,11 +177,18 @@ def slug(text: str) -> str:
     return (s[:48] or "section")
 
 
+UNRESOLVED_SECTION_MARK = "UNRESOLVED — SOURCE DOES NOT IDENTIFY SECTION"
+
+
 def section_title_and_id(section: str) -> tuple[str, str]:
-    """Use short title before em-dash/hyphen description; never put sentences in query params."""
-    raw = (section or "overview").strip()
+    """Use short title before em-dash/hyphen description; never invent overview fallback."""
+    raw = (section or "").strip()
+    if not raw or raw.upper().startswith("UNRESOLVED"):
+        return UNRESOLVED_SECTION_MARK, UNRESOLVED_SECTION_MARK
     title = re.split(r"\s+[—–-]\s+", raw, maxsplit=1)[0].strip() or raw
-    title = title.split(":")[0].strip() or "overview"
+    title = title.split(":")[0].strip()
+    if not title:
+        return UNRESOLVED_SECTION_MARK, UNRESOLVED_SECTION_MARK
     # Prefer concise label (max ~40 chars of title words)
     if len(title) > 40:
         title = title[:40].rsplit(" ", 1)[0] or title[:40]
@@ -1089,12 +1096,41 @@ def main():
             return None, "UNRESOLVED — SOURCE DOES NOT IDENTIFY SECTION"
         return best, f"PROVEN — section matched by label tokens (score={best_score})"
 
-    # Pre-build screen skeletons from extraction (exact source = tab source or BRD module tab)
+    # Pre-build screen skeletons from extraction (exact source = tab / register section; never invent overview)
     screen_skeletons = []
     for s in screens_ex["screens"]:
         num = int(s["moduleKey"][1:])
         a = audits[num]
-        section_label, section_id = section_title_and_id(s.get("section") or "overview")
+        source_type = s.get("sourceType") or ""
+        # Reject legacy invented Overview; expand would happen in extract — skip if still present
+        if source_type == "blueprint-default" and (s.get("section") or "").strip().lower() == "overview":
+            raise SystemExit(
+                f"FATAL: invented Overview screen {s.get('id')} for {s['moduleKey']} — "
+                "extract must emit module-register-section or unresolved, never blueprint-default Overview"
+            )
+        if source_type == "blueprint-unresolved-section" or str(s.get("section") or "").startswith("UNRESOLVED"):
+            # No slugable section — do not emit a screen row that activates a fake section contract
+            continue
+        reg = next((r for r in register if r["number"] == num), None)
+        reg_sec = None
+        if source_type == "module-register-section" and reg:
+            want = s.get("registerSectionId") or s.get("sectionId")
+            reg_sec = next((x for x in reg.get("sections") or [] if x["id"] == want), None)
+            if not reg_sec:
+                reg_sec = next(
+                    (
+                        x
+                        for x in reg.get("sections") or []
+                        if x["label"].lower() == str(s.get("section") or "").lower()
+                    ),
+                    None,
+                )
+        if reg_sec:
+            section_label, section_id = reg_sec["label"], reg_sec["id"]
+        else:
+            section_label, section_id = section_title_and_id(s.get("section") or "")
+            if section_id == UNRESOLVED_SECTION_MARK:
+                continue
         route = a["mainRoute"] or ("/" + str(s.get("route") or "").lstrip("/"))
         if not route.startswith("/"):
             route = "/" + route
@@ -1112,6 +1148,11 @@ def main():
         src = None
         if tab and tab.get("source"):
             src = loc_str(tab["source"])
+        elif source_type == "module-register-section":
+            src = (
+                f"src/platform/module-registry/module-register.ts:section:"
+                f"{(reg or {}).get('id', s['moduleKey'])}/{section_id}"
+            )
         elif brd and brd.get("source"):
             src = loc_str(brd["source"]) + f"#tab:{s.get('tabId') or section_id}"
         else:
@@ -1132,7 +1173,7 @@ def main():
             "sectionDescription": s.get("section") or section_label,
             "deepLink": f"{route}?section={section_id}",
             "purpose": s.get("purpose") or a["note"],
-            "sourceType": s.get("sourceType"),
+            "sourceType": source_type,
             "sourceLocation": src,
             "tabId": s.get("tabId"),
             "brdModuleId": s.get("brdModuleId"),
@@ -1399,11 +1440,12 @@ def main():
             screen = next((s for s in mod_screens if s["sectionId"] == sec["id"] or s["sectionLabel"].lower() == sec["label"].lower()), None)
             if not screen and mod_screens:
                 screen, reason = pick_screen_for_label(sec["label"], mod_screens)
+            elif screen and screen["sectionId"] == sec["id"]:
+                reason = "PROVEN — registry section id matched extracted screen"
+            elif screen:
+                reason = "INFERRED — registry section label matched extracted screen"
             else:
-                reason = (
-                    "INFERRED — registry section id/label matched extracted screen"
-                    if screen else "NOT APPLICABLE — registry-only section without extracted screen"
-                )
+                reason = "NOT APPLICABLE — registry-only section without extracted screen"
             page = (a.get("pagePaths") or ["NONE — NOT IMPLEMENTED"])[0]
             sf = section_fields(screen, reason, reg["mainRoute"])
             action_items.append(build_action(
@@ -1571,41 +1613,94 @@ def main():
         action_ids = sorted(set(actions_by_screen.get(sk["screenId"], [])))
         wf_ids = sorted(set(workflows_by_screen.get(sk["screenId"], [])))
         if not action_ids:
-            # Bind best-matching module navigation control to this screen (registry section labels ≠ BRD tab labels)
-            navs = [
-                x for x in action_items
-                if x["moduleKey"] == sk["moduleKey"] and x["kind"] == "navigation-control"
-            ]
-            navs_scored = sorted(
-                navs,
-                key=lambda x: (-codeinv.score_section(sk["sectionLabel"], x["label"]), x["id"]),
+            # Prefer binding existing module-register nav-ctrl for this proven sectionId
+            matching_nav = next(
+                (
+                    x
+                    for x in action_items
+                    if x["moduleKey"] == sk["moduleKey"]
+                    and x["kind"] == "navigation-control"
+                    and x.get("sectionId") == sk["sectionId"]
+                    and not str(x["id"]).startswith("nav-screen-")
+                    and (
+                        str(x.get("screenId") or "").startswith("UNRESOLVED")
+                        or str(x.get("screenId") or "").startswith("NOT APPLICABLE")
+                        or not x.get("screenId")
+                    )
+                ),
+                None,
             )
-            if navs_scored:
-                donor = navs_scored[0]
-                cid = f"nav-screen-{sk['screenId']}"
-                cloned = dict(donor)
-                cloned.update({
-                    "id": cid,
-                    "label": f"Open screen section {sk['sectionLabel']}",
-                    "screenId": sk["screenId"],
-                    "screenRoute": sk["route"],
-                    "sectionId": sk["sectionId"],
-                    "sectionMappingReason": "INFERRED — screen-local navigation binding from nearest registry section control",
-                    "sectionMappingConfidence": "inferred",
-                    "screenSection": sk["sectionLabel"],
-                    "sourceLocation": f"{donor['sourceLocation']}#bound-to-screen:{sk['screenId']}",
-                    "requirementId": cid,
-                    "componentHandler": f"{(a.get('pagePaths') or ['NONE'])[0]} section `{sk['sectionId']}`",
-                    "handlerOrNavigationTarget": sk["deepLink"],
-                    "visibleLabel": sk["sectionLabel"],
-                    "resultingBehaviour": f"activate screen-local section `{sk['sectionId']}`",
-                    "acceptanceTest": f"UI test: open {sk['deepLink']} as authorised role; assert section '{sk['sectionLabel']}' active",
-                    "automatedTest": f"Route/section test for {sk['deepLink']}",
-                })
-                action_items.append(cloned)
-                action_by_id[cid] = cloned
-                actions_by_screen[sk["screenId"]].append(cid)
-                action_ids = [cid]
+            declared_ids = {
+                sec["id"]
+                for r in register
+                if r["number"] == num
+                for sec in (r.get("sections") or [])
+            }
+            brd_tab_ok = sk.get("sourceType") == "brd-tab"
+            section_declared = sk["sectionId"] in declared_ids or brd_tab_ok
+            if matching_nav and section_declared:
+                matching_nav["screenId"] = sk["screenId"]
+                matching_nav["screenRoute"] = sk["route"]
+                matching_nav["sectionMappingReason"] = (
+                    "PROVEN — module-register section id matched extracted screen"
+                    if sk.get("sourceType") == "module-register-section"
+                    else "PROVEN — registry section id bound to extracted screen"
+                )
+                matching_nav["sectionMappingConfidence"] = "proven"
+                matching_nav["screenSection"] = sk["sectionLabel"]
+                matching_nav["handlerOrNavigationTarget"] = sk["deepLink"]
+                matching_nav["componentHandler"] = (
+                    f"{(a.get('pagePaths') or ['NONE'])[0]} ← module entry; section param `{sk['sectionId']}`"
+                )
+                matching_nav["acceptanceTest"] = (
+                    f"UI test: open {sk['deepLink']} as authorised role; assert section '{sk['sectionLabel']}' active"
+                )
+                matching_nav["automatedTest"] = f"Route/section test for {sk['deepLink']}"
+                action_by_id[matching_nav["id"]] = matching_nav
+                actions_by_screen[sk["screenId"]].append(matching_nav["id"])
+                action_ids = [matching_nav["id"]]
+            elif section_declared:
+                # Bind best-matching module navigation control to this screen (registry section labels ≠ BRD tab labels)
+                navs = [
+                    x for x in action_items
+                    if x["moduleKey"] == sk["moduleKey"] and x["kind"] == "navigation-control"
+                    and not str(x["id"]).startswith("nav-screen-")
+                ]
+                navs_scored = sorted(
+                    navs,
+                    key=lambda x: (-codeinv.score_section(sk["sectionLabel"], x["label"]), x["id"]),
+                )
+                if navs_scored:
+                    donor = navs_scored[0]
+                    cid = f"nav-screen-{sk['screenId']}"
+                    cloned = dict(donor)
+                    cloned.update({
+                        "id": cid,
+                        "label": f"Open screen section {sk['sectionLabel']}",
+                        "screenId": sk["screenId"],
+                        "screenRoute": sk["route"],
+                        "sectionId": sk["sectionId"],
+                        "sectionMappingReason": "INFERRED — screen-local navigation binding from nearest registry section control",
+                        "sectionMappingConfidence": "inferred",
+                        "screenSection": sk["sectionLabel"],
+                        "sourceLocation": f"{donor['sourceLocation']}#bound-to-screen:{sk['screenId']}",
+                        "requirementId": cid,
+                        "componentHandler": f"{(a.get('pagePaths') or ['NONE'])[0]} section `{sk['sectionId']}`",
+                        "handlerOrNavigationTarget": sk["deepLink"],
+                        "visibleLabel": sk["sectionLabel"],
+                        "resultingBehaviour": f"activate screen-local section `{sk['sectionId']}`",
+                        "acceptanceTest": f"UI test: open {sk['deepLink']} as authorised role; assert section '{sk['sectionLabel']}' active",
+                        "automatedTest": f"Route/section test for {sk['deepLink']}",
+                    })
+                    action_items.append(cloned)
+                    action_by_id[cid] = cloned
+                    actions_by_screen[sk["screenId"]].append(cid)
+                    action_ids = [cid]
+            else:
+                raise SystemExit(
+                    f"screen {sk['screenId']} section `{sk['sectionId']}` is undeclared "
+                    f"(not in module-register and not a BRD tab) — refusing overview/fallback activation"
+                )
         if not action_ids:
             raise SystemExit(f"screen {sk['screenId']} has zero screen-scoped actions")
         for aid in action_ids + wf_ids:
@@ -2798,6 +2893,16 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
             persist = a["persistenceMethod"]
             cross = a["crossModuleIntegrations"]
             owner_note = a["note"]
+            reg_row = next((r for r in register if r["number"] == num), None)
+            valid_section_ids = [sec["id"] for sec in (reg_row.get("sections") if reg_row else []) or []]
+            # BRD-tab section ids are also valid for this module's screen contract
+            for s in screen_rows:
+                if s["moduleKey"] == mod_key and s.get("sourceType") == "brd-tab" and s["sectionId"] not in valid_section_ids:
+                    valid_section_ids.append(s["sectionId"])
+            valid_sections_line = (
+                "- **Valid section IDs (complete):** "
+                + (", ".join(f"`{x}`" for x in valid_section_ids) if valid_section_ids else "`NONE — NO SECTIONS DECLARED`")
+            )
         elif kind == "shared-shell":
             screen_ids = shared_screen_ids
             req_ids = shared_req_ids
@@ -2809,6 +2914,7 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
             persist = "Appearance preference persistence only; no domain writes in P1"
             cross = "Shell projects navigation only; M01/M02 domain projections remain IN-DEVELOPMENT"
             owner_note = "Shared shell owns chrome/tokens/primitives only"
+            valid_sections_line = "- **Valid section IDs (complete):** `NOT APPLICABLE — shared shell (no module section contract)`"
         else:  # production verification
             screen_ids = [s["screenId"] for s in screen_rows]
             req_ids = [r["requirementId"] for r in rows if r["sourceType"] in ("owner", "accepted-evidence", "current-plan")]
@@ -2820,6 +2926,7 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
             persist = "Verify existing persistence proofs; no new domain model in P9"
             cross = "Full producer→M01/M02 and M06→M07 contract verification"
             owner_note = "Production verification ≠ operational release"
+            valid_sections_line = "- **Valid section IDs (complete):** `NOT APPLICABLE — cross-module verification`"
 
         # Module-specific resulting-state evidence expectations
         if kind == "ppa":
@@ -2914,6 +3021,7 @@ Do **not** begin Programme Wave P1, PPA implementation, or M08–M24 bulk work u
 - **Primary route(s):** `{route}`
 - **Design reference:** `{img}`
 - **Screen IDs (complete):** {", ".join(f"`{x}`" for x in screen_ids) if screen_ids else "`NONE — NO SCREENS IN SCOPE`"}
+{valid_sections_line}
 - **Requirement IDs (complete):** {", ".join(f"`{x}`" for x in req_ids) if req_ids else "`NONE — NO REQUIREMENTS IN SCOPE`"}
 {scope_table}
 ## 4. Exact actions and workflows (inline execution dossiers)

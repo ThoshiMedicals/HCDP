@@ -3,7 +3,7 @@
   "prototypeSha256": "8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760",
   "traceabilityRows": 1982,
   "unclassifiedDispositions": 0,
-  "canonicalScreens": 186,
+  "canonicalScreens": 194,
   "designPngsInstalled": true,
   "designPngDecision": "A-REVISED",
   "decisionACommit": "66e6e6488b27b9098dadd8962473fedea5053614",
@@ -16,7 +16,7 @@
     "blueprintWorkflows": 72,
     "legacyWorkflowGroups": 28,
     "modalsDrawers": 63,
-    "navigationControls": 182,
+    "navigationControls": 178,
     "productionControls": 28,
     "plannedModuleControls": 8,
     "productionControlsBeforeFalsePositiveRemoval": 67,
@@ -30,9 +30,9 @@
       "src/modules/m11-training/TrainingWorkspace.tsx": 2
     },
     "sectionMappingTotals": {
-      "proven": 414,
-      "inferred": 79,
-      "unresolved": 318
+      "proven": 468,
+      "inferred": 41,
+      "unresolved": 298
     },
     "m08toM24GenuineProductionControls": 2,
     "m08toM24PlaceholderShellCount": 16,
@@ -54,16 +54,16 @@
       "M23",
       "M24"
     ],
-    "screenSpecificActionSets": 186,
-    "actionsWithExactSectionId": 545,
-    "actionsWithExactSourceLocation": 811,
+    "screenSpecificActionSets": 194,
+    "actionsWithExactSectionId": 549,
+    "actionsWithExactSourceLocation": 807,
     "atomicServiceMapped": 103,
     "atomicNoneNotImplemented": 510,
-    "totalItems": 811,
+    "totalItems": 807,
     "fieldCompleteness": {
-      "withSourceLocation": 811,
-      "withScreenRoute": 811,
-      "withoutGenericPhrases": 811
+      "withSourceLocation": 807,
+      "withScreenRoute": 807,
+      "withoutGenericPhrases": 807
     }
   },
   "conflictAdjudicationTotals": {

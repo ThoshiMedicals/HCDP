@@ -705,7 +705,22 @@ const themes = {
   familyStyles: named.FAMILY_STYLES?.data || null,
 };
 
-// Screens: derive from BRD tabs + blueprint routes (canonical candidates)
+// Module-register sections (canonical when BRD has no tabs — never invent Overview)
+const REG_TS = readFileSync(
+  join(ROOT, "src/platform/module-registry/module-register.ts"),
+  "utf8"
+).replace(/\r\n/g, "\n");
+const registerSectionsByModule = {};
+for (const block of REG_TS.split(/\n  \{\n/).slice(1)) {
+  const num = block.match(/number:\s*(\d+)/);
+  if (!num) continue;
+  const secs = [...block.matchAll(/\{\s*id:\s*"([^"]+)"\s*,\s*label:\s*"([^"]+)"/g)].map(
+    (m) => ({ id: m[1], label: m[2] })
+  );
+  registerSectionsByModule[`M${String(Number(num[1])).padStart(2, "0")}`] = secs;
+}
+
+// Screens: derive from BRD tabs + module-register sections (never invent Overview)
 const screens = [];
 for (const b of blueprints) {
   const brd = brdModules.find((m) => m.moduleKey === b.moduleKey);
@@ -728,18 +743,39 @@ for (const b of blueprints) {
       });
     }
   } else {
-    screens.push({
-      id: sid("screen", b.moduleKey, "default"),
-      moduleKey: b.moduleKey,
-      moduleName: b.name,
-      family: b.family,
-      route: primaryRoute,
-      section: "Overview",
-      sourceType: "blueprint-default",
-      purpose: b.summary,
-      blueprintId: b.id,
-      brdModuleId: brd?.id || null,
-    });
+    const regSecs = registerSectionsByModule[b.moduleKey] || [];
+    if (regSecs.length) {
+      for (const sec of regSecs) {
+        screens.push({
+          id: sid("screen", b.moduleKey, sec.id),
+          moduleKey: b.moduleKey,
+          moduleName: b.name,
+          family: b.family,
+          route: primaryRoute,
+          section: sec.label,
+          sectionId: sec.id,
+          sourceType: "module-register-section",
+          purpose: b.summary,
+          blueprintId: b.id,
+          brdModuleId: brd?.id || null,
+          registerSectionId: sec.id,
+        });
+      }
+    } else {
+      // No BRD tab and no register section — explicit unresolved; do not invent Overview
+      screens.push({
+        id: sid("screen", b.moduleKey, "unresolved-section"),
+        moduleKey: b.moduleKey,
+        moduleName: b.name,
+        family: b.family,
+        route: primaryRoute,
+        section: "UNRESOLVED — SOURCE DOES NOT IDENTIFY SECTION",
+        sourceType: "blueprint-unresolved-section",
+        purpose: b.summary,
+        blueprintId: b.id,
+        brdModuleId: brd?.id || null,
+      });
+    }
   }
 }
 

@@ -1,8 +1,8 @@
 # Canonical Screen Register
 
-**Derived count:** 186  
+**Derived count:** 194  
 **Earlier 143 estimate:** minimum planning baseline, **not a cap**.  
-**Variance:** 43
+**Variance:** 51
 
 ## Rules applied
 
@@ -35,9 +35,9 @@
 | M18 | 8 |
 | M19 | 9 |
 | M20 | 11 |
-| M21 | 1 |
-| M22 | 1 |
-| M23 | 1 |
-| M24 | 1 |
+| M21 | 3 |
+| M22 | 3 |
+| M23 | 3 |
+| M24 | 3 |
 
 Full machine register: `canonical-screen-register.json`

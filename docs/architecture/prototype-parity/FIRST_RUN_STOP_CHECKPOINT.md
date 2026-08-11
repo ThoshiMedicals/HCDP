@@ -10,7 +10,7 @@
 | Decision A PNG tip | `66e6e6488b27b9098dadd8962473fedea5053614` |
 | Prototype SHA-256 | `8843dbb315a6e82b5df628c51f68e3eb904b794aca928823bab99bfa57758760` |
 | Traceability rows | 1982 |
-| Canonical screens | 186 |
+| Canonical screens | 194 |
 | Design PNGs | 9/9 INSTALLED_HASH_OK (Decision A) |
 | Open owner decisions | 0 |
 | P1 authorised | **No** |

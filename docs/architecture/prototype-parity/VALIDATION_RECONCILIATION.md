@@ -6,7 +6,7 @@
 | Minimum baseline counts | PASS |
 | Traceability rows (JSON=CSV) | 1982 |
 | Unclassified dispositions | 0 |
-| Canonical screens | 186 |
+| Canonical screens | 194 |
 | Design PNGs installed | True |
 | Design PNG Decision | A-REVISED @ `66e6e6488b27b9098dadd8962473fedea5053614` |
 | Open owner decisions | 0 |

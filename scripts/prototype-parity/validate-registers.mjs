@@ -542,6 +542,149 @@ if (existsSync(promptsDir)) {
   }
 }
 
+// Section-contract integrity: prompts, screens, and actions must not activate undeclared sections
+{
+  const regTs = readFileSync(
+    join(ROOT, "src/platform/module-registry/module-register.ts"),
+    "utf8"
+  ).replace(/\r\n/g, "\n");
+  const registerSections = {};
+  for (const block of regTs.split(/\n  \{\n/).slice(1)) {
+    const num = block.match(/number:\s*(\d+)/);
+    if (!num) continue;
+    const mk = `M${String(Number(num[1])).padStart(2, "0")}`;
+    registerSections[mk] = new Set(
+      [...block.matchAll(/\{\s*id:\s*"([^"]+)"\s*,\s*label:\s*"([^"]+)"/g)].map((m) => m[1])
+    );
+  }
+  const declared = {};
+  for (const [mk, secs] of Object.entries(registerSections)) {
+    declared[mk] = new Set(secs);
+  }
+  // Canonical screens with BRD-tab provenance expand the declared set (tab labels may differ from register ids)
+  for (const s of screens?.screens || []) {
+    if (!declared[s.moduleKey]) declared[s.moduleKey] = new Set();
+    if (s.sourceType === "brd-tab" || s.sourceType === "module-register-section") {
+      if (s.sectionId) declared[s.moduleKey].add(s.sectionId);
+    }
+  }
+  const extractedScreens = load("prototype-screens.json");
+  for (const s of extractedScreens?.screens || []) {
+    if (s.sourceType === "blueprint-default") {
+      fail(
+        `extracted screen ${s.id || s.screenId} still uses banned blueprint-default (invented Overview path)`
+      );
+    }
+    if (
+      String(s.section || "").toLowerCase() === "overview" &&
+      s.sourceType !== "brd-tab" &&
+      s.sourceType !== "module-register-section"
+    ) {
+      fail(
+        `invented Overview/section without canonical evidence: ${s.moduleKey} ${s.id || ""} sourceType=${s.sourceType}`
+      );
+    }
+  }
+  for (const s of screens?.screens || []) {
+    const d = declared[s.moduleKey] || new Set();
+    if (s.sourceType === "blueprint-default")
+      fail(`canonical screen ${s.screenId} has banned sourceType blueprint-default`);
+    if (!d.has(s.sectionId))
+      fail(
+        `canonical screen ${s.screenId} sectionId=${s.sectionId} not declared by module-register/BRD for ${s.moduleKey}`
+      );
+    // Generator input agreement: extracted screen with same id must agree on section when present
+    const ex = (extractedScreens?.screens || []).find((x) => x.id === s.screenId);
+    if (ex?.registerSectionId && ex.registerSectionId !== s.sectionId)
+      fail(
+        `sectionId disagreement for ${s.screenId}: generated=${s.sectionId} extract.registerSectionId=${ex.registerSectionId}`
+      );
+  }
+  for (const a of actions?.items || []) {
+    const sid = String(a.sectionId || "");
+    if (!sid || sid.startsWith("UNRESOLVED") || sid.startsWith("NOT APPLICABLE")) continue;
+    const d = declared[a.moduleKey] || new Set();
+    if (!d.has(sid))
+      fail(`action ${a.id} references undeclared sectionId=${sid} for ${a.moduleKey}`);
+    const conf = String(a.sectionMappingConfidence || "");
+    const reason = String(a.sectionMappingReason || "");
+    if (
+      conf === "proven" &&
+      (/fallback/i.test(reason) || /invent/i.test(reason) || /default overview/i.test(reason))
+    )
+      fail(`fallback section presented as proven: ${a.id}`);
+    if (
+      a.moduleKey === "M21" &&
+      sid === "overview" &&
+      a.source !== "brd" &&
+      !/brd-tab/i.test(String(a.sourceLocation || ""))
+    )
+      fail(`M21 active overview contract without canonical evidence: ${a.id}`);
+  }
+  // M21 must not activate overview at all unless register declares it (it does not)
+  const m21Declared = declared.M21 || new Set();
+  if (m21Declared.has("overview"))
+    fail("M21 module-register unexpectedly declares overview — revisit adjudication");
+  for (const s of (screens?.screens || []).filter((x) => x.moduleKey === "M21")) {
+    if (s.sectionId === "overview")
+      fail(`M21 canonical screen activates undeclared overview: ${s.screenId}`);
+  }
+  const promptsDir2 = join(OUT, "prompts");
+  if (existsSync(promptsDir2)) {
+    for (const f of readdirSync(promptsDir2).filter((x) => x.endsWith(".md") && x !== "README.md")) {
+      const txt = readFileSync(join(promptsDir2, f), "utf8");
+      const modMatch = txt.match(/\*\*Module:\*\*\s*(M\d{2}|SHARED|MULTI)/);
+      const mk = modMatch?.[1];
+      const validLine = txt.match(
+        /\*\*Valid section IDs \(complete\):\*\*\s*(.+)/i
+      );
+      if (mk && /^M\d{2}$/.test(mk)) {
+        if (!validLine)
+          fail(`prompt ${f} missing Valid section IDs contract line`);
+        else if (!/NOT APPLICABLE/i.test(validLine[1])) {
+          const listed = [
+            ...validLine[1].matchAll(/`([a-z0-9]+(?:-[a-z0-9]+)*)`/g),
+          ].map((m) => m[1]);
+          const d = declared[mk] || new Set();
+          for (const id of listed) {
+            if (!d.has(id))
+              fail(`prompt ${f} lists undeclared valid section ${id}`);
+          }
+          for (const id of d) {
+            if (!listed.includes(id) && registerSections[mk]?.has(id))
+              fail(
+                `prompt ${f} omits module-register section ${id} from Valid section IDs (generated vs register disagreement)`
+              );
+          }
+        }
+        // Active tests / dossiers must not target sections outside the valid list
+        const allowed = new Set();
+        if (validLine && !/NOT APPLICABLE|NONE — NO SECTIONS/i.test(validLine[1])) {
+          for (const m of validLine[1].matchAll(/`([a-z0-9]+(?:-[a-z0-9]+)*)`/g))
+            allowed.add(m[1]);
+        } else {
+          for (const id of declared[mk] || []) allowed.add(id);
+        }
+        const sectionRefs = [
+          ...txt.matchAll(/\?section=([a-z0-9]+(?:-[a-z0-9]+)*)/gi),
+          ...txt.matchAll(/section=`([a-z0-9]+(?:-[a-z0-9]+)*)`/gi),
+          ...txt.matchAll(/section param `([a-z0-9]+(?:-[a-z0-9]+)*)`/gi),
+        ].map((m) => m[1]);
+        for (const sid of sectionRefs) {
+          if (!allowed.has(sid))
+            fail(
+              `prompt ${f} references section=${sid} not in Valid section IDs for ${mk}`
+            );
+        }
+        if (mk === "M21") {
+          if (/\boverview\b/i.test(txt) && /\?section=overview|section=`overview`|Open screen section Overview/i.test(txt))
+            fail(`prompt ${f} still activates M21 overview contract`);
+        }
+      }
+    }
+  }
+}
+
 const result = {
   ok: failures.length === 0,
   tip,

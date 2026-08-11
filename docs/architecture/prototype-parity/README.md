@@ -28,7 +28,7 @@ Second generation must produce zero diff.
 ## Key outputs
 
 - Master traceability JSON/CSV/MD  
-- Canonical screen register (186)  
+- Canonical screen register (194)  
 - Workflow/action register  
 - Implementation re-audit M01–M24  
 - Conflict/owner decision register (open=0)  

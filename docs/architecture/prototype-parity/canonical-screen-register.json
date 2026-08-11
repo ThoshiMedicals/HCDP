@@ -1,10 +1,10 @@
 {
   "generatedAt": "deterministic:baseline-b1152d36d3f4:decisionA-66e6e6488b27:proto-8843dbb315a6",
-  "count": 186,
+  "count": 194,
   "vs143": {
     "baselineEstimate": 143,
-    "derivedCount": 186,
-    "variance": 43,
+    "derivedCount": 194,
+    "variance": 51,
     "explanation": "143 was a minimum planning baseline, not a cap. Derived from BRD tabs/blueprint defaults with stable section IDs."
   },
   "screens": [
@@ -10280,25 +10280,25 @@
       ]
     },
     {
-      "screenId": "screen_ccc228ef4693",
+      "screenId": "screen_cb79dab87412",
       "moduleKey": "M21",
       "moduleName": "SaaS Vendor Operations & Tenant Provisioning",
       "family": "SaaS Vendor Administration",
       "route": "/vendor-console",
-      "sectionId": "overview",
-      "sectionLabel": "Overview",
-      "sectionDescription": "Overview",
-      "deepLink": "/vendor-console?section=overview",
+      "sectionId": "tenants",
+      "sectionLabel": "Tenants",
+      "sectionDescription": "Tenants",
+      "deepLink": "/vendor-console?section=tenants",
       "purpose": "Vendor-level provisioning, entitlement, service status and support governance outside tenant operations.",
-      "sourceType": "blueprint-default",
-      "sourceLocation": "public/pulse-html-prototype.html:line:4906:offset:1060517-1112053#blueprint-screen:overview",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:vendor-console/tenants",
       "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
       "accessClassification": "enterprise-vendor",
       "dataOwner": "Vendor-level provisioning and portfolio operations",
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-screen-screen_ccc228ef4693"
+        "nav-ctrl-vendor-console-tenants"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -10311,7 +10311,7 @@
       ],
       "responsiveBehaviour": "Desktop: vendor portfolio table + detail. Tablet/Mobile: cards + full-screen detail.",
       "requirementIds": [
-        "screen_ccc228ef4693"
+        "screen_cb79dab87412"
       ],
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
@@ -10327,25 +10327,121 @@
       ]
     },
     {
-      "screenId": "screen_df83e1b95471",
+      "screenId": "screen_c23413ae218c",
+      "moduleKey": "M21",
+      "moduleName": "SaaS Vendor Operations & Tenant Provisioning",
+      "family": "SaaS Vendor Administration",
+      "route": "/vendor-console",
+      "sectionId": "provisioning",
+      "sectionLabel": "Provisioning",
+      "sectionDescription": "Provisioning",
+      "deepLink": "/vendor-console?section=provisioning",
+      "purpose": "Vendor-level provisioning, entitlement, service status and support governance outside tenant operations.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:vendor-console/provisioning",
+      "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
+      "accessClassification": "enterprise-vendor",
+      "dataOwner": "Vendor-level provisioning and portfolio operations",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-vendor-console-provisioning"
+      ],
+      "workflowIds": [
+        "bpflow_fd87ebac39c8"
+      ],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: vendor portfolio table + detail. Tablet/Mobile: cards + full-screen detail.",
+      "requirementIds": [
+        "screen_c23413ae218c"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M04/M02 vendor portfolio",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m21-vendor-operations/VendorOperationsModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_8d0de40eef32",
+      "moduleKey": "M21",
+      "moduleName": "SaaS Vendor Operations & Tenant Provisioning",
+      "family": "SaaS Vendor Administration",
+      "route": "/vendor-console",
+      "sectionId": "platform-health",
+      "sectionLabel": "Platform Health",
+      "sectionDescription": "Platform Health",
+      "deepLink": "/vendor-console?section=platform-health",
+      "purpose": "Vendor-level provisioning, entitlement, service status and support governance outside tenant operations.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:vendor-console/platform-health",
+      "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
+      "accessClassification": "enterprise-vendor",
+      "dataOwner": "Vendor-level provisioning and portfolio operations",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-vendor-console-platform-health"
+      ],
+      "workflowIds": [],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: vendor portfolio table + detail. Tablet/Mobile: cards + full-screen detail.",
+      "requirementIds": [
+        "screen_8d0de40eef32"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M04/M02 vendor portfolio",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m21-vendor-operations/VendorOperationsModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_ffd47c7a5c52",
       "moduleKey": "M22",
       "moduleName": "Recruitment & Talent Acquisition",
       "family": "People & Talent",
       "route": "/recruitment",
-      "sectionId": "overview",
-      "sectionLabel": "Overview",
-      "sectionDescription": "Overview",
-      "deepLink": "/recruitment?section=overview",
+      "sectionId": "vacancies",
+      "sectionLabel": "Vacancies",
+      "sectionDescription": "Vacancies",
+      "deepLink": "/recruitment?section=vacancies",
       "purpose": "Vacancies, tenant-controlled applications, candidate Kanban, assessment, offers and promotion to staff.",
-      "sourceType": "blueprint-default",
-      "sourceLocation": "public/pulse-html-prototype.html:line:4906:offset:1060517-1112053#blueprint-screen:overview",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:recruitment/vacancies",
       "roles": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
       "accessClassification": "hr",
       "dataOwner": "Recruitment until controlled promotion into M04",
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-screen-screen_df83e1b95471"
+        "nav-ctrl-recruitment-vacancies"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -10358,7 +10454,7 @@
       ],
       "responsiveBehaviour": "Desktop: people list/table + detail panel with tabs. Tablet: list + drawer detail. Mobile: searchable card list; detail full-screen with section accordion.",
       "requirementIds": [
-        "screen_df83e1b95471"
+        "screen_ffd47c7a5c52"
       ],
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
@@ -10374,25 +10470,123 @@
       ]
     },
     {
-      "screenId": "screen_db496c13b69b",
+      "screenId": "screen_bd8d8489a183",
+      "moduleKey": "M22",
+      "moduleName": "Recruitment & Talent Acquisition",
+      "family": "People & Talent",
+      "route": "/recruitment",
+      "sectionId": "candidates",
+      "sectionLabel": "Candidates",
+      "sectionDescription": "Candidates",
+      "deepLink": "/recruitment?section=candidates",
+      "purpose": "Vacancies, tenant-controlled applications, candidate Kanban, assessment, offers and promotion to staff.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:recruitment/candidates",
+      "roles": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
+      "accessClassification": "hr",
+      "dataOwner": "Recruitment until controlled promotion into M04",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-recruitment-candidates"
+      ],
+      "workflowIds": [
+        "bpflow_1fbd01631035",
+        "bpflow_bec0e5084e0f",
+        "bpflow_c400845cd160"
+      ],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: people list/table + detail panel with tabs. Tablet: list + drawer detail. Mobile: searchable card list; detail full-screen with section accordion.",
+      "requirementIds": [
+        "screen_bd8d8489a183"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M04 people master-detail",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m22-recruitment/RecruitmentModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_e1fbcd042113",
+      "moduleKey": "M22",
+      "moduleName": "Recruitment & Talent Acquisition",
+      "family": "People & Talent",
+      "route": "/recruitment",
+      "sectionId": "onboarding",
+      "sectionLabel": "Onboarding Pipeline",
+      "sectionDescription": "Onboarding Pipeline",
+      "deepLink": "/recruitment?section=onboarding",
+      "purpose": "Vacancies, tenant-controlled applications, candidate Kanban, assessment, offers and promotion to staff.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:recruitment/onboarding",
+      "roles": "HR / Payroll, Practice Managers, Owners, authorised HR roles (accessClassification=hr)",
+      "accessClassification": "hr",
+      "dataOwner": "Recruitment until controlled promotion into M04",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-recruitment-onboarding"
+      ],
+      "workflowIds": [],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: people list/table + detail panel with tabs. Tablet: list + drawer detail. Mobile: searchable card list; detail full-screen with section accordion.",
+      "requirementIds": [
+        "screen_e1fbcd042113"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M04 people master-detail",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m22-recruitment/RecruitmentModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_eadb7065ecac",
       "moduleKey": "M23",
       "moduleName": "Tenant Website Infrastructure & SEO Engine",
       "family": "Website & Digital Experience",
       "route": "/website-studio",
-      "sectionId": "overview",
-      "sectionLabel": "Overview",
-      "sectionDescription": "Overview",
-      "deepLink": "/website-studio?section=overview",
+      "sectionId": "sites",
+      "sectionLabel": "Sites",
+      "sectionDescription": "Sites",
+      "deepLink": "/website-studio?section=sites",
       "purpose": "Modular website assembly, local SEO, public form routing, publication and rollback governance.",
-      "sourceType": "blueprint-default",
-      "sourceLocation": "public/pulse-html-prototype.html:line:4906:offset:1060517-1112053#blueprint-screen:overview",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:website-studio/sites",
       "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
       "accessClassification": "enterprise-vendor",
       "dataOwner": "Tenant website/SEO/public form routing",
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-screen-screen_db496c13b69b"
+        "nav-ctrl-website-studio-sites"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -10405,7 +10599,7 @@
       ],
       "responsiveBehaviour": "Desktop: site ops dashboard + routing table. Tablet/Mobile: stacked metrics + cards.",
       "requirementIds": [
-        "screen_db496c13b69b"
+        "screen_eadb7065ecac"
       ],
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
@@ -10421,25 +10615,173 @@
       ]
     },
     {
-      "screenId": "screen_e06e97012fa4",
+      "screenId": "screen_1852028d83d1",
+      "moduleKey": "M23",
+      "moduleName": "Tenant Website Infrastructure & SEO Engine",
+      "family": "Website & Digital Experience",
+      "route": "/website-studio",
+      "sectionId": "seo",
+      "sectionLabel": "SEO Engine",
+      "sectionDescription": "SEO Engine",
+      "deepLink": "/website-studio?section=seo",
+      "purpose": "Modular website assembly, local SEO, public form routing, publication and rollback governance.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:website-studio/seo",
+      "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
+      "accessClassification": "enterprise-vendor",
+      "dataOwner": "Tenant website/SEO/public form routing",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-website-studio-seo"
+      ],
+      "workflowIds": [
+        "bpflow_2e870999a453"
+      ],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: site ops dashboard + routing table. Tablet/Mobile: stacked metrics + cards.",
+      "requirementIds": [
+        "screen_1852028d83d1"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M01/M02 public-routing ops",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m23-website-seo/WebsiteSeoModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_b6412dabce34",
+      "moduleKey": "M23",
+      "moduleName": "Tenant Website Infrastructure & SEO Engine",
+      "family": "Website & Digital Experience",
+      "route": "/website-studio",
+      "sectionId": "publishing",
+      "sectionLabel": "Publishing",
+      "sectionDescription": "Publishing",
+      "deepLink": "/website-studio?section=publishing",
+      "purpose": "Modular website assembly, local SEO, public form routing, publication and rollback governance.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:website-studio/publishing",
+      "roles": "SaaS vendor operators and authorised portfolio administrators (accessClassification=enterprise-vendor)",
+      "accessClassification": "enterprise-vendor",
+      "dataOwner": "Tenant website/SEO/public form routing",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-website-studio-publishing"
+      ],
+      "workflowIds": [
+        "bpflow_d727df6d01ed"
+      ],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: site ops dashboard + routing table. Tablet/Mobile: stacked metrics + cards.",
+      "requirementIds": [
+        "screen_b6412dabce34"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M01/M02 public-routing ops",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P8",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m23-website-seo/WebsiteSeoModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_0b81c266bbab",
       "moduleKey": "M24",
       "moduleName": "Practice Financial Forecast & Ledger Control",
       "family": "Finance & Forecasting",
       "route": "/financial-forecast",
-      "sectionId": "overview",
-      "sectionLabel": "Overview",
-      "sectionDescription": "Overview",
-      "deepLink": "/financial-forecast?section=overview",
+      "sectionId": "forecast",
+      "sectionLabel": "Forecast",
+      "sectionDescription": "Forecast",
+      "deepLink": "/financial-forecast?section=forecast",
       "purpose": "Multi-clinic revenue, expense, roster-cost, margin baseline and actual-versus-forecast control.",
-      "sourceType": "blueprint-default",
-      "sourceLocation": "public/pulse-html-prototype.html:line:4906:offset:1060517-1112053#blueprint-screen:overview",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:financial-forecast/forecast",
       "roles": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
       "accessClassification": "finance",
       "dataOwner": "Forecasts, immutable baselines, actual-vs-forecast review",
       "sourceSystem": "Doctors Pulse module services (not prototype seed)",
       "dataSource": "NONE \u2014 NOT IMPLEMENTED",
       "visibleActionIds": [
-        "nav-screen-screen_e06e97012fa4"
+        "nav-ctrl-financial-forecast-forecast"
+      ],
+      "workflowIds": [
+        "bpflow_42341e97db62",
+        "bpflow_b8ce79afcf31"
+      ],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: forecast KPI + review table. Tablet/Mobile: KPI stack + card rows.",
+      "requirementIds": [
+        "screen_0b81c266bbab"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M01 dashboard + finance review",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P6",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m24-financial-forecast/FinancialForecastModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_402dd6c4774d",
+      "moduleKey": "M24",
+      "moduleName": "Practice Financial Forecast & Ledger Control",
+      "family": "Finance & Forecasting",
+      "route": "/financial-forecast",
+      "sectionId": "ledger",
+      "sectionLabel": "Ledger Control",
+      "sectionDescription": "Ledger Control",
+      "deepLink": "/financial-forecast?section=ledger",
+      "purpose": "Multi-clinic revenue, expense, roster-cost, margin baseline and actual-versus-forecast control.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:financial-forecast/ledger",
+      "roles": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
+      "accessClassification": "finance",
+      "dataOwner": "Forecasts, immutable baselines, actual-vs-forecast review",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-financial-forecast-ledger"
       ],
       "workflowIds": [],
       "imageControlRequirementIds": [],
@@ -10452,7 +10794,54 @@
       ],
       "responsiveBehaviour": "Desktop: forecast KPI + review table. Tablet/Mobile: KPI stack + card rows.",
       "requirementIds": [
-        "screen_e06e97012fa4"
+        "screen_402dd6c4774d"
+      ],
+      "uiStatus": "PROTOTYPE-ONLY",
+      "domainStatus": "NOT-STARTED",
+      "integrationStatus": "NOT-STARTED",
+      "evidenceStatus": "NOT-STARTED",
+      "designReference": "M01 dashboard + finance review",
+      "designReferenceStatus": "DERIVED_FROM_DESIGN_SYSTEM",
+      "designReferenceSha256": null,
+      "targetWave": "P6",
+      "acceptanceEvidencePath": "NONE \u2014 NOT YET AUTHORISED",
+      "pagePaths": [
+        "src/modules/m24-financial-forecast/FinancialForecastModule.tsx"
+      ]
+    },
+    {
+      "screenId": "screen_211f3a1c7e87",
+      "moduleKey": "M24",
+      "moduleName": "Practice Financial Forecast & Ledger Control",
+      "family": "Finance & Forecasting",
+      "route": "/financial-forecast",
+      "sectionId": "variance",
+      "sectionLabel": "Variance",
+      "sectionDescription": "Variance",
+      "deepLink": "/financial-forecast?section=variance",
+      "purpose": "Multi-clinic revenue, expense, roster-cost, margin baseline and actual-versus-forecast control.",
+      "sourceType": "module-register-section",
+      "sourceLocation": "src/platform/module-registry/module-register.ts:section:financial-forecast/variance",
+      "roles": "Finance leads, Owners, authorised payroll/finance roles (accessClassification=finance)",
+      "accessClassification": "finance",
+      "dataOwner": "Forecasts, immutable baselines, actual-vs-forecast review",
+      "sourceSystem": "Doctors Pulse module services (not prototype seed)",
+      "dataSource": "NONE \u2014 NOT IMPLEMENTED",
+      "visibleActionIds": [
+        "nav-ctrl-financial-forecast-variance"
+      ],
+      "workflowIds": [],
+      "imageControlRequirementIds": [],
+      "states": [
+        "default",
+        "loading",
+        "empty",
+        "error",
+        "permission-denied"
+      ],
+      "responsiveBehaviour": "Desktop: forecast KPI + review table. Tablet/Mobile: KPI stack + card rows.",
+      "requirementIds": [
+        "screen_211f3a1c7e87"
       ],
       "uiStatus": "PROTOTYPE-ONLY",
       "domainStatus": "NOT-STARTED",
