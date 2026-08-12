@@ -41,7 +41,7 @@ function writeOnline(online: boolean) {
 export function Topbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { setSidebarOpen, pushToast } = usePortal();
+  const { sidebarOpen, setSidebarOpen, pushToast } = usePortal();
   const {
     selection,
     groups,
@@ -126,9 +126,12 @@ export function Topbar() {
       <div className="ribbon-left flex min-w-0 shrink-0 items-center gap-2">
         <button
           type="button"
-          className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
-          onClick={() => setSidebarOpen(true)}
-          aria-label="Open menu"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          aria-label={sidebarOpen ? "Close menu" : "Open menu"}
+          aria-expanded={sidebarOpen}
+          aria-controls="shell-sidebar-nav"
+          data-testid="shell-mobile-menu"
         >
           ☰
         </button>

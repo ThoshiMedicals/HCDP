@@ -1,11 +1,16 @@
 {
   "batch": "P1-B1",
+  "harness": "remediated-acceptance",
   "base": "http://localhost:3000",
-  "generatedAt": "2026-08-11T06:14:04.797Z",
+  "generatedAt": "2026-08-12T23:44:07.677Z",
   "ownerAcceptance": "pending",
+  "githubCiStatus": "none-for-this-branch — local results only; do not claim GitHub CI",
   "engineeringComplete": true,
   "failures": 0,
-  "regionsExpected": [
+  "assertionCount": 425,
+  "passCount": 425,
+  "failCount": 0,
+  "regionsCatalog": [
     "shell-nav",
     "topbar",
     "module-title-tabs",
@@ -25,1163 +30,2207 @@
   "appearances": [
     "light",
     "dark",
-    "system"
+    "system-os-light",
+    "system-os-dark"
+  ],
+  "routes": [
+    "/dashboard",
+    "/action-inbox"
   ],
   "shots": [
-    "dashboard-1440-light.png",
-    "dashboard-1440-dark.png",
-    "dashboard-1440-system.png",
-    "dashboard-1280-light.png",
-    "dashboard-1280-dark.png",
-    "dashboard-1280-system.png",
-    "dashboard-1024-light.png",
-    "dashboard-1024-dark.png",
-    "dashboard-1024-system.png",
-    "dashboard-768-light.png",
-    "dashboard-768-dark.png",
-    "dashboard-768-system.png",
-    "dashboard-430-light.png",
-    "dashboard-430-dark.png",
-    "dashboard-430-system.png",
-    "dashboard-390-light.png",
-    "dashboard-390-dark.png",
-    "dashboard-390-system.png",
-    "action-inbox-1440-light.png",
-    "action-inbox-1440-dark.png",
-    "action-inbox-1440-system.png",
-    "action-inbox-1280-light.png",
-    "action-inbox-1280-dark.png",
-    "action-inbox-1280-system.png",
-    "action-inbox-1024-light.png",
-    "action-inbox-1024-dark.png",
-    "action-inbox-1024-system.png",
-    "action-inbox-768-light.png",
-    "action-inbox-768-dark.png",
-    "action-inbox-768-system.png",
-    "action-inbox-430-light.png",
-    "action-inbox-430-dark.png",
-    "action-inbox-430-system.png",
-    "action-inbox-390-light.png",
-    "action-inbox-390-dark.png",
-    "action-inbox-390-system.png"
+    "dashboard-1440-light-normal.png",
+    "dashboard-1440-dark-normal.png",
+    "dashboard-1440-system-os-light-normal.png",
+    "dashboard-1440-system-os-dark-normal.png",
+    "dashboard-1280-light-normal.png",
+    "dashboard-1280-dark-normal.png",
+    "dashboard-1280-system-os-light-normal.png",
+    "dashboard-1280-system-os-dark-normal.png",
+    "dashboard-1024-light-normal.png",
+    "dashboard-1024-dark-normal.png",
+    "dashboard-1024-system-os-light-normal.png",
+    "dashboard-1024-system-os-dark-normal.png",
+    "dashboard-768-light-normal.png",
+    "dashboard-768-dark-normal.png",
+    "dashboard-768-system-os-light-normal.png",
+    "dashboard-768-system-os-dark-normal.png",
+    "dashboard-430-light-normal.png",
+    "dashboard-430-dark-normal.png",
+    "dashboard-430-system-os-light-normal.png",
+    "dashboard-430-system-os-dark-normal.png",
+    "dashboard-390-light-normal.png",
+    "dashboard-390-dark-normal.png",
+    "dashboard-390-system-os-light-normal.png",
+    "dashboard-390-system-os-dark-normal.png",
+    "action-inbox-1440-light-normal.png",
+    "action-inbox-1440-dark-normal.png",
+    "action-inbox-1440-system-os-light-normal.png",
+    "action-inbox-1440-system-os-dark-normal.png",
+    "action-inbox-1280-light-normal.png",
+    "action-inbox-1280-dark-normal.png",
+    "action-inbox-1280-system-os-light-normal.png",
+    "action-inbox-1280-system-os-dark-normal.png",
+    "action-inbox-1024-light-normal.png",
+    "action-inbox-1024-dark-normal.png",
+    "action-inbox-1024-system-os-light-normal.png",
+    "action-inbox-1024-system-os-dark-normal.png",
+    "action-inbox-768-light-normal.png",
+    "action-inbox-768-dark-normal.png",
+    "action-inbox-768-system-os-light-normal.png",
+    "action-inbox-768-system-os-dark-normal.png",
+    "action-inbox-430-light-normal.png",
+    "action-inbox-430-dark-normal.png",
+    "action-inbox-430-system-os-light-normal.png",
+    "action-inbox-430-system-os-dark-normal.png",
+    "action-inbox-390-light-normal.png",
+    "action-inbox-390-dark-normal.png",
+    "action-inbox-390-system-os-light-normal.png",
+    "action-inbox-390-system-os-dark-normal.png",
+    "interaction-mobile-nav-closed-390.png",
+    "interaction-mobile-menu-keyboard-focus-390.png",
+    "interaction-mobile-nav-open-390.png",
+    "interaction-mobile-nav-keyboard-tab-390.png",
+    "interaction-mobile-nav-after-escape-390.png",
+    "interaction-drawer-closed-action-inbox-1280.png",
+    "interaction-drawer-trigger-focus-1280.png",
+    "interaction-drawer-open-action-inbox-1280.png",
+    "interaction-drawer-after-escape-1280.png",
+    "interaction-detail-panel-closed-with-probe-1280.png",
+    "interaction-detail-panel-open-1280.png",
+    "interaction-detail-panel-after-escape-1280.png",
+    "state-action-inbox-390-intentional-loading.png",
+    "state-action-inbox-1280-empty-filtered.png",
+    "state-action-inbox-1280-error.png",
+    "state-action-inbox-1280-access-denied-visible.png",
+    "interaction-keyboard-focus-topbar-1440.png",
+    "interaction-keyboard-focus-sidebar-nav-1440.png"
   ],
-  "findings": [
+  "assertions": [
     {
-      "route": "/dashboard",
-      "viewport": "1440",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1440",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1440",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1280",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1280",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1280",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1024",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1024",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
     },
     {
-      "route": "/dashboard",
-      "viewport": "1024",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "768",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
     },
     {
-      "route": "/dashboard",
-      "viewport": "768",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
     },
     {
-      "route": "/dashboard",
-      "viewport": "768",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "430",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
     },
     {
-      "route": "/dashboard",
-      "viewport": "430",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
     },
     {
-      "route": "/dashboard",
-      "viewport": "430",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "390",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
     },
     {
-      "route": "/dashboard",
-      "viewport": "390",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
     },
     {
-      "route": "/dashboard",
-      "viewport": "390",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 0,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 2
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1440",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1440",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1440",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1280",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1280",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1280",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1024",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1024",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "1024",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "768",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "768",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "768",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 72,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "72px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 72
-      }
+      "id": "dashboard-1440-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "430",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "430",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1440-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "430",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1280-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "390",
-      "appearance": "light",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "light",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1280-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "390",
-      "appearance": "dark",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "dark",
-        "themeDark": true,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1280-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
     },
     {
-      "route": "/action-inbox",
-      "viewport": "390",
-      "appearance": "system",
       "ok": true,
-      "sidebarOk": true,
-      "topbarOk": true,
-      "cssVarOk": true,
-      "regionOk": true,
-      "overflowX": false,
-      "audit": {
-        "sidebarWidth": 240,
-        "topbarHeight": 48,
-        "cssSidebarCurrent": "240px",
-        "cssTopbar": "48px",
-        "dataCollapsed": "false",
-        "appearance": "system",
-        "themeDark": false,
-        "regions": {
-          "shell-nav": 1,
-          "topbar": 1,
-          "module-title-tabs": 1,
-          "kpi-strip": 0,
-          "toolbar": 0,
-          "main-pane": 1,
-          "detail-pane": 1
-        },
-        "overflowX": false,
-        "expectedWidth": 240
-      }
+      "id": "dashboard-1280-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1280-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-1024-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=1)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=1)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=1)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=1)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-768-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=4)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Command Centre"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1440-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 240px (expected 240)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1280-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-1024-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/sidebar-visible-geometry",
+      "reason": "Visible sidebar width 72px (expected 72)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-768-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/appearance",
+      "reason": "Appearance light: themeDark=false, data-appearance=light, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/appearance",
+      "reason": "Appearance dark: themeDark=true, data-appearance=dark, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/appearance",
+      "reason": "Appearance system-os-light: themeDark=false, data-appearance=system, osDark=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-nav-closed-geometry",
+      "reason": "Mobile sidebar off-screen when closed (right=0)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-css-width",
+      "reason": "Configured mobile sidebar width 240px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/topbar",
+      "reason": "Topbar height 48 / css 48px"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/required-regions",
+      "reason": "Required regions present: shell-nav, topbar, main-pane, module-title-tabs"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/doc-overflow",
+      "reason": "No unintended document horizontal overflow (intentional scrollers=2)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/appearance",
+      "reason": "Appearance system-os-dark: themeDark=true, data-appearance=system, osDark=true"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/reduced-motion",
+      "reason": "prefers-reduced-motion: reduce active"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/not-loading",
+      "reason": "Completed-screen evidence (not loading)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/active-route",
+      "reason": "Active navigation indicator present: Action Inbox6 open actions, includes overdue or urgent"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open/geometry",
+      "reason": "Mobile sidebar visible when open (width=240)"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open/overlay",
+      "reason": "Mobile overlay visible when open"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open/state-attr",
+      "reason": "data-mobile-nav=open"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open/focus-moved",
+      "reason": "Focus moved into sidebar when opened"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-escape/closed",
+      "reason": "Escape closed mobile nav and hid overlay"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-escape/focus-restore",
+      "reason": "Focus restored to mobile menu control after Escape"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-overlay-close",
+      "reason": "Overlay click closed mobile nav"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open/trigger-present",
+      "reason": "Found 12 Open Review Panel controls"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open/visible",
+      "reason": "Drawer visible (width=420, title=Staff document exception — expired WWCC)"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open/a11y-attrs",
+      "reason": "role=dialog labelled=true aria-hidden=false"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open/focus",
+      "reason": "Focus moved into drawer"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open/region",
+      "reason": "detail-pane regions=2"
+    },
+    {
+      "ok": true,
+      "id": "drawer-escape/closed",
+      "reason": "Escape closed drawer"
+    },
+    {
+      "ok": true,
+      "id": "detail-probe/mounted",
+      "reason": "Harness probe mounted (KPI + toolbar + DetailPanel)"
+    },
+    {
+      "ok": true,
+      "id": "detail-probe/kpi-region",
+      "reason": "kpi-strip count=1"
+    },
+    {
+      "ok": true,
+      "id": "detail-probe/toolbar-region",
+      "reason": "toolbar count=1"
+    },
+    {
+      "ok": true,
+      "id": "detail-panel-open/geometry",
+      "reason": "DetailPanel visible width=360 mode=drawer"
+    },
+    {
+      "ok": true,
+      "id": "detail-panel-open/focus",
+      "reason": "Focus moved into DetailPanel"
+    },
+    {
+      "ok": true,
+      "id": "detail-panel-escape/closed",
+      "reason": "Escape closed DetailPanel"
+    },
+    {
+      "ok": true,
+      "id": "state/loading",
+      "reason": "Captured intentional Action Inbox loading state separately"
+    },
+    {
+      "ok": true,
+      "id": "state/empty",
+      "reason": "Empty/filtered inbox messaging visible"
+    },
+    {
+      "ok": true,
+      "id": "state/error",
+      "reason": "Action Inbox error state visible (harness force flag)"
+    },
+    {
+      "ok": true,
+      "id": "state/access-denied",
+      "reason": "Access-denied/restricted copy present on page"
+    },
+    {
+      "ok": true,
+      "id": "keyboard/topbar-focus",
+      "reason": "Keyboard focus on BUTTON (Executive Command⌄)"
+    },
+    {
+      "ok": true,
+      "id": "keyboard/sidebar-nav",
+      "reason": "Focused representative sidebar navigation control"
     }
   ],
-  "note": "Visual QA vs Decision A PNGs remains owner/separate-agent; this harness is engineering smoke only."
+  "note": "Supersedes archive-fa2cc7f harness smoke. Visual QA vs Decision A PNGs remains for separate reviewer/owner. OWN-P1-016 open. P1-B2–B8 unauthorised."
 }

@@ -56,6 +56,8 @@ describe("P1-B1 shell dimensions — 1280 / 768 / 390", () => {
     const topbar = read("src/components/shell/Topbar.tsx");
     assert.match(topbar, /--topbar-height/);
     assert.match(topbar, /data-shell-region="topbar"/);
+    assert.match(topbar, /data-testid="shell-mobile-menu"/);
+    assert.match(topbar, /aria-expanded=\{sidebarOpen\}/);
     assert.doesNotMatch(topbar, /min-h-\[52px\]/);
 
     const header = read("src/components/shell/PageHeader.tsx");
@@ -67,6 +69,9 @@ describe("P1-B1 shell dimensions — 1280 / 768 / 390", () => {
     assert.match(sidebar, /data-collapsed=/);
     assert.match(sidebar, /setSidebarCollapsed/);
     assert.match(sidebar, /md:translate-x-0/);
+    assert.match(sidebar, /data-mobile-nav/);
+    assert.match(sidebar, /shell-mobile-nav-overlay/);
+    assert.match(sidebar, /Escape/);
 
     const drawer = read("src/components/ui/Drawer.tsx");
     assert.match(drawer, /--drawer-width/);

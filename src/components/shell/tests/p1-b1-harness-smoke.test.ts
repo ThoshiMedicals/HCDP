@@ -36,7 +36,7 @@ describe("P1-B1 screenshot harness smoke — contract wiring", () => {
     }
   });
 
-  it("harness script exists and targets localhost:3000 + docs/audits/p1", () => {
+  it("harness script exists and targets localhost:3000 + docs/audits/p1 with remediated checks", () => {
     const rel = "scripts/p1-b1-shell-harness-smoke.mjs";
     assert.ok(existsSync(join(root, rel)), "missing harness script");
     const src = readFileSync(join(root, rel), "utf8");
@@ -46,6 +46,13 @@ describe("P1-B1 screenshot harness smoke — contract wiring", () => {
     assert.match(src, /shell-nav/);
     assert.match(src, /topbar/);
     assert.match(src, /kpi-strip/);
+    assert.match(src, /system-os-light/);
+    assert.match(src, /system-os-dark/);
+    assert.match(src, /shell-mobile-menu/);
+    assert.match(src, /Loading your actions/);
+    assert.match(src, /sidebarOffscreenLeft/);
+    assert.match(src, /process\.exit\(failures \? 1 : 0\)/);
+    assert.match(src, /githubCiStatus|githubCi/);
   });
 
   it("Decision A canonical PNG set remains installed hash-OK", () => {

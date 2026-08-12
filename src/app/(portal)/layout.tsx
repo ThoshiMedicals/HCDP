@@ -6,6 +6,7 @@ import { IdentityProvider } from "@/platform/context/identity-context";
 import { CreateFormProvider } from "@/components/forms/CreateFormProvider";
 import { Sidebar } from "@/components/shell/Sidebar";
 import { Topbar } from "@/components/shell/Topbar";
+import { ShellHarnessProbe } from "@/components/shell/ShellHarnessProbe";
 import { ToastStack } from "@/components/ui/Toast";
 
 function PortalChrome({ children }: { children: React.ReactNode }) {
@@ -24,6 +25,7 @@ function PortalChrome({ children }: { children: React.ReactNode }) {
           <Topbar />
           <div className="min-w-0 w-full max-w-full overflow-x-hidden">{children}</div>
         </main>
+        <ShellHarnessProbe />
         <ToastStack toasts={toasts} />
       </div>
     </CreateFormProvider>

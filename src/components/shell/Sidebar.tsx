@@ -125,10 +125,12 @@ export function Sidebar() {
   } = usePortal();
   const { identity, identities, setActiveIdentity } = useIdentity();
   const [railCollapsed, setRailCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function syncRail() {
       const w = window.innerWidth;
+      setIsMobile(w < 768);
       // Tablet forces icon rail; desktop honors user preference (Decision A collapseBehaviour).
       setRailCollapsed(w >= 768 && w < 1280 ? true : w >= 1280 ? sidebarCollapsed : false);
     }
@@ -137,6 +139,8 @@ export function Sidebar() {
     return () => window.removeEventListener("resize", syncRail);
   }, [sidebarCollapsed]);
   const navRef = useRef<HTMLElement | null>(null);
+  const asideRef = useRef<HTMLElement | null>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
 
   const [navQuery, setNavQuery] = useState("");
 
@@ -145,6 +149,40 @@ export function Sidebar() {
     hydrateCollapse();
     hydrateInboxBadge();
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mobile = window.innerWidth < 768;
+    if (!mobile) return;
+
+    if (sidebarOpen) {
+      restoreFocusRef.current = document.activeElement as HTMLElement | null;
+      const t = window.setTimeout(() => {
+        const first = asideRef.current?.querySelector<HTMLElement>(
+          'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        first?.focus();
+      }, 0);
+      function onKey(e: KeyboardEvent) {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          setSidebarOpen(false);
+        }
+      }
+      document.addEventListener("keydown", onKey);
+      return () => {
+        window.clearTimeout(t);
+        document.removeEventListener("keydown", onKey);
+      };
+    }
+
+    const prev = restoreFocusRef.current;
+    restoreFocusRef.current = null;
+    if (prev && typeof prev.focus === "function") {
+      window.setTimeout(() => prev.focus(), 0);
+    }
+    return undefined;
+  }, [sidebarOpen, setSidebarOpen]);
 
   const navPrefs = useSyncExternalStore(subscribeNavPrefs, getNavPrefsSnapshot, getNavPrefsServerSnapshot);
   const collapsedGroups = useSyncExternalStore(subscribeCollapse, getCollapseSnapshot, getCollapseServerSnapshot);
@@ -191,8 +229,12 @@ export function Sidebar() {
       <div
         className={cn("fixed inset-0 z-[5] bg-black/30 md:hidden", sidebarOpen ? "block" : "hidden")}
         onClick={() => setSidebarOpen(false)}
+        data-testid="shell-mobile-nav-overlay"
+        aria-hidden={!sidebarOpen}
       />
       <aside
+        ref={asideRef}
+        id="shell-sidebar-nav"
         className={cn(
           "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex flex-col transition-transform duration-200",
           sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
@@ -202,7 +244,9 @@ export function Sidebar() {
         data-shell-region="shell-nav"
         data-testid="shell-sidebar"
         data-collapsed={railCollapsed ? "true" : "false"}
+        data-mobile-nav={sidebarOpen ? "open" : "closed"}
         aria-label="Platform navigation"
+        aria-hidden={isMobile ? !sidebarOpen : undefined}
       >
         <div className="v33-nav-tools">
           <label className="v33-nav-search">
