@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useIdentity } from "@/platform/context/identity-context";
+import { useQaDemoMode } from "@/platform/context/qa-demo-mode";
 import { getSourceLinkForInboxAction } from "@/platform/services/action-inbox-bridge";
 import { buildSourceHref } from "@/platform/contracts/source-record";
 import { Badge } from "@/components/ui/Badge";
@@ -158,6 +159,7 @@ export function ActionInboxApp() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { identity, inboxDemoRole, canSeeSensitive: identitySensitive } = useIdentity();
+  const { qaDemoMode } = useQaDemoMode();
 
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [actions, setActions] = useState<InboxAction[]>([]);
@@ -216,7 +218,7 @@ export function ActionInboxApp() {
   const moreRef = useRef<HTMLDivElement>(null);
 
   const isManager = demoRole === "manager";
-  const actor = DEMO_USER.name;
+  const actor = identity.displayName;
 
   const persistActions = useCallback((next: InboxAction[]) => {
     setActions(next);
@@ -1079,6 +1081,13 @@ export function ActionInboxApp() {
   };
 
   const resetDemo = () => {
+    if (
+      !window.confirm(
+        "Reset Action Inbox demonstration data to seed? Local edits in this browser will be lost."
+      )
+    ) {
+      return;
+    }
     const seed = resetActionsToSeed();
     setActions(seed);
     setNotifications(loadNotifications());
@@ -1092,7 +1101,7 @@ export function ActionInboxApp() {
     setCategory("all");
     setMainView("my-actions");
     bumpAudit();
-    pushToast("Demonstration data reset.", "default");
+    pushToast("Demonstration data reset (demo).", "default");
     setMoreOpen(false);
   };
 
@@ -1152,10 +1161,15 @@ export function ActionInboxApp() {
 
   return (
     <div className="grid gap-3">
-      {demoMode ? (
-        <div className="cc-demo-banner rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--hcdp-status-info-text)]">
+      {qaDemoMode && demoMode ? (
+        <div className="cc-demo-banner rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--hcdp-status-info-text)]" role="status">
           Demonstration mode — actions, notifications and decisions are stored in this browser only.
-          Email / SMS delivery is simulated.
+          Email / SMS delivery is simulated. Not live operational truth.
+        </div>
+      ) : null}
+      {!qaDemoMode ? (
+        <div className="rounded-[12px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]" role="status">
+          Demonstration seed content — enable QA / Demo mode in the sidebar to reveal inbox demo tools.
         </div>
       ) : null}
 
@@ -1169,53 +1183,62 @@ export function ActionInboxApp() {
               Review, decide and complete work requiring your attention.
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-2">
-              <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
-                Demo role
-                <select
-                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
-                  value={demoRole}
-                  onChange={(e) => {
-                    const next = e.target.value as DemoRole;
-                    applyDemoRole(next);
-                    setSelectedIds([]);
-                    if (next === "staff") setMainView("my-actions");
-                    pushToast(
-                      `Local inbox role override: ${next}. Prefer Act as User / Role in the sidebar for platform-wide identity.`,
-                      "default"
-                    );
-                  }}
-                  aria-label="Demonstration role (coordinates with global identity)"
-                >
-                  <option value="manager">Manager</option>
-                  <option value="staff">Staff</option>
-                </select>
-              </label>
+              {qaDemoMode ? (
+                <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
+                  Local demo role override
+                  <select
+                    className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                    value={demoRole}
+                    onChange={(e) => {
+                      const next = e.target.value as DemoRole;
+                      applyDemoRole(next);
+                      setSelectedIds([]);
+                      if (next === "staff") setMainView("my-actions");
+                      pushToast(
+                        `Local inbox role override: ${next}. Prefer Act as User / Role in the sidebar for platform-wide identity.`,
+                        "default"
+                      );
+                    }}
+                    aria-label="Local demonstration role override (does not replace global Act-as)"
+                  >
+                    <option value="manager">Manager</option>
+                    <option value="staff">Staff</option>
+                  </select>
+                </label>
+              ) : null}
               <Badge tone="info">{identity.displayName} · {identity.role}</Badge>
-              <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
-                Sensitivity
-                <select
-                  className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
-                  value={canSeeSensitive ? "full" : "restricted"}
-                  onChange={(e) => {
-                    const full = e.target.value === "full";
-                    applySensitivity(full);
-                    pushToast(
-                      full ? "Full sensitivity view." : "Restricted sensitivity view.",
-                      "default"
-                    );
-                  }}
-                  aria-label="Sensitivity demonstration"
-                >
-                  <option value="full">Full (authorised)</option>
-                  <option value="restricted">Restricted (unauthorised)</option>
-                </select>
-              </label>
+              {qaDemoMode ? (
+                <label className="flex items-center gap-1.5 text-[length:var(--type-control)] font-bold text-[#475569]">
+                  Sensitivity (demo)
+                  <select
+                    className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-2 py-1 text-[length:var(--type-control)] font-semibold text-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#2563eb]"
+                    value={canSeeSensitive ? "full" : "restricted"}
+                    onChange={(e) => {
+                      const full = e.target.value === "full";
+                      applySensitivity(full);
+                      pushToast(
+                        full ? "Full sensitivity view (demo)." : "Restricted sensitivity view (demo).",
+                        "default"
+                      );
+                    }}
+                    aria-label="Sensitivity demonstration simulation"
+                  >
+                    <option value="full">Full (authorised)</option>
+                    <option value="restricted">Restricted (unauthorised)</option>
+                  </select>
+                </label>
+              ) : null}
               <Badge tone="info">{isManager ? "Manager view" : "Staff view"}</Badge>
               <Badge tone={canSeeSensitive ? "teal" : "warn"}>
                 {canSeeSensitive ? "Full sensitivity" : "Restricted sensitivity"}
               </Badge>
               {unreadNotifs ? <Badge tone="danger">{unreadNotifs} unread</Badge> : null}
-              <span className="text-[length:var(--type-control)] text-[#94a3b8]">Signed in as {actor}</span>
+              <span
+                className="text-[length:var(--type-control)] text-[#94a3b8]"
+                data-testid="inbox-signed-in-as"
+              >
+                Signed in as {actor}
+              </span>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -1262,52 +1285,58 @@ export function ActionInboxApp() {
                       setMoreOpen(false);
                     }}
                   />
-                  <MoreItem
-                    label={demoMode ? "Turn demo mode off" : "Turn demo mode on"}
-                    onClick={() => {
-                      if (!isManager) {
-                        pushToast("Only managers can change demonstration mode.", "warn");
-                        setMoreOpen(false);
-                        return;
-                      }
-                      toggleDemoMode();
-                    }}
-                  />
-                  <MoreItem
-                    label={
-                      demoRole === "manager" ? "Switch to staff role" : "Switch to manager role"
-                    }
-                    onClick={() => {
-                      const next = demoRole === "manager" ? "staff" : "manager";
-                      applyDemoRole(next);
-                      setSelectedIds([]);
-                      if (demoRole === "manager") setMainView("my-actions");
-                      pushToast(
-                        demoRole === "manager" ? "Staff view active." : "Manager view active.",
-                        "default"
-                      );
-                      setMoreOpen(false);
-                    }}
-                  />
-                  <MoreItem
-                    label={
-                      canSeeSensitive
-                        ? "Sensitivity: switch to restricted"
-                        : "Sensitivity: switch to full"
-                    }
-                    onClick={() => {
-                      applySensitivity(!canSeeSensitive);
-                      pushToast(
-                        canSeeSensitive
-                          ? "Restricted sensitivity view."
-                          : "Full sensitivity view.",
-                        "default"
-                      );
-                      setMoreOpen(false);
-                    }}
-                  />
-                  {isManager ? (
-                    <MoreItem label="Reset demonstration data" danger onClick={resetDemo} />
+                  {qaDemoMode ? (
+                    <>
+                      <MoreItem
+                        label={demoMode ? "Turn demo mode off" : "Turn demo mode on"}
+                        onClick={() => {
+                          if (!isManager) {
+                            pushToast("Only managers can change demonstration mode.", "warn");
+                            setMoreOpen(false);
+                            return;
+                          }
+                          toggleDemoMode();
+                        }}
+                      />
+                      <MoreItem
+                        label={
+                          demoRole === "manager" ? "Switch to staff role (local override)" : "Switch to manager role (local override)"
+                        }
+                        onClick={() => {
+                          const next = demoRole === "manager" ? "staff" : "manager";
+                          applyDemoRole(next);
+                          setSelectedIds([]);
+                          if (demoRole === "manager") setMainView("my-actions");
+                          pushToast(
+                            demoRole === "manager"
+                              ? "Local staff role override active (demo)."
+                              : "Local manager role override active (demo).",
+                            "default"
+                          );
+                          setMoreOpen(false);
+                        }}
+                      />
+                      <MoreItem
+                        label={
+                          canSeeSensitive
+                            ? "Sensitivity: switch to restricted (demo)"
+                            : "Sensitivity: switch to full (demo)"
+                        }
+                        onClick={() => {
+                          applySensitivity(!canSeeSensitive);
+                          pushToast(
+                            canSeeSensitive
+                              ? "Restricted sensitivity view (demo)."
+                              : "Full sensitivity view (demo).",
+                            "default"
+                          );
+                          setMoreOpen(false);
+                        }}
+                      />
+                      {isManager ? (
+                        <MoreItem label="Reset demonstration data" danger onClick={resetDemo} />
+                      ) : null}
+                    </>
                   ) : null}
                 </div>
               ) : null}

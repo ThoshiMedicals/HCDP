@@ -139,7 +139,7 @@ th{background:#f8fafc;}
     <div className="grid gap-[18px]">
       <SectionHeader
         title="Reports & exports"
-        subtitle="All organisation reports with real spreadsheet (CSV) export and print/PDF preview. Exports are audited."
+        subtitle="Organisation reports with local browser CSV / print preview. Not a live reporting or export-processing backend."
       />
 
       {Object.entries(grouped).map(([category, reports]) => (

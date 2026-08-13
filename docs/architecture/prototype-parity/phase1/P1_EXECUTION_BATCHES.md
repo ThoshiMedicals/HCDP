@@ -1,14 +1,14 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
-**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B2–B8 never auto-start (OWN-P1-002). P1-B1 acceptance does **not** authorise automatic progression.
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2** implemented on `cursor/p1-b2-shell-truthfulness` — **owner acceptance pending** (not closed). **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B3–B8 never auto-start (OWN-P1-002). P1-B1 acceptance / P1-B2 implementation do **not** authorise automatic progression.
 
 ## Batch index
 
 | Batch | Objective | Gap IDs (primary) | Status |
 | --- | --- | --- | --- |
 | P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
-| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` |
 | P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
@@ -51,17 +51,18 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — PLANNED, NOT AUTHORISED` |
+| Status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` |
 | Objective | Remove or truthfully label inactive/stub shell controls and demo surfaces |
 | Included gaps | 005, 006, 007, 018 (labels), 030 (honesty), 032, 071, 073 (+ identity via OWN-P1-017) |
-| Owner decisions (disposition) | **OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 closed 2026-08-13** — do **not** close gaps; do **not** authorise this batch |
-| Dependencies | P1-B1 closed; honesty dispositions recorded; express B2 authorisation still required |
+| Owner decisions (disposition) | **OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 closed 2026-08-13** — gaps not owner-closed |
+| Dependencies | P1-B1 closed; honesty dispositions recorded; express B2 authorisation **met by named implementation prompt** |
 | Authorised changes (when named) | Copy, visibility, disablement, demo badges / QA gate, identity-chrome alignment — **no fake backends** |
 | Prohibited | Implementing payment/export backends as silent scope; enabling emergency/auth as toast-success; MFA/IdP; SQL; PR/merge/deploy |
 | Tests | Control labelling; no toast-as-success assertions; demo gate; identity chrome consistency |
-| Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; **express owner authorisation of P1-B2** |
-| Exit gate | Named honesty tests green; owner accepts B2 tip; gaps dispositioned by evidence (not by decision alone) |
-| Remaining blocker before coding | **Express named-batch authorisation only** (decision blockers cleared) |
+| Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; **express owner authorisation of P1-B2** — met |
+| Exit gate | Named honesty tests green; **owner accepts B2 tip** (pending); gaps dispositioned by evidence (not by decision alone) |
+| Implementation evidence | [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md) |
+| Remaining blocker before close | **Owner acceptance of implementation tip** |
 
 ## P1-B3 — Register / navigation hygiene
 

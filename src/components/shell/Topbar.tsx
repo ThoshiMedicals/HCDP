@@ -13,11 +13,19 @@ import {
 import { usePortal } from "@/lib/portal-context";
 import { useClinicContext } from "@/platform/context/clinic-context";
 import { useIdentity } from "@/platform/context/identity-context";
+import { useQaDemoMode } from "@/platform/context/qa-demo-mode";
 import { searchPlatformNav } from "@/platform/navigation/nav-search";
 import { modulesVisibleForRole } from "@/platform/module-registry";
 import { cn } from "@/lib/cn";
 
 const ONLINE_STORE = "pulse.v31.online";
+
+const EXPORT_UNAVAILABLE =
+  "Unavailable — portal export requires a reporting backend (not implemented in P1).";
+const MFA_UNAVAILABLE =
+  "Unavailable — Enterprise MFA requires a live authentication backend (not implemented in P1).";
+const MULTI_CLINIC_GUIDANCE =
+  "Shell multi-clinic selection is not available. Use Command Centre multi-clinic controls.";
 
 function readOnline(): boolean {
   if (typeof window === "undefined") return true;
@@ -52,6 +60,7 @@ export function Topbar() {
     scopeLabel,
   } = useClinicContext();
   const { identity } = useIdentity();
+  const { qaDemoMode } = useQaDemoMode();
   const { openCreate } = useCreateForm();
   const [openCount, setOpenCount] = useState(0);
   const [online, setOnline] = useState(true);
@@ -84,7 +93,8 @@ export function Topbar() {
     if (value === "all") setAllClinics();
     else if (value.startsWith("group:")) setClinicGroup(value.slice(6));
     else if (value === "multiple") {
-      pushToast("Use Command Centre multi-clinic controls for custom multi-select (executive).", "default");
+      // OWN-P1-005 — Accepted difference: Command Centre only. Not a success toast.
+      pushToast(MULTI_CLINIC_GUIDANCE, "warn");
     } else setSingleClinic(value);
   }
 
@@ -105,14 +115,15 @@ export function Topbar() {
   }
 
   function toggleOnline() {
+    if (!qaDemoMode) return;
     const next = !online;
     setOnline(next);
     writeOnline(next);
     pushToast(
       next
-        ? "Connection Healthy — operational summaries are current."
-        : "Offline Continuity — local capture continues; sync when online (demo).",
-      next ? "success" : "warn"
+        ? "Demo simulation: Online — browser-local continuity flag only (not live connectivity monitoring)."
+        : "Demo simulation: Offline — browser-local continuity flag only (not live connectivity monitoring).",
+      "default"
     );
   }
 
@@ -149,7 +160,8 @@ export function Topbar() {
           value={clinicSelectValue()}
           onChange={(e) => onClinicChange(e.target.value)}
           aria-label="Clinic scope"
-          title={`Scope: ${scopeLabel}`}
+          title={`Scope: ${scopeLabel}. Multi-clinic custom selection is available in Command Centre only.`}
+          data-testid="shell-clinic-scope"
         >
           <option value="all">All Clinics</option>
           {groups.map((g) => (
@@ -163,7 +175,9 @@ export function Topbar() {
             </option>
           ))}
           {selection.mode === "multiple" ? (
-            <option value="multiple">Multiple Clinics · {selection.selectedClinicIds.length}</option>
+            <option value="multiple">
+              Multiple Clinics · {selection.selectedClinicIds.length} (set in Command Centre)
+            </option>
           ) : null}
         </select>
       </div>
@@ -186,6 +200,16 @@ export function Topbar() {
       </div>
 
       <div className="ribbon-right flex min-w-0 max-w-full items-center gap-1.5 overflow-x-auto sm:gap-2">
+        {qaDemoMode ? (
+          <span
+            className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-warn-border,#f59e0b)] bg-[var(--hcdp-status-warn-surface,#fffbeb)] px-2 py-1 text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--hcdp-status-warn-text,#92400e)] xl:inline-flex"
+            role="status"
+            data-testid="shell-qa-demo-banner"
+            title="QA / Demo mode — demonstration facility only; not a production security boundary"
+          >
+            QA / Demo mode
+          </span>
+        ) : null}
         <div className="seg-mini">
           <Link href="/dashboard" className={cn(onDashboard && "active")}>
             Dashboard
@@ -196,45 +220,60 @@ export function Topbar() {
         </div>
         <button
           type="button"
-          className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] 2xl:inline-flex"
+          className="hidden shrink-0 rounded-[10px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-2.5 py-1.5 text-sm font-bold text-[var(--hcdp-status-info-text)] xl:inline-flex"
           onClick={() => openCreate("locations")}
+          data-testid="shell-new-entry"
+          title="Create a location record in this browser (local demo storage)"
+          aria-label="New Entry — create location (local demo storage)"
         >
           + New Entry
         </button>
         <button
           type="button"
-          className="hidden shrink-0 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--card)] px-2.5 py-1.5 text-sm font-bold text-[var(--ink)] 2xl:inline-flex"
-          onClick={() =>
-            pushToast("Portal export requires a reporting backend. Use Command Centre Export for local demo packs.", "default")
-          }
+          className="hidden shrink-0 cursor-not-allowed rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2.5 py-1.5 text-sm font-bold text-[var(--muted)] opacity-70 xl:inline-flex"
+          disabled
+          aria-disabled="true"
+          data-testid="shell-export-unavailable"
+          title={EXPORT_UNAVAILABLE}
+          aria-label={`Export — ${EXPORT_UNAVAILABLE}`}
         >
           Export
+          <span className="sr-only">{EXPORT_UNAVAILABLE}</span>
         </button>
         <button
           type="button"
-          className="hidden shrink-0 items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] 2xl:inline-flex"
-          aria-label="Enterprise Sign-In · MFA"
-          title="Enterprise Sign-In · MFA"
-          onClick={() =>
-            pushToast("Enterprise Sign-In · MFA requires a live authentication backend (demo).", "default")
-          }
+          className="hidden shrink-0 cursor-not-allowed items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] opacity-70 xl:inline-flex"
+          disabled
+          aria-disabled="true"
+          data-testid="shell-mfa-unavailable"
+          aria-label={`Enterprise Sign-In · MFA — ${MFA_UNAVAILABLE}`}
+          title={MFA_UNAVAILABLE}
         >
-          <Icon name="shield" className="h-3.5 w-3.5 text-[var(--theme-primary)]" />
+          <Icon name="shield" className="h-3.5 w-3.5 text-[var(--muted)]" />
           Enterprise MFA
+          <span className="sr-only">{MFA_UNAVAILABLE}</span>
         </button>
-        <button
-          type="button"
-          className={cn(
-            "inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-control)] font-bold",
-            online
-              ? "border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)]"
-              : "border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)]"
-          )}
-          onClick={toggleOnline}
-          aria-label={online ? "Online" : "Offline"}
-        >
-          {online ? "Online" : "Offline"}
-        </button>
+        {qaDemoMode ? (
+          <button
+            type="button"
+            className={cn(
+              "inline-flex shrink-0 items-center gap-1.5 rounded-[10px] border px-2 py-1 text-[length:var(--type-control)] font-bold",
+              online
+                ? "border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] text-[var(--hcdp-status-success-text)]"
+                : "border-[var(--hcdp-status-warning-border)] bg-[var(--hcdp-status-warning-surface)] text-[var(--hcdp-status-warning-text)]"
+            )}
+            onClick={toggleOnline}
+            data-testid="shell-online-demo-toggle"
+            aria-label={
+              online
+                ? "Online — browser demo simulation (not live connectivity)"
+                : "Offline — browser demo simulation (not live connectivity)"
+            }
+            title="Demo simulation only — not live platform connectivity monitoring"
+          >
+            {online ? "Online (demo)" : "Offline (demo)"}
+          </button>
+        ) : null}
       </div>
     </div>
   );

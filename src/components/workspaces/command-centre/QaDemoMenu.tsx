@@ -42,7 +42,7 @@ export function QaDemoMenu({
         className="cc-ctrl border-dashed cc-text-warn"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        title="Demonstration / QA tools only — not for production use"
+        title="QA / Demo tools — visible only when QA / Demo mode is enabled"
       >
         QA Demo ▾
       </button>

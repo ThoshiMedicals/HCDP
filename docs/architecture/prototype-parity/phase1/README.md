@@ -14,7 +14,7 @@
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1 closed with qualifications; B2–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1 closed with qualifications; P1-B2 implemented — acceptance pending; B3–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 

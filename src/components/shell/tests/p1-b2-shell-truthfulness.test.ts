@@ -1,0 +1,155 @@
+/**
+ * P1-B2 — Shell truthfulness / demo honesty contracts (OWN-P1-004/005/008/017).
+ * Source contracts only — no product runtime acceptance hooks.
+ */
+import assert from "node:assert/strict";
+import { describe, it } from "node:test";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const root = process.cwd();
+function read(rel: string) {
+  return readFileSync(join(root, rel), "utf8");
+}
+
+describe("P1-B2 unsupported Topbar controls (OWN-P1-004)", () => {
+  const topbar = read("src/components/shell/Topbar.tsx");
+
+  it("Export is disabled with truthful inaccessible success path", () => {
+    assert.match(topbar, /shell-export-unavailable/);
+    assert.match(topbar, /disabled/);
+    assert.match(topbar, /aria-disabled="true"/);
+    assert.match(topbar, /Unavailable — portal export requires a reporting backend/);
+    assert.doesNotMatch(topbar, /Export prepared|Export complete|pushToast\([^)]*Export/);
+  });
+
+  it("Enterprise MFA is disabled without success simulation", () => {
+    assert.match(topbar, /shell-mfa-unavailable/);
+    assert.match(topbar, /Unavailable — Enterprise MFA requires a live authentication backend/);
+    assert.doesNotMatch(topbar, /MFA verified|MFA enabled|Enterprise Sign-In ready/);
+  });
+
+  it("New Entry remains a genuine create-drawer pathway", () => {
+    assert.match(topbar, /shell-new-entry/);
+    assert.match(topbar, /openCreate\("locations"\)/);
+    assert.match(topbar, /local demo storage/i);
+  });
+});
+
+describe("P1-B2 multi-clinic accepted difference (OWN-P1-005)", () => {
+  const topbar = read("src/components/shell/Topbar.tsx");
+
+  it("Topbar directs multi-clinic selection to Command Centre without success toast", () => {
+    assert.match(topbar, /Shell multi-clinic selection is not available/);
+    assert.match(topbar, /Command Centre/);
+    assert.match(topbar, /pushToast\(MULTI_CLINIC_GUIDANCE,\s*"warn"\)/);
+    assert.doesNotMatch(topbar, /setMultipleClinics|shell-wide multi-select/);
+  });
+
+  it("does not claim OWN-P1-016 or SQL tenancy resolution", () => {
+    assert.doesNotMatch(topbar, /OWN-P1-016|SQL-backed clinic|production tenancy/);
+  });
+});
+
+describe("P1-B2 QA/demo gate (OWN-P1-008)", () => {
+  const qa = read("src/platform/context/qa-demo-mode.tsx");
+  const topbar = read("src/components/shell/Topbar.tsx");
+  const sidebar = read("src/components/shell/Sidebar.tsx");
+  const layout = read("src/app/(portal)/layout.tsx");
+  const cc = read("src/components/workspaces/command-centre/CommandCentre.tsx");
+  const org = read("src/components/workspaces/OrganisationWorkspace.tsx");
+  const inbox = read("src/components/workspaces/action-inbox/ActionInboxApp.tsx");
+
+  it("QaDemoModeProvider defaults off and forces off in production enforcement", () => {
+    assert.match(qa, /isDemoIdentityMode/);
+    assert.match(qa, /enabled: false/);
+    assert.match(qa, /QA_DEMO_MODE_NOTICE/);
+    assert.match(qa, /not a production security boundary/i);
+    assert.match(layout, /QaDemoModeProvider/);
+  });
+
+  it("Online simulation is gated behind QA/demo mode", () => {
+    assert.match(topbar, /qaDemoMode \?/);
+    assert.match(topbar, /shell-online-demo-toggle/);
+    assert.match(topbar, /not live platform connectivity/i);
+  });
+
+  it("Sidebar exposes an explicit QA/demo toggle and labelled status", () => {
+    assert.match(sidebar, /shell-qa-demo-mode-toggle/);
+    assert.match(sidebar, /shell-qa-demo-mode-status/);
+    assert.match(sidebar, /Enable QA \/ Demo tools/);
+  });
+
+  it("Command Centre QA Demo menu only mounts when qaDemoMode is active", () => {
+    assert.match(cc, /onQaSimulateNextDay=\{\s*qaDemoMode/);
+    assert.match(cc, /onQaResetActions=\{\s*qaDemoMode/);
+  });
+
+  it("Organisation and Action Inbox demo tools are gated", () => {
+    assert.match(org, /qaDemoMode \?/);
+    assert.match(org, /Reset demo data/);
+    assert.match(org, /window\.confirm/);
+    assert.match(inbox, /qaDemoMode/);
+    assert.match(inbox, /Local demo role override/);
+    assert.match(inbox, /window\.confirm/);
+  });
+
+  it("does not reintroduce P1-B1 harness hooks", () => {
+    assert.doesNotMatch(layout, /ShellHarnessProbe|p1-b1-harness/);
+    assert.doesNotMatch(inbox, /p1-b1-harness-force-inbox-error/);
+    assert.equal(existsSync(join(root, "src/components/shell/ShellHarnessProbe.tsx")), false);
+  });
+});
+
+describe("P1-B2 identity consistency (OWN-P1-017)", () => {
+  const sidebar = read("src/components/shell/Sidebar.tsx");
+  const cc = read("src/components/workspaces/command-centre/CommandCentre.tsx");
+  const inbox = read("src/components/workspaces/action-inbox/ActionInboxApp.tsx");
+  const overview = read("src/components/workspaces/organisation/OverviewSection.tsx");
+
+  it("Sidebar and Command Centre greeting use platform identity displayName", () => {
+    assert.match(sidebar, /shell-current-user-name/);
+    assert.match(sidebar, /identity\.displayName/);
+    assert.match(cc, /cc-current-user-greeting/);
+    assert.match(cc, /actingUserName/);
+    assert.match(cc, /\{greeting\}, \{actingUserName\}/);
+    assert.match(cc, /currentUserName=\{actingUserName\}/);
+    assert.doesNotMatch(cc, /\{greeting\}, Neil\./);
+    const controlBar = read("src/components/workspaces/command-centre/ControlBar.tsx");
+    assert.match(controlBar, /currentUserName/);
+    assert.doesNotMatch(controlBar, /Neil ▾/);
+  });
+
+  it("Action Inbox signed-in label uses identity, not DEMO_USER", () => {
+    assert.match(inbox, /const actor = identity\.displayName/);
+    assert.match(inbox, /inbox-signed-in-as/);
+    assert.doesNotMatch(inbox, /const actor = DEMO_USER\.name/);
+  });
+
+  it("Organisation overview no longer hardcodes Sarah as signed-in user", () => {
+    assert.match(overview, /identity\.displayName/);
+    assert.doesNotMatch(overview, /Acting as Sarah Mitchell \(Senior Administrator\)/);
+  });
+});
+
+describe("P1-B2 honesty remnants (GAP-007/030/071/073)", () => {
+  const dash = read("src/components/workspaces/DashboardShellControls.tsx");
+  const reports = read("src/components/workspaces/organisation/ReportsSection.tsx");
+  const topbar = read("src/components/shell/Topbar.tsx");
+
+  it("Dashboard non-operational labels remain non-success controls", () => {
+    assert.match(dash, /nonOperationalNote/);
+    assert.match(dash, /Non-operational — live authentication backend required/);
+    assert.match(dash, /Start intervention — non-operational/);
+    assert.doesNotMatch(dash, /pushToast\([^)]*success/);
+  });
+
+  it("Reports/export honesty avoids live-backend claims", () => {
+    assert.match(reports, /Not a live reporting or export-processing backend/);
+  });
+
+  it("Online toggle is labelled as browser demo simulation", () => {
+    assert.match(topbar, /browser demo simulation/i);
+    assert.match(topbar, /Online \(demo\)|Offline \(demo\)/);
+  });
+});

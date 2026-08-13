@@ -22,6 +22,7 @@ import {
   writeCollapsedGroups,
 } from "@/lib/shell/nav-prefs";
 import { useIdentity } from "@/platform/context/identity-context";
+import { QA_DEMO_MODE_NOTICE, useQaDemoMode } from "@/platform/context/qa-demo-mode";
 import { migrateNavPrefsToModuleIds } from "@/platform/navigation/migrate-nav-prefs";
 import { searchPlatformNav } from "@/platform/navigation/nav-search";
 import { modulesVisibleForRole } from "@/platform/module-registry";
@@ -124,6 +125,7 @@ export function Sidebar() {
     pushToast,
   } = usePortal();
   const { identity, identities, setActiveIdentity } = useIdentity();
+  const { qaDemoMode, setQaDemoMode, canUseQaDemoMode, notice } = useQaDemoMode();
   const [railCollapsed, setRailCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -424,6 +426,17 @@ export function Sidebar() {
         </nav>
 
         <div className="sidebar-user">
+          {qaDemoMode ? (
+            <div
+              className="mb-2 rounded-[10px] border border-[var(--hcdp-status-warn-border,#f59e0b)] bg-[var(--hcdp-status-warn-surface,#fffbeb)] px-2 py-1.5 text-[length:var(--type-control)] font-bold leading-snug text-[var(--hcdp-status-warn-text,#92400e)]"
+              role="status"
+              data-testid="shell-qa-demo-mode-status"
+              title={notice}
+            >
+              QA / Demo mode on
+              <span className="mt-0.5 block font-semibold opacity-90">{QA_DEMO_MODE_NOTICE}</span>
+            </div>
+          ) : null}
           <div className="avatar" aria-hidden>
             {identity.displayName
               .split(" ")
@@ -432,7 +445,9 @@ export function Sidebar() {
               .slice(0, 2)}
           </div>
           <div className="min-w-0 flex-1">
-            <div className="user-name">{identity.displayName}</div>
+            <div className="user-name" data-testid="shell-current-user-name">
+              {identity.displayName}
+            </div>
             <div className="user-role">{identity.role}</div>
           </div>
           <div className="v27-sidebar-role">
@@ -460,6 +475,32 @@ export function Sidebar() {
             <p className="mt-1 text-[length:var(--type-control)] leading-snug text-[var(--sidebar-muted)]">
               Demo Act-as — not production auth
             </p>
+            {canUseQaDemoMode ? (
+              <label className="mt-2 flex cursor-pointer items-start gap-2 text-[length:var(--type-control)] font-semibold leading-snug text-[var(--sidebar-muted)]">
+                <input
+                  type="checkbox"
+                  className="mt-0.5"
+                  checked={qaDemoMode}
+                  onChange={(e) => {
+                    setQaDemoMode(e.target.checked);
+                    pushToast(
+                      e.target.checked
+                        ? "QA / Demo mode on — demonstration tools unlocked (not a security boundary)."
+                        : "QA / Demo mode off — demonstration tools hidden.",
+                      "default"
+                    );
+                  }}
+                  data-testid="shell-qa-demo-mode-toggle"
+                  aria-describedby="shell-qa-demo-mode-help"
+                />
+                <span>
+                  Enable QA / Demo tools
+                  <span id="shell-qa-demo-mode-help" className="mt-0.5 block font-normal opacity-90">
+                    Demonstration facility only — not production authorisation.
+                  </span>
+                </span>
+              </label>
+            ) : null}
           </div>
         </div>
       </aside>

@@ -39,7 +39,7 @@ Additional open decisions cover later P1 batches (OWN-P1-004…008), definition/
 | --- | --- |
 | Branch / SHA | `cursor/p1-scope-readiness-plan` @ `9142ec30b3b2efea1e959ad85ce1406562cd5faa` (application baseline unchanged) |
 | Accepted P0 tip | `b0c4c4d20de1cce7adac5d691c506122e30610a2` (OWN-P1-001, 2026-08-11) |
-| P1B | Pack under `phase1/`; **83** gaps; **P1-B1** accepted/closed with qualifications (2026-08-13); **P1-B2…P1-B8** remain **not authorised** |
+| P1B | Pack under `phase1/`; **83** gaps; **P1-B1** accepted/closed with qualifications (2026-08-13); **P1-B2** implemented — owner acceptance pending; **P1-B3…P1-B8** remain **not authorised** |
 | P1A | 16 files under `phase1/p1a/` |
 | P1C | 15 files under `phase1/p1c/`; scorecard overall **1 / 5** |
 | Docs path | Docs-only under `docs/architecture/prototype-parity/`; no `src/` changes |

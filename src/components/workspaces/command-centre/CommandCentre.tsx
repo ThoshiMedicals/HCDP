@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { usePortal } from "@/lib/portal-context";
+import { useIdentity } from "@/platform/context/identity-context";
+import { useQaDemoMode } from "@/platform/context/qa-demo-mode";
 import {
   ASSETS,
   CATEGORY_LIST,
@@ -268,6 +270,9 @@ function loadClientLayouts(): SavedLayout[] {
 
 export function CommandCentre() {
   const { locations, pushToast } = usePortal();
+  const { identity } = useIdentity();
+  const { qaDemoMode } = useQaDemoMode();
+  const actingUserName = identity.displayName;
   const [selectedClinicIds, setSelectedClinicIds] = useState<string[]>(() => locations.map((l) => l.id));
   const [clinicGroups, setClinicGroups] = useState<ClinicGroup[]>(() => CLINIC_GROUPS);
   const [period, setPeriod] = useState<LayoutPeriod>("Today");
@@ -596,13 +601,13 @@ export function CommandCentre() {
             stage: "Completed",
             priority: "Completed Today",
             completedAt: new Date().toISOString(),
-            latestUpdate: `Marked complete by Neil`,
+            latestUpdate: `Marked complete by ${actingUserName}`,
           };
         }
         if (verb === "Escalate") return { ...a, stage: "Escalated", escalation: "Owner/Director", latestUpdate: "Escalated" };
         if (verb === "Acknowledge") return { ...a, acknowledged: true, latestUpdate: "Acknowledged" };
         if (verb === "Dismiss") return { ...a, stage: "Dismissed", latestUpdate: "Dismissed" };
-        return { ...a, latestUpdate: `${verb} by Neil`, stage: verb === "Assign" || verb === "Reassign" ? "Assigned" : a.stage };
+        return { ...a, latestUpdate: `${verb} by ${actingUserName}`, stage: verb === "Assign" || verb === "Reassign" ? "Assigned" : a.stage };
       })
     );
     pushToast(`${verb} applied to ${ids.length} action(s).`, "success");
@@ -621,7 +626,7 @@ export function CommandCentre() {
         a.id === id
           ? {
               ...a,
-              comments: [...a.comments, { id: `c-${Date.now()}`, author: "Neil", at: new Date().toISOString(), body }],
+              comments: [...a.comments, { id: `c-${Date.now()}`, author: actingUserName, at: new Date().toISOString(), body }],
               latestUpdate: `Comment: ${body}`,
             }
           : a
@@ -794,12 +799,12 @@ export function CommandCentre() {
       appendAudit({
         actionId: target,
         event: `Finance ${verb}`,
-        user: "Neil",
+        user: actingUserName,
         at: new Date().toISOString(),
         reason: `Demonstration ${verb.toLowerCase()} on ${target}`,
         previousValue: "Pending review",
         newValue: verb,
-        approval: "Neil (demonstration)",
+        approval: `${actingUserName} (demonstration)`,
         evidence: "Evidence placeholder (local demonstration)",
       });
       pushToast(`${verb} recorded for finance item (local demo — no live backend).`, "success");
@@ -818,12 +823,12 @@ export function CommandCentre() {
         appendAudit({
           actionId: id,
           event: "Close serious incident",
-          user: "Neil",
+          user: actingUserName,
           at: new Date().toISOString(),
           previousValue: "Open investigation",
           newValue: "Closed",
           reason: "Serious incident formally closed (demonstration)",
-          approval: "Neil (demonstration)",
+          approval: `${actingUserName} (demonstration)`,
           evidence: "Evidence placeholder (local demonstration)",
         });
       }
@@ -872,12 +877,12 @@ export function CommandCentre() {
     appendAudit({
       actionId: id,
       event: "Withdraw emergency notice",
-      user: "Neil",
+      user: actingUserName,
       at: new Date().toISOString(),
       reason: reason || "Emergency notice withdrawn",
       previousValue: "Emergency published",
       newValue: "Withdrawn",
-      approval: "Neil (demonstration)",
+      approval: `${actingUserName} (demonstration)`,
       evidence: "Evidence placeholder (local demonstration)",
     });
     pushToast("Emergency notice withdrawn locally (dashboard only — no live email).", "success");
@@ -1041,7 +1046,7 @@ export function CommandCentre() {
                           temporaryContinuedUse: {
                             reason: "Owner-approved temporary continued use",
                             controls: "Supervised use + daily review",
-                            recordedBy: "Neil",
+                            recordedBy: actingUserName,
                             at: new Date().toISOString(),
                           },
                         }
@@ -1154,8 +1159,14 @@ export function CommandCentre() {
             <h1 className="m-0 mt-1 text-[22px] font-black tracking-tight text-[var(--cc-ink)] sm:text-[26px]">
               Owner/Director Command Centre
             </h1>
-            <p className="m-0 mt-1 text-[13px] font-semibold text-[var(--cc-ink)]">
-              {greeting}, Neil. Here is today’s organisation overview.
+            <p
+              className="m-0 mt-1 text-[13px] font-semibold text-[var(--cc-ink)]"
+              data-testid="cc-current-user-greeting"
+            >
+              {greeting}, {actingUserName}. Here is today’s organisation overview.
+            </p>
+            <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]" role="status">
+              Demonstration seed data — not live operational truth.
             </p>
             <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">
               {todayLabel} · Layout: {layoutName} · Period: {periodLabel(period, customRange)}
@@ -1231,17 +1242,34 @@ export function CommandCentre() {
         appearance={resolvedAppearance}
         onAppearance={setAppearance}
         notificationCounts={notificationCounts}
-        onQaSimulateNextDay={simulateNextDay}
-        onQaSetCardState={(s) => {
-          setQaCardState(s);
-          writeQaCardState(s);
-          pushToast(s ? `QA card state: ${s}` : "QA card state cleared.", "default");
-        }}
-        onQaResetActions={() => {
-          const seed = resetModule1ActionsToSeed();
-          setActions(applyDemoDayFilter(seed, demoDay, period));
-          pushToast("Module 1 actions reset to seed.", "warn");
-        }}
+        onQaSimulateNextDay={
+          qaDemoMode
+            ? simulateNextDay
+            : undefined
+        }
+        onQaSetCardState={
+          qaDemoMode
+            ? (s) => {
+                setQaCardState(s);
+                writeQaCardState(s);
+                pushToast(
+                  s
+                    ? `QA simulation: card state “${s}” (local demo only).`
+                    : "QA simulation: card state cleared.",
+                  "default"
+                );
+              }
+            : undefined
+        }
+        onQaResetActions={
+          qaDemoMode
+            ? () => {
+                const seed = resetModule1ActionsToSeed();
+                setActions(applyDemoDayFilter(seed, demoDay, period));
+                pushToast("Module 1 actions reset to seed (demo).", "warn");
+              }
+            : undefined
+        }
         onTemplatesRecurring={() => setRecurringOpen(true)}
         onAppearanceReminder={() =>
           pushToast("Use the Appearance selector in the control bar (Light / Dark / Device setting).", "default")
@@ -1249,6 +1277,7 @@ export function CommandCentre() {
         onSignOut={() =>
           pushToast("Sign out is demonstration-only — no authentication backend connected.", "default")
         }
+        currentUserName={actingUserName}
       />
 
       <div className="mx-auto grid w-full min-w-0 max-w-[1480px] gap-2.5 px-3 py-2.5 lg:px-5">
@@ -1286,12 +1315,12 @@ export function CommandCentre() {
                   appendAudit({
                     actionId: `export-${report}`,
                     event: "Sensitive report export",
-                    user: "Neil",
+                    user: actingUserName,
                     at: new Date().toISOString(),
                     previousValue: "Not exported",
                     newValue: `${format} prepared`,
                     reason: `Sensitive export of ${report}`,
-                    approval: "Neil (demonstration)",
+                    approval: `${actingUserName} (demonstration)`,
                     evidence: "Evidence placeholder (local demonstration)",
                   });
                   pushToast(`${format} export for “${report}” prepared (local demo).`, "success");
@@ -1469,7 +1498,7 @@ export function CommandCentre() {
           const ev: TimelineEvent = {
             id: `t-${Date.now()}`,
             at: new Date().toISOString(),
-            actor: "Neil",
+            actor: actingUserName,
             event: `Executive note: ${note}`,
           };
           setClinicHealth((prev) =>
@@ -1482,7 +1511,7 @@ export function CommandCentre() {
           appendAudit({
             actionId: healthOpenId,
             event: "Executive health note",
-            user: "Neil",
+            user: actingUserName,
             at: ev.at,
             reason: note,
           });
@@ -1494,7 +1523,7 @@ export function CommandCentre() {
             const auditEv: TimelineEvent = {
               id: `t-${Date.now()}`,
               at: new Date().toISOString(),
-              actor: "Neil",
+              actor: actingUserName,
               event: `Override applied: ${payload.band} until ${payload.expiry}`,
             };
             setClinicHealth((prev) => {
@@ -1515,7 +1544,7 @@ export function CommandCentre() {
             appendAudit({
               actionId: healthOpenId ?? payload.affectedClinicIds[0] ?? "health",
               event: "Clinic health override",
-              user: "Neil",
+              user: actingUserName,
               at: payload.recordedAt,
               reason: payload.reason,
               approval: payload.approvingManager,
@@ -1533,7 +1562,7 @@ export function CommandCentre() {
             const auditEv: TimelineEvent = {
               id: `t-${Date.now()}`,
               at: new Date().toISOString(),
-              actor: "Neil",
+              actor: actingUserName,
               event: "Override withdrawn",
             };
             setClinicHealth((prev) => {
@@ -1550,12 +1579,12 @@ export function CommandCentre() {
             appendAudit({
               actionId: healthOpenId,
               event: "Override withdrawn",
-              user: "Neil",
+              user: actingUserName,
               at: auditEv.at,
               previousValue: prevBand,
               newValue: "Automatic calculated status",
               reason: "Manager withdrew clinic-status override",
-              approval: "Neil (demonstration)",
+              approval: `${actingUserName} (demonstration)`,
               evidence: "Evidence placeholder (local demonstration)",
             });
             pushToast("Override withdrawn.", "success");

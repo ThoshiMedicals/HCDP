@@ -1,0 +1,63 @@
+{
+  "base": "http://localhost:3000",
+  "shots": [
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\01-ordinary-mode-dashboard-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\02-export-disabled-focus-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\03-mfa-disabled-focus-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\04-new-entry-available-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\05-multi-clinic-guidance-toast-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\06-identity-sidebar-and-cc-greeting-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\07-act-as-propagated-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\08-qa-demo-mode-active-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\09-online-offline-demo-labelled-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\10-cc-qa-demo-menu-and-clinic-controls-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\11-org-local-demo-override-labelled-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\12-org-reset-confirmation-path-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\13-inbox-signed-in-identity-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\14-mobile-ordinary-390-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\15-mobile-qa-demo-mode-390-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16-qa-demo-mode-1440-dark.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-1280-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-1024-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-768-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-430-light.png"
+  ],
+  "checks": [
+    {
+      "id": "ordinary-hidden-demo",
+      "onlineOrdinary": 0,
+      "qaBannerOrdinary": 0,
+      "qaMenuOrdinary": 0
+    },
+    {
+      "id": "identity-match-ordinary",
+      "sidebarName": "Sarah Mitchell",
+      "greeting": "Good morning, Sarah Mitchell. Here is today’s organisation overview."
+    },
+    {
+      "id": "identity-act-as",
+      "priorName": "Sarah Mitchell",
+      "sidebarAfter": "David King",
+      "greetingAfter": "Good morning, David King. Here is today’s organisation overview.",
+      "menuAfter": "David King ▾"
+    },
+    {
+      "id": "org-reset-confirm",
+      "message": "Reset Organisation demo data to seed? Local edits in this browser will be lost."
+    },
+    {
+      "id": "inbox-signed-in",
+      "signedIn": "Signed in as David King"
+    },
+    {
+      "id": "appearance-modes",
+      "light": true,
+      "dark": true,
+      "systemLight": "covered via light emulate",
+      "systemDark": "covered via dark emulate"
+    }
+  ],
+  "at": "2026-08-13T01:40:32.210Z",
+  "failures": [],
+  "ok": true
+}

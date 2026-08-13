@@ -22,7 +22,7 @@
 
 Owner-review planning artefacts for the next prototype-parity phase live under [`phase1/`](./phase1/README.md):
 
-- **P1B** prototype-parity plan (83 gaps, 8 batches) — **P1-B1** owner accepted with qualifications and closed (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`
+- **P1B** prototype-parity plan (83 gaps, 8 batches) — **P1-B1** owner accepted with qualifications and closed (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; **P1-B2** implemented on `cursor/p1-b2-shell-truthfulness` — **owner acceptance pending**; **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`
 - **P1A** master product-definition / delivery-readiness pack — stamp `P1A — PLANNED, NOT AUTHORISED` — [`phase1/p1a/`](./phase1/p1a/README.md)
 - **P1C** development-repository / architecture / production-readiness audit — stamp `P1C — PLANNED, NOT AUTHORISED` — [`phase1/p1c/`](./phase1/p1c/README.md)
 

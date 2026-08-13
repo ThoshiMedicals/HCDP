@@ -3,6 +3,7 @@
 import { PortalProvider, usePortal } from "@/lib/portal-context";
 import { ClinicContextProvider } from "@/platform/context/clinic-context";
 import { IdentityProvider } from "@/platform/context/identity-context";
+import { QaDemoModeProvider } from "@/platform/context/qa-demo-mode";
 import { CreateFormProvider } from "@/components/forms/CreateFormProvider";
 import { Sidebar } from "@/components/shell/Sidebar";
 import { Topbar } from "@/components/shell/Topbar";
@@ -35,7 +36,9 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     <PortalProvider>
       <ClinicContextProvider>
         <IdentityProvider>
-          <PortalChrome>{children}</PortalChrome>
+          <QaDemoModeProvider>
+            <PortalChrome>{children}</PortalChrome>
+          </QaDemoModeProvider>
         </IdentityProvider>
       </ClinicContextProvider>
     </PortalProvider>

@@ -5,6 +5,8 @@ export const PLATFORM_PREFIX = "pulse.platform";
 export const PLATFORM_KEYS = {
   clinics: `${PLATFORM_PREFIX}.context.clinics`,
   identity: `${PLATFORM_PREFIX}.context.identity`,
+  /** Explicit QA/demo mode gate (OWN-P1-008). Default off — not a production security boundary. */
+  qaDemoMode: `${PLATFORM_PREFIX}.qaDemoMode`,
   migrations: `${PLATFORM_PREFIX}.migrations`,
   sourceLinks: `${PLATFORM_PREFIX}.sourceLinks`,
 } as const;

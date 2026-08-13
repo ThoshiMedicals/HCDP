@@ -2,6 +2,8 @@
 
 import { Panel, PanelSub, PanelTitle } from "@/components/ui/Panel";
 import { useOrganisation } from "@/lib/organisation/context";
+import { useIdentity } from "@/platform/context/identity-context";
+import { useQaDemoMode } from "@/platform/context/qa-demo-mode";
 import {
   ClickableMetric,
   EmergencyBanner,
@@ -11,7 +13,9 @@ import {
 } from "./org-ui";
 
 export function OverviewSection() {
-  const { state, metrics, navigate, clinics } = useOrganisation();
+  const { state, metrics, navigate, clinics, actor } = useOrganisation();
+  const { identity } = useIdentity();
+  const { qaDemoMode } = useQaDemoMode();
 
   const usersByClinic = clinics.map((c) => ({
     label: c.shortName,
@@ -69,7 +73,11 @@ export function OverviewSection() {
     <div className="grid gap-[18px]">
       <SectionHeader
         title="Organisation overview"
-        subtitle="Summary cards drill into filtered sections. Acting as Sarah Mitchell (Senior Administrator)."
+        subtitle={
+          qaDemoMode
+            ? `Summary cards drill into filtered sections. Signed in as ${identity.displayName}. Local demo actor: ${actor.name} (${actor.role}). Demonstration seed data.`
+            : `Summary cards drill into filtered sections. Signed in as ${identity.displayName} · ${identity.role}. Demonstration seed data — not live operational truth.`
+        }
       />
 
       <div className="grid gap-3.5 md:grid-cols-2 xl:grid-cols-3">

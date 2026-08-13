@@ -63,6 +63,7 @@ export function ControlBar({
   onTemplatesRecurring,
   onSignOut,
   onAppearanceReminder,
+  currentUserName,
 }: {
   locations: Location[];
   health: ClinicHealthProfile[];
@@ -101,6 +102,8 @@ export function ControlBar({
   onTemplatesRecurring?: () => void;
   onSignOut?: () => void;
   onAppearanceReminder?: () => void;
+  /** Active global demo identity — OWN-P1-017 current-user chrome. */
+  currentUserName: string;
 }) {
   const [clinicsOpen, setClinicsOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -367,8 +370,8 @@ export function ControlBar({
           <Button small variant="line" onClick={onCustomise}>
             Customise Dashboard
           </Button>
-          <Button small variant="line" onClick={onExport}>
-            Export
+          <Button small variant="line" onClick={onExport} title="Local demonstration export — not live report generation">
+            Export (local demo)
           </Button>
           <Button
             small
@@ -450,24 +453,28 @@ export function ControlBar({
               type="button"
               className="cc-ctrl"
               aria-expanded={userOpen}
+              aria-label={`Signed in as ${currentUserName} (demonstration)`}
+              data-testid="cc-current-user-menu"
               onClick={() => {
                 setUserOpen((v) => !v);
                 setClinicsOpen(false);
                 setMoreOpen(false);
               }}
             >
-              Neil ▾
+              {currentUserName} ▾
             </button>
             {userOpen ? (
               <div className="absolute right-0 top-[110%] z-40 w-[240px] rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-card)] p-2 shadow-xl">
-                <div className="px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">Owner / Director</div>
+                <div className="px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--cc-muted)]">
+                  {currentUserName}
+                </div>
                 <div className="px-2 pb-2 text-xs font-semibold">Demonstration user · local session only</div>
                 <p className="m-0 px-2 pb-2 text-[length:var(--type-control)] text-[var(--cc-muted)]">
                   Sign-in, SSO and role switching require a future authentication backend.
                 </p>
                 {[
                   ["Open notifications", onNotifications],
-                  ["Export", onExport],
+                  ["Export (local demo)", onExport],
                   [
                     "Appearance",
                     () => {

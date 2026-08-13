@@ -26,6 +26,8 @@ import { SettingsSection } from "./organisation/SettingsSection";
 import { StructureSection } from "./organisation/StructureSection";
 import { UsersSection } from "./organisation/UsersSection";
 import { cn } from "@/lib/cn";
+import { useIdentity } from "@/platform/context/identity-context";
+import { QA_DEMO_MODE_NOTICE, useQaDemoMode } from "@/platform/context/qa-demo-mode";
 
 const NAV: { id: OrgSectionId; label: string }[] = [
   { id: "overview", label: "Overview" },
@@ -109,6 +111,8 @@ function OrganisationWorkspaceInner() {
     patchState,
     pushToast,
   } = useOrganisation();
+  const { identity } = useIdentity();
+  const { qaDemoMode } = useQaDemoMode();
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [criticalResolve, setCriticalResolve] = useState<OrgNotification | null>(null);
@@ -152,7 +156,14 @@ function OrganisationWorkspaceInner() {
         <div className="mb-3 px-2">
           <div className="text-xs font-bold uppercase tracking-wide text-[var(--muted)]">Module 3</div>
           <div className="text-sm font-extrabold text-[var(--ink)]">Organisation & Access</div>
-          <div className="mt-1 text-xs text-[var(--muted)]">{actor.name} · {actor.role}</div>
+          <div className="mt-1 text-xs text-[var(--muted)]">
+            Signed in as {identity.displayName} · {identity.role}
+          </div>
+          {qaDemoMode ? (
+            <div className="mt-1 text-xs font-semibold text-[var(--hcdp-status-warn-text,#92400e)]" role="status">
+              Local demo actor: {actor.name} · {actor.role}
+            </div>
+          ) : null}
         </div>
         <nav className="grid gap-0.5">
           {NAV.map((item) => (
@@ -171,43 +182,70 @@ function OrganisationWorkspaceInner() {
             </button>
           ))}
         </nav>
-        <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
-          <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">Acting as</span>
-          {demoActors.map((a) => (
-            <Button
-              key={a.id}
-              small
-              variant={actor.id === a.id ? "teal" : "line"}
-              onClick={() => switchActor(a.id)}
-              title={`Act as ${a.name} (${a.role})`}
-            >
-              Act as {a.name.split(" ")[0]}
-            </Button>
-          ))}
-        </div>
-        <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
-          <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">Demo controls</span>
-          <Button small variant="line" onClick={() => advanceClock(1)} title="Advance demo clock one day">
-            +1 day
-          </Button>
-          <Button small variant="line" onClick={() => advanceClock(3)} title="Advance demo clock three days">
-            +3 days
-          </Button>
-          <Button small variant="line" onClick={runExpiryCheck}>
-            Run expiry check
-          </Button>
-          <Button small variant="line" onClick={resetDemo}>
-            Reset demo data
-          </Button>
-        </div>
+        {qaDemoMode ? (
+          <>
+            <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
+              <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">
+                Local demo actor
+              </span>
+              <p className="px-2 text-[length:var(--type-control)] font-semibold leading-snug text-[var(--muted)]">
+                Module-local override — does not replace global Act-as identity ({identity.displayName}).
+              </p>
+              {demoActors.map((a) => (
+                <Button
+                  key={a.id}
+                  small
+                  variant={actor.id === a.id ? "teal" : "line"}
+                  onClick={() => switchActor(a.id)}
+                  title={`Local demo actor ${a.name} (${a.role})`}
+                >
+                  Act as {a.name.split(" ")[0]}
+                </Button>
+              ))}
+            </div>
+            <div className="mt-4 grid gap-2 border-t border-[#f0f3f6] pt-3">
+              <span className="px-2 text-[length:var(--type-meta)] font-bold uppercase text-[#94a3b8]">
+                Demo controls
+              </span>
+              <p className="px-2 text-[length:var(--type-control)] font-semibold leading-snug text-[var(--muted)]">
+                {QA_DEMO_MODE_NOTICE}
+              </p>
+              <Button small variant="line" onClick={() => advanceClock(1)} title="Advance demo clock one day (simulation)">
+                +1 day (demo clock)
+              </Button>
+              <Button small variant="line" onClick={() => advanceClock(3)} title="Advance demo clock three days (simulation)">
+                +3 days (demo clock)
+              </Button>
+              <Button small variant="line" onClick={runExpiryCheck}>
+                Run expiry check (demo)
+              </Button>
+              <Button
+                small
+                variant="line"
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Reset Organisation demo data to seed? Local edits in this browser will be lost."
+                    )
+                  ) {
+                    resetDemo();
+                  }
+                }}
+                aria-label="Reset organisation demo data — requires confirmation"
+              >
+                Reset demo data
+              </Button>
+            </div>
+          </>
+        ) : null}
       </aside>
 
       <div className="min-w-0 grid gap-[18px]">
         <SectionHeader
           title="Organisation & Access"
-          subtitle="Healthcare Doctors Pulse — structure, users, permissions and audit."
+          subtitle="Healthcare Doctors Pulse — structure, users, permissions and audit. Demonstration seed data — not live operational truth."
           actions={
-            <Badge tone="teal">{actor.role}</Badge>
+            <Badge tone="teal">{identity.role}</Badge>
           }
         />
 

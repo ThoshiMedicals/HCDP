@@ -129,7 +129,7 @@
 | Risk | False operational confidence |
 | Acceptance evidence | UI copy/visibility tests; no toast-as-success |
 | Batch | P1-B2 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (P1-B2; see `docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`) |
 | Owner clarification | **Yes** — hide vs truthful non-op vs defer backend |
 
 ### P1-GAP-006 — Clinic multi-select limited to Command Centre
@@ -147,7 +147,7 @@
 | Risk | Wrong clinic data views |
 | Acceptance evidence | Role/clinic scenarios |
 | Batch | P1-B2 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (Accepted difference: CC-only; OWN-P1-005) |
 | Owner clarification | **Yes** |
 
 ### P1-GAP-007 — Dashboard non-operational shell cards
@@ -165,7 +165,7 @@
 | Risk | Fake success if “activated” without backend |
 | Acceptance evidence | Copy/visibility checks |
 | Batch | P1-B2 / P2 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (honesty labels preserved; domain enablement still P2+) |
 | Owner clarification | No |
 
 ### P1-GAP-008 — Appearance System hydrate settle
@@ -371,7 +371,7 @@
 | Risk | Security misunderstanding |
 | Acceptance evidence | Label tests (P1); service/audit tests (P2) |
 | Batch | P1-B2 / P2-M03 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (labelling/identity + QA gate only; durable services remain P2+) |
 | Owner clarification | **Yes** — which M03 controls must be disabled vs demo-labelled in P1 |
 
 ### P1-GAP-019 — M01/M02 cross-module projections incomplete
@@ -531,7 +531,7 @@ Same pattern for M11 `/training` (Wave3). Prefer after P1-GAP-011 register sync.
 | Risk | Compliance misunderstanding |
 | Acceptance evidence | Control labelling tests |
 | Batch | P1-B2 / P1-B7 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (honesty portion in P1-B2; residual report chrome may remain P1-B7) |
 | Owner clarification | No |
 
 ### P1-GAP-031 — Responsive behaviour residual (tablet/mobile)
@@ -567,7 +567,7 @@ Same pattern for M11 `/training` (Wave3). Prefer after P1-GAP-011 register sync.
 | Risk | Data misunderstanding |
 | Acceptance evidence | Visible “demo/QA” labelling |
 | Batch | P1-B2 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` (explicit QA/demo mode gate) |
 | Owner clarification | **Yes** — retain vs gate behind flag |
 
 ---
@@ -673,13 +673,13 @@ Classification **Future scope** / P2+. Status `P1 — PLANNED, NOT AUTHORISED`.
 Classification **Future scope**. Status `P1 — PLANNED, NOT AUTHORISED`.
 
 ### P1-GAP-071 — Prototype-only features still visible as if live (seed titles, demo packs)
-Classification **Moderate**. Priority P1-rec. Batch P1-B2. Status `P1 — PLANNED, NOT AUTHORISED`. Owner clarification **Yes** on seed copy cleanup vs retain for QA.
+Classification **Moderate**. Priority P1-rec. Batch P1-B2. Status `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING`. Owner clarification **Yes** on seed copy cleanup vs retain for QA.
 
 ### P1-GAP-072 — Material dashboard difference: stacked strips removed (Batch1) vs prototype density
 Classification **Accepted difference** (owner visual remediation). Preserve unless Decision A requires revisit. Status `P1 — PLANNED, NOT AUTHORISED`.
 
 ### P1-GAP-073 — Online toggle demo (`pulse.v31.online`)
-Classification **Minor**. Priority P1-rec honesty. Batch P1-B2. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Minor**. Priority P1-rec honesty. Batch P1-B2. Status `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING`.
 
 ### P1-GAP-074 — Hydration observations (historical M04/M05/M07)
 Classification **Minor** / Observation. Note: tooling debt from Batch1 partially superseded by tip `9142ec30` clean tsc. Re-verify during P1-B4. Status `P1 — PLANNED, NOT AUTHORISED`.
