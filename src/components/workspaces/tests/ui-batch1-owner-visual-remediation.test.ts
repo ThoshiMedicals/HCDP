@@ -71,13 +71,15 @@ describe("Owner visual remediation — global sidebar", () => {
 });
 
 describe("Owner visual remediation — M04–M07 section navigation", () => {
-  it("provides shared ModuleSectionNav with desktop tabs and mobile selector", () => {
+  it("provides shared ModuleSectionNav with desktop navigation and mobile selector", () => {
     const nav = read("src/components/shell/ModuleSectionNav.tsx");
     const css = read("src/styles/tokens.css");
     assert.match(nav, /module-section-nav__desktop-only/);
     assert.match(nav, /module-section-nav__compact-only/);
-    assert.match(nav, /role="tablist"/);
-    assert.match(nav, /role="tab"/);
+    assert.match(nav, /<nav/);
+    assert.match(nav, /aria-current=\{selected \? "page"/);
+    assert.doesNotMatch(nav, /role="tablist"/);
+    assert.doesNotMatch(nav, /role="tab"/);
     assert.match(css, /max-width:\s*768px/);
     assert.match(nav, /module-section-nav__select/);
   });

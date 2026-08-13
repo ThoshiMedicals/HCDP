@@ -1,13 +1,50 @@
 {
   "batch": "P1-B4",
   "runtime": "production",
-  "baseUrl": "http://localhost:3020",
-  "generatedAt": "2026-08-13T10:40:02.114Z",
+  "baseUrl": "http://localhost:3021",
+  "generatedAt": "2026-08-13T22:54:59.529Z",
   "failures": 0,
-  "assertionCount": 695,
-  "passCount": 695,
+  "assertionCount": 765,
+  "passCount": 765,
   "failCount": 0,
-  "screenshotCount": 65,
+  "assertionGroups": {
+    "appearance": {
+      "pass": 232,
+      "fail": 0,
+      "total": 232
+    },
+    "responsive": {
+      "pass": 262,
+      "fail": 0,
+      "total": 262
+    },
+    "keyboard": {
+      "pass": 44,
+      "fail": 0,
+      "total": 44
+    },
+    "reducedMotion": {
+      "pass": 53,
+      "fail": 0,
+      "total": 53
+    },
+    "hydration": {
+      "pass": 90,
+      "fail": 0,
+      "total": 90
+    },
+    "consumer": {
+      "pass": 84,
+      "fail": 0,
+      "total": 84
+    },
+    "other": {
+      "pass": 0,
+      "fail": 0,
+      "total": 0
+    }
+  },
+  "screenshotCount": 69,
   "shots": [
     {
       "file": "dashboard-1440-light-reduce.png",
@@ -27,7 +64,7 @@
     {
       "file": "dashboard-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 161141
+      "bytes": 161304
     },
     {
       "file": "dashboard-1280-light-reduce.png",
@@ -47,7 +84,7 @@
     {
       "file": "dashboard-1280-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 158337
+      "bytes": 158475
     },
     {
       "file": "dashboard-1024-light-reduce.png",
@@ -77,7 +114,7 @@
     {
       "file": "dashboard-768-dark-reduce.png",
       "runtime": "production",
-      "bytes": 117744
+      "bytes": 117889
     },
     {
       "file": "dashboard-768-system-os-light-reduce.png",
@@ -97,7 +134,7 @@
     {
       "file": "dashboard-430-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74424
+      "bytes": 74570
     },
     {
       "file": "dashboard-430-system-os-light-reduce.png",
@@ -107,7 +144,7 @@
     {
       "file": "dashboard-430-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74590
+      "bytes": 74424
     },
     {
       "file": "dashboard-390-light-reduce.png",
@@ -177,17 +214,17 @@
     {
       "file": "b2-demo-honesty-390-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 62729
+      "bytes": 62716
     },
     {
       "file": "b3-m11-nav-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 151049
+      "bytes": 151051
     },
     {
       "file": "b3-m11-nav-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 150010
+      "bytes": 150001
     },
     {
       "file": "b3-m11-nav-390-light-reduce.png",
@@ -242,12 +279,12 @@
     {
       "file": "hydrate-m04-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 126654
+      "bytes": 126840
     },
     {
       "file": "hydrate-m04-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 125676
+      "bytes": 125545
     },
     {
       "file": "hydrate-m04-390-light-reduce.png",
@@ -282,7 +319,7 @@
     {
       "file": "hydrate-m07-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 137993
+      "bytes": 137989
     },
     {
       "file": "hydrate-m07-1440-system-os-dark-reduce.png",
@@ -302,7 +339,7 @@
     {
       "file": "interaction-mobile-nav-open-390-light-reduce.png",
       "runtime": "production",
-      "bytes": 60625
+      "bytes": 60623
     },
     {
       "file": "interaction-mobile-nav-closed-after-escape-390-light-reduce.png",
@@ -310,9 +347,29 @@
       "bytes": 64180
     },
     {
+      "file": "interaction-mobile-nav-closed-after-overlay-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 64180
+    },
+    {
+      "file": "interaction-mobile-nav-open-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 67617
+    },
+    {
+      "file": "interaction-mobile-nav-closed-after-escape-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 76139
+    },
+    {
+      "file": "interaction-mobile-nav-closed-after-overlay-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 76139
+    },
+    {
       "file": "system-os-change-system-preference-os-dark-1440.png",
       "runtime": "production",
-      "bytes": 161228
+      "bytes": 161226
     },
     {
       "file": "explicit-light-unaffected-by-os-dark-1440.png",
@@ -327,12 +384,12 @@
     {
       "file": "motion-normal-dashboard-1440-dark.png",
       "runtime": "production",
-      "bytes": 161910
+      "bytes": 161378
     },
     {
       "file": "keyboard-tab-focus-dashboard-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 163125
+      "bytes": 163118
     }
   ],
   "assertions": [
@@ -374,7 +431,7 @@
     {
       "ok": true,
       "id": "dashboard-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -414,7 +471,7 @@
     {
       "ok": true,
       "id": "dashboard-1440-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -459,7 +516,7 @@
     {
       "ok": true,
       "id": "dashboard-1440-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -504,7 +561,7 @@
     {
       "ok": true,
       "id": "dashboard-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -544,7 +601,7 @@
     {
       "ok": true,
       "id": "dashboard-1280-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -584,7 +641,7 @@
     {
       "ok": true,
       "id": "dashboard-1280-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -629,7 +686,7 @@
     {
       "ok": true,
       "id": "dashboard-1280-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -674,7 +731,7 @@
     {
       "ok": true,
       "id": "dashboard-1280-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -714,7 +771,7 @@
     {
       "ok": true,
       "id": "dashboard-1024-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -754,7 +811,7 @@
     {
       "ok": true,
       "id": "dashboard-1024-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -799,7 +856,7 @@
     {
       "ok": true,
       "id": "dashboard-1024-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -844,7 +901,7 @@
     {
       "ok": true,
       "id": "dashboard-1024-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -884,7 +941,7 @@
     {
       "ok": true,
       "id": "dashboard-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -924,7 +981,7 @@
     {
       "ok": true,
       "id": "dashboard-768-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -969,7 +1026,7 @@
     {
       "ok": true,
       "id": "dashboard-768-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1014,7 +1071,7 @@
     {
       "ok": true,
       "id": "dashboard-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1058,13 +1115,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-430-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-430-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-430-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1108,13 +1175,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-430-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-430-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-430-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1163,13 +1240,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-430-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-430-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1218,13 +1305,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-430-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-430-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1268,13 +1365,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-390-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-390-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1318,13 +1425,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-390-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-390-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-390-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1373,13 +1490,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-390-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-390-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1428,13 +1555,23 @@
     },
     {
       "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "dashboard-390-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "dashboard-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1474,7 +1611,7 @@
     {
       "ok": true,
       "id": "action-inbox-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1514,7 +1651,7 @@
     {
       "ok": true,
       "id": "action-inbox-1440-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1559,7 +1696,7 @@
     {
       "ok": true,
       "id": "action-inbox-1440-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1604,7 +1741,7 @@
     {
       "ok": true,
       "id": "action-inbox-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1644,7 +1781,7 @@
     {
       "ok": true,
       "id": "action-inbox-1280-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1684,7 +1821,7 @@
     {
       "ok": true,
       "id": "action-inbox-1280-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1729,7 +1866,7 @@
     {
       "ok": true,
       "id": "action-inbox-1280-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1774,7 +1911,7 @@
     {
       "ok": true,
       "id": "action-inbox-1280-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1814,7 +1951,7 @@
     {
       "ok": true,
       "id": "action-inbox-1024-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1854,7 +1991,7 @@
     {
       "ok": true,
       "id": "action-inbox-1024-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1899,7 +2036,7 @@
     {
       "ok": true,
       "id": "action-inbox-1024-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1944,7 +2081,7 @@
     {
       "ok": true,
       "id": "action-inbox-1024-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -1984,7 +2121,7 @@
     {
       "ok": true,
       "id": "action-inbox-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2024,7 +2161,7 @@
     {
       "ok": true,
       "id": "action-inbox-768-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2069,7 +2206,7 @@
     {
       "ok": true,
       "id": "action-inbox-768-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2114,7 +2251,7 @@
     {
       "ok": true,
       "id": "action-inbox-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2158,13 +2295,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-430-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-430-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-430-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2208,13 +2355,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-430-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-430-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-430-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2263,13 +2420,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-430-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-430-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2318,13 +2485,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-430-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-430-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2368,13 +2545,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-390-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-390-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2418,13 +2605,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-390-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-390-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-390-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2473,13 +2670,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-390-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-390-system-os-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2528,13 +2735,23 @@
     },
     {
       "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-nav-closed-overlay",
+      "reason": "Closed overlay hidden=true visible=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-nav-closed-pointer-noninteractive",
+      "reason": "Closed sidebar pointer-events=none"
+    },
+    {
+      "ok": true,
       "id": "action-inbox-390-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44"
+      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
     },
     {
       "ok": true,
       "id": "action-inbox-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2559,7 +2776,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2589,7 +2806,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2614,7 +2831,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2644,7 +2861,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2669,7 +2886,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2699,7 +2916,7 @@
     {
       "ok": true,
       "id": "b2-demo-honesty-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2724,7 +2941,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2754,7 +2971,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2779,7 +2996,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2809,7 +3026,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2834,7 +3051,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2864,7 +3081,7 @@
     {
       "ok": true,
       "id": "b3-m11-nav-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration messages; documented residuals=1"
     },
     {
       "ok": true,
@@ -2889,7 +3106,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2919,7 +3136,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2944,7 +3161,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2974,7 +3191,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -2999,7 +3216,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3029,7 +3246,7 @@
     {
       "ok": true,
       "id": "b3-m07-history-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3054,7 +3271,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3084,7 +3301,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3109,7 +3326,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3139,7 +3356,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3164,7 +3381,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3194,7 +3411,7 @@
     {
       "ok": true,
       "id": "b3-m07-adjustments-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3219,7 +3436,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3249,7 +3466,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3274,7 +3491,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3304,7 +3521,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3329,7 +3546,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3359,7 +3576,7 @@
     {
       "ok": true,
       "id": "hydrate-m04-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3384,7 +3601,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3414,7 +3631,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3439,7 +3656,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3469,7 +3686,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3494,7 +3711,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3524,7 +3741,7 @@
     {
       "ok": true,
       "id": "hydrate-m05-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3549,7 +3766,7 @@
     {
       "ok": true,
       "id": "hydrate-m07-1440-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3579,7 +3796,7 @@
     {
       "ok": true,
       "id": "hydrate-m07-1440-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3604,7 +3821,7 @@
     {
       "ok": true,
       "id": "hydrate-m07-768-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3634,7 +3851,7 @@
     {
       "ok": true,
       "id": "hydrate-m07-768-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3659,7 +3876,7 @@
     {
       "ok": true,
       "id": "hydrate-m07-390-light/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
     },
     {
       "ok": true,
@@ -3689,7 +3906,17 @@
     {
       "ok": true,
       "id": "hydrate-m07-390-system-os-dark/hydration-console",
-      "reason": "No hydration console warnings/errors observed"
+      "reason": "No hydration console/pageerror messages observed"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/aria-expanded-closed",
+      "reason": "aria-expanded=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/aria-controls",
+      "reason": "aria-controls=shell-sidebar-nav"
     },
     {
       "ok": true,
@@ -3703,13 +3930,83 @@
     },
     {
       "ok": true,
+      "id": "interaction/mobile-nav-390/menu-target-size",
+      "reason": "Menu button 44x44 (44 target, >=40 accept)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/closed-offscreen",
+      "reason": "Closed offscreen right=0 visible=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/closed-inert-or-hidden",
+      "reason": "inert=true aria-hidden=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/closed-overlay-hidden",
+      "reason": "overlayHidden=true overlayVisible=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/closed-pointer-noninteractive",
+      "reason": "pointer-events=none"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/open-sidebar-visible",
+      "reason": "sidebarVisible=true left=0"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/open-overlay-visible",
+      "reason": "overlayVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/open-role-dialog",
+      "reason": "role=dialog"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/open-aria-modal",
+      "reason": "aria-modal=true"
+    },
+    {
+      "ok": true,
       "id": "interaction/mobile-nav-open",
-      "reason": "Open visible=true overlay=true left=0"
+      "reason": "Open visible=true overlay=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/focus-in-sidebar",
+      "reason": "Focus moved into sidebar after Enter open"
     },
     {
       "ok": true,
       "id": "interaction/mobile-nav-focus",
       "reason": "Focus moved into sidebar"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/tab-wrap-forward",
+      "reason": "Forward Tab stayed in sidebar across 65 presses (focusables~63)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/tab-wrap-shift",
+      "reason": "Shift+Tab stayed in sidebar across 65 presses"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/escape-closed",
+      "reason": "After Escape offscreen=true overlay=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/escape-focus-restore",
+      "reason": "Escape restored focus to data-testid=shell-mobile-menu"
     },
     {
       "ok": true,
@@ -3720,6 +4017,106 @@
       "ok": true,
       "id": "interaction/mobile-nav-focus-restore",
       "reason": "Focus restored to menu"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/overlay-dismiss-closed",
+      "reason": "Overlay dismiss offscreen=true overlay=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/overlay-dismiss-focus-restore",
+      "reason": "Overlay dismiss restored focus to shell-mobile-menu"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/aria-expanded-closed",
+      "reason": "aria-expanded=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/aria-controls",
+      "reason": "aria-controls=shell-sidebar-nav"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-target-size",
+      "reason": "Menu button 44x44 (44 target, >=40 accept)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/closed-offscreen",
+      "reason": "Closed offscreen right=0 visible=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/closed-inert-or-hidden",
+      "reason": "inert=true aria-hidden=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/closed-overlay-hidden",
+      "reason": "overlayHidden=true overlayVisible=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/closed-pointer-noninteractive",
+      "reason": "pointer-events=none"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/open-sidebar-visible",
+      "reason": "sidebarVisible=true left=0"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/open-overlay-visible",
+      "reason": "overlayVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/open-role-dialog",
+      "reason": "role=dialog"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/open-aria-modal",
+      "reason": "aria-modal=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/focus-in-sidebar",
+      "reason": "Focus moved into sidebar after Enter open"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/tab-wrap-forward",
+      "reason": "Forward Tab stayed in sidebar across 65 presses (focusables~63)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/tab-wrap-shift",
+      "reason": "Shift+Tab stayed in sidebar across 65 presses"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/escape-closed",
+      "reason": "After Escape offscreen=true overlay=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/escape-focus-restore",
+      "reason": "Escape restored focus to data-testid=shell-mobile-menu"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/overlay-dismiss-closed",
+      "reason": "Overlay dismiss offscreen=true overlay=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/overlay-dismiss-focus-restore",
+      "reason": "Overlay dismiss restored focus to shell-mobile-menu"
     },
     {
       "ok": true,
@@ -3743,6 +4140,11 @@
     },
     {
       "ok": true,
+      "id": "motion/reduce-matchMedia",
+      "reason": "matchMedia prefers-reduced-motion reduce=true (expected true)"
+    },
+    {
+      "ok": true,
       "id": "motion/reduce",
       "reason": "reducedMotion=true transitionSample=1e-05s"
     },
@@ -3750,6 +4152,11 @@
       "ok": true,
       "id": "motion/reduce-near-zero-transition",
       "reason": "transitionDuration=1e-05s"
+    },
+    {
+      "ok": true,
+      "id": "motion/normal-matchMedia",
+      "reason": "matchMedia prefers-reduced-motion reduce=false (expected false)"
     },
     {
       "ok": true,
@@ -3816,277 +4223,392 @@
     {
       "route": "dashboard",
       "label": "dashboard-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-1440-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -4101,12 +4623,26 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-768-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -4121,12 +4657,26 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-390-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -4141,157 +4691,280 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
+    }
+  ],
+  "hydrationResiduals": [
+    {
+      "label": "b3-m11-nav-1440-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-1440-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-768-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-768-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-390-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-390-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
     }
   ],
   "claims": {

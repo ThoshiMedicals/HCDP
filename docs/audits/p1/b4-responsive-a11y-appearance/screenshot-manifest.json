@@ -1,6 +1,6 @@
 {
   "runtime": "production",
-  "count": 65,
+  "count": 69,
   "shots": [
     {
       "file": "dashboard-1440-light-reduce.png",
@@ -20,7 +20,7 @@
     {
       "file": "dashboard-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 161141
+      "bytes": 161304
     },
     {
       "file": "dashboard-1280-light-reduce.png",
@@ -40,7 +40,7 @@
     {
       "file": "dashboard-1280-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 158337
+      "bytes": 158475
     },
     {
       "file": "dashboard-1024-light-reduce.png",
@@ -70,7 +70,7 @@
     {
       "file": "dashboard-768-dark-reduce.png",
       "runtime": "production",
-      "bytes": 117744
+      "bytes": 117889
     },
     {
       "file": "dashboard-768-system-os-light-reduce.png",
@@ -90,7 +90,7 @@
     {
       "file": "dashboard-430-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74424
+      "bytes": 74570
     },
     {
       "file": "dashboard-430-system-os-light-reduce.png",
@@ -100,7 +100,7 @@
     {
       "file": "dashboard-430-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74590
+      "bytes": 74424
     },
     {
       "file": "dashboard-390-light-reduce.png",
@@ -170,17 +170,17 @@
     {
       "file": "b2-demo-honesty-390-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 62729
+      "bytes": 62716
     },
     {
       "file": "b3-m11-nav-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 151049
+      "bytes": 151051
     },
     {
       "file": "b3-m11-nav-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 150010
+      "bytes": 150001
     },
     {
       "file": "b3-m11-nav-390-light-reduce.png",
@@ -235,12 +235,12 @@
     {
       "file": "hydrate-m04-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 126654
+      "bytes": 126840
     },
     {
       "file": "hydrate-m04-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 125676
+      "bytes": 125545
     },
     {
       "file": "hydrate-m04-390-light-reduce.png",
@@ -275,7 +275,7 @@
     {
       "file": "hydrate-m07-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 137993
+      "bytes": 137989
     },
     {
       "file": "hydrate-m07-1440-system-os-dark-reduce.png",
@@ -295,7 +295,7 @@
     {
       "file": "interaction-mobile-nav-open-390-light-reduce.png",
       "runtime": "production",
-      "bytes": 60625
+      "bytes": 60623
     },
     {
       "file": "interaction-mobile-nav-closed-after-escape-390-light-reduce.png",
@@ -303,9 +303,29 @@
       "bytes": 64180
     },
     {
+      "file": "interaction-mobile-nav-closed-after-overlay-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 64180
+    },
+    {
+      "file": "interaction-mobile-nav-open-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 67617
+    },
+    {
+      "file": "interaction-mobile-nav-closed-after-escape-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 76139
+    },
+    {
+      "file": "interaction-mobile-nav-closed-after-overlay-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 76139
+    },
+    {
       "file": "system-os-change-system-preference-os-dark-1440.png",
       "runtime": "production",
-      "bytes": 161228
+      "bytes": 161226
     },
     {
       "file": "explicit-light-unaffected-by-os-dark-1440.png",
@@ -320,12 +340,12 @@
     {
       "file": "motion-normal-dashboard-1440-dark.png",
       "runtime": "production",
-      "bytes": 161910
+      "bytes": 161378
     },
     {
       "file": "keyboard-tab-focus-dashboard-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 163125
+      "bytes": 163118
     }
   ]
 }

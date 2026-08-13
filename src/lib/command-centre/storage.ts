@@ -119,6 +119,16 @@ export function subscribeSystemAppearance(onChange: () => void): () => void {
   return () => mq.removeEventListener?.("change", handler);
 }
 
+/** Sync appearance when another tab/window updates pulse.cc.appearance. */
+export function subscribeAppearanceStorage(onChange: () => void): () => void {
+  if (typeof window === "undefined") return () => undefined;
+  const handler = (event: StorageEvent) => {
+    if (event.key === CC_STORAGE.appearance) onChange();
+  };
+  window.addEventListener("storage", handler);
+  return () => window.removeEventListener("storage", handler);
+}
+
 export function readLayouts(): SavedLayout[] {
   return readJson<SavedLayout[]>(CC_STORAGE.layouts, []);
 }

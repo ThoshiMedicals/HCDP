@@ -25,10 +25,12 @@ type ModuleSectionNavProps<T extends string = string> = {
 };
 
 /**
- * Shared module section navigation — horizontal tabs on desktop,
- * compact labelled selector at 768px and below. Visibility is CSS-driven
- * so SSR/mobile audit does not depend on JS matchMedia hydration timing.
- * Desktop tabs follow the ARIA tabs keyboard pattern (P1-GAP-009).
+ * Shared module section navigation — horizontal controls on desktop,
+ * compact labelled selector at 768px and below.
+ *
+ * Not implemented as ARIA tabs: section panels live in parent workspaces
+ * without tabpanel IDs / aria-controls wiring. Uses navigation + aria-current
+ * (P1-B4 remediation / P1-GAP-009).
  */
 export function ModuleSectionNav<T extends string = string>({
   items,
@@ -38,37 +40,39 @@ export function ModuleSectionNav<T extends string = string>({
   testIdPrefix,
   className,
 }: ModuleSectionNavProps<T>) {
-  const tablistRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLElement>(null);
 
-  function focusTabAt(index: number) {
-    const tabs = tablistRef.current?.querySelectorAll<HTMLElement>('[role="tab"]');
-    if (!tabs?.length) return;
-    const next = ((index % tabs.length) + tabs.length) % tabs.length;
-    const el = tabs[next];
+  function focusAt(index: number) {
+    const buttons = listRef.current?.querySelectorAll<HTMLElement>(
+      "[data-section-id]"
+    );
+    if (!buttons?.length) return;
+    const next = ((index % buttons.length) + buttons.length) % buttons.length;
+    const el = buttons[next];
     el?.focus();
     const id = el?.getAttribute("data-section-id");
     if (id) onChange(id as T);
   }
 
-  function onTabKeyDown(e: KeyboardEvent<HTMLButtonElement>, index: number) {
+  function onItemKeyDown(e: KeyboardEvent<HTMLButtonElement>, index: number) {
     switch (e.key) {
       case "ArrowRight":
       case "ArrowDown":
         e.preventDefault();
-        focusTabAt(index + 1);
+        focusAt(index + 1);
         break;
       case "ArrowLeft":
       case "ArrowUp":
         e.preventDefault();
-        focusTabAt(index - 1);
+        focusAt(index - 1);
         break;
       case "Home":
         e.preventDefault();
-        focusTabAt(0);
+        focusAt(0);
         break;
       case "End":
         e.preventDefault();
-        focusTabAt(items.length - 1);
+        focusAt(items.length - 1);
         break;
       default:
         break;
@@ -81,11 +85,11 @@ export function ModuleSectionNav<T extends string = string>({
         className="module-section-nav__desktop-only"
         data-module-section-nav="desktop"
       >
-        <div
-          ref={tablistRef}
+        <nav
+          ref={listRef}
           className="module-section-nav__scroller"
-          role="tablist"
           aria-label={ariaLabel}
+          data-testid="module-section-nav-list"
         >
           {items.map((item, index) => {
             const selected = value === item.id;
@@ -93,9 +97,7 @@ export function ModuleSectionNav<T extends string = string>({
               <button
                 key={item.id}
                 type="button"
-                role="tab"
                 tabIndex={selected ? 0 : -1}
-                aria-selected={selected}
                 aria-current={selected ? "page" : undefined}
                 aria-label={item.ariaLabel ?? item.label}
                 data-section-id={item.id}
@@ -107,7 +109,7 @@ export function ModuleSectionNav<T extends string = string>({
                   testIdPrefix === "m06" ? (selected ? "true" : "false") : undefined
                 }
                 onClick={() => onChange(item.id as T)}
-                onKeyDown={(e) => onTabKeyDown(e, index)}
+                onKeyDown={(e) => onItemKeyDown(e, index)}
                 className={cn(
                   "module-section-nav__tab",
                   selected && "module-section-nav__tab--selected"
@@ -125,7 +127,7 @@ export function ModuleSectionNav<T extends string = string>({
               </button>
             );
           })}
-        </div>
+        </nav>
       </div>
 
       <div

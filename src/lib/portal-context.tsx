@@ -28,6 +28,7 @@ import {
   getAppearanceSnapshot,
   hydrateAppearanceFromStorage,
   subscribeSystemAppearance,
+  subscribeAppearanceStorage,
 } from "@/lib/command-centre/storage";
 import { syncFromPortalActiveLocation, hydrateClinicContext, portalActiveLocationId } from "@/platform/context/clinic-context";
 import {
@@ -210,6 +211,12 @@ export function PortalProvider({ children }: { children: React.ReactNode }) {
       if (getAppearanceSnapshot() === "system") {
         applyAppearance("system");
       }
+    });
+  }, []);
+
+  useEffect(() => {
+    return subscribeAppearanceStorage(() => {
+      hydrateAppearanceFromStorage();
     });
   }, []);
 

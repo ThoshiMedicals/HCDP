@@ -4,277 +4,392 @@
     {
       "route": "dashboard",
       "label": "dashboard-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1280-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-1024-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-430-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "dashboard",
       "label": "dashboard-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1280-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-1024-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-430-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-system-os-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "action-inbox",
       "label": "action-inbox-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b2-demo-honesty",
       "label": "b2-demo-honesty-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-1440-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -289,12 +404,26 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-768-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -309,12 +438,26 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m11-nav",
       "label": "b3-m11-nav-390-light",
       "errors": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
         {
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
@@ -329,157 +472,281 @@
           "type": "pageerror",
           "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
         }
+      ],
+      "hydrationHits": [],
+      "residualsUnrelated": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
       ]
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-history",
       "label": "b3-m07-history-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "b3-m07-adjustments",
       "label": "b3-m07-adjustments-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m04",
       "label": "hydrate-m04-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m05",
       "label": "hydrate-m05-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-1440-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-1440-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-768-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-768-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-390-light",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     },
     {
       "route": "hydrate-m07",
       "label": "hydrate-m07-390-system-os-dark",
-      "errors": []
+      "errors": [],
+      "hydrationHits": [],
+      "residualsUnrelated": []
     }
-  ]
+  ],
+  "residualsUnrelated": [
+    {
+      "label": "b3-m11-nav-1440-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-1440-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-768-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-768-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-390-light",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    },
+    {
+      "label": "b3-m11-nav-390-system-os-dark",
+      "residuals": [
+        {
+          "type": "pageerror",
+          "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        }
+      ]
+    }
+  ],
+  "note": "Fail only on hydration messages for tested surfaces; residualsUnrelated are documented non-hydration console/pageerror leftovers."
 }

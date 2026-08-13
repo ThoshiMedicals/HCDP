@@ -108,6 +108,14 @@ async function seedAppearance(context, appearance) {
   }, appearance);
 }
 
+function transitionNearZero(sample) {
+  if (!sample) return true;
+  return sample.split(",").every((part) => {
+    const n = parseFloat(part);
+    return Number.isFinite(n) && n <= 0.05;
+  });
+}
+
 async function auditShell(page, width) {
   return page.evaluate((expectedWidth) => {
     const sidebar = document.querySelector('[data-testid="shell-sidebar"], .pulse-sidebar');
@@ -125,6 +133,8 @@ async function auditShell(page, width) {
     const docOverflowX =
       document.documentElement.scrollWidth > document.documentElement.clientWidth + 1;
     const transitionSample = sidebar ? getComputedStyle(sidebar).transitionDuration : null;
+    const overlayCs = overlay ? getComputedStyle(overlay) : null;
+    const sidebarCs = sidebar ? getComputedStyle(sidebar) : null;
     return {
       sidebarWidth: sb ? Math.round(sb.width) : null,
       sidebarLeft: sb ? Math.round(sb.left) : null,
@@ -143,19 +153,103 @@ async function auditShell(page, width) {
       regions,
       docOverflowX,
       mobileNav: sidebar?.getAttribute("data-mobile-nav") || null,
+      role: sidebar?.getAttribute("role"),
+      ariaModal: sidebar?.getAttribute("aria-modal"),
       ariaHidden: sidebar?.getAttribute("aria-hidden"),
       inert: sidebar?.hasAttribute("inert") || sidebar?.inert === true,
+      sidebarPointerEvents: sidebarCs?.pointerEvents ?? null,
       menuExpanded: menu?.getAttribute("aria-expanded") ?? null,
       menuControls: menu?.getAttribute("aria-controls") ?? null,
       overlayVisible: overlay
-        ? getComputedStyle(overlay).display !== "none" &&
-          overlay.getBoundingClientRect().width > 0
+        ? overlayCs.display !== "none" && overlay.getBoundingClientRect().width > 0
         : false,
+      overlayHidden:
+        !overlay ||
+        overlayCs.display === "none" ||
+        overlay.getBoundingClientRect().width === 0 ||
+        overlay.getAttribute("aria-hidden") === "true",
+      overlayPointerEvents: overlayCs?.pointerEvents ?? null,
       expectedWidth,
       transitionSample,
       viewportWidth: window.innerWidth,
     };
   }, expectSidebarWidth(width));
+}
+
+async function focusInsideSidebar(page) {
+  return page.evaluate(() => {
+    const aside = document.querySelector('[data-testid="shell-sidebar"]');
+    return !!(aside && document.activeElement && aside.contains(document.activeElement));
+  });
+}
+
+async function focusIsMobileMenu(page) {
+  return page.evaluate(() => {
+    const el = document.activeElement;
+    return el?.getAttribute("data-testid") === "shell-mobile-menu";
+  });
+}
+
+async function countSidebarFocusables(page) {
+  return page.evaluate(() => {
+    const aside = document.querySelector('[data-testid="shell-sidebar"]');
+    if (!aside) return 0;
+    const sel =
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    return Array.from(aside.querySelectorAll(sel)).filter((el) => {
+      if (el.getAttribute("aria-hidden") === "true") return false;
+      const style = window.getComputedStyle(el);
+      if (style.visibility === "hidden" || style.display === "none") return false;
+      return true;
+    }).length;
+  });
+}
+
+function classifyAssertionGroup(id) {
+  if (/hydration|pageerror/.test(id)) return "hydration";
+  if (/^motion\/|\/reduced-motion$|reduce-near-zero|matchMedia/.test(id)) return "reducedMotion";
+  if (
+    /stored-appearance|resolved-theme|os-preference|system-os-change|explicit-light|matrix\/appearance/.test(
+      id
+    )
+  ) {
+    return "appearance";
+  }
+  if (/^(b2-|b3-|hydrate-m)/.test(id)) return "consumer";
+  if (
+    /keyboard\/|^interaction\/|tab-wrap|focus-restore|overlay-dismiss|escape-focus|open-role-dialog|open-aria-modal|aria-expanded|aria-controls|drawer-/.test(
+      id
+    )
+  ) {
+    return "keyboard";
+  }
+  if (
+    /overflow|viewport|sidebar-geometry|mobile-nav-closed|matrix\/width|pointer-noninteractive|regions|mobile-menu-target|menu-target-size/.test(
+      id
+    )
+  ) {
+    return "responsive";
+  }
+  return "other";
+}
+
+function summarizeAssertionGroups(list) {
+  const groups = {
+    appearance: { pass: 0, fail: 0, total: 0 },
+    responsive: { pass: 0, fail: 0, total: 0 },
+    keyboard: { pass: 0, fail: 0, total: 0 },
+    reducedMotion: { pass: 0, fail: 0, total: 0 },
+    hydration: { pass: 0, fail: 0, total: 0 },
+    consumer: { pass: 0, fail: 0, total: 0 },
+    other: { pass: 0, fail: 0, total: 0 },
+  };
+  for (const a of list) {
+    const g = classifyAssertionGroup(a.id);
+    groups[g].total += 1;
+    if (a.ok) groups[g].pass += 1;
+    else groups[g].fail += 1;
+  }
+  return groups;
 }
 
 async function waitReady(page, route) {
@@ -183,6 +277,7 @@ async function openContext(browser, { appearance, colorScheme, width, height, re
     reducedMotion: reducedMotion ? "reduce" : "no-preference",
     viewport: { width, height },
   });
+  // Seed BEFORE first navigation (addInitScript runs on every document start)
   await seedAppearance(context, appearance);
   const page = await context.newPage();
   const consoleErrors = [];
@@ -210,6 +305,7 @@ async function gotoSeeded(page, path) {
 }
 
 function assertAppearance(audit, spec, label) {
+  // data-appearance asserted separately from theme-dark
   record(
     audit.appearance === spec.appearance,
     `${label}/stored-appearance`,
@@ -239,6 +335,27 @@ function assertRegions(audit, required, label) {
     missing.length === 0,
     `${label}/regions`,
     missing.length === 0 ? `Regions present: ${required.join(", ")}` : `Missing: ${missing.join(", ")}`
+  );
+}
+
+function recordHydration(consoleErrors, label, routeId) {
+  const hydratHits = consoleErrors.filter((e) => /hydrat/i.test(e.text));
+  const residuals = consoleErrors.filter((e) => !/hydrat/i.test(e.text));
+  hydrationLog.push({
+    route: routeId,
+    label,
+    errors: consoleErrors.slice(0, 20),
+    hydrationHits: hydratHits.slice(0, 10),
+    residualsUnrelated: residuals.slice(0, 10),
+  });
+  record(
+    hydratHits.length === 0,
+    `${label}/hydration-console`,
+    hydratHits.length === 0
+      ? residuals.length === 0
+        ? "No hydration console/pageerror messages observed"
+        : `No hydration messages; documented residuals=${residuals.length}`
+      : `Hydration messages: ${hydratHits.map((e) => e.text).join(" | ").slice(0, 240)}`
   );
 }
 
@@ -284,11 +401,21 @@ async function runPrimaryMatrix(browser) {
               `${label}/mobile-nav-closed-a11y`,
               `Closed nav inert/hidden (inert=${audit.inert}, aria-hidden=${audit.ariaHidden})`
             );
+            record(
+              audit.overlayHidden === true && !audit.overlayVisible,
+              `${label}/mobile-nav-closed-overlay`,
+              `Closed overlay hidden=${audit.overlayHidden} visible=${audit.overlayVisible}`
+            );
+            record(
+              audit.sidebarPointerEvents === "none",
+              `${label}/mobile-nav-closed-pointer-noninteractive`,
+              `Closed sidebar pointer-events=${audit.sidebarPointerEvents}`
+            );
             if (audit.menuWidth != null) {
               record(
                 audit.menuWidth >= 40 && audit.menuHeight >= 40,
                 `${label}/mobile-menu-target`,
-                `Mobile menu target ${audit.menuWidth}x${audit.menuHeight}`
+                `Mobile menu target ${audit.menuWidth}x${audit.menuHeight} (44px target, >=40 accept)`
               );
             }
           } else {
@@ -302,15 +429,7 @@ async function runPrimaryMatrix(browser) {
             );
           }
 
-          const hydratHits = consoleErrors.filter((e) => /hydrat/i.test(e.text));
-          hydrationLog.push({ route: route.id, label, errors: consoleErrors.slice(0, 20) });
-          record(
-            hydratHits.length === 0,
-            `${label}/hydration-console`,
-            hydratHits.length === 0
-              ? "No hydration console warnings/errors observed"
-              : `Hydration messages: ${hydratHits.map((e) => e.text).join(" | ").slice(0, 240)}`
-          );
+          recordHydration(consoleErrors, label, route.id);
 
           // Sparse shots: dashboard all widths×appearances; action-inbox representative subset
           const shotThis =
@@ -356,15 +475,7 @@ async function runConsumerSurfaces(browser) {
           assertNoOverflow(audit, label);
           assertAppearance(audit, spec, label);
           assertRegions(audit, ["shell-nav", "topbar"], label);
-          const hydratHits = consoleErrors.filter((e) => /hydrat/i.test(e.text));
-          hydrationLog.push({ route: route.id, label, errors: consoleErrors.slice(0, 20) });
-          record(
-            hydratHits.length === 0,
-            `${label}/hydration-console`,
-            hydratHits.length === 0
-              ? "No hydration console warnings/errors observed"
-              : `Hydration messages: ${hydratHits.map((e) => e.text).join(" | ").slice(0, 240)}`
-          );
+          recordHydration(consoleErrors, label, route.id);
           if (w === 1440 || w === 390) {
             await shot(page, `${label}-reduce`);
           }
@@ -378,60 +489,205 @@ async function runConsumerSurfaces(browser) {
   }
 }
 
-async function runInteractions(browser) {
-  // Mobile open/closed + Escape + focus restore + Space dismissal
-  {
-    const spec = APPEARANCES[0];
-    const { context, page } = await openContext(browser, {
-      appearance: spec.appearance,
-      colorScheme: spec.colorScheme,
-      width: 390,
-      height: 844,
-      reducedMotion: true,
-    });
-    try {
-      await gotoSeeded(page, "/dashboard");
-      await waitReady(page, PRIMARY_ROUTES[0]);
-      const menu = page.locator('[data-testid="shell-mobile-menu"]');
-      await menu.focus();
-      const expandedClosed = await menu.getAttribute("aria-expanded");
-      const controls = await menu.getAttribute("aria-controls");
-      record(expandedClosed === "false", "interaction/aria-expanded-closed", `aria-expanded=${expandedClosed}`);
-      record(controls === "shell-sidebar-nav", "interaction/aria-controls", `aria-controls=${controls}`);
-      await page.keyboard.press("Enter");
-      await page.waitForTimeout(150);
-      let audit = await auditShell(page, 390);
+async function runMobileNavKeyboardSuite(browser, width, height) {
+  const prefix = `interaction/mobile-nav-${width}`;
+  const spec = APPEARANCES[0];
+  const { context, page } = await openContext(browser, {
+    appearance: spec.appearance,
+    colorScheme: spec.colorScheme,
+    width,
+    height,
+    reducedMotion: true,
+  });
+  try {
+    await gotoSeeded(page, "/dashboard");
+    await waitReady(page, PRIMARY_ROUTES[0]);
+    const menu = page.locator('[data-testid="shell-mobile-menu"]');
+
+    // Closed baseline + 44px target (accept >=40)
+    let audit = await auditShell(page, width);
+    const ariaExpandedOk = audit.menuExpanded === "false";
+    const ariaControlsOk = audit.menuControls === "shell-sidebar-nav";
+    record(ariaExpandedOk, `${prefix}/aria-expanded-closed`, `aria-expanded=${audit.menuExpanded}`);
+    record(ariaControlsOk, `${prefix}/aria-controls`, `aria-controls=${audit.menuControls}`);
+    if (width === 390) {
+      record(ariaExpandedOk, "interaction/aria-expanded-closed", `aria-expanded=${audit.menuExpanded}`);
+      record(ariaControlsOk, "interaction/aria-controls", `aria-controls=${audit.menuControls}`);
+    }
+    record(
+      audit.menuWidth != null &&
+        audit.menuHeight != null &&
+        audit.menuWidth >= 40 &&
+        audit.menuHeight >= 40,
+      `${prefix}/menu-target-size`,
+      `Menu button ${audit.menuWidth}x${audit.menuHeight} (44 target, >=40 accept)`
+    );
+    record(
+      audit.sidebarOffscreenLeft === true && !audit.sidebarVisible,
+      `${prefix}/closed-offscreen`,
+      `Closed offscreen right=${audit.sidebarRight} visible=${audit.sidebarVisible}`
+    );
+    record(
+      audit.inert === true || audit.ariaHidden === "true",
+      `${prefix}/closed-inert-or-hidden`,
+      `inert=${audit.inert} aria-hidden=${audit.ariaHidden}`
+    );
+    record(
+      audit.overlayHidden === true && !audit.overlayVisible,
+      `${prefix}/closed-overlay-hidden`,
+      `overlayHidden=${audit.overlayHidden} overlayVisible=${audit.overlayVisible}`
+    );
+    record(
+      audit.sidebarPointerEvents === "none",
+      `${prefix}/closed-pointer-noninteractive`,
+      `pointer-events=${audit.sidebarPointerEvents}`
+    );
+
+    // Open via Enter on menu
+    await menu.focus();
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    audit = await auditShell(page, width);
+    record(
+      audit.sidebarVisible === true,
+      `${prefix}/open-sidebar-visible`,
+      `sidebarVisible=${audit.sidebarVisible} left=${audit.sidebarLeft}`
+    );
+    record(
+      audit.overlayVisible === true,
+      `${prefix}/open-overlay-visible`,
+      `overlayVisible=${audit.overlayVisible}`
+    );
+    record(audit.role === "dialog", `${prefix}/open-role-dialog`, `role=${audit.role}`);
+    record(audit.ariaModal === "true", `${prefix}/open-aria-modal`, `aria-modal=${audit.ariaModal}`);
+    if (width === 390) {
       record(
         audit.sidebarVisible === true && audit.overlayVisible === true,
         "interaction/mobile-nav-open",
-        `Open visible=${audit.sidebarVisible} overlay=${audit.overlayVisible} left=${audit.sidebarLeft}`
+        `Open visible=${audit.sidebarVisible} overlay=${audit.overlayVisible}`
       );
-      await shot(page, "interaction-mobile-nav-open-390-light-reduce");
-      const focusInside = await page.evaluate(() => {
-        const aside = document.querySelector('[data-testid="shell-sidebar"]');
-        return !!(aside && document.activeElement && aside.contains(document.activeElement));
-      });
-      record(focusInside, "interaction/mobile-nav-focus", focusInside ? "Focus moved into sidebar" : "Focus not in sidebar");
-      await page.keyboard.press("Escape");
-      await page.waitForTimeout(150);
-      audit = await auditShell(page, 390);
+    }
+    await shot(page, `interaction-mobile-nav-open-${width}-light-reduce`);
+
+    const focusInside = await focusInsideSidebar(page);
+    record(
+      focusInside,
+      `${prefix}/focus-in-sidebar`,
+      focusInside ? "Focus moved into sidebar after Enter open" : "Focus not in sidebar"
+    );
+    if (width === 390) {
+      record(
+        focusInside,
+        "interaction/mobile-nav-focus",
+        focusInside ? "Focus moved into sidebar" : "Focus not in sidebar"
+      );
+    }
+
+    // Forward Tab wrap — press Tab enough times; activeElement stays inside sidebar
+    const focusableCount = await countSidebarFocusables(page);
+    const tabPasses = Math.max(focusableCount + 2, 6);
+    let tabWrapOk = true;
+    for (let i = 0; i < tabPasses; i++) {
+      await page.keyboard.press("Tab");
+      if (!(await focusInsideSidebar(page))) {
+        tabWrapOk = false;
+        break;
+      }
+    }
+    record(
+      tabWrapOk,
+      `${prefix}/tab-wrap-forward`,
+      tabWrapOk
+        ? `Forward Tab stayed in sidebar across ${tabPasses} presses (focusables~${focusableCount})`
+        : `Forward Tab escaped sidebar within ${tabPasses} presses`
+    );
+
+    // Shift+Tab wrap
+    let shiftWrapOk = true;
+    for (let i = 0; i < tabPasses; i++) {
+      await page.keyboard.press("Shift+Tab");
+      if (!(await focusInsideSidebar(page))) {
+        shiftWrapOk = false;
+        break;
+      }
+    }
+    record(
+      shiftWrapOk,
+      `${prefix}/tab-wrap-shift`,
+      shiftWrapOk
+        ? `Shift+Tab stayed in sidebar across ${tabPasses} presses`
+        : `Shift+Tab escaped sidebar within ${tabPasses} presses`
+    );
+
+    // Escape restores focus to exact shell-mobile-menu
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(200);
+    audit = await auditShell(page, width);
+    record(
+      audit.sidebarOffscreenLeft === true && !audit.overlayVisible,
+      `${prefix}/escape-closed`,
+      `After Escape offscreen=${audit.sidebarOffscreenLeft} overlay=${audit.overlayVisible}`
+    );
+    const restoredEscape = await focusIsMobileMenu(page);
+    record(
+      restoredEscape,
+      `${prefix}/escape-focus-restore`,
+      restoredEscape
+        ? "Escape restored focus to data-testid=shell-mobile-menu"
+        : "Escape did not restore focus to shell-mobile-menu"
+    );
+    if (width === 390) {
       record(
         audit.sidebarOffscreenLeft === true && !audit.overlayVisible,
         "interaction/mobile-nav-escape",
         `After Escape offscreen=${audit.sidebarOffscreenLeft} overlay=${audit.overlayVisible}`
       );
-      const restored = await page.evaluate(() => {
-        const el = document.activeElement;
-        return el?.getAttribute("data-testid") === "shell-mobile-menu";
-      });
-      record(restored, "interaction/mobile-nav-focus-restore", restored ? "Focus restored to menu" : "Focus not restored");
-      await shot(page, "interaction-mobile-nav-closed-after-escape-390-light-reduce");
-    } catch (err) {
-      record(false, "interaction/mobile-nav", String(err?.message || err));
-    } finally {
-      await context.close();
+      record(
+        restoredEscape,
+        "interaction/mobile-nav-focus-restore",
+        restoredEscape ? "Focus restored to menu" : "Focus not restored"
+      );
     }
+    await shot(page, `interaction-mobile-nav-closed-after-escape-${width}-light-reduce`);
+
+    // Separately: open, click overlay to close, assert focus restored to menu
+    await menu.focus();
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    const overlay = page.locator('[data-testid="shell-mobile-nav-overlay"]');
+    // Click dimmed area outside the left sidebar rail (sidebar z-index sits above overlay).
+    const overlayBox = await overlay.boundingBox();
+    const clickX = overlayBox
+      ? Math.min(overlayBox.width - 16, Math.max(280, overlayBox.width - 24))
+      : Math.max(280, width - 24);
+    await overlay.click({ position: { x: clickX, y: 40 } });
+    await page.waitForTimeout(200);
+    audit = await auditShell(page, width);
+    record(
+      audit.sidebarOffscreenLeft === true && !audit.overlayVisible,
+      `${prefix}/overlay-dismiss-closed`,
+      `Overlay dismiss offscreen=${audit.sidebarOffscreenLeft} overlay=${audit.overlayVisible}`
+    );
+    const restoredOverlay = await focusIsMobileMenu(page);
+    record(
+      restoredOverlay,
+      `${prefix}/overlay-dismiss-focus-restore`,
+      restoredOverlay
+        ? "Overlay dismiss restored focus to shell-mobile-menu"
+        : "Overlay dismiss did not restore focus to shell-mobile-menu"
+    );
+    await shot(page, `interaction-mobile-nav-closed-after-overlay-${width}-light-reduce`);
+  } catch (err) {
+    record(false, `${prefix}/suite`, String(err?.message || err));
+  } finally {
+    await context.close();
   }
+}
+
+async function runInteractions(browser) {
+  // Mobile nav keyboard / focus / dialog for 390 AND 430
+  await runMobileNavKeyboardSuite(browser, 390, 844);
+  await runMobileNavKeyboardSuite(browser, 430, 932);
 
   // Drawer Escape + focus trap smoke via Action Inbox review if available
   {
@@ -536,6 +792,7 @@ async function runInteractions(browser) {
     }
   }
 
+  // Explicit Light unaffected by OS dark
   {
     const { context, page } = await openContext(browser, {
       appearance: "light",
@@ -563,7 +820,7 @@ async function runInteractions(browser) {
     }
   }
 
-  // Normal motion vs reduced (transition duration evidence)
+  // Normal motion vs reduced (matchMedia + transition duration evidence)
   {
     for (const reduce of [true, false]) {
       const { context, page } = await openContext(browser, {
@@ -579,17 +836,27 @@ async function runInteractions(browser) {
         const audit = await auditShell(page, 1440);
         record(
           audit.reducedMotion === reduce,
-          `motion/${reduce ? "reduce" : "normal"}`,
-          `reducedMotion=${audit.reducedMotion} transitionSample=${audit.transitionSample}`
+          `motion/${reduce ? "reduce" : "normal"}-matchMedia`,
+          `matchMedia prefers-reduced-motion reduce=${audit.reducedMotion} (expected ${reduce})`
         );
+        // Keep prior id for reduce matchMedia compatibility
         if (reduce) {
-          const nearZero =
-            !audit.transitionSample ||
-            audit.transitionSample.split(",").every((part) => {
-              const n = parseFloat(part);
-              return Number.isFinite(n) && n <= 0.05;
-            });
-          record(nearZero, "motion/reduce-near-zero-transition", `transitionDuration=${audit.transitionSample}`);
+          record(
+            audit.reducedMotion === true,
+            "motion/reduce",
+            `reducedMotion=${audit.reducedMotion} transitionSample=${audit.transitionSample}`
+          );
+          record(
+            transitionNearZero(audit.transitionSample),
+            "motion/reduce-near-zero-transition",
+            `transitionDuration=${audit.transitionSample}`
+          );
+        } else {
+          record(
+            audit.reducedMotion === false,
+            "motion/normal",
+            `reducedMotion=${audit.reducedMotion} transitionSample=${audit.transitionSample}`
+          );
         }
         await shot(page, `motion-${reduce ? "reduce" : "normal"}-dashboard-1440-dark`);
       } catch (err) {
@@ -634,7 +901,7 @@ async function runInteractions(browser) {
 
 async function main() {
   console.log(`P1-B4 harness starting — base=${BASE} runtime=${RUNTIME}`);
-  // Clear prior shot set for this run only
+  // Clear live shots/ only for this run — never touch historical-* archives
   try {
     rmSync(SHOTS, { recursive: true, force: true });
   } catch {
@@ -657,9 +924,21 @@ async function main() {
     "interaction/mobile-nav-focus-restore",
     "interaction/aria-expanded-closed",
     "interaction/aria-controls",
+    "interaction/mobile-nav-390/tab-wrap-forward",
+    "interaction/mobile-nav-390/tab-wrap-shift",
+    "interaction/mobile-nav-390/overlay-dismiss-focus-restore",
+    "interaction/mobile-nav-390/open-role-dialog",
+    "interaction/mobile-nav-390/open-aria-modal",
+    "interaction/mobile-nav-430/tab-wrap-forward",
+    "interaction/mobile-nav-430/tab-wrap-shift",
+    "interaction/mobile-nav-430/escape-focus-restore",
+    "interaction/mobile-nav-430/overlay-dismiss-focus-restore",
+    "interaction/mobile-nav-430/open-role-dialog",
     "system-os-change/after-os-dark",
     "explicit-light/os-dark-unaffected",
     "motion/reduce-near-zero-transition",
+    "motion/reduce-matchMedia",
+    "motion/normal-matchMedia",
     "keyboard/tab-focus",
   ];
   for (const id of requiredIds) {
@@ -670,10 +949,6 @@ async function main() {
   }
 
   // Prove matrix coverage counts
-  const widthCovered = new Set(
-    assertions.filter((a) => a.ok && /\/viewport$/.test(a.id)).map((a) => a.id.split("-")[1])
-  );
-  // ids like dashboard-1440-light/viewport
   const widthsFromIds = new Set();
   for (const a of assertions) {
     const m = a.id.match(/^(?:dashboard|action-inbox)-(\d+)-/);
@@ -687,6 +962,14 @@ async function main() {
     record(hit, `matrix/appearance-${id}`, hit ? `Appearance case ${id} exercised` : `Appearance case ${id} missing`);
   }
 
+  const assertionGroups = summarizeAssertionGroups(assertions);
+  const hydrationResiduals = hydrationLog
+    .filter((e) => (e.residualsUnrelated || []).length > 0)
+    .map((e) => ({
+      label: e.label,
+      residuals: e.residualsUnrelated,
+    }));
+
   const report = {
     batch: "P1-B4",
     runtime: RUNTIME,
@@ -696,10 +979,12 @@ async function main() {
     assertionCount: assertions.length,
     passCount: assertions.filter((a) => a.ok).length,
     failCount: assertions.filter((a) => !a.ok).length,
+    assertionGroups,
     screenshotCount: shots.length,
     shots,
     assertions,
     hydrationLog,
+    hydrationResiduals,
     claims: {
       wcagCertification: false,
       pixelParity: false,
@@ -715,12 +1000,22 @@ async function main() {
   );
   writeFileSync(
     join(OUT, "hydration-reverification.json"),
-    JSON.stringify({ runtime: RUNTIME, entries: hydrationLog }, null, 2)
+    JSON.stringify(
+      {
+        runtime: RUNTIME,
+        entries: hydrationLog,
+        residualsUnrelated: hydrationResiduals,
+        note: "Fail only on hydration messages for tested surfaces; residualsUnrelated are documented non-hydration console/pageerror leftovers.",
+      },
+      null,
+      2
+    )
   );
 
   console.log(
     `P1-B4 harness complete — assertions=${assertions.length} pass=${report.passCount} fail=${report.failCount} shots=${shots.length}`
   );
+  console.log(`assertionGroups=${JSON.stringify(assertionGroups)}`);
   if (failures > 0) process.exit(1);
 }
 

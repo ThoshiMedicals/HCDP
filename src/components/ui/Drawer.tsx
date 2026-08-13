@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
-import { Button } from "./Button";
 import { focusFirst, handleFocusTrapKeydown } from "@/lib/shell/focus-trap";
+import { Button } from "./Button";
 
 export function Drawer({
   open,
@@ -56,9 +56,9 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        tabIndex={-1}
         data-shell-region="detail-pane"
         data-testid="shell-drawer"
+        tabIndex={-1}
         className={`fixed bottom-0 right-0 top-0 z-50 flex flex-col bg-[var(--dp-bg-surface,var(--card))] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] motion-safe:transition-transform motion-safe:duration-200 ${
           open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}

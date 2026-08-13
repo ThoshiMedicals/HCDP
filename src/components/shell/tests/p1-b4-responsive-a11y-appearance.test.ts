@@ -34,7 +34,9 @@ describe("P1-B4 appearance initialization and System settle (GAP-008)", () => {
 
   it("OS preference changes re-apply only when stored preference is System", () => {
     assert.match(storage, /subscribeSystemAppearance/);
+    assert.match(storage, /subscribeAppearanceStorage/);
     assert.match(portal, /subscribeSystemAppearance/);
+    assert.match(portal, /subscribeAppearanceStorage/);
     assert.match(portal, /getAppearanceSnapshot\(\) === "system"/);
     assert.match(portal, /applyAppearance\("system"\)/);
   });
@@ -88,14 +90,14 @@ describe("P1-B4 keyboard / focus / ARIA baselines (GAP-009)", () => {
     assert.match(detail, /role=\{resolvedMode === "drawer" \? "dialog" : "complementary"\}/);
   });
 
-  it("ModuleSectionNav implements ARIA tabs arrow-key pattern without inventing roving elsewhere", () => {
-    assert.match(sectionNav, /role="tablist"/);
-    assert.match(sectionNav, /role="tab"/);
+  it("ModuleSectionNav uses navigation semantics (not tabs without tabpanels)", () => {
+    assert.match(sectionNav, /<nav/);
+    assert.match(sectionNav, /aria-current=\{selected \? "page"/);
     assert.match(sectionNav, /ArrowRight/);
     assert.match(sectionNav, /ArrowLeft/);
     assert.match(sectionNav, /tabIndex=\{selected \? 0 : -1\}/);
-    assert.match(sectionNav, /Home/);
-    assert.match(sectionNav, /End/);
+    assert.doesNotMatch(sectionNav, /role="tablist"/);
+    assert.doesNotMatch(sectionNav, /role="tab"/);
   });
 });
 
@@ -119,6 +121,22 @@ describe("P1-B4 responsive shell geometry contracts (GAP-031)", () => {
     assert.match(harness, /mobile-nav-open/);
     assert.match(harness, /mobile-nav-closed/);
   });
+
+  it("harness covers 390 and 430 mobile nav keyboard/dialog assertions", () => {
+    assert.match(harness, /runMobileNavKeyboardSuite/);
+    assert.match(harness, /mobile-nav-390/);
+    assert.match(harness, /mobile-nav-430/);
+    assert.match(harness, /tab-wrap-forward/);
+    assert.match(harness, /tab-wrap-shift/);
+    assert.match(harness, /overlay-dismiss-focus-restore/);
+    assert.match(harness, /escape-focus-restore/);
+    assert.match(harness, /open-role-dialog/);
+    assert.match(harness, /open-aria-modal/);
+    assert.match(harness, /closed-pointer-noninteractive/);
+    assert.match(harness, /menu-target-size/);
+    assert.match(harness, /assertionGroups/);
+    assert.match(harness, /historical-\*/);
+  });
 });
 
 describe("P1-B4 reduced-motion (GAP-052)", () => {
@@ -140,6 +158,9 @@ describe("P1-B4 reduced-motion (GAP-052)", () => {
     assert.match(drawer, /motion-safe:transition-transform/);
     assert.match(harness, /reducedMotion/);
     assert.match(harness, /prefers-reduced-motion/);
+    assert.match(harness, /reduce-near-zero-transition/);
+    assert.match(harness, /reduce-matchMedia/);
+    assert.match(harness, /normal-matchMedia/);
   });
 });
 
@@ -152,6 +173,8 @@ describe("P1-B4 historical hydration re-verification scope (GAP-074)", () => {
     assert.match(harness, /\/staffpay|\/staff-pay/);
     assert.match(harness, /hydration/);
     assert.match(harness, /consoleErrors|hydrationWarnings|Hydration/);
+    assert.match(harness, /pageerror/);
+    assert.match(harness, /residualsUnrelated|hydrationResiduals/);
   });
 });
 
