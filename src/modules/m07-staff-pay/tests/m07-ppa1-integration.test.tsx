@@ -1,6 +1,8 @@
 /**
- * Wave 6 / M07 PPA-1 Foundation — integration lane tests.
+ * Wave 6 / M07 adjustment-preparation foundation — integration lane tests.
+ * Historic filename/prefix `ppa1` is an internal test id only — not an authorised PPA product claim.
  * Real ppa-service + mounted Adjustments section (wired props) + shell/section-meta wiring.
+ * OWN-P1-011 (named PPA product) remains open.
  */
 
 import assert from "node:assert/strict";

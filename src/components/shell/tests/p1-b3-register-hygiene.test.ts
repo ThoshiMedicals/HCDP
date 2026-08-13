@@ -143,6 +143,20 @@ describe("P1-B3 historic register supersession (GAP-013)", () => {
   });
 });
 
+describe("P1-B3 M11 legacy aliases / deep links", () => {
+  it("maps records→assignments and expiry→certificates without inventing sections", () => {
+    const domain = read("src/modules/m11-training/types/domain.ts");
+    assert.match(domain, /records:\s*"assignments"/);
+    assert.match(domain, /expiry:\s*"certificates"/);
+    assert.match(domain, /export const M11_SECTION_ALIASES/);
+    const context = read("src/modules/m11-training/context.tsx");
+    assert.match(context, /M11_SECTION_ALIASES/);
+    assert.match(context, /function resolveM11Section/);
+    const workspace = read("src/modules/m11-training/TrainingWorkspace.tsx");
+    assert.match(workspace, /resolveM11Section\(searchParams\.get\("section"\)\)/);
+  });
+});
+
 describe("P1-B3 programme control preserves open decisions and later batches", () => {
   const decisions = read("docs/architecture/prototype-parity/phase1/P1_OWNER_DECISION_REGISTER.md");
   const batches = read("docs/architecture/prototype-parity/phase1/P1_EXECUTION_BATCHES.md");

@@ -1,6 +1,8 @@
 /**
- * PPA-1 Foundation UI — isolated lane tests (pending integration).
+ * Adjustment-preparation foundation UI — isolated lane tests (pending integration).
+ * Historic filename/prefix `ppa1` is an internal test id only — not an authorised PPA product claim.
  * Does not wire production ppa-service / section-meta / navigation.
+ * OWN-P1-011 (named PPA product) remains open.
  */
 
 import assert from "node:assert/strict";

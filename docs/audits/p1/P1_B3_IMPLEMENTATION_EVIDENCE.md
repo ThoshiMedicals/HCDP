@@ -1,16 +1,18 @@
 # P1-B3 — Register hygiene and payroll-history truthfulness — implementation evidence
 
-**Batch:** P1-B3  
-**Status:** **Authorised and implemented — owner acceptance PENDING** (2026-08-13)  
-**Implementation branch:** `cursor/p1-b3-register-hygiene`  
-**Source branch:** `cursor/p1-b2-shell-truthfulness`  
-**Starting source SHA:** `4c84263ca27f7a23e71c5304cff4249e0d132e50`  
-**Implementation tip:** published as the `feat(p1-b3): implement register hygiene and honest payroll labels` commit on `cursor/p1-b3-register-hygiene` (full SHA in return report / `git rev-parse HEAD` after publish)  
+**Batch:** P1-B3
+**Status:** **Authorised and implemented — owner acceptance PENDING** (2026-08-13)
+**Implementation branch:** `cursor/p1-b3-register-hygiene`
+**Source branch:** `cursor/p1-b2-shell-truthfulness`
+**Starting source SHA:** `4c84263ca27f7a23e71c5304cff4249e0d132e50`
+**Implementation tip:** `a80405dd79dc180c1d2b3ffa470e9db219ff3b3c` (`feat(p1-b3): implement register hygiene and honest payroll labels`)
+**Remediation tip:** published as `fix(p1-b3): remediate acceptance evidence and diff hygiene` on the same branch (full SHA in return report)
 
-**Owner acceptance:** **Pending** — this pack is published for independent owner review  
-**Validation basis:** local validators, unit tests, lint, `tsc`, production build, and visual harness (local only)  
-**GitHub CI:** none — branch has no GitHub Actions checks; **no CI pass claimed**  
-**Authorised decisions implemented:** OWN-P1-006 (Option A Synchronise), OWN-P1-007 (Option A Honesty-only labels)  
+**Owner acceptance:** **Pending** — this pack is published for independent owner review
+**Validation basis:** local validators, unit tests, lint, `tsc`, production build, and visual harness (local only)
+**GitHub CI:** none — branch has no GitHub Actions checks; **no CI pass claimed**
+**Authorised decisions implemented:** OWN-P1-006 (Option A Synchronise), OWN-P1-007 (Option A Honesty-only labels)
+**Independent remediation:** see [`P1_B3_REMEDIATION_EVIDENCE.md`](./P1_B3_REMEDIATION_EVIDENCE.md) (diff hygiene, a11y hardening, strengthened harness; original `a80405dd` evidence archived)
 
 **Not claimed:** overall Programme P1 complete; production-approved; WCAG/security compliance; PPA product (OWN-P1-011); payment; M08; `OWN-P1-016` resolved; P1-B4–P1-B8 authorised; PR; merge; deploy; automatic progression; gap closure without owner acceptance
 
@@ -38,7 +40,7 @@
 
 ## Screenshot / harness evidence
 
-Under `docs/audits/p1/b3-register-hygiene/` (shots + harness report). Local-only.
+Under `docs/audits/p1/b3-register-hygiene/` (shots + harness report). Local-only. Original `a80405dd` pack archived under `archive-a80405dd/`.
 
 ## Deferred / remains open
 

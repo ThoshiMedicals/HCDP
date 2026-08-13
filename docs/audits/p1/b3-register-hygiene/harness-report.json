@@ -3,21 +3,177 @@
   "shots": [
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\01-training-nav-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\02-training-nav-1440-dark.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\09-training-nav-1440-system-os-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\10-training-nav-1440-system-os-dark.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\11-training-alias-records-assignments-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\12-training-alias-expiry-certificates-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\03-history-planned-1440-light-focus.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\04-adjustments-honesty-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\08-adjustments-honesty-1440-dark.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\05-history-planned-390-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\06-adjustments-honesty-390-light.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\07-history-planned-1280-system.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\08-adjustments-honesty-1440-dark.png"
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\07-history-planned-1280-system.png"
   ],
   "checks": [
     {
-      "id": "m11-nav-light",
+      "id": "appearance-light",
+      "ok": true
+    },
+    {
+      "id": "appearance-dark",
+      "ok": true
+    },
+    {
+      "id": "appearance-system-os-light",
+      "ok": true
+    },
+    {
+      "id": "appearance-system-os-dark",
+      "ok": true
+    }
+  ],
+  "appearanceMatrix": [
+    {
+      "id": "light",
+      "appearance": "light",
+      "colorScheme": "light",
+      "expectDark": false,
+      "shot": "01-training-nav-1440-light",
+      "themeDark": false,
+      "osDark": false,
+      "ok": true
+    },
+    {
+      "id": "dark",
+      "appearance": "dark",
+      "colorScheme": "dark",
+      "expectDark": true,
+      "shot": "02-training-nav-1440-dark",
+      "themeDark": true,
+      "osDark": true,
+      "ok": true
+    },
+    {
+      "id": "system-os-light",
+      "appearance": "system",
+      "colorScheme": "light",
+      "expectDark": false,
+      "shot": "09-training-nav-1440-system-os-light",
+      "themeDark": false,
+      "osDark": false,
+      "ok": true
+    },
+    {
+      "id": "system-os-dark",
+      "appearance": "system",
+      "colorScheme": "dark",
+      "expectDark": true,
+      "shot": "10-training-nav-1440-system-os-dark",
+      "themeDark": true,
+      "osDark": true,
+      "ok": true
+    }
+  ],
+  "responsiveMatrix": [
+    {
+      "width": 1440,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 1440,
+      "route": "adjustments",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 1280,
+      "route": "adjustments",
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 1024,
+      "route": "adjustments",
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 768,
+      "route": "adjustments",
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 430,
+      "route": "adjustments",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "training",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "history",
+      "ok": true
+    },
+    {
+      "width": 390,
+      "route": "adjustments",
       "ok": true
     }
   ],
   "localOnly": true,
   "githubCi": false,
+  "claims": {
+    "wcag": false,
+    "pixelParity": false,
+    "productionApproval": false
+  },
   "ok": true,
-  "failures": []
+  "failures": [],
+  "shotCount": 12
 }

@@ -51,10 +51,19 @@ export function PlannedSection({ section }: { section: M07SectionId }) {
         title="Not yet available — payroll history is not operational"
         onClick={(e) => {
           e.preventDefault();
+          e.stopPropagation();
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
+            e.stopPropagation();
+          }
+        }}
+        onKeyUp={(e) => {
+          // Space synthesises click on keyup in some browsers; block operational activation.
+          if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+            e.stopPropagation();
           }
         }}
       >
