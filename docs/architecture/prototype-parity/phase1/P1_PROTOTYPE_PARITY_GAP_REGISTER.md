@@ -1,8 +1,9 @@
 # P1 Prototype-Parity Gap Register
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED`  
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** gaps remain `P1 — PLANNED, NOT AUTHORISED` unless noted. Overall Programme P1 is **not** complete.  
 **Scheme:** `P1-GAP-###` (append-only; never reuse)  
-**Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`
+**Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
+**Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
 
 ## Field legend
 
@@ -10,8 +11,8 @@
 | --- | --- |
 | Classification | Blocker \| Major \| Moderate \| Minor \| Accepted difference \| Future scope \| Not applicable \| Duplicate or prohibited clinical scope |
 | Priority | P0-gate \| P1-rec \| P2+ \| Later \| Exclude |
-| Implementation status | Always `P1 — PLANNED, NOT AUTHORISED` in this pack |
-| Batch | Proposed batch id (not authorised) |
+| Implementation status | Default `P1 — PLANNED, NOT AUTHORISED`; P1-B1-associated rows may record qualified owner acceptance / partial treatment |
+| Batch | Proposed or accepted batch id (B2–B8 not authorised) |
 | Owner clarification | Yes / No |
 
 ## Audit dimensions applied (all modules / SHARED)
@@ -64,7 +65,7 @@
 | --- | --- |
 | Module / screen | SHARED — `/dashboard`, `/action-inbox`, global chrome |
 | Source | `prompts/p1.md` imgctrl-* requirements; `FINAL_DESIGN_SYSTEM_CONTRACT.md`; Decision A PNGs |
-| Current | UI Batch1 chrome remediation exists; Decision A final conversion not claimed complete |
+| Current | Tokenised `--dp-*` shell + Decision A chrome regions delivered on accepted tip `fdb2beb…`; full module presentation parity remains later batches |
 | Required | Tokenised shell matching design-system-contract + Decision A regions |
 | Roles | All authenticated |
 | Impact | Visual/interaction parity baseline for all modules |
@@ -74,7 +75,7 @@
 | Risk | Module work before shell locks churn |
 | Acceptance evidence | Theme/shell tests + screenshot harness vs Decision A + Work-Step for shell controls |
 | Batch | P1-B1 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` |
 | Owner clarification | No (scope already in prompts/p1.md) |
 
 ### P1-GAP-003 — Shared KPI strip / toolbar / detail-panel primitives
@@ -82,7 +83,7 @@
 | --- | --- |
 | Module / screen | SHARED primitives (referenced by M01+ chrome) |
 | Source | imgctrl-*-kpi-strip / primary-toolbar / detail-panel |
-| Current | KPI largely M01-local; Drawer primitive exists; not Decision A-complete shared contract |
+| Current | Shared `KpiStrip`, `PrimaryToolbar`, `DetailPanel` primitives + unit contracts on accepted tip |
 | Required | Shared primitives reusable across modules |
 | Roles | All |
 | Impact | Multi-module chrome inconsistency |
@@ -92,7 +93,7 @@
 | Risk | Per-module reinvention |
 | Acceptance evidence | Component tests + visual regions |
 | Batch | P1-B1 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` |
 | Owner clarification | No |
 
 ### P1-GAP-004 — Shell dimension contract (240/72 sidebar, 48 topbar)
@@ -100,7 +101,7 @@
 | --- | --- |
 | Module / screen | SHARED shell |
 | Source | `FINAL_DESIGN_SYSTEM_CONTRACT.md`; `prompts/p1.md` §9 |
-| Current | Sidebar/Topbar implemented; contract dimensions not fully evidenced as acceptance gate |
+| Current | B1 dimension evidence asserted (visible geometry; mobile off-screen when closed) on accepted tip; broader responsive/a11y matrix remains P1-B4 |
 | Required | Asserted dimensions at 1280 / 768 / 390 |
 | Roles | All |
 | Impact | Layout parity |
@@ -110,7 +111,7 @@
 | Risk | Responsive regressions |
 | Acceptance evidence | Shell dimension tests |
 | Batch | P1-B1 / P1-B4 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B1 — PARTIAL / OWNER-ACCEPTED FOR B1 SCOPE (2026-08-13)**; residual responsive/a11y evidence remains `P1 — PLANNED, NOT AUTHORISED` (P1-B4) |
 | Owner clarification | No |
 
 ### P1-GAP-005 — Inactive Topbar Export / MFA / New Entry truthfulness
@@ -208,7 +209,7 @@
 | --- | --- |
 | Module / screen | SHARED visual QA |
 | Source | Design contract viewports/regions/tolerances; `prompts/p1.md` §10 |
-| Current | Prior matrices exist; Decision A P1 harness smoke not closed as Programme P1 exit |
+| Current | P1-B1 harness smoke started and owner-accepted for shell foundation; Decision A pixel-difference and Programme P1 exit **not** closed |
 | Required | Harness smoke against contract viewports/regions |
 | Roles | QA / owner inspection |
 | Impact | Cannot claim Decision A parity |
@@ -218,7 +219,7 @@
 | Risk | Subjective visual acceptance |
 | Acceptance evidence | Screenshot diffs + SHA evidence |
 | Batch | P1-B1 / P1-B8 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B1 — HARNESS START OWNER-ACCEPTED (2026-08-13); NOT CLOSED** — pixel-diff / Programme P1 exit remain for later controlled batch (P1-B8); residual status `P1 — PLANNED, NOT AUTHORISED` |
 | Owner clarification | No |
 
 ---
@@ -598,13 +599,13 @@ Special notes:
 ## F. Minor / presentation inconsistencies
 
 ### P1-GAP-049 — Family accent vs global theme discipline
-Source: `DEC-BRANDED-THEMES` closed — Light/Dark/System only. Current accents as nav cues allowed. Ensure P1 does not reintroduce Executive Blue / Medical Emerald globals. Classification **Accepted difference** (closed) + **Minor** watch item. Batch P1-B1. Status `P1 — PLANNED, NOT AUTHORISED`.
+Source: `DEC-BRANDED-THEMES` closed — Light/Dark/System only. Current accents as nav cues allowed. Ensure P1 does not reintroduce Executive Blue / Medical Emerald globals. Classification **Accepted difference** (closed) + **Minor** watch item. Batch P1-B1. Status **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (no banned globals on accepted tip).
 
 ### P1-GAP-050 — Density / typography residual vs contract
 Source: design-system-contract typography/spacing. Classification **Minor**. Batch P1-B5/B6. Status `P1 — PLANNED, NOT AUTHORISED`.
 
 ### P1-GAP-051 — Detail panel width band 320–420
-Source: design contract. Classification **Minor**. Batch P1-B1. Status `P1 — PLANNED, NOT AUTHORISED`.
+Source: design contract. Classification **Minor**. Batch P1-B1. Status **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (default 360; band 320–420 evidenced).
 
 ### P1-GAP-052 — Prefers-reduced-motion coverage uneven
 Source: design contract; M07 evidence exists. Classification **Minor**. Batch P1-B4. Status `P1 — PLANNED, NOT AUTHORISED`.

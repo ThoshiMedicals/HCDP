@@ -14,18 +14,19 @@
 
 - Decision A canonical PNGs: **installed** (9/9 `INSTALLED_HASH_OK`)  
 - Control pack generation: deterministic extract → build → validate  
-- P1 / PPA / M08–M24 implementation: **not authorised**  
+- **P1-B1:** owner accepted with qualifications and closed (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`  
+- **P1-B2–P1-B8 / PPA / M08–M24 / production:** **not authorised**  
 - PR / merge: **none**
 
-## P1 readiness pack (planning only)
+## P1 readiness pack
 
 Owner-review planning artefacts for the next prototype-parity phase live under [`phase1/`](./phase1/README.md):
 
-- **P1B** prototype-parity plan (83 gaps, 8 batches) — stamp `P1 — PLANNED, NOT AUTHORISED`
+- **P1B** prototype-parity plan (83 gaps, 8 batches) — **P1-B1** owner accepted with qualifications and closed (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`
 - **P1A** master product-definition / delivery-readiness pack — stamp `P1A — PLANNED, NOT AUTHORISED` — [`phase1/p1a/`](./phase1/p1a/README.md)
 - **P1C** development-repository / architecture / production-readiness audit — stamp `P1C — PLANNED, NOT AUTHORISED` — [`phase1/p1c/`](./phase1/p1c/README.md)
 
-No implementation authorised or performed by these packs.
+P1-B1 acceptance does **not** authorise later batches, PR/merge/deploy, or production. Evidence: [`../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md).
 
 ## Regenerate
 

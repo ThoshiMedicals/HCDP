@@ -1,11 +1,12 @@
 # P1 Owner-Decision Briefing (P1A · P1B · P1C)
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED` (briefing); underlying packs retain `P1` / `P1A` / `P1C — PLANNED, NOT AUTHORISED`  
-**Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
-**Planning branch:** `cursor/p1-scope-readiness-plan`  
+**Stamp (updated 2026-08-13):** **P1-B1** owner accepted with qualifications and **closed** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain unauthorised. P1A/P1C packs remain `PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Baseline tip (planning):** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
+**Planning branch (historical):** `cursor/p1-scope-readiness-plan`  
 **Access / planning date:** 2026-08-11  
+**P1-B1 acceptance date:** 2026-08-13  
 
-> **Planning and analysis only.** Owner decisions **OWN-P1-001**, **OWN-P1-002**, and **OWN-P1-003** are recorded closed as of **2026-08-11** in [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md). This briefing does **not** authorise **P1-B1** or any implementation; does **not** claim legal, security, privacy, or accessibility certification. **OWN-P1-016** (ARCH-01 / DATA-01) is open.
+> **Update (2026-08-13):** Qualified owner acceptance of **P1-B1 only** is recorded in [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md) (`P1-B1-OWNER-ACCEPT-2026-08-13`) and [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md). This briefing’s historical planning narrative below is preserved. Acceptance does **not** authorise P1-B2–P1-B8, PR/merge/deploy, production, or automatic progression. **OWN-P1-016** remains open. No legal, security, privacy, or accessibility certification is claimed.
 
 **Authoritative registers (do not treat this briefing as a replacement):**
 
@@ -25,7 +26,7 @@
 
 P1A (definition readiness), P1B (83 prototype-parity gaps / 8 batches), and P1C (repo/production audit, overall ~**1/5** production readiness) form the verified planning pack. **No product coding is authorised.**
 
-Gate decisions **OWN-P1-001**, **OWN-P1-002**, and **OWN-P1-003** are **closed (2026-08-11)** — P0 tip accepted, SHARED-first scope, first batch **named** `P1-B1`. Naming and planning closure are **not** implementation authorisation. **P1-B1 remains `P1 — PLANNED, NOT AUTHORISED`.**
+Gate decisions **OWN-P1-001**, **OWN-P1-002**, and **OWN-P1-003** are **closed (2026-08-11)** — P0 tip accepted, SHARED-first scope, first batch **named** `P1-B1`. **P1-B1** is now **owner accepted with qualifications and closed (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8 remain unauthorised.**
 
 Additional open decisions cover later P1 batches (OWN-P1-004…008), definition/security/accessibility targets (OWN-P1A-*), repository/production hygiene (OWN-P1C-*), deferred waves (OWN-P1-009…014), and **OWN-P1-016** (ARCH-01 / DATA-01 — localStorage vs SQL production architecture) which remains **Open**.
 
@@ -37,7 +38,7 @@ Additional open decisions cover later P1 batches (OWN-P1-004…008), definition/
 | --- | --- |
 | Branch / SHA | `cursor/p1-scope-readiness-plan` @ `9142ec30b3b2efea1e959ad85ce1406562cd5faa` (application baseline unchanged) |
 | Accepted P0 tip | `b0c4c4d20de1cce7adac5d691c506122e30610a2` (OWN-P1-001, 2026-08-11) |
-| P1B | Pack under `phase1/`; **83** gaps; batches P1-B1…P1-B8 — all **not authorised** for implementation |
+| P1B | Pack under `phase1/`; **83** gaps; **P1-B1** accepted/closed with qualifications (2026-08-13); **P1-B2…P1-B8** remain **not authorised** |
 | P1A | 16 files under `phase1/p1a/` |
 | P1C | 15 files under `phase1/p1c/`; scorecard overall **1 / 5** |
 | Docs path | Docs-only under `docs/architecture/prototype-parity/`; no `src/` changes |

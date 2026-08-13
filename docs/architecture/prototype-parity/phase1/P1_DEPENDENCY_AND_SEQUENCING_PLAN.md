@@ -1,6 +1,6 @@
 # P1 Dependency and Sequencing Plan
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED`
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. No automatic progression.
 
 ## Prioritisation order (mandatory)
 
@@ -19,26 +19,30 @@
         │
         ▼
    P1-B1 SHARED shell foundation
+   (OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED 2026-08-13
+    tip fdb2beb5b0e786e42d358efa9875b6bba52666cd)
         │
-        ├──────────────► P1-B2 truthfulness (can overlap after B1 entry)
+        │  *** STOP — B2–B8 each require separate explicit owner authorisation ***
         │
-        ▼
-   P1-B3 register hygiene (can start after B1 entry; preferred before B5/B6 scoring)
-        │
-        ▼
-   P1-B4 responsive/a11y/appearance evidence
+        ├──────────────► P1-B2 truthfulness (UNAUTHORISED)
         │
         ▼
-   P1-B5 M01/M02 presentation
+   P1-B3 register hygiene (UNAUTHORISED)
         │
         ▼
-   P1-B6 M04–M07/M11 design apply (preserve frozen domain)
+   P1-B4 responsive/a11y/appearance evidence (UNAUTHORISED)
         │
         ▼
-   P1-B7 states/permissions/report honesty
+   P1-B5 M01/M02 presentation (UNAUTHORISED)
         │
         ▼
-   P1-B8 P1 closure evidence → STOP
+   P1-B6 M04–M07/M11 design apply (UNAUTHORISED)
+        │
+        ▼
+   P1-B7 states/permissions/report honesty (UNAUTHORISED)
+        │
+        ▼
+   P1-B8 P1 closure evidence → STOP (UNAUTHORISED)
         │
         ▼
    Programme P2+ (separate authorisation)
@@ -63,7 +67,7 @@
 
 | Pair | Note |
 | --- | --- |
-| B2 ∥ B3 after B1 starts | Honesty + register sync are largely independent |
+| B2 ∥ B3 after B1 starts | Honesty + register sync are largely independent — **still each require separate owner auth** |
 | B3 before B5/B6 | Prevents false readiness scoring during design apply |
 | B4 after B1 | Evidence harness needs stable tokens/dimensions |
 
@@ -96,6 +100,11 @@
 - M25 future planning acceptance  
 - Production deployment  
 
+### After P1-B1 acceptance (2026-08-13)
+- Express authorisation still required for each of P1-B2–P1-B8  
+- `OWN-P1-016` remains open  
+- No PR / merge / deploy from this acceptance  
+
 ## Rollback strategy
 
-Each batch on its own branch from the last owner-accepted tip. Rollback = discard unmerged batch branch / reset to previous accepted SHA. Do not rewrite historical P0 evidence commits.
+Each batch on its own branch from the last owner-accepted tip. Rollback = discard unmerged batch branch / reset to previous accepted SHA. Do not rewrite historical P0 evidence commits. Current last owner-accepted implementation tip for P1-B1: `fdb2beb5b0e786e42d358efa9875b6bba52666cd`.

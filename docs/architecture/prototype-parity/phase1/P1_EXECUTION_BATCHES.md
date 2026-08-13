@@ -1,20 +1,20 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** Every batch below is `P1 — PLANNED, NOT AUTHORISED`  
-**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each batch before coding; B2–B8 never auto-start (OWN-P1-002).
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B2–B8 never auto-start (OWN-P1-002). P1-B1 acceptance does **not** authorise automatic progression.
 
 ## Batch index
 
-| Batch | Objective | Gap IDs (primary) |
-| --- | --- | --- |
-| P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 |
-| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 |
-| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 |
-| P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 |
-| P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* |
-| P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 |
-| P1-B7 | Permission / state / report honesty completeness | 027–030, 028, 053* |
-| P1-B8 | P1 closure evidence + stop checkpoint | 010, 075, 076, 082 |
+| Batch | Objective | Gap IDs (primary) | Status |
+| --- | --- | --- | --- |
+| P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
+| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B7 | Permission / state / report honesty completeness | 027–030, 028, 053* | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B8 | P1 closure evidence + stop checkpoint | 010, 075, 076, 082 | `P1 — PLANNED, NOT AUTHORISED` |
 
 \*Partial — honesty/labels only; durable domain remains P2+.
 
@@ -24,9 +24,14 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — PLANNED, NOT AUTHORISED` |
+| Status | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
+| Accepted tip | `fdb2beb5b0e786e42d358efa9875b6bba52666cd` |
+| Accepted scope | P1-B1 shared Decision A shell foundation only |
+| Validation basis | Verified local tests, validators, build and visual harness |
+| GitHub CI | None — not passed; local validation only |
 | Objective | Establish tokenised Light/Dark/System shell + shared chrome primitives per design-system-contract and Decision A |
 | Included gaps | 002, 003, 004, 010 (harness start), 049, 051 |
+| Gap disposition | 002, 003, 049, 051 closed for B1; 004 partial (B4 residual); 010 partial / not closed (pixel-diff / P1 exit later) |
 | Modules/screens | SHARED; reference surfaces `/dashboard`, `/action-inbox` |
 | Dependencies | Owner clears P1-GAP-001 / 083; Decision A PNGs remain `66e6e64…` |
 | Exact authorised changes (when named) | CSS variables/tokens; Sidebar/Topbar/ModuleSectionNav/PageHeader/Drawer primitives; shell dimensions; screenshot harness smoke |
@@ -35,11 +40,12 @@
 | Required tests | Theme token; shell dimensions 1280/768/390; harness smoke |
 | Browser widths / appearance | Contract viewports; Light, Dark, System |
 | Role scenarios | Authenticated user sees chrome; role gating unchanged |
-| Acceptance evidence | Screenshots + tests + SHA tip evidence under `docs/audits/` (new, not rewriting P0) |
+| Acceptance evidence | `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md` (+ harness artefacts) |
 | Rollback | Revert batch branch tip to pre-batch SHA |
 | Entry gate | P0 accepted; batch named; tip clean; validators green |
-| Exit gate | Named tests green; visual QA agent (not implementer) PASS; owner decision point |
-| Owner decision point | Accept B1 tip before B2 |
+| Exit gate | Named tests green; owner decision recorded with qualifications (2026-08-13) |
+| Owner decision point | Accept B1 tip before B2 — **met with qualifications; B2 remains unauthorised** |
+| Qualifications | No GitHub CI; pixel-diff deferred; Sarah/Neil → B2; `OWN-P1-016` open; no PR/merge/deploy; no automatic progression; not overall P1/production acceptance |
 
 ## P1-B2 — Shell truthfulness
 

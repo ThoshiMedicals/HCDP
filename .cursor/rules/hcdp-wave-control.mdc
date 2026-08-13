@@ -1,5 +1,5 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; PPA planned only
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1 accepted with qualifications; PPA planned only
 alwaysApply: true
 ---
 
@@ -14,7 +14,9 @@ Accepted Wave 4 implementation: `15f020800bbca40702ef08ad25f94f1d1999112f`
 Wave 6 Batch 4 HEAD: `db96703123cc4759c04ed5f6ad9c930012ab38ea` (accepted with qualifications)  
 Wave 6 Batch 5 accepted baseline: `db9550bac5e3995b095d3143b49e17549e81582b`  
 Wave 6 Batch 6 accepted technical target: `ce1f4af68917c9988efff327d521d94b8289f2fc` (owner accepted with qualifications; closed 29 July 2026)  
-Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`
+Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`  
+Accepted P1-B1 tip: `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (owner accepted with qualifications; closed 2026-08-13)  
+P1-B1 evidence: `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`
 
 ```text
 Wave 1A: Owner accepted and frozen
@@ -26,11 +28,16 @@ Wave 5 (M06): Owner accepted and frozen at 6cfee6ca7ae2d0f58695569b9f61ffa939b97
 Wave 6 / M07 Batches 1–6: Owner accepted and closed within approved scope
   (Batches 3–4 and 6 with qualifications; Batch 6 closure is NOT production approval)
 Wave 6 / M07 PPA: Planned only — Prior-Period Adjustment; not authorised for implementation
+P1-B1 (SHARED Decision A shell): Owner accepted with qualifications and closed at
+  fdb2beb5b0e786e42d358efa9875b6bba52666cd (2026-08-13) — NOT overall P1 / production acceptance
+P1-B2 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+OWN-P1-016: remains open
 ```
 
 ## Order
 
-0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)
+0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → stop (do not begin P1-B2–P1-B8 until expressly authorised)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -75,3 +82,6 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
 - Claim production approval
 - Begin Module 8
+- Begin P1-B2 through P1-B8 without separate explicit owner authorisation
+- Treat P1-B1 acceptance as overall Programme P1 or production acceptance
+- Resolve `OWN-P1-016` by implication from P1-B1 acceptance

@@ -1,7 +1,8 @@
 # P1 Test and Acceptance-Evidence Plan
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED`  
-**Framework:** [`../GLOBAL_ACCEPTANCE_TEST_DESIGN.md`](../GLOBAL_ACCEPTANCE_TEST_DESIGN.md)
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (local validation; no GitHub CI). **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`.  
+**Framework:** [`../GLOBAL_ACCEPTANCE_TEST_DESIGN.md`](../GLOBAL_ACCEPTANCE_TEST_DESIGN.md)  
+**P1-B1 evidence:** [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md)
 
 ## Mandatory proof types (every authorised batch)
 

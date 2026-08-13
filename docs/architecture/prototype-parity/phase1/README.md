@@ -1,38 +1,41 @@
 # Phase 1 — P1A · P1B · P1C Planning Packs
 
-**Planning only — no implementation authorised or performed.**
+**P1-B1 status:** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
 
 | Pin | Value |
 | --- | --- |
-| Planning branch | `cursor/p1-scope-readiness-plan` |
+| Planning branch (historical) | `cursor/p1-scope-readiness-plan` |
 | Starting tip (unmodified application) | `9142ec30b3b2efea1e959ad85ce1406562cd5faa` (`cursor/baseline-quality-remediation`) |
 | P0 programme-reset tip (preserved) | `b0c4c4d20de1cce7adac5d691c506122e30610a2` (`cursor/prototype-parity-programme-reset`) |
+| Accepted P1-B1 tip | `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (`cursor/p1-b1-shared-shell-foundation`) |
 | M25 parking branch | `cursor/m25-future-planning` (do not implement) |
 
 ## Workstream split
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 proposed batches | `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1 closed with qualifications; B2–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 
-None of these workstreams authorises implementation.
+P1A/P1C remain planning-only. P1-B1 acceptance does **not** authorise later batches or production.
 
 Cross-links:
 
 - P1A ↔ P1B: [`p1a/P1A_12_P1B_RECONCILIATION.md`](./p1a/P1A_12_P1B_RECONCILIATION.md)
 - P1C ↔ P1A/P1B: [`p1c/P1C_10_RECONCILIATION_P1A_P1B.md`](./p1c/P1C_10_RECONCILIATION_P1A_P1B.md)
 
-## Owner decisions (planning)
+## Owner decisions (planning + B1 acceptance)
 
 Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.md) · Register: [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md).
 
 **Closed 2026-08-11 (planning only):** OWN-P1-001 (accepted P0 `b0c4c4d20de1cce7adac5d691c506122e30610a2`; `OWN-NO-P1-YET` cleared), OWN-P1-002 (SHARED-first), OWN-P1-003 (named **P1-B1**).
 
-**Still required before coding:** Express **P1-B1** implementation authorisation (naming ≠ auth).
+**Closed 2026-08-13 (qualified):** P1-B1 owner acceptance at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (`P1-B1-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md).
 
-**Open:** OWN-P1-004…014 (as registered); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL). 
+**Still required before further coding:** Express **P1-B2** (or later) implementation authorisation. No automatic progression.
+
+**Open:** OWN-P1-004…014 (as registered); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
 
@@ -66,14 +69,14 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 - Parent control pack: [`../README.md`](../README.md)
 - Existing Programme Wave P1 prompt (SHARED shell only): [`../prompts/p1.md`](../prompts/p1.md)
 - Phase 0 acceptance record: [`../phase0/PHASE0_BASELINE_ACCEPTANCE_RECORD.md`](../phase0/PHASE0_BASELINE_ACCEPTANCE_RECORD.md)
-- Stop checkpoint (P1 authorised = **No**): [`../FIRST_RUN_STOP_CHECKPOINT.md`](../FIRST_RUN_STOP_CHECKPOINT.md)
+- Stop checkpoint (historical P0 hold): [`../FIRST_RUN_STOP_CHECKPOINT.md`](../FIRST_RUN_STOP_CHECKPOINT.md)
 
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B1 from planning packs alone
+- Begin P1-B2–P1-B8 from P1-B1 acceptance alone (no automatic progression)
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes
 - Claim legal compliance or security/accessibility certification from documentation review
+- Treat P1-B1 acceptance as overall Programme P1 or production acceptance
 - Commit / push / merge / open a PR unless the owner expressly asks
-

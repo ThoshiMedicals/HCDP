@@ -1,10 +1,11 @@
 # P1 Owner-Decision Register
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED`  
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
 **Note:** Conflict register openCount remains 0 for prior DEC-* items. This register lists **P1 planning decisions** required, closed, or deferrable.  
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.  
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.  
-**Owner-decision date (001–003, 016 opened):** `2026-08-11`
+**Owner-decision date (001–003, 016 opened):** `2026-08-11`  
+**P1-B1 qualified acceptance date:** `2026-08-13`
 
 ## Decisions required before any P1 implementation
 
@@ -66,6 +67,43 @@ Outcome: Approved — first named implementation batch is P1-B1.
 Authorises batch(es): None (name only)
 Explicitly does NOT authorise: P1-B1 implementation; B2–B8; PPA; payment; M25; production
 Evidence pointer: P1_RECOMMENDED_FIRST_BATCH.md; P1_EXECUTION_BATCHES.md
+```
+
+## P1-B1 qualified owner acceptance (recorded 2026-08-13)
+
+Closing this acceptance record closes **P1-B1 only**. It does **not** authorise P1-B2–P1-B8, resolve `OWN-P1-016`, claim overall Programme P1 completion, or authorise PR / merge / deployment / production.
+
+```text
+Decision ID: P1-B1-OWNER-ACCEPT-2026-08-13
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Outcome: Owner accepted with qualifications — P1-B1 CLOSED
+         Accepted implementation tip:
+         fdb2beb5b0e786e42d358efa9875b6bba52666cd
+         Implementation sequence:
+         fa2cc7f401fab95d1320f00897bca4438207191b
+         4069ed429072138c81eeca85e14f879d4bfb6cf6
+         fdb2beb5b0e786e42d358efa9875b6bba52666cd
+         Accepted scope: P1-B1 shared Decision A shell foundation only
+         Validation basis: verified local tests, validators, build, visual harness
+         GitHub CI: none — not passed (no Actions checks on branch)
+Qualifications (binding):
+  - No GitHub CI pass claimed
+  - Full Decision A pixel-difference deferred to controlled later batch
+  - Sarah/Neil demo identity consistency remains P1-B2
+  - OWN-P1-016 remains open
+  - P1-B2 through P1-B8 remain separately unauthorised
+  - No production approval or readiness claim
+  - No PR, merge or deployment authorised
+  - No automatic progression to P1-B2
+  - Not overall Programme P1 or production acceptance
+Authorises batch(es): Closure of P1-B1 only (qualified)
+Explicitly does NOT authorise: P1-B2–P1-B8; automatic progression; PR; merge;
+         deploy; production; OWN-P1-016 resolution; PPA; payment; M25;
+         patient/clinical SoR; pixel-parity claim; WCAG/security certification
+Evidence pointer: docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md;
+                  docs/audits/p1/P1_B1_VISUAL_QA_NOTES.md;
+                  P1_EXECUTION_BATCHES.md; branch cursor/p1-b1-shared-shell-foundation
 ```
 
 ## Open architecture / data decision (production path)

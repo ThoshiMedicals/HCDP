@@ -1,7 +1,18 @@
 # P1 Gap Traceability (Source → Gap → Acceptance)
 
-**Stamp:** `P1 — PLANNED, NOT AUTHORISED`  
+**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`.  
 **Rule:** No proposed change without source, gap ID, and acceptance method.
+
+## P1-B1 gap disposition (2026-08-13)
+
+| Gap ID | Disposition |
+| --- | --- |
+| P1-GAP-002 | Owner accepted / closed for P1-B1 |
+| P1-GAP-003 | Owner accepted / closed for P1-B1 |
+| P1-GAP-004 | Partial — B1 dimension evidence accepted; residual B4 remains open |
+| P1-GAP-010 | Partial / not closed — harness start accepted; pixel-diff / Programme P1 exit remain (B8) |
+| P1-GAP-049 | Owner accepted / closed for P1-B1 |
+| P1-GAP-051 | Owner accepted / closed for P1-B1 |
 
 | Gap ID | Source IDs / artefacts | Acceptance method | Batch |
 | --- | --- | --- | --- |
@@ -74,8 +85,9 @@
 
 | Requirement | Status |
 | --- | --- |
-| Every gap has ID | Yes |
+| Every gap has ID | Yes (83 preserved) |
 | Every proposed P1-rec item has source | Yes |
 | Every proposed P1-rec item has acceptance method | Yes |
-| Every proposed batch stamped not authorised | Yes |
+| Eight batches accounted for | Yes — only P1-B1 accepted/closed with qualifications |
+| P1-B2–P1-B8 stamped not authorised | Yes |
 | Exclusions traced | Yes (057–065, 061–062) |
