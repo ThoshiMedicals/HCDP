@@ -53,12 +53,15 @@
 | --- | --- |
 | Status | `P1 — PLANNED, NOT AUTHORISED` |
 | Objective | Remove or truthfully label inactive/stub shell controls and demo surfaces |
-| Included gaps | 005, 006, 007, 018 (labels), 030 (honesty), 032, 071, 073 |
-| Dependencies | P1-B1 preferred; owner decisions on stub disposition |
-| Authorised changes | Copy, visibility, disablement, demo badges — **no fake backends** |
-| Prohibited | Implementing payment/export backends as silent scope; enabling emergency/auth as toast-success |
-| Tests | Control labelling; no toast-as-success assertions |
-| Entry/exit | After B1 acceptance; owner accepts honesty disposition |
+| Included gaps | 005, 006, 007, 018 (labels), 030 (honesty), 032, 071, 073 (+ identity via OWN-P1-017) |
+| Owner decisions (disposition) | **OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 closed 2026-08-13** — do **not** close gaps; do **not** authorise this batch |
+| Dependencies | P1-B1 closed; honesty dispositions recorded; express B2 authorisation still required |
+| Authorised changes (when named) | Copy, visibility, disablement, demo badges / QA gate, identity-chrome alignment — **no fake backends** |
+| Prohibited | Implementing payment/export backends as silent scope; enabling emergency/auth as toast-success; MFA/IdP; SQL; PR/merge/deploy |
+| Tests | Control labelling; no toast-as-success assertions; demo gate; identity chrome consistency |
+| Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; **express owner authorisation of P1-B2** |
+| Exit gate | Named honesty tests green; owner accepts B2 tip; gaps dispositioned by evidence (not by decision alone) |
+| Remaining blocker before coding | **Express named-batch authorisation only** (decision blockers cleared) |
 
 ## P1-B3 — Register / navigation hygiene
 

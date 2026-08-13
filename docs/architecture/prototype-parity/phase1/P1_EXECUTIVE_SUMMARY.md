@@ -84,7 +84,9 @@ Domain workflow completion remains **Programme P2+**, not these batches. **No au
 
 **Closed 2026-08-13 (qualified batch acceptance):** P1-B1 at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` — see `P1-B1-OWNER-ACCEPT-2026-08-13` in the owner-decision register.
 
-**Still open / unauthorised:** OWN-P1-004…008 for later batches; **OWN-P1-016** before production data path; P1-B2–P1-B8 implementation.
+**Still open / unauthorised:** OWN-P1-006…007 (B3); OWN-P1-009…015 (deferred); **OWN-P1-016** before production data path; P1-B2–P1-B8 implementation.
+
+**Closed 2026-08-13 (decision disposition only — not batch auth):** OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017. P1-B2 remains `P1 — PLANNED, NOT AUTHORISED` pending a separate express implementation authorisation.
 
 See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 

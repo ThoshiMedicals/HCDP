@@ -33,9 +33,11 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-13 (qualified):** P1-B1 owner acceptance at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (`P1-B1-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md).
 
-**Still required before further coding:** Express **P1-B2** (or later) implementation authorisation. No automatic progression.
+**Closed 2026-08-13 (P1-B2 honesty disposition only):** OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017. Briefing: [`P1_B2_OWNER_DECISION_BRIEFING.md`](./P1_B2_OWNER_DECISION_BRIEFING.md). **P1-B2 remains unauthorised.**
 
-**Open:** OWN-P1-004…014 (as registered); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
+**Still required before P1-B2 coding:** Express **P1-B2** implementation authorisation. No automatic progression.
+
+**Open:** OWN-P1-006…007 (B3); OWN-P1-009…014 (as registered); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
 

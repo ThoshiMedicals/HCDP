@@ -1,12 +1,13 @@
 # P1 Owner-Decision Briefing (P1A · P1B · P1C)
 
-**Stamp (updated 2026-08-13):** **P1-B1** owner accepted with qualifications and **closed** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain unauthorised. P1A/P1C packs remain `PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Stamp (updated 2026-08-13):** **P1-B1** owner accepted with qualifications and **closed** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **OWN-P1-004 / 005 / 008 / 017** closed for P1-B2 honesty disposition (2026-08-13). **P1-B2–P1-B8** remain unauthorised. P1A/P1C packs remain `PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
 **Baseline tip (planning):** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
 **Planning branch (historical):** `cursor/p1-scope-readiness-plan`  
 **Access / planning date:** 2026-08-11  
 **P1-B1 acceptance date:** 2026-08-13  
+**P1-B2 honesty decisions date:** 2026-08-13  
 
-> **Update (2026-08-13):** Qualified owner acceptance of **P1-B1 only** is recorded in [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md) (`P1-B1-OWNER-ACCEPT-2026-08-13`) and [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md). This briefing’s historical planning narrative below is preserved. Acceptance does **not** authorise P1-B2–P1-B8, PR/merge/deploy, production, or automatic progression. **OWN-P1-016** remains open. No legal, security, privacy, or accessibility certification is claimed.
+> **Update (2026-08-13):** Qualified owner acceptance of **P1-B1 only** is recorded in [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md) (`P1-B1-OWNER-ACCEPT-2026-08-13`) and [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md). **OWN-P1-004, OWN-P1-005, OWN-P1-008 and OWN-P1-017** are recorded closed for shell-honesty disposition — see [`P1_B2_OWNER_DECISION_BRIEFING.md`](./P1_B2_OWNER_DECISION_BRIEFING.md). This does **not** authorise P1-B2–P1-B8, PR/merge/deploy, production, or automatic progression. **OWN-P1-016** remains open. No legal, security, privacy, or accessibility certification is claimed.
 
 **Authoritative registers (do not treat this briefing as a replacement):**
 

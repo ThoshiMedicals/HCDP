@@ -5,7 +5,8 @@
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.  
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.  
 **Owner-decision date (001–003, 016 opened):** `2026-08-11`  
-**P1-B1 qualified acceptance date:** `2026-08-13`
+**P1-B1 qualified acceptance date:** `2026-08-13`  
+**P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13` (decision closure only; **P1-B2 remains unauthorised**)
 
 ## Decisions required before any P1 implementation
 
@@ -14,11 +15,12 @@
 | OWN-P1-001 | Accept corrected P0 control pack tip `b0c4c4d20de1cce7adac5d691c506122e30610a2` (and nested pins) and clear `OWN-NO-P1-YET`? | Accept when pack review complete | All batches (entry) | **Closed (conditionally approved) — 2026-08-11** |
 | OWN-P1-002 | Is Programme P1 limited to SHARED foundation (`prompts/p1.md`), or does it include B1–B8 presentation/hygiene? | Prefer SHARED-first (B1), then explicitly authorise B2–B8 as P1 continuation | Scope / 083 | **Closed (approved) — 2026-08-11** |
 | OWN-P1-003 | Name the first implementation batch? | **P1-B1** | Start coding (naming only) | **Closed (approved — naming only) — 2026-08-11** |
-| OWN-P1-004 | Inactive Topbar Export / MFA / New Entry: hide, truthful non-op, or defer backend to P2+? | Truthful non-op or hide in P1; backend not P1 | B2 | **Open** |
-| OWN-P1-005 | Clinic multi-select: shell-wide vs Command Centre only (Accepted difference)? | Document Accepted difference OR schedule shell support in B2 | B2 / 006 | **Open** |
+| OWN-P1-004 | Inactive Topbar Export / MFA / New Entry: hide, truthful non-op, or defer backend to P2+? | Truthful non-op or hide in P1; backend not P1 | B2 | **Closed (approved) — 2026-08-13** |
+| OWN-P1-005 | Clinic multi-select: shell-wide vs Command Centre only (Accepted difference)? | Document Accepted difference OR schedule shell support in B2 | B2 / 006 | **Closed (approved) — 2026-08-13** |
 | OWN-P1-006 | Authorise M11 register/condition/section sync without domain change? | Yes | B3 / 011 | **Open** |
 | OWN-P1-007 | Authorise M07 History/Adjustments honesty labelling (not PPA product)? | Yes — honesty only | B3 / 012 / 079 | **Open** |
-| OWN-P1-008 | Demo/QA menus: retain visible, gate behind flag, or remove from portal? | Gate behind explicit QA flag | B2 / 032 | **Open** |
+| OWN-P1-008 | Demo/QA menus: retain visible, gate behind flag, or remove from portal? | Gate behind explicit QA flag | B2 / 032 | **Closed (approved) — 2026-08-13** |
+| OWN-P1-017 | Demo identity consistency across current-user chrome? | Global Act-as identity drives current-user chrome; seed names as labelled demo data | B2 identity | **Closed (approved) — 2026-08-13** |
 
 ## Closed gate decisions (2026-08-11) — planning closure only
 
@@ -105,6 +107,135 @@ Evidence pointer: docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md;
                   docs/audits/p1/P1_B1_VISUAL_QA_NOTES.md;
                   P1_EXECUTION_BATCHES.md; branch cursor/p1-b1-shared-shell-foundation
 ```
+
+## P1-B2 shell-honesty owner decisions (recorded 2026-08-13) — decision closure only
+
+Closing OWN-P1-004, OWN-P1-005, OWN-P1-008 and OWN-P1-017 records the owner’s honesty dispositions for a future **P1-B2**. These closures do **not** authorise P1-B2 implementation, start coding, PR, merge, deployment, or automatic progression. Gaps remain open until implemented and accepted evidence exists. Briefing: [`P1_B2_OWNER_DECISION_BRIEFING.md`](./P1_B2_OWNER_DECISION_BRIEFING.md).
+
+### OWN-P1-004 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-004
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Selected option: Option A + D
+Outcome: Approved and closed — Disable unsupported Topbar Export, Enterprise MFA and any
+         unsupported New Entry affordances with a truthful non-operational explanation
+         during P1. Their backend capabilities remain outside P1 and are not authorised
+         by P1-B2.
+Qualifications / interpretation:
+  - Unsupported controls must not simulate successful completion
+  - No toast may imply that an unavailable backend operation succeeded
+  - Controls may remain visible only when unavailable/demonstration status is clear
+  - Hiding a control remains permitted where clearer than disabling it
+  - Existing genuinely working New Entry behaviour must not be incorrectly disabled
+    merely because another New Entry pathway is unsupported
+  - No export-processing service authorised
+  - No MFA infrastructure or IdP work authorised
+  - No fake backend authorised
+Affected gaps (disposition guidance only — gaps NOT closed): P1-GAP-005;
+         honesty portion of P1-GAP-030
+Authorises: Honesty disposition for Topbar unsupported controls in a future authorised P1-B2
+Explicitly does NOT authorise: P1-B2 implementation; export-processing services;
+         MFA infrastructure; IdP; fake backends; PR; merge; deploy; production
+Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; P1-GAP-005; Topbar.tsx
+Dependencies: Aligns with OWN-P1-008 honesty theme; after P1-B1 closed
+```
+
+### OWN-P1-005 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-005
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Selected option: Option A
+Outcome: Approved and closed — Accept Command Centre-only multi-clinic selection as an
+         Accepted difference for Programme P1. The Topbar must truthfully direct users to
+         Command Centre and must not imply that shell-wide multi-select exists.
+         Shell-wide multi-clinic selection is not authorised by P1-B2.
+Qualifications / interpretation:
+  - Command Centre remains the authorised P1 multi-clinic selection surface
+  - Topbar must not silently pretend to support multi-select
+  - Presentation / workflow-boundary decision only
+  - Does not resolve production tenancy or data isolation
+  - OWN-P1-016 remains open
+  - Shell-wide multi-select requires a separate future authorisation if desired
+Affected gaps (disposition guidance only — gaps NOT closed): P1-GAP-006
+Authorises: Accepted-difference disposition for clinic multi-select honesty in a future
+         authorised P1-B2
+Explicitly does NOT authorise: Shell-wide multi-select; P1-B2 implementation;
+         OWN-P1-016 resolution; production tenancy; PR; merge; deploy
+Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; P1-GAP-006; Topbar.tsx; CC ControlBar
+Dependencies: Independent of OWN-P1-016 for consideration; production claims still need 016
+```
+
+### OWN-P1-008 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-008
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Selected option: Option A
+Outcome: Approved and closed — Gate demo and QA menus, simulated states, destructive demo
+         resets, demo clock controls and equivalent testing tools behind an explicit
+         QA/demo mode. Ordinary portal navigation must not present them as live
+         operational controls.
+Qualifications / interpretation:
+  - QA functionality may remain available only through a clear and testable demo/QA gate
+  - Demo/QA mode must be visibly labelled
+  - Ordinary users must not mistake seed resets, simulated time or online/offline
+    simulation for production operations
+  - Does not authorise production authentication
+  - Does not authorise durable demo-data services
+  - The gate is not a security boundary equivalent to production authorisation
+Affected gaps (disposition guidance only — gaps NOT closed): P1-GAP-032, P1-GAP-071,
+         P1-GAP-073; labelling portion of P1-GAP-018
+Authorises: Demo/QA gating disposition for a future authorised P1-B2
+Explicitly does NOT authorise: P1-B2 implementation; production authentication;
+         durable demo-data services; PR; merge; deploy; production
+Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; P1-GAP-032; QaDemoMenu.tsx;
+         OrganisationWorkspace.tsx
+Dependencies: Honesty theme with OWN-P1-004; coordinates with OWN-P1-017
+```
+
+### OWN-P1-017 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-017
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Title: Demo identity consistency across current-user chrome
+Selected option: Option A
+Outcome: Approved and closed — All visible current-user chrome, including the Sidebar,
+         Command Centre greeting and equivalent shell labels, must follow the active
+         global demonstration identity selected through Act as User/Role. Seed narrative
+         names such as Neil or Alex may remain only as clearly identifiable demo-data
+         characters or record participants. Act-as remains demonstration-only and is not
+         production authentication.
+Qualifications / interpretation:
+  - One global demo identity controls current-user name, greeting, acting-as label,
+    and equivalent visible identity chrome
+  - Module-specific role simulation may remain only when visibly labelled as a local
+    demo override
+  - A module-local role override must not silently replace or contradict the global
+    current-user display name
+  - Neil, Alex and other seed names may remain as record owners, staff members or
+    narrative actors where clearly part of demo data
+  - Do not replace every seed-person name with the current user
+  - Do not implement production authentication or an IdP
+  - Preserve existing production enforcement boundaries (demo-isolation / AUTH_ENFORCEMENT)
+Affected gaps (disposition guidance only — gaps NOT closed): identity portion of
+         P1-GAP-018, P1-GAP-032 and P1-GAP-071; satisfies P1-B1 Sarah/Neil qualification
+         guidance for a future P1-B2
+Authorises: Identity-chrome consistency disposition for a future authorised P1-B2
+Explicitly does NOT authorise: P1-B2 implementation; production authentication; IdP;
+         SQL/durable identity store; PR; merge; deploy; production
+Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; identity-context.tsx;
+         CommandCentre.tsx; demo-isolation.ts; P1_B1_IMPLEMENTATION_EVIDENCE.md
+Dependencies: Coordinates with OWN-P1-008; distinct from OWN-P1-016
+```
+
+**Remaining before a separate P1-B2 express implementation authorisation:** owner decision blockers OWN-P1-004/005/008/017 are **closed**. P1-B2 itself remains **`P1 — PLANNED, NOT AUTHORISED`** until the owner expressly authorises that named batch. OWN-P1-006/007 (B3), OWN-P1-016, and deferred P1A/P1C decisions remain as registered.
 
 ## Open architecture / data decision (production path)
 
