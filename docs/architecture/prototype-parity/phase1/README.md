@@ -1,9 +1,10 @@
 # Phase 1 — P1A · P1B · P1C Planning Packs
 
-**P1-B1 status:** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`.  
-**P1-B2 status:** owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.  
-**P1-B3 status:** owner accepted with qualifications and **closed** (2026-08-13) at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).  
-**P1-B4–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
+**P1-B1 status:** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`.
+**P1-B2 status:** owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.
+**P1-B3 status:** owner accepted with qualifications and **closed** (2026-08-13) at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).
+**P1-B4 status:** expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b4-responsive-a11y-appearance` (source tip `c5d919cc2921ab43949b37cad499e29a79cfa6b0`).
+**P1-B5–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
 
 | Pin | Value |
 | --- | --- |
@@ -19,7 +20,7 @@
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1/B2/B3 closed with qualifications; B4–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1/B2/B3 closed with qualifications; B4 implemented for owner review (acceptance pending); B5–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 
@@ -44,9 +45,9 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-13 (P1-B3 register-hygiene disposition):** OWN-P1-006 (Option A Synchronise), OWN-P1-007 (Option A Honesty-only labels).
 
-**Closed 2026-08-13 (qualified):** P1-B3 owner acceptance at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md); remediation: [`../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`](../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md). **P1-B4–P1-B8 remain unauthorised.** No automatic progression.
+**Closed 2026-08-13 (qualified):** P1-B3 owner acceptance at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md); remediation: [`../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`](../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md). No automatic progression.
 
-**P1-B4 readiness (2026-08-13):** Authorisation briefing published — [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md). Status remains `P1 — PLANNED, NOT AUTHORISED`. No owner-choice blocker found for gaps 008/009/031/052/074; express named-batch authorisation still required. Aurora parallel stream is not an input.
+**P1-B4 (2026-08-13):** Expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b4-responsive-a11y-appearance` (source tip `c5d919cc2921ab43949b37cad499e29a79cfa6b0`). Gaps 008/009/031/052/074 addressed for review — **not closed**. Evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md). **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Aurora parallel stream remained isolated.
 
 **Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
@@ -88,7 +89,9 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B4–P1-B8 from P1-B3 acceptance alone (no automatic progression; acceptance of B3 does not authorise later batches)
+- Begin P1-B5–P1-B8 without separate explicit owner authorisation (no automatic progression from B3 acceptance or B4 implementation)
+- Treat P1-B4 implementation as owner acceptance or close gaps 008/009/031/052/074 before acceptance
+- Integrate or depend on `cursor/aurora-design-foundation` without separate express authorisation
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes
 - Claim legal compliance or security/accessibility certification from documentation review

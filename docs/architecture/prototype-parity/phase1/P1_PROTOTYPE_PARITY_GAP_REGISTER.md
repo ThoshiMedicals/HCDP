@@ -1,6 +1,6 @@
 # P1 Prototype-Parity Gap Register
 
-**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`. **P1-B4–P1-B8** gaps remain `P1 — PLANNED, NOT AUTHORISED` unless noted. Overall Programme P1 is **not** complete.  
+**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`. **P1-B4** expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b4-responsive-a11y-appearance` (source tip `c5d919cc2921ab43949b37cad499e29a79cfa6b0`). **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED` unless noted. Overall Programme P1 is **not** complete.
 **Scheme:** `P1-GAP-###` (append-only; never reuse)  
 **Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
@@ -183,7 +183,7 @@
 | Risk | Flaky screenshot diffs |
 | Acceptance evidence | Theme tests + screenshot harness |
 | Batch | P1-B4 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B4 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — not closed |
 | Owner clarification | No |
 
 ### P1-GAP-009 — Keyboard / focus baselines for shell chrome
@@ -201,7 +201,7 @@
 | Risk | a11y regressions across modules |
 | Acceptance evidence | Named a11y tests + Work-Step |
 | Batch | P1-B4 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B4 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — not closed |
 | Owner clarification | No |
 
 ### P1-GAP-010 — Screenshot harness vs Decision A viewports
@@ -540,7 +540,7 @@ Same pattern for M11 `/training` (Wave3). Prefer after P1-GAP-011 register sync.
 | Risk | Overflow / clipped chrome |
 | Acceptance evidence | Width matrix 390/768/1280 (+ contract list) |
 | Batch | P1-B4 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B4 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — not closed |
 | Owner clarification | No |
 
 ### P1-GAP-032 — Demo/reset control governance
@@ -599,7 +599,7 @@ Source: design-system-contract typography/spacing. Classification **Minor**. Bat
 Source: design contract. Classification **Minor**. Batch P1-B1. Status **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (default 360; band 320–420 evidenced).
 
 ### P1-GAP-052 — Prefers-reduced-motion coverage uneven
-Source: design contract; M07 evidence exists. Classification **Minor**. Batch P1-B4. Status `P1 — PLANNED, NOT AUTHORISED`.
+Source: design contract; M07 evidence exists. Classification **Minor**. Batch P1-B4. Status **P1-B4 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — not closed.
 
 ### P1-GAP-053 — Print stylesheet / print parity incomplete
 Source: BRD outputs / reports. Classification **Minor** / Future for full packs. Batch Later / P1-B7 honesty only. Status `P1 — PLANNED, NOT AUTHORISED`.
@@ -673,7 +673,7 @@ Classification **Accepted difference** (owner visual remediation). Preserve unle
 Classification **Minor**. Priority P1-rec honesty. Batch P1-B2. Status **P1-B2 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (Online gated + labelled browser demo simulation).
 
 ### P1-GAP-074 — Hydration observations (historical M04/M05/M07)
-Classification **Minor** / Observation. Note: tooling debt from Batch1 partially superseded by tip `9142ec30` clean tsc. Re-verify during P1-B4. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Minor** / Observation. Note: tooling debt from Batch1 partially superseded by tip `9142ec30` clean tsc. Re-verify during P1-B4. Status **P1-B4 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — not closed.
 
 ### P1-GAP-075 — next-dev transient residual risk (Batch1 IV)
 Classification **Minor** Observation for QA environment. Batch P1-B8 gates. Status `P1 — PLANNED, NOT AUTHORISED`.

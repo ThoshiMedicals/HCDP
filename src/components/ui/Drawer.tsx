@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef } from "react";
 import { Button } from "./Button";
+import { focusFirst, handleFocusTrapKeydown } from "@/lib/shell/focus-trap";
 
 export function Drawer({
   open,
@@ -25,10 +26,15 @@ export function Drawer({
     if (!open) return;
     const prev = document.activeElement as HTMLElement | null;
     const t = window.setTimeout(() => {
-      panelRef.current?.querySelector<HTMLElement>("button, [href], input, select, textarea")?.focus();
+      focusFirst(panelRef.current);
     }, 0);
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      handleFocusTrapKeydown(e, panelRef.current);
     }
     document.addEventListener("keydown", onKey);
     return () => {
@@ -41,7 +47,7 @@ export function Drawer({
   return (
     <>
       <div
-        className={`fixed inset-0 z-40 bg-[rgba(15,23,42,0.28)] transition ${open ? "block" : "hidden"}`}
+        className={`fixed inset-0 z-40 bg-[rgba(15,23,42,0.28)] motion-safe:transition ${open ? "block" : "hidden"}`}
         onClick={onClose}
         aria-hidden
       />
@@ -50,9 +56,10 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
+        tabIndex={-1}
         data-shell-region="detail-pane"
         data-testid="shell-drawer"
-        className={`fixed bottom-0 right-0 top-0 z-50 flex flex-col bg-[var(--dp-bg-surface,var(--card))] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] transition-transform duration-200 ${
+        className={`fixed bottom-0 right-0 top-0 z-50 flex flex-col bg-[var(--dp-bg-surface,var(--card))] text-[var(--ink)] shadow-[-20px_0_60px_rgba(15,23,42,0.2)] motion-safe:transition-transform motion-safe:duration-200 ${
           open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
         style={{ width: "min(var(--drawer-width, 420px), 96vw)" }}
@@ -71,7 +78,7 @@ export function Drawer({
           </div>
           <Button
             variant="line"
-            className="h-10 w-10 min-h-0 justify-center px-0"
+            className="h-11 w-11 min-h-[44px] min-w-[44px] justify-center px-0"
             onClick={onClose}
             aria-label="Close panel"
           >

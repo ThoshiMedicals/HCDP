@@ -167,11 +167,13 @@ describe("P1-B3 programme control preserves open decisions and later batches", (
     assert.match(decisions, /OWN-P1-016 \|[\s\S]*?\*\*Open\*\*/);
   });
 
-  it("keeps P1-B4 through P1-B8 unauthorised", () => {
-    for (const id of ["P1-B4", "P1-B5", "P1-B6", "P1-B7", "P1-B8"]) {
+  it("keeps P1-B5 through P1-B8 PLANNED NOT AUTHORISED; B4 acceptance pending", () => {
+    assert.match(batches, /P1-B4[\s\S]*acceptance pending/i);
+    for (const id of ["P1-B5", "P1-B6", "P1-B7", "P1-B8"]) {
       assert.match(batches, new RegExp(`${id}[\\s\\S]{0,160}PLANNED, NOT AUTHORISED`));
     }
-    assert.match(wave, /P1-B4 through P1-B8/);
+    assert.match(wave, /P1-B5 through P1-B8/);
+    assert.match(wave, /acceptance PENDING|acceptance pending/i);
   });
 
   it("preserves inventory totals 83 / 8 / 24", () => {

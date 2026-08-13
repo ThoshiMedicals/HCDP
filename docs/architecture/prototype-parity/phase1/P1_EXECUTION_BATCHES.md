@@ -1,7 +1,7 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B4–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
-**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B4–B8 never auto-start (OWN-P1-002). P1-B3 acceptance does **not** authorise automatic progression.
+**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B4** expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b4-responsive-a11y-appearance` (source tip `c5d919cc2921ab43949b37cad499e29a79cfa6b0`). **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
+**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B5–B8 never auto-start (OWN-P1-002). P1-B3 acceptance and P1-B4 implementation do **not** authorise automatic progression.
 
 ## Batch index
 
@@ -10,7 +10,7 @@
 | P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
-| P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B7 | Permission / state / report honesty completeness | 027–030, 028, 053* | `P1 — PLANNED, NOT AUTHORISED` |
@@ -100,15 +100,19 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — PLANNED, NOT AUTHORISED` |
+| Status | **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
+| Implementation branch | `cursor/p1-b4-responsive-a11y-appearance` |
+| Source tip | `c5d919cc2921ab43949b37cad499e29a79cfa6b0` |
 | Objective | Harden shell a11y/keyboard/responsive/System appearance evidence |
 | Included gaps | 008, 009, 031, 052, 074 |
+| Gap disposition | Gaps **addressed for owner review** — **not closed** until owner acceptance |
 | Widths | 390, 430, 768, 1024, 1280, 1440 (+ contract list) |
 | Appearance | Light / Dark / System+OS Light / System+OS Dark (four distinct states) |
-| Owner-decision blocker | **None** for named B4 gaps (Owner clarification: No) — express named-batch authorisation still required |
+| Owner-decision blocker | **None** for named B4 gaps (Owner clarification: No) |
 | Authorisation briefing | [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md) |
-| Prohibited | Visual redesign unrelated to contract; Aurora integration; dependency upgrades; domain/PPA/payment/M08; PR/merge/deploy; automatic progression to B5 |
-| Exit | Named a11y + dimension + theme tests green; owner acceptance of authorised tip (when authorised) |
+| Implementation evidence | [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md) |
+| Prohibited | Visual redesign unrelated to contract; Aurora integration; dependency upgrades; domain/PPA/payment/M08; PR/merge/deploy; automatic progression to B5; treating implementation as acceptance |
+| Exit | Named a11y + dimension + theme tests green; **owner acceptance of authorised tip remains pending** |
 
 ## P1-B5 — M01/M02 presentation parity
 

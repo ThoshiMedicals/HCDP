@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { SHELL_BREAKPOINTS_PX, SHELL_DIMENSIONS_PX } from "@/lib/shell/design-contract";
+import { focusFirst, handleFocusTrapKeydown } from "@/lib/shell/focus-trap";
 
 /**
  * Shared Decision A detail panel (P1-GAP-003 / P1-GAP-051).
@@ -53,10 +54,21 @@ export function DetailPanel({
     if (!open) return;
     const prev = document.activeElement as HTMLElement | null;
     const t = window.setTimeout(() => {
-      panelRef.current?.querySelector<HTMLElement>("button, [href], input, select, textarea")?.focus();
+      focusFirst(panelRef.current);
     }, 0);
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      // Compute drawer mode inside the handler — do not assign refs during render.
+      const trapActive =
+        mode === "drawer" ||
+        (mode === "auto" && window.innerWidth < SHELL_BREAKPOINTS_PX.desktopMin);
+      if (trapActive) {
+        handleFocusTrapKeydown(e, panelRef.current);
+      }
     }
     document.addEventListener("keydown", onKey);
     return () => {
@@ -64,7 +76,7 @@ export function DetailPanel({
       document.removeEventListener("keydown", onKey);
       prev?.focus?.();
     };
-  }, [open, onClose]);
+  }, [open, onClose, mode]);
 
   const resolvedMode = mode === "auto" ? (desktop ? "docked" : "drawer") : mode;
 
@@ -75,15 +87,17 @@ export function DetailPanel({
   const panel = (
     <aside
       ref={panelRef}
-      role="complementary"
+      role={resolvedMode === "drawer" ? "dialog" : "complementary"}
+      aria-modal={resolvedMode === "drawer" && open ? true : undefined}
       aria-labelledby={titleId}
+      tabIndex={resolvedMode === "drawer" ? -1 : undefined}
       data-shell-region="detail-pane"
       data-testid="shell-detail-panel"
       data-detail-mode={resolvedMode}
       className={cn(
         "flex h-full min-h-0 flex-col border-l border-[var(--dp-border-subtle)] bg-[var(--dp-bg-surface)] text-[var(--dp-text-primary)]",
         resolvedMode === "drawer" &&
-          "fixed bottom-0 right-0 top-0 z-50 shadow-[-20px_0_60px_rgba(15,23,42,0.2)] transition-transform duration-200",
+          "fixed bottom-0 right-0 top-0 z-50 shadow-[-20px_0_60px_rgba(15,23,42,0.2)] motion-safe:transition-transform motion-safe:duration-200",
         resolvedMode === "drawer" && (open ? "translate-x-0" : "pointer-events-none translate-x-full"),
         className
       )}
@@ -109,7 +123,7 @@ export function DetailPanel({
         </div>
         <Button
           variant="line"
-          className="h-8 w-8 min-h-0 justify-center px-0"
+          className="h-11 w-11 min-h-[44px] min-w-[44px] justify-center px-0"
           onClick={onClose}
           aria-label="Close detail panel"
         >
@@ -130,7 +144,7 @@ export function DetailPanel({
       <>
         <div
           className={cn(
-            "fixed inset-0 z-40 bg-[rgba(15,23,42,0.28)] transition",
+            "fixed inset-0 z-40 bg-[rgba(15,23,42,0.28)] motion-safe:transition",
             open ? "block" : "hidden"
           )}
           onClick={onClose}

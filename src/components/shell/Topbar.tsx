@@ -139,7 +139,7 @@ export function Topbar() {
       <div className="ribbon-left flex min-w-0 shrink-0 items-center gap-2">
         <button
           type="button"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
+          className="grid h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-label={sidebarOpen ? "Close menu" : "Open menu"}
           aria-expanded={sidebarOpen}

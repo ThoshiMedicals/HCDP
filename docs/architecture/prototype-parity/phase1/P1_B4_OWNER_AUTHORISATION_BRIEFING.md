@@ -1,19 +1,21 @@
 # P1-B4 Owner-Authorisation / Readiness Briefing — Responsive / a11y / appearance evidence
 
-**Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)  
-**Batch:** P1-B4 — Responsive / a11y / appearance evidence  
-**Status stamp:** `P1 — PLANNED, NOT AUTHORISED`  
-**Branch (authoritative):** `cursor/p1-b3-register-hygiene`  
-**Briefing tip:** published on the same branch after P1-B3 acceptance (`6938cbd409dffdacc42d10beca8036f5667f4ebc` source; this docs commit follows)  
-**Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`  
-**Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`  
-**Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)  
-**Briefing date:** 2026-08-13  
+**Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)
+**Batch:** P1-B4 — Responsive / a11y / appearance evidence
+**Status stamp:** Expressly authorised and **implemented for owner review** (acceptance **pending**)
+**Implementation branch:** `cursor/p1-b4-responsive-a11y-appearance`
+**Authorised source tip:** `c5d919cc2921ab43949b37cad499e29a79cfa6b0`
+**Briefing tip (pre-implementation):** published on `cursor/p1-b3-register-hygiene` after P1-B3 acceptance (`6938cbd409dffdacc42d10beca8036f5667f4ebc` source; docs commit `c5d919cc2921ab43949b37cad499e29a79cfa6b0`)
+**Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
+**Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`
+**Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
+**Briefing / implementation date:** 2026-08-13
 
-> **P1-B4 remains `P1 — PLANNED, NOT AUTHORISED`.**  
-> This briefing does **not** authorise implementation, close gaps, create/close owner decisions, open a PR, merge, deploy, or begin P1-B5.  
-> A separate express named-batch owner act is still required before any P1-B4 coding.  
-> The parallel `cursor/aurora-design-foundation` stream is **out of scope** for this briefing and must not be inspected, merged, or depended upon.
+> **P1-B4 is expressly authorised and implemented for owner review — acceptance remains pending.**
+> Implementation does **not** close gaps, create/close owner decisions, open a PR, merge, deploy, or begin P1-B5.
+> Gaps 008 / 009 / 031 / 052 / 074 are **addressed for review**, not closed.
+> The parallel `cursor/aurora-design-foundation` stream remains **isolated** and must not be inspected, merged, or depended upon.
+> Evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md).
 
 **Authoritative sources (this briefing does not replace them):**
 
@@ -39,12 +41,13 @@ P1-B4 must **validate and correct defects in the currently accepted shell**, not
 
 | Item | Status |
 | --- | --- |
-| P1-B4 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B4 | Expressly authorised — **IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
 | New owner-decision blocker for B4 gaps | **None found** (verified) |
-| Express named-batch authorisation | **Still required** before coding |
-| Gaps 008 / 009 / 031 / 052 / 074 | Remain open / not closed by this briefing |
-| `OWN-P1-011` / `OWN-P1-016` | Remain **open** (do not block B4 consideration) |
-| Aurora parallel branch | **Not an input**; do not touch or integrate |
+| Express named-batch authorisation | **Met** — implemented for owner review |
+| Gaps 008 / 009 / 031 / 052 / 074 | **Addressed for owner review** — **not closed** |
+| `OWN-P1-011` / `OWN-P1-016` | Remain **open** |
+| Aurora parallel branch | **Isolated**; do not touch or integrate |
+| P1-B5 through P1-B8 | Remain `P1 — PLANNED, NOT AUTHORISED` |
 
 ---
 
@@ -72,7 +75,7 @@ P1-B4 must **validate and correct defects in the currently accepted shell**, not
 
 - **No new owner decision ID is required** for P1-B4 readiness.
 - **No unresolved owner-choice blocker** was found for the named B4 gaps.
-- **P1-B4 still requires separate express named-batch implementation authorisation.**
+- **P1-B4 received separate express named-batch implementation authorisation** and is **implemented for owner review** (acceptance pending).
 - Technical details must follow the accepted design contract and **must not silently introduce a visual redesign.**
 - If future work discovers a genuine unresolved product choice (for example, a contract conflict that cannot be resolved by defect correction alone), document it for owner review **without** inventing or closing a decision ID in that implementation batch until expressly authorised.
 

@@ -66,7 +66,8 @@ export function subscribeAppearance(listener: () => void) {
 }
 
 export function getAppearanceSnapshot(): CcAppearance {
-  if (!appearanceHydrated) return "light";
+  // Match theme-init default ("system") to avoid a false Light flash before hydrate (P1-GAP-008).
+  if (!appearanceHydrated) return "system";
   return appearanceMemory;
 }
 

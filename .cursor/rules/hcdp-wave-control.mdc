@@ -1,5 +1,5 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1/B2/B3 accepted with qualifications; PPA planned only
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1/B2/B3 accepted with qualifications; P1-B4 implemented for owner review (acceptance pending); PPA planned only
 alwaysApply: true
 ---
 
@@ -21,6 +21,8 @@ Accepted P1-B2 tip: `66f3f8d27803f5b8d24043639d21b9069f58e77a` (owner accepted w
 P1-B2 evidence: `docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`  
 Accepted P1-B3 tip: `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (owner accepted with qualifications; closed 2026-08-13)  
 P1-B3 evidence: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; remediation: `docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`
+P1-B4 implementation branch: `cursor/p1-b4-responsive-a11y-appearance` (source tip `c5d919cc2921ab43949b37cad499e29a79cfa6b0`; expressly authorised; implemented for owner review; acceptance PENDING)
+P1-B4 evidence: `docs/audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`
 
 ```text
 Wave 1A: Owner accepted and frozen
@@ -39,7 +41,14 @@ P1-B2 (shell truthfulness / demo honesty): Owner accepted with qualifications an
 P1-B3 (register hygiene / payroll-history truthfulness): Owner accepted with qualifications and closed at
   2515a4ffac0fb94cbd37092e26bf372cb43898f8 (2026-08-13; P1-B3-OWNER-ACCEPT-2026-08-13)
   — NOT overall P1 / production acceptance; does NOT authorise P1-B4+
-P1-B4 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+P1-B4 (responsive / a11y / appearance): Expressly authorised and implemented for owner review
+  (acceptance PENDING) on cursor/p1-b4-responsive-a11y-appearance
+  (source tip c5d919cc2921ab43949b37cad499e29a79cfa6b0)
+  — NOT overall P1 / production acceptance; gaps 008/009/031/052/074 addressed not closed;
+    does NOT authorise P1-B5+
+P1-B5 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+Aurora (cursor/aurora-design-foundation): isolated — do not inspect, merge, or integrate
+  without separate express authorisation
 P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
   closed 2026-08-13; batch closed by P1-B2-OWNER-ACCEPT-2026-08-13
 P1-B3 register-hygiene dispositions: OWN-P1-006 (Option A Synchronise),
@@ -52,7 +61,7 @@ OWN-P1-016: remains open
 ## Order
 
 0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 readiness briefing only (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B4–P1-B8 coding until expressly authorised; do not integrate Aurora without separate review)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 expressly authorised and implemented for owner review (acceptance PENDING)** → **P1-B5–P1-B8 (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B5–P1-B8 without express authorisation; do not treat B4 implementation as acceptance; do not integrate Aurora without separate review)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -97,10 +106,11 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
 - Claim production approval
 - Begin Module 8
-- Begin P1-B4 through P1-B8 without separate explicit owner authorisation
+- Begin P1-B5 through P1-B8 without separate explicit owner authorisation
 - Integrate or depend on `cursor/aurora-design-foundation` without separate owner review and express integration authorisation
 - Treat P1-B3 acceptance or OWN-P1-006/007 closure as overall Programme P1 / production acceptance
-- Resolve `OWN-P1-016` or `OWN-P1-011` by implication from P1-B3
-- Authorise automatic progression from P1-B3 to later batches
-- Claim PR, merge or deployment authority from P1-B3 acceptance
-- Treat the P1-B4 readiness briefing as implementation authorisation
+- Treat P1-B4 implementation or evidence publication as owner acceptance or batch closure
+- Close gaps 008 / 009 / 031 / 052 / 074 before owner acceptance of P1-B4
+- Resolve `OWN-P1-016` or `OWN-P1-011` by implication from P1-B3 or P1-B4
+- Authorise automatic progression from P1-B3 or P1-B4 to later batches
+- Claim PR, merge or deployment authority from P1-B3 acceptance or P1-B4 implementation

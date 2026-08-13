@@ -1,0 +1,331 @@
+{
+  "runtime": "production",
+  "count": 65,
+  "shots": [
+    {
+      "file": "dashboard-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 162140
+    },
+    {
+      "file": "dashboard-1440-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 161255
+    },
+    {
+      "file": "dashboard-1440-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 162428
+    },
+    {
+      "file": "dashboard-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 161141
+    },
+    {
+      "file": "dashboard-1280-light-reduce.png",
+      "runtime": "production",
+      "bytes": 158840
+    },
+    {
+      "file": "dashboard-1280-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 157832
+    },
+    {
+      "file": "dashboard-1280-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 159528
+    },
+    {
+      "file": "dashboard-1280-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 158337
+    },
+    {
+      "file": "dashboard-1024-light-reduce.png",
+      "runtime": "production",
+      "bytes": 108579
+    },
+    {
+      "file": "dashboard-1024-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 108067
+    },
+    {
+      "file": "dashboard-1024-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 108622
+    },
+    {
+      "file": "dashboard-1024-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 108018
+    },
+    {
+      "file": "dashboard-768-light-reduce.png",
+      "runtime": "production",
+      "bytes": 118627
+    },
+    {
+      "file": "dashboard-768-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 117744
+    },
+    {
+      "file": "dashboard-768-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 118854
+    },
+    {
+      "file": "dashboard-768-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 117924
+    },
+    {
+      "file": "dashboard-430-light-reduce.png",
+      "runtime": "production",
+      "bytes": 75482
+    },
+    {
+      "file": "dashboard-430-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 74424
+    },
+    {
+      "file": "dashboard-430-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 75341
+    },
+    {
+      "file": "dashboard-430-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 74590
+    },
+    {
+      "file": "dashboard-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 63294
+    },
+    {
+      "file": "dashboard-390-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 61987
+    },
+    {
+      "file": "dashboard-390-system-os-light-reduce.png",
+      "runtime": "production",
+      "bytes": 63294
+    },
+    {
+      "file": "dashboard-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 61987
+    },
+    {
+      "file": "action-inbox-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 157558
+    },
+    {
+      "file": "action-inbox-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 155751
+    },
+    {
+      "file": "action-inbox-768-light-reduce.png",
+      "runtime": "production",
+      "bytes": 102718
+    },
+    {
+      "file": "action-inbox-768-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 101741
+    },
+    {
+      "file": "action-inbox-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 58600
+    },
+    {
+      "file": "action-inbox-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 58044
+    },
+    {
+      "file": "b2-demo-honesty-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 170186
+    },
+    {
+      "file": "b2-demo-honesty-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 169020
+    },
+    {
+      "file": "b2-demo-honesty-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 64096
+    },
+    {
+      "file": "b2-demo-honesty-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 62729
+    },
+    {
+      "file": "b3-m11-nav-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 151049
+    },
+    {
+      "file": "b3-m11-nav-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 150010
+    },
+    {
+      "file": "b3-m11-nav-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 40851
+    },
+    {
+      "file": "b3-m11-nav-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 40038
+    },
+    {
+      "file": "b3-m07-history-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 125221
+    },
+    {
+      "file": "b3-m07-history-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 123143
+    },
+    {
+      "file": "b3-m07-history-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 58284
+    },
+    {
+      "file": "b3-m07-history-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 55481
+    },
+    {
+      "file": "b3-m07-adjustments-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 141679
+    },
+    {
+      "file": "b3-m07-adjustments-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 139589
+    },
+    {
+      "file": "b3-m07-adjustments-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 55406
+    },
+    {
+      "file": "b3-m07-adjustments-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 52737
+    },
+    {
+      "file": "hydrate-m04-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 126654
+    },
+    {
+      "file": "hydrate-m04-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 125676
+    },
+    {
+      "file": "hydrate-m04-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 43772
+    },
+    {
+      "file": "hydrate-m04-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 43293
+    },
+    {
+      "file": "hydrate-m05-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 108944
+    },
+    {
+      "file": "hydrate-m05-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 107639
+    },
+    {
+      "file": "hydrate-m05-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 46308
+    },
+    {
+      "file": "hydrate-m05-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 45941
+    },
+    {
+      "file": "hydrate-m07-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 137993
+    },
+    {
+      "file": "hydrate-m07-1440-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 135744
+    },
+    {
+      "file": "hydrate-m07-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 56369
+    },
+    {
+      "file": "hydrate-m07-390-system-os-dark-reduce.png",
+      "runtime": "production",
+      "bytes": 53739
+    },
+    {
+      "file": "interaction-mobile-nav-open-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 60625
+    },
+    {
+      "file": "interaction-mobile-nav-closed-after-escape-390-light-reduce.png",
+      "runtime": "production",
+      "bytes": 64180
+    },
+    {
+      "file": "system-os-change-system-preference-os-dark-1440.png",
+      "runtime": "production",
+      "bytes": 161228
+    },
+    {
+      "file": "explicit-light-unaffected-by-os-dark-1440.png",
+      "runtime": "production",
+      "bytes": 162140
+    },
+    {
+      "file": "motion-reduce-dashboard-1440-dark.png",
+      "runtime": "production",
+      "bytes": 161255
+    },
+    {
+      "file": "motion-normal-dashboard-1440-dark.png",
+      "runtime": "production",
+      "bytes": 161910
+    },
+    {
+      "file": "keyboard-tab-focus-dashboard-1440-light-reduce.png",
+      "runtime": "production",
+      "bytes": 163125
+    }
+  ]
+}

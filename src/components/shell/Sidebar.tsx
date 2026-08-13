@@ -28,6 +28,7 @@ import { searchPlatformNav } from "@/platform/navigation/nav-search";
 import { modulesVisibleForRole } from "@/platform/module-registry";
 import { identitySeesEnterprise } from "@/platform/permissions/visibility";
 import { Icon } from "@/components/ui/Icon";
+import { focusFirst, handleFocusTrapKeydown } from "@/lib/shell/focus-trap";
 import { cn } from "@/lib/cn";
 
 const NAV_PREFS_SERVER_SNAPSHOT = {
@@ -160,16 +161,15 @@ export function Sidebar() {
     if (sidebarOpen) {
       restoreFocusRef.current = document.activeElement as HTMLElement | null;
       const t = window.setTimeout(() => {
-        const first = asideRef.current?.querySelector<HTMLElement>(
-          'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        first?.focus();
+        focusFirst(asideRef.current);
       }, 0);
       function onKey(e: KeyboardEvent) {
         if (e.key === "Escape") {
           e.preventDefault();
           setSidebarOpen(false);
+          return;
         }
+        handleFocusTrapKeydown(e, asideRef.current);
       }
       document.addEventListener("keydown", onKey);
       return () => {
@@ -238,8 +238,9 @@ export function Sidebar() {
         ref={asideRef}
         id="shell-sidebar-nav"
         className={cn(
-          "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex flex-col transition-transform duration-200",
-          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+          "pulse-sidebar fixed bottom-0 left-0 top-0 z-[6] flex flex-col motion-safe:transition-transform motion-safe:duration-200",
+          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0",
+          isMobile && !sidebarOpen && "pointer-events-none"
         )}
         style={{ width: "var(--sidebar-current, var(--sidebar))" }}
         data-premium-clinical-nav="true"
@@ -247,8 +248,12 @@ export function Sidebar() {
         data-testid="shell-sidebar"
         data-collapsed={railCollapsed ? "true" : "false"}
         data-mobile-nav={sidebarOpen ? "open" : "closed"}
+        role={isMobile && sidebarOpen ? "dialog" : undefined}
+        aria-modal={isMobile && sidebarOpen ? true : undefined}
         aria-label="Platform navigation"
         aria-hidden={isMobile ? !sidebarOpen : undefined}
+        inert={isMobile && !sidebarOpen ? true : undefined}
+        tabIndex={isMobile && sidebarOpen ? -1 : undefined}
       >
         <div className="v33-nav-tools">
           <label className="v33-nav-search">
