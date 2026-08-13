@@ -14,8 +14,8 @@ This remediation independently separates **live application** proofs from **synt
 | --- | --- | --- |
 | Light | **Live application** + harness | Live shell captured from `/dashboard` with `pulse.cc.appearance=light` |
 | Dark | **Live application** + harness | Live shell captured with `appearance=dark` / `theme-dark` |
-| System + OS Light | **Harness only** (requested appearance) / live path exists in product | Product supports System; this remediation harness proves OS-light emulation on the static primitive page. Live System resolution is product behaviour (P1-B1), not re-proven in every Aurora shot. |
-| System + OS Dark | **Harness only** for Aurora shots | Same as above — System mode is product-supported; Aurora matrix marks synthetic OS-dark harness captures as harness-only. |
+| System + OS Light | **Live application** + harness | Live `shell-system-os-light-*` captured with appearance=system under emulated prefers-color-scheme: light; harness also proves primitives under OS-light. |
+| System + OS Dark | **Live application** + harness | Live `shell-system-os-dark-*` captured with appearance=system under emulated prefers-color-scheme: dark; harness also proves primitives under OS-dark. |
 | Executive Blue | **Harness only** | Token/personality demonstration via `data-aurora-personality`. **Not** selectable, persisted, or product-themed. |
 | Medical Emerald | **Harness only** | Same — demonstration only. Must not be reported as a live theme. |
 | Reduced motion | **Harness only** (media emulation) + global CSS present in live app | Live app includes `prefers-reduced-motion` rules in `globals.css` / tokens; Aurora shots prove harness under `reducedMotion: reduce`. |
