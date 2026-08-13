@@ -4,9 +4,10 @@
 **Branch:** `cursor/p1-b1-shared-shell-foundation`  
 **Approved planning baseline:** `c960a397fbec94edb55cbd377f65a5df4eac4fa9`  
 **Starting engineering tip (pre-remediation):** `fa2cc7f401fab95d1320f00897bca4438207191b`  
-**Remediation commit:** *this tip after `test(p1-b1): complete shell acceptance evidence`*  
+**Remediation tip:** `4069ed429072138c81eeca85e14f879d4bfb6cf6`  
+**Runtime-hook cleanup tip:** *this tip after `test(p1-b1): remove runtime acceptance hooks`*  
 **Owner acceptance:** **pending**  
-**Engineering status:** acceptance evidence remediated for independent owner review (local validators/tests/harness green)  
+**Engineering status:** runtime acceptance hooks removed; cleanup evidence published for final independent owner review  
 **Not claimed:** owner-accepted, closed, production-approved, B2–B8 start, merge, deploy, GitHub CI pass
 
 ## Supersession
@@ -17,16 +18,41 @@ Original fa2cc7f harness artefacts are preserved under:
 - `docs/audits/p1/archive-fa2cc7f-P1_B1_IMPLEMENTATION_EVIDENCE.md`
 - `docs/audits/p1/archive-fa2cc7f-P1_B1_VISUAL_QA_NOTES.md`
 
-Those artefacts are **not** current acceptance evidence. This document and the live `docs/audits/p1/b1-shell/` tree supersede them.
+Synthetic probe/forced-error screenshots from tip `4069ed4` are preserved under:
+
+- `docs/audits/p1/b1-shell/historical-synthetic-4069ed4/`
+
+Those artefacts are **not** ordinary product-runtime evidence. Live `docs/audits/p1/b1-shell/shots/` plus unit contract tests supersede them for current review.
+
+## Runtime acceptance-hook cleanup (post-4069ed4)
+
+| Hook / path | Action |
+| --- | --- |
+| `ShellHarnessProbe` mounted from `src/app/(portal)/layout.tsx` | **Removed** from product layout |
+| `src/components/shell/ShellHarnessProbe.tsx` | **Deleted** |
+| `sessionStorage p1-b1-harness-probe` | **Removed** (no product activation path) |
+| `postMessage` `p1-b1-detail-open` / `p1-b1-detail-close` | **Removed** with probe |
+| `sessionStorage p1-b1-harness-force-inbox-error` in `ActionInboxApp` | **Removed** |
+| Harness browser dependence on probe / forced error | **Removed**; replaced with unit/contract tests + honest limitation notes |
+
+Ordinary users cannot activate artificial P1-B1 testing content via session/local storage, query params, fragments, `postMessage`, console config, or hidden production controls for these hooks.
+
+**Preserved product improvements:** mobile nav open/closed, Escape, focus move/restore, `aria-expanded` / `aria-controls`, accessible naming, 44×44 menu target, sidebar geometry, appearance modes, shared shell primitives, Decision A tokens/dimensions, drawer a11y.
+
+**Replacement test strategy:**
+
+- `src/components/shell/tests/p1-b1-shell-primitives.test.ts` — DetailPanel / KpiStrip / PrimaryToolbar / Drawer contracts + absence of hooks  
+- Browser harness continues for product drawer, mobile nav, loading, filtered empty, keyboard chrome  
+- Forced error and DetailPanel probe browser shots classified **historical/synthetic** only  
 
 ## Authorised gaps addressed
 
 | Gap ID | Outcome |
 | --- | --- |
 | P1-GAP-002 | Decision A `--dp-*` tokens + shell chrome regions wired |
-| P1-GAP-003 | Shared `KpiStrip`, `PrimaryToolbar`, `DetailPanel` primitives added (+ harness probe proof) |
+| P1-GAP-003 | Shared `KpiStrip`, `PrimaryToolbar`, `DetailPanel` primitives + unit contract proof (no runtime probe) |
 | P1-GAP-004 | Sidebar 240/72 + topbar 48 asserted (visible geometry; mobile off-screen when closed) |
-| P1-GAP-010 | Harness smoke **remediated** (`scripts/p1-b1-shell-harness-smoke.mjs`) — start only; not Programme P1 exit |
+| P1-GAP-010 | Harness smoke **remediated** without product test mounts — start only; not Programme P1 exit |
 | P1-GAP-049 | No Executive Blue / Medical Emerald globals; champagne retained as nav cue only |
 | P1-GAP-051 | Detail panel width band 320–420 (default 360); drawer width 420 |
 
@@ -53,7 +79,7 @@ Those artefacts are **not** current acceptance evidence. This document and the l
 | Mobile menu touch target 32×32 | **Corrected** to 44×44 for the menu control |
 | Closed Create drawer always present; first `shell-drawer` query was ambiguous | **Corrected** in harness (select visible open drawer) |
 | Empty `[]` Action Inbox storage re-seeds by design | **Harness uses filtered empty**; product re-seed behaviour unchanged |
-| `writeJson` swallows storage throws — native error hard to force | **Harness force flag** `p1-b1-harness-force-inbox-error` for error-state evidence only |
+| `writeJson` swallows storage throws — native error hard to force | **Force hook removed**; error UI covered by source contract test; prior forced-error shot = historical/synthetic only |
 | Topbar search truncates on 390/430 (intentional `overflow-x-auto`) | **Deferred residual** — intentional scroll container; not page overflow |
 | Mobile sidebar group title truncation (“EXECUTIVE COMMA…”) | **Deferred** — later responsive/a11y polish (B4), not blocking shell foundation evidence |
 | Demo Act-as identity vs Command Centre greeting (“Sarah” vs “Neil”) | **Deferred to P1-B2** honesty / stub disposition |
@@ -77,7 +103,7 @@ Those artefacts are **not** current acceptance evidence. This document and the l
 
 ## Objective interaction results (local)
 
-Harness assertions: **425 pass / 0 fail** (see `harness-smoke-report.json`).
+Harness assertions: **421 pass / 0 fail** (see `harness-smoke-report.json`; post hook-cleanup).
 
 Includes: mobile menu open/close (control + Escape + overlay), focus move/restore, drawer dialog attrs + Escape, DetailPanel geometry 320–420 + Escape, reduced-motion context, required-region gates, document overflow vs intentional scrollers, dual System OS preferences.
 
@@ -89,8 +115,8 @@ Includes: mobile menu open/close (control + Escape + overlay), focus move/restor
 | `npx tsc --noEmit` | pass (local) |
 | `npm run lint` | pass — **0 errors**; 24 pre-existing warnings (local) |
 | `npm test` | **252 pass / 0 fail** (local) |
-| `npm run test:p1-b1` | **16 pass / 0 fail** (local) |
-| Harness (`HCDP_BASE_URL=http://localhost:3000`) | **0 failures / 425 assertions / 66 shots** (local) |
+| `npm run test:p1-b1` | **21 pass / 0 fail** (local; includes primitives contract suite) |
+| Harness (`HCDP_BASE_URL=http://localhost:3000`) | **0 failures / 421 assertions / 62 shots** (local; post hook-cleanup) |
 | `npm run build` | pass (local) |
 | GitHub Actions / commit checks for this branch | **none** (`total_count: 0`) — known assurance limitation |
 | Runtime module count | **24** (unchanged); M25 not implemented |

@@ -53,6 +53,8 @@ describe("P1-B1 screenshot harness smoke — contract wiring", () => {
     assert.match(src, /sidebarOffscreenLeft/);
     assert.match(src, /process\.exit\(failures \? 1 : 0\)/);
     assert.match(src, /githubCiStatus|githubCi/);
+    assert.doesNotMatch(src, /p1-b1-harness-probe/);
+    assert.doesNotMatch(src, /p1-b1-harness-force-inbox-error/);
   });
 
   it("Decision A canonical PNG set remains installed hash-OK", () => {

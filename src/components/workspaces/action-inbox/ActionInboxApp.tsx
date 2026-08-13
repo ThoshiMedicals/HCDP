@@ -257,14 +257,6 @@ export function ActionInboxApp() {
   }, []);
 
   useEffect(() => {
-    try {
-      if (window.sessionStorage.getItem("p1-b1-harness-force-inbox-error") === "1") {
-        queueMicrotask(() => setLoadState("error"));
-        return;
-      }
-    } catch {
-      /* ignore */
-    }
     queueMicrotask(() => hydrate());
   }, [hydrate]);
 

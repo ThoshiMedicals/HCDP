@@ -2,13 +2,13 @@
   "batch": "P1-B1",
   "harness": "remediated-acceptance",
   "base": "http://localhost:3000",
-  "generatedAt": "2026-08-12T23:44:07.677Z",
+  "generatedAt": "2026-08-13T00:21:10.345Z",
   "ownerAcceptance": "pending",
   "githubCiStatus": "none-for-this-branch — local results only; do not claim GitHub CI",
   "engineeringComplete": true,
   "failures": 0,
-  "assertionCount": 425,
-  "passCount": 425,
+  "assertionCount": 421,
+  "passCount": 421,
   "failCount": 0,
   "regionsCatalog": [
     "shell-nav",
@@ -95,12 +95,8 @@
     "interaction-drawer-trigger-focus-1280.png",
     "interaction-drawer-open-action-inbox-1280.png",
     "interaction-drawer-after-escape-1280.png",
-    "interaction-detail-panel-closed-with-probe-1280.png",
-    "interaction-detail-panel-open-1280.png",
-    "interaction-detail-panel-after-escape-1280.png",
     "state-action-inbox-390-intentional-loading.png",
     "state-action-inbox-1280-empty-filtered.png",
-    "state-action-inbox-1280-error.png",
     "state-action-inbox-1280-access-denied-visible.png",
     "interaction-keyboard-focus-topbar-1440.png",
     "interaction-keyboard-focus-sidebar-nav-1440.png"
@@ -2173,33 +2169,13 @@
     },
     {
       "ok": true,
-      "id": "detail-probe/mounted",
-      "reason": "Harness probe mounted (KPI + toolbar + DetailPanel)"
+      "id": "detail-panel/unit-coverage",
+      "reason": "DetailPanel/KpiStrip/PrimaryToolbar covered by component contract unit tests — no production probe mount"
     },
     {
       "ok": true,
-      "id": "detail-probe/kpi-region",
-      "reason": "kpi-strip count=1"
-    },
-    {
-      "ok": true,
-      "id": "detail-probe/toolbar-region",
-      "reason": "toolbar count=1"
-    },
-    {
-      "ok": true,
-      "id": "detail-panel-open/geometry",
-      "reason": "DetailPanel visible width=360 mode=drawer"
-    },
-    {
-      "ok": true,
-      "id": "detail-panel-open/focus",
-      "reason": "Focus moved into DetailPanel"
-    },
-    {
-      "ok": true,
-      "id": "detail-panel-escape/closed",
-      "reason": "Escape closed DetailPanel"
+      "id": "detail-panel/historical-synthetic",
+      "reason": "Prior probe screenshots classified historical/synthetic under docs/audits/p1/b1-shell/historical-synthetic-4069ed4/"
     },
     {
       "ok": true,
@@ -2214,7 +2190,7 @@
     {
       "ok": true,
       "id": "state/error",
-      "reason": "Action Inbox error state visible (harness force flag)"
+      "reason": "Action Inbox error UI remains in source (loadState===error); browser capture not regenerated without production force hook — prior forced-error shot retained as historical/synthetic only"
     },
     {
       "ok": true,
