@@ -1,12 +1,15 @@
 # MCOP Aurora Integration Readiness
 
 **Status:** Assessment only — **not** authorisation to integrate, merge, or deploy.
+**Design foundation:** Owner accepted with qualifications — DESIGN FOUNDATION CLOSED (2026-08-14) at `d765174b01f7be3b1410201025c1c58ea00f48c3` — see `MCOP_AURORA_FOUNDATION_OWNER_ACCEPTANCE.md`.
+**P1 integration:** **Not authorised** by foundation closure. Later-P1 compatibility remains pending.
 **Aurora branch:** `cursor/aurora-design-foundation`
 **Aurora baseline:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8`
 **Aurora published tip (pre-remediation):** `a5f22d5f422703766c459f6cf7855b44b5bcec28`
+**Accepted remediated foundation SHA:** `d765174b01f7be3b1410201025c1c58ea00f48c3`
 **Later P1 stream:** advanced beyond Aurora baseline (includes P1-B4 responsive/a11y/appearance work in other worktrees).
 
-Aurora must **not** be named production-ready or merge-ready until a compatibility assessment is performed against the latest accepted P1 tip on a fresh integration branch.
+Foundation closure does **not** make Aurora integration-ready. Aurora must **not** be named production-ready or merge-ready until a compatibility assessment is performed against the latest accepted P1 tip on a fresh integration branch.
 
 ## Likely overlap / conflicts with later P1 work
 

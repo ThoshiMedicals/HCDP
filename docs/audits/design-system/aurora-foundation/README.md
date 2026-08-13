@@ -1,12 +1,14 @@
 # Aurora foundation evidence (remediated)
 
+**Owner acceptance:** Owner accepted with qualifications — DESIGN FOUNDATION CLOSED (2026-08-14) at `d765174b01f7be3b1410201025c1c58ea00f48c3` (`AURORA-FOUNDATION-OWNER-ACCEPT-2026-08-14`). See `../../architecture/design-system/MCOP_AURORA_FOUNDATION_OWNER_ACCEPTANCE.md`. P1 integration and module adoption remain unauthorised.
+
 - Screenshots: 72
 - Assertions: 170/170 passed
 - Live shell captures: 24
 - Harness captures: 48
 - WCAG claim: no
 - Pixel parity claim: no
-- Merge-ready claim: no
+- Merge-ready / integration claim: no
 
 ## Live vs harness
 

@@ -1,9 +1,13 @@
 # MCOP Aurora Design Decision (Phase A)
 
-**Status:** Approved defaults recorded for design review on isolated branch `cursor/aurora-design-foundation`
+**Status:** Owner accepted with qualifications — DESIGN FOUNDATION CLOSED (2026-08-14)
+**Owner acceptance:** `MCOP_AURORA_FOUNDATION_OWNER_ACCEPTANCE.md` (`AURORA-FOUNDATION-OWNER-ACCEPT-2026-08-14`)
+**Accepted foundation SHA:** `d765174b01f7be3b1410201025c1c58ea00f48c3`
 **Baseline:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8`
 **Core principle:** Glass for navigation; clarity for work.
 **Design objective:** Apple-inspired clarity + enterprise operational density + healthcare-grade accessibility and trust.
+
+**Not authorised by foundation closure:** P1 integration, module adoption, merge, deployment, or selectable branded themes. Deferred roadmap items remain open.
 
 This document records Aurora defaults. Where a default conflicts with accepted Decision A / P1-B1–B2 behaviour, **accepted behaviour is preserved** and the Aurora recommendation is marked **deferred**.
 

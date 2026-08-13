@@ -5,6 +5,7 @@
 **Reference:** MCOP/HCDP UX/UI Design Direction (Apple-Inspired, Modern, Operational and Development-Ready)
 **Scope:** Phase A — design-system foundation + shared shell/primitives only
 **Date:** 2026-08-13
+**Owner acceptance:** Owner accepted with qualifications — DESIGN FOUNDATION CLOSED (2026-08-14) at `d765174b01f7be3b1410201025c1c58ea00f48c3` — see `MCOP_AURORA_FOUNDATION_OWNER_ACCEPTANCE.md`. P1 integration and module adoption remain unauthorised.
 
 ## Audit method
 

@@ -2,11 +2,13 @@
 
 **Branch:** `cursor/aurora-design-foundation`
 **Starting tip:** `a5f22d5f422703766c459f6cf7855b44b5bcec28`
+**Accepted foundation SHA (owner approval):** `d765174b01f7be3b1410201025c1c58ea00f48c3`
+**Owner acceptance:** Owner accepted with qualifications — DESIGN FOUNDATION CLOSED (2026-08-14) — `AURORA-FOUNDATION-OWNER-ACCEPT-2026-08-14` — see `docs/architecture/design-system/MCOP_AURORA_FOUNDATION_OWNER_ACCEPTANCE.md`.
 **Original Aurora baseline:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8`
 **Archive of original evidence:** `docs/audits/design-system/aurora-foundation/archive-a5f22d5f/`
 **Principle:** Glass for navigation; clarity for work.
 
-This remediation independently separates **live application** proofs from **synthetic harness** proofs and corrects accessibility gaps in shared Drawer/Modal primitives.
+This remediation independently separates **live application** proofs from **synthetic harness** proofs and corrects accessibility gaps in shared Drawer/Modal primitives. Owner foundation closure does **not** authorise P1 integration, merge, or deployment.
 
 ## Live application versus harness-only capability matrix
 
