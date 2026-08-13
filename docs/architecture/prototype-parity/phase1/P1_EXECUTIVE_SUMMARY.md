@@ -1,12 +1,12 @@
 # P1 Executive Summary
 
-**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **OWN-P1-006** / **OWN-P1-007** closed. **P1-B3** authorised and implemented — **owner acceptance pending**. **P1-B4–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete or production-approved.
+**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). **OWN-P1-006** / **OWN-P1-007** closed. **P1-B4–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete or production-approved.
 
 ## Verdict
 
 A controlled P1 prototype-parity readiness pack was prepared on tip `9142ec30b3b2efea1e959ad85ce1406562cd5faa`. As of **2026-08-11**, OWN-P1-001…003 closed for planning: accepted P0 tip `b0c4c4d20de1cce7adac5d691c506122e30610a2`, SHARED-first scope, first batch **named** **P1-B1**. `OWN-NO-P1-YET` cleared for programme entry.
 
-As of **2026-08-13**, **P1-B1** is **owner accepted with qualifications** and **closed** at implementation tip `fdb2beb5b0e786e42d358efa9875b6bba52666cd`, and **P1-B2** is **owner accepted with qualifications** and **closed** at tip `66f3f8d27803f5b8d24043639d21b9069f58e77a` (local validation basis; no GitHub CI). OWN-P1-006 and OWN-P1-007 are **closed** the same day as register-hygiene dispositions only. This does **not** authorise P1-B3–P1-B8, PR/merge/deploy, production, or automatic progression. `OWN-P1-011` and `OWN-P1-016` remain **open**.
+As of **2026-08-13**, **P1-B1**, **P1-B2** and **P1-B3** are **owner accepted with qualifications** and **closed** at tips `fdb2beb5b0e786e42d358efa9875b6bba52666cd`, `66f3f8d27803f5b8d24043639d21b9069f58e77a` and `2515a4ffac0fb94cbd37092e26bf372cb43898f8` respectively (local validation basis; no GitHub CI). This does **not** authorise P1-B4–P1-B8, PR/merge/deploy, production, or automatic progression. `OWN-P1-011` and `OWN-P1-016` remain **open**.
 
 ## What P1 is (this programme)
 
@@ -25,9 +25,9 @@ It must **not** become general feature development, visual redesign, M25, PPA, p
 | Layer | Recommendation | Status |
 | --- | --- | --- |
 | **Entry gate** | Owner accepts P0 pack tip `b0c4c4d20de1cce7adac5d691c506122e30610a2` (and nested pins) and clears `OWN-NO-P1-YET` | **Closed** OWN-P1-001 (2026-08-11) |
-| **Programme P1 (SHARED-first)** | SHARED shell / Decision A foundation first; B3–B8 need separate explicit auth (OWN-P1-002) | Planning closed; B1/B2 closed with qualifications; B3–B8 still **not** authorised |
+| **Programme P1 (SHARED-first)** | SHARED shell / Decision A foundation first; B4–B8 need separate explicit auth (OWN-P1-002) | Planning closed; B1/B2/B3 closed with qualifications; B4–B8 still **not** authorised |
 | **Named first batch** | **P1-B1** (OWN-P1-003) | **Owner accepted with qualifications — CLOSED (2026-08-13)** at `fdb2beb…` |
-| **Immediate hygiene (with P1 or first follow-on)** | Register drift corrections (especially M11, M07 history labelling) so readiness scoring cannot invent “implemented” stubs | **P1-B3 implemented — owner acceptance pending** |
+| **Immediate hygiene** | Register drift corrections (especially M11, M07 history labelling) so readiness scoring cannot invent “implemented” stubs | **P1-B3 owner accepted with qualifications — CLOSED (2026-08-13)** at `2515a4ff…` |
 | **Beyond P1** | Domain workflows for M01–M07/M11 (Programme P2); M10 (P3); placeholder rebuilds M08/M09/M12–M24 (P4–P8); PPA (separate auth); production verification (P9) | Deferred |
 
 ## Baseline gate (this planning run)
@@ -61,7 +61,7 @@ Detail: [P1_BASELINE_GATE_EVIDENCE.md](./P1_BASELINE_GATE_EVIDENCE.md).
 | Not applicable | 4 | M25 absent; production deployment; etc. |
 | Duplicate / prohibited clinical | 8 | Patient/clinical/BP/payment/PPA exclusions |
 
-**Total gap rows:** 83 (see [gap register](./P1_PROTOTYPE_PARITY_GAP_REGISTER.md)). P1-B1 gap set disposition: 002/003/049/051 closed for B1; 004 partial; 010 partial / not closed.
+**Total gap rows:** 83 (see [gap register](./P1_PROTOTYPE_PARITY_GAP_REGISTER.md)). P1-B1 gap set disposition: 002/003/049/051 closed for B1; 004 partial; 010 partial / not closed. P1-B3: 011 closed; 012/014/015/079 partial with residuals; 013 closed (supersession).
 
 ## Proposed batches
 
@@ -69,24 +69,22 @@ Eight batches remain accounted for:
 
 1. **P1-B1** — SHARED Decision A shell foundation — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 2. **P1-B2** — Shell truthfulness + inactive-control remediation — **owner accepted with qualifications — CLOSED (2026-08-13)**  
-3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **authorised & implemented; owner acceptance pending**  
+3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — unauthorised  
 5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — unauthorised  
 6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — unauthorised  
 7. **P1-B7** — Permission / audit / empty-loading-error-denied state completeness — unauthorised  
 8. **P1-B8** — P1 closure evidence pack + owner stop checkpoint — unauthorised  
 
-Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B3 implementation.
+Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B3 acceptance.
 
 ## Owner decisions
 
 **Closed 2026-08-11 (planning only):** OWN-P1-001 (P0 tip accepted; `OWN-NO-P1-YET` cleared), OWN-P1-002 (SHARED-first), OWN-P1-003 (name **P1-B1**).
 
-**Closed 2026-08-13 (qualified batch acceptance):** P1-B1 at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.
+**Closed 2026-08-13 (qualified batch acceptance):** P1-B1 at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 at `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).
 
 **Closed 2026-08-13 (decision disposition):** OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 (B2 honesty); **OWN-P1-006** (Option A Synchronise), **OWN-P1-007** (Option A Honesty-only labels).
-
-**P1-B3 (2026-08-13):** Expressly authorised and **implemented** on `cursor/p1-b3-register-hygiene` — **owner acceptance pending**. Gaps 011/012/013/014*/015/079 addressed by implementation but **not closed** until acceptance.
 
 **Still open / unauthorised:** OWN-P1-009…015 (deferred; includes **OWN-P1-011** PPA product); **OWN-P1-016** before production data path; P1-B4–P1-B8 implementation.
 
@@ -104,4 +102,4 @@ See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 - Not automatic authorisation of B4–B8  
 - Historical P0 evidence not altered  
 
-**Current programme claim:** `P1-B3 register hygiene and payroll-history truthfulness implemented, validated and published for owner review — owner acceptance remains pending and no later batch, merge or deployment was authorised or performed.`
+**Current programme claim:** `P1-B3 qualified owner acceptance recorded and published — P1-B4 through P1-B8 remain unauthorised, with no merge or deployment performed.`

@@ -1,18 +1,20 @@
 # P1-B3 Owner-Decision Briefing — Register and navigation hygiene
 
-**Document type:** Owner-decision briefing + recorded owner outcomes for OWN-P1-006 / OWN-P1-007  
-**Status stamp:** `P1 — PLANNED, NOT AUTHORISED` for **P1-B3** (unchanged — decision closure ≠ batch authorisation)  
-**Branch:** `cursor/p1-b2-shell-truthfulness`  
+**Document type:** Owner-decision briefing + recorded owner outcomes for OWN-P1-006 / OWN-P1-007 + P1-B3 qualified acceptance pointer  
+**Status stamp:** **Owner accepted with qualifications — CLOSED (2026-08-13)** for **P1-B3** at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)  
+**Branch:** `cursor/p1-b3-register-hygiene`  
 **Briefing tip (original):** `96d402f89406c07d0abadde8d427a06f0e57b83b`  
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`  
 **Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`  
+**Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8`  
 **Briefing date:** 2026-08-13  
 **Owner-decision recording date:** 2026-08-13  
+**P1-B3 acceptance date:** 2026-08-13  
 
-> **OWN-P1-006 and OWN-P1-007 are APPROVED / CLOSED (2026-08-13)** — disposition only.  
-> **P1-B3 remains unauthorised.** Decision closure ≠ batch authorisation.  
-> A separate express owner act is still required before any P1-B3 implementation.  
-> No automatic progression from P1-B1 or P1-B2. Gaps are **not** closed by decision recording alone.
+> **OWN-P1-006 and OWN-P1-007 are APPROVED / CLOSED (2026-08-13)** — disposition recorded before implementation.  
+> **P1-B3 is owner accepted with qualifications and CLOSED (2026-08-13)** at `2515a4ff…` (`P1-B3-OWNER-ACCEPT-2026-08-13`).  
+> Acceptance does **not** authorise P1-B4–P1-B8, PR, merge, deployment, production, or automatic progression.  
+> `OWN-P1-011` and `OWN-P1-016` remain **open**.
 
 **Authoritative registers (this briefing does not replace them):**
 
@@ -22,7 +24,7 @@
 | P1B batches | [`P1_EXECUTION_BATCHES.md`](./P1_EXECUTION_BATCHES.md) |
 | P1B gaps | [`P1_PROTOTYPE_PARITY_GAP_REGISTER.md`](./P1_PROTOTYPE_PARITY_GAP_REGISTER.md) |
 | Traceability | [`P1_GAP_TRACEABILITY.md`](./P1_GAP_TRACEABILITY.md) |
-| P1-B1 / P1-B2 acceptance | [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md), [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md) |
+| P1-B1 / P1-B2 / P1-B3 acceptance | [`../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md), [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md), [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md) |
 | PPA readiness (planning only) | [`../../plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`](../../plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md) |
 | P1A / P1C | [`p1a/`](./p1a/README.md), [`p1c/`](./p1c/README.md) |
 
@@ -32,11 +34,11 @@
 
 ## 1. Executive summary
 
-P1-B1 and P1-B2 are **owner accepted with qualifications and closed** (2026-08-13). The next proposed batch is **P1-B3 — register and navigation hygiene**: align metadata, badges, section lists and labels with verified reality **without changing domain behaviour**.
+P1-B1 and P1-B2 are **owner accepted with qualifications and closed** (2026-08-13). **P1-B3 — register and navigation hygiene** is also **owner accepted with qualifications and closed** (2026-08-13) at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).
 
-P1-B3 remains **`P1 — PLANNED, NOT AUTHORISED`**.
+This briefing originally recorded OWN-P1-006 / OWN-P1-007 dispositions before implementation. Implementation and remediation are complete; authoritative acceptance is in `P1_OWNER_DECISION_REGISTER.md` (`P1-B3-OWNER-ACCEPT-2026-08-13`).
 
-Two owner decisions that previously blocked B3 consideration are now **closed** (disposition only). **Express P1-B3 implementation authorisation is still required** before any register/nav code work:
+**P1-B4–P1-B8 remain unauthorised.** No automatic progression.
 
 | ID | Question (plain) | Status |
 | --- | --- | --- |
@@ -61,12 +63,12 @@ P1-B3 must stay limited to **register/navigation/badge/label honesty**. It must 
 | Briefing tip (original) | `96d402f89406c07d0abadde8d427a06f0e57b83b` |
 | P1-B1 | Owner accepted with qualifications — **CLOSED** at `fdb2beb…` |
 | P1-B2 | Owner accepted with qualifications — **CLOSED** at `66f3f8d…` |
-| P1-B3 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B3 | **Owner accepted with qualifications — CLOSED (2026-08-13)** at `2515a4ff…` |
 | P1-B4–P1-B8 | Unauthorised |
 | Gap inventory | **83** gaps accounted for |
 | Batch inventory | **8** batches accounted for |
 | Runtime modules | **24** (M01–M24); M25 unimplemented |
-| `OWN-P1-006` / `OWN-P1-007` | **Closed (approved) — 2026-08-13** (disposition only; gaps remain open) |
+| `OWN-P1-006` / `OWN-P1-007` | **Closed (approved) — 2026-08-13**; P1-B3 batch closed by `P1-B3-OWNER-ACCEPT-2026-08-13` |
 | `OWN-P1-011` | **Open** — continues to govern any future PPA product decision |
 | `OWN-P1-016` | **Open** — does **not** block P1-B3 consideration (production data path) |
 | Automatic progression | **Prohibited** |

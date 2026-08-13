@@ -2,7 +2,7 @@
 
 **P1-B1 status:** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`.  
 **P1-B2 status:** owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.  
-**P1-B3 status:** expressly authorised and **implemented — owner acceptance pending** (`cursor/p1-b3-register-hygiene`).  
+**P1-B3 status:** owner accepted with qualifications and **closed** (2026-08-13) at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).  
 **P1-B4–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
 
 | Pin | Value |
@@ -12,24 +12,25 @@
 | P0 programme-reset tip (preserved) | `b0c4c4d20de1cce7adac5d691c506122e30610a2` (`cursor/prototype-parity-programme-reset`) |
 | Accepted P1-B1 tip | `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (`cursor/p1-b1-shared-shell-foundation`) |
 | Accepted P1-B2 tip | `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`cursor/p1-b2-shell-truthfulness`) |
+| Accepted P1-B3 tip | `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`cursor/p1-b3-register-hygiene`) |
 | M25 parking branch | `cursor/m25-future-planning` (do not implement) |
 
 ## Workstream split
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1/B2 closed with qualifications; P1-B3 implemented (acceptance pending); B4–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1/B2/B3 closed with qualifications; B4–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 
-P1A/P1C remain planning-only. P1-B1 / P1-B2 acceptance do **not** authorise later batches or production.
+P1A/P1C remain planning-only. P1-B1 / P1-B2 / P1-B3 acceptance do **not** authorise later batches or production.
 
 Cross-links:
 
 - P1A ↔ P1B: [`p1a/P1A_12_P1B_RECONCILIATION.md`](./p1a/P1A_12_P1B_RECONCILIATION.md)
 - P1C ↔ P1A/P1B: [`p1c/P1C_10_RECONCILIATION_P1A_P1B.md`](./p1c/P1C_10_RECONCILIATION_P1A_P1B.md)
 
-## Owner decisions (planning + B1/B2 acceptance + B3 dispositions)
+## Owner decisions (planning + B1/B2/B3 acceptance + B3 dispositions)
 
 Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.md) · Register: [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md).
 
@@ -43,7 +44,7 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-13 (P1-B3 register-hygiene disposition):** OWN-P1-006 (Option A Synchronise), OWN-P1-007 (Option A Honesty-only labels).
 
-**P1-B3 (2026-08-13):** Express implementation authorised and published for owner review — **acceptance pending**. Evidence: [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md). Gaps not closed until acceptance. **P1-B4–P1-B8 remain unauthorised.** No automatic progression.
+**Closed 2026-08-13 (qualified):** P1-B3 owner acceptance at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md); remediation: [`../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`](../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md). **P1-B4–P1-B8 remain unauthorised.** No automatic progression.
 
 **Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
@@ -84,9 +85,9 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B4–P1-B8 from P1-B3 implementation alone (no automatic progression; acceptance of B3 does not authorise later batches)
+- Begin P1-B4–P1-B8 from P1-B3 acceptance alone (no automatic progression; acceptance of B3 does not authorise later batches)
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes
 - Claim legal compliance or security/accessibility certification from documentation review
-- Treat P1-B1 or P1-B2 acceptance as overall Programme P1 or production acceptance
+- Treat P1-B1, P1-B2 or P1-B3 acceptance as overall Programme P1 or production acceptance
 - Commit / push / merge / open a PR unless the owner expressly asks

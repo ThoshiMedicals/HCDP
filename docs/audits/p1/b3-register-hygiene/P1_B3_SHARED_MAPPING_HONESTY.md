@@ -2,7 +2,7 @@
 
 **Batch:** P1-B3  
 **Gap:** P1-GAP-014 (SHARED subset only)  
-**Status:** Honesty documentation only — **not** bulk resolution; owner acceptance of P1-B3 still pending  
+**Status:** Honesty documentation only — **not** bulk resolution; P1-B3 SHARED honesty subset **accepted (Partial)** under `P1-B3-OWNER-ACCEPT-2026-08-13`; bulk residual remains P2+  
 
 ## Verified residual
 

@@ -1,7 +1,7 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B3** expressly authorised and **implemented — owner acceptance pending**. **P1-B4–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
-**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B4–B8 never auto-start (OWN-P1-002). P1-B3 implementation does **not** authorise automatic progression.
+**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B4–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B4–B8 never auto-start (OWN-P1-002). P1-B3 acceptance does **not** authorise automatic progression.
 
 ## Batch index
 
@@ -9,7 +9,7 @@
 | --- | --- | --- | --- |
 | P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
-| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | **Authorised & implemented — owner acceptance pending** |
+| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
@@ -69,21 +69,32 @@
 | Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; express owner authorisation of P1-B2 — met |
 | Exit gate | Named honesty tests green; **owner accepts B2 tip** — **met (2026-08-13)** |
 | Implementation evidence | [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md) |
-| Owner decision point | Accept B2 tip before B3 — **met with qualifications; B3 remains unauthorised** |
+| Owner decision point | Accept B2 tip before B3 — **met with qualifications; B3 later closed separately by `P1-B3-OWNER-ACCEPT-2026-08-13`** |
 | Qualifications | See `P1-B2-OWNER-ACCEPT-2026-08-13` (local-only validation; no CI; production-auth / export-backend / shell-wide multi-select / WCAG / pixel-parity / OWN-P1-016 / B3–B8 / PR-merge-deploy / automatic progression excluded) |
 
 ## P1-B3 — Register / navigation hygiene
 
 | Field | Value |
 | --- | --- |
-| Status | **Authorised and implemented — owner acceptance pending** (2026-08-13) |
+| Status | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
+| Accepted tip | `2515a4ffac0fb94cbd37092e26bf372cb43898f8` |
+| Accepted branch | `cursor/p1-b3-register-hygiene` |
+| Acceptance reference | `P1-B3-OWNER-ACCEPT-2026-08-13` |
+| Implementation sequence | `a80405dd…` (feat) → `2515a4ff…` (remediation; accepted tip) |
+| Accepted scope | Register hygiene and payroll-history truthfulness only (OWN-P1-006 / OWN-P1-007) |
+| Validation basis | Verified local tests, validators, build and visual harness |
+| GitHub CI | None — not passed; local validation only |
 | Objective | Align registers/badges with reality; prevent false “implemented” scoring |
-| Included gaps | 011, 012, 013, 014 (SHARED subset), 015, 079 — **addressed by implementation; not closed until owner acceptance** |
-| Authorised changes | M11 `module-register` section/condition sync (`strong-existing`); M07 History planned honesty; M07 Adjustments honesty-only labels; ModuleLanding placeholder honesty; historic register supersession banner; SHARED mapping honesty note; focused tests/evidence |
-| Prohibited | Domain workflow expansion; PPA product (OWN-P1-011); payment; M08; historical evidence rewrite; gap auto-closure without acceptance; automatic progression to B4+ |
+| Included gaps | 011, 012, 013, 014 (SHARED subset), 015, 079 |
+| Gap disposition | 011 closed (M11 register sync); 012 partial (History honesty closed; operational History Future/P2+); 013 closed (supersession banner; historic body preserved); 014 partial (SHARED honesty closed; bulk unresolved=298 → P2+); 015 partial (ModuleLanding honesty closed; placeholder builds Future); 079 partial (Adjustments honesty closed; OWN-P1-011 PPA product residual) |
+| Authorised changes (accepted) | M11 `module-register` section/condition sync (`strong-existing`); M07 History planned honesty; M07 Adjustments honesty-only labels; ModuleLanding placeholder honesty; historic register supersession banner; SHARED mapping honesty note; focused tests/evidence |
+| Prohibited | Domain workflow expansion; PPA product (OWN-P1-011); payment; M08; historical evidence rewrite; automatic progression to B4+; PR/merge/deploy; production approval |
 | Tests | `test:p1-b3`; register validator; M11 section-list assertions; M07 honesty string tests |
-| Owner decision | **OWN-P1-006** Option A and **OWN-P1-007** Option A — closed; express P1-B3 implementation authorised 2026-08-13 |
-| Evidence | `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; `docs/audits/p1/b3-register-hygiene/` |
+| Owner decision | **OWN-P1-006** Option A and **OWN-P1-007** Option A — closed; batch closed by `P1-B3-OWNER-ACCEPT-2026-08-13` |
+| Exit gate | Owner accepts B3 tip — **met with qualifications (2026-08-13)** |
+| Owner decision point | Accept B3 tip before B4 — **met with qualifications; B4–B8 remain unauthorised** |
+| Qualifications | See `P1-B3-OWNER-ACCEPT-2026-08-13` (local-only; no CI; no pixel/WCAG claims; `strong-existing` ≠ production; Wave 3 frozen; History planned; Adjustments preparation-only; unlock≠PPA; OWN-P1-011/016 open; bulk mapping P2+; historic MD trailing-space limitation; archived `a80405dd` retained; no production/PR/merge/deploy/automatic progression; not overall P1) |
+| Evidence | `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; `docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`; `docs/audits/p1/b3-register-hygiene/` |
 
 ## P1-B4 — Responsive / a11y / appearance evidence
 
