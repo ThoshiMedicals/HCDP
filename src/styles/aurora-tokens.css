@@ -127,8 +127,9 @@ body.theme-dark {
   --aurora-overlay: rgb(0 0 0 / 0.55);
 }
 
-/* Optional personality hooks for design review only — not product-selectable themes.
-   Decision A / P1-B1 keep appearance modes at light|dark|system. */
+/* Optional personality hooks for design-review / harness demonstration only.
+   They adjust accent colour ONLY and must never overwrite success/warning/danger/info.
+   Decision A / P1-B1 keep product appearance modes at light|dark|system — these are not selectable themes. */
 :root[data-aurora-personality="executive-blue"] {
   --aurora-accent: #2563eb;
   --aurora-accent-hover: #1d4ed8;

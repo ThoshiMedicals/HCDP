@@ -111,17 +111,46 @@ describe("Aurora foundation — shared primitives", () => {
     assert.match(panel, /data-aurora-surface="content"/);
   });
 
-  it("keeps Drawer/Modal solid raised surfaces with Escape + focus restore", () => {
+  it("keeps Drawer/Modal solid raised surfaces with focus trap + Escape restore", () => {
     const drawer = read("src/components/ui/Drawer.tsx");
+    const modal = read("src/components/ui/Modal.tsx");
+    const trap = read("src/lib/a11y/use-focus-trap.ts");
     assert.match(drawer, /data-aurora-surface="raised"/);
-    assert.match(drawer, /Escape/);
-    assert.match(drawer, /prev\?\.focus/);
+    assert.match(drawer, /useFocusTrap/);
     assert.match(drawer, /--drawer-width/);
     assert.doesNotMatch(drawer, /aurora-surface--glass/);
-    const modal = read("src/components/ui/Modal.tsx");
     assert.match(modal, /data-aurora-surface="raised"/);
-    assert.match(modal, /Escape/);
+    assert.match(modal, /useFocusTrap/);
     assert.doesNotMatch(modal, /aurora-surface--glass/);
+    assert.match(trap, /Escape/);
+    assert.match(trap, /previous\.focus/);
+    assert.match(trap, /Tab/);
+  });
+
+  it("forwards refs on Button and Input and keeps type=button default", () => {
+    const button = read("src/components/ui/Button.tsx");
+    const input = read("src/components/ui/Input.tsx");
+    assert.match(button, /forwardRef/);
+    assert.match(button, /type = "button"/);
+    assert.match(input, /forwardRef/);
+    assert.match(input, /aria-invalid/);
+    assert.match(input, /role="alert"/);
+  });
+
+  it("documents live vs harness capability matrix in remediation evidence", () => {
+    assert.equal(
+      existsSync(join(root, "docs/audits/design-system/AURORA_FOUNDATION_REMEDIATION_EVIDENCE.md")),
+      true
+    );
+    assert.equal(
+      existsSync(join(root, "docs/architecture/design-system/MCOP_AURORA_INTEGRATION_READINESS.md")),
+      true
+    );
+    const rem = read("docs/audits/design-system/AURORA_FOUNDATION_REMEDIATION_EVIDENCE.md");
+    assert.match(rem, /Live application/);
+    assert.match(rem, /Harness only/);
+    assert.match(rem, /Executive Blue/);
+    assert.match(rem, /Medical Emerald/);
   });
 
   it("applies glass chrome only to sidebar/topbar presentation", () => {
@@ -129,5 +158,15 @@ describe("Aurora foundation — shared primitives", () => {
     assert.match(css, /\.pulse-sidebar\s*\{[\s\S]*backdrop-filter/);
     assert.match(css, /\.pulse-top-ribbon\s*\{[\s\S]*backdrop-filter/);
     assert.match(css, /--aurora-nav-chrome/);
+  });
+});
+
+describe("Aurora foundation — focus trap unit contract", () => {
+  it("exposes useFocusTrap with cycle + restore semantics", () => {
+    const trap = read("src/lib/a11y/use-focus-trap.ts");
+    assert.match(trap, /listFocusable/);
+    assert.match(trap, /Shift/);
+    assert.match(trap, /onEscape/);
+    assert.match(trap, /previous/);
   });
 });

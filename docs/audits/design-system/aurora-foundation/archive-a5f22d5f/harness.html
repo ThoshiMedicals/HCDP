@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en" data-appearance="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aurora Foundation Harness</title>
+    <style>
+      :root {
+        --dp-bg-canvas: #f3f5f7;
+        --dp-bg-surface: #ffffff;
+        --dp-bg-nav: #0b1f33;
+        --dp-bg-topbar: #ffffff;
+        --dp-text-primary: #0f172a;
+        --dp-text-secondary: #475569;
+        --dp-text-on-nav: #e2e8f0;
+        --dp-border-subtle: #e2e8f0;
+        --dp-border-strong: #cbd5e1;
+        --dp-accent-primary: #2563eb;
+        --dp-accent-primary-hover: #1d4ed8;
+        --dp-focus-ring: #2563eb;
+        --hcdp-surface-raised: #ffffff;
+        --hcdp-text-muted: #475569;
+        --hcdp-on-action: #ffffff;
+        --hcdp-status-success-text: #047857;
+        --hcdp-status-success-surface: #ecfdf5;
+        --hcdp-status-success-border: #a7f3d0;
+        --hcdp-status-warning-text: #b45309;
+        --hcdp-status-warning-surface: #fffbeb;
+        --hcdp-status-warning-border: #fde68a;
+        --hcdp-status-critical-text: #b91c1c;
+        --hcdp-status-critical-surface: #fef2f2;
+        --hcdp-status-critical-border: #fecaca;
+        --hcdp-status-info-text: #1d4ed8;
+        --hcdp-status-info-surface: #eff6ff;
+        --hcdp-status-info-border: #bfdbfe;
+        --hcdp-status-neutral-text: #5f7085;
+        --hcdp-status-neutral-surface: #f5f7fa;
+        --hcdp-status-neutral-border: #d4dce6;
+        --aurora-canvas: var(--dp-bg-canvas);
+        --aurora-surface: var(--dp-bg-surface);
+        --aurora-surface-raised: var(--hcdp-surface-raised);
+        --aurora-surface-muted: #eef2f7;
+        --aurora-surface-critical: var(--hcdp-status-critical-surface);
+        --aurora-nav-chrome: color-mix(in srgb, var(--dp-bg-nav) 86%, transparent);
+        --aurora-topbar-chrome: color-mix(in srgb, var(--dp-bg-topbar) 78%, transparent);
+        --aurora-glass-border: color-mix(in srgb, var(--dp-text-on-nav) 22%, transparent);
+        --aurora-glass-blur: 12px;
+        --aurora-glass-saturate: 1.15;
+        --aurora-text-primary: var(--dp-text-primary);
+        --aurora-text-secondary: var(--dp-text-secondary);
+        --aurora-text-muted: var(--hcdp-text-muted);
+        --aurora-border-subtle: var(--dp-border-subtle);
+        --aurora-border-strong: var(--dp-border-strong);
+        --aurora-accent: var(--dp-accent-primary);
+        --aurora-accent-hover: var(--dp-accent-primary-hover);
+        --aurora-accent-contrast: #ffffff;
+        --aurora-success: var(--hcdp-status-success-text);
+        --aurora-success-surface: var(--hcdp-status-success-surface);
+        --aurora-warning: var(--hcdp-status-warning-text);
+        --aurora-warning-surface: var(--hcdp-status-warning-surface);
+        --aurora-danger: var(--hcdp-status-critical-text);
+        --aurora-danger-surface: var(--hcdp-status-critical-surface);
+        --aurora-info: var(--hcdp-status-info-text);
+        --aurora-info-surface: var(--hcdp-status-info-surface);
+        --aurora-focus-ring: var(--dp-focus-ring);
+        --aurora-radius-button: 12px;
+        --aurora-radius-input: 10px;
+        --aurora-radius-card: 16px;
+        --aurora-radius-panel: 20px;
+        --aurora-radius-pill: 999px;
+        --aurora-elevation-raised: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.04);
+        --aurora-elevation-panel: 0 4px 16px rgb(15 23 42 / 0.1), 0 1px 3px rgb(15 23 42 / 0.05);
+        --aurora-motion-surface: 160ms;
+        --aurora-motion-drawer: 200ms;
+        --aurora-motion-easing: cubic-bezier(0.2, 0, 0, 1);
+        --aurora-control-height: 40px;
+        --aurora-touch-target-min: 44px;
+        --aurora-overlay: rgb(15 23 42 / 0.4);
+        --sidebar-expanded: 240px;
+        --topbar-height: 48px;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      html.theme-dark {
+        --dp-bg-canvas: #0b1220;
+        --dp-bg-surface: #111827;
+        --dp-bg-nav: #020617;
+        --dp-bg-topbar: #111827;
+        --dp-text-primary: #f8fafc;
+        --dp-text-secondary: #94a3b8;
+        --dp-border-subtle: #1f2937;
+        --dp-border-strong: #334155;
+        --dp-accent-primary: #3b82f6;
+        --dp-accent-primary-hover: #60a5fa;
+        --dp-focus-ring: #60a5fa;
+        --hcdp-surface-raised: #1d2b3f;
+        --aurora-surface-muted: #1d2b3f;
+        --aurora-nav-chrome: color-mix(in srgb, var(--dp-bg-nav) 82%, transparent);
+        --aurora-topbar-chrome: color-mix(in srgb, var(--dp-bg-topbar) 72%, transparent);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--aurora-canvas);
+        color: var(--aurora-text-primary);
+        min-height: 100vh;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      :focus-visible {
+        outline: 2px solid var(--aurora-focus-ring);
+        outline-offset: 2px;
+      }
+      .shell {
+        display: grid;
+        grid-template-columns: var(--sidebar-expanded) 1fr;
+        min-height: 100vh;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .nav {
+        background: var(--aurora-nav-chrome);
+        backdrop-filter: blur(var(--aurora-glass-blur)) saturate(var(--aurora-glass-saturate));
+        color: var(--dp-text-on-nav);
+        padding: 16px;
+        border-right: 1px solid var(--aurora-glass-border);
+      }
+      .nav h1 { font-size: 14px; margin: 0 0 16px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; }
+      .nav a {
+        display: flex; align-items: center; min-height: 44px; padding: 0 10px;
+        border-radius: 9px; color: inherit; text-decoration: none; font-weight: 650;
+      }
+      .nav a[aria-current="page"] { background: color-mix(in srgb, #ffffff 12%, transparent); font-weight: 800; }
+      .main { display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
+      .topbar {
+        min-height: var(--topbar-height);
+        display: flex; align-items: center; gap: 12px; padding: 0 16px;
+        background: var(--aurora-topbar-chrome);
+        backdrop-filter: blur(var(--aurora-glass-blur)) saturate(var(--aurora-glass-saturate));
+        border-bottom: 1px solid var(--aurora-border-subtle);
+        min-width: 0;
+      }
+      .content { padding: 24px; display: grid; gap: 16px; min-width: 0; max-width: 100%; }
+      .card {
+        background: var(--aurora-surface);
+        border: 1px solid var(--aurora-border-subtle);
+        border-radius: var(--aurora-radius-card);
+        box-shadow: var(--aurora-elevation-raised);
+        padding: 16px;
+        min-width: 0;
+        max-width: 100%;
+      }
+      .critical {
+        background: var(--aurora-surface-critical);
+        border: 1px solid var(--hcdp-status-critical-border);
+        border-radius: var(--aurora-radius-card);
+        padding: 16px;
+        color: var(--aurora-danger);
+      }
+      .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; max-width: 100%; }
+      button, .btn {
+        min-height: var(--aurora-control-height);
+        border: 0; border-radius: var(--aurora-radius-button);
+        padding: 0 14px; font-weight: 700; cursor: pointer;
+        transition: background-color var(--aurora-motion-surface) var(--aurora-motion-easing);
+      }
+      .btn-primary { background: var(--aurora-accent); color: var(--aurora-accent-contrast); }
+      .btn-line { background: var(--aurora-surface); color: var(--aurora-text-primary); border: 1px solid var(--aurora-border-strong); }
+      input {
+        height: var(--aurora-control-height);
+        border: 1px solid var(--aurora-border-strong);
+        border-radius: var(--aurora-radius-input);
+        padding: 0 12px;
+        background: var(--aurora-surface);
+        color: var(--aurora-text-primary);
+        min-width: 0;
+        flex: 1 1 140px;
+        max-width: 100%;
+      }
+      .badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        border-radius: var(--aurora-radius-pill);
+        padding: 4px 10px; font-size: 13px; font-weight: 800;
+        border: 1px solid transparent;
+      }
+      .badge-success { background: var(--aurora-success-surface); color: var(--aurora-success); border-color: var(--hcdp-status-success-border); }
+      .badge-warn { background: var(--aurora-warning-surface); color: var(--aurora-warning); border-color: var(--hcdp-status-warning-border); }
+      .badge-danger { background: var(--aurora-danger-surface); color: var(--aurora-danger); border-color: var(--hcdp-status-critical-border); }
+      .badge-info { background: var(--aurora-info-surface); color: var(--aurora-info); border-color: var(--hcdp-status-info-border); }
+      .skeleton {
+        height: 14px; border-radius: var(--aurora-radius-input);
+        background: var(--aurora-surface-muted);
+      }
+      .drawer {
+        position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 96vw);
+        background: var(--aurora-surface-raised); box-shadow: var(--aurora-elevation-panel);
+        border-left: 1px solid var(--aurora-border-subtle);
+        padding: 16px; display: none;
+      }
+      .drawer.open { display: block; }
+      .overlay {
+        position: fixed; inset: 0; background: var(--aurora-overlay); display: none;
+      }
+      .overlay.open { display: block; }
+      .empty { text-align: center; padding: 40px 16px; color: var(--aurora-text-muted); }
+      .denied {
+        border: 1px solid var(--hcdp-status-warning-border);
+        background: var(--aurora-warning-surface);
+        color: var(--aurora-warning);
+        border-radius: var(--aurora-radius-card);
+        padding: 16px;
+      }
+      h2 { margin: 0 0 8px; font-size: 18px; }
+      p { margin: 0; color: var(--aurora-text-secondary); }
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; animation: none !important; }
+      }
+      @media (max-width: 767px) {
+        .shell { grid-template-columns: 1fr; }
+        .nav { display: none; }
+        .nav.mobile-open {
+          display: block; position: fixed; inset: 0 auto 0 0; width: min(240px, 86vw); z-index: 30;
+        }
+        .content { padding: 16px; }
+        .topbar { flex-wrap: wrap; padding: 8px 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" data-testid="aurora-harness-shell">
+      <aside class="nav" data-shell-region="shell-nav" data-testid="shell-sidebar" aria-label="Primary">
+        <h1>MCOP Aurora</h1>
+        <a href="#work" aria-current="page">My Work</a>
+        <a href="#ops">Operations</a>
+        <a href="#finance">Finance</a>
+      </aside>
+      <div class="main">
+        <header class="topbar" data-shell-region="topbar" data-testid="shell-topbar">
+          <button class="btn btn-line" id="menu" aria-expanded="false" aria-controls="mobile-nav" data-testid="shell-mobile-menu">Menu</button>
+          <strong>Aurora foundation</strong>
+          <input aria-label="Search" placeholder="Search" />
+        </header>
+        <main class="content" data-shell-region="main-pane" id="work">
+          <section class="card" data-aurora-surface="content">
+            <h2>Shared primitives</h2>
+            <p>Glass for navigation; clarity for work.</p>
+            <div class="row" style="margin-top:12px">
+              <button class="btn btn-primary" id="primary-action">Create action</button>
+              <button class="btn btn-line" id="open-drawer">Open drawer</button>
+              <span class="badge badge-success" role="status">✓ Ready</span>
+              <span class="badge badge-warn" role="status">! Attention</span>
+              <span class="badge badge-danger" role="status">! Blocked</span>
+              <span class="badge badge-info" role="status">i Info</span>
+            </div>
+          </section>
+          <section class="critical" data-aurora-surface="critical">
+            <strong>Payroll blocker</strong>
+            <p>Solid critical surface — never decorative glass.</p>
+          </section>
+          <section class="card">
+            <h2>Loading</h2>
+            <div class="skeleton" style="margin-top:8px" role="status" aria-label="Loading"></div>
+            <div class="skeleton" style="margin-top:8px;width:70%" role="status" aria-label="Loading"></div>
+          </section>
+          <section class="card empty" role="status">
+            <h2>Empty</h2>
+            <p>No items in this queue.</p>
+          </section>
+          <section class="denied" role="status">
+            <strong>Permission denied</strong>
+            <p>You do not have access to this record.</p>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" data-aurora-surface="raised">
+      <h2 id="drawer-title">Drawer</h2>
+      <p>Solid raised surface with Escape close.</p>
+      <button class="btn btn-line" id="close-drawer" style="margin-top:12px">Close</button>
+    </aside>
+    <script>
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("overlay");
+      const openBtn = document.getElementById("open-drawer");
+      const closeBtn = document.getElementById("close-drawer");
+      const menu = document.getElementById("menu");
+      const nav = document.querySelector(".nav");
+      function setDrawer(open) {
+        drawer.classList.toggle("open", open);
+        overlay.classList.toggle("open", open);
+        if (open) closeBtn.focus();
+        else openBtn.focus();
+      }
+      openBtn.addEventListener("click", () => setDrawer(true));
+      closeBtn.addEventListener("click", () => setDrawer(false));
+      overlay.addEventListener("click", () => setDrawer(false));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setDrawer(false);
+      });
+      menu.addEventListener("click", () => {
+        const open = !nav.classList.contains("mobile-open");
+        nav.classList.toggle("mobile-open", open);
+        menu.setAttribute("aria-expanded", String(open));
+      });
+      const params = new URLSearchParams(location.search);
+      if (params.get("theme") === "dark") document.documentElement.classList.add("theme-dark");
+      if (params.get("personality") === "executive-blue") {
+        document.documentElement.setAttribute("data-aurora-personality", "executive-blue");
+      }
+      if (params.get("personality") === "medical-emerald") {
+        document.documentElement.setAttribute("data-aurora-personality", "medical-emerald");
+        document.documentElement.style.setProperty("--aurora-accent", "#0f766e");
+        document.documentElement.style.setProperty("--aurora-accent-hover", "#0d9488");
+      }
+    </script>
+  </body>
+</html>

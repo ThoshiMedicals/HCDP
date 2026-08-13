@@ -1,10 +1,22 @@
 {
-  "generatedAt": "2026-08-13T22:26:18.868Z",
+  "generatedAt": "2026-08-13T23:21:37.144Z",
   "principle": "Glass for navigation; clarity for work.",
   "claims": {
     "wcagCompliant": false,
     "pixelParity": false,
-    "productionApproved": false
+    "productionApproved": false,
+    "mergeReady": false
+  },
+  "capabilityMatrix": {
+    "light": "live+harness",
+    "dark": "live+harness",
+    "system-os-light": "live+harness (live requires server)",
+    "system-os-dark": "live+harness (live requires server)",
+    "executive-blue": "harness-only demonstration",
+    "medical-emerald": "harness-only demonstration",
+    "reduced-motion": "harness media + live CSS present",
+    "mobile-navigation": "live shell drawer; harness synthetic only",
+    "drawer-focus": "shared primitive trap + harness demo"
   },
   "viewports": [
     {
@@ -38,1076 +50,2508 @@
       "h": 844
     }
   ],
-  "themes": [
+  "harnessThemes": [
+    {
+      "id": "light",
+      "demonstrationOnly": false
+    },
+    {
+      "id": "dark",
+      "demonstrationOnly": false
+    },
+    {
+      "id": "system-os-light",
+      "demonstrationOnly": false
+    },
+    {
+      "id": "system-os-dark",
+      "demonstrationOnly": false
+    },
+    {
+      "id": "executive-blue",
+      "demonstrationOnly": true
+    },
+    {
+      "id": "medical-emerald",
+      "demonstrationOnly": true
+    },
+    {
+      "id": "reduced-motion",
+      "demonstrationOnly": false
+    }
+  ],
+  "liveAppearances": [
     "light",
     "dark",
     "system-os-light",
-    "system-os-dark",
-    "executive-blue",
-    "medical-emerald",
-    "reduced-motion"
+    "system-os-dark"
   ],
-  "screenshotCount": 60,
+  "screenshotCount": 72,
   "assertionTotals": {
-    "total": 104,
-    "passed": 104,
+    "total": 170,
+    "passed": 170,
     "failed": 0
   },
+  "assertionGroups": {
+    "harnessOverflow": {
+      "pass": 42,
+      "fail": 0
+    },
+    "harnessCriticalSolid": {
+      "pass": 42,
+      "fail": 0
+    },
+    "harnessFocus": {
+      "pass": 2,
+      "fail": 0
+    },
+    "harnessDrawer": {
+      "pass": 4,
+      "fail": 0
+    },
+    "harnessReducedMotion": {
+      "pass": 6,
+      "fail": 0
+    },
+    "harnessMobileNav": {
+      "pass": 2,
+      "fail": 0
+    },
+    "liveShellPresent": {
+      "pass": 24,
+      "fail": 0
+    },
+    "liveOverflow": {
+      "pass": 24,
+      "fail": 0
+    },
+    "liveThemeResolved": {
+      "pass": 24,
+      "fail": 0
+    }
+  },
+  "consoleErrors": [],
   "shots": [
     {
       "file": "harness-light-1440x900.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "harness-focus-light-1440x900.png",
+      "source": "harness",
       "kind": "focus",
-      "theme": "light",
-      "viewport": "1440x900"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "harness-drawer-light-1440x900.png",
+      "source": "harness",
       "kind": "drawer",
-      "theme": "light",
-      "viewport": "1440x900"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "harness-light-1280x800.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
     },
     {
       "file": "harness-light-1024x768.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
     },
     {
       "file": "harness-light-768x1024.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
     },
     {
       "file": "harness-light-430-mobile.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
     },
     {
       "file": "harness-mobile-nav-430-mobile.png",
+      "source": "harness",
       "kind": "mobile-nav",
-      "theme": "light",
-      "viewport": "430-mobile"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false,
+      "demonstrationOnly": true
     },
     {
       "file": "harness-light-390x844.png",
-      "kind": "harness",
-      "theme": "light",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     },
     {
       "file": "harness-focus-light-390x844.png",
+      "source": "harness",
       "kind": "focus",
-      "theme": "light",
-      "viewport": "390x844"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     },
     {
       "file": "harness-drawer-light-390x844.png",
+      "source": "harness",
       "kind": "drawer",
-      "theme": "light",
-      "viewport": "390x844"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     },
     {
       "file": "harness-mobile-nav-390x844.png",
+      "source": "harness",
       "kind": "mobile-nav",
-      "theme": "light",
-      "viewport": "390x844"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false,
+      "demonstrationOnly": true
     },
     {
       "file": "harness-dark-1440x900.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "harness-dark-1280x800.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
     },
     {
       "file": "harness-dark-1024x768.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
     },
     {
       "file": "harness-dark-768x1024.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
     },
     {
       "file": "harness-dark-430-mobile.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
     },
     {
       "file": "harness-dark-390x844.png",
-      "kind": "harness",
-      "theme": "dark",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     },
     {
       "file": "harness-system-os-light-1440x900.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-light-1280x800.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-light-1024x768.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-light-768x1024.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-light-430-mobile.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-light-390x844.png",
-      "kind": "harness",
-      "theme": "system-os-light",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-light",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-1440x900.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-1280x800.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-1024x768.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-768x1024.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-430-mobile.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false
     },
     {
       "file": "harness-system-os-dark-390x844.png",
-      "kind": "harness",
-      "theme": "system-os-dark",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "system-os-dark",
+      "themeResolved": "dark",
+      "demonstrationOnly": false,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-1440x900.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-1280x800.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-1024x768.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-768x1024.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-430-mobile.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false
     },
     {
       "file": "harness-executive-blue-390x844.png",
-      "kind": "harness",
-      "theme": "executive-blue",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "executive-blue",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-1440x900.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-1280x800.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-1024x768.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-768x1024.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-430-mobile.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false
     },
     {
       "file": "harness-medical-emerald-390x844.png",
-      "kind": "harness",
-      "theme": "medical-emerald",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "medical-emerald",
+      "themeResolved": "light",
+      "demonstrationOnly": true,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-1440x900.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "1440x900"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-1280x800.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "1280x800"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-1024x768.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "1024x768"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-768x1024.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "768x1024"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-430-mobile.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "430-mobile"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": false
     },
     {
       "file": "harness-reduced-motion-390x844.png",
-      "kind": "harness",
-      "theme": "reduced-motion",
-      "viewport": "390x844"
+      "source": "harness",
+      "kind": "primitives",
+      "themeRequested": "reduced-motion",
+      "themeResolved": "light",
+      "demonstrationOnly": false,
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": false
     },
     {
       "file": "shell-light-1440x900.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "1440x900"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "shell-light-1280x800.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "1280x800"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
     },
     {
       "file": "shell-light-1024x768.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "1024x768"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
     },
     {
       "file": "shell-light-768x1024.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "768x1024"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
     },
     {
       "file": "shell-light-430-mobile.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "430-mobile"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
     },
     {
       "file": "shell-light-390x844.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "light",
-      "viewport": "390x844"
+      "themeRequested": "light",
+      "themeResolved": "light",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     },
     {
       "file": "shell-dark-1440x900.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "1440x900"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
     },
     {
       "file": "shell-dark-1280x800.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "1280x800"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
     },
     {
       "file": "shell-dark-1024x768.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "1024x768"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
     },
     {
       "file": "shell-dark-768x1024.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "768x1024"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
     },
     {
       "file": "shell-dark-430-mobile.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "430-mobile"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
     },
     {
       "file": "shell-dark-390x844.png",
+      "source": "live",
       "kind": "shell",
-      "theme": "dark",
-      "viewport": "390x844"
+      "themeRequested": "dark",
+      "themeResolved": "dark",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-1440x900.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-1280x800.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-1024x768.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-768x1024.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-430-mobile.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-light-390x844.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "light",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-1440x900.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-1280x800.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "1280x800",
+      "width": 1280,
+      "height": 800,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-1024x768.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-768x1024.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-430-mobile.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "430-mobile",
+      "width": 430,
+      "height": 932,
+      "authoritative": true
+    },
+    {
+      "file": "shell-system-os-dark-390x844.png",
+      "source": "live",
+      "kind": "shell",
+      "themeRequested": "system",
+      "themeResolved": "dark",
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "authoritative": true
     }
   ],
   "assertions": [
     {
       "ok": true,
-      "id": "overflow-light-1440x900",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "1440x900"
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-1440x900",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-focus-1440x900",
+      "reason": "harness: focus on primary action",
+      "source": "harness",
+      "viewport": "1440x900",
+      "group": "harnessFocus",
+      "activeElement": "primary-action"
+    },
+    {
+      "ok": true,
+      "id": "harness-drawer-open-1440x900",
+      "reason": "harness: drawer opens",
+      "source": "harness",
+      "group": "harnessDrawer",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "focus-light-1440x900",
-      "reason": "keyboard focus captured"
+      "id": "harness-drawer-escape-1440x900",
+      "reason": "harness: Escape closes + focus restores",
+      "source": "harness",
+      "group": "harnessDrawer",
+      "viewport": "1440x900",
+      "drawerClosed": true,
+      "focusRestored": true
     },
     {
       "ok": true,
-      "id": "drawer-open-light-1440x900",
-      "reason": "drawer opens"
-    },
-    {
-      "ok": true,
-      "id": "drawer-escape-light-1440x900",
-      "reason": "drawer closes on Escape"
-    },
-    {
-      "ok": true,
-      "id": "overflow-light-1280x800",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "1280x800"
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-1280x800",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
-      "viewport": "1280x800"
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
     },
     {
       "ok": true,
-      "id": "overflow-light-1024x768",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "1024x768"
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-1024x768",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
-      "viewport": "1024x768"
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
     },
     {
       "ok": true,
-      "id": "overflow-light-768x1024",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "768x1024"
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-768x1024",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
-      "viewport": "768x1024"
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
     },
     {
       "ok": true,
-      "id": "overflow-light-430-mobile",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "430-mobile"
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-430-mobile",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
-      "viewport": "430-mobile"
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
     },
     {
       "ok": true,
-      "id": "mobile-nav-open-430-mobile",
-      "reason": "mobile nav aria-expanded true"
+      "id": "harness-mobile-nav-430-mobile",
+      "reason": "harness: synthetic mobile nav expands",
+      "source": "harness",
+      "group": "harnessMobileNav",
+      "viewport": "430-mobile",
+      "note": "Synthetic harness nav — not the deferred Today/Actions/Search/More product model"
     },
     {
       "ok": true,
-      "id": "overflow-light-390x844",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-light-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "light",
-      "viewport": "390x844"
+      "viewport": "390x844",
+      "group": "harnessOverflow"
     },
     {
       "ok": true,
-      "id": "critical-solid-light-390x844",
-      "reason": "critical surface is not glass",
+      "id": "harness-critical-light-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
       "theme": "light",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-focus-390x844",
+      "reason": "harness: focus on primary action",
+      "source": "harness",
+      "viewport": "390x844",
+      "group": "harnessFocus",
+      "activeElement": "primary-action"
+    },
+    {
+      "ok": true,
+      "id": "harness-drawer-open-390x844",
+      "reason": "harness: drawer opens",
+      "source": "harness",
+      "group": "harnessDrawer",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "focus-light-390x844",
-      "reason": "keyboard focus captured"
+      "id": "harness-drawer-escape-390x844",
+      "reason": "harness: Escape closes + focus restores",
+      "source": "harness",
+      "group": "harnessDrawer",
+      "viewport": "390x844",
+      "drawerClosed": true,
+      "focusRestored": true
     },
     {
       "ok": true,
-      "id": "drawer-open-light-390x844",
-      "reason": "drawer opens"
+      "id": "harness-mobile-nav-390x844",
+      "reason": "harness: synthetic mobile nav expands",
+      "source": "harness",
+      "group": "harnessMobileNav",
+      "viewport": "390x844",
+      "note": "Synthetic harness nav — not the deferred Today/Actions/Search/More product model"
     },
     {
       "ok": true,
-      "id": "drawer-escape-light-390x844",
-      "reason": "drawer closes on Escape"
-    },
-    {
-      "ok": true,
-      "id": "mobile-nav-open-390x844",
-      "reason": "mobile nav aria-expanded true"
-    },
-    {
-      "ok": true,
-      "id": "overflow-dark-1440x900",
-      "reason": "no horizontal overflow",
+      "id": "harness-overflow-dark-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
       "theme": "dark",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-dark-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-dark-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-dark-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-dark-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-dark-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-dark-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "dark",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-light-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-light-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-light",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-system-os-dark-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-system-os-dark-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "system-os-dark",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-executive-blue-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-executive-blue-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "executive-blue",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-medical-emerald-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-medical-emerald-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "medical-emerald",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-1440x900",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1440x900",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-1440x900",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1440x900",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-1440x900",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1440x900",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-1280x800",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1280x800",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-1280x800",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1280x800",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-1280x800",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1280x800",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-1024x768",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1024x768",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-1024x768",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1024x768",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-1024x768",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1024x768",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-768x1024",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "768x1024",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-768x1024",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "768x1024",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-768x1024",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "768x1024",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-430-mobile",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-430-mobile",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-430-mobile",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "harness-overflow-reduced-motion-390x844",
+      "reason": "harness: no horizontal overflow",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "390x844",
+      "group": "harnessOverflow"
+    },
+    {
+      "ok": true,
+      "id": "harness-critical-reduced-motion-390x844",
+      "reason": "harness: critical surface solid",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "390x844",
+      "group": "harnessCriticalSolid"
+    },
+    {
+      "ok": true,
+      "id": "harness-reduced-motion-390x844",
+      "reason": "harness: prefers-reduced-motion active",
+      "source": "harness",
+      "theme": "reduced-motion",
+      "viewport": "390x844",
+      "group": "harnessReducedMotion"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-1440x900",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-1440x900",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "overflow-dark-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "dark",
+      "id": "live-overflow-light-1440x900",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1440x900",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-1280x800",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-1280x800",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "overflow-dark-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "dark",
+      "id": "live-overflow-light-1280x800",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1280x800",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-1024x768",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-1024x768",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "overflow-dark-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "dark",
+      "id": "live-overflow-light-1024x768",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1024x768",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-768x1024",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-768x1024",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "overflow-dark-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "dark",
+      "id": "live-overflow-light-768x1024",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "768x1024",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-430-mobile",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-430-mobile",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "overflow-dark-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "dark",
+      "id": "live-overflow-light-430-mobile",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "430-mobile",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-light-390x844",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "critical-solid-dark-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "dark",
+      "id": "live-theme-light-390x844",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "light",
+      "themeResolved": "light",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-1440x900",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-light-390x844",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "390x844",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-1440x900",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-1440x900",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-dark-1440x900",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1440x900",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-1280x800",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-1280x800",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-dark-1280x800",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1280x800",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-1024x768",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-1024x768",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-dark-1024x768",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1024x768",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-768x1024",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-768x1024",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-dark-768x1024",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "768x1024",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-430-mobile",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-430-mobile",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-light-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-light",
+      "id": "live-overflow-dark-430-mobile",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "430-mobile",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-dark-390x844",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-light-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-light",
+      "id": "live-theme-dark-390x844",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "dark",
+      "themeResolved": "dark",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-1440x900",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-dark-390x844",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "390x844",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-1440x900",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-1440x900",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-system-os-light-1440x900",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1440x900",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-1280x800",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-1280x800",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-system-os-light-1280x800",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1280x800",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-1024x768",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-1024x768",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-system-os-light-1024x768",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1024x768",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-768x1024",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-768x1024",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-system-os-light-768x1024",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "768x1024",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-430-mobile",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-430-mobile",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "overflow-system-os-dark-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "system-os-dark",
+      "id": "live-overflow-system-os-light-430-mobile",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "430-mobile",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-light-390x844",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "critical-solid-system-os-dark-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "system-os-dark",
+      "id": "live-theme-system-os-light-390x844",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "light",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-1440x900",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-light-390x844",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "390x844",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-1440x900",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-1440x900",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1440x900"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-dark-1440x900",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1440x900",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-1280x800",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-1280x800",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1280x800"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-dark-1280x800",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1280x800",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-1024x768",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-1024x768",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "1024x768"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-dark-1024x768",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "1024x768",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-768x1024",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-768x1024",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "768x1024"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-dark-768x1024",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "768x1024",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-430-mobile",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-430-mobile",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "430-mobile"
     },
     {
       "ok": true,
-      "id": "overflow-executive-blue-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "executive-blue",
+      "id": "live-overflow-system-os-dark-430-mobile",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "430-mobile",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
+    },
+    {
+      "ok": true,
+      "id": "live-shell-nav-system-os-dark-390x844",
+      "reason": "live: shell nav present",
+      "source": "live",
+      "group": "liveShellPresent",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "critical-solid-executive-blue-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "executive-blue",
+      "id": "live-theme-system-os-dark-390x844",
+      "reason": "live: requested appearance resolves",
+      "source": "live",
+      "group": "liveThemeResolved",
+      "themeRequested": "system",
+      "themeResolved": "dark",
       "viewport": "390x844"
     },
     {
       "ok": true,
-      "id": "overflow-medical-emerald-1440x900",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "1440x900"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "1440x900"
-    },
-    {
-      "ok": true,
-      "id": "overflow-medical-emerald-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "1280x800"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "1280x800"
-    },
-    {
-      "ok": true,
-      "id": "overflow-medical-emerald-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "1024x768"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "1024x768"
-    },
-    {
-      "ok": true,
-      "id": "overflow-medical-emerald-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "768x1024"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "768x1024"
-    },
-    {
-      "ok": true,
-      "id": "overflow-medical-emerald-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "430-mobile"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "430-mobile"
-    },
-    {
-      "ok": true,
-      "id": "overflow-medical-emerald-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "medical-emerald",
-      "viewport": "390x844"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-medical-emerald-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "medical-emerald",
-      "viewport": "390x844"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-1440x900",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "1440x900"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-1440x900",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "1440x900"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-1280x800",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "1280x800"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-1280x800",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "1280x800"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-1024x768",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "1024x768"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-1024x768",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "1024x768"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-768x1024",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "768x1024"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-768x1024",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "768x1024"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-430-mobile",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "430-mobile"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-430-mobile",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "430-mobile"
-    },
-    {
-      "ok": true,
-      "id": "overflow-reduced-motion-390x844",
-      "reason": "no horizontal overflow",
-      "theme": "reduced-motion",
-      "viewport": "390x844"
-    },
-    {
-      "ok": true,
-      "id": "critical-solid-reduced-motion-390x844",
-      "reason": "critical surface is not glass",
-      "theme": "reduced-motion",
-      "viewport": "390x844"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-1440x900",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-1280x800",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-1024x768",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-768x1024",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-430-mobile",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-light-390x844",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-1440x900",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-1280x800",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-1024x768",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-768x1024",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-430-mobile",
-      "reason": "shell nav present"
-    },
-    {
-      "ok": true,
-      "id": "shell-nav-dark-390x844",
-      "reason": "shell nav present"
+      "id": "live-overflow-system-os-dark-390x844",
+      "reason": "live: shell chrome within viewport",
+      "source": "live",
+      "group": "liveOverflow",
+      "viewport": "390x844",
+      "note": "Whole-page Command Centre density overflow is outside Aurora shared-foundation scope"
     }
   ],
   "notes": [
-    "Executive Blue / Medical Emerald personality hooks are harness-only; product appearance remains light|dark|system.",
+    "Executive Blue / Medical Emerald are harness/token demonstrations only — not product-selectable themes.",
     "Decision A shell dimensions (240/72/48) preserved.",
-    "Static harness proves shared primitive surfaces; live shell capture is optional via HCDP_BASE_URL."
+    "Original a5f22d5 evidence archived under archive-a5f22d5f/."
   ]
 }

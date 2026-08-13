@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import { useId, useRef } from "react";
+import { useFocusTrap } from "@/lib/a11y/use-focus-trap";
 import { Button } from "./Button";
 
 export function Drawer({
@@ -20,23 +21,7 @@ export function Drawer({
 }) {
   const titleId = useId();
   const panelRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.activeElement as HTMLElement | null;
-    const t = window.setTimeout(() => {
-      panelRef.current?.querySelector<HTMLElement>("button, [href], input, select, textarea")?.focus();
-    }, 0);
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    document.addEventListener("keydown", onKey);
-    return () => {
-      window.clearTimeout(t);
-      document.removeEventListener("keydown", onKey);
-      prev?.focus?.();
-    };
-  }, [open, onClose]);
+  useFocusTrap(open, panelRef, onClose);
 
   return (
     <>
@@ -53,6 +38,8 @@ export function Drawer({
         data-shell-region="detail-pane"
         data-testid="shell-drawer"
         data-aurora-surface="raised"
+        data-aurora-focus-trap={open ? "true" : "false"}
+        tabIndex={-1}
         className={`fixed bottom-0 right-0 top-0 z-50 flex flex-col bg-[var(--aurora-surface-raised,var(--dp-bg-surface,var(--card)))] text-[var(--aurora-text-primary,var(--ink))] shadow-[var(--aurora-elevation-panel,-20px_0_60px_rgba(15,23,42,0.2))] transition-transform duration-[var(--aurora-motion-drawer,200ms)] ease-[var(--aurora-motion-easing,ease)] ${
           open ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
@@ -74,7 +61,7 @@ export function Drawer({
           </div>
           <Button
             variant="line"
-            className="h-10 w-10 min-h-0 justify-center px-0"
+            className="h-10 w-10 min-h-[var(--aurora-touch-target-min,44px)] min-w-[var(--aurora-touch-target-min,44px)] justify-center px-0 md:min-h-10 md:min-w-10"
             onClick={onClose}
             aria-label="Close panel"
           >

@@ -39,15 +39,18 @@ describe("P1-B1 shell primitives — contract (no runtime probe)", () => {
     assert.match(toolbar, /role="toolbar"/);
   });
 
-  it("Drawer retains Escape, dialog labelling, and contract width", () => {
+  it("Drawer retains Escape, dialog labelling, contract width, and focus trap", () => {
     const drawer = read("src/components/ui/Drawer.tsx");
+    const trap = read("src/lib/a11y/use-focus-trap.ts");
     assert.match(drawer, /role="dialog"/);
     assert.match(drawer, /aria-modal="true"/);
     assert.match(drawer, /aria-labelledby/);
-    assert.match(drawer, /Escape/);
-    assert.match(drawer, /prev\?\.focus/);
+    assert.match(drawer, /useFocusTrap/);
     assert.match(drawer, /--drawer-width/);
     assert.match(drawer, /data-testid="shell-drawer"/);
+    assert.match(trap, /Escape/);
+    assert.match(trap, /previous\.focus/);
+    assert.match(trap, /Tab/);
   });
 
   it("Action Inbox error UI remains in source without sessionStorage force hook", () => {

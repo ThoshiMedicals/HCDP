@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import { useId, useRef } from "react";
+import { useFocusTrap } from "@/lib/a11y/use-focus-trap";
 import { Button } from "./Button";
 
 export function Modal({
@@ -18,23 +19,7 @@ export function Modal({
 }) {
   const titleId = useId();
   const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.activeElement as HTMLElement | null;
-    const t = window.setTimeout(() => {
-      panelRef.current?.querySelector<HTMLElement>("button, [href], input, select, textarea")?.focus();
-    }, 0);
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    document.addEventListener("keydown", onKey);
-    return () => {
-      window.clearTimeout(t);
-      document.removeEventListener("keydown", onKey);
-      prev?.focus?.();
-    };
-  }, [open, onClose]);
+  useFocusTrap(open, panelRef, onClose);
 
   if (!open) return null;
   return (
@@ -51,6 +36,9 @@ export function Modal({
         aria-modal="true"
         aria-labelledby={titleId}
         data-aurora-surface="raised"
+        data-aurora-focus-trap="true"
+        data-testid="shell-modal"
+        tabIndex={-1}
         className="w-[min(920px,100%)] overflow-hidden rounded-[var(--aurora-radius-panel,20px)] bg-[var(--aurora-surface,var(--card))] text-[var(--aurora-text-primary,var(--ink))] shadow-[var(--aurora-elevation-panel,0_30px_80px_rgba(15,23,42,0.25))]"
       >
         <div className="flex items-center justify-between border-b border-[var(--aurora-border-subtle,var(--line))] px-5 py-[18px]">
@@ -59,7 +47,7 @@ export function Modal({
           </h2>
           <Button
             variant="line"
-            className="h-10 w-10 min-h-0 justify-center px-0"
+            className="h-10 w-10 min-h-[var(--aurora-touch-target-min,44px)] min-w-[var(--aurora-touch-target-min,44px)] justify-center px-0 md:min-h-10 md:min-w-10"
             onClick={onClose}
             aria-label="Close dialog"
           >
