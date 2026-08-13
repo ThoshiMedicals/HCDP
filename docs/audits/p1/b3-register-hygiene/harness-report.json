@@ -1,0 +1,23 @@
+{
+  "base": "http://localhost:3000",
+  "shots": [
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\01-training-nav-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\02-training-nav-1440-dark.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\03-history-planned-1440-light-focus.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\04-adjustments-honesty-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\05-history-planned-390-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\06-adjustments-honesty-390-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\07-history-planned-1280-system.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b3-register-hygiene\\shots\\08-adjustments-honesty-1440-dark.png"
+  ],
+  "checks": [
+    {
+      "id": "m11-nav-light",
+      "ok": true
+    }
+  ],
+  "localOnly": true,
+  "githubCi": false,
+  "ok": true,
+  "failures": []
+}

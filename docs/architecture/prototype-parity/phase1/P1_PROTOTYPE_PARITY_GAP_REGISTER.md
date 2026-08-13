@@ -241,10 +241,7 @@
 | Risk | Wrong planning scores |
 | Acceptance evidence | Register validator + manual nav check |
 | Batch | P1-B3 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
-| Owner clarification | **Yes** — confirm allowed register sync without domain change |
-
-### P1-GAP-012 — M07 History/Reports PlannedSection vs “functionally complete” narrative
+| Implementation status | **P1-B3 — IMPLEMENTED; OWNER ACCEPTANCE PENDING** (register sync to TrainingWorkspace; `strong-existing`; not production-approved) |
 | Field | Value |
 | --- | --- |
 | Module / screen | M07 `/staffpay` → history |
@@ -259,10 +256,7 @@
 | Risk | Treating planned as done |
 | Acceptance evidence | UI label + register text |
 | Batch | P1-B3 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
-| Owner clarification | **Yes** |
-
-### P1-GAP-013 — Historic parity register still calls some accepted modules stubs
+| Implementation status | **P1-B3 — IMPLEMENTED (honesty); OWNER ACCEPTANCE PENDING** — History remains planned/non-operational; not closed until acceptance |
 | Field | Value |
 | --- | --- |
 | Module / screen | Docs hygiene |
@@ -277,10 +271,7 @@
 | Risk | Low if re-audit preferred |
 | Acceptance evidence | Doc cross-link |
 | Batch | P1-B3 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
-| Owner clarification | No |
-
-### P1-GAP-014 — 298 unresolved workflow section mappings
+| Implementation status | **P1-B3 — IMPLEMENTED (supersession banner); OWNER ACCEPTANCE PENDING** |
 | Field | Value |
 | --- | --- |
 | Module / screen | Cross-register |
@@ -295,10 +286,7 @@
 | Risk | Wrong screen wiring |
 | Acceptance evidence | Mapping counts for in-scope IDs |
 | Batch | P1-B3 (SHARED subset) / P2+ |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
-| Owner clarification | No |
-
-### P1-GAP-015 — Placeholder modules must not be scored as implemented
+| Implementation status | **P1-B3 — SHARED subset honesty documented; OWNER ACCEPTANCE PENDING** — bulk unresolved=298 residual remains P2+; gap not closed |
 | Field | Value |
 | --- | --- |
 | Module / screen | M08–M10, M12–M24 ModuleLanding |
@@ -313,12 +301,7 @@
 | Risk | Scope creep into rebuilds |
 | Acceptance evidence | Landing-only confirmation tests |
 | Batch | P1-B3 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
-| Owner clarification | No |
-
----
-
-## C. M01–M03 (UI-accepted; domain NOT-STARTED)
+| Implementation status | **P1-B3 — IMPLEMENTED (ModuleLanding honesty); OWNER ACCEPTANCE PENDING** — placeholders remain not-implemented |
 
 ### P1-GAP-016 — M01 durable domain services absent
 | Field | Value |
@@ -697,7 +680,7 @@ Classification **Future scope** aggregate. Priority Later / P2+. Status `P1 — 
 Classification **Accepted difference** relative to prototype button volume; remaining are Future/P2. Status `P1 — PLANNED, NOT AUTHORISED`.
 
 ### P1-GAP-079 — M07 Adjustments “PPA-1 foundation” wording risk
-Classification **Major** (scope confusion). Must not be treated as authorised PPA. Batch P1-B3 honesty. Owner clarification **Yes**. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Major** (scope confusion). Must not be treated as authorised PPA. Batch P1-B3 honesty. Owner clarification **Yes**. Status **P1-B3 — IMPLEMENTED (honesty labels); OWNER ACCEPTANCE PENDING** — not closed until acceptance; OWN-P1-011 remains open.
 
 ### P1-GAP-080 — BLOCKED-M10 remains informational outside M07 totals
 Classification **Future scope** (P3). Status `P1 — PLANNED, NOT AUTHORISED`.

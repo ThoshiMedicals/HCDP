@@ -26,7 +26,7 @@ export const M07_SECTION_META: Record<
     label: "Adjustments",
     batch1: "available",
     batchNote:
-      "PPA-1 prior-period adjustment foundation: register, create and cancel draft only",
+      "Adjustment preparation/foundation only: register, create and cancel draft. Not an authorised prior-period adjustment (PPA) product. Unlock/reopen is not PPA.",
   },
   exceptions: { label: "Exceptions", batch1: "available", batchNote: "Batch 4 resolve/waive" },
   variances: { label: "Variances", batch1: "available", batchNote: "Batch 4 informational" },
@@ -45,7 +45,11 @@ export const M07_SECTION_META: Record<
     batch1: "available",
     batchNote: "Batch 6 package-level reconciliation (not provider return files)",
   },
-  history: { label: "History / Reports", batch1: "planned" },
+  history: {
+    label: "History / Reports",
+    batch1: "planned",
+    batchNote: "Planned — not yet available; payroll history is not operational",
+  },
   settings: { label: "Settings", batch1: "available" },
 };
 

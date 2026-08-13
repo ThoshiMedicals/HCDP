@@ -17,6 +17,7 @@
     "test": "npm run test:workforce && npm run test:auth && npm run test:m04 && npm run test:m11 && npm run test:m05 && npm run test:m06 && npm run test:m07",
     "test:p1-b1": "tsx --test \"src/components/shell/tests/p1-b1-*.test.ts\"",
     "test:p1-b2": "tsx --test \"src/components/shell/tests/p1-b2-*.test.ts\"",
+    "test:p1-b3": "tsx --test \"src/components/shell/tests/p1-b3-*.test.ts\"",
     "test:platform-qa": "node scripts/platform-integration-qa.mjs",
     "test:wave2-evidence": "node scripts/wave2-m04-acceptance-evidence.mjs",
     "test:wave3-evidence": "node scripts/wave3-m11-acceptance-evidence.mjs",

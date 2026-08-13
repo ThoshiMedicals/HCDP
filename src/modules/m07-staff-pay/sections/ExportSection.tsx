@@ -375,7 +375,8 @@ export function ExportSection() {
         <div className="rounded-lg border border-[var(--v34-card-line)] p-3 text-sm" role="dialog">
           <p>
             Confirm lock? Locked periods reject ordinary recalculation, re-approval, and re-export.
-            Prior-period adjustments are not implemented in Batch 6.
+            Authorised prior-period adjustment (PPA) product processing is not implemented in Batch
+            6. Unlock/reopen is not PPA.
           </p>
           <div className="mt-2 flex gap-2">
             <button

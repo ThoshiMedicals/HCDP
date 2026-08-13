@@ -37,7 +37,12 @@ export function ModuleLanding({
 
   const activeSection = plat.sections.find((s) => s.id === section) ?? plat.sections[0];
   const isComplete = plat.condition === "complete-interactive-rebuild";
-  const showPending = !isComplete;
+  const isStrongExisting = plat.condition === "strong-existing";
+  const isPlaceholderLike =
+    plat.condition === "placeholder" ||
+    plat.condition === "legacy-html-fallback" ||
+    plat.condition === "missing";
+  const showPending = !isComplete && !isStrongExisting;
 
   return (
     <div className="space-y-5">
@@ -54,10 +59,14 @@ export function ModuleLanding({
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--muted)]">{plat.purpose}</p>
           </div>
           <div className="flex flex-wrap gap-2">
-            {showPending ? (
-              <Badge tone="warn">Rebuild pending</Badge>
-            ) : (
+            {isComplete ? (
               <Badge tone="success">Interactive rebuild</Badge>
+            ) : isStrongExisting ? (
+              <Badge tone="info">Strong existing — not production-approved</Badge>
+            ) : isPlaceholderLike ? (
+              <Badge tone="warn">Placeholder — not implemented</Badge>
+            ) : (
+              <Badge tone="warn">Partially implemented</Badge>
             )}
             <Badge tone="info">{conditionLabel(plat.condition)}</Badge>
             {plat.canCreateInboxEvents ? (
@@ -70,12 +79,19 @@ export function ModuleLanding({
 
         {showPending ? (
           <p className="mt-4 rounded-xl border border-[color-mix(in_srgb,#b45309_25%,var(--line))] bg-[color-mix(in_srgb,#b45309_8%,var(--card))] px-3 py-2 text-sm text-[#92400e]">
-            This approved module is not fully rebuilt in Next yet. Use the section list below to navigate
-            planned workspaces. The HTML prototype remains available for Development / QA at{" "}
+            {isPlaceholderLike
+              ? "This module is a placeholder / rebuild-pending landing only. It must not be scored as implemented. Domain workflows are not built."
+              : "This approved module is not fully rebuilt in Next yet. Use the section list below to navigate planned workspaces."}{" "}
+            The HTML prototype remains available for Development / QA at{" "}
             <Link href="/prototype-reference" className="font-bold underline">
               /prototype-reference
             </Link>
             .
+          </p>
+        ) : isStrongExisting ? (
+          <p className="mt-4 rounded-xl border border-[var(--v34-card-line)] bg-[var(--soft)] px-3 py-2 text-sm text-[var(--muted)]">
+            Strong existing module — register metadata reflects verified runtime. Not production
+            approval.
           </p>
         ) : null}
       </header>

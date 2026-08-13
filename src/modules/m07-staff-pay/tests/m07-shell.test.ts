@@ -19,8 +19,10 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.equal(M07_SECTION_META.adjustments.batch1, "available");
     assert.match(
       M07_SECTION_META.adjustments.batchNote ?? "",
-      /PPA-1 prior-period adjustment foundation/i
+      /Adjustment preparation\/foundation only/i
     );
+    assert.match(M07_SECTION_META.adjustments.batchNote ?? "", /not an authorised prior-period adjustment/i);
+    assert.match(M07_SECTION_META.adjustments.batchNote ?? "", /Unlock\/reopen is not PPA/i);
     assert.ok(planned.includes("history"));
     assert.equal(M07_SECTION_META.overview.batch1, "available");
     assert.equal(M07_SECTION_META.settings.batch1, "available");
@@ -37,9 +39,11 @@ describe("M07 shell smoke (Batch 1)", () => {
   it("planned section UI disables actions and does not claim parity", () => {
     const plannedPath = join(process.cwd(), "src/modules/m07-staff-pay/sections/PlannedSection.tsx");
     const src = readFileSync(plannedPath, "utf8");
-    assert.match(src, /Planned — not operational in Batch 1/);
-    assert.match(src, /disabled/);
+    assert.match(src, /Planned — not yet available/);
+    assert.match(src, /aria-disabled="true"/);
+    assert.match(src, /not operational/i);
     assert.match(src, /not prototype parity/);
+    assert.doesNotMatch(src, /pushToast|Export complete|History ready/);
   });
 
   it("workspace declares responsive shell attribute and a11y affordances", () => {
@@ -73,7 +77,7 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.match(settings, /role="status"/);
   });
 
-  it("overview copy distinguishes ordinary prep availability from PPA-1 limits (GAP-PAR-003)", () => {
+  it("overview copy distinguishes ordinary prep availability from adjustment-preparation limits (GAP-PAR-003 / OWN-P1-007)", () => {
     const overview = readFileSync(
       join(process.cwd(), "src/modules/m07-staff-pay/sections/OverviewSection.tsx"),
       "utf8"
@@ -85,7 +89,10 @@ describe("M07 shell smoke (Batch 1)", () => {
     assert.match(overview, /period\s+lock/i);
     assert.match(overview, /adjustment register/i);
     assert.match(overview, /draft cancellation/i);
+    assert.match(overview, /not an authorised or complete prior-period adjustment/i);
+    assert.match(overview, /Unlock\/reopen is not PPA/i);
     assert.match(overview, /PPA calculation lines/i);
     assert.doesNotMatch(overview, /PPA-2/);
+    assert.doesNotMatch(overview, /PPA-1 foundation/i);
   });
 });

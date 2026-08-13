@@ -1,6 +1,6 @@
 # P1 Owner-Decision Register
 
-**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **P1-B3–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
+**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **P1-B3** authorised and implemented — **owner acceptance pending**. **P1-B4–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
 **Note:** Conflict register openCount remains 0 for prior DEC-* items. This register lists **P1 planning decisions** required, closed, or deferrable.  
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.  
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.  
@@ -8,7 +8,8 @@
 **P1-B1 qualified acceptance date:** `2026-08-13`  
 **P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13`  
 **P1-B2 qualified acceptance date:** `2026-08-13` (`P1-B2-OWNER-ACCEPT-2026-08-13`)  
-**P1-B3 register-hygiene decisions closed:** `OWN-P1-006`, `OWN-P1-007` — `2026-08-13` (decision closure only; **P1-B3 remains unauthorised**)
+**P1-B3 register-hygiene decisions closed:** `OWN-P1-006`, `OWN-P1-007` — `2026-08-13`  
+**P1-B3 implementation:** expressly authorised and published for owner review — **acceptance pending** (2026-08-13)
 
 ## Decisions required before any P1 implementation
 
@@ -371,7 +372,7 @@ Evidence pointer: P1_B3_OWNER_DECISION_BRIEFING.md; P1-GAP-012; P1-GAP-079;
 Dependencies: Distinct from OWN-P1-011; after P1-B1/B2 closed; pairs with OWN-P1-006
 ```
 
-**P1-B3 status after these closures:** Decision blockers OWN-P1-006/007 are **closed**. **P1-B3 itself remains `P1 — PLANNED, NOT AUTHORISED`** until the owner expressly authorises that named batch. Gaps 011/012/013/014/015/079 remain open until implemented and accepted.
+**P1-B3 status after these closures:** Decision blockers OWN-P1-006/007 are **closed**. Express P1-B3 implementation was authorised and published for owner review (2026-08-13) — **owner acceptance pending**. Gaps 011/012/013/014/015/079 remain **not closed** until owner acceptance. **P1-B4–P1-B8 remain unauthorised.**
 
 ## Open architecture / data decision (production path)
 

@@ -246,8 +246,8 @@ export function AdjustmentCaseDetail({
       </div>
 
       <p className="text-xs text-[var(--muted)]" data-m07-ppa-no-downstream="true">
-        PPA-1 foundation UI only — no calculation, approval, export, payment, bank, STP,
-        superannuation, or provider controls on this screen.
+        Adjustment preparation foundation only — no calculation, approval, export, payment, bank,
+        STP, superannuation, or provider controls on this screen. Not an authorised PPA product.
       </p>
     </div>
   );

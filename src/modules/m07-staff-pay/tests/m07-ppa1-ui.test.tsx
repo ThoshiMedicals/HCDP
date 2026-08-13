@@ -69,11 +69,13 @@ function html(node: ReactElement): string {
 }
 
 describe("M07 PPA-1 UI (isolated · pending integration)", () => {
-  it("labels lane as isolated UI pending integration", () => {
+  it("labels lane as adjustment preparation foundation — not authorised PPA product", () => {
     const markup = html(createElement(AdjustmentsSection, {}));
-    assert.match(markup, /isolated · pending integration/i);
+    assert.match(markup, /Adjustment preparation UI · foundation only · not authorised PPA product/i);
     assert.match(markup, /data-m07-ppa-lane="isolated-ui-pending-integration"/);
-    assert.match(markup, /Unlock\/reopen is not a PPA/i);
+    assert.match(markup, /Unlock\/reopen is not PPA/i);
+    assert.doesNotMatch(markup, />Prior-period adjustments</);
+    assert.doesNotMatch(markup, /PPA-1 foundation · available/i);
   });
 
   it("register renders rows with status, source, adjustment period, LE, reason, created actor", () => {
@@ -106,7 +108,7 @@ describe("M07 PPA-1 UI (isolated · pending integration)", () => {
       })
     );
     assert.match(markup, /data-m07-ppa-empty="true"/);
-    assert.match(markup, /No prior-period adjustments yet/);
+    assert.match(markup, /No adjustment preparation cases yet/);
     assert.match(markup, /Create first adjustment/);
   });
 
@@ -175,7 +177,7 @@ describe("M07 PPA-1 UI (isolated · pending integration)", () => {
         onCancel: () => {},
       })
     );
-    assert.match(submitting, /Submitting prior-period adjustment/);
+    assert.match(submitting, /Submitting adjustment preparation case/);
     assert.match(submitting, /Creating…/);
     assert.match(submitting, /disabled=""/);
   });
@@ -304,7 +306,9 @@ describe("M07 PPA-1 UI (isolated · pending integration)", () => {
   it("integration lane wires section-meta available and shell ConnectedAdjustmentsSection", () => {
     const meta = readFileSync(join(ROOT, "src/modules/m07-staff-pay/section-meta.ts"), "utf8");
     assert.match(meta, /batch1: "available"/);
-    assert.match(meta, /PPA-1 prior-period adjustment foundation/);
+    assert.match(meta, /Adjustment preparation\/foundation only/);
+    assert.match(meta, /not an authorised prior-period adjustment \(PPA\) product/);
+    assert.doesNotMatch(meta, /PPA-1 prior-period adjustment foundation/);
 
     const workspace = readFileSync(
       join(ROOT, "src/modules/m07-staff-pay/StaffPayWorkspace.tsx"),

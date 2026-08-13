@@ -53,10 +53,11 @@ export function OverviewSection() {
           Create and list ordinary pay periods for one legal entity. Ordinary payroll preparation
           (including management approval, export preparation, package reconciliation, and period
           lock) remains available on the relevant sections according to your permissions and period
-          state — non-certified; export is not payment. Prior-period adjustments currently support
+          state — non-certified; export is not payment. Adjustment preparation currently supports
           the adjustment register, creation against a locked ordinary source, immutable source pins,
-          and draft cancellation. PPA calculation lines, approval, reconciliation, export, and
-          payment are not available for adjustments.
+          and draft cancellation. This is not an authorised or complete prior-period adjustment
+          (PPA) product. Unlock/reopen is not PPA processing. PPA calculation lines, approval,
+          reconciliation, export, and payment are not available for adjustments.
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
       </div>

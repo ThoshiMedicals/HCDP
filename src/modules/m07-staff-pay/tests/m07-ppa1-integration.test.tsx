@@ -174,11 +174,15 @@ describe("M07 PPA-1 integration — shell + real service + mounted section", () 
     resetM07TestEnv();
   });
 
-  it("section-meta marks adjustments available with PPA-1 foundation wording", () => {
+  it("section-meta marks adjustments available with honesty-only foundation wording", () => {
     assert.equal(M07_SECTION_META.adjustments.batch1, "available");
     assert.match(
       M07_SECTION_META.adjustments.batchNote ?? "",
-      /PPA-1 prior-period adjustment foundation: register, create and cancel draft only/
+      /Adjustment preparation\/foundation only: register, create and cancel draft/
+    );
+    assert.match(
+      M07_SECTION_META.adjustments.batchNote ?? "",
+      /Not an authorised prior-period adjustment \(PPA\) product/
     );
   });
 
@@ -201,7 +205,8 @@ describe("M07 PPA-1 integration — shell + real service + mounted section", () 
       })
     );
     assert.match(markup, /data-m07-ppa-lane="ppa1-foundation-wired"/);
-    assert.match(markup, /No prior-period adjustments/i);
+    assert.match(markup, /No adjustment preparation cases yet/i);
+    assert.match(markup, /not authorised PPA product/i);
     assert.doesNotMatch(markup, />Calculate</);
     assert.doesNotMatch(markup, /Approve for payment/i);
     assert.doesNotMatch(markup, /Download bank/i);

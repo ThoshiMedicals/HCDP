@@ -159,10 +159,11 @@ export function CreateAdjustmentForm({
     >
       <div>
         <h3 id="m07-ppa-create-heading" className="text-base font-semibold text-[var(--ink)]">
-          Create prior-period adjustment
+          Create adjustment preparation case
         </h3>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          Bind a new adjustment period to a locked ordinary source. Original history stays immutable.
+          Bind a new adjustment-preparation period to a locked ordinary source. Original history
+          stays immutable. This does not authorise a complete prior-period adjustment (PPA) product.
         </p>
       </div>
 
@@ -172,16 +173,17 @@ export function CreateAdjustmentForm({
         role="status"
         data-m07-ppa-unlock-warning="true"
       >
-        <p className="font-semibold">Unlock or reopen is not a prior-period adjustment</p>
+        <p className="font-semibold">Unlock or reopen is not prior-period adjustment processing</p>
         <p className="mt-1">
-          Controlled unlock remediates an ordinary period. A PPA creates a separate adjustment
-          context that pins the locked source without rewriting it.
+          Controlled unlock remediates an ordinary period. Adjustment preparation creates a separate
+          foundation context that pins the locked source without rewriting it. Named PPA product
+          authorisation remains under OWN-P1-011 (open).
         </p>
       </div>
 
       {denied ? (
         <p className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800" role="alert">
-          {createDeniedReason || "Permission denied — cannot create a prior-period adjustment."}
+          {createDeniedReason || "Permission denied — cannot create an adjustment preparation case."}
         </p>
       ) : null}
 
@@ -290,7 +292,7 @@ export function CreateAdjustmentForm({
 
       {submitting ? (
         <p className="text-sm text-[var(--muted)]" role="status" aria-live="polite">
-          Submitting prior-period adjustment…
+          Submitting adjustment preparation case…
         </p>
       ) : null}
 

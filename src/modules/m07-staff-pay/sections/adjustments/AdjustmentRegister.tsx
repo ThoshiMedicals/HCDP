@@ -70,10 +70,11 @@ export function AdjustmentRegister({
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <h3 id="m07-ppa-register-heading" className="text-base font-semibold text-[var(--ink)]">
-            Prior-period adjustment register
+            Adjustment preparation register
           </h3>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            Controlled corrections against locked ordinary periods. Unlock or reopen is not a PPA.
+            Foundation cases against locked ordinary periods — not an authorised PPA product.
+            Unlock or reopen is not PPA processing.
           </p>
         </div>
         <button
@@ -97,7 +98,7 @@ export function AdjustmentRegister({
 
       {loading ? (
         <p className="text-sm text-[var(--muted)]" role="status" aria-live="polite">
-          Loading prior-period adjustments…
+          Loading adjustment preparation cases…
         </p>
       ) : null}
 
@@ -107,9 +108,10 @@ export function AdjustmentRegister({
           role="status"
           data-m07-ppa-empty="true"
         >
-          <p className="font-medium text-[var(--ink)]">No prior-period adjustments yet</p>
+          <p className="font-medium text-[var(--ink)]">No adjustment preparation cases yet</p>
           <p className="mt-1 text-[var(--muted)]">
-            Create a PPA against a locked ordinary source period. This is not unlock or reopen.
+            Create an adjustment-preparation case against a locked ordinary source period. This is
+            not unlock or reopen, and is not an authorised PPA product.
           </p>
           <button
             type="button"

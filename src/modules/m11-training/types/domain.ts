@@ -339,6 +339,7 @@ export const M11_SECTION_ALIASES: Record<string, M11SectionId> = {
   policy: "settings",
   policies: "settings",
   records: "assignments",
+  expiry: "certificates",
   courses: "catalogue",
 };
 

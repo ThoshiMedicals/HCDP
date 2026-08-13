@@ -1,12 +1,14 @@
 "use client";
 
 /**
- * PPA-1 Foundation — Adjustments section.
+ * Adjustment preparation foundation — Adjustments section.
  *
  * Presentational `AdjustmentsSection` remains prop-driven for isolated UI tests.
  * Production shell mounts `ConnectedAdjustmentsSection`, which wires real ppa-service
  * + authoritative M07 actor/LE/clinic context.
  *
+ * Honesty (OWN-P1-007): this is adjustment preparation/foundation only — not an
+ * authorised or complete prior-period adjustment (PPA) product.
  * Unlock/reopen is NOT a prior-period adjustment.
  */
 
@@ -238,27 +240,28 @@ export function AdjustmentsSection({
         <p
           className={
             wired
-              ? "hcdp-type-meta text-[var(--accent-positive)]"
-              : "hcdp-type-meta text-[var(--status-warning)]"
+              ? "hcdp-type-meta text-[var(--ink)]"
+              : "hcdp-type-meta text-[var(--ink)]"
           }
           role="status"
         >
           {wired
-            ? "PPA-1 foundation · available · register / create / cancel draft"
-            : "PPA-1 foundation UI · isolated · pending integration"}
+            ? "Adjustment preparation · foundation only · not authorised PPA product"
+            : "Adjustment preparation UI · foundation only · not authorised PPA product"}
         </p>
         <h2 id="m07-adjustments-heading" className="hcdp-type-heading mt-1 text-[var(--ink)]">
-          Prior-period adjustments
+          Adjustments
         </h2>
         <p className="hcdp-type-body mt-2 text-[var(--muted)]">
           {wired
-            ? "Create and review prior-period adjustment cases against locked ordinary sources. Unlock/reopen is not a PPA."
-            : "Create and review prior-period adjustment cases against locked ordinary sources. This lane is not wired to production navigation or the PPA service yet. Unlock/reopen is not a PPA."}
+            ? "Create and review adjustment-preparation cases against locked ordinary sources. This is not an authorised or complete prior-period adjustment (PPA) product. Unlock/reopen is not PPA processing."
+            : "Create and review adjustment-preparation cases against locked ordinary sources. This lane is foundation UI only and is not an authorised PPA product. Unlock/reopen is not PPA processing."}
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         <p className="mt-2 text-xs text-[var(--muted)]" data-m07-ppa-scope="true">
           Scope: register, create, cancel draft, immutable pins. No calculation, approval, export,
-          payment, bank, STP, superannuation, Xero, or Module 8 controls.
+          payment, bank, STP, superannuation, Xero, or Module 8 controls. OWN-P1-011 (named PPA
+          product) remains open and separately governed.
         </p>
       </div>
 
@@ -269,7 +272,7 @@ export function AdjustmentsSection({
           data-m07-ppa-denied="true"
         >
           {viewDeniedReason ||
-            "Permission denied — prior-period adjustment view is required."}
+            "Permission denied — adjustment preparation view is required."}
         </div>
       ) : null}
 

@@ -1,7 +1,9 @@
 # HCDP Prototype Parity Register
 
+> **SUPERSEDED FOR CURRENT PLANNING (P1-GAP-013 / P1-B3):** This historic register is **not** the current source of truth for module implementation status. Prefer the Wave re-audit packs, Wave 3–6 acceptance evidence, and `docs/architecture/prototype-parity/phase1/` registers. Do **not** treat stub/landing claims in this file as overriding accepted Wave 3 (M11), Wave 6 (M07 ordinary prep), or current `module-register.ts` metadata. Historical content below is preserved; it has not been silently rewritten.
+
 **Date:** 28 July 2026  
-**Status:** PLANNING / DOCUMENTATION ONLY — not execution evidence  
+**Status:** PLANNING / DOCUMENTATION ONLY — not execution evidence — **historic / superseded for current readiness scoring**  
 **Reference prototype:** `Healthcare_Doctors_Pulse_Executive_Healthcare_Operations_Platform_v34_Stronger_Navigation_Palette.html`  
 **Identical copy:** `Development folder/public/pulse-html-prototype.html` (byte-identical)  
 **Machine-readable companion:** `docs/architecture/hcdp-prototype-parity-register.json`
