@@ -39,7 +39,7 @@ export function Modal({
   if (!open) return null;
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-[rgba(15,23,42,0.45)] p-5"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-[var(--aurora-overlay,rgba(15,23,42,0.45))] p-5"
       role="presentation"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -50,9 +50,10 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="w-[min(920px,100%)] overflow-hidden rounded-[20px] bg-[var(--card)] text-[var(--ink)] shadow-[0_30px_80px_rgba(15,23,42,0.25)]"
+        data-aurora-surface="raised"
+        className="w-[min(920px,100%)] overflow-hidden rounded-[var(--aurora-radius-panel,20px)] bg-[var(--aurora-surface,var(--card))] text-[var(--aurora-text-primary,var(--ink))] shadow-[var(--aurora-elevation-panel,0_30px_80px_rgba(15,23,42,0.25))]"
       >
-        <div className="flex items-center justify-between border-b border-[var(--line)] px-5 py-[18px]">
+        <div className="flex items-center justify-between border-b border-[var(--aurora-border-subtle,var(--line))] px-5 py-[18px]">
           <h2 id={titleId} className="m-0 text-[19px] font-extrabold">
             {title}
           </h2>
@@ -67,7 +68,7 @@ export function Modal({
         </div>
         <div className="max-h-[72vh] overflow-auto p-5">{children}</div>
         {footer ? (
-          <div className="flex justify-end gap-2 border-t border-[var(--line)] bg-[var(--soft)] px-5 py-3.5">
+          <div className="flex justify-end gap-2 border-t border-[var(--aurora-border-subtle,var(--line))] bg-[var(--aurora-surface-muted,var(--soft))] px-5 py-3.5">
             {footer}
           </div>
         ) : null}

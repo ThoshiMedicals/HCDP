@@ -89,6 +89,42 @@ export const SCREENSHOT_REGIONS = [
   "detail-pane",
 ] as const;
 
+/** Aurora Phase A recommended geometry (deferred vs Decision A operational contract). */
+export const AURORA_RECOMMENDED_DIMENSIONS_PX = {
+  sidebarExpandedMin: 264,
+  sidebarExpandedMax: 288,
+  sidebarCollapsedMin: 72,
+  sidebarCollapsedMax: 80,
+  topbarMin: 60,
+  topbarMax: 68,
+} as const;
+
+/** Aurora spacing scale (8px grid + 4px half-steps). */
+export const AURORA_SPACE_PX = [4, 8, 12, 16, 24, 32, 40, 48, 64] as const;
+
+export const AURORA_MOTION_MS = {
+  micro: { min: 100, max: 160, token: 120 },
+  surface: { min: 140, max: 180, token: 160 },
+  drawer: { min: 180, max: 240, token: 200 },
+  context: { min: 220, max: 300, token: 240 },
+} as const;
+
+export const AURORA_PRINCIPLE = "Glass for navigation; clarity for work." as const;
+
+export const AURORA_NAV_FAMILIES_PROPOSED = [
+  "My Work",
+  "Executive",
+  "Operations",
+  "People",
+  "Rostering",
+  "Finance",
+  "Governance",
+  "Assets & Facilities",
+  "Communications",
+  "Digital & Security",
+  "Platform",
+] as const;
+
 export function effectiveSidebarCollapsed(
   viewportWidth: number,
   userCollapsed: boolean

@@ -592,23 +592,32 @@ html.theme-dark .brand-compact strong, body.theme-dark .brand-compact strong {
   /* Family/nav cue accent (not a global branded theme) */
   --sidebar-champagne: #d6be97;
   width: var(--sidebar-current, var(--sidebar));
-  background: var(--sidebar-navy);
-  border-right: 1px solid var(--sidebar-line);
+  /* Aurora: restrained glass chrome - Decision A --dp-bg-nav colour retained */
+  background: var(--aurora-nav-chrome, var(--sidebar-navy));
+  backdrop-filter: blur(var(--aurora-glass-blur, 12px)) saturate(var(--aurora-glass-saturate, 1.15));
+  -webkit-backdrop-filter: blur(var(--aurora-glass-blur, 12px)) saturate(var(--aurora-glass-saturate, 1.15));
+  border-right: 1px solid var(--aurora-glass-border, var(--sidebar-line));
   color: var(--sidebar-text);
+  transition: width var(--aurora-motion-context, 240ms) var(--aurora-motion-easing, ease),
+    background-color var(--aurora-motion-surface, 160ms) var(--aurora-motion-easing, ease);
 }
 html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
   --sidebar-champagne: #d6be97;
 }
 .pulse-top-ribbon {
   min-height: var(--topbar-height);
-  background: var(--dp-bg-topbar);
+  background: var(--aurora-topbar-chrome, var(--dp-bg-topbar));
+  backdrop-filter: blur(var(--aurora-glass-blur, 12px)) saturate(var(--aurora-glass-saturate, 1.15));
+  -webkit-backdrop-filter: blur(var(--aurora-glass-blur, 12px)) saturate(var(--aurora-glass-saturate, 1.15));
+  border-bottom: 1px solid var(--aurora-border-subtle, var(--dp-border-subtle));
+  transition: background-color var(--aurora-motion-surface, 160ms) var(--aurora-motion-easing, ease);
 }
 .v33-nav-tools {
   padding: 10px 12px;
   border-bottom: 1px solid var(--sidebar-line);
   display: grid;
   gap: 9px;
-  background: var(--sidebar-navy);
+  background: transparent;
 }
 .v33-nav-search {
   height: 38px;
@@ -894,7 +903,7 @@ html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
   align-items: start;
   column-gap: 10px;
   row-gap: 8px;
-  background: var(--sidebar-navy);
+  background: transparent;
   flex-shrink: 0;
 }
 .sidebar-user .avatar {
@@ -942,7 +951,7 @@ html.theme-dark .pulse-sidebar, body.theme-dark .pulse-sidebar {
 }
 
 html.theme-dark .v33-nav-tools, body.theme-dark .v33-nav-tools, html.theme-dark .v33-nav-search, body.theme-dark .v33-nav-search {
-  background: var(--sidebar-navy);
+  background: transparent;
   border-color: var(--sidebar-line);
 }
 html.theme-dark .v33-nav-search input, body.theme-dark .v33-nav-search input {

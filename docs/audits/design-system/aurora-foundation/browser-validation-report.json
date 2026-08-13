@@ -1,0 +1,1113 @@
+{
+  "generatedAt": "2026-08-13T22:26:18.868Z",
+  "principle": "Glass for navigation; clarity for work.",
+  "claims": {
+    "wcagCompliant": false,
+    "pixelParity": false,
+    "productionApproved": false
+  },
+  "viewports": [
+    {
+      "name": "1440x900",
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "name": "1280x800",
+      "w": 1280,
+      "h": 800
+    },
+    {
+      "name": "1024x768",
+      "w": 1024,
+      "h": 768
+    },
+    {
+      "name": "768x1024",
+      "w": 768,
+      "h": 1024
+    },
+    {
+      "name": "430-mobile",
+      "w": 430,
+      "h": 932
+    },
+    {
+      "name": "390x844",
+      "w": 390,
+      "h": 844
+    }
+  ],
+  "themes": [
+    "light",
+    "dark",
+    "system-os-light",
+    "system-os-dark",
+    "executive-blue",
+    "medical-emerald",
+    "reduced-motion"
+  ],
+  "screenshotCount": 60,
+  "assertionTotals": {
+    "total": 104,
+    "passed": 104,
+    "failed": 0
+  },
+  "shots": [
+    {
+      "file": "harness-light-1440x900.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-focus-light-1440x900.png",
+      "kind": "focus",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-drawer-light-1440x900.png",
+      "kind": "drawer",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-light-1280x800.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-light-1024x768.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-light-768x1024.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-light-430-mobile.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-mobile-nav-430-mobile.png",
+      "kind": "mobile-nav",
+      "theme": "light",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-light-390x844.png",
+      "kind": "harness",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-focus-light-390x844.png",
+      "kind": "focus",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-drawer-light-390x844.png",
+      "kind": "drawer",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-mobile-nav-390x844.png",
+      "kind": "mobile-nav",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-dark-1440x900.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-dark-1280x800.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-dark-1024x768.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-dark-768x1024.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-dark-430-mobile.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-dark-390x844.png",
+      "kind": "harness",
+      "theme": "dark",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-system-os-light-1440x900.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-system-os-light-1280x800.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-system-os-light-1024x768.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-system-os-light-768x1024.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-system-os-light-430-mobile.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-system-os-light-390x844.png",
+      "kind": "harness",
+      "theme": "system-os-light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-system-os-dark-1440x900.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-system-os-dark-1280x800.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-system-os-dark-1024x768.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-system-os-dark-768x1024.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-system-os-dark-430-mobile.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-system-os-dark-390x844.png",
+      "kind": "harness",
+      "theme": "system-os-dark",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-executive-blue-1440x900.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-executive-blue-1280x800.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-executive-blue-1024x768.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-executive-blue-768x1024.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-executive-blue-430-mobile.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-executive-blue-390x844.png",
+      "kind": "harness",
+      "theme": "executive-blue",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-medical-emerald-1440x900.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-medical-emerald-1280x800.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-medical-emerald-1024x768.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-medical-emerald-768x1024.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-medical-emerald-430-mobile.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-medical-emerald-390x844.png",
+      "kind": "harness",
+      "theme": "medical-emerald",
+      "viewport": "390x844"
+    },
+    {
+      "file": "harness-reduced-motion-1440x900.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "harness-reduced-motion-1280x800.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "harness-reduced-motion-1024x768.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "harness-reduced-motion-768x1024.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "harness-reduced-motion-430-mobile.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "harness-reduced-motion-390x844.png",
+      "kind": "harness",
+      "theme": "reduced-motion",
+      "viewport": "390x844"
+    },
+    {
+      "file": "shell-light-1440x900.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "shell-light-1280x800.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "shell-light-1024x768.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "shell-light-768x1024.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "shell-light-430-mobile.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "shell-light-390x844.png",
+      "kind": "shell",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "file": "shell-dark-1440x900.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "1440x900"
+    },
+    {
+      "file": "shell-dark-1280x800.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "1280x800"
+    },
+    {
+      "file": "shell-dark-1024x768.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "1024x768"
+    },
+    {
+      "file": "shell-dark-768x1024.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "shell-dark-430-mobile.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "file": "shell-dark-390x844.png",
+      "kind": "shell",
+      "theme": "dark",
+      "viewport": "390x844"
+    }
+  ],
+  "assertions": [
+    {
+      "ok": true,
+      "id": "overflow-light-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "focus-light-1440x900",
+      "reason": "keyboard focus captured"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open-light-1440x900",
+      "reason": "drawer opens"
+    },
+    {
+      "ok": true,
+      "id": "drawer-escape-light-1440x900",
+      "reason": "drawer closes on Escape"
+    },
+    {
+      "ok": true,
+      "id": "overflow-light-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-light-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-light-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-light-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open-430-mobile",
+      "reason": "mobile nav aria-expanded true"
+    },
+    {
+      "ok": true,
+      "id": "overflow-light-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-light-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "light",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "focus-light-390x844",
+      "reason": "keyboard focus captured"
+    },
+    {
+      "ok": true,
+      "id": "drawer-open-light-390x844",
+      "reason": "drawer opens"
+    },
+    {
+      "ok": true,
+      "id": "drawer-escape-light-390x844",
+      "reason": "drawer closes on Escape"
+    },
+    {
+      "ok": true,
+      "id": "mobile-nav-open-390x844",
+      "reason": "mobile nav aria-expanded true"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-dark-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "dark",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-dark-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "dark",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-light-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-light",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-light-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-light",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-system-os-dark-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "system-os-dark",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-system-os-dark-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "system-os-dark",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-executive-blue-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "executive-blue",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-executive-blue-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "executive-blue",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-medical-emerald-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "medical-emerald",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-medical-emerald-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "medical-emerald",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-1440x900",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-1440x900",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "1440x900"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-1280x800",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-1280x800",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "1280x800"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-1024x768",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-1024x768",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "1024x768"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-768x1024",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-768x1024",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "768x1024"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-430-mobile",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-430-mobile",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "430-mobile"
+    },
+    {
+      "ok": true,
+      "id": "overflow-reduced-motion-390x844",
+      "reason": "no horizontal overflow",
+      "theme": "reduced-motion",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "critical-solid-reduced-motion-390x844",
+      "reason": "critical surface is not glass",
+      "theme": "reduced-motion",
+      "viewport": "390x844"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-1440x900",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-1280x800",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-1024x768",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-768x1024",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-430-mobile",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-light-390x844",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-1440x900",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-1280x800",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-1024x768",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-768x1024",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-430-mobile",
+      "reason": "shell nav present"
+    },
+    {
+      "ok": true,
+      "id": "shell-nav-dark-390x844",
+      "reason": "shell nav present"
+    }
+  ],
+  "notes": [
+    "Executive Blue / Medical Emerald personality hooks are harness-only; product appearance remains light|dark|system.",
+    "Decision A shell dimensions (240/72/48) preserved.",
+    "Static harness proves shared primitive surfaces; live shell capture is optional via HCDP_BASE_URL."
+  ]
+}

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
+@import "../styles/aurora-tokens.css";
 
 @theme inline {
   --color-background: var(--v34-canvas);
@@ -116,8 +117,9 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus-ring, var(--accent-champagne));
-  outline-offset: 2px;
+  outline: var(--aurora-focus-ring-width, 2px) solid
+    var(--aurora-focus-ring, var(--focus-ring, var(--accent-champagne)));
+  outline-offset: var(--aurora-focus-ring-offset, 2px);
 }
 
 @media (prefers-reduced-motion: reduce) {

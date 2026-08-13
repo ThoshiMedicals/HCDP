@@ -12,10 +12,11 @@ export function Panel({
   return (
     <div
       className={cn(
-        "min-w-0 max-w-full rounded-[var(--radius)] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]",
+        "min-w-0 max-w-full rounded-[var(--aurora-radius-card,16px)] border border-[var(--aurora-border-subtle,var(--v34-card-line))] bg-[var(--aurora-surface,var(--card))] text-[var(--aurora-text-primary,var(--ink))] shadow-[var(--aurora-elevation-raised,var(--v34-card-shadow))]",
         pad && "p-5",
         className
       )}
+      data-aurora-surface="content"
     >
       {children}
     </div>
@@ -27,5 +28,5 @@ export function PanelTitle({ children }: { children: React.ReactNode }) {
 }
 
 export function PanelSub({ children }: { children: React.ReactNode }) {
-  return <p className="hcdp-type-body m-0 text-[var(--muted)]">{children}</p>;
+  return <p className="hcdp-type-body m-0 text-[var(--aurora-text-muted,var(--muted))]">{children}</p>;
 }

@@ -1,0 +1,219 @@
+/**
+ * MCOP Aurora semantic tokens (Phase A)
+ * Additive layer — Decision A `--dp-*` / shell dimensions remain contractual.
+ * Principle: Glass for navigation; clarity for work.
+ */
+
+:root {
+  /* ===== Canvas / surfaces ===== */
+  --aurora-canvas: var(--dp-bg-canvas);
+  --aurora-surface: var(--dp-bg-surface);
+  --aurora-surface-raised: var(--hcdp-surface-raised, var(--dp-bg-surface));
+  --aurora-surface-muted: color-mix(in srgb, var(--dp-bg-canvas) 70%, var(--dp-bg-surface));
+  --aurora-surface-critical: var(--hcdp-status-critical-surface);
+
+  /* Navigation chrome (glass material — chrome only) */
+  --aurora-nav-solid: var(--dp-bg-nav);
+  --aurora-nav-chrome: color-mix(in srgb, var(--dp-bg-nav) 86%, transparent);
+  --aurora-nav-text: var(--dp-text-on-nav);
+  --aurora-nav-text-muted: color-mix(in srgb, var(--dp-text-on-nav) 72%, transparent);
+  --aurora-topbar-chrome: color-mix(in srgb, var(--dp-bg-topbar) 78%, transparent);
+  --aurora-glass-bg: var(--aurora-nav-chrome);
+  --aurora-glass-border: color-mix(in srgb, var(--dp-text-on-nav) 22%, transparent);
+  --aurora-glass-blur: 12px;
+  --aurora-glass-saturate: 1.15;
+
+  /* Text hierarchy */
+  --aurora-text-primary: var(--dp-text-primary);
+  --aurora-text-secondary: var(--dp-text-secondary);
+  --aurora-text-muted: var(--hcdp-text-muted, var(--dp-text-secondary));
+  --aurora-text-inverse: #f8fafc;
+
+  /* Borders */
+  --aurora-border-subtle: var(--dp-border-subtle);
+  --aurora-border-strong: var(--dp-border-strong);
+  --aurora-border-focus: var(--dp-focus-ring);
+
+  /* Accent */
+  --aurora-accent: var(--dp-accent-primary);
+  --aurora-accent-hover: var(--dp-accent-primary-hover);
+  --aurora-accent-muted: color-mix(in srgb, var(--dp-accent-primary) 16%, var(--dp-bg-surface));
+  --aurora-accent-contrast: var(--hcdp-on-action, #ffffff);
+
+  /* Status */
+  --aurora-success: var(--hcdp-status-success-text);
+  --aurora-success-surface: var(--hcdp-status-success-surface);
+  --aurora-warning: var(--hcdp-status-warning-text);
+  --aurora-warning-surface: var(--hcdp-status-warning-surface);
+  --aurora-danger: var(--hcdp-status-critical-text);
+  --aurora-danger-surface: var(--hcdp-status-critical-surface);
+  --aurora-info: var(--hcdp-status-info-text);
+  --aurora-info-surface: var(--hcdp-status-info-surface);
+
+  /* Focus */
+  --aurora-focus-ring: var(--dp-focus-ring);
+  --aurora-focus-ring-width: 2px;
+  --aurora-focus-ring-offset: 2px;
+
+  /* Spacing — 8px grid with 4px half-steps */
+  --aurora-space-1: 4px;
+  --aurora-space-2: 8px;
+  --aurora-space-3: 12px;
+  --aurora-space-4: 16px;
+  --aurora-space-5: 24px;
+  --aurora-space-6: 32px;
+  --aurora-space-7: 40px;
+  --aurora-space-8: 48px;
+  --aurora-space-9: 64px;
+
+  /* Radius */
+  --aurora-radius-control-sm: 8px;
+  --aurora-radius-input: 10px;
+  --aurora-radius-button: 12px;
+  --aurora-radius-card-compact: 12px;
+  --aurora-radius-card: 16px;
+  --aurora-radius-panel: 20px;
+  --aurora-radius-toolbar: 20px;
+  --aurora-radius-pill: 999px;
+
+  /* Elevation (content / raised — not decorative glass cards) */
+  --aurora-elevation-raised: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.04);
+  --aurora-elevation-overlay: 0 2px 8px rgb(15 23 42 / 0.08), 0 1px 2px rgb(15 23 42 / 0.04);
+  --aurora-elevation-panel: 0 4px 16px rgb(15 23 42 / 0.1), 0 1px 3px rgb(15 23 42 / 0.05);
+
+  /* Motion */
+  --aurora-motion-micro: 120ms;
+  --aurora-motion-surface: 160ms;
+  --aurora-motion-drawer: 200ms;
+  --aurora-motion-context: 240ms;
+  --aurora-motion-easing: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Control heights / touch */
+  --aurora-control-height-sm: 32px;
+  --aurora-control-height: 40px;
+  --aurora-control-height-lg: 44px;
+  --aurora-touch-target-min: 44px;
+
+  /* Density */
+  --aurora-density-comfortable-pad: 16px;
+  --aurora-density-compact-pad: 10px;
+  --aurora-density-comfortable-row: 44px;
+  --aurora-density-compact-row: 36px;
+
+  /* Breakpoint mirrors (informational; Decision A behaviour unchanged) */
+  --aurora-bp-mobile-max: 767px;
+  --aurora-bp-tablet-min: 768px;
+  --aurora-bp-desktop-min: 1280px;
+  --aurora-container-max: var(--content-max-width, 1440px);
+
+  /* Overlay scrim for menus / drawers (not glass content) */
+  --aurora-overlay: rgb(15 23 42 / 0.4);
+
+  /* Compatibility: prefer Aurora names without breaking legacy consumers */
+  --aurora-compat-radius-card: var(--aurora-radius-card);
+}
+
+html.theme-dark,
+body.theme-dark {
+  --aurora-surface-muted: color-mix(in srgb, var(--dp-bg-canvas) 55%, var(--dp-bg-surface));
+  --aurora-nav-chrome: color-mix(in srgb, var(--dp-bg-nav) 82%, transparent);
+  --aurora-topbar-chrome: color-mix(in srgb, var(--dp-bg-topbar) 72%, transparent);
+  --aurora-glass-border: color-mix(in srgb, var(--dp-text-on-nav) 28%, transparent);
+  --aurora-glass-blur: 14px;
+  --aurora-text-inverse: #0f172a;
+  --aurora-elevation-raised: 0 1px 2px rgb(0 0 0 / 0.35), 0 1px 3px rgb(0 0 0 / 0.25);
+  --aurora-elevation-overlay: 0 2px 10px rgb(0 0 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.3);
+  --aurora-elevation-panel: 0 4px 18px rgb(0 0 0 / 0.5), 0 1px 3px rgb(0 0 0 / 0.35);
+  --aurora-overlay: rgb(0 0 0 / 0.55);
+}
+
+/* Optional personality hooks for design review only — not product-selectable themes.
+   Decision A / P1-B1 keep appearance modes at light|dark|system. */
+:root[data-aurora-personality="executive-blue"] {
+  --aurora-accent: #2563eb;
+  --aurora-accent-hover: #1d4ed8;
+  --aurora-accent-muted: #dbeafe;
+}
+
+:root[data-aurora-personality="medical-emerald"] {
+  --aurora-accent: #0f766e;
+  --aurora-accent-hover: #0d9488;
+  --aurora-accent-muted: #ccfbf1;
+}
+
+/* Shared focus utility */
+.aurora-focus-ring:focus-visible {
+  outline: var(--aurora-focus-ring-width) solid var(--aurora-focus-ring);
+  outline-offset: var(--aurora-focus-ring-offset);
+}
+
+/* Content surfaces — always solid */
+.aurora-surface {
+  background: var(--aurora-surface);
+  color: var(--aurora-text-primary);
+  border: 1px solid var(--aurora-border-subtle);
+  border-radius: var(--aurora-radius-card);
+  box-shadow: var(--aurora-elevation-raised);
+}
+
+.aurora-surface--raised {
+  background: var(--aurora-surface-raised);
+  border-radius: var(--aurora-radius-panel);
+  box-shadow: var(--aurora-elevation-panel);
+}
+
+.aurora-surface--critical {
+  background: var(--aurora-surface-critical);
+  border-color: var(--hcdp-status-critical-border);
+  color: var(--aurora-danger);
+  box-shadow: none;
+}
+
+.aurora-surface--glass {
+  /* Intentionally restricted: chrome helpers only — do not use on operational cards */
+  background: var(--aurora-glass-bg);
+  border: 1px solid var(--aurora-glass-border);
+  backdrop-filter: blur(var(--aurora-glass-blur)) saturate(var(--aurora-glass-saturate));
+  -webkit-backdrop-filter: blur(var(--aurora-glass-blur)) saturate(var(--aurora-glass-saturate));
+}
+
+/* Skeleton */
+.aurora-skeleton {
+  display: block;
+  border-radius: var(--aurora-radius-input);
+  background: linear-gradient(
+    90deg,
+    var(--aurora-surface-muted) 0%,
+    color-mix(in srgb, var(--aurora-surface-muted) 40%, var(--aurora-surface)) 50%,
+    var(--aurora-surface-muted) 100%
+  );
+  background-size: 200% 100%;
+  animation: aurora-skeleton-shimmer var(--aurora-motion-context) var(--aurora-motion-easing) infinite;
+}
+
+@keyframes aurora-skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-skeleton {
+    animation: none;
+    background: var(--aurora-surface-muted);
+  }
+}
+
+/* Density helpers for later table/form consumers */
+[data-aurora-density="comfortable"] {
+  --aurora-density-pad: var(--aurora-density-comfortable-pad);
+  --aurora-density-row: var(--aurora-density-comfortable-row);
+}
+
+[data-aurora-density="compact"] {
+  --aurora-density-pad: var(--aurora-density-compact-pad);
+  --aurora-density-row: var(--aurora-density-compact-row);
+}
