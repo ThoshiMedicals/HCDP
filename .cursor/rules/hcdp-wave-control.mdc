@@ -1,5 +1,5 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1 accepted with qualifications; PPA planned only
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1 and P1-B2 accepted with qualifications; PPA planned only
 alwaysApply: true
 ---
 
@@ -16,7 +16,9 @@ Wave 6 Batch 5 accepted baseline: `db9550bac5e3995b095d3143b49e17549e81582b`
 Wave 6 Batch 6 accepted technical target: `ce1f4af68917c9988efff327d521d94b8289f2fc` (owner accepted with qualifications; closed 29 July 2026)  
 Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`  
 Accepted P1-B1 tip: `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (owner accepted with qualifications; closed 2026-08-13)  
-P1-B1 evidence: `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`
+P1-B1 evidence: `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`  
+Accepted P1-B2 tip: `66f3f8d27803f5b8d24043639d21b9069f58e77a` (owner accepted with qualifications; closed 2026-08-13)  
+P1-B2 evidence: `docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`
 
 ```text
 Wave 1A: Owner accepted and frozen
@@ -30,16 +32,18 @@ Wave 6 / M07 Batches 1–6: Owner accepted and closed within approved scope
 Wave 6 / M07 PPA: Planned only — Prior-Period Adjustment; not authorised for implementation
 P1-B1 (SHARED Decision A shell): Owner accepted with qualifications and closed at
   fdb2beb5b0e786e42d358efa9875b6bba52666cd (2026-08-13) — NOT overall P1 / production acceptance
-P1-B2 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+P1-B2 (shell truthfulness / demo honesty): Owner accepted with qualifications and closed at
+  66f3f8d27803f5b8d24043639d21b9069f58e77a (2026-08-13) — NOT overall P1 / production acceptance
+P1-B3 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
 P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
-  closed 2026-08-13 — decision closure only; P1-B2 implementation NOT authorised
+  closed 2026-08-13; batch closed by P1-B2-OWNER-ACCEPT-2026-08-13
 OWN-P1-016: remains open
 ```
 
 ## Order
 
 0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → P1-B2 honesty decisions recorded → stop (do not begin P1-B2–P1-B8 until expressly authorised)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → stop (do not begin P1-B3–P1-B8 until expressly authorised)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -84,6 +88,6 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
 - Claim production approval
 - Begin Module 8
-- Begin P1-B2 through P1-B8 without separate explicit owner authorisation
-- Treat P1-B1 acceptance as overall Programme P1 or production acceptance
-- Resolve `OWN-P1-016` by implication from P1-B1 acceptance
+- Begin P1-B3 through P1-B8 without separate explicit owner authorisation
+- Treat P1-B1 or P1-B2 acceptance as overall Programme P1 or production acceptance
+- Resolve `OWN-P1-016` by implication from P1-B1 or P1-B2 acceptance

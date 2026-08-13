@@ -1,14 +1,16 @@
 # P1-B2 Owner-Decision Briefing — Shell truthfulness / inactive controls / demo honesty
 
 **Document type:** Owner-decision briefing + recorded owner responses  
-**Status stamp:** `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` for **P1-B2** (implementation authorised and delivered; owner acceptance not recorded)  
+**Status stamp:** `P1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)` for **P1-B2** at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`)  
+**P1-B3–P1-B8:** remain unauthorised. Overall Programme P1 is **not** complete.  
 **Branch:** `cursor/p1-b2-shell-truthfulness` (source tip `300b250f6970ef23254df8630a5fd0145000129e`)  
 **Accepted P1-B1 implementation tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`  
 **Briefing date:** 2026-08-13  
 **Owner decisions recorded:** OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 — **closed 2026-08-13** (see register)  
 
 > **Owner decisions OWN-P1-004 / 005 / 008 / 017 are recorded closed in the owner-decision register.**  
-> **P1-B2 implementation was expressly authorised and delivered for owner review; owner acceptance remains pending.**  
+> **P1-B2 implementation was expressly authorised, delivered, and owner-accepted with qualifications (2026-08-13).**  
+> P1-B3–P1-B8 remain unauthorised. No automatic progression.  
 > Historical recommendation cards below are preserved for audit; authoritative outcomes are in the register and §14.
 
 **Authoritative registers (do not treat this briefing as a replacement):**

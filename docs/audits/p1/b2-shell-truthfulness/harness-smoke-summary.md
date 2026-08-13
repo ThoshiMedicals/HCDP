@@ -16,6 +16,6 @@
 - Fabricated historical shot archived under `historical-superseded-dom-fabricated/`.
 
 Local evidence only — GitHub CI not claimed.
-P1-B2 owner acceptance remains pending.
+P1-B2 owner accepted with qualifications and closed (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.
 P1-B3–P1-B8 remain unauthorised.
 OWN-P1-016 remains open.

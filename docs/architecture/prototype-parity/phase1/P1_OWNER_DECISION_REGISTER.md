@@ -1,12 +1,13 @@
 # P1 Owner-Decision Register
 
-**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
+**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **P1-B3–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
 **Note:** Conflict register openCount remains 0 for prior DEC-* items. This register lists **P1 planning decisions** required, closed, or deferrable.  
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.  
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.  
 **Owner-decision date (001–003, 016 opened):** `2026-08-11`  
 **P1-B1 qualified acceptance date:** `2026-08-13`  
-**P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13` (decision closure only; **P1-B2 remains unauthorised**)
+**P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13`  
+**P1-B2 qualified acceptance date:** `2026-08-13` (`P1-B2-OWNER-ACCEPT-2026-08-13`)
 
 ## Decisions required before any P1 implementation
 
@@ -93,8 +94,12 @@ Qualifications (binding):
   - No GitHub CI pass claimed
   - Full Decision A pixel-difference deferred to controlled later batch
   - Sarah/Neil demo identity consistency remains P1-B2
+    (historical B1 qualification text preserved; satisfaction noted under
+     P1-B2-OWNER-ACCEPT-2026-08-13 and P1_B1_IMPLEMENTATION_EVIDENCE.md)
   - OWN-P1-016 remains open
   - P1-B2 through P1-B8 remain separately unauthorised
+    (historical at B1 acceptance time; P1-B2 later closed separately —
+     P1-B3–P1-B8 remain unauthorised)
   - No production approval or readiness claim
   - No PR, merge or deployment authorised
   - No automatic progression to P1-B2
@@ -106,6 +111,65 @@ Explicitly does NOT authorise: P1-B2–P1-B8; automatic progression; PR; merge;
 Evidence pointer: docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md;
                   docs/audits/p1/P1_B1_VISUAL_QA_NOTES.md;
                   P1_EXECUTION_BATCHES.md; branch cursor/p1-b1-shared-shell-foundation
+```
+
+### P1-B1 qualification satisfaction note (Sarah/Neil — recorded with P1-B2 acceptance)
+
+The historical P1-B1 qualification “Sarah/Neil demo identity consistency remains P1-B2” is **satisfied for the accepted demo runtime** by P1-B2 at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (OWN-P1-017): global demo current-user chrome (Sidebar, Command Centre greeting/menu, Action Inbox signed-in, Organisation overview) follows the active identity. This note does **not** rewrite or reopen `P1-B1-OWNER-ACCEPT-2026-08-13`. Production authentication remains outside P1-B2. Act-as chrome under production enforcement remains a later security/authentication consideration (see P1-B2 qualifications).
+
+## P1-B2 qualified owner acceptance (recorded 2026-08-13)
+
+Closing this acceptance record closes **P1-B2 only**. It does **not** authorise P1-B3–P1-B8, resolve `OWN-P1-016`, claim overall Programme P1 completion, or authorise PR / merge / deployment / production. It does **not** authorise automatic progression to P1-B3.
+
+```text
+Decision ID: P1-B2-OWNER-ACCEPT-2026-08-13
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Outcome: Owner accepted with qualifications — P1-B2 CLOSED
+         Accepted branch: cursor/p1-b2-shell-truthfulness
+         Accepted implementation tip:
+         66f3f8d27803f5b8d24043639d21b9069f58e77a
+         Implementation sequence:
+         d425adaad2ac8f29de893ca0dd996e147ad6febe
+         66f3f8d27803f5b8d24043639d21b9069f58e77a
+         Source/planning tip:
+         300b250f6970ef23254df8630a5fd0145000129e
+         Accepted scope: P1-B2 shell truthfulness, inactive-control disposition,
+         QA/demo gating and demonstration-identity consistency only
+         Validation basis: verified local tests, validators, build, visual harness
+         GitHub CI: none — not passed (no Actions checks on branch)
+Qualifications (binding):
+  - Validation evidence is local only
+  - No GitHub CI pass claimed (no GitHub Actions checks)
+  - QA/demo tools and activation are forced off under production enforcement
+  - Demo Act-as chrome may still render under production-enforcement builds
+  - P1-B2 does not constitute production-authentication approval
+  - Any production treatment of Act-as chrome remains deferred to the
+    appropriate production-authentication/security batch
+  - Topbar Export and Enterprise MFA remain unavailable and non-operational
+  - Command Centre and Organisation exports remain browser-local demos only
+  - No export-processing or reporting backend is accepted
+  - Command Centre-only multi-clinic selection remains an accepted P1 difference
+  - Shell-wide multi-clinic selection is not accepted or authorised
+  - Full WCAG compliance is not claimed
+  - Pixel-level Decision A parity remains deferred to its controlled later batch
+  - Intermittent Next.js development hot-reload JSON.parse 500 responses remain
+    a recorded development-environment limitation
+  - OWN-P1-016 remains open
+  - P1-B3 through P1-B8 remain separately unauthorised
+  - Acceptance does not authorise a PR, merge, deployment or production release
+  - Acceptance does not authorise automatic progression to P1-B3
+  - Acceptance is not overall Programme P1 acceptance
+  - P1-B1 qualifications remain unchanged unless specifically satisfied by
+    accepted P1-B2 evidence (Sarah/Neil demo identity: satisfied for demo runtime)
+Authorises batch(es): Closure of P1-B2 only (qualified)
+Explicitly does NOT authorise: P1-B3–P1-B8; automatic progression; PR; merge;
+         deploy; production; SQL; MFA/IdP; export backend; shell-wide multi-select;
+         M25; PPA; payments; patient/clinical functionality; OWN-P1-016 resolution;
+         WCAG/security certification; overall Programme P1 completion
+Evidence pointer: docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md;
+                  docs/audits/p1/b2-shell-truthfulness/;
+                  P1_EXECUTION_BATCHES.md; branch cursor/p1-b2-shell-truthfulness
 ```
 
 ## P1-B2 shell-honesty owner decisions (recorded 2026-08-13) — decision closure only
@@ -235,7 +299,7 @@ Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; identity-context.tsx;
 Dependencies: Coordinates with OWN-P1-008; distinct from OWN-P1-016
 ```
 
-**Remaining before a separate P1-B2 express implementation authorisation:** owner decision blockers OWN-P1-004/005/008/017 are **closed**. P1-B2 itself remains **`P1 — PLANNED, NOT AUTHORISED`** until the owner expressly authorises that named batch. OWN-P1-006/007 (B3), OWN-P1-016, and deferred P1A/P1C decisions remain as registered.
+**P1-B2 status:** Owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`). OWN-P1-006/007 (B3), OWN-P1-016, and deferred P1A/P1C decisions remain as registered. **P1-B3–P1-B8 remain unauthorised.**
 
 ## Open architecture / data decision (production path)
 

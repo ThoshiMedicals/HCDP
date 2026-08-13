@@ -26,7 +26,7 @@ P1-B1 is **owner accepted with qualifications** at tip `fdb2beb5b0e786e42d358efa
 | --- | --- |
 | GitHub CI | No Actions/check status exists; local validation only |
 | Pixel comparison | Deferred to the controlled later batch |
-| Demo identity consistency | Sarah/Neil issue remains P1-B2 |
+| Demo identity consistency | Sarah/Neil issue remains P1-B2 *(historical B1 text)* — **satisfied for accepted demo runtime by P1-B2** at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`; OWN-P1-017). Production authentication remains outside P1-B2. |
 | Data architecture | `OWN-P1-016` remains open |
 | Later batches | P1-B2 through P1-B8 remain unauthorised |
 | Production | No production approval or readiness claim |
@@ -105,7 +105,7 @@ Ordinary users cannot activate artificial P1-B1 testing content via session/loca
 | `writeJson` swallows storage throws — native error hard to force | **Force hook removed**; error UI covered by source contract test; prior forced-error shot = historical/synthetic only |
 | Topbar search truncates on 390/430 (intentional `overflow-x-auto`) | **Deferred residual** — intentional scroll container; not page overflow |
 | Mobile sidebar group title truncation (“EXECUTIVE COMMA…”) | **Deferred** — later responsive/a11y polish (B4), not blocking shell foundation acceptance |
-| Demo Act-as identity vs Command Centre greeting (“Sarah” vs “Neil”) | **Deferred to P1-B2** honesty / stub disposition |
+| Demo Act-as identity vs Command Centre greeting (“Sarah” vs “Neil”) | **Deferred to P1-B2** honesty / stub disposition — **later satisfied for accepted demo runtime by P1-B2** (`66f3f8d…`, 2026-08-13); historical B1 deferral text preserved |
 | `OWN-P1-016` (localStorage vs SQL) | **Remains open** — not resolved |
 | Pixel-diff vs Decision A PNGs | **Remains for separate Visual QA / B8 close of GAP-010** |
 

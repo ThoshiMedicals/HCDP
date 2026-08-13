@@ -1,14 +1,14 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`. **P1-B2** implemented on `cursor/p1-b2-shell-truthfulness` — **owner acceptance pending** (not closed). **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
-**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B3–B8 never auto-start (OWN-P1-002). P1-B1 acceptance / P1-B2 implementation do **not** authorise automatic progression.
+**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B3–B8 never auto-start (OWN-P1-002). P1-B1 / P1-B2 acceptance do **not** authorise automatic progression.
 
 ## Batch index
 
 | Batch | Objective | Gap IDs (primary) | Status |
 | --- | --- | --- | --- |
 | P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
-| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` |
+| P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
@@ -51,18 +51,26 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — IMPLEMENTED, OWNER ACCEPTANCE PENDING` |
+| Status | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
+| Accepted tip | `66f3f8d27803f5b8d24043639d21b9069f58e77a` |
+| Accepted branch | `cursor/p1-b2-shell-truthfulness` |
+| Implementation sequence | `d425ada…` → `66f3f8d…` |
+| Accepted scope | Shell truthfulness, inactive-control disposition, QA/demo gating and demo-identity consistency only |
+| Validation basis | Verified local tests, validators, build and visual harness |
+| GitHub CI | None — not passed; local validation only |
 | Objective | Remove or truthfully label inactive/stub shell controls and demo surfaces |
 | Included gaps | 005, 006, 007, 018 (labels), 030 (honesty), 032, 071, 073 (+ identity via OWN-P1-017) |
-| Owner decisions (disposition) | **OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 closed 2026-08-13** — gaps not owner-closed |
-| Dependencies | P1-B1 closed; honesty dispositions recorded; express B2 authorisation **met by named implementation prompt** |
+| Gap disposition | 005 closed (B2 truthfulness); 006 closed (accepted CC-only difference); 007 closed for honesty/non-op labels (domain P2+); 018/030 partial; 032/073 closed for B2 portions; 071 accepted for B2 demo/seed honesty with broader residuals preserved |
+| Owner decisions (disposition) | **OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017 closed 2026-08-13**; batch closed by `P1-B2-OWNER-ACCEPT-2026-08-13` |
+| Dependencies | P1-B1 closed; honesty dispositions recorded; express B2 authorisation met; owner acceptance **met** |
 | Authorised changes (when named) | Copy, visibility, disablement, demo badges / QA gate, identity-chrome alignment — **no fake backends** |
 | Prohibited | Implementing payment/export backends as silent scope; enabling emergency/auth as toast-success; MFA/IdP; SQL; PR/merge/deploy |
 | Tests | Control labelling; no toast-as-success assertions; demo gate; identity chrome consistency |
-| Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; **express owner authorisation of P1-B2** — met |
-| Exit gate | Named honesty tests green; **owner accepts B2 tip** (pending); gaps dispositioned by evidence (not by decision alone) |
+| Entry gate | P1-B1 accepted; OWN-P1-004/005/008/017 closed; validators green; express owner authorisation of P1-B2 — met |
+| Exit gate | Named honesty tests green; **owner accepts B2 tip** — **met (2026-08-13)** |
 | Implementation evidence | [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md) |
-| Remaining blocker before close | **Owner acceptance of implementation tip** |
+| Owner decision point | Accept B2 tip before B3 — **met with qualifications; B3 remains unauthorised** |
+| Qualifications | See `P1-B2-OWNER-ACCEPT-2026-08-13` (local-only validation; no CI; production-auth / export-backend / shell-wide multi-select / WCAG / pixel-parity / OWN-P1-016 / B3–B8 / PR-merge-deploy / automatic progression excluded) |
 
 ## P1-B3 — Register / navigation hygiene
 
