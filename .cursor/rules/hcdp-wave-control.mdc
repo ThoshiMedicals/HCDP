@@ -1,5 +1,5 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1 and P1-B2 accepted with qualifications; PPA planned only
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1 and P1-B2 accepted with qualifications; OWN-P1-006/007 closed; P1-B3 unauthorised; PPA planned only
 alwaysApply: true
 ---
 
@@ -37,13 +37,17 @@ P1-B2 (shell truthfulness / demo honesty): Owner accepted with qualifications an
 P1-B3 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
 P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
   closed 2026-08-13; batch closed by P1-B2-OWNER-ACCEPT-2026-08-13
+P1-B3 register-hygiene dispositions: OWN-P1-006 (Option A Synchronise),
+  OWN-P1-007 (Option A Honesty-only labels) closed 2026-08-13 —
+  decision closure only; P1-B3 remains UNAUTHORISED; gaps not auto-closed
+OWN-P1-011: remains open (PPA product)
 OWN-P1-016: remains open
 ```
 
 ## Order
 
 0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → stop (do not begin P1-B3–P1-B8 until expressly authorised)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **OWN-P1-006/007 closed (disposition only)** → stop (do not begin P1-B3–P1-B8 until expressly authorised)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -89,5 +93,6 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Claim production approval
 - Begin Module 8
 - Begin P1-B3 through P1-B8 without separate explicit owner authorisation
-- Treat P1-B1 or P1-B2 acceptance as overall Programme P1 or production acceptance
-- Resolve `OWN-P1-016` by implication from P1-B1 or P1-B2 acceptance
+- Treat P1-B1 or P1-B2 acceptance, or OWN-P1-006/007 closure, as P1-B3 authorisation or overall Programme P1 / production acceptance
+- Resolve `OWN-P1-016` or `OWN-P1-011` by implication from P1-B1/B2 acceptance or OWN-P1-006/007 closure
+- Close gaps solely because their governing owner decisions are closed

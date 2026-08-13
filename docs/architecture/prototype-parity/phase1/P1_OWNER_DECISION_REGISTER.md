@@ -7,7 +7,8 @@
 **Owner-decision date (001–003, 016 opened):** `2026-08-11`  
 **P1-B1 qualified acceptance date:** `2026-08-13`  
 **P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13`  
-**P1-B2 qualified acceptance date:** `2026-08-13` (`P1-B2-OWNER-ACCEPT-2026-08-13`)
+**P1-B2 qualified acceptance date:** `2026-08-13` (`P1-B2-OWNER-ACCEPT-2026-08-13`)  
+**P1-B3 register-hygiene decisions closed:** `OWN-P1-006`, `OWN-P1-007` — `2026-08-13` (decision closure only; **P1-B3 remains unauthorised**)
 
 ## Decisions required before any P1 implementation
 
@@ -18,8 +19,8 @@
 | OWN-P1-003 | Name the first implementation batch? | **P1-B1** | Start coding (naming only) | **Closed (approved — naming only) — 2026-08-11** |
 | OWN-P1-004 | Inactive Topbar Export / MFA / New Entry: hide, truthful non-op, or defer backend to P2+? | Truthful non-op or hide in P1; backend not P1 | B2 | **Closed (approved) — 2026-08-13** |
 | OWN-P1-005 | Clinic multi-select: shell-wide vs Command Centre only (Accepted difference)? | Document Accepted difference OR schedule shell support in B2 | B2 / 006 | **Closed (approved) — 2026-08-13** |
-| OWN-P1-006 | Authorise M11 register/condition/section sync without domain change? | Yes | B3 / 011 | **Open** |
-| OWN-P1-007 | Authorise M07 History/Adjustments honesty labelling (not PPA product)? | Yes — honesty only | B3 / 012 / 079 | **Open** |
+| OWN-P1-006 | Authorise M11 register/condition/section sync without domain change? | Yes | B3 / 011 | **Closed (approved) — 2026-08-13** |
+| OWN-P1-007 | Authorise M07 History/Adjustments honesty labelling (not PPA product)? | Yes — honesty only | B3 / 012 / 079 | **Closed (approved) — 2026-08-13** |
 | OWN-P1-008 | Demo/QA menus: retain visible, gate behind flag, or remove from portal? | Gate behind explicit QA flag | B2 / 032 | **Closed (approved) — 2026-08-13** |
 | OWN-P1-017 | Demo identity consistency across current-user chrome? | Global Act-as identity drives current-user chrome; seed names as labelled demo data | B2 identity | **Closed (approved) — 2026-08-13** |
 
@@ -299,7 +300,78 @@ Evidence pointer: P1_B2_OWNER_DECISION_BRIEFING.md; identity-context.tsx;
 Dependencies: Coordinates with OWN-P1-008; distinct from OWN-P1-016
 ```
 
-**P1-B2 status:** Owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`). OWN-P1-006/007 (B3), OWN-P1-016, and deferred P1A/P1C decisions remain as registered. **P1-B3–P1-B8 remain unauthorised.**
+**P1-B2 status:** Owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`). OWN-P1-006/007 (B3 register hygiene) are **closed 2026-08-13** as disposition only — **P1-B3 remains unauthorised**. OWN-P1-016 and deferred P1A/P1C decisions remain as registered. **P1-B3–P1-B8 remain unauthorised.**
+
+## P1-B3 register-hygiene owner decisions (recorded 2026-08-13) — decision closure only
+
+Closing OWN-P1-006 and OWN-P1-007 records the owner’s register/navigation honesty dispositions for a future **P1-B3**. These closures do **not** authorise P1-B3 implementation, start coding, PR, merge, deployment, or automatic progression. Gaps remain open until implemented and accepted evidence exists. Briefing: [`P1_B3_OWNER_DECISION_BRIEFING.md`](./P1_B3_OWNER_DECISION_BRIEFING.md).
+
+### OWN-P1-006 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-006
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Selected option: Option A — Synchronise
+Outcome: Approved and closed — Synchronise M11 module-register metadata with the
+         verified TrainingWorkspace / Wave 3 implementation reality.
+         Update the registered section list to the verified runtime sections.
+         Replace condition legacy-html-fallback with strong-existing (existing valid
+         ImplementationCondition; label “Strong existing module”), as a metadata /
+         register correction only.
+Qualifications / interpretation:
+  - Metadata/register correction only — not a new M11 implementation
+  - Preserve the Wave 3 freeze and historical Wave 3 evidence
+  - Do not claim production approval, domain expansion, or acceptance beyond
+    existing Wave 3 evidence
+  - Do not modify M11 application/domain behaviour under this decision alone
+  - Gaps are NOT closed by this decision; implementation + acceptance evidence required
+Affected gaps (disposition guidance only — gaps NOT closed): P1-GAP-011
+Authorises: Register/section/condition synchronisation disposition for a future
+         authorised P1-B3
+Explicitly does NOT authorise: P1-B3 implementation; M11 domain changes; production;
+         PR; merge; deploy; automatic progression; OWN-P1-016 resolution
+Evidence pointer: P1_B3_OWNER_DECISION_BRIEFING.md; P1-GAP-011;
+         module-register.ts (M11); TrainingWorkspace.tsx; Wave 3 M11 acceptance docs
+Dependencies: After P1-B1/B2 closed; pairs with OWN-P1-007 before B3 authorisation
+```
+
+### OWN-P1-007 — Approved / closed (2026-08-13)
+
+```text
+Decision ID: OWN-P1-007
+Date: 2026-08-13
+Owner: Programme owner (recorded)
+Selected option: Option A — Honesty-only labels
+Outcome: Approved and closed — Authorise truthful M07 History and Adjustments
+         metadata and documentation labelling only.
+         History must be described as planned/non-operational where that remains
+         the verified state.
+         Adjustments must be described as the existing adjustment-preparation /
+         foundation capability, not as an authorised or complete PPA product.
+         Remove or qualify wording such as “PPA-1 foundation” where it could imply
+         PPA product approval.
+         Unlock/reopen is not equivalent to prior-period adjustment processing.
+Qualifications / interpretation:
+  - Honesty labelling only — not PPA product implementation
+  - OWN-P1-011 remains open and continues to govern any future PPA product decision
+  - No payment execution, M08 doctor pay, statutory/tax/award/super certification,
+    or production approval is authorised
+  - Preserve OWN-PPA-SEPARATE (PPA separately authorised; unlock ≠ PPA)
+  - Gaps are NOT closed by this decision; implementation + acceptance evidence required
+Affected gaps (disposition guidance only — gaps NOT closed): P1-GAP-012, P1-GAP-079
+Authorises: History/Adjustments honesty-labelling disposition for a future
+         authorised P1-B3
+Explicitly does NOT authorise: P1-B3 implementation; OWN-P1-011 / PPA product;
+         payment; M08; certification; PR; merge; deploy; production;
+         automatic progression
+Evidence pointer: P1_B3_OWNER_DECISION_BRIEFING.md; P1-GAP-012; P1-GAP-079;
+         CONF-P1C-006; section-meta.ts; AdjustmentsSection.tsx; PlannedSection.tsx;
+         WAVE6_M07_PPA_READINESS_AND_DESIGN.md
+Dependencies: Distinct from OWN-P1-011; after P1-B1/B2 closed; pairs with OWN-P1-006
+```
+
+**P1-B3 status after these closures:** Decision blockers OWN-P1-006/007 are **closed**. **P1-B3 itself remains `P1 — PLANNED, NOT AUTHORISED`** until the owner expressly authorises that named batch. Gaps 011/012/013/014/015/079 remain open until implemented and accepted.
 
 ## Open architecture / data decision (production path)
 

@@ -1,7 +1,7 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
-**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B3–B8 never auto-start (OWN-P1-002). P1-B1 / P1-B2 acceptance do **not** authorise automatic progression.
+**Stamp:** **P1-B1** and **P1-B2** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`. **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13 (disposition only). **P1-B3–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.  
+**Rule:** No batch auto-starts. `OWN-NO-P1-YET` cleared and **P1-B1** named (OWN-P1-001…003, 2026-08-11). Owner must still **expressly authorise** each later batch before coding; B3–B8 never auto-start (OWN-P1-002). Closing OWN-P1-006/007 does **not** authorise P1-B3. P1-B1 / P1-B2 acceptance do **not** authorise automatic progression.
 
 ## Batch index
 
@@ -9,7 +9,7 @@
 | --- | --- | --- | --- |
 | P1-B1 | SHARED Decision A shell foundation | 002, 003, 004, 010, 049, 051 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
-| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | `P1 — PLANNED, NOT AUTHORISED` (OWN-P1-006/007 closed; batch still unauthorised) |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
@@ -79,10 +79,10 @@
 | Status | `P1 — PLANNED, NOT AUTHORISED` |
 | Objective | Align registers/badges with reality; prevent false “implemented” scoring |
 | Included gaps | 011, 012, 013, 014 (SHARED subset), 015, 079 |
-| Authorised changes | `module-register.ts` metadata; doc pointers; M07 history/PPA-foundation labelling honesty |
-| Prohibited | Domain behaviour changes; historical evidence rewrite; M11 domain edits beyond register sync |
-| Tests | Register validator; nav section list assertions for M11 |
-| Owner decision | Confirm M11/M07 register sync authorised |
+| Authorised changes | None until express P1-B3 implementation authorisation. Disposition recorded: OWN-P1-006 Option A (M11 register sync to TrainingWorkspace; `strong-existing`); OWN-P1-007 Option A (M07 History/Adjustments honesty labels only). Gaps remain open. |
+| Prohibited | Domain behaviour changes; historical evidence rewrite; M11 domain edits beyond register sync; PPA product; payment; M08; treating unlock as PPA; gap auto-closure from decision recording; automatic progression |
+| Tests | Register validator; nav section list assertions for M11 (when authorised) |
+| Owner decision | **OWN-P1-006** and **OWN-P1-007** — **CLOSED (approved) 2026-08-13**. Batch authorisation remains separate and outstanding. |
 
 ## P1-B4 — Responsive / a11y / appearance evidence
 

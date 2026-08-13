@@ -2,6 +2,7 @@
 
 **P1-B1 status:** owner accepted with qualifications and **closed** (2026-08-13) at `fdb2beb5b0e786e42d358efa9875b6bba52666cd`.  
 **P1-B2 status:** owner accepted with qualifications and **closed** (2026-08-13) at `66f3f8d27803f5b8d24043639d21b9069f58e77a`.  
+**P1-B3 register-hygiene decisions:** OWN-P1-006 / OWN-P1-007 **closed** (2026-08-13) — disposition only.  
 **P1-B3–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
 
 | Pin | Value |
@@ -17,7 +18,7 @@
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1 and P1-B2 closed with qualifications; B3–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1 and P1-B2 closed with qualifications; OWN-P1-006/007 closed (disposition); B3–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 
@@ -28,7 +29,7 @@ Cross-links:
 - P1A ↔ P1B: [`p1a/P1A_12_P1B_RECONCILIATION.md`](./p1a/P1A_12_P1B_RECONCILIATION.md)
 - P1C ↔ P1A/P1B: [`p1c/P1C_10_RECONCILIATION_P1A_P1B.md`](./p1c/P1C_10_RECONCILIATION_P1A_P1B.md)
 
-## Owner decisions (planning + B1/B2 acceptance)
+## Owner decisions (planning + B1/B2 acceptance + B3 dispositions)
 
 Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.md) · Register: [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md).
 
@@ -38,9 +39,13 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-13 (P1-B2 honesty disposition):** OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017. Briefing: [`P1_B2_OWNER_DECISION_BRIEFING.md`](./P1_B2_OWNER_DECISION_BRIEFING.md).
 
-**Closed 2026-08-13 (qualified):** P1-B2 owner acceptance at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md). **P1-B3–P1-B8 remain unauthorised.** No automatic progression.
+**Closed 2026-08-13 (qualified):** P1-B2 owner acceptance at `66f3f8d27803f5b8d24043639d21b9069f58e77a` (`P1-B2-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md).
 
-**Open:** OWN-P1-006…007 (B3); OWN-P1-009…014 (as registered); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
+**Closed 2026-08-13 (P1-B3 register-hygiene disposition only):** OWN-P1-006 (Option A Synchronise), OWN-P1-007 (Option A Honesty-only labels). Briefing: [`P1_B3_OWNER_DECISION_BRIEFING.md`](./P1_B3_OWNER_DECISION_BRIEFING.md). **Does not authorise P1-B3 implementation.** Gaps not auto-closed.
+
+**P1-B3–P1-B8 remain unauthorised.** No automatic progression.
+
+**Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
 
@@ -79,7 +84,7 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B3–P1-B8 from P1-B1 / P1-B2 acceptance alone (no automatic progression)
+- Begin P1-B3–P1-B8 from P1-B1 / P1-B2 acceptance or from OWN-P1-006/007 closure alone (no automatic progression; decision closure ≠ batch authorisation)
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes
 - Claim legal compliance or security/accessibility certification from documentation review
