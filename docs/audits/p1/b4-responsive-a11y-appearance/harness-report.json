@@ -1,11 +1,11 @@
 {
   "batch": "P1-B4",
   "runtime": "production",
-  "baseUrl": "http://localhost:3021",
-  "generatedAt": "2026-08-13T22:54:59.529Z",
+  "baseUrl": "http://localhost:3022",
+  "generatedAt": "2026-08-13T23:48:29.115Z",
   "failures": 0,
-  "assertionCount": 765,
-  "passCount": 765,
+  "assertionCount": 825,
+  "passCount": 825,
   "failCount": 0,
   "assertionGroups": {
     "appearance": {
@@ -14,14 +14,14 @@
       "total": 232
     },
     "responsive": {
-      "pass": 262,
+      "pass": 294,
       "fail": 0,
-      "total": 262
+      "total": 294
     },
     "keyboard": {
-      "pass": 44,
+      "pass": 72,
       "fail": 0,
-      "total": 44
+      "total": 72
     },
     "reducedMotion": {
       "pass": 53,
@@ -84,7 +84,7 @@
     {
       "file": "dashboard-1280-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 158475
+      "bytes": 158337
     },
     {
       "file": "dashboard-1024-light-reduce.png",
@@ -104,7 +104,7 @@
     {
       "file": "dashboard-1024-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 108018
+      "bytes": 108019
     },
     {
       "file": "dashboard-768-light-reduce.png",
@@ -114,7 +114,7 @@
     {
       "file": "dashboard-768-dark-reduce.png",
       "runtime": "production",
-      "bytes": 117889
+      "bytes": 117737
     },
     {
       "file": "dashboard-768-system-os-light-reduce.png",
@@ -134,7 +134,7 @@
     {
       "file": "dashboard-430-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74570
+      "bytes": 74585
     },
     {
       "file": "dashboard-430-system-os-light-reduce.png",
@@ -144,7 +144,7 @@
     {
       "file": "dashboard-430-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 74424
+      "bytes": 74590
     },
     {
       "file": "dashboard-390-light-reduce.png",
@@ -164,7 +164,7 @@
     {
       "file": "dashboard-390-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 61987
+      "bytes": 61973
     },
     {
       "file": "action-inbox-1440-light-reduce.png",
@@ -224,7 +224,7 @@
     {
       "file": "b3-m11-nav-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 150001
+      "bytes": 150010
     },
     {
       "file": "b3-m11-nav-390-light-reduce.png",
@@ -279,12 +279,12 @@
     {
       "file": "hydrate-m04-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 126840
+      "bytes": 126747
     },
     {
       "file": "hydrate-m04-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 125545
+      "bytes": 125676
     },
     {
       "file": "hydrate-m04-390-light-reduce.png",
@@ -319,12 +319,12 @@
     {
       "file": "hydrate-m07-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 137989
+      "bytes": 137993
     },
     {
       "file": "hydrate-m07-1440-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 135744
+      "bytes": 135740
     },
     {
       "file": "hydrate-m07-390-light-reduce.png",
@@ -334,12 +334,12 @@
     {
       "file": "hydrate-m07-390-system-os-dark-reduce.png",
       "runtime": "production",
-      "bytes": 53739
+      "bytes": 53740
     },
     {
       "file": "interaction-mobile-nav-open-390-light-reduce.png",
       "runtime": "production",
-      "bytes": 60623
+      "bytes": 59581
     },
     {
       "file": "interaction-mobile-nav-closed-after-escape-390-light-reduce.png",
@@ -354,22 +354,22 @@
     {
       "file": "interaction-mobile-nav-open-430-light-reduce.png",
       "runtime": "production",
-      "bytes": 67617
+      "bytes": 66750
     },
     {
       "file": "interaction-mobile-nav-closed-after-escape-430-light-reduce.png",
       "runtime": "production",
-      "bytes": 76139
+      "bytes": 76281
     },
     {
       "file": "interaction-mobile-nav-closed-after-overlay-430-light-reduce.png",
       "runtime": "production",
-      "bytes": 76139
+      "bytes": 76281
     },
     {
       "file": "system-os-change-system-preference-os-dark-1440.png",
       "runtime": "production",
-      "bytes": 161226
+      "bytes": 161312
     },
     {
       "file": "explicit-light-unaffected-by-os-dark-1440.png",
@@ -379,17 +379,17 @@
     {
       "file": "motion-reduce-dashboard-1440-dark.png",
       "runtime": "production",
-      "bytes": 161255
+      "bytes": 161093
     },
     {
       "file": "motion-normal-dashboard-1440-dark.png",
       "runtime": "production",
-      "bytes": 161378
+      "bytes": 162316
     },
     {
       "file": "keyboard-tab-focus-dashboard-1440-light-reduce.png",
       "runtime": "production",
-      "bytes": 163118
+      "bytes": 163125
     }
   ],
   "assertions": [
@@ -1126,7 +1126,17 @@
     {
       "ok": true,
       "id": "dashboard-430-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1186,7 +1196,17 @@
     {
       "ok": true,
       "id": "dashboard-430-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1251,7 +1271,17 @@
     {
       "ok": true,
       "id": "dashboard-430-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1316,7 +1346,17 @@
     {
       "ok": true,
       "id": "dashboard-430-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-430-system-os-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1376,7 +1416,17 @@
     {
       "ok": true,
       "id": "dashboard-390-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1436,7 +1486,17 @@
     {
       "ok": true,
       "id": "dashboard-390-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1501,7 +1561,17 @@
     {
       "ok": true,
       "id": "dashboard-390-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -1566,7 +1636,17 @@
     {
       "ok": true,
       "id": "dashboard-390-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "dashboard-390-system-os-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2306,7 +2386,17 @@
     {
       "ok": true,
       "id": "action-inbox-430-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2366,7 +2456,17 @@
     {
       "ok": true,
       "id": "action-inbox-430-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2431,7 +2531,17 @@
     {
       "ok": true,
       "id": "action-inbox-430-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2496,7 +2606,17 @@
     {
       "ok": true,
       "id": "action-inbox-430-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-430-system-os-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2556,7 +2676,17 @@
     {
       "ok": true,
       "id": "action-inbox-390-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2616,7 +2746,17 @@
     {
       "ok": true,
       "id": "action-inbox-390-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2681,7 +2821,17 @@
     {
       "ok": true,
       "id": "action-inbox-390-system-os-light/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-light/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -2746,7 +2896,17 @@
     {
       "ok": true,
       "id": "action-inbox-390-system-os-dark/mobile-menu-target",
-      "reason": "Mobile menu target 44x44 (44px target, >=40 accept)"
+      "reason": "Mobile menu open/close trigger 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "action-inbox-390-system-os-dark/mobile-menu-not-overlapped",
+      "reason": "menuOverlapped=false"
     },
     {
       "ok": true,
@@ -3931,7 +4091,32 @@
     {
       "ok": true,
       "id": "interaction/mobile-nav-390/menu-target-size",
-      "reason": "Menu button 44x44 (44 target, >=40 accept)"
+      "reason": "Open trigger (closed state) 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-not-overlapped",
+      "reason": "menuOverlapped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-pointer-operable",
+      "reason": "pointer-events=auto"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-focus-visible-closed",
+      "reason": "focused=true focusVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-focus-not-clipped-closed",
+      "reason": "menuFocusRingClipped=false"
     },
     {
       "ok": true,
@@ -3977,6 +4162,51 @@
       "ok": true,
       "id": "interaction/mobile-nav-open",
       "reason": "Open visible=true overlay=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/close-control-labelled",
+      "reason": "aria-expanded=true aria-label=Close menu"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/close-target-size",
+      "reason": "Close control (open state) 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/close-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/close-not-overlapped",
+      "reason": "menuOverlapped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/close-pointer-operable",
+      "reason": "pointer-events=auto"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-focus-visible",
+      "reason": "focused=true focusVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-focus-not-clipped",
+      "reason": "menuFocusRingClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-keyboard-space-close",
+      "reason": "After Space: expanded=false offscreen=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-390/menu-keyboard-enter-reopen",
+      "reason": "After Enter reopen: expanded=true visible=true"
     },
     {
       "ok": true,
@@ -4041,7 +4271,32 @@
     {
       "ok": true,
       "id": "interaction/mobile-nav-430/menu-target-size",
-      "reason": "Menu button 44x44 (44 target, >=40 accept)"
+      "reason": "Open trigger (closed state) 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-not-overlapped",
+      "reason": "menuOverlapped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-pointer-operable",
+      "reason": "pointer-events=auto"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-focus-visible-closed",
+      "reason": "focused=true focusVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-focus-not-clipped-closed",
+      "reason": "menuFocusRingClipped=false"
     },
     {
       "ok": true,
@@ -4082,6 +4337,51 @@
       "ok": true,
       "id": "interaction/mobile-nav-430/open-aria-modal",
       "reason": "aria-modal=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/close-control-labelled",
+      "reason": "aria-expanded=true aria-label=Close menu"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/close-target-size",
+      "reason": "Close control (open state) 44.00x44.00 (min 44x44)"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/close-not-clipped",
+      "reason": "menuClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/close-not-overlapped",
+      "reason": "menuOverlapped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/close-pointer-operable",
+      "reason": "pointer-events=auto"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-focus-visible",
+      "reason": "focused=true focusVisible=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-focus-not-clipped",
+      "reason": "menuFocusRingClipped=false"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-keyboard-space-close",
+      "reason": "After Space: expanded=false offscreen=true"
+    },
+    {
+      "ok": true,
+      "id": "interaction/mobile-nav-430/menu-keyboard-enter-reopen",
+      "reason": "After Enter reopen: expanded=true visible=true"
     },
     {
       "ok": true,

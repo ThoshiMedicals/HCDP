@@ -32,6 +32,9 @@ const WIDTHS = [
   { name: "390", w: 390, h: 844, class: "mobile" },
 ];
 
+/** Authorised P1-B4 mobile navigation minimum effective target (CSS px). */
+const MOBILE_NAV_MIN_TARGET_PX = 44;
+
 const APPEARANCES = [
   { id: "light", appearance: "light", colorScheme: "light", expectDark: false },
   { id: "dark", appearance: "dark", colorScheme: "dark", expectDark: true },
@@ -135,6 +138,34 @@ async function auditShell(page, width) {
     const transitionSample = sidebar ? getComputedStyle(sidebar).transitionDuration : null;
     const overlayCs = overlay ? getComputedStyle(overlay) : null;
     const sidebarCs = sidebar ? getComputedStyle(sidebar) : null;
+    const menuCs = menu ? getComputedStyle(menu) : null;
+
+    let menuClipped = null;
+    let menuOverlapped = null;
+    let menuFocusRingClipped = null;
+    if (mb && menu) {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      menuClipped =
+        mb.left < -0.5 ||
+        mb.top < -0.5 ||
+        mb.right > vw + 0.5 ||
+        mb.bottom > vh + 0.5 ||
+        (tb != null && (mb.top < tb.top - 0.5 || mb.bottom > tb.bottom + 0.5));
+      const cx = mb.left + mb.width / 2;
+      const cy = mb.top + mb.height / 2;
+      const topEl = document.elementFromPoint(cx, cy);
+      menuOverlapped = !(topEl === menu || (topEl && menu.contains(topEl)));
+      // Mobile menu uses focus-visible:outline-offset-0 inside the 48px topbar (44px control).
+      // Ring budget = outline width (~2px), not the global 2px offset.
+      const ringPad = 2;
+      menuFocusRingClipped =
+        mb.left - ringPad < -0.5 ||
+        mb.top - ringPad < -0.5 ||
+        mb.right + ringPad > vw + 0.5 ||
+        mb.bottom + ringPad > vh + 0.5;
+    }
+
     return {
       sidebarWidth: sb ? Math.round(sb.width) : null,
       sidebarLeft: sb ? Math.round(sb.left) : null,
@@ -143,8 +174,14 @@ async function auditShell(page, width) {
         sb != null && sb.width > 1 && sb.right > 0 && sb.left < window.innerWidth && sb.right > 8,
       sidebarOffscreenLeft: sb != null && sb.right <= 1,
       topbarHeight: tb ? Math.round(tb.height) : null,
-      menuWidth: mb ? Math.round(mb.width) : null,
-      menuHeight: mb ? Math.round(mb.height) : null,
+      // Exact CSS-pixel boxes — do not round up (must not hide sub-44 sizes).
+      menuWidth: mb ? mb.width : null,
+      menuHeight: mb ? mb.height : null,
+      menuClipped,
+      menuOverlapped,
+      menuFocusRingClipped,
+      menuPointerEvents: menuCs?.pointerEvents ?? null,
+      menuAriaLabel: menu?.getAttribute("aria-label") ?? null,
       cssSidebarCurrent: cs.getPropertyValue("--sidebar-current").trim(),
       appearance: document.documentElement.getAttribute("data-appearance"),
       themeDark: document.documentElement.classList.contains("theme-dark"),
@@ -174,6 +211,21 @@ async function auditShell(page, width) {
       viewportWidth: window.innerWidth,
     };
   }, expectSidebarWidth(width));
+}
+
+function meetsMobileNavTarget(widthPx, heightPx) {
+  return (
+    typeof widthPx === "number" &&
+    typeof heightPx === "number" &&
+    widthPx >= MOBILE_NAV_MIN_TARGET_PX &&
+    heightPx >= MOBILE_NAV_MIN_TARGET_PX
+  );
+}
+
+function formatTarget(widthPx, heightPx) {
+  const w = typeof widthPx === "number" ? widthPx.toFixed(2) : String(widthPx);
+  const h = typeof heightPx === "number" ? heightPx.toFixed(2) : String(heightPx);
+  return `${w}x${h} (min ${MOBILE_NAV_MIN_TARGET_PX}x${MOBILE_NAV_MIN_TARGET_PX})`;
 }
 
 async function focusInsideSidebar(page) {
@@ -224,7 +276,7 @@ function classifyAssertionGroup(id) {
     return "keyboard";
   }
   if (
-    /overflow|viewport|sidebar-geometry|mobile-nav-closed|matrix\/width|pointer-noninteractive|regions|mobile-menu-target|menu-target-size/.test(
+    /overflow|viewport|sidebar-geometry|mobile-nav-closed|matrix\/width|pointer-noninteractive|regions|mobile-menu-target|menu-target-size|close-target-size|menu-not-clipped|close-not-clipped|menu-not-overlapped|close-not-overlapped/.test(
       id
     )
   ) {
@@ -413,9 +465,19 @@ async function runPrimaryMatrix(browser) {
             );
             if (audit.menuWidth != null) {
               record(
-                audit.menuWidth >= 40 && audit.menuHeight >= 40,
+                meetsMobileNavTarget(audit.menuWidth, audit.menuHeight),
                 `${label}/mobile-menu-target`,
-                `Mobile menu target ${audit.menuWidth}x${audit.menuHeight} (44px target, >=40 accept)`
+                `Mobile menu open/close trigger ${formatTarget(audit.menuWidth, audit.menuHeight)}`
+              );
+              record(
+                audit.menuClipped === false,
+                `${label}/mobile-menu-not-clipped`,
+                `menuClipped=${audit.menuClipped}`
+              );
+              record(
+                audit.menuOverlapped === false,
+                `${label}/mobile-menu-not-overlapped`,
+                `menuOverlapped=${audit.menuOverlapped}`
               );
             }
           } else {
@@ -504,7 +566,7 @@ async function runMobileNavKeyboardSuite(browser, width, height) {
     await waitReady(page, PRIMARY_ROUTES[0]);
     const menu = page.locator('[data-testid="shell-mobile-menu"]');
 
-    // Closed baseline + 44px target (accept >=40)
+    // Closed baseline + authorised 44×44px effective target (both dimensions)
     let audit = await auditShell(page, width);
     const ariaExpandedOk = audit.menuExpanded === "false";
     const ariaControlsOk = audit.menuControls === "shell-sidebar-nav";
@@ -515,13 +577,57 @@ async function runMobileNavKeyboardSuite(browser, width, height) {
       record(ariaControlsOk, "interaction/aria-controls", `aria-controls=${audit.menuControls}`);
     }
     record(
-      audit.menuWidth != null &&
-        audit.menuHeight != null &&
-        audit.menuWidth >= 40 &&
-        audit.menuHeight >= 40,
+      meetsMobileNavTarget(audit.menuWidth, audit.menuHeight),
       `${prefix}/menu-target-size`,
-      `Menu button ${audit.menuWidth}x${audit.menuHeight} (44 target, >=40 accept)`
+      `Open trigger (closed state) ${formatTarget(audit.menuWidth, audit.menuHeight)}`
     );
+    record(
+      audit.menuClipped === false,
+      `${prefix}/menu-not-clipped`,
+      `menuClipped=${audit.menuClipped}`
+    );
+    record(
+      audit.menuOverlapped === false,
+      `${prefix}/menu-not-overlapped`,
+      `menuOverlapped=${audit.menuOverlapped}`
+    );
+    record(
+      audit.menuPointerEvents !== "none",
+      `${prefix}/menu-pointer-operable`,
+      `pointer-events=${audit.menuPointerEvents}`
+    );
+    // Closed-state keyboard focus: Tab to trigger, assert visible focus not clipped
+    await page.evaluate(() => {
+      const el = document.querySelector('[data-testid="shell-mobile-menu"]');
+      if (!el) return;
+      try {
+        el.focus({ focusVisible: true });
+      } catch {
+        el.focus();
+      }
+    });
+    {
+      const closedFocus = await page.evaluate(() => {
+        const el = document.querySelector('[data-testid="shell-mobile-menu"]');
+        if (!el || document.activeElement !== el) return { focused: false, focusVisible: false };
+        const cs = getComputedStyle(el);
+        const outlineOk = cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth || "0") > 0;
+        const shadowOk = Boolean(cs.boxShadow && cs.boxShadow !== "none");
+        const fv = typeof el.matches === "function" && el.matches(":focus-visible");
+        return { focused: true, focusVisible: fv || outlineOk || shadowOk };
+      });
+      const closedRing = await auditShell(page, width);
+      record(
+        closedFocus.focused === true && closedFocus.focusVisible === true,
+        `${prefix}/menu-focus-visible-closed`,
+        `focused=${closedFocus.focused} focusVisible=${closedFocus.focusVisible}`
+      );
+      record(
+        closedRing.menuFocusRingClipped === false,
+        `${prefix}/menu-focus-not-clipped-closed`,
+        `menuFocusRingClipped=${closedRing.menuFocusRingClipped}`
+      );
+    }
     record(
       audit.sidebarOffscreenLeft === true && !audit.sidebarVisible,
       `${prefix}/closed-offscreen`,
@@ -568,6 +674,83 @@ async function runMobileNavKeyboardSuite(browser, width, height) {
       );
     }
     await shot(page, `interaction-mobile-nav-open-${width}-light-reduce`);
+
+    // Close control is the same shell-mobile-menu trigger while expanded ("Close menu")
+    audit = await auditShell(page, width);
+    record(
+      audit.menuExpanded === "true" && /close menu/i.test(audit.menuAriaLabel || ""),
+      `${prefix}/close-control-labelled`,
+      `aria-expanded=${audit.menuExpanded} aria-label=${audit.menuAriaLabel}`
+    );
+    record(
+      meetsMobileNavTarget(audit.menuWidth, audit.menuHeight),
+      `${prefix}/close-target-size`,
+      `Close control (open state) ${formatTarget(audit.menuWidth, audit.menuHeight)}`
+    );
+    record(
+      audit.menuClipped === false,
+      `${prefix}/close-not-clipped`,
+      `menuClipped=${audit.menuClipped}`
+    );
+    record(
+      audit.menuOverlapped === false,
+      `${prefix}/close-not-overlapped`,
+      `menuOverlapped=${audit.menuOverlapped}`
+    );
+    record(
+      audit.menuPointerEvents !== "none",
+      `${prefix}/close-pointer-operable`,
+      `pointer-events=${audit.menuPointerEvents}`
+    );
+
+    // Visible focus on the open/close control must not be clipped
+    const focusAudit = await page.evaluate(() => {
+      const el = document.querySelector('[data-testid="shell-mobile-menu"]');
+      if (!el) return { focused: false, focusVisible: false };
+      try {
+        el.focus({ focusVisible: true });
+      } catch {
+        el.focus();
+      }
+      const cs = getComputedStyle(el);
+      const outlineOk = cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth || "0") > 0;
+      const shadowOk = Boolean(cs.boxShadow && cs.boxShadow !== "none");
+      const fv = typeof el.matches === "function" && el.matches(":focus-visible");
+      return {
+        focused: document.activeElement === el,
+        focusVisible: fv || outlineOk || shadowOk,
+      };
+    });
+    const ringAudit = await auditShell(page, width);
+    record(
+      focusAudit.focused === true && focusAudit.focusVisible === true,
+      `${prefix}/menu-focus-visible`,
+      `focused=${focusAudit.focused} focusVisible=${focusAudit.focusVisible}`
+    );
+    record(
+      ringAudit.menuFocusRingClipped === false,
+      `${prefix}/menu-focus-not-clipped`,
+      `menuFocusRingClipped=${ringAudit.menuFocusRingClipped}`
+    );
+
+    // Keyboard operable: Space toggles closed from open (then reopen for remaining suite)
+    await page.keyboard.press("Space");
+    await page.waitForTimeout(150);
+    let afterSpace = await auditShell(page, width);
+    record(
+      afterSpace.menuExpanded === "false" && afterSpace.sidebarOffscreenLeft === true,
+      `${prefix}/menu-keyboard-space-close`,
+      `After Space: expanded=${afterSpace.menuExpanded} offscreen=${afterSpace.sidebarOffscreenLeft}`
+    );
+    await menu.focus();
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    afterSpace = await auditShell(page, width);
+    record(
+      afterSpace.menuExpanded === "true" && afterSpace.sidebarVisible === true,
+      `${prefix}/menu-keyboard-enter-reopen`,
+      `After Enter reopen: expanded=${afterSpace.menuExpanded} visible=${afterSpace.sidebarVisible}`
+    );
 
     const focusInside = await focusInsideSidebar(page);
     record(
@@ -656,11 +839,13 @@ async function runMobileNavKeyboardSuite(browser, width, height) {
     await page.waitForTimeout(200);
     const overlay = page.locator('[data-testid="shell-mobile-nav-overlay"]');
     // Click dimmed area outside the left sidebar rail (sidebar z-index sits above overlay).
+    // Topbar is raised above the overlay so the Close menu control stays operable — click
+    // below --topbar-height (48px), not into the topbar intercept zone.
     const overlayBox = await overlay.boundingBox();
     const clickX = overlayBox
       ? Math.min(overlayBox.width - 16, Math.max(280, overlayBox.width - 24))
       : Math.max(280, width - 24);
-    await overlay.click({ position: { x: clickX, y: 40 } });
+    await overlay.click({ position: { x: clickX, y: 96 } });
     await page.waitForTimeout(200);
     audit = await auditShell(page, width);
     record(

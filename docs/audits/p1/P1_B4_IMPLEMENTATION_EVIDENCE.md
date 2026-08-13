@@ -62,7 +62,41 @@ No Aurora redesign, navigation architecture change, domain/PPA/payment/M08 work,
 | Check-runs for `9052a677…` | `total_count=0` |
 | Commit status contexts for `9052a677…` | `statuses.length=0` (local-only validation) |
 | CRLF restore vs parent | Sidebar 11/6; Topbar 1/1; Drawer 12/5; storage 12/1 |
-6. **Mobile menu target (GAP-031):** Explicit `min-h/[44px]` / `min-w/[44px]` on the shell mobile menu control.
+
+No Aurora redesign, navigation architecture change, domain/PPA/payment/M08 work, dependency/lockfile change, SQL/migration, CI, env/secret, PR, merge, or deploy was performed.
+
+---
+
+## 2c. Final gate — 44×44px mobile navigation targets (2026-08-14)
+
+Authorised P1-B4 minimum effective target is **44×44 CSS pixels** for mobile navigation open/close controls. The prior harness accepted `>= 40`, which was weaker than the authorised target and could allow a future regression below 44px. Corrected before owner acceptance.
+
+| Item | Value |
+| --- | --- |
+| Prior harness threshold (defect) | `>= 40` (weaker than authorised) |
+| Corrected harness threshold | **both** width and height `>= 44` (`MOBILE_NAV_MIN_TARGET_PX = 44`) |
+| Control under test | `[data-testid="shell-mobile-menu"]` — Open menu (closed) and Close menu (open); no separate close control |
+| Widths measured | 390 and 430 |
+| Measurement method | Exact `getBoundingClientRect()` width/height — not rounded up; not area-only; not screenshot-only |
+| UI change this gate | Topbar stacking `z-[7]` (close control above overlay); `focus-visible:outline-offset-0` on mobile menu so focus ring fits Decision A 48px topbar with 44px target — no visual redesign |
+
+### Measured effective targets (production runtime `:3022`)
+
+| Control | 390px W×H | 430px W×H | Clipped | Overlapped | Pointer | Keyboard | Focus visible / not clipped |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Menu trigger (closed) | **44.00×44.00** | **44.00×44.00** | Pass | Pass | Pass | Pass (Enter/Space) | Pass |
+| Close control (open) | **44.00×44.00** | **44.00×44.00** | Pass | Pass | Pass | Pass (Space close / Enter reopen) | Pass |
+
+| Harness totals (this gate) | Value |
+| --- | --- |
+| Assertions | **825** pass / 0 fail |
+| Screenshots | **69** |
+| Groups | appearance 232; responsive 294; keyboard 72; reducedMotion 53; hydration 90; consumer 84 |
+| Threshold before | `>= 40` (defect) |
+| Threshold after | both dimensions `>= 44` |
+| Shell micro-fix | Topbar `z-[7]` so close control is not under overlay; `focus-visible:outline-offset-0` so ring fits 48px topbar with 44px target |
+
+Live assertion reasons in `harness-report.json` (`menu-target-size`, `close-target-size`, clip/overlap/pointer/focus ids). Gaps remain unclosed; **owner acceptance remains pending**.
 
 No Aurora redesign, navigation architecture change, domain/PPA/payment/M08 work, dependency/lockfile change, SQL/migration, CI, env/secret, PR, merge, or deploy was performed.
 
@@ -121,16 +155,16 @@ Exact assertion and screenshot totals are recorded in `harness-report.json` afte
 
 | Metric | Value |
 | --- | --- |
-| Unit `test:p1-b4` | **16 pass / 0 fail** |
+| Unit `test:p1-b4` | **19 pass / 0 fail** (includes 44px threshold lock) |
 | Full suite (`npm test`) | **252 pass / 0 fail** |
-| Harness assertions | **695 pass / 0 fail** |
-| Harness screenshots | **65** |
-| Authoritative runtime | Production on `localhost:3020` |
+| Harness assertions (44px gate, production `:3022`) | **825 pass / 0 fail** |
+| Harness screenshots | **69** |
+| Authoritative runtime | Production (`next build` + `next start`) |
 | `tsc --noEmit` | **0** errors |
 | Register validator failures | `[]` |
-| Lint (P1-B4 changed files) | **0** errors after DetailPanel refs fix; repo-wide still has pre-existing warnings (**25**) and historically may report exit 1 for warnings-only elsewhere — P1-B4 files clean |
-| `git diff --check` | **0** after hygiene |
-| GitHub Actions | `gh` CLI not available in environment — **do not claim CI** |
+| Full lint | **0** errors / **24** warnings (parent-lineage M05/M06 exhaustive-deps) |
+| Mobile nav target threshold | **both dimensions ≥ 44** (`MOBILE_NAV_MIN_TARGET_PX`) — prior `>= 40` removed |
+| GitHub Actions | Local validation only — **do not claim CI** |
 
 ---
 

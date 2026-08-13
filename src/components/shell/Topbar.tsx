@@ -131,7 +131,7 @@ export function Topbar() {
 
   return (
     <div
-      className="pulse-top-ribbon sticky top-0 z-[3] flex h-[var(--topbar-height)] max-h-[var(--topbar-height)] w-full min-w-0 max-w-full flex-nowrap items-center justify-between gap-2 overflow-x-auto overflow-y-hidden border-b border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--dp-bg-topbar,var(--card))] px-[10px] text-[var(--ink)] xl:px-[14px]"
+      className="pulse-top-ribbon sticky top-0 z-[7] flex h-[var(--topbar-height)] max-h-[var(--topbar-height)] w-full min-w-0 max-w-full flex-nowrap items-center justify-between gap-2 overflow-x-auto overflow-y-hidden border-b border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--dp-bg-topbar,var(--card))] px-[10px] text-[var(--ink)] xl:px-[14px]"
       data-shell-region="topbar"
       data-testid="shell-topbar"
       style={{ height: "var(--topbar-height)", minHeight: "var(--topbar-height)" }}
@@ -139,7 +139,7 @@ export function Topbar() {
       <div className="ribbon-left flex min-w-0 shrink-0 items-center gap-2">
         <button
           type="button"
-          className="grid h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] md:hidden"
+          className="grid h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 place-items-center rounded-xl border border-[var(--dp-border-subtle,var(--v34-card-line))] bg-[var(--card)] text-[var(--muted)] focus-visible:outline-offset-0 md:hidden"
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-label={sidebarOpen ? "Close menu" : "Open menu"}
           aria-expanded={sidebarOpen}

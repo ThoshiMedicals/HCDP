@@ -134,8 +134,28 @@ describe("P1-B4 responsive shell geometry contracts (GAP-031)", () => {
     assert.match(harness, /open-aria-modal/);
     assert.match(harness, /closed-pointer-noninteractive/);
     assert.match(harness, /menu-target-size/);
+    assert.match(harness, /close-target-size/);
     assert.match(harness, /assertionGroups/);
     assert.match(harness, /historical-\*/);
+  });
+
+  it("harness enforces authorised 44×44px mobile navigation targets (not ≥40)", () => {
+    assert.match(harness, /MOBILE_NAV_MIN_TARGET_PX\s*=\s*44/);
+    assert.match(harness, /meetsMobileNavTarget/);
+    assert.match(harness, /menu-target-size/);
+    assert.match(harness, /close-target-size/);
+    assert.doesNotMatch(harness, />=\s*40\s*&&/);
+    assert.doesNotMatch(harness, />=40 accept/);
+    assert.doesNotMatch(harness, /accept >=40/);
+  });
+
+  it("Topbar mobile menu keeps 44px interactive box above overlay with in-budget focus ring", () => {
+    const topbar = read("src/components/shell/Topbar.tsx");
+    assert.match(topbar, /min-h-\[44px\]/);
+    assert.match(topbar, /min-w-\[44px\]/);
+    assert.match(topbar, /h-11 w-11/);
+    assert.match(topbar, /z-\[7\]/);
+    assert.match(topbar, /focus-visible:outline-offset-0/);
   });
 });
 
