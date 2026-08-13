@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "failures": [],
+  "prodOnline": 0,
+  "prodToggle": 0,
+  "prodBanner": 0,
+  "shot": "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\18-production-enforcement-qa-refused-1440-light.png",
+  "at": "2026-08-13T03:08:18.369Z",
+  "note": "Browser evidence against AUTH_ENFORCEMENT=production build/process"
+}

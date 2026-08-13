@@ -65,6 +65,8 @@ export function Topbar() {
   const [openCount, setOpenCount] = useState(0);
   const [online, setOnline] = useState(true);
   const [ribbonSearch, setRibbonSearch] = useState("");
+  const [exportExplainFocused, setExportExplainFocused] = useState(false);
+  const [mfaExplainFocused, setMfaExplainFocused] = useState(false);
 
   useEffect(() => {
     hydrateInboxBadge();
@@ -228,31 +230,85 @@ export function Topbar() {
         >
           + New Entry
         </button>
-        <button
-          type="button"
-          className="hidden shrink-0 cursor-not-allowed rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2.5 py-1.5 text-sm font-bold text-[var(--muted)] opacity-70 xl:inline-flex"
-          disabled
-          aria-disabled="true"
-          data-testid="shell-export-unavailable"
-          title={EXPORT_UNAVAILABLE}
-          aria-label={`Export — ${EXPORT_UNAVAILABLE}`}
-        >
-          Export
-          <span className="sr-only">{EXPORT_UNAVAILABLE}</span>
-        </button>
-        <button
-          type="button"
-          className="hidden shrink-0 cursor-not-allowed items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] opacity-70 xl:inline-flex"
-          disabled
-          aria-disabled="true"
-          data-testid="shell-mfa-unavailable"
-          aria-label={`Enterprise Sign-In · MFA — ${MFA_UNAVAILABLE}`}
-          title={MFA_UNAVAILABLE}
-        >
-          <Icon name="shield" className="h-3.5 w-3.5 text-[var(--muted)]" />
-          Enterprise MFA
-          <span className="sr-only">{MFA_UNAVAILABLE}</span>
-        </button>
+        <div className="relative hidden shrink-0 xl:block" data-testid="shell-export-unavailable-wrap">
+          <button
+            type="button"
+            className="inline-flex cursor-not-allowed rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2.5 py-1.5 text-sm font-bold text-[var(--muted)] opacity-70"
+            aria-disabled="true"
+            data-testid="shell-export-unavailable"
+            aria-describedby="shell-export-unavailable-desc"
+            aria-label="Export — unavailable. Portal export requires a reporting backend (not implemented in P1). Non-operational."
+            onFocus={() => setExportExplainFocused(true)}
+            onBlur={() => setExportExplainFocused(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
+          >
+            Export
+            <span className="ml-1 text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide" aria-hidden>
+              Unavailable
+            </span>
+          </button>
+          <span
+            id="shell-export-unavailable-desc"
+            role="note"
+            data-testid="shell-export-unavailable-desc"
+            className={
+              exportExplainFocused
+                ? "fixed bottom-[18px] left-[18px] z-[90] max-w-[22rem] rounded-md border border-[var(--v34-card-line)] bg-[var(--card)] px-3 py-2 text-[length:var(--type-meta)] font-semibold leading-snug text-[var(--ink)] shadow-lg"
+                : "sr-only"
+            }
+          >
+            {EXPORT_UNAVAILABLE} This control is non-operational and does not run an export.
+          </span>
+        </div>
+        <div className="relative hidden shrink-0 xl:block" data-testid="shell-mfa-unavailable-wrap">
+          <button
+            type="button"
+            className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-[10px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-2 py-1 text-[length:var(--type-control)] font-bold text-[var(--muted)] opacity-70"
+            aria-disabled="true"
+            data-testid="shell-mfa-unavailable"
+            aria-describedby="shell-mfa-unavailable-desc"
+            aria-label="Enterprise Sign-In · MFA — unavailable. Requires a live authentication backend (not implemented in P1). Non-operational."
+            onFocus={() => setMfaExplainFocused(true)}
+            onBlur={() => setMfaExplainFocused(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
+          >
+            <Icon name="shield" className="h-3.5 w-3.5 text-[var(--muted)]" aria-hidden />
+            Enterprise MFA
+            <span className="text-[length:var(--type-meta)] font-extrabold uppercase tracking-wide" aria-hidden>
+              Unavailable
+            </span>
+          </button>
+          <span
+            id="shell-mfa-unavailable-desc"
+            role="note"
+            data-testid="shell-mfa-unavailable-desc"
+            className={
+              mfaExplainFocused
+                ? "fixed bottom-[18px] left-[18px] z-[90] max-w-[22rem] rounded-md border border-[var(--v34-card-line)] bg-[var(--card)] px-3 py-2 text-[length:var(--type-meta)] font-semibold leading-snug text-[var(--ink)] shadow-lg"
+                : "sr-only"
+            }
+          >
+            {MFA_UNAVAILABLE} This control is non-operational and does not verify MFA.
+          </span>
+        </div>
         {qaDemoMode ? (
           <button
             type="button"

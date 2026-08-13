@@ -1,11 +1,15 @@
 {
   "base": "http://localhost:3000",
+  "productionBase": null,
   "shots": [
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\01-ordinary-mode-dashboard-1440-light.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\02-export-disabled-focus-1440-light.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\03-mfa-disabled-focus-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\02-export-unavailable-keyboard-focus-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\02b-export-activation-no-op-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\03-mfa-unavailable-keyboard-focus-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\03b-mfa-activation-no-op-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\04-new-entry-available-1440-light.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\05-multi-clinic-guidance-toast-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\05-cc-multi-clinic-topbar-truthful-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\05b-topbar-multi-clinic-guidance-warn-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\06-identity-sidebar-and-cc-greeting-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\07-act-as-propagated-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\08-qa-demo-mode-active-1440-light.png",
@@ -14,9 +18,12 @@
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\11-org-local-demo-override-labelled-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\12-org-reset-confirmation-path-1440-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\13-inbox-signed-in-identity-1440-light.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16a-appearance-app-light-1440.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16b-appearance-app-dark-1440.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16c-appearance-system-os-light-1440.png",
+    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16d-appearance-system-os-dark-1440.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\14-mobile-ordinary-390-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\15-mobile-qa-demo-mode-390-light.png",
-    "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\16-qa-demo-mode-1440-dark.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-1280-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-1024-light.png",
     "C:\\Users\\RoshanSamarawickrema\\Desktop\\HCDP\\.worktrees\\p0c4\\docs\\audits\\p1\\b2-shell-truthfulness\\shots\\17-responsive-ordinary-768-light.png",
@@ -26,8 +33,22 @@
     {
       "id": "ordinary-hidden-demo",
       "onlineOrdinary": 0,
-      "qaBannerOrdinary": 0,
-      "qaMenuOrdinary": 0
+      "qaBannerOrdinary": 0
+    },
+    {
+      "id": "export-no-op",
+      "afterExport": ""
+    },
+    {
+      "id": "mfa-no-op",
+      "afterMfa": ""
+    },
+    {
+      "id": "cc-multi-clinic-topbar",
+      "label": "Multiple Clinics · 3 (set in Command Centre)"
+    },
+    {
+      "id": "topbar-multi-warn-not-success"
     },
     {
       "id": "identity-match-ordinary",
@@ -50,14 +71,45 @@
       "signedIn": "Signed in as David King"
     },
     {
-      "id": "appearance-modes",
-      "light": true,
+      "id": "appearance-light",
+      "pref": "light",
+      "dark": false,
+      "stored": "light",
+      "mqDark": true
+    },
+    {
+      "id": "appearance-dark",
+      "pref": "dark",
       "dark": true,
-      "systemLight": "covered via light emulate",
-      "systemDark": "covered via dark emulate"
+      "stored": "dark",
+      "mqDark": false
+    },
+    {
+      "id": "appearance-system-os-light",
+      "pref": "system",
+      "dark": false,
+      "stored": "system",
+      "mqDark": false
+    },
+    {
+      "id": "appearance-system-os-dark",
+      "pref": "system",
+      "dark": true,
+      "stored": "system",
+      "mqDark": true
+    },
+    {
+      "id": "production-enforcement-browser",
+      "skipped": true,
+      "note": "Objective proof: unit test production enforcement. Browser shot via scripts/p1-b2-production-enforcement-shot.mjs with exclusive production Next process."
     }
   ],
-  "at": "2026-08-13T01:40:32.210Z",
+  "at": "2026-08-13T03:21:45.988Z",
   "failures": [],
-  "ok": true
+  "ok": true,
+  "notes": [
+    "No Topbar option DOM fabrication.",
+    "System appearance evidence uses application preference=system with OS colorScheme emulation — not ordinary Light/Dark alone.",
+    "GitHub CI not claimed."
+  ]
 }
