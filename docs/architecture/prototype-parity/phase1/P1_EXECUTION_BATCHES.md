@@ -104,9 +104,11 @@
 | Objective | Harden shell a11y/keyboard/responsive/System appearance evidence |
 | Included gaps | 008, 009, 031, 052, 074 |
 | Widths | 390, 430, 768, 1024, 1280, 1440 (+ contract list) |
-| Appearance | Light / Dark / System |
-| Prohibited | Visual redesign unrelated to contract; dependency upgrades |
-| Exit | Named a11y + dimension + theme tests green |
+| Appearance | Light / Dark / System+OS Light / System+OS Dark (four distinct states) |
+| Owner-decision blocker | **None** for named B4 gaps (Owner clarification: No) — express named-batch authorisation still required |
+| Authorisation briefing | [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md) |
+| Prohibited | Visual redesign unrelated to contract; Aurora integration; dependency upgrades; domain/PPA/payment/M08; PR/merge/deploy; automatic progression to B5 |
+| Exit | Named a11y + dimension + theme tests green; owner acceptance of authorised tip (when authorised) |
 
 ## P1-B5 — M01/M02 presentation parity
 

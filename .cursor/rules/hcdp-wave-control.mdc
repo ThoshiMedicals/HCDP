@@ -52,7 +52,7 @@ OWN-P1-016: remains open
 ## Order
 
 0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → stop (do not begin P1-B4–P1-B8 until expressly authorised)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 readiness briefing only (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B4–P1-B8 coding until expressly authorised; do not integrate Aurora without separate review)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -98,7 +98,9 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Claim production approval
 - Begin Module 8
 - Begin P1-B4 through P1-B8 without separate explicit owner authorisation
+- Integrate or depend on `cursor/aurora-design-foundation` without separate owner review and express integration authorisation
 - Treat P1-B3 acceptance or OWN-P1-006/007 closure as overall Programme P1 / production acceptance
 - Resolve `OWN-P1-016` or `OWN-P1-011` by implication from P1-B3
 - Authorise automatic progression from P1-B3 to later batches
 - Claim PR, merge or deployment authority from P1-B3 acceptance
+- Treat the P1-B4 readiness briefing as implementation authorisation

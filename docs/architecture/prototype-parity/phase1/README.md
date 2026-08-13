@@ -46,6 +46,8 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-13 (qualified):** P1-B3 owner acceptance at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Evidence: [`../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md); remediation: [`../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`](../../audits/p1/P1_B3_REMEDIATION_EVIDENCE.md). **P1-B4–P1-B8 remain unauthorised.** No automatic progression.
 
+**P1-B4 readiness (2026-08-13):** Authorisation briefing published — [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md). Status remains `P1 — PLANNED, NOT AUTHORISED`. No owner-choice blocker found for gaps 008/009/031/052/074; express named-batch authorisation still required. Aurora parallel stream is not an input.
+
 **Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
@@ -65,6 +67,7 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 | 11 | Recommended first batch | [P1_RECOMMENDED_FIRST_BATCH.md](./P1_RECOMMENDED_FIRST_BATCH.md) |
 | 12 | Gap → source → acceptance traceability | [P1_GAP_TRACEABILITY.md](./P1_GAP_TRACEABILITY.md) |
 | — | Baseline gate evidence | [P1_BASELINE_GATE_EVIDENCE.md](./P1_BASELINE_GATE_EVIDENCE.md) |
+| — | P1-B4 authorisation readiness briefing | [P1_B4_OWNER_AUTHORISATION_BRIEFING.md](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md) |
 | — | This index | [README.md](./README.md) |
 
 ## P1A pack

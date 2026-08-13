@@ -70,7 +70,7 @@ Eight batches remain accounted for:
 1. **P1-B1** — SHARED Decision A shell foundation — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 2. **P1-B2** — Shell truthfulness + inactive-control remediation — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **owner accepted with qualifications — CLOSED (2026-08-13)**  
-4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — unauthorised  
+4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — **unauthorised** (readiness briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md))  
 5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — unauthorised  
 6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — unauthorised  
 7. **P1-B7** — Permission / audit / empty-loading-error-denied state completeness — unauthorised  
@@ -102,4 +102,4 @@ See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 - Not automatic authorisation of B4–B8  
 - Historical P0 evidence not altered  
 
-**Current programme claim:** `P1-B3 qualified owner acceptance recorded and published — P1-B4 through P1-B8 remain unauthorised, with no merge or deployment performed.`
+**Current programme claim:** `P1-B4 responsive, accessibility and appearance authorisation-readiness briefing prepared and published — P1-B4 remains unauthorised and the parallel Aurora design stream was not touched or integrated.`
