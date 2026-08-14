@@ -1,6 +1,6 @@
 # P1 Owner-Decision Register
 
-**Stamp:** **P1-B1**, **P1-B2** and **P1-B3** owner accepted with qualifications and **closed** (2026-08-13). Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). **P1-B4–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **P1-B5–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.  
 **Note:** Conflict register openCount remains 0 for prior DEC-* items. This register lists **P1 planning decisions** required, closed, or deferrable.  
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.  
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.  
@@ -9,7 +9,8 @@
 **P1-B2 shell-honesty decisions closed:** `OWN-P1-004`, `OWN-P1-005`, `OWN-P1-008`, `OWN-P1-017` — `2026-08-13`  
 **P1-B2 qualified acceptance date:** `2026-08-13` (`P1-B2-OWNER-ACCEPT-2026-08-13`)  
 **P1-B3 register-hygiene decisions closed:** `OWN-P1-006`, `OWN-P1-007` — `2026-08-13`  
-**P1-B3 qualified acceptance date:** `2026-08-13` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
+**P1-B3 qualified acceptance date:** `2026-08-13` (`P1-B3-OWNER-ACCEPT-2026-08-13`)  
+**P1-B4 qualified acceptance date:** `2026-08-14` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
 
 ## Decisions required before any P1 implementation
 
@@ -372,7 +373,7 @@ Evidence pointer: P1_B3_OWNER_DECISION_BRIEFING.md; P1-GAP-012; P1-GAP-079;
 Dependencies: Distinct from OWN-P1-011; after P1-B1/B2 closed; pairs with OWN-P1-006
 ```
 
-**P1-B3 status after these closures:** Decision blockers OWN-P1-006/007 are **closed**. Express P1-B3 implementation was authorised, remediated and **owner accepted with qualifications — CLOSED (2026-08-13)** at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Gap dispositions recorded below. **P1-B4–P1-B8 remain unauthorised.**
+**P1-B3 status after these closures:** Decision blockers OWN-P1-006/007 are **closed**. Express P1-B3 implementation was authorised, remediated and **owner accepted with qualifications — CLOSED (2026-08-13)** at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`). Gap dispositions recorded below. **P1-B4 was later authorised, implemented and owner-accepted separately.**
 
 ## P1-B3 qualified owner acceptance (recorded 2026-08-13)
 
@@ -454,6 +455,101 @@ Evidence pointer: docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md;
                   docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md;
                   docs/audits/p1/b3-register-hygiene/;
                   P1_EXECUTION_BATCHES.md; branch cursor/p1-b3-register-hygiene
+```
+
+## P1-B4 qualified owner acceptance (recorded 2026-08-14)
+
+Closing this acceptance record closes **P1-B4 only**. It does **not** authorise P1-B5–P1-B8, resolve `OWN-P1-011` or `OWN-P1-016`, claim overall Programme P1 completion, or authorise PR / merge / deployment / production. It does **not** authorise automatic progression to P1-B5. It does **not** integrate Aurora.
+
+```text
+Decision ID: P1-B4-OWNER-ACCEPT-2026-08-14
+Date: 2026-08-14
+Owner: Programme owner (recorded)
+Outcome: Owner accepted with qualifications — P1-B4 CLOSED
+         Accepted branch: cursor/p1-b4-responsive-a11y-appearance
+         Accepted implementation tip:
+         c58f2843d47b6fa875cd155d166c1f7c916d5250
+         Source tip:
+         c5d919cc2921ab43949b37cad499e29a79cfa6b0
+         Accepted scope: P1-B4 responsive, accessibility, reduced-motion
+         and System-appearance hardening only (gaps 008/009/031/052/074)
+         Validation basis: verified local tests, validators, production build,
+         Chromium/Playwright production-runtime harness
+         GitHub CI: none — workflows=0; check-runs=0; status-contexts=0;
+         no CI pass claimed
+Accepted P1-GAP-008:
+  - System is the truthful default appearance state
+  - Stored Light/Dark/System settle correctly
+  - System+OS Light and System+OS Dark separately proven
+  - OS changes update System without overriding explicit Light/Dark
+  - Cross-tab appearance updates and listener cleanup accepted
+  - No production or cross-browser certification implied
+Accepted P1-GAP-009:
+  - Shared shell keyboard/focus baselines accepted
+  - Mobile nav forward/reverse focus containment accepted
+  - Escape and overlay dismissal accepted
+  - Exact trigger focus restoration accepted
+  - Drawer/DetailPanel focus containment/restoration accepted for tested P1 scope
+  - Module section navigation uses navigation + aria-current (not invalid tabs)
+  - Required ARIA state and keyboard interaction evidence accepted
+Accepted P1-GAP-031 (partial):
+  - Responsive shell behaviour accepted for tested P1 surfaces at
+    1440/1280/1024/768/430/390
+  - Mobile open/closed geometry, inert, overlay and overflow evidence accepted
+  - Menu/close controls objectively meet 44×44px at 390 and 430
+  - Residual: module-specific responsive work outside tested P1 scope
+Accepted P1-GAP-052 (partial):
+  - Shared P1 reduced-motion hardening accepted
+  - Normal and reduced-motion evidence accepted
+  - Residual: broader platform-wide reduced-motion / full WCAG motion certification
+Accepted P1-GAP-074:
+  - Historical M04/M05/M07 appearance/hydration observations re-verified
+  - No shared P1-B4 hydration defect remains on tested routes
+  - No M04/M05/M07 domain behaviour accepted or changed
+Gap disposition at acceptance:
+  - P1-GAP-008 Closed — P1 System appearance/hydration scope
+  - P1-GAP-009 Closed — P1 shared-shell keyboard/focus scope
+  - P1-GAP-031 Partial — tested P1 shell/shared surfaces closed;
+    module-specific residual retained
+  - P1-GAP-052 Partial — shared P1 reduced-motion closed;
+    platform-wide residual retained
+  - P1-GAP-074 Closed — historical observation re-verified;
+    no domain acceptance implied
+Qualifications (binding):
+  1. Validation is local-only
+  2. GitHub workflow count is zero
+  3. GitHub check-run count is zero
+  4. GitHub status-context count is zero
+  5. No GitHub CI pass is claimed
+  6. No full WCAG compliance is claimed
+  7. No pixel-parity claim is made
+  8. Evidence is based primarily on Chromium/Playwright production-runtime testing
+  9. Cross-browser and assistive-technology certification remains outside this acceptance
+  10. Full platform-wide 200%/400% zoom certification is not claimed
+  11. The 24 lint warnings remain verified parent-lineage warnings; no lint errors remain
+  12. Intentional CRLF parent-lineage files can produce raw git diff --check CR-at-EOL
+      output; semantic inspection found no genuine trailing whitespace defect
+  13. P1-GAP-031 retains any module-specific responsive residual outside tested P1 surfaces
+  14. P1-GAP-052 retains any broader platform-wide reduced-motion residual
+  15. M04/M05/M07 domain behaviour is unchanged
+  16. OWN-P1-011 remains open
+  17. OWN-P1-016 remains open
+  18. Aurora remains separately approved as a design foundation but unintegrated
+  19. Aurora integration into P1 remains unauthorised
+  20. P1-B5 through P1-B8 remain unauthorised
+  21. No automatic progression is permitted
+  22. No production approval is granted
+  23. No PR, merge or deployment is authorised
+  24. This is not overall Programme P1 acceptance
+Authorises batch(es): Closure of P1-B4 only (qualified)
+Explicitly does NOT authorise: P1-B5–P1-B8; automatic progression; PR; merge;
+         deploy; production; SQL; PPA product; payment; M08; M25;
+         OWN-P1-011 / OWN-P1-016 resolution; WCAG/security/AT certification;
+         Aurora integration; overall Programme P1 completion
+Evidence pointer: docs/audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md;
+                  docs/audits/p1/b4-responsive-a11y-appearance/;
+                  P1_EXECUTION_BATCHES.md;
+                  branch cursor/p1-b4-responsive-a11y-appearance
 ```
 
 ## Open architecture / data decision (production path)

@@ -2,19 +2,21 @@
 
 **Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)
 **Batch:** P1-B4 — Responsive / a11y / appearance evidence
-**Status stamp:** Expressly authorised and **implemented for owner review** (acceptance **pending**)
+**Status stamp:** **Owner accepted with qualifications — CLOSED (2026-08-14)** (`P1-B4-OWNER-ACCEPT-2026-08-14`)
 **Implementation branch:** `cursor/p1-b4-responsive-a11y-appearance`
+**Accepted tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250`
 **Authorised source tip:** `c5d919cc2921ab43949b37cad499e29a79cfa6b0`
 **Briefing tip (pre-implementation):** published on `cursor/p1-b3-register-hygiene` after P1-B3 acceptance (`6938cbd409dffdacc42d10beca8036f5667f4ebc` source; docs commit `c5d919cc2921ab43949b37cad499e29a79cfa6b0`)
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
 **Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`
 **Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
 **Briefing / implementation date:** 2026-08-13
+**Owner acceptance date:** 2026-08-14
 
-> **P1-B4 is expressly authorised and implemented for owner review — acceptance remains pending.**
-> Implementation does **not** close gaps, create/close owner decisions, open a PR, merge, deploy, or begin P1-B5.
-> Gaps 008 / 009 / 031 / 052 / 074 are **addressed for review**, not closed.
-> The parallel `cursor/aurora-design-foundation` stream remains **isolated** and must not be inspected, merged, or depended upon.
+> **P1-B4 is owner accepted with qualifications and CLOSED (2026-08-14)** at `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`).  
+> Acceptance does **not** authorise P1-B5–P1-B8, PR, merge, deployment, production, Aurora integration, or automatic progression.  
+> Gap disposition: 008/009/074 Closed (scoped); 031/052 Partial with retained residuals.  
+> The parallel `cursor/aurora-design-foundation` stream remains **isolated** and must not be inspected, merged, or depended upon.  
 > Evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md).
 
 **Authoritative sources (this briefing does not replace them):**
@@ -41,10 +43,10 @@ P1-B4 must **validate and correct defects in the currently accepted shell**, not
 
 | Item | Status |
 | --- | --- |
-| P1-B4 | Expressly authorised — **IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
+| P1-B4 | **Owner accepted with qualifications — CLOSED (2026-08-14)** at `c58f284…` (`P1-B4-OWNER-ACCEPT-2026-08-14`) |
 | New owner-decision blocker for B4 gaps | **None found** (verified) |
-| Express named-batch authorisation | **Met** — implemented for owner review |
-| Gaps 008 / 009 / 031 / 052 / 074 | **Addressed for owner review** — **not closed** |
+| Express named-batch authorisation | **Met** — accepted and closed with qualifications |
+| Gaps 008 / 009 / 031 / 052 / 074 | 008/009/074 **Closed** (scoped); 031/052 **Partial** with residuals |
 | `OWN-P1-011` / `OWN-P1-016` | Remain **open** |
 | Aurora parallel branch | **Isolated**; do not touch or integrate |
 | P1-B5 through P1-B8 | Remain `P1 — PLANNED, NOT AUTHORISED` |
@@ -75,7 +77,7 @@ P1-B4 must **validate and correct defects in the currently accepted shell**, not
 
 - **No new owner decision ID is required** for P1-B4 readiness.
 - **No unresolved owner-choice blocker** was found for the named B4 gaps.
-- **P1-B4 received separate express named-batch implementation authorisation** and is **implemented for owner review** (acceptance pending).
+- **P1-B4 received separate express named-batch implementation authorisation**, was implemented/remediated, and is **owner accepted with qualifications — CLOSED (2026-08-14)** (`P1-B4-OWNER-ACCEPT-2026-08-14`).
 - Technical details must follow the accepted design contract and **must not silently introduce a visual redesign.**
 - If future work discovers a genuine unresolved product choice (for example, a contract conflict that cannot be resolved by defect correction alone), document it for owner review **without** inventing or closing a decision ID in that implementation batch until expressly authorised.
 
@@ -314,38 +316,38 @@ This section is a **recommendation**, not implementation and not owner acceptanc
 
 ---
 
-## 8. Included gaps (unchanged status)
+## 8. Included gaps (disposition at acceptance)
 
-| Gap | Batch | Status after this briefing |
+| Gap | Batch | Status after `P1-B4-OWNER-ACCEPT-2026-08-14` |
 | --- | --- | --- |
-| P1-GAP-008 | P1-B4 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-009 | P1-B4 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-031 | P1-B4 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-052 | P1-B4 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-074 | P1-B4 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
+| P1-GAP-008 | P1-B4 | **Closed** — P1 System appearance/hydration scope |
+| P1-GAP-009 | P1-B4 | **Closed** — P1 shared-shell keyboard/focus scope |
+| P1-GAP-031 | P1-B4 | **Partial** — tested P1 shell/shared surfaces; module residual retained |
+| P1-GAP-052 | P1-B4 | **Partial** — shared P1 reduced-motion; platform residual retained |
+| P1-GAP-074 | P1-B4 | **Closed** — historical observation re-verified; no domain acceptance |
 
 ---
 
 ## 9. Control preservation
 
-- P1-B1 / P1-B2 / P1-B3 remain accepted/closed with qualifications  
+- P1-B1 / P1-B2 / P1-B3 / **P1-B4** remain accepted/closed with qualifications  
 - **83** gaps / **8** batches / **24** runtime modules preserved  
 - M25 unimplemented  
 - `OWN-P1-011` open; `OWN-P1-016` open  
-- P1-B4 through P1-B8 **unauthorised**  
-- No application-code, test, script, PR, merge, or deployment change from this briefing alone  
+- P1-B5 through P1-B8 **unauthorised**  
+- Aurora isolated and unintegrated  
+- No automatic progression; no PR/merge/deploy from this acceptance 
 
 ---
 
-## 10. Owner next act (not performed by this briefing)
+## 10. Post-acceptance control
 
-To proceed, the owner must **expressly authorise** named batch **P1-B4** implementation on a stated tip/branch. Until then:
+P1-B4 is closed with qualifications. Remaining control:
 
-- No P1-B4 coding  
-- No gap closure  
-- No PR / merge / deploy  
 - No automatic progression to P1-B5  
+- No PR / merge / deploy from this acceptance  
 - No Aurora integration  
+- `OWN-P1-011` and `OWN-P1-016` remain open  
 
-**Current programme claim for this docs tip:**  
-`P1-B4 responsive, accessibility and appearance authorisation-readiness briefing prepared and published — P1-B4 remains unauthorised and the parallel Aurora design stream was not touched or integrated.`
+**Current programme claim:**  
+`P1-B4 qualified owner acceptance recorded and published — P1-B5 through P1-B8 remain unauthorised, Aurora remains isolated, and no merge or deployment was performed.`
