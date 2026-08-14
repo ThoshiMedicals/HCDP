@@ -610,7 +610,7 @@ export function CommandCentre() {
         return { ...a, latestUpdate: `${verb} by ${actingUserName}`, stage: verb === "Assign" || verb === "Reassign" ? "Assigned" : a.stage };
       })
     );
-    pushToast(`${verb} applied to ${ids.length} action(s).`, "success");
+    pushToast(`${verb} applied to ${ids.length} action(s) (local demo — not live backend).`, "success");
     setOpenActionId(null);
   }
 
@@ -1611,7 +1611,7 @@ export function CommandCentre() {
             saveModule1Actions(next);
             return next;
           });
-          pushToast(`Created ${created.length} action(s).`, "success");
+          pushToast(`Created ${created.length} action(s) (local demo — not live backend).`, "success");
         }}
       />
 

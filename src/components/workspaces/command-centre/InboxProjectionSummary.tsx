@@ -35,7 +35,7 @@ export function InboxProjectionSummary() {
     <CcCard accent="#0f766e">
       <CcCardHeader
         title="Operational Action Inbox (Module 2)"
-        subtitle="Live projection from Action Inbox — not duplicated as editable Command Centre records"
+        subtitle="Local/demo projection from Action Inbox (browser store) — not live operational aggregation and not editable Command Centre records"
       />
       <div className="space-y-3 px-4 pb-4">
         <div className="flex flex-wrap gap-2">

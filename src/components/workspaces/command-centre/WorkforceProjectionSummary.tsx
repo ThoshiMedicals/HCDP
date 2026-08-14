@@ -35,7 +35,7 @@ export function WorkforceProjectionSummary() {
     <CcCard accent="#7c3aed">
       <CcCardHeader
         title="Workforce (Module 4)"
-        subtitle="Live counts from Staff & Doctor Management — not duplicated as editable Command Centre records"
+        subtitle="Local/demo counts from Staff & Doctor Management (browser store) — not live operational aggregation and not editable Command Centre records"
       />
       <div className="space-y-3 px-4 pb-4">
         <div className="flex flex-wrap gap-2">

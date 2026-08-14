@@ -80,10 +80,12 @@ export function ReviewPanel({
           </Button>
         }
       >
-        <p className="text-sm text-[var(--muted)]">
-          You do not have permission to view the title, owner, description or attachments for this
-          sensitivity level ({action.sensitivity}).
-        </p>
+        <div data-testid="m02-review-panel" data-review-action-id={action.id} data-state="sensitivity-restricted">
+          <p className="text-sm text-[var(--muted)]">
+            You do not have permission to view the title, owner, description or attachments for this
+            sensitivity level ({action.sensitivity}).
+          </p>
+        </div>
       </Drawer>
     );
   }
@@ -105,7 +107,7 @@ export function ReviewPanel({
                 Create Linked Follow-up
               </Button>
               <Button variant="line" onClick={() => onAction("open-source")}>
-                Open clinical source system
+                Open operational source system
               </Button>
             </>
           ) : (
@@ -143,14 +145,14 @@ export function ReviewPanel({
                 </Button>
               )}
               <Button variant="line" onClick={() => onAction("open-source")}>
-                Open clinical source system
+                Open operational source system
               </Button>
             </>
           )}
         </div>
       }
     >
-      <div className="grid gap-4" data-testid={open ? "m02-review-panel" : undefined}>
+      <div className="grid gap-4" data-testid={open ? "m02-review-panel" : undefined} data-review-action-id={open ? action.id : undefined}>
         <div className="flex flex-wrap gap-1.5">
           <Badge tone="info">{action.category}</Badge>
           <Badge tone={action.priority === "Urgent" || action.priority === "High" ? "danger" : "warn"}>
@@ -258,7 +260,9 @@ export function ReviewPanel({
             ))
           )}
           <p className="mt-1 text-[length:var(--type-control)] text-[var(--muted)]">
-            Operational source reference: {action.sourceModule} / {action.sourceRecord || "—"} (clinical records remain in the clinical source system)
+            Operational source reference: {action.sourceModule} / {action.sourceRecord || "—"} (patient
+            clinical records remain outside HCDP — Best Practice or the relevant clinical source system)
+
           </p>
         </div>
 

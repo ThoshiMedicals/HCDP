@@ -49,11 +49,15 @@ export function NotificationSettingsPanel({
       }
     >
       <div className="grid gap-3 text-sm">
+        <p className="m-0 text-[length:var(--type-control)] text-[var(--muted)]">
+          Email and SMS channels are planned/unavailable for live delivery. Preferences below are stored locally for
+          demonstration only.
+        </p>
         {(
           [
             ["platform", "Platform"],
-            ["email", "Email"],
-            ["sms", "SMS"],
+            ["email", "Email (planned / not live)"],
+            ["sms", "SMS (planned / not live)"],
             ["dailySummary", "Daily summary"],
             ["delegationUpdates", "Delegation updates"],
             ["watchedActionUpdates", "Watched-action updates"],

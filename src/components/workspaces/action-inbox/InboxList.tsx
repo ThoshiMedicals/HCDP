@@ -28,6 +28,7 @@ export function InboxList({
   isManager,
   selectedIds,
   expandedId,
+  reviewId,
   onToggleSelect,
   onToggleExpand,
   onOpenReview,
@@ -41,17 +42,18 @@ export function InboxList({
   isManager: boolean;
   selectedIds: string[];
   expandedId: string | null;
+  reviewId: string | null;
   onToggleSelect: (id: string) => void;
   onToggleExpand: (id: string) => void;
   onOpenReview: (id: string) => void;
   onQuick: (kind: QuickKind, id: string) => void;
-  emptyKind: "inbox" | "filtered";
+  emptyKind: "inbox" | "filtered" | "view";
   onEmptyAction: (act: "completed" | "create" | "refresh" | "clear" | "edit") => void;
 }) {
   if (!actions.length) {
     if (emptyKind === "inbox") {
       return (
-        <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center" data-testid="m02-inbox-list" data-empty="inbox">
+        <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center" data-testid="m02-inbox-list" data-empty="inbox" data-state="empty-inbox">
           <h3 className="m-0 text-lg font-extrabold text-[#334155]">You’re all caught up</h3>
           <p className="mt-1 text-sm text-[var(--muted)]">
             There are no open actions requiring your attention.
@@ -70,8 +72,26 @@ export function InboxList({
         </div>
       );
     }
+    if (emptyKind === "view") {
+      return (
+        <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center" data-testid="m02-inbox-list" data-empty="view" data-state="empty-view">
+          <h3 className="m-0 text-lg font-extrabold text-[#334155]">No actions in this view</h3>
+          <p className="mt-1 text-sm text-[var(--muted)]">
+            This queue view has no matching local demonstration actions.
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <Button variant="teal" onClick={() => onEmptyAction("clear")}>
+              Clear Filters
+            </Button>
+            <Button variant="line" onClick={() => onEmptyAction("refresh")}>
+              Refresh Inbox
+            </Button>
+          </div>
+        </div>
+      );
+    }
     return (
-      <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center" data-testid="m02-inbox-list" data-empty="filtered">
+      <div className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-10 text-center" data-testid="m02-inbox-list" data-empty="filtered" data-state="empty-filtered">
         <h3 className="m-0 text-lg font-extrabold text-[#334155]">No actions match these filters</h3>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           <Button variant="teal" onClick={() => onEmptyAction("clear")}>
@@ -86,7 +106,7 @@ export function InboxList({
   }
 
   return (
-    <div className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]" data-testid="m02-inbox-list">
+    <div className="overflow-hidden rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] shadow-[var(--v34-card-shadow)]" data-testid="m02-inbox-list" data-state="ready-queue">
       <div
         className={cn(
           "hidden grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] gap-2 border-b border-[var(--v34-card-line)] bg-[var(--soft)] px-3 text-[length:var(--type-control)] font-extrabold uppercase tracking-wide text-[var(--muted)] lg:grid",
@@ -108,13 +128,15 @@ export function InboxList({
         const restricted = !canViewSensitive(action, canSeeSensitive);
         const overdue = isOverdue(action);
         const expanded = expandedId === action.id;
-        const selected = selectedIds.includes(action.id);
+        const checked = selectedIds.includes(action.id);
+        const reviewing = reviewId === action.id;
         const title = restricted ? "Restricted Action" : action.title;
         return (
           <div
             key={action.id}
-            data-selected={expanded || selected ? "true" : undefined}
-            aria-current={expanded ? "true" : undefined}
+            data-action-id={action.id}
+            data-checked={checked ? "true" : undefined}
+            data-expanded={expanded ? "true" : undefined}
             className={cn(
               "border-b border-[#eef2f6] last:border-0",
               action.unread && !restricted && "bg-[var(--soft)]",
@@ -124,6 +146,10 @@ export function InboxList({
             <div
               role="button"
               tabIndex={0}
+              data-action-id={action.id}
+              data-selected={reviewing ? "true" : undefined}
+              aria-current={reviewing ? "true" : undefined}
+              aria-expanded={expanded}
               onClick={() => onToggleExpand(action.id)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -133,7 +159,8 @@ export function InboxList({
               }}
               className={cn(
                 "grid cursor-pointer grid-cols-1 gap-2 px-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2563eb] lg:grid-cols-[auto_72px_1fr_90px_90px_100px_70px_90px_100px_88px] lg:items-center",
-                density === "compact" ? "py-2" : "py-3"
+                density === "compact" ? "py-2" : "py-3",
+                reviewing && "bg-[var(--hcdp-status-info-surface)]"
               )}
             >
               <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>

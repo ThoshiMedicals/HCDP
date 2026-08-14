@@ -52,10 +52,11 @@ describe("P1-B5 M01 metric/source and attention honesty (GAP-020)", () => {
     assert.match(sections, /Demonstration estimate — not live operational metric/);
   });
 
-  it("Command Centre keeps demo banner and root testid", () => {
+  it("Command Centre keeps demo banner and demo-qualified bulk toasts", () => {
     assert.match(cc, /data-testid="m01-demo-banner"/);
     assert.match(cc, /data-testid="m01-command-centre"/);
     assert.match(cc, /Demonstration seed data|not live operational truth/i);
+    assert.match(cc, /local demo — not live backend/);
   });
 });
 
@@ -84,17 +85,23 @@ describe("P1-B5 M02 queue/detail and control honesty (GAP-021/068)", () => {
     assert.match(summary, /demonstration|local/i);
   });
 
-  it("List/detail expose selection and review panel testids", () => {
+  it("List/detail put aria-current on reviewing interactive row", () => {
     assert.match(list, /data-testid="m02-inbox-list"/);
-    assert.match(list, /aria-current|data-selected/);
+    assert.match(list, /reviewId/);
+    assert.match(list, /aria-current=\{reviewing \? "true" : undefined\}/);
     assert.match(review, /m02-review-panel/);
+    assert.match(review, /Open operational source system/);
+    assert.doesNotMatch(review, /Open clinical source system/);
   });
 
-  it("Control classification manifest exists and marks domain NOT-STARTED", () => {
+  it("Control classification is expanded and marks domain NOT-STARTED", () => {
     assert.ok(existsSync(join(root, "docs/audits/p1/b5-m01-m02-presentation/control-classification.json")));
     assert.match(classification, /"domainStatus":\s*"NOT-STARTED"/);
-    assert.match(classification, /operational-local-demo/);
+    assert.match(classification, /m01-control-bar/);
+    assert.match(classification, /m02-route-access-denied/);
     assert.match(classification, /planned-unavailable|deferred-durable|outside-p1-b5/);
+    const parsed = JSON.parse(classification);
+    assert.ok(parsed.classifications.length > 14);
   });
 });
 
@@ -102,6 +109,7 @@ describe("P1-B5 patient/clinical firewall and domain exclusion", () => {
   const matrix = read("docs/architecture/prototype-parity/phase1/P1_MODULE_PARITY_MATRIX.md");
   const briefing = read("docs/architecture/prototype-parity/phase1/P1_B5_OWNER_AUTHORISATION_BRIEFING.md");
   const review = read("src/components/workspaces/action-inbox/ReviewPanel.tsx");
+  const inboxProj = read("src/components/workspaces/command-centre/InboxProjectionSummary.tsx");
 
   it("Module parity matrix keeps M01/M02 Domain NS", () => {
     assert.match(matrix, /\| M01 \|[^|]*\| FC \| NS \|/);
@@ -110,7 +118,13 @@ describe("P1-B5 patient/clinical firewall and domain exclusion", () => {
 
   it("Briefing and UI preserve clinical source-system boundary", () => {
     assert.match(briefing, /OWN-PATIENT-FIREWALL|patient clinical|Best Practice/i);
-    assert.match(review, /clinical source system|source system/i);
+    assert.match(review, /Best Practice|clinical source system/i);
+    assert.match(review, /Open operational source system/);
+  });
+
+  it("Projection cards do not claim Live operational aggregation", () => {
+    assert.match(inboxProj, /Local\/demo projection/i);
+    assert.doesNotMatch(inboxProj, /Live projection/);
   });
 
   it("Does not integrate Aurora", () => {
@@ -136,13 +150,15 @@ describe("P1-B5 preservation and unauthorised later batches", () => {
     assert.match(batches, /P1 — PLANNED, NOT AUTHORISED|IMPLEMENTED FOR OWNER REVIEW|acceptance pending/i);
   });
 
-  it("harness asserts required matrices and exclusions when present", () => {
+  it("harness forbids ambiguous or-filenames and requires exact states", () => {
     if (!harness) return;
     assert.match(harness, /1440/);
     assert.match(harness, /390/);
     assert.match(harness, /system-os-dark/);
-    assert.match(harness, /m01-priority-summary|m02-action-inbox/);
-    assert.match(harness, /NOT-STARTED|patient|clinical/i);
+    assert.match(harness, /m02-selected-detail|m02\/selected-detail/);
+    assert.match(harness, /m02-sensitivity-restricted|m02\/sensitivity-restricted/);
+    assert.match(harness, /Ambiguous screenshot name rejected|no-ambiguous-or-names/);
+    assert.doesNotMatch(harness, /m02-access-denied-or-sensitivity|m02-empty-or-no-row|m02-no-selection-or-ready/);
     assert.doesNotMatch(harness, /aurora-design-foundation/);
   });
 });

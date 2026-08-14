@@ -179,7 +179,7 @@ export function PrioritySummary({
     <CcCard data-priority-summary="true" data-testid="m01-priority-summary" className="min-w-0 max-w-full">
       <div className="flex min-w-0 max-w-full flex-wrap items-center justify-between gap-2 px-4 pt-3.5">
         <div className="min-w-0">
-          <h3 className="m-0 text-[14px] font-extrabold">Priority Summary</h3>
+          <h2 className="m-0 text-[14px] font-extrabold">Priority Summary</h2>
           <p className="m-0 mt-0.5 text-[length:var(--type-control)] text-[var(--cc-muted)]">
             {clinicScopeLabel} · Updated {formatClock(lastUpdated)}
           </p>

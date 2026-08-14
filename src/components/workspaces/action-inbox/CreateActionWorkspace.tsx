@@ -469,10 +469,15 @@ export function CreateActionWorkspace({
                   </label>
                   <label className="grid gap-1 text-[length:var(--type-control)] font-bold">
                     Delivery method
-                    <select className={inputCls} value={deliveryMethod} onChange={(e) => setDeliveryMethod(e.target.value)}>
-                      <option>Platform</option>
-                      <option>Email</option>
-                      <option>SMS</option>
+                    <select
+                      className={inputCls}
+                      value={deliveryMethod}
+                      onChange={(e) => setDeliveryMethod(e.target.value)}
+                      aria-label="Delivery method (Email and SMS planned, not live)"
+                    >
+                      <option value="Platform">Platform</option>
+                      <option value="Email">Email (planned / not live)</option>
+                      <option value="SMS">SMS (planned / not live)</option>
                     </select>
                   </label>
                   <label className="flex items-center gap-2 text-[length:var(--type-control)] font-semibold">

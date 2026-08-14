@@ -1,2468 +1,2802 @@
 {
-  "batch": "P1-B5",
+  "batch": "P1-B5-REMEDIATION",
   "runtime": "production",
-  "baseUrl": "http://localhost:3026",
-  "generatedAt": "2026-08-14T03:40:21.905Z",
+  "baseUrl": "http://localhost:3029",
+  "generatedAt": "2026-08-14T04:56:09.317Z",
   "failures": 0,
-  "assertionCount": 469,
-  "passCount": 469,
+  "assertionCount": 438,
+  "passCount": 438,
   "failCount": 0,
-  "screenshotCount": 27,
+  "screenshotCount": 29,
+  "assertionGroups": {
+    "regions": 144,
+    "overflow": 49,
+    "appearance": 48,
+    "theme": 48,
+    "m01States": 33,
+    "m02States": 34,
+    "focus": 3,
+    "controls": 5,
+    "firewall": 48,
+    "domain": 4,
+    "matrix": 10,
+    "required": 12
+  },
   "shots": [
     {
-      "name": "m01-1440-light-reduce",
-      "file": "shots/m01-1440-light-reduce.png"
+      "name": "m01-1440-light-ready",
+      "state": "m01-ready",
+      "file": "shots/m01-1440-light-ready.png"
     },
     {
-      "name": "m01-1440-dark-reduce",
-      "file": "shots/m01-1440-dark-reduce.png"
+      "name": "m01-1440-dark-ready",
+      "state": "m01-ready",
+      "file": "shots/m01-1440-dark-ready.png"
     },
     {
-      "name": "m01-430-light-reduce",
-      "file": "shots/m01-430-light-reduce.png"
+      "name": "m01-430-light-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-430-light-mobile.png"
     },
     {
-      "name": "m01-430-system-os-dark-reduce",
-      "file": "shots/m01-430-system-os-dark-reduce.png"
+      "name": "m01-430-system-os-dark-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-430-system-os-dark-mobile.png"
     },
     {
-      "name": "m01-390-light-reduce",
-      "file": "shots/m01-390-light-reduce.png"
+      "name": "m01-390-light-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-390-light-mobile.png"
     },
     {
-      "name": "m01-390-system-os-dark-reduce",
-      "file": "shots/m01-390-system-os-dark-reduce.png"
+      "name": "m01-390-system-os-dark-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-390-system-os-dark-mobile.png"
     },
     {
-      "name": "m02-1440-light-reduce",
-      "file": "shots/m02-1440-light-reduce.png"
+      "name": "m02-1440-light-ready",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-1440-light-ready.png"
     },
     {
-      "name": "m02-1440-dark-reduce",
-      "file": "shots/m02-1440-dark-reduce.png"
+      "name": "m02-1440-dark-ready",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-1440-dark-ready.png"
     },
     {
-      "name": "m02-430-light-reduce",
-      "file": "shots/m02-430-light-reduce.png"
+      "name": "m02-430-light-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-430-light-mobile.png"
     },
     {
-      "name": "m02-430-system-os-dark-reduce",
-      "file": "shots/m02-430-system-os-dark-reduce.png"
+      "name": "m02-430-system-os-dark-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-430-system-os-dark-mobile.png"
     },
     {
-      "name": "m02-390-light-reduce",
-      "file": "shots/m02-390-light-reduce.png"
+      "name": "m02-390-light-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-390-light-mobile.png"
     },
     {
-      "name": "m02-390-system-os-dark-reduce",
-      "file": "shots/m02-390-system-os-dark-reduce.png"
+      "name": "m02-390-system-os-dark-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-390-system-os-dark-mobile.png"
     },
     {
-      "name": "m01-ready-1440-light-reduce",
-      "file": "shots/m01-ready-1440-light-reduce.png"
+      "name": "m01-ready-1440-light",
+      "state": "m01-ready",
+      "file": "shots/m01-ready-1440-light.png"
     },
     {
-      "name": "m01-state-loading-1440-light-reduce",
-      "file": "shots/m01-state-loading-1440-light-reduce.png"
+      "name": "m01-loading-1440-light",
+      "state": "m01-loading",
+      "file": "shots/m01-loading-1440-light.png"
     },
     {
-      "name": "m01-state-empty-1440-light-reduce",
-      "file": "shots/m01-state-empty-1440-light-reduce.png"
+      "name": "m01-empty-1440-light",
+      "state": "m01-empty",
+      "file": "shots/m01-empty-1440-light.png"
     },
     {
-      "name": "m01-state-error-1440-light-reduce",
-      "file": "shots/m01-state-error-1440-light-reduce.png"
+      "name": "m01-error-1440-light",
+      "state": "m01-error",
+      "file": "shots/m01-error-1440-light.png"
     },
     {
-      "name": "m01-state-permission-1440-light-reduce",
-      "file": "shots/m01-state-permission-1440-light-reduce.png"
+      "name": "m01-permission-unavailable-1440-light",
+      "state": "m01-permission-unavailable",
+      "file": "shots/m01-permission-unavailable-1440-light.png"
     },
     {
-      "name": "m01-mobile-390-light-reduce",
-      "file": "shots/m01-mobile-390-light-reduce.png"
+      "name": "m02-ready-queue-1440-light",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-ready-queue-1440-light.png"
     },
     {
-      "name": "m02-ready-1440-light-reduce",
-      "file": "shots/m02-ready-1440-light-reduce.png"
+      "name": "m02-no-selection-1440-light",
+      "state": "m02-no-selection",
+      "file": "shots/m02-no-selection-1440-light.png"
     },
     {
-      "name": "m02-detail-open-1440-light-reduce",
-      "file": "shots/m02-detail-open-1440-light-reduce.png"
+      "name": "m02-planned-unavailable-email-sms-1440-light",
+      "state": "m02-planned-unavailable-email-sms",
+      "file": "shots/m02-planned-unavailable-email-sms-1440-light.png"
     },
     {
-      "name": "m02-operational-local-demo-1440-light-reduce",
-      "file": "shots/m02-operational-local-demo-1440-light-reduce.png"
+      "name": "m02-selected-detail-1440-light",
+      "state": "m02-selected-detail",
+      "file": "shots/m02-selected-detail-1440-light.png"
     },
     {
-      "name": "m02-detail-closed-after-escape-1440-light-reduce",
-      "file": "shots/m02-detail-closed-after-escape-1440-light-reduce.png"
+      "name": "m02-operational-local-demo-1440-light",
+      "state": "m02-operational-local-demo",
+      "file": "shots/m02-operational-local-demo-1440-light.png"
     },
     {
-      "name": "m02-filters-search-1440-light-reduce",
-      "file": "shots/m02-filters-search-1440-light-reduce.png"
+      "name": "m02-detail-closed-after-escape-1440-light",
+      "state": "m02-detail-closed-after-escape",
+      "file": "shots/m02-detail-closed-after-escape-1440-light.png"
     },
     {
-      "name": "m02-no-selection-or-ready-1440-light-reduce",
-      "file": "shots/m02-no-selection-or-ready-1440-light-reduce.png"
+      "name": "m02-empty-filtered-1440-light",
+      "state": "m02-empty-filtered",
+      "file": "shots/m02-empty-filtered-1440-light.png"
     },
     {
-      "name": "m02-empty-1440-light-reduce",
-      "file": "shots/m02-empty-1440-light-reduce.png"
+      "name": "m02-filters-search-1440-light",
+      "state": "m02-filters-search",
+      "file": "shots/m02-filters-search-1440-light.png"
     },
     {
-      "name": "m02-access-denied-or-sensitivity-1440-light-reduce",
-      "file": "shots/m02-access-denied-or-sensitivity-1440-light-reduce.png"
+      "name": "m02-sensitivity-restricted-1440-light",
+      "state": "m02-sensitivity-restricted",
+      "file": "shots/m02-sensitivity-restricted-1440-light.png"
     },
     {
-      "name": "m02-mobile-stacked-390-light-reduce",
-      "file": "shots/m02-mobile-stacked-390-light-reduce.png"
+      "name": "m02-empty-filtered-from-view-1440-light",
+      "state": "m02-empty-filtered-from-view",
+      "file": "shots/m02-empty-filtered-from-view-1440-light.png"
+    },
+    {
+      "name": "m02-loading-1440-light",
+      "state": "m02-loading",
+      "file": "shots/m02-loading-1440-light.png"
+    },
+    {
+      "name": "m02-mobile-stacked-390-light",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-mobile-stacked-390-light.png"
     }
   ],
   "assertions": [
     {
       "ok": true,
       "id": "m01-1440-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1440-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1440-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1440-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1440-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1440-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1440-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1440-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1440-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1280-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1280-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1280-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1280-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1280-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1280-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1280-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1280-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1280-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1024-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1024-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1024-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1024-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1024-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1024-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1024-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-1024-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-1024-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-768-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-768-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-768-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-768-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-768-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-768-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-768-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-768-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-768-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-768-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-768-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-768-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-768-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-768-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-430-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-430-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-430-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-430-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-430-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-430-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-430-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-430-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-430-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-430-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-430-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-430-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-430-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-430-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-390-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-390-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-390-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-390-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-390-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-390-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-390-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-390-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-390-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-390-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-390-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-390-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-light/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-light/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-light/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-dark/m01-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-dark/m01-demo-label",
-      "reason": "demo=true"
-    },
-    {
-      "ok": true,
-      "id": "m01-390-system-os-dark/m01-priority",
-      "reason": "priority=true"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m01-390-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/m01-ready",
+      "reason": "command centre ready+demo",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m02-1440-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1440-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1440-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1440-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1440-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1440-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1440-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1440-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1440-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1280-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1280-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1280-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1280-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1280-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1280-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1280-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1280-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1280-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1024-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1024-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1024-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1024-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1024-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1024-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1024-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-1024-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-1024-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-768-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-768-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-768-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-768-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-768-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-768-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-768-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-768-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-768-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-768-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-768-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-768-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-768-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-768-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-430-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-430-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-430-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-430-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-430-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-430-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-430-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-430-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-430-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-430-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-430-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-430-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-430-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-430-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-390-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-390-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-390-light/appearance-pref",
-      "reason": "data-appearance=light expected=light"
+      "reason": "data-appearance=light",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-390-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-390-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-390-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-390-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-390-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-390-dark/appearance-pref",
-      "reason": "data-appearance=dark expected=dark"
+      "reason": "data-appearance=dark",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-390-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-390-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-390-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/resolved-theme",
-      "reason": "themeDark=false expectDark=false"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-light/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-light/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-light/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=false",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-light/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/regions",
-      "reason": "shell=1 topbar=1 main=1 header=1"
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/single-h1",
+      "reason": "h1 count=1",
+      "group": "regions"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/appearance-pref",
-      "reason": "data-appearance=system expected=system"
+      "reason": "data-appearance=system",
+      "group": "appearance"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/resolved-theme",
-      "reason": "themeDark=true expectDark=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-dark/m02-ready",
-      "reason": "root=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-dark/m02-summary",
-      "reason": "summary=true"
-    },
-    {
-      "ok": true,
-      "id": "m02-390-system-os-dark/m02-honesty",
-      "reason": "Demo/local honesty text present"
+      "reason": "themeDark=true",
+      "group": "theme"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/patient-firewall",
-      "reason": "patientClinicalHit=false"
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
     },
     {
       "ok": true,
       "id": "m02-390-system-os-dark/hydration",
-      "reason": "hydrationErrors=0"
+      "reason": "no hydration errors",
+      "group": "regions"
     },
     {
       "ok": true,
-      "id": "m01/attention-fields",
-      "reason": "Attention owner/due present"
+      "id": "m02-390-system-os-dark/m02-ready",
+      "reason": "action inbox ready",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m01/metric-attribution",
-      "reason": "Metric/demo attribution present"
+      "reason": "demo/local metric attribution present",
+      "group": "m01States"
+    },
+    {
+      "ok": true,
+      "id": "m01/attention-fields",
+      "reason": "attention owner/due present",
+      "group": "m01States"
+    },
+    {
+      "ok": true,
+      "id": "m01/no-live-projection-claim",
+      "reason": "no Live projection wording",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01/state-loading",
-      "reason": "QA card state loading"
+      "reason": "QA card state loading",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01/state-empty",
-      "reason": "QA card state empty"
+      "reason": "QA card state empty",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01/state-error",
-      "reason": "QA card state error"
+      "reason": "QA card state error",
+      "group": "m01States"
     },
     {
       "ok": true,
       "id": "m01/state-permission",
-      "reason": "QA card state permission"
+      "reason": "QA card state permission",
+      "group": "m01States"
     },
     {
       "ok": true,
-      "id": "m01/mobile-no-overflow",
-      "reason": "docOverflowX=false"
+      "id": "m01/permission-content-gated",
+      "reason": "permission frame replaces card content",
+      "group": "m01States"
     },
     {
       "ok": true,
-      "id": "m02/list",
-      "reason": "list=true"
+      "id": "m01/route-access-denied",
+      "reason": "M01 route-level access denied unsupported; QA permission card state evidenced separately",
+      "group": "m01States"
     },
     {
       "ok": true,
-      "id": "m02/planned-unavailable-delivery",
-      "reason": "Email/SMS planned-unavailable honesty present"
+      "id": "m02/ready-queue",
+      "reason": "listState=ready-queue",
+      "group": "m02States"
     },
     {
       "ok": true,
-      "id": "m02/detail-open",
-      "reason": "review=false"
+      "id": "m02/no-selection",
+      "reason": "no review selection before open",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/planned-unavailable-email-sms",
+      "reason": "Email/SMS planned-unavailable honesty",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "m02/selected-detail",
+      "reason": "reviewId=m2-apr-2 expected=m2-apr-2",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/selection-detail-id-match",
+      "reason": "selected=m2-apr-2 review=m2-apr-2",
+      "group": "focus"
     },
     {
       "ok": true,
       "id": "m02/operational-local-demo",
-      "reason": "Operational control outcome remains demo-honest"
+      "reason": "open-source outcome demo-honest",
+      "group": "controls"
     },
     {
       "ok": true,
-      "id": "m02/escape",
-      "reason": "Escape pressed after detail"
+      "id": "m02/detail-closed-escape",
+      "reason": "review closed after Escape",
+      "group": "focus"
     },
     {
       "ok": true,
-      "id": "m02/filters-search",
-      "reason": "Search interacted"
+      "id": "m02/focus-restored",
+      "reason": "focus={\"tag\":\"BUTTON\",\"actionId\":\"m2-apr-2\",\"name\":\"Open Review Panel\"}",
+      "group": "focus"
     },
     {
       "ok": true,
-      "id": "m02/empty",
-      "reason": "Empty/filtered-empty presentation exercised"
+      "id": "m02/empty-filtered",
+      "reason": "emptyKind=filtered",
+      "group": "m02States"
     },
     {
       "ok": true,
-      "id": "m02/access-denied-or-sensitivity",
-      "reason": "Sensitivity/permission honesty path present"
+      "id": "m02/sensitivity-restricted",
+      "reason": "sensitivity restriction evidenced",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/empty-view",
+      "reason": "emptyKind=filtered",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/empty-inbox-unsupported-stable",
+      "reason": "True empty inbox without reseed unsupported for stable evidence (loadActions reseeds [])",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/loading",
+      "reason": "loading discriminator captured",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02/error-source-verified",
-      "reason": "Error+Try Again UI retained in ActionInboxApp source; no fabricated backend force"
+      "reason": "Error+Try Again UI retained in source; no fabricated sessionStorage force",
+      "group": "m02States"
+    },
+    {
+      "ok": true,
+      "id": "m02/route-access-denied-unsupported",
+      "reason": "Route-level access denied unsupported — sensitivity-restricted evidenced instead",
+      "group": "m02States"
     },
     {
       "ok": true,
       "id": "m02/mobile-no-overflow",
-      "reason": "docOverflowX=false"
+      "reason": "docOverflowX=false",
+      "group": "overflow"
     },
     {
       "ok": true,
-      "id": "control/domain-not-started",
-      "reason": "M01/M02 domain remains NOT-STARTED (parity matrix / classification)"
-    },
-    {
-      "ok": true,
-      "id": "control/durable-excluded",
-      "reason": "No durable M01/M02 services authorised under P1-B5"
-    },
-    {
-      "ok": true,
-      "id": "control/aurora-unintegrated",
-      "reason": "Aurora not merged/cherry-picked/copied"
-    },
-    {
-      "ok": true,
-      "id": "control/b6-b8-unauthorised",
-      "reason": "P1-B6–P1-B8 remain unauthorised"
+      "id": "domain/no-app-api",
+      "reason": "apiHits=0",
+      "group": "domain"
     },
     {
       "ok": true,
       "id": "control/classification-manifest",
-      "reason": "control-classification.json present"
+      "reason": "manifest present",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "control/domain-not-started",
+      "reason": "domainStatus NOT-STARTED",
+      "group": "domain"
+    },
+    {
+      "ok": true,
+      "id": "control/enumeration-expanded",
+      "reason": "count=27",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "control/unsupported-access-denied-documented",
+      "reason": "route access denied documented unsupported",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "control/aurora-unintegrated",
+      "reason": "Aurora not merged/cherry-picked/copied",
+      "group": "domain"
+    },
+    {
+      "ok": true,
+      "id": "control/b6-b8-unauthorised",
+      "reason": "P1-B6–P1-B8 remain unauthorised",
+      "group": "domain"
     },
     {
       "ok": true,
       "id": "matrix/width-1440",
-      "reason": "Width 1440 exercised"
+      "reason": "Width 1440",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/width-1280",
-      "reason": "Width 1280 exercised"
+      "reason": "Width 1280",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/width-1024",
-      "reason": "Width 1024 exercised"
+      "reason": "Width 1024",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/width-768",
-      "reason": "Width 768 exercised"
+      "reason": "Width 768",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/width-430",
-      "reason": "Width 430 exercised"
+      "reason": "Width 430",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/width-390",
-      "reason": "Width 390 exercised"
+      "reason": "Width 390",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/appearance-light",
-      "reason": "Appearance light exercised"
+      "reason": "Appearance light",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/appearance-dark",
-      "reason": "Appearance dark exercised"
+      "reason": "Appearance dark",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/appearance-system-os-light",
-      "reason": "Appearance system-os-light exercised"
+      "reason": "Appearance system-os-light",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "matrix/appearance-system-os-dark",
-      "reason": "Appearance system-os-dark exercised"
+      "reason": "Appearance system-os-dark",
+      "group": "matrix"
     },
     {
       "ok": true,
       "id": "required/m01/attention-fields",
-      "reason": "Attention owner/due present"
+      "reason": "attention owner/due present",
+      "group": "required"
     },
     {
       "ok": true,
       "id": "required/m01/metric-attribution",
-      "reason": "Metric/demo attribution present"
+      "reason": "demo/local metric attribution present",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/ready-queue",
+      "reason": "listState=ready-queue",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/no-selection",
+      "reason": "no review selection before open",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/selected-detail",
+      "reason": "reviewId=m2-apr-2 expected=m2-apr-2",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/empty-filtered",
+      "reason": "emptyKind=filtered",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/sensitivity-restricted",
+      "reason": "sensitivity restriction evidenced",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/planned-unavailable-email-sms",
+      "reason": "Email/SMS planned-unavailable honesty",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/m02/focus-restored",
+      "reason": "focus={\"tag\":\"BUTTON\",\"actionId\":\"m2-apr-2\",\"name\":\"Open Review Panel\"}",
+      "group": "required"
     },
     {
       "ok": true,
       "id": "required/control/domain-not-started",
-      "reason": "M01/M02 domain remains NOT-STARTED (parity matrix / classification)"
+      "reason": "domainStatus NOT-STARTED",
+      "group": "required"
     },
     {
       "ok": true,
       "id": "required/control/aurora-unintegrated",
-      "reason": "Aurora not merged/cherry-picked/copied"
+      "reason": "Aurora not merged/cherry-picked/copied",
+      "group": "required"
     },
     {
       "ok": true,
-      "id": "required/control/classification-manifest",
-      "reason": "control-classification.json present"
+      "id": "evidence/no-ambiguous-or-names",
+      "reason": "No ambiguous or-filenames",
+      "group": "required"
     }
   ],
   "claims": {
@@ -2472,6 +2806,7 @@
     "productionApproval": false,
     "durableDomainComplete": false,
     "auroraIntegrated": false,
-    "ownerAcceptance": "pending"
+    "ownerAcceptance": "pending",
+    "validationBasis": "local-only"
   }
 }

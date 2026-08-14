@@ -906,8 +906,8 @@ export function ActionInboxApp() {
       } else {
         pushToast(
           a?.sourceRecord
-            ? `Demonstration: would open ${a.sourceModule} / ${a.sourceRecord}.`
-            : "No source record linked.",
+            ? `Demonstration: would open ${a.sourceModule} / ${a.sourceRecord} (local demo — not live backend).`
+            : "No source record linked (local demo — not live backend).",
           "default"
         );
       }
@@ -1116,10 +1116,15 @@ export function ActionInboxApp() {
     setMoreOpen(false);
   };
 
-  const emptyKind: "inbox" | "filtered" =
-    Object.values(filters).some((v) => v !== "" && v !== false) || category !== "all"
-      ? "filtered"
-      : "inbox";
+  const emptyKind: "inbox" | "filtered" | "view" = (() => {
+    const filtersActive =
+      Object.values(filters).some((v) => v !== "" && v !== false) || category !== "all";
+    if (filtersActive) return "filtered";
+    if (mainView !== "my-actions" && mainView !== "all-clinics" && mainView !== "my-team") {
+      return "view";
+    }
+    return "inbox";
+  })();
 
   if (loadState === "loading") {
     return (
@@ -1374,7 +1379,7 @@ export function ActionInboxApp() {
       </header>
 
       <SummaryCards
-        actions={actions}
+        actions={canSeeSensitive ? actions : actions.filter((a) => canViewSensitive(a, canSeeSensitive))}
         active={category === "all" ? null : (category as ActionCategory)}
         onSelect={onSummarySelect}
       />
@@ -1489,6 +1494,7 @@ export function ActionInboxApp() {
         isManager={isManager}
         selectedIds={selectedIds}
         expandedId={expandedId}
+        reviewId={reviewId}
         onToggleSelect={toggleSelect}
         onToggleExpand={(id) => setExpandedId((cur) => (cur === id ? null : id))}
         onOpenReview={(id) => {
@@ -1517,7 +1523,9 @@ export function ActionInboxApp() {
         canSeeSensitive={canSeeSensitive}
         isManager={isManager}
         auditKey={auditKey}
-        onClose={() => setReviewId(null)}
+        onClose={() => {
+          setReviewId(null);
+        }}
         onAction={onReviewAction}
       />
 

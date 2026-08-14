@@ -1,114 +1,151 @@
 {
   "runtime": "production",
-  "count": 27,
+  "count": 29,
   "shots": [
     {
-      "name": "m01-1440-light-reduce",
-      "file": "shots/m01-1440-light-reduce.png"
+      "name": "m01-1440-light-ready",
+      "state": "m01-ready",
+      "file": "shots/m01-1440-light-ready.png"
     },
     {
-      "name": "m01-1440-dark-reduce",
-      "file": "shots/m01-1440-dark-reduce.png"
+      "name": "m01-1440-dark-ready",
+      "state": "m01-ready",
+      "file": "shots/m01-1440-dark-ready.png"
     },
     {
-      "name": "m01-430-light-reduce",
-      "file": "shots/m01-430-light-reduce.png"
+      "name": "m01-430-light-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-430-light-mobile.png"
     },
     {
-      "name": "m01-430-system-os-dark-reduce",
-      "file": "shots/m01-430-system-os-dark-reduce.png"
+      "name": "m01-430-system-os-dark-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-430-system-os-dark-mobile.png"
     },
     {
-      "name": "m01-390-light-reduce",
-      "file": "shots/m01-390-light-reduce.png"
+      "name": "m01-390-light-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-390-light-mobile.png"
     },
     {
-      "name": "m01-390-system-os-dark-reduce",
-      "file": "shots/m01-390-system-os-dark-reduce.png"
+      "name": "m01-390-system-os-dark-mobile",
+      "state": "m01-mobile",
+      "file": "shots/m01-390-system-os-dark-mobile.png"
     },
     {
-      "name": "m02-1440-light-reduce",
-      "file": "shots/m02-1440-light-reduce.png"
+      "name": "m02-1440-light-ready",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-1440-light-ready.png"
     },
     {
-      "name": "m02-1440-dark-reduce",
-      "file": "shots/m02-1440-dark-reduce.png"
+      "name": "m02-1440-dark-ready",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-1440-dark-ready.png"
     },
     {
-      "name": "m02-430-light-reduce",
-      "file": "shots/m02-430-light-reduce.png"
+      "name": "m02-430-light-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-430-light-mobile.png"
     },
     {
-      "name": "m02-430-system-os-dark-reduce",
-      "file": "shots/m02-430-system-os-dark-reduce.png"
+      "name": "m02-430-system-os-dark-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-430-system-os-dark-mobile.png"
     },
     {
-      "name": "m02-390-light-reduce",
-      "file": "shots/m02-390-light-reduce.png"
+      "name": "m02-390-light-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-390-light-mobile.png"
     },
     {
-      "name": "m02-390-system-os-dark-reduce",
-      "file": "shots/m02-390-system-os-dark-reduce.png"
+      "name": "m02-390-system-os-dark-mobile",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-390-system-os-dark-mobile.png"
     },
     {
-      "name": "m01-ready-1440-light-reduce",
-      "file": "shots/m01-ready-1440-light-reduce.png"
+      "name": "m01-ready-1440-light",
+      "state": "m01-ready",
+      "file": "shots/m01-ready-1440-light.png"
     },
     {
-      "name": "m01-state-loading-1440-light-reduce",
-      "file": "shots/m01-state-loading-1440-light-reduce.png"
+      "name": "m01-loading-1440-light",
+      "state": "m01-loading",
+      "file": "shots/m01-loading-1440-light.png"
     },
     {
-      "name": "m01-state-empty-1440-light-reduce",
-      "file": "shots/m01-state-empty-1440-light-reduce.png"
+      "name": "m01-empty-1440-light",
+      "state": "m01-empty",
+      "file": "shots/m01-empty-1440-light.png"
     },
     {
-      "name": "m01-state-error-1440-light-reduce",
-      "file": "shots/m01-state-error-1440-light-reduce.png"
+      "name": "m01-error-1440-light",
+      "state": "m01-error",
+      "file": "shots/m01-error-1440-light.png"
     },
     {
-      "name": "m01-state-permission-1440-light-reduce",
-      "file": "shots/m01-state-permission-1440-light-reduce.png"
+      "name": "m01-permission-unavailable-1440-light",
+      "state": "m01-permission-unavailable",
+      "file": "shots/m01-permission-unavailable-1440-light.png"
     },
     {
-      "name": "m01-mobile-390-light-reduce",
-      "file": "shots/m01-mobile-390-light-reduce.png"
+      "name": "m02-ready-queue-1440-light",
+      "state": "m02-ready-queue",
+      "file": "shots/m02-ready-queue-1440-light.png"
     },
     {
-      "name": "m02-ready-1440-light-reduce",
-      "file": "shots/m02-ready-1440-light-reduce.png"
+      "name": "m02-no-selection-1440-light",
+      "state": "m02-no-selection",
+      "file": "shots/m02-no-selection-1440-light.png"
     },
     {
-      "name": "m02-detail-open-1440-light-reduce",
-      "file": "shots/m02-detail-open-1440-light-reduce.png"
+      "name": "m02-planned-unavailable-email-sms-1440-light",
+      "state": "m02-planned-unavailable-email-sms",
+      "file": "shots/m02-planned-unavailable-email-sms-1440-light.png"
     },
     {
-      "name": "m02-operational-local-demo-1440-light-reduce",
-      "file": "shots/m02-operational-local-demo-1440-light-reduce.png"
+      "name": "m02-selected-detail-1440-light",
+      "state": "m02-selected-detail",
+      "file": "shots/m02-selected-detail-1440-light.png"
     },
     {
-      "name": "m02-detail-closed-after-escape-1440-light-reduce",
-      "file": "shots/m02-detail-closed-after-escape-1440-light-reduce.png"
+      "name": "m02-operational-local-demo-1440-light",
+      "state": "m02-operational-local-demo",
+      "file": "shots/m02-operational-local-demo-1440-light.png"
     },
     {
-      "name": "m02-filters-search-1440-light-reduce",
-      "file": "shots/m02-filters-search-1440-light-reduce.png"
+      "name": "m02-detail-closed-after-escape-1440-light",
+      "state": "m02-detail-closed-after-escape",
+      "file": "shots/m02-detail-closed-after-escape-1440-light.png"
     },
     {
-      "name": "m02-no-selection-or-ready-1440-light-reduce",
-      "file": "shots/m02-no-selection-or-ready-1440-light-reduce.png"
+      "name": "m02-empty-filtered-1440-light",
+      "state": "m02-empty-filtered",
+      "file": "shots/m02-empty-filtered-1440-light.png"
     },
     {
-      "name": "m02-empty-1440-light-reduce",
-      "file": "shots/m02-empty-1440-light-reduce.png"
+      "name": "m02-filters-search-1440-light",
+      "state": "m02-filters-search",
+      "file": "shots/m02-filters-search-1440-light.png"
     },
     {
-      "name": "m02-access-denied-or-sensitivity-1440-light-reduce",
-      "file": "shots/m02-access-denied-or-sensitivity-1440-light-reduce.png"
+      "name": "m02-sensitivity-restricted-1440-light",
+      "state": "m02-sensitivity-restricted",
+      "file": "shots/m02-sensitivity-restricted-1440-light.png"
     },
     {
-      "name": "m02-mobile-stacked-390-light-reduce",
-      "file": "shots/m02-mobile-stacked-390-light-reduce.png"
+      "name": "m02-empty-filtered-from-view-1440-light",
+      "state": "m02-empty-filtered-from-view",
+      "file": "shots/m02-empty-filtered-from-view-1440-light.png"
+    },
+    {
+      "name": "m02-loading-1440-light",
+      "state": "m02-loading",
+      "file": "shots/m02-loading-1440-light.png"
+    },
+    {
+      "name": "m02-mobile-stacked-390-light",
+      "state": "m02-mobile-stacked",
+      "file": "shots/m02-mobile-stacked-390-light.png"
     }
   ]
 }
