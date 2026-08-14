@@ -50,7 +50,9 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-14 (qualified):** P1-B4 owner acceptance at `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). Evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md). **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Aurora parallel stream remained isolated. No automatic progression.
 
-**Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
+**P1-B5 (2026-08-14):** Authorisation readiness briefing prepared — **implementation remains unauthorised**. Briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md). Gaps 020/021/066/067/068 **not closed**.
+
+**Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product; **OWN-P1-009** durable M01–M03 domain → P2); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
 
@@ -70,6 +72,7 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 | 12 | Gap → source → acceptance traceability | [P1_GAP_TRACEABILITY.md](./P1_GAP_TRACEABILITY.md) |
 | — | Baseline gate evidence | [P1_BASELINE_GATE_EVIDENCE.md](./P1_BASELINE_GATE_EVIDENCE.md) |
 | — | P1-B4 authorisation readiness briefing | [P1_B4_OWNER_AUTHORISATION_BRIEFING.md](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md) |
+| — | P1-B5 authorisation readiness briefing | [P1_B5_OWNER_AUTHORISATION_BRIEFING.md](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md) |
 | — | This index | [README.md](./README.md) |
 
 ## P1A pack
@@ -90,7 +93,7 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B5–P1-B8 without separate explicit owner authorisation (no automatic progression from B1–B4 acceptance)
+- Begin P1-B5–P1-B8 without separate explicit owner authorisation (no automatic progression from B1–B4 acceptance; B5 briefing alone is not authorisation)
 - Integrate or depend on `cursor/aurora-design-foundation` without separate express authorisation
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes

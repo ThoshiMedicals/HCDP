@@ -71,12 +71,12 @@ Eight batches remain accounted for:
 2. **P1-B2** — Shell truthfulness + inactive-control remediation — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **owner accepted with qualifications — CLOSED (2026-08-13)**  
 4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — **Owner accepted with qualifications — CLOSED (2026-08-14)** at `c58f284…` (`P1-B4-OWNER-ACCEPT-2026-08-14`) (evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md))
-5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — unauthorised
+5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — **unauthorised** (briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md))
 6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — unauthorised
 7. **P1-B7** — Permission / audit / empty-loading-error-denied state completeness — unauthorised
 8. **P1-B8** — P1 closure evidence pack + owner stop checkpoint — unauthorised
 
-Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B3 acceptance or B4 implementation.
+Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B4 acceptance.
 
 ## Owner decisions
 
@@ -104,4 +104,4 @@ See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 - Not automatic authorisation of B5–B8
 - Historical P0 evidence not altered
 
-**Current programme claim:** `P1-B4 qualified owner acceptance recorded and published — P1-B5 through P1-B8 remain unauthorised, Aurora remains isolated, and no merge or deployment was performed.`
+**Current programme claim:** `P1-B5 M01/M02 Decision A presentation authorisation briefing prepared and published — P1-B5 remains unauthorised, Aurora remains parked and unintegrated, and no implementation, merge or deployment was performed.`

@@ -124,7 +124,9 @@
 | Status | `P1 — PLANNED, NOT AUTHORISED` |
 | Objective | Apply Decision A chrome to M01/M02 **without** durable domain services |
 | Included gaps | 020, 021, 066, 067, 068 (chrome) |
-| Prohibited | Claiming domain complete; workflow dossier completion (P2); patient mock → real patient data |
+| Authorisation briefing | [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md) — prepared; **does not authorise coding** |
+| Owner-decision blocker | **None** for presentation-only B5 (OWN-P1-009 durable domain remains P2; OWN-P1-011/016 open but out of B5 product scope) |
+| Prohibited | Claiming domain complete; workflow dossier completion (P2); patient mock → real patient data; Aurora adoption; durable services |
 | Exit | Visual QA vs Decision A for listed screens; domain status remains NOT-STARTED |
 
 ## P1-B6 — Accepted modules design apply
