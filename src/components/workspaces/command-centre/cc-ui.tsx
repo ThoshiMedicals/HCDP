@@ -10,12 +10,13 @@ export function CcCard({
   className,
   accent,
   collapsed,
+  ...rest
 }: {
   children: React.ReactNode;
   className?: string;
   accent?: string;
   collapsed?: boolean;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   return (
     <section
       className={cn(
@@ -24,6 +25,7 @@ export function CcCard({
         className
       )}
       style={accent ? { borderTop: `3px solid ${accent}` } : undefined}
+      {...rest}
     >
       {children}
     </section>

@@ -398,7 +398,7 @@
 | Risk | Layout churn |
 | Acceptance evidence | Visual QA regions |
 | Batch | P1-B5 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** — not closed |
 | Owner clarification | No |
 
 ### P1-GAP-021 — M02 Decision A chrome apply (presentation)
@@ -416,7 +416,7 @@
 | Risk | Layout churn |
 | Acceptance evidence | Visual QA |
 | Batch | P1-B5 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** — not closed |
 | Owner clarification | No |
 
 ---
@@ -649,13 +649,13 @@ Classification **Not applicable** / prohibited. Exclude.
 ## H. Additional moderate gaps (forms/filters/drill-downs/alerts)
 
 ### P1-GAP-066 — Shared filter/search semantics inconsistent (Topbar nav search vs module filters)
-Classification **Moderate**. Priority P1-rec. Batch P1-B2/B5. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Moderate**. Priority P1-rec. Batch P1-B2/B5. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 presentation portion — **not closed**.
 
 ### P1-GAP-067 — Drill-down / detail panel patterns inconsistent across M01–M03 vs domain modules
-Classification **Moderate**. Priority P1-rec. Batch P1-B1/B5. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Moderate**. Priority P1-rec. Batch P1-B1/B5. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 presentation portion — **not closed**.
 
 ### P1-GAP-068 — Alert/notification chrome vs M02 domain notifications
-Classification **Moderate**. Priority P2+ for domain; P1 for chrome honesty. Batch P1-B5 / P2. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Moderate**. Priority P2+ for domain; P1 for chrome honesty. Batch P1-B5 / P2. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 chrome honesty — **not closed**; durable domain notifications remain P2+.
 
 ### P1-GAP-069 — Form field schema adoption incomplete outside accepted modules
 Classification **Future scope** / P2+. Status `P1 — PLANNED, NOT AUTHORISED`.

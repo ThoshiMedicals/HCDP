@@ -1,7 +1,7 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
-**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B5–B8 never auto-start (OWN-P1-002). P1-B4 acceptance does **not** authorise automatic progression.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B5** expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b5-m01-m02-presentation` (source tip `ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577`). **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
+**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B6–B8 never auto-start (OWN-P1-002). P1-B5 implementation does **not** authorise automatic progression.
 
 ## Batch index
 
@@ -11,7 +11,7 @@
 | P1-B2 | Shell truthfulness / inactive controls / demo honesty | 005, 006, 007, 018*, 030*, 032, 071, 073 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | **Owner accepted with qualifications — CLOSED (2026-08-14)** |
-| P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
 | P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B7 | Permission / state / report honesty completeness | 027–030, 028, 053* | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B8 | P1 closure evidence + stop checkpoint | 010, 075, 076, 082 | `P1 — PLANNED, NOT AUTHORISED` |
@@ -121,13 +121,18 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — PLANNED, NOT AUTHORISED` |
+| Status | **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
+| Implementation branch | `cursor/p1-b5-m01-m02-presentation` |
+| Source tip | `ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577` |
 | Objective | Apply Decision A chrome to M01/M02 **without** durable domain services |
 | Included gaps | 020, 021, 066, 067, 068 (chrome) |
-| Authorisation briefing | [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md) — prepared; **does not authorise coding** |
+| Gap disposition | Gaps **addressed for owner review** — **not closed** until owner acceptance |
+| Domain status | M01/M02 remain **NOT-STARTED** |
+| Authorisation briefing | [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md) |
+| Implementation evidence | [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md) |
 | Owner-decision blocker | **None** for presentation-only B5 (OWN-P1-009 durable domain remains P2; OWN-P1-011/016 open but out of B5 product scope) |
-| Prohibited | Claiming domain complete; workflow dossier completion (P2); patient mock → real patient data; Aurora adoption; durable services |
-| Exit | Visual QA vs Decision A for listed screens; domain status remains NOT-STARTED |
+| Prohibited | Claiming domain complete; workflow dossier completion (P2); patient mock → real patient data; Aurora adoption; durable services; automatic progression to B6 |
+| Exit | Visual QA vs Decision A for listed screens; domain status remains NOT-STARTED; **owner acceptance remains pending** |
 
 ## P1-B6 — Accepted modules design apply
 

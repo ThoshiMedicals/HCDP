@@ -105,7 +105,7 @@ export function ReviewPanel({
                 Create Linked Follow-up
               </Button>
               <Button variant="line" onClick={() => onAction("open-source")}>
-                Open Source Record
+                Open clinical source system
               </Button>
             </>
           ) : (
@@ -143,14 +143,14 @@ export function ReviewPanel({
                 </Button>
               )}
               <Button variant="line" onClick={() => onAction("open-source")}>
-                Open Source Record
+                Open clinical source system
               </Button>
             </>
           )}
         </div>
       }
     >
-      <div className="grid gap-4">
+      <div className="grid gap-4" data-testid={open ? "m02-review-panel" : undefined}>
         <div className="flex flex-wrap gap-1.5">
           <Badge tone="info">{action.category}</Badge>
           <Badge tone={action.priority === "Urgent" || action.priority === "High" ? "danger" : "warn"}>
@@ -258,7 +258,7 @@ export function ReviewPanel({
             ))
           )}
           <p className="mt-1 text-[length:var(--type-control)] text-[var(--muted)]">
-            Source record: {action.sourceModule} / {action.sourceRecord || "—"}
+            Operational source reference: {action.sourceModule} / {action.sourceRecord || "—"} (clinical records remain in the clinical source system)
           </p>
         </div>
 

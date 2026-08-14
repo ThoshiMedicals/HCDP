@@ -192,6 +192,9 @@ export function ClinicOperationsPanel({
         title="Clinic Operations & Comparison"
         subtitle="Overall 0–100% score across eight equal areas. Emergency status shown separately. Actual totals shown alongside fair / FTE and / room rates."
       />
+      <p className="m-0 px-4 pb-2 text-[length:var(--type-control)] font-semibold text-[var(--cc-muted)]" role="note">
+        Demonstration estimate — not live operational metric. Income, FTE and room figures below are local comparison guesses for presentation only.
+      </p>
       {/*
         Collapse earlier than sm: 2-col from 640px forces clinic cards past the main pane at
         768 short-height (VQA-C2-SHORT). Stack until lg; 2-col at lg; 4-col at xl+.
@@ -253,6 +256,7 @@ export function ClinicOperationsPanel({
                       <span className="tabular-nums">
                         Income {formatMoneyExact(income)} · {formatMoneyExact(fte ? income / fte : 0)} / FTE ·{" "}
                         {formatMoneyExact(rooms ? income / rooms : 0)} / room
+                        <span className="block font-semibold">Demonstration estimate — not live operational metric</span>
                       </span>
                     </div>
                     {onOpenHealth ? (
@@ -321,7 +325,7 @@ export function ClinicOperationsPanel({
         </div>
         <p className="mt-2 text-[length:var(--type-control)] text-[var(--cc-muted)]">
           Normalisation prevents larger clinics from looking worse simply because they have higher absolute volumes.
-          Actual totals remain visible beside fair rates.
+          Income / FTE / room columns are demonstration estimates — not live operational metrics.
         </p>
       </div>
     </CcCard>

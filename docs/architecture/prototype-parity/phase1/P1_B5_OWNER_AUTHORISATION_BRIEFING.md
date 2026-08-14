@@ -1,20 +1,22 @@
 # P1-B5 Owner-Authorisation / Readiness Briefing — M01/M02 Decision A presentation parity
 
-**Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)  
-**Batch:** P1-B5 — M01/M02 Decision A presentation parity **without** durable domain services  
-**Status stamp:** `P1 — PLANNED, NOT AUTHORISED` — **briefing only; implementation not authorised**  
-**Publication branch:** `cursor/p1-b4-responsive-a11y-appearance`  
-**Publication tip (docs):** tip at time of this briefing on the accepted P1-B4 branch  
-**Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`  
-**Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`  
-**Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)  
-**Accepted P1-B4 tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`)  
-**Briefing date:** 2026-08-14  
+**Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)
+**Batch:** P1-B5 — M01/M02 Decision A presentation parity **without** durable domain services
+**Status stamp (historical briefing):** prepared as `P1 — PLANNED, NOT AUTHORISED`
+**Implementation stamp (post-authorisation):** **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** on `cursor/p1-b5-m01-m02-presentation`
+**Evidence:** [`../../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md)
+**Publication branch:** `cursor/p1-b4-responsive-a11y-appearance`
+**Publication tip (docs):** tip at time of this briefing on the accepted P1-B4 branch
+**Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
+**Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`
+**Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
+**Accepted P1-B4 tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
+**Briefing date:** 2026-08-14
 
-> **P1-B5 remains `P1 — PLANNED, NOT AUTHORISED`.**  
-> This briefing does **not** authorise coding, close gaps, create/close owner decisions, open a PR, merge, deploy, integrate Aurora, or begin P1-B6.  
-> Gaps 020 / 021 / 066 / 067 / 068 remain **not closed**.  
-> Aurora (`cursor/aurora-design-foundation`) remains **parked, isolated and unintegrated** — do not merge, cherry-pick, copy or adopt Aurora code.  
+> **Historical note:** This briefing was prepared before coding. Express named-batch authorisation was subsequently granted.
+> **Current:** P1-B5 is **implemented for owner review** — **owner acceptance remains pending**. Gaps 020 / 021 / 066 / 067 / 068 remain **addressed but not closed**.
+> This briefing still does **not** grant owner acceptance, close `OWN-P1-009`/`OWN-P1-011`/`OWN-P1-016`, open a PR, merge, deploy, integrate Aurora, or begin P1-B6.
+> Aurora (`cursor/aurora-design-foundation`) remains **parked, isolated and unintegrated** — do not merge, cherry-pick, copy or adopt Aurora code.
 > Decision A remains the binding P1 visual contract.
 
 **Authoritative sources (this briefing does not replace them):**
@@ -89,14 +91,14 @@ P1-B1 through P1-B4 are **owner accepted with qualifications and closed**. The n
 
 **No.** No open `OWN-P1-*` decision is registered as a product-choice blocker for **presentation-only** M01/M02 Decision A chrome apply.
 
-- Durable domain enablement is explicitly **OWN-P1-009 → Programme P2**, not B5.  
-- Persistence architecture (**OWN-P1-016**) and PPA (**OWN-P1-011**) remain open and **out of B5 product scope**.  
+- Durable domain enablement is explicitly **OWN-P1-009 → Programme P2**, not B5.
+- Persistence architecture (**OWN-P1-016**) and PPA (**OWN-P1-011**) remain open and **out of B5 product scope**.
 - Next available sequential ID if a **new** choice is later required: **OWN-P1-018** (do **not** create without owner approval).
 
 ### 2.4 Conclusion
 
-- **No new owner decision ID is required** for P1-B5 readiness as framed (presentation-only).  
-- **No unresolved owner-choice blocker** was found for gaps 020/021/066/067/068-chrome.  
+- **No new owner decision ID is required** for P1-B5 readiness as framed (presentation-only).
+- **No unresolved owner-choice blocker** was found for gaps 020/021/066/067/068-chrome.
 - **Express named-batch implementation authorisation is still required** before any P1-B5 coding.
 
 ---
@@ -109,19 +111,19 @@ P1-B5 = **presentation-only** application of the already accepted Decision A she
 
 ### 3.2 Potentially permitted (subject to evidence) — presentation
 
-- Page hierarchy and shared shell integration (sidebar, topbar, regions)  
-- Shared `PageHeader`, cards/surfaces, status badges  
-- Existing typography and spacing tokens from Decision A / B1  
-- Responsive arrangement at required widths  
-- Accessible names, descriptions, visible focus; Escape / focus restoration where drawers/panels apply  
-- Honest loading, empty, error and denied presentation  
-- Action-oriented presentation using **existing** local/demo data  
-- Existing drawer/detail-panel presentation patterns  
-- Existing filters/controls **where already functional**  
-- Honest unavailable/planned treatment for non-operational controls (B2 honesty preserved)  
-- Removal of duplicated or contradictory chrome  
-- Existing data-source attribution and freshness labels  
-- Visual alignment with Decision A within accepted P1 design contracts  
+- Page hierarchy and shared shell integration (sidebar, topbar, regions)
+- Shared `PageHeader`, cards/surfaces, status badges
+- Existing typography and spacing tokens from Decision A / B1
+- Responsive arrangement at required widths
+- Accessible names, descriptions, visible focus; Escape / focus restoration where drawers/panels apply
+- Honest loading, empty, error and denied presentation
+- Action-oriented presentation using **existing** local/demo data
+- Existing drawer/detail-panel presentation patterns
+- Existing filters/controls **where already functional**
+- Honest unavailable/planned treatment for non-operational controls (B2 honesty preserved)
+- Removal of duplicated or contradictory chrome
+- Existing data-source attribution and freshness labels
+- Visual alignment with Decision A within accepted P1 design contracts
 
 ### 3.3 Explicitly not permitted (domain / durable / out of scope)
 
@@ -241,21 +243,21 @@ Do **not** create new inbox aggregation, approval orchestration, notification de
 
 ## 6. Patient and clinical boundary (binding)
 
-1. MCOP/HCDP does **not** manage patient clinical records.  
-2. Patient arrival, booking, consultation, billing and clinical source-of-record functions remain in **Best Practice** (or the relevant clinical system).  
-3. P1-B5 must **not** introduce patient lists, appointments, clinical notes, diagnoses, prescriptions, Medicare billing or patient invoicing.  
-4. Any prototype content implying duplicated patient functionality must be **excluded** or **truthfully redirected** to the clinical source system.  
+1. MCOP/HCDP does **not** manage patient clinical records.
+2. Patient arrival, booking, consultation, billing and clinical source-of-record functions remain in **Best Practice** (or the relevant clinical system).
+3. P1-B5 must **not** introduce patient lists, appointments, clinical notes, diagnoses, prescriptions, Medicare billing or patient invoicing.
+4. Any prototype content implying duplicated patient functionality must be **excluded** or **truthfully redirected** to the clinical source system.
 5. Operational references may identify a clinic, task, exception or source record **without** importing patient clinical data.
 
 ---
 
 ## 7. Decision A versus Aurora (binding)
 
-1. **Decision A** remains the binding P1 visual contract.  
-2. **Aurora** is owner-approved as an **isolated design foundation only**.  
-3. Aurora **integration and module adoption remain unauthorised**.  
-4. P1-B5 must **not** cherry-pick or reimplement Aurora tokens or primitives.  
-5. Similar visual characteristics already present in **accepted Decision A** components may continue.  
+1. **Decision A** remains the binding P1 visual contract.
+2. **Aurora** is owner-approved as an **isolated design foundation only**.
+3. Aurora **integration and module adoption remain unauthorised**.
+4. P1-B5 must **not** cherry-pick or reimplement Aurora tokens or primitives.
+5. Similar visual characteristics already present in **accepted Decision A** components may continue.
 6. Any future Aurora integration requires a **fresh branch** from the then-current accepted P1 tip and **separate compatibility authorisation**.
 
 ---
@@ -278,30 +280,30 @@ Light · Dark · System+OS Light · System+OS Dark
 
 ### Required M01 states
 
-- Normal/ready  
-- Loading  
-- Empty (where supported)  
-- Error  
-- Permission/access denied  
-- Attention item with owner, reason, due state and action  
-- Metric/source explanation  
-- Drill-down **or** honest unavailable treatment  
+- Normal/ready
+- Loading
+- Empty (where supported)
+- Error
+- Permission/access denied
+- Attention item with owner, reason, due state and action
+- Metric/source explanation
+- Drill-down **or** honest unavailable treatment
 
 ### Required M02 states
 
-- Normal/ready · Loading · Empty · Error · Access denied  
-- List/detail selection · Filters/search · Keyboard navigation  
-- Drawer/detail behaviour · Operational and unavailable controls  
-- Mobile stacked presentation  
+- Normal/ready · Loading · Empty · Error · Access denied
+- List/detail selection · Filters/search · Keyboard navigation
+- Drawer/detail behaviour · Operational and unavailable controls
+- Mobile stacked presentation
 
 ### Evidence must prove
 
-- No horizontal overflow; no clipped actions; required regions present  
-- Wait-for-ready; no loading placeholder accepted as complete  
-- Correct accessible names/descriptions; visible focus; Escape + focus restoration  
-- Honest control outcomes; no patient/clinical content; no Aurora integration  
-- No unsupported domain claims  
-- Appearance preference and resolved theme separately recorded  
+- No horizontal overflow; no clipped actions; required regions present
+- Wait-for-ready; no loading placeholder accepted as complete
+- Correct accessible names/descriptions; visible focus; Escape + focus restoration
+- Honest control outcomes; no patient/clinical content; no Aurora integration
+- No unsupported domain claims
+- Appearance preference and resolved theme separately recorded
 - GitHub CI availability stated accurately (expect local-only unless CI exists)
 
 Do **not** claim full WCAG compliance or pixel parity unless separately proven.
@@ -312,14 +314,14 @@ Do **not** claim full WCAG compliance or pixel parity unless separately proven.
 
 ### 9.1 Focused `test:p1-b5` (recommended)
 
-- Decision A shared-component use on M01/M02  
-- M01 / M02 presentation honesty  
-- Metric/source attribution; owner/reason/due/action fields  
-- Functional versus unavailable controls  
-- Loading/empty/error/denied states  
-- Responsive presentation; keyboard/focus; Light/Dark/System  
-- Patient/clinical exclusion; durable-service exclusion  
-- Aurora non-integration  
+- Decision A shared-component use on M01/M02
+- M01 / M02 presentation honesty
+- Metric/source attribution; owner/reason/due/action fields
+- Functional versus unavailable controls
+- Loading/empty/error/denied states
+- Responsive presentation; keyboard/focus; Light/Dark/System
+- Patient/clinical exclusion; durable-service exclusion
+- Aurora non-integration
 - P1-B6–P1-B8 remain unauthorised (control assertions)
 
 ### 9.2 Full validation suite (recommended)
@@ -357,11 +359,11 @@ Register validator · `tsc --noEmit` · full lint · full test suite · `test:p1
 
 ### 10.3 Recommended implementation approach (**recommendation only**)
 
-1. Owner expressly authorises named batch **P1-B5** on a clean tip of the authoritative P1 branch.  
-2. Apply Decision A chrome via **existing shared primitives** to M01 and M02 routes only.  
-3. Inventory every metric/control → operational / demo / unavailable / out-of-scope.  
-4. Strengthen attribution and honesty without new durable services.  
-5. Produce production-runtime evidence pack per §8; run §9 validations.  
+1. Owner expressly authorises named batch **P1-B5** on a clean tip of the authoritative P1 branch.
+2. Apply Decision A chrome via **existing shared primitives** to M01 and M02 routes only.
+3. Inventory every metric/control → operational / demo / unavailable / out-of-scope.
+4. Strengthen attribution and honesty without new durable services.
+5. Produce production-runtime evidence pack per §8; run §9 validations.
 6. Stop for owner acceptance — **no automatic P1-B6**.
 
 This is a **recommendation**, not authorisation.
@@ -382,13 +384,13 @@ This is a **recommendation**, not authorisation.
 
 ## 12. Control preservation
 
-- P1-B1 / P1-B2 / P1-B3 / P1-B4 remain accepted/closed with qualifications  
-- **83** gaps / **8** batches / **24** runtime modules preserved  
-- M25 unimplemented  
-- `OWN-P1-011` open; `OWN-P1-016` open; `OWN-P1-009` deferred (durable domain P2)  
-- P1-B5 through P1-B8 **unauthorised**  
-- Aurora parked, isolated and unintegrated  
-- No application-code, test, script, PR, merge or deployment change from this briefing alone  
+- P1-B1 / P1-B2 / P1-B3 / P1-B4 remain accepted/closed with qualifications
+- **83** gaps / **8** batches / **24** runtime modules preserved
+- M25 unimplemented
+- `OWN-P1-011` open; `OWN-P1-016` open; `OWN-P1-009` deferred (durable domain P2)
+- P1-B5 through P1-B8 **unauthorised**
+- Aurora parked, isolated and unintegrated
+- No application-code, test, script, PR, merge or deployment change from this briefing alone
 
 ---
 
@@ -396,11 +398,11 @@ This is a **recommendation**, not authorisation.
 
 To proceed, the owner must **expressly authorise** named batch **P1-B5** implementation on a stated tip/branch. Until then:
 
-- No P1-B5 coding  
-- No gap closure  
-- No PR / merge / deploy  
-- No automatic progression to P1-B6  
-- No Aurora integration  
+- No P1-B5 coding
+- No gap closure
+- No PR / merge / deploy
+- No automatic progression to P1-B6
+- No Aurora integration
 
-**Current programme claim for this docs tip:**  
+**Current programme claim for this docs tip:**
 `P1-B5 M01/M02 Decision A presentation authorisation briefing prepared and published — P1-B5 remains unauthorised, Aurora remains parked and unintegrated, and no implementation, merge or deployment was performed.`

@@ -207,13 +207,13 @@ describe("P1-B4 preservation and unauthorised later batches", () => {
     assert.match(pkg, /"test:p1-b4":\s*"tsx --test \\"src\/components\/shell\/tests\/p1-b4-\*\.test\.ts\\"/);
   });
 
-  it("documents B1–B3 accepted, B4 acceptance pending, B5–B8 unauthorised", () => {
-    assert.match(evidence, /acceptance pending|Owner acceptance remains pending/i);
+  it("documents B1–B4 accepted/closed, B5 acceptance pending, B6–B8 unauthorised", () => {
+    assert.match(evidence, /Owner accepted with qualifications — CLOSED|CLOSED \(2026-08-14\)/i);
     assert.match(evidence, /P1-B5/);
     assert.match(evidence, /NOT AUTHORISED|unauthorised/i);
-    assert.match(batches, /P1-B4[\s\S]*acceptance pending/i);
-    assert.match(batches, /P1-B5[\s\S]*PLANNED, NOT AUTHORISED/);
-    assert.match(batches, /P1-B8[\s\S]*PLANNED, NOT AUTHORISED/);
+    assert.match(batches, /P1-B4[\s\S]*CLOSED/i);
+    assert.match(batches, /P1-B5[\s\S]{0,220}acceptance pending/i);
+    assert.match(batches, /P1-B8[\s\S]{0,160}PLANNED, NOT AUTHORISED/);
   });
 
   it("keeps OWN-P1-011 and OWN-P1-016 open and Aurora isolated", () => {

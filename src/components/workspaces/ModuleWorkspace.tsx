@@ -163,7 +163,7 @@ export function ModuleWorkspace({ module }: { module: ModuleDef }) {
 
   return (
     <>
-      {!isCommandCentre ? <PageHeader module={module} /> : null}
+      <PageHeader module={module} />
       <section
         className={
           isCommandCentre

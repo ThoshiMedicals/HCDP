@@ -919,6 +919,10 @@ export function CommandCentre() {
                   : `${selectedClinicIds.length} clinic(s) selected`
               }
             />
+            <p className="m-0 mt-2 text-[length:var(--type-control)] font-semibold text-[var(--cc-muted)]" role="note">
+              Metrics below use demonstration seed data for period {periodLabel(period, customRange)} · clinic scope as
+              selected — not live operational source systems.
+            </p>
             <div className="mt-3 space-y-3">
               <InboxProjectionSummary />
               <WorkforceProjectionSummary />
@@ -1128,7 +1132,7 @@ export function CommandCentre() {
   };
 
   return (
-    <div className="cc-root min-w-0 max-w-full">
+    <div className="cc-root min-w-0 max-w-full" data-testid="m01-command-centre">
       <div className="mx-auto w-full min-w-0 max-w-[1480px] px-3 pt-2.5 lg:px-5">
         <EmergencyBanner
           items={emergencyAnnouncements}
@@ -1156,16 +1160,20 @@ export function CommandCentre() {
             <div className="cc-text-info text-[length:var(--type-control)] font-extrabold uppercase tracking-[0.08em]">
               Module 1 · Owner / Director
             </div>
-            <h1 className="m-0 mt-1 text-[22px] font-black tracking-tight text-[var(--cc-ink)] sm:text-[26px]">
-              Owner/Director Command Centre
-            </h1>
+            <p className="m-0 mt-1 text-[15px] font-bold tracking-tight text-[var(--cc-muted)] sm:text-[16px]">
+              Owner/Director overview
+            </p>
             <p
               className="m-0 mt-1 text-[13px] font-semibold text-[var(--cc-ink)]"
               data-testid="cc-current-user-greeting"
             >
               {greeting}, {actingUserName}. Here is today’s organisation overview.
             </p>
-            <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]" role="status">
+            <p
+              className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]"
+              role="status"
+              data-testid="m01-demo-banner"
+            >
               Demonstration seed data — not live operational truth.
             </p>
             <p className="m-0 mt-1 text-[length:var(--type-control)] text-[var(--cc-muted)]">

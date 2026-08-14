@@ -60,7 +60,7 @@ export function ActiveActionList({
   }
 
   return (
-    <CcCard accent="#1e40af">
+    <CcCard accent="#1e40af" data-testid="m01-attention-list">
       <CcCardHeader
         title={showCompleted ? "Completed Today" : "Active Action List"}
         subtitle={
@@ -110,7 +110,11 @@ export function ActiveActionList({
       {view === "card" ? (
         <div className="grid gap-2.5 px-4 pb-4">
           {visible.map((a) => (
-            <div key={a.id} className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3.5">
+            <div
+              key={a.id}
+              data-testid={`m01-attention-${a.id}`}
+              className="rounded-xl border border-[var(--cc-card-line)] bg-[var(--cc-soft)] p-3.5"
+            >
               <div className="flex flex-wrap items-start gap-2">
                 <input type="checkbox" checked={selected.includes(a.id)} onChange={() => toggle(a.id)} />
                 <div className="min-w-0 flex-1">
@@ -122,24 +126,31 @@ export function ActiveActionList({
                       <span className="text-[length:var(--type-control)] text-[var(--cc-muted)]">Linked {a.linkedReferences[0]}</span>
                     ) : null}
                   </div>
-                  <strong className="block text-[15px]">{a.title}</strong>
+                  <strong className="block text-[15px]" data-testid="m01-attention-action">
+                    {a.title}
+                  </strong>
                   <div className="mt-1 grid gap-0.5 text-[length:var(--type-control)] leading-snug text-[var(--cc-muted)] sm:grid-cols-2">
                     <span>
                       {locationShort(a.locationId === "all" ? "all" : a.locationId, locations)} · {a.category}
                     </span>
                     <span>
-                      Source: {a.sourceModule} · Owner: {a.owner}
+                      Source: {a.sourceModule}
                     </span>
-                    <span>
-                      Due {new Date(a.due).toLocaleString("en-AU")}
+                    <span data-testid="m01-attention-owner">
+                      Owner: {a.owner}
+                    </span>
+                    <span data-testid="m01-attention-due">
+                      Due: {new Date(a.due).toLocaleString("en-AU")}
                       {a.overdueAge ? ` · Overdue ${a.overdueAge}` : ""}
+                    </span>
+                    <span data-testid="m01-attention-reason" className="sm:col-span-2">
+                      Reason: {a.delayReason?.trim() || "Reason not recorded"}
                     </span>
                     <span>
                       Reminders: {a.reminders} · Escalation: {a.escalation}
                     </span>
                     <span className="sm:col-span-2 line-clamp-2">
                       Latest: {a.latestUpdate}
-                      {a.delayReason ? ` · Delay: ${a.delayReason}` : ""}
                       {a.attachments ? ` · Attachments: ${a.attachments}` : ""}
                     </span>
                   </div>

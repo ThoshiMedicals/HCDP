@@ -156,6 +156,10 @@ function cloneAction(action: InboxAction): InboxAction {
 
 export function ActionInboxApp() {
   const { pushToast } = usePortal();
+  const demoSuccess = useCallback(
+    (msg: string) => pushToast(`${msg} (local demo — not live backend)`, "success"),
+    [pushToast]
+  );
   const searchParams = useSearchParams();
   const router = useRouter();
   const { identity, inboxDemoRole, canSeeSensitive: identitySensitive } = useIdentity();
@@ -383,7 +387,7 @@ export function ActionInboxApp() {
       persistNotifications(notifs);
     }
     bumpAudit();
-    pushToast(result.selfApproved ? "Self-approval recorded." : "Action approved.", "success");
+    demoSuccess(result.selfApproved ? "Self-approval recorded." : "Action approved.");
   };
 
   const handleReasonSubmit = (payload: {
@@ -489,7 +493,7 @@ export function ActionInboxApp() {
         notifications
       );
       persistNotifications(notifs);
-      pushToast(`Reassigned to ${person}.`, "success");
+      demoSuccess(`Reassigned to ${person}.`);
       setReason(null);
       return;
     }
@@ -547,7 +551,7 @@ export function ActionInboxApp() {
         notifications
       );
       persistNotifications(notifs);
-      pushToast(`Delegated to ${person}.`, "success");
+      demoSuccess(`Delegated to ${person}.`);
       setReason(null);
       return;
     }
@@ -565,7 +569,7 @@ export function ActionInboxApp() {
         newValue: payload.dueAt,
       });
       bumpAudit();
-      pushToast("Due date updated.", "success");
+      demoSuccess("Due date updated.");
       setReason(null);
       return;
     }
@@ -637,7 +641,7 @@ export function ActionInboxApp() {
         );
         persistNotifications(notifs);
       }
-      pushToast("Comment added.", "success");
+      demoSuccess("Comment added.");
       setReason(null);
       return;
     }
@@ -695,11 +699,10 @@ export function ActionInboxApp() {
         detail: payload.outcome,
       });
       bumpAudit();
-      pushToast(
+      demoSuccess(
         result.action.status === "Awaiting Verification"
           ? "Marked complete — awaiting verification."
-          : "Action completed.",
-        "success"
+          : "Action completed."
       );
       setReason(null);
       return;
@@ -715,7 +718,7 @@ export function ActionInboxApp() {
         notes: `${a.notes}\nVerified: ${payload.reason}`.trim(),
       }));
       recordAudit(actionId, "Verified", { reason: payload.reason });
-      pushToast("Resolution verified.", "success");
+      demoSuccess("Resolution verified.");
       setReason(null);
       return;
     }
@@ -729,7 +732,7 @@ export function ActionInboxApp() {
         unread: false,
       }));
       recordAudit(actionId, "Acknowledged", { reason: payload.reason });
-      pushToast("Exception acknowledged.", "success");
+      demoSuccess("Exception acknowledged.");
       setReason(null);
       return;
     }
@@ -809,7 +812,7 @@ export function ActionInboxApp() {
       });
       recordAudit(followId, "Created", { detail: `Follow-up of ${action.number}` });
       bumpAudit();
-      pushToast(`Linked follow-up ${number} created.`, "success");
+      demoSuccess(`Linked follow-up ${number} created.`);
       setReason(null);
       setReviewId(followId);
       return;
@@ -899,7 +902,7 @@ export function ActionInboxApp() {
             : null;
       if (href) {
         router.push(href);
-        pushToast(`Opening source record in ${link?.source.sourceModuleId ?? a?.sourceModule ?? "module"}.`, "success");
+        demoSuccess(`Opening source in ${link?.source.sourceModuleId ?? a?.sourceModule ?? "module"}.`);
       } else {
         pushToast(
           a?.sourceRecord
@@ -963,7 +966,7 @@ export function ActionInboxApp() {
     setSavedViews(next);
     saveSavedViews(next);
     setActiveSavedViewId(view.id);
-    pushToast(`Saved view “${name}”.`, "success");
+    demoSuccess(`Saved view “${name}”.`);
   };
 
   const toggleSelect = (id: string) => {
@@ -977,7 +980,7 @@ export function ActionInboxApp() {
     }
     persistActions(next);
     setSelectedIds([]);
-    pushToast("Marked selected as read.", "success");
+    demoSuccess("Marked selected as read.");
   };
 
   const bulkWatch = () => {
@@ -992,7 +995,7 @@ export function ActionInboxApp() {
     persistActions(next);
     bumpAudit();
     setSelectedIds([]);
-    pushToast("Added to Watching.", "success");
+    demoSuccess("Added to Watching.");
   };
 
   const bulkPriority = () => {
@@ -1004,7 +1007,7 @@ export function ActionInboxApp() {
     persistActions(next);
     bumpAudit();
     setSelectedIds([]);
-    pushToast("Priority set to High for selection.", "success");
+    demoSuccess("Priority set to High for selection.");
   };
 
   const bulkReminder = () => {
@@ -1031,7 +1034,7 @@ export function ActionInboxApp() {
     persistNotifications(notifs);
     bumpAudit();
     setSelectedIds([]);
-    pushToast("Reminders sent.", "success");
+    demoSuccess("Reminders sent.");
   };
 
   const bulkReassign = () => {
@@ -1059,7 +1062,7 @@ export function ActionInboxApp() {
     persistActions(next);
     bumpAudit();
     setSelectedIds([]);
-    pushToast(`Reassigned ${selectedIds.length} to ${person}.`, "success");
+    demoSuccess(`Reassigned ${selectedIds.length} to ${person}.`);
   };
 
   const onExport = (format: string) => {
@@ -1160,27 +1163,28 @@ export function ActionInboxApp() {
   }
 
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-3" data-testid="m02-action-inbox">
       {qaDemoMode && demoMode ? (
-        <div className="cc-demo-banner rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--hcdp-status-info-text)]" role="status">
+        <div className="cc-demo-banner rounded-[12px] border border-[var(--hcdp-status-info-border)] bg-[var(--hcdp-status-info-surface)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--hcdp-status-info-text)]" role="status" data-testid="m02-demo-banner">
           Demonstration mode — actions, notifications and decisions are stored in this browser only.
           Email / SMS delivery is simulated. Not live operational truth.
         </div>
       ) : null}
       {!qaDemoMode ? (
-        <div className="rounded-[12px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]" role="status">
-          Demonstration seed content — enable QA / Demo mode in the sidebar to reveal inbox demo tools.
+        <div className="rounded-[12px] border border-[var(--v34-card-line)] bg-[var(--soft)] px-3 py-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]" role="status" data-testid="m02-demo-banner">
+          Demonstration seed content — browser-local only. Email / SMS delivery is not live. Enable QA / Demo
+          mode in the sidebar to reveal inbox demo tools.
         </div>
       ) : null}
 
       <header className="rounded-[14px] border border-[var(--v34-card-line)] bg-[var(--card)] p-4 shadow-[var(--v34-card-shadow)]">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h1 className="m-0 text-[22px] font-black tracking-tight text-[var(--ink)]">
-              Action Inbox & Notifications
-            </h1>
+            <p className="m-0 text-[15px] font-bold tracking-tight text-[var(--muted)]">
+              Review & notifications
+            </p>
             <p className="mt-1 max-w-2xl text-sm text-[var(--muted)]">
-              Review, decide and complete work requiring your attention.
+              Review, decide and complete operational exceptions requiring your attention.
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               {qaDemoMode ? (
@@ -1528,7 +1532,7 @@ export function ActionInboxApp() {
             setDrafts(next);
             saveDrafts(next);
             recordAudit(draft.id, "Draft saved", { detail: draft.title });
-            pushToast("Draft saved.", "success");
+            demoSuccess("Draft saved.");
           }}
           onSubmit={(action) => {
             persistActions([action, ...actions]);
@@ -1551,7 +1555,7 @@ export function ActionInboxApp() {
             bumpAudit();
             setOverlay(null);
             setReviewId(action.id);
-            pushToast(`${action.number} created.`, "success");
+            demoSuccess(`${action.number} created.`);
           }}
         />
       ) : null}
@@ -1596,7 +1600,7 @@ export function ActionInboxApp() {
             setSettings(s);
             saveSettings(s);
             setOverlay(null);
-            pushToast("Notification settings saved.", "success");
+            demoSuccess("Notification settings saved.");
           }}
         />
       ) : null}
@@ -1632,7 +1636,7 @@ export function ActionInboxApp() {
           onSave={(items) => {
             setDelegations(items);
             saveDelegations(items);
-            pushToast("Delegations updated.", "success");
+            demoSuccess("Delegations updated.");
           }}
           onEnd={(id) => {
             const next = delegations.map((d) => (d.id === id ? { ...d, active: false } : d));

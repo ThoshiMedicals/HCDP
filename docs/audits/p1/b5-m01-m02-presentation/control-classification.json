@@ -1,0 +1,92 @@
+{
+  "batch": "P1-B5",
+  "module": "M02 Action Inbox",
+  "scope": "presentation-only control classification for major visible M02 controls",
+  "domainStatus": "NOT-STARTED",
+  "classifications": [
+    {
+      "id": "m02-approve",
+      "label": "Approve",
+      "classification": "operational-local-demo",
+      "notes": "Mutates localStorage inbox approval state via approveStep; success toast uses demoSuccess qualifier. No live backend approval orchestration."
+    },
+    {
+      "id": "m02-reject",
+      "label": "Reject / Return for Correction",
+      "classification": "operational-local-demo",
+      "notes": "Local reject/return pathway with reason modal; warn toasts retained. Browser-only persistence."
+    },
+    {
+      "id": "m02-reassign",
+      "label": "Reassign",
+      "classification": "operational-local-demo",
+      "notes": "Updates owner and ownershipHistory in local demo store (single and bulk). Not a directory/workflow backend."
+    },
+    {
+      "id": "m02-export",
+      "label": "Export / Print",
+      "classification": "operational-local-demo",
+      "notes": "ConfirmExportModal prepares a demonstration export audit trail only; toast states not downloaded. No durable export service."
+    },
+    {
+      "id": "m02-reminders",
+      "label": "Reminders (bulk send / snooze)",
+      "classification": "operational-local-demo",
+      "notes": "Creates local notifications and snooze fields in browser storage. Email/SMS delivery remains simulated; domain notification delivery outside P1-B5."
+    },
+    {
+      "id": "m02-notification-settings",
+      "label": "Notification settings",
+      "classification": "operational-local-demo",
+      "notes": "Persists NotificationSettings to localStorage. Chrome honesty only for GAP-068; durable notification preferences deferred."
+    },
+    {
+      "id": "m02-create-action",
+      "label": "Create action",
+      "classification": "operational-local-demo",
+      "notes": "CreateActionWorkspace writes new InboxAction into local seed store. No durable workflow engine."
+    },
+    {
+      "id": "m02-reset-seed",
+      "label": "Reset demonstration seed",
+      "classification": "operational-local-demo",
+      "notes": "QA/demo-gated resetActionsToSeed; restores browser local demonstration data only."
+    },
+    {
+      "id": "m02-open-source",
+      "label": "Open clinical source system",
+      "classification": "operational-local-demo",
+      "notes": "Navigates to linked operational/source route when present, otherwise demo toast. Softened chrome: does not claim patient clinical record management; clinical SoR remains external."
+    },
+    {
+      "id": "m02-analytics",
+      "label": "Analytics panel / drill-down",
+      "classification": "operational-local-demo",
+      "notes": "Client-side rollups over local inbox actions with drill-down selection. No durable aggregation service (outside durable-domain / P2)."
+    },
+    {
+      "id": "m02-summary-cards",
+      "label": "Summary cards (approvals/exceptions/escalations/reminders)",
+      "classification": "presentation-only",
+      "notes": "Attributed as demonstration/local totals with period/source note; filter UX only."
+    },
+    {
+      "id": "m02-email-sms-delivery",
+      "label": "Email / SMS delivery",
+      "classification": "planned-unavailable",
+      "notes": "Banner states delivery is simulated. Live channel delivery not implemented under P1-B5."
+    },
+    {
+      "id": "m02-durable-approval-orchestration",
+      "label": "Durable approval / notification orchestration",
+      "classification": "deferred-durable",
+      "notes": "OWN-P1-009 / P2 domain services. P1-B5 must not invent backend orchestration."
+    },
+    {
+      "id": "m02-patient-clinical-records",
+      "label": "Patient clinical record management",
+      "classification": "outside-p1-b5",
+      "notes": "Excluded by patient/clinical boundary. Any source open is redirect/honesty only toward clinical source system."
+    }
+  ]
+}

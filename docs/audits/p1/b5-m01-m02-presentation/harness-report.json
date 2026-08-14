@@ -1,0 +1,2477 @@
+{
+  "batch": "P1-B5",
+  "runtime": "production",
+  "baseUrl": "http://localhost:3026",
+  "generatedAt": "2026-08-14T03:40:21.905Z",
+  "failures": 0,
+  "assertionCount": 469,
+  "passCount": 469,
+  "failCount": 0,
+  "screenshotCount": 27,
+  "shots": [
+    {
+      "name": "m01-1440-light-reduce",
+      "file": "shots/m01-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-1440-dark-reduce",
+      "file": "shots/m01-1440-dark-reduce.png"
+    },
+    {
+      "name": "m01-430-light-reduce",
+      "file": "shots/m01-430-light-reduce.png"
+    },
+    {
+      "name": "m01-430-system-os-dark-reduce",
+      "file": "shots/m01-430-system-os-dark-reduce.png"
+    },
+    {
+      "name": "m01-390-light-reduce",
+      "file": "shots/m01-390-light-reduce.png"
+    },
+    {
+      "name": "m01-390-system-os-dark-reduce",
+      "file": "shots/m01-390-system-os-dark-reduce.png"
+    },
+    {
+      "name": "m02-1440-light-reduce",
+      "file": "shots/m02-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-1440-dark-reduce",
+      "file": "shots/m02-1440-dark-reduce.png"
+    },
+    {
+      "name": "m02-430-light-reduce",
+      "file": "shots/m02-430-light-reduce.png"
+    },
+    {
+      "name": "m02-430-system-os-dark-reduce",
+      "file": "shots/m02-430-system-os-dark-reduce.png"
+    },
+    {
+      "name": "m02-390-light-reduce",
+      "file": "shots/m02-390-light-reduce.png"
+    },
+    {
+      "name": "m02-390-system-os-dark-reduce",
+      "file": "shots/m02-390-system-os-dark-reduce.png"
+    },
+    {
+      "name": "m01-ready-1440-light-reduce",
+      "file": "shots/m01-ready-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-state-loading-1440-light-reduce",
+      "file": "shots/m01-state-loading-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-state-empty-1440-light-reduce",
+      "file": "shots/m01-state-empty-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-state-error-1440-light-reduce",
+      "file": "shots/m01-state-error-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-state-permission-1440-light-reduce",
+      "file": "shots/m01-state-permission-1440-light-reduce.png"
+    },
+    {
+      "name": "m01-mobile-390-light-reduce",
+      "file": "shots/m01-mobile-390-light-reduce.png"
+    },
+    {
+      "name": "m02-ready-1440-light-reduce",
+      "file": "shots/m02-ready-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-detail-open-1440-light-reduce",
+      "file": "shots/m02-detail-open-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-operational-local-demo-1440-light-reduce",
+      "file": "shots/m02-operational-local-demo-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-detail-closed-after-escape-1440-light-reduce",
+      "file": "shots/m02-detail-closed-after-escape-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-filters-search-1440-light-reduce",
+      "file": "shots/m02-filters-search-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-no-selection-or-ready-1440-light-reduce",
+      "file": "shots/m02-no-selection-or-ready-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-empty-1440-light-reduce",
+      "file": "shots/m02-empty-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-access-denied-or-sensitivity-1440-light-reduce",
+      "file": "shots/m02-access-denied-or-sensitivity-1440-light-reduce.png"
+    },
+    {
+      "name": "m02-mobile-stacked-390-light-reduce",
+      "file": "shots/m02-mobile-stacked-390-light-reduce.png"
+    }
+  ],
+  "assertions": [
+    {
+      "ok": true,
+      "id": "m01-1440-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1440-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1280-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-1024-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-768-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-430-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/m01-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/m01-demo-label",
+      "reason": "demo=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/m01-priority",
+      "reason": "priority=true"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m01-390-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1440-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1280-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-1024-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-768-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-430-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/appearance-pref",
+      "reason": "data-appearance=light expected=light"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/appearance-pref",
+      "reason": "data-appearance=dark expected=dark"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/resolved-theme",
+      "reason": "themeDark=false expectDark=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-light/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/regions",
+      "reason": "shell=1 topbar=1 main=1 header=1"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system expected=system"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/resolved-theme",
+      "reason": "themeDark=true expectDark=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/m02-ready",
+      "reason": "root=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/m02-summary",
+      "reason": "summary=true"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/m02-honesty",
+      "reason": "Demo/local honesty text present"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/patient-firewall",
+      "reason": "patientClinicalHit=false"
+    },
+    {
+      "ok": true,
+      "id": "m02-390-system-os-dark/hydration",
+      "reason": "hydrationErrors=0"
+    },
+    {
+      "ok": true,
+      "id": "m01/attention-fields",
+      "reason": "Attention owner/due present"
+    },
+    {
+      "ok": true,
+      "id": "m01/metric-attribution",
+      "reason": "Metric/demo attribution present"
+    },
+    {
+      "ok": true,
+      "id": "m01/state-loading",
+      "reason": "QA card state loading"
+    },
+    {
+      "ok": true,
+      "id": "m01/state-empty",
+      "reason": "QA card state empty"
+    },
+    {
+      "ok": true,
+      "id": "m01/state-error",
+      "reason": "QA card state error"
+    },
+    {
+      "ok": true,
+      "id": "m01/state-permission",
+      "reason": "QA card state permission"
+    },
+    {
+      "ok": true,
+      "id": "m01/mobile-no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "m02/list",
+      "reason": "list=true"
+    },
+    {
+      "ok": true,
+      "id": "m02/planned-unavailable-delivery",
+      "reason": "Email/SMS planned-unavailable honesty present"
+    },
+    {
+      "ok": true,
+      "id": "m02/detail-open",
+      "reason": "review=false"
+    },
+    {
+      "ok": true,
+      "id": "m02/operational-local-demo",
+      "reason": "Operational control outcome remains demo-honest"
+    },
+    {
+      "ok": true,
+      "id": "m02/escape",
+      "reason": "Escape pressed after detail"
+    },
+    {
+      "ok": true,
+      "id": "m02/filters-search",
+      "reason": "Search interacted"
+    },
+    {
+      "ok": true,
+      "id": "m02/empty",
+      "reason": "Empty/filtered-empty presentation exercised"
+    },
+    {
+      "ok": true,
+      "id": "m02/access-denied-or-sensitivity",
+      "reason": "Sensitivity/permission honesty path present"
+    },
+    {
+      "ok": true,
+      "id": "m02/error-source-verified",
+      "reason": "Error+Try Again UI retained in ActionInboxApp source; no fabricated backend force"
+    },
+    {
+      "ok": true,
+      "id": "m02/mobile-no-overflow",
+      "reason": "docOverflowX=false"
+    },
+    {
+      "ok": true,
+      "id": "control/domain-not-started",
+      "reason": "M01/M02 domain remains NOT-STARTED (parity matrix / classification)"
+    },
+    {
+      "ok": true,
+      "id": "control/durable-excluded",
+      "reason": "No durable M01/M02 services authorised under P1-B5"
+    },
+    {
+      "ok": true,
+      "id": "control/aurora-unintegrated",
+      "reason": "Aurora not merged/cherry-picked/copied"
+    },
+    {
+      "ok": true,
+      "id": "control/b6-b8-unauthorised",
+      "reason": "P1-B6–P1-B8 remain unauthorised"
+    },
+    {
+      "ok": true,
+      "id": "control/classification-manifest",
+      "reason": "control-classification.json present"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1440",
+      "reason": "Width 1440 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1280",
+      "reason": "Width 1280 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1024",
+      "reason": "Width 1024 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-768",
+      "reason": "Width 768 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-430",
+      "reason": "Width 430 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-390",
+      "reason": "Width 390 exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-light",
+      "reason": "Appearance light exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-dark",
+      "reason": "Appearance dark exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-system-os-light",
+      "reason": "Appearance system-os-light exercised"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-system-os-dark",
+      "reason": "Appearance system-os-dark exercised"
+    },
+    {
+      "ok": true,
+      "id": "required/m01/attention-fields",
+      "reason": "Attention owner/due present"
+    },
+    {
+      "ok": true,
+      "id": "required/m01/metric-attribution",
+      "reason": "Metric/demo attribution present"
+    },
+    {
+      "ok": true,
+      "id": "required/control/domain-not-started",
+      "reason": "M01/M02 domain remains NOT-STARTED (parity matrix / classification)"
+    },
+    {
+      "ok": true,
+      "id": "required/control/aurora-unintegrated",
+      "reason": "Aurora not merged/cherry-picked/copied"
+    },
+    {
+      "ok": true,
+      "id": "required/control/classification-manifest",
+      "reason": "control-classification.json present"
+    }
+  ],
+  "claims": {
+    "wcagCertification": false,
+    "pixelParity": false,
+    "githubCi": false,
+    "productionApproval": false,
+    "durableDomainComplete": false,
+    "auroraIntegrated": false,
+    "ownerAcceptance": "pending"
+  }
+}

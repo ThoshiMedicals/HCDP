@@ -1,28 +1,31 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1–B4 accepted with qualifications; PPA planned only; P1-B5–B8 unauthorised
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1–B4 accepted with qualifications; P1-B5 implemented for owner review (acceptance pending); PPA planned only; P1-B6–B8 unauthorised
 alwaysApply: true
 ---
 
 # HCDP Wave Control
 
-Controlling plan: `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`  
-Wave 6 plan: `Development folder/docs/architecture/WAVE6_M07_IMPLEMENTATION_PLAN.md`  
-PPA readiness/design (approved planning source; **not** implementation authority): `Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`  
-Accepted Wave 5 runtime: `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`  
-Wave 5 acceptance checkpoint: `39f892e81f5aa76f6690d6af8c82273def5a6e0f`  
-Accepted Wave 4 implementation: `15f020800bbca40702ef08ad25f94f1d1999112f`  
-Wave 6 Batch 4 HEAD: `db96703123cc4759c04ed5f6ad9c930012ab38ea` (accepted with qualifications)  
-Wave 6 Batch 5 accepted baseline: `db9550bac5e3995b095d3143b49e17549e81582b`  
-Wave 6 Batch 6 accepted technical target: `ce1f4af68917c9988efff327d521d94b8289f2fc` (owner accepted with qualifications; closed 29 July 2026)  
-Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`  
-Accepted P1-B1 tip: `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (owner accepted with qualifications; closed 2026-08-13)  
-P1-B1 evidence: `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`  
-Accepted P1-B2 tip: `66f3f8d27803f5b8d24043639d21b9069f58e77a` (owner accepted with qualifications; closed 2026-08-13)  
-P1-B2 evidence: `docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`  
-Accepted P1-B3 tip: `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (owner accepted with qualifications; closed 2026-08-13)  
-P1-B3 evidence: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; remediation: `docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`  
-Accepted P1-B4 tip: `c58f2843d47b6fa875cd155d166c1f7c916d5250` (owner accepted with qualifications; closed 2026-08-14; `P1-B4-OWNER-ACCEPT-2026-08-14`)  
+Controlling plan: `docs/architecture/HCDP_CONNECTED_WORKFORCE_ARCHITECTURE_AND_CURSOR_PLAN.md`
+Wave 6 plan: `Development folder/docs/architecture/WAVE6_M07_IMPLEMENTATION_PLAN.md`
+PPA readiness/design (approved planning source; **not** implementation authority): `Development folder/docs/plans/WAVE6_M07_PPA_READINESS_AND_DESIGN.md`
+Accepted Wave 5 runtime: `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`
+Wave 5 acceptance checkpoint: `39f892e81f5aa76f6690d6af8c82273def5a6e0f`
+Accepted Wave 4 implementation: `15f020800bbca40702ef08ad25f94f1d1999112f`
+Wave 6 Batch 4 HEAD: `db96703123cc4759c04ed5f6ad9c930012ab38ea` (accepted with qualifications)
+Wave 6 Batch 5 accepted baseline: `db9550bac5e3995b095d3143b49e17549e81582b`
+Wave 6 Batch 6 accepted technical target: `ce1f4af68917c9988efff327d521d94b8289f2fc` (owner accepted with qualifications; closed 29 July 2026)
+Batch 6 owner-acceptance evidence commit: `ad54aed94b0c798d3f26fe66bf811d6e3b083151`
+Accepted P1-B1 tip: `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (owner accepted with qualifications; closed 2026-08-13)
+P1-B1 evidence: `docs/audits/p1/P1_B1_IMPLEMENTATION_EVIDENCE.md`
+Accepted P1-B2 tip: `66f3f8d27803f5b8d24043639d21b9069f58e77a` (owner accepted with qualifications; closed 2026-08-13)
+P1-B2 evidence: `docs/audits/p1/P1_B2_IMPLEMENTATION_EVIDENCE.md`
+Accepted P1-B3 tip: `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (owner accepted with qualifications; closed 2026-08-13)
+P1-B3 evidence: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; remediation: `docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md`
+Accepted P1-B4 tip: `c58f2843d47b6fa875cd155d166c1f7c916d5250` (owner accepted with qualifications; closed 2026-08-14; `P1-B4-OWNER-ACCEPT-2026-08-14`)
 P1-B4 evidence: `docs/audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`
+P1-B5 implementation branch: `cursor/p1-b5-m01-m02-presentation` (expressly authorised; **owner acceptance pending**)
+P1-B5 source tip: `ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577`
+P1-B5 evidence: `docs/audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`
 
 ```text
 Wave 1A: Owner accepted and frozen
@@ -43,8 +46,12 @@ P1-B3 (register hygiene / payroll-history truthfulness): Owner accepted with qua
   — NOT overall P1 / production acceptance; does NOT authorise P1-B4+
 P1-B4 (responsive / a11y / appearance): Owner accepted with qualifications and closed at
   c58f2843d47b6fa875cd155d166c1f7c916d5250 (2026-08-14; P1-B4-OWNER-ACCEPT-2026-08-14)
-  — NOT overall P1 / production acceptance; does NOT authorise P1-B5+
-P1-B5 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+  — NOT overall P1 / production acceptance; does NOT authorise automatic progression
+P1-B5 (M01/M02 Decision A presentation): Expressly authorised and IMPLEMENTED FOR OWNER REVIEW
+  (acceptance pending) on cursor/p1-b5-m01-m02-presentation from source tip
+  ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577 — NOT owner acceptance; NOT durable domain;
+  does NOT authorise P1-B6+
+P1-B6 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
 Aurora (cursor/aurora-design-foundation): isolated — do not inspect, merge, or integrate
   without separate express authorisation
 P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
@@ -52,14 +59,16 @@ P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
 P1-B3 register-hygiene dispositions: OWN-P1-006 (Option A Synchronise),
   OWN-P1-007 (Option A Honesty-only labels) closed 2026-08-13;
   batch closed by P1-B3-OWNER-ACCEPT-2026-08-13
+OWN-P1-009: remains open (durable M01–M03 domain → P2)
 OWN-P1-011: remains open (PPA product)
 OWN-P1-016: remains open
+Inventory: 83 gaps / 8 batches / 24 modules; M25 unimplemented
 ```
 
 ## Order
 
-0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)  
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 closed with qualifications (`P1-B4-OWNER-ACCEPT-2026-08-14`)** → **P1-B5–P1-B8 (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B5–P1-B8 without express authorisation; do not integrate Aurora without separate review)
+0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 closed with qualifications (`P1-B4-OWNER-ACCEPT-2026-08-14`)** → **P1-B5 expressly authorised / implemented for owner review (acceptance pending)** → **P1-B6–P1-B8 (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B6–P1-B8 without express authorisation; do not integrate Aurora without separate review)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -80,7 +89,7 @@ Ordinary staff-pay payroll-preparation capability through Batch 6 is **complete 
 - Batch 5: readiness, review, management approval (non-certified)
 - Batch 6: export preparation, package reconciliation, period lock, controlled unlock
 
-Batch 6 evidence: `Development folder/docs/audits/WAVE6_BATCH6_*`  
+Batch 6 evidence: `Development folder/docs/audits/WAVE6_BATCH6_*`
 Batch 6 closure does **not** constitute production approval, certification, payment readiness, or statutory/monetary correctness.
 
 ## PPA (Prior-Period Adjustment) — planned only
@@ -104,9 +113,10 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
 - Claim production approval
 - Begin Module 8
-- Begin P1-B5 through P1-B8 without separate explicit owner authorisation
+- Begin P1-B6 through P1-B8 without separate explicit owner authorisation
+- Treat P1-B5 owner-review publication as owner acceptance, durable M01/M02 domain completion, or automatic progression
 - Integrate or depend on `cursor/aurora-design-foundation` without separate owner review and express integration authorisation
-- Treat P1-B1–P1-B4 acceptance as overall Programme P1 / production acceptance
-- Resolve `OWN-P1-016` or `OWN-P1-011` by implication from P1-B3 or P1-B4
-- Authorise automatic progression from P1-B4 to later batches
-- Claim PR, merge or deployment authority from P1-B4 acceptance
+- Treat P1-B1–P1-B5 as overall Programme P1 / production acceptance
+- Resolve `OWN-P1-016`, `OWN-P1-011` or `OWN-P1-009` by implication from P1-B3–P1-B5
+- Authorise automatic progression from P1-B5 to later batches
+- Claim PR, merge or deployment authority from P1-B5 publication

@@ -21,7 +21,10 @@ export function SummaryCards({
   onSelect: (cat: ActionCategory) => void;
 }) {
   return (
-    <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-4" data-testid="m02-summary-cards">
+      <p className="sm:col-span-2 xl:col-span-4 m-0 text-[length:var(--type-control)] font-semibold text-[var(--muted)]" role="note">
+        Demonstration / local totals for the current browser seed — period comparison is not a live operational source.
+      </p>
       {CARDS.map((card) => {
         const stats = summaryStats(actions, card.id);
         const color = categoryColor(card.id);
@@ -77,7 +80,10 @@ export function SummaryCards({
                 <div className="text-[#94a3b8]">Urgent</div>
               </div>
             </div>
-            <div className="mt-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]">{changeLabel}</div>
+            <div className="mt-2 text-[length:var(--type-control)] font-semibold text-[var(--muted)]">
+              {changeLabel}
+              <span className="block font-semibold">Demonstration local total</span>
+            </div>
           </button>
         );
       })}
