@@ -72,7 +72,7 @@ Eight batches remain accounted for:
 3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **owner accepted with qualifications — CLOSED (2026-08-13)**
 4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — **Owner accepted with qualifications — CLOSED (2026-08-14)** at `c58f284…` (`P1-B4-OWNER-ACCEPT-2026-08-14`) (evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md))
 5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — **Owner accepted with qualifications — CLOSED (2026-08-17)** at `4306116…` (`P1-B5-OWNER-ACCEPT-2026-08-17`) (evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md))
-6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — unauthorised
+6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — **unauthorised** (briefing prepared: [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md))
 7. **P1-B7** — Permission / audit / empty-loading-error-denied state completeness — unauthorised
 8. **P1-B8** — P1 closure evidence pack + owner stop checkpoint — unauthorised
 

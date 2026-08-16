@@ -51,6 +51,8 @@ P1-B5 (M01/M02 Decision A presentation): Owner accepted with qualifications and 
   4306116fdf28f9d90a989d8ec78b317ad351b0d2 (2026-08-17; P1-B5-OWNER-ACCEPT-2026-08-17)
   — NOT overall P1 / production acceptance; NOT durable M01/M02 domain;
   does NOT authorise P1-B6+
+P1-B6 briefing: docs/architecture/prototype-parity/phase1/P1_B6_OWNER_AUTHORISATION_BRIEFING.md
+  (prepared only — P1-B6 remains PLANNED, NOT AUTHORISED)
 P1-B6 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
 Aurora (cursor/aurora-design-foundation): isolated — do not inspect, merge, or integrate
   without separate express authorisation

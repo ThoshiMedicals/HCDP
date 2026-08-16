@@ -54,6 +54,8 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-17 (qualified):** P1-B5 owner acceptance at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). Evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md). Gaps 020/021 closed for accepted presentation scope; 066/067/068 partial with residuals. Domain M01/M02 remains **NOT-STARTED**. **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. No automatic progression.
 
+**P1-B6 briefing (2026-08-17):** Authorisation readiness briefing prepared only — [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md). P1-B6 remains **unauthorised**. Frozen M04–M07/M11 domain behaviour remains protected. Aurora remains unintegrated.
+
 **Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product; **OWN-P1-009** durable M01–M03 domain → P2); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
 ## P1B pack index (preserved — 14 files)
@@ -75,6 +77,7 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 | — | Baseline gate evidence | [P1_BASELINE_GATE_EVIDENCE.md](./P1_BASELINE_GATE_EVIDENCE.md) |
 | — | P1-B4 authorisation readiness briefing | [P1_B4_OWNER_AUTHORISATION_BRIEFING.md](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md) |
 | — | P1-B5 authorisation readiness briefing | [P1_B5_OWNER_AUTHORISATION_BRIEFING.md](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md) |
+| — | P1-B6 authorisation readiness briefing | [P1_B6_OWNER_AUTHORISATION_BRIEFING.md](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md) |
 | — | This index | [README.md](./README.md) |
 
 ## P1A pack
@@ -95,8 +98,9 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B6–P1-B8 without separate explicit owner authorisation (no automatic progression from B1–B5; B5 acceptance does not authorise B6)
+- Begin P1-B6–P1-B8 without separate explicit owner authorisation (no automatic progression from B1–B5; B5 acceptance does not authorise B6; B6 briefing does not authorise B6)
 - Treat P1-B5 qualified acceptance as durable domain completion or production approval
+- Treat the P1-B6 authorisation briefing as implementation authorisation
 - Integrate or depend on `cursor/aurora-design-foundation` without separate express authorisation
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes

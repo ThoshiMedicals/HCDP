@@ -144,9 +144,10 @@
 | Status | `P1 — PLANNED, NOT AUTHORISED` |
 | Objective | Apply shared final design to M04–M07/M11 presentation only |
 | Included gaps | 022–026, 050, 081 |
-| Prohibited | Changing frozen domain SoT/permissions/events; PPA; payment; M08 |
-| Required tests | Focused regression per module wave suite; 252+ baseline must not regress; restore any evidence JSON rewritten by tests |
-| Exit | Owner accepts “presentation-only” tip; domain behaviour unchanged |
+| Authorisation briefing | [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md) — prepared only; **not** authorisation |
+| Prohibited | Changing frozen domain SoT/permissions/events; PPA; payment; M08; Aurora adoption |
+| Required tests | Focused regression per module wave suite; full suite must not regress; domain-equivalence report; restore any evidence JSON rewritten by tests |
+| Exit | Owner accepts “presentation-only” tip; domain behaviour unchanged; GAP-081 equivalence evidence required |
 
 ## P1-B7 — States / permissions / report honesty
 
