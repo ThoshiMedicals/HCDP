@@ -1,6 +1,6 @@
 # P1 Prototype-Parity Gap Register
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`; P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **P1-B5–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED` unless noted. Overall Programme P1 is **not** complete.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`; P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
 **Scheme:** `P1-GAP-###` (append-only; never reuse)  
 **Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
@@ -398,7 +398,7 @@
 | Risk | Layout churn |
 | Acceptance evidence | Visual QA regions |
 | Batch | P1-B5 |
-| Implementation status | **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** — not closed |
+| Implementation status | **Closed (2026-08-17)** — accepted M01 Decision A presentation scope at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`); durable M01 domain remains P2+ / NOT-STARTED |
 | Owner clarification | No |
 
 ### P1-GAP-021 — M02 Decision A chrome apply (presentation)
@@ -416,7 +416,7 @@
 | Risk | Layout churn |
 | Acceptance evidence | Visual QA |
 | Batch | P1-B5 |
-| Implementation status | **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** — not closed |
+| Implementation status | **Closed (2026-08-17)** — accepted M02 Decision A presentation scope at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`); durable M02 domain remains P2+ / NOT-STARTED |
 | Owner clarification | No |
 
 ---
@@ -649,13 +649,13 @@ Classification **Not applicable** / prohibited. Exclude.
 ## H. Additional moderate gaps (forms/filters/drill-downs/alerts)
 
 ### P1-GAP-066 — Shared filter/search semantics inconsistent (Topbar nav search vs module filters)
-Classification **Moderate**. Priority P1-rec. Batch P1-B2/B5. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 presentation portion — **not closed**.
+Classification **Moderate**. Priority P1-rec. Batch P1-B2/B5. Status **Partial (2026-08-17)** — M01/M02 filter/search presentation semantics accepted at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`); **residual:** broader M03/module consistency.
 
 ### P1-GAP-067 — Drill-down / detail panel patterns inconsistent across M01–M03 vs domain modules
-Classification **Moderate**. Priority P1-rec. Batch P1-B1/B5. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 presentation portion — **not closed**.
+Classification **Moderate**. Priority P1-rec. Batch P1-B1/B5. Status **Partial (2026-08-17)** — M01/M02 drill-down/detail presentation accepted at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`); **residual:** broader cross-module and M03 consistency.
 
 ### P1-GAP-068 — Alert/notification chrome vs M02 domain notifications
-Classification **Moderate**. Priority P2+ for domain; P1 for chrome honesty. Batch P1-B5 / P2. Status **P1-B5 — ADDRESSED FOR OWNER REVIEW (acceptance pending)** for M01/M02 chrome honesty — **not closed**; durable domain notifications remain P2+.
+Classification **Moderate**. Priority P2+ for domain; P1 for chrome honesty. Batch P1-B5 / P2. Status **Partial (2026-08-17)** — M01/M02 alert/notification chrome honesty accepted at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`); **residual:** durable M02 notifications remain P2+.
 
 ### P1-GAP-069 — Form field schema adoption incomplete outside accepted modules
 Classification **Future scope** / P2+. Status `P1 — PLANNED, NOT AUTHORISED`.

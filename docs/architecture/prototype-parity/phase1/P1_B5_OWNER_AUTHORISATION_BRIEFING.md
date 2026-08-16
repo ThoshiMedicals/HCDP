@@ -3,19 +3,22 @@
 **Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)
 **Batch:** P1-B5 — M01/M02 Decision A presentation parity **without** durable domain services
 **Status stamp (historical briefing):** prepared as `P1 — PLANNED, NOT AUTHORISED`
-**Implementation stamp (post-authorisation):** **Expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** on `cursor/p1-b5-m01-m02-presentation`
+**Implementation stamp (post-authorisation):** Expressly authorised and implemented on `cursor/p1-b5-m01-m02-presentation`
+**Acceptance stamp:** **Owner accepted with qualifications — CLOSED (2026-08-17)** (`P1-B5-OWNER-ACCEPT-2026-08-17`) at `4306116fdf28f9d90a989d8ec78b317ad351b0d2`
 **Evidence:** [`../../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md)
-**Publication branch:** `cursor/p1-b4-responsive-a11y-appearance`
-**Publication tip (docs):** tip at time of this briefing on the accepted P1-B4 branch
+**Publication branch:** `cursor/p1-b5-m01-m02-presentation`
+**Accepted implementation tip:** `4306116fdf28f9d90a989d8ec78b317ad351b0d2`
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
 **Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`
 **Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
 **Accepted P1-B4 tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
+**Accepted P1-B5 tip:** `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`)
 **Briefing date:** 2026-08-14
+**Acceptance date:** 2026-08-17
 
-> **Historical note:** This briefing was prepared before coding. Express named-batch authorisation was subsequently granted.
-> **Current:** P1-B5 is **implemented for owner review** — **owner acceptance remains pending**. Gaps 020 / 021 / 066 / 067 / 068 remain **addressed but not closed**.
-> This briefing still does **not** grant owner acceptance, close `OWN-P1-009`/`OWN-P1-011`/`OWN-P1-016`, open a PR, merge, deploy, integrate Aurora, or begin P1-B6.
+> **Historical note:** This briefing was prepared before coding. Express named-batch authorisation was subsequently granted; presentation work was implemented and remediated.
+> **Current:** P1-B5 is **owner accepted with qualifications and closed** (`P1-B5-OWNER-ACCEPT-2026-08-17`). Gaps 020/021 closed for accepted presentation scope; 066/067/068 remain **partial** with residuals. M01/M02 domain remains **NOT-STARTED**.
+> This briefing does **not** authorise durable M01/M02 services, close `OWN-P1-009`/`OWN-P1-011`/`OWN-P1-016`, open a PR, merge, deploy, integrate Aurora, or begin P1-B6.
 > Aurora (`cursor/aurora-design-foundation`) remains **parked, isolated and unintegrated** — do not merge, cherry-pick, copy or adopt Aurora code.
 > Decision A remains the binding P1 visual contract.
 
@@ -44,12 +47,13 @@ P1-B1 through P1-B4 are **owner accepted with qualifications and closed**. The n
 
 | Item | Status |
 | --- | --- |
-| P1-B5 | `P1 — PLANNED, NOT AUTHORISED` — briefing prepared only |
+| P1-B5 | **Owner accepted with qualifications — CLOSED (2026-08-17)** (`P1-B5-OWNER-ACCEPT-2026-08-17`) |
 | Included gaps | 020, 021, 066, 067, **chrome portion of** 068 |
+| Gap disposition | 020/021 Closed (presentation scope); 066/067/068 Partial with residuals |
 | New owner-decision blocker for B5 presentation | **None found** (verified) |
-| Express named-batch authorisation | **Not granted** — owner must expressly authorise before coding |
+| Express named-batch authorisation | **Granted** historically; acceptance recorded 2026-08-17 |
 | `OWN-P1-009` (M01/M02/M03 durable domain) | **Open / deferred to P2** — outside P1-B5 |
-| `OWN-P1-011` / `OWN-P1-016` | Remain **open**; do **not** block B5 presentation consideration |
+| `OWN-P1-011` / `OWN-P1-016` | Remain **open** |
 | Aurora | Parked, isolated, unintegrated — adoption **unauthorised** |
 | P1-B6 through P1-B8 | Remain `P1 — PLANNED, NOT AUTHORISED` |
 
@@ -370,15 +374,15 @@ This is a **recommendation**, not authorisation.
 
 ---
 
-## 11. Included gaps (status unchanged by this briefing)
+## 11. Included gaps (disposition after `P1-B5-OWNER-ACCEPT-2026-08-17`)
 
-| Gap | Batch | Status after this briefing |
+| Gap | Batch | Status after acceptance |
 | --- | --- | --- |
-| P1-GAP-020 | P1-B5 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-021 | P1-B5 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-066 | P1-B2/B5 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-067 | P1-B1/B5 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-068 (chrome) | P1-B5 / P2 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed**; domain notifications remain P2+ |
+| P1-GAP-020 | P1-B5 | **Closed** for accepted M01 Decision A presentation scope; durable M01 remains P2+ / NOT-STARTED |
+| P1-GAP-021 | P1-B5 | **Closed** for accepted M02 Decision A presentation scope; durable M02 remains P2+ / NOT-STARTED |
+| P1-GAP-066 | P1-B2/B5 | **Partial** — M01/M02 filter/search presentation accepted; broader M03/module residual |
+| P1-GAP-067 | P1-B1/B5 | **Partial** — M01/M02 drill-down/detail presentation accepted; broader cross-module/M03 residual |
+| P1-GAP-068 (chrome) | P1-B5 / P2 | **Partial** — M01/M02 chrome honesty accepted; durable M02 notifications remain P2+ |
 
 ---
 

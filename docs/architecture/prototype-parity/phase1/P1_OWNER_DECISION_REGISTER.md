@@ -1,6 +1,6 @@
 # P1 Owner-Decision Register
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **P1-B5** expressly authorised and **implemented for owner review** (acceptance **pending**). **P1-B6–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **P1-B6–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete or production-approved.
 **Note:** Conflict register openCount remains 0 for prior DEC-* items. This register lists **P1 planning decisions** required, closed, or deferrable.
 **P1A extension:** Additional definition/delivery decisions (`OWN-P1A-*`) live in [`p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md`](./p1a/P1A_06_MASTER_REGISTERS_11_TO_20.md#register-20--risks-assumptions-dependencies-owner-decisions) — also open / not approved.
 **P1C extension:** Repository/production-readiness decisions (`OWN-P1C-*`) live in [`p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md`](./p1c/P1C_12_PRODUCTION_SCORECARD_AND_DECISIONS.md) — also open / not approved.
@@ -11,6 +11,7 @@
 **P1-B3 register-hygiene decisions closed:** `OWN-P1-006`, `OWN-P1-007` — `2026-08-13`
 **P1-B3 qualified acceptance date:** `2026-08-13` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
 **P1-B4 qualified acceptance date:** `2026-08-14` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
+**P1-B5 qualified acceptance date:** `2026-08-17` (`P1-B5-OWNER-ACCEPT-2026-08-17`)
 
 ## Decisions required before any P1 implementation
 
@@ -550,6 +551,112 @@ Evidence pointer: docs/audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md;
                   docs/audits/p1/b4-responsive-a11y-appearance/;
                   P1_EXECUTION_BATCHES.md;
                   branch cursor/p1-b4-responsive-a11y-appearance
+```
+
+## P1-B5 qualified owner acceptance (recorded 2026-08-17)
+
+Closing this acceptance record closes **P1-B5 only**. It does **not** authorise durable M01/M02 services, P1-B6–P1-B8, resolve `OWN-P1-009`, `OWN-P1-011` or `OWN-P1-016`, claim overall Programme P1 completion, or authorise PR / merge / deployment / production. It does **not** authorise automatic progression to P1-B6. It does **not** integrate Aurora.
+
+```text
+Decision ID: P1-B5-OWNER-ACCEPT-2026-08-17
+Date: 2026-08-17
+Owner: Programme owner (recorded)
+Outcome: Owner accepted with qualifications — P1-B5 CLOSED
+         Accepted branch: cursor/p1-b5-m01-m02-presentation
+         Accepted implementation tip:
+         4306116fdf28f9d90a989d8ec78b317ad351b0d2
+         Source tip:
+         ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577
+         Accepted scope: M01/M02 Decision A presentation and honesty only
+         (gaps 020/021/066/067/068 within accepted presentation scope)
+         Validation basis: verified local tests, validators, production build,
+         Chromium/Playwright production-runtime harness
+         GitHub CI: none — workflows=0; check-runs=0; status-contexts=0;
+         no CI pass claimed
+Accepted M01 presentation scope:
+  - Decision A presentation; shared PageHeader; one page-level heading
+  - Local/demo-data honesty; metric/period/clinic/source attribution
+  - “vs yesterday” demonstration/local qualification
+  - Attention items (owner, reason, due, action); demo-qualified toasts
+  - Honest operational-source navigation
+  - Loading / empty / error / QA permission-unavailable presentation
+  - Responsive and appearance evidence for tested P1 surfaces
+  - Patient/clinical firewall preserved
+  - M01 domain remains NOT-STARTED
+Accepted M02 presentation scope:
+  - Decision A presentation; local/demo queue and summary honesty
+  - Search/filter; no-selection and selected-detail; selection semantics
+  - Escape and focus restoration; filtered/view empty; loading
+  - Sensitivity-restricted without summary leakage
+  - Planned/unavailable Email/SMS; demo-qualified outcomes
+  - Best Practice / operational source wording
+  - 27 independently enumerated control classifications
+  - Mobile stacked presentation; patient/clinical firewall preserved
+  - M02 domain remains NOT-STARTED
+Gap disposition at acceptance:
+  - P1-GAP-020 Closed — accepted M01 Decision A presentation scope;
+    durable M01 domain remains P2+
+  - P1-GAP-021 Closed — accepted M02 Decision A presentation scope;
+    durable M02 domain remains P2+
+  - P1-GAP-066 Partial — M01/M02 filter/search presentation accepted;
+    broader M03/module consistency residual retained
+  - P1-GAP-067 Partial — M01/M02 drill-down/detail presentation accepted;
+    broader cross-module and M03 consistency residual retained
+  - P1-GAP-068 Partial — M01/M02 alert/notification chrome honesty accepted;
+    durable M02 notifications remain P2+
+Unsupported-state residuals (not accepted functionality):
+  1. M01 true route-level access denial unsupported (QA permission card only)
+  2. M02 true route-level access denial unsupported
+  3. M02 stable true-empty inbox without reseeding unsupported
+  4. Filtered/view empty is not durable true-empty inbox evidence
+  5. Error evidence limited to source-verified/supported mechanism
+  6. Residuals documented for later state/permission work (incl. P1-B7)
+Qualifications (binding):
+  1. Validation is local-only
+  2. GitHub workflow count is zero
+  3. GitHub check-run count is zero
+  4. GitHub status-context count is zero
+  5. No GitHub CI pass is claimed
+  6. No full WCAG compliance is claimed
+  7. No pixel-parity claim is made
+  8. Evidence is primarily Chromium/Playwright production-runtime evidence
+  9. M01 domain remains NOT-STARTED
+  10. M02 domain remains NOT-STARTED
+  11. No durable API or database service was added
+  12. M01 metrics and comparisons remain local/demo presentation data
+  13. M02 queue/actions remain local/demo presentation behaviour
+  14. M01 route-level access-denied evidence is unsupported
+  15. M02 route-level access-denied evidence is unsupported
+  16. M02 stable true-empty inbox without reseeding is unsupported
+  17. Filtered/view empty states are not durable true-empty inbox evidence
+  18. Email/SMS remains planned and not live
+  19. Durable M01–M03 services remain governed by OWN-P1-009
+  20. OWN-P1-009 remains open
+  21. OWN-P1-011 remains open
+  22. OWN-P1-016 remains open
+  23. Best Practice remains the clinical source of record
+  24. No patient or clinical-record functionality is accepted
+  25. P1-GAP-066 retains broader M03/cross-module residuals
+  26. P1-GAP-067 retains broader M03/cross-module residuals
+  27. P1-GAP-068 retains durable-notification residuals
+  28. The 24 lint warnings remain verified parent-lineage warnings;
+      no lint errors remain
+  29. Aurora remains parked and unintegrated
+  30. P1-B6 through P1-B8 remain unauthorised
+  31. No automatic progression is permitted
+  32. No production approval is granted
+  33. No PR, merge or deployment is authorised
+  34. This is not overall Programme P1 acceptance
+Authorises batch(es): Closure of P1-B5 only (qualified)
+Explicitly does NOT authorise: durable M01/M02 services; P1-B6–P1-B8;
+         automatic progression; PR; merge; deploy; production; SQL;
+         PPA product; payment; M08; M25; OWN-P1-009 / OWN-P1-011 /
+         OWN-P1-016 resolution; WCAG/security/AT certification;
+         Aurora integration; overall Programme P1 completion
+Evidence pointer: docs/audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md;
+                  docs/audits/p1/b5-m01-m02-presentation/;
+                  P1_EXECUTION_BATCHES.md;
+                  branch cursor/p1-b5-m01-m02-presentation
 ```
 
 ## Open architecture / data decision (production path)

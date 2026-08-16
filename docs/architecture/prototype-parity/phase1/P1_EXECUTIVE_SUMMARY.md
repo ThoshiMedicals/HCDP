@@ -1,12 +1,12 @@
 # P1 Executive Summary
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). **OWN-P1-006** / **OWN-P1-007** closed. **P1-B5** expressly authorised and **implemented for owner review** (acceptance **pending**) on `cursor/p1-b5-m01-m02-presentation` (source tip `ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577`). **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete or production-approved.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **OWN-P1-006** / **OWN-P1-007** closed. **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete or production-approved.
 
 ## Verdict
 
 A controlled P1 prototype-parity readiness pack was prepared on tip `9142ec30b3b2efea1e959ad85ce1406562cd5faa`. As of **2026-08-11**, OWN-P1-001…003 closed for planning: accepted P0 tip `b0c4c4d20de1cce7adac5d691c506122e30610a2`, SHARED-first scope, first batch **named** **P1-B1**. `OWN-NO-P1-YET` cleared for programme entry.
 
-As of **2026-08-14**, **P1-B1**, **P1-B2**, **P1-B3** and **P1-B4** are **owner accepted with qualifications** and **closed** at tips `fdb2beb5b0e786e42d358efa9875b6bba52666cd`, `66f3f8d27803f5b8d24043639d21b9069f58e77a`, `2515a4ffac0fb94cbd37092e26bf372cb43898f8` and `c58f2843d47b6fa875cd155d166c1f7c916d5250` respectively (local validation basis; no GitHub CI). **P1-B5** is expressly authorised and **implemented for owner review** (acceptance **pending**); it does **not** authorise P1-B6–P1-B8, PR/merge/deploy, production, durable domain completion, or automatic progression. `OWN-P1-009`, `OWN-P1-011` and `OWN-P1-016` remain **open**. Aurora remained isolated.
+As of **2026-08-17**, **P1-B1** through **P1-B5** are **owner accepted with qualifications** and **closed** at tips `fdb2beb5b0e786e42d358efa9875b6bba52666cd`, `66f3f8d27803f5b8d24043639d21b9069f58e77a`, `2515a4ffac0fb94cbd37092e26bf372cb43898f8`, `c58f2843d47b6fa875cd155d166c1f7c916d5250` and `4306116fdf28f9d90a989d8ec78b317ad351b0d2` respectively (local validation basis; no GitHub CI). **P1-B5** acceptance does **not** authorise durable M01/M02 services, P1-B6–P1-B8, PR/merge/deploy, production, or automatic progression. `OWN-P1-009`, `OWN-P1-011` and `OWN-P1-016` remain **open**. Aurora remained isolated. M01/M02 domain remain **NOT-STARTED**.
 
 ## What P1 is (this programme)
 
@@ -25,7 +25,7 @@ It must **not** become general feature development, visual redesign, M25, PPA, p
 | Layer | Recommendation | Status |
 | --- | --- | --- |
 | **Entry gate** | Owner accepts P0 pack tip `b0c4c4d20de1cce7adac5d691c506122e30610a2` (and nested pins) and clears `OWN-NO-P1-YET` | **Closed** OWN-P1-001 (2026-08-11) |
-| **Programme P1 (SHARED-first)** | SHARED shell / Decision A foundation first; B6–B8 need separate explicit auth (OWN-P1-002) | Planning closed; B1–B4 closed with qualifications; B5 implemented for owner review (acceptance pending); B6–B8 still **not** authorised |
+| **Programme P1 (SHARED-first)** | SHARED shell / Decision A foundation first; B6–B8 need separate explicit auth (OWN-P1-002) | Planning closed; B1–B5 closed with qualifications; B6–B8 still **not** authorised |
 | **Named first batch** | **P1-B1** (OWN-P1-003) | **Owner accepted with qualifications — CLOSED (2026-08-13)** at `fdb2beb…` |
 | **Immediate hygiene** | Register drift corrections (especially M11, M07 history labelling) so readiness scoring cannot invent “implemented” stubs | **P1-B3 owner accepted with qualifications — CLOSED (2026-08-13)** at `2515a4ff…` |
 | **Beyond P1** | Domain workflows for M01–M07/M11 (Programme P2); M10 (P3); placeholder rebuilds M08/M09/M12–M24 (P4–P8); PPA (separate auth); production verification (P9) | Deferred |
@@ -71,12 +71,12 @@ Eight batches remain accounted for:
 2. **P1-B2** — Shell truthfulness + inactive-control remediation — **owner accepted with qualifications — CLOSED (2026-08-13)**
 3. **P1-B3** — Register / navigation hygiene (M11, M07 labels, placeholder honesty) — **owner accepted with qualifications — CLOSED (2026-08-13)**
 4. **P1-B4** — Shared responsive / a11y / appearance evidence hardening — **Owner accepted with qualifications — CLOSED (2026-08-14)** at `c58f284…` (`P1-B4-OWNER-ACCEPT-2026-08-14`) (evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md))
-5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — **expressly authorised — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** (evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md))
+5. **P1-B5** — M01/M02 chrome parity against Decision A (no domain services) — **Owner accepted with qualifications — CLOSED (2026-08-17)** at `4306116…` (`P1-B5-OWNER-ACCEPT-2026-08-17`) (evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md); briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md))
 6. **P1-B6** — Accepted-module final-design apply (M04–M07/M11) — presentation only, preserve domain — unauthorised
 7. **P1-B7** — Permission / audit / empty-loading-error-denied state completeness — unauthorised
 8. **P1-B8** — P1 closure evidence pack + owner stop checkpoint — unauthorised
 
-Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B5 implementation.
+Domain workflow completion remains **Programme P2+**, not these batches. **No automatic progression** from B5 acceptance.
 
 ## Owner decisions
 
@@ -88,7 +88,9 @@ Domain workflow completion remains **Programme P2+**, not these batches. **No au
 
 **Closed 2026-08-14 (qualified batch acceptance):** P1-B4 at `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`).
 
-**Still open / unauthorised:** OWN-P1-009…015 (deferred; includes **OWN-P1-011** PPA product); **OWN-P1-016** before production data path; P1-B6–P1-B8 implementation. P1-B5 owner **acceptance pending**.
+**Closed 2026-08-17 (qualified batch acceptance):** P1-B5 at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`).
+
+**Still open / unauthorised:** OWN-P1-009…015 (deferred; includes **OWN-P1-011** PPA product); **OWN-P1-016** before production data path; P1-B6–P1-B8 implementation. M01/M02 domain remain **NOT-STARTED**.
 
 See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 
@@ -104,4 +106,4 @@ See [P1_OWNER_DECISION_REGISTER.md](./P1_OWNER_DECISION_REGISTER.md).
 - Not automatic authorisation of B6–B8
 - Historical P0 evidence not altered
 
-**Current programme claim:** `P1-B5 M01/M02 Decision A presentation parity implemented, validated and published for owner review — owner acceptance remains pending, durable M01/M02 services remain deferred, Aurora remains unintegrated, and no later batch, merge or deployment was authorised or performed.`
+**Current programme claim:** `P1-B5 qualified owner acceptance recorded and published — durable M01/M02 services remain deferred, P1-B6 through P1-B8 remain unauthorised, Aurora remains unintegrated, and no merge or deployment was performed.`
