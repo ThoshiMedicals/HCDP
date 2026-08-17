@@ -104,7 +104,7 @@ export function AdjustmentRegister({
 
       {!loading && cases.length === 0 ? (
         <div
-          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-6 text-sm"
+          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] bg-[var(--card)] p-3 text-sm"
           role="status"
           data-m07-ppa-empty="true"
         >

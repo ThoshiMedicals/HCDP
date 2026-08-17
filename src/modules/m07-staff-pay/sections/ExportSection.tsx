@@ -112,7 +112,7 @@ export function ExportSection() {
   if (!canView) {
     return (
       <section
-        className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6"
+        className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3"
         data-m07-shell="batch6-export"
       >
         <h2 className="text-lg font-bold">Export</h2>
@@ -130,7 +130,7 @@ export function ExportSection() {
 
   return (
     <section
-      className="space-y-4 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6"
+      className="space-y-4 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3"
       aria-labelledby="m07-export-heading"
       data-m07-shell="batch6-export"
     >
@@ -454,7 +454,7 @@ export function ExportSection() {
       ) : null}
 
       {statusMsg ? (
-        <p className="text-sm text-emerald-700 dark:text-emerald-300" role="status">
+        <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
           {statusMsg}
         </p>
       ) : null}

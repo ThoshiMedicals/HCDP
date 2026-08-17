@@ -79,7 +79,7 @@ export function ApprovalSection() {
   if (denied) {
     return (
       <section
-        className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6"
+        className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3"
         aria-labelledby="m07-approval-denied"
         data-m07-shell="batch5-approval"
       >
@@ -103,8 +103,8 @@ export function ApprovalSection() {
       aria-labelledby="m07-approval-heading"
       data-m07-shell="batch5-approval"
     >
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 5 — management approval · available
         </p>
         <h2 id="m07-approval-heading" className="mt-1 text-lg font-bold">
@@ -116,13 +116,13 @@ export function ApprovalSection() {
         </p>
         <p className="mt-2 text-xs text-[var(--muted)]">{M07_NON_CERTIFIED_DISCLAIMER}</p>
         {period?.state === "export-ready" ? (
-          <p className="mt-2 text-sm text-emerald-900" role="status">
+          <p className="mt-2 text-sm text-[var(--hcdp-status-success-text)]" role="status">
             {EXPORT_READY_LABEL}
           </p>
         ) : null}
       </div>
 
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 space-y-3">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 space-y-3">
         <label className="block text-sm" htmlFor="m07-apr-period">
           Pay period
           <select
@@ -309,7 +309,7 @@ export function ApprovalSection() {
         </div>
 
         {statusMsg ? (
-          <p className="text-sm text-emerald-900" role="status">
+          <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
             {statusMsg}
           </p>
         ) : null}

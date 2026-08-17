@@ -15,7 +15,7 @@ export function PlannedSection({ section }: { section: M07SectionId }) {
 
   return (
     <section
-      className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 min-w-0"
+      className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 min-w-0"
       aria-labelledby={headingId}
       data-m07-section={section}
       data-m07-planned="true"

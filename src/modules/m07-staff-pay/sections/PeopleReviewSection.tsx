@@ -123,8 +123,8 @@ export function PeopleReviewSection() {
       aria-labelledby="m07-people-heading"
       data-m07-section="people"
     >
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 3 — People Review · available
         </p>
         <h2 id="m07-people-heading" className="mt-1 text-lg font-bold">
@@ -160,7 +160,7 @@ export function PeopleReviewSection() {
           </p>
         ) : null}
         {status ? (
-          <p className="text-sm text-emerald-800" role="status">
+          <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
             {status}
           </p>
         ) : null}
@@ -168,7 +168,7 @@ export function PeopleReviewSection() {
 
       {!rows.length ? (
         <div
-          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-6 text-sm text-[var(--muted)]"
+          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-3 text-sm text-[var(--muted)]"
           role="status"
         >
           {activePeriodId

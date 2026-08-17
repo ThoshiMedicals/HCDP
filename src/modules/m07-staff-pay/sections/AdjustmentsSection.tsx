@@ -236,7 +236,7 @@ export function AdjustmentsSection({
         }
       `}</style>
 
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 min-w-0">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 min-w-0">
         <p
           className={
             wired
@@ -287,7 +287,7 @@ export function AdjustmentsSection({
       ) : null}
 
       {canView && view === "register" ? (
-        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 min-w-0">
+        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 min-w-0">
           <AdjustmentRegister
             cases={cases}
             loading={loading}
@@ -300,7 +300,7 @@ export function AdjustmentsSection({
       ) : null}
 
       {canView && view === "create" ? (
-        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 min-w-0">
+        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 min-w-0">
           <CreateAdjustmentForm
             lockedSources={lockedSources}
             submitting={submitting}
@@ -314,7 +314,7 @@ export function AdjustmentsSection({
       ) : null}
 
       {canView && view === "detail" ? (
-        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 min-w-0">
+        <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 min-w-0">
           <AdjustmentCaseDetail
             caseRow={selectedCase}
             loading={loading}

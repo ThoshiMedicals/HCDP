@@ -85,8 +85,8 @@ export function ExceptionsSection() {
       aria-labelledby="m07-exceptions-heading"
       data-m07-section="exceptions"
     >
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 4 — Exceptions · available
         </p>
         <h2 id="m07-exceptions-heading" className="mt-1 text-lg font-bold">
@@ -157,14 +157,14 @@ export function ExceptionsSection() {
         </p>
       ) : null}
       {ok ? (
-        <p className="text-sm text-emerald-800" role="status">
+        <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
           {ok}
         </p>
       ) : null}
 
       {!rows.length && canView ? (
         <div
-          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-6 text-sm text-[var(--muted)]"
+          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-3 text-sm text-[var(--muted)]"
           role="status"
         >
           No exceptions match the current filters.
@@ -196,7 +196,7 @@ export function ExceptionsSection() {
                     {nonWaivable ? (
                       <p className="mt-1 text-xs font-semibold text-amber-900">Non-waivable</p>
                     ) : waivable ? (
-                      <p className="mt-1 text-xs text-emerald-800">Waivable (SoD enforced)</p>
+                      <p className="mt-1 text-xs text-[var(--hcdp-status-success-text)]">Waivable (SoD enforced)</p>
                     ) : null}
                   </div>
                   <div className="flex flex-wrap gap-2">

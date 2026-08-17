@@ -47,8 +47,8 @@ export function VariancesSection() {
       aria-labelledby="m07-variances-heading"
       data-m07-section="variances"
     >
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 4 — Variances · informational
         </p>
         <h2 id="m07-variances-heading" className="mt-1 text-lg font-bold">
@@ -93,7 +93,7 @@ export function VariancesSection() {
 
       {!loading && canView && !rows.length ? (
         <div
-          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-6 text-sm text-[var(--muted)]"
+          className="rounded-2xl border border-dashed border-[var(--v34-card-line)] p-3 text-sm text-[var(--muted)]"
           role="status"
         >
           No variance rows in scope. Create a period and ensure staff profiles exist.

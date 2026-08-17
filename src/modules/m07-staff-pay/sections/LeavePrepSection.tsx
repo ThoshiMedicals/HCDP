@@ -198,8 +198,8 @@ export function LeavePrepSection() {
       aria-labelledby="m07-leave-heading"
       data-m07-section="leave"
     >
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 4 — Leave, Allowances &amp; Deductions · available
         </p>
         <h2 id="m07-leave-heading" className="mt-1 text-lg font-bold">
@@ -257,7 +257,7 @@ export function LeavePrepSection() {
           </p>
         ) : null}
         {status ? (
-          <p className="text-sm text-emerald-800" role="status">
+          <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
             {status}
           </p>
         ) : null}
@@ -284,18 +284,18 @@ export function LeavePrepSection() {
       </div>
 
       <div
-        className="rounded-2xl border border-emerald-300 bg-emerald-50 p-4 space-y-3"
+        className="rounded-2xl border border-[var(--hcdp-status-success-border)] bg-[var(--hcdp-status-success-surface)] p-4 space-y-3"
         data-m07-allowances="available-batch4"
         aria-label="Allowance preparation"
       >
-        <h3 className="font-semibold text-emerald-950">Allowances — preparation available</h3>
-        <p className="text-xs text-emerald-900">
+        <h3 className="font-semibold text-[var(--hcdp-status-success-text)]">Allowances — preparation available</h3>
+        <p className="text-xs text-[var(--hcdp-status-success-text)]">
           Non-certified lines from eligible snapshot allowanceInputs mapped to active M07 codes.
           No invented rates or payable totals.
         </p>
         <button
           type="button"
-          className="rounded-lg bg-emerald-900 px-3 py-2 text-sm text-white disabled:opacity-40"
+          className="rounded-lg bg-[var(--hcdp-status-success-text)] px-3 py-2 text-sm text-white disabled:opacity-40"
           disabled={!canGenerate || !personId || !activePeriodId}
           onClick={onCalcAllowances}
         >

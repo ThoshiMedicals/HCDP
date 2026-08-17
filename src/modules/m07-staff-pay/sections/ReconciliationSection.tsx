@@ -62,7 +62,7 @@ export function ReconciliationSection() {
 
   if (!canView) {
     return (
-      <section className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6" data-m07-shell="batch6-recon">
+      <section className="space-y-3 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3" data-m07-shell="batch6-recon">
         <h2 className="text-lg font-bold">Reconciliation</h2>
         <p className="text-sm text-amber-800">Permission denied — payroll.view is required.</p>
       </section>
@@ -71,7 +71,7 @@ export function ReconciliationSection() {
 
   return (
     <section
-      className="space-y-4 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6"
+      className="space-y-4 rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3"
       aria-labelledby="m07-recon-heading"
       data-m07-shell="batch6-recon"
     >
@@ -126,7 +126,7 @@ export function ReconciliationSection() {
               ))}
             </ul>
           ) : (
-            <p className="text-emerald-700 dark:text-emerald-300">No mismatches</p>
+            <p className="text-[var(--hcdp-status-success-text)]">No mismatches</p>
           )}
         </div>
       ) : null}
@@ -148,7 +148,7 @@ export function ReconciliationSection() {
         Run package reconciliation
       </button>
 
-      {statusMsg ? <p className="text-sm text-emerald-700 dark:text-emerald-300">{statusMsg}</p> : null}
+      {statusMsg ? <p className="text-sm text-[var(--hcdp-status-success-text)]">{statusMsg}</p> : null}
       {error ? (
         <p className="text-sm text-red-700 dark:text-red-300" role="alert">
           {error}

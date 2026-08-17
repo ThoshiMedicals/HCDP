@@ -194,8 +194,8 @@ export function SettingsSection() {
 
   return (
     <section className="space-y-4 min-w-0" aria-labelledby="m07-settings-heading">
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800" role="status">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--hcdp-status-success-text)]" role="status">
           Batch 1 foundation — configuration · available
         </p>
         <h2 id="m07-settings-heading" className="mt-1 text-lg font-bold">
@@ -209,7 +209,7 @@ export function SettingsSection() {
       </div>
 
       {msg ? (
-        <p className="text-sm text-emerald-800" role="status">
+        <p className="text-sm text-[var(--hcdp-status-success-text)]" role="status">
           Success: {msg}
         </p>
       ) : null}
@@ -244,7 +244,7 @@ export function SettingsSection() {
         })}
       </div>
 
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 text-sm space-y-2">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 text-sm space-y-2">
         <p>Profiles: {profiles.length}</p>
         <p>Rules: {rules.length} (certified=false)</p>
         <p>Codes: {codes.length}</p>

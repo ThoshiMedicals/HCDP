@@ -42,7 +42,10 @@ export function OverviewSection() {
 
   return (
     <section className="space-y-4 min-w-0" aria-labelledby="m07-overview-heading">
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
+      <p className="cc-demo-banner m-0" role="status" data-testid="m07-demo-banner">
+        Demonstration / local browser data — not live payroll or payment truth. Not payment-ready.
+      </p>
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
         <p className="hcdp-type-meta text-[var(--accent-positive)]" role="status">
           Batch 1 foundation — periods · available
         </p>
@@ -63,7 +66,7 @@ export function OverviewSection() {
       </div>
 
       <form
-        className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6 space-y-3"
+        className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3 space-y-3"
         onSubmit={(e) => {
           e.preventDefault();
           if (canCreate) onCreate();
@@ -125,7 +128,7 @@ export function OverviewSection() {
         ) : null}
       </form>
 
-      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-6">
+      <div className="rounded-2xl border border-[var(--v34-card-line)] bg-[var(--card)] p-3">
         <h3 className="font-semibold">Periods ({periods.length})</h3>
         {periods.length === 0 ? (
           <p className="mt-2 text-sm text-[var(--muted)]">No periods for this legal entity.</p>
