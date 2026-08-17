@@ -4,7 +4,7 @@
   "document": "control-inventory",
   "status": "implementation-evidence",
   "comparisonBaselineSha": "f17756d80f039954c3be9f341436d0ba426d27b1",
-  "implementationSha": "16c889d6c46e6189a278cfa9bfa05b14d96febfa",
+  "implementationSha": "10c6d0ec305c4b70c9d380c6ba401e40d5603a51",
   "before": {
     "permissions": 105,
     "presentation": 82,
@@ -74,5 +74,6 @@
     "src/modules/m11-training/sections/ux-states.tsx"
   ],
   "sourceBaseline": "docs/architecture/prototype-parity/phase1/P1_B6_FROZEN_BASELINES.json",
-  "domainEquivalencePass": true
+  "domainEquivalencePass": true,
+  "evidencePackTip": "10c6d0ec305c4b70c9d380c6ba401e40d5603a51"
 }
