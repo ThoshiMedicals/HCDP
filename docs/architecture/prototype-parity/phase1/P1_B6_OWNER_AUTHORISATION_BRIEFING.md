@@ -11,9 +11,12 @@
 **Accepted P1-B4 tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
 **Accepted P1-B5 tip:** `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`)
 **Briefing date:** 2026-08-17
+**Frozen baseline / equivalence gate:** [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md); machine-readable [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json)
+**Immutable pre-implementation comparison baseline:** `f17756d80f039954c3be9f341436d0ba426d27b1`
 
 > **This briefing is not authorisation.**
 > P1-B6 remains `P1 — PLANNED, NOT AUTHORISED`. No coding, PR, merge, deployment, gap closure, decision approval, Aurora integration, PPA, payment, or automatic progression is granted by this document.
+> Frozen-module baseline provenance and the deterministic equivalence gate are recorded separately — they do **not** authorise implementation.
 > Aurora (`cursor/aurora-design-foundation`) remains **parked, isolated and unintegrated** — do not merge, cherry-pick, copy or selectively reapply Aurora code.
 > Decision A remains the binding P1 visual contract.
 > Frozen Waves 2–5 and accepted M07 Batches 1–6 domain behaviour must be preserved.
@@ -26,6 +29,7 @@
 | Decision A acceptance | [`../DESIGN_REFERENCE_DECISION_A_ACCEPTANCE.md`](../DESIGN_REFERENCE_DECISION_A_ACCEPTANCE.md) |
 | Gap register | [`P1_PROTOTYPE_PARITY_GAP_REGISTER.md`](./P1_PROTOTYPE_PARITY_GAP_REGISTER.md) |
 | Execution batches | [`P1_EXECUTION_BATCHES.md`](./P1_EXECUTION_BATCHES.md) |
+| Frozen baselines / equivalence | [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md); [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json) |
 | Sequencing | [`P1_DEPENDENCY_AND_SEQUENCING_PLAN.md`](./P1_DEPENDENCY_AND_SEQUENCING_PLAN.md) |
 | Owner decisions | [`P1_OWNER_DECISION_REGISTER.md`](./P1_OWNER_DECISION_REGISTER.md) |
 | Scope exclusions / firewall | [`P1_SCOPE_EXCLUSIONS.md`](./P1_SCOPE_EXCLUSIONS.md); parent firewall |
@@ -56,15 +60,19 @@ P1-B1 through P1-B5 are **owner accepted with qualifications and closed**. The n
 
 ## 2. Authoritative accepted-module baseline table
 
+Authoritative provenance reconciliation, current comparison baseline, and deterministic hashes: [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md) and [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json).
+
 | Module | Route | Accepted wave/batch | Accepted implementation SHA | Evidence files | Required regression suite |
 | --- | --- | --- | --- | --- | --- |
-| M04 | `/staff-doctors` | Wave 2 — owner accepted and frozen (27 July 2026) | **Not pinned** as a full SHA in wave-control or Wave 2 acceptance/completion reports in this worktree — freeze is by status/date; use evidence pack as behavioural baseline | `docs/audits/WAVE2_M04_COMPLETION_REPORT.md`; `docs/audits/WAVE2_ACCEPTANCE_REPORT.md`; `docs/audits/WAVE2_CHECKPOINT_STOP_BEFORE_WAVE3.md`; `docs/audits/wave2-m04-acceptance-evidence.json`; `docs/audits/wave2-m04-browser-evidence.json` | `npm run test:m04`; `npm run test:wave2-evidence` |
-| M05 | `/roster` | Wave 4 — owner accepted and frozen — NOT production-approved | `15f020800bbca40702ef08ad25f94f1d1999112f` | `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`; `docs/audits/WAVE4_CHECKPOINT_STOP_BEFORE_WAVE5.md`; `docs/audits/wave4-m05-acceptance-evidence.json`; `docs/audits/wave4-m05-performance-evidence.json` | `npm run test:m05`; `npm run test:wave4-evidence` |
-| M06 | `/time-attendance` | Wave 5 — owner accepted and frozen — NOT production-approved | Runtime `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`; acceptance checkpoint `39f892e81f5aa76f6690d6af8c82273def5a6e0f` | `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`; `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`; `docs/audits/wave5-m06-acceptance-evidence.json`; `docs/audits/wave5-m06-workflow-evidence.json`; `docs/audits/wave5-m06-performance-evidence.json` | `npm run test:m06`; `npm run test:wave5-evidence` |
+| M04 | `/staff-doctors` | Wave 2 — owner accepted and frozen (27 July 2026) | **`null` — not recoverable as authoritative pin** (`verified-wave-closure`; probable tip `5886bf3a…` is not authoritative) | `docs/audits/WAVE2_M04_COMPLETION_REPORT.md`; `docs/audits/WAVE2_ACCEPTANCE_REPORT.md`; `docs/audits/WAVE2_CHECKPOINT_STOP_BEFORE_WAVE3.md`; `docs/audits/wave2-m04-acceptance-evidence.json`; `docs/audits/wave2-m04-browser-evidence.json` | `npm run test:m04`; `npm run test:wave2-evidence` |
+| M05 | `/roster` | Wave 4 — owner accepted and frozen — NOT production-approved | `15f020800bbca40702ef08ad25f94f1d1999112f` (`verified-owner-accepted`) | `docs/audits/WAVE4_M05_COMPLETION_REPORT.md`; `docs/audits/WAVE4_CHECKPOINT_STOP_BEFORE_WAVE5.md`; `docs/audits/wave4-m05-acceptance-evidence.json`; `docs/audits/wave4-m05-performance-evidence.json` | `npm run test:m05`; `npm run test:wave4-evidence` |
+| M06 | `/time-attendance` | Wave 5 — owner accepted and frozen — NOT production-approved | Runtime `6cfee6ca7ae2d0f58695569b9f61ffa939b97e49`; acceptance checkpoint `39f892e81f5aa76f6690d6af8c82273def5a6e0f` (docs-only) | `docs/audits/WAVE5_M06_COMPLETION_REPORT.md`; `docs/audits/WAVE5_CHECKPOINT_STOP_BEFORE_WAVE6.md`; `docs/audits/wave5-m06-acceptance-evidence.json`; `docs/audits/wave5-m06-workflow-evidence.json`; `docs/audits/wave5-m06-performance-evidence.json` | `npm run test:m06`; `npm run test:wave5-evidence` |
 | M07 | `/staffpay` | Wave 6 / M07 Batches 1–6 closed within approved scope (Batches 3–4 and 6 with qualifications); plus P1-B3 honesty | Batch 6 technical target `ce1f4af68917c9988efff327d521d94b8289f2fc`; Batch 6 owner-acceptance evidence `ad54aed94b0c798d3f26fe66bf811d6e3b083151`; P1-B3 honesty tip `2515a4ffac0fb94cbd37092e26bf372cb43898f8` | `docs/audits/WAVE6_BATCH6_*`; P1-B3: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; `docs/audits/p1/P1_B3_REMEDIATION_EVIDENCE.md` | `npm run test:m07`; `npm run test:p1-b3` |
-| M11 | `/training` | Wave 3 — owner accepted and frozen (27 July 2026); plus P1-B3 register sync | **Not pinned** as a full SHA in wave-control or Wave 3 completion reports in this worktree — freeze is by status/date; P1-B3 register sync tip `2515a4ffac0fb94cbd37092e26bf372cb43898f8` | `docs/audits/WAVE3_M11_COMPLETION_REPORT.md`; `docs/audits/WAVE3_CHECKPOINT_STOP_BEFORE_WAVE4.md`; `docs/audits/wave3-m11-acceptance-evidence.json`; `docs/audits/wave3-m11-performance-evidence.json`; P1-B3: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; `docs/audits/p1/b3-register-hygiene/` | `npm run test:m11`; `npm run test:wave3-evidence`; `npm run test:p1-b3` |
+| M11 | `/training` | Wave 3 — owner accepted and frozen (27 July 2026); plus P1-B3 register sync | **`null` Wave 3 pin** (`verified-wave-closure`); P1-B3 register sync tip `2515a4ffac0fb94cbd37092e26bf372cb43898f8` | `docs/audits/WAVE3_M11_COMPLETION_REPORT.md`; `docs/audits/WAVE3_CHECKPOINT_STOP_BEFORE_WAVE4.md`; `docs/audits/wave3-m11-acceptance-evidence.json`; `docs/audits/wave3-m11-performance-evidence.json`; P1-B3: `docs/audits/p1/P1_B3_IMPLEMENTATION_EVIDENCE.md`; `docs/audits/p1/b3-register-hygiene/` | `npm run test:m11`; `npm run test:wave3-evidence`; `npm run test:p1-b3` |
 
-**Honesty note:** Where a full accepted implementation SHA is not recorded in authoritative control/evidence, future B6 work must treat the freeze status + evidence pack + focused regression suite as the behavioural baseline, and must not invent a SHA.
+**Honesty note:** Where a full accepted implementation SHA is not recorded in authoritative control/evidence, future B6 work must treat the freeze status + evidence pack + focused regression suite + **current comparison baseline hashes** as the behavioural baseline, and must not invent a SHA.
+
+**Current comparison baseline (immutable):** `f17756d80f039954c3be9f341436d0ba426d27b1` — not a replacement for historical owner-accepted SHAs.
 
 ### Distinguishing accepted domain implementation from later P1 presentation
 
@@ -228,36 +236,20 @@ Source: [`../design-system-contract.json`](../design-system-contract.json). Do *
 
 ## 7. Domain-equivalence gate (mandatory)
 
-Before/after P1-B6 implementation (if later authorised), for **each** of M04–M07/M11 inventory:
+Authoritative procedure and machine-readable baseline: [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md) and [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json) at comparison tip `f17756d80f039954c3be9f341436d0ba426d27b1`.
 
-- Routes; sections/tabs; visible controls
-- Permissions; state transitions
-- Storage writes; events/audit entries
-- Export outputs; calculated values
-- Test fixtures; network/API activity (distinguish Next asset requests from durable domain calls)
+Before/after P1-B6 implementation (if later authorised), for **each** of M04–M07/M11:
 
-Produce machine-readable:
+1. Regenerate the frozen-baselines manifest deterministically.
+2. Compare protected file hashes and inventories.
+3. Allow changes only in classified presentation files (`sections/`, `components/`).
+4. Fail publication on any unexplained protected-domain difference (permissions, transitions, storage, events, calculations, exports, M07 PPA/payment/M08 boundaries, M11 sections/aliases).
+
+Also produce implementation evidence under:
 
 `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`
 
-Required fields:
-
-| Field | Requirement |
-| --- | --- |
-| `baselineSha` | Per-module accepted baseline SHA where pinned; else freeze evidence reference |
-| `implementationSha` | P1-B6 tip under review |
-| `expectedPresentationOnlyChanges` | Explicit allow-list |
-| `domainTestsBefore` / `domainTestsAfter` | Suite counts + failing IDs |
-| `changedBehaviour` | Empty array required for pass, or explained presentation-only diffs |
-| `decision` | `pass` \| `fail` |
-
-**Fail rule:** any unexplained domain-output difference blocks publication.
-
-**P1-GAP-081:** cannot close merely because tests pass; evidence must demonstrate frozen-wave behaviour preservation via the equivalence report + control inventory.
-
-Also produce:
-
-`docs/audits/p1/b6-accepted-modules-presentation/control-inventory.json`
+**P1-GAP-081:** cannot close merely because tests pass; evidence must demonstrate frozen-wave behaviour preservation via the equivalence report + unchanged protected hashes.
 
 ---
 
