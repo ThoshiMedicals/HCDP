@@ -326,11 +326,14 @@ export function RosterBoardSection() {
 
   return (
     <SectionFrame sectionId="roster-board" title="Roster Board">
+      <p className="cc-demo-banner m-0" role="status" data-testid="m05-demo-banner">
+        Demonstration / local browser data — not live operational roster truth.
+      </p>
       <OfflineState />
       <div>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Build weekly rosters — periods, shifts and assignments. Every assignment runs
-          authoritative M04/platform eligibility.
+          M04/platform eligibility.
         </p>
       </div>
 
@@ -400,7 +403,7 @@ export function RosterBoardSection() {
                 className={
                   "rounded-lg border px-3 py-2 text-left text-xs transition " +
                   (activePeriodId === p.id
-                    ? "border-[var(--theme-primary,#1e40af)] bg-[var(--teal-3)] text-[#1d4ed8]"
+                    ? "border-[var(--theme-primary,#1e40af)] bg-[var(--teal-3)] text-[var(--hcdp-status-info-text)]"
                     : "border-[var(--line)] bg-[var(--card)] hover:bg-[var(--soft)]")
                 }
               >
@@ -412,7 +415,7 @@ export function RosterBoardSection() {
                   <Badge tone={p.lifecycleState === "published" ? "success" : "warn"}>
                     {p.lifecycleState}
                   </Badge>
-                  <span className="text-[length:var(--type-meta)] text-[#94a3b8]">v{p.version}</span>
+                  <span className="text-[length:var(--type-meta)] text-[var(--muted)]">v{p.version}</span>
                 </div>
               </button>
             ))}
@@ -617,10 +620,10 @@ export function RosterBoardSection() {
               </div>
               {assignPreview.blockers.length > 0 ? (
                 <div className="mt-2">
-                  <div className="text-xs font-bold uppercase text-[#b91c1c]">
+                  <div className="text-xs font-bold uppercase text-[var(--hcdp-status-critical-text)]">
                     Blockers
                   </div>
-                  <ul className="mt-1 list-disc pl-4 text-xs text-[#991b1b]">
+                  <ul className="mt-1 list-disc pl-4 text-xs text-[var(--hcdp-status-critical-text)]">
                     {assignPreview.blockers.map((b, i) => (
                       <li key={i}>
                         {b.code}: {b.description}
@@ -632,10 +635,10 @@ export function RosterBoardSection() {
               ) : null}
               {assignPreview.warnings.length > 0 ? (
                 <div className="mt-2">
-                  <div className="text-xs font-bold uppercase text-[#92400e]">
+                  <div className="text-xs font-bold uppercase text-[var(--hcdp-status-warning-text)]">
                     Warnings
                   </div>
-                  <ul className="mt-1 list-disc pl-4 text-xs text-[#78350f]">
+                  <ul className="mt-1 list-disc pl-4 text-xs text-[var(--hcdp-status-warning-text)]">
                     {assignPreview.warnings.map((w, i) => (
                       <li key={i}>
                         {w.code}: {w.description}

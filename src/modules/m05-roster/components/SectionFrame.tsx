@@ -31,7 +31,7 @@ export function SectionFrame({
     >
       <div>
         <h2
-          className="m-0 text-xl font-extrabold text-[var(--ink)]"
+          className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]"
           data-testid={`m05-heading-${sectionId}`}
         >
           {title}

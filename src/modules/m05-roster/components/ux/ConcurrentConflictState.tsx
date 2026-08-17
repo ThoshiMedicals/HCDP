@@ -31,7 +31,7 @@ export function ConcurrentConflictState({
             </div>
             <p className="mt-1 text-sm text-[var(--muted)]">{message}</p>
             {targetType && targetId ? (
-              <p className="mt-1 text-xs text-[#94a3b8]">
+              <p className="mt-1 text-[length:var(--type-control)] text-[var(--muted)]">
                 {targetType} · {targetId}
               </p>
             ) : null}

@@ -158,8 +158,8 @@ export function CostForecastSection() {
               </div>
               {f.warnings.length > 0 ? (
                 <div className="border-t border-[var(--line)] px-5 py-3">
-                  <div className="text-xs font-bold uppercase text-[#92400e]">Warnings</div>
-                  <ul className="mt-1 list-disc pl-4 text-xs text-[#78350f]">
+                  <div className="text-xs font-bold uppercase text-[var(--hcdp-status-warning-text)]">Warnings</div>
+                  <ul className="mt-1 list-disc pl-4 text-xs text-[var(--hcdp-status-warning-text)]">
                     {f.warnings.map((w, i) => (
                       <li key={i}>{w}</li>
                     ))}
