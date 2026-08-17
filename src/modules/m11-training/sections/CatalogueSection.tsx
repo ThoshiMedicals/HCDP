@@ -83,8 +83,8 @@ export function CatalogueSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Course Catalogue</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Course Catalogue</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Manage versioned training courses. Prior versions are archived (immutable) when a new version is published.
         </p>
       </div>
@@ -194,7 +194,7 @@ export function CatalogueSection() {
                     </tr>
                     {publishingCourseId === c.id ? (
                       <tr key={`${c.id}-publish`}>
-                        <td colSpan={canManage ? 6 : 5} className="bg-[#f8fafc]">
+                        <td colSpan={canManage ? 6 : 5} className="bg-[var(--soft)]">
                           <div className="grid gap-2 p-2 md:grid-cols-4">
                             <input
                               className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
@@ -251,12 +251,12 @@ export function CatalogueSection() {
                     ) : null}
                     {c.versions.length > 0 ? (
                       <tr key={`${c.id}-versions`}>
-                        <td colSpan={canManage ? 6 : 5} className="bg-[#f8fafc] py-1">
+                        <td colSpan={canManage ? 6 : 5} className="bg-[var(--soft)] py-1">
                           <div className="flex flex-wrap gap-2 px-2 py-1">
                             {c.versions.map((v) => (
                               <span
                                 key={v.versionId}
-                                className="inline-flex items-center gap-1 rounded bg-white px-2 py-0.5 text-xs border border-[var(--line)]"
+                                className="inline-flex items-center gap-1 rounded bg-[var(--card)] px-2 py-0.5 text-xs border border-[var(--line)]"
                               >
                                 v{v.versionNumber}
                                 <Badge

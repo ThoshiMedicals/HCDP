@@ -34,7 +34,7 @@ export function CompetenciesSection() {
     return (
       <div className="grid gap-4">
         <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Competencies</h2>
+          <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Competencies</h2>
         </div>
         <RestrictedState permission="training.competency.record" />
       </div>
@@ -74,8 +74,8 @@ export function CompetenciesSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Competencies</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Competencies</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Record competency attestations against policy requirements. Supersede prior records via
           the service.
         </p>
@@ -156,7 +156,7 @@ export function CompetenciesSection() {
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3 flex items-center gap-3">
             <PanelTitle>Competency records</PanelTitle>
-            <span className="text-xs text-[#64748b]">
+            <span className="text-[length:var(--type-control)] text-[var(--muted)]">
               {active.length} active · {records.length - active.length} superseded
             </span>
           </div>
@@ -182,7 +182,7 @@ export function CompetenciesSection() {
                     </Badge>
                   </Td>
                   <Td className="text-xs">{r.expiresOn ?? "—"}</Td>
-                  <Td className="text-xs text-[#64748b]">{r.attestedBy}</Td>
+                  <Td className="text-[length:var(--type-control)] text-[var(--muted)]">{r.attestedBy}</Td>
                   <Td className="text-xs">{r.createdAt.slice(0, 10)}</Td>
                 </tr>
               ))}

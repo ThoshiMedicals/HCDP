@@ -41,7 +41,7 @@ export function AssessmentsSection() {
     return (
       <div className="grid gap-4">
         <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Assessments</h2>
+          <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Assessments</h2>
         </div>
         <RestrictedState permission="training.assess" />
       </div>
@@ -80,8 +80,8 @@ export function AssessmentsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Assessments</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Assessments</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Record assessment outcomes. Supersede prior records by linking via supersedesId.
         </p>
       </div>
@@ -162,7 +162,7 @@ export function AssessmentsSection() {
         <Panel pad={false}>
           <div className="border-b border-[var(--line)] px-5 py-3 flex items-center gap-3">
             <PanelTitle>Assessment records</PanelTitle>
-            <span className="text-xs text-[#64748b]">
+            <span className="text-[length:var(--type-control)] text-[var(--muted)]">
               {active.length} active · {assessments.length - active.length} superseded
             </span>
           </div>
@@ -187,7 +187,7 @@ export function AssessmentsSection() {
                   <Td className="text-xs">
                     {a.score != null ? `${a.score}${a.maxScore != null ? ` / ${a.maxScore}` : ""}` : "—"}
                   </Td>
-                  <Td className="text-xs text-[#64748b]">{a.assessorId}</Td>
+                  <Td className="text-[length:var(--type-control)] text-[var(--muted)]">{a.assessorId}</Td>
                   <Td className="text-xs">{a.createdAt.slice(0, 10)}</Td>
                   <Td>
                     {a.supersededById ? (

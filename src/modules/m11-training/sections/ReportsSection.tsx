@@ -32,7 +32,7 @@ export function ReportsSection() {
     return (
       <div className="grid gap-4">
         <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Reports</h2>
+          <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Reports</h2>
         </div>
         <RestrictedState permission="training.view" />
       </div>
@@ -43,8 +43,8 @@ export function ReportsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Reports</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Reports</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Training compliance counts and export. Export requires <code>training.export</code>.
         </p>
       </div>
@@ -114,7 +114,7 @@ export function ReportsSection() {
             Export summary
           </Button>
         ) : (
-          <p className="mt-3 text-sm text-[#64748b]">
+          <p className="mt-3 text-[length:var(--type-body)] text-[var(--muted)]">
             You do not have <code>training.export</code> — contact your administrator.
           </p>
         )}

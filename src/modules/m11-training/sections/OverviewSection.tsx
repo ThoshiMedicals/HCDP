@@ -32,11 +32,14 @@ export function OverviewSection() {
 
   return (
     <div className="grid gap-4">
+      <p className="cc-demo-banner m-0" role="status" data-testid="m11-demo-banner">
+        Demonstration / local browser data — not live operational training truth.
+      </p>
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Training overview</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
-          M11 training compliance: courses, assignments, sessions, certificates and policy.
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Training overview</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
+          Training compliance workspace: courses, assignments, sessions, certificates and policy.
         </p>
       </div>
 
@@ -114,7 +117,7 @@ export function OverviewSection() {
             Recalculate readiness contributions
           </Button>
         </div>
-        <p className="mt-3 text-xs text-[#64748b]">
+        <p className="mt-3 text-[length:var(--type-control)] text-[var(--muted)]">
           Recalculate rebuilds M11 training contributions consumed by M04 authoritative readiness.
           M04 owns final eligibility outcome.
         </p>
@@ -128,7 +131,7 @@ export function OverviewSection() {
             {migrationReport.duplicates} · rejected {migrationReport.rejected}
           </PanelSub>
           {migrationReport.warnings.length > 0 ? (
-            <ul className="mt-2 text-xs text-[#64748b]">
+            <ul className="mt-2 text-[length:var(--type-control)] text-[var(--muted)]">
               {migrationReport.warnings.map((w, i) => (
                 <li key={i}>{w}</li>
               ))}
@@ -149,7 +152,7 @@ export function OverviewSection() {
           <PanelTitle>Course catalogue snapshot</PanelTitle>
         </div>
         {courses.length === 0 ? (
-          <div className="px-5 py-4 text-sm text-[#64748b]">No courses in catalogue yet.</div>
+          <div className="px-5 py-4 text-[length:var(--type-body)] text-[var(--muted)]">No courses in catalogue yet.</div>
         ) : (
           <Table>
             <THead>
@@ -185,17 +188,17 @@ export function OverviewSection() {
       <div className="grid gap-3 md:grid-cols-3">
         <Panel>
           <PanelTitle>Active actor</PanelTitle>
-          <div className="text-sm text-[#526479]">{actor.userId}</div>
+          <div className="text-[length:var(--type-body)] text-[var(--muted)]">{actor.userId}</div>
         </Panel>
         <Panel>
           <PanelTitle>Permissions</PanelTitle>
-          <div className="text-sm text-[#526479]">
+          <div className="text-[length:var(--type-body)] text-[var(--muted)]">
             {actor.permissions.includes("*") ? "All (superuser)" : `${actor.permissions.length} codes`}
           </div>
         </Panel>
         <Panel>
           <PanelTitle>Clinic scope</PanelTitle>
-          <div className="text-sm text-[#526479]">
+          <div className="text-[length:var(--type-body)] text-[var(--muted)]">
             {actor.clinicIds === undefined ? "All clinics" : `${actor.clinicIds.length} clinic(s)`}
           </div>
         </Panel>

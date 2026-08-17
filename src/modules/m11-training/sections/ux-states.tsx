@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 export function LoadingState({ label = "Loading…" }: { label?: string }) {
   return (
-    <div className="flex items-center gap-2 py-8 text-sm text-[#64748b]" role="status" aria-live="polite">
+    <div className="flex items-center gap-2 py-8 text-[length:var(--type-body)] text-[var(--muted)]" role="status" aria-live="polite">
       <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-[var(--teal-6)] border-t-transparent" />
       {label}
     </div>
@@ -28,7 +28,7 @@ export function EmptyState({
         <div className="text-3xl select-none" aria-hidden="true">📭</div>
         <div>
           <div className="font-semibold text-[var(--ink)]">{title}</div>
-          {description ? <p className="mt-1 text-sm text-[#64748b]">{description}</p> : null}
+          {description ? <p className="mt-1 text-[length:var(--type-body)] text-[var(--muted)]">{description}</p> : null}
         </div>
         {action ? (
           <Button variant="teal" small onClick={action.onClick}>
@@ -51,7 +51,7 @@ export function FilteredEmptyState({
         <div className="text-3xl select-none" aria-hidden="true">🔍</div>
         <div>
           <div className="font-semibold text-[var(--ink)]">No results match the current filter</div>
-          <p className="mt-1 text-sm text-[#64748b]">Try adjusting or clearing the filter.</p>
+          <p className="mt-1 text-[length:var(--type-body)] text-[var(--muted)]">Try adjusting or clearing the filter.</p>
         </div>
         {onClear ? (
           <Button variant="line" small onClick={onClear}>
@@ -76,7 +76,7 @@ export function RestrictedState({
         <div className="text-3xl select-none" aria-hidden="true">🔒</div>
         <div>
           <div className="font-semibold text-[var(--ink)]">Access restricted</div>
-          <p className="mt-1 text-sm text-[#64748b]">
+          <p className="mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
             {message ?? (permission
               ? `You need the "${permission}" permission to view this section.`
               : "You do not have permission to view this section.")}
@@ -98,12 +98,12 @@ export function ValidationErrorState({
   return (
     <div
       role="alert"
-      className="rounded-lg border border-[#fca5a5] bg-[#fef2f2] px-4 py-3"
+      className="rounded-lg border border-[var(--hcdp-status-critical-border)] bg-[var(--hcdp-status-critical-surface)] px-4 py-3"
     >
       <div className="flex items-start justify-between gap-2">
         <div>
-          <div className="font-semibold text-[#b91c1c] text-sm">Please fix the following:</div>
-          <ul className="mt-1 list-disc pl-4 text-sm text-[#991b1b]">
+          <div className="font-semibold text-[var(--hcdp-status-critical-text)] text-sm">Please fix the following:</div>
+          <ul className="mt-1 list-disc pl-4 text-sm text-[var(--hcdp-status-critical-text)]">
             {errors.map((e, i) => (
               <li key={i}>{e}</li>
             ))}
@@ -113,7 +113,7 @@ export function ValidationErrorState({
           <button
             type="button"
             onClick={onDismiss}
-            className="mt-0.5 text-[#b91c1c] hover:opacity-70"
+            className="mt-0.5 text-[var(--hcdp-status-critical-text)] hover:opacity-70"
             aria-label="Dismiss errors"
           >
             ✕
@@ -137,7 +137,7 @@ export function SystemErrorState({
         <div className="text-3xl select-none" aria-hidden="true">⚠️</div>
         <div>
           <div className="font-semibold text-[var(--ink)]">Something went wrong</div>
-          <p className="mt-1 text-sm text-[#64748b]">{error}</p>
+          <p className="mt-1 text-[length:var(--type-body)] text-[var(--muted)]">{error}</p>
         </div>
         {onRetry ? (
           <Button variant="line" small onClick={onRetry}>

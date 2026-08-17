@@ -51,7 +51,7 @@ export function SessionsSection() {
     return (
       <div className="grid gap-4">
         <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Sessions</h2>
+          <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Sessions</h2>
         </div>
         <RestrictedState permission="training.manage_sessions" />
       </div>
@@ -136,8 +136,8 @@ export function SessionsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Sessions</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Sessions</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Create scheduled training sessions, enrol participants, and mark attendance.
         </p>
       </div>
@@ -272,7 +272,7 @@ export function SessionsSection() {
                           </>
                         ) : null}
                         {s.status === "completed" ? (
-                          <span className="text-xs text-[#64748b]">
+                          <span className="text-[length:var(--type-control)] text-[var(--muted)]">
                             {s.attendedPersonIds.length} attended
                           </span>
                         ) : null}
@@ -281,7 +281,7 @@ export function SessionsSection() {
                   </tr>
                   {enrolSessionId === s.id ? (
                     <tr key={`${s.id}-enrol`}>
-                      <td colSpan={7} className="bg-[#f8fafc]">
+                      <td colSpan={7} className="bg-[var(--soft)]">
                         <div className="flex gap-2 p-2">
                           <input
                             className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
@@ -307,7 +307,7 @@ export function SessionsSection() {
                   ) : null}
                   {attendSessionId === s.id ? (
                     <tr key={`${s.id}-attend`}>
-                      <td colSpan={7} className="bg-[#f8fafc]">
+                      <td colSpan={7} className="bg-[var(--soft)]">
                         <div className="flex gap-2 p-2">
                           <input
                             className="flex-1 rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
@@ -327,7 +327,7 @@ export function SessionsSection() {
                             Cancel
                           </Button>
                         </div>
-                        <p className="px-3 pb-2 text-xs text-[#64748b]">
+                        <p className="px-3 pb-2 text-[length:var(--type-control)] text-[var(--muted)]">
                           Marking attendance sets session to &quot;completed&quot;.
                         </p>
                       </td>

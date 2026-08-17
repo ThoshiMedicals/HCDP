@@ -113,8 +113,8 @@ export function EvidenceSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Evidence</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Evidence</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Training evidence records. Sensitive evidence is masked unless you have{" "}
           <code>training.view_sensitive_evidence</code>.
         </p>
@@ -170,7 +170,7 @@ export function EvidenceSection() {
             onChange={(e) => setUrl(e.target.value)}
             aria-label="URL"
           />
-          <label className="flex items-center gap-2 text-sm text-[#526479]">
+          <label className="flex items-center gap-2 text-[length:var(--type-body)] text-[var(--muted)]">
             <input
               type="checkbox"
               checked={sensitive}
@@ -199,8 +199,8 @@ export function EvidenceSection() {
               onClick={() => setStatusFilter(s)}
               className={`rounded-full px-3 py-1 text-xs font-semibold border transition ${
                 statusFilter === s
-                  ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[#1d4ed8]"
-                  : "border-[var(--line)] text-[#526479] hover:bg-[#f8fafc]"
+                  ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[var(--hcdp-status-info-text)]"
+                  : "border-[var(--line)] text-[var(--muted)] hover:bg-[var(--soft)]"
               }`}
             >
               {s === "" ? "All" : s}
@@ -234,7 +234,7 @@ export function EvidenceSection() {
                       <Td className="font-mono text-xs">{ev.personId}</Td>
                       <Td>
                         {isHidden ? (
-                          <span className="text-[#64748b] italic text-xs">
+                          <span className="text-[var(--muted)] italic text-xs">
                             [sensitive — restricted]
                           </span>
                         ) : (
@@ -244,7 +244,7 @@ export function EvidenceSection() {
                       <Td>{courseMap[ev.courseId ?? ""] ?? (ev.courseId ?? "—")}</Td>
                       <Td className="text-xs">{ev.source}</Td>
                       <Td>
-                        {ev.sensitive ? <Badge tone="warn">sensitive</Badge> : <span className="text-xs text-[#64748b]">no</span>}
+                        {ev.sensitive ? <Badge tone="warn">sensitive</Badge> : <span className="text-[length:var(--type-control)] text-[var(--muted)]">no</span>}
                       </Td>
                       <Td>
                         <Badge tone={STATUS_TONES[ev.status]}>{ev.status}</Badge>
@@ -270,10 +270,10 @@ export function EvidenceSection() {
                     </tr>
                     {rejectOpen[ev.id] ? (
                       <tr key={`${ev.id}-reject`}>
-                        <td colSpan={7} className="bg-[#fef2f2]">
+                        <td colSpan={7} className="bg-[var(--hcdp-status-critical-surface)]">
                           <div className="flex gap-2 p-2">
                             <input
-                              className="flex-1 rounded-lg border border-[#fca5a5] px-3 py-2 text-sm"
+                              className="flex-1 rounded-lg border border-[var(--hcdp-status-critical-border)] px-3 py-2 text-sm"
                               placeholder="Rejection reason"
                               value={rejectReason[ev.id] ?? ""}
                               onChange={(e) =>

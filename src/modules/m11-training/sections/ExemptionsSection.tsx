@@ -123,8 +123,8 @@ export function ExemptionsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Exemptions</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Exemptions</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Request and manage training exemptions. Self-approval is not permitted.
         </p>
       </div>
@@ -192,8 +192,8 @@ export function ExemptionsSection() {
               onClick={() => setStatusFilter(s)}
               className={`rounded-full px-3 py-1 text-xs font-semibold border transition ${
                 statusFilter === s
-                  ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[#1d4ed8]"
-                  : "border-[var(--line)] text-[#526479] hover:bg-[#f8fafc]"
+                  ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[var(--hcdp-status-info-text)]"
+                  : "border-[var(--line)] text-[var(--muted)] hover:bg-[var(--soft)]"
               }`}
             >
               {s === "" ? "All" : s}
@@ -231,7 +231,7 @@ export function ExemptionsSection() {
                       </Td>
                       <Td className="max-w-[200px] truncate text-xs">{ex.reason}</Td>
                       <Td className="text-xs">{ex.expiresOn ?? "—"}</Td>
-                      <Td className="text-xs text-[#64748b]">{ex.requestedBy}</Td>
+                      <Td className="text-[length:var(--type-control)] text-[var(--muted)]">{ex.requestedBy}</Td>
                       <Td>
                         <div className="flex flex-wrap gap-1">
                           {canApprove && ex.status === "request" && !isSelf ? (
@@ -245,7 +245,7 @@ export function ExemptionsSection() {
                             </>
                           ) : null}
                           {canApprove && ex.status === "request" && isSelf ? (
-                            <span className="text-xs text-[#64748b] italic">
+                            <span className="text-[length:var(--type-control)] text-[var(--muted)] italic">
                               Cannot self-approve
                             </span>
                           ) : null}
@@ -268,7 +268,7 @@ export function ExemptionsSection() {
                     </tr>
                     {revokeMap[ex.id] !== undefined ? (
                       <tr key={`${ex.id}-revoke`}>
-                        <td colSpan={7} className="bg-[#f8fafc]">
+                        <td colSpan={7} className="bg-[var(--soft)]">
                           <div className="flex gap-2 p-2">
                             <input
                               className="flex-1 rounded-lg border border-[var(--line)] px-3 py-2 text-sm"
@@ -301,7 +301,7 @@ export function ExemptionsSection() {
                     ) : null}
                     {canApprove && ex.status === "request" && !isSelf ? (
                       <tr key={`${ex.id}-notes`}>
-                        <td colSpan={7} className="bg-[#f8fafc]">
+                        <td colSpan={7} className="bg-[var(--soft)]">
                           <div className="flex gap-2 p-2">
                             <input
                               className="flex-1 rounded-lg border border-[var(--line)] px-3 py-2 text-sm"

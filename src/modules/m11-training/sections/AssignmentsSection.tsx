@@ -113,8 +113,8 @@ export function AssignmentsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Assignments</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Assignments</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Manual assignment of courses to people. Complete or revoke as needed.
         </p>
       </div>
@@ -186,8 +186,8 @@ export function AssignmentsSection() {
                 }}
                 className={`rounded-full px-3 py-1 text-xs font-semibold border transition ${
                   statusFilter === s
-                    ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[#1d4ed8]"
-                    : "border-[var(--line)] text-[#526479] hover:bg-[#f8fafc]"
+                    ? "border-[var(--teal-6)] bg-[var(--teal-3)] text-[var(--hcdp-status-info-text)]"
+                    : "border-[var(--line)] text-[var(--muted)] hover:bg-[var(--soft)]"
                 }`}
               >
                 {s === "" ? "All" : s}
@@ -247,7 +247,7 @@ export function AssignmentsSection() {
                   <Td>
                     <Badge tone={STATUS_TONES[a.status]}>{a.status}</Badge>
                   </Td>
-                  <Td className="text-xs text-[#64748b]">{a.assignedBy}</Td>
+                  <Td className="text-[length:var(--type-control)] text-[var(--muted)]">{a.assignedBy}</Td>
                   <Td>
                     <div className="flex flex-wrap gap-1">
                       {canComplete &&

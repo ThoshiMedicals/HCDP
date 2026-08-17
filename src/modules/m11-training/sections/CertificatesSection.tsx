@@ -45,8 +45,8 @@ export function CertificatesSection() {
     return (
       <div className="grid gap-4">
         <div>
-          <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Certificates</h2>
-          <p className="m-0 mt-1 text-sm text-[#526479]">
+          <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Certificates</h2>
+          <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
             M11 training qualification certificates — not M04 workforce credentials.
           </p>
         </div>
@@ -110,8 +110,8 @@ export function CertificatesSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Certificates</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Certificates</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           M11 training qualification certificates — these are M11-owned training outcomes and are{" "}
           <strong>not</strong> the same as M04 workforce credentials.
         </p>
@@ -197,7 +197,7 @@ export function CertificatesSection() {
                       {c.verifiedAt ? (
                         <Badge tone="success">verified {c.verifiedAt.slice(0, 10)}</Badge>
                       ) : (
-                        <span className="text-[#64748b]">—</span>
+                        <span className="text-[var(--muted)]">—</span>
                       )}
                     </Td>
                     <Td>
@@ -221,10 +221,10 @@ export function CertificatesSection() {
                   </tr>
                   {revokeId === c.id ? (
                     <tr key={`${c.id}-revoke`}>
-                      <td colSpan={7} className="bg-[#fef2f2]">
+                      <td colSpan={7} className="bg-[var(--hcdp-status-critical-surface)]">
                         <div className="flex gap-2 p-2">
                           <input
-                            className="flex-1 rounded-lg border border-[#fca5a5] px-3 py-2 text-sm"
+                            className="flex-1 rounded-lg border border-[var(--hcdp-status-critical-border)] px-3 py-2 text-sm"
                             placeholder="Revocation reason (required)"
                             value={revokeReason}
                             onChange={(e) => setRevokeReason(e.target.value)}

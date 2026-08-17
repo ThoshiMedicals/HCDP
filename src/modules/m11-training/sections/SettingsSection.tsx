@@ -115,8 +115,8 @@ export function SettingsSection() {
     <div className="grid gap-4">
       <OfflineState />
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Policy & Settings</h2>
-        <p className="m-0 mt-1 text-sm text-[#526479]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Policy & Settings</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Versioned training policy management. Prior published versions are archived (immutable) when
           a new version is published.
         </p>
@@ -130,8 +130,8 @@ export function SettingsSection() {
             onClick={() => setTab(t)}
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
               tab === t
-                ? "bg-[var(--teal-3)] text-[#1d4ed8]"
-                : "border border-[var(--line)] text-[#526479] hover:bg-[#f8fafc]"
+                ? "bg-[var(--teal-3)] text-[var(--hcdp-status-info-text)]"
+                : "border border-[var(--line)] text-[var(--muted)] hover:bg-[var(--soft)]"
             }`}
           >
             {t === "policy" ? "Policy" : t === "actor" ? "Actor" : "Storage"}
@@ -209,7 +209,7 @@ export function SettingsSection() {
 
                 {draftRules.length > 0 ? (
                   <div className="mt-3">
-                    <div className="mb-1 text-xs font-semibold text-[#526479]">
+                    <div className="mb-1 text-xs font-semibold text-[var(--muted)]">
                       Rules in this draft ({draftRules.length})
                     </div>
                     <ul className="space-y-1">
@@ -224,7 +224,7 @@ export function SettingsSection() {
                           </span>
                           <button
                             type="button"
-                            className="ml-2 text-[#b91c1c] hover:opacity-70"
+                            className="ml-2 text-[var(--hcdp-status-critical-text)] hover:opacity-70"
                             onClick={() =>
                               setDraftRules((prev) => prev.filter((_, idx) => idx !== i))
                             }
@@ -288,7 +288,7 @@ export function SettingsSection() {
                           <Td className="text-xs">
                             {p.publishedAt ? p.publishedAt.slice(0, 10) : "—"}
                           </Td>
-                          <Td className="text-xs text-[#64748b]">{p.createdBy}</Td>
+                          <Td className="text-[length:var(--type-control)] text-[var(--muted)]">{p.createdBy}</Td>
                           <Td className="text-xs">{p.createdAt.slice(0, 10)}</Td>
                           {canManagePolicy ? (
                             <Td>
@@ -303,7 +303,7 @@ export function SettingsSection() {
                                   Publish
                                 </Button>
                               ) : (
-                                <span className="text-xs text-[#64748b] italic">
+                                <span className="text-[length:var(--type-control)] text-[var(--muted)] italic">
                                   {p.status === "published" ? "immutable" : "archived"}
                                 </span>
                               )}
@@ -312,9 +312,9 @@ export function SettingsSection() {
                         </tr>
                         {publishingId === p.id ? (
                           <tr key={`${p.id}-publish`}>
-                            <td colSpan={canManagePolicy ? 7 : 6} className="bg-[#f0fdf4]">
+                            <td colSpan={canManagePolicy ? 7 : 6} className="bg-[var(--hcdp-status-success-surface)]">
                               <div className="flex items-center gap-3 p-2 text-sm">
-                                <span className="text-[#15803d]">
+                                <span className="text-[var(--hcdp-status-success-text)]">
                                   Publishing will archive the current published version (if any) and
                                   activate this policy. This action cannot be undone.
                                 </span>
@@ -340,13 +340,13 @@ export function SettingsSection() {
                           <tr key={`${p.id}-rules`}>
                             <td
                               colSpan={canManagePolicy ? 7 : 6}
-                              className="bg-[#f8fafc] py-1"
+                              className="bg-[var(--soft)] py-1"
                             >
                               <div className="flex flex-wrap gap-2 px-2 py-1">
                                 {p.rules.map((r) => (
                                   <span
                                     key={r.id}
-                                    className="rounded bg-white px-2 py-0.5 text-xs border border-[var(--line)]"
+                                    className="rounded bg-[var(--card)] px-2 py-0.5 text-xs border border-[var(--line)]"
                                   >
                                     {r.requirementLabel} ({courseMap[r.courseId] ?? r.courseId})
                                     {r.recurrenceMonths ? ` · ${r.recurrenceMonths}mo` : ""}
@@ -371,7 +371,7 @@ export function SettingsSection() {
           <PanelSub>
             {actorName} ({actor.userId})
           </PanelSub>
-          <ul className="mt-2 max-h-48 overflow-auto text-xs text-[#526479]">
+          <ul className="mt-2 max-h-48 overflow-auto text-[length:var(--type-control)] text-[var(--muted)]">
             {actor.permissions.includes("*") ? (
               <li>* (all M11 permissions)</li>
             ) : (
@@ -381,7 +381,7 @@ export function SettingsSection() {
             )}
           </ul>
           {migrationReport ? (
-            <p className="mt-3 text-sm text-[#526479]">
+            <p className="mt-3 text-[length:var(--type-body)] text-[var(--muted)]">
               Last seed: {migrationReport.migratedCount}/{migrationReport.sourceCount} at{" "}
               {migrationReport.ranAt}
             </p>
@@ -395,7 +395,7 @@ export function SettingsSection() {
           <PanelSub>
             Repositories own these keys — components must not write localStorage directly.
           </PanelSub>
-          <ul className="mt-2 text-xs text-[#526479]">
+          <ul className="mt-2 text-[length:var(--type-control)] text-[var(--muted)]">
             {Object.entries(M11_STORAGE_KEYS).map(([k, v]) => (
               <li key={k}>
                 <code>{v}</code>
