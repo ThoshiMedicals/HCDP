@@ -67,7 +67,7 @@ export function ReportsSection() {
           {JSON.stringify(report, null, 2)}
         </pre>
       ) : (
-        <p className="text-sm text-[var(--muted)]">Run a report to see operational totals.</p>
+        <p className="text-[length:var(--type-body)] text-[var(--muted)]">Run a report to see operational totals.</p>
       )}
       {reconcileRows ? (
         <ul data-testid="m06-reconcile-output" className="grid gap-1 mt-3 text-sm">

@@ -83,7 +83,7 @@ export function BreaksSection() {
         </Button>
       </div>
       {!open ? (
-        <p className="text-sm text-[var(--muted)] mb-3" data-testid="m06-break-disabled-reason">
+        <p className="text-[length:var(--type-body)] text-[var(--muted)] mb-3" data-testid="m06-break-disabled-reason">
           Break controls are disabled until you have an open attendance session.
         </p>
       ) : null}

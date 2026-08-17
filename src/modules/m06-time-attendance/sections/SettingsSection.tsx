@@ -28,7 +28,7 @@ export function SettingsSection() {
 
   return (
     <SectionFrame sectionId="settings" title="Settings & Policies">
-      <p className="text-sm text-[var(--muted)] m-0 mb-3">
+      <p className="text-[length:var(--type-body)] text-[var(--muted)] m-0 mb-3">
         Prototype policies are not employment-law, award, payroll or clinical-safety certification.
       </p>
       <div className="mb-3 flex flex-wrap gap-2">

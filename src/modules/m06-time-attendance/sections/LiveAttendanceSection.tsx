@@ -50,6 +50,9 @@ export function LiveAttendanceSection() {
 
   return (
     <SectionFrame sectionId="live" title="Live Attendance">
+      <p className="cc-demo-banner m-0" role="status" data-testid="m06-demo-banner">
+        Demonstration / local browser data — not live operational attendance truth.
+      </p>
       {sessions.length === 0 ? (
         <EmptyState
           title="No live sessions"
