@@ -115,7 +115,7 @@ export function ReportsSection() {
       {csvPreview ? (
         <Panel>
           <PanelTitle>CSV preview</PanelTitle>
-          <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-[var(--line)] bg-[#0f172a] p-3 text-[length:var(--type-control)] leading-relaxed text-[#e2e8f0]">
+          <pre className="mt-2 max-h-64 overflow-auto rounded-lg border border-[var(--line)] bg-[var(--ink)] p-3 text-[length:var(--type-control)] leading-relaxed text-[var(--soft)]">
             {csvPreview}
           </pre>
         </Panel>

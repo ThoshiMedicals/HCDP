@@ -91,15 +91,15 @@ export function ReportsSection() {
       <div className="grid gap-3 md:grid-cols-3">
         <Panel>
           <PanelTitle>Courses</PanelTitle>
-          <div className="text-2xl font-extrabold">{listCourses().length}</div>
+          <div className="text-[length:var(--type-display)] font-extrabold">{listCourses().length}</div>
         </Panel>
         <Panel>
           <PanelTitle>Certificates</PanelTitle>
-          <div className="text-2xl font-extrabold">{listCertificates().length}</div>
+          <div className="text-[length:var(--type-display)] font-extrabold">{listCertificates().length}</div>
         </Panel>
         <Panel>
           <PanelTitle>Exemptions</PanelTitle>
-          <div className="text-2xl font-extrabold">{listExemptions().length}</div>
+          <div className="text-[length:var(--type-display)] font-extrabold">{listExemptions().length}</div>
         </Panel>
       </div>
 

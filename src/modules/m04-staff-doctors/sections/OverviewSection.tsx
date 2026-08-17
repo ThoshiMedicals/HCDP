@@ -143,13 +143,13 @@ export function OverviewSection() {
       <div className="grid gap-3 md:grid-cols-3">
         <Panel>
           <PanelTitle>Credentials</PanelTitle>
-          <div className="text-2xl font-extrabold">
+          <div className="text-[length:var(--type-display)] font-extrabold">
             {hydrated ? listCredentials().length : 0}
           </div>
         </Panel>
         <Panel>
           <PanelTitle>Leave requests</PanelTitle>
-          <div className="text-2xl font-extrabold">{hydrated ? listLeave().length : 0}</div>
+          <div className="text-[length:var(--type-display)] font-extrabold">{hydrated ? listLeave().length : 0}</div>
         </Panel>
         <Panel>
           <PanelTitle>Lifecycle</PanelTitle>
