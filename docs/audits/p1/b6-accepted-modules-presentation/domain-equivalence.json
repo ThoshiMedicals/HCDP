@@ -1,0 +1,1231 @@
+{
+  "schemaVersion": 1,
+  "document": "domain-equivalence",
+  "batch": "P1-B6",
+  "status": "PASS",
+  "pass": true,
+  "comparisonBaselineSha": "f17756d80f039954c3be9f341436d0ba426d27b1",
+  "implementationSha": "e392c7589a01a2e4dbafa04ee8b51132b9b54e21",
+  "aurora": "parked-unintegrated",
+  "ownerAcceptance": "pending",
+  "totals": {
+    "modules": 5,
+    "protectedFilesCompared": 233,
+    "protectedDriftTotal": 0,
+    "presentationFilesChanged": 47,
+    "permissionCountBefore": 105,
+    "permissionCountAfter": 105,
+    "storageKeyCountBefore": 95,
+    "storageKeyCountAfter": 95
+  },
+  "protectedHashExplanations": [],
+  "presentationFilesChanged": [
+    "src/modules/m04-staff-doctors/sections/CredentialsSection.tsx",
+    "src/modules/m04-staff-doctors/sections/EngagementsSection.tsx",
+    "src/modules/m04-staff-doctors/sections/LeaveAvailabilitySection.tsx",
+    "src/modules/m04-staff-doctors/sections/OffboardingSection.tsx",
+    "src/modules/m04-staff-doctors/sections/OnboardingSection.tsx",
+    "src/modules/m04-staff-doctors/sections/OverviewSection.tsx",
+    "src/modules/m04-staff-doctors/sections/PeopleSection.tsx",
+    "src/modules/m04-staff-doctors/sections/ReportsSection.tsx",
+    "src/modules/m04-staff-doctors/sections/RestrictionsSection.tsx",
+    "src/modules/m04-staff-doctors/sections/SettingsSection.tsx",
+    "src/modules/m05-roster/components/SectionFrame.tsx",
+    "src/modules/m05-roster/components/ux/ConcurrentConflictState.tsx",
+    "src/modules/m05-roster/components/ux/ValidationErrorState.tsx",
+    "src/modules/m05-roster/sections/CostForecastSection.tsx",
+    "src/modules/m05-roster/sections/ReportsSection.tsx",
+    "src/modules/m05-roster/sections/RosterBoardSection.tsx",
+    "src/modules/m06-time-attendance/components/SectionFrame.tsx",
+    "src/modules/m06-time-attendance/components/ux/EmptyState.tsx",
+    "src/modules/m06-time-attendance/sections/BreaksSection.tsx",
+    "src/modules/m06-time-attendance/sections/ClockSection.tsx",
+    "src/modules/m06-time-attendance/sections/LiveAttendanceSection.tsx",
+    "src/modules/m06-time-attendance/sections/ReportsSection.tsx",
+    "src/modules/m06-time-attendance/sections/SettingsSection.tsx",
+    "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx",
+    "src/modules/m07-staff-pay/sections/ApprovalSection.tsx",
+    "src/modules/m07-staff-pay/sections/ExceptionsSection.tsx",
+    "src/modules/m07-staff-pay/sections/ExportSection.tsx",
+    "src/modules/m07-staff-pay/sections/LeavePrepSection.tsx",
+    "src/modules/m07-staff-pay/sections/OverviewSection.tsx",
+    "src/modules/m07-staff-pay/sections/PeopleReviewSection.tsx",
+    "src/modules/m07-staff-pay/sections/PlannedSection.tsx",
+    "src/modules/m07-staff-pay/sections/ReconciliationSection.tsx",
+    "src/modules/m07-staff-pay/sections/SettingsSection.tsx",
+    "src/modules/m07-staff-pay/sections/VariancesSection.tsx",
+    "src/modules/m07-staff-pay/sections/adjustments/AdjustmentRegister.tsx",
+    "src/modules/m11-training/sections/AssessmentsSection.tsx",
+    "src/modules/m11-training/sections/AssignmentsSection.tsx",
+    "src/modules/m11-training/sections/CatalogueSection.tsx",
+    "src/modules/m11-training/sections/CertificatesSection.tsx",
+    "src/modules/m11-training/sections/CompetenciesSection.tsx",
+    "src/modules/m11-training/sections/EvidenceSection.tsx",
+    "src/modules/m11-training/sections/ExemptionsSection.tsx",
+    "src/modules/m11-training/sections/OverviewSection.tsx",
+    "src/modules/m11-training/sections/ReportsSection.tsx",
+    "src/modules/m11-training/sections/SessionsSection.tsx",
+    "src/modules/m11-training/sections/SettingsSection.tsx",
+    "src/modules/m11-training/sections/ux-states.tsx"
+  ],
+  "presentationJustifications": [
+    {
+      "path": "src/modules/m04-staff-doctors/sections/CredentialsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/EngagementsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/LeaveAvailabilitySection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/OffboardingSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/OnboardingSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/OverviewSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/PeopleSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/ReportsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/RestrictionsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m04-staff-doctors/sections/SettingsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/components/SectionFrame.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/components/ux/ConcurrentConflictState.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/components/ux/ValidationErrorState.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/sections/CostForecastSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/sections/ReportsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m05-roster/sections/RosterBoardSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/components/SectionFrame.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/components/ux/EmptyState.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/sections/BreaksSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/sections/ClockSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/sections/LiveAttendanceSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/sections/ReportsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m06-time-attendance/sections/SettingsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/ApprovalSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/ExceptionsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/ExportSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/LeavePrepSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/OverviewSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/PeopleReviewSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/PlannedSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/ReconciliationSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/SettingsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/VariancesSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m07-staff-pay/sections/adjustments/AdjustmentRegister.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/AssessmentsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/AssignmentsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/CatalogueSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/CertificatesSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/CompetenciesSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/EvidenceSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/ExemptionsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/OverviewSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/ReportsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/SessionsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/SettingsSection.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    },
+    {
+      "path": "src/modules/m11-training/sections/ux-states.tsx",
+      "justification": "Presentation-only Decision A alignment (typography/spacing/tokens/demo honesty/density) within B6 allowlist; no protected-domain behaviour change."
+    }
+  ],
+  "modules": [
+    {
+      "moduleId": "M04",
+      "route": "/staff-doctors",
+      "protectedDomainFileCount": 28,
+      "protectedAggregateSha256Before": "0efe3aaa81b8bdf58ed8d5333925a98949b3dfc4e5be99a9d13341db53b64466",
+      "protectedAggregateSha256After": "0efe3aaa81b8bdf58ed8d5333925a98949b3dfc4e5be99a9d13341db53b64466",
+      "protectedAggregateMatch": true,
+      "protectedDriftCount": 0,
+      "protectedDrift": [],
+      "permissionInventoryBefore": [
+        "credential.verify",
+        "leave.approve",
+        "offboarding.manage",
+        "onboarding.manage",
+        "restriction.manage",
+        "restriction.view_sensitive",
+        "workforce.assign_clinic",
+        "workforce.create",
+        "workforce.edit",
+        "workforce.export",
+        "workforce.manage_engagement",
+        "workforce.reinstate",
+        "workforce.suspend",
+        "workforce.view"
+      ],
+      "permissionInventoryAfter": [
+        "credential.verify",
+        "leave.approve",
+        "offboarding.manage",
+        "onboarding.manage",
+        "restriction.manage",
+        "restriction.view_sensitive",
+        "workforce.assign_clinic",
+        "workforce.create",
+        "workforce.edit",
+        "workforce.export",
+        "workforce.manage_engagement",
+        "workforce.reinstate",
+        "workforce.suspend",
+        "workforce.view"
+      ],
+      "permissionCountBefore": 14,
+      "permissionCountAfter": 14,
+      "storageKeyInventoryBefore": [
+        "pulse.m04.workforce.",
+        "pulse.m04.workforce.*",
+        "pulse.m04.workforce.availability",
+        "pulse.m04.workforce.credentials",
+        "pulse.m04.workforce.engagements",
+        "pulse.m04.workforce.leave",
+        "pulse.m04.workforce.meta",
+        "pulse.m04.workforce.offboarding",
+        "pulse.m04.workforce.onboarding",
+        "pulse.m04.workforce.people",
+        "pulse.m04.workforce.readiness",
+        "pulse.m04.workforce.restrictions"
+      ],
+      "storageKeyInventoryAfter": [
+        "pulse.m04.workforce.",
+        "pulse.m04.workforce.*",
+        "pulse.m04.workforce.availability",
+        "pulse.m04.workforce.credentials",
+        "pulse.m04.workforce.engagements",
+        "pulse.m04.workforce.leave",
+        "pulse.m04.workforce.meta",
+        "pulse.m04.workforce.offboarding",
+        "pulse.m04.workforce.onboarding",
+        "pulse.m04.workforce.people",
+        "pulse.m04.workforce.readiness",
+        "pulse.m04.workforce.restrictions"
+      ],
+      "storageKeyCountBefore": 12,
+      "storageKeyCountAfter": 12,
+      "eventAuditInventoryBefore": [
+        "availability.changed",
+        "blocked",
+        "credential.status.changed",
+        "engagement.changed",
+        "engagement.created",
+        "leave.approved",
+        "restriction.changed",
+        "worker.offboarding.completed",
+        "worker.offboarding.started",
+        "worker.status.changed"
+      ],
+      "eventAuditInventoryAfter": [
+        "availability.changed",
+        "blocked",
+        "credential.status.changed",
+        "engagement.changed",
+        "engagement.created",
+        "leave.approved",
+        "restriction.changed",
+        "worker.offboarding.completed",
+        "worker.offboarding.started",
+        "worker.status.changed"
+      ],
+      "sectionsTabsBefore": [
+        "CredentialsSection",
+        "EngagementsSection",
+        "LeaveAvailabilitySection",
+        "OffboardingSection",
+        "OnboardingSection",
+        "OverviewSection",
+        "PeopleSection",
+        "ReportsSection",
+        "RestrictionsSection",
+        "SettingsSection",
+        "index"
+      ],
+      "sectionsTabsAfter": [
+        "CredentialsSection",
+        "EngagementsSection",
+        "LeaveAvailabilitySection",
+        "OffboardingSection",
+        "OnboardingSection",
+        "OverviewSection",
+        "PeopleSection",
+        "ReportsSection",
+        "RestrictionsSection",
+        "SettingsSection",
+        "index"
+      ],
+      "transitionInventoryBefore": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "transitionInventoryAfter": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryBefore": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryAfter": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "exportInventoryBefore": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "exportInventoryAfter": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "presentationFilesPermitted": [
+        "src/modules/m04-staff-doctors/sections/CredentialsSection.tsx",
+        "src/modules/m04-staff-doctors/sections/EngagementsSection.tsx",
+        "src/modules/m04-staff-doctors/sections/LeaveAvailabilitySection.tsx",
+        "src/modules/m04-staff-doctors/sections/OffboardingSection.tsx",
+        "src/modules/m04-staff-doctors/sections/OnboardingSection.tsx",
+        "src/modules/m04-staff-doctors/sections/OverviewSection.tsx",
+        "src/modules/m04-staff-doctors/sections/PeopleSection.tsx",
+        "src/modules/m04-staff-doctors/sections/ReportsSection.tsx",
+        "src/modules/m04-staff-doctors/sections/RestrictionsSection.tsx",
+        "src/modules/m04-staff-doctors/sections/SettingsSection.tsx",
+        "src/modules/m04-staff-doctors/sections/index.ts"
+      ]
+    },
+    {
+      "moduleId": "M05",
+      "route": "/roster",
+      "protectedDomainFileCount": 48,
+      "protectedAggregateSha256Before": "1c2827677598e880dd7586c051ad1ce787f0cca3c3995b0a95c42dd88cdcc770",
+      "protectedAggregateSha256After": "1c2827677598e880dd7586c051ad1ce787f0cca3c3995b0a95c42dd88cdcc770",
+      "protectedAggregateMatch": true,
+      "protectedDriftCount": 0,
+      "protectedDrift": [],
+      "permissionInventoryBefore": [
+        "roster.acknowledge",
+        "roster.assign",
+        "roster.audit.view",
+        "roster.bulk",
+        "roster.cost.view",
+        "roster.export",
+        "roster.open_shift.manage",
+        "roster.override",
+        "roster.period.create",
+        "roster.policy.manage",
+        "roster.publish",
+        "roster.report",
+        "roster.review",
+        "roster.shift.edit",
+        "roster.swap.approve",
+        "roster.swap.request",
+        "roster.view"
+      ],
+      "permissionInventoryAfter": [
+        "roster.acknowledge",
+        "roster.assign",
+        "roster.audit.view",
+        "roster.bulk",
+        "roster.cost.view",
+        "roster.export",
+        "roster.open_shift.manage",
+        "roster.override",
+        "roster.period.create",
+        "roster.policy.manage",
+        "roster.publish",
+        "roster.report",
+        "roster.review",
+        "roster.shift.edit",
+        "roster.swap.approve",
+        "roster.swap.request",
+        "roster.view"
+      ],
+      "permissionCountBefore": 17,
+      "permissionCountAfter": 17,
+      "storageKeyInventoryBefore": [
+        "pulse.m05.roster.",
+        "pulse.m05.roster.*",
+        "pulse.m05.roster.acknowledgements",
+        "pulse.m05.roster.approvedLeaveCache",
+        "pulse.m05.roster.assignments",
+        "pulse.m05.roster.audit",
+        "pulse.m05.roster.availabilityDeclarations",
+        "pulse.m05.roster.costForecasts",
+        "pulse.m05.roster.coverageRequirements",
+        "pulse.m05.roster.meta",
+        "pulse.m05.roster.openShifts",
+        "pulse.m05.roster.periods",
+        "pulse.m05.roster.policies",
+        "pulse.m05.roster.publications",
+        "pulse.m05.roster.shifts",
+        "pulse.m05.roster.swaps",
+        "pulse.m05.roster.ui"
+      ],
+      "storageKeyInventoryAfter": [
+        "pulse.m05.roster.",
+        "pulse.m05.roster.*",
+        "pulse.m05.roster.acknowledgements",
+        "pulse.m05.roster.approvedLeaveCache",
+        "pulse.m05.roster.assignments",
+        "pulse.m05.roster.audit",
+        "pulse.m05.roster.availabilityDeclarations",
+        "pulse.m05.roster.costForecasts",
+        "pulse.m05.roster.coverageRequirements",
+        "pulse.m05.roster.meta",
+        "pulse.m05.roster.openShifts",
+        "pulse.m05.roster.periods",
+        "pulse.m05.roster.policies",
+        "pulse.m05.roster.publications",
+        "pulse.m05.roster.shifts",
+        "pulse.m05.roster.swaps",
+        "pulse.m05.roster.ui"
+      ],
+      "storageKeyCountBefore": 17,
+      "storageKeyCountAfter": 17,
+      "eventAuditInventoryBefore": [
+        "assignment.created",
+        "coverage.unassigned",
+        "leave.approved.clash",
+        "period.created",
+        "period.published",
+        "policy.created",
+        "policy.published",
+        "roster.published",
+        "shift.cancelled",
+        "shift.changed",
+        "shift.created",
+        "shift.updated",
+        "swap.approved",
+        "swap.rejected",
+        "unassigned"
+      ],
+      "eventAuditInventoryAfter": [
+        "assignment.created",
+        "coverage.unassigned",
+        "leave.approved.clash",
+        "period.created",
+        "period.published",
+        "policy.created",
+        "policy.published",
+        "roster.published",
+        "shift.cancelled",
+        "shift.changed",
+        "shift.created",
+        "shift.updated",
+        "swap.approved",
+        "swap.rejected",
+        "unassigned"
+      ],
+      "sectionsTabsBefore": [
+        "AvailabilityLeaveSection",
+        "ConflictsWarningsSection",
+        "CostForecastSection",
+        "CoverageSection",
+        "OpenShiftsSection",
+        "PublishedHistorySection",
+        "ReportsSection",
+        "RequestsSection",
+        "RosterBoardSection",
+        "SettingsSection",
+        "index"
+      ],
+      "sectionsTabsAfter": [
+        "AvailabilityLeaveSection",
+        "ConflictsWarningsSection",
+        "CostForecastSection",
+        "CoverageSection",
+        "OpenShiftsSection",
+        "PublishedHistorySection",
+        "ReportsSection",
+        "RequestsSection",
+        "RosterBoardSection",
+        "SettingsSection",
+        "index"
+      ],
+      "transitionInventoryBefore": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "transitionInventoryAfter": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryBefore": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryAfter": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "exportInventoryBefore": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "exportInventoryAfter": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "presentationFilesPermitted": [
+        "src/modules/m05-roster/components/SectionFrame.tsx",
+        "src/modules/m05-roster/components/ux/ConcurrentConflictState.tsx",
+        "src/modules/m05-roster/components/ux/EmptyState.tsx",
+        "src/modules/m05-roster/components/ux/FilteredEmptyState.tsx",
+        "src/modules/m05-roster/components/ux/LoadingState.tsx",
+        "src/modules/m05-roster/components/ux/OfflineState.tsx",
+        "src/modules/m05-roster/components/ux/RestrictedState.tsx",
+        "src/modules/m05-roster/components/ux/SystemErrorState.tsx",
+        "src/modules/m05-roster/components/ux/ValidationErrorState.tsx",
+        "src/modules/m05-roster/components/ux/index.ts",
+        "src/modules/m05-roster/sections/AvailabilityLeaveSection.tsx",
+        "src/modules/m05-roster/sections/ConflictsWarningsSection.tsx",
+        "src/modules/m05-roster/sections/CostForecastSection.tsx",
+        "src/modules/m05-roster/sections/CoverageSection.tsx",
+        "src/modules/m05-roster/sections/OpenShiftsSection.tsx",
+        "src/modules/m05-roster/sections/PublishedHistorySection.tsx",
+        "src/modules/m05-roster/sections/ReportsSection.tsx",
+        "src/modules/m05-roster/sections/RequestsSection.tsx",
+        "src/modules/m05-roster/sections/RosterBoardSection.tsx",
+        "src/modules/m05-roster/sections/SettingsSection.tsx",
+        "src/modules/m05-roster/sections/index.ts"
+      ]
+    },
+    {
+      "moduleId": "M06",
+      "route": "/time-attendance",
+      "protectedDomainFileCount": 48,
+      "protectedAggregateSha256Before": "818a58a351a755ffde5d6f505136c0fadfe70f6e79591566021bc8ac7dcaea78",
+      "protectedAggregateSha256After": "818a58a351a755ffde5d6f505136c0fadfe70f6e79591566021bc8ac7dcaea78",
+      "protectedAggregateMatch": true,
+      "protectedDriftCount": 0,
+      "protectedDrift": [],
+      "permissionInventoryBefore": [
+        "attendance.approve",
+        "attendance.audit.view",
+        "attendance.break.self",
+        "attendance.bulk.approve",
+        "attendance.clock.self",
+        "attendance.correction.apply",
+        "attendance.correction.request",
+        "attendance.declare",
+        "attendance.evidence.view",
+        "attendance.exception.raise",
+        "attendance.exception.resolve",
+        "attendance.exception.view",
+        "attendance.export",
+        "attendance.manager.enter",
+        "attendance.override",
+        "attendance.policy.manage",
+        "attendance.reopen",
+        "attendance.report",
+        "attendance.sync.resolve",
+        "attendance.timesheet.generate",
+        "attendance.timesheet.submit",
+        "attendance.timesheet.view",
+        "attendance.view.self",
+        "attendance.view.team"
+      ],
+      "permissionInventoryAfter": [
+        "attendance.approve",
+        "attendance.audit.view",
+        "attendance.break.self",
+        "attendance.bulk.approve",
+        "attendance.clock.self",
+        "attendance.correction.apply",
+        "attendance.correction.request",
+        "attendance.declare",
+        "attendance.evidence.view",
+        "attendance.exception.raise",
+        "attendance.exception.resolve",
+        "attendance.exception.view",
+        "attendance.export",
+        "attendance.manager.enter",
+        "attendance.override",
+        "attendance.policy.manage",
+        "attendance.reopen",
+        "attendance.report",
+        "attendance.sync.resolve",
+        "attendance.timesheet.generate",
+        "attendance.timesheet.submit",
+        "attendance.timesheet.view",
+        "attendance.view.self",
+        "attendance.view.team"
+      ],
+      "permissionCountBefore": 24,
+      "permissionCountAfter": 24,
+      "storageKeyInventoryBefore": [
+        "pulse.m06.attendance.",
+        "pulse.m06.attendance.*",
+        "pulse.m06.attendance.approvals",
+        "pulse.m06.attendance.audit",
+        "pulse.m06.attendance.breaks",
+        "pulse.m06.attendance.corrections",
+        "pulse.m06.attendance.declarations",
+        "pulse.m06.attendance.devices",
+        "pulse.m06.attendance.events",
+        "pulse.m06.attendance.evidence",
+        "pulse.m06.attendance.exceptions",
+        "pulse.m06.attendance.meta",
+        "pulse.m06.attendance.offlineQueue",
+        "pulse.m06.attendance.policies",
+        "pulse.m06.attendance.publishedTimesheetOutbox",
+        "pulse.m06.attendance.publishedTimesheetOutboxMeta",
+        "pulse.m06.attendance.sessions",
+        "pulse.m06.attendance.timesheets"
+      ],
+      "storageKeyInventoryAfter": [
+        "pulse.m06.attendance.",
+        "pulse.m06.attendance.*",
+        "pulse.m06.attendance.approvals",
+        "pulse.m06.attendance.audit",
+        "pulse.m06.attendance.breaks",
+        "pulse.m06.attendance.corrections",
+        "pulse.m06.attendance.declarations",
+        "pulse.m06.attendance.devices",
+        "pulse.m06.attendance.events",
+        "pulse.m06.attendance.evidence",
+        "pulse.m06.attendance.exceptions",
+        "pulse.m06.attendance.meta",
+        "pulse.m06.attendance.offlineQueue",
+        "pulse.m06.attendance.policies",
+        "pulse.m06.attendance.publishedTimesheetOutbox",
+        "pulse.m06.attendance.publishedTimesheetOutboxMeta",
+        "pulse.m06.attendance.sessions",
+        "pulse.m06.attendance.timesheets"
+      ],
+      "storageKeyCountBefore": 18,
+      "storageKeyCountAfter": 18,
+      "eventAuditInventoryBefore": [
+        "attendance.event.recorded",
+        "attendance.exception.created",
+        "attendance.exception.resolved",
+        "break-end",
+        "break-start",
+        "bulk.approve.item.rejectRest.blocked",
+        "clock-in",
+        "clock-out",
+        "correction",
+        "policy.published",
+        "timesheet.approved",
+        "timesheet.published"
+      ],
+      "eventAuditInventoryAfter": [
+        "attendance.event.recorded",
+        "attendance.exception.created",
+        "attendance.exception.resolved",
+        "break-end",
+        "break-start",
+        "bulk.approve.item.rejectRest.blocked",
+        "clock-in",
+        "clock-out",
+        "correction",
+        "policy.published",
+        "timesheet.approved",
+        "timesheet.published"
+      ],
+      "sectionsTabsBefore": [
+        "ApprovalsSection",
+        "AttendanceHistorySection",
+        "BreaksSection",
+        "ClockSection",
+        "CorrectionsSection",
+        "ExceptionsSection",
+        "LiveAttendanceSection",
+        "ReportsSection",
+        "SettingsSection",
+        "TimesheetsSection",
+        "index"
+      ],
+      "sectionsTabsAfter": [
+        "ApprovalsSection",
+        "AttendanceHistorySection",
+        "BreaksSection",
+        "ClockSection",
+        "CorrectionsSection",
+        "ExceptionsSection",
+        "LiveAttendanceSection",
+        "ReportsSection",
+        "SettingsSection",
+        "TimesheetsSection",
+        "index"
+      ],
+      "transitionInventoryBefore": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "transitionInventoryAfter": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryBefore": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryAfter": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "exportInventoryBefore": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "exportInventoryAfter": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "presentationFilesPermitted": [
+        "src/modules/m06-time-attendance/components/SectionFrame.tsx",
+        "src/modules/m06-time-attendance/components/ux/ConcurrentConflictState.tsx",
+        "src/modules/m06-time-attendance/components/ux/EmptyState.tsx",
+        "src/modules/m06-time-attendance/components/ux/FilteredEmptyState.tsx",
+        "src/modules/m06-time-attendance/components/ux/LoadingState.tsx",
+        "src/modules/m06-time-attendance/components/ux/OfflineState.tsx",
+        "src/modules/m06-time-attendance/components/ux/RestrictedState.tsx",
+        "src/modules/m06-time-attendance/components/ux/SyncConflictState.tsx",
+        "src/modules/m06-time-attendance/components/ux/SystemErrorState.tsx",
+        "src/modules/m06-time-attendance/components/ux/ValidationErrorState.tsx",
+        "src/modules/m06-time-attendance/components/ux/index.ts",
+        "src/modules/m06-time-attendance/sections/ApprovalsSection.tsx",
+        "src/modules/m06-time-attendance/sections/AttendanceHistorySection.tsx",
+        "src/modules/m06-time-attendance/sections/BreaksSection.tsx",
+        "src/modules/m06-time-attendance/sections/ClockSection.tsx",
+        "src/modules/m06-time-attendance/sections/CorrectionsSection.tsx",
+        "src/modules/m06-time-attendance/sections/ExceptionsSection.tsx",
+        "src/modules/m06-time-attendance/sections/LiveAttendanceSection.tsx",
+        "src/modules/m06-time-attendance/sections/ReportsSection.tsx",
+        "src/modules/m06-time-attendance/sections/SettingsSection.tsx",
+        "src/modules/m06-time-attendance/sections/TimesheetsSection.tsx",
+        "src/modules/m06-time-attendance/sections/index.ts"
+      ]
+    },
+    {
+      "moduleId": "M07",
+      "route": "/staffpay",
+      "protectedDomainFileCount": 74,
+      "protectedAggregateSha256Before": "6c239dac6d58026e2ba62b06c1df8bdbd863fa9b41c3deb2a0db3fbaf9e2cca8",
+      "protectedAggregateSha256After": "6c239dac6d58026e2ba62b06c1df8bdbd863fa9b41c3deb2a0db3fbaf9e2cca8",
+      "protectedAggregateMatch": true,
+      "protectedDriftCount": 0,
+      "protectedDrift": [],
+      "permissionInventoryBefore": [
+        "payroll.adjust",
+        "payroll.approve",
+        "payroll.audit.view",
+        "payroll.bulk",
+        "payroll.calculate",
+        "payroll.codes.edit",
+        "payroll.entity.settings",
+        "payroll.exception.resolve",
+        "payroll.exception.view",
+        "payroll.exception.waive",
+        "payroll.export.cancel",
+        "payroll.export.create",
+        "payroll.export.download",
+        "payroll.export.profile.edit",
+        "payroll.export.reconcile",
+        "payroll.externalId.edit",
+        "payroll.externalId.view",
+        "payroll.intake.run",
+        "payroll.lifecycle.exception.resolve",
+        "payroll.lifecycle.hold.clear",
+        "payroll.lifecycle.requalify",
+        "payroll.lifecycle.review",
+        "payroll.lifecycle.supersede",
+        "payroll.override",
+        "payroll.period.create",
+        "payroll.period.edit",
+        "payroll.period.lock",
+        "payroll.period.unlock.approve",
+        "payroll.period.unlock.request",
+        "payroll.profile.edit",
+        "payroll.rate.view",
+        "payroll.report.view",
+        "payroll.review.submit",
+        "payroll.rules.edit",
+        "payroll.settings.edit",
+        "payroll.view"
+      ],
+      "permissionInventoryAfter": [
+        "payroll.adjust",
+        "payroll.approve",
+        "payroll.audit.view",
+        "payroll.bulk",
+        "payroll.calculate",
+        "payroll.codes.edit",
+        "payroll.entity.settings",
+        "payroll.exception.resolve",
+        "payroll.exception.view",
+        "payroll.exception.waive",
+        "payroll.export.cancel",
+        "payroll.export.create",
+        "payroll.export.download",
+        "payroll.export.profile.edit",
+        "payroll.export.reconcile",
+        "payroll.externalId.edit",
+        "payroll.externalId.view",
+        "payroll.intake.run",
+        "payroll.lifecycle.exception.resolve",
+        "payroll.lifecycle.hold.clear",
+        "payroll.lifecycle.requalify",
+        "payroll.lifecycle.review",
+        "payroll.lifecycle.supersede",
+        "payroll.override",
+        "payroll.period.create",
+        "payroll.period.edit",
+        "payroll.period.lock",
+        "payroll.period.unlock.approve",
+        "payroll.period.unlock.request",
+        "payroll.profile.edit",
+        "payroll.rate.view",
+        "payroll.report.view",
+        "payroll.review.submit",
+        "payroll.rules.edit",
+        "payroll.settings.edit",
+        "payroll.view"
+      ],
+      "permissionCountBefore": 36,
+      "permissionCountAfter": 36,
+      "storageKeyInventoryBefore": [
+        "pulse.m07.staffpay.",
+        "pulse.m07.staffpay.*",
+        "pulse.m07.staffpay.adjustments",
+        "pulse.m07.staffpay.approvals",
+        "pulse.m07.staffpay.audit",
+        "pulse.m07.staffpay.calculations",
+        "pulse.m07.staffpay.classificationMaps",
+        "pulse.m07.staffpay.codes",
+        "pulse.m07.staffpay.deductionPrepInputs",
+        "pulse.m07.staffpay.exceptions",
+        "pulse.m07.staffpay.exportProfiles",
+        "pulse.m07.staffpay.exports",
+        "pulse.m07.staffpay.intake",
+        "pulse.m07.staffpay.leavePrepLines",
+        "pulse.m07.staffpay.legalEntities",
+        "pulse.m07.staffpay.meta",
+        "pulse.m07.staffpay.periodLocks",
+        "pulse.m07.staffpay.periods",
+        "pulse.m07.staffpay.profiles",
+        "pulse.m07.staffpay.publishedTimesheetCurrentIntake",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleDecisions",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleEventApplications",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleExceptions",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleProjections",
+        "pulse.m07.staffpay.publishedTimesheetReplayCheckpoints",
+        "pulse.m07.staffpay.publishedTimesheetReplayOutcomes",
+        "pulse.m07.staffpay.publishedTimesheetSnapshotEligibility",
+        "pulse.m07.staffpay.publishedTimesheetSnapshotIndex",
+        "pulse.m07.staffpay.publishedTimesheetSnapshots",
+        "pulse.m07.staffpay.reconciliations",
+        "pulse.m07.staffpay.rules",
+        "pulse.m07.staffpay.unlockRequests"
+      ],
+      "storageKeyInventoryAfter": [
+        "pulse.m07.staffpay.",
+        "pulse.m07.staffpay.*",
+        "pulse.m07.staffpay.adjustments",
+        "pulse.m07.staffpay.approvals",
+        "pulse.m07.staffpay.audit",
+        "pulse.m07.staffpay.calculations",
+        "pulse.m07.staffpay.classificationMaps",
+        "pulse.m07.staffpay.codes",
+        "pulse.m07.staffpay.deductionPrepInputs",
+        "pulse.m07.staffpay.exceptions",
+        "pulse.m07.staffpay.exportProfiles",
+        "pulse.m07.staffpay.exports",
+        "pulse.m07.staffpay.intake",
+        "pulse.m07.staffpay.leavePrepLines",
+        "pulse.m07.staffpay.legalEntities",
+        "pulse.m07.staffpay.meta",
+        "pulse.m07.staffpay.periodLocks",
+        "pulse.m07.staffpay.periods",
+        "pulse.m07.staffpay.profiles",
+        "pulse.m07.staffpay.publishedTimesheetCurrentIntake",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleDecisions",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleEventApplications",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleExceptions",
+        "pulse.m07.staffpay.publishedTimesheetLifecycleProjections",
+        "pulse.m07.staffpay.publishedTimesheetReplayCheckpoints",
+        "pulse.m07.staffpay.publishedTimesheetReplayOutcomes",
+        "pulse.m07.staffpay.publishedTimesheetSnapshotEligibility",
+        "pulse.m07.staffpay.publishedTimesheetSnapshotIndex",
+        "pulse.m07.staffpay.publishedTimesheetSnapshots",
+        "pulse.m07.staffpay.reconciliations",
+        "pulse.m07.staffpay.rules",
+        "pulse.m07.staffpay.unlockRequests"
+      ],
+      "storageKeyCountBefore": 32,
+      "storageKeyCountAfter": 32,
+      "eventAuditInventoryBefore": [
+        "APPROVED_PREP_BLOCKED_ON_HOLD",
+        "blocked",
+        "calculation.completed",
+        "exception.updated",
+        "material-revision",
+        "period.locked",
+        "period.unlocked",
+        "replay.gap",
+        "timesheet.approval.revoked",
+        "unlocked"
+      ],
+      "eventAuditInventoryAfter": [
+        "APPROVED_PREP_BLOCKED_ON_HOLD",
+        "blocked",
+        "calculation.completed",
+        "exception.updated",
+        "material-revision",
+        "period.locked",
+        "period.unlocked",
+        "replay.gap",
+        "timesheet.approval.revoked",
+        "unlocked"
+      ],
+      "sectionsTabsBefore": [
+        "AdjustmentsSection",
+        "ApprovalSection",
+        "ExceptionsSection",
+        "ExportSection",
+        "LeavePrepSection",
+        "OverviewSection",
+        "PeopleReviewSection",
+        "PlannedSection",
+        "ReconciliationSection",
+        "SettingsSection",
+        "VariancesSection",
+        "index"
+      ],
+      "sectionsTabsAfter": [
+        "AdjustmentsSection",
+        "ApprovalSection",
+        "ExceptionsSection",
+        "ExportSection",
+        "LeavePrepSection",
+        "OverviewSection",
+        "PeopleReviewSection",
+        "PlannedSection",
+        "ReconciliationSection",
+        "SettingsSection",
+        "VariancesSection",
+        "index"
+      ],
+      "transitionInventoryBefore": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "transitionInventoryAfter": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryBefore": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryAfter": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "exportInventoryBefore": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "exportInventoryAfter": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "presentationFilesPermitted": [
+        "src/modules/m07-staff-pay/sections/AdjustmentsSection.tsx",
+        "src/modules/m07-staff-pay/sections/ApprovalSection.tsx",
+        "src/modules/m07-staff-pay/sections/ExceptionsSection.tsx",
+        "src/modules/m07-staff-pay/sections/ExportSection.tsx",
+        "src/modules/m07-staff-pay/sections/LeavePrepSection.tsx",
+        "src/modules/m07-staff-pay/sections/OverviewSection.tsx",
+        "src/modules/m07-staff-pay/sections/PeopleReviewSection.tsx",
+        "src/modules/m07-staff-pay/sections/PlannedSection.tsx",
+        "src/modules/m07-staff-pay/sections/ReconciliationSection.tsx",
+        "src/modules/m07-staff-pay/sections/SettingsSection.tsx",
+        "src/modules/m07-staff-pay/sections/VariancesSection.tsx",
+        "src/modules/m07-staff-pay/sections/adjustments/AdjustmentCaseDetail.tsx",
+        "src/modules/m07-staff-pay/sections/adjustments/AdjustmentRegister.tsx",
+        "src/modules/m07-staff-pay/sections/adjustments/CreateAdjustmentForm.tsx",
+        "src/modules/m07-staff-pay/sections/index.ts"
+      ]
+    },
+    {
+      "moduleId": "M11",
+      "route": "/training",
+      "protectedDomainFileCount": 35,
+      "protectedAggregateSha256Before": "45f8f50a6655cbbdf7aa6219186a20642f99c05555aa5b3f28b91794afb94585",
+      "protectedAggregateSha256After": "45f8f50a6655cbbdf7aa6219186a20642f99c05555aa5b3f28b91794afb94585",
+      "protectedAggregateMatch": true,
+      "protectedDriftCount": 0,
+      "protectedDrift": [],
+      "permissionInventoryBefore": [
+        "training.assess",
+        "training.assign",
+        "training.certificate.verify",
+        "training.competency.record",
+        "training.complete",
+        "training.evidence.verify",
+        "training.exemption.approve",
+        "training.exemption.request",
+        "training.export",
+        "training.manage_catalogue",
+        "training.manage_policy",
+        "training.manage_sessions",
+        "training.view",
+        "training.view_sensitive_evidence"
+      ],
+      "permissionInventoryAfter": [
+        "training.assess",
+        "training.assign",
+        "training.certificate.verify",
+        "training.competency.record",
+        "training.complete",
+        "training.evidence.verify",
+        "training.exemption.approve",
+        "training.exemption.request",
+        "training.export",
+        "training.manage_catalogue",
+        "training.manage_policy",
+        "training.manage_sessions",
+        "training.view",
+        "training.view_sensitive_evidence"
+      ],
+      "permissionCountBefore": 14,
+      "permissionCountAfter": 14,
+      "storageKeyInventoryBefore": [
+        "pulse.m11.training.",
+        "pulse.m11.training.*",
+        "pulse.m11.training.assessments",
+        "pulse.m11.training.assignments",
+        "pulse.m11.training.audit",
+        "pulse.m11.training.catalogue",
+        "pulse.m11.training.certificates",
+        "pulse.m11.training.competencies",
+        "pulse.m11.training.completions",
+        "pulse.m11.training.evidence",
+        "pulse.m11.training.exemptions",
+        "pulse.m11.training.meta",
+        "pulse.m11.training.policies",
+        "pulse.m11.training.rules",
+        "pulse.m11.training.sessions",
+        "pulse.m11.training.ui"
+      ],
+      "storageKeyInventoryAfter": [
+        "pulse.m11.training.",
+        "pulse.m11.training.*",
+        "pulse.m11.training.assessments",
+        "pulse.m11.training.assignments",
+        "pulse.m11.training.audit",
+        "pulse.m11.training.catalogue",
+        "pulse.m11.training.certificates",
+        "pulse.m11.training.competencies",
+        "pulse.m11.training.completions",
+        "pulse.m11.training.evidence",
+        "pulse.m11.training.exemptions",
+        "pulse.m11.training.meta",
+        "pulse.m11.training.policies",
+        "pulse.m11.training.rules",
+        "pulse.m11.training.sessions",
+        "pulse.m11.training.ui"
+      ],
+      "storageKeyCountBefore": 16,
+      "storageKeyCountAfter": 16,
+      "eventAuditInventoryBefore": [
+        "blocked",
+        "exemption.approved",
+        "exemption.rejected",
+        "exemption.revoked",
+        "training.assignment.created",
+        "worker.status.changed"
+      ],
+      "eventAuditInventoryAfter": [
+        "blocked",
+        "exemption.approved",
+        "exemption.rejected",
+        "exemption.revoked",
+        "training.assignment.created",
+        "worker.status.changed"
+      ],
+      "sectionsTabsBefore": [
+        "AssessmentsSection",
+        "AssignmentsSection",
+        "CatalogueSection",
+        "CertificatesSection",
+        "CompetenciesSection",
+        "EvidenceSection",
+        "ExemptionsSection",
+        "OverviewSection",
+        "ReportsSection",
+        "SessionsSection",
+        "SettingsSection",
+        "index",
+        "ux-states"
+      ],
+      "sectionsTabsAfter": [
+        "AssessmentsSection",
+        "AssignmentsSection",
+        "CatalogueSection",
+        "CertificatesSection",
+        "CompetenciesSection",
+        "EvidenceSection",
+        "ExemptionsSection",
+        "OverviewSection",
+        "ReportsSection",
+        "SessionsSection",
+        "SettingsSection",
+        "index",
+        "ux-states"
+      ],
+      "transitionInventoryBefore": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "transitionInventoryAfter": [
+        "Protected services/state transitions must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryBefore": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "calculationOutputInventoryAfter": [
+        "Protected services/* calculation and projection outputs must remain hash-equivalent under presentation-only B6"
+      ],
+      "exportInventoryBefore": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "exportInventoryAfter": [
+        "Export payloads and export-service entry points in protected inventory must remain equivalent"
+      ],
+      "presentationFilesPermitted": [
+        "src/modules/m11-training/sections/AssessmentsSection.tsx",
+        "src/modules/m11-training/sections/AssignmentsSection.tsx",
+        "src/modules/m11-training/sections/CatalogueSection.tsx",
+        "src/modules/m11-training/sections/CertificatesSection.tsx",
+        "src/modules/m11-training/sections/CompetenciesSection.tsx",
+        "src/modules/m11-training/sections/EvidenceSection.tsx",
+        "src/modules/m11-training/sections/ExemptionsSection.tsx",
+        "src/modules/m11-training/sections/OverviewSection.tsx",
+        "src/modules/m11-training/sections/ReportsSection.tsx",
+        "src/modules/m11-training/sections/SessionsSection.tsx",
+        "src/modules/m11-training/sections/SettingsSection.tsx",
+        "src/modules/m11-training/sections/index.ts",
+        "src/modules/m11-training/sections/ux-states.tsx"
+      ]
+    }
+  ],
+  "controlOutcomes": {
+    "note": "Control IDs/outcomes unchanged at domain layer; presentation chrome only. See control-inventory.json."
+  },
+  "moduleRegression": {
+    "note": "Recorded in P1_B6_IMPLEMENTATION_EVIDENCE.md — unit suites m04/m05/m06/m07/m11 passed at module commits; full matrix at evidence commit."
+  },
+  "boundaries": {
+    "m07AdjustmentsWording": "preserved",
+    "m07PpaPaymentM08": "unchanged-excluded",
+    "m11SectionsAliases": "unchanged",
+    "patientClinicalFirewall": "preserved",
+    "p1b7b8": "unauthorised"
+  },
+  "overallPassFail": "pass"
+}

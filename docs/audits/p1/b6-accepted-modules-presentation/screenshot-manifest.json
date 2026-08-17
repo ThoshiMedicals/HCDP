@@ -1,0 +1,131 @@
+{
+  "runtime": "production",
+  "count": 25,
+  "shots": [
+    {
+      "name": "m04-1440-light-ready",
+      "state": "m04-ready",
+      "file": "shots/m04-1440-light-ready.png"
+    },
+    {
+      "name": "m04-1440-dark-ready",
+      "state": "m04-ready",
+      "file": "shots/m04-1440-dark-ready.png"
+    },
+    {
+      "name": "m04-1280-system-os-light-system",
+      "state": "m04-system-os-light",
+      "file": "shots/m04-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m04-1280-system-os-dark-system",
+      "state": "m04-system-os-dark",
+      "file": "shots/m04-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m05-1440-light-ready",
+      "state": "m05-ready",
+      "file": "shots/m05-1440-light-ready.png"
+    },
+    {
+      "name": "m05-1440-dark-ready",
+      "state": "m05-ready",
+      "file": "shots/m05-1440-dark-ready.png"
+    },
+    {
+      "name": "m05-1280-system-os-light-system",
+      "state": "m05-system-os-light",
+      "file": "shots/m05-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m05-1280-system-os-dark-system",
+      "state": "m05-system-os-dark",
+      "file": "shots/m05-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m06-1440-light-ready",
+      "state": "m06-ready",
+      "file": "shots/m06-1440-light-ready.png"
+    },
+    {
+      "name": "m06-1440-dark-ready",
+      "state": "m06-ready",
+      "file": "shots/m06-1440-dark-ready.png"
+    },
+    {
+      "name": "m06-1280-system-os-light-system",
+      "state": "m06-system-os-light",
+      "file": "shots/m06-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m06-1280-system-os-dark-system",
+      "state": "m06-system-os-dark",
+      "file": "shots/m06-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m07-1440-light-ready",
+      "state": "m07-ready",
+      "file": "shots/m07-1440-light-ready.png"
+    },
+    {
+      "name": "m07-1440-dark-ready",
+      "state": "m07-ready",
+      "file": "shots/m07-1440-dark-ready.png"
+    },
+    {
+      "name": "m07-1280-system-os-light-system",
+      "state": "m07-system-os-light",
+      "file": "shots/m07-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m07-1280-system-os-dark-system",
+      "state": "m07-system-os-dark",
+      "file": "shots/m07-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m11-1440-light-ready",
+      "state": "m11-ready",
+      "file": "shots/m11-1440-light-ready.png"
+    },
+    {
+      "name": "m11-1440-dark-ready",
+      "state": "m11-ready",
+      "file": "shots/m11-1440-dark-ready.png"
+    },
+    {
+      "name": "m11-1280-system-os-light-system",
+      "state": "m11-system-os-light",
+      "file": "shots/m11-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m11-1280-system-os-dark-system",
+      "state": "m11-system-os-dark",
+      "file": "shots/m11-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m06-430-light-mobile",
+      "state": "m06-mobile",
+      "file": "shots/m06-430-light-mobile.png"
+    },
+    {
+      "name": "m04-430-system-os-dark-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-430-system-os-dark-mobile.png"
+    },
+    {
+      "name": "m04-390-light-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-390-light-mobile.png"
+    },
+    {
+      "name": "m04-390-system-os-dark-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-390-system-os-dark-mobile.png"
+    },
+    {
+      "name": "m04-focus-tabs-1440-light",
+      "state": "focus-tabs",
+      "file": "shots/m04-focus-tabs-1440-light.png"
+    }
+  ]
+}

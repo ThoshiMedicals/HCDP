@@ -2,17 +2,19 @@
 
 **Document type:** Baseline provenance + domain-equivalence control record  
 **Batch:** P1-B6 — Accepted-module final-design apply (presentation only)  
-**Status stamp:** `P1 — PLANNED, NOT AUTHORISED`  
+**Status stamp:** `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — expressly authorised; **NOT** owner accepted  
 **Machine-readable companion:** [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json)  
 **Authorisation briefing:** [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md)  
-**Publication branch:** `cursor/p1-b5-m01-m02-presentation`  
+**Implementation branch:** `cursor/p1-b6-accepted-modules-presentation`  
 **Immutable pre-implementation comparison baseline:** `f17756d80f039954c3be9f341436d0ba426d27b1`  
-**Record date:** 2026-08-17  
+**Domain equivalence evidence:** [`../../audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`](../../audits/p1/b6-accepted-modules-presentation/domain-equivalence.json) — **PASS**  
+**Record date:** 2026-08-17 (provenance); status refreshed for implementation-for-review  
 
-> This record does **not** authorise P1-B6 implementation.  
+> This record established frozen baselines and the equivalence gate.  
 > It does **not** fabricate historical accepted SHAs.  
-> Aurora remains parked and unintegrated.  
-> Gaps and owner decisions are unchanged.
+> It does **not** grant owner acceptance, close gaps, or authorise PR/merge/deploy.  
+> Aurora remains parked and unintegrated; Decision A binding.  
+> `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` remain open.
 
 ---
 
@@ -23,7 +25,7 @@ Establish:
 1. Historical provenance of frozen M04 / M05 / M06 / M07 / M11 baselines (truthfully).  
 2. An immutable **current comparison baseline** at tip `f17756d80f039954c3be9f341436d0ba426d27b1`.  
 3. A deterministic, machine-readable protected-domain inventory with cryptographic file hashes.  
-4. A mandatory domain-equivalence procedure for any future expressly authorised P1-B6 implementation.
+4. A mandatory domain-equivalence procedure for expressly authorised P1-B6 implementation (now applied; acceptance pending).
 
 ---
 
@@ -181,26 +183,26 @@ Screenshots, build outputs, and test-mutated evidence JSON are **not** hashed as
 2. Probable tip `5886bf3a…` is bundled implementation+evidence — not an accepted pin.  
 3. Permission/event inventories are source-extracted heuristics; protected **file hashes** are the primary drift detector.  
 4. No GitHub CI — validation remains local-only when workflows/check-runs/statuses are zero.  
-5. P1-B6 remains unauthorised — this record is readiness infrastructure only.  
+5. P1-B6 is expressly authorised and **implemented for owner review** — **acceptance pending**; this record remains the baseline/equivalence control (not owner acceptance).  
 6. Aurora remains parked; Decision A remains the binding visual contract.
 
 ---
 
 ## 10. Readiness conclusion
 
-**`READY FOR EXPRESS P1-B6 AUTHORISATION`**
+**`EXPRESS P1-B6 AUTHORISATION GRANTED — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)`**
 
-Missing historical M04/M11 SHA pins do **not** block readiness because:
+Missing historical M04/M11 SHA pins do **not** block the equivalence gate because:
 
 - Their absence is truthfully documented.  
 - The current comparison baseline `f17756d80f039954c3be9f341436d0ba426d27b1` is immutable.  
 - Accepted behaviour remains supported by wave acceptance evidence packs and required regression suites.  
-- The machine-readable manifest can objectively detect domain drift via protected hashes.
+- The machine-readable manifest objectively detected **zero** protected-domain drift (see domain-equivalence.json **PASS**).
 
-P1-B6 status remains: **`P1 — PLANNED, NOT AUTHORISED`**. Express named-batch owner authorisation is still required before any presentation implementation.
+P1-B6 status: **`P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)`**. Owner acceptance remains **pending**. P1-B7 and P1-B8 remain `P1 — PLANNED, NOT AUTHORISED`.
 
 ---
 
 ## 11. Control preservation
 
-Preserve: P1-B1–P1-B5 accepted/closed; P1-B6–P1-B8 unauthorised; 83 gaps; 8 batches; 24 modules; M25 unimplemented; `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` open; Aurora parked; no PPA/payment/M08; no overall Programme P1 acceptance; no gap/decision disposition changes from this record.
+Preserve: P1-B1–P1-B5 accepted/closed; P1-B6 expressly authorised and implemented for owner review (acceptance pending); P1-B7–P1-B8 `P1 — PLANNED, NOT AUTHORISED`; 83 gaps; 8 batches; 24 modules; M25 unimplemented; `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` open; Aurora parked; Decision A binding; no PPA/payment/M08; no overall Programme P1 acceptance; gaps 022–026/050/081 addressed but **not closed**; no PR/merge/deploy.

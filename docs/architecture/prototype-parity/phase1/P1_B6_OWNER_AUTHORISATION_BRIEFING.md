@@ -2,21 +2,25 @@
 
 **Document type:** Owner-authorisation readiness briefing (implementation boundary + evidence matrix)
 **Batch:** P1-B6 — Accepted-module final-design apply, **preserving domain behaviour**
-**Status stamp:** `P1 — PLANNED, NOT AUTHORISED`
-**Publication branch:** `cursor/p1-b5-m01-m02-presentation`
-**Publication tip (docs):** tip at time of this briefing on the accepted P1-B5 branch
+**Status stamp:** `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — expressly authorised; implementation published for owner review; **NOT** owner accepted
+**Implementation branch:** `cursor/p1-b6-accepted-modules-presentation`
+**Starting SHA:** `df4deee61ac3655611c216770450d57e45201489`
+**Comparison baseline:** `f17756d80f039954c3be9f341436d0ba426d27b1`
+**Module implementation tip:** `8cd34ee31f46269c8b4f590160bbd43fe04c4827`
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
 **Accepted P1-B2 tip:** `66f3f8d27803f5b8d24043639d21b9069f58e77a`
 **Accepted P1-B3 tip:** `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`)
 **Accepted P1-B4 tip:** `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`)
 **Accepted P1-B5 tip:** `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`)
-**Briefing date:** 2026-08-17
+**Briefing date:** 2026-08-17 (authorisation readiness); status refreshed for implementation-for-review
 **Frozen baseline / equivalence gate:** [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md); machine-readable [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json)
 **Immutable pre-implementation comparison baseline:** `f17756d80f039954c3be9f341436d0ba426d27b1`
+**Domain equivalence evidence:** [`../../audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`](../../audits/p1/b6-accepted-modules-presentation/domain-equivalence.json) — **PASS**
+**Implementation evidence:** [`../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md)
 
-> **This briefing is not authorisation.**
-> P1-B6 remains `P1 — PLANNED, NOT AUTHORISED`. No coding, PR, merge, deployment, gap closure, decision approval, Aurora integration, PPA, payment, or automatic progression is granted by this document.
-> Frozen-module baseline provenance and the deterministic equivalence gate are recorded separately — they do **not** authorise implementation.
+> **Express named-batch authorisation was granted and presentation implementation is published for owner review.**
+> Owner acceptance of P1-B6 remains **pending**. This document does **not** close gaps, grant owner acceptance, authorise PR/merge/deployment/production, Aurora integration, PPA, payment, M08, or automatic progression to P1-B7/P1-B8.
+> Frozen-module baseline provenance and the deterministic equivalence gate remain binding — unexplained domain drift blocks acceptance.
 > Aurora (`cursor/aurora-design-foundation`) remains **parked, isolated and unintegrated** — do not merge, cherry-pick, copy or selectively reapply Aurora code.
 > Decision A remains the binding P1 visual contract.
 > Frozen Waves 2–5 and accepted M07 Batches 1–6 domain behaviour must be preserved.
@@ -42,15 +46,16 @@
 
 ## 1. Executive summary
 
-P1-B1 through P1-B5 are **owner accepted with qualifications and closed**. The next proposed batch is **P1-B6 — Accepted-module final-design apply**: apply already-accepted Decision A presentation to frozen modules **M04, M05, M06, M07 and M11** while **preserving domain behaviour** (SoT, permissions, calculations, events, exports, validations).
+P1-B1 through P1-B5 are **owner accepted with qualifications and closed**. **P1-B6** was **expressly authorised** and is **implemented for owner review** — **acceptance pending** (NOT owner accepted): apply already-accepted Decision A presentation to frozen modules **M04, M05, M06, M07 and M11** while **preserving domain behaviour** (SoT, permissions, calculations, events, exports, validations).
 
 | Item | Status |
 | --- | --- |
-| P1-B6 | `P1 — PLANNED, NOT AUTHORISED` — briefing prepared only |
-| Included gaps | 022, 023, 024, 025, 026, 050, 081 |
+| P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — expressly authorised; **not** owner accepted |
+| Included gaps | 022, 023, 024, 025, 026, 050, 081 — **addressed; not closed** |
+| Domain equivalence | **PASS** — `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json` |
 | New owner-decision blocker for B6 presentation | **None found** when Adjustments honesty wording is preserved exactly (see §3) |
-| Express named-batch authorisation | **Not granted** — owner must expressly authorise before coding |
-| `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` | Remain **open**; do **not** block presentation-only B6 consideration |
+| Express named-batch authorisation | **Granted** — implementation published for owner review |
+| `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` | Remain **open**; do **not** block presentation-only B6 review |
 | Aurora | Parked, isolated, unintegrated — adoption **unauthorised** |
 | P1-B7 / P1-B8 | Remain `P1 — PLANNED, NOT AUTHORISED` |
 
@@ -80,7 +85,7 @@ Authoritative provenance reconciliation, current comparison baseline, and determ
 | --- | --- |
 | Accepted wave/batch tip | Domain behaviour, permissions, calculations, events, exports — **immutable under B6** |
 | P1-B1–B5 accepted tips | Shared Decision A shell/chrome/honesty — **may be applied** as presentation-only |
-| P1-B6 (if later authorised) | Presentation/layout/tokens/a11y chrome on M04–M07/M11 only — **domain-equivalent exit required** |
+| P1-B6 (authorised; acceptance pending) | Presentation/layout/tokens/a11y chrome on M04–M07/M11 only — **domain-equivalent exit required** |
 
 ---
 
@@ -109,13 +114,13 @@ Authoritative provenance reconciliation, current comparison baseline, and determ
 - Under that default, **no new owner decision is needed** and no `OWN-P1-018` is proposed.
 - If a future implementer believes a wording change is genuinely required, they must stop and present exact before/after wording with options for owner decision — **do not modify or approve wording in this briefing**.
 
-**Verdict:** No owner-choice blocker currently prevents *consideration* of presentation-only P1-B6. Express named-batch authorisation remains a separate owner act.
+**Verdict:** No owner-choice blocker currently prevents presentation-only P1-B6. Express named-batch authorisation has been granted; **owner acceptance remains pending**.
 
 ---
 
 ## 4. Binding presentation-only boundary
 
-### P1-B6 may change (if later authorised)
+### P1-B6 may change (authorised presentation scope)
 
 - Application of accepted Decision A tokens
 - Accepted shared shell/chrome primitives
@@ -145,10 +150,11 @@ Authoritative provenance reconciliation, current comparison baseline, and determ
 - PPA, payment, M08, patient/clinical data
 - Dependencies or lockfile; SQL/schema/migrations; environment/secrets; CI/CD
 - Aurora code, tokens, or selective reapplication
+- Owner acceptance claims; PR/merge/deploy; automatic progression to P1-B7/P1-B8
 
 ### Exit condition
 
-Domain behaviour must remain **equivalent** to the accepted module baseline (see §7). Unexplained domain-output differences **block publication**.
+Domain behaviour must remain **equivalent** to the accepted module baseline (see §7). Unexplained domain-output differences **block acceptance**. Owner acceptance of the presentation-only tip remains **pending**.
 
 ---
 
@@ -238,29 +244,29 @@ Source: [`../design-system-contract.json`](../design-system-contract.json). Do *
 
 Authoritative procedure and machine-readable baseline: [`P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md`](./P1_B6_BASELINE_PROVENANCE_AND_EQUIVALENCE_GATE.md) and [`P1_B6_FROZEN_BASELINES.json`](./P1_B6_FROZEN_BASELINES.json) at comparison tip `f17756d80f039954c3be9f341436d0ba426d27b1`.
 
-Before/after P1-B6 implementation (if later authorised), for **each** of M04–M07/M11:
+Before/after P1-B6 implementation, for **each** of M04–M07/M11:
 
 1. Regenerate the frozen-baselines manifest deterministically.
 2. Compare protected file hashes and inventories.
 3. Allow changes only in classified presentation files (`sections/`, `components/`).
-4. Fail publication on any unexplained protected-domain difference (permissions, transitions, storage, events, calculations, exports, M07 PPA/payment/M08 boundaries, M11 sections/aliases).
+4. Fail acceptance on any unexplained protected-domain difference (permissions, transitions, storage, events, calculations, exports, M07 PPA/payment/M08 boundaries, M11 sections/aliases).
 
 Also produce implementation evidence under:
 
 `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`
 
-**P1-GAP-081:** cannot close merely because tests pass; evidence must demonstrate frozen-wave behaviour preservation via the equivalence report + unchanged protected hashes.
+**P1-GAP-081:** cannot close merely because tests pass; evidence must demonstrate frozen-wave behaviour preservation via the equivalence report + unchanged protected hashes. Equivalence **PASS** is recorded; gap remains **not closed** pending owner acceptance.
 
 ---
 
-## 8. Proposed evidence (future implementation — not created by this briefing)
+## 8. Proposed evidence (implementation pack)
 
 | Path | Purpose |
 | --- | --- |
 | `docs/audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md` | Narrative evidence + qualifications |
 | `docs/audits/p1/b6-accepted-modules-presentation/` | Pack root |
 | `…/shots/` | Screenshots |
-| `…/domain-equivalence.json` | Equivalence gate |
+| `…/domain-equivalence.json` | Equivalence gate (**PASS**; acceptance pending) |
 | `…/control-inventory.json` | Control inventory |
 
 **Widths:** 1440, 1280, 1024, 768, 430, 390  
@@ -278,7 +284,7 @@ Balance coverage with screenshot count — prefer exact-state discriminators + g
 
 ---
 
-## 9. Required future testing (if later authorised)
+## 9. Required testing (authorised batch)
 
 Recommend `npm run test:p1-b6` covering:
 
@@ -335,7 +341,7 @@ Plus existing accepted wave/module suites and:
 - Aurora leakage via copied tokens
 - No GitHub CI (local-only validation)
 
-### Recommended implementation sequence (do not implement now)
+### Recommended implementation sequence (completed for review)
 
 1. M04 presentation apply + equivalence  
 2. M11 presentation apply + register/alias preservation  
@@ -345,9 +351,9 @@ Plus existing accepted wave/module suites and:
 6. Cross-module density/typography pass (GAP-050)  
 7. Full equivalence pack + harness evidence (GAP-081 gate)
 
-### Recommended commit structure (do not implement now)
+### Recommended commit structure
 
-Prefer **multiple module-specific commits** followed by **one evidence/control commit**, all under a single expressly authorised P1-B6 batch:
+Prefer **multiple module-specific commits** followed by **one evidence/control commit**, all under the expressly authorised P1-B6 batch:
 
 - Improves reviewability and rollback per module freeze  
 - Keeps domain-equivalence diffs attributable  
@@ -357,26 +363,26 @@ A single monolithic commit is acceptable only if the owner prefers atomicity ove
 
 ---
 
-## 12. Included gaps (status unchanged by this briefing)
+## 12. Included gaps (addressed; not closed)
 
-| Gap | Batch | Status after this briefing |
+| Gap | Batch | Status after implementation-for-review |
 | --- | --- | --- |
-| P1-GAP-022 | P1-B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-023 | P1-B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-024 | P1-B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-025 | P1-B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed**; Adjustments wording preserved by default |
-| P1-GAP-026 | P1-B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-050 | P1-B5/B6 | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed** |
-| P1-GAP-081 | all / B6 gate | Still `P1 — PLANNED, NOT AUTHORISED` — **not closed**; equivalence evidence required to close later |
+| P1-GAP-022 | P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed** |
+| P1-GAP-023 | P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed** |
+| P1-GAP-024 | P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed** |
+| P1-GAP-025 | P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed**; Adjustments wording preserved |
+| P1-GAP-026 | P1-B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed** |
+| P1-GAP-050 | P1-B5/B6 | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — **addressed; not closed** |
+| P1-GAP-081 | all / B6 gate | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — equivalence **PASS**; **not closed** pending owner acceptance |
 
 ---
 
 ## 13. Control preservation
 
-Preserve: P1-B1–P1-B5 accepted/closed with qualifications; P1-B6–P1-B8 unauthorised; **83** gaps; **8** batches; **24** modules; M25 unimplemented; `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` open; Aurora parked; no overall Programme P1 acceptance; no PR/merge/deploy from this briefing.
+Preserve: P1-B1–P1-B5 accepted/closed with qualifications; P1-B6 expressly authorised and implemented for owner review (acceptance pending); P1-B7–P1-B8 `P1 — PLANNED, NOT AUTHORISED`; **83** gaps; **8** batches; **24** modules; M25 unimplemented; `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` open; Aurora parked; Decision A binding; no overall Programme P1 acceptance; no PR/merge/deploy from this briefing or B6 review publication.
 
 ---
 
 ## 14. Final briefing claim
 
-P1-B6 accepted-module presentation authorisation briefing prepared and published — P1-B6 remains unauthorised, frozen domain behaviour remains protected, Aurora remains unintegrated, and no implementation, merge or deployment was performed.
+P1-B6 accepted-module presentation was expressly authorised and is **implemented for owner review** — **acceptance pending**. Frozen domain behaviour remains protected (equivalence PASS), Aurora remains unintegrated, gaps 022–026/050/081 remain **not closed**, P1-B7/P1-B8 remain unauthorised, and no PR, merge or deployment was performed.

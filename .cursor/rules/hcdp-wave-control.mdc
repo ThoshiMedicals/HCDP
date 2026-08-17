@@ -1,5 +1,5 @@
 ---
-description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1–B5 accepted with qualifications; PPA planned only; P1-B6–B8 unauthorised
+description: HCDP wave control — Waves 1A–5 frozen; Wave 6 M07 Batches 1–6 closed; P1-B1–B5 accepted with qualifications; P1-B6 authorised/implemented for owner review (acceptance pending); P1-B7–B8 PLANNED NOT AUTHORISED; PPA planned only
 alwaysApply: true
 ---
 
@@ -26,6 +26,12 @@ P1-B4 evidence: `docs/audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`
 Accepted P1-B5 tip: `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (owner accepted with qualifications; closed 2026-08-17; `P1-B5-OWNER-ACCEPT-2026-08-17`)
 P1-B5 source tip: `ef66e3fa9aadaa3507ccf16d07aac3cbc7b5c577`
 P1-B5 evidence: `docs/audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`
+P1-B6 implementation branch: `cursor/p1-b6-accepted-modules-presentation`
+P1-B6 starting SHA: `df4deee61ac3655611c216770450d57e45201489`
+P1-B6 comparison baseline: `f17756d80f039954c3be9f341436d0ba426d27b1`
+P1-B6 module implementation tip: `8cd34ee31f46269c8b4f590160bbd43fe04c4827`
+P1-B6 evidence: `docs/audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md`
+P1-B6 domain equivalence: `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`
 
 ```text
 Wave 1A: Owner accepted and frozen
@@ -50,12 +56,16 @@ P1-B4 (responsive / a11y / appearance): Owner accepted with qualifications and c
 P1-B5 (M01/M02 Decision A presentation): Owner accepted with qualifications and closed at
   4306116fdf28f9d90a989d8ec78b317ad351b0d2 (2026-08-17; P1-B5-OWNER-ACCEPT-2026-08-17)
   — NOT overall P1 / production acceptance; NOT durable M01/M02 domain;
-  does NOT authorise P1-B6+
-P1-B6 briefing: docs/architecture/prototype-parity/phase1/P1_B6_OWNER_AUTHORISATION_BRIEFING.md
-  (prepared only — P1-B6 remains PLANNED, NOT AUTHORISED)
-P1-B6 through P1-B8: PLANNED, NOT AUTHORISED — no automatic progression
+  does NOT authorise automatic progression
+P1-B6 (accepted-module Decision A presentation): expressly authorised and
+  IMPLEMENTED FOR OWNER REVIEW (acceptance pending) — NOT owner accepted;
+  branch cursor/p1-b6-accepted-modules-presentation;
+  briefing docs/architecture/prototype-parity/phase1/P1_B6_OWNER_AUTHORISATION_BRIEFING.md;
+  gaps 022–026, 050, 081 addressed but not closed; domain equivalence PASS;
+  does NOT authorise P1-B7+, PR, merge, deploy, or overall Programme P1 completion
+P1-B7 and P1-B8: P1 — PLANNED, NOT AUTHORISED — no automatic progression
 Aurora (cursor/aurora-design-foundation): isolated — do not inspect, merge, or integrate
-  without separate express authorisation
+  without separate express authorisation; Decision A remains binding
 P1-B2 honesty dispositions: OWN-P1-004, OWN-P1-005, OWN-P1-008, OWN-P1-017
   closed 2026-08-13; batch closed by P1-B2-OWNER-ACCEPT-2026-08-13
 P1-B3 register-hygiene dispositions: OWN-P1-006 (Option A Synchronise),
@@ -70,7 +80,7 @@ Inventory: 83 gaps / 8 batches / 24 modules; M25 unimplemented
 ## Order
 
 0 → 1A → 1 → 2–5 (frozen) → **6 M07 Batches 1–6 (closed)** → **PPA (prior-period adjustment) planning only** → stop (do not implement PPA until expressly authorised)
-Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 closed with qualifications (`P1-B4-OWNER-ACCEPT-2026-08-14`)** → **P1-B5 closed with qualifications (`P1-B5-OWNER-ACCEPT-2026-08-17`)** → **P1-B6–P1-B8 (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B6–P1-B8 without express authorisation; do not integrate Aurora without separate review)
+Parallel prototype-parity track: **P1-B1 closed with qualifications** → **P1-B2 closed with qualifications** → **P1-B3 closed with qualifications** → **P1-B4 closed with qualifications (`P1-B4-OWNER-ACCEPT-2026-08-14`)** → **P1-B5 closed with qualifications (`P1-B5-OWNER-ACCEPT-2026-08-17`)** → **P1-B6 expressly authorised / IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** → **P1-B7–P1-B8 (`P1 — PLANNED, NOT AUTHORISED`)** → stop (do not begin P1-B7–P1-B8 without express authorisation; do not treat B6 review publication as owner acceptance; do not integrate Aurora without separate review)
 
 ## Preserve (Waves 2–5 freeze)
 
@@ -115,10 +125,13 @@ Batch 6 closure does **not** constitute production approval, certification, paym
 - Alter accepted Batches 1–6 ordinary prep behaviour without documented defect/CR and owner review
 - Claim production approval
 - Begin Module 8
-- Begin P1-B6 through P1-B8 without separate explicit owner authorisation
+- Begin P1-B7 through P1-B8 without separate explicit owner authorisation
+- Treat P1-B6 implementation-for-review as owner acceptance, production approval, PR/merge/deploy authority, or automatic progression
 - Treat P1-B5 qualified acceptance as durable M01/M02 domain completion, production approval, or automatic progression
 - Integrate or depend on `cursor/aurora-design-foundation` without separate owner review and express integration authorisation
 - Treat P1-B1–P1-B5 as overall Programme P1 / production acceptance
-- Resolve `OWN-P1-016`, `OWN-P1-011` or `OWN-P1-009` by implication from P1-B3–P1-B5
-- Authorise automatic progression from P1-B5 to later batches
-- Claim PR, merge or deployment authority from P1-B5 acceptance
+- Treat P1-B6 review publication as overall Programme P1 completion
+- Resolve `OWN-P1-016`, `OWN-P1-011` or `OWN-P1-009` by implication from P1-B3–P1-B6
+- Authorise automatic progression from P1-B6 to later batches
+- Claim PR, merge or deployment authority from P1-B6 implementation-for-review
+- Close gaps P1-GAP-022, 023, 024, 025, 026, 050 or 081 without owner acceptance

@@ -5,7 +5,8 @@
 **P1-B3 status:** owner accepted with qualifications and **closed** (2026-08-13) at `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`).
 **P1-B4 status:** owner accepted with qualifications and **closed** (2026-08-14) at `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`).
 **P1-B5 status:** owner accepted with qualifications and **closed** (2026-08-17) at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`).
-**P1-B6–P1-B8** remain unauthorised. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
+**P1-B6 status:** expressly authorised and **implemented for owner review** — **acceptance pending** (NOT owner accepted) on `cursor/p1-b6-accepted-modules-presentation` (starting `df4deee61ac3655611c216770450d57e45201489`; comparison baseline `f17756d80f039954c3be9f341436d0ba426d27b1`). Gaps 022–026, 050, 081 addressed but **not closed**. Frozen domain equivalence **passed** (`docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`).
+**P1-B7** and **P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete. Planning packs for P1A/P1C remain planning-only.
 
 | Pin | Value |
 | --- | --- |
@@ -17,13 +18,14 @@
 | Accepted P1-B3 tip | `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`cursor/p1-b3-register-hygiene`) |
 | Accepted P1-B4 tip | `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`cursor/p1-b4-responsive-a11y-appearance`) |
 | Accepted P1-B5 tip | `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`cursor/p1-b5-m01-m02-presentation`; `P1-B5-OWNER-ACCEPT-2026-08-17`) |
+| P1-B6 review tip (acceptance pending) | `8cd34ee31f46269c8b4f590160bbd43fe04c4827` (`cursor/p1-b6-accepted-modules-presentation`; starting `df4deee61ac3655611c216770450d57e45201489`) |
 | M25 parking branch | `cursor/m25-future-planning` (do not implement) |
 
 ## Workstream split
 
 | Workstream | Meaning | Stamp | Location |
 | --- | --- | --- | --- |
-| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1–B5 closed with qualifications; B6–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
+| **P1B** | Prototype-parity gap inventory (83 gaps) + 8 batches | P1-B1–B5 closed with qualifications; P1-B6 `IMPLEMENTED FOR OWNER REVIEW (acceptance pending)`; B7–B8 `P1 — PLANNED, NOT AUTHORISED` | Files in this folder (below) |
 | **P1A** | Master product-definition, design and delivery-readiness completeness | `P1A — PLANNED, NOT AUTHORISED` | [`p1a/`](./p1a/README.md) |
 | **P1C** | Development-repository, architecture and production-readiness audit | `P1C — PLANNED, NOT AUTHORISED` | [`p1c/`](./p1c/README.md) |
 
@@ -52,9 +54,9 @@ Owner briefing: [`P1_OWNER_DECISION_BRIEFING.md`](./P1_OWNER_DECISION_BRIEFING.m
 
 **Closed 2026-08-14 (qualified):** P1-B4 owner acceptance at `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`). Evidence: [`../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B4_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B4_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B4_OWNER_AUTHORISATION_BRIEFING.md). Aurora parallel stream remained isolated. No automatic progression.
 
-**Closed 2026-08-17 (qualified):** P1-B5 owner acceptance at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). Evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md). Gaps 020/021 closed for accepted presentation scope; 066/067/068 partial with residuals. Domain M01/M02 remains **NOT-STARTED**. **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. No automatic progression.
+**Closed 2026-08-17 (qualified):** P1-B5 owner acceptance at `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). Evidence: [`../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B5_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B5_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B5_OWNER_AUTHORISATION_BRIEFING.md). Gaps 020/021 closed for accepted presentation scope; 066/067/068 partial with residuals. Domain M01/M02 remains **NOT-STARTED**. No automatic progression.
 
-**P1-B6 briefing (2026-08-17):** Authorisation readiness briefing prepared only — [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md). P1-B6 remains **unauthorised**. Frozen M04–M07/M11 domain behaviour remains protected. Aurora remains unintegrated.
+**P1-B6 (expressly authorised; implementation for owner review — acceptance pending):** Branch `cursor/p1-b6-accepted-modules-presentation`. Evidence: [`../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md). Briefing: [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md). Gaps 022–026, 050, 081 addressed but **not closed**. Domain equivalence passed. Frozen M04–M07/M11 domain behaviour preserved. Aurora remains parked and unintegrated; Decision A binding. **P1-B7** and **P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. No PR/merge/deploy; not overall Programme P1 completion.
 
 **Open:** OWN-P1-009…014 (as registered; includes **OWN-P1-011** PPA product; **OWN-P1-009** durable M01–M03 domain → P2); **OWN-P1-016** (ARCH-01 / DATA-01 localStorage vs SQL).
 
@@ -98,12 +100,12 @@ See [`p1c/README.md`](./p1c/README.md) — repository inventory, 30-item missing
 ## Do not
 
 - Implement application behaviour without a named owner-authorised batch
-- Begin P1-B6–P1-B8 without separate explicit owner authorisation (no automatic progression from B1–B5; B5 acceptance does not authorise B6; B6 briefing does not authorise B6)
-- Treat P1-B5 qualified acceptance as durable domain completion or production approval
-- Treat the P1-B6 authorisation briefing as implementation authorisation
+- Begin P1-B7–P1-B8 without separate explicit owner authorisation (no automatic progression; B5 acceptance and B6 implementation-for-review do not authorise B7+)
+- Treat P1-B5 qualified acceptance or P1-B6 implementation-for-review as durable domain completion, owner acceptance of B6, or production approval
+- Treat the P1-B6 authorisation briefing alone as owner acceptance of the batch
 - Integrate or depend on `cursor/aurora-design-foundation` without separate express authorisation
 - Delete/archive conflicting historical docs during planning
 - Implement M25, PPA, payment execution, patient/clinical duplication, DB/deps changes
 - Claim legal compliance or security/accessibility certification from documentation review
-- Treat P1-B1–P1-B5 acceptance as overall Programme P1 or production acceptance
+- Treat P1-B1–P1-B5 acceptance or P1-B6 review publication as overall Programme P1 or production acceptance
 - Commit / push / merge / open a PR unless the owner expressly asks

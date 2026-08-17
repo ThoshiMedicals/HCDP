@@ -1,0 +1,2742 @@
+{
+  "batch": "P1-B6-ACCEPTED-MODULES-PRESENTATION",
+  "runtime": "production",
+  "baseUrl": "http://localhost:3026",
+  "generatedAt": "2026-08-17T02:15:03.075Z",
+  "failures": 0,
+  "assertionCount": 426,
+  "passCount": 426,
+  "failCount": 0,
+  "screenshotCount": 25,
+  "assertionGroups": {
+    "regions": 160,
+    "overflow": 40,
+    "appearance": 40,
+    "theme": 60,
+    "ready": 50,
+    "loading": 5,
+    "focus": 2,
+    "controls": 5,
+    "firewall": 40,
+    "domain": 3,
+    "matrix": 15,
+    "required": 6
+  },
+  "modules": [
+    {
+      "id": "m04",
+      "path": "/staff-doctors"
+    },
+    {
+      "id": "m05",
+      "path": "/roster"
+    },
+    {
+      "id": "m06",
+      "path": "/time-attendance"
+    },
+    {
+      "id": "m07",
+      "path": "/staffpay"
+    },
+    {
+      "id": "m11",
+      "path": "/training"
+    }
+  ],
+  "shots": [
+    {
+      "name": "m04-1440-light-ready",
+      "state": "m04-ready",
+      "file": "shots/m04-1440-light-ready.png"
+    },
+    {
+      "name": "m04-1440-dark-ready",
+      "state": "m04-ready",
+      "file": "shots/m04-1440-dark-ready.png"
+    },
+    {
+      "name": "m04-1280-system-os-light-system",
+      "state": "m04-system-os-light",
+      "file": "shots/m04-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m04-1280-system-os-dark-system",
+      "state": "m04-system-os-dark",
+      "file": "shots/m04-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m05-1440-light-ready",
+      "state": "m05-ready",
+      "file": "shots/m05-1440-light-ready.png"
+    },
+    {
+      "name": "m05-1440-dark-ready",
+      "state": "m05-ready",
+      "file": "shots/m05-1440-dark-ready.png"
+    },
+    {
+      "name": "m05-1280-system-os-light-system",
+      "state": "m05-system-os-light",
+      "file": "shots/m05-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m05-1280-system-os-dark-system",
+      "state": "m05-system-os-dark",
+      "file": "shots/m05-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m06-1440-light-ready",
+      "state": "m06-ready",
+      "file": "shots/m06-1440-light-ready.png"
+    },
+    {
+      "name": "m06-1440-dark-ready",
+      "state": "m06-ready",
+      "file": "shots/m06-1440-dark-ready.png"
+    },
+    {
+      "name": "m06-1280-system-os-light-system",
+      "state": "m06-system-os-light",
+      "file": "shots/m06-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m06-1280-system-os-dark-system",
+      "state": "m06-system-os-dark",
+      "file": "shots/m06-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m07-1440-light-ready",
+      "state": "m07-ready",
+      "file": "shots/m07-1440-light-ready.png"
+    },
+    {
+      "name": "m07-1440-dark-ready",
+      "state": "m07-ready",
+      "file": "shots/m07-1440-dark-ready.png"
+    },
+    {
+      "name": "m07-1280-system-os-light-system",
+      "state": "m07-system-os-light",
+      "file": "shots/m07-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m07-1280-system-os-dark-system",
+      "state": "m07-system-os-dark",
+      "file": "shots/m07-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m11-1440-light-ready",
+      "state": "m11-ready",
+      "file": "shots/m11-1440-light-ready.png"
+    },
+    {
+      "name": "m11-1440-dark-ready",
+      "state": "m11-ready",
+      "file": "shots/m11-1440-dark-ready.png"
+    },
+    {
+      "name": "m11-1280-system-os-light-system",
+      "state": "m11-system-os-light",
+      "file": "shots/m11-1280-system-os-light-system.png"
+    },
+    {
+      "name": "m11-1280-system-os-dark-system",
+      "state": "m11-system-os-dark",
+      "file": "shots/m11-1280-system-os-dark-system.png"
+    },
+    {
+      "name": "m06-430-light-mobile",
+      "state": "m06-mobile",
+      "file": "shots/m06-430-light-mobile.png"
+    },
+    {
+      "name": "m04-430-system-os-dark-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-430-system-os-dark-mobile.png"
+    },
+    {
+      "name": "m04-390-light-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-390-light-mobile.png"
+    },
+    {
+      "name": "m04-390-system-os-dark-mobile",
+      "state": "m04-mobile",
+      "file": "shots/m04-390-system-os-dark-mobile.png"
+    },
+    {
+      "name": "m04-focus-tabs-1440-light",
+      "state": "focus-tabs",
+      "file": "shots/m04-focus-tabs-1440-light.png"
+    }
+  ],
+  "assertions": [
+    {
+      "ok": true,
+      "id": "m04-1440-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/demo-banner",
+      "reason": "m05-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-light/ready",
+      "reason": "m05 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/demo-banner",
+      "reason": "m05-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1440-dark/ready",
+      "reason": "m05 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/demo-banner",
+      "reason": "m05-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-light/ready",
+      "reason": "m05 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/demo-banner",
+      "reason": "m05-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-1280-system-os-dark/ready",
+      "reason": "m05 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/demo-banner",
+      "reason": "m06-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-light/ready",
+      "reason": "m06 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/demo-banner",
+      "reason": "m06-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1440-dark/ready",
+      "reason": "m06 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/demo-banner",
+      "reason": "m06-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-light/ready",
+      "reason": "m06 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/demo-banner",
+      "reason": "m06-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-1280-system-os-dark/ready",
+      "reason": "m06 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/demo-banner",
+      "reason": "m07-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-light/ready",
+      "reason": "m07 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/demo-banner",
+      "reason": "m07-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1440-dark/ready",
+      "reason": "m07 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/demo-banner",
+      "reason": "m07-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-light/ready",
+      "reason": "m07 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/demo-banner",
+      "reason": "m07-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-1280-system-os-dark/ready",
+      "reason": "m07 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/demo-banner",
+      "reason": "m11-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-light/ready",
+      "reason": "m11 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/demo-banner",
+      "reason": "m11-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1440-dark/ready",
+      "reason": "m11 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/demo-banner",
+      "reason": "m11-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-light/ready",
+      "reason": "m11 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/demo-banner",
+      "reason": "m11-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m11-1280-system-os-dark/ready",
+      "reason": "m11 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/demo-banner",
+      "reason": "m05-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m05-768-dark/ready",
+      "reason": "m05 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/demo-banner",
+      "reason": "m06-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m06-430-light/ready",
+      "reason": "m06 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/demo-banner",
+      "reason": "m07-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m07-390-dark/ready",
+      "reason": "m07 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1440-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1280-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-1024-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-768-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/appearance-pref",
+      "reason": "data-appearance=dark",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-430-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/appearance-pref",
+      "reason": "data-appearance=light",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/resolved-theme",
+      "reason": "themeDark=false",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/system-os-light-distinct",
+      "reason": "System OS light resolves light",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-light/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/regions",
+      "reason": "shell regions present; h1=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/page-header",
+      "reason": "shell-page-header count=1",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/demo-banner",
+      "reason": "m04-demo-banner present",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/no-overflow",
+      "reason": "docOverflowX=false",
+      "group": "overflow"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/appearance-pref",
+      "reason": "data-appearance=system",
+      "group": "appearance"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/resolved-theme",
+      "reason": "themeDark=true",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/system-os-dark-distinct",
+      "reason": "System OS dark resolves dark",
+      "group": "theme"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/patient-firewall",
+      "reason": "no prohibited clinical chrome",
+      "group": "firewall"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/hydration",
+      "reason": "no hydration errors",
+      "group": "regions"
+    },
+    {
+      "ok": true,
+      "id": "m04-390-system-os-dark/ready",
+      "reason": "m04 ready text matched",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04/loading-distinct",
+      "reason": "loading flash not stably capturable; ready path still verified separately",
+      "group": "loading"
+    },
+    {
+      "ok": true,
+      "id": "m04/ready-regions",
+      "reason": "ready has page header + demo banner",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m04/ready-not-loading-only",
+      "reason": "ready body is not loading-only",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05/loading-distinct",
+      "reason": "loading flash not stably capturable; ready path still verified separately",
+      "group": "loading"
+    },
+    {
+      "ok": true,
+      "id": "m05/ready-regions",
+      "reason": "ready has page header + demo banner",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m05/ready-not-loading-only",
+      "reason": "ready body is not loading-only",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06/loading-distinct",
+      "reason": "loading flash not stably capturable; ready path still verified separately",
+      "group": "loading"
+    },
+    {
+      "ok": true,
+      "id": "m06/ready-regions",
+      "reason": "ready has page header + demo banner",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m06/ready-not-loading-only",
+      "reason": "ready body is not loading-only",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07/loading-distinct",
+      "reason": "loading flash not stably capturable; ready path still verified separately",
+      "group": "loading"
+    },
+    {
+      "ok": true,
+      "id": "m07/ready-regions",
+      "reason": "ready has page header + demo banner",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m07/ready-not-loading-only",
+      "reason": "ready body is not loading-only",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11/loading-distinct",
+      "reason": "loading flash not stably capturable; ready path still verified separately",
+      "group": "loading"
+    },
+    {
+      "ok": true,
+      "id": "m11/ready-regions",
+      "reason": "ready has page header + demo banner",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "m11/ready-not-loading-only",
+      "reason": "ready body is not loading-only",
+      "group": "ready"
+    },
+    {
+      "ok": true,
+      "id": "focus/tab-receives",
+      "reason": "active=BUTTON",
+      "group": "focus"
+    },
+    {
+      "ok": true,
+      "id": "focus/restored",
+      "reason": "focus={\"tag\":\"BUTTON\",\"inTabs\":true}",
+      "group": "focus"
+    },
+    {
+      "ok": true,
+      "id": "controls/demo-banner-honesty",
+      "reason": "demo banner present",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "controls/primary-action",
+      "reason": "primary control invoked without crash",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "controls/m07-adjustments-honesty",
+      "reason": "Adjustments nav not reachable in this seed — honesty covered by static suite",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "domain/equivalence-pass",
+      "reason": "pass=true",
+      "group": "domain"
+    },
+    {
+      "ok": true,
+      "id": "control/inventory-present",
+      "reason": "control-inventory.json present",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "control/inventory-totals",
+      "reason": "before/after totals match frozen baselines 105/82/233",
+      "group": "controls"
+    },
+    {
+      "ok": true,
+      "id": "control/aurora-unintegrated",
+      "reason": "Aurora not merged/cherry-picked/copied",
+      "group": "domain"
+    },
+    {
+      "ok": true,
+      "id": "control/b7-b8-unauthorised",
+      "reason": "P1-B7–P1-B8 remain unauthorised",
+      "group": "domain"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1440",
+      "reason": "Width 1440",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1280",
+      "reason": "Width 1280",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-1024",
+      "reason": "Width 1024",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-768",
+      "reason": "Width 768",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-430",
+      "reason": "Width 430",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/width-390",
+      "reason": "Width 390",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-light",
+      "reason": "Appearance light",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-dark",
+      "reason": "Appearance dark",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-system-os-light",
+      "reason": "Appearance system-os-light",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/appearance-system-os-dark",
+      "reason": "Appearance system-os-dark",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/module-m04",
+      "reason": "Module m04",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/module-m05",
+      "reason": "Module m05",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/module-m06",
+      "reason": "Module m06",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/module-m07",
+      "reason": "Module m07",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "matrix/module-m11",
+      "reason": "Module m11",
+      "group": "matrix"
+    },
+    {
+      "ok": true,
+      "id": "required/domain/equivalence-pass",
+      "reason": "pass=true",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/control/inventory-totals",
+      "reason": "before/after totals match frozen baselines 105/82/233",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/control/aurora-unintegrated",
+      "reason": "Aurora not merged/cherry-picked/copied",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/focus/restored",
+      "reason": "focus={\"tag\":\"BUTTON\",\"inTabs\":true}",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "required/controls/demo-banner-honesty",
+      "reason": "demo banner present",
+      "group": "required"
+    },
+    {
+      "ok": true,
+      "id": "evidence/no-ambiguous-or-names",
+      "reason": "No ambiguous or-filenames",
+      "group": "required"
+    }
+  ],
+  "claims": {
+    "wcagCertification": false,
+    "pixelParity": false,
+    "githubCi": false,
+    "productionApproval": false,
+    "durableDomainComplete": false,
+    "auroraIntegrated": false,
+    "ownerAcceptance": "pending",
+    "validationBasis": "local-only"
+  }
+}

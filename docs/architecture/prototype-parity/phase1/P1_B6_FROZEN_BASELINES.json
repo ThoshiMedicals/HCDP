@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "document": "P1_B6_FROZEN_BASELINES",
-  "status": "P1 — PLANNED, NOT AUTHORISED",
+  "status": "P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)",
   "preImplementationComparisonBaseline": "f17756d80f039954c3be9f341436d0ba426d27b1",
   "preImplementationComparisonBaselineRole": "Immutable P1-B6 pre-implementation comparison baseline — not a replacement for historical owner-accepted SHAs",
   "aurora": "parked-unintegrated",

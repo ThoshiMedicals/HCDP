@@ -167,13 +167,19 @@ describe("P1-B3 programme control preserves open decisions and later batches", (
     assert.match(decisions, /OWN-P1-016 \|[\s\S]*?\*\*Open\*\*/);
   });
 
-  it("keeps P1-B6 through P1-B8 PLANNED NOT AUTHORISED; B5 acceptance pending", () => {
-    assert.match(batches, /P1-B5[\s\S]{0,220}acceptance pending/i);
-    for (const id of ["P1-B6", "P1-B7", "P1-B8"]) {
+  it("keeps P1-B1–B5 accepted/closed; P1-B6 authorised for owner review (acceptance pending); P1-B7–B8 PLANNED NOT AUTHORISED", () => {
+    assert.match(batches, /P1-B1[\s\S]{0,80}P1-B2[\s\S]{0,80}P1-B3[\s\S]{0,80}P1-B4[\s\S]{0,80}P1-B5/i);
+    assert.match(batches, /P1-B5[\s\S]{0,220}(owner accepted|CLOSED)/i);
+    assert.match(
+      batches,
+      /P1-B6[\s\S]{0,280}(expressly authorised|authorised and implemented|IMPLEMENTED FOR OWNER REVIEW|acceptance pending)/i
+    );
+    for (const id of ["P1-B7", "P1-B8"]) {
       assert.match(batches, new RegExp(`${id}[\\s\\S]{0,160}PLANNED, NOT AUTHORISED`));
     }
-    assert.match(wave, /P1-B6 through P1-B8|P1-B6–P1-B8/);
-    assert.match(wave, /acceptance pending/i);
+    assert.match(wave, /P1-B1|P1-B5/);
+    assert.match(wave, /P1-B6[\s\S]{0,220}(acceptance pending|authorised|IMPLEMENTED FOR OWNER REVIEW)/i);
+    assert.match(wave, /P1-B7[\s\S]{0,160}PLANNED|P1-B8[\s\S]{0,160}PLANNED|P1-B7.*P1-B8.*NOT AUTHORISED/i);
   });
 
   it("preserves inventory totals 83 / 8 / 24", () => {

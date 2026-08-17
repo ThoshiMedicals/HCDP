@@ -20,6 +20,7 @@
     "test:p1-b3": "tsx --test \"src/components/shell/tests/p1-b3-*.test.ts\"",
     "test:p1-b4": "tsx --test \"src/components/shell/tests/p1-b4-*.test.ts\"",
     "test:p1-b5": "tsx --test \"src/components/shell/tests/p1-b5-*.test.ts\"",
+    "test:p1-b6": "tsx --test \"src/components/shell/tests/p1-b6-*.test.ts\"",
     "test:platform-qa": "node scripts/platform-integration-qa.mjs",
     "test:wave2-evidence": "node scripts/wave2-m04-acceptance-evidence.mjs",
     "test:wave3-evidence": "node scripts/wave3-m11-acceptance-evidence.mjs",

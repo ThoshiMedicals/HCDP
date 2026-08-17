@@ -1,7 +1,7 @@
 # P1 Proposed Execution Batches
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
-**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B6–B8 never auto-start (OWN-P1-002). P1-B5 acceptance does **not** authorise automatic progression.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8` (`P1-B3-OWNER-ACCEPT-2026-08-13`); P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **OWN-P1-006** and **OWN-P1-007** closed 2026-08-13. **P1-B6** expressly authorised and **implemented for owner review** — **acceptance pending** (NOT owner accepted). **P1-B7** and **P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
+**Rule:** No batch auto-starts. Owner must still **expressly authorise** each later batch before coding; B7–B8 never auto-start (OWN-P1-002). P1-B5 acceptance and P1-B6 implementation for review do **not** authorise automatic progression or owner acceptance of B6.
 
 ## Batch index
 
@@ -12,7 +12,7 @@
 | P1-B3 | Register / navigation hygiene | 011, 012, 013, 014*, 015, 079 | **Owner accepted with qualifications — CLOSED (2026-08-13)** |
 | P1-B4 | Responsive / a11y / appearance evidence | 008, 009, 031, 052, 074 | **Owner accepted with qualifications — CLOSED (2026-08-14)** |
 | P1-B5 | M01/M02 Decision A presentation (no domain services) | 020, 021, 066, 067, 068* | **Owner accepted with qualifications — CLOSED (2026-08-17)** |
-| P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | `P1 — PLANNED, NOT AUTHORISED` |
+| P1-B6 | Accepted-module final-design apply (preserve domain) | 022–026, 050, 081 | **P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** |
 | P1-B7 | Permission / state / report honesty completeness | 027–030, 028, 053* | `P1 — PLANNED, NOT AUTHORISED` |
 | P1-B8 | P1 closure evidence + stop checkpoint | 010, 075, 076, 082 | `P1 — PLANNED, NOT AUTHORISED` |
 
@@ -141,13 +141,21 @@
 
 | Field | Value |
 | --- | --- |
-| Status | `P1 — PLANNED, NOT AUTHORISED` |
+| Status | **P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)** — expressly authorised; **NOT** owner accepted |
+| Implementation branch | `cursor/p1-b6-accepted-modules-presentation` |
+| Starting SHA | `df4deee61ac3655611c216770450d57e45201489` |
+| Comparison baseline | `f17756d80f039954c3be9f341436d0ba426d27b1` |
+| Module implementation tip | `8cd34ee31f46269c8b4f590160bbd43fe04c4827` |
 | Objective | Apply shared final design to M04–M07/M11 presentation only |
 | Included gaps | 022–026, 050, 081 |
-| Authorisation briefing | [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md) — prepared only; **not** authorisation |
-| Prohibited | Changing frozen domain SoT/permissions/events; PPA; payment; M08; Aurora adoption |
+| Gap disposition | 022, 023, 024, 025, 026, 050, 081 **addressed** for presentation/equivalence scope — **not closed** (`P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)`) |
+| Domain equivalence | **Passed** — `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json` |
+| Authorisation briefing | [`P1_B6_OWNER_AUTHORISATION_BRIEFING.md`](./P1_B6_OWNER_AUTHORISATION_BRIEFING.md) — express named-batch authorisation granted; implementation published for owner review |
+| Implementation evidence | [`../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md`](../../audits/p1/P1_B6_IMPLEMENTATION_EVIDENCE.md) |
+| Prohibited | Changing frozen domain SoT/permissions/events; PPA; payment; M08; Aurora adoption; claiming owner acceptance; PR/merge/deploy; automatic progression to B7+ |
 | Required tests | Focused regression per module wave suite; full suite must not regress; domain-equivalence report; restore any evidence JSON rewritten by tests |
-| Exit | Owner accepts “presentation-only” tip; domain behaviour unchanged; GAP-081 equivalence evidence required |
+| Exit | Owner accepts “presentation-only” tip; domain behaviour unchanged; GAP-081 equivalence evidence required — **exit not met** (acceptance pending) |
+| Qualifications | Local validation only; no GitHub CI claim; frozen domain preserved; M07 Adjustments/PPA/payment/M08 unchanged; M11 sections/aliases unchanged; Aurora parked; `OWN-P1-009` / `OWN-P1-011` / `OWN-P1-016` open; not overall Programme P1 |
 
 ## P1-B7 — States / permissions / report honesty
 

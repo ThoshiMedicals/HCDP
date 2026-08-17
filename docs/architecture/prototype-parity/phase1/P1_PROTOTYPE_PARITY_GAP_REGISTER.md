@@ -1,6 +1,6 @@
 # P1 Prototype-Parity Gap Register
 
-**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`; P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **P1-B6–P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
+**Stamp:** **P1-B1**, **P1-B2**, **P1-B3**, **P1-B4** and **P1-B5** owner accepted with qualifications and **closed**. Accepted tips: P1-B1 `fdb2beb5b0e786e42d358efa9875b6bba52666cd`; P1-B2 `66f3f8d27803f5b8d24043639d21b9069f58e77a`; P1-B3 `2515a4ffac0fb94cbd37092e26bf372cb43898f8`; P1-B4 `c58f2843d47b6fa875cd155d166c1f7c916d5250` (`P1-B4-OWNER-ACCEPT-2026-08-14`); P1-B5 `4306116fdf28f9d90a989d8ec78b317ad351b0d2` (`P1-B5-OWNER-ACCEPT-2026-08-17`). **P1-B6** expressly authorised and **implemented for owner review** — **acceptance pending** (NOT owner accepted). Gaps **022, 023, 024, 025, 026, 050, 081** addressed but **not closed**. **P1-B7** and **P1-B8** remain `P1 — PLANNED, NOT AUTHORISED`. Overall Programme P1 is **not** complete.
 **Scheme:** `P1-GAP-###` (append-only; never reuse)  
 **Baseline tip:** `9142ec30b3b2efea1e959ad85ce1406562cd5faa`  
 **Accepted P1-B1 tip:** `fdb2beb5b0e786e42d358efa9875b6bba52666cd`
@@ -438,20 +438,20 @@
 | Risk | Accidental domain regression |
 | Acceptance evidence | Focused regression + visual QA |
 | Batch | P1-B6 |
-| Implementation status | `P1 — PLANNED, NOT AUTHORISED` |
+| Implementation status | `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed; **not closed** |
 | Owner clarification | No |
 
 ### P1-GAP-023 — Apply shared final design to M05 without domain change
-Same pattern as P1-GAP-022 for M05 `/roster` (Wave4). Classification **Moderate**. Batch P1-B6. Status `P1 — PLANNED, NOT AUTHORISED`.
+Same pattern as P1-GAP-022 for M05 `/roster` (Wave4). Classification **Moderate**. Batch P1-B6. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed; **not closed**.
 
 ### P1-GAP-024 — Apply shared final design to M06 without domain change
-Same pattern for M06 `/time-attendance` (Wave5). Classification **Moderate**. Batch P1-B6. Status `P1 — PLANNED, NOT AUTHORISED`.
+Same pattern for M06 `/time-attendance` (Wave5). Classification **Moderate**. Batch P1-B6. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed; **not closed**.
 
 ### P1-GAP-025 — Apply shared final design to M07 without domain / PPA / payment change
-Same pattern for M07 `/staffpay` (Batch6). Must not touch PPA/payment. Classification **Moderate**. Batch P1-B6. Status `P1 — PLANNED, NOT AUTHORISED`. Owner clarification: **Yes** if any Adjustments UI wording changes.
+Same pattern for M07 `/staffpay` (Batch6). Must not touch PPA/payment. Classification **Moderate**. Batch P1-B6. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed; **not closed**. Owner clarification: **Yes** if any Adjustments UI wording changes (accepted P1-B3 honesty wording preserved).
 
 ### P1-GAP-026 — Apply shared final design to M11 without domain change
-Same pattern for M11 `/training` (Wave3). Prefer after P1-GAP-011 register sync. Classification **Moderate**. Batch P1-B6. Status `P1 — PLANNED, NOT AUTHORISED`.
+Same pattern for M11 `/training` (Wave3). Prefer after P1-GAP-011 register sync. Classification **Moderate**. Batch P1-B6. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed; **not closed**.
 
 ### P1-GAP-027 — Empty/loading/error/denied completeness on accepted modules
 | Field | Value |
@@ -593,7 +593,7 @@ Special notes:
 Source: `DEC-BRANDED-THEMES` closed — Light/Dark/System only. Current accents as nav cues allowed. Ensure P1 does not reintroduce Executive Blue / Medical Emerald globals. Classification **Accepted difference** (closed) + **Minor** watch item. Batch P1-B1. Status **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (no banned globals on accepted tip).
 
 ### P1-GAP-050 — Density / typography residual vs contract
-Source: design-system-contract typography/spacing. Classification **Minor**. Batch P1-B5/B6. Status `P1 — PLANNED, NOT AUTHORISED`.
+Source: design-system-contract typography/spacing. Classification **Minor**. Batch P1-B5/B6. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — addressed for accepted-module Decision A density/typography apply; **not closed**.
 
 ### P1-GAP-051 — Detail panel width band 320–420
 Source: design contract. Classification **Minor**. Batch P1-B1. Status **P1-B1 — OWNER ACCEPTED WITH QUALIFICATIONS — CLOSED (2026-08-13)** at `fdb2beb5b0e786e42d358efa9875b6bba52666cd` (default 360; band 320–420 evidenced).
@@ -694,7 +694,7 @@ Classification **Major** (scope confusion). Must not be treated as authorised PP
 Classification **Future scope** (P3). Status `P1 — PLANNED, NOT AUTHORISED`.
 
 ### P1-GAP-081 — Wave freeze alteration risk if P1 touches domain
-Classification **Major** (risk control). P1 batches must prohibit domain behaviour changes on frozen waves. Batch all. Status `P1 — PLANNED, NOT AUTHORISED`.
+Classification **Major** (risk control). P1 batches must prohibit domain behaviour changes on frozen waves. Batch all / P1-B6 gate. Status `P1 — IMPLEMENTED FOR OWNER REVIEW (acceptance pending)` — domain-equivalence **PASS** at `docs/audits/p1/b6-accepted-modules-presentation/domain-equivalence.json`; gap **not closed** pending owner acceptance.
 
 ### P1-GAP-082 — Self-approval prohibition for Visual/Work-Step QA
 Classification **Accepted difference** / process control from GLOBAL design. Batch P1-B8. Status `P1 — PLANNED, NOT AUTHORISED`.
