@@ -22,8 +22,8 @@ export function OnboardingSection() {
   return (
     <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
-        <h2 className="m-0 text-xl font-extrabold">Onboarding</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">Start and complete workforce onboarding.</p>
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold">Onboarding</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">Start and complete workforce onboarding.</p>
       </div>
       <Panel>
         <PanelTitle>Start onboarding</PanelTitle>

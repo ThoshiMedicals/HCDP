@@ -21,8 +21,8 @@ export function RestrictionsSection() {
   return (
     <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
-        <h2 className="m-0 text-xl font-extrabold">Restrictions & adjustments</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold">Restrictions & adjustments</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Sensitive detail is masked without restriction.view_sensitive.
         </p>
       </div>

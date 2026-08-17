@@ -41,8 +41,8 @@ export function ReportsSection() {
   return (
     <div className="grid gap-4">
       <div>
-        <h2 className="m-0 text-xl font-extrabold">Reports</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">Workforce counts and export (permission-gated).</p>
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold">Reports</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">Workforce counts and export (permission-gated).</p>
       </div>
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         <Metric label="Active staff" value={displayCounts.activeStaff} icon="users" />

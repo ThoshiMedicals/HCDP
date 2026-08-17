@@ -11,8 +11,8 @@ export function SettingsSection() {
   return (
     <div className="grid gap-4">
       <div>
-        <h2 className="m-0 text-xl font-extrabold">Settings</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">M04 storage ownership and rollback notes.</p>
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold">Settings</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">M04 storage ownership and rollback notes.</p>
       </div>
       <Panel>
         <PanelTitle>Active actor</PanelTitle>
@@ -37,9 +37,9 @@ export function SettingsSection() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-[var(--muted)]">People in store: {peopleCount}</p>
+        <p className="mt-3 text-[length:var(--type-body)] text-[var(--muted)]">People in store: {peopleCount}</p>
         {migrationReport ? (
-          <p className="mt-1 text-sm text-[var(--muted)]">
+          <p className="mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
             Last portal seed: {migrationReport.migratedCount}/{migrationReport.sourceCount} at {migrationReport.ranAt}
           </p>
         ) : null}

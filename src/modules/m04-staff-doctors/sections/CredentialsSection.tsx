@@ -23,8 +23,8 @@ export function CredentialsSection() {
   return (
     <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <div>
-        <h2 className="m-0 text-xl font-extrabold">Credentials</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold">Credentials</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
           Verify credentials and recalculate readiness. Expired credentials project to Action Inbox.
         </p>
       </div>

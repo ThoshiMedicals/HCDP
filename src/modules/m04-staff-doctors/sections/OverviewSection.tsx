@@ -27,10 +27,13 @@ export function OverviewSection() {
 
   return (
     <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
+      <p className="cc-demo-banner m-0" role="status" data-testid="m04-demo-banner">
+        Demonstration / local browser data — not live operational workforce truth.
+      </p>
       <div>
-        <h2 className="m-0 text-xl font-extrabold text-[var(--ink)]">Workforce overview</h2>
-        <p className="m-0 mt-1 text-sm text-[var(--muted)]">
-          Authoritative staff and doctor management. Recalculate readiness from credentials and lifecycle state.
+        <h2 className="m-0 text-[length:var(--type-heading)] font-extrabold text-[var(--ink)]">Workforce overview</h2>
+        <p className="m-0 mt-1 text-[length:var(--type-body)] text-[var(--muted)]">
+          Staff and doctor management workspace. Recalculate readiness from credentials and lifecycle state.
         </p>
       </div>
 
@@ -150,7 +153,7 @@ export function OverviewSection() {
         </Panel>
         <Panel>
           <PanelTitle>Lifecycle</PanelTitle>
-          <div className="text-sm text-[var(--muted)]">
+          <div className="text-[length:var(--type-body)] text-[var(--muted)]">
             Onboarding {hydrated ? listOnboarding().length : 0} · Offboarding{" "}
             {hydrated ? listOffboarding().length : 0}
           </div>
